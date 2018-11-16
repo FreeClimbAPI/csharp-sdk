@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4825593-8458-42F7-9C62-01A2DAC906EF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>persy_cs_sdk_test</RootNamespace>
+    <AssemblyName>persy-cs-sdk-test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="Telerik.JustMock, Version=2016.2.426.1, Culture=neutral, PublicKeyToken=721b6c5bc0326b3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\JustMock.2016.2.426.1\lib\Net35\Telerik.JustMock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="api\account\AccountRequesterTest.cs" />
+    <Compile Include="api\account\AccountTest.cs" />
+    <Compile Include="api\application\ApplicationRequesterTest.cs" />
+    <Compile Include="api\application\ApplicationTest.cs" />
+    <Compile Include="api\conference\ConferenceTest.cs" />
+    <Compile Include="api\conference\ParticipantTest.cs" />
+    <Compile Include="api\conference\ConferenceRequesterTest.cs" />
+    <Compile Include="api\log\LogRequesterTest.cs" />
+    <Compile Include="api\log\LogTest.cs" />
+    <Compile Include="api\message\MessagesRequesterTest.cs" />
+    <Compile Include="api\message\MessageTest.cs" />
+    <Compile Include="api\PersyCommonTest.cs" />
+    <Compile Include="api\phonenumber\AvailablePhoneNumberRequesterTest.cs" />
+    <Compile Include="api\phonenumber\AvailablePhoneNumberTest.cs" />
+    <Compile Include="api\phonenumber\CallingNumberRequesterTest.cs" />
+    <Compile Include="api\phonenumber\CallingNumberTest.cs" />
+    <Compile Include="api\phonenumber\IncomingPhoneNumberRequesterTest.cs" />
+    <Compile Include="api\phonenumber\IncomingPhoneNumberTest.cs" />
+    <Compile Include="api\queue\QueueTest.cs" />
+    <Compile Include="api\queue\QueueMemberTest.cs" />
+    <Compile Include="api\queue\QueuesRequesterTest.cs" />
+    <Compile Include="api\Test.cs" />
+    <Compile Include="api\PersyListTest.cs" />
+    <Compile Include="api\TestRequester.cs" />
+    <Compile Include="api\TestsList.cs" />
+    <Compile Include="api\PersyClientTest.cs" />
+    <Compile Include="api\APIRequesterTest.cs" />
+    <Compile Include="api\call\CallTest.cs" />
+    <Compile Include="api\call\OutboundCallTest.cs" />
+    <Compile Include="api\call\CallsRequesterTest.cs" />
+    <Compile Include="percl\SmsTest.cs" />
+    <Compile Include="percl\TestCommand.cs" />
+    <Compile Include="percl\PerCLScriptTest.cs" />
+    <Compile Include="percl\SayTest.cs" />
+    <Compile Include="percl\PlayTest.cs" />
+    <Compile Include="percl\StartRecordCallTest.cs" />
+    <Compile Include="percl\RecordUtteranceTest.cs" />
+    <Compile Include="percl\PlayEarlyMediaTest.cs" />
+    <Compile Include="percl\PauseTest.cs" />
+    <Compile Include="percl\HangupTest.cs" />
+    <Compile Include="api\recording\RecordingTest.cs" />
+    <Compile Include="api\recording\RecordingsRequesterTest.cs" />
+    <Compile Include="percl\SendDigitsTest.cs" />
+    <Compile Include="percl\GetDigitsTest.cs" />
+    <Compile Include="percl\GetSpeechTest.cs" />
+    <Compile Include="percl\OutDialTest.cs" />
+    <Compile Include="percl\DequeueTest.cs" />
+    <Compile Include="percl\EnqueueTest.cs" />
+    <Compile Include="percl\AddToConferenceTest.cs" />
+    <Compile Include="percl\CreateConferenceTest.cs" />
+    <Compile Include="percl\RedirectTest.cs" />
+    <Compile Include="percl\RemoveFromConferenceTest.cs" />
+    <Compile Include="percl\TerminateConferenceTest.cs" />
+    <Compile Include="percl\SetListenTest.cs" />
+    <Compile Include="percl\SetTalkTest.cs" />
+    <Compile Include="TestWebRequestCreate.cs" />
+    <Compile Include="webhooks\application\ApplicationVoiceCallbackTest.cs" />
+    <Compile Include="webhooks\application\MessageDeliveryCallbackTest.cs" />
+    <Compile Include="webhooks\call\CallStatusCallbackTest.cs" />
+    <Compile Include="webhooks\call\OutDialActionCallbackTest.cs" />
+    <Compile Include="webhooks\call\OutDialIfMachineCallbackTest.cs" />
+    <Compile Include="webhooks\conference\ConferenceCallControlCallbackTest.cs" />
+    <Compile Include="webhooks\conference\LeaveConferenceUrlCallbackTest.cs" />
+    <Compile Include="webhooks\conference\ConferenceCreateActionCallbackTest.cs" />
+    <Compile Include="webhooks\conference\ConferenceStatusCallbackTest.cs" />
+    <Compile Include="webhooks\message\MessageStatusCallbackTest.cs" />
+    <Compile Include="webhooks\percl\GetDigitsActionCallbackTest.cs" />
+    <Compile Include="webhooks\percl\GetSpeechActionCallbackTest.cs" />
+    <Compile Include="webhooks\call\RecordingUtteranceActionCallbackTest.cs" />
+    <Compile Include="webhooks\VoiceRequestTest.cs" />
+    <Compile Include="webhooks\queue\QueueWaitCallbackTest.cs" />
+    <Compile Include="webhooks\queue\QueueActionCallbackTest.cs" />
+    <Compile Include="webhooks\StatusCallbackTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="webhooks\PersyRequestTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\persy-cs-sdk\persy-cs-sdk.csproj">
+      <Project>{20AF67C9-1B1D-4447-946E-8F8896C77180}</Project>
+      <Name>persy-cs-sdk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
