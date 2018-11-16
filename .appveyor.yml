@@ -1,1 +1,7 @@
-version: CI-Build-{build}
+version: '{build}'
+deploy:
+  - provider: NuGet
+    api_key:
+      secure: yziytZX76P+7YvLKu4YNzYdHtM7hCZPQguCa4SGHEvmzL7FTqS7Sjij5oqEc6taN
+    on:
+      APPVEYOR_REPO_TAG: true
