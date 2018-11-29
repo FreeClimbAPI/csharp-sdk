@@ -78,36 +78,6 @@ namespace com.persephony.api.call
         }
 
         /// <summary>
-        /// Create a new call through the Persephony API using a registered
-        /// Persephony application. 
-        /// </summary>
-        /// <param name="to">The number to call out to (DNIS). This can be any valid phone number formatted in E.164 format.</param>
-        /// <param name="from">The number to call from (ANI). This must be a number purchase from Persephony or a verified phone number owned by the user.</param>
-        /// <param name="callConnectUrl">The URL that Persephony makes requests to when the call connects.</param>
-        /// <param name="statusCallbackUrl">The URL to which Persephony will report call status notifications.</param>
-        /// <param name="callOptions">Optional CallOrigOptions instance to be used when creating a call.</param> 
-        /// <returns>A Call object returned by Persephony that represents the call that was created.</returns>
-        /// <exception cref="PersyException">Thrown upon failed request.</exception>
-        /// <see cref="CallOrigOptions">CallOrigOptions class.</see>
-        public Call create(string to, string from, string callConnectUrl, string statusCallbackUrl, CallOrigOptions callOptions = null)
-        {
-            OutboundCall outboundCall = new OutboundCall(callOptions);
-            outboundCall.setTo(to);
-            outboundCall.setFrom(from);
-            outboundCall.setCallConnectUrl(callConnectUrl);
-            outboundCall.setStatusCallbackUrl(statusCallbackUrl);
-
-            string json = base.POST(this.path, outboundCall.toJson());
-
-            if (string.IsNullOrEmpty(json) == true)
-            {
-                throw new PersyException(String.Format("Failed to connect to {0} from {1}", to ?? string.Empty, from ?? string.Empty));
-            }
-
-            return Call.fromJson(json);
-        }
-
-        /// <summary>
         /// Retrieve a list of calls associated with the accountId.
         /// </summary>
         /// <param name="filters">Optional CallsSearchFilters instance to filter list of calls.</param>
