@@ -65,7 +65,7 @@ namespace com.persephony.api.call
             OutboundCall outboundCall = new OutboundCall(callOptions);
             outboundCall.setTo(to);
             outboundCall.setFrom(from);
-            outboundCall.setCallConnectUrl(applicationId);
+            outboundCall.setApplicationId(applicationId);
 
             string json = base.POST(this.path, outboundCall.toJson());
 

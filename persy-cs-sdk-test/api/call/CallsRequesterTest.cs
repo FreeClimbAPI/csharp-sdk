@@ -28,6 +28,43 @@ namespace persy_cs_sdk_test.api.call
         }
 
         [TestMethod]
+        public void MakeACallsRequestAppIdNoOptionsTest()     
+        {
+            try
+            {
+                CallsRequester callsRequester = new CallsRequester("AC736ca2078721a9a41fb47f07bf40d9e21cb304da", "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5", "AC736ca2078721a9a41fb47f07bf40d9e21cb304da");
+
+                Type callsRequesterType = typeof(CallsRequester);
+                MethodInfo persyUrlMethodInfo = callsRequesterType.GetMethod("setPersyUrl", 
+                                                                             BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, 
+                                                                             null, 
+                                                                             new Type[] { typeof(System.String) }, 
+                                                                             null);
+                persyUrlMethodInfo.Invoke(callsRequester, new Object[] { "http://MakeACallsRequestAppIdNoOptionsTest:3000" });
+
+                WebRequest.RegisterPrefix("http://MakeACallsRequestAppIdNoOptionsTest:3000", new TestWebRequestCreate());
+
+                TestWebRequestCreate.MockHttpWebRequestWithGivenResponseCode(HttpStatusCode.OK,
+                                                                             "{\"uri\" : \"/Accounts/AC736ca2078721a9a41fb47f07bf40d9e21cb304da/Calls/CA16ac1bcbd6f4895c89a798571e89e1e715892924\", \"revision\" : 1, \"dateCreated\" : \"Thu, 23 Jun 2016 17:30:06 GMT\", \"dateUpdated\" : \"Thu, 23 Jun 2016 17:30:06 GMT\", \"callId\" : \"CA16ac1bcbd6f4895c89a798571e89e1e715892924\", \"parentCallId\" : null, \"accountId\" : \"AC736ca2078721a9a41fb47f07bf40d9e21cb304da\", \"from\" : \"+12248806205\", \"to\" : \"+18475978014\", \"phoneNumberId\" : \"PN1311218371073288ff9c0434698753f98ea4228a\", \"status\" : \"queued\", \"startTime\" : null, \"endTime\" : null, \"duration\" : 0, \"direction\" : \"outboundAPI\", \"answeredBy\" : null, \"callerName\" : null, \"subresourceUris\" : {\"notifications\" : \"/Accounts/AC736ca2078721a9a41fb47f07bf40d9e21cb304da/Calls/CA16ac1bcbd6f4895c89a798571e89e1e715892924/Notifications\", \"recordings\" : \"/Accounts/AC736ca2078721a9a41fb47f07bf40d9e21cb304da/Calls/CA16ac1bcbd6f4895c89a798571e89e1e715892924/Recordings\"}}");
+
+                Call call = callsRequester.create("+18475978014", "+12248806205", "AC736ca2078721a9a41fb47f07bf40d9e21cb304da");
+
+                Assert.IsNotNull(call);
+                Assert.IsNotNull(call.getUri);
+                Assert.AreEqual(call.getUri, "/Accounts/AC736ca2078721a9a41fb47f07bf40d9e21cb304da/Calls/CA16ac1bcbd6f4895c89a798571e89e1e715892924");
+                Assert.AreEqual(call.getSubresourceUris.Count, 2);
+                Assert.AreEqual(call.getRevision, 1);
+                Assert.IsNotNull(call.getDateCreated);
+                Assert.IsNotNull(call.getDateUpdated);
+                Assert.AreEqual(call.getStatus, ECallStatus.Queued);
+            }
+            catch (PersyException pe)
+            {
+                Assert.Fail(pe.Message);
+            }
+        }
+
+        [TestMethod]
         public void MakeUpdateRequestTest()
         {
             try
