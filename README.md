@@ -3,29 +3,23 @@ The Persephony C# SDK will allow you to easily use the Persephony API in a C# ap
 
 
 ## Testing your Installation
-Test the SDK is working by sending yourself a phone call.
+Test the SDK is working by sending yourself a text message.
 
 ```C#
 using com.persephony;
 using com.persephony.api;
-using com.persephony.api.call;
+using com.persephony.api.message;
 ...
 
 PersyClient client = new PersyClient("ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "your_auth_token");
 string to = "your_phone_number";
 string from = "a_persephony_phone_number_in_your_account";
-// the last (null) parameter is a URL that is called with status on your call (like when it ends). Not used in this example
-Call call = client.getCallsRequester.create(to, from, "https://www.persephony.com/testApp/voice", null);
+
+Message msg = client.messages.create(from, to, "Welcome to Persephony!");
 
 ```
 
-When you run this code you should get a phone call. On answering the call, you should hear a short message ("Thanks for using Persephony!"). This indicates that you've successfully setup your SDK.
-
-`https://www.persephony.com/testApp/voice` contains a small Persephony application. When a request is made to its `/voice` endpoint, it will respond with the following PerCL script, which produces the message you heard.
-
-```json
-[{"Say": {"text": "Thanks for using Persephony!"}}]
-```
+When you run this code you should get a text message. This indicates that you've successfully setup your SDK.
 
 ## Documentation
 The [Persephony documentation ](https://www.persephony.com/docs) has guides on [getting started](https://www.persephony.com/docs/getting-started) with Persephony, as well as the [API reference](https://www.persephony.com/docs/api), [PerCL reference](https://www.persephony.com/docs/percl), and several useful [tutorials.](https://www.persephony.com/docs/tutorials)/.
