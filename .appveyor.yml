@@ -4,4 +4,4 @@ deploy:
     api_key:
       secure: yziytZX76P+7YvLKu4YNzYdHtM7hCZPQguCa4SGHEvmzL7FTqS7Sjij5oqEc6taN
     on:
-      APPVEYOR_REPO_TAG: true
+      appveyor_repo_tag: true
