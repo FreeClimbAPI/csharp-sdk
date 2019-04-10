@@ -159,7 +159,7 @@ namespace com.persephony.api.queue
         /// Update a single queue. 
         /// </summary>
         /// <param name="queueId">The queueId of the target queueId.</param>
-        /// <param name="queueOptions">>Optional QueueOptions instance to be used when updating a queue.</param>
+        /// <param name="queueOptions">Optional QueueOptions instance to be used when updating a queue.</param>
         /// <returns>The queue matching the queueId provided.</returns>
         /// <exception cref="PersyException">Thrown upon failed request.</exception>
         public Queue update(string queueId, QueueOptions queueOptions = null)
@@ -179,6 +179,7 @@ namespace com.persephony.api.queue
         /// </summary>
         /// <param name="queueId">The queueId of the target queueId.</param>
         /// <param name="callId">Optional callId of the queue member to retrieve. If not provided the 'Front' is returned.</param>
+        /// <param name="queueMemberOptions">Optional QueueMemberOptions instance to be used when updating a queue member.</param>
         /// <returns>The queue member matching the queueId provided.</returns>
         /// <exception cref="PersyException">Thrown upon failed request.</exception>
         public QueueMember updateQueueMember(string queueId, string callId = null, QueueMemberOptions queueMemberOptions = null)

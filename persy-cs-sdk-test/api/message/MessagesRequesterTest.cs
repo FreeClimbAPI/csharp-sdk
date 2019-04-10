@@ -147,7 +147,7 @@ namespace persy_cs_sdk_test.api.call
                                                                              "{\"uri\" : \"/Accounts/AC736ca2078721a9a41fb47f07bf40d9e21cb304da/Messages/MM16ac1bcbd6f4895c89a798571e89e1e715892924\", \"revision\" : 1, \"dateCreated\" : \"Thu, 23 Jun 2016 17:30:06 GMT\", \"dateUpdated\" : \"Thu, 23 Jun 2016 17:30:06 GMT\", \"messageId\" : \"MM16ac1bcbd6f4895c89a798571e89e1e715892924\", \"accountId\" : \"AC736ca2078721a9a41fb47f07bf40d9e21cb304da\", \"from\" : \"" + from + "\", \"to\" : \"" + to + "\", \"text\" : \"" + text + "\", \"direction\" : \"outbound\", \"status\" : \"sending\"}");
                 Message msg = messagesRequester.create(from,to,text);
             }
-            catch (PersyException pe)
+            catch (PersyException /* pe */)
             {
                 Assert.IsTrue(true);
                 return;

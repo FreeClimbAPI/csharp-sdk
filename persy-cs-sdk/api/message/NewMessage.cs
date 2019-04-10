@@ -15,16 +15,12 @@ namespace com.persephony.api.message
     {
         [JsonProperty(PropertyName = "from")]
         private string from = string.Empty;
-        private bool fromFlag = false;
 
         [JsonProperty(PropertyName = "to")]
         private string to = string.Empty;
-        private bool toFlag = false;
 
         [JsonProperty(PropertyName = "text")]
         private string text = string.Empty;
-        private bool textFlag = false;
-
 
         public NewMessage(string from, string to, string text, MessageOptions options) : base()
         {
@@ -74,7 +70,7 @@ namespace com.persephony.api.message
         public string getText { get { return this.text; } }
 
 
-        private IDictionary<string, object> toDict() 
+        private new IDictionary<string, object> toDict() 
         {
             // change all properties with settings to a dictionary. Start off with optional params. Then add the required fields
             IDictionary<string, object> props = new Dictionary<string, object>();

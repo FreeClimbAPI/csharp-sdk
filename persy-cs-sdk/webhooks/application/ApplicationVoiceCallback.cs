@@ -20,7 +20,7 @@ namespace com.persephony.webhooks.application
         /// <param name="rawJson">A JSON string representing a ApplicationVoiceCallback instance.</param>
         /// <returns>A ApplicationVoiceCallback object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
-        public static ApplicationVoiceCallback fromJson(string rawJson)
+        public new static ApplicationVoiceCallback fromJson(string rawJson)
         {
             try
             {

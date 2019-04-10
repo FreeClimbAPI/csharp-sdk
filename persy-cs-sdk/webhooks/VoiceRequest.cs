@@ -40,7 +40,7 @@ namespace com.persephony.webhooks
         /// <param name="rawJson">A JSON string representing a VoiceRequest instance.</param>
         /// <returns>A VoiceRequest object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
-        public static VoiceRequest fromJson(string rawJson)
+        public new static VoiceRequest fromJson(string rawJson)
         {
             try
             {

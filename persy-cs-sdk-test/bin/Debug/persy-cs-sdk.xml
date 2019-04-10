@@ -1227,20 +1227,6 @@
             <exception cref="T:com.persephony.api.PersyException">Thrown upon failed request.</exception>
             <see cref="T:com.persephony.api.call.CallOrigOptions">CallOrigOptions class.</see>
         </member>
-        <member name="M:com.persephony.api.call.CallsRequester.create(System.String,System.String,System.String,System.String,com.persephony.api.call.CallOrigOptions)">
-            <summary>
-            Create a new call through the Persephony API using a registered
-            Persephony application. 
-            </summary>
-            <param name="to">The number to call out to (DNIS). This can be any valid phone number formatted in E.164 format.</param>
-            <param name="from">The number to call from (ANI). This must be a number purchase from Persephony or a verified phone number owned by the user.</param>
-            <param name="callConnectUrl">The URL that Persephony makes requests to when the call connects.</param>
-            <param name="statusCallbackUrl">The URL to which Persephony will report call status notifications.</param>
-            <param name="callOptions">Optional CallOrigOptions instance to be used when creating a call.</param> 
-            <returns>A Call object returned by Persephony that represents the call that was created.</returns>
-            <exception cref="T:com.persephony.api.PersyException">Thrown upon failed request.</exception>
-            <see cref="T:com.persephony.api.call.CallOrigOptions">CallOrigOptions class.</see>
-        </member>
         <member name="M:com.persephony.api.call.CallsRequester.get(com.persephony.api.call.CallsSearchFilters)">
             <summary>
             Retrieve a list of calls associated with the accountId.
@@ -2215,7 +2201,7 @@
             <summary>
             Retrieve a list of Logs from Persephony.
             </summary>
-            <param name="persyQuery">Optional query written in PQL (Persy Query Language) .</param>
+            <param name="filters">Optional query written in PQL (Persy Query Language) .</param>
             <returns>
             An in-language representation of Persephony's paginated list response.This will be a paginated list 
             of Log instances as returned by the Persephony API. 
@@ -2300,6 +2286,16 @@
             Direction of the message
             </summary>
         </member>
+        <member name="F:com.persephony.api.message.Message.notificationUrl">
+            <summary>
+            The url that will be requested when the status of an outbound message changes.
+            </summary>
+        </member>
+        <member name="F:com.persephony.api.message.Message.status">
+            <summary>
+            Status of the message
+            </summary>
+        </member>
         <member name="M:com.persephony.api.message.Message.fromJson(System.String)">
             <summary>
             Helper method to build a Message object from the JSON string.
@@ -2343,7 +2339,20 @@
             Retrieve the direction of this message from the object.
             </summary>
             <returns>The direction of this message.</returns>
-            <see cref="T:com.persephony.EDirection">Direction enumeration.</see>
+            <see cref="T:com.persephony.EMessageDirection">Direction enumeration.</see>
+        </member>
+        <member name="P:com.persephony.api.message.Message.getNotificationUrl">
+            <summary>
+            Retrieve  the notificationUrl for this message from the object.
+            </summary>
+            <returns>The notificationUrl for this message.</returns>
+        </member>
+        <member name="P:com.persephony.api.message.Message.getStatus">
+            <summary>
+            Retrieve the status of this message from the object.
+            </summary>
+            <returns>The status of this message.</returns>
+            <see cref="T:com.persephony.EMessageStatus">MessageStatus enumeration.</see>
         </member>
         <member name="M:com.persephony.api.message.Message.GetHashCode">
             <summary>
@@ -2415,7 +2424,7 @@
         </member>
         <member name="T:com.persephony.api.message.MessageOptions">
             <summary>
-            The class represents the message fields to use when creating messages. serialized to json when sent to API
+            The class represents the optional message fields to use when creating messages. serialized to json when sent to API
             </summary>
         </member>
         <member name="M:com.persephony.api.message.MessageOptions.fromJson(System.String)">
@@ -2433,41 +2442,17 @@
             <returns>A JSON string equivalent to the MessageOptions instance.</returns>
             <exception cref="T:com.persephony.api.PersyJSONException">Thrown upon deserialize failure.</exception>
         </member>
-        <member name="P:com.persephony.api.message.MessageOptions.getFrom">
+        <member name="P:com.persephony.api.message.MessageOptions.getNotificationUrl">
             <summary>
-            Retrieve the from value.
+            Retrieve the notificationUrl value.
             </summary>
-            <returns>The from value of the object.</returns>
+            <returns>The notificationUrl value of the object.</returns>
         </member>
-        <member name="M:com.persephony.api.message.MessageOptions.setFrom(System.String)">
+        <member name="M:com.persephony.api.message.MessageOptions.setNotificationUrl(System.String)">
             <summary>
-            Sets the from object value.
+            Sets the notificationUrl object value.
             </summary>
-            <param name="val">from value.</param>
-        </member>
-        <member name="P:com.persephony.api.message.MessageOptions.getTo">
-            <summary>
-            Retrieve the to value.
-            </summary>
-            <returns>The to value of the object.</returns>
-        </member>
-        <member name="M:com.persephony.api.message.MessageOptions.setTo(System.String)">
-            <summary>
-            Sets the to object value.
-            </summary>
-            <param name="val">to value.</param>
-        </member>
-        <member name="P:com.persephony.api.message.MessageOptions.getText">
-            <summary>
-            Retrieve the text value.
-            </summary>
-            <returns>The text value of the object.</returns>
-        </member>
-        <member name="M:com.persephony.api.message.MessageOptions.setText(System.String)">
-            <summary>
-            Sets the text object value.
-            </summary>
-            <param name="val">text value.</param>
+            <param name="val">notificationUrl value.</param>
         </member>
         <member name="M:com.persephony.api.message.MessageOptions.toDict">
             <summary>
@@ -2517,13 +2502,14 @@
             </summary>
             <returns>The url being used for the Persephony API.</returns>
         </member>
-        <member name="M:com.persephony.api.message.MessagesRequester.create(System.String,System.String,System.String)">
+        <member name="M:com.persephony.api.message.MessagesRequester.create(System.String,System.String,System.String,com.persephony.api.message.MessageOptions)">
             <summary>
             Create a new message through the Persephony API 
             </summary>
             <param name="from">the phone number the message is being sent from. Formatted in E.164 format. This must be a number purchase from Persephony or a verified phone number owned by the user.</param> 
             <param name="to">the phone number the message is being sent to. Formatted in E.164 format.</param> 
             <param name="text">The text of the message. Should be 254 chars or less</param> 
+            <param name="options">optional parameters used when creating a message. </param> 
             <returns>A Message object returned by Persephony that represents the message that was created.</returns>
             <exception cref="T:com.persephony.api.PersyException">Thrown upon failed request.</exception>
         </member>
@@ -2591,23 +2577,53 @@
             </summary>
             <param name="val">to value.</param>
         </member>
-        <member name="P:com.persephony.api.message.MessagesSearchFilter.getDateSent">
+        <member name="P:com.persephony.api.message.MessagesSearchFilter.getBeginTime">
             <summary>
-            Retrieve the dateSent value. The format of this date string is YYYY-MM-DD.
+            Retrieve the beginTime value. The format of this date string is YYYY-MM-DD hh:mm:ss.
             </summary>
-            <returns>The dateSent value of the object.</returns>
+            <returns>The beginTime value of the object.</returns>
         </member>
-        <member name="M:com.persephony.api.message.MessagesSearchFilter.setDateSent(System.String)">
+        <member name="M:com.persephony.api.message.MessagesSearchFilter.setBeginTime(System.String)">
             <summary>
-            Sets the dateSent object value. Note the format of this is YYYY-MM-DD
+            Sets the beginTime object value. Note the format of this string is YYYY-MM-DD hh:mm:ss.
             </summary>
-            <param name="val">dateSent value. Note the format of this is YYYY-MM-DD</param>
+            <param name="val">beginTime value. </param>
+        </member>
+        <member name="P:com.persephony.api.message.MessagesSearchFilter.getEndTime">
+            <summary>
+            Retrieve the endTime value. The format of this date string is YYYY-MM-DD hh:mm:ss.
+            </summary>
+            <returns>The endTime value of the object.</returns>
+        </member>
+        <member name="M:com.persephony.api.message.MessagesSearchFilter.setEndTime(System.String)">
+            <summary>
+            Sets the endTime object value. Note the format of this string is YYYY-MM-DD hh:mm:ss.
+            </summary>
+            <param name="val">endTime value. </param>
+        </member>
+        <member name="P:com.persephony.api.message.MessagesSearchFilter.getDirection">
+            <summary>
+            Retrieve the direction value.
+            </summary>
+            <returns>The direction value of the object.</returns>
+        </member>
+        <member name="M:com.persephony.api.message.MessagesSearchFilter.setDirection(com.persephony.EMessageDirection)">
+            <summary>
+            Sets the direction object value.
+            </summary>
+            <param name="val">from value.</param>
         </member>
         <member name="M:com.persephony.api.message.MessagesSearchFilter.toDict">
             <summary>
             Retrieve the KVP Dictionary for the MessagesSearchFilters instance. 
             </summary>
             <returns>KVP Dictionary</returns>
+        </member>
+        <member name="M:com.persephony.api.message.NewMessage.fromJson(System.String)">
+            <exception cref="T:com.persephony.api.PersyJSONException">Thrown upon deserialize failure.</exception>
+        </member>
+        <member name="M:com.persephony.api.message.NewMessage.toJson">
+            <exception cref="T:com.persephony.api.PersyJSONException">Thrown upon deserialize failure.</exception>
         </member>
         <member name="T:com.persephony.api.phonenumber.AvailablePhoneNumber">
             <summary>
@@ -2643,6 +2659,11 @@
         <member name="F:com.persephony.api.phonenumber.AvailablePhoneNumber.voiceEnabled">
             <summary>
             The voiceEnabled flag for the resource.
+            </summary>
+        </member>
+        <member name="F:com.persephony.api.phonenumber.AvailablePhoneNumber.smsEnabled">
+            <summary>
+            The smsEnabled flag for the resource.
             </summary>
         </member>
         <member name="M:com.persephony.api.phonenumber.AvailablePhoneNumber.fromJson(System.String)">
@@ -2682,6 +2703,12 @@
             Retrieve  the voiceEnabled for this availablePhoneNumber from the object.
             </summary>
             <returns>The voiceEnabled for this availablePhoneNumber.</returns>
+        </member>
+        <member name="P:com.persephony.api.phonenumber.AvailablePhoneNumber.getSmsEnabled">
+            <summary>
+            Retrieve  the smsEnabled for this availablePhoneNumber from the object.
+            </summary>
+            <returns>The smsEnabled for this availablePhoneNumber.</returns>
         </member>
         <member name="M:com.persephony.api.phonenumber.AvailablePhoneNumber.GetHashCode">
             <summary>
@@ -3181,6 +3208,11 @@
             The voiceEnabled flag for the resource.
             </summary>
         </member>
+        <member name="F:com.persephony.api.phonenumber.IncomingPhoneNumber.smsEnabled">
+            <summary>
+            The smsEnabled flag for the resource.
+            </summary>
+        </member>
         <member name="M:com.persephony.api.phonenumber.IncomingPhoneNumber.fromJson(System.String)">
             <summary>
             Helper method to build a IncomingPhoneNumber object from the JSON string.
@@ -3236,6 +3268,12 @@
             Retrieve  the voiceEnabled for this incomingPhoneNumber from the object.
             </summary>
             <returns>The voiceEnabled for this incomingPhoneNumber.</returns>
+        </member>
+        <member name="P:com.persephony.api.phonenumber.IncomingPhoneNumber.getSmsEnabled">
+            <summary>
+            Retrieve  the smsEnabled for this incomingPhoneNumber from the object.
+            </summary>
+            <returns>The smsEnabled for this incomingPhoneNumber.</returns>
         </member>
         <member name="M:com.persephony.api.phonenumber.IncomingPhoneNumber.GetHashCode">
             <summary>
@@ -3942,7 +3980,7 @@
             Update a single queue. 
             </summary>
             <param name="queueId">The queueId of the target queueId.</param>
-            <param name="queueOptions">>Optional QueueOptions instance to be used when updating a queue.</param>
+            <param name="queueOptions">Optional QueueOptions instance to be used when updating a queue.</param>
             <returns>The queue matching the queueId provided.</returns>
             <exception cref="T:com.persephony.api.PersyException">Thrown upon failed request.</exception>
         </member>
@@ -3952,6 +3990,7 @@
             </summary>
             <param name="queueId">The queueId of the target queueId.</param>
             <param name="callId">Optional callId of the queue member to retrieve. If not provided the 'Front' is returned.</param>
+            <param name="queueMemberOptions">Optional QueueMemberOptions instance to be used when updating a queue member.</param>
             <returns>The queue member matching the queueId provided.</returns>
             <exception cref="T:com.persephony.api.PersyException">Thrown upon failed request.</exception>
         </member>
@@ -4394,6 +4433,18 @@
             </summary>
             <param name="val">callId value.</param>
         </member>
+        <member name="P:com.persephony.api.recording.RecordingsSearchFilters.getConferenceId">
+            <summary>
+            Retrieve the conferenceId value.
+            </summary>
+            <returns>The conferenceId value of the object.</returns>
+        </member>
+        <member name="M:com.persephony.api.recording.RecordingsSearchFilters.setConferenceId(System.String)">
+            <summary>
+            Sets the conferenceId object value.
+            </summary>
+            <param name="val">conferenceId value.</param>
+        </member>
         <member name="P:com.persephony.api.recording.RecordingsSearchFilters.getDateCreated">
             <summary>
             Retrieve the dateCreated value.
@@ -4644,6 +4695,16 @@
         <member name="T:com.persephony.EMachineType">
             <summary>
             MachineTYpe enumeration with a default value of NONE.
+            </summary>
+        </member>
+        <member name="T:com.persephony.EMessageDirection">
+            <summary>
+            Direction enumeration for Messages with a default value of NONE.
+            </summary>
+        </member>
+        <member name="T:com.persephony.EMessageStatus">
+            <summary>
+            Status enumeration with a default value of NONE.
             </summary>
         </member>
         <member name="T:com.persephony.EPlayBeep">
@@ -5280,6 +5341,44 @@
             Set the notificationUrl value.
             </summary>
             <param name="val">notificationUrl value.</param>
+        </member>
+        <member name="P:com.persephony.percl.AddToConference.getAllowCallControl">
+            <summary>
+            Retrieve the allowCallControl value.
+            </summary>
+            <returns>The allowCallControl value of the object.</returns>
+            <see cref="T:com.persephony.EBool">Bool enumeration.</see>
+        </member>
+        <member name="M:com.persephony.percl.AddToConference.setAllowCallControl(com.persephony.EBool)">
+            <summary>
+            Set the allowCallControl value.
+            </summary>
+            <param name="val">allowCallControl value.</param>
+            <see cref="T:com.persephony.EBool">Bool enumeration.</see>
+        </member>
+        <member name="P:com.persephony.percl.AddToConference.getCallControlSequence">
+            <summary>
+            Retrieve the callControlSequence value.
+            </summary>
+            <returns>The callControlSequence value of the object.</returns>
+        </member>
+        <member name="M:com.persephony.percl.AddToConference.setCallControlSequence(System.String)">
+            <summary>
+            Set the callControlSequence value.
+            </summary>
+            <param name="val">callControlSequence value.</param>
+        </member>
+        <member name="P:com.persephony.percl.AddToConference.getCallControlUrl">
+            <summary>
+            Retrieve the callControlUrl value.
+            </summary>
+            <returns>The callControlUrl value of the object.</returns>
+        </member>
+        <member name="M:com.persephony.percl.AddToConference.setCallControlUrl(System.String)">
+            <summary>
+            Set the callControlUrl value.
+            </summary>
+            <param name="val">callControlUrl value.</param>
         </member>
         <member name="M:com.persephony.percl.AddToConference.toKvp">
             <summary>
@@ -6457,6 +6556,18 @@
             </summary>
             <returns>The text value of the object.</returns>
         </member>
+        <member name="M:com.persephony.percl.Sms.setNotificationUrl(System.String)">
+            <summary>
+            Set the notificationUrl value.
+            </summary>
+            <param name="val">notificationUrl value.</param>
+        </member>
+        <member name="P:com.persephony.percl.Sms.getNotificationUrl">
+            <summary>
+            Retrieve the notificationUrl value.
+            </summary>
+            <returns>The notificationUrl value of the object.</returns>
+        </member>
         <member name="M:com.persephony.percl.Sms.#ctor(System.String,System.String,System.String)">
             <summary>
             Creates Sms PerCL with required fields. 
@@ -6756,6 +6867,73 @@
             </returns>
             <exception cref="T:com.persephony.api.PersyException">Thrown upon failed request.</exception>
         </member>
+        <member name="T:com.persephony.webhooks.application.ApplicationVoiceCallback">
+            <summary>
+            A ApplicationVoiceCallback represents the JSON object that is sent to the webhooks
+            for incoming calls. URL specified in voiceUrl, voiceFallbackUrl of Application. 
+            Currently no special properties beyond its' subclasses
+            </summary>
+        </member>
+        <member name="M:com.persephony.webhooks.application.ApplicationVoiceCallback.fromJson(System.String)">
+            <summary>
+            Helper method to build a ApplicationVoiceCallback object from the JSON string.
+            </summary>
+            <param name="rawJson">A JSON string representing a ApplicationVoiceCallback instance.</param>
+            <returns>A ApplicationVoiceCallback object equivalent to the JSON string passed in.</returns>
+            <exception cref="T:com.persephony.api.PersyJSONException">Thrown upon deserialize failure.</exception>
+        </member>
+        <member name="T:com.persephony.webhooks.application.MessageDelivery">
+            <summary>
+            A MessageDelivery represents the JSON object that is sent to the webhooks
+            for incoming messages. URL specified in smsUrl, smsFallbackUrl of Application
+            </summary>
+        </member>
+        <member name="M:com.persephony.webhooks.application.MessageDelivery.fromJson(System.String)">
+            <summary>
+            Helper method to build a MessageDelivery object from the JSON string.
+            </summary>
+            <param name="rawJson">A JSON string representing a MessageDelivery instance.</param>
+            <returns>A MessageDelivery object equivalent to the JSON string passed in.</returns>
+            <exception cref="T:com.persephony.api.PersyJSONException">Thrown upon deserialize failure.</exception>
+        </member>
+        <member name="P:com.persephony.webhooks.application.MessageDelivery.getStatus">
+             <summary>
+             Retrieve status value from the object.
+             </summary>
+             <returns>The status value.</returns>
+            <see cref="T:com.persephony.EMessageStatus">MessageStatus enumeration.</see>
+        </member>
+        <member name="P:com.persephony.webhooks.application.MessageDelivery.getMessageId">
+            <summary>
+            Retrieve messageId value from the object.
+            </summary>
+            <returns>The messageId value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.application.MessageDelivery.getDirection">
+             <summary>
+             Retrieve direction value from the object.
+             </summary>
+             <returns>The direction value.</returns>
+            <see cref="T:com.persephony.EMessageDirection">Direction enumeration.</see>
+        </member>
+        <member name="P:com.persephony.webhooks.application.MessageDelivery.getText">
+            <summary>
+            Retrieve text value from the object.
+            </summary>
+            <returns>The text value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.application.MessageDelivery.getApplicationId">
+            <summary>
+            Retrieve applicationId value from the object.
+            </summary>
+            <returns>The applicationId value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.application.MessageDelivery.getPhoneNumberId">
+            <summary>
+            Retrieve phoneNumberId value from the object.
+            </summary>
+            <returns>The phoneNumberId value.</returns>
+        </member>
         <member name="T:com.persephony.webhooks.call.CallStatusCallback">
             <summary>
             A CallStatusCallback represents the JSON object that is 
@@ -6858,6 +7036,40 @@
              <returns>The termReason value.</returns>
             <see cref="T:com.persephony.ERecordTermReason">RecordTermReason enumeration.</see>
         </member>
+        <member name="T:com.persephony.webhooks.conference.ConferenceCallControlCallback">
+            <summary>
+            A ConferenceCallControlCallback represents the JSON object that is 
+            sent to the webhooks of Persephony applications.
+            </summary>
+        </member>
+        <member name="M:com.persephony.webhooks.conference.ConferenceCallControlCallback.fromJson(System.String)">
+            <summary>
+            Helper method to build a ConferenceCallControlCallback object from the JSON string.
+            </summary>
+            <param name="rawJson">A JSON string representing a ConferenceCallControlCallback instance.</param>
+            <returns>A ConferenceCallControlCallback object equivalent to the JSON string passed in.</returns>
+            <exception cref="T:com.persephony.api.PersyJSONException">Thrown upon deserialize failure.</exception>
+        </member>
+        <member name="P:com.persephony.webhooks.conference.ConferenceCallControlCallback.getDigits">
+            <summary>
+            Retrieve digits value from the object.
+            </summary>
+            <returns>The digits value.</returns>
+        </member>
+        <member name="T:com.persephony.webhooks.conference.LeaveConferenceUrlCallback">
+            <summary>
+            A LeaveConferenceUrlCallback represents the JSON object that is 
+            sent to the webhooks of Persephony applications.
+            </summary>
+        </member>
+        <member name="M:com.persephony.webhooks.conference.LeaveConferenceUrlCallback.fromJson(System.String)">
+            <summary>
+            Helper method to build a LeaveConferenceUrlCallback object from the JSON string.
+            </summary>
+            <param name="rawJson">A JSON string representing a LeaveConferenceUrlCallback instance.</param>
+            <returns>A LeaveConferenceUrlCallback object equivalent to the JSON string passed in.</returns>
+            <exception cref="T:com.persephony.api.PersyJSONException">Thrown upon deserialize failure.</exception>
+        </member>
         <member name="T:com.persephony.webhooks.conference.ConferenceCreateActionCallback">
             <summary>
             A ConferenceActionCallback represents the JSON object that is 
@@ -6892,6 +7104,70 @@
              </summary>
              <returns>The status value.</returns>
             <see cref="T:com.persephony.EConferenceStatus">ConferenceStatus enumeration.</see>
+        </member>
+        <member name="T:com.persephony.webhooks.message.MessageStatus">
+            <summary>
+            A MessageStatus represents the JSON object that is sent to the webhooks
+            for message notificationUrl
+            </summary>
+        </member>
+        <member name="M:com.persephony.webhooks.message.MessageStatus.fromJson(System.String)">
+            <summary>
+            Helper method to build a MessageStatus object from the JSON string.
+            </summary>
+            <param name="rawJson">A JSON string representing a MessageStatus instance.</param>
+            <returns>A MessageStatus object equivalent to the JSON string passed in.</returns>
+            <exception cref="T:com.persephony.api.PersyJSONException">Thrown upon deserialize failure.</exception>
+        </member>
+        <member name="P:com.persephony.webhooks.message.MessageStatus.getStatus">
+             <summary>
+             Retrieve status value from the object.
+             </summary>
+             <returns>The status value.</returns>
+            <see cref="T:com.persephony.EMessageStatus">MessageStatus enumeration.</see>
+        </member>
+        <member name="P:com.persephony.webhooks.message.MessageStatus.getMessageId">
+            <summary>
+            Retrieve messageId value from the object.
+            </summary>
+            <returns>The messageId value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.message.MessageStatus.getDirection">
+             <summary>
+             Retrieve direction value from the object.
+             </summary>
+             <returns>The direction value.</returns>
+            <see cref="T:com.persephony.EMessageDirection">Direction enumeration.</see>
+        </member>
+        <member name="P:com.persephony.webhooks.message.MessageStatus.getText">
+            <summary>
+            Retrieve text value from the object.
+            </summary>
+            <returns>The text value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.message.MessageStatus.getApplicationId">
+            <summary>
+            Retrieve applicationId value from the object.
+            </summary>
+            <returns>The applicationId value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.message.MessageStatus.getPhoneNumberId">
+            <summary>
+            Retrieve phoneNumberId value from the object.
+            </summary>
+            <returns>The phoneNumberId value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.message.MessageStatus.getCallId">
+            <summary>
+            Retrieve callId value from the object.
+            </summary>
+            <returns>The callId value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.message.MessageStatus.getParentCallId">
+            <summary>
+            Retrieve parentCallId value from the object.
+            </summary>
+            <returns>The parentCallId value.</returns>
         </member>
         <member name="T:com.persephony.webhooks.percl.GetDigitsActionCallback">
             <summary>
@@ -7022,7 +7298,7 @@
             <summary>
             The StatusCallback class represents the JSON object that is sent to the
             statusCallbackUrl webhook of Persephony applications. StatusCallback is a
-            subclass of the PersyRequest and contains all the fields that it does.
+            subclass of the VoiceRequest and contains all the fields that it does.
             </summary>
         </member>
         <member name="M:com.persephony.webhooks.StatusCallback.fromJson(System.String)">
@@ -7078,49 +7354,11 @@
             </summary>
             <returns>The accountId value.</returns>
         </member>
-        <member name="P:com.persephony.webhooks.PersyRequest.getCallId">
-            <summary>
-            Retrieve callId value from the object.
-            </summary>
-            <returns>The callId value.</returns>
-        </member>
-        <member name="P:com.persephony.webhooks.PersyRequest.getCallStatus">
-             <summary>
-             Retrieve callId value from the object.
-             </summary>
-             <returns>The callId value.</returns>
-            <see cref="T:com.persephony.ECallStatus">Status enumeration.</see>
-        </member>
-        <member name="P:com.persephony.webhooks.PersyRequest.getConferenceId">
-            <summary>
-            Retrieve conferenceId value from the object.
-            </summary>
-            <returns>The conferenceId value.</returns>
-        </member>
-        <member name="P:com.persephony.webhooks.PersyRequest.getDirection">
-             <summary>
-             Retrieve direction value from the object.
-             </summary>
-             <returns>The direction value.</returns>
-            <see cref="T:com.persephony.EDirection">Direction enumeration.</see>
-        </member>
         <member name="P:com.persephony.webhooks.PersyRequest.getFrom">
             <summary>
             Retrieve from value from the object.
             </summary>
             <returns>The from value.</returns>
-        </member>
-        <member name="P:com.persephony.webhooks.PersyRequest.getParentCallId">
-            <summary>
-            Retrieve parentCallId value from the object.
-            </summary>
-            <returns>The parentCallId value.</returns>
-        </member>
-        <member name="P:com.persephony.webhooks.PersyRequest.getQueueId">
-            <summary>
-            Retrieve queueId value from the object.
-            </summary>
-            <returns>The queueId value.</returns>
         </member>
         <member name="P:com.persephony.webhooks.PersyRequest.getRequestId">
             <summary>
@@ -7140,6 +7378,59 @@
             Retrieve to value from the object.
             </summary>
             <returns>The to value.</returns>
+        </member>
+        <member name="T:com.persephony.webhooks.VoiceRequest">
+            <summary>
+            A VoiceRequest represents the JSON object that is sent to the webhooks
+            (voiceUrl, voiceFallbackUrl, etc.) of Persephony applications. The properties
+            in this class are common to most non-message callbacks
+            </summary>
+        </member>
+        <member name="M:com.persephony.webhooks.VoiceRequest.fromJson(System.String)">
+            <summary>
+            Helper method to build a VoiceRequest object from the JSON string.
+            </summary>
+            <param name="rawJson">A JSON string representing a VoiceRequest instance.</param>
+            <returns>A VoiceRequest object equivalent to the JSON string passed in.</returns>
+            <exception cref="T:com.persephony.api.PersyJSONException">Thrown upon deserialize failure.</exception>
+        </member>
+        <member name="P:com.persephony.webhooks.VoiceRequest.getCallId">
+            <summary>
+            Retrieve callId value from the object.
+            </summary>
+            <returns>The callId value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.VoiceRequest.getParentCallId">
+            <summary>
+            Retrieve parentCallId value from the object.
+            </summary>
+            <returns>The parentCallId value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.VoiceRequest.getCallStatus">
+             <summary>
+             Retrieve callId value from the object.
+             </summary>
+             <returns>The callId value.</returns>
+            <see cref="T:com.persephony.ECallStatus">Status enumeration.</see>
+        </member>
+        <member name="P:com.persephony.webhooks.VoiceRequest.getConferenceId">
+            <summary>
+            Retrieve conferenceId value from the object.
+            </summary>
+            <returns>The conferenceId value.</returns>
+        </member>
+        <member name="P:com.persephony.webhooks.VoiceRequest.getDirection">
+             <summary>
+             Retrieve direction value from the object.
+             </summary>
+             <returns>The direction value.</returns>
+            <see cref="T:com.persephony.EDirection">Direction enumeration.</see>
+        </member>
+        <member name="P:com.persephony.webhooks.VoiceRequest.getQueueId">
+            <summary>
+            Retrieve queueId value from the object.
+            </summary>
+            <returns>The queueId value.</returns>
         </member>
     </members>
 </doc>

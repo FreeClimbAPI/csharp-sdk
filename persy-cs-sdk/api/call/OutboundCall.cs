@@ -86,7 +86,7 @@ namespace com.persephony.api.call
         public string getStatusCallbackUrl { get { return this.statusCallbackUrl; } }
         public void setStatusCallbackUrl(string val) { this.statusCallbackUrl = val; }
 
-        private IDictionary<string, object> toDict() 
+        private new IDictionary<string, object> toDict() 
         {
             // change all properties with settings to a dictionary
             IDictionary<string, object> props = new Dictionary<string, object>();

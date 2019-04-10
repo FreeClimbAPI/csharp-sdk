@@ -60,7 +60,7 @@ namespace com.persephony.api.phonenumber
         public string getPhoneNumber { get { return this.phoneNumber; } }
 
 
-        private IDictionary<string, object> toDict() 
+        private new IDictionary<string, object> toDict() 
         {
             // change all properties with settings to a dictionary. Start off with optional params. Then add the required phoneNumber
             IDictionary<string, object> props = new Dictionary<string, object>();

@@ -40,7 +40,7 @@ namespace com.persephony.api.log
         /// <summary>
         /// Retrieve a list of Logs from Persephony.
         /// </summary>
-        /// <param name="persyQuery">Optional query written in PQL (Persy Query Language) .</param>
+        /// <param name="filters">Optional query written in PQL (Persy Query Language) .</param>
         /// <returns>
         /// An in-language representation of Persephony's paginated list response.This will be a paginated list 
         /// of Log instances as returned by the Persephony API. 

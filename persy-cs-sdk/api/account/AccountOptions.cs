@@ -60,7 +60,7 @@ namespace com.persephony.api.account
         /// Retrieve the KVP Dictionary for the AccountOptions instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
-        private IDictionary<string, object> toDict()
+        private new IDictionary<string, object> toDict()
         {
             // change properties used by this resource with settings to a dictionary
             IDictionary<string, object> props = new Dictionary<string, object>();

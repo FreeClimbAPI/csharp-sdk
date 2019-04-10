@@ -46,7 +46,7 @@ namespace com.persephony.webhooks.message
         /// <param name="rawJson">A JSON string representing a MessageStatus instance.</param>
         /// <returns>A MessageStatus object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
-        public static MessageStatus fromJson(string rawJson)
+        public new static MessageStatus fromJson(string rawJson)
         {
             try
             {

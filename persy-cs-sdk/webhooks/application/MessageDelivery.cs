@@ -40,7 +40,7 @@ namespace com.persephony.webhooks.application
         /// <param name="rawJson">A JSON string representing a MessageDelivery instance.</param>
         /// <returns>A MessageDelivery object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
-        public static MessageDelivery fromJson(string rawJson)
+        public new static MessageDelivery fromJson(string rawJson)
         {
             try
             {
