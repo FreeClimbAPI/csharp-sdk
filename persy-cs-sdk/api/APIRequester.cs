@@ -18,7 +18,7 @@ namespace com.persephony.api
         /// <summary>
         /// The URL of the Persephony API 
         /// </summary> 
-        protected static string PERSY_URL = "https://persy-stable.vail/apiserver";
+        protected static string PERSY_URL = "https://www.persephony.com/apiserver";
 
         private string credAccountId;
         private string credAuthToken;
