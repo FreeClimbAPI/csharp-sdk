@@ -192,7 +192,7 @@ namespace com.persephony.api.account
         /// </summary>
         /// <param name="a">Account object.</param>
         /// <param name="b">Account object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Account a, Account b)
         {
             return Equal(a, b);

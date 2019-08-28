@@ -167,7 +167,7 @@ namespace com.persephony.api.log
         /// </summary>
         /// <param name="a">Log object.</param>
         /// <param name="b">Log object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Log a, Log b)
         {
             return Equal(a, b);

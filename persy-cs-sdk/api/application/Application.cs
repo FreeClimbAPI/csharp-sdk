@@ -183,7 +183,7 @@ namespace com.persephony.api.application
         /// </summary>
         /// <param name="a">Application object.</param>
         /// <param name="b">Application object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Application a, Application b)
         {
             return Equal(a, b);

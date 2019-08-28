@@ -130,7 +130,7 @@ namespace com.persephony.api.phonenumber
         /// </summary>
         /// <param name="a">CallingNumber object.</param>
         /// <param name="b">CallingNumber object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(CallingNumber a, CallingNumber b)
         {
             return Equal(a, b);

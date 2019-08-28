@@ -184,7 +184,7 @@ namespace com.persephony.api.phonenumber
         /// </summary>
         /// <param name="a">IncomingPhoneNumber object.</param>
         /// <param name="b">IncomingPhoneNumber object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(IncomingPhoneNumber a, IncomingPhoneNumber b)
         {
             return Equal(a, b);

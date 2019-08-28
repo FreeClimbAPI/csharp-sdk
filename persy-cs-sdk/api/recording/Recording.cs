@@ -125,7 +125,7 @@ namespace com.persephony.api.recording
         /// </summary>
         /// <param name="a">Recording object.</param>
         /// <param name="b">Recording object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Recording a, Recording b)
         {
             return Equal(a, b);

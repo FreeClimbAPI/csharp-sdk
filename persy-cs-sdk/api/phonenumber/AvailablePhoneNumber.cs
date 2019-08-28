@@ -149,7 +149,7 @@ namespace com.persephony.api.phonenumber
         /// </summary>
         /// <param name="a">AvailablePhoneNumber object.</param>
         /// <param name="b">AvailablePhoneNumber object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(AvailablePhoneNumber a, AvailablePhoneNumber b)
         {
             return Equal(a, b);
