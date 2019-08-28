@@ -123,7 +123,7 @@ namespace com.persephony.api.call
         /// Update a single call. 
         /// </summary>
         /// <param name="callId">The callId of the target call.</param>
-        /// <param name="callOptions">>Optional CallTermOptions instance to be used when updating a call.</param>
+        /// <param name="callOptions">Optional CallTermOptions instance to be used when updating a call.</param>
         /// <exception cref="PersyException">Thrown upon failed request.</exception>
         public void update(string callId, CallTermOptions callOptions = null)
         {

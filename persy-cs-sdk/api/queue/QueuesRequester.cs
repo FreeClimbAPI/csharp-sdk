@@ -141,7 +141,7 @@ namespace com.persephony.api.queue
         /// Retrieve a single queue from Persephony.
         /// </summary>
         /// <param name="queueId">Target queue to retrieve information.</param> 
-        /// <returns>A QueueM object returned by Persephony that represents the queue that was retrieved.</returns>
+        /// <returns>A Queue object returned by Persephony that represents the queue that was retrieved.</returns>
         /// <exception cref="PersyException">Thrown upon failed request.</exception>
         public Queue get(string queueId)
         {

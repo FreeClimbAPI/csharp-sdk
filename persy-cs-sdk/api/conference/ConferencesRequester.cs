@@ -121,7 +121,7 @@ namespace com.persephony.api.conference
         /// Update a single conference. 
         /// </summary>
         /// <param name="conferenceId">The conferenceId of the target conference.</param>
-        /// <param name="conferenceOptions">>Optional ConferenceOptions instance to be used when updating a conference.</param>
+        /// <param name="conferenceOptions">Optional ConferenceOptions instance to be used when updating a conference.</param>
         /// <returns>The conference matching the conferenceId provided.</returns>
         /// <exception cref="PersyException">Thrown upon failed request.</exception>
         public Conference update(string conferenceId, ConferenceOptions conferenceOptions = null)
@@ -141,7 +141,7 @@ namespace com.persephony.api.conference
         /// </summary>
         /// <param name="conferenceId">The conferenceId of the target conference.</param>
         /// <param name="callId">The callId of the target conference.</param>
-        /// <param name="participantOptions">>Optional ParticipantOptions instance to be used when updating a conference participant.</param>
+        /// <param name="participantOptions">Optional ParticipantOptions instance to be used when updating a conference participant.</param>
         /// <returns>The Participant matching the conferenceId and callId provided.</returns>
         /// <exception cref="PersyException">Thrown upon failed request.</exception>
         public Participant update(string conferenceId, string callId, ParticipantOptions participantOptions = null)
