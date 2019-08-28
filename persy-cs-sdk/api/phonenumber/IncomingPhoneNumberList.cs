@@ -26,7 +26,7 @@ namespace com.persephony.api.phonenumber
         /// Used by IncomingPhoneNumberList to create IncomingPhoneNumber objects from the JSON list.
         /// </summary>
         /// <param name="element">A JSON string representing a Persephony incomingPhoneNumber instance.</param>
-        /// <returns>A equivalent IncomingPhoneNumber object to the one represented by the inputted JSON string.</returns>
+        /// <returns>An equivalent IncomingPhoneNumber object to the one represented by the inputted JSON string.</returns>
         protected override IPersyCommon constructElement(string element)
         {
             return JsonConvert.DeserializeObject<IncomingPhoneNumber>(element);

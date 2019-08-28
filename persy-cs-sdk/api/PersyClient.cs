@@ -12,7 +12,7 @@ namespace com.persephony.api
 {
     /// <summary>
     /// The PersyClient is the main way within the SDK to interact with the
-    /// Persephony API. After creating a PersyClient the user can any of it's many
+    /// Persephony API. After creating a PersyClient the user can use any of it's many
     /// APIRequesters to make requests to the API.
     /// </summary>
     public class PersyClient
@@ -40,7 +40,7 @@ namespace com.persephony.api
         /// </summary>
         /// <param name="credAccountId">The Account ID to use in your credentials for the Persephony API.</param>
         /// <param name="credAuthToken">The Auth Token to use in your credentials for the Persephony API. This should be the matching Auth Token to the credAccountId parameter.</param>
-        /// <param name="accountId">The Account ID of the account you want to act as. This should either be the same Account ID ass credAccountId or the id of a sub-account to the credAccountId's account.</param>
+        /// <param name="accountId">The Account ID of the account you want to act as. This should either be the same Account ID as credAccountId or the id of a sub-account to the credAccountId's account.</param>
         /// <exception cref="PersyException">Thrown upon failed request.</exception>
         public PersyClient(string credAccountId, string credAuthToken, string accountId)
         {

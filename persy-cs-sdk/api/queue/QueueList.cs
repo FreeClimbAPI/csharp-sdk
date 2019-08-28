@@ -21,7 +21,7 @@ namespace com.persephony.api.queue
         /// Used by QueueList to create Queue objects from the JSON list.
         /// </summary>
         /// <param name="element">A JSON string representing a Persephony queue instance.</param>
-        /// <returns>A equivalent queue object to the one represented by the inputted JSON string.</returns>
+        /// <returns>An equivalent queue object to the one represented by the inputted JSON string.</returns>
         protected override IPersyCommon constructElement(string element)
         {
             return JsonConvert.DeserializeObject<Queue>(element);

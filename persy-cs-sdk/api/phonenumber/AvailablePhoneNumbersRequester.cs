@@ -15,7 +15,7 @@ namespace com.persephony.api.phonenumber
     {
         private readonly string path;
         /// <summary>
-        /// Creates a AvailablePhoneNumbersRequester. For most SDK users AvailablePhoneNumbersRequester will be
+        /// Creates an AvailablePhoneNumbersRequester. For most SDK users AvailablePhoneNumbersRequester will be
         /// created automatically by the PersyClient but is available for more
         /// users who only require the features in this specific requester and not 
         /// the rest of the features of the PersyClient.

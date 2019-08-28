@@ -47,7 +47,7 @@ namespace com.persephony.percl
         private string statusCallbackUrl = string.Empty;
 
         /// <summary>
-	    /// Helper method to build a JSON string from a OutDial instance.
+	    /// Helper method to build a JSON string from an OutDial instance.
         /// </summary>
         /// <returns>A JSON string equivalent to the OutDial instance.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>

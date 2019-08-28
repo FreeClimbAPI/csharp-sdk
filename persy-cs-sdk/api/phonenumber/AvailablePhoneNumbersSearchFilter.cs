@@ -22,7 +22,7 @@ namespace com.persephony.api.phonenumber
         private string phoneNumber = string.Empty;
 
         /// <summary>
-	    /// Helper method to build a AvailablePhoneNumbersSearchFilter object from the JSON string.
+	    /// Helper method to build an AvailablePhoneNumbersSearchFilter object from the JSON string.
         /// </summary>
         /// <param name="rawJson">A JSON string representing an AvailablePhoneNumbersSearchFilter instance.</param>
         /// <returns>An AvailablePhoneNumbersSearchFilter object equivalent to the JSON string passed in.</returns>
@@ -40,7 +40,7 @@ namespace com.persephony.api.phonenumber
         }
 
         /// <summary>
-        /// Helper method to build a JSON string from a AvailablePhoneNumbersSearchFilter instance.
+        /// Helper method to build a JSON string from an AvailablePhoneNumbersSearchFilter instance.
         /// </summary>
         /// <returns>A JSON string equivalent to the AvailablePhoneNumbersSearchFilter instance.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>

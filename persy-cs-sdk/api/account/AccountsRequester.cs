@@ -15,7 +15,7 @@ namespace com.persephony.api.account
     {
         private readonly string path;
         /// <summary>
-        /// Creates a AccountRequester. For most SDK users AccountRequester will be
+        /// Creates an AccountRequester. For most SDK users AccountRequester will be
         /// created automatically by the PersyClient but is available for more
         /// users who only require the features in this specific requester and not 
         /// the rest of the features of the PersyClient.

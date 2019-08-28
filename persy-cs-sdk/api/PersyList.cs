@@ -73,7 +73,7 @@ namespace com.persephony.api
         /// Method that should be implemented with code to build the type of resource that a subclass represents.
         /// </summary>
         /// <param name="element">A JSON string representing a Persephony object.</param>
-        /// <returns>A equivalent object to the one represented by the inputted JSON string.</returns>
+        /// <returns>An equivalent object to the one represented by the inputted JSON string.</returns>
         protected abstract IPersyCommon constructElement(string element);
 
         /// <summary>

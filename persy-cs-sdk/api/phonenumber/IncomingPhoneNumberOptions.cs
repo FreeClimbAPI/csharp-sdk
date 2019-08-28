@@ -32,10 +32,10 @@ namespace com.persephony.api.phonenumber
 
 
         /// <summary>
-        /// Helper method to build a IncomingPhoneNumberOptions object from the JSON string.
+        /// Helper method to build an IncomingPhoneNumberOptions object from the JSON string.
         /// </summary>
         /// <param name="rawJson">A JSON string representing an IncomingPhoneNumberOptions instance.</param>
-        /// <returns>A IncomingPhoneNumberOptions object equivalent to the JSON string passed in.</returns>
+        /// <returns>An IncomingPhoneNumberOptions object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static IncomingPhoneNumberOptions fromJson(string rawJson)
         {
@@ -75,7 +75,7 @@ namespace com.persephony.api.phonenumber
         }
 
         /// <summary>
-        /// Helper method to build a JSON string from a IncomingPhoneNumberOptions instance.
+        /// Helper method to build a JSON string from an IncomingPhoneNumberOptions instance.
         /// </summary>
         /// <returns>A JSON string equivalent to the IncomingPhoneNumberOptions instance.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>

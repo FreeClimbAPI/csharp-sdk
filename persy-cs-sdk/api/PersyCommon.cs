@@ -93,7 +93,7 @@ namespace com.persephony.api
         /// </summary>
         /// <param name="a">PersyCommon object.</param>
         /// <param name="b">PersyCommon object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(PersyCommon a, PersyCommon b)
         {
             return Equal(a, b);

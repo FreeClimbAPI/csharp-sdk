@@ -21,7 +21,7 @@ namespace com.persephony.api.recording
         /// Used by QueueList to create Recording objects from the JSON list.
         /// </summary>
         /// <param name="element">A JSON string representing a Persephony recording instance.</param>
-        /// <returns>A equivalent recording object to the one represented by the inputted JSON string.</returns>
+        /// <returns>An equivalent recording object to the one represented by the inputted JSON string.</returns>
         protected override IPersyCommon constructElement(string element)
         {
             return JsonConvert.DeserializeObject<Recording>(element);

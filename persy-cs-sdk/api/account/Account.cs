@@ -77,10 +77,10 @@ namespace com.persephony.api.account
 #pragma warning restore 0649 
 
         /// <summary>
-	    /// Helper method to build a Account object from the JSON string.
+	    /// Helper method to build an Account object from the JSON string.
         /// </summary>
-        /// <param name="rawJson">A JSON string representing a Account instance.</param>
-        /// <returns>A Account object equivalent to the JSON string passed in.</returns>
+        /// <param name="rawJson">A JSON string representing an Account instance.</param>
+        /// <returns>An Account object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static Account fromJson(string rawJson)
         {

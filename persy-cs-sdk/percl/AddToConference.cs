@@ -45,7 +45,7 @@ namespace com.persephony.percl
         private string callControlUrl = string.Empty;
 
         /// <summary>
-        /// Helper method to build a JSON string from a AddToConference instance.
+        /// Helper method to build a JSON string from an AddToConference instance.
         /// </summary>
         /// <returns>A JSON string equivalent to the AddToConference instance.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>

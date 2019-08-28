@@ -26,7 +26,7 @@ namespace com.persephony.api.message
         /// Used by MessageList to create Message objects from the JSON list.
         /// </summary>
         /// <param name="element">A JSON string representing a Persephony Message instance.</param>
-        /// <returns>A equivalent Message object to the one represented by the inputted JSON string.</returns>
+        /// <returns>An equivalent Message object to the one represented by the inputted JSON string.</returns>
         protected override IPersyCommon constructElement(string element)
         {
             return JsonConvert.DeserializeObject<Message>(element);

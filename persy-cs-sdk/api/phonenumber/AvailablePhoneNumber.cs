@@ -56,10 +56,10 @@ namespace com.persephony.api.phonenumber
 #pragma warning restore 0649
 
         /// <summary>
-	    /// Helper method to build a AvailablePhoneNumber object from the JSON string.
+	    /// Helper method to build an AvailablePhoneNumber object from the JSON string.
         /// </summary>
-        /// <param name="rawJson">A JSON string representing a AvailablePhoneNumber instance.</param>
-        /// <returns>A AvailablePhoneNumber object equivalent to the JSON string passed in.</returns>
+        /// <param name="rawJson">A JSON string representing an AvailablePhoneNumber instance.</param>
+        /// <returns>An AvailablePhoneNumber object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static AvailablePhoneNumber fromJson(string rawJson)
         {

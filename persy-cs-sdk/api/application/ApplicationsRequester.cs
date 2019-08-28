@@ -15,7 +15,7 @@ namespace com.persephony.api.application
     {
         private readonly string path;
         /// <summary>
-        /// Creates a ApplicationsRequester. For most SDK users ApplicationsRequester will be
+        /// Creates an ApplicationsRequester. For most SDK users ApplicationsRequester will be
         /// created automatically by the PersyClient but is available for more
         /// users who only require the features in this specific requester and not 
         /// the rest of the features of the PersyClient.

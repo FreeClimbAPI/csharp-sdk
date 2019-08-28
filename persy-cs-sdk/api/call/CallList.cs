@@ -21,7 +21,7 @@ namespace com.persephony.api.call
         /// Used by CallList to create Call objects from the JSON list.
         /// </summary>
         /// <param name="element">A JSON string representing a Persephony call instance.</param>
-        /// <returns>A equivalent call object to the one represented by the inputted JSON string.</returns>
+        /// <returns>An equivalent call object to the one represented by the inputted JSON string.</returns>
         protected override IPersyCommon constructElement(string element)
         {
             return JsonConvert.DeserializeObject<Call>(element);

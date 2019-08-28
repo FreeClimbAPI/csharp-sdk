@@ -26,7 +26,7 @@ namespace com.persephony.percl
         private string notificationUrl = string.Empty;
 
         /// <summary>
-        /// Helper method to build a JSON string from a Enqueue instance.
+        /// Helper method to build a JSON string from an Enqueue instance.
         /// </summary>
         /// <returns>A JSON string equivalent to the Enqueue instance.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>

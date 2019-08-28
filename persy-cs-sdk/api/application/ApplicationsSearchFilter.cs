@@ -19,10 +19,10 @@ namespace com.persephony.api.application
         private string alias = string.Empty;
 
         /// <summary>
-	    /// Helper method to build a ApplicationsSearchFilters object from the JSON string.
+	    /// Helper method to build an ApplicationsSearchFilters object from the JSON string.
         /// </summary>
-        /// <param name="rawJson">A JSON string representing a ApplicationsSearchFilters instance.</param>
-        /// <returns>A ApplicationsSearchFilters object equivalent to the JSON string passed in.</returns>
+        /// <param name="rawJson">A JSON string representing an ApplicationsSearchFilters instance.</param>
+        /// <returns>An ApplicationsSearchFilters object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static ApplicationsSearchFilters fromJson(string rawJson)
         {
@@ -37,7 +37,7 @@ namespace com.persephony.api.application
         }
 
         /// <summary>
-        /// Helper method to build a JSON string from a ApplicationsSearchFilters instance.
+        /// Helper method to build a JSON string from an ApplicationsSearchFilters instance.
         /// </summary>
         /// <returns>A JSON string equivalent to the ApplicationsSearchFilters instance.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
