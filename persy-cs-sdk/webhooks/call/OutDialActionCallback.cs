@@ -6,7 +6,7 @@ using System.IO;
 namespace com.persephony.webhooks.call
 {
     /// <summary>
-    /// A OutDialActionCallback represents the JSON object that is 
+    /// An OutDialActionCallback represents the JSON object that is 
     /// sent to the webhooks of Persephony applications.
     /// </summary>
     [JsonObject]
@@ -18,10 +18,10 @@ namespace com.persephony.webhooks.call
 #pragma warning restore 0649 
 
         /// <summary>
-        /// Helper method to build a OutDialActionCallback object from the JSON string.
+        /// Helper method to build an OutDialActionCallback object from the JSON string.
         /// </summary>
-        /// <param name="rawJson">A JSON string representing a OutDialActionCallback instance.</param>
-        /// <returns>A OutDialActionCallback object equivalent to the JSON string passed in.</returns>
+        /// <param name="rawJson">A JSON string representing an OutDialActionCallback instance.</param>
+        /// <returns>An OutDialActionCallback object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static new OutDialActionCallback fromJson(string rawJson)
         {

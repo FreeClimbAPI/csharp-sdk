@@ -26,7 +26,7 @@ namespace com.persephony.api.log
         /// Used by LogList to create Log objects from the JSON list.
         /// </summary>
         /// <param name="element">A JSON string representing a Persephony log instance.</param>
-        /// <returns>A equivalent log object to the one represented by the inputted JSON string.</returns>
+        /// <returns>An equivalent log object to the one represented by the inputted JSON string.</returns>
         protected override IPersyCommon constructElement(string element)
         {
             return JsonConvert.DeserializeObject<Log>(element);

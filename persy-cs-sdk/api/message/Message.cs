@@ -177,7 +177,7 @@ namespace com.persephony.api.message
         /// </summary>
         /// <param name="a">Message object.</param>
         /// <param name="b">Message object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Message a, Message b)
         {
             return Equal(a, b);

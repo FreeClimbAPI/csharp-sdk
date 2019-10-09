@@ -70,10 +70,10 @@ namespace com.persephony.api.phonenumber
 #pragma warning restore 0649
 
         /// <summary>
-        /// Helper method to build a IncomingPhoneNumber object from the JSON string.
+        /// Helper method to build an IncomingPhoneNumber object from the JSON string.
         /// </summary>
         /// <param name="rawJson">A JSON string representing an incomingPhoneNumber instance.</param>
-        /// <returns>A IncomingPhoneNumber object equivalent to the JSON string passed in.</returns>
+        /// <returns>An IncomingPhoneNumber object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static IncomingPhoneNumber fromJson(string rawJson)
         {
@@ -184,7 +184,7 @@ namespace com.persephony.api.phonenumber
         /// </summary>
         /// <param name="a">IncomingPhoneNumber object.</param>
         /// <param name="b">IncomingPhoneNumber object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(IncomingPhoneNumber a, IncomingPhoneNumber b)
         {
             return Equal(a, b);

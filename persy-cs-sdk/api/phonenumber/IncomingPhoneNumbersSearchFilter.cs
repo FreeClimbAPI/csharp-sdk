@@ -22,10 +22,10 @@ namespace com.persephony.api.phonenumber
         private string phoneNumber = string.Empty;
 
         /// <summary>
-	    /// Helper method to build a IncomingPhoneNumbersSearchFilter object from the JSON string.
+	    /// Helper method to build an IncomingPhoneNumbersSearchFilter object from the JSON string.
         /// </summary>
-        /// <param name="rawJson">A JSON string representing a IncomingPhoneNumbersSearchFilter instance.</param>
-        /// <returns>A IncomingPhoneNumbersSearchFilter object equivalent to the JSON string passed in.</returns>
+        /// <param name="rawJson">A JSON string representing an IncomingPhoneNumbersSearchFilter instance.</param>
+        /// <returns>An IncomingPhoneNumbersSearchFilter object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static IncomingPhoneNumbersSearchFilter fromJson(string rawJson)
         {
@@ -40,7 +40,7 @@ namespace com.persephony.api.phonenumber
         }
 
         /// <summary>
-        /// Helper method to build a JSON string from a IncomingPhoneNumbersSearchFilter instance.
+        /// Helper method to build a JSON string from an IncomingPhoneNumbersSearchFilter instance.
         /// </summary>
         /// <returns>A JSON string equivalent to the IncomingPhoneNumbersSearchFilter instance.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>

@@ -39,10 +39,10 @@ namespace com.persephony.api.account
 
 
         /// <summary>
-        /// Helper method to build a AccountOptions object from the JSON string.
+        /// Helper method to build an AccountOptions object from the JSON string.
         /// </summary>
-        /// <param name="rawJson">A JSON string representing a AccountOptions instance.</param>
-        /// <returns>A AccountOptions object equivalent to the JSON string passed in.</returns>
+        /// <param name="rawJson">A JSON string representing an AccountOptions instance.</param>
+        /// <returns>An AccountOptions object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static AccountOptions fromJson(string rawJson)
         {
@@ -88,7 +88,7 @@ namespace com.persephony.api.account
         }
 
         /// <summary>
-        /// Helper method to build a JSON string from a AccountOptions instance.
+        /// Helper method to build a JSON string from an AccountOptions instance.
         /// </summary>
         /// <returns>A JSON string equivalent to the AccountOptions instance.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>

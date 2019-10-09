@@ -134,7 +134,7 @@ namespace com.persephony.api.conference
         /// </summary>
         /// <param name="a">Participant object.</param>
         /// <param name="b">Participant object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Participant a, Participant b)
         {
             return Equal(a, b);

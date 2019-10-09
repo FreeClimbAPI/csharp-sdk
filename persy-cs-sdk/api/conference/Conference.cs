@@ -192,7 +192,7 @@ namespace com.persephony.api.conference
         /// </summary>
         /// <param name="a">Conference object.</param>
         /// <param name="b">Conference object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Conference a, Conference b)
         {
             return Equal(a, b);

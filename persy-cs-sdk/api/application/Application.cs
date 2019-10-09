@@ -70,10 +70,10 @@ namespace com.persephony.api.application
 #pragma warning restore 0649
 
         /// <summary>
-	    /// Helper method to build a Application object from the JSON string.
+	    /// Helper method to build an Application object from the JSON string.
         /// </summary>
-        /// <param name="rawJson">A JSON string representing a application instance.</param>
-        /// <returns>A Application object equivalent to the JSON string passed in.</returns>
+        /// <param name="rawJson">A JSON string representing an application instance.</param>
+        /// <returns>An Application object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static Application fromJson(string rawJson)
         {
@@ -183,7 +183,7 @@ namespace com.persephony.api.application
         /// </summary>
         /// <param name="a">Application object.</param>
         /// <param name="b">Application object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Application a, Application b)
         {
             return Equal(a, b);

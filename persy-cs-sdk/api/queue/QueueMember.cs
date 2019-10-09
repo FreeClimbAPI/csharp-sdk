@@ -126,7 +126,7 @@ namespace com.persephony.api.queue
         /// </summary>
         /// <param name="a">QueueMember object.</param>
         /// <param name="b">QueueMember object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(QueueMember a, QueueMember b)
         {
             return Equal(a, b);

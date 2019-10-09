@@ -178,7 +178,7 @@ namespace com.persephony
         /// </summary>
         /// <param name="d1">Date structure.</param>
         /// <param name="d2">Date structure.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         /// <exception cref="PersyException">Thrown upon failed request.</exception>
         public static bool operator ==(Date d1, Date d2)
         {

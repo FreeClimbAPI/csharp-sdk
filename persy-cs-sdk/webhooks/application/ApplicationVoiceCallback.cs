@@ -6,7 +6,7 @@ using System;
 namespace com.persephony.webhooks.application
 {
     /// <summary>
-    /// A ApplicationVoiceCallback represents the JSON object that is sent to the webhooks
+    /// An ApplicationVoiceCallback represents the JSON object that is sent to the webhooks
     /// for incoming calls. URL specified in voiceUrl, voiceFallbackUrl of Application. 
     /// Currently no special properties beyond its' subclasses
     /// </summary>
@@ -15,10 +15,10 @@ namespace com.persephony.webhooks.application
     {
 
         /// <summary>
-        /// Helper method to build a ApplicationVoiceCallback object from the JSON string.
+        /// Helper method to build an ApplicationVoiceCallback object from the JSON string.
         /// </summary>
-        /// <param name="rawJson">A JSON string representing a ApplicationVoiceCallback instance.</param>
-        /// <returns>A ApplicationVoiceCallback object equivalent to the JSON string passed in.</returns>
+        /// <param name="rawJson">A JSON string representing an ApplicationVoiceCallback instance.</param>
+        /// <returns>An ApplicationVoiceCallback object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public new static ApplicationVoiceCallback fromJson(string rawJson)
         {

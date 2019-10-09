@@ -3,7 +3,7 @@
 namespace com.persephony.api
 {
     /// <summary>
-    /// This exception is thrown when the SDK runs into problems parse a date string.
+    /// This exception is thrown when the SDK runs into problems parsing a date string.
     /// </summary>
     [Serializable]
     public class PersyDateException : PersyException

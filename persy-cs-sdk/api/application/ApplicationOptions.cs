@@ -42,10 +42,10 @@ namespace com.persephony.api.application
         private bool statusCallbackUrlFlag = false;
 
         /// <summary>
-	    /// Helper method to build a ApplicationOptions object from the JSON string.
+	    /// Helper method to build an ApplicationOptions object from the JSON string.
         /// </summary>
-        /// <param name="rawJson">A JSON string representing a ApplicationOptions instance.</param>
-        /// <returns>A ApplicationOptions object equivalent to the JSON string passed in.</returns>
+        /// <param name="rawJson">A JSON string representing an ApplicationOptions instance.</param>
+        /// <returns>An ApplicationOptions object equivalent to the JSON string passed in.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>
         public static ApplicationOptions fromJson(string rawJson)
         {
@@ -60,7 +60,7 @@ namespace com.persephony.api.application
         }
 
         /// <summary>
-        /// Helper method to build a JSON string from a ApplicationOptions instance.
+        /// Helper method to build a JSON string from an ApplicationOptions instance.
         /// </summary>
         /// <returns>A JSON string equivalent to the ApplicationOptions instance.</returns>
         /// <exception cref="PersyJSONException">Thrown upon deserialize failure.</exception>

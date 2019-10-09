@@ -21,7 +21,7 @@ namespace com.persephony.api.conference
         /// Used by ConferenceList to create Conference objects from the JSON list.
         /// </summary>
         /// <param name="element">A JSON string representing a Persephony conference instance.</param>
-        /// <returns>A equivalent conference object to the one represented by the inputted JSON string.</returns>
+        /// <returns>An equivalent conference object to the one represented by the inputted JSON string.</returns>
         protected override IPersyCommon constructElement(string element)
         {
             return JsonConvert.DeserializeObject<Conference>(element);

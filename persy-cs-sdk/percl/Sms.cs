@@ -100,9 +100,9 @@ namespace com.persephony.percl
         /// <summary>
         /// Creates Sms PerCL with required fields. 
         /// </summary>
-        /// <param name="from">phone number message is from.</param>
-        /// <param name="to">phone number to send message to.</param>
-        /// <param name="text">text of message.</param>
+        /// <param name="from">phone number message is from in E.164 format.</param>
+        /// <param name="to">phone number to send message to in E.164 format.</param>
+        /// <param name="text">text of message.  Should be 254 chars or less.</param>
         public Sms(string from, string to, string text)
         {
             this.from = from;

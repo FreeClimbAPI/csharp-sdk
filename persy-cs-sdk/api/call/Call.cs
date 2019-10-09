@@ -249,7 +249,7 @@ namespace com.persephony.api.call
         /// </summary>
         /// <param name="a">Call object.</param>
         /// <param name="b">Call object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Call a, Call b)
         {
             return Equal(a, b);

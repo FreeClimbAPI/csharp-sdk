@@ -123,7 +123,7 @@ namespace com.persephony.api
         }
 
         /// <summary>
-        ///	MMake a HTTP DELETE request to the Persephony API.
+        ///	Make a HTTP DELETE request to the Persephony API.
         /// </summary>
         /// <param name="path">The URI path to make a request to.</param>
         /// <exception cref="PersyException">Thrown upon failed request.</exception>

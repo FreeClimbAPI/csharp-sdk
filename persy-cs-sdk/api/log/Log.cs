@@ -112,7 +112,7 @@ namespace com.persephony.api.log
         /// <summary>
         /// Retrieve  the metadata for this log from the object.
         /// </summary>
-        /// <returns>The metadata for this log. The object returned is essentially a json object. 
+        /// <returns>The metadata for this log. The object returned is essentially a JSON object. 
         /// To deal with an object with an 'unknown' class (dynamic),
         /// the object is of type JObject (http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm). 
         /// See the newtonsoft documentation for more details on how to use this object to get to all the data contained in it.
@@ -167,7 +167,7 @@ namespace com.persephony.api.log
         /// </summary>
         /// <param name="a">Log object.</param>
         /// <param name="b">Log object.</param>
-        /// <returns>true if not equal otherwise false.</returns>
+        /// <returns>true if equal otherwise false.</returns>
         public static bool operator ==(Log a, Log b)
         {
             return Equal(a, b);
