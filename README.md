@@ -12,11 +12,12 @@ using com.persephony.api.message;
 ...
 
 PersyClient client = new PersyClient("ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "your_auth_token");
+// Numbers must follow the E.164 formatting standard for phone numbers
+// An example US number in E.164 would be: +1Area_CodePhoneNumber
+// So the US number 202-555-0175 in E.164 formating would be +12025550175
 string to = "your_phone_number";
 string from = "a_persephony_phone_number_in_your_account";
-
-Message msg = client.messages.create(from, to, "Welcome to Persephony!");
-
+Message message = client.getMessagesRequester.create(from, to, "Hello from C#");
 ```
 
 When you run this code you should get a text message. This indicates that you've successfully setup your SDK.
