@@ -163,8 +163,7 @@ namespace freeclimb_cs_sdk_test.api.recording
                 {
                     fieldInfo.SetValue(recordingsRequester, "http://GetRecordingListTest:3000");
                 }
-
-                WebRequest.RegisterPrefix("http://GetRecordingListTest:3000/Accounts/AC736ca2078721a9a41fb47f07bf40d9e21cb304da/Recordings?dateCreate=2016-05-27", new TestWebRequestCreate());
+                WebRequest.RegisterPrefix("http://GetRecordingListTest:3000/Accounts/AC736ca2078721a9a41fb47f07bf40d9e21cb304da/Recordings?dateCreated=2016-05-27", new TestWebRequestCreate());
 
                 TestWebRequestCreate.MockHttpWebRequestWithGivenResponseCode(HttpStatusCode.OK,
                                                                              "{\"total\":1,\"start\":0,\"end\":0,\"page\":1,\"numPages\":1,\"pageSize\":20,\"nextPageUri\":null,\"recordings\":[{\"uri\":\"/Accounts/ACabe7063197551fe51671f9ac3a9708e9dad51c4d/Recordings/REb1eecfce410141ad1749c0fc84dfbb6fc4c2a815\",\"revision\":1,\"dateCreated\":\"Mon, 27 Jun 2016 17:53:55 GMT\",\"dateUpdated\":\"Mon, 27 Jun 2016 17:53:55 GMT\",\"recordingId\":\"REb1eecfce410141ad1749c0fc84dfbb6fc4c2a815\",\"accountId\":\"ACabe7063197551fe51671f9ac3a9708e9dad51c4d\",\"callId\":\"CA3cb8a52f461bcf64cbd3111d9492c3f61943eef9\",\"duration\":9}]}");
@@ -203,13 +202,14 @@ namespace freeclimb_cs_sdk_test.api.recording
                     fieldInfo.SetValue(recordingsRequester, "http://GetRecordingListTest:3000");
                 }
 
-                WebRequest.RegisterPrefix("http://GetRecordingListTest:3000/Accounts/AC736ca2078721a9a41fb47f07bf40d9e21cb304da/Recordings?dateCreate=2016-05-27&callId=CA3cb8a52f461bcf64cbd3111d9492c3f61943eef9", new TestWebRequestCreate());
+                WebRequest.RegisterPrefix("http://GetRecordingListTest:3000/Accounts/AC736ca2078721a9a41fb47f07bf40d9e21cb304da/Recordings?callId=CA3cb8a52f461bcf64cbd3111d9492c3f61943eef9&dateCreated=2016-05-27", new TestWebRequestCreate());
 
                 TestWebRequestCreate.MockHttpWebRequestWithGivenResponseCode(HttpStatusCode.OK,
                                                                              "{\"total\":1,\"start\":0,\"end\":0,\"page\":1,\"numPages\":1,\"pageSize\":20,\"nextPageUri\":null,\"recordings\":[{\"uri\":\"/Accounts/ACabe7063197551fe51671f9ac3a9708e9dad51c4d/Recordings/REb1eecfce410141ad1749c0fc84dfbb6fc4c2a815\",\"revision\":1,\"dateCreated\":\"Mon, 27 Jun 2016 17:53:55 GMT\",\"dateUpdated\":\"Mon, 27 Jun 2016 17:53:55 GMT\",\"recordingId\":\"REb1eecfce410141ad1749c0fc84dfbb6fc4c2a815\",\"accountId\":\"ACabe7063197551fe51671f9ac3a9708e9dad51c4d\",\"callId\":\"CA3cb8a52f461bcf64cbd3111d9492c3f61943eef9\",\"duration\":9}]}");
 
                 RecordingsSearchFilters filters = new RecordingsSearchFilters();
                 filters.setDateCreated(new Date(2016, 5, 27));
+                filters.setCallId("CA3cb8a52f461bcf64cbd3111d9492c3f61943eef9");
                 RecordingList recordingList = recordingsRequester.getMeta(filters);
 
                 Assert.IsNotNull(recordingList);
