@@ -80,6 +80,12 @@ namespace com.freeclimb.api.call
 
         [JsonProperty(PropertyName = "subresourceUris")]
         private readonly Dictionary<SubresourceUri, string> subresourceUris;
+
+        [JsonProperty(PropertyName = "connectTime")]
+        private readonly DateTime connectTime;
+
+        [JsonProperty(PropertyName = "connectDuration")]
+        private readonly int connectDuration;
 #pragma warning restore 0649 
 
         /// <summary>
@@ -187,6 +193,20 @@ namespace com.freeclimb.api.call
         /// <returns>The subresourceUris for this call.</returns>
         public Dictionary<SubresourceUri, string> getSubresourceUris { get { return this.subresourceUris; } }
 
+
+        /// <summary>
+        /// Retrieve  the connectTime for this call from the object.
+        /// </summary>
+        /// <returns>The connectTime for this call.</returns>
+        public DateTime getConnectTime { get { return this.connectTime; } }
+
+
+        /// <summary>
+        /// Retrieve  the connect Duration for this call from the object.
+        /// </summary>
+        /// <returns>The connectDuration for this call.</returns>
+        public int getConnectDuration { get { return this.connectDuration; } }
+
         private int ShiftAndWrap(int value, int positions)
         {
             positions = positions & 0x1F;
@@ -216,6 +236,8 @@ namespace com.freeclimb.api.call
             hash ^= this.direction.GetHashCode();
             hash ^= this.answeredBy.GetHashCode();
             hash ^= this.callerName.GetHashCode();
+            hash ^= this.connectDuration.GetHashCode();
+            hash ^= this.connectTime.GetHashCode();
 
             foreach (KeyValuePair<SubresourceUri, string> pair in this.subresourceUris)
             {
@@ -331,6 +353,7 @@ namespace com.freeclimb.api.call
                    (a.getAnsweredBy == b.getAnsweredBy) &&
                    String.Equals(a.getCallerName, b.getCallerName, StringComparison.Ordinal) &&
                    DictionaryEqual(a.subresourceUris, b.subresourceUris) &&
+                   ((DateTime.Compare(a.getConnectTime, b.getConnectTime) == 0) ? true : false) &&
                    FreeClimbCommon.Equal(a, b);
         }
     }
