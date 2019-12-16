@@ -1,0 +1,40 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>com.freeclimb.api Namespace</title><meta name="Language" content="en-us" /><meta name="System.Keywords" content="com.freeclimb.api namespace" /><meta name="Microsoft.Help.F1" content="com.freeclimb.api" /><meta name="Microsoft.Help.Id" content="N:com.freeclimb.api" /><meta name="Description" content="summaryN:com.freeclimb.api" /><meta name="Microsoft.Help.ContentType" content="Reference" /><meta name="BrandingAware" content="true" /><meta name="container" content="com.freeclimb.api" /><meta name="file" content="freeclimb-api-namespace" /><meta name="guid" content="freeclimb-api-namespace" /><link rel="stylesheet" type="text/css" href="../styles/branding-Help1.css" /></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">A Sandcastle Documented Class Library</div><div class="pageBody"><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="titleColumn"><h1>com.freeclimb.api Namespace</h1></td></tr></table><span class="introStyle"></span> <div class="summary"><p style="color: #dc143c; font-size: 8.5pt; font-weight: bold;">[Missing &lt;summary&gt; documentation for "N:com.freeclimb.api"]</p></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Classes</span></div><div id="ID0RBSection" class="collapsibleSection"><table class="members" id="classList"><tr><th class="iconColumn">
+					 
+				</th><th>Class</th><th>Description</th></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="bf848cfc-ebcd-f8c6-befb-47bb413878c0.htm">APIRequester</a></td><td><div class="summary">
+            The APIRequester is the base class for various *Requestor classes which
+            each wrap a portion of the FreeClimb API. This class abstracts away the
+            messiness that can be directly interacting with the API over HTTP to reduce
+            code duplication in these child Requesters and ease their development.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="cb77b038-0161-5dd9-606a-dd29c7a4d484.htm">CommonFields</a></td><td><div class="summary">
+            fields that are used across many different API request message bodies.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="b51bb066-de2e-23f3-db30-8c26c6beefbc.htm">FreeClimbClient</a></td><td><div class="summary">
+            The FreeClimbClient is the main way within the SDK to interact with the
+            FreeClimb API. After creating a FreeClimbClient the user can use any of it's many
+            APIRequesters to make requests to the API.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="1219e0b8-c03e-25b5-1e75-f0364a2df3fc.htm">FreeClimbCommon</a></td><td><div class="summary">
+            FreeClimbCommon is the base class from which all classes that are built to
+            represent objects returned from the FreeClimb API are built upon. A user
+            of the SDK should never directly interact with a FreeClimbCommon object.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="d363bd09-45b9-439c-5381-c26d393a1236.htm">FreeClimbConnectionException</a></td><td><div class="summary">
+            This exception is thrown when the SDK runs into problems with establishing a
+            connection with the FreeClimb API.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="163d2600-06e4-24c0-0028-2f391e213aef.htm">FreeClimbDateException</a></td><td><div class="summary">
+            This exception is thrown when the SDK runs into problems parsing a date string.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="3c680bab-ef36-3d78-50d8-229a84c73caa.htm">FreeClimbError</a></td><td><div class="summary">
+            The FreeClimbError represents the error messages that the FreeClimb API often replies with.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="2d7d0ff0-107d-a34a-aa78-2e36bda732a4.htm">FreeClimbErrorResponseException</a></td><td><div class="summary">
+            This exception is thrown when the FreeClimb API responds with and HTTP error code to some user request.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="694174e5-35b5-9f57-b547-786715fd9935.htm">FreeClimbException</a></td><td><div class="summary">
+            Base FreeClimb exception class off of which all other exceptions in the SDK are based.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="9b17c69c-5a63-9c38-c063-7ce20962436b.htm">FreeClimbJSONException</a></td><td><div class="summary">
+            Raised when there is a problem interpretting JSON or converting an object to JSON.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" alt="Public class" title="Public class" /></td><td><a href="9a553d4b-226c-968d-e52a-1a1d0dee6c97.htm">FreeClimbList</a></td><td><div class="summary">
+            Base class for representing a list of resources returned by the FreeClimb
+            API. Resources are kept in an ArrayList which the user is given limited
+            access to. Subclasses for each type of resource that can be returned in
+            FreeClimb API's paginated lists should be made to wrap around this.
+            </div></td></tr></table></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Interfaces</span></div><div id="ID1RBSection" class="collapsibleSection"><table class="members" id="interfaceList"><tr><th class="iconColumn">
+					 
+				</th><th>Interface</th><th>Description</th></tr><tr data="interface; public"><td><img src="../icons/pubinterface.gif" alt="Public interface" title="Public interface" /></td><td><a href="5ff17039-1e8e-72e4-0f20-54f07402d6e7.htm">IFreeClimbCommon</a></td><td><div class="summary">
+            Generic FreeClimbCommon interface
+            </div></td></tr></table></div></div></div><div id="pageFooter" class="pageFooter"> </div></body></html>
