@@ -3,7 +3,7 @@
         "src": [{
             "src": "../",
             "files": [
-                "persy-cs-sdk/**.csproj"
+                "freeclimb-cs-sdk/**.csproj"
             ],
             "exlude": [
                 "**/bin/**",
