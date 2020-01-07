@@ -1,6 +1,7 @@
 ## Introduction
 The FreeClimb C# SDK will allow you to easily use the FreeClimb API in a C# application.
 
+[![Documentation](https://img.shields.io/badge/documentation-1.1.1-green?url=https://freeclimbapi.github.io/csharpdocs/index.html&link=https://freeclimbapi.github.io/csharpdocs/index.html)](https://freeclimbapi.github.io/csharpdocs/index.html)
 
 ## Testing your Installation
 Test the SDK is working by sending yourself a text message.
@@ -25,8 +26,9 @@ When you run this code you should get a text message. This indicates that you've
 ## Documentation
 The [FreeClimb documentation ](https://docs.freeclimb.com/docs) has guides on [getting started](https://docs.freeclimb.com/docs/getting-started-with-freeclimb) with FreeClimb, as well as the [API reference](https://docs.freeclimb.com/reference/using-the-api) and [PerCL reference](https://docs.freeclimb.com/reference/percl-overview).
 
-The C# SDK uses standard [XML Documentation Comments](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments).
-[Docfx](https://dotnet.github.io/docfx/index.html) consumes these comments and generates a static documentation site.
+The [C# SDK documentation](https://freeclimbapi.github.io/csharpdocs/api) has further information on the different namespaces available through the SDK and functionalities they provide.
+The C# SDK uses standard [XML Documentation Comments](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments). 
+[Docfx](https://dotnet.github.io/docfx/index.html) consumes these comments and generates a static documentation site. 
 To build the documentation, install docfx and run `docfx docs/docfx.json --serve`.
 
 ## Getting Help
