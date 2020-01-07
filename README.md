@@ -1,6 +1,7 @@
 ## Introduction
 The FreeClimb C# SDK will allow you to easily use the FreeClimb API in a C# application.
 
+[![Documentation](https://img.shields.io/badge/documentation-1.1.1-green?url=https://freeclimbapi.github.io/csharpdocs/index.html&link=https://freeclimbapi.github.io/csharpdocs/index.html)](https://freeclimbapi.github.io/csharpdocs/index.html)
 
 ## Testing your Installation
 Test the SDK is working by sending yourself a text message.
