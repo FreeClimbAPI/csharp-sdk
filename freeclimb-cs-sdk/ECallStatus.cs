@@ -25,9 +25,6 @@ namespace com.freeclimb
         [EnumMember(Value = "canceled")]
         Canceled,
 
-        [EnumMember(Value = "bridged")]
-        Bridged,
-
         [EnumMember(Value = "completed")]
         Completed,
 
