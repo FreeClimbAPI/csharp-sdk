@@ -29,7 +29,10 @@ namespace com.freeclimb
         Rejected,
 
         [EnumMember(Value = "received")]
-        Received
+        Received,
+
+        [EnumMember(Value = "undelivered")]
+        Undelivered
 #pragma warning restore 1591 
     }
 }
