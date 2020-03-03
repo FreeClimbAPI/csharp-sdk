@@ -35,7 +35,9 @@ namespace com.freeclimb
         [EnumMember(Value = "#")]
         Pound,
         [EnumMember(Value = "*")]
-        Star
+        Star,
+        [EnumMember(Value = "")]
+        None
 #pragma warning restore 1591 
     }
 }
