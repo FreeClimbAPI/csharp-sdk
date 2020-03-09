@@ -204,7 +204,7 @@ namespace com.freeclimb.percl
                 props.Add("minDigits", this.minDigits);
             }
 
-            if (getFinishOnKey != EFinishOnKey.NONE)
+            if (getFinishOnKey != EFinishOnKey.EMPTY)
             {
                 EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getFinishOnKey);
                 props.Add("finishOnKey", attr.Value);
