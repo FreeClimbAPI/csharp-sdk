@@ -11,7 +11,7 @@ namespace com.freeclimb
     {
 #pragma warning disable 1591 // XML comment compiler warning
         [EnumMember(Value = "")]
-        NONE = 0,
+        EMPTY = 0,
         [EnumMember(Value = "0")]
         Zero,
         [EnumMember(Value = "1")]
@@ -35,7 +35,9 @@ namespace com.freeclimb
         [EnumMember(Value = "#")]
         Pound,
         [EnumMember(Value = "*")]
-        Star
+        Star,
+        [EnumMember(Value = "")]
+        None
 #pragma warning restore 1591 
     }
 }
