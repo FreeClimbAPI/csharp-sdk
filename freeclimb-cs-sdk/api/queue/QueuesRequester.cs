@@ -179,12 +179,11 @@ namespace com.freeclimb.api.queue
         /// </summary>
         /// <param name="queueId">The queueId of the target queueId.</param>
         /// <param name="callId">Optional callId of the queue member to retrieve. If not provided the 'Front' is returned.</param>
-        /// <param name="queueMemberOptions">Optional QueueMemberOptions instance to be used when updating a queue member.</param>
         /// <returns>The queue member matching the queueId provided.</returns>
         /// <exception cref="FreeClimbException">Thrown upon failed request.</exception>
-        public QueueMember updateQueueMember(string queueId, string callId = null, QueueMemberOptions queueMemberOptions = null)
+        public QueueMember updateQueueMember(string queueId, string callId = null)
         {
-            string json = base.POST(String.Format("{0}/{1}/Members/{2}", this.path, queueId, ((callId == null) ? "Front" : callId)), ((queueMemberOptions != null) ? queueMemberOptions.toJson() : null));
+            string json = base.POST(String.Format("{0}/{1}/Members/{2}", this.path, queueId, ((callId == null) ? "Front" : callId)), null);
 
             if (string.IsNullOrEmpty(json) == true)
             {

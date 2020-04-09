@@ -15,7 +15,7 @@ namespace freeclimb_cs_sdk_test.percl
             string json = getDigits.toJson();
 
             Assert.IsNotNull(json);
-            Assert.AreEqual(json, "{\"GetDigits\":{\"actionUrl\":\"http://foo.com\",\"prompts\":[]}}");
+            Assert.AreEqual("{\"GetDigits\":{\"actionUrl\":\"http://foo.com\",\"prompts\":[]}}", json);
         }
 
         [TestMethod]

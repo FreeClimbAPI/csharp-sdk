@@ -15,7 +15,7 @@ namespace freeclimb_cs_sdk_test.percl
             string json = reject.toJson();
 
             Assert.IsNotNull(json);
-            Assert.AreEqual(json, "{\"Reject\":{}");
+            Assert.AreEqual(json, "{\"Reject\":{}}");
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace freeclimb_cs_sdk_test.percl
             string json = reject.toJson();
 
             Assert.IsNotNull(json);
-            Assert.AreEqual(json, "{\"Reject\":{\"reason\":\"not available right now\",}}");
+            Assert.AreEqual(json, "{\"Reject\":{\"reason\":\"not available right now\"}}");
         }
     }
 }

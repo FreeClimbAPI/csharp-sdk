@@ -12,7 +12,7 @@ namespace com.freeclimb.api.account
     /// <summary>
     /// The class represents the common account update optional fields.
     /// </summary>
-    public class AccountOptions:CommonFields
+    public class AccountOptions
     {
         /// <summary>
         /// Alias of account
@@ -79,11 +79,6 @@ namespace com.freeclimb.api.account
                 props.Add("status", getStatus);
             }
 
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
             return props;
         }
 

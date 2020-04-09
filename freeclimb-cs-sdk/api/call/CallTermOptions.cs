@@ -11,7 +11,7 @@ namespace com.freeclimb.api.call
     /// The class represents the common optional fields which can be passed terminating a call.
     /// </summary>
     [JsonObject]
-    public class CallTermOptions:CommonFields
+    public class CallTermOptions
     {
         [JsonProperty(PropertyName = "status")]
         private ECallStatus status = ECallStatus.NONE;
@@ -85,11 +85,7 @@ namespace com.freeclimb.api.call
                 EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getStatus);
                 props.Add("status", attr.Value);
             }
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
+            
             return props;
         }
     }

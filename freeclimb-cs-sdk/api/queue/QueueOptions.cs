@@ -10,7 +10,7 @@ namespace com.freeclimb.api.queue
     /// The class represents the common queue optional fields.
     /// </summary>
     [JsonObject]
-    public class QueueOptions: CommonFields
+    public class QueueOptions
     {
         [JsonProperty(PropertyName = "alias")]
         private string alias = string.Empty;
@@ -102,11 +102,7 @@ namespace com.freeclimb.api.queue
             {
                 props.Add("maxSize", getMaxSize);
             }
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
+            
             return props;
         }
     }

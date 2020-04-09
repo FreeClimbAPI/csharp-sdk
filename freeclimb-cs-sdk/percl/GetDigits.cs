@@ -25,7 +25,7 @@ namespace com.freeclimb.percl
         private int digitTimeoutMs = int.MinValue;
 
         [JsonProperty(PropertyName = "finishOnKey")]
-        private EFinishOnKey finishOnKey = EFinishOnKey.NONE;
+        private EFinishOnKey finishOnKey = EFinishOnKey.EMPTY;
 
         [JsonProperty(PropertyName = "minDigits")]
         private int minDigits = int.MinValue;

@@ -12,7 +12,7 @@ namespace com.freeclimb.api.conference
     /// The class represents the common conference create optional fields.
     /// </summary>
     [JsonObject]
-    public class ConferenceCreateOptions:CommonFields
+    public class ConferenceCreateOptions
     {
         [JsonProperty(PropertyName = "alias")]
         private string alias = string.Empty;
@@ -170,11 +170,7 @@ namespace com.freeclimb.api.conference
             {
                 props.Add("statusCallbackUrl", getStatusCallbackUrl);
             }
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
+            
             return props;
         }
     }

@@ -11,7 +11,7 @@ namespace com.freeclimb.api.call
     /// The class represents the common optional fields which can be passed originating a call.
     /// </summary>
     [JsonObject]
-    public class CallOrigOptions:CommonFields
+    public class CallOrigOptions
     {
         /// <summary>
         /// Constant default call timeout value.
@@ -151,11 +151,6 @@ namespace com.freeclimb.api.call
                 props.Add("parentCallId", getParentCallId);
             }
 
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
             return props;
         }
     }

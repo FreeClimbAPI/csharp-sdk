@@ -10,7 +10,7 @@ namespace com.freeclimb.api.log
     /// The class represents the search filters (fields) for searching for log items
     /// </summary>
     [JsonObject]
-    public class LogSearchFilters : CommonFields
+    public class LogSearchFilters
     {
         [JsonProperty(PropertyName = "pql")]
         private string pql = string.Empty;
@@ -64,11 +64,7 @@ namespace com.freeclimb.api.log
             {
                 props.Add("pql", getPql);
             }
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
+            
             return props;
         }
     }
