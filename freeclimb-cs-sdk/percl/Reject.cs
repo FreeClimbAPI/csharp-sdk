@@ -58,7 +58,10 @@ namespace com.freeclimb.percl
             // change all properties with settings to a dictionary
             IDictionary<string, object> props = new Dictionary<string, object>();
 
-            props.Add("reason", getReason);
+            if(getReason != null)
+            {
+                props.Add("reason", getReason);
+            }
 
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("Reject", props);

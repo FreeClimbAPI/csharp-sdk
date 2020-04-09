@@ -11,7 +11,7 @@ namespace com.freeclimb.api.application
     /// The class represents the common application optional fields to use when updating and creating applications.
     /// </summary>
     [JsonObject]
-    public class ApplicationOptions:CommonFields
+    public class ApplicationOptions
     {
         [JsonProperty(PropertyName = "alias")]
         private string alias = string.Empty;
@@ -208,11 +208,7 @@ namespace com.freeclimb.api.application
             {
                 props.Add("statusCallbackUrl", getStatusCallbackUrl);
             }
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
+            
             return props;
         }
     }

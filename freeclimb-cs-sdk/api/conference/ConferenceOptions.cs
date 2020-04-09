@@ -13,7 +13,7 @@ namespace com.freeclimb.api.conference
     /// The class represents the common conference optional fields.
     /// </summary>
     [JsonObject]
-    public class ConferenceOptions:CommonFields
+    public class ConferenceOptions
     {
         [JsonProperty(PropertyName = "alias")]
         private string alias = string.Empty;
@@ -130,11 +130,7 @@ namespace com.freeclimb.api.conference
                 EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getStatus);
                 props.Add("status", attr.Value);
             }
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
+            
             return props;
         }
     }

@@ -11,7 +11,7 @@ namespace com.freeclimb.api.message
     /// The class represents the optional message fields to use when creating messages. serialized to json when sent to API
     /// </summary>
     [JsonObject]
-    public class MessageOptions:CommonFields
+    public class MessageOptions
     {
 
         [JsonProperty(PropertyName = "notificationUrl")]
@@ -86,11 +86,6 @@ namespace com.freeclimb.api.message
                 props.Add("notificationUrl", getNotificationUrl);
             }
 
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
             return props;
         }
     }

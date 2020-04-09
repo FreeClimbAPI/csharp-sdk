@@ -37,7 +37,7 @@ namespace com.freeclimb
         [EnumMember(Value = "*")]
         Star,
         [EnumMember(Value = "")]
-        None
+        NONE
 #pragma warning restore 1591 
     }
 }

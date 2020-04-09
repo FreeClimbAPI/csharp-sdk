@@ -92,6 +92,7 @@
     <Compile Include="api\call\CallTest.cs" />
     <Compile Include="api\call\OutboundCallTest.cs" />
     <Compile Include="api\call\CallsRequesterTest.cs" />
+    <Compile Include="percl\RejectTest.cs" />
     <Compile Include="percl\SmsTest.cs" />
     <Compile Include="percl\TestCommand.cs" />
     <Compile Include="percl\PerCLScriptTest.cs" />

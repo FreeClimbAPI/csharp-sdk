@@ -66,44 +66,6 @@ namespace freeclimb_cs_sdk_test.api.conference
             }
         }
 
-        [TestMethod]
-        public void MakeAInitialConferenceRequestWithRequestIdTest()
-        {
-            try
-            {
-                ConferencesRequester confRequester = new ConferencesRequester("AC736ca2078721a9a41fb47f07bf40d9e21cb304da", "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5", "AC736ca2078721a9a41fb47f07bf40d9e21cb304da");
-
-                Type confRequesterType = typeof(ConferencesRequester);
-                MethodInfo freeClimbUrlMethodInfo = confRequesterType.GetMethod("SetFreeClimbUrl",
-                                                                            BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
-                                                                            null,
-                                                                            new Type[] { typeof(System.String) },
-                                                                            null);
-                freeClimbUrlMethodInfo.Invoke(confRequester, new Object[] { "http://MakeAInitialConferenceRequestTest:3000" });
-
-                WebRequest.RegisterPrefix("http://MakeAInitialConferenceRequestTest:3000", new TestWebRequestCreate());
-
-                TestWebRequestCreate.MockHttpWebRequestWithGivenResponseCode(HttpStatusCode.OK,
-                                                                             "{\"uri\" : \"/Accounts/AC142c48f2ee663e214c19ea459516068c/Conferences/CFbbe46ff1274e283f7e3ac1df0072ab39\", \"revision\" : 1, \"dateCreated\" : \"Thu, 23 Jun 2016 17:30:06 GMT\", \"dateUpdated\" : \"Thu, 23 Jun 2016 17:30:06 GMT\", \"conferenceId\" : \"CFbbe46ff1274e283f7e3ac1df0072ab39\", \"accountId\" : \"AC142c48f2ee663e214c19ea459516068c\", \"alias\" : \"API\", \"status\" : \"empty\", \"subresourceUris\" : { \"participants\" : \"/Accounts/AC142c48f2ee663e214c19ea459516068c/Conferences/CFbbe46ff1274e283f7e3ac1df0072ab39/Participants\", \"recordings\" : \"/Accounts/AC142c48f2ee663e214c19ea459516068c/Conferences/CFbbe46ff1274e283f7e3ac1df0072ab39/Recordings\"}}");
-
-                ConferenceCreateOptions options = new ConferenceCreateOptions();
-                options.setAlias("API");
-                options.setRequestId("RQ1234567890123456789012345678901234567890");
-                Conference conference = confRequester.create(options);
-
-                Assert.IsNotNull(conference);
-                Assert.AreEqual(conference.getUri, "/Accounts/AC142c48f2ee663e214c19ea459516068c/Conferences/CFbbe46ff1274e283f7e3ac1df0072ab39");
-                Assert.AreEqual(conference.getSubresourceUris.Count, 2);
-                Assert.AreEqual(conference.getRevision, 1);
-                Assert.IsNotNull(conference.getDateCreated);
-                Assert.IsNotNull(conference.getDateUpdated);
-                Assert.AreEqual(conference.getStatus, EConferenceStatus.Empty);
-            }
-            catch (FreeClimbException pe)
-            {
-                Assert.Fail(pe.Message);
-            }
-        }
 
         [TestMethod]
         public void GetConferenceRequestTest()

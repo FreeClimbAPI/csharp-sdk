@@ -179,41 +179,7 @@ namespace freeclimb_cs_sdk_test.api.phonenumber
                 Assert.Fail(pe.Message);
             }
         }
-
-        [TestMethod]
-        public void UpdateCallingNumberWithRequestIdTest()
-        {
-            try
-            {
-                CallingNumbersRequester requester = new CallingNumbersRequester("AC907d7e328b3a5b402fa908857e047a243a8949b1", "2c78e8a8d1033b77902758e584ad5fc4a1c5ee02", "AC907d7e328b3a5b402fa908857e047a243a8949b1");
-
-                Type type = typeof(APIRequester);
-                FieldInfo fieldInfo = type.GetField("freeClimbUrl", BindingFlags.NonPublic | BindingFlags.Instance);
-                if (fieldInfo != null)
-                {
-                    fieldInfo.SetValue(requester, "http://UpdateCallingTest:3000");
-                }
-
-                WebRequest.RegisterPrefix("http://UpdateCallingTest:3000", new TestWebRequestCreate());
-
-                TestWebRequestCreate.MockHttpWebRequestWithGivenResponseCode(HttpStatusCode.OK,
-                    "{ \"phoneNumber\" : \"+13033447438\", \"alias\" : \"new Calling number 1\", \"revision\" : 1, \"dateCreated\" : \"Wed, 01 Feb 2017 17:33:27 GMT\", \"dateUpdated\" : \"Wed, 01 Feb 2017 17:33:27 GMT\", \"callingNumberId\" : \"PN7bbef986a434fd30ba006551ed6cc507403b5e87\", \"uri\" : \"/Accounts/AC907d7e328b3a5b402fa908857e047a243a8949b1/CallingNumbers/PN7bbef986a434fd30ba006551ed6cc507403b5e87\", \"accountId\" : \"AC907d7e328b3a5b402fa908857e047a243a8949b1\"}");
-                CallingNumberOptions options = new CallingNumberOptions();
-                options.setAlias("calling number new");
-                options.setRequestId("RQ1234567890123456789012345678901234567890");
-
-                CallingNumber num = requester.update("PN7bbef986a434fd30ba006551ed6cc507403b5e87", options);
-
-                Assert.IsNotNull(num);
-                Assert.AreEqual(num.getAlias, "new Calling number 1");
-                Assert.AreEqual(num.getCallingNumberId, "PN7bbef986a434fd30ba006551ed6cc507403b5e87");
-            }
-            catch (FreeClimbException pe)
-            {
-                Assert.Fail(pe.Message);
-            }
-        }
-
+        
         [TestMethod]
         public void CreateCallingNumberTest()
         {
@@ -234,41 +200,6 @@ namespace freeclimb_cs_sdk_test.api.phonenumber
                     "{ \"phoneNumber\" : \"+13033447438\", \"alias\" : \"Calling number 1\", \"revision\" : 1, \"dateCreated\" : \"Wed, 01 Feb 2017 17:33:27 GMT\", \"dateUpdated\" : \"Wed, 01 Feb 2017 17:33:27 GMT\", \"callingNumberId\" : \"PN7bbef986a434fd30ba006551ed6cc507403b5e87\", \"uri\" : \"/Accounts/AC907d7e328b3a5b402fa908857e047a243a8949b1/CallingNumbers/PN7bbef986a434fd30ba006551ed6cc507403b5e87\", \"accountId\" : \"AC907d7e328b3a5b402fa908857e047a243a8949b1\"}");
                 CallingNumberOptions options = new CallingNumberOptions();
                 options.setAlias("Calling number 1");
-                CallingNumber num = requester.create("+13033447438", options);
-
-                Assert.IsNotNull(num);
-                Assert.AreEqual(num.getAlias, "Calling number 1");
-                Assert.AreEqual(num.getPhoneNumber, "+13033447438");
-                Assert.IsNotNull(num.getCallingNumberId);
-            }
-            catch (FreeClimbException pe)
-            {
-                Assert.Fail(pe.Message);
-            }
-        }
-
-        [TestMethod]
-        public void CreateCallingNumberWithRequestIdTest()
-        {
-            try
-            {
-                CallingNumbersRequester requester = new CallingNumbersRequester("AC907d7e328b3a5b402fa908857e047a243a8949b1", "2c78e8a8d1033b77902758e584ad5fc4a1c5ee02", "AC907d7e328b3a5b402fa908857e047a243a8949b1");
-
-                Type type = typeof(APIRequester);
-                FieldInfo fieldInfo = type.GetField("freeClimbUrl", BindingFlags.NonPublic | BindingFlags.Instance);
-                if (fieldInfo != null)
-                {
-                    fieldInfo.SetValue(requester, "http://CreateCallingTest:3000");
-                }
-
-                WebRequest.RegisterPrefix("http://CreateCallingTest:3000", new TestWebRequestCreate());
-
-                TestWebRequestCreate.MockHttpWebRequestWithGivenResponseCode(HttpStatusCode.OK,
-                    "{ \"phoneNumber\" : \"+13033447438\", \"alias\" : \"Calling number 1\", \"revision\" : 1, \"dateCreated\" : \"Wed, 01 Feb 2017 17:33:27 GMT\", \"dateUpdated\" : \"Wed, 01 Feb 2017 17:33:27 GMT\", \"callingNumberId\" : \"PN7bbef986a434fd30ba006551ed6cc507403b5e87\", \"uri\" : \"/Accounts/AC907d7e328b3a5b402fa908857e047a243a8949b1/CallingNumbers/PN7bbef986a434fd30ba006551ed6cc507403b5e87\", \"accountId\" : \"AC907d7e328b3a5b402fa908857e047a243a8949b1\"}");
-                CallingNumberOptions options = new CallingNumberOptions();
-                options.setAlias("Calling number 1");
-                options.setRequestId("RQ1234567890123456789012345678901234567890");
-
                 CallingNumber num = requester.create("+13033447438", options);
 
                 Assert.IsNotNull(num);

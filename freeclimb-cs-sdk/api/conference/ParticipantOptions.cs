@@ -11,7 +11,7 @@ namespace com.freeclimb.api.conference
     /// The class represents the common participant optional fields.
     /// </summary>
     [JsonObject]
-    public class ParticipantOptions:CommonFields
+    public class ParticipantOptions
     {
         [JsonProperty(PropertyName = "talk")]
         private EBool talk = EBool.NONE;
@@ -108,11 +108,7 @@ namespace com.freeclimb.api.conference
                 EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getListen);
                 props.Add("listen", attr.Value);
             }
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
+            
             return props;
         }
     }

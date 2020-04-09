@@ -183,41 +183,6 @@ namespace freeclimb_cs_sdk_test.api.phonenumber
         }
 
         [TestMethod]
-        public void UpdateIncomingNumberWithRequestIdTest()
-        {
-            try
-            {
-                IncomingPhoneNumbersRequester requester = new IncomingPhoneNumbersRequester("AC907d7e328b3a5b402fa908857e047a243a8949b1", "2c78e8a8d1033b77902758e584ad5fc4a1c5ee02", "AC907d7e328b3a5b402fa908857e047a243a8949b1");
-
-                Type type = typeof(APIRequester);
-                FieldInfo fieldInfo = type.GetField("freeClimbUrl", BindingFlags.NonPublic | BindingFlags.Instance);
-                if (fieldInfo != null)
-                {
-                    fieldInfo.SetValue(requester, "http://UpdateIncomingTest:3000");
-                }
-
-                WebRequest.RegisterPrefix("http://UpdateIncomingTest:3000", new TestWebRequestCreate());
-
-                TestWebRequestCreate.MockHttpWebRequestWithGivenResponseCode(HttpStatusCode.OK,
-                    "{ \"phoneNumber\" : \"+13122290330\", \"alias\" : \"new incoming number 1\", \"revision\" : 2, \"dateCreated\" : \"Fri, 11 Nov 2016 13:42:25 GMT\", \"dateUpdated\" : \"Wed, 01 Feb 2017 19:33:00 GMT\", \"phoneNumberId\" : \"PN3816047eda7b012ea2cf6d5e0697a2474363dcd6\", \"region\" : \"Illinois\", \"country\" : \"US\", \"voiceEnabled\" : true, \"smsEnabled\" : true, \"applicationId\" : \"APabfb2706f416285399ae6bdd96d07b3416f6d4ce\", \"uri\" : \"/Accounts/AC907d7e328b3a5b402fa908857e047a243a8949b1/IncomingPhoneNumbers/PN3816047eda7b012ea2cf6d5e0697a2474363dcd6\", \"accountId\" : \"AC907d7e328b3a5b402fa908857e047a243a8949b1\"} ");
-                IncomingPhoneNumberOptions options = new IncomingPhoneNumberOptions();
-                options.setAlias("new incoming number 1");
-                options.setApplicationId("APabfb2706f416285399ae6bdd96d07b3416f6d4ce");
-                options.setRequestId("RQ1234567890123456789012345678901234567890");
-                IncomingPhoneNumber num = requester.update("PN3816047eda7b012ea2cf6d5e0697a2474363dcd6", options);
-
-                Assert.IsNotNull(num);
-                Assert.AreEqual(num.getAlias, "new incoming number 1");
-                Assert.AreEqual(num.getPhoneNumberId, "PN3816047eda7b012ea2cf6d5e0697a2474363dcd6");
-                Assert.AreEqual(num.getApplicationId, "APabfb2706f416285399ae6bdd96d07b3416f6d4ce");
-            }
-            catch (FreeClimbException pe)
-            {
-                Assert.Fail(pe.Message);
-            }
-        }
-
-        [TestMethod]
         public void CreateIncomingNumberTest()
         {
             try
@@ -238,41 +203,6 @@ namespace freeclimb_cs_sdk_test.api.phonenumber
                 IncomingPhoneNumberOptions options = new IncomingPhoneNumberOptions();
                 options.setAlias("incoming number 1");
                 options.setApplicationId("APbd38defccbf9a1db844551aa8ae0531a876bc84b");
-                IncomingPhoneNumber num = requester.create("+13122290330", options);
-
-                Assert.IsNotNull(num);
-                Assert.AreEqual(num.getAlias, "incoming number 1");
-                Assert.AreEqual(num.getPhoneNumber, "+13122290330");
-                Assert.IsNotNull(num.getPhoneNumberId);
-            }
-            catch (FreeClimbException pe)
-            {
-                Assert.Fail(pe.Message);
-            }
-        }
-
-        [TestMethod]
-        public void CreateIncomingNumberWithRequestIdTest()
-        {
-            try
-            {
-                IncomingPhoneNumbersRequester requester = new IncomingPhoneNumbersRequester("AC907d7e328b3a5b402fa908857e047a243a8949b1", "2c78e8a8d1033b77902758e584ad5fc4a1c5ee02", "AC907d7e328b3a5b402fa908857e047a243a8949b1");
-
-                Type type = typeof(APIRequester);
-                FieldInfo fieldInfo = type.GetField("freeClimbUrl", BindingFlags.NonPublic | BindingFlags.Instance);
-                if (fieldInfo != null)
-                {
-                    fieldInfo.SetValue(requester, "http://CreateIncomingTest:3000");
-                }
-
-                WebRequest.RegisterPrefix("http://CreateIncomingTest:3000", new TestWebRequestCreate());
-
-                TestWebRequestCreate.MockHttpWebRequestWithGivenResponseCode(HttpStatusCode.OK,
-                    "{ \"phoneNumber\" : \"+13122290330\", \"alias\" : \"incoming number 1\", \"revision\" : 2, \"dateCreated\" : \"Fri, 11 Nov 2016 13:42:25 GMT\", \"dateUpdated\" : \"Wed, 01 Feb 2017 19:33:00 GMT\", \"phoneNumberId\" : \"PN3816047eda7b012ea2cf6d5e0697a2474363dcd6\", \"region\" : \"Illinois\", \"country\" : \"US\", \"voiceEnabled\" : true, \"smsEnabled\" : true, \"applicationId\" : \"APbd38defccbf9a1db844551aa8ae0531a876bc84b\", \"uri\" : \"/Accounts/AC907d7e328b3a5b402fa908857e047a243a8949b1/IncomingPhoneNumbers/PN3816047eda7b012ea2cf6d5e0697a2474363dcd6\", \"accountId\" : \"AC907d7e328b3a5b402fa908857e047a243a8949b1\"} ");
-                IncomingPhoneNumberOptions options = new IncomingPhoneNumberOptions();
-                options.setAlias("incoming number 1");
-                options.setApplicationId("APbd38defccbf9a1db844551aa8ae0531a876bc84b");
-                options.setRequestId("RQ1234567890123456789012345678901234567890");
                 IncomingPhoneNumber num = requester.create("+13122290330", options);
 
                 Assert.IsNotNull(num);

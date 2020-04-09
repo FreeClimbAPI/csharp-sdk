@@ -12,7 +12,7 @@ namespace com.freeclimb.api.phonenumber
     /// <summary>
     /// The class represents the common incomingPhoneNumber optional fields to use when updating and creating incomingPhoneNumbers.
     /// </summary>
-    public class IncomingPhoneNumberOptions:CommonFields
+    public class IncomingPhoneNumberOptions
     {
         /// <summary>
         /// Alias of number
@@ -66,11 +66,7 @@ namespace com.freeclimb.api.phonenumber
             {
                 props.Add("applicationId", getApplicationId);
             }
-            IDictionary<string, object> baseDict = base.toDict();
-            foreach (string key in baseDict.Keys)
-            {
-                props.Add(key, baseDict[key]);
-            }
+            
             return props;
         }
 

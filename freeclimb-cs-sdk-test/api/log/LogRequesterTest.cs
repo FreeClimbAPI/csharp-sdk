@@ -114,44 +114,5 @@ namespace freeclimb_cs_sdk_test.api.log
             }
         }
 
-        [TestMethod]
-        public void GetLogListUsingRequestIdTest()
-        {
-            try
-            {
-                LogsRequester requester = new LogsRequester("AC907d7e328b3a5b402fa908857e047a243a8949b1", "2c78e8a8d1033b77902758e584ad5fc4a1c5ee02", "AC907d7e328b3a5b402fa908857e047a243a8949b1");
-
-                Type type = typeof(APIRequester);
-                FieldInfo fieldInfo = type.GetField("freeClimbUrl", BindingFlags.NonPublic | BindingFlags.Instance);
-                if (fieldInfo != null)
-                {
-                    fieldInfo.SetValue(requester, "http://GetLogListTest:3000");
-                }
-
-                WebRequest.RegisterPrefix("http://GetLogListTest:3000", new TestWebRequestCreate());
-
-                string requestId = "RQ1234567890123456789012345678901234567890";
-                TestWebRequestCreate.MockHttpWebRequestWithGivenResponseCode(HttpStatusCode.OK,
-                    "{\"total\":1,\"start\":0,\"end\":0,\"page\":0,\"numPages\":1,\"pageSize\":2,\"nextPageUri\":\"/Accounts/ACabe7063197551fe51671f9ac3a9708e9dad51c4d/Applications&cursor=492dc883a811bd0204204ea9047122f93a2788a2\", \"logs\" : [{\"hostname\":\"spv07vcs10\",\"subsystem\":\"vcsserver\",\"timestamp\":1485450178603416,\"scope\":\"public\",\"level\":\"info\",\"accountId\":\"AC907d7e328b3a5b402fa908857e047a243a8949b1\",\"requestId\":\""+requestId+"\",\"callId\":\"CA5c8c6d7df5d19096eb71ce516a39ade6aa1b0d4f\",\"message\":\"Customer Response 200 : POST http://172.29.11.10/FreeClimbSurvey/FreeClimbSurvey/NextQuestion\",\"metadata\":[{\"GetSpeech\":{\"actionUrl\":\"http://172.29.11.10/FreeClimbSurvey/FreeClimbSurvey/HandleQuestionResponse\",\"grammarFile\":\"http://172.29.11.10/FreeClimbSurvey/Grammars/969d88d2-8edb-4ad9-8436-aa0c4d268f56.grxml\",\"grammarRule\":\"Choices\",\"grammarType\":\"URL\",\"noInputTimeoutMs\":4000,\"prompts\":[{\"Say\":{\"text\":\"what is your favorite color\"}}],\"recognitionTimeoutMs\":5000}}]}]}");
-                LogSearchFilters filters = new LogSearchFilters();
-                filters.setRequestId(requestId);
-                LogList logList = requester.get(filters);
-
-                Assert.IsNotNull(logList);
-
-                Assert.AreEqual(logList.getLocalSize, 1);
-                Assert.AreEqual((logList.export()).Count, 1);
-
-                Log log = logList.get(0) as Log;
-
-                Assert.IsNotNull(log);
-                Assert.AreEqual(log.getRequestId, requestId);
-            }
-            catch (FreeClimbException pe)
-            {
-                Assert.Fail(pe.Message);
-            }
-        }
-
     }
 }

@@ -60,7 +60,6 @@
     <Compile Include="api\call\CallsSearchFilters.cs" />
     <Compile Include="api\call\CallOrigOptions.cs" />
     <Compile Include="api\call\CallTermOptions.cs" />
-    <Compile Include="api\CommonFields.cs" />
     <Compile Include="api\conference\Conference.cs" />
     <Compile Include="api\conference\ConferenceList.cs" />
     <Compile Include="api\conference\ConferenceCreateOptions.cs" />
@@ -96,7 +95,6 @@
     <Compile Include="api\phonenumber\IncomingPhoneNumbersSearchFilter.cs" />
     <Compile Include="api\phonenumber\NewIncomingPhoneNumber.cs" />
     <Compile Include="api\phonenumber\NewPhoneNumber.cs" />
-    <Compile Include="api\queue\QueueMemberOptions.cs" />
     <Compile Include="EAccountStatus.cs" />
     <Compile Include="EAccountType.cs" />
     <Compile Include="EConferenceStatus.cs" />
@@ -159,6 +157,7 @@
     <Compile Include="percl\Play.cs" />
     <Compile Include="percl\PlayEarlyMedia.cs" />
     <Compile Include="percl\Redirect.cs" />
+    <Compile Include="percl\Reject.cs" />
     <Compile Include="percl\RemoveFromConference.cs" />
     <Compile Include="percl\SendDigits.cs" />
     <Compile Include="percl\SetTalk.cs" />
