@@ -22,6 +22,9 @@ namespace com.freeclimb.percl
         [JsonProperty(PropertyName = "conferenceId")]
         private string conferenceId;
 
+        [JsonProperty(PropertyName = "privacyMode")]
+        private EBool privacyMode = EBool.NONE;
+
         /// <summary>
 	    /// Helper method to build a JSON string from a Play instance.
         /// </summary>
@@ -82,6 +85,20 @@ namespace com.freeclimb.percl
         public void setConferenceId(string val) { this.conferenceId = val; }
 
         /// <summary>
+        /// Retrieve the privacyMode value.
+        /// </summary>
+        /// <returns>The privacyMode value of the object.</returns>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public EBool getPrivacyMode { get { return this.privacyMode; } }
+
+        /// <summary>
+        /// Set the privacyMode value.
+        /// </summary>
+        /// <param name="val">privacyMode value.</param>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public void setPrivacyMode(EBool val) { this.privacyMode = val; }
+
+        /// <summary>
         /// Creates Play PerCL with require fields. 
         /// </summary>
         /// <param name="file">File to play.</param>
@@ -115,6 +132,12 @@ namespace com.freeclimb.percl
             if (getLoop != int.MinValue)
             {
                 props.Add("loop", getLoop);
+            }
+
+            if (getPrivacyMode != EBool.NONE)
+            {
+                EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getPrivacyMode);
+                props.Add("privacyMode", bool.Parse(attr.Value));
             }
 
             IDictionary<string, object> command = new Dictionary<string, object>();

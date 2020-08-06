@@ -38,11 +38,12 @@ namespace freeclimb_cs_sdk_test.percl
             say.setText("goodbye");
 
             getDigits.setPrompts(say);
+            getDigits.setPrivacyMode(true);
 
             string json = getDigits.toJson();
 
             Assert.IsNotNull(json);
-            Assert.AreEqual(json, "{\"GetDigits\":{\"actionUrl\":\"http://foo.com\",\"prompts\":[{\"Say\":{\"text\":\"hello\",\"language\":\"en-US\"}},{\"Pause\":{\"length\":1000}},{\"Say\":{\"text\":\"goodbye\",\"language\":\"en-US\"}}]}}");
+            Assert.AreEqual(json, "{\"GetDigits\":{\"actionUrl\":\"http://foo.com\",\"prompts\":[{\"Say\":{\"text\":\"hello\",\"language\":\"en-US\"}},{\"Pause\":{\"length\":1000}},{\"Say\":{\"text\":\"goodbye\",\"language\":\"en-US\"}}],\"privacyMode\":true}}");
         }
     }
 }

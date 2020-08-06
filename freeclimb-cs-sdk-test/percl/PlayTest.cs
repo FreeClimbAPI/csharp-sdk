@@ -24,11 +24,12 @@ namespace freeclimb_cs_sdk_test.percl
             Play play = new Play("http://foo.com/greeting.wav");
             play.setLoop(1);
             play.setConferenceId("123");
+            play.setPrivacyMode(true);
 
             string json = play.toJson();
 
             Assert.IsNotNull(json);
-            Assert.AreEqual(json, "{\"Play\":{\"file\":\"http://foo.com/greeting.wav\",\"conferenceId\":\"123\",\"loop\":1}}");
+            Assert.AreEqual(json, "{\"Play\":{\"file\":\"http://foo.com/greeting.wav\",\"conferenceId\":\"123\",\"loop\":1,\"privacyMode\":true}}");
         }
     }
 }

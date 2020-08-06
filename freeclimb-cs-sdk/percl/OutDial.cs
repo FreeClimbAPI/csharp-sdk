@@ -46,6 +46,9 @@ namespace com.freeclimb.percl
         [JsonProperty(PropertyName = "statusCallbackUrl")]
         private string statusCallbackUrl = string.Empty;
 
+        [JsonProperty(PropertyName = "privacyMode")]
+        private EBool privacyMode = EBool.NONE;
+
         /// <summary>
 	    /// Helper method to build a JSON string from an OutDial instance.
         /// </summary>
@@ -180,6 +183,20 @@ namespace com.freeclimb.percl
         public void setStatusCallbackUrl(string val) { this.statusCallbackUrl = val; }
 
         /// <summary>
+        /// Retrieve the privacyMode value.
+        /// </summary>
+        /// <returns>The privacyMode value of the object.</returns>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public EBool getPrivacyMode { get { return this.privacyMode; } }
+
+        /// <summary>
+        /// Set the privacyMode value.
+        /// </summary>
+        /// <param name="val">privacyMode value.</param>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public void setPrivacyMode(EBool val) { this.privacyMode = val; }
+
+        /// <summary>
         /// Creates OutDial PerCL with require fields. 
         /// </summary>
         /// <param name="destination">Outbound destination.</param>
@@ -248,6 +265,12 @@ namespace com.freeclimb.percl
             if (String.IsNullOrEmpty(getStatusCallbackUrl) == false)
             {
                 props.Add("statusCallbackUrl", getStatusCallbackUrl);
+            }
+
+            if (getPrivacyMode != EBool.NONE)
+            {
+                EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getPrivacyMode);
+                props.Add("privacyMode", bool.Parse(attr.Value));
             }
 
             IDictionary<string, object> command = new Dictionary<string, object>();

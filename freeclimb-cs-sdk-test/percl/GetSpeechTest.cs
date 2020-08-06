@@ -33,11 +33,12 @@ namespace freeclimb_cs_sdk_test.percl
             say.setText("Test");
 
             getSpeech.setPrompts(say);
+            getSpeech.setPrivacyMode(true);
 
             string json = getSpeech.toJson();
 
             Assert.IsNotNull(json);
-            Assert.AreEqual(json, "{\"GetSpeech\":{\"actionUrl\":\"http://foo.com\",\"grammarFile\":\"DIG1\",\"grammarType\":\"BUILTIN\",\"prompts\":[{\"Say\":{\"text\":\"Test\",\"language\":\"en-US\"}}]}}");
+            Assert.AreEqual(json, "{\"GetSpeech\":{\"actionUrl\":\"http://foo.com\",\"grammarFile\":\"DIG1\",\"grammarType\":\"BUILTIN\",\"prompts\":[{\"Say\":{\"text\":\"Test\",\"language\":\"en-US\"}}],\"privacyMode\":true}}");
         }
     }
 }

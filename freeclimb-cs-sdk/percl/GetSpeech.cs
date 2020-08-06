@@ -54,6 +54,9 @@ namespace com.freeclimb.percl
         [JsonProperty(PropertyName = "prompts")]
         private List<IGetSpeechNestable> prompts = new List<IGetSpeechNestable>();
 
+        [JsonProperty(PropertyName = "privacyMode")]
+        private EBool privacyMode = EBool.NONE;
+
         /// <summary>
         /// Helper method to build a JSON string from a GetSpeech instance.
         /// </summary>
@@ -226,6 +229,20 @@ namespace com.freeclimb.percl
         public void setSpeechIncompleteTimeoutMs(int val) { this.speechIncompleteTimeoutMs = val; }
 
         /// <summary>
+        /// Retrieve the privacyMode value.
+        /// </summary>
+        /// <returns>The privacyMode value of the object.</returns>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public EBool getPrivacyMode { get { return this.privacyMode; } }
+
+        /// <summary>
+        /// Set the privacyMode value.
+        /// </summary>
+        /// <param name="val">privacyMode value.</param>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public void setPrivacyMode(EBool val) { this.privacyMode = val; }
+
+        /// <summary>
         /// Retrieve the IGetSpeechNestable list reference.
         /// </summary>
         /// <returns>The IGetSpeechNestable list reference of object.</returns>
@@ -322,6 +339,12 @@ namespace com.freeclimb.percl
             if (this.nBestListLength != int.MinValue)
             {
                 props.Add("nBestListLength", this.nBestListLength);
+            }
+
+            if (getPrivacyMode != EBool.NONE)
+            {
+                EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getPrivacyMode);
+                props.Add("privacyMode", bool.Parse(attr.Value));
             }
 
             List<object> promptList = new List<object>();

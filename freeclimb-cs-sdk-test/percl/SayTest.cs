@@ -26,11 +26,12 @@ namespace freeclimb_cs_sdk_test.percl
             say.setLanguage(ELanguage.SpanishMX);
             say.setLoop(1);
             say.setConferenceId("123");
+            say.setPrivacyMode(true);
 
             string json = say.toJson();
 
             Assert.IsNotNull(json);
-            Assert.AreEqual(json, "{\"Say\":{\"text\":\"hello world\",\"conferenceId\":\"123\",\"language\":\"es-MX\",\"loop\":1}}");
+            Assert.AreEqual(json, "{\"Say\":{\"text\":\"hello world\",\"conferenceId\":\"123\",\"language\":\"es-MX\",\"loop\":1,\"privacyMode\":true}}");
         }
     }
 }
