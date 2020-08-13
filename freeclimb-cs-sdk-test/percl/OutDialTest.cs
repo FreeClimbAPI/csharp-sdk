@@ -18,11 +18,12 @@ namespace freeclimb_cs_sdk_test.percl
             outdial.setTimeout(1000);
             outdial.setIfMachineUrl("http://foo.com/ifMachineUrl");
             outdial.setStatusCallbackUrl("http://foo.com/statusCallbackUrl");
+            outdial.setPrivacyMode(true);
 
             string json = outdial.toJson();
 
             Assert.IsNotNull(json);
-            Assert.AreEqual(json, "{\"OutDial\":{\"destination\":\"+18475971234\",\"callConnectUrl\":\"http://foo.com/callConnectUrl\",\"sendDigits\":\"12{2}34{4}#\",\"timeout\":1000,\"ifMachine\":\"hangup\",\"actionUrl\":\"http://foo.com/actionUrl\",\"ifMachineUrl\":\"http://foo.com/ifMachineUrl\",\"statusCallbackUrl\":\"http://foo.com/statusCallbackUrl\"}}");
+            Assert.AreEqual(json, "{\"OutDial\":{\"destination\":\"+18475971234\",\"callConnectUrl\":\"http://foo.com/callConnectUrl\",\"sendDigits\":\"12{2}34{4}#\",\"timeout\":1000,\"ifMachine\":\"hangup\",\"actionUrl\":\"http://foo.com/actionUrl\",\"ifMachineUrl\":\"http://foo.com/ifMachineUrl\",\"statusCallbackUrl\":\"http://foo.com/statusCallbackUrl\",\"privacyMode\":true}}");
         }
     }
 }

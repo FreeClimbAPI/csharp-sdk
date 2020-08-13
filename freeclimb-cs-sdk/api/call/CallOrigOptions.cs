@@ -30,6 +30,9 @@ namespace com.freeclimb.api.call
         [JsonProperty(PropertyName = "parentCallId")]
         private string parentCallId;
 
+        [JsonProperty(PropertyName = "privacyMode")]
+        private EBool privacyMode = EBool.NONE;
+
         /// <summary>
 	    /// Helper method to build a CallOrigOptions object from the JSON string.
         /// </summary>
@@ -122,6 +125,20 @@ namespace com.freeclimb.api.call
         public void setParentCallId(string val) { this.parentCallId = val; }
 
         /// <summary>
+        /// Retrieve the privacyMode value.
+        /// </summary>
+        /// <returns>The privacyMode value of the object.</returns>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public EBool getPrivacyMode { get { return this.privacyMode; } }
+
+        /// <summary>
+        /// Set the privacyMode value.
+        /// </summary>
+        /// <param name="val">privacyMode value.</param>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public void setPrivacyMode(EBool val) { this.privacyMode = val; }
+
+        /// <summary>
         /// Retrieve the KVP Dictionary for the CallOrigOptions instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
@@ -149,6 +166,12 @@ namespace com.freeclimb.api.call
             if (string.IsNullOrEmpty(getParentCallId) == false)
             {
                 props.Add("parentCallId", getParentCallId);
+            }
+
+            if (getPrivacyMode != EBool.NONE)
+            {
+                EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getPrivacyMode);
+                props.Add("privacyMode", bool.Parse(attr.Value));
             }
 
             return props;

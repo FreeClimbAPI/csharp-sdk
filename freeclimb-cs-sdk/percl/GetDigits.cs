@@ -39,6 +39,9 @@ namespace com.freeclimb.percl
         [JsonProperty(PropertyName = "prompts")]
         private List<IGetDigitsNestable> prompts = new List<IGetDigitsNestable>();
 
+        [JsonProperty(PropertyName = "privacyMode")]
+        private EBool privacyMode = EBool.NONE;
+
         /// <summary>
         /// Helper method to build a JSON string from a GetDigits instance.
         /// </summary>
@@ -151,6 +154,20 @@ namespace com.freeclimb.percl
         public void setActionUrl(string val) { this.actionUrl = val; }
 
         /// <summary>
+        /// Retrieve the privacyMode value.
+        /// </summary>
+        /// <returns>The privacyMode value of the object.</returns>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public EBool getPrivacyMode { get { return this.privacyMode; } }
+
+        /// <summary>
+        /// Set the privacyMode value.
+        /// </summary>
+        /// <param name="val">privacyMode value.</param>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public void setPrivacyMode(EBool val) { this.privacyMode = val; }
+
+        /// <summary>
         /// Retrieve the IGetDigitsNestable list reference.
         /// </summary>
         /// <returns>The IGetDigitsNestable list reference of object.</returns>
@@ -192,6 +209,12 @@ namespace com.freeclimb.percl
             {
                 EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getFlushBuffer);
                 props.Add("flushBuffer", bool.Parse(attr.Value));
+            }
+
+            if (getPrivacyMode != EBool.NONE)
+            {
+                EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getPrivacyMode);
+                props.Add("privacyMode", bool.Parse(attr.Value));
             }
 
             if (this.maxDigits != int.MinValue)
