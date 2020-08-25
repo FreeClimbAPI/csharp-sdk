@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using com.freeclimb.percl;
 using com.freeclimb.api;
+using com.freeclimb;
 
 namespace freeclimb_cs_sdk_test.percl
 {
@@ -24,7 +25,7 @@ namespace freeclimb_cs_sdk_test.percl
             Play play = new Play("http://foo.com/greeting.wav");
             play.setLoop(1);
             play.setConferenceId("123");
-            play.setPrivacyMode(true);
+            play.setPrivacyMode(EBool.True);
 
             string json = play.toJson();
 

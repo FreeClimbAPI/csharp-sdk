@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using com.freeclimb.percl;
+using com.freeclimb;
 
 namespace freeclimb_cs_sdk_test.percl
 {
@@ -24,7 +25,7 @@ namespace freeclimb_cs_sdk_test.percl
             SendDigits sendDigits = new SendDigits();
             sendDigits.setDigits("12{2}34{4}#");
             sendDigits.setPauseMs(1000);
-            sendDigits.setPrivacyMode(true);
+            sendDigits.setPrivacyMode(EBool.True);
 
             string json = sendDigits.toJson();
 
