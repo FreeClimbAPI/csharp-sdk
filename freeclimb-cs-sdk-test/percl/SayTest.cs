@@ -26,7 +26,7 @@ namespace freeclimb_cs_sdk_test.percl
             say.setLanguage(ELanguage.SpanishMX);
             say.setLoop(1);
             say.setConferenceId("123");
-            say.setPrivacyMode(true);
+            say.setPrivacyMode(EBool.True);
 
             string json = say.toJson();
 

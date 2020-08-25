@@ -18,7 +18,7 @@ namespace freeclimb_cs_sdk_test.percl
             outdial.setTimeout(1000);
             outdial.setIfMachineUrl("http://foo.com/ifMachineUrl");
             outdial.setStatusCallbackUrl("http://foo.com/statusCallbackUrl");
-            outdial.setPrivacyMode(true);
+            outdial.setPrivacyMode(EBool.True);
 
             string json = outdial.toJson();
 
