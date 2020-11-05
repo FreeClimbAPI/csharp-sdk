@@ -71,4 +71,4 @@ None
 - Initial Release
 
 
-[Unreleased]: https://gitlab.vailsys.com/vail-cloud-services/fc-boilerplates/javascript-sdk/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/FreeClimbAPI/csharp-sdk/compare/v1.0.1...HEAD
