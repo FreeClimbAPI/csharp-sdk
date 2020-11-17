@@ -32,4 +32,4 @@ The C# SDK uses standard [XML Documentation Comments](https://docs.microsoft.com
 To build the documentation, install docfx and run `docfx docs/docfx.json --serve`.
 
 ## Getting Help
-If you are experiencing difficulties, contact our support team at [support@freeclimb.com](mailto:support@freeclimb.com).
+If you are experiencing difficulties, [contact support](https://freeclimb.com/support).
