@@ -32,6 +32,9 @@ namespace com.freeclimb.percl
         [JsonProperty(PropertyName = "autoStart")]
         private EBool autoStart = EBool.NONE;
 
+        [JsonProperty(PropertyName = "privacyMode")]
+        private EBool privacyMode = EBool.NONE;
+
         /// <summary>
 	    /// Helper method to build a JSON string from a RecordUtterance instance.
         /// </summary>
@@ -134,6 +137,20 @@ namespace com.freeclimb.percl
         public void setAutoStart(EBool val) { this.autoStart = val; }
 
         /// <summary>
+        /// Retrieve the privacyMode value.
+        /// </summary>
+        /// <returns>The privacyMode value of the object.</returns>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public EBool getPrivacyMode { get { return this.privacyMode; } }
+
+        /// <summary>
+        /// Set the privacyMode value.
+        /// </summary>
+        /// <param name="val">privacyMode value.</param>
+        /// <see cref="EBool">Bool enumeration.</see>
+        public void setPrivacyMode(EBool val) { this.privacyMode = val; }
+
+        /// <summary>
         /// Creates RecordUtterance PerCL with require fields. 
         /// </summary>
         /// <param name="actionUrl">Url to retrieve actions.</param>
@@ -185,6 +202,12 @@ namespace com.freeclimb.percl
             {
                 EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getAutoStart);
                 props.Add("autoStart", bool.Parse(attr.Value));
+            }
+
+            if (getPrivacyMode != EBool.NONE)
+            {
+                EnumMemberAttribute attr = EnumHelper.GetAttributeOfType<EnumMemberAttribute>(getPrivacyMode);
+                props.Add("privacyMode", bool.Parse(attr.Value));
             }
 
             IDictionary<string, object> command = new Dictionary<string, object>();

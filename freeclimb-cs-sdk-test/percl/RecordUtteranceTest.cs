@@ -28,11 +28,12 @@ namespace freeclimb_cs_sdk_test.percl
             recordUtterance.setFinishOnKey(EFinishOnKey.Pound);
             recordUtterance.setPlayBeep(com.freeclimb.EBool.True);
             recordUtterance.setAutoStart(com.freeclimb.EBool.False);
+            recordUtterance.setPrivacyMode(com.freeclimb.EBool.True);
 
             string json = recordUtterance.toJson();
 
             Assert.IsNotNull(json);
-            Assert.AreEqual(json, "{\"RecordUtterance\":{\"actionUrl\":\"http://foo.com/handleRecording.php\",\"silenceTimeoutMs\":2500,\"finishOnKey\":\"#\",\"maxLengthSec\":60,\"playBeep\":true,\"autoStart\":false}}");
+            Assert.AreEqual(json, "{\"RecordUtterance\":{\"actionUrl\":\"http://foo.com/handleRecording.php\",\"silenceTimeoutMs\":2500,\"finishOnKey\":\"#\",\"maxLengthSec\":60,\"playBeep\":true,\"autoStart\":false,\"privacyMode\":true}}");
         }
     }
 }
