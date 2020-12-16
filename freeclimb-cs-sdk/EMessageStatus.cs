@@ -32,7 +32,16 @@ namespace com.freeclimb
         Received,
 
         [EnumMember(Value = "undelivered")]
-        Undelivered
+        Undelivered,
+
+        [EnumMember(Value = "expired")]
+        Expired,
+
+        [EnumMember(Value = "deleted")]
+        Deleted,
+
+        [EnumMember(Value = "unknown")]
+        Unknown
 #pragma warning restore 1591 
     }
 }
