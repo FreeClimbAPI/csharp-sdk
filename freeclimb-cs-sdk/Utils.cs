@@ -73,7 +73,7 @@ namespace com.freeclimb
                     {
                         if (!Int32.TryParse(sigElems[i + 1], out ts))
                         {
-                            throw new FreeClimbException(String.Format("{0} bad timestamp supplied in header", sigElems[1]));
+                            throw new FreeClimbException(String.Format("{0} bad timestamp supplied in header", sigElems[i+1]));
                         }
                         tsStr = sigElems[i + 1];
                     }
