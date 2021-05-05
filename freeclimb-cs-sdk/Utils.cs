@@ -22,7 +22,8 @@ namespace com.freeclimb
         /// <exception cref="FreeClimbException">Thrown upon failed request.</exception>
         public static bool verifyRequest(string header, Stream requestBody, string signingSecret, int tolerance = defaultToleranceMs)
         {
-
+            //Defensive move, saving the current position
+            //of the stream just in case the caller needs it back in the same spot
             var startPos = requestBody.Position;
 
             MemoryStream localBody = new MemoryStream();
@@ -30,6 +31,7 @@ namespace com.freeclimb
             reader.BaseStream.Seek(0, SeekOrigin.Begin);
             var bodyStr = reader.ReadToEnd();
 
+            //Restore the position in the stream
             reader.BaseStream.Position = startPos;
 
             return VerifyRequestV1(bodyStr, header, signingSecret, tolerance);
