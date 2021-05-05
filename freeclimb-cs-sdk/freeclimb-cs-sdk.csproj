@@ -200,6 +200,7 @@
     <Compile Include="webhooks\StatusCallback.cs" />
     <Compile Include="webhooks\FreeClimbRequest.cs" />
     <Compile Include="webhooks\VoiceRequest.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
