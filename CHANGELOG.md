@@ -6,6 +6,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 None
+<a name="2.1.2"></a>
+## [3.0.0] - 2021-05-06
+### Added
+- Add new `Utils` file
+- Add API to verify a signature
 
 <a name="2.1.2"></a>
 ## [2.1.2] - 2020-12-16
