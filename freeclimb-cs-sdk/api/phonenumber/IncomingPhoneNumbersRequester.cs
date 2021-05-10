@@ -21,9 +21,9 @@ namespace com.freeclimb.api.phonenumber
         /// the rest of the features of the FreeClimbClient.
         /// </summary>
         /// <param name="credAccountId">The accountId to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
-        /// <param name="credAuthToken">The authToken to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
+        /// <param name="credApiKey">The apiKey to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
         /// <param name="accountId">The accountId to act as. This can be the same as the credAccountId or the accountId of a subaccount of the credAccountId.</param>
-        public IncomingPhoneNumbersRequester(string credAccountId, string credAuthToken, string accountId) : base(credAccountId, credAuthToken)
+        public IncomingPhoneNumbersRequester(string credAccountId, string credApiKey, string accountId) : base(credAccountId, credApiKey)
         {
             this.path = "/Accounts/" + accountId + "/IncomingPhoneNumbers";
         }
@@ -71,7 +71,7 @@ namespace com.freeclimb.api.phonenumber
                 throw new FreeClimbException("Failed to get incomingPhoneNumber list");
             }
 
-            IncomingPhoneNumberList list = new IncomingPhoneNumberList(this.getAccountId, this.getAuthToken, json);
+            IncomingPhoneNumberList list = new IncomingPhoneNumberList(this.getAccountId, this.getApiKey, json);
 
             return list;
         }

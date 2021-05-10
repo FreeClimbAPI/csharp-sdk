@@ -18,7 +18,7 @@ namespace com.freeclimb.api
     public class FreeClimbClient
     {
         private readonly string credAccountId;
-        private readonly string credAuthToken;
+        private readonly string credApiKey;
         private readonly string accountId;
 
         private readonly CallsRequester calls;
@@ -39,39 +39,39 @@ namespace com.freeclimb.api
         /// account).
         /// </summary>
         /// <param name="credAccountId">The Account ID to use in your credentials for the FreeClimb API.</param>
-        /// <param name="credAuthToken">The Auth Token to use in your credentials for the FreeClimb API. This should be the matching Auth Token to the credAccountId parameter.</param>
+        /// <param name="credApiKey">The API key to use in your credentials for the FreeClimb API. This should be the matching API key to the credAccountId parameter.</param>
         /// <param name="accountId">The Account ID of the account you want to act as. This should either be the same Account ID as credAccountId or the id of a sub-account to the credAccountId's account.</param>
         /// <exception cref="FreeClimbException">Thrown upon failed request.</exception>
-        public FreeClimbClient(string credAccountId, string credAuthToken, string accountId)
+        public FreeClimbClient(string credAccountId, string credApiKey, string accountId)
         {
 		    this.credAccountId = credAccountId;
-		    this.credAuthToken = credAuthToken;
+		    this.credApiKey = credApiKey;
 		    this.accountId = accountId;
 
-            calls = new CallsRequester(credAccountId, credAuthToken, accountId);
-            recordings = new RecordingsRequester(credAccountId, credAuthToken, accountId);
-            conferences = new ConferencesRequester(credAccountId, credAuthToken, accountId);
-            queues = new QueuesRequester(credAccountId, credAuthToken, accountId);
-            applications = new ApplicationsRequester(credAccountId, credAuthToken, accountId);
-            logs = new LogsRequester(credAccountId, credAuthToken, accountId);
-            availablePhoneNumbers = new AvailablePhoneNumbersRequester(credAccountId, credAuthToken, accountId);
-            incomingPhoneNumbers = new IncomingPhoneNumbersRequester(credAccountId, credAuthToken, accountId);
-            callingNumbers = new CallingNumbersRequester(credAccountId, credAuthToken, accountId);
-            accounts = new AccountsRequester(credAccountId, credAuthToken);
-            messages = new MessagesRequester(credAccountId, credAuthToken, accountId);
+            calls = new CallsRequester(credAccountId, credApiKey, accountId);
+            recordings = new RecordingsRequester(credAccountId, credApiKey, accountId);
+            conferences = new ConferencesRequester(credAccountId, credApiKey, accountId);
+            queues = new QueuesRequester(credAccountId, credApiKey, accountId);
+            applications = new ApplicationsRequester(credAccountId, credApiKey, accountId);
+            logs = new LogsRequester(credAccountId, credApiKey, accountId);
+            availablePhoneNumbers = new AvailablePhoneNumbersRequester(credAccountId, credApiKey, accountId);
+            incomingPhoneNumbers = new IncomingPhoneNumbersRequester(credAccountId, credApiKey, accountId);
+            callingNumbers = new CallingNumbersRequester(credAccountId, credApiKey, accountId);
+            accounts = new AccountsRequester(credAccountId, credApiKey);
+            messages = new MessagesRequester(credAccountId, credApiKey, accountId);
         }
 
         /// <summary>
         /// This constructor allows one to create a FreeClimbClient that authenticates
         /// with one set of credentials and acts as that account.
         /// </summary>
-        /// This Constructor is a shortcut for calling 'FreeClimbClient(credAccountId, credAuthToken, credAccountId)'.
+        /// This Constructor is a shortcut for calling 'FreeClimbClient(credAccountId, credApiKey, credAccountId)'.
         /// <remarks>
         /// </remarks>
         /// <param name="credAccountId">The Account ID to use in your credentials for the FreeClimb API.</param>
-        /// <param name="credAuthToken">The Auth Token to use in your credentials for the FreeClimb API. This should be the matching Auth Token to the credAccountId parameter.</param>       
+        /// <param name="credApiKey">The API key to use in your credentials for the FreeClimb API. This should be the matching API key to the credAccountId parameter.</param>       
         /// <exception cref="FreeClimbException">Thrown upon failed request.</exception>
-        public FreeClimbClient(string credAccountId, string credAuthToken) : this(credAccountId, credAuthToken, credAccountId)
+        public FreeClimbClient(string credAccountId, string credApiKey) : this(credAccountId, credApiKey, credAccountId)
         {}
 
         /// <summary>
@@ -81,10 +81,10 @@ namespace com.freeclimb.api
         public string getCredAccountId { get { return this.credAccountId; } }
 
         /// <summary>
-        /// Retrieve  Auth Token being used to authenticate with the API.
+        /// Retrieve  API key being used to authenticate with the API.
         /// </summary>
-        /// <returns>Auth Token being used to authenticate with the API.</returns>
-        public string getCredAuthToken { get { return this.credAuthToken; } }
+        /// <returns>API key being used to authenticate with the API.</returns>
+        public string getCredApiKey { get { return this.credApiKey; } }
 
         /// <summary>
         /// Retrieve  Account ID of the account that this client is acting as.
