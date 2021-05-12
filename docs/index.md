@@ -14,7 +14,7 @@ using com.freeclimb.api;
 using com.freeclimb.api.call;
 ...
 
-FreeClimbClient client = new FreeClimbClient("ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "your_auth_token");
+FreeClimbClient client = new FreeClimbClient("ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "your_api_key");
 string to = "your_phone_number";
 string from = "a_freeclimb_phone_number_in_your_account";
 // the last (null) parameter is a URL that is called with status on your call (like when it ends). Not used in this example

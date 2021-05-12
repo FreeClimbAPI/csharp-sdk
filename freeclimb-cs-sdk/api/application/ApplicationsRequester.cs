@@ -21,9 +21,9 @@ namespace com.freeclimb.api.application
         /// the rest of the features of the FreeClimbClient.
         /// </summary>
         /// <param name="credAccountId">The accountId to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
-        /// <param name="credAuthToken">The authToken to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
+        /// <param name="credApiKey">The apiKey to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
         /// <param name="accountId">The accountId to act as. This can be the same as the credAccountId or the accountId of a subaccount of the credAccountId.</param>
-        public ApplicationsRequester(string credAccountId, string credAuthToken, string accountId) : base(credAccountId, credAuthToken)
+        public ApplicationsRequester(string credAccountId, string credApiKey, string accountId) : base(credAccountId, credApiKey)
         {
             this.path = "/Accounts/" + accountId + "/Applications";
         }
@@ -71,7 +71,7 @@ namespace com.freeclimb.api.application
                 throw new FreeClimbException("Failed to get application list");
             }
 
-            ApplicationList list = new ApplicationList(this.getAccountId, this.getAuthToken, json);
+            ApplicationList list = new ApplicationList(this.getAccountId, this.getApiKey, json);
 
             return list;
         }

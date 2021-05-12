@@ -6,7 +6,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 None
-<a name="2.1.2"></a>
+
+<a name="3.1.0"></a>
+## [3.1.0] - 2021-05-12
+### Changed
+- Replace any language instance of auth token or similar speech to api key
+
+<a name="3.0.0"></a>
 ## [3.0.0] - 2021-05-06
 ### Added
 - Add new `Utils` file

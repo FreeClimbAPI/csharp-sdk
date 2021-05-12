@@ -17,9 +17,9 @@ namespace com.freeclimb.api.application
         /// Creates a new ApplicationList.
         /// </summary>
         /// <param name="accountId">The accountId to use in requests for subsequent pages.</param>
-        /// <param name="authToken">The authToken to use in requests for subsequent pages.</param>
+        /// <param name="apiKey">The apiKey to use in requests for subsequent pages.</param>
         /// <param name="rawPage">The raw JSON string representing a page of an applications list from the FreeClimb API.</param>
-        public ApplicationList(string accountId, string authToken, string rawPage) : base(accountId, authToken, rawPage, "applications")
+        public ApplicationList(string accountId, string apiKey, string rawPage) : base(accountId, apiKey, rawPage, "applications")
         { }
 
         /// <summary>

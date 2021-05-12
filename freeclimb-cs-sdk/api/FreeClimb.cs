@@ -30,11 +30,11 @@ namespace com.freeclimb.api
         /// Creates a FreeClimbList based on the JSON list returned by the FreeClimb API (rawPage).
         /// </summary>
         /// <param name="accountId">The accountId to use for credentials with the FreeClimb API when pulling new pages of the list.</param>
-        /// <param name="authToken">The authToken to use for credentials with the FreeClimb API when pulling new pages of the list.</param>
+        /// <param name="apiKey">The apiKey to use for credentials with the FreeClimb API when pulling new pages of the list.</param>
         /// <param name="rawPage">The JSON string representing the first page of the list.</param>
         /// <param name="listField">The name of the array of resources within the raw JSON list. For example, for lists of Call resources the field is called "calls" and for Queues it's called "queues".</param>
         /// <exception cref="FreeClimbException">Thrown upon failed request.</exception>
-        protected FreeClimbList(string accountId, string authToken, string rawPage, string listField) : base(accountId, authToken)
+        protected FreeClimbList(string accountId, string apiKey, string rawPage, string listField) : base(accountId, apiKey)
         {
 		    this.list = new LinkedList<IFreeClimbCommon>();
 		    this.listField = listField;

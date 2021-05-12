@@ -28,9 +28,9 @@ namespace com.freeclimb.api.recording
         /// the rest of the features of the FreeClimbClient.
         /// </summary>
         /// <param name="credAccountId">The accountId to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
-        /// <param name="credAuthToken">The authToken to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
+        /// <param name="credApiKey">The apiKey to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
         /// <param name="accountId">The accountId to act as. This can be the same as the credAccountId or the accountId of a subaccount of the credAccountId.</param>
-        public RecordingsRequester(string credAccountId, string credAuthToken, string accountId) : base(credAccountId, credAuthToken)
+        public RecordingsRequester(string credAccountId, string credApiKey, string accountId) : base(credAccountId, credApiKey)
         {
             this.path = "/Accounts/" + accountId + "/Recordings";
         }
@@ -48,10 +48,10 @@ namespace com.freeclimb.api.recording
         public new string getAccountId { get { return base.getAccountId; } }
 
         /// <summary>
-        /// Retrieve  authToken object value.
+        /// Retrieve  apiKey object value.
         /// </summary>
-        /// <returns>The authToken being used for authentication.</returns>
-        public new string getAuthToken { get { return base.getAuthToken; } }
+        /// <returns>The apiKey being used for authentication.</returns>
+        public new string getApiKey { get { return base.getApiKey; } }
 
         /// <summary>
         /// Retrieve  FreeClimb API Url object value.
@@ -78,7 +78,7 @@ namespace com.freeclimb.api.recording
                 throw new FreeClimbException("Failed to get recording list information");
             }
 
-            return new RecordingList(this.getAccountId, this.getAuthToken, json);
+            return new RecordingList(this.getAccountId, this.getApiKey, json);
         }
 
         /// <summary>

@@ -6,11 +6,11 @@ namespace freeclimb_cs_sdk_test
 {
     public class TestRequester : APIRequester
     {
-        public TestRequester(String accountId, String authToken) : base(accountId, authToken)
+        public TestRequester(String accountId, String apiKey) : base(accountId, apiKey)
         { }
 
         public new string getAccountId { get { return base.getAccountId; } }
-        public new string getAuthToken { get { return base.getAuthToken; } }
+        public new string getApiKey { get { return base.getApiKey; } }
         public new string getfreeClimbUrl { get { return base.GetFreeClimbUrl; } }
         public new void setfreeClimbUrl(string newUrl) { base.SetFreeClimbUrl(newUrl); } 
         public new string GET(string path) { return base.GET(path); }

@@ -21,18 +21,18 @@ namespace com.freeclimb.api
         protected static string FREECLIMB_URL = "https://www.freeclimb.com/apiserver";
 
         private string credAccountId;
-        private string credAuthToken;
+        private string credApiKey;
         private string freeClimbUrl;
 
         /// <summary>
         /// Create a new APIRequester.
         /// </summary>
         /// <param name="credAccountId">The accountId to use to authenticate requests.</param>
-        /// <param name="credAuthToken">The authToken to use to authenticate requests.</param>
-        protected APIRequester(string credAccountId, string credAuthToken)
+        /// <param name="credApiKey">The apiKey to use to authenticate requests.</param>
+        protected APIRequester(string credAccountId, string credApiKey)
         { 
 		    this.credAccountId = credAccountId;
-		    this.credAuthToken = credAuthToken;
+		    this.credApiKey = credApiKey;
 		    this.freeClimbUrl = APIRequester.FREECLIMB_URL;
         }
 
@@ -43,10 +43,10 @@ namespace com.freeclimb.api
         protected string getAccountId { get { return this.credAccountId; } }
 
         /// <summary>
-        /// Retrieve  authToken object value.
+        /// Retrieve  apiKey object value.
         /// </summary>
-        /// <returns>The authToken being used for authentication.</returns>
-        protected string getAuthToken { get { return this.credAuthToken; } }
+        /// <returns>The apiKey being used for authentication.</returns>
+        protected string getApiKey { get { return this.credApiKey; } }
 
         /// <summary>
         /// Retrieve  FreeClimb API Url object value.
@@ -218,7 +218,7 @@ namespace com.freeclimb.api
                 request.Method = method;
                 request.ServicePoint.Expect100Continue = false;
                 request.Headers.Add("Authorization",
-                                    String.Format("Basic {0}", Convert.ToBase64String(Encoding.UTF8.GetBytes(String.Format("{0}:{1}", credAccountId, credAuthToken)))));
+                                    String.Format("Basic {0}", Convert.ToBase64String(Encoding.UTF8.GetBytes(String.Format("{0}:{1}", credAccountId, credApiKey)))));
             }
             catch (Exception e)
             {

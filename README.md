@@ -12,7 +12,7 @@ using com.freeclimb.api;
 using com.freeclimb.api.message;
 ...
 
-FreeClimbClient client = new FreeClimbClient("ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "your_auth_token");
+FreeClimbClient client = new FreeClimbClient("ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "your_api_key");
 // Numbers must follow the E.164 formatting standard for phone numbers
 // An example US number in E.164 would be: +1Area_CodePhoneNumber
 // So the US number 202-555-0175 in E.164 formating would be +12025550175

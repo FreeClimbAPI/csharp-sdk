@@ -19,7 +19,7 @@ namespace freeclimb_cs_sdk_test.api.conference
                 ConferencesRequester req = new ConferencesRequester("AC736ca2078721a9a41fb47f07bf40d9e21cb304da", "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5", "AC736ca2078721a9a41fb47f07bf40d9e21cb304da");
 
                 Assert.AreEqual(req.getAccountId, "AC736ca2078721a9a41fb47f07bf40d9e21cb304da");
-                Assert.AreEqual(req.getAuthToken, "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5");
+                Assert.AreEqual(req.getApiKey, "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5");
             }
             catch (FreeClimbException pe)
             {

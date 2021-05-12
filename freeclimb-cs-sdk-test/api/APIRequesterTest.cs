@@ -18,7 +18,7 @@ namespace freeclimb_cs_sdk_test
                 TestRequester req = new TestRequester("AC736ca2078721a9a41fb47f07bf40d9e21cb304da", "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5");
 
                 Assert.AreEqual(req.getAccountId, "AC736ca2078721a9a41fb47f07bf40d9e21cb304da");
-                Assert.AreEqual(req.getAuthToken, "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5");
+                Assert.AreEqual(req.getApiKey, "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5");
             }
             catch (FreeClimbException pe)
             {
@@ -35,7 +35,7 @@ namespace freeclimb_cs_sdk_test
                 req.setfreeClimbUrl("http://freeclimb.com");
 
                 Assert.AreEqual(req.getAccountId, "AC736ca2078721a9a41fb47f07bf40d9e21cb304da");
-                Assert.AreEqual(req.getAuthToken, "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5");
+                Assert.AreEqual(req.getApiKey, "8e3d1c1c519fc761856f8cc825bcfea94d8c58b5");
                 Assert.AreEqual(req.getfreeClimbUrl, "http://freeclimb.com");
             }
             catch (FreeClimbException pe)

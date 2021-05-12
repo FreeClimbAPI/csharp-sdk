@@ -57,8 +57,8 @@ namespace com.freeclimb.api.account
         [JsonProperty(PropertyName = "accountId")]
         private readonly string accountId;
 
-        [JsonProperty(PropertyName = "authToken")]
-        private readonly string authToken;
+        [JsonProperty(PropertyName = "apiKey")]
+        private readonly string apiKey;
 
         [JsonProperty(PropertyName = "alias")]
         private readonly string alias;
@@ -101,10 +101,10 @@ namespace com.freeclimb.api.account
         public string getAccountId {  get { return this.accountId; } }
 
         /// <summary>
-        /// Retrieve  the authToken for this account from the object.
+        /// Retrieve  the apiKey for this account from the object.
         /// </summary>
-        /// <returns>The authToken for this account.</returns>
-        public string getAuthToken { get { return this.authToken; } }
+        /// <returns>The apiKey for this account.</returns>
+        public string getApiKey { get { return this.apiKey; } }
 
         /// <summary>
         /// Retrieve  the alias for this account from the object.
@@ -154,7 +154,7 @@ namespace com.freeclimb.api.account
         {
             int hash = 0;
             hash ^= this.accountId.GetHashCode();
-            hash ^= this.authToken.GetHashCode();
+            hash ^= this.apiKey.GetHashCode();
             hash ^= this.alias.GetHashCode();
             hash ^= this.label.GetHashCode();
             hash ^= this.type.GetHashCode();
@@ -261,7 +261,7 @@ namespace com.freeclimb.api.account
             }
 
             return String.Equals(a.getAccountId, b.getAccountId, StringComparison.Ordinal) &&
-                   String.Equals(a.getAuthToken, b.getAuthToken, StringComparison.Ordinal) &&
+                   String.Equals(a.getApiKey, b.getApiKey, StringComparison.Ordinal) &&
                    String.Equals(a.getLabel, b.getLabel, StringComparison.Ordinal) &&
                    String.Equals(a.getAlias, b.getAlias, StringComparison.Ordinal) &&
                    (a.getType == b.getType) &&
