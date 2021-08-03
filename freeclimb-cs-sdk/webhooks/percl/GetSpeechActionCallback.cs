@@ -22,6 +22,18 @@ namespace com.freeclimb.webhooks.percl
 
         [JsonProperty(PropertyName = "confidence")]
         private readonly int confidence;
+
+        [JsonProperty(PropertyName = "completionReason")]
+        private readonly string completionReason;
+
+        [JsonProperty(PropertyName = "completionCause")]
+        private readonly string completionCause;
+
+        [JsonProperty(PropertyName = "mrcpCode")]
+        private readonly int mrcpCode;
+
+        [JsonProperty(PropertyName = "mrcpDiagnostic")]
+        private readonly string mrcpDiagnostic;
 #pragma warning restore 0649
 
         /// <summary>
@@ -63,5 +75,29 @@ namespace com.freeclimb.webhooks.percl
         /// </summary>
         /// <returns>The confidence value.</returns>
         public int getConfidence { get { return this.confidence; } }
+
+        /// <summary>
+        /// Retrieve completionReason value from the object.
+        /// </summary>
+        /// <returns>The completionReason value.</returns>
+        public string getCompletionReason { get { return this.completionReason; } }
+
+        /// <summary>
+        /// Retrieve completionCause value from the object.
+        /// </summary>
+        /// <returns>The completionCause value.</returns>
+        public string getCompletionCause { get { return this.completionCause; } }
+
+        /// <summary>
+        /// Retrieve mrcpCode value from the object.
+        /// </summary>
+        /// <returns>The mrcpCode value.</returns>
+        public int getMrcpCode { get { return this.mrcpCode; } }
+
+        /// <summary>
+        /// Retrieve mrcpDiagnostic value from the object.
+        /// </summary>
+        /// <returns>The mrcpDiagnostic value.</returns>
+        public string getMrcpDiagnostic { get { return this.mrcpDiagnostic; } }
     }
 }
