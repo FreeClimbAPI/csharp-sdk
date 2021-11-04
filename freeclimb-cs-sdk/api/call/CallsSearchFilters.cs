@@ -158,7 +158,7 @@ namespace com.freeclimb.api.call
         /// <summary>
         /// Sets the active object value.
         /// </summary>
-        /// <param name="val">active value.</param>
+        /// <param name="val">The active value.</param>
         public void setActive(bool val) { this.active = val; }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace com.freeclimb.api.call
                 props.Add("parentcallId", getParentCallId);
             }
 
-            if (bool.IsNullOrEmpty(active) == false)
+            if (active != null)
             {
                 props.Add("active", active);
             }
