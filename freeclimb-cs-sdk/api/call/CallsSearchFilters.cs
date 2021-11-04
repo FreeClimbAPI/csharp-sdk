@@ -197,7 +197,7 @@ namespace com.freeclimb.api.call
 
             if (getActive != null)
             {
-                props.Add("active", getActive);
+                props.Add("active", getActive.ToString());
             }
 
             if (getStatus != ECallStatus.NONE)
