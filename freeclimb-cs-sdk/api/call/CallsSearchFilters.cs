@@ -32,7 +32,7 @@ namespace com.freeclimb.api.call
         private string parentCallId = string.Empty;
 
         [JsonProperty(PropertyName = "active")]
-        private bool active = string.Empty;
+        private bool active = bool.Empty;
 
         /// <summary>
 	    /// Helper method to build a CallsSearchFilters object from the JSON string.
