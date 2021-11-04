@@ -153,13 +153,13 @@ namespace com.freeclimb.api.call
         /// Retrieve the active value.
         /// </summary>
         /// <returns>The active value of the object.</returns>
-        public string getActive { get { return this.active; } }
+        public bool getActive { get { return this.active; } }
 
         /// <summary>
         /// Sets the active object value.
         /// </summary>
         /// <param name="val">active value.</param>
-        public void setActive(string val) { this.active = val; }
+        public void setActive(bool val) { this.active = val; }
 
         /// <summary>
         /// Retrieve the KVP Dictionary for the CallsSearchFilters instance. 
@@ -195,7 +195,7 @@ namespace com.freeclimb.api.call
                 props.Add("parentcallId", getParentCallId);
             }
 
-            if (string.IsNullOrEmpty(active) == false)
+            if (bool.IsNullOrEmpty(active) == false)
             {
                 props.Add("active", active);
             }
