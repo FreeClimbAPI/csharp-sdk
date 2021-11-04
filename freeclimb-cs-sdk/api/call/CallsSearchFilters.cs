@@ -195,7 +195,7 @@ namespace com.freeclimb.api.call
                 props.Add("parentcallId", getParentCallId);
             }
 
-            if (getActive != Null)
+            if (getActive != null)
             {
                 props.Add("active", getActive);
             }
