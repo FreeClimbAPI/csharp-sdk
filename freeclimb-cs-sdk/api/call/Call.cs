@@ -149,7 +149,7 @@ namespace com.freeclimb.api.call
         /// Retrieve  whether the call is active or not from the object.
         /// </summary>
         /// <returns>The active property for this call.</returns>
-        public bool active { get { return this.active; } }
+        public bool getActive { get { return this.active; } }
 
         /// <summary>
         /// Retrieve  the status for this call from the object.
