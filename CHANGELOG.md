@@ -7,7 +7,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 None
 <a name="3.0.3"</a>
-## [3.0.1] 2021-11-4
+## [3.0.3] 2021-11-4
 ### Added
 - 1 new property `active` for CallSearchFilters and Call
 <a name="3.0.1"</a>
