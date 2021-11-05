@@ -56,7 +56,6 @@ namespace freeclimb_cs_sdk_test.api.call
                 Assert.AreEqual(call.getRevision, 1);
                 Assert.IsNotNull(call.getDateCreated);
                 Assert.IsNotNull(call.getDateUpdated);
-                Assert.IsNotNull(call.getActive);
                 Assert.AreEqual(call.getStatus, ECallStatus.Queued);
             }
             catch (FreeClimbException pe)

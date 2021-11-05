@@ -55,9 +55,6 @@ namespace com.freeclimb.api.call
         [JsonProperty(PropertyName = "phoneNumberId")]
         private readonly string phoneNumberId;
 
-        [JsonProperty(PropertyName = "active")]
-        private readonly bool active;
-
         [JsonProperty(PropertyName = "status")]
         private readonly ECallStatus status;
 
@@ -146,12 +143,6 @@ namespace com.freeclimb.api.call
         public string getPhoneNumberId { get { return this.phoneNumberId; } }
 
         /// <summary>
-        /// Retrieve  whether the call is active or not from the object.
-        /// </summary>
-        /// <returns>The active property for this call.</returns>
-        public bool getActive { get { return this.active; } }
-
-        /// <summary>
         /// Retrieve  the status for this call from the object.
         /// </summary>
         /// <returns>The status for this call.</returns>
@@ -238,7 +229,6 @@ namespace com.freeclimb.api.call
             hash ^= this.to.GetHashCode();
             hash ^= this.from.GetHashCode();
             hash ^= this.phoneNumberId.GetHashCode();
-            hash ^= this.active.GetHashCode();
             hash ^= this.status.GetHashCode();
             hash ^= this.startTime.GetHashCode();
             hash ^= this.endTime.GetHashCode();
@@ -355,7 +345,6 @@ namespace com.freeclimb.api.call
                    String.Equals(a.getTo, b.getTo, StringComparison.Ordinal) &&
                    String.Equals(a.getFrom, b.getFrom, StringComparison.Ordinal) &&
                    String.Equals(a.getPhoneNumberId, b.getPhoneNumberId, StringComparison.Ordinal) &&
-                   (a.getActive == b.getActive) &&
                    (a.getStatus == b.getStatus) &&
                    ((DateTime.Compare(a.getStartTime, b.getStartTime) == 0) ? true : false) &&
                    ((DateTime.Compare(a.getEndTime, b.getEndTime) == 0) ? true : false) &&

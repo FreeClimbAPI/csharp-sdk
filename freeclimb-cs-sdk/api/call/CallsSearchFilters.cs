@@ -156,12 +156,6 @@ namespace com.freeclimb.api.call
         public bool getActive { get { return this.active; } }
 
         /// <summary>
-        /// Sets the active object value.
-        /// </summary>
-        /// <param name="val">The active value.</param>
-        public void setActive(bool val) { this.active = val; }
-
-        /// <summary>
         /// Retrieve the KVP Dictionary for the CallsSearchFilters instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>

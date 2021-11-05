@@ -13,8 +13,9 @@ namespace com.freeclimb.api.call
         /// </summary>
         /// <param name="accountId">The accountId to use in requests for subsequent pages.</param>
         /// <param name="authToken">The authToken to use in requests for subsequent pages.</param>
+        /// <param name="active">The active propert to use in listCalls query</param>
         /// <param name="rawPage">The raw JSON string representing a page of a calls list from the FreeClimb API.</param>
-        public CallList(string accountId, string authToken, string rawPage) : base(accountId, authToken, rawPage, "calls")
+        public CallList(string accountId, string authToken, bool active, string rawPage) : base(accountId, authToken, active, rawPage, "calls")
         { }
 
         /// <summary>
