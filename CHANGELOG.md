@@ -9,7 +9,7 @@ None
 <a name="3.0.3"</a>
 ## [3.0.3] 2021-11-4
 ### Added
-- 1 new property `active` for CallSearchFilters and Call
+- 1 new param `active` for CallSearchFilters
 <a name="3.0.1"</a>
 ## [3.0.1] 2021-8-3
 ### Added
