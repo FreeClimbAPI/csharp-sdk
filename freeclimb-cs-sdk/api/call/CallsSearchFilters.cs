@@ -31,8 +31,8 @@ namespace com.freeclimb.api.call
         [JsonProperty(PropertyName = "parentcallId")]
         private string parentCallId = string.Empty;
 
-        [JsonProperty(PropertyName = "active")]
-        private bool active = false;
+        // [JsonProperty(PropertyName = "active")]
+        // private bool active = false;
 
         /// <summary>
 	    /// Helper method to build a CallsSearchFilters object from the JSON string.
@@ -153,7 +153,7 @@ namespace com.freeclimb.api.call
         /// Retrieve the active value.
         /// </summary>
         /// <returns>The active value of the object.</returns>
-        public bool getActive { get { return this.active; } }
+        // public bool getActive { get { return this.active; } }
 
         /// <summary>
         /// Retrieve the KVP Dictionary for the CallsSearchFilters instance. 
@@ -189,10 +189,10 @@ namespace com.freeclimb.api.call
                 props.Add("parentcallId", getParentCallId);
             }
 
-            if (getActive != null)
-            {
-                props.Add("active", getActive.ToString());
-            }
+            // if (getActive != null)
+            // {
+            //     props.Add("active", getActive.ToString());
+            // }
 
             if (getStatus != ECallStatus.NONE)
             {
