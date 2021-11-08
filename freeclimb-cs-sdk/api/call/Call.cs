@@ -89,7 +89,7 @@ namespace com.freeclimb.api.call
 #pragma warning restore 0649 
 
         /// <summary>
-	    /// Helper method to build a Call object from the JSON string.
+        /// Helper method to build a Call object from the JSON string.
         /// </summary>
         /// <param name="rawJson">A JSON string representing a Call instance.</param>
         /// <returns>A Call object equivalent to the JSON string passed in.</returns>
@@ -322,7 +322,7 @@ namespace com.freeclimb.api.call
         }
 
         /// <summary>
-	    /// Helper method to deep compare two Call instances.
+        /// Helper method to deep compare two Call instances.
         /// </summary>
         /// <param name="a">Call instance one.</param>
         /// <param name="b">Call instance two.</param>
@@ -358,3 +358,4 @@ namespace com.freeclimb.api.call
         }
     }
 }
+
