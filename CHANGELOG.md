@@ -9,8 +9,8 @@ None
 <a name="3.0.4"</a>
 ## [3.0.4] 2021-11-2
 ### Added
-- Added `applicationId`, `country`, `hasApplication`, `region`, `smsEnabled`, `voiceEnabled` optional filters to `ListIncomingNumbersFilters` interface
-- Added `country`, `region`, `smsEnabled`, `voiceEnabled` optional filters to `ListAvailableNumbersFilters` interface
+- Added `applicationId`, `country`, `hasApplication`, `region`, `smsEnabled`, `voiceEnabled` optional filters to `IncomingPhoneNumbersSearchFilters` interface
+- Added `country`, `region`, `smsEnabled`, `voiceEnabled` optional filters to `AvailablePhoneNumbersSearchFilters` interface
 <a name="3.0.3"</a>
 ## [3.0.3] 2021-11-4
 ### Added
