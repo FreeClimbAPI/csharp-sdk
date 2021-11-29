@@ -15,9 +15,6 @@ namespace com.freeclimb.api.phonenumber
     [JsonObject]
     public class AvailablePhoneNumbersSearchFilter
     {
-        [JsonProperty(PropertyName = "alias")]
-        private string alias = string.Empty;
-
         [JsonProperty(PropertyName = "phoneNumber")]
         private string phoneNumber = string.Empty;
 
@@ -73,18 +70,6 @@ namespace com.freeclimb.api.phonenumber
                 throw new FreeClimbJSONException(e.Message);
             }
         }
-
-        /// <summary>
-        /// Retrieve the alias value.
-        /// </summary>
-        /// <returns>The alias value of the object.</returns>
-        public string getAlias { get { return this.alias; } }
-
-        /// <summary>
-        /// Sets the alias object value.
-        /// </summary>
-        /// <param name="val">alias value.</param>
-        public void setAlias(string val) { this.alias = val; }
 
         /// <summary>
         /// Retrieve the phoneNumber value.
@@ -155,10 +140,6 @@ namespace com.freeclimb.api.phonenumber
             // change all properties with settings to a dictionary
             IDictionary<string, string> props = new Dictionary<string, string>();
 
-            if (string.IsNullOrEmpty(getAlias) == false)
-            {
-                props.Add("alias", getAlias);
-            }
             if (string.IsNullOrEmpty(getPhoneNumber) == false)
             {
                 props.Add("phoneNumber", getPhoneNumber);
