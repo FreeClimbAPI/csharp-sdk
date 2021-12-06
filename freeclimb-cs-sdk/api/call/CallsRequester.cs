@@ -18,9 +18,9 @@ namespace com.freeclimb.api.call
         /// the rest of the features of the FreeClimbClient.
         /// </summary>
         /// <param name="credAccountId">The accountId to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
-        /// <param name="credAuthToken">The authToken to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
+        /// <param name="credApiKey">The apiKey to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
         /// <param name="accountId">The accountId to act as. This can be the same as the credAccountId or the accountId of a subaccount of the credAccountId.</param>
-        public CallsRequester(string credAccountId, string credAuthToken, string accountId) : base(credAccountId, credAuthToken)
+        public CallsRequester(string credAccountId, string credApiKey, string accountId) : base(credAccountId, credApiKey)
         {
             this.path = "/Accounts/" + accountId + "/Calls";
         }
@@ -38,10 +38,10 @@ namespace com.freeclimb.api.call
         public new string getAccountId { get { return base.getAccountId; } }
 
         /// <summary>
-        /// Retrieve  authToken object value.
+        /// Retrieve  apiKey object value.
         /// </summary>
-        /// <returns>The authToken being used for authentication.</returns>
-        public new string getAuthToken { get { return base.getAuthToken; } }
+        /// <returns>The apiKey being used for authentication.</returns>
+        public new string getApiKey { get { return base.getApiKey; } }
 
         /// <summary>
         /// Retrieve  FreeClimb API Url object value.
@@ -96,7 +96,7 @@ namespace com.freeclimb.api.call
                 throw new FreeClimbException("Failed to get call list");
             }
 
-            CallList list = new CallList(this.getAccountId, this.getAuthToken, json);
+            CallList list = new CallList(this.getAccountId, this.getApiKey, json);
 
             return list;
         }

@@ -21,8 +21,8 @@ namespace com.freeclimb.api.account
         /// the rest of the features of the FreeClimbClient.
         /// </summary>
         /// <param name="credAccountId">The accountId to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
-        /// <param name="credAuthToken">The authToken to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
-        public AccountsRequester(string credAccountId, string credAuthToken) : base(credAccountId, credAuthToken)
+        /// <param name="credApiKey">The ApiKey to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
+        public AccountsRequester(string credAccountId, string credApiKey) : base(credAccountId, credApiKey)
         {
             this.path = "/Accounts";
         }

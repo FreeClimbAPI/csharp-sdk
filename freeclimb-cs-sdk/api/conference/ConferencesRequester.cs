@@ -23,9 +23,9 @@ namespace com.freeclimb.api.conference
         /// the rest of the features of the FreeClimbClient.
         /// </summary>
         /// <param name="credAccountId">The accountId to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
-        /// <param name="credAuthToken">The authToken to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
+        /// <param name="credApiKey">The ApiKey to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
         /// <param name="accountId">The accountId to act as. This can be the same as the credAccountId or the accountId of a subaccount of the credAccountId.</param>
-        public ConferencesRequester(string credAccountId, string credAuthToken, string accountId) : base(credAccountId, credAuthToken)
+        public ConferencesRequester(string credAccountId, string credApiKey, string accountId) : base(credAccountId, credApiKey)
         {
             this.path = "/Accounts/" + accountId + "/Conferences";
         }
@@ -43,10 +43,10 @@ namespace com.freeclimb.api.conference
         public new string getAccountId { get { return base.getAccountId; } }
 
         /// <summary>
-        /// Retrieve  authToken object value.
+        /// Retrieve  ApiKey object value.
         /// </summary>
-        /// <returns>The authToken being used for authentication.</returns>
-        public new string getAuthToken { get { return base.getAuthToken; } }
+        /// <returns>The ApiKey being used for authentication.</returns>
+        public new string getApiKey { get { return base.getApiKey; } }
 
         /// <summary>
         /// Retrieve  FreeClimb API Url object value.
@@ -94,7 +94,7 @@ namespace com.freeclimb.api.conference
                 throw new FreeClimbException("Failed to get conference list");
             }
 
-            ConferenceList list = new ConferenceList(this.getAccountId, this.getAuthToken, json);
+            ConferenceList list = new ConferenceList(this.getAccountId, this.getApiKey, json);
 
             return list;
         }
@@ -174,7 +174,7 @@ namespace com.freeclimb.api.conference
                 throw new FreeClimbException(String.Format("Failed to get recording list information for conference {0}", conferenceId ?? ""));
             }
 
-            return new RecordingList(this.getAccountId, this.getAuthToken, json);
+            return new RecordingList(this.getAccountId, this.getApiKey, json);
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace com.freeclimb.api.conference
                 throw new FreeClimbException(String.Format("Failed to get participant list information for conference {0}", conferenceId ?? ""));
             }
 
-            return new ParticipantList(this.getAccountId, this.getAuthToken, json);
+            return new ParticipantList(this.getAccountId, this.getApiKey, json);
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace com.freeclimb.api.conference
                 throw new FreeClimbException(String.Format("Failed to get participant list information for conference {0}", conferenceId ?? ""));
             }
 
-            return new ParticipantList(this.getAccountId, this.getAuthToken, json);
+            return new ParticipantList(this.getAccountId, this.getApiKey, json);
         }
 
         /// <summary>

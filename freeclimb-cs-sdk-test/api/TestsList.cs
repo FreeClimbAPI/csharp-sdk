@@ -6,7 +6,7 @@ namespace freeclimb_cs_sdk_test
 {
     public class TestsList : FreeClimbList
     {
-        public TestsList(String accountId, String authToken, String rawPage) : base(accountId, authToken, rawPage, "tests")
+        public TestsList(String accountId, String apiKey, String rawPage) : base(accountId, apiKey, rawPage, "tests")
         { }
 
         public new Test get(int i)

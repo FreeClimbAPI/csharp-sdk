@@ -12,9 +12,9 @@ namespace com.freeclimb.api.queue
         /// Creates a new QueueMemberList.
         /// </summary>
         /// <param name="accountId">The accountId to use in requests for subsequent pages.</param>
-        /// <param name="authToken">The authToken to use in requests for subsequent pages.</param>
+        /// <param name="apiKey">The apiKey to use in requests for subsequent pages.</param>
         /// <param name="rawPage">The raw JSON string representing a page of a queue member list from the FreeClimb API.</param>
-        public QueueMemberList(string accountId, string authToken, string rawPage) : base(accountId, authToken, rawPage, "queueMembers")
+        public QueueMemberList(string accountId, string apiKey, string rawPage) : base(accountId, apiKey, rawPage, "queueMembers")
         { }
 
         /// <summary>
