@@ -18,9 +18,9 @@ namespace com.freeclimb.api.queue
         /// the rest of the features of the FreeClimbClient.
         /// </summary>
         /// <param name="credAccountId">The accountId to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
-        /// <param name="credAuthToken">The authToken to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
+        /// <param name="credApiKey">The ApiKey to use as authentication credentials in the HTTP Basic Auth header for requests made by this requester.</param>
         /// <param name="accountId">The accountId to act as. This can be the same as the credAccountId or the accountId of a subaccount of the credAccountId.</param>
-        public QueuesRequester(string credAccountId, string credAuthToken, string accountId) : base(credAccountId, credAuthToken)
+        public QueuesRequester(string credAccountId, string credApiKey, string accountId) : base(credAccountId, credApiKey)
         {
             this.path = "/Accounts/" + accountId + "/Queues";
         }
@@ -38,10 +38,10 @@ namespace com.freeclimb.api.queue
         public new string getAccountId { get { return base.getAccountId; } }
 
         /// <summary>
-        /// Retrieve  authToken object value.
+        /// Retrieve  ApiKey object value.
         /// </summary>
-        /// <returns>The authToken being used for authentication.</returns>
-        public new string getAuthToken { get { return base.getAuthToken; } }
+        /// <returns>The ApiKey being used for authentication.</returns>
+        public new string getApiKey { get { return base.getApiKey; } }
 
         /// <summary>
         /// Retrieve  FreeClimb API Url object value.
@@ -104,7 +104,7 @@ namespace com.freeclimb.api.queue
                 throw new FreeClimbException(String.Format("Failed to get queue {0} member list", queueId ?? ""));
             }
 
-            QueueMemberList list = new QueueMemberList(this.getAccountId, this.getAuthToken, json);
+            QueueMemberList list = new QueueMemberList(this.getAccountId, this.getApiKey, json);
 
             // load initial page if not done by API
             if ((list.getLocalSize <= 0) &&
@@ -132,7 +132,7 @@ namespace com.freeclimb.api.queue
                 throw new FreeClimbException("Failed to get queue list");
             }
 
-            QueueList list = new QueueList(this.getAccountId, this.getAuthToken, json);
+            QueueList list = new QueueList(this.getAccountId, this.getApiKey, json);
 
             return list;
         }
