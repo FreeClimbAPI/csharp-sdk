@@ -8,7 +8,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 None
 <a name="3.0.5"</a>
 ## [3.0.5] 2021-12-6
-### Added
+### Changed
 - Replaced Auth Token -> API Key
 
 <a name="3.0.4"</a>
