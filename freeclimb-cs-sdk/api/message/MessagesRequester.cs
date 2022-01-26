@@ -50,7 +50,7 @@ namespace com.freeclimb.api.message
         /// Retrieve  FreeClimb API Url object value.
         /// </summary>
         /// <returns>The url being used for the FreeClimb API.</returns>
-        public new string getfreeClimbUrl { get { return base.GetFreeClimbUrl; } }
+        public string getfreeClimbUrl { get { return base.GetFreeClimbUrl; } }
 
         /// <summary>
         /// Create a new message through the FreeClimb API 

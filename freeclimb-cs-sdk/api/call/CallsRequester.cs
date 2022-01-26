@@ -35,7 +35,7 @@ namespace com.freeclimb.api.call
         /// Retrieve  accountId object value.
         /// </summary>
         /// <returns>The accountId being used for authentication.</returns>
-        public new string getAccountId { get { return base.getAccountId; } }
+       public new string getAccountId { get { return base.getAccountId; } }
 
         /// <summary>
         /// Retrieve  apiKey object value.
@@ -47,7 +47,7 @@ namespace com.freeclimb.api.call
         /// Retrieve  FreeClimb API Url object value.
         /// </summary>
         /// <returns>The url being used for the FreeClimb API.</returns>
-        public new string getfreeClimbUrl { get { return base.GetFreeClimbUrl; } }
+        public string getfreeClimbUrl { get { return base.GetFreeClimbUrl; } }
 
         /// <summary>
         /// Create a new call through the FreeClimb API using a registered

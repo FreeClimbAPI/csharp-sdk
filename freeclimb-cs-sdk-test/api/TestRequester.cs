@@ -11,8 +11,8 @@ namespace freeclimb_cs_sdk_test
 
         public new string getAccountId { get { return base.getAccountId; } }
         public new string getApiKey { get { return base.getApiKey; } }
-        public new string getfreeClimbUrl { get { return base.GetFreeClimbUrl; } }
-        public new void setfreeClimbUrl(string newUrl) { base.SetFreeClimbUrl(newUrl); } 
+        public string getfreeClimbUrl { get { return base.GetFreeClimbUrl; } }
+        public void setfreeClimbUrl(string newUrl) { base.SetFreeClimbUrl(newUrl); } 
         public new string GET(string path) { return base.GET(path); }
         public new string GET(string path, IDictionary<string, string> query) { return base.GET(path,query); }
         public new string POST(string path, string payload) { return base.POST(path, payload); }

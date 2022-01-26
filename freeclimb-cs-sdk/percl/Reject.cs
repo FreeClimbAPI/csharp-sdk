@@ -53,6 +53,10 @@ namespace com.freeclimb.percl
         public void setReason(string val) { this.reason = val; }
 
 
+        /// <summary>
+        /// Retrieve the KVP Dictionary for the Reject instance.
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> toKvp()
         {
             // change all properties with settings to a dictionary

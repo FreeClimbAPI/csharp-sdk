@@ -44,7 +44,7 @@ namespace com.freeclimb.api.phonenumber
         /// Retrieve the KVP Dictionary for the CallingNumberOptions instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
-        private new IDictionary<string, object> toDict()
+        private IDictionary<string, object> toDict()
         {
             // change properties used by this resource with settings to a dictionary
             IDictionary<string, object> props = new Dictionary<string, object>();

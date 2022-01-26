@@ -54,7 +54,7 @@ namespace com.freeclimb
             }
             catch (Exception /* e */)
             {
-                throw new FreeClimbDateException(((dateTime != null) ? dateTime.ToLongTimeString() : "Null"));
+                throw new FreeClimbDateException(dateTime.ToLongTimeString());
             }
         }
 
@@ -499,18 +499,13 @@ namespace com.freeclimb
         }
 
         /// <summary>
-        /// Helper method to deep compare two Recording instances.
+        /// Helper method to deep compare two Date instances.
         /// </summary>
-        /// <param name="a">Recording instance one.</param>
-        /// <param name="b">Recording instance two.</param>
+        /// <param name="a">Date instance one.</param>
+        /// <param name="b">Date instance two.</param>
         /// <returns>True is a == b, otherwise false.</returns>
         public static bool Equal(Date a, Date b)
         {
-            if (System.Object.ReferenceEquals(a, b))
-            {
-                return true;
-            }
-
             if (((object)a == null) || ((object)b == null))
             {
                 return false;

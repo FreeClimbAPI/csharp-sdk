@@ -52,7 +52,7 @@ namespace com.freeclimb.api.conference
         /// Retrieve  FreeClimb API Url object value.
         /// </summary>
         /// <returns>The url being used for the FreeClimb API.</returns>
-        public new string getfreeClimbUrl { get { return base.GetFreeClimbUrl; } }
+        public string getfreeClimbUrl { get { return base.GetFreeClimbUrl; } }
 
         /// <summary>
         /// Create a new conference through the FreeClimb API using a registered

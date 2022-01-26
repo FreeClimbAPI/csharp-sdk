@@ -8,6 +8,9 @@ using System.IO;
 
 namespace com.freeclimb
 {
+    /// <summary>
+    /// Utils structure.
+    /// </summary>
     [JsonObject]
     public sealed class Utils
     {

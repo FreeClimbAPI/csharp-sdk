@@ -92,7 +92,7 @@ namespace com.freeclimb.api.conference
         /// Retrieve the KVP Dictionary for the ConferenceOptions instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
-        private new IDictionary<string, object> toDict()
+        private IDictionary<string, object> toDict()
         {
             // change all properties with settings to a dictionary
             IDictionary<string, object> props = new Dictionary<string, object>();
