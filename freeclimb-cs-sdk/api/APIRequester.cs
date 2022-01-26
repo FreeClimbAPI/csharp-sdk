@@ -24,6 +24,12 @@ namespace com.freeclimb.api
         private string credApiKey;
         private string freeClimbUrl;
 
+        static APIRequester()
+        {
+            // Instead of setting this on every individual request, set this globally on the service point manager
+            ServicePointManager.Expect100Continue = false;
+        }
+
         /// <summary>
         /// Create a new APIRequester.
         /// </summary>
@@ -216,7 +222,6 @@ namespace com.freeclimb.api
             {
                 request = WebRequest.Create(uri) as HttpWebRequest;
                 request.Method = method;
-                request.ServicePoint.Expect100Continue = false;
                 request.Headers.Add("Authorization",
                                     String.Format("Basic {0}", Convert.ToBase64String(Encoding.UTF8.GetBytes(String.Format("{0}:{1}", credAccountId, credApiKey)))));
             }
