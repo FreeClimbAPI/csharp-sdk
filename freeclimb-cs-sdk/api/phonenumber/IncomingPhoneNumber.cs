@@ -56,16 +56,6 @@ namespace com.freeclimb.api.phonenumber
         /// </summary>
         [JsonProperty(PropertyName = "country")]
         private readonly string country;
-        /// <summary>
-        /// The voiceEnabled flag for the resource.
-        /// </summary>
-        [JsonProperty(PropertyName = "voiceEnabled")]
-        private readonly bool voiceEnabled;
-        /// <summary>
-        /// The smsEnabled flag for the resource.
-        /// </summary>
-        [JsonProperty(PropertyName = "smsEnabled")]
-        private readonly bool smsEnabled;
 
 #pragma warning restore 0649
 
@@ -123,16 +113,6 @@ namespace com.freeclimb.api.phonenumber
         /// </summary>
         /// <returns>The country for this incomingPhoneNumber.</returns>
         public string getCountry { get { return this.country; } }
-        /// <summary>
-        /// Retrieve  the voiceEnabled for this incomingPhoneNumber from the object.
-        /// </summary>
-        /// <returns>The voiceEnabled for this incomingPhoneNumber.</returns>
-        public bool getVoiceEnabled { get { return this.voiceEnabled; } }
-        /// <summary>
-        /// Retrieve  the smsEnabled for this incomingPhoneNumber from the object.
-        /// </summary>
-        /// <returns>The smsEnabled for this incomingPhoneNumber.</returns>
-        public bool getSmsEnabled { get { return this.smsEnabled; } }
 
         /// <summary>
         /// Serves as the default hash function.
@@ -149,8 +129,6 @@ namespace com.freeclimb.api.phonenumber
             hash ^= this.getPhoneNumberId.GetHashCode();
             hash ^= this.getRegion.GetHashCode();
             hash ^= this.getCountry.GetHashCode();
-            hash ^= this.getVoiceEnabled.GetHashCode();
-            hash ^= this.getSmsEnabled.GetHashCode();
 
             hash ^= base.GetHashCode();
 
@@ -227,8 +205,6 @@ namespace com.freeclimb.api.phonenumber
                    String.Equals(a.getPhoneNumber, b.getPhoneNumber, StringComparison.Ordinal) &&
                    String.Equals(a.getRegion, b.getRegion, StringComparison.Ordinal) &&
                    String.Equals(a.getCountry, b.getCountry, StringComparison.Ordinal) &&
-                   (a.getVoiceEnabled == b.getVoiceEnabled) &&
-                   (a.getSmsEnabled == b.getSmsEnabled) &&
 
                    FreeClimbCommon.Equal(a, b);
         }

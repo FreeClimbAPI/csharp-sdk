@@ -33,12 +33,6 @@ namespace com.freeclimb.api.phonenumber
         [JsonProperty(PropertyName = "region")]
         private string region = string.Empty;
 
-        [JsonProperty(PropertyName = "smsEnabled")]
-        private bool smsEnabled = false;
-
-        [JsonProperty(PropertyName = "voiceEnabled")]
-        private bool voiceEnabled = false;
-
         /// <summary>
 	    /// Helper method to build an IncomingPhoneNumbersSearchFilter object from the JSON string.
         /// </summary>
@@ -153,30 +147,6 @@ namespace com.freeclimb.api.phonenumber
         public void setRegion(string val) { this.region = val; }
 
         /// <summary>
-        /// Retrieve the smsEnabled value.
-        /// </summary>
-        /// <returns>The smsEnabled value of the object.</returns>
-        public bool getSmsEnabled { get { return this.smsEnabled; } }
-
-        /// <summary>
-        /// Sets the smsEnabled object value.
-        /// </summary>
-        /// <param name="val">smsEnabled value.</param>
-        public void setSmsEnabled(bool val) { this.smsEnabled = val; }
-
-        /// <summary>
-        /// Retrieve the phoneNumber value.
-        /// </summary>
-        /// <returns>The phoneNumber value of the object.</returns>
-        public bool getVoiceEnabled { get { return this.voiceEnabled; } }
-
-        /// <summary>
-        /// Sets the voiceEnabled object value.
-        /// </summary>
-        /// <param name="val">voiceEnabled value.</param>
-        public void setVoiceEnabled(bool val) { this.voiceEnabled = val; }
-
-        /// <summary>
         /// Retrieve the KVP Dictionary for the IncomingPhoneNumbersSearchFilter instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
@@ -201,22 +171,11 @@ namespace com.freeclimb.api.phonenumber
             {
                 props.Add("country", getCountry);
             }
-            if (getHasApplication != null)
-            {
-                props.Add("hasApplication", getHasApplication.ToString());
-            }
             if (string.IsNullOrEmpty(getRegion) == false)
             {
                 props.Add("region", getRegion);
             }
-            if (getSmsEnabled != null)
-            {
-                props.Add("smsEnabled", getSmsEnabled.ToString());
-            }
-            if (getVoiceEnabled != null)
-            {
-                props.Add("voiceEnabled", getVoiceEnabled.ToString());
-            }
+            props.Add("hasApplication", getHasApplication.ToString());
             return props;
         }
     }
