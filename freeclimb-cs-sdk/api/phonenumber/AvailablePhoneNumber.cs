@@ -57,7 +57,7 @@ namespace com.freeclimb.api.phonenumber
         /// </summary>
         [JsonProperty(PropertyName = "capabilities")]
         private readonly PhoneNumberCapabilities capabilities;
-        
+
 
 #pragma warning restore 0649
 

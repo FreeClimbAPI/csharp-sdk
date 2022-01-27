@@ -32,6 +32,8 @@ namespace com.freeclimb.api.phonenumber
 
         [JsonProperty(PropertyName = "alias")]
         private string alias = string.Empty;
+        [JsonProperty(PropertyName = "capabilities")]
+        private PhoneNumberCapabilities capabilities;
 
         /// <summary>
 	    /// Helper method to build an AvailablePhoneNumbersSearchFilter object from the JSON string.
@@ -147,13 +149,25 @@ namespace com.freeclimb.api.phonenumber
         public void setAlias(string val) { this.alias = val; }
 
         /// <summary>
+        /// Retrieve the capabilities value.
+        /// </summary>
+        /// <returns>The capabilities value of the object.</returns>
+        public PhoneNumberCapabilities getCapabilities { get { return this.capabilities; } }
+
+        /// <summary>
+        /// Sets the capabilities object value.
+        /// </summary>
+        /// <param name="val">capabilities value.</param>
+        public void setCapabilities(PhoneNumberCapabilities val) { this.capabilities = val; }
+
+        /// <summary>
         /// Retrieve the KVP Dictionary for the AvailablePhoneNumbersSearchFilter instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
-        public IDictionary<string, string> toDict()
+        public IDictionary<string, object> toDict()
         {
             // change all properties with settings to a dictionary
-            IDictionary<string, string> props = new Dictionary<string, string>();
+            IDictionary<string, object> props = new Dictionary<string, object>();
 
             if (!string.IsNullOrEmpty(getPhoneNumber))
             {
@@ -178,6 +192,10 @@ namespace com.freeclimb.api.phonenumber
             if (!string.IsNullOrEmpty(getAlias))
             {
                 props.Add("alias", getAlias);
+            }
+            if (getCapabilities != null)
+            {
+                props.Add("capabilities", getCapabilities);
             }
             return props;
         }
