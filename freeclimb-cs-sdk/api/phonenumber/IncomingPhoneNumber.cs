@@ -56,6 +56,21 @@ namespace com.freeclimb.api.phonenumber
         /// </summary>
         [JsonProperty(PropertyName = "country")]
         private readonly string country;
+        /// <summary>
+        /// The campaignId for the resource.
+        /// </summary>
+        [JsonProperty(PropertyName = "campaignId")]
+        private readonly string campaignId;
+        /// <summary>
+        /// The provider for the resource.
+        /// </summary>
+        [JsonProperty(PropertyName = "provider")]
+        private readonly string provider;
+        /// <summary>
+        /// The capabilities for the resource.
+        /// </summary>
+        [JsonProperty(PropertyName = "capabilities")]
+        private readonly PhoneNumberCapabilities capabilities;
 
 #pragma warning restore 0649
 
@@ -113,6 +128,21 @@ namespace com.freeclimb.api.phonenumber
         /// </summary>
         /// <returns>The country for this incomingPhoneNumber.</returns>
         public string getCountry { get { return this.country; } }
+        /// <summary>
+        /// Retrieve  the campaignId for this incomingPhoneNumber from the object.
+        /// </summary>
+        /// <returns>The campaignId for this incomingPhoneNumber.</returns>
+        public string getCampaignId { get { return this.campaignId; } }
+        /// <summary>
+        /// Retrieve  the provider for this incomingPhoneNumber from the object.
+        /// </summary>
+        /// <returns>The provider for this incomingPhoneNumber.</returns>
+        public string getProvider { get { return this.provider; } }
+        /// <summary>
+        /// Retrieve  the capabilities for this incomingPhoneNumber from the object.
+        /// </summary>
+        /// <returns>The capabilities for this incomingPhoneNumber.</returns>
+        public PhoneNumberCapabilities getCapabilities { get { return this.capabilities; } }
 
         /// <summary>
         /// Serves as the default hash function.
@@ -129,6 +159,9 @@ namespace com.freeclimb.api.phonenumber
             hash ^= this.getPhoneNumberId.GetHashCode();
             hash ^= this.getRegion.GetHashCode();
             hash ^= this.getCountry.GetHashCode();
+            hash ^= this.getCampaignId.GetHashCode();
+            hash ^= this.getProvider.GetHashCode();
+            hash ^= this.getCapabilities.GetHashCode();
 
             hash ^= base.GetHashCode();
 
@@ -205,6 +238,9 @@ namespace com.freeclimb.api.phonenumber
                    String.Equals(a.getPhoneNumber, b.getPhoneNumber, StringComparison.Ordinal) &&
                    String.Equals(a.getRegion, b.getRegion, StringComparison.Ordinal) &&
                    String.Equals(a.getCountry, b.getCountry, StringComparison.Ordinal) &&
+                   String.Equals(a.getProvider, b.getProvider, StringComparison.Ordinal) &&
+                   String.Equals(a.getCampaignId, b.getCampaignId, StringComparison.Ordinal) &&
+                   PhoneNumberCapabilities.Equal(a.getCapabilities, b.getCapabilities) &&
 
                    FreeClimbCommon.Equal(a, b);
         }

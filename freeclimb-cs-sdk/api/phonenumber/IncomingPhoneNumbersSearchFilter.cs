@@ -33,6 +33,12 @@ namespace com.freeclimb.api.phonenumber
         [JsonProperty(PropertyName = "region")]
         private string region = string.Empty;
 
+        [JsonProperty(PropertyName = "campaignId")]
+        private string campaignId = string.Empty;
+
+        [JsonProperty(PropertyName = "provider")]
+        private string provider = string.Empty;
+
         /// <summary>
 	    /// Helper method to build an IncomingPhoneNumbersSearchFilter object from the JSON string.
         /// </summary>
@@ -147,6 +153,30 @@ namespace com.freeclimb.api.phonenumber
         public void setRegion(string val) { this.region = val; }
 
         /// <summary>
+        /// Retrieve the campaignId value.
+        /// </summary>
+        /// <returns>The campaignId value of the object.</returns>
+        public string getCampaignId { get { return this.campaignId; } }
+
+        /// <summary>
+        /// Sets the campaignId object value.
+        /// </summary>
+        /// <param name="val">campaignId value.</param>
+        public void setCampaignId(string val) { this.campaignId = val; }
+
+        /// <summary>
+        /// Retrieve the provider value.
+        /// </summary>
+        /// <returns>The provider value of the object.</returns>
+        public string getProvider { get { return this.provider; } }
+
+        /// <summary>
+        /// Sets the provider object value.
+        /// </summary>
+        /// <param name="val">provider value.</param>
+        public void setProvider(string val) { this.provider = val; }
+
+        /// <summary>
         /// Retrieve the KVP Dictionary for the IncomingPhoneNumbersSearchFilter instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
@@ -155,25 +185,33 @@ namespace com.freeclimb.api.phonenumber
             // change all properties with settings to a dictionary
             IDictionary<string, string> props = new Dictionary<string, string>();
 
-            if (string.IsNullOrEmpty(getAlias) == false)
+            if (!string.IsNullOrEmpty(getAlias))
             {
                 props.Add("alias", getAlias);
             }
-            if (string.IsNullOrEmpty(getPhoneNumber) == false)
+            if (!string.IsNullOrEmpty(getPhoneNumber))
             {
                 props.Add("phoneNumber", getPhoneNumber);
             }
-            if (string.IsNullOrEmpty(getApplicationId) == false)
+            if (!string.IsNullOrEmpty(getApplicationId))
             {
                 props.Add("applicationId", getApplicationId);
             }
-            if (string.IsNullOrEmpty(getCountry) == false)
+            if (!string.IsNullOrEmpty(getCountry))
             {
                 props.Add("country", getCountry);
             }
-            if (string.IsNullOrEmpty(getRegion) == false)
+            if (!string.IsNullOrEmpty(getRegion))
             {
                 props.Add("region", getRegion);
+            }
+            if (!string.IsNullOrEmpty(getCampaignId))
+            {
+                props.Add("campaignId", getCampaignId);
+            }
+            if (!string.IsNullOrEmpty(getProvider))
+            {
+                props.Add("provider", getProvider);
             }
             props.Add("hasApplication", getHasApplication.ToString());
             return props;
