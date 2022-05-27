@@ -67,9 +67,37 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+
+            List<object> list = new List<object>();
+            foreach (PerclCommand command in this.Commands.ToList<PerclCommand>())
+            {
+                list.Add(command.ToKvp());
+            }
+
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), list);
+        
+            return strb.ToString();
         }
 
+        /// <summary>
+        /// Retrieve the KVP Dictionary for the PerclScript instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            List<object> nested = new List<object>();
+            foreach (var item in Commands)
+            {
+                nested.Add(item.ToKvp());
+            }
+            props.Add("commands", nested); 
+            return props;
+        }
+        
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>

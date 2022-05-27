@@ -70,6 +70,22 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the RecordingListAllOf instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            List<object> nested = new List<object>();
+            foreach (var item in Recordings)
+            {
+                nested.Add(item.ToKvp());
+            }
+            props.Add("recordings", nested); 
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

@@ -170,6 +170,26 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the AddToConferenceAllOf instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("allowCallControl", AllowCallControl);          
+            props.Add("callControlSequence", CallControlSequence);          
+            props.Add("callControlUrl", CallControlUrl);          
+            props.Add("conferenceId", ConferenceId);          
+            props.Add("callId", CallId);          
+            props.Add("leaveConferenceUrl", LeaveConferenceUrl);          
+            props.Add("listen", Listen);          
+            props.Add("notificationUrl", NotificationUrl);          
+            props.Add("startConfOnEnter", StartConfOnEnter);          
+            props.Add("talk", Talk);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

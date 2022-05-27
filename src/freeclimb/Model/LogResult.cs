@@ -158,6 +158,23 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the LogResult instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("timestamp", Timestamp);          
+            props.Add("level", Level);          
+            props.Add("requestId", RequestId);          
+            props.Add("accountId", AccountId);          
+            props.Add("callId", CallId);          
+            props.Add("message", Message);          
+            props.Add("metadata", Metadata);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

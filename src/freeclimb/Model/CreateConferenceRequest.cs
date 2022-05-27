@@ -144,6 +144,21 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the CreateConferenceRequest instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("alias", Alias);          
+            props.Add("playBeep", PlayBeep);          
+            props.Add("record", Record);          
+            props.Add("waitUrl", WaitUrl);          
+            props.Add("statusCallbackUrl", StatusCallbackUrl);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

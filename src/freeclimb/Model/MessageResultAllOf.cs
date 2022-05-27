@@ -216,6 +216,24 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the MessageResultAllOf instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("accountId", AccountId);          
+            props.Add("messageId", MessageId);          
+            props.Add("status", Status);          
+            props.Add("from", From);          
+            props.Add("to", To);          
+            props.Add("text", Text);          
+            props.Add("direction", Direction);          
+            props.Add("notificationUrl", NotificationUrl);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

@@ -91,9 +91,26 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
+
+            return strb.ToString();
         }
 
+        /// <summary>
+        /// Retrieve the KVP Dictionary for the PerclCommand instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("command", Command);          
+            return props;
+        }
+        
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
@@ -145,7 +162,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        public virtual IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -155,7 +172,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected virtual IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
         {
             yield break;
         }

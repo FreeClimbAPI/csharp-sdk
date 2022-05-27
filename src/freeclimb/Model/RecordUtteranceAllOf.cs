@@ -140,6 +140,23 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the RecordUtteranceAllOf instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("actionUrl", ActionUrl);          
+            props.Add("silenceTimeoutMs", SilenceTimeoutMs);          
+            props.Add("finishOnKey", FinishOnKey);          
+            props.Add("maxLengthSec", MaxLengthSec);          
+            props.Add("playBeep", PlayBeep);          
+            props.Add("autoStart", AutoStart);          
+            props.Add("privacyMode", PrivacyMode);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

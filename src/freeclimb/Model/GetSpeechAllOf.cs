@@ -204,6 +204,34 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the GetSpeechAllOf instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("actionUrl", ActionUrl);          
+            props.Add("grammarType", GrammarType);          
+            props.Add("grammarFile", GrammarFile);          
+            props.Add("grammarRule", GrammarRule);          
+            props.Add("playBeep", PlayBeep);          
+            List<object> nested = new List<object>();
+            foreach (var item in Prompts)
+            {
+                nested.Add(item.ToKvp());
+            }
+            props.Add("prompts", nested); 
+            props.Add("noInputTimeoutMs", NoInputTimeoutMs);          
+            props.Add("recognitionTimeoutMs", RecognitionTimeoutMs);          
+            props.Add("confidenceThreshold", ConfidenceThreshold);          
+            props.Add("sensitivityLevel", SensitivityLevel);          
+            props.Add("speechCompleteTimeoutMs", SpeechCompleteTimeoutMs);          
+            props.Add("speechIncompleteTimeoutMs", SpeechIncompleteTimeoutMs);          
+            props.Add("privacyMode", PrivacyMode);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

@@ -74,14 +74,6 @@ namespace freeclimb.Test.Model
             // TODO unit test for the property 'CampaignId'
         }
         /// <summary>
-        /// Test the property 'SmsProvider'
-        /// </summary>
-        [Fact]
-        public void SmsProviderTest()
-        {
-            // TODO unit test for the property 'SmsProvider'
-        }
-        /// <summary>
         /// Test the property 'PhoneNumber'
         /// </summary>
         [Fact]

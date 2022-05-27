@@ -174,6 +174,26 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the MakeCallRequest instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("from", From);          
+            props.Add("to", To);          
+            props.Add("applicationId", ApplicationId);          
+            props.Add("sendDigits", SendDigits);          
+            props.Add("ifMachine", IfMachine);          
+            props.Add("ifMachineUrl", IfMachineUrl);          
+            props.Add("timeout", Timeout);          
+            props.Add("parentCallId", ParentCallId);          
+            props.Add("privacyMode", PrivacyMode);          
+            props.Add("callConnectUrl", CallConnectUrl);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

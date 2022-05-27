@@ -171,6 +171,27 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the QueueResult instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("uri", Uri);          
+            props.Add("dateCreated", DateCreated);          
+            props.Add("dateUpdated", DateUpdated);          
+            props.Add("revision", Revision);          
+            props.Add("accountId", AccountId);          
+            props.Add("queueId", QueueId);          
+            props.Add("alias", Alias);          
+            props.Add("maxSize", MaxSize);          
+            props.Add("currentSize", CurrentSize);          
+            props.Add("averageWaitTime", AverageWaitTime);          
+            props.Add("subresourceUris", SubresourceUris);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

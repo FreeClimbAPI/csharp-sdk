@@ -111,6 +111,21 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the QueueMember instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("uri", Uri);          
+            props.Add("callId", CallId);          
+            props.Add("waitTime", WaitTime);          
+            props.Add("position", Position);          
+            props.Add("dateEnqueued", DateEnqueued);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

@@ -39,6 +39,18 @@ namespace freeclimb.Test.Model
         {
             // TODO uncomment below to create an instance of PerclScript
             //instance = new PerclScript();
+            PerclScript getSpeechScript = new PerclScript();
+            GetSpeech getSpeech = new GetSpeech("www.test.com", 0, "grammar.xml");
+            Say sayHello = new Say("Hello, Freeclimb");
+            Say sayFoo = new Say("Foo you");
+            List<PerclCommand> getSpeechCommands = new List<PerclCommand>();
+            getSpeechCommands.Add(sayHello);
+            getSpeechCommands.Add(sayFoo);
+            getSpeech.Prompts = getSpeechCommands;
+            List<PerclCommand> commands = new List<PerclCommand>();
+            commands.Add(getSpeech);
+            getSpeechScript.Commands = commands;
+            Console.WriteLine(getSpeechScript.ToJson());
         }
 
         public void Dispose()

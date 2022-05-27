@@ -151,6 +151,25 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the ApplicationResultAllOf instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("accountId", AccountId);          
+            props.Add("applicationId", ApplicationId);          
+            props.Add("alias", Alias);          
+            props.Add("voiceUrl", VoiceUrl);          
+            props.Add("voiceFallbackUrl", VoiceFallbackUrl);          
+            props.Add("callConnectUrl", CallConnectUrl);          
+            props.Add("statusCallbackUrl", StatusCallbackUrl);          
+            props.Add("smsUrl", SmsUrl);          
+            props.Add("smsFallbackUrl", SmsFallbackUrl);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

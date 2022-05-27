@@ -42,10 +42,10 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="text">The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped. (required).</param>
         /// <param name="language">Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below..</param>
-        /// <param name="loop">Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up..</param>
+        /// <param name="loop">Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up. (default to 1).</param>
         /// <param name="conferenceId">D of the Conference the speech should be rendered to. If this is not specified, the speech is by default rendered to the Caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
-        public SayAllOf(string text = default(string), string language = default(string), int loop = default(int), string conferenceId = default(string), bool privacyMode = default(bool))
+        public SayAllOf(string text = default(string), string language = default(string), int loop = 1, string conferenceId = default(string), bool privacyMode = default(bool))
         {
             // to ensure "text" is required (not null)
             if (text == null) {
@@ -119,6 +119,21 @@ namespace freeclimb.Model
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
+        /// <summary>
+        /// Retrieve the KVP Dictionary for the SayAllOf instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("text", Text);          
+            props.Add("language", Language);          
+            props.Add("loop", Loop);          
+            props.Add("conferenceId", ConferenceId);          
+            props.Add("privacyMode", PrivacyMode);          
+            return props;
+        }
+        
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>

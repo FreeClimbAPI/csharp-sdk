@@ -111,6 +111,21 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the RecordingResultAllOf instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("recordingId", RecordingId);          
+            props.Add("accountId", AccountId);          
+            props.Add("callId", CallId);          
+            props.Add("durationSec", DurationSec);          
+            props.Add("conferenceId", ConferenceId);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

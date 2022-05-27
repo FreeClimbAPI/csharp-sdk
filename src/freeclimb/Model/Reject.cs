@@ -93,9 +93,28 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
+
+            return strb.ToString();
         }
 
+        /// <summary>
+        /// Retrieve the KVP Dictionary for the Reject instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("reason", Reason);          
+            IDictionary<string, object> command = new Dictionary<string, object>();
+            command.Add("Reject",props);
+            return command;
+        }
+        
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
@@ -147,7 +166,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -157,7 +176,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
         {
             foreach (var x in BaseValidate(validationContext))
             {

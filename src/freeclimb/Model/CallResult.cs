@@ -308,6 +308,35 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the CallResult instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("uri", Uri);          
+            props.Add("dateCreated", DateCreated);          
+            props.Add("dateUpdated", DateUpdated);          
+            props.Add("revision", Revision);          
+            props.Add("callId", CallId);          
+            props.Add("parentCallId", ParentCallId);          
+            props.Add("accountId", AccountId);          
+            props.Add("from", From);          
+            props.Add("to", To);          
+            props.Add("phoneNumberId", PhoneNumberId);          
+            props.Add("status", Status);          
+            props.Add("startTime", StartTime);          
+            props.Add("connectTime", ConnectTime);          
+            props.Add("endTime", EndTime);          
+            props.Add("duration", Duration);          
+            props.Add("connectDuration", ConnectDuration);          
+            props.Add("direction", Direction);          
+            props.Add("answeredBy", AnsweredBy);          
+            props.Add("subresourceUris", SubresourceUris);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

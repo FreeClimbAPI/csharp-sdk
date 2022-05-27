@@ -160,6 +160,30 @@ namespace freeclimb.Model
         }
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the GetDigitsAllOf instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("actionUrl", ActionUrl);          
+            props.Add("digitTimeoutMs", DigitTimeoutMs);          
+            props.Add("finishOnKey", FinishOnKey);          
+            props.Add("flushBuffer", FlushBuffer);          
+            props.Add("initialTimeoutMs", InitialTimeoutMs);          
+            props.Add("maxDigits", MaxDigits);          
+            props.Add("minDigits", MinDigits);          
+            List<object> nested = new List<object>();
+            foreach (var item in Prompts)
+            {
+                nested.Add(item.ToKvp());
+            }
+            props.Add("prompts", nested); 
+            props.Add("privacyMode", PrivacyMode);          
+            return props;
+        }
+        
+        /// <summary>
         /// Returns true if objects are equal
         /// </summary>
         /// <param name="input">Object to be compared</param>

@@ -956,8 +956,8 @@ namespace freeclimb.Test.Api
         {
             List<AvailableNumber> numList = new List<AvailableNumber>();
             Capabilities capabilities = new Capabilities(true, true, true, true, false);
-            AvailableNumber num1 = new AvailableNumber(capabilities, "TEST-CAMPAIGN", AvailableNumber.SmsProviderEnum.Twilio, "+18003608245", true, true, "US", "IL");
-            AvailableNumber num2 = new AvailableNumber(capabilities, "TEST-CAMPAIGN", AvailableNumber.SmsProviderEnum.Twilio, phoneNumberTestValue(), true, true, "US", "IL");
+            AvailableNumber num1 = new AvailableNumber(capabilities, "TEST-CAMPAIGN", "+18003608245", true, true, "US", "IL");
+            AvailableNumber num2 = new AvailableNumber(capabilities, "TEST-CAMPAIGN", phoneNumberTestValue(), true, true, "US", "IL");
             numList.Add(num1);
             numList.Add(num2);
             return new AvailableNumberList(2, 1, 1, 1, 1, 10, "example.com", numList);
