@@ -28,9 +28,9 @@ using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// The &#x60;SetTalk&#x60; command enables or disables the talk privilege for a Participant in a Conference provided both calls are in the same conference. If &#39;true&#39;, no audio from that Participant is shared with the other Participants of the Conference.
+    /// The &#x60;Unpark&#x60; command resumes a parked call.  Execution continues with the first command in the PerCL scripted returned by the actionUrl specified in the Park command as long as the call is still in progress.  If the call is no longer in progress, any returned PerCL will not be executed. Unpark is a terminal command - - any commands following it in the same script are not executed.
     /// </summary>
-    [DataContract(Name = "SetTalk")]
+    [DataContract(Name = "Unpark")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
     [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
     [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
@@ -56,42 +56,15 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
     [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
     [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class SetTalk : PerclCommand, IEquatable<SetTalk>, IValidatableObject
+    public partial class Unpark : PerclCommand, IEquatable<Unpark>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SetTalk" /> class.
+        /// Initializes a new instance of the <see cref="Unpark" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SetTalk() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SetTalk" /> class.
-        /// </summary>
-        /// <param name="callId">ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered. (required).</param>
-        /// <param name="talk">Specifying &#x60;false&#x60; mutes the Participant..</param>
-        /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;SetTalk&quot;).</param>
-        public SetTalk(string callId = default(string), bool talk = default(bool), string command = "SetTalk") : base(command)
+        /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Unpark&quot;).</param>
+        public Unpark(string command = "Unpark") : base(command)
         {
-            // to ensure "callId" is required (not null)
-            if (callId == null) {
-                throw new ArgumentNullException("callId is a required property for SetTalk and cannot be null");
-            }
-            this.CallId = callId;
-            this.Talk = talk;
         }
-
-        /// <summary>
-        /// ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.
-        /// </summary>
-        /// <value>ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.</value>
-        [DataMember(Name = "callId", IsRequired = true, EmitDefaultValue = false)]
-        public string CallId { get; set; }
-
-        /// <summary>
-        /// Specifying &#x60;false&#x60; mutes the Participant.
-        /// </summary>
-        /// <value>Specifying &#x60;false&#x60; mutes the Participant.</value>
-        [DataMember(Name = "talk", EmitDefaultValue = true)]
-        public bool Talk { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -100,10 +73,8 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SetTalk {\n");
+            sb.Append("class Unpark {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  CallId: ").Append(CallId).Append("\n");
-            sb.Append("  Talk: ").Append(Talk).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,16 +95,14 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SetTalk instance. 
+        /// Retrieve the KVP Dictionary for the Unpark instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("callId", CallId);          
-            props.Add("talk", Talk);          
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("SetTalk",props);
+            command.Add("Unpark",props);
             return command;
         }
         
@@ -144,30 +113,21 @@ namespace freeclimb.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SetTalk);
+            return this.Equals(input as Unpark);
         }
 
         /// <summary>
-        /// Returns true if SetTalk instances are equal
+        /// Returns true if Unpark instances are equal
         /// </summary>
-        /// <param name="input">Instance of SetTalk to be compared</param>
+        /// <param name="input">Instance of Unpark to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SetTalk input)
+        public bool Equals(Unpark input)
         {
             if (input == null)
             {
                 return false;
             }
-            return base.Equals(input) && 
-                (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                ) && base.Equals(input) && 
-                (
-                    this.Talk == input.Talk ||
-                    this.Talk.Equals(input.Talk)
-                );
+            return base.Equals(input);
         }
 
         /// <summary>
@@ -179,11 +139,6 @@ namespace freeclimb.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Talk.GetHashCode();
                 return hashCode;
             }
         }

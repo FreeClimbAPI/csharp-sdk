@@ -28,9 +28,9 @@ using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// The &#x60;SetTalk&#x60; command enables or disables the talk privilege for a Participant in a Conference provided both calls are in the same conference. If &#39;true&#39;, no audio from that Participant is shared with the other Participants of the Conference.
+    /// The &#x60;Park&#x60; command allows a caller to be put on hold.  You can provide hold music,messages,etc until ready to resume the call. Park is a terminal command.  Actions performed on the Call while on hold are provided in a PerCL script in response to the waitUrl property. Actions performed on the Call after it has been unparked (resumed) will be provided in a PerCL script in response to the actionUrl provided. A Call can be resumed in two ways - - REST API invocation or the Unpark percl command. No actions can be nested within Park and Park cannot be nested in any other actions. 
     /// </summary>
-    [DataContract(Name = "SetTalk")]
+    [DataContract(Name = "Park")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
     [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
     [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
@@ -56,42 +56,55 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
     [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
     [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class SetTalk : PerclCommand, IEquatable<SetTalk>, IValidatableObject
+    public partial class Park : PerclCommand, IEquatable<Park>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SetTalk" /> class.
+        /// Initializes a new instance of the <see cref="Park" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected SetTalk() { }
+        protected Park() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="SetTalk" /> class.
+        /// Initializes a new instance of the <see cref="Park" /> class.
         /// </summary>
-        /// <param name="callId">ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered. (required).</param>
-        /// <param name="talk">Specifying &#x60;false&#x60; mutes the Participant..</param>
-        /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;SetTalk&quot;).</param>
-        public SetTalk(string callId = default(string), bool talk = default(bool), string command = "SetTalk") : base(command)
+        /// <param name="waitUrl">Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is Parked. Once the script returned by the waitUrl runs out of commands to execute, FreeClimb will re-request the waitUrl and start over, essentially looping the script requests indefinitely. (required).</param>
+        /// <param name="actionUrl">A request is made to this URL when the Call is resumed, which can occur if the Call is resumed via the Unpark command, the REST API (POST to Call resource), or the caller hangs up. The PerCL script returned in response to the actionUrl will be executed on the resumed call. (required).</param>
+        /// <param name="notificationUrl">URL to be invoked when the Call is parked. The request to the URL contains the standard request parameters..</param>
+        /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Park&quot;).</param>
+        public Park(string waitUrl = default(string), string actionUrl = default(string), string notificationUrl = default(string), string command = "Park") : base(command)
         {
-            // to ensure "callId" is required (not null)
-            if (callId == null) {
-                throw new ArgumentNullException("callId is a required property for SetTalk and cannot be null");
+            // to ensure "waitUrl" is required (not null)
+            if (waitUrl == null) {
+                throw new ArgumentNullException("waitUrl is a required property for Park and cannot be null");
             }
-            this.CallId = callId;
-            this.Talk = talk;
+            this.WaitUrl = waitUrl;
+            // to ensure "actionUrl" is required (not null)
+            if (actionUrl == null) {
+                throw new ArgumentNullException("actionUrl is a required property for Park and cannot be null");
+            }
+            this.ActionUrl = actionUrl;
+            this.NotificationUrl = notificationUrl;
         }
 
         /// <summary>
-        /// ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.
+        /// Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is Parked. Once the script returned by the waitUrl runs out of commands to execute, FreeClimb will re-request the waitUrl and start over, essentially looping the script requests indefinitely.
         /// </summary>
-        /// <value>ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.</value>
-        [DataMember(Name = "callId", IsRequired = true, EmitDefaultValue = false)]
-        public string CallId { get; set; }
+        /// <value>Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is Parked. Once the script returned by the waitUrl runs out of commands to execute, FreeClimb will re-request the waitUrl and start over, essentially looping the script requests indefinitely.</value>
+        [DataMember(Name = "waitUrl", IsRequired = true, EmitDefaultValue = false)]
+        public string WaitUrl { get; set; }
 
         /// <summary>
-        /// Specifying &#x60;false&#x60; mutes the Participant.
+        /// A request is made to this URL when the Call is resumed, which can occur if the Call is resumed via the Unpark command, the REST API (POST to Call resource), or the caller hangs up. The PerCL script returned in response to the actionUrl will be executed on the resumed call.
         /// </summary>
-        /// <value>Specifying &#x60;false&#x60; mutes the Participant.</value>
-        [DataMember(Name = "talk", EmitDefaultValue = true)]
-        public bool Talk { get; set; }
+        /// <value>A request is made to this URL when the Call is resumed, which can occur if the Call is resumed via the Unpark command, the REST API (POST to Call resource), or the caller hangs up. The PerCL script returned in response to the actionUrl will be executed on the resumed call.</value>
+        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = false)]
+        public string ActionUrl { get; set; }
+
+        /// <summary>
+        /// URL to be invoked when the Call is parked. The request to the URL contains the standard request parameters.
+        /// </summary>
+        /// <value>URL to be invoked when the Call is parked. The request to the URL contains the standard request parameters.</value>
+        [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
+        public string NotificationUrl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -100,10 +113,11 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SetTalk {\n");
+            sb.Append("class Park {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  CallId: ").Append(CallId).Append("\n");
-            sb.Append("  Talk: ").Append(Talk).Append("\n");
+            sb.Append("  WaitUrl: ").Append(WaitUrl).Append("\n");
+            sb.Append("  ActionUrl: ").Append(ActionUrl).Append("\n");
+            sb.Append("  NotificationUrl: ").Append(NotificationUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,16 +138,17 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SetTalk instance. 
+        /// Retrieve the KVP Dictionary for the Park instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("callId", CallId);          
-            props.Add("talk", Talk);          
+            props.Add("waitUrl", WaitUrl);          
+            props.Add("actionUrl", ActionUrl);          
+            props.Add("notificationUrl", NotificationUrl);          
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("SetTalk",props);
+            command.Add("Park",props);
             return command;
         }
         
@@ -144,15 +159,15 @@ namespace freeclimb.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SetTalk);
+            return this.Equals(input as Park);
         }
 
         /// <summary>
-        /// Returns true if SetTalk instances are equal
+        /// Returns true if Park instances are equal
         /// </summary>
-        /// <param name="input">Instance of SetTalk to be compared</param>
+        /// <param name="input">Instance of Park to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SetTalk input)
+        public bool Equals(Park input)
         {
             if (input == null)
             {
@@ -160,13 +175,19 @@ namespace freeclimb.Model
             }
             return base.Equals(input) && 
                 (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
+                    this.WaitUrl == input.WaitUrl ||
+                    (this.WaitUrl != null &&
+                    this.WaitUrl.Equals(input.WaitUrl))
                 ) && base.Equals(input) && 
                 (
-                    this.Talk == input.Talk ||
-                    this.Talk.Equals(input.Talk)
+                    this.ActionUrl == input.ActionUrl ||
+                    (this.ActionUrl != null &&
+                    this.ActionUrl.Equals(input.ActionUrl))
+                ) && base.Equals(input) && 
+                (
+                    this.NotificationUrl == input.NotificationUrl ||
+                    (this.NotificationUrl != null &&
+                    this.NotificationUrl.Equals(input.NotificationUrl))
                 );
         }
 
@@ -179,11 +200,18 @@ namespace freeclimb.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.CallId != null)
+                if (this.WaitUrl != null)
                 {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.WaitUrl.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Talk.GetHashCode();
+                if (this.ActionUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
+                }
+                if (this.NotificationUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.NotificationUrl.GetHashCode();
+                }
                 return hashCode;
             }
         }

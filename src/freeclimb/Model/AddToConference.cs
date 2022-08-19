@@ -40,6 +40,7 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
     [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
     [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
+    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
     [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
     [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
     [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
@@ -54,6 +55,7 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
     [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
     [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
+    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
     public partial class AddToConference : PerclCommand, IEquatable<AddToConference>, IValidatableObject
     {
         /// <summary>

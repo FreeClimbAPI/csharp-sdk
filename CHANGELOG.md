@@ -6,6 +6,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 None
+<a name="4.0.1"</a>
+## [4.0.1] 2022-08-19
+### Added
+- Add `Park` PerCL command
+- Add `Unpark` PerCL command
+
 <a name="3.0.5"</a>
 ## [3.0.5] 2021-12-6
 ### Changed
