@@ -6,29 +6,29 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 None
-<a name="4.0.1"</a>
+<a name="4.0.1"></a>
 ## [4.0.1] 2022-08-19
 ### Added
 - Add `Park` PerCL command
 - Add `Unpark` PerCL command
 
-<a name="3.0.5"</a>
+<a name="3.0.5"></a>
 ## [3.0.5] 2021-12-6
 ### Changed
 - Replaced Auth Token -> API Key
 
-<a name="3.0.4"</a>
+<a name="3.0.4"></a>
 ## [3.0.4] 2021-11-2
 ### Added
 - Added `applicationId`, `country`, `hasApplication`, `region`, `smsEnabled`, `voiceEnabled` optional filters to `IncomingPhoneNumbersSearchFilters` interface
 - Added `country`, `region`, `smsEnabled`, `voiceEnabled` optional filters to `AvailablePhoneNumbersSearchFilters` interface
 
-<a name="3.0.3"</a>
+<a name="3.0.3"></a>
 ## [3.0.3] 2021-11-4
 ### Added
 - 1 new param `active` for CallSearchFilters
 
-<a name="3.0.1"</a>
+<a name="3.0.1"></a>
 ## [3.0.1] 2021-8-3
 ### Added
 - 4 new properties for GetSpeechActionCallback
