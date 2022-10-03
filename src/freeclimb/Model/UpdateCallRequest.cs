@@ -40,16 +40,16 @@ namespace freeclimb.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Canceled for value: canceled
+            /// Enum CANCELED for value: canceled
             /// </summary>
             [EnumMember(Value = "canceled")]
-            Canceled = 1,
+            CANCELED = 1,
 
             /// <summary>
-            /// Enum Completed for value: completed
+            /// Enum COMPLETED for value: completed
             /// </summary>
             [EnumMember(Value = "completed")]
-            Completed = 2
+            COMPLETED = 2
 
         }
 

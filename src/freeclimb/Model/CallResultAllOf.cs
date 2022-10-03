@@ -40,52 +40,52 @@ namespace freeclimb.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Queued for value: queued
+            /// Enum QUEUED for value: queued
             /// </summary>
             [EnumMember(Value = "queued")]
-            Queued = 1,
+            QUEUED = 1,
 
             /// <summary>
-            /// Enum Ringing for value: ringing
+            /// Enum RINGING for value: ringing
             /// </summary>
             [EnumMember(Value = "ringing")]
-            Ringing = 2,
+            RINGING = 2,
 
             /// <summary>
-            /// Enum InProgress for value: inProgress
+            /// Enum IN_PROGRESS for value: inProgress
             /// </summary>
             [EnumMember(Value = "inProgress")]
-            InProgress = 3,
+            IN_PROGRESS = 3,
 
             /// <summary>
-            /// Enum Canceled for value: canceled
+            /// Enum CANCELED for value: canceled
             /// </summary>
             [EnumMember(Value = "canceled")]
-            Canceled = 4,
+            CANCELED = 4,
 
             /// <summary>
-            /// Enum Completed for value: completed
+            /// Enum COMPLETED for value: completed
             /// </summary>
             [EnumMember(Value = "completed")]
-            Completed = 5,
+            COMPLETED = 5,
 
             /// <summary>
-            /// Enum Busy for value: busy
+            /// Enum BUSY for value: busy
             /// </summary>
             [EnumMember(Value = "busy")]
-            Busy = 6,
+            BUSY = 6,
 
             /// <summary>
-            /// Enum Failed for value: failed
+            /// Enum FAILED for value: failed
             /// </summary>
             [EnumMember(Value = "failed")]
-            Failed = 7,
+            FAILED = 7,
 
             /// <summary>
-            /// Enum NoAnswer for value: noAnswer
+            /// Enum NO_ANSWER for value: noAnswer
             /// </summary>
             [EnumMember(Value = "noAnswer")]
-            NoAnswer = 8
+            NO_ANSWER = 8
 
         }
 

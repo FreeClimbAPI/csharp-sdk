@@ -40,28 +40,28 @@ namespace freeclimb.Model
         public enum PlayBeepEnum
         {
             /// <summary>
-            /// Enum Always for value: always
+            /// Enum ALWAYS for value: always
             /// </summary>
             [EnumMember(Value = "always")]
-            Always = 1,
+            ALWAYS = 1,
 
             /// <summary>
-            /// Enum Never for value: never
+            /// Enum NEVER for value: never
             /// </summary>
             [EnumMember(Value = "never")]
-            Never = 2,
+            NEVER = 2,
 
             /// <summary>
-            /// Enum EntryOnly for value: entryOnly
+            /// Enum ENTRY_ONLY for value: entryOnly
             /// </summary>
             [EnumMember(Value = "entryOnly")]
-            EntryOnly = 3,
+            ENTRY_ONLY = 3,
 
             /// <summary>
-            /// Enum ExitOnly for value: exitOnly
+            /// Enum EXIT_ONLY for value: exitOnly
             /// </summary>
             [EnumMember(Value = "exitOnly")]
-            ExitOnly = 4
+            EXIT_ONLY = 4
 
         }
 
@@ -80,34 +80,34 @@ namespace freeclimb.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Creating for value: creating
+            /// Enum CREATING for value: creating
             /// </summary>
             [EnumMember(Value = "creating")]
-            Creating = 1,
+            CREATING = 1,
 
             /// <summary>
-            /// Enum Empty for value: empty
+            /// Enum EMPTY for value: empty
             /// </summary>
             [EnumMember(Value = "empty")]
-            Empty = 2,
+            EMPTY = 2,
 
             /// <summary>
-            /// Enum Populated for value: populated
+            /// Enum POPULATED for value: populated
             /// </summary>
             [EnumMember(Value = "populated")]
-            Populated = 3,
+            POPULATED = 3,
 
             /// <summary>
-            /// Enum InProgress for value: inProgress
+            /// Enum IN_PROGRESS for value: inProgress
             /// </summary>
             [EnumMember(Value = "inProgress")]
-            InProgress = 4,
+            IN_PROGRESS = 4,
 
             /// <summary>
-            /// Enum Terminated for value: terminated
+            /// Enum TERMINATED for value: terminated
             /// </summary>
             [EnumMember(Value = "terminated")]
-            Terminated = 5
+            TERMINATED = 5
 
         }
 

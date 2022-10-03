@@ -84,15 +84,6 @@ namespace freeclimb.Test.Model
             //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new TerminateConference().ToJson()));
         }
         /// <summary>
-        /// Test deserialize a Park from type PerclCommand
-        /// </summary>
-        [Fact]
-        public void ParkDeserializeFromPerclCommandTest()
-        {
-            // TODO uncomment below to test deserialize a Park from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Park().ToJson()));
-        }
-        /// <summary>
         /// Test deserialize a SendDigits from type PerclCommand
         /// </summary>
         [Fact]
@@ -136,15 +127,6 @@ namespace freeclimb.Test.Model
         {
             // TODO uncomment below to test deserialize a Redirect from type PerclCommand
             //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Redirect().ToJson()));
-        }
-        /// <summary>
-        /// Test deserialize a Unpark from type PerclCommand
-        /// </summary>
-        [Fact]
-        public void UnparkDeserializeFromPerclCommandTest()
-        {
-            // TODO uncomment below to test deserialize a Unpark from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Unpark().ToJson()));
         }
         /// <summary>
         /// Test deserialize a Play from type PerclCommand

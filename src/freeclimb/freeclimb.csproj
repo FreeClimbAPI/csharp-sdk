@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>freeclimb</AssemblyName>
     <PackageId>freeclimb</PackageId>
     <OutputType>Library</OutputType>
@@ -12,7 +12,7 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>freeclimb</RootNamespace>
-    <Version>4.0.0</Version>
+    <Version>4.0.1</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\freeclimb.xml</DocumentationFile>
     <RepositoryUrl>https://https://github.com/freeclimbapi/csharp-sdk.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

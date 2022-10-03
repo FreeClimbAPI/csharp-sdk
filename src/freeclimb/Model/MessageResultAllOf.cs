@@ -40,70 +40,70 @@ namespace freeclimb.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum New for value: new
+            /// Enum NEW for value: new
             /// </summary>
             [EnumMember(Value = "new")]
-            New = 1,
+            NEW = 1,
 
             /// <summary>
-            /// Enum Queued for value: queued
+            /// Enum QUEUED for value: queued
             /// </summary>
             [EnumMember(Value = "queued")]
-            Queued = 2,
+            QUEUED = 2,
 
             /// <summary>
-            /// Enum Rejected for value: rejected
+            /// Enum REJECTED for value: rejected
             /// </summary>
             [EnumMember(Value = "rejected")]
-            Rejected = 3,
+            REJECTED = 3,
 
             /// <summary>
-            /// Enum Sending for value: sending
+            /// Enum SENDING for value: sending
             /// </summary>
             [EnumMember(Value = "sending")]
-            Sending = 4,
+            SENDING = 4,
 
             /// <summary>
-            /// Enum Sent for value: sent
+            /// Enum SENT for value: sent
             /// </summary>
             [EnumMember(Value = "sent")]
-            Sent = 5,
+            SENT = 5,
 
             /// <summary>
-            /// Enum Failed for value: failed
+            /// Enum FAILED for value: failed
             /// </summary>
             [EnumMember(Value = "failed")]
-            Failed = 6,
+            FAILED = 6,
 
             /// <summary>
-            /// Enum Received for value: received
+            /// Enum RECEIVED for value: received
             /// </summary>
             [EnumMember(Value = "received")]
-            Received = 7,
+            RECEIVED = 7,
 
             /// <summary>
-            /// Enum Undelivered for value: undelivered
+            /// Enum UNDELIVERED for value: undelivered
             /// </summary>
             [EnumMember(Value = "undelivered")]
-            Undelivered = 8,
+            UNDELIVERED = 8,
 
             /// <summary>
-            /// Enum Expired for value: expired
+            /// Enum EXPIRED for value: expired
             /// </summary>
             [EnumMember(Value = "expired")]
-            Expired = 9,
+            EXPIRED = 9,
 
             /// <summary>
-            /// Enum Deleted for value: deleted
+            /// Enum DELETED for value: deleted
             /// </summary>
             [EnumMember(Value = "deleted")]
-            Deleted = 10,
+            DELETED = 10,
 
             /// <summary>
-            /// Enum Unknown for value: unknown
+            /// Enum UNKNOWN for value: unknown
             /// </summary>
             [EnumMember(Value = "unknown")]
-            Unknown = 11
+            UNKNOWN = 11
 
         }
 
