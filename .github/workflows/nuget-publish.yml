@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Nuget Publish
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    name: Update NuGet package
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1
+          
+      - name: Build solution and generate NuGet package
+        run: |  
+          cd src/freeclimb
+          dotnet pack -c Release -o out  
+
+      - name: Push generated package to GitHub registry
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}        
+        run: dotnet nuget push ./src/freeclimb/out/*.nupkg --skip-duplicate --no-symbols --api-key $NUGET_AUTH_TOKEN
