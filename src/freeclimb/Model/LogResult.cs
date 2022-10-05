@@ -40,22 +40,22 @@ namespace freeclimb.Model
         public enum LevelEnum
         {
             /// <summary>
-            /// Enum Info for value: info
+            /// Enum INFO for value: info
             /// </summary>
             [EnumMember(Value = "info")]
-            Info = 1,
+            INFO = 1,
 
             /// <summary>
-            /// Enum Warning for value: warning
+            /// Enum WARNING for value: warning
             /// </summary>
             [EnumMember(Value = "warning")]
-            Warning = 2,
+            WARNING = 2,
 
             /// <summary>
-            /// Enum Error for value: error
+            /// Enum ERROR for value: error
             /// </summary>
             [EnumMember(Value = "error")]
-            Error = 3
+            ERROR = 3
 
         }
 

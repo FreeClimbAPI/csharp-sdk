@@ -40,16 +40,16 @@ namespace freeclimb.Model
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum Trial for value: trial
+            /// Enum TRIAL for value: trial
             /// </summary>
             [EnumMember(Value = "trial")]
-            Trial = 1,
+            TRIAL = 1,
 
             /// <summary>
-            /// Enum Full for value: full
+            /// Enum FULL for value: full
             /// </summary>
             [EnumMember(Value = "full")]
-            Full = 2
+            FULL = 2
 
         }
 
@@ -68,22 +68,22 @@ namespace freeclimb.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Active for value: active
+            /// Enum ACTIVE for value: active
             /// </summary>
             [EnumMember(Value = "active")]
-            Active = 1,
+            ACTIVE = 1,
 
             /// <summary>
-            /// Enum Suspended for value: suspended
+            /// Enum SUSPENDED for value: suspended
             /// </summary>
             [EnumMember(Value = "suspended")]
-            Suspended = 2,
+            SUSPENDED = 2,
 
             /// <summary>
-            /// Enum Closed for value: closed
+            /// Enum CLOSED for value: closed
             /// </summary>
             [EnumMember(Value = "closed")]
-            Closed = 3
+            CLOSED = 3
 
         }
 

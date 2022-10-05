@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>freeclimb.Test</AssemblyName>
     <RootNamespace>freeclimb.Test</RootNamespace>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 

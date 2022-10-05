@@ -33,6 +33,46 @@ namespace freeclimb.Model
     public partial class UpdateConferenceRequest : IEquatable<UpdateConferenceRequest>, IValidatableObject
     {
         /// <summary>
+        /// Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.
+        /// </summary>
+        /// <value>Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PlayBeepEnum
+        {
+            /// <summary>
+            /// Enum ALWAYS for value: always
+            /// </summary>
+            [EnumMember(Value = "always")]
+            ALWAYS = 1,
+
+            /// <summary>
+            /// Enum NEVER for value: never
+            /// </summary>
+            [EnumMember(Value = "never")]
+            NEVER = 2,
+
+            /// <summary>
+            /// Enum ENTRY_ONLY for value: entryOnly
+            /// </summary>
+            [EnumMember(Value = "entryOnly")]
+            ENTRY_ONLY = 3,
+
+            /// <summary>
+            /// Enum EXIT_ONLY for value: exitOnly
+            /// </summary>
+            [EnumMember(Value = "exitOnly")]
+            EXIT_ONLY = 4
+
+        }
+
+
+        /// <summary>
+        /// Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.
+        /// </summary>
+        /// <value>Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.</value>
+        [DataMember(Name = "playBeep", EmitDefaultValue = false)]
+        public PlayBeepEnum? PlayBeep { get; set; }
+        /// <summary>
         /// New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**
         /// </summary>
         /// <value>New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**</value>
@@ -40,16 +80,16 @@ namespace freeclimb.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Empty for value: empty
+            /// Enum EMPTY for value: empty
             /// </summary>
             [EnumMember(Value = "empty")]
-            Empty = 1,
+            EMPTY = 1,
 
             /// <summary>
-            /// Enum Terminated for value: terminated
+            /// Enum TERMINATED for value: terminated
             /// </summary>
             [EnumMember(Value = "terminated")]
-            Terminated = 2
+            TERMINATED = 2
 
         }
 
@@ -64,13 +104,12 @@ namespace freeclimb.Model
         /// Initializes a new instance of the <see cref="UpdateConferenceRequest" /> class.
         /// </summary>
         /// <param name="alias">Description for this conference. Maximum 64 characters..</param>
-        /// <param name="playBeep">Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;. (default to &quot;always&quot;).</param>
+        /// <param name="playBeep">Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;. (default to PlayBeepEnum.ALWAYS).</param>
         /// <param name="status">New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**.</param>
-        public UpdateConferenceRequest(string alias = default(string), string playBeep = "always", StatusEnum? status = default(StatusEnum?))
+        public UpdateConferenceRequest(string alias = default(string), PlayBeepEnum? playBeep = PlayBeepEnum.ALWAYS, StatusEnum? status = default(StatusEnum?))
         {
             this.Alias = alias;
-            // use default value if no "playBeep" provided
-            this.PlayBeep = playBeep ?? "always";
+            this.PlayBeep = playBeep;
             this.Status = status;
         }
 
@@ -80,13 +119,6 @@ namespace freeclimb.Model
         /// <value>Description for this conference. Maximum 64 characters.</value>
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
-
-        /// <summary>
-        /// Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.
-        /// </summary>
-        /// <value>Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.</value>
-        [DataMember(Name = "playBeep", EmitDefaultValue = false)]
-        public string PlayBeep { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -154,8 +186,7 @@ namespace freeclimb.Model
                 ) && 
                 (
                     this.PlayBeep == input.PlayBeep ||
-                    (this.PlayBeep != null &&
-                    this.PlayBeep.Equals(input.PlayBeep))
+                    this.PlayBeep.Equals(input.PlayBeep)
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -176,10 +207,7 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.Alias.GetHashCode();
                 }
-                if (this.PlayBeep != null)
-                {
-                    hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 return hashCode;
             }

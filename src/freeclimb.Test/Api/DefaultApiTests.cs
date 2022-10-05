@@ -869,7 +869,7 @@ namespace freeclimb.Test.Api
 
         private CreateConferenceRequest createConferenceRequestTestValue()
         {
-            return new CreateConferenceRequest("TEST-CONF", CreateConferenceRequest.PlayBeepEnum.Always, true);
+            return new CreateConferenceRequest("TEST-CONF", CreateConferenceRequest.PlayBeepEnum.ALWAYS, true);
         }
 
         private ConferenceResult conferenceResultTestValue()
@@ -977,7 +977,7 @@ namespace freeclimb.Test.Api
         {
             return new CallResult("example.com", dateCreatedTestValue(), "Mon, 15 Jun 2020 20:45:32 GMT", 
                 1, callIdTestValue(), null, accountIdTestValue(), phoneNumberTestValue(), "+13124567890",
-                null, CallResult.StatusEnum.InProgress, dateCreatedTestValue(), dateCreatedTestValue(), null);
+                null, CallResult.StatusEnum.IN_PROGRESS, dateCreatedTestValue(), dateCreatedTestValue(), null);
         }
         
         private ConferenceParticipantResult conferenceParticipantResultTestValue()
@@ -998,7 +998,7 @@ namespace freeclimb.Test.Api
 
         private MessageResult messageResultTestValue()
         {
-            return new MessageResult("example.com", dateCreatedTestValue(), null, 1, accountIdTestValue(), messageIdTestValue(), MessageResult.StatusEnum.Sent,
+            return new MessageResult("example.com", dateCreatedTestValue(), null, 1, accountIdTestValue(), messageIdTestValue(), MessageResult.StatusEnum.SENT,
                 phoneNumberTestValue(), "+13121113456", "Test text message", "outbound");
         }
 
@@ -1118,12 +1118,12 @@ namespace freeclimb.Test.Api
 
         private UpdateConferenceRequest updateConferenceRequestTestValue()
         {
-            return new UpdateConferenceRequest("TEST-CONF", "always");
+            return new UpdateConferenceRequest("TEST-CONF", UpdateConferenceRequest.PlayBeepEnum.ALWAYS);
         }
 
         private UpdateCallRequest updateCallRequestTestValue()
         {
-            return new UpdateCallRequest(UpdateCallRequest.StatusEnum.Completed);
+            return new UpdateCallRequest(UpdateCallRequest.StatusEnum.COMPLETED);
         }
 
         private UpdateConferenceParticipantRequest updateConferenceParticipantRequestTestValue()
