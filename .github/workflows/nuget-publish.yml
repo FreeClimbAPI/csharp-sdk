@@ -25,5 +25,6 @@ jobs:
 
       - name: Push generated package to GitHub registry
         env:
-          NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}        
-        run: dotnet nuget push ./src/freeclimb/out/*.nupkg --skip-duplicate --no-symbols --api-key $NUGET_AUTH_TOKEN
+          NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
+          
+        run: dotnet nuget push ./src/freeclimb/out/*.nupkg --skip-duplicate --no-symbols --api-key $NUGET_AUTH_TOKEN --source https://api.nuget.org/v3/index.json
