@@ -545,8 +545,9 @@ namespace freeclimb.Test.Api
             bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
             bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
             bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
-            instance.Setup(m => m.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode)).Returns(incomingNumberListTestValue());
-            var response = instance.Object.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
+            bool? offnet = offnetTestValue();
+            instance.Setup(m => m.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet)).Returns(incomingNumberListTestValue());
+            var response = instance.Object.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet);
             //Assert.IsType<IncomingNumberList>(response);
             Assert.IsAssignableFrom<IncomingNumberList>(response);
         }
@@ -948,6 +949,10 @@ namespace freeclimb.Test.Api
         }
         
         private bool capabilitiesShortCodeTestValue()
+        {
+            return true;
+        }
+        private bool offnetTestValue()
         {
             return true;
         }

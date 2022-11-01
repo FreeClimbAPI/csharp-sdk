@@ -2339,7 +2339,7 @@ Name | Type | Description  | Notes
 
 <a name="listincomingnumbers"></a>
 # **ListIncomingNumbers**
-> IncomingNumberList ListIncomingNumbers (string accountId, string phoneNumber = null, string alias = null, string region = null, string country = null, string applicationId = null, bool? hasApplication = null, bool? voiceEnabled = null, bool? smsEnabled = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null)
+> IncomingNumberList ListIncomingNumbers (string accountId, string phoneNumber = null, string alias = null, string region = null, string country = null, string applicationId = null, bool? hasApplication = null, bool? voiceEnabled = null, bool? smsEnabled = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null, bool? offnet = null)
 
 List Incoming Numbers
 
@@ -2378,11 +2378,12 @@ namespace Example
             var capabilitiesTollFree = true;  // bool? |  (optional) 
             var capabilitiesTenDLC = true;  // bool? |  (optional) 
             var capabilitiesShortCode = true;  // bool? |  (optional) 
+            var offnet = true;  // bool? | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional) 
 
             try
             {
                 // List Incoming Numbers
-                IncomingNumberList result = apiInstance.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
+                IncomingNumberList result = apiInstance.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2414,6 +2415,7 @@ Name | Type | Description  | Notes
  **capabilitiesTollFree** | **bool?**|  | [optional] 
  **capabilitiesTenDLC** | **bool?**|  | [optional] 
  **capabilitiesShortCode** | **bool?**|  | [optional] 
+ **offnet** | **bool?**| Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. | [optional] 
 
 ### Return type
 
