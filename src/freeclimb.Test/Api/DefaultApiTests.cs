@@ -68,10 +68,11 @@ namespace freeclimb.Test.Api
 
         public void BuyAPhoneNumberTest()
         {
-            string accountId = accountIdTestValue();
+            
             BuyIncomingNumberRequest buyIncomingNumberRequest = buyIncomingNumberRequestTestValue();
-            instance.Setup(m => m.BuyAPhoneNumber(accountId, buyIncomingNumberRequest)).Returns(incomingNumberResultTestValue());
-            var response = instance.Object.BuyAPhoneNumber(accountId, buyIncomingNumberRequest);
+	    
+            instance.Setup(m => m.BuyAPhoneNumber(buyIncomingNumberRequest)).Returns(incomingNumberResultTestValue());
+            var response = instance.Object.BuyAPhoneNumber(buyIncomingNumberRequest);
             //Assert.IsType<IncomingNumberResult>(response);
             Assert.IsAssignableFrom<IncomingNumberResult>(response);
         }
@@ -83,10 +84,11 @@ namespace freeclimb.Test.Api
 
         public void CreateAConferenceTest()
         {
-            string accountId = accountIdTestValue();
+            
             CreateConferenceRequest createConferenceRequest = createConferenceRequestTestValue();
-            instance.Setup(m => m.CreateAConference(accountId, createConferenceRequest)).Returns(conferenceResultTestValue());
-            var response = instance.Object.CreateAConference(accountId, createConferenceRequest);
+	    
+            instance.Setup(m => m.CreateAConference(createConferenceRequest)).Returns(conferenceResultTestValue());
+            var response = instance.Object.CreateAConference(createConferenceRequest);
             //Assert.IsType<ConferenceResult>(response);
             Assert.IsAssignableFrom<ConferenceResult>(response);
         }
@@ -98,10 +100,11 @@ namespace freeclimb.Test.Api
 
         public void CreateAQueueTest()
         {
-            string accountId = accountIdTestValue();
+            
             QueueRequest queueRequest = queueRequestTestValue();
-            instance.Setup(m => m.CreateAQueue(accountId, queueRequest)).Returns(queueResultTestValue());
-            var response = instance.Object.CreateAQueue(accountId, queueRequest);
+	    
+            instance.Setup(m => m.CreateAQueue(queueRequest)).Returns(queueResultTestValue());
+            var response = instance.Object.CreateAQueue(queueRequest);
             //Assert.IsType<QueueResult>(response);
             Assert.IsAssignableFrom<QueueResult>(response);
         }
@@ -113,10 +116,11 @@ namespace freeclimb.Test.Api
 
         public void CreateAnApplicationTest()
         {
-            string accountId = accountIdTestValue();
+            
             ApplicationRequest applicationRequest = applicationRequestTestValue();
-            instance.Setup(m => m.CreateAnApplication(accountId, applicationRequest)).Returns(applicationResultTestValue());
-            var response = instance.Object.CreateAnApplication(accountId, applicationRequest);
+	    
+            instance.Setup(m => m.CreateAnApplication(applicationRequest)).Returns(applicationResultTestValue());
+            var response = instance.Object.CreateAnApplication(applicationRequest);
             //Assert.IsType<ApplicationResult>(response);
             Assert.IsAssignableFrom<ApplicationResult>(response);
         }
@@ -128,10 +132,11 @@ namespace freeclimb.Test.Api
 
         public void DeleteARecordingTest()
         {
-            string accountId = accountIdTestValue();
+            
             string recordingId = recordingIdTestValue();
-            instance.Setup(m => m.DeleteARecording(accountId, recordingId));
-            instance.Object.DeleteARecording(accountId, recordingId);
+	    
+            instance.Setup(m => m.DeleteARecording(recordingId));
+            instance.Object.DeleteARecording(recordingId);
         }
         
         /// <summary>
@@ -141,10 +146,11 @@ namespace freeclimb.Test.Api
 
         public void DeleteAnApplicationTest()
         {
-            string accountId = accountIdTestValue();
+            
             string applicationId = applicationIdTestValue();
-            instance.Setup(m => m.DeleteAnApplication(accountId, applicationId));
-            instance.Object.DeleteAnApplication(accountId, applicationId);
+	    
+            instance.Setup(m => m.DeleteAnApplication(applicationId));
+            instance.Object.DeleteAnApplication(applicationId);
         }
         
         /// <summary>
@@ -154,10 +160,11 @@ namespace freeclimb.Test.Api
 
         public void DeleteAnIncomingNumberTest()
         {
-            string accountId = accountIdTestValue();
+            
             string phoneNumberId = phoneNumberIdTestValue();
-            instance.Setup(m => m.DeleteAnIncomingNumber(accountId, phoneNumberId));
-            instance.Object.DeleteAnIncomingNumber(accountId, phoneNumberId);
+	    
+            instance.Setup(m => m.DeleteAnIncomingNumber(phoneNumberId));
+            instance.Object.DeleteAnIncomingNumber(phoneNumberId);
         }
         
         /// <summary>
@@ -167,11 +174,13 @@ namespace freeclimb.Test.Api
 
         public void DequeueAMemberTest()
         {
-            string accountId = accountIdTestValue();
+            
             string queueId = queueIdTestValue();
+	    
             string callId = callIdTestValue();
-            instance.Setup(m => m.DequeueAMember(accountId, queueId, callId)).Returns(queueMemberTestValue());
-            var response = instance.Object.DequeueAMember(accountId, queueId, callId);
+	    
+            instance.Setup(m => m.DequeueAMember(queueId, callId)).Returns(queueMemberTestValue());
+            var response = instance.Object.DequeueAMember(queueId, callId);
             //Assert.IsType<QueueMember>(response);
             Assert.IsAssignableFrom<QueueMember>(response);
         }
@@ -183,10 +192,11 @@ namespace freeclimb.Test.Api
 
         public void DequeueHeadMemberTest()
         {
-            string accountId = accountIdTestValue();
+            
             string queueId = queueIdTestValue();
-            instance.Setup(m => m.DequeueHeadMember(accountId, queueId)).Returns(queueMemberTestValue());
-            var response = instance.Object.DequeueHeadMember(accountId, queueId);
+	    
+            instance.Setup(m => m.DequeueHeadMember(queueId)).Returns(queueMemberTestValue());
+            var response = instance.Object.DequeueHeadMember(queueId);
             //Assert.IsType<QueueMember>(response);
             Assert.IsAssignableFrom<QueueMember>(response);
         }
@@ -198,10 +208,11 @@ namespace freeclimb.Test.Api
 
         public void DownloadARecordingFileTest()
         {
-            string accountId = accountIdTestValue();
+            
             string recordingId = recordingIdTestValue();
-            instance.Setup(m => m.DownloadARecordingFile(accountId, recordingId)).Returns(systemIOStreamTestValue());
-            var response = instance.Object.DownloadARecordingFile(accountId, recordingId);
+	    
+            instance.Setup(m => m.DownloadARecordingFile(recordingId)).Returns(systemIOStreamTestValue());
+            var response = instance.Object.DownloadARecordingFile(recordingId);
             //Assert.IsType<System.IO.Stream>(response);
             Assert.IsAssignableFrom<System.IO.Stream>(response);
         }
@@ -213,10 +224,11 @@ namespace freeclimb.Test.Api
 
         public void FilterLogsTest()
         {
-            string accountId = accountIdTestValue();
+            
             FilterLogsRequest filterLogsRequest = filterLogsRequestTestValue();
-            instance.Setup(m => m.FilterLogs(accountId, filterLogsRequest)).Returns(logListTestValue());
-            var response = instance.Object.FilterLogs(accountId, filterLogsRequest);
+	    
+            instance.Setup(m => m.FilterLogs(filterLogsRequest)).Returns(logListTestValue());
+            var response = instance.Object.FilterLogs(filterLogsRequest);
             //Assert.IsType<LogList>(response);
             Assert.IsAssignableFrom<LogList>(response);
         }
@@ -228,10 +240,11 @@ namespace freeclimb.Test.Api
 
         public void GetACallTest()
         {
-            string accountId = accountIdTestValue();
+            
             string callId = callIdTestValue();
-            instance.Setup(m => m.GetACall(accountId, callId)).Returns(callResultTestValue());
-            var response = instance.Object.GetACall(accountId, callId);
+	    
+            instance.Setup(m => m.GetACall(callId)).Returns(callResultTestValue());
+            var response = instance.Object.GetACall(callId);
             //Assert.IsType<CallResult>(response);
             Assert.IsAssignableFrom<CallResult>(response);
         }
@@ -243,10 +256,11 @@ namespace freeclimb.Test.Api
 
         public void GetAConferenceTest()
         {
-            string accountId = accountIdTestValue();
+            
             string conferenceId = conferenceIdTestValue();
-            instance.Setup(m => m.GetAConference(accountId, conferenceId)).Returns(conferenceResultTestValue());
-            var response = instance.Object.GetAConference(accountId, conferenceId);
+	    
+            instance.Setup(m => m.GetAConference(conferenceId)).Returns(conferenceResultTestValue());
+            var response = instance.Object.GetAConference(conferenceId);
             //Assert.IsType<ConferenceResult>(response);
             Assert.IsAssignableFrom<ConferenceResult>(response);
         }
@@ -258,11 +272,13 @@ namespace freeclimb.Test.Api
 
         public void GetAMemberTest()
         {
-            string accountId = accountIdTestValue();
+            
             string queueId = queueIdTestValue();
+	    
             string callId = callIdTestValue();
-            instance.Setup(m => m.GetAMember(accountId, queueId, callId)).Returns(queueMemberTestValue());
-            var response = instance.Object.GetAMember(accountId, queueId, callId);
+	    
+            instance.Setup(m => m.GetAMember(queueId, callId)).Returns(queueMemberTestValue());
+            var response = instance.Object.GetAMember(queueId, callId);
             //Assert.IsType<QueueMember>(response);
             Assert.IsAssignableFrom<QueueMember>(response);
         }
@@ -274,11 +290,13 @@ namespace freeclimb.Test.Api
 
         public void GetAParticipantTest()
         {
-            string accountId = accountIdTestValue();
+            
             string conferenceId = conferenceIdTestValue();
+	    
             string callId = callIdTestValue();
-            instance.Setup(m => m.GetAParticipant(accountId, conferenceId, callId)).Returns(conferenceParticipantResultTestValue());
-            var response = instance.Object.GetAParticipant(accountId, conferenceId, callId);
+	    
+            instance.Setup(m => m.GetAParticipant(conferenceId, callId)).Returns(conferenceParticipantResultTestValue());
+            var response = instance.Object.GetAParticipant(conferenceId, callId);
             //Assert.IsType<ConferenceParticipantResult>(response);
             Assert.IsAssignableFrom<ConferenceParticipantResult>(response);
         }
@@ -290,10 +308,11 @@ namespace freeclimb.Test.Api
 
         public void GetAQueueTest()
         {
-            string accountId = accountIdTestValue();
+            
             string queueId = queueIdTestValue();
-            instance.Setup(m => m.GetAQueue(accountId, queueId)).Returns(queueResultTestValue());
-            var response = instance.Object.GetAQueue(accountId, queueId);
+	    
+            instance.Setup(m => m.GetAQueue(queueId)).Returns(queueResultTestValue());
+            var response = instance.Object.GetAQueue(queueId);
             //Assert.IsType<QueueResult>(response);
             Assert.IsAssignableFrom<QueueResult>(response);
         }
@@ -305,10 +324,11 @@ namespace freeclimb.Test.Api
 
         public void GetARecordingTest()
         {
-            string accountId = accountIdTestValue();
+            
             string recordingId = recordingIdTestValue();
-            instance.Setup(m => m.GetARecording(accountId, recordingId)).Returns(recordingResultTestValue());
-            var response = instance.Object.GetARecording(accountId, recordingId);
+	    
+            instance.Setup(m => m.GetARecording(recordingId)).Returns(recordingResultTestValue());
+            var response = instance.Object.GetARecording(recordingId);
             //Assert.IsType<RecordingResult>(response);
             Assert.IsAssignableFrom<RecordingResult>(response);
         }
@@ -320,9 +340,9 @@ namespace freeclimb.Test.Api
 
         public void GetAnAccountTest()
         {
-            string accountId = accountIdTestValue();
-            instance.Setup(m => m.GetAnAccount(accountId)).Returns(accountResultTestValue());
-            var response = instance.Object.GetAnAccount(accountId);
+            
+            instance.Setup(m => m.GetAnAccount()).Returns(accountResultTestValue());
+            var response = instance.Object.GetAnAccount();
             //Assert.IsType<AccountResult>(response);
             Assert.IsAssignableFrom<AccountResult>(response);
         }
@@ -334,10 +354,11 @@ namespace freeclimb.Test.Api
 
         public void GetAnApplicationTest()
         {
-            string accountId = accountIdTestValue();
+            
             string applicationId = applicationIdTestValue();
-            instance.Setup(m => m.GetAnApplication(accountId, applicationId)).Returns(applicationResultTestValue());
-            var response = instance.Object.GetAnApplication(accountId, applicationId);
+	    
+            instance.Setup(m => m.GetAnApplication(applicationId)).Returns(applicationResultTestValue());
+            var response = instance.Object.GetAnApplication(applicationId);
             //Assert.IsType<ApplicationResult>(response);
             Assert.IsAssignableFrom<ApplicationResult>(response);
         }
@@ -349,10 +370,11 @@ namespace freeclimb.Test.Api
 
         public void GetAnIncomingNumberTest()
         {
-            string accountId = accountIdTestValue();
+            
             string phoneNumberId = phoneNumberIdTestValue();
-            instance.Setup(m => m.GetAnIncomingNumber(accountId, phoneNumberId)).Returns(incomingNumberResultTestValue());
-            var response = instance.Object.GetAnIncomingNumber(accountId, phoneNumberId);
+	    
+            instance.Setup(m => m.GetAnIncomingNumber(phoneNumberId)).Returns(incomingNumberResultTestValue());
+            var response = instance.Object.GetAnIncomingNumber(phoneNumberId);
             //Assert.IsType<IncomingNumberResult>(response);
             Assert.IsAssignableFrom<IncomingNumberResult>(response);
         }
@@ -364,10 +386,11 @@ namespace freeclimb.Test.Api
 
         public void GetAnSmsMessageTest()
         {
-            string accountId = accountIdTestValue();
+            
             string messageId = messageIdTestValue();
-            instance.Setup(m => m.GetAnSmsMessage(accountId, messageId)).Returns(messageResultTestValue());
-            var response = instance.Object.GetAnSmsMessage(accountId, messageId);
+	    
+            instance.Setup(m => m.GetAnSmsMessage(messageId)).Returns(messageResultTestValue());
+            var response = instance.Object.GetAnSmsMessage(messageId);
             //Assert.IsType<MessageResult>(response);
             Assert.IsAssignableFrom<MessageResult>(response);
         }
@@ -379,10 +402,11 @@ namespace freeclimb.Test.Api
 
         public void GetHeadMemberTest()
         {
-            string accountId = accountIdTestValue();
+            
             string queueId = queueIdTestValue();
-            instance.Setup(m => m.GetHeadMember(accountId, queueId)).Returns(queueMemberTestValue());
-            var response = instance.Object.GetHeadMember(accountId, queueId);
+	    
+            instance.Setup(m => m.GetHeadMember(queueId)).Returns(queueMemberTestValue());
+            var response = instance.Object.GetHeadMember(queueId);
             //Assert.IsType<QueueMember>(response);
             Assert.IsAssignableFrom<QueueMember>(response);
         }
@@ -394,10 +418,11 @@ namespace freeclimb.Test.Api
 
         public void ListActiveQueuesTest()
         {
-            string accountId = accountIdTestValue();
+            
             string alias = aliasTestValue();
-            instance.Setup(m => m.ListActiveQueues(accountId, alias)).Returns(queueListTestValue());
-            var response = instance.Object.ListActiveQueues(accountId, alias);
+	    
+            instance.Setup(m => m.ListActiveQueues(alias)).Returns(queueListTestValue());
+            var response = instance.Object.ListActiveQueues(alias);
             //Assert.IsType<QueueList>(response);
             Assert.IsAssignableFrom<QueueList>(response);
         }
@@ -409,9 +434,9 @@ namespace freeclimb.Test.Api
 
         public void ListAllAccountLogsTest()
         {
-            string accountId = accountIdTestValue();
-            instance.Setup(m => m.ListAllAccountLogs(accountId)).Returns(logListTestValue());
-            var response = instance.Object.ListAllAccountLogs(accountId);
+            
+            instance.Setup(m => m.ListAllAccountLogs()).Returns(logListTestValue());
+            var response = instance.Object.ListAllAccountLogs();
             //Assert.IsType<LogList>(response);
             Assert.IsAssignableFrom<LogList>(response);
         }
@@ -423,10 +448,11 @@ namespace freeclimb.Test.Api
 
         public void ListApplicationsTest()
         {
-            string accountId = accountIdTestValue();
+            
             string alias = aliasTestValue();
-            instance.Setup(m => m.ListApplications(accountId, alias)).Returns(applicationListTestValue());
-            var response = instance.Object.ListApplications(accountId, alias);
+	    
+            instance.Setup(m => m.ListApplications(alias)).Returns(applicationListTestValue());
+            var response = instance.Object.ListApplications(alias);
             //Assert.IsType<ApplicationList>(response);
             Assert.IsAssignableFrom<ApplicationList>(response);
         }
@@ -438,16 +464,27 @@ namespace freeclimb.Test.Api
 
         public void ListAvailableNumbersTest()
         {
+            
             string phoneNumber = phoneNumberTestValue();
+	    
             string region = regionTestValue();
+	    
             string country = countryTestValue();
+	    
             bool? voiceEnabled = voiceEnabledTestValue();
+	    
             bool? smsEnabled = smsEnabledTestValue();
+	    
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+	    
             bool? capabilitiesSms = capabilitiesSmsTestValue();
+	    
             bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+	    
             bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+	    
             bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+	    
             instance.Setup(m => m.ListAvailableNumbers(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode)).Returns(availableNumberListTestValue());
             var response = instance.Object.ListAvailableNumbers(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
             //Assert.IsType<AvailableNumberList>(response);
@@ -461,10 +498,11 @@ namespace freeclimb.Test.Api
 
         public void ListCallLogsTest()
         {
-            string accountId = accountIdTestValue();
+            
             string callId = callIdTestValue();
-            instance.Setup(m => m.ListCallLogs(accountId, callId)).Returns(logListTestValue());
-            var response = instance.Object.ListCallLogs(accountId, callId);
+	    
+            instance.Setup(m => m.ListCallLogs(callId)).Returns(logListTestValue());
+            var response = instance.Object.ListCallLogs(callId);
             //Assert.IsType<LogList>(response);
             Assert.IsAssignableFrom<LogList>(response);
         }
@@ -476,11 +514,13 @@ namespace freeclimb.Test.Api
 
         public void ListCallRecordingsTest()
         {
-            string accountId = accountIdTestValue();
+            
             string callId = callIdTestValue();
+	    
             string dateCreated = dateCreatedTestValue();
-            instance.Setup(m => m.ListCallRecordings(accountId, callId, dateCreated)).Returns(recordingListTestValue());
-            var response = instance.Object.ListCallRecordings(accountId, callId, dateCreated);
+	    
+            instance.Setup(m => m.ListCallRecordings(callId, dateCreated)).Returns(recordingListTestValue());
+            var response = instance.Object.ListCallRecordings(callId, dateCreated);
             //Assert.IsType<RecordingList>(response);
             Assert.IsAssignableFrom<RecordingList>(response);
         }
@@ -492,16 +532,23 @@ namespace freeclimb.Test.Api
 
         public void ListCallsTest()
         {
-            string accountId = accountIdTestValue();
+            
             bool? active = activeTestValue();
+	    
             string to = toTestValue();
+	    
             string from = fromTestValue();
+	    
             string status = statusTestValue();
+	    
             string startTime = startTimeTestValue();
+	    
             string endTime = endTimeTestValue();
+	    
             string parentCallId = parentCallIdTestValue();
-            instance.Setup(m => m.ListCalls(accountId, active, to, from, status, startTime, endTime, parentCallId)).Returns(callListTestValue());
-            var response = instance.Object.ListCalls(accountId, active, to, from, status, startTime, endTime, parentCallId);
+	    
+            instance.Setup(m => m.ListCalls(active, to, from, status, startTime, endTime, parentCallId)).Returns(callListTestValue());
+            var response = instance.Object.ListCalls(active, to, from, status, startTime, endTime, parentCallId);
             //Assert.IsType<CallList>(response);
             Assert.IsAssignableFrom<CallList>(response);
         }
@@ -513,13 +560,17 @@ namespace freeclimb.Test.Api
 
         public void ListConferencesTest()
         {
-            string accountId = accountIdTestValue();
+            
             string status = statusTestValue();
+	    
             string alias = aliasTestValue();
+	    
             string dateCreated = dateCreatedTestValue();
+	    
             string dateUpdated = dateUpdatedTestValue();
-            instance.Setup(m => m.ListConferences(accountId, status, alias, dateCreated, dateUpdated)).Returns(conferenceListTestValue());
-            var response = instance.Object.ListConferences(accountId, status, alias, dateCreated, dateUpdated);
+	    
+            instance.Setup(m => m.ListConferences(status, alias, dateCreated, dateUpdated)).Returns(conferenceListTestValue());
+            var response = instance.Object.ListConferences(status, alias, dateCreated, dateUpdated);
             //Assert.IsType<ConferenceList>(response);
             Assert.IsAssignableFrom<ConferenceList>(response);
         }
@@ -531,23 +582,37 @@ namespace freeclimb.Test.Api
 
         public void ListIncomingNumbersTest()
         {
-            string accountId = accountIdTestValue();
+            
             string phoneNumber = phoneNumberTestValue();
+	    
             string alias = aliasTestValue();
+	    
             string region = regionTestValue();
+	    
             string country = countryTestValue();
+	    
             string applicationId = applicationIdTestValue();
+	    
             bool? hasApplication = hasApplicationTestValue();
+	    
             bool? voiceEnabled = voiceEnabledTestValue();
+	    
             bool? smsEnabled = smsEnabledTestValue();
+	    
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+	    
             bool? capabilitiesSms = capabilitiesSmsTestValue();
+	    
             bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+	    
             bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+	    
             bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+	    
             bool? offnet = offnetTestValue();
-            instance.Setup(m => m.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet)).Returns(incomingNumberListTestValue());
-            var response = instance.Object.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet);
+	    
+            instance.Setup(m => m.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet)).Returns(incomingNumberListTestValue());
+            var response = instance.Object.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet);
             //Assert.IsType<IncomingNumberList>(response);
             Assert.IsAssignableFrom<IncomingNumberList>(response);
         }
@@ -559,10 +624,11 @@ namespace freeclimb.Test.Api
 
         public void ListMembersTest()
         {
-            string accountId = accountIdTestValue();
+            
             string queueId = queueIdTestValue();
-            instance.Setup(m => m.ListMembers(accountId, queueId)).Returns(queueMemberListTestValue());
-            var response = instance.Object.ListMembers(accountId, queueId);
+	    
+            instance.Setup(m => m.ListMembers(queueId)).Returns(queueMemberListTestValue());
+            var response = instance.Object.ListMembers(queueId);
             //Assert.IsType<QueueMemberList>(response);
             Assert.IsAssignableFrom<QueueMemberList>(response);
         }
@@ -574,12 +640,15 @@ namespace freeclimb.Test.Api
 
         public void ListParticipantsTest()
         {
-            string accountId = accountIdTestValue();
+            
             string conferenceId = conferenceIdTestValue();
+	    
             bool? talk = talkTestValue();
+	    
             bool? listen = listenTestValue();
-            instance.Setup(m => m.ListParticipants(accountId, conferenceId, talk, listen)).Returns(conferenceParticipantListTestValue());
-            var response = instance.Object.ListParticipants(accountId, conferenceId, talk, listen);
+	    
+            instance.Setup(m => m.ListParticipants(conferenceId, talk, listen)).Returns(conferenceParticipantListTestValue());
+            var response = instance.Object.ListParticipants(conferenceId, talk, listen);
             //Assert.IsType<ConferenceParticipantList>(response);
             Assert.IsAssignableFrom<ConferenceParticipantList>(response);
         }
@@ -591,12 +660,15 @@ namespace freeclimb.Test.Api
 
         public void ListRecordingsTest()
         {
-            string accountId = accountIdTestValue();
+            
             string callId = callIdTestValue();
+	    
             string conferenceId = conferenceIdTestValue();
+	    
             string dateCreated = dateCreatedTestValue();
-            instance.Setup(m => m.ListRecordings(accountId, callId, conferenceId, dateCreated)).Returns(recordingListTestValue());
-            var response = instance.Object.ListRecordings(accountId, callId, conferenceId, dateCreated);
+	    
+            instance.Setup(m => m.ListRecordings(callId, conferenceId, dateCreated)).Returns(recordingListTestValue());
+            var response = instance.Object.ListRecordings(callId, conferenceId, dateCreated);
             //Assert.IsType<RecordingList>(response);
             Assert.IsAssignableFrom<RecordingList>(response);
         }
@@ -608,14 +680,19 @@ namespace freeclimb.Test.Api
 
         public void ListSmsMessagesTest()
         {
-            string accountId = accountIdTestValue();
+            
             string to = toTestValue();
+	    
             string from = fromTestValue();
+	    
             string beginTime = beginTimeTestValue();
+	    
             string endTime = endTimeTestValue();
+	    
             string direction = directionTestValue();
-            instance.Setup(m => m.ListSmsMessages(accountId, to, from, beginTime, endTime, direction)).Returns(messagesListTestValue());
-            var response = instance.Object.ListSmsMessages(accountId, to, from, beginTime, endTime, direction);
+	    
+            instance.Setup(m => m.ListSmsMessages(to, from, beginTime, endTime, direction)).Returns(messagesListTestValue());
+            var response = instance.Object.ListSmsMessages(to, from, beginTime, endTime, direction);
             //Assert.IsType<MessagesList>(response);
             Assert.IsAssignableFrom<MessagesList>(response);
         }
@@ -627,10 +704,11 @@ namespace freeclimb.Test.Api
 
         public void MakeACallTest()
         {
-            string accountId = accountIdTestValue();
+            
             MakeCallRequest makeCallRequest = makeCallRequestTestValue();
-            instance.Setup(m => m.MakeACall(accountId, makeCallRequest)).Returns(callResultTestValue());
-            var response = instance.Object.MakeACall(accountId, makeCallRequest);
+	    
+            instance.Setup(m => m.MakeACall(makeCallRequest)).Returns(callResultTestValue());
+            var response = instance.Object.MakeACall(makeCallRequest);
             //Assert.IsType<CallResult>(response);
             Assert.IsAssignableFrom<CallResult>(response);
         }
@@ -642,11 +720,13 @@ namespace freeclimb.Test.Api
 
         public void RemoveAParticipantTest()
         {
-            string accountId = accountIdTestValue();
+            
             string conferenceId = conferenceIdTestValue();
+	    
             string callId = callIdTestValue();
-            instance.Setup(m => m.RemoveAParticipant(accountId, conferenceId, callId));
-            instance.Object.RemoveAParticipant(accountId, conferenceId, callId);
+	    
+            instance.Setup(m => m.RemoveAParticipant(conferenceId, callId));
+            instance.Object.RemoveAParticipant(conferenceId, callId);
         }
         
         /// <summary>
@@ -656,10 +736,11 @@ namespace freeclimb.Test.Api
 
         public void SendAnSmsMessageTest()
         {
-            string accountId = accountIdTestValue();
+            
             MessageRequest messageRequest = messageRequestTestValue();
-            instance.Setup(m => m.SendAnSmsMessage(accountId, messageRequest)).Returns(messageResultTestValue());
-            var response = instance.Object.SendAnSmsMessage(accountId, messageRequest);
+	    
+            instance.Setup(m => m.SendAnSmsMessage(messageRequest)).Returns(messageResultTestValue());
+            var response = instance.Object.SendAnSmsMessage(messageRequest);
             //Assert.IsType<MessageResult>(response);
             Assert.IsAssignableFrom<MessageResult>(response);
         }
@@ -671,10 +752,11 @@ namespace freeclimb.Test.Api
 
         public void StreamARecordingFileTest()
         {
-            string accountId = accountIdTestValue();
+            
             string recordingId = recordingIdTestValue();
-            instance.Setup(m => m.StreamARecordingFile(accountId, recordingId)).Returns(systemIOStreamTestValue());
-            var response = instance.Object.StreamARecordingFile(accountId, recordingId);
+	    
+            instance.Setup(m => m.StreamARecordingFile(recordingId)).Returns(systemIOStreamTestValue());
+            var response = instance.Object.StreamARecordingFile(recordingId);
             //Assert.IsType<System.IO.Stream>(response);
             Assert.IsAssignableFrom<System.IO.Stream>(response);
         }
@@ -686,11 +768,13 @@ namespace freeclimb.Test.Api
 
         public void UpdateAConferenceTest()
         {
-            string accountId = accountIdTestValue();
+            
             string conferenceId = conferenceIdTestValue();
+	    
             UpdateConferenceRequest updateConferenceRequest = updateConferenceRequestTestValue();
-            instance.Setup(m => m.UpdateAConference(accountId, conferenceId, updateConferenceRequest)).Returns(conferenceResultTestValue());
-            var response = instance.Object.UpdateAConference(accountId, conferenceId, updateConferenceRequest);
+	    
+            instance.Setup(m => m.UpdateAConference(conferenceId, updateConferenceRequest)).Returns(conferenceResultTestValue());
+            var response = instance.Object.UpdateAConference(conferenceId, updateConferenceRequest);
             //Assert.IsType<ConferenceResult>(response);
             Assert.IsAssignableFrom<ConferenceResult>(response);
         }
@@ -702,11 +786,13 @@ namespace freeclimb.Test.Api
 
         public void UpdateALiveCallTest()
         {
-            string accountId = accountIdTestValue();
+            
             string callId = callIdTestValue();
+	    
             UpdateCallRequest updateCallRequest = updateCallRequestTestValue();
-            instance.Setup(m => m.UpdateALiveCall(accountId, callId, updateCallRequest));
-            instance.Object.UpdateALiveCall(accountId, callId, updateCallRequest);
+	    
+            instance.Setup(m => m.UpdateALiveCall(callId, updateCallRequest));
+            instance.Object.UpdateALiveCall(callId, updateCallRequest);
         }
         
         /// <summary>
@@ -716,12 +802,15 @@ namespace freeclimb.Test.Api
 
         public void UpdateAParticipantTest()
         {
-            string accountId = accountIdTestValue();
+            
             string conferenceId = conferenceIdTestValue();
+	    
             string callId = callIdTestValue();
+	    
             UpdateConferenceParticipantRequest updateConferenceParticipantRequest = updateConferenceParticipantRequestTestValue();
-            instance.Setup(m => m.UpdateAParticipant(accountId, conferenceId, callId, updateConferenceParticipantRequest)).Returns(conferenceParticipantResultTestValue());
-            var response = instance.Object.UpdateAParticipant(accountId, conferenceId, callId, updateConferenceParticipantRequest);
+	    
+            instance.Setup(m => m.UpdateAParticipant(conferenceId, callId, updateConferenceParticipantRequest)).Returns(conferenceParticipantResultTestValue());
+            var response = instance.Object.UpdateAParticipant(conferenceId, callId, updateConferenceParticipantRequest);
             //Assert.IsType<ConferenceParticipantResult>(response);
             Assert.IsAssignableFrom<ConferenceParticipantResult>(response);
         }
@@ -733,11 +822,13 @@ namespace freeclimb.Test.Api
 
         public void UpdateAQueueTest()
         {
-            string accountId = accountIdTestValue();
+            
             string queueId = queueIdTestValue();
+	    
             QueueRequest queueRequest = queueRequestTestValue();
-            instance.Setup(m => m.UpdateAQueue(accountId, queueId, queueRequest)).Returns(queueResultTestValue());
-            var response = instance.Object.UpdateAQueue(accountId, queueId, queueRequest);
+	    
+            instance.Setup(m => m.UpdateAQueue(queueId, queueRequest)).Returns(queueResultTestValue());
+            var response = instance.Object.UpdateAQueue(queueId, queueRequest);
             //Assert.IsType<QueueResult>(response);
             Assert.IsAssignableFrom<QueueResult>(response);
         }
@@ -749,10 +840,11 @@ namespace freeclimb.Test.Api
 
         public void UpdateAnAccountTest()
         {
-            string accountId = accountIdTestValue();
+            
             AccountRequest accountRequest = accountRequestTestValue();
-            instance.Setup(m => m.UpdateAnAccount(accountId, accountRequest));
-            instance.Object.UpdateAnAccount(accountId, accountRequest);
+	    
+            instance.Setup(m => m.UpdateAnAccount(accountRequest));
+            instance.Object.UpdateAnAccount(accountRequest);
         }
         
         /// <summary>
@@ -762,11 +854,13 @@ namespace freeclimb.Test.Api
 
         public void UpdateAnApplicationTest()
         {
-            string accountId = accountIdTestValue();
+            
             string applicationId = applicationIdTestValue();
+	    
             ApplicationRequest applicationRequest = applicationRequestTestValue();
-            instance.Setup(m => m.UpdateAnApplication(accountId, applicationId, applicationRequest)).Returns(applicationResultTestValue());
-            var response = instance.Object.UpdateAnApplication(accountId, applicationId, applicationRequest);
+	    
+            instance.Setup(m => m.UpdateAnApplication(applicationId, applicationRequest)).Returns(applicationResultTestValue());
+            var response = instance.Object.UpdateAnApplication(applicationId, applicationRequest);
             //Assert.IsType<ApplicationResult>(response);
             Assert.IsAssignableFrom<ApplicationResult>(response);
         }
@@ -778,11 +872,13 @@ namespace freeclimb.Test.Api
 
         public void UpdateAnIncomingNumberTest()
         {
-            string accountId = accountIdTestValue();
+            
             string phoneNumberId = phoneNumberIdTestValue();
+	    
             IncomingNumberRequest incomingNumberRequest = incomingNumberRequestTestValue();
-            instance.Setup(m => m.UpdateAnIncomingNumber(accountId, phoneNumberId, incomingNumberRequest)).Returns(incomingNumberResultTestValue());
-            var response = instance.Object.UpdateAnIncomingNumber(accountId, phoneNumberId, incomingNumberRequest);
+	    
+            instance.Setup(m => m.UpdateAnIncomingNumber(phoneNumberId, incomingNumberRequest)).Returns(incomingNumberResultTestValue());
+            var response = instance.Object.UpdateAnIncomingNumber(phoneNumberId, incomingNumberRequest);
             //Assert.IsType<IncomingNumberResult>(response);
             Assert.IsAssignableFrom<IncomingNumberResult>(response);
         }
