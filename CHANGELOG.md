@@ -9,7 +9,7 @@ None
 
 <a name="4.1.0"></a>
 
-## [4.0.3] 2022-01-02
+## [4.1.0] 2022-01-02
 ### Changed
 - Account ID is no longer needed for every api request/model creation
 - Updated README for accountId and apiKey setting 
