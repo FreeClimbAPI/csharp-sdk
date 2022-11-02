@@ -110,7 +110,6 @@ docs/UpdateConferenceParticipantRequest.md
 docs/UpdateConferenceRequest.md
 freeclimb.sln
 git_push.sh
-src/freeclimb.Test/Api/DefaultApiTests.cs
 src/freeclimb.Test/freeclimb.Test.csproj
 src/freeclimb/Api/DefaultApi.cs
 src/freeclimb/Client/ApiClient.cs
