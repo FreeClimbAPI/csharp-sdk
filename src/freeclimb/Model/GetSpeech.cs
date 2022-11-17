@@ -24,6 +24,7 @@ using Newtonsoft.Json.Linq;
 using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
+using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -58,6 +59,12 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
     public partial class GetSpeech : PerclCommand, IEquatable<GetSpeech>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets GrammarType
+        /// </summary>
+        [DataMember(Name = "grammarType", EmitDefaultValue = false)]
+        public GrammarType? GrammarType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSpeech" /> class.
         /// </summary>
@@ -67,7 +74,7 @@ namespace freeclimb.Model
         /// Initializes a new instance of the <see cref="GetSpeech" /> class.
         /// </summary>
         /// <param name="actionUrl">When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call. (required).</param>
-        /// <param name="grammarType">The grammar file type to use for speech recognition. A value of &#39;URL&#39; indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of &#x60;BUILTIN&#x60; indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files..</param>
+        /// <param name="grammarType">grammarType.</param>
         /// <param name="grammarFile">The grammar file to use for speech recognition. If grammarType is set to URL, this attribute is specified as a download URL. (required).</param>
         /// <param name="grammarRule">The grammar rule within the specified grammar file to use for speech recognition. This attribute is optional if &#x60;grammarType&#x60; is &#x60;URL&#x60; and ignored if &#x60;grammarType&#x60; is &#x60;BUILTIN&#x60;..</param>
         /// <param name="playBeep">Indicates whether a beep should be played just before speech recognition is initiated so that the speaker can start to speak..</param>
@@ -80,7 +87,7 @@ namespace freeclimb.Model
         /// <param name="speechIncompleteTimeoutMs">Parameter &#x60;speechIncompleteTimeoutMs&#x60; specifies the length of silence following user speech after which a recognizer finalizes a result. This timeout applies when the speech prior to the silence is an incomplete match of all active grammars. Timeout &#x60;speechIncompleteTimeoutMs&#x60; is usually longer than &#x60;speechCompleteTimeoutMs&#x60; to allow users to pause mid-utterance..</param>
         /// <param name="privacyMode">Parameter privacyMode will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;GetSpeech&quot;).</param>
-        public GetSpeech(string actionUrl = default(string), int grammarType = default(int), string grammarFile = default(string), bool grammarRule = default(bool), string playBeep = default(string), List<PerclCommand> prompts = default(List<PerclCommand>), int noInputTimeoutMs = default(int), int recognitionTimeoutMs = default(int), decimal confidenceThreshold = default(decimal), decimal sensitivityLevel = default(decimal), int speechCompleteTimeoutMs = default(int), int speechIncompleteTimeoutMs = default(int), bool privacyMode = default(bool), string command = "GetSpeech") : base(command)
+        public GetSpeech(string actionUrl = default(string), GrammarType? grammarType = default(GrammarType?), string grammarFile = default(string), string grammarRule = default(string), bool playBeep = default(bool), List<PerclCommand> prompts = default(List<PerclCommand>), int noInputTimeoutMs = default(int), int recognitionTimeoutMs = default(int), decimal confidenceThreshold = default(decimal), decimal sensitivityLevel = default(decimal), int speechCompleteTimeoutMs = default(int), int speechIncompleteTimeoutMs = default(int), bool privacyMode = default(bool), string command = "GetSpeech") : base(command)
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null) {
@@ -113,13 +120,6 @@ namespace freeclimb.Model
         public string ActionUrl { get; set; }
 
         /// <summary>
-        /// The grammar file type to use for speech recognition. A value of &#39;URL&#39; indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of &#x60;BUILTIN&#x60; indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files.
-        /// </summary>
-        /// <value>The grammar file type to use for speech recognition. A value of &#39;URL&#39; indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of &#x60;BUILTIN&#x60; indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files.</value>
-        [DataMember(Name = "grammarType", EmitDefaultValue = false)]
-        public int GrammarType { get; set; }
-
-        /// <summary>
         /// The grammar file to use for speech recognition. If grammarType is set to URL, this attribute is specified as a download URL.
         /// </summary>
         /// <value>The grammar file to use for speech recognition. If grammarType is set to URL, this attribute is specified as a download URL.</value>
@@ -130,15 +130,15 @@ namespace freeclimb.Model
         /// The grammar rule within the specified grammar file to use for speech recognition. This attribute is optional if &#x60;grammarType&#x60; is &#x60;URL&#x60; and ignored if &#x60;grammarType&#x60; is &#x60;BUILTIN&#x60;.
         /// </summary>
         /// <value>The grammar rule within the specified grammar file to use for speech recognition. This attribute is optional if &#x60;grammarType&#x60; is &#x60;URL&#x60; and ignored if &#x60;grammarType&#x60; is &#x60;BUILTIN&#x60;.</value>
-        [DataMember(Name = "grammarRule", EmitDefaultValue = true)]
-        public bool GrammarRule { get; set; }
+        [DataMember(Name = "grammarRule", EmitDefaultValue = false)]
+        public string GrammarRule { get; set; }
 
         /// <summary>
         /// Indicates whether a beep should be played just before speech recognition is initiated so that the speaker can start to speak.
         /// </summary>
         /// <value>Indicates whether a beep should be played just before speech recognition is initiated so that the speaker can start to speak.</value>
-        [DataMember(Name = "playBeep", EmitDefaultValue = false)]
-        public string PlayBeep { get; set; }
+        [DataMember(Name = "playBeep", EmitDefaultValue = true)]
+        public bool PlayBeep { get; set; }
 
         /// <summary>
         /// The JSON array of PerCL commands to nest within the &#x60;GetSpeech&#x60; command. The &#x60;Say&#x60;, &#x60;Play&#x60;, and &#x60;Pause&#x60; commands can be used. The nested actions are executed while FreeClimb is waiting for input from the caller. This allows for playing menu options to the caller and to prompt for the expected input. These commands stop executing when the caller begins to input speech.
@@ -305,12 +305,12 @@ namespace freeclimb.Model
                 ) && base.Equals(input) && 
                 (
                     this.GrammarRule == input.GrammarRule ||
-                    this.GrammarRule.Equals(input.GrammarRule)
+                    (this.GrammarRule != null &&
+                    this.GrammarRule.Equals(input.GrammarRule))
                 ) && base.Equals(input) && 
                 (
                     this.PlayBeep == input.PlayBeep ||
-                    (this.PlayBeep != null &&
-                    this.PlayBeep.Equals(input.PlayBeep))
+                    this.PlayBeep.Equals(input.PlayBeep)
                 ) && base.Equals(input) && 
                 (
                     this.Prompts == input.Prompts ||
@@ -366,11 +366,11 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.GrammarFile.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.GrammarRule.GetHashCode();
-                if (this.PlayBeep != null)
+                if (this.GrammarRule != null)
                 {
-                    hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
+                    hashCode = (hashCode * 59) + this.GrammarRule.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
                 if (this.Prompts != null)
                 {
                     hashCode = (hashCode * 59) + this.Prompts.GetHashCode();
