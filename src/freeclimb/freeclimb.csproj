@@ -14,7 +14,7 @@
     <RootNamespace>freeclimb</RootNamespace>
     <Version>4.1.1</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\freeclimb.xml</DocumentationFile>
-    <RepositoryUrl>https://https://github.com/freeclimbapi/csharp-sdk.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/freeclimbapi/csharp-sdk.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
   </PropertyGroup>

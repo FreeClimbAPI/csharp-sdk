@@ -23,6 +23,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
+using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -32,68 +33,18 @@ namespace freeclimb.Model
     [DataContract(Name = "AccountResult_allOf")]
     public partial class AccountResultAllOf : IEquatable<AccountResultAllOf>, IValidatableObject
     {
-        /// <summary>
-        /// The type of this account. It is one of: trial or full.
-        /// </summary>
-        /// <value>The type of this account. It is one of: trial or full.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            /// <summary>
-            /// Enum TRIAL for value: trial
-            /// </summary>
-            [EnumMember(Value = "trial")]
-            TRIAL = 1,
-
-            /// <summary>
-            /// Enum FULL for value: full
-            /// </summary>
-            [EnumMember(Value = "full")]
-            FULL = 2
-
-        }
-
 
         /// <summary>
-        /// The type of this account. It is one of: trial or full.
+        /// Gets or Sets Type
         /// </summary>
-        /// <value>The type of this account. It is one of: trial or full.</value>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
-        /// The status of this account. It is one of: active, suspended, or closed.
-        /// </summary>
-        /// <value>The status of this account. It is one of: active, suspended, or closed.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum ACTIVE for value: active
-            /// </summary>
-            [EnumMember(Value = "active")]
-            ACTIVE = 1,
-
-            /// <summary>
-            /// Enum SUSPENDED for value: suspended
-            /// </summary>
-            [EnumMember(Value = "suspended")]
-            SUSPENDED = 2,
-
-            /// <summary>
-            /// Enum CLOSED for value: closed
-            /// </summary>
-            [EnumMember(Value = "closed")]
-            CLOSED = 3
-
-        }
-
+        [DataMember(Name = "type", EmitDefaultValue = false)]
+        public AccountType? Type { get; set; }
 
         /// <summary>
-        /// The status of this account. It is one of: active, suspended, or closed.
+        /// Gets or Sets Status
         /// </summary>
-        /// <value>The status of this account. It is one of: active, suspended, or closed.</value>
-        [DataMember(Name = "status", EmitDefaultValue = true)]
-        public StatusEnum? Status { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public AccountStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountResultAllOf" /> class.
         /// </summary>
@@ -101,10 +52,10 @@ namespace freeclimb.Model
         /// <param name="apiKey">The API key assigned to this account. This key must be kept a secret by the customer..</param>
         /// <param name="alias">A description for this account..</param>
         /// <param name="label">A string that identifies a category or group to which the account belongs..</param>
-        /// <param name="type">The type of this account. It is one of: trial or full..</param>
-        /// <param name="status">The status of this account. It is one of: active, suspended, or closed..</param>
+        /// <param name="type">type.</param>
+        /// <param name="status">status.</param>
         /// <param name="subresourceUris">The list of subresources for this account..</param>
-        public AccountResultAllOf(string accountId = default(string), string apiKey = default(string), string alias = default(string), string label = default(string), TypeEnum? type = default(TypeEnum?), StatusEnum? status = default(StatusEnum?), Object subresourceUris = default(Object))
+        public AccountResultAllOf(string accountId = default(string), string apiKey = default(string), string alias = default(string), string label = default(string), AccountType? type = default(AccountType?), AccountStatus? status = default(AccountStatus?), Object subresourceUris = default(Object))
         {
             this.AccountId = accountId;
             this.ApiKey = apiKey;

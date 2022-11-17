@@ -23,6 +23,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
+using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -32,70 +33,24 @@ namespace freeclimb.Model
     [DataContract(Name = "CallResult")]
     public partial class CallResult : IEquatable<CallResult>, IValidatableObject
     {
-        /// <summary>
-        /// * &#x60;queued&#x60; &amp;ndash; Call is ready and waiting in line before going out. * &#x60;ringing&#x60; &amp;ndash; Call is currently ringing. * &#x60;inProgress&#x60; &amp;ndash; Call was answered and is currently in progress. * &#x60;canceled&#x60; &amp;ndash; Call was hung up while it was queued or ringing. * &#x60;completed&#x60; &amp;ndash; Call was answered and has ended normally. * &#x60;busy&#x60; &amp;ndash; Caller received a busy signal. * &#x60;failed&#x60; &amp;ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * &#x60;noAnswer&#x60; &amp;ndash; Call ended without being answered.
-        /// </summary>
-        /// <value>* &#x60;queued&#x60; &amp;ndash; Call is ready and waiting in line before going out. * &#x60;ringing&#x60; &amp;ndash; Call is currently ringing. * &#x60;inProgress&#x60; &amp;ndash; Call was answered and is currently in progress. * &#x60;canceled&#x60; &amp;ndash; Call was hung up while it was queued or ringing. * &#x60;completed&#x60; &amp;ndash; Call was answered and has ended normally. * &#x60;busy&#x60; &amp;ndash; Caller received a busy signal. * &#x60;failed&#x60; &amp;ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * &#x60;noAnswer&#x60; &amp;ndash; Call ended without being answered.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum QUEUED for value: queued
-            /// </summary>
-            [EnumMember(Value = "queued")]
-            QUEUED = 1,
-
-            /// <summary>
-            /// Enum RINGING for value: ringing
-            /// </summary>
-            [EnumMember(Value = "ringing")]
-            RINGING = 2,
-
-            /// <summary>
-            /// Enum IN_PROGRESS for value: inProgress
-            /// </summary>
-            [EnumMember(Value = "inProgress")]
-            IN_PROGRESS = 3,
-
-            /// <summary>
-            /// Enum CANCELED for value: canceled
-            /// </summary>
-            [EnumMember(Value = "canceled")]
-            CANCELED = 4,
-
-            /// <summary>
-            /// Enum COMPLETED for value: completed
-            /// </summary>
-            [EnumMember(Value = "completed")]
-            COMPLETED = 5,
-
-            /// <summary>
-            /// Enum BUSY for value: busy
-            /// </summary>
-            [EnumMember(Value = "busy")]
-            BUSY = 6,
-
-            /// <summary>
-            /// Enum FAILED for value: failed
-            /// </summary>
-            [EnumMember(Value = "failed")]
-            FAILED = 7,
-
-            /// <summary>
-            /// Enum NO_ANSWER for value: noAnswer
-            /// </summary>
-            [EnumMember(Value = "noAnswer")]
-            NO_ANSWER = 8
-
-        }
-
 
         /// <summary>
-        /// * &#x60;queued&#x60; &amp;ndash; Call is ready and waiting in line before going out. * &#x60;ringing&#x60; &amp;ndash; Call is currently ringing. * &#x60;inProgress&#x60; &amp;ndash; Call was answered and is currently in progress. * &#x60;canceled&#x60; &amp;ndash; Call was hung up while it was queued or ringing. * &#x60;completed&#x60; &amp;ndash; Call was answered and has ended normally. * &#x60;busy&#x60; &amp;ndash; Caller received a busy signal. * &#x60;failed&#x60; &amp;ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * &#x60;noAnswer&#x60; &amp;ndash; Call ended without being answered.
+        /// Gets or Sets Status
         /// </summary>
-        /// <value>* &#x60;queued&#x60; &amp;ndash; Call is ready and waiting in line before going out. * &#x60;ringing&#x60; &amp;ndash; Call is currently ringing. * &#x60;inProgress&#x60; &amp;ndash; Call was answered and is currently in progress. * &#x60;canceled&#x60; &amp;ndash; Call was hung up while it was queued or ringing. * &#x60;completed&#x60; &amp;ndash; Call was answered and has ended normally. * &#x60;busy&#x60; &amp;ndash; Caller received a busy signal. * &#x60;failed&#x60; &amp;ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * &#x60;noAnswer&#x60; &amp;ndash; Call ended without being answered.</value>
-        [DataMember(Name = "status", EmitDefaultValue = true)]
-        public StatusEnum? Status { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public CallStatus? Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Direction
+        /// </summary>
+        [DataMember(Name = "direction", EmitDefaultValue = false)]
+        public CallDirection? Direction { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AnsweredBy
+        /// </summary>
+        [DataMember(Name = "answeredBy", EmitDefaultValue = false)]
+        public AnsweredBy? AnsweredBy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CallResult" /> class.
         /// </summary>
@@ -109,16 +64,16 @@ namespace freeclimb.Model
         /// <param name="from">Phone number that initiated this Call..</param>
         /// <param name="to">Phone number that received this Call..</param>
         /// <param name="phoneNumberId">If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI)..</param>
-        /// <param name="status">* &#x60;queued&#x60; &amp;ndash; Call is ready and waiting in line before going out. * &#x60;ringing&#x60; &amp;ndash; Call is currently ringing. * &#x60;inProgress&#x60; &amp;ndash; Call was answered and is currently in progress. * &#x60;canceled&#x60; &amp;ndash; Call was hung up while it was queued or ringing. * &#x60;completed&#x60; &amp;ndash; Call was answered and has ended normally. * &#x60;busy&#x60; &amp;ndash; Caller received a busy signal. * &#x60;failed&#x60; &amp;ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * &#x60;noAnswer&#x60; &amp;ndash; Call ended without being answered..</param>
+        /// <param name="status">status.</param>
         /// <param name="startTime">Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed..</param>
         /// <param name="connectTime">Time the Call was answered (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed..</param>
         /// <param name="endTime">End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully..</param>
         /// <param name="duration">Total length of the Call in seconds. Measures time between startTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls..</param>
         /// <param name="connectDuration">Length of time that the Call was connected in seconds. Measures time between connectTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls..</param>
-        /// <param name="direction">Direction of the Call. &#x60;inbound&#x60; for Calls into FreeClimb, &#x60;outboundAPI&#x60; for Calls initiated via the REST API,  &#x60;outboundDial&#x60; for Calls initiated by the &#x60;OutDial&#x60; PerCL command..</param>
-        /// <param name="answeredBy">If this Call was initiated with answering machine detection, either &#x60;human&#x60; or &#x60;machine&#x60;. Empty otherwise..</param>
+        /// <param name="direction">direction.</param>
+        /// <param name="answeredBy">answeredBy.</param>
         /// <param name="subresourceUris">The list of subresources for this Call. These include things like logs and recordings associated with the Call..</param>
-        public CallResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string callId = default(string), string parentCallId = default(string), string accountId = default(string), string from = default(string), string to = default(string), string phoneNumberId = default(string), StatusEnum? status = default(StatusEnum?), string startTime = default(string), string connectTime = default(string), string endTime = default(string), int? duration = default(int?), int? connectDuration = default(int?), string direction = default(string), string answeredBy = default(string), Object subresourceUris = default(Object))
+        public CallResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string callId = default(string), string parentCallId = default(string), string accountId = default(string), string from = default(string), string to = default(string), string phoneNumberId = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string connectTime = default(string), string endTime = default(string), int? duration = default(int?), int? connectDuration = default(int?), CallDirection? direction = default(CallDirection?), AnsweredBy? answeredBy = default(AnsweredBy?), Object subresourceUris = default(Object))
         {
             this.Uri = uri;
             this.DateCreated = dateCreated;
@@ -245,20 +200,6 @@ namespace freeclimb.Model
         /// <value>Length of time that the Call was connected in seconds. Measures time between connectTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls.</value>
         [DataMember(Name = "connectDuration", EmitDefaultValue = true)]
         public int? ConnectDuration { get; set; }
-
-        /// <summary>
-        /// Direction of the Call. &#x60;inbound&#x60; for Calls into FreeClimb, &#x60;outboundAPI&#x60; for Calls initiated via the REST API,  &#x60;outboundDial&#x60; for Calls initiated by the &#x60;OutDial&#x60; PerCL command.
-        /// </summary>
-        /// <value>Direction of the Call. &#x60;inbound&#x60; for Calls into FreeClimb, &#x60;outboundAPI&#x60; for Calls initiated via the REST API,  &#x60;outboundDial&#x60; for Calls initiated by the &#x60;OutDial&#x60; PerCL command.</value>
-        [DataMember(Name = "direction", EmitDefaultValue = true)]
-        public string Direction { get; set; }
-
-        /// <summary>
-        /// If this Call was initiated with answering machine detection, either &#x60;human&#x60; or &#x60;machine&#x60;. Empty otherwise.
-        /// </summary>
-        /// <value>If this Call was initiated with answering machine detection, either &#x60;human&#x60; or &#x60;machine&#x60;. Empty otherwise.</value>
-        [DataMember(Name = "answeredBy", EmitDefaultValue = true)]
-        public string AnsweredBy { get; set; }
 
         /// <summary>
         /// The list of subresources for this Call. These include things like logs and recordings associated with the Call.
@@ -438,13 +379,11 @@ namespace freeclimb.Model
                 ) && 
                 (
                     this.Direction == input.Direction ||
-                    (this.Direction != null &&
-                    this.Direction.Equals(input.Direction))
+                    this.Direction.Equals(input.Direction)
                 ) && 
                 (
                     this.AnsweredBy == input.AnsweredBy ||
-                    (this.AnsweredBy != null &&
-                    this.AnsweredBy.Equals(input.AnsweredBy))
+                    this.AnsweredBy.Equals(input.AnsweredBy)
                 ) && 
                 (
                     this.SubresourceUris == input.SubresourceUris ||
@@ -520,14 +459,8 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.ConnectDuration.GetHashCode();
                 }
-                if (this.Direction != null)
-                {
-                    hashCode = (hashCode * 59) + this.Direction.GetHashCode();
-                }
-                if (this.AnsweredBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.AnsweredBy.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Direction.GetHashCode();
+                hashCode = (hashCode * 59) + this.AnsweredBy.GetHashCode();
                 if (this.SubresourceUris != null)
                 {
                     hashCode = (hashCode * 59) + this.SubresourceUris.GetHashCode();

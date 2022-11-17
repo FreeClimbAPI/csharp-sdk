@@ -23,6 +23,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
+using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -32,106 +33,32 @@ namespace freeclimb.Model
     [DataContract(Name = "ConferenceResult_allOf")]
     public partial class ConferenceResultAllOf : IEquatable<ConferenceResultAllOf>, IValidatableObject
     {
-        /// <summary>
-        /// Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.
-        /// </summary>
-        /// <value>Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PlayBeepEnum
-        {
-            /// <summary>
-            /// Enum ALWAYS for value: always
-            /// </summary>
-            [EnumMember(Value = "always")]
-            ALWAYS = 1,
-
-            /// <summary>
-            /// Enum NEVER for value: never
-            /// </summary>
-            [EnumMember(Value = "never")]
-            NEVER = 2,
-
-            /// <summary>
-            /// Enum ENTRY_ONLY for value: entryOnly
-            /// </summary>
-            [EnumMember(Value = "entryOnly")]
-            ENTRY_ONLY = 3,
-
-            /// <summary>
-            /// Enum EXIT_ONLY for value: exitOnly
-            /// </summary>
-            [EnumMember(Value = "exitOnly")]
-            EXIT_ONLY = 4
-
-        }
-
 
         /// <summary>
-        /// Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.
+        /// Gets or Sets PlayBeep
         /// </summary>
-        /// <value>Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.</value>
-        [DataMember(Name = "playBeep", EmitDefaultValue = true)]
-        public PlayBeepEnum? PlayBeep { get; set; }
-        /// <summary>
-        /// The status of the Conference. One of: creating, empty, populated, inProgress, or terminated.
-        /// </summary>
-        /// <value>The status of the Conference. One of: creating, empty, populated, inProgress, or terminated.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum CREATING for value: creating
-            /// </summary>
-            [EnumMember(Value = "creating")]
-            CREATING = 1,
-
-            /// <summary>
-            /// Enum EMPTY for value: empty
-            /// </summary>
-            [EnumMember(Value = "empty")]
-            EMPTY = 2,
-
-            /// <summary>
-            /// Enum POPULATED for value: populated
-            /// </summary>
-            [EnumMember(Value = "populated")]
-            POPULATED = 3,
-
-            /// <summary>
-            /// Enum IN_PROGRESS for value: inProgress
-            /// </summary>
-            [EnumMember(Value = "inProgress")]
-            IN_PROGRESS = 4,
-
-            /// <summary>
-            /// Enum TERMINATED for value: terminated
-            /// </summary>
-            [EnumMember(Value = "terminated")]
-            TERMINATED = 5
-
-        }
-
+        [DataMember(Name = "playBeep", EmitDefaultValue = false)]
+        public PlayBeep? PlayBeep { get; set; }
 
         /// <summary>
-        /// The status of the Conference. One of: creating, empty, populated, inProgress, or terminated.
+        /// Gets or Sets Status
         /// </summary>
-        /// <value>The status of the Conference. One of: creating, empty, populated, inProgress, or terminated.</value>
-        [DataMember(Name = "status", EmitDefaultValue = true)]
-        public StatusEnum? Status { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public ConferenceStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ConferenceResultAllOf" /> class.
         /// </summary>
         /// <param name="conferenceId">A string that uniquely identifies this Conference resource..</param>
         /// <param name="accountId">ID of the account that created this Conference..</param>
         /// <param name="alias">A description for this Conference..</param>
-        /// <param name="playBeep">Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always..</param>
+        /// <param name="playBeep">playBeep.</param>
         /// <param name="record">Flag indicating whether recording is enabled for this Conference..</param>
-        /// <param name="status">The status of the Conference. One of: creating, empty, populated, inProgress, or terminated..</param>
+        /// <param name="status">status.</param>
         /// <param name="waitUrl">URL referencing the audio file to be used as default wait music for the Conference when it is in the populated state..</param>
         /// <param name="actionUrl">URL invoked once the Conference is successfully created..</param>
         /// <param name="statusCallbackUrl">URL to inform that the Conference status has changed..</param>
         /// <param name="subresourceUris">The list of subresources for this Conference. This includes participants and/or recordings..</param>
-        public ConferenceResultAllOf(string conferenceId = default(string), string accountId = default(string), string alias = default(string), PlayBeepEnum? playBeep = default(PlayBeepEnum?), bool? record = default(bool?), StatusEnum? status = default(StatusEnum?), string waitUrl = default(string), string actionUrl = default(string), string statusCallbackUrl = default(string), Object subresourceUris = default(Object))
+        public ConferenceResultAllOf(string conferenceId = default(string), string accountId = default(string), string alias = default(string), PlayBeep? playBeep = default(PlayBeep?), bool? record = default(bool?), ConferenceStatus? status = default(ConferenceStatus?), string waitUrl = default(string), string actionUrl = default(string), string statusCallbackUrl = default(string), Object subresourceUris = default(Object))
         {
             this.ConferenceId = conferenceId;
             this.AccountId = accountId;
