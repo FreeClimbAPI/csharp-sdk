@@ -2742,7 +2742,7 @@ Name | Type | Description  | Notes
 
 <a name="listsmsmessages"></a>
 # **ListSmsMessages**
-> MessagesList ListSmsMessages (string to = null, string from = null, string beginTime = null, string endTime = null, CallDirection? direction = null)
+> MessagesList ListSmsMessages (string to = null, string from = null, string beginTime = null, string endTime = null, MessageDirection? direction = null)
 
 List SMS Messages
 
@@ -2776,7 +2776,7 @@ namespace Example
 
             var endTime = "endTime_example";  // string | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional) 
 
-            var direction = (CallDirection) "inbound";  // CallDirection? | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional) 
+            var direction = (MessageDirection) "inbound";  // MessageDirection? | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional) 
 
 
             try
@@ -2804,7 +2804,7 @@ Name | Type | Description  | Notes
  **from** | **string**| Only show Messages from this phone number. | [optional] 
  **beginTime** | **string**| Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional] 
  **endTime** | **string**| Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional] 
- **direction** | **CallDirection?**| Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] 
+ **direction** | **MessageDirection?**| Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] 
 
 
 ### Return type

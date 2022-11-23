@@ -5,10 +5,12 @@ using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace freeclimb.Enums {
+namespace freeclimb.Enums
+{
 
-    public static class Reflection {
-          /// <summary>
+    public static class Reflection
+    {
+        /// <summary>
         /// Retrieves an enum item from a specified string by matching the string to the EnumMemberAttribute
         /// elements assigned to each enum item
         /// </summary>
@@ -17,7 +19,7 @@ namespace freeclimb.Enums {
         /// <param name="ignoreCase">Whether string comparison of values should be case-sensitive or not</param>
         /// <returns>The matched enum item</returns>
         /// <exception cref="ArgumentException">Thrown if no enum item could be found with the corresponding value</exception>
-        public static TEnum GetEnumByValue<TEnum>(string value, bool ignoreCase = false) 
+        public static TEnum GetEnumByValue<TEnum>(String value, Boolean ignoreCase = false)
             // Add a condition to the generic type
             where TEnum : Enum
         {
@@ -32,7 +34,7 @@ namespace freeclimb.Enums {
                     // the value matches the given value parameter
                     if (string.Equals(attribute.Value, value,
                         ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal))
-                        return (TEnum) item.GetValue(null);
+                        return (TEnum)item.GetValue(null);
                 }
             }
 
@@ -51,7 +53,7 @@ namespace freeclimb.Enums {
         /// <param name="ignoreCase">Whether string comparison of values should be case-sensitive or not</param>
         /// <param name="result">The matched enum item if it was found</param>
         /// <returns>Whether or not the enum item was found or not</returns>
-        public static bool TryGetEnumByValue<TEnum>(string value, bool ignoreCase, out TEnum result)
+        public static bool TryGetEnumByValue<TEnum>(String value, Boolean ignoreCase, out TEnum result)
             where TEnum : Enum
         {
             try
@@ -77,7 +79,7 @@ namespace freeclimb.Enums {
         /// <param name="value">The value that should be searched</param>
         /// <param name="result">The matched enum item if it was found</param>
         /// <returns>Whether or not the enum item was found or not</returns>
-        public static bool TryGetEnumByValue<TEnum>(string value, out TEnum result)
+        public static bool TryGetEnumByValue<TEnum>(String value, out TEnum result)
             where TEnum : Enum
         {
             return TryGetEnumByValue(value, false, out result);

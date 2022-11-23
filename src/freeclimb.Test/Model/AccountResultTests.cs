@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class AccountResultTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for AccountResult
-        //private AccountResult instance;
+        private AccountResult instance;
 
         public AccountResultTests()
         {
-            // TODO uncomment below to create an instance of AccountResult
             //instance = new AccountResult();
         }
 
@@ -145,7 +147,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'SubresourceUris'
         }
-
     }
 
 }

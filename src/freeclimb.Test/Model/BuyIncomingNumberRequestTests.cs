@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class BuyIncomingNumberRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for BuyIncomingNumberRequest
-        //private BuyIncomingNumberRequest instance;
+        private BuyIncomingNumberRequest instance;
 
         public BuyIncomingNumberRequestTests()
         {
-            // TODO uncomment below to create an instance of BuyIncomingNumberRequest
             //instance = new BuyIncomingNumberRequest();
         }
 
@@ -81,7 +83,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'ApplicationId'
         }
-
     }
 
 }

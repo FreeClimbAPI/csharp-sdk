@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class UnparkTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Unpark
-        //private Unpark instance;
+        private Unpark instance;
 
         public UnparkTests()
         {
-            // TODO uncomment below to create an instance of Unpark
             //instance = new Unpark();
         }
 
@@ -55,7 +57,6 @@ namespace freeclimb.Test.Model
             // TODO uncomment below to test "IsType" Unpark
             //Assert.IsType<Unpark>(instance);
         }
-
 
 
     }

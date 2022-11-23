@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class PlayAllOfTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for PlayAllOf
-        //private PlayAllOf instance;
+        private PlayAllOf instance;
 
         public PlayAllOfTests()
         {
-            // TODO uncomment below to create an instance of PlayAllOf
             //instance = new PlayAllOf();
         }
 
@@ -89,7 +91,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'PrivacyMode'
         }
-
     }
 
 }

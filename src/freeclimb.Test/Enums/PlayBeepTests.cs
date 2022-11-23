@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -22,6 +24,7 @@ using System.Reflection;
 using Newtonsoft.Json;
 
 using freeclimb.Enums;
+
 namespace freeclimb.Test.Enums
 {
     /// <summary>
@@ -34,12 +37,11 @@ namespace freeclimb.Test.Enums
     public class PlayBeepTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for PlayBeep
-        //private PlayBeep instance;
+        private PlayBeep instance;
 
         public PlayBeepTests()
         {
-            // TODO uncomment below to create an instance of PlayBeep
-            //instance = new PlayBeep();
+            instance = PlayBeepInstanceValue();
         }
 
         public void Dispose()
@@ -58,7 +60,107 @@ namespace freeclimb.Test.Enums
         }
 
 
-
+        [Fact]
+        public void EnumToStringValueTest()
+        {
+            string expectedValue = StringValuePlayBeepTestValue();
+            string calculatedValue = Extensions.GetMemberValue(instance);
+            Assert.Equal(expectedValue, calculatedValue);
+        }
+        [Fact]
+        public void StringToEnumValueTest()
+        {
+            string expectedValue = StringValuePlayBeepTestValue();
+            PlayBeep calculatedValue = Reflection.GetEnumByValue<PlayBeep>(expectedValue);
+            Assert.Equal(instance, calculatedValue);
+        }
+        private PlayBeep PlayBeepInstanceValue()
+        {
+            return Reflection.GetEnumByValue<PlayBeep>(StringValuePlayBeepTestValue());
+        }
+        private string StringValueAccountStatusTestValue()
+        {
+            return "active";
+        }
+        private string StringValueAccountTypeTestValue()
+        {
+            return "trial";
+        }
+        private string StringValueAnsweredByTestValue()
+        {
+            return "human";
+        }
+        private string StringValueCallDirectionTestValue()
+        {
+            return "inbound";
+        }
+        private string StringValueCallStatusTestValue()
+        {
+            return "queued";
+        }
+        private string StringValueConferenceStatusTestValue()
+        {
+            return "populated";
+        }
+        private string StringValueGetSpeechReasonTestValue()
+        {
+            return "digit";
+        }
+        private string StringValueGrammarFileBuiltInTestValue()
+        {
+            return "ALPHNUM6";
+        }
+        private string StringValueGrammarTypeTestValue()
+        {
+            return "URL";
+        }
+        private string StringValueIfMachineTestValue()
+        {
+            return "redirect";
+        }
+        private string StringValueLanguageTestValue()
+        {
+            return "ca-ES";
+        }
+        private string StringValueLogLevelTestValue()
+        {
+            return "info";
+        }
+        private string StringValueMachineTypeTestValue()
+        {
+            return "answeringMachine";
+        }
+        private string StringValueMessageDirectionTestValue()
+        {
+            return "inbound";
+        }
+        private string StringValueMessageStatusTestValue()
+        {
+            return "new";
+        }
+        private string StringValuePlayBeepTestValue()
+        {
+            return "always";
+        }
+        private string StringValueQueueResultStatusTestValue()
+        {
+            return "queueFull";
+        }
+        private string StringValueRecordUtteranceTermReasonTestValue()
+        {
+            return "finishKey";
+        }
+        private string StringValueRequestTypeTestValue()
+        {
+            return "inboundCall";
+        }
+        private string StringValueUpdateCallRequestStatusTestValue()
+        {
+            return "completed";
+        }
+        private string StringValueUpdateConferenceRequestStatusTestValue()
+        {
+            return "empty";
+        }
     }
-
 }

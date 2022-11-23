@@ -5,13 +5,16 @@ using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace freeclimb.Enums {
+namespace freeclimb.Enums
+{
 
-    public static partial class Extensions {
-        public static string GetMemberValue(this Enum @this)  {
+    public static partial class Extensions
+    {
+        public static string GetMemberValue(this Enum @this)
+        {
             FieldInfo fieldInfo = @this.GetType().GetField(@this.ToString());
             if (fieldInfo == null) return null;
-            var attribute = (EnumMemberAttribute)fieldInfo.GetCustomAttribute(typeof (EnumMemberAttribute));
+            var attribute = (EnumMemberAttribute)fieldInfo.GetCustomAttribute(typeof(EnumMemberAttribute));
             return attribute.Value;
         }
     }
