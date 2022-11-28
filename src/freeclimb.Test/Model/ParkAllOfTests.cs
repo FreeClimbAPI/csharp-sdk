@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class ParkAllOfTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for ParkAllOf
-        //private ParkAllOf instance;
+        private ParkAllOf instance;
 
         public ParkAllOfTests()
         {
-            // TODO uncomment below to create an instance of ParkAllOf
             //instance = new ParkAllOf();
         }
 
@@ -81,7 +83,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'NotificationUrl'
         }
-
     }
 
 }

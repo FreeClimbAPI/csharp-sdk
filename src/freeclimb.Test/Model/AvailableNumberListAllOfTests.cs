@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class AvailableNumberListAllOfTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for AvailableNumberListAllOf
-        //private AvailableNumberListAllOf instance;
+        private AvailableNumberListAllOf instance;
 
         public AvailableNumberListAllOfTests()
         {
-            // TODO uncomment below to create an instance of AvailableNumberListAllOf
             //instance = new AvailableNumberListAllOf();
         }
 
@@ -65,7 +67,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'AvailablePhoneNumbers'
         }
-
     }
 
 }

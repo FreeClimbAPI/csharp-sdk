@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CallConnectUrl** | **string** | URL to which FreeClimb makes an HTTP POST request informing the result of the OutDial. | 
 **CallingNumber** | **decimal** | he caller ID to show to the called party when FreeClimb calls. This can be one of the following: The To or From number provided in the first Webhook to your webserver. Any phone number you have purchased from FreeClimb. | 
 **Destination** | **decimal** | E.164 representation of the phone number to Call.  | 
-**IfMachine** | **string** | Specifies how FreeClimb should handle this OutDial if an answering machine answers the Call. Valid values: &#x60;redirect&#x60; invokes the ifMachineUrl for instructions. &#x60;hangup&#x60; hangs up the Call. The ifMachineUrl will not be invoked. | [optional] 
+**IfMachine** | **IfMachine** |  | [optional] 
 **IfMachineUrl** | **string** | When the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;, this attribute specifies a URL to which FreeClimb makes a POST request when an answering machine or a fax machine is detected. This URL is required if the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;. Otherwise, it should not be included. | [optional] 
 **SendDigits** | **string** | DTMF tones to play to the outdialed Call. This is typically used to dial a number and then dial an extension. | [optional] 
 **StatusCallbackUrl** | **string** | When the outdialed Call leg terminates, FreeClimb sends a &#x60;callStatus&#x60; Webhook to the &#x60;statusCallbackUrl&#x60;. This is a notification only; any PerCL command returned is ignored. | [optional] 

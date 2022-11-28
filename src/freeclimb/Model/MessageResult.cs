@@ -23,6 +23,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
+using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -32,88 +33,12 @@ namespace freeclimb.Model
     [DataContract(Name = "MessageResult")]
     public partial class MessageResult : IEquatable<MessageResult>, IValidatableObject
     {
-        /// <summary>
-        /// Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown
-        /// </summary>
-        /// <value>Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum NEW for value: new
-            /// </summary>
-            [EnumMember(Value = "new")]
-            NEW = 1,
-
-            /// <summary>
-            /// Enum QUEUED for value: queued
-            /// </summary>
-            [EnumMember(Value = "queued")]
-            QUEUED = 2,
-
-            /// <summary>
-            /// Enum REJECTED for value: rejected
-            /// </summary>
-            [EnumMember(Value = "rejected")]
-            REJECTED = 3,
-
-            /// <summary>
-            /// Enum SENDING for value: sending
-            /// </summary>
-            [EnumMember(Value = "sending")]
-            SENDING = 4,
-
-            /// <summary>
-            /// Enum SENT for value: sent
-            /// </summary>
-            [EnumMember(Value = "sent")]
-            SENT = 5,
-
-            /// <summary>
-            /// Enum FAILED for value: failed
-            /// </summary>
-            [EnumMember(Value = "failed")]
-            FAILED = 6,
-
-            /// <summary>
-            /// Enum RECEIVED for value: received
-            /// </summary>
-            [EnumMember(Value = "received")]
-            RECEIVED = 7,
-
-            /// <summary>
-            /// Enum UNDELIVERED for value: undelivered
-            /// </summary>
-            [EnumMember(Value = "undelivered")]
-            UNDELIVERED = 8,
-
-            /// <summary>
-            /// Enum EXPIRED for value: expired
-            /// </summary>
-            [EnumMember(Value = "expired")]
-            EXPIRED = 9,
-
-            /// <summary>
-            /// Enum DELETED for value: deleted
-            /// </summary>
-            [EnumMember(Value = "deleted")]
-            DELETED = 10,
-
-            /// <summary>
-            /// Enum UNKNOWN for value: unknown
-            /// </summary>
-            [EnumMember(Value = "unknown")]
-            UNKNOWN = 11
-
-        }
-
 
         /// <summary>
-        /// Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown
+        /// Gets or Sets Status
         /// </summary>
-        /// <value>Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown</value>
-        [DataMember(Name = "status", EmitDefaultValue = true)]
-        public StatusEnum? Status { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public MessageStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageResult" /> class.
         /// </summary>
@@ -123,13 +48,13 @@ namespace freeclimb.Model
         /// <param name="revision">Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated..</param>
         /// <param name="accountId">String that uniquely identifies this account resource..</param>
         /// <param name="messageId">String that uniquely identifies this message resource.</param>
-        /// <param name="status">Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown.</param>
+        /// <param name="status">status.</param>
         /// <param name="from">Phone number in E.164 format that sent the message..</param>
         /// <param name="to">Phone number in E.164 format that received the message..</param>
         /// <param name="text">Message contents.</param>
         /// <param name="direction">Noting whether the message was inbound or outbound.</param>
         /// <param name="notificationUrl">URL invoked when message sent.</param>
-        public MessageResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string messageId = default(string), StatusEnum? status = default(StatusEnum?), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string notificationUrl = default(string))
+        public MessageResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string messageId = default(string), MessageStatus? status = default(MessageStatus?), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string notificationUrl = default(string))
         {
             this.Uri = uri;
             this.DateCreated = dateCreated;

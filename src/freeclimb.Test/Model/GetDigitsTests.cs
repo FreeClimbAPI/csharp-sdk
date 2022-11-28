@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class GetDigitsTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for GetDigits
-        //private GetDigits instance;
+        private GetDigits instance;
 
         public GetDigitsTests()
         {
-            // TODO uncomment below to create an instance of GetDigits
             //instance = new GetDigits();
         }
 
@@ -129,7 +131,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'PrivacyMode'
         }
-
     }
 
 }

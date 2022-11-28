@@ -16,6 +16,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using freeclimb.Client;
+using freeclimb.Enums;
 using freeclimb.Model;
 
 namespace freeclimb.Api
@@ -565,7 +566,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>CallList</returns>
-        CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
+        CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
 
         /// <summary>
         /// List Calls
@@ -582,7 +583,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>ApiResponse of CallList</returns>
-        ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
+        ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
         /// <summary>
         /// List Conferences
         /// </summary>
@@ -723,7 +724,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         /// <returns>MessagesList</returns>
-        MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string));
+        MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?));
 
         /// <summary>
         /// List SMS Messages
@@ -738,7 +739,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         /// <returns>ApiResponse of MessagesList</returns>
-        ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string));
+        ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?));
         /// <summary>
         /// Make a Call
         /// </summary>
@@ -969,9 +970,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="buyIncomingNumberRequest">Incoming Number transaction details</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberResult</returns>
         System.Threading.Tasks.Task<IncomingNumberResult> BuyAPhoneNumberAsync(BuyIncomingNumberRequest buyIncomingNumberRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -983,9 +984,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="buyIncomingNumberRequest">Incoming Number transaction details</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<IncomingNumberResult>> BuyAPhoneNumberWithHttpInfoAsync(BuyIncomingNumberRequest buyIncomingNumberRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -996,9 +997,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="createConferenceRequest">Conference to create (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceResult</returns>
         System.Threading.Tasks.Task<ConferenceResult> CreateAConferenceAsync(CreateConferenceRequest createConferenceRequest = default(CreateConferenceRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1010,9 +1011,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="createConferenceRequest">Conference to create (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConferenceResult>> CreateAConferenceWithHttpInfoAsync(CreateConferenceRequest createConferenceRequest = default(CreateConferenceRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1023,9 +1024,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueRequest">Queue details used to create a queue (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueResult</returns>
         System.Threading.Tasks.Task<QueueResult> CreateAQueueAsync(QueueRequest queueRequest = default(QueueRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1037,9 +1038,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueRequest">Queue details used to create a queue (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueResult>> CreateAQueueWithHttpInfoAsync(QueueRequest queueRequest = default(QueueRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1050,9 +1051,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationRequest">Application Details (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationResult</returns>
         System.Threading.Tasks.Task<ApplicationResult> CreateAnApplicationAsync(ApplicationRequest applicationRequest = default(ApplicationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1064,9 +1065,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationRequest">Application Details (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApplicationResult>> CreateAnApplicationWithHttpInfoAsync(ApplicationRequest applicationRequest = default(ApplicationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1077,9 +1078,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DeleteARecordingAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1091,9 +1092,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteARecordingWithHttpInfoAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1104,9 +1105,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">String that uniquely identifies this application resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DeleteAnApplicationAsync(string applicationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1118,9 +1119,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">String that uniquely identifies this application resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAnApplicationWithHttpInfoAsync(string applicationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1131,9 +1132,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DeleteAnIncomingNumberAsync(string phoneNumberId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1145,9 +1146,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAnIncomingNumberWithHttpInfoAsync(string phoneNumberId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1158,11 +1159,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="callId">ID if the Call that the Member belongs to</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMember</returns>
         System.Threading.Tasks.Task<QueueMember> DequeueAMemberAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1174,11 +1175,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="callId">ID if the Call that the Member belongs to</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueMember>> DequeueAMemberWithHttpInfoAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1189,9 +1190,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies this queue resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMember</returns>
         System.Threading.Tasks.Task<QueueMember> DequeueHeadMemberAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1203,9 +1204,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies this queue resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueMember>> DequeueHeadMemberWithHttpInfoAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1216,9 +1217,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
         System.Threading.Tasks.Task<System.IO.Stream> DownloadARecordingFileAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1230,9 +1231,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadARecordingFileWithHttpInfoAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1243,9 +1244,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="filterLogsRequest">Filter logs request paramters</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LogList</returns>
         System.Threading.Tasks.Task<LogList> FilterLogsAsync(FilterLogsRequest filterLogsRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1257,9 +1258,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="filterLogsRequest">Filter logs request paramters</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
         System.Threading.Tasks.Task<ApiResponse<LogList>> FilterLogsWithHttpInfoAsync(FilterLogsRequest filterLogsRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1270,9 +1271,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallResult</returns>
         System.Threading.Tasks.Task<CallResult> GetACallAsync(string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1284,9 +1285,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<CallResult>> GetACallWithHttpInfoAsync(string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1297,9 +1298,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">A string that uniquely identifies this conference resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceResult</returns>
         System.Threading.Tasks.Task<ConferenceResult> GetAConferenceAsync(string conferenceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1311,9 +1312,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">A string that uniquely identifies this conference resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConferenceResult>> GetAConferenceWithHttpInfoAsync(string conferenceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1324,11 +1325,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="callId">ID of the Call that the Member belongs to</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMember</returns>
         System.Threading.Tasks.Task<QueueMember> GetAMemberAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1340,11 +1341,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="callId">ID of the Call that the Member belongs to</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueMember>> GetAMemberWithHttpInfoAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1355,11 +1356,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceParticipantResult</returns>
         System.Threading.Tasks.Task<ConferenceParticipantResult> GetAParticipantAsync(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1371,11 +1372,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConferenceParticipantResult>> GetAParticipantWithHttpInfoAsync(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1386,9 +1387,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">A string that uniquely identifies this queue resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueResult</returns>
         System.Threading.Tasks.Task<QueueResult> GetAQueueAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1400,9 +1401,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">A string that uniquely identifies this queue resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueResult>> GetAQueueWithHttpInfoAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1413,9 +1414,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordingResult</returns>
         System.Threading.Tasks.Task<RecordingResult> GetARecordingAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1427,9 +1428,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<RecordingResult>> GetARecordingWithHttpInfoAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1440,7 +1441,7 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountResult</returns>
         System.Threading.Tasks.Task<AccountResult> GetAnAccountAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1452,7 +1453,7 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<AccountResult>> GetAnAccountWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1463,9 +1464,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationResult</returns>
         System.Threading.Tasks.Task<ApplicationResult> GetAnApplicationAsync(string applicationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1477,9 +1478,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApplicationResult>> GetAnApplicationWithHttpInfoAsync(string applicationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1490,9 +1491,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberResult</returns>
         System.Threading.Tasks.Task<IncomingNumberResult> GetAnIncomingNumberAsync(string phoneNumberId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1504,9 +1505,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<IncomingNumberResult>> GetAnIncomingNumberWithHttpInfoAsync(string phoneNumberId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1517,9 +1518,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="messageId">String that uniquely identifies this Message resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageResult</returns>
         System.Threading.Tasks.Task<MessageResult> GetAnSmsMessageAsync(string messageId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1531,9 +1532,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="messageId">String that uniquely identifies this Message resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<MessageResult>> GetAnSmsMessageWithHttpInfoAsync(string messageId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1544,9 +1545,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMember</returns>
         System.Threading.Tasks.Task<QueueMember> GetHeadMemberAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1558,9 +1559,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueMember>> GetHeadMemberWithHttpInfoAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1571,9 +1572,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="alias">Return only the Queue resources with aliases that exactly match this name. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueList</returns>
         System.Threading.Tasks.Task<QueueList> ListActiveQueuesAsync(string alias = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1585,9 +1586,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="alias">Return only the Queue resources with aliases that exactly match this name. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueList)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueList>> ListActiveQueuesWithHttpInfoAsync(string alias = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1598,7 +1599,7 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LogList</returns>
         System.Threading.Tasks.Task<LogList> ListAllAccountLogsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1610,7 +1611,7 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
         System.Threading.Tasks.Task<ApiResponse<LogList>> ListAllAccountLogsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1621,9 +1622,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="alias">Return only applications with aliases that exactly match this value. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationList</returns>
         System.Threading.Tasks.Task<ApplicationList> ListApplicationsAsync(string alias = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1635,9 +1636,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="alias">Return only applications with aliases that exactly match this value. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationList)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApplicationList>> ListApplicationsWithHttpInfoAsync(string alias = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1648,27 +1649,27 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumber">PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format. (optional)</param>
-        
+
         /// <param name="region">State or province of this phone number. (optional)</param>
-        
+
         /// <param name="country">Country of this phone number. (optional)</param>
-        
+
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true)</param>
-        
+
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true)</param>
-        
+
         /// <param name="capabilitiesVoice"> (optional)</param>
-        
+
         /// <param name="capabilitiesSms"> (optional)</param>
-        
+
         /// <param name="capabilitiesTollFree"> (optional)</param>
-        
+
         /// <param name="capabilitiesTenDLC"> (optional)</param>
-        
+
         /// <param name="capabilitiesShortCode"> (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AvailableNumberList</returns>
         System.Threading.Tasks.Task<AvailableNumberList> ListAvailableNumbersAsync(string phoneNumber = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1680,27 +1681,27 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumber">PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format. (optional)</param>
-        
+
         /// <param name="region">State or province of this phone number. (optional)</param>
-        
+
         /// <param name="country">Country of this phone number. (optional)</param>
-        
+
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true)</param>
-        
+
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true)</param>
-        
+
         /// <param name="capabilitiesVoice"> (optional)</param>
-        
+
         /// <param name="capabilitiesSms"> (optional)</param>
-        
+
         /// <param name="capabilitiesTollFree"> (optional)</param>
-        
+
         /// <param name="capabilitiesTenDLC"> (optional)</param>
-        
+
         /// <param name="capabilitiesShortCode"> (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AvailableNumberList)</returns>
         System.Threading.Tasks.Task<ApiResponse<AvailableNumberList>> ListAvailableNumbersWithHttpInfoAsync(string phoneNumber = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1711,9 +1712,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LogList</returns>
         System.Threading.Tasks.Task<LogList> ListCallLogsAsync(string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1725,9 +1726,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
         System.Threading.Tasks.Task<ApiResponse<LogList>> ListCallLogsWithHttpInfoAsync(string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1738,11 +1739,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordingList</returns>
         System.Threading.Tasks.Task<RecordingList> ListCallRecordingsAsync(string callId, string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1754,11 +1755,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingList)</returns>
         System.Threading.Tasks.Task<ApiResponse<RecordingList>> ListCallRecordingsWithHttpInfoAsync(string callId, string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1769,24 +1770,24 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
-        
+
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
-        
+
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
-        
+
         /// <param name="status">Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional)</param>
-        
+
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
-        
+
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
-        
+
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallList</returns>
-        System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Calls
@@ -1795,24 +1796,24 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
-        
+
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
-        
+
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
-        
+
         /// <param name="status">Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional)</param>
-        
+
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
-        
+
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
-        
+
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Conferences
         /// </summary>
@@ -1820,15 +1821,15 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="status">Only show conferences that currently have the specified status. Valid values: `empty`, `populated`, `inProgress`, or `terminated`. (optional)</param>
-        
+
         /// <param name="alias">List Conferences whose alias exactly matches this string. (optional)</param>
-        
+
         /// <param name="dateCreated">Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="dateUpdated">Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceList</returns>
         System.Threading.Tasks.Task<ConferenceList> ListConferencesAsync(string status = default(string), string alias = default(string), string dateCreated = default(string), string dateUpdated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1840,15 +1841,15 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="status">Only show conferences that currently have the specified status. Valid values: `empty`, `populated`, `inProgress`, or `terminated`. (optional)</param>
-        
+
         /// <param name="alias">List Conferences whose alias exactly matches this string. (optional)</param>
-        
+
         /// <param name="dateCreated">Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="dateUpdated">Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceList)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConferenceList>> ListConferencesWithHttpInfoAsync(string status = default(string), string alias = default(string), string dateCreated = default(string), string dateUpdated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1859,35 +1860,35 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumber">Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional)</param>
-        
+
         /// <param name="alias">Only show incoming phone numbers with aliases that exactly match this value. (optional)</param>
-        
+
         /// <param name="region">State or province of this phone number. (optional)</param>
-        
+
         /// <param name="country">Country of this phone number. (optional)</param>
-        
+
         /// <param name="applicationId">ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)</param>
-        
+
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
-        
+
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        
+
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        
+
         /// <param name="capabilitiesVoice"> (optional)</param>
-        
+
         /// <param name="capabilitiesSms"> (optional)</param>
-        
+
         /// <param name="capabilitiesTollFree"> (optional)</param>
-        
+
         /// <param name="capabilitiesTenDLC"> (optional)</param>
-        
+
         /// <param name="capabilitiesShortCode"> (optional)</param>
-        
+
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberList</returns>
         System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1899,35 +1900,35 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumber">Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional)</param>
-        
+
         /// <param name="alias">Only show incoming phone numbers with aliases that exactly match this value. (optional)</param>
-        
+
         /// <param name="region">State or province of this phone number. (optional)</param>
-        
+
         /// <param name="country">Country of this phone number. (optional)</param>
-        
+
         /// <param name="applicationId">ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)</param>
-        
+
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
-        
+
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        
+
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        
+
         /// <param name="capabilitiesVoice"> (optional)</param>
-        
+
         /// <param name="capabilitiesSms"> (optional)</param>
-        
+
         /// <param name="capabilitiesTollFree"> (optional)</param>
-        
+
         /// <param name="capabilitiesTenDLC"> (optional)</param>
-        
+
         /// <param name="capabilitiesShortCode"> (optional)</param>
-        
+
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberList)</returns>
         System.Threading.Tasks.Task<ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1938,9 +1939,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMemberList</returns>
         System.Threading.Tasks.Task<QueueMemberList> ListMembersAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1952,9 +1953,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMemberList)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueMemberList>> ListMembersWithHttpInfoAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1965,13 +1966,13 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="talk">Only show Participants with the talk privilege. (optional)</param>
-        
+
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceParticipantList</returns>
         System.Threading.Tasks.Task<ConferenceParticipantList> ListParticipantsAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1983,13 +1984,13 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="talk">Only show Participants with the talk privilege. (optional)</param>
-        
+
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantList)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConferenceParticipantList>> ListParticipantsWithHttpInfoAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2000,13 +2001,13 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
-        
+
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
-        
+
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordingList</returns>
         System.Threading.Tasks.Task<RecordingList> ListRecordingsAsync(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2018,13 +2019,13 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
-        
+
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
-        
+
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingList)</returns>
         System.Threading.Tasks.Task<ApiResponse<RecordingList>> ListRecordingsWithHttpInfoAsync(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2035,20 +2036,20 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="to">Only show Messages to this phone number. (optional)</param>
-        
+
         /// <param name="from">Only show Messages from this phone number. (optional)</param>
-        
+
         /// <param name="beginTime">Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)</param>
-        
+
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
-        
+
         /// <param name="direction">Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessagesList</returns>
-        System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List SMS Messages
@@ -2057,20 +2058,20 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="to">Only show Messages to this phone number. (optional)</param>
-        
+
         /// <param name="from">Only show Messages from this phone number. (optional)</param>
-        
+
         /// <param name="beginTime">Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)</param>
-        
+
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
-        
+
         /// <param name="direction">Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessagesList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Make a Call
         /// </summary>
@@ -2078,9 +2079,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="makeCallRequest">Call details for making a call (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallResult</returns>
         System.Threading.Tasks.Task<CallResult> MakeACallAsync(MakeCallRequest makeCallRequest = default(MakeCallRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2092,9 +2093,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="makeCallRequest">Call details for making a call (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<CallResult>> MakeACallWithHttpInfoAsync(MakeCallRequest makeCallRequest = default(MakeCallRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2105,11 +2106,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task RemoveAParticipantAsync(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2121,11 +2122,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAParticipantWithHttpInfoAsync(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2136,9 +2137,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="messageRequest">Details to create a message</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageResult</returns>
         System.Threading.Tasks.Task<MessageResult> SendAnSmsMessageAsync(MessageRequest messageRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2150,9 +2151,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="messageRequest">Details to create a message</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<MessageResult>> SendAnSmsMessageWithHttpInfoAsync(MessageRequest messageRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2163,9 +2164,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
         System.Threading.Tasks.Task<System.IO.Stream> StreamARecordingFileAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2177,9 +2178,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> StreamARecordingFileWithHttpInfoAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2190,11 +2191,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">String that uniquely identifies this conference resource.</param>
-        
+
         /// <param name="updateConferenceRequest">Conference Details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceResult</returns>
         System.Threading.Tasks.Task<ConferenceResult> UpdateAConferenceAsync(string conferenceId, UpdateConferenceRequest updateConferenceRequest = default(UpdateConferenceRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2206,11 +2207,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">String that uniquely identifies this conference resource.</param>
-        
+
         /// <param name="updateConferenceRequest">Conference Details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConferenceResult>> UpdateAConferenceWithHttpInfoAsync(string conferenceId, UpdateConferenceRequest updateConferenceRequest = default(UpdateConferenceRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2221,11 +2222,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="updateCallRequest">Call details to update</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task UpdateALiveCallAsync(string callId, UpdateCallRequest updateCallRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2237,11 +2238,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="updateCallRequest">Call details to update</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> UpdateALiveCallWithHttpInfoAsync(string callId, UpdateCallRequest updateCallRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2252,13 +2253,13 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="updateConferenceParticipantRequest">Conference participant details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceParticipantResult</returns>
         System.Threading.Tasks.Task<ConferenceParticipantResult> UpdateAParticipantAsync(string conferenceId, string callId, UpdateConferenceParticipantRequest updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2270,13 +2271,13 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="updateConferenceParticipantRequest">Conference participant details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConferenceParticipantResult>> UpdateAParticipantWithHttpInfoAsync(string conferenceId, string callId, UpdateConferenceParticipantRequest updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2287,11 +2288,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">A string that uniquely identifies this Queue resource.</param>
-        
+
         /// <param name="queueRequest">Queue Details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueResult</returns>
         System.Threading.Tasks.Task<QueueResult> UpdateAQueueAsync(string queueId, QueueRequest queueRequest = default(QueueRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2303,11 +2304,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">A string that uniquely identifies this Queue resource.</param>
-        
+
         /// <param name="queueRequest">Queue Details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueResult>> UpdateAQueueWithHttpInfoAsync(string queueId, QueueRequest queueRequest = default(QueueRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2318,9 +2319,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="accountRequest">Account details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task UpdateAnAccountAsync(AccountRequest accountRequest = default(AccountRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2332,9 +2333,9 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="accountRequest">Account details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> UpdateAnAccountWithHttpInfoAsync(AccountRequest accountRequest = default(AccountRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2345,11 +2346,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
-        
+
         /// <param name="applicationRequest">Application details to update. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationResult</returns>
         System.Threading.Tasks.Task<ApplicationResult> UpdateAnApplicationAsync(string applicationId, ApplicationRequest applicationRequest = default(ApplicationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2361,11 +2362,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
-        
+
         /// <param name="applicationRequest">Application details to update. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApplicationResult>> UpdateAnApplicationWithHttpInfoAsync(string applicationId, ApplicationRequest applicationRequest = default(ApplicationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2376,11 +2377,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="incomingNumberRequest">Incoming Number details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberResult</returns>
         System.Threading.Tasks.Task<IncomingNumberResult> UpdateAnIncomingNumberAsync(string phoneNumberId, IncomingNumberRequest incomingNumberRequest = default(IncomingNumberRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2392,11 +2393,11 @@ namespace freeclimb.Api
         /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="incomingNumberRequest">Incoming Number details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<IncomingNumberResult>> UpdateAnIncomingNumberWithHttpInfoAsync(string phoneNumberId, IncomingNumberRequest incomingNumberRequest = default(IncomingNumberRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2459,6 +2460,7 @@ namespace freeclimb.Api
             this.Client = new freeclimb.Client.ApiClient(this.Configuration.BasePath);
             this.AsynchronousClient = new freeclimb.Client.ApiClient(this.Configuration.BasePath);
             ExceptionFactory = freeclimb.Client.Configuration.DefaultExceptionFactory;
+            this.accountId = this.Configuration.Username;
         }
 
         /// <summary>
@@ -2529,7 +2531,7 @@ namespace freeclimb.Api
         /// <returns>IncomingNumberResult</returns>
         public IncomingNumberResult BuyAPhoneNumber(BuyIncomingNumberRequest buyIncomingNumberRequest)
         {
-            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = BuyAPhoneNumberWithHttpInfo(buyIncomingNumberRequest );
+            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = BuyAPhoneNumberWithHttpInfo(buyIncomingNumberRequest);
             return localVarResponse.Data;
         }
 
@@ -2541,14 +2543,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of IncomingNumberResult</returns>
         public freeclimb.Client.ApiResponse<IncomingNumberResult> BuyAPhoneNumberWithHttpInfo(BuyIncomingNumberRequest buyIncomingNumberRequest)
         {
-            
+
             // verify the required parameter 'buyIncomingNumberRequest' is set
             if (buyIncomingNumberRequest == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'buyIncomingNumberRequest' when calling DefaultApi->BuyAPhoneNumber");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -2600,9 +2602,9 @@ namespace freeclimb.Api
         /// Buy a Phone Number 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="buyIncomingNumberRequest">Incoming Number transaction details</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberResult</returns>
         public async System.Threading.Tasks.Task<IncomingNumberResult> BuyAPhoneNumberAsync(BuyIncomingNumberRequest buyIncomingNumberRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2615,21 +2617,21 @@ namespace freeclimb.Api
         /// Buy a Phone Number 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="buyIncomingNumberRequest">Incoming Number transaction details</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<IncomingNumberResult>> BuyAPhoneNumberWithHttpInfoAsync(BuyIncomingNumberRequest buyIncomingNumberRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'buyIncomingNumberRequest' is set
             if (buyIncomingNumberRequest == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'buyIncomingNumberRequest' when calling DefaultApi->BuyAPhoneNumber");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -2687,7 +2689,7 @@ namespace freeclimb.Api
         /// <returns>ConferenceResult</returns>
         public ConferenceResult CreateAConference(CreateConferenceRequest createConferenceRequest = default(CreateConferenceRequest))
         {
-            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = CreateAConferenceWithHttpInfo(createConferenceRequest );
+            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = CreateAConferenceWithHttpInfo(createConferenceRequest);
             return localVarResponse.Data;
         }
 
@@ -2699,8 +2701,8 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ConferenceResult</returns>
         public freeclimb.Client.ApiResponse<ConferenceResult> CreateAConferenceWithHttpInfo(CreateConferenceRequest createConferenceRequest = default(CreateConferenceRequest))
         {
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -2752,9 +2754,9 @@ namespace freeclimb.Api
         /// Create a Conference 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="createConferenceRequest">Conference to create (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceResult</returns>
         public async System.Threading.Tasks.Task<ConferenceResult> CreateAConferenceAsync(CreateConferenceRequest createConferenceRequest = default(CreateConferenceRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2767,15 +2769,15 @@ namespace freeclimb.Api
         /// Create a Conference 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="createConferenceRequest">Conference to create (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ConferenceResult>> CreateAConferenceWithHttpInfoAsync(CreateConferenceRequest createConferenceRequest = default(CreateConferenceRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -2833,7 +2835,7 @@ namespace freeclimb.Api
         /// <returns>QueueResult</returns>
         public QueueResult CreateAQueue(QueueRequest queueRequest = default(QueueRequest))
         {
-            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = CreateAQueueWithHttpInfo(queueRequest );
+            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = CreateAQueueWithHttpInfo(queueRequest);
             return localVarResponse.Data;
         }
 
@@ -2845,8 +2847,8 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of QueueResult</returns>
         public freeclimb.Client.ApiResponse<QueueResult> CreateAQueueWithHttpInfo(QueueRequest queueRequest = default(QueueRequest))
         {
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -2898,9 +2900,9 @@ namespace freeclimb.Api
         /// Create a Queue 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueRequest">Queue details used to create a queue (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueResult</returns>
         public async System.Threading.Tasks.Task<QueueResult> CreateAQueueAsync(QueueRequest queueRequest = default(QueueRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2913,15 +2915,15 @@ namespace freeclimb.Api
         /// Create a Queue 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueRequest">Queue details used to create a queue (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<QueueResult>> CreateAQueueWithHttpInfoAsync(QueueRequest queueRequest = default(QueueRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -2979,7 +2981,7 @@ namespace freeclimb.Api
         /// <returns>ApplicationResult</returns>
         public ApplicationResult CreateAnApplication(ApplicationRequest applicationRequest = default(ApplicationRequest))
         {
-            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = CreateAnApplicationWithHttpInfo(applicationRequest );
+            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = CreateAnApplicationWithHttpInfo(applicationRequest);
             return localVarResponse.Data;
         }
 
@@ -2991,8 +2993,8 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ApplicationResult</returns>
         public freeclimb.Client.ApiResponse<ApplicationResult> CreateAnApplicationWithHttpInfo(ApplicationRequest applicationRequest = default(ApplicationRequest))
         {
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3044,9 +3046,9 @@ namespace freeclimb.Api
         /// Create an application 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationRequest">Application Details (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationResult</returns>
         public async System.Threading.Tasks.Task<ApplicationResult> CreateAnApplicationAsync(ApplicationRequest applicationRequest = default(ApplicationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3059,15 +3061,15 @@ namespace freeclimb.Api
         /// Create an application 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationRequest">Application Details (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ApplicationResult>> CreateAnApplicationWithHttpInfoAsync(ApplicationRequest applicationRequest = default(ApplicationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -3136,14 +3138,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public freeclimb.Client.ApiResponse<Object> DeleteARecordingWithHttpInfo(string recordingId)
         {
-            
+
             // verify the required parameter 'recordingId' is set
             if (recordingId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'recordingId' when calling DefaultApi->DeleteARecording");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3193,9 +3195,9 @@ namespace freeclimb.Api
         /// Delete a Recording 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DeleteARecordingAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3207,21 +3209,21 @@ namespace freeclimb.Api
         /// Delete a Recording 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<Object>> DeleteARecordingWithHttpInfoAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'recordingId' is set
             if (recordingId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'recordingId' when calling DefaultApi->DeleteARecording");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -3288,14 +3290,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public freeclimb.Client.ApiResponse<Object> DeleteAnApplicationWithHttpInfo(string applicationId)
         {
-            
+
             // verify the required parameter 'applicationId' is set
             if (applicationId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'applicationId' when calling DefaultApi->DeleteAnApplication");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3345,9 +3347,9 @@ namespace freeclimb.Api
         /// Delete an application 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">String that uniquely identifies this application resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DeleteAnApplicationAsync(string applicationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3359,21 +3361,21 @@ namespace freeclimb.Api
         /// Delete an application 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">String that uniquely identifies this application resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<Object>> DeleteAnApplicationWithHttpInfoAsync(string applicationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'applicationId' is set
             if (applicationId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'applicationId' when calling DefaultApi->DeleteAnApplication");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -3440,14 +3442,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public freeclimb.Client.ApiResponse<Object> DeleteAnIncomingNumberWithHttpInfo(string phoneNumberId)
         {
-            
+
             // verify the required parameter 'phoneNumberId' is set
             if (phoneNumberId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'phoneNumberId' when calling DefaultApi->DeleteAnIncomingNumber");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3497,9 +3499,9 @@ namespace freeclimb.Api
         /// Delete an Incoming Number 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DeleteAnIncomingNumberAsync(string phoneNumberId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3511,21 +3513,21 @@ namespace freeclimb.Api
         /// Delete an Incoming Number 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<Object>> DeleteAnIncomingNumberWithHttpInfoAsync(string phoneNumberId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'phoneNumberId' is set
             if (phoneNumberId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'phoneNumberId' when calling DefaultApi->DeleteAnIncomingNumber");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -3582,7 +3584,7 @@ namespace freeclimb.Api
         /// <returns>QueueMember</returns>
         public QueueMember DequeueAMember(string queueId, string callId)
         {
-            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = DequeueAMemberWithHttpInfo(queueId , callId );
+            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = DequeueAMemberWithHttpInfo(queueId, callId);
             return localVarResponse.Data;
         }
 
@@ -3595,21 +3597,21 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of QueueMember</returns>
         public freeclimb.Client.ApiResponse<QueueMember> DequeueAMemberWithHttpInfo(string queueId, string callId)
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->DequeueAMember");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->DequeueAMember");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3661,11 +3663,11 @@ namespace freeclimb.Api
         /// Dequeue a Member 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="callId">ID if the Call that the Member belongs to</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMember</returns>
         public async System.Threading.Tasks.Task<QueueMember> DequeueAMemberAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3678,30 +3680,30 @@ namespace freeclimb.Api
         /// Dequeue a Member 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="callId">ID if the Call that the Member belongs to</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<QueueMember>> DequeueAMemberWithHttpInfoAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->DequeueAMember");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->DequeueAMember");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -3759,7 +3761,7 @@ namespace freeclimb.Api
         /// <returns>QueueMember</returns>
         public QueueMember DequeueHeadMember(string queueId)
         {
-            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = DequeueHeadMemberWithHttpInfo(queueId );
+            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = DequeueHeadMemberWithHttpInfo(queueId);
             return localVarResponse.Data;
         }
 
@@ -3771,14 +3773,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of QueueMember</returns>
         public freeclimb.Client.ApiResponse<QueueMember> DequeueHeadMemberWithHttpInfo(string queueId)
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->DequeueHeadMember");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3829,9 +3831,9 @@ namespace freeclimb.Api
         /// Dequeue Head Member 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies this queue resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMember</returns>
         public async System.Threading.Tasks.Task<QueueMember> DequeueHeadMemberAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3844,21 +3846,21 @@ namespace freeclimb.Api
         /// Dequeue Head Member 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies this queue resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<QueueMember>> DequeueHeadMemberWithHttpInfoAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->DequeueHeadMember");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -3915,7 +3917,7 @@ namespace freeclimb.Api
         /// <returns>System.IO.Stream</returns>
         public System.IO.Stream DownloadARecordingFile(string recordingId)
         {
-            freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = DownloadARecordingFileWithHttpInfo(recordingId );
+            freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = DownloadARecordingFileWithHttpInfo(recordingId);
             return localVarResponse.Data;
         }
 
@@ -3927,14 +3929,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of System.IO.Stream</returns>
         public freeclimb.Client.ApiResponse<System.IO.Stream> DownloadARecordingFileWithHttpInfo(string recordingId)
         {
-            
+
             // verify the required parameter 'recordingId' is set
             if (recordingId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'recordingId' when calling DefaultApi->DownloadARecordingFile");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3985,9 +3987,9 @@ namespace freeclimb.Api
         /// Download a Recording File 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
         public async System.Threading.Tasks.Task<System.IO.Stream> DownloadARecordingFileAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4000,21 +4002,21 @@ namespace freeclimb.Api
         /// Download a Recording File 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<System.IO.Stream>> DownloadARecordingFileWithHttpInfoAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'recordingId' is set
             if (recordingId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'recordingId' when calling DefaultApi->DownloadARecordingFile");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -4071,7 +4073,7 @@ namespace freeclimb.Api
         /// <returns>LogList</returns>
         public LogList FilterLogs(FilterLogsRequest filterLogsRequest)
         {
-            freeclimb.Client.ApiResponse<LogList> localVarResponse = FilterLogsWithHttpInfo(filterLogsRequest );
+            freeclimb.Client.ApiResponse<LogList> localVarResponse = FilterLogsWithHttpInfo(filterLogsRequest);
             return localVarResponse.Data;
         }
 
@@ -4083,14 +4085,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of LogList</returns>
         public freeclimb.Client.ApiResponse<LogList> FilterLogsWithHttpInfo(FilterLogsRequest filterLogsRequest)
         {
-            
+
             // verify the required parameter 'filterLogsRequest' is set
             if (filterLogsRequest == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'filterLogsRequest' when calling DefaultApi->FilterLogs");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -4142,9 +4144,9 @@ namespace freeclimb.Api
         /// Filter Logs 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="filterLogsRequest">Filter logs request paramters</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LogList</returns>
         public async System.Threading.Tasks.Task<LogList> FilterLogsAsync(FilterLogsRequest filterLogsRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4157,21 +4159,21 @@ namespace freeclimb.Api
         /// Filter Logs 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="filterLogsRequest">Filter logs request paramters</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<LogList>> FilterLogsWithHttpInfoAsync(FilterLogsRequest filterLogsRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'filterLogsRequest' is set
             if (filterLogsRequest == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'filterLogsRequest' when calling DefaultApi->FilterLogs");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -4229,7 +4231,7 @@ namespace freeclimb.Api
         /// <returns>CallResult</returns>
         public CallResult GetACall(string callId)
         {
-            freeclimb.Client.ApiResponse<CallResult> localVarResponse = GetACallWithHttpInfo(callId );
+            freeclimb.Client.ApiResponse<CallResult> localVarResponse = GetACallWithHttpInfo(callId);
             return localVarResponse.Data;
         }
 
@@ -4241,14 +4243,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of CallResult</returns>
         public freeclimb.Client.ApiResponse<CallResult> GetACallWithHttpInfo(string callId)
         {
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->GetACall");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -4299,9 +4301,9 @@ namespace freeclimb.Api
         /// Get a Call 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallResult</returns>
         public async System.Threading.Tasks.Task<CallResult> GetACallAsync(string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4314,21 +4316,21 @@ namespace freeclimb.Api
         /// Get a Call 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<CallResult>> GetACallWithHttpInfoAsync(string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->GetACall");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -4385,7 +4387,7 @@ namespace freeclimb.Api
         /// <returns>ConferenceResult</returns>
         public ConferenceResult GetAConference(string conferenceId)
         {
-            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = GetAConferenceWithHttpInfo(conferenceId );
+            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = GetAConferenceWithHttpInfo(conferenceId);
             return localVarResponse.Data;
         }
 
@@ -4397,14 +4399,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ConferenceResult</returns>
         public freeclimb.Client.ApiResponse<ConferenceResult> GetAConferenceWithHttpInfo(string conferenceId)
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->GetAConference");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -4455,9 +4457,9 @@ namespace freeclimb.Api
         /// Get a Conference 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">A string that uniquely identifies this conference resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceResult</returns>
         public async System.Threading.Tasks.Task<ConferenceResult> GetAConferenceAsync(string conferenceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4470,21 +4472,21 @@ namespace freeclimb.Api
         /// Get a Conference 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">A string that uniquely identifies this conference resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ConferenceResult>> GetAConferenceWithHttpInfoAsync(string conferenceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->GetAConference");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -4542,7 +4544,7 @@ namespace freeclimb.Api
         /// <returns>QueueMember</returns>
         public QueueMember GetAMember(string queueId, string callId)
         {
-            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = GetAMemberWithHttpInfo(queueId , callId );
+            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = GetAMemberWithHttpInfo(queueId, callId);
             return localVarResponse.Data;
         }
 
@@ -4555,21 +4557,21 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of QueueMember</returns>
         public freeclimb.Client.ApiResponse<QueueMember> GetAMemberWithHttpInfo(string queueId, string callId)
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->GetAMember");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->GetAMember");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -4621,11 +4623,11 @@ namespace freeclimb.Api
         /// Get a Member 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="callId">ID of the Call that the Member belongs to</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMember</returns>
         public async System.Threading.Tasks.Task<QueueMember> GetAMemberAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4638,30 +4640,30 @@ namespace freeclimb.Api
         /// Get a Member 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="callId">ID of the Call that the Member belongs to</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<QueueMember>> GetAMemberWithHttpInfoAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->GetAMember");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->GetAMember");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -4720,7 +4722,7 @@ namespace freeclimb.Api
         /// <returns>ConferenceParticipantResult</returns>
         public ConferenceParticipantResult GetAParticipant(string conferenceId, string callId)
         {
-            freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = GetAParticipantWithHttpInfo(conferenceId , callId );
+            freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = GetAParticipantWithHttpInfo(conferenceId, callId);
             return localVarResponse.Data;
         }
 
@@ -4733,21 +4735,21 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ConferenceParticipantResult</returns>
         public freeclimb.Client.ApiResponse<ConferenceParticipantResult> GetAParticipantWithHttpInfo(string conferenceId, string callId)
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->GetAParticipant");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->GetAParticipant");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -4799,11 +4801,11 @@ namespace freeclimb.Api
         /// Get a Participant 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceParticipantResult</returns>
         public async System.Threading.Tasks.Task<ConferenceParticipantResult> GetAParticipantAsync(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4816,30 +4818,30 @@ namespace freeclimb.Api
         /// Get a Participant 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ConferenceParticipantResult>> GetAParticipantWithHttpInfoAsync(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->GetAParticipant");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->GetAParticipant");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -4897,7 +4899,7 @@ namespace freeclimb.Api
         /// <returns>QueueResult</returns>
         public QueueResult GetAQueue(string queueId)
         {
-            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = GetAQueueWithHttpInfo(queueId );
+            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = GetAQueueWithHttpInfo(queueId);
             return localVarResponse.Data;
         }
 
@@ -4909,14 +4911,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of QueueResult</returns>
         public freeclimb.Client.ApiResponse<QueueResult> GetAQueueWithHttpInfo(string queueId)
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->GetAQueue");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -4967,9 +4969,9 @@ namespace freeclimb.Api
         /// Get a Queue 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">A string that uniquely identifies this queue resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueResult</returns>
         public async System.Threading.Tasks.Task<QueueResult> GetAQueueAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4982,21 +4984,21 @@ namespace freeclimb.Api
         /// Get a Queue 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">A string that uniquely identifies this queue resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<QueueResult>> GetAQueueWithHttpInfoAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->GetAQueue");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -5053,7 +5055,7 @@ namespace freeclimb.Api
         /// <returns>RecordingResult</returns>
         public RecordingResult GetARecording(string recordingId)
         {
-            freeclimb.Client.ApiResponse<RecordingResult> localVarResponse = GetARecordingWithHttpInfo(recordingId );
+            freeclimb.Client.ApiResponse<RecordingResult> localVarResponse = GetARecordingWithHttpInfo(recordingId);
             return localVarResponse.Data;
         }
 
@@ -5065,14 +5067,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of RecordingResult</returns>
         public freeclimb.Client.ApiResponse<RecordingResult> GetARecordingWithHttpInfo(string recordingId)
         {
-            
+
             // verify the required parameter 'recordingId' is set
             if (recordingId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'recordingId' when calling DefaultApi->GetARecording");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -5123,9 +5125,9 @@ namespace freeclimb.Api
         /// Get a Recording 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordingResult</returns>
         public async System.Threading.Tasks.Task<RecordingResult> GetARecordingAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -5138,21 +5140,21 @@ namespace freeclimb.Api
         /// Get a Recording 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<RecordingResult>> GetARecordingWithHttpInfoAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'recordingId' is set
             if (recordingId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'recordingId' when calling DefaultApi->GetARecording");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -5219,7 +5221,7 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of AccountResult</returns>
         public freeclimb.Client.ApiResponse<AccountResult> GetAnAccountWithHttpInfo()
         {
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -5269,7 +5271,7 @@ namespace freeclimb.Api
         /// Get an Account 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountResult</returns>
         public async System.Threading.Tasks.Task<AccountResult> GetAnAccountAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -5282,12 +5284,12 @@ namespace freeclimb.Api
         /// Get an Account 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<AccountResult>> GetAnAccountWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -5343,7 +5345,7 @@ namespace freeclimb.Api
         /// <returns>ApplicationResult</returns>
         public ApplicationResult GetAnApplication(string applicationId)
         {
-            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = GetAnApplicationWithHttpInfo(applicationId );
+            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = GetAnApplicationWithHttpInfo(applicationId);
             return localVarResponse.Data;
         }
 
@@ -5355,14 +5357,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ApplicationResult</returns>
         public freeclimb.Client.ApiResponse<ApplicationResult> GetAnApplicationWithHttpInfo(string applicationId)
         {
-            
+
             // verify the required parameter 'applicationId' is set
             if (applicationId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'applicationId' when calling DefaultApi->GetAnApplication");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -5413,9 +5415,9 @@ namespace freeclimb.Api
         /// Get an Application 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationResult</returns>
         public async System.Threading.Tasks.Task<ApplicationResult> GetAnApplicationAsync(string applicationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -5428,21 +5430,21 @@ namespace freeclimb.Api
         /// Get an Application 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ApplicationResult>> GetAnApplicationWithHttpInfoAsync(string applicationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'applicationId' is set
             if (applicationId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'applicationId' when calling DefaultApi->GetAnApplication");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -5499,7 +5501,7 @@ namespace freeclimb.Api
         /// <returns>IncomingNumberResult</returns>
         public IncomingNumberResult GetAnIncomingNumber(string phoneNumberId)
         {
-            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = GetAnIncomingNumberWithHttpInfo(phoneNumberId );
+            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = GetAnIncomingNumberWithHttpInfo(phoneNumberId);
             return localVarResponse.Data;
         }
 
@@ -5511,14 +5513,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of IncomingNumberResult</returns>
         public freeclimb.Client.ApiResponse<IncomingNumberResult> GetAnIncomingNumberWithHttpInfo(string phoneNumberId)
         {
-            
+
             // verify the required parameter 'phoneNumberId' is set
             if (phoneNumberId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'phoneNumberId' when calling DefaultApi->GetAnIncomingNumber");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -5569,9 +5571,9 @@ namespace freeclimb.Api
         /// Get an Incoming Number 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberResult</returns>
         public async System.Threading.Tasks.Task<IncomingNumberResult> GetAnIncomingNumberAsync(string phoneNumberId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -5584,21 +5586,21 @@ namespace freeclimb.Api
         /// Get an Incoming Number 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<IncomingNumberResult>> GetAnIncomingNumberWithHttpInfoAsync(string phoneNumberId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'phoneNumberId' is set
             if (phoneNumberId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'phoneNumberId' when calling DefaultApi->GetAnIncomingNumber");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -5655,7 +5657,7 @@ namespace freeclimb.Api
         /// <returns>MessageResult</returns>
         public MessageResult GetAnSmsMessage(string messageId)
         {
-            freeclimb.Client.ApiResponse<MessageResult> localVarResponse = GetAnSmsMessageWithHttpInfo(messageId );
+            freeclimb.Client.ApiResponse<MessageResult> localVarResponse = GetAnSmsMessageWithHttpInfo(messageId);
             return localVarResponse.Data;
         }
 
@@ -5667,14 +5669,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of MessageResult</returns>
         public freeclimb.Client.ApiResponse<MessageResult> GetAnSmsMessageWithHttpInfo(string messageId)
         {
-            
+
             // verify the required parameter 'messageId' is set
             if (messageId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'messageId' when calling DefaultApi->GetAnSmsMessage");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -5725,9 +5727,9 @@ namespace freeclimb.Api
         /// Get an SMS Message 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="messageId">String that uniquely identifies this Message resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageResult</returns>
         public async System.Threading.Tasks.Task<MessageResult> GetAnSmsMessageAsync(string messageId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -5740,21 +5742,21 @@ namespace freeclimb.Api
         /// Get an SMS Message 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="messageId">String that uniquely identifies this Message resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<MessageResult>> GetAnSmsMessageWithHttpInfoAsync(string messageId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'messageId' is set
             if (messageId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'messageId' when calling DefaultApi->GetAnSmsMessage");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -5811,7 +5813,7 @@ namespace freeclimb.Api
         /// <returns>QueueMember</returns>
         public QueueMember GetHeadMember(string queueId)
         {
-            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = GetHeadMemberWithHttpInfo(queueId );
+            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = GetHeadMemberWithHttpInfo(queueId);
             return localVarResponse.Data;
         }
 
@@ -5823,14 +5825,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of QueueMember</returns>
         public freeclimb.Client.ApiResponse<QueueMember> GetHeadMemberWithHttpInfo(string queueId)
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->GetHeadMember");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -5881,9 +5883,9 @@ namespace freeclimb.Api
         /// Get Head Member 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMember</returns>
         public async System.Threading.Tasks.Task<QueueMember> GetHeadMemberAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -5896,21 +5898,21 @@ namespace freeclimb.Api
         /// Get Head Member 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<QueueMember>> GetHeadMemberWithHttpInfoAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->GetHeadMember");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -5967,7 +5969,7 @@ namespace freeclimb.Api
         /// <returns>QueueList</returns>
         public QueueList ListActiveQueues(string alias = default(string))
         {
-            freeclimb.Client.ApiResponse<QueueList> localVarResponse = ListActiveQueuesWithHttpInfo(alias );
+            freeclimb.Client.ApiResponse<QueueList> localVarResponse = ListActiveQueuesWithHttpInfo(alias);
             return localVarResponse.Data;
         }
 
@@ -5979,8 +5981,8 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of QueueList</returns>
         public freeclimb.Client.ApiResponse<QueueList> ListActiveQueuesWithHttpInfo(string alias = default(string))
         {
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -6034,9 +6036,9 @@ namespace freeclimb.Api
         /// List Active Queues 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="alias">Return only the Queue resources with aliases that exactly match this name. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueList</returns>
         public async System.Threading.Tasks.Task<QueueList> ListActiveQueuesAsync(string alias = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -6049,15 +6051,15 @@ namespace freeclimb.Api
         /// List Active Queues 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="alias">Return only the Queue resources with aliases that exactly match this name. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<QueueList>> ListActiveQueuesWithHttpInfoAsync(string alias = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -6127,7 +6129,7 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of LogList</returns>
         public freeclimb.Client.ApiResponse<LogList> ListAllAccountLogsWithHttpInfo()
         {
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -6177,7 +6179,7 @@ namespace freeclimb.Api
         /// List All Account Logs 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LogList</returns>
         public async System.Threading.Tasks.Task<LogList> ListAllAccountLogsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -6190,12 +6192,12 @@ namespace freeclimb.Api
         /// List All Account Logs 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<LogList>> ListAllAccountLogsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -6251,7 +6253,7 @@ namespace freeclimb.Api
         /// <returns>ApplicationList</returns>
         public ApplicationList ListApplications(string alias = default(string))
         {
-            freeclimb.Client.ApiResponse<ApplicationList> localVarResponse = ListApplicationsWithHttpInfo(alias );
+            freeclimb.Client.ApiResponse<ApplicationList> localVarResponse = ListApplicationsWithHttpInfo(alias);
             return localVarResponse.Data;
         }
 
@@ -6263,8 +6265,8 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ApplicationList</returns>
         public freeclimb.Client.ApiResponse<ApplicationList> ListApplicationsWithHttpInfo(string alias = default(string))
         {
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -6318,9 +6320,9 @@ namespace freeclimb.Api
         /// List applications 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="alias">Return only applications with aliases that exactly match this value. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationList</returns>
         public async System.Threading.Tasks.Task<ApplicationList> ListApplicationsAsync(string alias = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -6333,15 +6335,15 @@ namespace freeclimb.Api
         /// List applications 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="alias">Return only applications with aliases that exactly match this value. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ApplicationList>> ListApplicationsWithHttpInfoAsync(string alias = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -6410,7 +6412,7 @@ namespace freeclimb.Api
         /// <returns>AvailableNumberList</returns>
         public AvailableNumberList ListAvailableNumbers(string phoneNumber = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?))
         {
-            freeclimb.Client.ApiResponse<AvailableNumberList> localVarResponse = ListAvailableNumbersWithHttpInfo(phoneNumber , region , country , voiceEnabled , smsEnabled , capabilitiesVoice , capabilitiesSms , capabilitiesTollFree , capabilitiesTenDLC , capabilitiesShortCode );
+            freeclimb.Client.ApiResponse<AvailableNumberList> localVarResponse = ListAvailableNumbersWithHttpInfo(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
             return localVarResponse.Data;
         }
 
@@ -6431,17 +6433,17 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of AvailableNumberList</returns>
         public freeclimb.Client.ApiResponse<AvailableNumberList> ListAvailableNumbersWithHttpInfo(string phoneNumber = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?))
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -6530,27 +6532,27 @@ namespace freeclimb.Api
         /// List available numbers 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumber">PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. (optional)</param>
-        
+
         /// <param name="region">State or province of this phone number. (optional)</param>
-        
+
         /// <param name="country">Country of this phone number. (optional)</param>
-        
+
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true)</param>
-        
+
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true)</param>
-        
+
         /// <param name="capabilitiesVoice"> (optional)</param>
-        
+
         /// <param name="capabilitiesSms"> (optional)</param>
-        
+
         /// <param name="capabilitiesTollFree"> (optional)</param>
-        
+
         /// <param name="capabilitiesTenDLC"> (optional)</param>
-        
+
         /// <param name="capabilitiesShortCode"> (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AvailableNumberList</returns>
         public async System.Threading.Tasks.Task<AvailableNumberList> ListAvailableNumbersAsync(string phoneNumber = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -6563,42 +6565,42 @@ namespace freeclimb.Api
         /// List available numbers 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumber">PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. (optional)</param>
-        
+
         /// <param name="region">State or province of this phone number. (optional)</param>
-        
+
         /// <param name="country">Country of this phone number. (optional)</param>
-        
+
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true)</param>
-        
+
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true)</param>
-        
+
         /// <param name="capabilitiesVoice"> (optional)</param>
-        
+
         /// <param name="capabilitiesSms"> (optional)</param>
-        
+
         /// <param name="capabilitiesTollFree"> (optional)</param>
-        
+
         /// <param name="capabilitiesTenDLC"> (optional)</param>
-        
+
         /// <param name="capabilitiesShortCode"> (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AvailableNumberList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<AvailableNumberList>> ListAvailableNumbersWithHttpInfoAsync(string phoneNumber = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -6693,7 +6695,7 @@ namespace freeclimb.Api
         /// <returns>LogList</returns>
         public LogList ListCallLogs(string callId)
         {
-            freeclimb.Client.ApiResponse<LogList> localVarResponse = ListCallLogsWithHttpInfo(callId );
+            freeclimb.Client.ApiResponse<LogList> localVarResponse = ListCallLogsWithHttpInfo(callId);
             return localVarResponse.Data;
         }
 
@@ -6705,14 +6707,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of LogList</returns>
         public freeclimb.Client.ApiResponse<LogList> ListCallLogsWithHttpInfo(string callId)
         {
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->ListCallLogs");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -6763,9 +6765,9 @@ namespace freeclimb.Api
         /// List Call Logs 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LogList</returns>
         public async System.Threading.Tasks.Task<LogList> ListCallLogsAsync(string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -6778,21 +6780,21 @@ namespace freeclimb.Api
         /// List Call Logs 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<LogList>> ListCallLogsWithHttpInfoAsync(string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->ListCallLogs");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -6850,7 +6852,7 @@ namespace freeclimb.Api
         /// <returns>RecordingList</returns>
         public RecordingList ListCallRecordings(string callId, string dateCreated = default(string))
         {
-            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = ListCallRecordingsWithHttpInfo(callId , dateCreated );
+            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = ListCallRecordingsWithHttpInfo(callId, dateCreated);
             return localVarResponse.Data;
         }
 
@@ -6863,15 +6865,15 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of RecordingList</returns>
         public freeclimb.Client.ApiResponse<RecordingList> ListCallRecordingsWithHttpInfo(string callId, string dateCreated = default(string))
         {
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->ListCallRecordings");
             }
 
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -6926,11 +6928,11 @@ namespace freeclimb.Api
         /// List Call Recordings 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordingList</returns>
         public async System.Threading.Tasks.Task<RecordingList> ListCallRecordingsAsync(string callId, string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -6943,24 +6945,24 @@ namespace freeclimb.Api
         /// List Call Recordings 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<RecordingList>> ListCallRecordingsWithHttpInfoAsync(string callId, string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->ListCallRecordings");
             }
 
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -7025,9 +7027,9 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>CallList</returns>
-        public CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
+        public CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
         {
-            freeclimb.Client.ApiResponse<CallList> localVarResponse = ListCallsWithHttpInfo(active , to , from , status , startTime , endTime , parentCallId );
+            freeclimb.Client.ApiResponse<CallList> localVarResponse = ListCallsWithHttpInfo(active, to, from, status, startTime, endTime, parentCallId);
             return localVarResponse.Data;
         }
 
@@ -7043,16 +7045,16 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>ApiResponse of CallList</returns>
-        public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
+        public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
         {
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -7130,24 +7132,24 @@ namespace freeclimb.Api
         /// List Calls 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
-        
+
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
-        
+
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
-        
+
         /// <param name="status">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
-        
+
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
-        
+
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
-        
+
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallList</returns>
-        public async System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             freeclimb.Client.ApiResponse<CallList> localVarResponse = await ListCallsWithHttpInfoAsync(active, to, from, status, startTime, endTime, parentCallId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -7157,33 +7159,33 @@ namespace freeclimb.Api
         /// List Calls 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
-        
+
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
-        
+
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
-        
+
         /// <param name="status">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
-        
+
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
-        
+
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
-        
+
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -7270,7 +7272,7 @@ namespace freeclimb.Api
         /// <returns>ConferenceList</returns>
         public ConferenceList ListConferences(string status = default(string), string alias = default(string), string dateCreated = default(string), string dateUpdated = default(string))
         {
-            freeclimb.Client.ApiResponse<ConferenceList> localVarResponse = ListConferencesWithHttpInfo(status , alias , dateCreated , dateUpdated );
+            freeclimb.Client.ApiResponse<ConferenceList> localVarResponse = ListConferencesWithHttpInfo(status, alias, dateCreated, dateUpdated);
             return localVarResponse.Data;
         }
 
@@ -7285,11 +7287,11 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ConferenceList</returns>
         public freeclimb.Client.ApiResponse<ConferenceList> ListConferencesWithHttpInfo(string status = default(string), string alias = default(string), string dateCreated = default(string), string dateUpdated = default(string))
         {
-            
-            
-            
-            
-            
+
+
+
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -7355,15 +7357,15 @@ namespace freeclimb.Api
         /// List Conferences 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="status">Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. (optional)</param>
-        
+
         /// <param name="alias">List Conferences whose alias exactly matches this string. (optional)</param>
-        
+
         /// <param name="dateCreated">Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="dateUpdated">Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceList</returns>
         public async System.Threading.Tasks.Task<ConferenceList> ListConferencesAsync(string status = default(string), string alias = default(string), string dateCreated = default(string), string dateUpdated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -7376,24 +7378,24 @@ namespace freeclimb.Api
         /// List Conferences 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="status">Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. (optional)</param>
-        
+
         /// <param name="alias">List Conferences whose alias exactly matches this string. (optional)</param>
-        
+
         /// <param name="dateCreated">Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="dateUpdated">Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ConferenceList>> ListConferencesWithHttpInfoAsync(string status = default(string), string alias = default(string), string dateCreated = default(string), string dateUpdated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
-            
-            
-            
+
+
+
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -7478,7 +7480,7 @@ namespace freeclimb.Api
         /// <returns>IncomingNumberList</returns>
         public IncomingNumberList ListIncomingNumbers(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = ListIncomingNumbersWithHttpInfo(phoneNumber , alias , region , country , applicationId , hasApplication , voiceEnabled , smsEnabled , capabilitiesVoice , capabilitiesSms , capabilitiesTollFree , capabilitiesTenDLC , capabilitiesShortCode , offnet );
+            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = ListIncomingNumbersWithHttpInfo(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet);
             return localVarResponse.Data;
         }
 
@@ -7503,21 +7505,21 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of IncomingNumberList</returns>
         public freeclimb.Client.ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?))
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -7623,35 +7625,35 @@ namespace freeclimb.Api
         /// List Incoming Numbers 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumber">Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional)</param>
-        
+
         /// <param name="alias">Only show incoming phone numbers with aliases that exactly match this value. (optional)</param>
-        
+
         /// <param name="region">State or province of this phone number. (optional)</param>
-        
+
         /// <param name="country">Country of this phone number. (optional)</param>
-        
+
         /// <param name="applicationId">ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)</param>
-        
+
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
-        
+
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        
+
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        
+
         /// <param name="capabilitiesVoice"> (optional)</param>
-        
+
         /// <param name="capabilitiesSms"> (optional)</param>
-        
+
         /// <param name="capabilitiesTollFree"> (optional)</param>
-        
+
         /// <param name="capabilitiesTenDLC"> (optional)</param>
-        
+
         /// <param name="capabilitiesShortCode"> (optional)</param>
-        
+
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberList</returns>
         public async System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -7664,54 +7666,54 @@ namespace freeclimb.Api
         /// List Incoming Numbers 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumber">Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional)</param>
-        
+
         /// <param name="alias">Only show incoming phone numbers with aliases that exactly match this value. (optional)</param>
-        
+
         /// <param name="region">State or province of this phone number. (optional)</param>
-        
+
         /// <param name="country">Country of this phone number. (optional)</param>
-        
+
         /// <param name="applicationId">ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)</param>
-        
+
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
-        
+
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        
+
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        
+
         /// <param name="capabilitiesVoice"> (optional)</param>
-        
+
         /// <param name="capabilitiesSms"> (optional)</param>
-        
+
         /// <param name="capabilitiesTollFree"> (optional)</param>
-        
+
         /// <param name="capabilitiesTenDLC"> (optional)</param>
-        
+
         /// <param name="capabilitiesShortCode"> (optional)</param>
-        
+
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -7823,7 +7825,7 @@ namespace freeclimb.Api
         /// <returns>QueueMemberList</returns>
         public QueueMemberList ListMembers(string queueId)
         {
-            freeclimb.Client.ApiResponse<QueueMemberList> localVarResponse = ListMembersWithHttpInfo(queueId );
+            freeclimb.Client.ApiResponse<QueueMemberList> localVarResponse = ListMembersWithHttpInfo(queueId);
             return localVarResponse.Data;
         }
 
@@ -7835,14 +7837,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of QueueMemberList</returns>
         public freeclimb.Client.ApiResponse<QueueMemberList> ListMembersWithHttpInfo(string queueId)
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->ListMembers");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -7893,9 +7895,9 @@ namespace freeclimb.Api
         /// List Members 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueMemberList</returns>
         public async System.Threading.Tasks.Task<QueueMemberList> ListMembersAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -7908,21 +7910,21 @@ namespace freeclimb.Api
         /// List Members 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMemberList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<QueueMemberList>> ListMembersWithHttpInfoAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->ListMembers");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -7981,7 +7983,7 @@ namespace freeclimb.Api
         /// <returns>ConferenceParticipantList</returns>
         public ConferenceParticipantList ListParticipants(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?))
         {
-            freeclimb.Client.ApiResponse<ConferenceParticipantList> localVarResponse = ListParticipantsWithHttpInfo(conferenceId , talk , listen );
+            freeclimb.Client.ApiResponse<ConferenceParticipantList> localVarResponse = ListParticipantsWithHttpInfo(conferenceId, talk, listen);
             return localVarResponse.Data;
         }
 
@@ -7995,16 +7997,16 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ConferenceParticipantList</returns>
         public freeclimb.Client.ApiResponse<ConferenceParticipantList> ListParticipantsWithHttpInfo(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?))
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->ListParticipants");
             }
 
-            
-            
-            
+
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -8063,13 +8065,13 @@ namespace freeclimb.Api
         /// List Participants 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="talk">Only show Participants with the talk privilege. (optional)</param>
-        
+
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceParticipantList</returns>
         public async System.Threading.Tasks.Task<ConferenceParticipantList> ListParticipantsAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -8082,27 +8084,27 @@ namespace freeclimb.Api
         /// List Participants 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="talk">Only show Participants with the talk privilege. (optional)</param>
-        
+
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ConferenceParticipantList>> ListParticipantsWithHttpInfoAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->ListParticipants");
             }
 
-            
-            
-            
+
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -8169,7 +8171,7 @@ namespace freeclimb.Api
         /// <returns>RecordingList</returns>
         public RecordingList ListRecordings(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string))
         {
-            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = ListRecordingsWithHttpInfo(callId , conferenceId , dateCreated );
+            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = ListRecordingsWithHttpInfo(callId, conferenceId, dateCreated);
             return localVarResponse.Data;
         }
 
@@ -8183,10 +8185,10 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of RecordingList</returns>
         public freeclimb.Client.ApiResponse<RecordingList> ListRecordingsWithHttpInfo(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string))
         {
-            
-            
-            
-            
+
+
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -8248,13 +8250,13 @@ namespace freeclimb.Api
         /// List Recordings 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
-        
+
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
-        
+
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordingList</returns>
         public async System.Threading.Tasks.Task<RecordingList> ListRecordingsAsync(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -8267,21 +8269,21 @@ namespace freeclimb.Api
         /// List Recordings 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
-        
+
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
-        
+
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingList)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<RecordingList>> ListRecordingsWithHttpInfoAsync(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
-            
-            
+
+
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -8351,9 +8353,9 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         /// <returns>MessagesList</returns>
-        public MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string))
+        public MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?))
         {
-            freeclimb.Client.ApiResponse<MessagesList> localVarResponse = ListSmsMessagesWithHttpInfo(to , from , beginTime , endTime , direction );
+            freeclimb.Client.ApiResponse<MessagesList> localVarResponse = ListSmsMessagesWithHttpInfo(to, from, beginTime, endTime, direction);
             return localVarResponse.Data;
         }
 
@@ -8367,14 +8369,14 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         /// <returns>ApiResponse of MessagesList</returns>
-        public freeclimb.Client.ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string))
+        public freeclimb.Client.ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?))
         {
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -8444,20 +8446,20 @@ namespace freeclimb.Api
         /// List SMS Messages 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="to">Only show Messages to this phone number. (optional)</param>
-        
+
         /// <param name="from">Only show Messages from this phone number. (optional)</param>
-        
+
         /// <param name="beginTime">Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)</param>
-        
+
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
-        
+
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessagesList</returns>
-        public async System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             freeclimb.Client.ApiResponse<MessagesList> localVarResponse = await ListSmsMessagesWithHttpInfoAsync(to, from, beginTime, endTime, direction, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -8467,27 +8469,27 @@ namespace freeclimb.Api
         /// List SMS Messages 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="to">Only show Messages to this phone number. (optional)</param>
-        
+
         /// <param name="from">Only show Messages from this phone number. (optional)</param>
-        
+
         /// <param name="beginTime">Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)</param>
-        
+
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
-        
+
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessagesList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -8563,7 +8565,7 @@ namespace freeclimb.Api
         /// <returns>CallResult</returns>
         public CallResult MakeACall(MakeCallRequest makeCallRequest = default(MakeCallRequest))
         {
-            freeclimb.Client.ApiResponse<CallResult> localVarResponse = MakeACallWithHttpInfo(makeCallRequest );
+            freeclimb.Client.ApiResponse<CallResult> localVarResponse = MakeACallWithHttpInfo(makeCallRequest);
             return localVarResponse.Data;
         }
 
@@ -8575,8 +8577,8 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of CallResult</returns>
         public freeclimb.Client.ApiResponse<CallResult> MakeACallWithHttpInfo(MakeCallRequest makeCallRequest = default(MakeCallRequest))
         {
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -8628,9 +8630,9 @@ namespace freeclimb.Api
         /// Make a Call 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="makeCallRequest">Call details for making a call (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallResult</returns>
         public async System.Threading.Tasks.Task<CallResult> MakeACallAsync(MakeCallRequest makeCallRequest = default(MakeCallRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -8643,15 +8645,15 @@ namespace freeclimb.Api
         /// Make a Call 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="makeCallRequest">Call details for making a call (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<CallResult>> MakeACallWithHttpInfoAsync(MakeCallRequest makeCallRequest = default(MakeCallRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -8722,21 +8724,21 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public freeclimb.Client.ApiResponse<Object> RemoveAParticipantWithHttpInfo(string conferenceId, string callId)
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->RemoveAParticipant");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->RemoveAParticipant");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -8787,11 +8789,11 @@ namespace freeclimb.Api
         /// Remove a Participant 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task RemoveAParticipantAsync(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -8803,30 +8805,30 @@ namespace freeclimb.Api
         /// Remove a Participant 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<Object>> RemoveAParticipantWithHttpInfoAsync(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->RemoveAParticipant");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->RemoveAParticipant");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -8883,7 +8885,7 @@ namespace freeclimb.Api
         /// <returns>MessageResult</returns>
         public MessageResult SendAnSmsMessage(MessageRequest messageRequest)
         {
-            freeclimb.Client.ApiResponse<MessageResult> localVarResponse = SendAnSmsMessageWithHttpInfo(messageRequest );
+            freeclimb.Client.ApiResponse<MessageResult> localVarResponse = SendAnSmsMessageWithHttpInfo(messageRequest);
             return localVarResponse.Data;
         }
 
@@ -8895,14 +8897,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of MessageResult</returns>
         public freeclimb.Client.ApiResponse<MessageResult> SendAnSmsMessageWithHttpInfo(MessageRequest messageRequest)
         {
-            
+
             // verify the required parameter 'messageRequest' is set
             if (messageRequest == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'messageRequest' when calling DefaultApi->SendAnSmsMessage");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -8954,9 +8956,9 @@ namespace freeclimb.Api
         /// Send an SMS Message 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="messageRequest">Details to create a message</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageResult</returns>
         public async System.Threading.Tasks.Task<MessageResult> SendAnSmsMessageAsync(MessageRequest messageRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -8969,21 +8971,21 @@ namespace freeclimb.Api
         /// Send an SMS Message 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="messageRequest">Details to create a message</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<MessageResult>> SendAnSmsMessageWithHttpInfoAsync(MessageRequest messageRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'messageRequest' is set
             if (messageRequest == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'messageRequest' when calling DefaultApi->SendAnSmsMessage");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -9041,7 +9043,7 @@ namespace freeclimb.Api
         /// <returns>System.IO.Stream</returns>
         public System.IO.Stream StreamARecordingFile(string recordingId)
         {
-            freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = StreamARecordingFileWithHttpInfo(recordingId );
+            freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = StreamARecordingFileWithHttpInfo(recordingId);
             return localVarResponse.Data;
         }
 
@@ -9053,14 +9055,14 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of System.IO.Stream</returns>
         public freeclimb.Client.ApiResponse<System.IO.Stream> StreamARecordingFileWithHttpInfo(string recordingId)
         {
-            
+
             // verify the required parameter 'recordingId' is set
             if (recordingId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'recordingId' when calling DefaultApi->StreamARecordingFile");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -9111,9 +9113,9 @@ namespace freeclimb.Api
         /// Stream a Recording File 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
         public async System.Threading.Tasks.Task<System.IO.Stream> StreamARecordingFileAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -9126,21 +9128,21 @@ namespace freeclimb.Api
         /// Stream a Recording File 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<System.IO.Stream>> StreamARecordingFileWithHttpInfoAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'recordingId' is set
             if (recordingId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'recordingId' when calling DefaultApi->StreamARecordingFile");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -9198,7 +9200,7 @@ namespace freeclimb.Api
         /// <returns>ConferenceResult</returns>
         public ConferenceResult UpdateAConference(string conferenceId, UpdateConferenceRequest updateConferenceRequest = default(UpdateConferenceRequest))
         {
-            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = UpdateAConferenceWithHttpInfo(conferenceId , updateConferenceRequest );
+            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = UpdateAConferenceWithHttpInfo(conferenceId, updateConferenceRequest);
             return localVarResponse.Data;
         }
 
@@ -9211,15 +9213,15 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ConferenceResult</returns>
         public freeclimb.Client.ApiResponse<ConferenceResult> UpdateAConferenceWithHttpInfo(string conferenceId, UpdateConferenceRequest updateConferenceRequest = default(UpdateConferenceRequest))
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->UpdateAConference");
             }
 
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -9272,11 +9274,11 @@ namespace freeclimb.Api
         /// Update a Conference 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">String that uniquely identifies this conference resource.</param>
-        
+
         /// <param name="updateConferenceRequest">Conference Details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceResult</returns>
         public async System.Threading.Tasks.Task<ConferenceResult> UpdateAConferenceAsync(string conferenceId, UpdateConferenceRequest updateConferenceRequest = default(UpdateConferenceRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -9289,24 +9291,24 @@ namespace freeclimb.Api
         /// Update a Conference 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">String that uniquely identifies this conference resource.</param>
-        
+
         /// <param name="updateConferenceRequest">Conference Details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ConferenceResult>> UpdateAConferenceWithHttpInfoAsync(string conferenceId, UpdateConferenceRequest updateConferenceRequest = default(UpdateConferenceRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->UpdateAConference");
             }
 
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -9378,21 +9380,21 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public freeclimb.Client.ApiResponse<Object> UpdateALiveCallWithHttpInfo(string callId, UpdateCallRequest updateCallRequest)
         {
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->UpdateALiveCall");
             }
 
-            
+
             // verify the required parameter 'updateCallRequest' is set
             if (updateCallRequest == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'updateCallRequest' when calling DefaultApi->UpdateALiveCall");
             }
 
-            
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -9444,11 +9446,11 @@ namespace freeclimb.Api
         /// Update a Live Call 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="updateCallRequest">Call details to update</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task UpdateALiveCallAsync(string callId, UpdateCallRequest updateCallRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -9460,30 +9462,30 @@ namespace freeclimb.Api
         /// Update a Live Call 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="callId">String that uniquely identifies this call resource.</param>
-        
+
         /// <param name="updateCallRequest">Call details to update</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<Object>> UpdateALiveCallWithHttpInfoAsync(string callId, UpdateCallRequest updateCallRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->UpdateALiveCall");
             }
 
-            
+
             // verify the required parameter 'updateCallRequest' is set
             if (updateCallRequest == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'updateCallRequest' when calling DefaultApi->UpdateALiveCall");
             }
 
-            
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -9543,7 +9545,7 @@ namespace freeclimb.Api
         /// <returns>ConferenceParticipantResult</returns>
         public ConferenceParticipantResult UpdateAParticipant(string conferenceId, string callId, UpdateConferenceParticipantRequest updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest))
         {
-            freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = UpdateAParticipantWithHttpInfo(conferenceId , callId , updateConferenceParticipantRequest );
+            freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = UpdateAParticipantWithHttpInfo(conferenceId, callId, updateConferenceParticipantRequest);
             return localVarResponse.Data;
         }
 
@@ -9557,22 +9559,22 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ConferenceParticipantResult</returns>
         public freeclimb.Client.ApiResponse<ConferenceParticipantResult> UpdateAParticipantWithHttpInfo(string conferenceId, string callId, UpdateConferenceParticipantRequest updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest))
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->UpdateAParticipant");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->UpdateAParticipant");
             }
 
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -9626,13 +9628,13 @@ namespace freeclimb.Api
         /// Update a Participant 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="updateConferenceParticipantRequest">Conference participant details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceParticipantResult</returns>
         public async System.Threading.Tasks.Task<ConferenceParticipantResult> UpdateAParticipantAsync(string conferenceId, string callId, UpdateConferenceParticipantRequest updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -9645,33 +9647,33 @@ namespace freeclimb.Api
         /// Update a Participant 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
-        
+
         /// <param name="callId">ID of the Call associated with this participant.</param>
-        
+
         /// <param name="updateConferenceParticipantRequest">Conference participant details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ConferenceParticipantResult>> UpdateAParticipantWithHttpInfoAsync(string conferenceId, string callId, UpdateConferenceParticipantRequest updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'conferenceId' is set
             if (conferenceId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->UpdateAParticipant");
             }
 
-            
+
             // verify the required parameter 'callId' is set
             if (callId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'callId' when calling DefaultApi->UpdateAParticipant");
             }
 
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -9732,7 +9734,7 @@ namespace freeclimb.Api
         /// <returns>QueueResult</returns>
         public QueueResult UpdateAQueue(string queueId, QueueRequest queueRequest = default(QueueRequest))
         {
-            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = UpdateAQueueWithHttpInfo(queueId , queueRequest );
+            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = UpdateAQueueWithHttpInfo(queueId, queueRequest);
             return localVarResponse.Data;
         }
 
@@ -9745,15 +9747,15 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of QueueResult</returns>
         public freeclimb.Client.ApiResponse<QueueResult> UpdateAQueueWithHttpInfo(string queueId, QueueRequest queueRequest = default(QueueRequest))
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->UpdateAQueue");
             }
 
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -9806,11 +9808,11 @@ namespace freeclimb.Api
         /// Update a Queue 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">A string that uniquely identifies this Queue resource.</param>
-        
+
         /// <param name="queueRequest">Queue Details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QueueResult</returns>
         public async System.Threading.Tasks.Task<QueueResult> UpdateAQueueAsync(string queueId, QueueRequest queueRequest = default(QueueRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -9823,24 +9825,24 @@ namespace freeclimb.Api
         /// Update a Queue 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="queueId">A string that uniquely identifies this Queue resource.</param>
-        
+
         /// <param name="queueRequest">Queue Details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<QueueResult>> UpdateAQueueWithHttpInfoAsync(string queueId, QueueRequest queueRequest = default(QueueRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'queueId' is set
             if (queueId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'queueId' when calling DefaultApi->UpdateAQueue");
             }
 
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -9910,8 +9912,8 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public freeclimb.Client.ApiResponse<Object> UpdateAnAccountWithHttpInfo(AccountRequest accountRequest = default(AccountRequest))
         {
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -9962,9 +9964,9 @@ namespace freeclimb.Api
         /// Manage an account 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="accountRequest">Account details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task UpdateAnAccountAsync(AccountRequest accountRequest = default(AccountRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -9976,15 +9978,15 @@ namespace freeclimb.Api
         /// Manage an account 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="accountRequest">Account details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<Object>> UpdateAnAccountWithHttpInfoAsync(AccountRequest accountRequest = default(AccountRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -10042,7 +10044,7 @@ namespace freeclimb.Api
         /// <returns>ApplicationResult</returns>
         public ApplicationResult UpdateAnApplication(string applicationId, ApplicationRequest applicationRequest = default(ApplicationRequest))
         {
-            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = UpdateAnApplicationWithHttpInfo(applicationId , applicationRequest );
+            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = UpdateAnApplicationWithHttpInfo(applicationId, applicationRequest);
             return localVarResponse.Data;
         }
 
@@ -10055,15 +10057,15 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ApplicationResult</returns>
         public freeclimb.Client.ApiResponse<ApplicationResult> UpdateAnApplicationWithHttpInfo(string applicationId, ApplicationRequest applicationRequest = default(ApplicationRequest))
         {
-            
+
             // verify the required parameter 'applicationId' is set
             if (applicationId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'applicationId' when calling DefaultApi->UpdateAnApplication");
             }
 
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -10116,11 +10118,11 @@ namespace freeclimb.Api
         /// Update an application 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
-        
+
         /// <param name="applicationRequest">Application details to update. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationResult</returns>
         public async System.Threading.Tasks.Task<ApplicationResult> UpdateAnApplicationAsync(string applicationId, ApplicationRequest applicationRequest = default(ApplicationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -10133,24 +10135,24 @@ namespace freeclimb.Api
         /// Update an application 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
-        
+
         /// <param name="applicationRequest">Application details to update. (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ApplicationResult>> UpdateAnApplicationWithHttpInfoAsync(string applicationId, ApplicationRequest applicationRequest = default(ApplicationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'applicationId' is set
             if (applicationId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'applicationId' when calling DefaultApi->UpdateAnApplication");
             }
 
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -10210,7 +10212,7 @@ namespace freeclimb.Api
         /// <returns>IncomingNumberResult</returns>
         public IncomingNumberResult UpdateAnIncomingNumber(string phoneNumberId, IncomingNumberRequest incomingNumberRequest = default(IncomingNumberRequest))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = UpdateAnIncomingNumberWithHttpInfo(phoneNumberId , incomingNumberRequest );
+            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = UpdateAnIncomingNumberWithHttpInfo(phoneNumberId, incomingNumberRequest);
             return localVarResponse.Data;
         }
 
@@ -10223,15 +10225,15 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of IncomingNumberResult</returns>
         public freeclimb.Client.ApiResponse<IncomingNumberResult> UpdateAnIncomingNumberWithHttpInfo(string phoneNumberId, IncomingNumberRequest incomingNumberRequest = default(IncomingNumberRequest))
         {
-            
+
             // verify the required parameter 'phoneNumberId' is set
             if (phoneNumberId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'phoneNumberId' when calling DefaultApi->UpdateAnIncomingNumber");
             }
 
-            
-            
+
+
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -10284,11 +10286,11 @@ namespace freeclimb.Api
         /// Update an Incoming Number 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="incomingNumberRequest">Incoming Number details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberResult</returns>
         public async System.Threading.Tasks.Task<IncomingNumberResult> UpdateAnIncomingNumberAsync(string phoneNumberId, IncomingNumberRequest incomingNumberRequest = default(IncomingNumberRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -10301,24 +10303,24 @@ namespace freeclimb.Api
         /// Update an Incoming Number 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        
+
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
-        
+
         /// <param name="incomingNumberRequest">Incoming Number details to update (optional)</param>
-        
+
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberResult)</returns>
         public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<IncomingNumberResult>> UpdateAnIncomingNumberWithHttpInfoAsync(string phoneNumberId, IncomingNumberRequest incomingNumberRequest = default(IncomingNumberRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            
+
             // verify the required parameter 'phoneNumberId' is set
             if (phoneNumberId == null)
             {
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'phoneNumberId' when calling DefaultApi->UpdateAnIncomingNumber");
             }
 
-            
-            
+
+
 
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 

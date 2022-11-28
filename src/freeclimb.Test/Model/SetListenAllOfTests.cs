@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class SetListenAllOfTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for SetListenAllOf
-        //private SetListenAllOf instance;
+        private SetListenAllOf instance;
 
         public SetListenAllOfTests()
         {
-            // TODO uncomment below to create an instance of SetListenAllOf
             //instance = new SetListenAllOf();
         }
 
@@ -73,7 +75,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'Listen'
         }
-
     }
 
 }

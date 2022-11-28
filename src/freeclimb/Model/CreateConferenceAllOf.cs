@@ -23,6 +23,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
+using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -32,6 +33,12 @@ namespace freeclimb.Model
     [DataContract(Name = "CreateConference_allOf")]
     public partial class CreateConferenceAllOf : IEquatable<CreateConferenceAllOf>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets PlayBeep
+        /// </summary>
+        [DataMember(Name = "playBeep", EmitDefaultValue = false)]
+        public PlayBeep? PlayBeep { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConferenceAllOf" /> class.
         /// </summary>
@@ -42,11 +49,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="actionUrl"> This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response.  (required).</param>
         /// <param name="alias">Descriptive name for the Conference. .</param>
-        /// <param name="playBeep">Indicates whether to play a beep when a Participant enters or leaves the Conference. either &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, or &#x60;exitOnly&#x60;. Leaving this unset will make conference default to &#x60;always&#x60; .</param>
+        /// <param name="playBeep">playBeep.</param>
         /// <param name="record">When set to &#x60;true&#x60;, the entire Conference is recorded. The &#x60;statusCallbackUrl&#x60; of the Conference will receive a &#x60;conferenceRecordingEnded&#x60; Webhook when the Conference transitions from the &#x60;inProgress&#x60; to empty state..</param>
         /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available..</param>
         /// <param name="waitUrl">If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb..</param>
-        public CreateConferenceAllOf(string actionUrl = default(string), bool alias = default(bool), string playBeep = default(string), bool record = default(bool), bool statusCallbackUrl = default(bool), string waitUrl = default(string))
+        public CreateConferenceAllOf(string actionUrl = default(string), bool alias = default(bool), PlayBeep? playBeep = default(PlayBeep?), bool record = default(bool), string statusCallbackUrl = default(string), string waitUrl = default(string))
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null) {
@@ -75,13 +82,6 @@ namespace freeclimb.Model
         public bool Alias { get; set; }
 
         /// <summary>
-        /// Indicates whether to play a beep when a Participant enters or leaves the Conference. either &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, or &#x60;exitOnly&#x60;. Leaving this unset will make conference default to &#x60;always&#x60; 
-        /// </summary>
-        /// <value>Indicates whether to play a beep when a Participant enters or leaves the Conference. either &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, or &#x60;exitOnly&#x60;. Leaving this unset will make conference default to &#x60;always&#x60; </value>
-        [DataMember(Name = "playBeep", EmitDefaultValue = false)]
-        public string PlayBeep { get; set; }
-
-        /// <summary>
         /// When set to &#x60;true&#x60;, the entire Conference is recorded. The &#x60;statusCallbackUrl&#x60; of the Conference will receive a &#x60;conferenceRecordingEnded&#x60; Webhook when the Conference transitions from the &#x60;inProgress&#x60; to empty state.
         /// </summary>
         /// <value>When set to &#x60;true&#x60;, the entire Conference is recorded. The &#x60;statusCallbackUrl&#x60; of the Conference will receive a &#x60;conferenceRecordingEnded&#x60; Webhook when the Conference transitions from the &#x60;inProgress&#x60; to empty state.</value>
@@ -92,8 +92,8 @@ namespace freeclimb.Model
         /// This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available.
         /// </summary>
         /// <value>This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available.</value>
-        [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = true)]
-        public bool StatusCallbackUrl { get; set; }
+        [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = false)]
+        public string StatusCallbackUrl { get; set; }
 
         /// <summary>
         /// If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb.
@@ -178,8 +178,7 @@ namespace freeclimb.Model
                 ) && 
                 (
                     this.PlayBeep == input.PlayBeep ||
-                    (this.PlayBeep != null &&
-                    this.PlayBeep.Equals(input.PlayBeep))
+                    this.PlayBeep.Equals(input.PlayBeep)
                 ) && 
                 (
                     this.Record == input.Record ||
@@ -187,7 +186,8 @@ namespace freeclimb.Model
                 ) && 
                 (
                     this.StatusCallbackUrl == input.StatusCallbackUrl ||
-                    this.StatusCallbackUrl.Equals(input.StatusCallbackUrl)
+                    (this.StatusCallbackUrl != null &&
+                    this.StatusCallbackUrl.Equals(input.StatusCallbackUrl))
                 ) && 
                 (
                     this.WaitUrl == input.WaitUrl ||
@@ -210,12 +210,12 @@ namespace freeclimb.Model
                     hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                if (this.PlayBeep != null)
-                {
-                    hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
                 hashCode = (hashCode * 59) + this.Record.GetHashCode();
-                hashCode = (hashCode * 59) + this.StatusCallbackUrl.GetHashCode();
+                if (this.StatusCallbackUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.StatusCallbackUrl.GetHashCode();
+                }
                 if (this.WaitUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.WaitUrl.GetHashCode();
