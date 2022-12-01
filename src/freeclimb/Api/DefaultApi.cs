@@ -2459,6 +2459,7 @@ namespace freeclimb.Api
             this.Client = new freeclimb.Client.ApiClient(this.Configuration.BasePath);
             this.AsynchronousClient = new freeclimb.Client.ApiClient(this.Configuration.BasePath);
             ExceptionFactory = freeclimb.Client.Configuration.DefaultExceptionFactory;
+            this.accountId = this.Configuration.Username;
         }
 
         /// <summary>
@@ -2478,6 +2479,7 @@ namespace freeclimb.Api
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
             this.ExceptionFactory = freeclimb.Client.Configuration.DefaultExceptionFactory;
+            this.accountId = this.Configuration.Username;
         }
 
         /// <summary>
