@@ -1,9 +1,12 @@
 # freeclimb.Model.ConferenceResult
 
+
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
 **Uri** | **string** | The URI for this resource, relative to /apiserver. | [optional] 
 **DateCreated** | **string** | The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). | [optional] 
 **DateUpdated** | **string** | The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). | [optional] 
@@ -19,5 +22,8 @@ Name | Type | Description | Notes
 **StatusCallbackUrl** | **string** | URL to inform that the Conference status has changed. | [optional] 
 **SubresourceUris** | **Object** | The list of subresources for this Conference. This includes participants and/or recordings. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+ [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
 

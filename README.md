@@ -173,11 +173,8 @@ Class | Method | HTTP request | Description
  - [Model.AccountRequest](docs/AccountRequest.md)
  - [Model.AccountResult](docs/AccountResult.md)
  - [Model.AccountResultAllOf](docs/AccountResultAllOf.md)
- - [Model.AccountStatus](docs/AccountStatus.md)
- - [Model.AccountType](docs/AccountType.md)
  - [Model.AddToConference](docs/AddToConference.md)
  - [Model.AddToConferenceAllOf](docs/AddToConferenceAllOf.md)
- - [Model.AnsweredBy](docs/AnsweredBy.md)
  - [Model.ApplicationList](docs/ApplicationList.md)
  - [Model.ApplicationListAllOf](docs/ApplicationListAllOf.md)
  - [Model.ApplicationRequest](docs/ApplicationRequest.md)
@@ -187,12 +184,10 @@ Class | Method | HTTP request | Description
  - [Model.AvailableNumberList](docs/AvailableNumberList.md)
  - [Model.AvailableNumberListAllOf](docs/AvailableNumberListAllOf.md)
  - [Model.BuyIncomingNumberRequest](docs/BuyIncomingNumberRequest.md)
- - [Model.CallDirection](docs/CallDirection.md)
  - [Model.CallList](docs/CallList.md)
  - [Model.CallListAllOf](docs/CallListAllOf.md)
  - [Model.CallResult](docs/CallResult.md)
  - [Model.CallResultAllOf](docs/CallResultAllOf.md)
- - [Model.CallStatus](docs/CallStatus.md)
  - [Model.Capabilities](docs/Capabilities.md)
  - [Model.ConferenceList](docs/ConferenceList.md)
  - [Model.ConferenceListAllOf](docs/ConferenceListAllOf.md)
@@ -202,7 +197,6 @@ Class | Method | HTTP request | Description
  - [Model.ConferenceParticipantResultAllOf](docs/ConferenceParticipantResultAllOf.md)
  - [Model.ConferenceResult](docs/ConferenceResult.md)
  - [Model.ConferenceResultAllOf](docs/ConferenceResultAllOf.md)
- - [Model.ConferenceStatus](docs/ConferenceStatus.md)
  - [Model.CreateConference](docs/CreateConference.md)
  - [Model.CreateConferenceAllOf](docs/CreateConferenceAllOf.md)
  - [Model.CreateConferenceRequest](docs/CreateConferenceRequest.md)
@@ -214,30 +208,21 @@ Class | Method | HTTP request | Description
  - [Model.GetDigitsAllOf](docs/GetDigitsAllOf.md)
  - [Model.GetSpeech](docs/GetSpeech.md)
  - [Model.GetSpeechAllOf](docs/GetSpeechAllOf.md)
- - [Model.GetSpeechReason](docs/GetSpeechReason.md)
- - [Model.GrammarFileBuiltIn](docs/GrammarFileBuiltIn.md)
- - [Model.GrammarType](docs/GrammarType.md)
  - [Model.Hangup](docs/Hangup.md)
  - [Model.HangupAllOf](docs/HangupAllOf.md)
- - [Model.IfMachine](docs/IfMachine.md)
  - [Model.IncomingNumberList](docs/IncomingNumberList.md)
  - [Model.IncomingNumberListAllOf](docs/IncomingNumberListAllOf.md)
  - [Model.IncomingNumberRequest](docs/IncomingNumberRequest.md)
  - [Model.IncomingNumberResult](docs/IncomingNumberResult.md)
  - [Model.IncomingNumberResultAllOf](docs/IncomingNumberResultAllOf.md)
- - [Model.Language](docs/Language.md)
- - [Model.LogLevel](docs/LogLevel.md)
  - [Model.LogList](docs/LogList.md)
  - [Model.LogListAllOf](docs/LogListAllOf.md)
  - [Model.LogResult](docs/LogResult.md)
- - [Model.MachineType](docs/MachineType.md)
  - [Model.MakeCallRequest](docs/MakeCallRequest.md)
- - [Model.MessageDirection](docs/MessageDirection.md)
  - [Model.MessageRequest](docs/MessageRequest.md)
  - [Model.MessageRequestAllOf](docs/MessageRequestAllOf.md)
  - [Model.MessageResult](docs/MessageResult.md)
  - [Model.MessageResultAllOf](docs/MessageResultAllOf.md)
- - [Model.MessageStatus](docs/MessageStatus.md)
  - [Model.MessagesList](docs/MessagesList.md)
  - [Model.MessagesListAllOf](docs/MessagesListAllOf.md)
  - [Model.MutableResourceModel](docs/MutableResourceModel.md)
@@ -252,7 +237,6 @@ Class | Method | HTTP request | Description
  - [Model.PerclScript](docs/PerclScript.md)
  - [Model.Play](docs/Play.md)
  - [Model.PlayAllOf](docs/PlayAllOf.md)
- - [Model.PlayBeep](docs/PlayBeep.md)
  - [Model.PlayEarlyMedia](docs/PlayEarlyMedia.md)
  - [Model.PlayEarlyMediaAllOf](docs/PlayEarlyMediaAllOf.md)
  - [Model.QueueList](docs/QueueList.md)
@@ -263,10 +247,8 @@ Class | Method | HTTP request | Description
  - [Model.QueueRequest](docs/QueueRequest.md)
  - [Model.QueueResult](docs/QueueResult.md)
  - [Model.QueueResultAllOf](docs/QueueResultAllOf.md)
- - [Model.QueueResultStatus](docs/QueueResultStatus.md)
  - [Model.RecordUtterance](docs/RecordUtterance.md)
  - [Model.RecordUtteranceAllOf](docs/RecordUtteranceAllOf.md)
- - [Model.RecordUtteranceTermReason](docs/RecordUtteranceTermReason.md)
  - [Model.RecordingList](docs/RecordingList.md)
  - [Model.RecordingListAllOf](docs/RecordingListAllOf.md)
  - [Model.RecordingResult](docs/RecordingResult.md)
@@ -277,7 +259,6 @@ Class | Method | HTTP request | Description
  - [Model.RejectAllOf](docs/RejectAllOf.md)
  - [Model.RemoveFromConference](docs/RemoveFromConference.md)
  - [Model.RemoveFromConferenceAllOf](docs/RemoveFromConferenceAllOf.md)
- - [Model.RequestType](docs/RequestType.md)
  - [Model.Say](docs/Say.md)
  - [Model.SayAllOf](docs/SayAllOf.md)
  - [Model.SendDigits](docs/SendDigits.md)
@@ -293,10 +274,34 @@ Class | Method | HTTP request | Description
  - [Model.TerminateConferenceAllOf](docs/TerminateConferenceAllOf.md)
  - [Model.Unpark](docs/Unpark.md)
  - [Model.UpdateCallRequest](docs/UpdateCallRequest.md)
- - [Model.UpdateCallRequestStatus](docs/UpdateCallRequestStatus.md)
  - [Model.UpdateConferenceParticipantRequest](docs/UpdateConferenceParticipantRequest.md)
  - [Model.UpdateConferenceRequest](docs/UpdateConferenceRequest.md)
- - [Model.UpdateConferenceRequestStatus](docs/UpdateConferenceRequestStatus.md)
+
+
+<a name="documentation-for-enums"></a>
+## Documentation for Enums
+
+ - [Enums.AccountStatus](docs/AccountStatus.md)
+ - [Enums.AccountType](docs/AccountType.md)
+ - [Enums.AnsweredBy](docs/AnsweredBy.md)
+ - [Enums.CallDirection](docs/CallDirection.md)
+ - [Enums.CallStatus](docs/CallStatus.md)
+ - [Enums.ConferenceStatus](docs/ConferenceStatus.md)
+ - [Enums.GetSpeechReason](docs/GetSpeechReason.md)
+ - [Enums.GrammarFileBuiltIn](docs/GrammarFileBuiltIn.md)
+ - [Enums.GrammarType](docs/GrammarType.md)
+ - [Enums.IfMachine](docs/IfMachine.md)
+ - [Enums.Language](docs/Language.md)
+ - [Enums.LogLevel](docs/LogLevel.md)
+ - [Enums.MachineType](docs/MachineType.md)
+ - [Enums.MessageDirection](docs/MessageDirection.md)
+ - [Enums.MessageStatus](docs/MessageStatus.md)
+ - [Enums.PlayBeep](docs/PlayBeep.md)
+ - [Enums.QueueResultStatus](docs/QueueResultStatus.md)
+ - [Enums.RecordUtteranceTermReason](docs/RecordUtteranceTermReason.md)
+ - [Enums.RequestType](docs/RequestType.md)
+ - [Enums.UpdateCallRequestStatus](docs/UpdateCallRequestStatus.md)
+ - [Enums.UpdateConferenceRequestStatus](docs/UpdateConferenceRequestStatus.md)
 
 
 <a name="documentation-for-authorization"></a>
@@ -307,3 +312,87 @@ Class | Method | HTTP request | Description
 
 - **Type**: HTTP basic authentication
 
+
+<a name="documentation-for-serialization-deserialization"></a>
+## Documentation for Serialization/Deserialization for Enums
+
+###These methods are not required unless being used for debugging/logging purposes
+
+- To serialize (turn value into enum), we would need to use the reflection method GetEnumByValue where you pass the enum as a type and value into the method to get the associated enum.
+  
+  GetMemberValue
+  
+  This is an extension method, so you can turn an enum directly into a value
+
+  Get a value from an enum
+
+  ```csharp
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System;
+    using System.Linq;
+    using System.IO;
+    using freeclimb.Api;
+    using freeclimb.Client;
+    using freeclimb.Model;
+    using System.Reflection;
+    using Newtonsoft.Json;
+
+    using freeclimb.Enums;
+
+    namespace Example
+    {
+    public class GetMemberValueExample
+    {
+        public static void Main()
+        {
+            AccountStatus status = AccountStatus.ACTIVE;
+            string expectedValue = StringValueAccountStatusTestValue();
+            string calculatedValue = status.GetMemberValue();
+            Assert.Equal(expectedValue, calculatedValue);
+        }
+        private string StringValueAccountStatusTestValue()
+        {
+            return "active";
+        }
+    }
+
+    }
+    ```
+    
+- To deserialize a value (turn enum into value), we would need to use the extension method GetMemberValue where you pass the enum as a parameter into the method to get the associated value.
+
+  GetEnumByValue
+  
+  Reflection.GetEnumByValue<EnumType>(expectedValue)
+
+  Get an Enum value from string
+
+  ```csharp
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System;
+    using System.Linq;
+    using System.IO;
+    using freeclimb.Api;
+    using freeclimb.Client;
+    using freeclimb.Model;
+    using System.Reflection;
+    using Newtonsoft.Json;
+
+    using freeclimb.Enums;
+
+    namespace Example
+    {
+    public class GetEnumByValueExample
+    {
+        public static void Main()
+        {
+            string expectedValue = "active";
+            AccountStatus calculatedValue = Reflection.GetEnumByValue<AccountStatus>(expectedValue);
+            Assert.Equal(instance, calculatedValue);
+        }
+    }
+
+    }
+    ```

@@ -1,9 +1,12 @@
 # freeclimb.Model.MakeCallRequest
 
+
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
 **From** | **string** | Phone number to use as the caller ID. This can be: (a) The To or From number provided in FreeClimb&#39;s initial request to your app or (b) Any incoming phone number you have purchased from FreeClimb. | 
 **To** | **string** | Phone number to place the Call to. | 
 **ApplicationId** | **string** | Required if no &#x60;parentCallId&#x60; or &#x60;callConnectUrl&#x60; has been provided. ID of the application FreeClimb should use to handle this phone call. FreeClimb will use the &#x60;callConnectUrl&#x60; and &#x60;statusCallbackUrl&#x60; set on the application unless the &#x60;callConnectUrl&#x60; attribute is also provided with the request. In this case, the URL specified in that &#x60;callConnectUrl&#x60; attribute will be used as a replacement of the &#x60;callConnectUrl&#x60; originally assigned in the application. If the &#x60;callConnectUrl&#x60; is not set as either an attribute of the request or as part of the specified application, an error will be provided. The application’s voiceUrl parameter is not used for outbound calls. | [optional] 
@@ -15,5 +18,8 @@ Name | Type | Description | Notes
 **PrivacyMode** | **bool** | Activate privacy mode in order to obscure log data that can potentially expose private information. | [optional] 
 **CallConnectUrl** | **string** | The URL that FreeClimb should use to handle this phone call. If an applicationId or parentCallId have already been provided, this callConnectUrl attribute will be used as a replacement of the callConnectUrl originally assigned in the application or parent call. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+ [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
 

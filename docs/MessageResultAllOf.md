@@ -1,9 +1,12 @@
 # freeclimb.Model.MessageResultAllOf
 
+
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
 **AccountId** | **string** | String that uniquely identifies this account resource. | [optional] 
 **MessageId** | **string** | String that uniquely identifies this message resource | [optional] 
 **Status** | **MessageStatus** |  | [optional] 
@@ -13,5 +16,8 @@ Name | Type | Description | Notes
 **Direction** | **string** | Noting whether the message was inbound or outbound | [optional] 
 **NotificationUrl** | **string** | URL invoked when message sent | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+ [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
 

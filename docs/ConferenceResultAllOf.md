@@ -1,9 +1,12 @@
 # freeclimb.Model.ConferenceResultAllOf
 
+
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
 **ConferenceId** | **string** | A string that uniquely identifies this Conference resource. | [optional] 
 **AccountId** | **string** | ID of the account that created this Conference. | [optional] 
 **Alias** | **string** | A description for this Conference. | [optional] 
@@ -15,5 +18,8 @@ Name | Type | Description | Notes
 **StatusCallbackUrl** | **string** | URL to inform that the Conference status has changed. | [optional] 
 **SubresourceUris** | **Object** | The list of subresources for this Conference. This includes participants and/or recordings. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+ [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
 
