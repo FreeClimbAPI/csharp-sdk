@@ -50,7 +50,8 @@ namespace freeclimb.Model
         /// <param name="country">Country of this phone number..</param>
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers..</param>
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers..</param>
-        public IncomingNumberResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), Capabilities capabilities = default(Capabilities), string campaignId = default(string), string phoneNumberId = default(string), string accountId = default(string), string applicationId = default(string), string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?))
+        /// <param name="offnet">The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource..</param>
+        public IncomingNumberResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), Capabilities capabilities = default(Capabilities), string campaignId = default(string), string phoneNumberId = default(string), string accountId = default(string), string applicationId = default(string), string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? offnet = default(bool?))
         {
             this.Uri = uri;
             this.DateCreated = dateCreated;
@@ -67,6 +68,7 @@ namespace freeclimb.Model
             this.Country = country;
             this.VoiceEnabled = voiceEnabled;
             this.SmsEnabled = smsEnabled;
+            this.Offnet = offnet;
         }
 
         /// <summary>
@@ -176,6 +178,13 @@ namespace freeclimb.Model
         public bool? SmsEnabled { get; set; }
 
         /// <summary>
+        /// The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource.
+        /// </summary>
+        /// <value>The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource.</value>
+        [DataMember(Name = "offnet", EmitDefaultValue = true)]
+        public bool? Offnet { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -198,6 +207,7 @@ namespace freeclimb.Model
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  VoiceEnabled: ").Append(VoiceEnabled).Append("\n");
             sb.Append("  SmsEnabled: ").Append(SmsEnabled).Append("\n");
+            sb.Append("  Offnet: ").Append(Offnet).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -233,6 +243,7 @@ namespace freeclimb.Model
             props.Add("country", Country);          
             props.Add("voiceEnabled", VoiceEnabled);          
             props.Add("smsEnabled", SmsEnabled);          
+            props.Add("offnet", Offnet);          
             return props;
         }
         
@@ -331,6 +342,11 @@ namespace freeclimb.Model
                     this.SmsEnabled == input.SmsEnabled ||
                     (this.SmsEnabled != null &&
                     this.SmsEnabled.Equals(input.SmsEnabled))
+                ) && 
+                (
+                    this.Offnet == input.Offnet ||
+                    (this.Offnet != null &&
+                    this.Offnet.Equals(input.Offnet))
                 );
         }
 
@@ -399,6 +415,10 @@ namespace freeclimb.Model
                 if (this.SmsEnabled != null)
                 {
                     hashCode = (hashCode * 59) + this.SmsEnabled.GetHashCode();
+                }
+                if (this.Offnet != null)
+                {
+                    hashCode = (hashCode * 59) + this.Offnet.GetHashCode();
                 }
                 return hashCode;
             }

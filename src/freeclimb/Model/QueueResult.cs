@@ -44,9 +44,9 @@ namespace freeclimb.Model
         /// <param name="alias">A description for this Queue..</param>
         /// <param name="maxSize">The maximum number of Calls permitted in the Queue. Default is 100. Maximum is 1000..</param>
         /// <param name="currentSize">Count of Calls currently in the Queue..</param>
-        /// <param name="averageWaitTime">Average wait time (in seconds) of all Calls in the Queue..</param>
+        /// <param name="averageQueueRemovalTime">The average amount of time (in seconds) for a call to be removed from the queue..</param>
         /// <param name="subresourceUris">List of subresources for this Queue (which includes Queue members)..</param>
-        public QueueResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string queueId = default(string), string alias = default(string), int? maxSize = default(int?), string currentSize = default(string), string averageWaitTime = default(string), Object subresourceUris = default(Object))
+        public QueueResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string queueId = default(string), string alias = default(string), int? maxSize = default(int?), int? currentSize = default(int?), int? averageQueueRemovalTime = default(int?), Object subresourceUris = default(Object))
         {
             this.Uri = uri;
             this.DateCreated = dateCreated;
@@ -57,7 +57,7 @@ namespace freeclimb.Model
             this.Alias = alias;
             this.MaxSize = maxSize;
             this.CurrentSize = currentSize;
-            this.AverageWaitTime = averageWaitTime;
+            this.AverageQueueRemovalTime = averageQueueRemovalTime;
             this.SubresourceUris = subresourceUris;
         }
 
@@ -122,14 +122,14 @@ namespace freeclimb.Model
         /// </summary>
         /// <value>Count of Calls currently in the Queue.</value>
         [DataMember(Name = "currentSize", EmitDefaultValue = true)]
-        public string CurrentSize { get; set; }
+        public int? CurrentSize { get; set; }
 
         /// <summary>
-        /// Average wait time (in seconds) of all Calls in the Queue.
+        /// The average amount of time (in seconds) for a call to be removed from the queue.
         /// </summary>
-        /// <value>Average wait time (in seconds) of all Calls in the Queue.</value>
-        [DataMember(Name = "averageWaitTime", EmitDefaultValue = true)]
-        public string AverageWaitTime { get; set; }
+        /// <value>The average amount of time (in seconds) for a call to be removed from the queue.</value>
+        [DataMember(Name = "averageQueueRemovalTime", EmitDefaultValue = true)]
+        public int? AverageQueueRemovalTime { get; set; }
 
         /// <summary>
         /// List of subresources for this Queue (which includes Queue members).
@@ -155,7 +155,7 @@ namespace freeclimb.Model
             sb.Append("  Alias: ").Append(Alias).Append("\n");
             sb.Append("  MaxSize: ").Append(MaxSize).Append("\n");
             sb.Append("  CurrentSize: ").Append(CurrentSize).Append("\n");
-            sb.Append("  AverageWaitTime: ").Append(AverageWaitTime).Append("\n");
+            sb.Append("  AverageQueueRemovalTime: ").Append(AverageQueueRemovalTime).Append("\n");
             sb.Append("  SubresourceUris: ").Append(SubresourceUris).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -186,7 +186,7 @@ namespace freeclimb.Model
             props.Add("alias", Alias);          
             props.Add("maxSize", MaxSize);          
             props.Add("currentSize", CurrentSize);          
-            props.Add("averageWaitTime", AverageWaitTime);          
+            props.Add("averageQueueRemovalTime", AverageQueueRemovalTime);          
             props.Add("subresourceUris", SubresourceUris);          
             return props;
         }
@@ -258,9 +258,9 @@ namespace freeclimb.Model
                     this.CurrentSize.Equals(input.CurrentSize))
                 ) && 
                 (
-                    this.AverageWaitTime == input.AverageWaitTime ||
-                    (this.AverageWaitTime != null &&
-                    this.AverageWaitTime.Equals(input.AverageWaitTime))
+                    this.AverageQueueRemovalTime == input.AverageQueueRemovalTime ||
+                    (this.AverageQueueRemovalTime != null &&
+                    this.AverageQueueRemovalTime.Equals(input.AverageQueueRemovalTime))
                 ) && 
                 (
                     this.SubresourceUris == input.SubresourceUris ||
@@ -311,9 +311,9 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.CurrentSize.GetHashCode();
                 }
-                if (this.AverageWaitTime != null)
+                if (this.AverageQueueRemovalTime != null)
                 {
-                    hashCode = (hashCode * 59) + this.AverageWaitTime.GetHashCode();
+                    hashCode = (hashCode * 59) + this.AverageQueueRemovalTime.GetHashCode();
                 }
                 if (this.SubresourceUris != null)
                 {

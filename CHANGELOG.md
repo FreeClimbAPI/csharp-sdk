@@ -6,6 +6,25 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 None
+
+<a name="4.1.0"></a>
+## [4.1.1] 2022-12-01
+### Changed
+- Change `QueueResult` `currentSize` property from string to int
+- Rename `QueueResult` `averageWaitTime` to `averageQueueRemovalTime`
+
+## [4.1.0] 2022-11-02
+### Changed
+- Account ID is no longer needed for every api request/model creation
+- Updated README for accountId and apiKey setting 
+
+<a name="4.0.2"></a>
+
+## [4.0.2] 2022-11-01
+### Added
+- Add `offnet` property in IncomingNumber resource
+- Add `offnet` query parameter for listIncomingNumbers
+
 <a name="4.0.1"></a>
 ## [4.0.1] 2022-08-19
 ### Added

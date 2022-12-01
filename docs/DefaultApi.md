@@ -54,7 +54,7 @@ Method | HTTP request | Description
 
 <a name="buyaphonenumber"></a>
 # **BuyAPhoneNumber**
-> IncomingNumberResult BuyAPhoneNumber (string accountId, BuyIncomingNumberRequest buyIncomingNumberRequest)
+> IncomingNumberResult BuyAPhoneNumber (BuyIncomingNumberRequest buyIncomingNumberRequest)
 
 Buy a Phone Number
 
@@ -75,17 +75,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
+
             var buyIncomingNumberRequest = new BuyIncomingNumberRequest(); // BuyIncomingNumberRequest | Incoming Number transaction details
 
             try
             {
                 // Buy a Phone Number
-                IncomingNumberResult result = apiInstance.BuyAPhoneNumber(accountId, buyIncomingNumberRequest);
+                IncomingNumberResult result = apiInstance.BuyAPhoneNumber(buyIncomingNumberRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -103,8 +104,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **buyIncomingNumberRequest** | [**BuyIncomingNumberRequest**](BuyIncomingNumberRequest.md)| Incoming Number transaction details | 
+
 
 ### Return type
 
@@ -129,7 +130,7 @@ Name | Type | Description  | Notes
 
 <a name="createaconference"></a>
 # **CreateAConference**
-> ConferenceResult CreateAConference (string accountId, CreateConferenceRequest createConferenceRequest = null)
+> ConferenceResult CreateAConference (CreateConferenceRequest createConferenceRequest = null)
 
 Create a Conference
 
@@ -150,17 +151,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
+
             var createConferenceRequest = new CreateConferenceRequest(); // CreateConferenceRequest | Conference to create (optional) 
 
             try
             {
                 // Create a Conference
-                ConferenceResult result = apiInstance.CreateAConference(accountId, createConferenceRequest);
+                ConferenceResult result = apiInstance.CreateAConference(createConferenceRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -178,8 +180,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **createConferenceRequest** | [**CreateConferenceRequest**](CreateConferenceRequest.md)| Conference to create | [optional] 
+
 
 ### Return type
 
@@ -204,7 +206,7 @@ Name | Type | Description  | Notes
 
 <a name="createaqueue"></a>
 # **CreateAQueue**
-> QueueResult CreateAQueue (string accountId, QueueRequest queueRequest = null)
+> QueueResult CreateAQueue (QueueRequest queueRequest = null)
 
 Create a Queue
 
@@ -225,17 +227,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
+
             var queueRequest = new QueueRequest(); // QueueRequest | Queue details used to create a queue (optional) 
 
             try
             {
                 // Create a Queue
-                QueueResult result = apiInstance.CreateAQueue(accountId, queueRequest);
+                QueueResult result = apiInstance.CreateAQueue(queueRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -253,8 +256,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **queueRequest** | [**QueueRequest**](QueueRequest.md)| Queue details used to create a queue | [optional] 
+
 
 ### Return type
 
@@ -279,7 +282,7 @@ Name | Type | Description  | Notes
 
 <a name="createanapplication"></a>
 # **CreateAnApplication**
-> ApplicationResult CreateAnApplication (string accountId, ApplicationRequest applicationRequest = null)
+> ApplicationResult CreateAnApplication (ApplicationRequest applicationRequest = null)
 
 Create an application
 
@@ -300,17 +303,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
+
             var applicationRequest = new ApplicationRequest(); // ApplicationRequest | Application Details (optional) 
 
             try
             {
                 // Create an application
-                ApplicationResult result = apiInstance.CreateAnApplication(accountId, applicationRequest);
+                ApplicationResult result = apiInstance.CreateAnApplication(applicationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -328,8 +332,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **applicationRequest** | [**ApplicationRequest**](ApplicationRequest.md)| Application Details | [optional] 
+
 
 ### Return type
 
@@ -354,7 +358,7 @@ Name | Type | Description  | Notes
 
 <a name="deletearecording"></a>
 # **DeleteARecording**
-> void DeleteARecording (string accountId, string recordingId)
+> void DeleteARecording (string recordingId)
 
 Delete a Recording
 
@@ -375,17 +379,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var recordingId = "recordingId_example";  // string | String that uniquely identifies this recording resource.
+
 
             try
             {
                 // Delete a Recording
-                apiInstance.DeleteARecording(accountId, recordingId);
+                apiInstance.DeleteARecording(recordingId);
             }
             catch (ApiException  e)
             {
@@ -402,8 +407,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **recordingId** | **string**| String that uniquely identifies this recording resource. | 
+
 
 ### Return type
 
@@ -428,7 +433,7 @@ void (empty response body)
 
 <a name="deleteanapplication"></a>
 # **DeleteAnApplication**
-> void DeleteAnApplication (string accountId, string applicationId)
+> void DeleteAnApplication (string applicationId)
 
 Delete an application
 
@@ -449,17 +454,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var applicationId = "applicationId_example";  // string | String that uniquely identifies this application resource.
+
 
             try
             {
                 // Delete an application
-                apiInstance.DeleteAnApplication(accountId, applicationId);
+                apiInstance.DeleteAnApplication(applicationId);
             }
             catch (ApiException  e)
             {
@@ -476,8 +482,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **applicationId** | **string**| String that uniquely identifies this application resource. | 
+
 
 ### Return type
 
@@ -502,7 +508,7 @@ void (empty response body)
 
 <a name="deleteanincomingnumber"></a>
 # **DeleteAnIncomingNumber**
-> void DeleteAnIncomingNumber (string accountId, string phoneNumberId)
+> void DeleteAnIncomingNumber (string phoneNumberId)
 
 Delete an Incoming Number
 
@@ -523,17 +529,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var phoneNumberId = "phoneNumberId_example";  // string | String that uniquely identifies this phone number resource.
+
 
             try
             {
                 // Delete an Incoming Number
-                apiInstance.DeleteAnIncomingNumber(accountId, phoneNumberId);
+                apiInstance.DeleteAnIncomingNumber(phoneNumberId);
             }
             catch (ApiException  e)
             {
@@ -550,8 +557,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **phoneNumberId** | **string**| String that uniquely identifies this phone number resource. | 
+
 
 ### Return type
 
@@ -576,7 +583,7 @@ void (empty response body)
 
 <a name="dequeueamember"></a>
 # **DequeueAMember**
-> QueueMember DequeueAMember (string accountId, string queueId, string callId)
+> QueueMember DequeueAMember (string queueId, string callId)
 
 Dequeue a Member
 
@@ -597,18 +604,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies the Queue that the Member belongs to.
+
             var callId = "callId_example";  // string | ID if the Call that the Member belongs to
+
 
             try
             {
                 // Dequeue a Member
-                QueueMember result = apiInstance.DequeueAMember(accountId, queueId, callId);
+                QueueMember result = apiInstance.DequeueAMember(queueId, callId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -626,9 +635,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **queueId** | **string**| String that uniquely identifies the Queue that the Member belongs to. | 
  **callId** | **string**| ID if the Call that the Member belongs to | 
+
 
 ### Return type
 
@@ -653,7 +662,7 @@ Name | Type | Description  | Notes
 
 <a name="dequeueheadmember"></a>
 # **DequeueHeadMember**
-> QueueMember DequeueHeadMember (string accountId, string queueId)
+> QueueMember DequeueHeadMember (string queueId)
 
 Dequeue Head Member
 
@@ -674,17 +683,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies this queue resource.
+
 
             try
             {
                 // Dequeue Head Member
-                QueueMember result = apiInstance.DequeueHeadMember(accountId, queueId);
+                QueueMember result = apiInstance.DequeueHeadMember(queueId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -702,8 +712,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **queueId** | **string**| String that uniquely identifies this queue resource. | 
+
 
 ### Return type
 
@@ -728,7 +738,7 @@ Name | Type | Description  | Notes
 
 <a name="downloadarecordingfile"></a>
 # **DownloadARecordingFile**
-> System.IO.Stream DownloadARecordingFile (string accountId, string recordingId)
+> System.IO.Stream DownloadARecordingFile (string recordingId)
 
 Download a Recording File
 
@@ -749,17 +759,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var recordingId = "recordingId_example";  // string | String that uniquely identifies this recording resource.
+
 
             try
             {
                 // Download a Recording File
-                System.IO.Stream result = apiInstance.DownloadARecordingFile(accountId, recordingId);
+                System.IO.Stream result = apiInstance.DownloadARecordingFile(recordingId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -777,8 +788,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **recordingId** | **string**| String that uniquely identifies this recording resource. | 
+
 
 ### Return type
 
@@ -803,7 +814,7 @@ Name | Type | Description  | Notes
 
 <a name="filterlogs"></a>
 # **FilterLogs**
-> LogList FilterLogs (string accountId, FilterLogsRequest filterLogsRequest)
+> LogList FilterLogs (FilterLogsRequest filterLogsRequest)
 
 Filter Logs
 
@@ -824,17 +835,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
+
             var filterLogsRequest = new FilterLogsRequest(); // FilterLogsRequest | Filter logs request paramters
 
             try
             {
                 // Filter Logs
-                LogList result = apiInstance.FilterLogs(accountId, filterLogsRequest);
+                LogList result = apiInstance.FilterLogs(filterLogsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -852,8 +864,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **filterLogsRequest** | [**FilterLogsRequest**](FilterLogsRequest.md)| Filter logs request paramters | 
+
 
 ### Return type
 
@@ -878,7 +890,7 @@ Name | Type | Description  | Notes
 
 <a name="getacall"></a>
 # **GetACall**
-> CallResult GetACall (string accountId, string callId)
+> CallResult GetACall (string callId)
 
 Get a Call
 
@@ -899,17 +911,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string | String that uniquely identifies this call resource.
+
 
             try
             {
                 // Get a Call
-                CallResult result = apiInstance.GetACall(accountId, callId);
+                CallResult result = apiInstance.GetACall(callId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -927,8 +940,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **callId** | **string**| String that uniquely identifies this call resource. | 
+
 
 ### Return type
 
@@ -953,7 +966,7 @@ Name | Type | Description  | Notes
 
 <a name="getaconference"></a>
 # **GetAConference**
-> ConferenceResult GetAConference (string accountId, string conferenceId)
+> ConferenceResult GetAConference (string conferenceId)
 
 Get a Conference
 
@@ -974,17 +987,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | A string that uniquely identifies this conference resource.
+
 
             try
             {
                 // Get a Conference
-                ConferenceResult result = apiInstance.GetAConference(accountId, conferenceId);
+                ConferenceResult result = apiInstance.GetAConference(conferenceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1002,8 +1016,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **conferenceId** | **string**| A string that uniquely identifies this conference resource. | 
+
 
 ### Return type
 
@@ -1028,7 +1042,7 @@ Name | Type | Description  | Notes
 
 <a name="getamember"></a>
 # **GetAMember**
-> QueueMember GetAMember (string accountId, string queueId, string callId)
+> QueueMember GetAMember (string queueId, string callId)
 
 Get a Member
 
@@ -1049,18 +1063,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies the Queue that the Member belongs to.
+
             var callId = "callId_example";  // string | ID of the Call that the Member belongs to
+
 
             try
             {
                 // Get a Member
-                QueueMember result = apiInstance.GetAMember(accountId, queueId, callId);
+                QueueMember result = apiInstance.GetAMember(queueId, callId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1078,9 +1094,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **queueId** | **string**| String that uniquely identifies the Queue that the Member belongs to. | 
  **callId** | **string**| ID of the Call that the Member belongs to | 
+
 
 ### Return type
 
@@ -1105,7 +1121,7 @@ Name | Type | Description  | Notes
 
 <a name="getaparticipant"></a>
 # **GetAParticipant**
-> ConferenceParticipantResult GetAParticipant (string accountId, string conferenceId, string callId)
+> ConferenceParticipantResult GetAParticipant (string conferenceId, string callId)
 
 Get a Participant
 
@@ -1126,18 +1142,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | ID of the conference this participant is in.
+
             var callId = "callId_example";  // string | ID of the Call associated with this participant.
+
 
             try
             {
                 // Get a Participant
-                ConferenceParticipantResult result = apiInstance.GetAParticipant(accountId, conferenceId, callId);
+                ConferenceParticipantResult result = apiInstance.GetAParticipant(conferenceId, callId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1155,9 +1173,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **conferenceId** | **string**| ID of the conference this participant is in. | 
  **callId** | **string**| ID of the Call associated with this participant. | 
+
 
 ### Return type
 
@@ -1182,7 +1200,7 @@ Name | Type | Description  | Notes
 
 <a name="getaqueue"></a>
 # **GetAQueue**
-> QueueResult GetAQueue (string accountId, string queueId)
+> QueueResult GetAQueue (string queueId)
 
 Get a Queue
 
@@ -1203,17 +1221,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | A string that uniquely identifies this queue resource.
+
 
             try
             {
                 // Get a Queue
-                QueueResult result = apiInstance.GetAQueue(accountId, queueId);
+                QueueResult result = apiInstance.GetAQueue(queueId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1231,8 +1250,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **queueId** | **string**| A string that uniquely identifies this queue resource. | 
+
 
 ### Return type
 
@@ -1257,7 +1276,7 @@ Name | Type | Description  | Notes
 
 <a name="getarecording"></a>
 # **GetARecording**
-> RecordingResult GetARecording (string accountId, string recordingId)
+> RecordingResult GetARecording (string recordingId)
 
 Get a Recording
 
@@ -1278,17 +1297,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var recordingId = "recordingId_example";  // string | String that uniquely identifies this recording resource.
+
 
             try
             {
                 // Get a Recording
-                RecordingResult result = apiInstance.GetARecording(accountId, recordingId);
+                RecordingResult result = apiInstance.GetARecording(recordingId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1306,8 +1326,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **recordingId** | **string**| String that uniquely identifies this recording resource. | 
+
 
 ### Return type
 
@@ -1332,7 +1352,7 @@ Name | Type | Description  | Notes
 
 <a name="getanaccount"></a>
 # **GetAnAccount**
-> AccountResult GetAnAccount (string accountId)
+> AccountResult GetAnAccount ()
 
 Get an Account
 
@@ -1353,16 +1373,16 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
 
             try
             {
                 // Get an Account
-                AccountResult result = apiInstance.GetAnAccount(accountId);
+                AccountResult result = apiInstance.GetAnAccount();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1378,9 +1398,7 @@ namespace Example
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
+
 
 ### Return type
 
@@ -1405,7 +1423,7 @@ Name | Type | Description  | Notes
 
 <a name="getanapplication"></a>
 # **GetAnApplication**
-> ApplicationResult GetAnApplication (string accountId, string applicationId)
+> ApplicationResult GetAnApplication (string applicationId)
 
 Get an Application
 
@@ -1426,17 +1444,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var applicationId = "applicationId_example";  // string | A string that uniquely identifies this application resource.
+
 
             try
             {
                 // Get an Application
-                ApplicationResult result = apiInstance.GetAnApplication(accountId, applicationId);
+                ApplicationResult result = apiInstance.GetAnApplication(applicationId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1454,8 +1473,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **applicationId** | **string**| A string that uniquely identifies this application resource. | 
+
 
 ### Return type
 
@@ -1480,7 +1499,7 @@ Name | Type | Description  | Notes
 
 <a name="getanincomingnumber"></a>
 # **GetAnIncomingNumber**
-> IncomingNumberResult GetAnIncomingNumber (string accountId, string phoneNumberId)
+> IncomingNumberResult GetAnIncomingNumber (string phoneNumberId)
 
 Get an Incoming Number
 
@@ -1501,17 +1520,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var phoneNumberId = "phoneNumberId_example";  // string | String that uniquely identifies this phone number resource.
+
 
             try
             {
                 // Get an Incoming Number
-                IncomingNumberResult result = apiInstance.GetAnIncomingNumber(accountId, phoneNumberId);
+                IncomingNumberResult result = apiInstance.GetAnIncomingNumber(phoneNumberId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1529,8 +1549,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **phoneNumberId** | **string**| String that uniquely identifies this phone number resource. | 
+
 
 ### Return type
 
@@ -1555,7 +1575,7 @@ Name | Type | Description  | Notes
 
 <a name="getansmsmessage"></a>
 # **GetAnSmsMessage**
-> MessageResult GetAnSmsMessage (string accountId, string messageId)
+> MessageResult GetAnSmsMessage (string messageId)
 
 Get an SMS Message
 
@@ -1576,17 +1596,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var messageId = "messageId_example";  // string | String that uniquely identifies this Message resource.
+
 
             try
             {
                 // Get an SMS Message
-                MessageResult result = apiInstance.GetAnSmsMessage(accountId, messageId);
+                MessageResult result = apiInstance.GetAnSmsMessage(messageId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1604,8 +1625,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **messageId** | **string**| String that uniquely identifies this Message resource. | 
+
 
 ### Return type
 
@@ -1630,7 +1651,7 @@ Name | Type | Description  | Notes
 
 <a name="getheadmember"></a>
 # **GetHeadMember**
-> QueueMember GetHeadMember (string accountId, string queueId)
+> QueueMember GetHeadMember (string queueId)
 
 Get Head Member
 
@@ -1651,17 +1672,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies the Queue that the Member belongs to.
+
 
             try
             {
                 // Get Head Member
-                QueueMember result = apiInstance.GetHeadMember(accountId, queueId);
+                QueueMember result = apiInstance.GetHeadMember(queueId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1679,8 +1701,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **queueId** | **string**| String that uniquely identifies the Queue that the Member belongs to. | 
+
 
 ### Return type
 
@@ -1705,7 +1727,7 @@ Name | Type | Description  | Notes
 
 <a name="listactivequeues"></a>
 # **ListActiveQueues**
-> QueueList ListActiveQueues (string accountId, string alias = null)
+> QueueList ListActiveQueues (string alias = null)
 
 List Active Queues
 
@@ -1726,17 +1748,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var alias = "alias_example";  // string | Return only the Queue resources with aliases that exactly match this name. (optional) 
+
 
             try
             {
                 // List Active Queues
-                QueueList result = apiInstance.ListActiveQueues(accountId, alias);
+                QueueList result = apiInstance.ListActiveQueues(alias);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1754,8 +1777,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **alias** | **string**| Return only the Queue resources with aliases that exactly match this name. | [optional] 
+
 
 ### Return type
 
@@ -1780,7 +1803,7 @@ Name | Type | Description  | Notes
 
 <a name="listallaccountlogs"></a>
 # **ListAllAccountLogs**
-> LogList ListAllAccountLogs (string accountId)
+> LogList ListAllAccountLogs ()
 
 List All Account Logs
 
@@ -1801,16 +1824,16 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
 
             try
             {
                 // List All Account Logs
-                LogList result = apiInstance.ListAllAccountLogs(accountId);
+                LogList result = apiInstance.ListAllAccountLogs();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1826,9 +1849,7 @@ namespace Example
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
+
 
 ### Return type
 
@@ -1853,7 +1874,7 @@ Name | Type | Description  | Notes
 
 <a name="listapplications"></a>
 # **ListApplications**
-> ApplicationList ListApplications (string accountId, string alias = null)
+> ApplicationList ListApplications (string alias = null)
 
 List applications
 
@@ -1874,17 +1895,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var alias = "alias_example";  // string | Return only applications with aliases that exactly match this value. (optional) 
+
 
             try
             {
                 // List applications
-                ApplicationList result = apiInstance.ListApplications(accountId, alias);
+                ApplicationList result = apiInstance.ListApplications(alias);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1902,8 +1924,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **alias** | **string**| Return only applications with aliases that exactly match this value. | [optional] 
+
 
 ### Return type
 
@@ -1949,20 +1971,31 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
+            
             var phoneNumber = "phoneNumber_example";  // string | PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format. (optional) 
+
             var region = "region_example";  // string | State or province of this phone number. (optional) 
+
             var country = "country_example";  // string | Country of this phone number. (optional) 
+
             var voiceEnabled = true;  // bool? | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional)  (default to true)
+
             var smsEnabled = true;  // bool? | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional)  (default to true)
+
             var capabilitiesVoice = true;  // bool? |  (optional) 
+
             var capabilitiesSms = true;  // bool? |  (optional) 
+
             var capabilitiesTollFree = true;  // bool? |  (optional) 
+
             var capabilitiesTenDLC = true;  // bool? |  (optional) 
+
             var capabilitiesShortCode = true;  // bool? |  (optional) 
+
 
             try
             {
@@ -1996,6 +2029,7 @@ Name | Type | Description  | Notes
  **capabilitiesTenDLC** | **bool?**|  | [optional] 
  **capabilitiesShortCode** | **bool?**|  | [optional] 
 
+
 ### Return type
 
 [**AvailableNumberList**](AvailableNumberList.md)
@@ -2019,7 +2053,7 @@ Name | Type | Description  | Notes
 
 <a name="listcalllogs"></a>
 # **ListCallLogs**
-> LogList ListCallLogs (string accountId, string callId)
+> LogList ListCallLogs (string callId)
 
 List Call Logs
 
@@ -2040,17 +2074,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string | String that uniquely identifies this call resource.
+
 
             try
             {
                 // List Call Logs
-                LogList result = apiInstance.ListCallLogs(accountId, callId);
+                LogList result = apiInstance.ListCallLogs(callId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2068,8 +2103,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **callId** | **string**| String that uniquely identifies this call resource. | 
+
 
 ### Return type
 
@@ -2094,7 +2129,7 @@ Name | Type | Description  | Notes
 
 <a name="listcallrecordings"></a>
 # **ListCallRecordings**
-> RecordingList ListCallRecordings (string accountId, string callId, string dateCreated = null)
+> RecordingList ListCallRecordings (string callId, string dateCreated = null)
 
 List Call Recordings
 
@@ -2115,18 +2150,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string | String that uniquely identifies this call resource.
+
             var dateCreated = "dateCreated_example";  // string | Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional) 
+
 
             try
             {
                 // List Call Recordings
-                RecordingList result = apiInstance.ListCallRecordings(accountId, callId, dateCreated);
+                RecordingList result = apiInstance.ListCallRecordings(callId, dateCreated);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2144,9 +2181,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **callId** | **string**| String that uniquely identifies this call resource. | 
  **dateCreated** | **string**| Only show recordings created on the specified date, in the form *YYYY-MM-DD*. | [optional] 
+
 
 ### Return type
 
@@ -2171,7 +2208,7 @@ Name | Type | Description  | Notes
 
 <a name="listcalls"></a>
 # **ListCalls**
-> CallList ListCalls (string accountId, bool? active = null, string to = null, string from = null, string status = null, string startTime = null, string endTime = null, string parentCallId = null)
+> CallList ListCalls (bool? active = null, string to = null, string from = null, string status = null, string startTime = null, string endTime = null, string parentCallId = null)
 
 List Calls
 
@@ -2192,23 +2229,30 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var active = false;  // bool? | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional)  (default to false)
+
             var to = "to_example";  // string | Only show Calls to this phone number. (optional) 
+
             var from = "from_example";  // string | Only show Calls from this phone number. (optional) 
+
             var status = "status_example";  // string | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional) 
+
             var startTime = "startTime_example";  // string | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
+
             var endTime = "endTime_example";  // string | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional) 
+
             var parentCallId = "parentCallId_example";  // string | Only show Calls spawned by the call with this ID. (optional) 
+
 
             try
             {
                 // List Calls
-                CallList result = apiInstance.ListCalls(accountId, active, to, from, status, startTime, endTime, parentCallId);
+                CallList result = apiInstance.ListCalls(active, to, from, status, startTime, endTime, parentCallId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2226,7 +2270,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **active** | **bool?**| If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional] [default to false]
  **to** | **string**| Only show Calls to this phone number. | [optional] 
  **from** | **string**| Only show Calls from this phone number. | [optional] 
@@ -2234,6 +2277,7 @@ Name | Type | Description  | Notes
  **startTime** | **string**| Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] 
  **endTime** | **string**| Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional] 
  **parentCallId** | **string**| Only show Calls spawned by the call with this ID. | [optional] 
+
 
 ### Return type
 
@@ -2258,7 +2302,7 @@ Name | Type | Description  | Notes
 
 <a name="listconferences"></a>
 # **ListConferences**
-> ConferenceList ListConferences (string accountId, string status = null, string alias = null, string dateCreated = null, string dateUpdated = null)
+> ConferenceList ListConferences (string status = null, string alias = null, string dateCreated = null, string dateUpdated = null)
 
 List Conferences
 
@@ -2279,20 +2323,24 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var status = "status_example";  // string | Only show conferences that currently have the specified status. Valid values: `empty`, `populated`, `inProgress`, or `terminated`. (optional) 
+
             var alias = "alias_example";  // string | List Conferences whose alias exactly matches this string. (optional) 
+
             var dateCreated = "dateCreated_example";  // string | Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional) 
+
             var dateUpdated = "dateUpdated_example";  // string | Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional) 
+
 
             try
             {
                 // List Conferences
-                ConferenceList result = apiInstance.ListConferences(accountId, status, alias, dateCreated, dateUpdated);
+                ConferenceList result = apiInstance.ListConferences(status, alias, dateCreated, dateUpdated);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2310,11 +2358,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **status** | **string**| Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. | [optional] 
  **alias** | **string**| List Conferences whose alias exactly matches this string. | [optional] 
  **dateCreated** | **string**| Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. | [optional] 
  **dateUpdated** | **string**| Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. | [optional] 
+
 
 ### Return type
 
@@ -2339,7 +2387,7 @@ Name | Type | Description  | Notes
 
 <a name="listincomingnumbers"></a>
 # **ListIncomingNumbers**
-> IncomingNumberList ListIncomingNumbers (string accountId, string phoneNumber = null, string alias = null, string region = null, string country = null, string applicationId = null, bool? hasApplication = null, bool? voiceEnabled = null, bool? smsEnabled = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null)
+> IncomingNumberList ListIncomingNumbers (string phoneNumber = null, string alias = null, string region = null, string country = null, string applicationId = null, bool? hasApplication = null, bool? voiceEnabled = null, bool? smsEnabled = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null, bool? offnet = null)
 
 List Incoming Numbers
 
@@ -2360,29 +2408,44 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var phoneNumber = "phoneNumber_example";  // string | Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional) 
+
             var alias = "alias_example";  // string | Only show incoming phone numbers with aliases that exactly match this value. (optional) 
+
             var region = "region_example";  // string | State or province of this phone number. (optional) 
+
             var country = "country_example";  // string | Country of this phone number. (optional) 
+
             var applicationId = "applicationId_example";  // string | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional) 
+
             var hasApplication = false;  // bool? | Indication of whether the phone number has an application linked to it. (optional)  (default to false)
+
             var voiceEnabled = true;  // bool? | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional)  (default to true)
+
             var smsEnabled = true;  // bool? | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional)  (default to true)
+
             var capabilitiesVoice = true;  // bool? |  (optional) 
+
             var capabilitiesSms = true;  // bool? |  (optional) 
+
             var capabilitiesTollFree = true;  // bool? |  (optional) 
+
             var capabilitiesTenDLC = true;  // bool? |  (optional) 
+
             var capabilitiesShortCode = true;  // bool? |  (optional) 
+
+            var offnet = true;  // bool? | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional) 
+
 
             try
             {
                 // List Incoming Numbers
-                IncomingNumberList result = apiInstance.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
+                IncomingNumberList result = apiInstance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2400,7 +2463,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **phoneNumber** | **string**| Only show incoming phone number resources that match this PCRE-compatible regular expression. | [optional] 
  **alias** | **string**| Only show incoming phone numbers with aliases that exactly match this value. | [optional] 
  **region** | **string**| State or province of this phone number. | [optional] 
@@ -2414,6 +2476,8 @@ Name | Type | Description  | Notes
  **capabilitiesTollFree** | **bool?**|  | [optional] 
  **capabilitiesTenDLC** | **bool?**|  | [optional] 
  **capabilitiesShortCode** | **bool?**|  | [optional] 
+ **offnet** | **bool?**| Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. | [optional] 
+
 
 ### Return type
 
@@ -2438,7 +2502,7 @@ Name | Type | Description  | Notes
 
 <a name="listmembers"></a>
 # **ListMembers**
-> QueueMemberList ListMembers (string accountId, string queueId)
+> QueueMemberList ListMembers (string queueId)
 
 List Members
 
@@ -2459,17 +2523,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies the Queue that the Member belongs to.
+
 
             try
             {
                 // List Members
-                QueueMemberList result = apiInstance.ListMembers(accountId, queueId);
+                QueueMemberList result = apiInstance.ListMembers(queueId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2487,8 +2552,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **queueId** | **string**| String that uniquely identifies the Queue that the Member belongs to. | 
+
 
 ### Return type
 
@@ -2513,7 +2578,7 @@ Name | Type | Description  | Notes
 
 <a name="listparticipants"></a>
 # **ListParticipants**
-> ConferenceParticipantList ListParticipants (string accountId, string conferenceId, bool? talk = null, bool? listen = null)
+> ConferenceParticipantList ListParticipants (string conferenceId, bool? talk = null, bool? listen = null)
 
 List Participants
 
@@ -2534,19 +2599,22 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | ID of the conference this participant is in.
+
             var talk = true;  // bool? | Only show Participants with the talk privilege. (optional) 
+
             var listen = true;  // bool? | Only show Participants with the listen privilege. (optional) 
+
 
             try
             {
                 // List Participants
-                ConferenceParticipantList result = apiInstance.ListParticipants(accountId, conferenceId, talk, listen);
+                ConferenceParticipantList result = apiInstance.ListParticipants(conferenceId, talk, listen);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2564,10 +2632,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **conferenceId** | **string**| ID of the conference this participant is in. | 
  **talk** | **bool?**| Only show Participants with the talk privilege. | [optional] 
  **listen** | **bool?**| Only show Participants with the listen privilege. | [optional] 
+
 
 ### Return type
 
@@ -2592,7 +2660,7 @@ Name | Type | Description  | Notes
 
 <a name="listrecordings"></a>
 # **ListRecordings**
-> RecordingList ListRecordings (string accountId, string callId = null, string conferenceId = null, string dateCreated = null)
+> RecordingList ListRecordings (string callId = null, string conferenceId = null, string dateCreated = null)
 
 List Recordings
 
@@ -2613,19 +2681,22 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string | Show only Recordings made during the Call with this ID. (optional) 
+
             var conferenceId = "conferenceId_example";  // string | Show only Recordings made during the conference with this ID. (optional) 
+
             var dateCreated = "dateCreated_example";  // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional) 
+
 
             try
             {
                 // List Recordings
-                RecordingList result = apiInstance.ListRecordings(accountId, callId, conferenceId, dateCreated);
+                RecordingList result = apiInstance.ListRecordings(callId, conferenceId, dateCreated);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2643,10 +2714,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **callId** | **string**| Show only Recordings made during the Call with this ID. | [optional] 
  **conferenceId** | **string**| Show only Recordings made during the conference with this ID. | [optional] 
  **dateCreated** | **string**| Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] 
+
 
 ### Return type
 
@@ -2671,7 +2742,7 @@ Name | Type | Description  | Notes
 
 <a name="listsmsmessages"></a>
 # **ListSmsMessages**
-> MessagesList ListSmsMessages (string accountId, string to = null, string from = null, string beginTime = null, string endTime = null, string direction = null)
+> MessagesList ListSmsMessages (string to = null, string from = null, string beginTime = null, string endTime = null, string direction = null)
 
 List SMS Messages
 
@@ -2692,21 +2763,26 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var to = "to_example";  // string | Only show Messages to this phone number. (optional) 
+
             var from = "from_example";  // string | Only show Messages from this phone number. (optional) 
+
             var beginTime = "beginTime_example";  // string | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional) 
+
             var endTime = "endTime_example";  // string | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional) 
+
             var direction = "inbound";  // string | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional) 
+
 
             try
             {
                 // List SMS Messages
-                MessagesList result = apiInstance.ListSmsMessages(accountId, to, from, beginTime, endTime, direction);
+                MessagesList result = apiInstance.ListSmsMessages(to, from, beginTime, endTime, direction);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2724,12 +2800,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **to** | **string**| Only show Messages to this phone number. | [optional] 
  **from** | **string**| Only show Messages from this phone number. | [optional] 
  **beginTime** | **string**| Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional] 
  **endTime** | **string**| Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional] 
  **direction** | **string**| Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] 
+
 
 ### Return type
 
@@ -2754,7 +2830,7 @@ Name | Type | Description  | Notes
 
 <a name="makeacall"></a>
 # **MakeACall**
-> CallResult MakeACall (string accountId, MakeCallRequest makeCallRequest = null)
+> CallResult MakeACall (MakeCallRequest makeCallRequest = null)
 
 Make a Call
 
@@ -2775,17 +2851,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
+
             var makeCallRequest = new MakeCallRequest(); // MakeCallRequest | Call details for making a call (optional) 
 
             try
             {
                 // Make a Call
-                CallResult result = apiInstance.MakeACall(accountId, makeCallRequest);
+                CallResult result = apiInstance.MakeACall(makeCallRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2803,8 +2880,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **makeCallRequest** | [**MakeCallRequest**](MakeCallRequest.md)| Call details for making a call | [optional] 
+
 
 ### Return type
 
@@ -2829,7 +2906,7 @@ Name | Type | Description  | Notes
 
 <a name="removeaparticipant"></a>
 # **RemoveAParticipant**
-> void RemoveAParticipant (string accountId, string conferenceId, string callId)
+> void RemoveAParticipant (string conferenceId, string callId)
 
 Remove a Participant
 
@@ -2850,18 +2927,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | ID of the conference this participant is in.
+
             var callId = "callId_example";  // string | ID of the Call associated with this participant.
+
 
             try
             {
                 // Remove a Participant
-                apiInstance.RemoveAParticipant(accountId, conferenceId, callId);
+                apiInstance.RemoveAParticipant(conferenceId, callId);
             }
             catch (ApiException  e)
             {
@@ -2878,9 +2957,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **conferenceId** | **string**| ID of the conference this participant is in. | 
  **callId** | **string**| ID of the Call associated with this participant. | 
+
 
 ### Return type
 
@@ -2905,7 +2984,7 @@ void (empty response body)
 
 <a name="sendansmsmessage"></a>
 # **SendAnSmsMessage**
-> MessageResult SendAnSmsMessage (string accountId, MessageRequest messageRequest)
+> MessageResult SendAnSmsMessage (MessageRequest messageRequest)
 
 Send an SMS Message
 
@@ -2926,17 +3005,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
+
             var messageRequest = new MessageRequest(); // MessageRequest | Details to create a message
 
             try
             {
                 // Send an SMS Message
-                MessageResult result = apiInstance.SendAnSmsMessage(accountId, messageRequest);
+                MessageResult result = apiInstance.SendAnSmsMessage(messageRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2954,8 +3034,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **messageRequest** | [**MessageRequest**](MessageRequest.md)| Details to create a message | 
+
 
 ### Return type
 
@@ -2980,7 +3060,7 @@ Name | Type | Description  | Notes
 
 <a name="streamarecordingfile"></a>
 # **StreamARecordingFile**
-> System.IO.Stream StreamARecordingFile (string accountId, string recordingId)
+> System.IO.Stream StreamARecordingFile (string recordingId)
 
 Stream a Recording File
 
@@ -3001,17 +3081,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var recordingId = "recordingId_example";  // string | String that uniquely identifies this recording resource.
+
 
             try
             {
                 // Stream a Recording File
-                System.IO.Stream result = apiInstance.StreamARecordingFile(accountId, recordingId);
+                System.IO.Stream result = apiInstance.StreamARecordingFile(recordingId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3029,8 +3110,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **recordingId** | **string**| String that uniquely identifies this recording resource. | 
+
 
 ### Return type
 
@@ -3055,7 +3136,7 @@ Name | Type | Description  | Notes
 
 <a name="updateaconference"></a>
 # **UpdateAConference**
-> ConferenceResult UpdateAConference (string accountId, string conferenceId, UpdateConferenceRequest updateConferenceRequest = null)
+> ConferenceResult UpdateAConference (string conferenceId, UpdateConferenceRequest updateConferenceRequest = null)
 
 Update a Conference
 
@@ -3076,18 +3157,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | String that uniquely identifies this conference resource.
+
+
             var updateConferenceRequest = new UpdateConferenceRequest(); // UpdateConferenceRequest | Conference Details to update (optional) 
 
             try
             {
                 // Update a Conference
-                ConferenceResult result = apiInstance.UpdateAConference(accountId, conferenceId, updateConferenceRequest);
+                ConferenceResult result = apiInstance.UpdateAConference(conferenceId, updateConferenceRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3105,9 +3188,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **conferenceId** | **string**| String that uniquely identifies this conference resource. | 
  **updateConferenceRequest** | [**UpdateConferenceRequest**](UpdateConferenceRequest.md)| Conference Details to update | [optional] 
+
 
 ### Return type
 
@@ -3132,7 +3215,7 @@ Name | Type | Description  | Notes
 
 <a name="updatealivecall"></a>
 # **UpdateALiveCall**
-> void UpdateALiveCall (string accountId, string callId, UpdateCallRequest updateCallRequest)
+> void UpdateALiveCall (string callId, UpdateCallRequest updateCallRequest)
 
 Update a Live Call
 
@@ -3153,18 +3236,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string | String that uniquely identifies this call resource.
+
+
             var updateCallRequest = new UpdateCallRequest(); // UpdateCallRequest | Call details to update
 
             try
             {
                 // Update a Live Call
-                apiInstance.UpdateALiveCall(accountId, callId, updateCallRequest);
+                apiInstance.UpdateALiveCall(callId, updateCallRequest);
             }
             catch (ApiException  e)
             {
@@ -3181,9 +3266,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **callId** | **string**| String that uniquely identifies this call resource. | 
  **updateCallRequest** | [**UpdateCallRequest**](UpdateCallRequest.md)| Call details to update | 
+
 
 ### Return type
 
@@ -3208,7 +3293,7 @@ void (empty response body)
 
 <a name="updateaparticipant"></a>
 # **UpdateAParticipant**
-> ConferenceParticipantResult UpdateAParticipant (string accountId, string conferenceId, string callId, UpdateConferenceParticipantRequest updateConferenceParticipantRequest = null)
+> ConferenceParticipantResult UpdateAParticipant (string conferenceId, string callId, UpdateConferenceParticipantRequest updateConferenceParticipantRequest = null)
 
 Update a Participant
 
@@ -3229,19 +3314,22 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | ID of the conference this participant is in.
+
             var callId = "callId_example";  // string | ID of the Call associated with this participant.
+
+
             var updateConferenceParticipantRequest = new UpdateConferenceParticipantRequest(); // UpdateConferenceParticipantRequest | Conference participant details to update (optional) 
 
             try
             {
                 // Update a Participant
-                ConferenceParticipantResult result = apiInstance.UpdateAParticipant(accountId, conferenceId, callId, updateConferenceParticipantRequest);
+                ConferenceParticipantResult result = apiInstance.UpdateAParticipant(conferenceId, callId, updateConferenceParticipantRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3259,10 +3347,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **conferenceId** | **string**| ID of the conference this participant is in. | 
  **callId** | **string**| ID of the Call associated with this participant. | 
  **updateConferenceParticipantRequest** | [**UpdateConferenceParticipantRequest**](UpdateConferenceParticipantRequest.md)| Conference participant details to update | [optional] 
+
 
 ### Return type
 
@@ -3287,7 +3375,7 @@ Name | Type | Description  | Notes
 
 <a name="updateaqueue"></a>
 # **UpdateAQueue**
-> QueueResult UpdateAQueue (string accountId, string queueId, QueueRequest queueRequest = null)
+> QueueResult UpdateAQueue (string queueId, QueueRequest queueRequest = null)
 
 Update a Queue
 
@@ -3308,18 +3396,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | A string that uniquely identifies this Queue resource.
+
+
             var queueRequest = new QueueRequest(); // QueueRequest | Queue Details to update (optional) 
 
             try
             {
                 // Update a Queue
-                QueueResult result = apiInstance.UpdateAQueue(accountId, queueId, queueRequest);
+                QueueResult result = apiInstance.UpdateAQueue(queueId, queueRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3337,9 +3427,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **queueId** | **string**| A string that uniquely identifies this Queue resource. | 
  **queueRequest** | [**QueueRequest**](QueueRequest.md)| Queue Details to update | [optional] 
+
 
 ### Return type
 
@@ -3364,7 +3454,7 @@ Name | Type | Description  | Notes
 
 <a name="updateanaccount"></a>
 # **UpdateAnAccount**
-> void UpdateAnAccount (string accountId, AccountRequest accountRequest = null)
+> void UpdateAnAccount (AccountRequest accountRequest = null)
 
 Manage an account
 
@@ -3385,17 +3475,18 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
+
             var accountRequest = new AccountRequest(); // AccountRequest | Account details to update (optional) 
 
             try
             {
                 // Manage an account
-                apiInstance.UpdateAnAccount(accountId, accountRequest);
+                apiInstance.UpdateAnAccount(accountRequest);
             }
             catch (ApiException  e)
             {
@@ -3412,8 +3503,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **accountRequest** | [**AccountRequest**](AccountRequest.md)| Account details to update | [optional] 
+
 
 ### Return type
 
@@ -3438,7 +3529,7 @@ void (empty response body)
 
 <a name="updateanapplication"></a>
 # **UpdateAnApplication**
-> ApplicationResult UpdateAnApplication (string accountId, string applicationId, ApplicationRequest applicationRequest = null)
+> ApplicationResult UpdateAnApplication (string applicationId, ApplicationRequest applicationRequest = null)
 
 Update an application
 
@@ -3459,18 +3550,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var applicationId = "applicationId_example";  // string | A string that uniquely identifies this application resource.
+
+
             var applicationRequest = new ApplicationRequest(); // ApplicationRequest | Application details to update. (optional) 
 
             try
             {
                 // Update an application
-                ApplicationResult result = apiInstance.UpdateAnApplication(accountId, applicationId, applicationRequest);
+                ApplicationResult result = apiInstance.UpdateAnApplication(applicationId, applicationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3488,9 +3581,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **applicationId** | **string**| A string that uniquely identifies this application resource. | 
  **applicationRequest** | [**ApplicationRequest**](ApplicationRequest.md)| Application details to update. | [optional] 
+
 
 ### Return type
 
@@ -3515,7 +3608,7 @@ Name | Type | Description  | Notes
 
 <a name="updateanincomingnumber"></a>
 # **UpdateAnIncomingNumber**
-> IncomingNumberResult UpdateAnIncomingNumber (string accountId, string phoneNumberId, IncomingNumberRequest incomingNumberRequest = null)
+> IncomingNumberResult UpdateAnIncomingNumber (string phoneNumberId, IncomingNumberRequest incomingNumberRequest = null)
 
 Update an Incoming Number
 
@@ -3536,18 +3629,20 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var phoneNumberId = "phoneNumberId_example";  // string | String that uniquely identifies this phone number resource.
+
+
             var incomingNumberRequest = new IncomingNumberRequest(); // IncomingNumberRequest | Incoming Number details to update (optional) 
 
             try
             {
                 // Update an Incoming Number
-                IncomingNumberResult result = apiInstance.UpdateAnIncomingNumber(accountId, phoneNumberId, incomingNumberRequest);
+                IncomingNumberResult result = apiInstance.UpdateAnIncomingNumber(phoneNumberId, incomingNumberRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3565,9 +3660,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **string**| ID of the account | 
  **phoneNumberId** | **string**| String that uniquely identifies this phone number resource. | 
  **incomingNumberRequest** | [**IncomingNumberRequest**](IncomingNumberRequest.md)| Incoming Number details to update | [optional] 
+
 
 ### Return type
 
