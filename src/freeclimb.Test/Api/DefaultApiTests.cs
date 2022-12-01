@@ -989,7 +989,7 @@ namespace freeclimb.Test.Api
         {
             return new QueueResult("example.com", "Mon, 15 Jun 2020 20:20:20 GMT", 
                 "Wed, 17 Jun 2020 20:20:20 GMT", 0, accountIdTestValue(), 
-                queueIdTestValue(), "TEST-QUEUE", 100, "0", "0", "0");
+                queueIdTestValue(), "TEST-QUEUE", 100, 0, 0, 0);
         }
 
         private ApplicationRequest applicationRequestTestValue()

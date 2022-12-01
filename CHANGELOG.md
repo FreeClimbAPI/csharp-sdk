@@ -7,9 +7,16 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 None
 
+<a name="4.1.1"></a>
+
+## [4.1.1] 2022-12-01
+### Changed
+ - Changed `QueueResult` property `currentSize` from string to int
+ - Renamed `QueueResult` property `averageWaitTime` to `averageQueueRemovalTime`
+
 <a name="4.1.0"></a>
 
-## [4.1.0] 2022-01-02
+## [4.1.0] 2022-11-02
 ### Changed
 - Account ID is no longer needed for every api request/model creation
 - Updated README for accountId and apiKey setting 
