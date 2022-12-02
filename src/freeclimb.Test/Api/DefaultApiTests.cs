@@ -78,12 +78,6 @@ namespace freeclimb.Test.Api
         {
 
             BuyIncomingNumberRequest buyIncomingNumberRequest = buyIncomingNumberRequestTestValue();
-
-            // instance.Setup(m => m.BuyAPhoneNumber(buyIncomingNumberRequest)).Returns(incomingNumberResultTestValue());
-            // var response = instance.Object.BuyAPhoneNumber(buyIncomingNumberRequest);
-            // //Assert.IsType<IncomingNumberResult>(response);
-            // Assert.IsAssignableFrom<IncomingNumberResult>(response);
-
             var response = instance2.BuyAPhoneNumber(buyIncomingNumberRequest);
             Assert.IsAssignableFrom<IncomingNumberResult>(response);
         }
@@ -97,11 +91,6 @@ namespace freeclimb.Test.Api
         {
 
             CreateConferenceRequest createConferenceRequest = createConferenceRequestTestValue();
-
-            // instance.Setup(m => m.CreateAConference(createConferenceRequest)).Returns(conferenceResultTestValue());
-            // var response = instance.Object.CreateAConference(createConferenceRequest);
-            //Assert.IsType<ConferenceResult>(response);
-
             var response = instance2.CreateAConference(createConferenceRequest);
             Assert.IsAssignableFrom<ConferenceResult>(response);
         }
@@ -115,10 +104,6 @@ namespace freeclimb.Test.Api
         {
 
             QueueRequest queueRequest = queueRequestTestValue();
-
-            // instance.Setup(m => m.CreateAQueue(queueRequest)).Returns(queueResultTestValue());
-            // var response = instance.Object.CreateAQueue(queueRequest);
-            //Assert.IsType<QueueResult>(response);
             var response = instance2.CreateAQueue(queueRequest);
             Assert.IsAssignableFrom<QueueResult>(response);
         }

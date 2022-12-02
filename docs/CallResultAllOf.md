@@ -1,12 +1,10 @@
 # freeclimb.Model.CallResultAllOf
 
 
-
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
 **CallId** | **string** | String that uniquely identifies this Call resource. | [optional] 
 **ParentCallId** | **string** | ID of the Call that created this leg (child Call). | [optional] 
 **AccountId** | **string** | ID of the account that owns this Call. | [optional] 
@@ -23,8 +21,8 @@ Name | Type | Description | Notes
 **AnsweredBy** | **AnsweredBy** |  | [optional] 
 **SubresourceUris** | **Object** | The list of subresources for this Call. These include things like logs and recordings associated with the Call. | [optional] 
 
-
- [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
-
+[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
+[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
+[[Back to Model list]](../README.md#documentation-for-models)<br /> 
+[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
+[[Back to README]](../README.md) <br /> 

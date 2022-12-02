@@ -1,17 +1,15 @@
 # freeclimb.Enums.MessageDirection
 
-
 ## Properties
 
 Name | Value | Notes
 ------------ | ------------- | -------------
-
-**INBOUND** | inbound | Represented in C# as 1, but can be seralized & deserialized using the reflection and extension methods
-**OUTBOUND** | outbound | Represented in C# as 2, but can be seralized & deserialized using the reflection and extension methods
-
+**INBOUND** | inbound | Represented in C# as 1
+**OUTBOUND** | outbound | Represented in C# as 2
 
 
-[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization) [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
-
+[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
+[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
+[[Back to Model list]](../README.md#documentation-for-models)<br /> 
+[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
+[[Back to README]](../README.md) <br /> 
