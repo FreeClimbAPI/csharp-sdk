@@ -388,9 +388,10 @@ Class | Method | HTTP request | Description
     {
         public static void Main()
         {
-            string expectedValue = "active";
-            AccountStatus calculatedValue = Reflection.GetEnumByValue<AccountStatus>(expectedValue);
-            Assert.Equal(instance, calculatedValue);
+            string stringToConvertToEnum = "active";
+            AccountStatus calculatedEnumValue = Reflection.GetEnumByValue<AccountStatus>(expectedValue);
+            AccountStatus expectedValue = AccountStatus.ACTIVE;
+            Assert.Equal(expectedValue, calculatedEnumValue);
         }
     }
 
