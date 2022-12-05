@@ -9413,25 +9413,17 @@ namespace freeclimb.Api
             }
 
             var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            Console.WriteLine("Accepts Params:" + localVarAccept);
             if (localVarAccept != null)
             {
                 Console.WriteLine("Accepts Params if not null:" + localVarAccept);
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
+            Console.WriteLine("Accepts Params:" + localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
             localVarRequestOptions.PathParameters.Add("callId", freeclimb.Client.ClientUtils.ParameterToString(callId)); // path parameter
             localVarRequestOptions.Data = updateCallRequest;
-            Console.WriteLine("Header Parameters being passed in for update a live call: " + localVarRequestOptions.HeaderParameters.ToString());
-            foreach (var contents in localVarRequestOptions.HeaderParameters.Keys)
-            {
-                foreach (var listMember in localVarRequestOptions.HeaderParameters[contents])
-                {
-                    Console.WriteLine("Key : " + contents + " member :" + listMember);
-                }
-            }
-            Console.WriteLine("Data being passed in for update a live call: " + localVarRequestOptions.Data);
+            //Console.WriteLine("Header Parameters being passed in for update a live call: " + localVarRequestOptions.HeaderParameters.ToString());
             //Console.WriteLine("JSON conversion of the request: " + updateCallRequest.ToJson());
             //Console.WriteLine(updateCallRequest.ToJsonObject());
 
@@ -9441,6 +9433,24 @@ namespace freeclimb.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
+
+            //Printout of entire request before sending to client to Post
+            Console.WriteLine("Request Header Parameters:");
+            foreach (var contents in localVarRequestOptions.HeaderParameters.Keys)
+            {
+                foreach (var listMember in localVarRequestOptions.HeaderParameters[contents])
+                {
+                    Console.WriteLine("Key : " + contents + " member :" + listMember);
+                }
+            }
+            Console.WriteLine("Request Path Parameters:");
+            foreach (KeyValuePair<string, string> kvp in localVarRequestOptions.PathParameters)
+            {
+                //textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+            }
+            Console.WriteLine("Request Data:");
+            Console.WriteLine("Data being passed in for update a live call: " + localVarRequestOptions.Data);
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/Accounts/{accountId}/Calls/{callId}", localVarRequestOptions, this.Configuration);
