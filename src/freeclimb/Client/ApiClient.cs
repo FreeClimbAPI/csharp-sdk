@@ -391,7 +391,6 @@ namespace freeclimb.Client
                     request.AddCookie(cookie.Name, cookie.Value);
                 }
             }
-
             return request;
         }
 
@@ -501,7 +500,7 @@ namespace freeclimb.Client
             {
                 try
                 {
-                    response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
+                    response.Data = (T)typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
                 }
                 catch (Exception ex)
                 {
@@ -618,7 +617,7 @@ namespace freeclimb.Client
             // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
             if (typeof(freeclimb.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
             {
-                response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
+                response.Data = (T)typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
             }
             else if (typeof(T).Name == "Stream") // for binary response
             {

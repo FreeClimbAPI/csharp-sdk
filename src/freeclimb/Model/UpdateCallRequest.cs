@@ -82,10 +82,10 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("status", Status);          
+            props.Add("status", Status);
             return props;
         }
-        
+
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
@@ -107,7 +107,7 @@ namespace freeclimb.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)

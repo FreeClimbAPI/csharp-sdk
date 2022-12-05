@@ -57,13 +57,15 @@ namespace freeclimb.Client
             }
             else if (value is IDictionary dictionary)
             {
-                if(collectionFormat == "deepObject") {
+                if (collectionFormat == "deepObject")
+                {
                     foreach (DictionaryEntry entry in dictionary)
                     {
                         parameters.Add(name + "[" + entry.Key + "]", ParameterToString(entry.Value));
                     }
                 }
-                else {
+                else
+                {
                     foreach (DictionaryEntry entry in dictionary)
                     {
                         parameters.Add(entry.Key.ToString(), ParameterToString(entry.Value));
@@ -81,7 +83,7 @@ namespace freeclimb.Client
                 {
                     parameters.Add(name, ParameterToString(value));
                 }
-              
+
             }
 
             return parameters;
@@ -207,7 +209,7 @@ namespace freeclimb.Client
         public static string SelectHeaderAccept(string[] accepts)
         {
             if (accepts.Length == 0)
-                return null;
+                return "";
 
             if (accepts.Contains("application/json", StringComparer.OrdinalIgnoreCase))
                 return "application/json";
