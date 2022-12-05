@@ -752,6 +752,7 @@ namespace freeclimb.Test.Api
             string callId = callIdTestValue();
 
             UpdateCallRequest updateCallRequest = updateCallRequestTestValue();
+            Console.WriteLine("Update Call Request: " + updateCallRequest);
 
             instance.UpdateALiveCall(callId, updateCallRequest);
         }
@@ -769,6 +770,7 @@ namespace freeclimb.Test.Api
             string callId = callIdTestValue();
 
             UpdateConferenceParticipantRequest updateConferenceParticipantRequest = updateConferenceParticipantRequestTestValue();
+            Console.WriteLine("Update Participant Request: " + updateConferenceParticipantRequest);
 
             var response = instance.UpdateAParticipant(conferenceId, callId, updateConferenceParticipantRequest);
             //Assert.IsType<ConferenceParticipantResult>(response);
