@@ -11,11 +11,12 @@ jobs:
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
         with:
-          image: stoplight/prism:latest
+          image: node:16.14.2-alpine3.15
           run: |
-            chmod a+x $(which prism) && prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
-      - name: cURL server
-        run: ( curl "http://127.0.0.1:4010/"  )
+            yarn global add @stoplight/prism-cli
+            prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
+            curl "http://127.0.0.1:4010/"
+            exit
 
   build:
     runs-on: ubuntu-latest
