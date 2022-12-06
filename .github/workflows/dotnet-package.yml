@@ -16,6 +16,8 @@ jobs:
           run: |
             yarn global add @stoplight/prism-cli
             prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
+      - name: cURL Request to prism server
+        run: curl -X GET "http://127.0.0.1:4010/"
   build:
     runs-on: ubuntu-latest
     steps:
