@@ -19,6 +19,9 @@ jobs:
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
       - name: List all files
         run: (ls -alg)
+      - name: Run Prism command
+          run: (prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17)
+      
   build:
     runs-on: ubuntu-latest
     steps:
