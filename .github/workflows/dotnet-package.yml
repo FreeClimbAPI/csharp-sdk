@@ -13,7 +13,8 @@ jobs:
         with:
           image: stoplight/prism:latest
           run: |
-            mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
+            yarn global add @stoplight/prism-cli
+            prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
       - name: cURL server
         run: ( curl "http://127.0.0.1:4010/"  )
 
