@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: stoplight/prism:latest
+      command: "mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17"
       ports:
         - 80
       volumes:
         - my_docker_volume:/volume_mount
       options: --cpus 1
-      command: "mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17"
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
