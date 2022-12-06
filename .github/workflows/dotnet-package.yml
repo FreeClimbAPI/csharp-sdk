@@ -28,7 +28,7 @@ jobs:
       - name: Install Prism
         run: (yarn global add @stoplight/prism-cli)
       - name: Start Prism Server
-        run: (prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17 &)
+        run: (prism mock -h 127.0.0.1 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17 &)
       - uses: actions/checkout@v3
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
@@ -38,7 +38,5 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release --no-restore
-      - name: cURL Request to prism server
-        run: curl -X GET "http://0.0.0.0:4010/"
       - name: Test
         run: dotnet test --no-restore --verbosity normal
