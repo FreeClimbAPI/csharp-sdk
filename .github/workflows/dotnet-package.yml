@@ -2,16 +2,16 @@ name: Build & Test .NET Package
 
 on:
   push:
-    branches: [ "*" ]
+    branches: ["*"]
 
 jobs:
   container:
-      image: stoplight/prism:latest
-      ports:
-        - 80
-      volumes:
-        - my_docker_volume:/volume_mount
-      options: --cpus 1
+    image: stoplight/prism:latest
+    ports:
+      - 80
+    volumes:
+      - my_docker_volume:/volume_mount
+    options: --cpus 1
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
@@ -19,20 +19,18 @@ jobs:
         run: (ls -alg)
       - name: Run Prism command
         run: prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
-      - name: Check if prism server is up
-        run: curl -X POST "http://127.0.0.1:4010/Accounts/{accountId}/Calls/{callId}" -H "Content-Type\:''application/json" -d "{\"status\":\"completed\"}"  -u "{account_id}:{api_key}"
 
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
