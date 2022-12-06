@@ -12,10 +12,9 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: node:16.14.2-alpine3.15
-          options: --network "host"
           run: |
             yarn global add @stoplight/prism-cli
-            prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
+            RUNNER_TRACKING_ID="" && prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
       - name: cURL Request to prism server
         run: curl -X GET "http://127.0.0.1:4010/"
   build:
