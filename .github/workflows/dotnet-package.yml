@@ -20,8 +20,8 @@ jobs:
       - name: Run Prism command
         run: prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
       - name: Check if prism server is up
-        run: curl -X POST "http://127.0.0.1:4010/Accounts/{accountId}/Calls/{callId}" -H "Content-Type: application/json" -d "{\"status\":\"completed\"}" -u "{account_id}:{api_key}"
-        
+        run: curl -X POST "http://127.0.0.1:4010/Accounts/{accountId}/Calls/{callId}" -H "Content-Type\:''application/json" -d "{\"status\":\"completed\"}"  -u "{account_id}:{api_key}"
+
   build:
     runs-on: ubuntu-latest
     steps:
