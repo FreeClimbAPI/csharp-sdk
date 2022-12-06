@@ -7,14 +7,15 @@ on:
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
-    - name: Run the build process with Docker
-            uses: addnab/docker-run-action@v3
-            with:
-                image:  stoplight/prism:latest
-                run: |
-                    prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
-    - name: cURL server
-      run: ( curl "http://127.0.0.1:4010/"  )
+    steps:
+      - name: Run the build process with Docker
+        uses: addnab/docker-run-action@v3
+        with:
+          image: stoplight/prism:latest
+          run: |
+            prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
+      - name: cURL server
+        run: ( curl "http://127.0.0.1:4010/"  )
 
   build:
     runs-on: ubuntu-latest
