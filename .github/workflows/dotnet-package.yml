@@ -7,21 +7,14 @@ on:
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
-    container:
-      image: stoplight/prism:latest
-      command: "mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17"
-      ports:
-        - 80
-      volumes:
-        - my_docker_volume:/volume_mount
-      options: --cpus 1
-    steps:
-      - name: Check for dockerenv file
-        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
-      - name: List all files
-        run: (ls -alg)
-      - name: cURL server
-        run: ( curl "http://127.0.0.1:4010/"  )
+    - name: Run the build process with Docker
+            uses: addnab/docker-run-action@v3
+            with:
+                image:  stoplight/prism:latest
+                run: |
+                    prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
+    - name: cURL server
+      run: ( curl "http://127.0.0.1:4010/"  )
 
   build:
     runs-on: ubuntu-latest
