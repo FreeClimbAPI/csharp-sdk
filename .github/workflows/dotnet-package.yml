@@ -12,7 +12,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: node:16.14.2-alpine3.15
-          option: --network "host"
+          options: --network "host"
           run: |
             yarn global add @stoplight/prism-cli
             prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
