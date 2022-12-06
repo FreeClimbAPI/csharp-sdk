@@ -26,9 +26,9 @@ jobs:
           dotnet-version: 6.0.x
       - name: Restore dependencies
         run: dotnet restore
-      - name: cURL Request to prism server
-        run: curl "http://127.0.0.1:4010/"
       - name: Build
         run: dotnet build --configuration Release --no-restore
+      - name: cURL Request to prism server
+        run: curl -X GET "http://127.0.0.1:4010/"
       - name: Test
         run: dotnet test --no-restore --verbosity normal
