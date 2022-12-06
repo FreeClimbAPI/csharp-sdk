@@ -7,16 +7,19 @@ on:
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
-    steps:
-      - name: Run the build process with Docker
-        uses: addnab/docker-run-action@v3
-        with:
-          image: node:16.14.2-alpine3.15
-          ports:
-            - 4010:4010
-          run: |
-            yarn global add @stoplight/prism-cli
-            prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
+    services: 
+      prismserver:
+        image: node:16.14.2-alpine3.15
+        ports:
+          - 4010:4010
+        steps:
+      - name: Check for dockerenv file
+        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Install prism
+        run: (yarn global add @stoplight/prism-cli)
+      - name: Run Prism Mock Server
+        run: (prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17)
+
 
   build:
     runs-on: ubuntu-latest
@@ -31,6 +34,6 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: curl against prism server
-        run: curl -X GET http://localhost:4010
+        run: curl -X GET http://prismserver:4010
       - name: Test
         run: dotnet test --no-restore --verbosity normal
