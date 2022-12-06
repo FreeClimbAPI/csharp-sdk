@@ -7,6 +7,13 @@ on:
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
+
+    services:
+      prismserver:
+        image: node:16.14.2-alpine3.15
+        ports:
+          - 4010:4010
+
     steps:
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
@@ -14,10 +21,8 @@ jobs:
           image: node:16.14.2-alpine3.15
           run: |
             yarn global add @stoplight/prism-cli
-            RUNNER_TRACKING_ID="" && prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
+            prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17
 
-      - name: cURL Request to prism server
-        run: curl -X GET "http://127.0.0.1:4010/"
   build:
     runs-on: ubuntu-latest
     steps:
@@ -28,11 +33,9 @@ jobs:
           dotnet-version: 6.0.x
       - name: Restore dependencies
         run: dotnet restore
-      - name: Find Docker containers
-        run: docker container ps
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: cURL Request to prism server
-        run: curl -X GET "http://127.0.0.1:4010/"
+        run: curl -X GET "http://prismserver:4010/"
       - name: Test
         run: dotnet test --no-restore --verbosity normal
