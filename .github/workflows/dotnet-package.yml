@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: stoplight/prism:latest
-      env:
       ports:
         - 80
       volumes:
