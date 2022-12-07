@@ -73,7 +73,6 @@ namespace freeclimb.Test.Model
             // TODO unit test for the property 'Commands'
             string actualJSONString = instance.ToJson();
             string expectedJSONString = "[{\"CreateConference\":{\"actionUrl\":\"\",\"alias\":false,\"playBeep\":\"always\",\"record\":false,\"statusCallbackUrl\":\"\",\"waitUrl\":\"\"}}]";
-            //Console.WriteLine(actualJSONString);
             Assert.Equal(expectedJSONString, actualJSONString);
         }
     }
