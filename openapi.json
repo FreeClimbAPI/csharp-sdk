@@ -2204,13 +2204,13 @@
                 "nullable": true
               },
               "currentSize": {
-                "type": "string",
+                "type": "integer",
                 "description": "Count of Calls currently in the Queue.",
                 "nullable": true
               },
-              "averageWaitTime": {
-                "type": "string",
-                "description": "Average wait time (in seconds) of all Calls in the Queue.",
+              "averageQueueRemovalTime": {
+                "type": "integer",
+                "description": "The average amount of time (in seconds) for a call to be removed from the queue.",
                 "nullable": true
               },
               "subresourceUris": {
