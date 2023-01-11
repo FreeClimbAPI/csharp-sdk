@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class ApplicationResultTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for ApplicationResult
-        //private ApplicationResult instance;
+        private ApplicationResult instance;
 
         public ApplicationResultTests()
         {
-            // TODO uncomment below to create an instance of ApplicationResult
             //instance = new ApplicationResult();
         }
 
@@ -161,7 +163,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'SmsFallbackUrl'
         }
-
     }
 
 }

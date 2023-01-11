@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class IncomingNumberResultTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for IncomingNumberResult
-        //private IncomingNumberResult instance;
+        private IncomingNumberResult instance;
 
         public IncomingNumberResultTests()
         {
-            // TODO uncomment below to create an instance of IncomingNumberResult
             //instance = new IncomingNumberResult();
         }
 
@@ -177,7 +179,14 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'SmsEnabled'
         }
-
+        /// <summary>
+        /// Test the property 'Offnet'
+        /// </summary>
+        [Fact]
+        public void OffnetTest()
+        {
+            // TODO unit test for the property 'Offnet'
+        }
     }
 
 }

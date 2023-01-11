@@ -16,6 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 
 namespace freeclimb.Client
 {
@@ -71,7 +72,16 @@ namespace freeclimb.Client
             }
             else
             {
-                parameters.Add(name, ParameterToString(value));
+                if (value is Enum)
+                {
+                    Enum newValue = (Enum)value;
+                    parameters.Add(name, newValue.GetMemberValue());
+                }
+                else
+                {
+                    parameters.Add(name, ParameterToString(value));
+                }
+              
             }
 
             return parameters;
@@ -197,7 +207,7 @@ namespace freeclimb.Client
         public static string SelectHeaderAccept(string[] accepts)
         {
             if (accepts.Length == 0)
-                return null;
+                return "";
 
             if (accepts.Contains("application/json", StringComparer.OrdinalIgnoreCase))
                 return "application/json";

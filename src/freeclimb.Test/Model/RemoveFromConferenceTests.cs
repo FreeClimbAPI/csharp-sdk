@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class RemoveFromConferenceTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for RemoveFromConference
-        //private RemoveFromConference instance;
+        private RemoveFromConference instance;
 
         public RemoveFromConferenceTests()
         {
-            // TODO uncomment below to create an instance of RemoveFromConference
             //instance = new RemoveFromConference();
         }
 
@@ -65,7 +67,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'CallId'
         }
-
     }
 
 }

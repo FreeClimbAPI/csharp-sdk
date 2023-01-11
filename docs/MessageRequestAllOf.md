@@ -1,5 +1,6 @@
 # freeclimb.Model.MessageRequestAllOf
 
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -10,5 +11,8 @@ Name | Type | Description | Notes
 **NotificationUrl** | **string** | When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored. | [optional] 
 **AccountId** | **string** | String that uniquely identifies this account resource. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
+[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
+[[Back to Model list]](../README.md#documentation-for-models)<br /> 
+[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
+[[Back to README]](../README.md) <br /> 

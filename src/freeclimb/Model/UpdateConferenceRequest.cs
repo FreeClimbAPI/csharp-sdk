@@ -23,6 +23,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
+using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -32,81 +33,25 @@ namespace freeclimb.Model
     [DataContract(Name = "UpdateConferenceRequest")]
     public partial class UpdateConferenceRequest : IEquatable<UpdateConferenceRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.
-        /// </summary>
-        /// <value>Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PlayBeepEnum
-        {
-            /// <summary>
-            /// Enum ALWAYS for value: always
-            /// </summary>
-            [EnumMember(Value = "always")]
-            ALWAYS = 1,
-
-            /// <summary>
-            /// Enum NEVER for value: never
-            /// </summary>
-            [EnumMember(Value = "never")]
-            NEVER = 2,
-
-            /// <summary>
-            /// Enum ENTRY_ONLY for value: entryOnly
-            /// </summary>
-            [EnumMember(Value = "entryOnly")]
-            ENTRY_ONLY = 3,
-
-            /// <summary>
-            /// Enum EXIT_ONLY for value: exitOnly
-            /// </summary>
-            [EnumMember(Value = "exitOnly")]
-            EXIT_ONLY = 4
-
-        }
-
 
         /// <summary>
-        /// Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.
+        /// Gets or Sets PlayBeep
         /// </summary>
-        /// <value>Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.</value>
         [DataMember(Name = "playBeep", EmitDefaultValue = false)]
-        public PlayBeepEnum? PlayBeep { get; set; }
-        /// <summary>
-        /// New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**
-        /// </summary>
-        /// <value>New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum EMPTY for value: empty
-            /// </summary>
-            [EnumMember(Value = "empty")]
-            EMPTY = 1,
-
-            /// <summary>
-            /// Enum TERMINATED for value: terminated
-            /// </summary>
-            [EnumMember(Value = "terminated")]
-            TERMINATED = 2
-
-        }
-
+        public PlayBeep? PlayBeep { get; set; }
 
         /// <summary>
-        /// New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**
+        /// Gets or Sets Status
         /// </summary>
-        /// <value>New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StatusEnum? Status { get; set; }
+        public UpdateConferenceRequestStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateConferenceRequest" /> class.
         /// </summary>
         /// <param name="alias">Description for this conference. Maximum 64 characters..</param>
-        /// <param name="playBeep">Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;. (default to PlayBeepEnum.ALWAYS).</param>
-        /// <param name="status">New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**.</param>
-        public UpdateConferenceRequest(string alias = default(string), PlayBeepEnum? playBeep = PlayBeepEnum.ALWAYS, StatusEnum? status = default(StatusEnum?))
+        /// <param name="playBeep">playBeep.</param>
+        /// <param name="status">status.</param>
+        public UpdateConferenceRequest(string alias = default(string), PlayBeep? playBeep = default(PlayBeep?), UpdateConferenceRequestStatus? status = default(UpdateConferenceRequestStatus?))
         {
             this.Alias = alias;
             this.PlayBeep = playBeep;

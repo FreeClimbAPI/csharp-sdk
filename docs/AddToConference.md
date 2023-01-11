@@ -1,5 +1,5 @@
 # freeclimb.Model.AddToConference
-The `AddToConference` command adds a Participant to a Conference. If this Participant currently is in another Conference, the Participant is first removed from that Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via `AddToConference`.
+
 
 ## Properties
 
@@ -17,5 +17,8 @@ Name | Type | Description | Notes
 **StartConfOnEnter** | **bool** | Flag that indicates whether a Conference starts upon entry of this particular Participant. This is usually set to &#x60;true&#x60; for moderators and &#x60;false&#x60; for all other Participants. | [optional] 
 **Talk** | **bool** | If &#x60;true&#x60;, the Participant joins the Conference with talk privileges. This may be modified later via the REST API or &#x60;SetTalk&#x60; PerCL command.  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
+[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
+[[Back to Model list]](../README.md#documentation-for-models)<br /> 
+[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
+[[Back to README]](../README.md) <br /> 

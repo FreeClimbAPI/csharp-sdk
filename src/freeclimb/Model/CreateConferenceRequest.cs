@@ -23,6 +23,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
+using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -32,55 +33,21 @@ namespace freeclimb.Model
     [DataContract(Name = "CreateConferenceRequest")]
     public partial class CreateConferenceRequest : IEquatable<CreateConferenceRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.
-        /// </summary>
-        /// <value>Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PlayBeepEnum
-        {
-            /// <summary>
-            /// Enum ALWAYS for value: always
-            /// </summary>
-            [EnumMember(Value = "always")]
-            ALWAYS = 1,
-
-            /// <summary>
-            /// Enum NEVER for value: never
-            /// </summary>
-            [EnumMember(Value = "never")]
-            NEVER = 2,
-
-            /// <summary>
-            /// Enum ENTRY_ONLY for value: entryOnly
-            /// </summary>
-            [EnumMember(Value = "entryOnly")]
-            ENTRY_ONLY = 3,
-
-            /// <summary>
-            /// Enum EXIT_ONLY for value: exitOnly
-            /// </summary>
-            [EnumMember(Value = "exitOnly")]
-            EXIT_ONLY = 4
-
-        }
-
 
         /// <summary>
-        /// Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.
+        /// Gets or Sets PlayBeep
         /// </summary>
-        /// <value>Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;.</value>
         [DataMember(Name = "playBeep", EmitDefaultValue = false)]
-        public PlayBeepEnum? PlayBeep { get; set; }
+        public PlayBeep? PlayBeep { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConferenceRequest" /> class.
         /// </summary>
         /// <param name="alias">A description for this Conference. Maximum 64 characters..</param>
-        /// <param name="playBeep">Controls when a beep is played. Valid values: &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, &#x60;exitOnly&#x60;. (default to PlayBeepEnum.ALWAYS).</param>
+        /// <param name="playBeep">playBeep.</param>
         /// <param name="record">Setting to &#x60;true&#x60; records the entire Conference..</param>
         /// <param name="waitUrl">If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &amp;mdash; when the Conference is created..</param>
         /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below)..</param>
-        public CreateConferenceRequest(string alias = default(string), PlayBeepEnum? playBeep = PlayBeepEnum.ALWAYS, bool record = default(bool), string waitUrl = default(string), string statusCallbackUrl = default(string))
+        public CreateConferenceRequest(string alias = default(string), PlayBeep? playBeep = default(PlayBeep?), bool record = default(bool), string waitUrl = default(string), string statusCallbackUrl = default(string))
         {
             this.Alias = alias;
             this.PlayBeep = playBeep;

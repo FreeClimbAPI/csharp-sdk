@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class ConferenceParticipantResultTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for ConferenceParticipantResult
-        //private ConferenceParticipantResult instance;
+        private ConferenceParticipantResult instance;
 
         public ConferenceParticipantResultTests()
         {
-            // TODO uncomment below to create an instance of ConferenceParticipantResult
             //instance = new ConferenceParticipantResult();
         }
 
@@ -137,7 +139,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'StartConfOnEnter'
         }
-
     }
 
 }

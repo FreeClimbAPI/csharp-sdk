@@ -1,5 +1,6 @@
 # freeclimb.Model.RecordingResultAllOf
 
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -10,5 +11,8 @@ Name | Type | Description | Notes
 **DurationSec** | **int?** | Length of the recording in seconds. | [optional] 
 **ConferenceId** | **string** | ID of the Conference that was recorded. If a Call was recorded, this value is empty and the callId property is populated. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
+[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
+[[Back to Model list]](../README.md#documentation-for-models)<br /> 
+[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
+[[Back to README]](../README.md) <br /> 

@@ -23,6 +23,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
+using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -32,34 +33,12 @@ namespace freeclimb.Model
     [DataContract(Name = "UpdateCallRequest")]
     public partial class UpdateCallRequest : IEquatable<UpdateCallRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Either &#x60;canceled&#x60; or &#x60;completed&#x60;.  Specifying &#x60;canceled&#x60; attempts to hang up calls that are queued without affecting calls already in progress. Specifying &#x60;completed&#x60; attempts to hang up a call already in progress.
-        /// </summary>
-        /// <value>Either &#x60;canceled&#x60; or &#x60;completed&#x60;.  Specifying &#x60;canceled&#x60; attempts to hang up calls that are queued without affecting calls already in progress. Specifying &#x60;completed&#x60; attempts to hang up a call already in progress.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum CANCELED for value: canceled
-            /// </summary>
-            [EnumMember(Value = "canceled")]
-            CANCELED = 1,
-
-            /// <summary>
-            /// Enum COMPLETED for value: completed
-            /// </summary>
-            [EnumMember(Value = "completed")]
-            COMPLETED = 2
-
-        }
-
 
         /// <summary>
-        /// Either &#x60;canceled&#x60; or &#x60;completed&#x60;.  Specifying &#x60;canceled&#x60; attempts to hang up calls that are queued without affecting calls already in progress. Specifying &#x60;completed&#x60; attempts to hang up a call already in progress.
+        /// Gets or Sets Status
         /// </summary>
-        /// <value>Either &#x60;canceled&#x60; or &#x60;completed&#x60;.  Specifying &#x60;canceled&#x60; attempts to hang up calls that are queued without affecting calls already in progress. Specifying &#x60;completed&#x60; attempts to hang up a call already in progress.</value>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
-        public StatusEnum Status { get; set; }
+        public UpdateCallRequestStatus Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCallRequest" /> class.
         /// </summary>
@@ -68,8 +47,8 @@ namespace freeclimb.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCallRequest" /> class.
         /// </summary>
-        /// <param name="status">Either &#x60;canceled&#x60; or &#x60;completed&#x60;.  Specifying &#x60;canceled&#x60; attempts to hang up calls that are queued without affecting calls already in progress. Specifying &#x60;completed&#x60; attempts to hang up a call already in progress. (required).</param>
-        public UpdateCallRequest(StatusEnum status = default(StatusEnum))
+        /// <param name="status">status (required).</param>
+        public UpdateCallRequest(UpdateCallRequestStatus status = default(UpdateCallRequestStatus))
         {
             this.Status = status;
         }

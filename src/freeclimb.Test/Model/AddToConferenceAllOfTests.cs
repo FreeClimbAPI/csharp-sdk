@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class AddToConferenceAllOfTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for AddToConferenceAllOf
-        //private AddToConferenceAllOf instance;
+        private AddToConferenceAllOf instance;
 
         public AddToConferenceAllOfTests()
         {
-            // TODO uncomment below to create an instance of AddToConferenceAllOf
             //instance = new AddToConferenceAllOf();
         }
 
@@ -137,7 +139,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'Talk'
         }
-
     }
 
 }

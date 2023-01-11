@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class EnqueueTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Enqueue
-        //private Enqueue instance;
+        private Enqueue instance;
 
         public EnqueueTests()
         {
-            // TODO uncomment below to create an instance of Enqueue
             //instance = new Enqueue();
         }
 
@@ -89,7 +91,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'WaitUrl'
         }
-
     }
 
 }

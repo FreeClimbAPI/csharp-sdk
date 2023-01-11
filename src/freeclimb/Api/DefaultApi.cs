@@ -16,6 +16,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using freeclimb.Client;
+using freeclimb.Enums;
 using freeclimb.Model;
 
 namespace freeclimb.Api
@@ -565,7 +566,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>CallList</returns>
-        CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
+        CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
 
         /// <summary>
         /// List Calls
@@ -582,7 +583,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>ApiResponse of CallList</returns>
-        ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
+        ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
         /// <summary>
         /// List Conferences
         /// </summary>
@@ -723,7 +724,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         /// <returns>MessagesList</returns>
-        MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string));
+        MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?));
 
         /// <summary>
         /// List SMS Messages
@@ -738,7 +739,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         /// <returns>ApiResponse of MessagesList</returns>
-        ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string));
+        ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?));
         /// <summary>
         /// Make a Call
         /// </summary>
@@ -1786,7 +1787,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallList</returns>
-        System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Calls
@@ -1812,7 +1813,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Conferences
         /// </summary>
@@ -2048,7 +2049,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessagesList</returns>
-        System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List SMS Messages
@@ -2070,7 +2071,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessagesList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Make a Call
         /// </summary>
@@ -7027,7 +7028,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>CallList</returns>
-        public CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
+        public CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
         {
             freeclimb.Client.ApiResponse<CallList> localVarResponse = ListCallsWithHttpInfo(active , to , from , status , startTime , endTime , parentCallId );
             return localVarResponse.Data;
@@ -7045,7 +7046,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>ApiResponse of CallList</returns>
-        public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
+        public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
         {
             
             
@@ -7149,7 +7150,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallList</returns>
-        public async System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             freeclimb.Client.ApiResponse<CallList> localVarResponse = await ListCallsWithHttpInfoAsync(active, to, from, status, startTime, endTime, parentCallId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -7176,7 +7177,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), string status = default(string), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             
             
@@ -8353,7 +8354,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         /// <returns>MessagesList</returns>
-        public MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string))
+        public MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?))
         {
             freeclimb.Client.ApiResponse<MessagesList> localVarResponse = ListSmsMessagesWithHttpInfo(to , from , beginTime , endTime , direction );
             return localVarResponse.Data;
@@ -8369,7 +8370,7 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         /// <returns>ApiResponse of MessagesList</returns>
-        public freeclimb.Client.ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string))
+        public freeclimb.Client.ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?))
         {
             
             
@@ -8459,7 +8460,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessagesList</returns>
-        public async System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             freeclimb.Client.ApiResponse<MessagesList> localVarResponse = await ListSmsMessagesWithHttpInfoAsync(to, from, beginTime, endTime, direction, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -8482,7 +8483,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessagesList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), string direction = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             
             

@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class RedirectTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Redirect
-        //private Redirect instance;
+        private Redirect instance;
 
         public RedirectTests()
         {
-            // TODO uncomment below to create an instance of Redirect
             //instance = new Redirect();
         }
 
@@ -65,7 +67,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'ActionUrl'
         }
-
     }
 
 }

@@ -1,5 +1,5 @@
 # freeclimb.Model.Sms
-The `Sms` command can be used to send an SMS message to a phone number during a phone call. International SMS is disabled by default.
+
 
 ## Properties
 
@@ -11,5 +11,8 @@ Name | Type | Description | Notes
 **Text** | **string** | Text contained in the message (maximum 160 characters). | 
 **NotificationUrl** | **string** | When the message changes status, this URL will be invoked using HTTP POST with the messageStatus parameters. This is a notification only; any PerCL returned will be ignored. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
+[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
+[[Back to Model list]](../README.md#documentation-for-models)<br /> 
+[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
+[[Back to README]](../README.md) <br /> 

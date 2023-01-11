@@ -1,5 +1,5 @@
 # freeclimb.Model.GetDigits
-The `GetDigits` command collects DTMF inputs from the caller. It is only supported only when there is a single party on the Call. `GetDigits` is a Terminal Command — any actions following it are never executed. When the Caller is done entering the digits, FreeClimb submits that data to the provided `actionUrl` using an HTTP POST request. Your server will be required to respond to the FreeClimb Webhook with PerCL to continue handling the call.
+
 
 ## Properties
 
@@ -16,5 +16,8 @@ Name | Type | Description | Notes
 **Prompts** | [**List&lt;PerclCommand&gt;**](PerclCommand.md) | JSON array of PerCL commands to nest within the &#x60;GetDigits&#x60; command. The &#x60;Say&#x60;, &#x60;Play&#x60;, and &#x60;Pause&#x60; commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller. | [optional] 
 **PrivacyMode** | **bool** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
+[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
+[[Back to Model list]](../README.md#documentation-for-models)<br /> 
+[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
+[[Back to README]](../README.md) <br /> 

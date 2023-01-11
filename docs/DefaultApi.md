@@ -2208,7 +2208,7 @@ Name | Type | Description  | Notes
 
 <a name="listcalls"></a>
 # **ListCalls**
-> CallList ListCalls (bool? active = null, string to = null, string from = null, string status = null, string startTime = null, string endTime = null, string parentCallId = null)
+> CallList ListCalls (bool? active = null, string to = null, string from = null, CallStatus? status = null, string startTime = null, string endTime = null, string parentCallId = null)
 
 List Calls
 
@@ -2240,7 +2240,7 @@ namespace Example
 
             var from = "from_example";  // string | Only show Calls from this phone number. (optional) 
 
-            var status = "status_example";  // string | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional) 
+            var status = (CallStatus) "queued";  // CallStatus? | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional) 
 
             var startTime = "startTime_example";  // string | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
 
@@ -2273,7 +2273,7 @@ Name | Type | Description  | Notes
  **active** | **bool?**| If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional] [default to false]
  **to** | **string**| Only show Calls to this phone number. | [optional] 
  **from** | **string**| Only show Calls from this phone number. | [optional] 
- **status** | **string**| Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] 
+ **status** | **CallStatus?**| Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] 
  **startTime** | **string**| Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] 
  **endTime** | **string**| Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional] 
  **parentCallId** | **string**| Only show Calls spawned by the call with this ID. | [optional] 
@@ -2742,7 +2742,7 @@ Name | Type | Description  | Notes
 
 <a name="listsmsmessages"></a>
 # **ListSmsMessages**
-> MessagesList ListSmsMessages (string to = null, string from = null, string beginTime = null, string endTime = null, string direction = null)
+> MessagesList ListSmsMessages (string to = null, string from = null, string beginTime = null, string endTime = null, MessageDirection? direction = null)
 
 List SMS Messages
 
@@ -2776,7 +2776,7 @@ namespace Example
 
             var endTime = "endTime_example";  // string | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional) 
 
-            var direction = "inbound";  // string | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional) 
+            var direction = (MessageDirection) "inbound";  // MessageDirection? | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional) 
 
 
             try
@@ -2804,7 +2804,7 @@ Name | Type | Description  | Notes
  **from** | **string**| Only show Messages from this phone number. | [optional] 
  **beginTime** | **string**| Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional] 
  **endTime** | **string**| Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional] 
- **direction** | **string**| Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] 
+ **direction** | **MessageDirection?**| Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] 
 
 
 ### Return type

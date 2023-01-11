@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class QueueResultTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for QueueResult
-        //private QueueResult instance;
+        private QueueResult instance;
 
         public QueueResultTests()
         {
-            // TODO uncomment below to create an instance of QueueResult
             //instance = new QueueResult();
         }
 
@@ -130,12 +132,12 @@ namespace freeclimb.Test.Model
             // TODO unit test for the property 'CurrentSize'
         }
         /// <summary>
-        /// Test the property 'AverageWaitTime'
+        /// Test the property 'AverageQueueRemovalTime'
         /// </summary>
         [Fact]
-        public void AverageWaitTimeTest()
+        public void AverageQueueRemovalTimeTest()
         {
-            // TODO unit test for the property 'AverageWaitTime'
+            // TODO unit test for the property 'AverageQueueRemovalTime'
         }
         /// <summary>
         /// Test the property 'SubresourceUris'
@@ -145,7 +147,5 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'SubresourceUris'
         }
-
     }
-
 }

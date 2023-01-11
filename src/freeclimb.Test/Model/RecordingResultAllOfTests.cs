@@ -9,6 +9,8 @@
  */
 
 
+
+
 using Xunit;
 
 using System;
@@ -20,6 +22,7 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+
 
 namespace freeclimb.Test.Model
 {
@@ -33,11 +36,10 @@ namespace freeclimb.Test.Model
     public class RecordingResultAllOfTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for RecordingResultAllOf
-        //private RecordingResultAllOf instance;
+        private RecordingResultAllOf instance;
 
         public RecordingResultAllOfTests()
         {
-            // TODO uncomment below to create an instance of RecordingResultAllOf
             //instance = new RecordingResultAllOf();
         }
 
@@ -97,7 +99,6 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'ConferenceId'
         }
-
     }
 
 }

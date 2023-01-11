@@ -2,22 +2,41 @@ name: Build & Test .NET Package
 
 on:
   push:
-    branches: [ "*" ]
+    branches: ["*"]
 
 jobs:
+  # container-test-job:
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: node:16.14.2-alpine3.15
+  #     ports:
+  #       - 4010:4010
+  #     env:
+  #       NODE_ENV: development
+  #     options: --cpus 1
+  #   # Figure out how to solve this hanging job problem
+  #   steps:
+  #     - name: Install Prism
+  #       run: (yarn global add @stoplight/prism-cli)
+  #     - name: Start Prism Server
+  #       run: (prism mock -h 0.0.0.0 https://docs.freeclimb.com/openapi/5db32318158f3e0031167a17 )
+
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install Prism
+        run: (yarn global add @stoplight/prism-cli)
+      - name: Start Prism Server
+        run: (prism mock -h 127.0.0.1 openapi.json &)
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
