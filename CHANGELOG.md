@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.2.1"></a>
+
+## [4.2.1] 2023-02-14
+
+### Changed
+
+- Application Request model allows for null values in this patch version
+
 <a name="4.2.0"></a>
 
 ## [4.2.0] 2023-01-06

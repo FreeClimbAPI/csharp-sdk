@@ -1379,27 +1379,33 @@
           },
           "voiceUrl": {
             "type": "string",
-            "description": "The URL that FreeClimb will request when an inbound call arrives on a phone number assigned to this application. Used only for inbound calls."
+            "description": "The URL that FreeClimb will request when an inbound call arrives on a phone number assigned to this application. Used only for inbound calls.",
+            "nullable": true
           },
           "voiceFallbackUrl": {
             "type": "string",
-            "description": "The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only. Note: A PerCL response is expected to control the inbound call."
+            "description": "The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only. Note: A PerCL response is expected to control the inbound call.",
+            "nullable": true
           },
           "callConnectUrl": {
             "type": "string",
-            "description": "The URL that FreeClimb will request when an outbound call request is complete. Used for outbound calls only.  Note: A PerCL response is expected if the outbound call is connected (status=InProgress) to control the call."
+            "description": "The URL that FreeClimb will request when an outbound call request is complete. Used for outbound calls only.  Note: A PerCL response is expected if the outbound call is connected (status=InProgress) to control the call.",
+            "nullable": true
           },
           "statusCallbackUrl": {
             "type": "string",
-            "description": "The URL that FreeClimb will request to pass call status (such as call ended) to the application.  Note: This is a notification only; any PerCL returned will be ignored."
+            "description": "The URL that FreeClimb will request to pass call status (such as call ended) to the application.  Note: This is a notification only; any PerCL returned will be ignored.",
+            "nullable": true
           },
           "smsUrl": {
             "type": "string",
-            "description": "The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored."
+            "description": "The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored.",
+            "nullable": true
           },
           "smsFallbackUrl": {
             "type": "string",
-            "description": "The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored."
+            "description": "The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored.",
+            "nullable": true
           }
         }
       },
