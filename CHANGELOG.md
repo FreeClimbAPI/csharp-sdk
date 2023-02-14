@@ -15,7 +15,7 @@ None
 
 ### Changed
 
-- Application Request model allows for null values in this patch version
+- Application Request model allows for null values
 
 <a name="4.2.0"></a>
 
