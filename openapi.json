@@ -751,11 +751,11 @@
               },
               "callingNumber": {
                 "description": "he caller ID to show to the called party when FreeClimb calls. This can be one of the following: The To or From number provided in the first Webhook to your webserver. Any phone number you have purchased from FreeClimb.",
-                "type": "number"
+                "type": "string"
               },
               "destination": {
                 "description": "E.164 representation of the phone number to Call. ",
-                "type": "number"
+                "type": "string"
               },
               "ifMachine": {
                 "$ref": "#/components/schemas/IfMachine"
