@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Command** | **string** | Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) | [optional] 
 **ActionUrl** | **string** | URL to which FreeClimb sends an HTTP POST request.  | 
 **CallConnectUrl** | **string** | URL to which FreeClimb makes an HTTP POST request informing the result of the OutDial. | 
-**CallingNumber** | **decimal** | he caller ID to show to the called party when FreeClimb calls. This can be one of the following: The To or From number provided in the first Webhook to your webserver. Any phone number you have purchased from FreeClimb. | 
-**Destination** | **decimal** | E.164 representation of the phone number to Call.  | 
+**CallingNumber** | **string** | he caller ID to show to the called party when FreeClimb calls. This can be one of the following: The To or From number provided in the first Webhook to your webserver. Any phone number you have purchased from FreeClimb. | 
+**Destination** | **string** | E.164 representation of the phone number to Call.  | 
 **IfMachine** | **IfMachine** |  | [optional] 
 **IfMachineUrl** | **string** | When the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;, this attribute specifies a URL to which FreeClimb makes a POST request when an answering machine or a fax machine is detected. This URL is required if the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;. Otherwise, it should not be included. | [optional] 
 **SendDigits** | **string** | DTMF tones to play to the outdialed Call. This is typically used to dial a number and then dial an extension. | [optional] 

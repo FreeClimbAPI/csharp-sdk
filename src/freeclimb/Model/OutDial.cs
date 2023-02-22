@@ -84,7 +84,7 @@ namespace freeclimb.Model
         /// <param name="timeout">Maximum time in seconds the &#x60;OutDial&#x60; command waits for the called party to answer the Call. When a timeout occurs, FreeClimb invokes the &#x60;callConnectUrl&#x60; Webhook to report that the out-dialed Call has ended with a status of &#x60;noAnswer&#x60;..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;OutDial&quot;).</param>
-        public OutDial(string actionUrl = default(string), string callConnectUrl = default(string), decimal callingNumber = default(decimal), decimal destination = default(decimal), IfMachine? ifMachine = default(IfMachine?), string ifMachineUrl = default(string), string sendDigits = default(string), string statusCallbackUrl = default(string), int timeout = default(int), bool privacyMode = default(bool), string command = "OutDial") : base(command)
+        public OutDial(string actionUrl = default(string), string callConnectUrl = default(string), string callingNumber = default(string), string destination = default(string), IfMachine? ifMachine = default(IfMachine?), string ifMachineUrl = default(string), string sendDigits = default(string), string statusCallbackUrl = default(string), int timeout = default(int), bool privacyMode = default(bool), string command = "OutDial") : base(command)
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null) {
@@ -96,7 +96,15 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("callConnectUrl is a required property for OutDial and cannot be null");
             }
             this.CallConnectUrl = callConnectUrl;
+            // to ensure "callingNumber" is required (not null)
+            if (callingNumber == null) {
+                throw new ArgumentNullException("callingNumber is a required property for OutDial and cannot be null");
+            }
             this.CallingNumber = callingNumber;
+            // to ensure "destination" is required (not null)
+            if (destination == null) {
+                throw new ArgumentNullException("destination is a required property for OutDial and cannot be null");
+            }
             this.Destination = destination;
             this.IfMachine = ifMachine;
             this.IfMachineUrl = ifMachineUrl;
@@ -125,14 +133,14 @@ namespace freeclimb.Model
         /// </summary>
         /// <value>he caller ID to show to the called party when FreeClimb calls. This can be one of the following: The To or From number provided in the first Webhook to your webserver. Any phone number you have purchased from FreeClimb.</value>
         [DataMember(Name = "callingNumber", IsRequired = true, EmitDefaultValue = false)]
-        public decimal CallingNumber { get; set; }
+        public string CallingNumber { get; set; }
 
         /// <summary>
         /// E.164 representation of the phone number to Call. 
         /// </summary>
         /// <value>E.164 representation of the phone number to Call. </value>
         [DataMember(Name = "destination", IsRequired = true, EmitDefaultValue = false)]
-        public decimal Destination { get; set; }
+        public string Destination { get; set; }
 
         /// <summary>
         /// When the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;, this attribute specifies a URL to which FreeClimb makes a POST request when an answering machine or a fax machine is detected. This URL is required if the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;. Otherwise, it should not be included.
@@ -263,11 +271,13 @@ namespace freeclimb.Model
                 ) && base.Equals(input) && 
                 (
                     this.CallingNumber == input.CallingNumber ||
-                    this.CallingNumber.Equals(input.CallingNumber)
+                    (this.CallingNumber != null &&
+                    this.CallingNumber.Equals(input.CallingNumber))
                 ) && base.Equals(input) && 
                 (
                     this.Destination == input.Destination ||
-                    this.Destination.Equals(input.Destination)
+                    (this.Destination != null &&
+                    this.Destination.Equals(input.Destination))
                 ) && base.Equals(input) && 
                 (
                     this.IfMachine == input.IfMachine ||
@@ -315,8 +325,14 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.CallConnectUrl.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.CallingNumber.GetHashCode();
-                hashCode = (hashCode * 59) + this.Destination.GetHashCode();
+                if (this.CallingNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.CallingNumber.GetHashCode();
+                }
+                if (this.Destination != null)
+                {
+                    hashCode = (hashCode * 59) + this.Destination.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.IfMachine.GetHashCode();
                 if (this.IfMachineUrl != null)
                 {
