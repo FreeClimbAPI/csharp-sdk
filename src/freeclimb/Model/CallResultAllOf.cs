@@ -35,10 +35,10 @@ namespace freeclimb.Model
     {
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Gets or Sets CallStatus
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public CallStatus? Status { get; set; }
+        [DataMember(Name = "callStatus", EmitDefaultValue = false)]
+        public CallStatus? CallStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets Direction
@@ -60,7 +60,7 @@ namespace freeclimb.Model
         /// <param name="from">Phone number that initiated this Call..</param>
         /// <param name="to">Phone number that received this Call..</param>
         /// <param name="phoneNumberId">If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI)..</param>
-        /// <param name="status">status.</param>
+        /// <param name="callStatus">callStatus.</param>
         /// <param name="startTime">Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed..</param>
         /// <param name="connectTime">Time the Call was answered (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed..</param>
         /// <param name="endTime">End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully..</param>
@@ -69,7 +69,7 @@ namespace freeclimb.Model
         /// <param name="direction">direction.</param>
         /// <param name="answeredBy">answeredBy.</param>
         /// <param name="subresourceUris">The list of subresources for this Call. These include things like logs and recordings associated with the Call..</param>
-        public CallResultAllOf(string callId = default(string), string parentCallId = default(string), string accountId = default(string), string from = default(string), string to = default(string), string phoneNumberId = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string connectTime = default(string), string endTime = default(string), int? duration = default(int?), int? connectDuration = default(int?), CallDirection? direction = default(CallDirection?), AnsweredBy? answeredBy = default(AnsweredBy?), Object subresourceUris = default(Object))
+        public CallResultAllOf(string callId = default(string), string parentCallId = default(string), string accountId = default(string), string from = default(string), string to = default(string), string phoneNumberId = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string connectTime = default(string), string endTime = default(string), int? duration = default(int?), int? connectDuration = default(int?), CallDirection? direction = default(CallDirection?), AnsweredBy? answeredBy = default(AnsweredBy?), Object subresourceUris = default(Object))
         {
             this.CallId = callId;
             this.ParentCallId = parentCallId;
@@ -77,7 +77,7 @@ namespace freeclimb.Model
             this.From = from;
             this.To = to;
             this.PhoneNumberId = phoneNumberId;
-            this.Status = status;
+            this.CallStatus = callStatus;
             this.StartTime = startTime;
             this.ConnectTime = connectTime;
             this.EndTime = endTime;
@@ -186,7 +186,7 @@ namespace freeclimb.Model
             sb.Append("  From: ").Append(From).Append("\n");
             sb.Append("  To: ").Append(To).Append("\n");
             sb.Append("  PhoneNumberId: ").Append(PhoneNumberId).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  CallStatus: ").Append(CallStatus).Append("\n");
             sb.Append("  StartTime: ").Append(StartTime).Append("\n");
             sb.Append("  ConnectTime: ").Append(ConnectTime).Append("\n");
             sb.Append("  EndTime: ").Append(EndTime).Append("\n");
@@ -221,7 +221,7 @@ namespace freeclimb.Model
             props.Add("from", From);          
             props.Add("to", To);          
             props.Add("phoneNumberId", PhoneNumberId);          
-            props.Add("status", Status);          
+            props.Add("callStatus", CallStatus);          
             props.Add("startTime", StartTime);          
             props.Add("connectTime", ConnectTime);          
             props.Add("endTime", EndTime);          
@@ -286,8 +286,8 @@ namespace freeclimb.Model
                     this.PhoneNumberId.Equals(input.PhoneNumberId))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
+                    this.CallStatus == input.CallStatus ||
+                    this.CallStatus.Equals(input.CallStatus)
                 ) && 
                 (
                     this.StartTime == input.StartTime ||
@@ -362,7 +362,7 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.PhoneNumberId.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                hashCode = (hashCode * 59) + this.CallStatus.GetHashCode();
                 if (this.StartTime != null)
                 {
                     hashCode = (hashCode * 59) + this.StartTime.GetHashCode();

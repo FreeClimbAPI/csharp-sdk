@@ -1647,7 +1647,7 @@
                 "description": "If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI).",
                 "nullable": true
               },
-              "status": {
+              "callStatus": {
                 "$ref": "#/components/schemas/CallStatus",
                 "nullable": true
               },
@@ -1835,7 +1835,7 @@
           },
           "level": {
             "$ref": "#/components/schemas/LogLevel",
-            
+
             "nullable": true
           },
           "requestId": {
@@ -3031,7 +3031,7 @@
             }
           },
           {
-            "name": "status",
+            "name": "callStatus",
             "in": "query",
             "description": "Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.",
             "required": false,
