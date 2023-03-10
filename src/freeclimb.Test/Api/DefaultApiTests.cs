@@ -513,7 +513,7 @@ namespace freeclimb.Test.Api
 	        
             string from = fromTestValue();
 	        
-            CallStatus? callStatus = callStatusTestEnum();
+            CallStatus? status = statusTestEnum();
 	        
             string startTime = startTimeTestValue();
 	        
@@ -521,7 +521,7 @@ namespace freeclimb.Test.Api
 	        
             string parentCallId = parentCallIdTestValue();
 	        
-            var response = instance.ListCalls(active, to, from, callStatus, startTime, endTime, parentCallId);
+            var response = instance.ListCalls(active, to, from, status, startTime, endTime, parentCallId);
             //Assert.IsType<CallList>(response);
             Assert.IsAssignableFrom<CallList>(response);
         }
@@ -1113,7 +1113,7 @@ namespace freeclimb.Test.Api
             return "completed";
         }
 
-        private CallStatus callStatusTestEnum() {
+        private CallStatus statusTestEnum() {
             return Reflection.GetEnumByValue<CallStatus>("completed");
         }
 

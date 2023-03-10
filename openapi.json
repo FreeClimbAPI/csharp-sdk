@@ -3031,7 +3031,7 @@
             }
           },
           {
-            "name": "callStatus",
+            "name": "status",
             "in": "query",
             "description": "Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.",
             "required": false,

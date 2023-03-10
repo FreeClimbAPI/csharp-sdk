@@ -561,12 +561,12 @@ namespace freeclimb.Api
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
-        /// <param name="callStatus">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
+        /// <param name="status">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>CallList</returns>
-        CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
+        CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
 
         /// <summary>
         /// List Calls
@@ -578,12 +578,12 @@ namespace freeclimb.Api
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
-        /// <param name="callStatus">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
+        /// <param name="status">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>ApiResponse of CallList</returns>
-        ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
+        ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string));
         /// <summary>
         /// List Conferences
         /// </summary>
@@ -1777,7 +1777,7 @@ namespace freeclimb.Api
         
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
         
-        /// <param name="callStatus">Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional)</param>
+        /// <param name="status">Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional)</param>
         
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
         
@@ -1787,7 +1787,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallList</returns>
-        System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Calls
@@ -1803,7 +1803,7 @@ namespace freeclimb.Api
         
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
         
-        /// <param name="callStatus">Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional)</param>
+        /// <param name="status">Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional)</param>
         
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
         
@@ -1813,7 +1813,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Conferences
         /// </summary>
@@ -7023,14 +7023,14 @@ namespace freeclimb.Api
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
-        /// <param name="callStatus">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
+        /// <param name="status">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>CallList</returns>
-        public CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
+        public CallList ListCalls(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
         {
-            freeclimb.Client.ApiResponse<CallList> localVarResponse = ListCallsWithHttpInfo(active , to , from , callStatus , startTime , endTime , parentCallId );
+            freeclimb.Client.ApiResponse<CallList> localVarResponse = ListCallsWithHttpInfo(active , to , from , status , startTime , endTime , parentCallId );
             return localVarResponse.Data;
         }
 
@@ -7041,12 +7041,12 @@ namespace freeclimb.Api
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
-        /// <param name="callStatus">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
+        /// <param name="status">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <returns>ApiResponse of CallList</returns>
-        public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
+        public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string))
         {
             
             
@@ -7091,9 +7091,9 @@ namespace freeclimb.Api
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "from", from));
             }
-            if (callStatus != null)
+            if (status != null)
             {
-                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "callStatus", callStatus));
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "status", status));
             }
             if (startTime != null)
             {
@@ -7140,7 +7140,7 @@ namespace freeclimb.Api
         
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
         
-        /// <param name="callStatus">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
+        /// <param name="status">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
         
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
         
@@ -7150,9 +7150,9 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CallList</returns>
-        public async System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<CallList> localVarResponse = await ListCallsWithHttpInfoAsync(active, to, from, callStatus, startTime, endTime, parentCallId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<CallList> localVarResponse = await ListCallsWithHttpInfoAsync(active, to, from, status, startTime, endTime, parentCallId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7167,7 +7167,7 @@ namespace freeclimb.Api
         
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
         
-        /// <param name="callStatus">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
+        /// <param name="status">Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)</param>
         
         /// <param name="startTime">Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
         
@@ -7177,7 +7177,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             
             
@@ -7223,9 +7223,9 @@ namespace freeclimb.Api
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "from", from));
             }
-            if (callStatus != null)
+            if (status != null)
             {
-                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "callStatus", callStatus));
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "status", status));
             }
             if (startTime != null)
             {

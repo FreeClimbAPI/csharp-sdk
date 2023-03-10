@@ -2208,7 +2208,7 @@ Name | Type | Description  | Notes
 
 <a name="listcalls"></a>
 # **ListCalls**
-> CallList ListCalls (bool? active = null, string to = null, string from = null, CallStatus? callStatus = null, string startTime = null, string endTime = null, string parentCallId = null)
+> CallList ListCalls (bool? active = null, string to = null, string from = null, CallStatus? status = null, string startTime = null, string endTime = null, string parentCallId = null)
 
 List Calls
 
@@ -2240,7 +2240,7 @@ namespace Example
 
             var from = "from_example";  // string | Only show Calls from this phone number. (optional) 
 
-            var callStatus = (CallStatus) "queued";  // CallStatus? | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional) 
+            var status = (CallStatus) "queued";  // CallStatus? | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional) 
 
             var startTime = "startTime_example";  // string | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
 
@@ -2252,7 +2252,7 @@ namespace Example
             try
             {
                 // List Calls
-                CallList result = apiInstance.ListCalls(active, to, from, callStatus, startTime, endTime, parentCallId);
+                CallList result = apiInstance.ListCalls(active, to, from, status, startTime, endTime, parentCallId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2273,7 +2273,7 @@ Name | Type | Description  | Notes
  **active** | **bool?**| If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional] [default to false]
  **to** | **string**| Only show Calls to this phone number. | [optional] 
  **from** | **string**| Only show Calls from this phone number. | [optional] 
- **callStatus** | **CallStatus?**| Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] 
+ **status** | **CallStatus?**| Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] 
  **startTime** | **string**| Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] 
  **endTime** | **string**| Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional] 
  **parentCallId** | **string**| Only show Calls spawned by the call with this ID. | [optional] 
