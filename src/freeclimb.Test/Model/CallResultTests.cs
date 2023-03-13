@@ -140,12 +140,12 @@ namespace freeclimb.Test.Model
             // TODO unit test for the property 'PhoneNumberId'
         }
         /// <summary>
-        /// Test the property 'Status'
+        /// Test the property 'CallStatus'
         /// </summary>
         [Fact]
-        public void StatusTest()
+        public void CallStatusTest()
         {
-            // TODO unit test for the property 'Status'
+            // TODO unit test for the property 'CallStatus'
         }
         /// <summary>
         /// Test the property 'StartTime'
@@ -212,5 +212,4 @@ namespace freeclimb.Test.Model
             // TODO unit test for the property 'SubresourceUris'
         }
     }
-
 }
