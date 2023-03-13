@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.2.3"></a>
+
+## [4.2.3] 2023-03-13
+
+### Changed
+
+- callStatus variable of CallResult is now processing and returning correct data back
+
 <a name="4.2.2"></a>
 
 ## [4.2.2] 2023-02-21
