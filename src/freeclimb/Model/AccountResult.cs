@@ -37,13 +37,13 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public AccountType? Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public AccountStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountResult" /> class.

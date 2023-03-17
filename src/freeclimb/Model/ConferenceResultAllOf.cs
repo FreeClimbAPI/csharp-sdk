@@ -37,13 +37,13 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets PlayBeep
         /// </summary>
-        [DataMember(Name = "playBeep", EmitDefaultValue = false)]
+        [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public PlayBeep? PlayBeep { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public ConferenceStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ConferenceResultAllOf" /> class.

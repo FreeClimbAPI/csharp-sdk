@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.3.0"></a>
+
+## [4.3.0] 2023-03-17
+
+### Changed
+
+- ListCalls allows for applicationId and has_application query parameters
+
 <a name="4.2.3"></a>
 
 ## [4.2.3] 2023-03-13
