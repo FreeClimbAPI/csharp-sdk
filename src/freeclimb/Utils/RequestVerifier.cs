@@ -47,7 +47,7 @@ namespace freeclimb.Utils
         }
         private void checkTolerance(int tolerance)
         {
-            if (!(tolerance > 0) || tolerance == int.MaxValue)
+            if (!(tolerance > 0) || tolerance >= int.MaxValue)
             {
                 throw new Exception("Tolerance value must be a positive integer");
             }
