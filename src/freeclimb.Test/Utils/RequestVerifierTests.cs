@@ -134,7 +134,7 @@ namespace freeclimb.Test.Utils
         public void verifySignatureTest()
         {
             string requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
-            string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7794";
+            string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "t=1679944186,v1=1d798c86e977ff734dec3a8b8d67fe8621dcc1df46ef4212e0bfe2e122b01bfd,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = 5 * 60;
             Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
