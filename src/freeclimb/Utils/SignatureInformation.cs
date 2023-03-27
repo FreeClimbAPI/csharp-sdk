@@ -26,7 +26,7 @@ namespace freeclimb.Utils
                 var headerValue = signatureHeader.Split('=')[1];
                 if (headerKey == "t")
                 {
-                    requestTimestamp = Int32.Parse(signatureHeader.Split('=')[1]);
+                    requestTimestamp = Int32.Parse(headerValue);
                 }
                 else if (headerKey == "v1")
                 {
