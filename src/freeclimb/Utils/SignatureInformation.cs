@@ -69,7 +69,7 @@ namespace freeclimb.Utils
             return hashHexadecimalValue;
         }
 
-        private int getCurrentUnixTime()
+        public int getCurrentUnixTime()
         {
             DateTime now = DateTime.UtcNow;
             return (int)((DateTimeOffset)now).ToUnixTimeSeconds();
