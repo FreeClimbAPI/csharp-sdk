@@ -7,7 +7,8 @@ namespace freeclimb.Utils
 {
     public class RequestVerifier
     {
-        public void verifyRequestSignature(String requestBody, String requestHeader, String signingSecret, int tolerance = 5 * 60 * 1000)
+        public const int DEFAULT_TOLERANCE = 5 * 60 * 1000;
+        public void verifyRequestSignature(String requestBody, String requestHeader, String signingSecret, int tolerance = DEFAULT_TOLERANCE)
         {
             checkRequestBody(requestBody);
             checkRequestHeader(requestHeader);
@@ -28,13 +29,17 @@ namespace freeclimb.Utils
 
         private void checkRequestHeader(String requestHeader)
         {
-            if (!requestHeader.Contains("t=") || !requestHeader.Contains("v1="))
+            if (requestHeader == "" || requestHeader == null)
             {
-                throw new Exception("Error with request header, ether it is null or an empty string or request header does not meet requirements");
+                throw new Exception("Error with request header, Request header is empty");
             }
-            else if (requestHeader == "" || requestHeader == null)
+            else if (!requestHeader.Contains("t="))
             {
-                throw new Exception("Error with request header, ether it is null or an empty string or request header does not meet requirements");
+                throw new Exception("Error with request header, timestamp is not present");
+            }
+            else if (!requestHeader.Contains("v1="))
+            {
+                throw new Exception("Error with request header, signatures are not present");
             }
         }
 
@@ -55,7 +60,7 @@ namespace freeclimb.Utils
 
         private void verifyTolerance(SignatureInformation info, int tolerance)
         {
-            int currentTime = (int)((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
+            int currentTime = info.getCurrentUnixTime();
             if (!info.isRequestTimeValid(tolerance))
             {
                 throw new Exception(String.Format("Request time exceeded tolerance threshold. Request: {0}, CurrentTime: {1}, tolerance: {2}", info.requestTimestamp, currentTime, tolerance));

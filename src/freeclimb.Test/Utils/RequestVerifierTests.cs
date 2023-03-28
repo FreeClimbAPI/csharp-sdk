@@ -50,7 +50,7 @@ namespace freeclimb.Test.Utils
             int tolerance = 5 * 60 * 1000;
             Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
-            Assert.Equal("Error with request header, ether it is null or an empty string or request header does not meet requirements", exception.Message);
+            Assert.Equal("Error with request header, signatures are not present", exception.Message);
         }
         [Fact]
         public void checkRequestHeaderTest2()
@@ -61,7 +61,7 @@ namespace freeclimb.Test.Utils
             int tolerance = 5 * 60 * 1000;
             Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
-            Assert.Equal("Error with request header, ether it is null or an empty string or request header does not meet requirements", exception.Message);
+            Assert.Equal("Error with request header, timestamp is not present", exception.Message);
         }
         [Fact]
         public void checkRequestHeaderTest3()
@@ -72,7 +72,7 @@ namespace freeclimb.Test.Utils
             int tolerance = 5 * 60;
             Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
-            Assert.Equal("Error with request header, ether it is null or an empty string or request header does not meet requirements", exception.Message);
+            Assert.Equal("Error with request header, Request header is empty", exception.Message);
         }
         [Fact]
         public void checkSigningSecretTest()

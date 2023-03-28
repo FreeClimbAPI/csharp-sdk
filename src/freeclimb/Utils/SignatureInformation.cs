@@ -22,15 +22,15 @@ namespace freeclimb.Utils
             string[] signatureHeaders = requestHeader.Split(',');
             foreach (var signatureHeader in signatureHeaders)
             {
-                var headerKey = signatureHeader.Split('=')[0];
-                var headerValue = signatureHeader.Split('=')[1];
-                if (headerKey == "t")
+                var header = signatureHeader.Split('=')[0];
+                var value = signatureHeader.Split('=')[1];
+                if (header == "t")
                 {
-                    requestTimestamp = Int32.Parse(headerValue);
+                    requestTimestamp = Int32.Parse(value);
                 }
-                else if (headerKey == "v1")
+                else if (header == "v1")
                 {
-                    constructorSignatures.Add(headerValue);
+                    constructorSignatures.Add(value);
                 }
             }
             signatures = constructorSignatures;
@@ -64,15 +64,12 @@ namespace freeclimb.Utils
             byte[] signingSecretBytes = Encoding.ASCII.GetBytes(signingSecret);
             HMACSHA256 hmac = new HMACSHA256(signingSecretBytes);
             byte[] hashValue = hmac.ComputeHash(hashSeed);
-            //Convert hashValue to proper hexadecimal string format
-            string hashHexadecimalValue = BitConverter.ToString(hashValue).Replace("-", "").ToLower();
-            return hashHexadecimalValue;
+            return BitConverter.ToString(hashValue).Replace("-", "").ToLower();
         }
 
         public int getCurrentUnixTime()
         {
-            DateTime now = DateTime.UtcNow;
-            return (int)((DateTimeOffset)now).ToUnixTimeSeconds();
+            return (int)((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
         }
     }
 }
