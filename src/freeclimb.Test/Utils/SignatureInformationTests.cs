@@ -43,6 +43,14 @@ namespace freeclimb.Test.Utils
             Boolean isRequestTimeValid = instance.isRequestTimeValid(tolerance);
             Assert.Equal<Boolean>(isRequestTimeValid, true);
         }
+        [Fact]
+        public void isRequestTimeValidTest2()
+        {
+            //For test purposes, this relates to three days, we also want to ensure that the signature header remains the same during tests
+            int tolerance = 5 * 60 * 1000;
+            Boolean isRequestTimeValid = instance.isRequestTimeValid(tolerance);
+            Assert.Equal<Boolean>(isRequestTimeValid, false);
+        }
         /// <summary>
         /// Test the method 'isSignatureSafe'
         /// </summary>
@@ -53,6 +61,14 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             Boolean isSignatureSafe = instance.isSignatureSafe(requestBody, signingSecret);
             Assert.Equal<Boolean>(isSignatureSafe, true);
+        }
+        [Fact]
+        public void isSignatureSafeTest2()
+        {
+            string requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
+            string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7794";
+            Boolean isSignatureSafe = instance.isSignatureSafe(requestBody, signingSecret);
+            Assert.Equal<Boolean>(isSignatureSafe, false);
         }
     }
 }
