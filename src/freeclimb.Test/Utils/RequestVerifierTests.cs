@@ -12,7 +12,7 @@ namespace freeclimb.Test.Utils
 
         public RequestVerifierTests()
         {
-            instance = new RequestVerifier();
+            RequestVerifier instance = new RequestVerifier();
         }
 
         public void Dispose()
@@ -37,7 +37,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "t=1679931346,v1=4945505e46930b6e31df721c069f10cd3a4cfb3c8e2ec67d2663fae49f95644f,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = 5 * 60 * 1000;
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Request Body cannot be empty or null", exception.Message);
         }
@@ -48,7 +48,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "t=1679944186,";
             int tolerance = 5 * 60 * 1000;
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Error with request header, signatures are not present", exception.Message);
         }
@@ -59,7 +59,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = 5 * 60 * 1000;
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Error with request header, timestamp is not present", exception.Message);
         }
@@ -70,7 +70,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "";
             int tolerance = 5 * 60;
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Error with request header, Request header is empty", exception.Message);
         }
@@ -81,7 +81,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "";
             string requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = 5 * 60;
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Signing secret cannot be empty or null", exception.Message);
         }
@@ -92,7 +92,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = int.MaxValue;
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Tolerance value must be a positive integer", exception.Message);
         }
@@ -103,7 +103,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = -5;
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Tolerance value must be a positive integer", exception.Message);
         }
@@ -114,7 +114,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = 0;
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Tolerance value must be a positive integer", exception.Message);
         }
@@ -126,7 +126,7 @@ namespace freeclimb.Test.Utils
             string requestHeader = "t=1900871395,v1=1d798c86e977ff734dec3a8b8d67fe8621dcc1df46ef4212e0bfe2e122b01bfd,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = 5 * 60;
             int currentTime = (int)((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Request time exceeded tolerance threshold. Request: 1900871395, CurrentTime: " + currentTime.ToString() + ", tolerance: 300", exception.Message);
         }
@@ -137,7 +137,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "t=1679944186,v1=1d798c86e977ff734dec3a8b8d67fe8621dcc1df46ef4212e0bfe2e122b01bfd,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = 5 * 60;
-            Action act = () => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
+            Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Unverified signature request, If this request was unexpected, it may be from a bad actor. Please proceed with caution. If the request was exepected, please check any typos or issues with the signingSecret", exception.Message);
         }
@@ -148,7 +148,7 @@ namespace freeclimb.Test.Utils
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             string requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             int tolerance = 5 * 60;
-            var exception = Record.Exception(() => instance.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance));
+            var exception = Record.Exception(() => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance));
             Assert.Null(exception);
         }
     }

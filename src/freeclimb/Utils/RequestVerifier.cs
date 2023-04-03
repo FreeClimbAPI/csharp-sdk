@@ -8,15 +8,16 @@ namespace freeclimb.Utils
     public class RequestVerifier
     {
         public const int DEFAULT_TOLERANCE = 5 * 60 * 1000;
-        public void verifyRequestSignature(String requestBody, String requestHeader, String signingSecret, int tolerance = DEFAULT_TOLERANCE)
+        public static void verifyRequestSignature(String requestBody, String requestHeader, String signingSecret, int tolerance = DEFAULT_TOLERANCE)
         {
-            checkRequestBody(requestBody);
-            checkRequestHeader(requestHeader);
-            checkSigningSecret(signingSecret);
-            checkTolerance(tolerance);
+            RequestVerifier verifier = new RequestVerifier();
+            verifier.checkRequestBody(requestBody);
+            verifier.checkRequestHeader(requestHeader);
+            verifier.checkSigningSecret(signingSecret);
+            verifier.checkTolerance(tolerance);
             SignatureInformation info = new SignatureInformation(requestHeader);
-            verifyTolerance(info, tolerance);
-            verifySignature(info, requestBody, signingSecret);
+            verifier.verifyTolerance(info, tolerance);
+            verifier.verifySignature(info, requestBody, signingSecret);
         }
 
         private void checkRequestBody(String requestBody)
