@@ -13,9 +13,10 @@ None
 
 ## [4.3.0] 2023-04-03
 
-### Changed
+### Added
 
-- Implementation of verify signature request feature
+- Introduce signing secret verification class (RequestVerifier)
+- Link to FreeClimb docs regarding signing secret verification: https://docs.freeclimb.com/docs/validating-requests-from-freeclimb#how-to-verify-requests-manually
 
 <a name="4.2.3"></a>
 
