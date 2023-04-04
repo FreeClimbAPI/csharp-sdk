@@ -398,15 +398,15 @@ Class | Method | HTTP request | Description
     }
     ```
 
-<a name="documentation-for-verify-signature-request"></a>
+<a name="documentation-for-verify-request-signature"></a>
 
-## Documentation for verifying signature request
+## Documentation for verifying request signature
 
-- To verify the signature request, we will need to use the verifySignatureRequest method within the Request Verifier class
+- To verify the request signature, we will need to use the verifyRequestSignature method within the Request Verifier class
 
   RequestVerifier.verifyRequestSignature()
 
-  This is a method that you can call directly from the request verifier class, it will throw exceptions depending on whether all parts of the signature request is valid otherwise it will throw a specific error message depending on which signature request part is causing issues
+  This is a method that you can call directly from the request verifier class, it will throw exceptions depending on whether all parts of the request signature is valid otherwise it will throw a specific error message depending on which request signature part is causing issues
 
   Example code down below
 
