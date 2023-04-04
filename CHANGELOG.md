@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.3.0"></a>
+
+## [4.3.0] 2023-04-03
+
+### Added
+
+- Introduce signing secret verification class (RequestVerifier) - https://docs.freeclimb.com/docs/validating-requests-from-freeclimb#how-to-verify-requests-manually
+
 <a name="4.2.3"></a>
 
 ## [4.2.3] 2023-03-13
