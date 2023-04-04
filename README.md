@@ -316,7 +316,7 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-serialization-deserialization"></a>
 ## Documentation for Serialization/Deserialization for Enums
 
-###These methods are not required unless being used for debugging/logging purposes
+### These methods are not required unless being used for debugging/logging purposes
 
 - To serialize (turn value into enum), we would need to use the reflection method GetEnumByValue where you pass the enum as a type and value into the method to get the associated enum.
   
@@ -404,9 +404,11 @@ Class | Method | HTTP request | Description
 
 - To verify the request signature, we will need to use the verifyRequestSignature method within the Request Verifier class
 
-  RequestVerifier.verifyRequestSignature()
+  RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance)
 
   This is a method that you can call directly from the request verifier class, it will throw exceptions depending on whether all parts of the request signature is valid otherwise it will throw a specific error message depending on which request signature part is causing issues
+
+  This method requires a requestBody of type string, a requestHeader of type string, a signingSecret of type string, and a tolerance value of type int
 
   Example code down below
 
