@@ -2208,7 +2208,7 @@ Name | Type | Description  | Notes
 
 <a name="listcalls"></a>
 # **ListCalls**
-> CallList ListCalls (bool? active = null, string to = null, string from = null, CallStatus? status = null, string startTime = null, string endTime = null, string parentCallId = null)
+> CallList ListCalls (bool? active = null, string to = null, string from = null, CallStatus? status = null, string startTime = null, string endTime = null, string parentCallId = null, List<string> applicationId = null, bool? hasApplication = null)
 
 List Calls
 
@@ -2249,10 +2249,14 @@ namespace Example
             var parentCallId = "parentCallId_example";  // string | Only show Calls spawned by the call with this ID. (optional) 
 
 
+            var applicationId = new List<string>(); // List<string> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional) 
+            var hasApplication = true;  // bool? | Only show calls which are associated with an Application (applicationId != null) (optional) 
+
+
             try
             {
                 // List Calls
-                CallList result = apiInstance.ListCalls(active, to, from, status, startTime, endTime, parentCallId);
+                CallList result = apiInstance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId, hasApplication);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2277,6 +2281,8 @@ Name | Type | Description  | Notes
  **startTime** | **string**| Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] 
  **endTime** | **string**| Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional] 
  **parentCallId** | **string**| Only show Calls spawned by the call with this ID. | [optional] 
+ **applicationId** | [**List&lt;string&gt;**](string.md)| Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional] 
+ **hasApplication** | **bool?**| Only show calls which are associated with an Application (applicationId !&#x3D; null) | [optional] 
 
 
 ### Return type

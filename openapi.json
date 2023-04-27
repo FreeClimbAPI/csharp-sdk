@@ -85,28 +85,33 @@
         "type": "string",
         "enum": ["closed", "suspended", "active"],
         "x-enum-varnames": ["CLOSED", "SUSPENDED", "ACTIVE"],
-        "description": "The status of this account. It is one of: active, suspended, or closed."
+        "description": "The status of this account. It is one of: active, suspended, or closed.",
+        "nullable": true
       },
       "AccountType": {
         "type": "string",
         "description": "The type of this account. It is one of: trial or full.",
         "enum": ["trial", "full"],
-        "x-enum-varnames": ["TRIAL", "FULL"]
+        "x-enum-varnames": ["TRIAL", "FULL"],
+        "nullable": true
       },
       "AnsweredBy": {
         "type": "string",
+        "nullable": true,
         "enum": ["human", "machine"],
         "x-enum-varnames": ["HUMAN", "MACHINE"],
         "description": "If this Call was initiated with answering machine detection, either `human` or `machine`. Empty otherwise."
       },
       "CallDirection": {
         "type": "string",
+        "nullable": true,
         "enum": ["inbound", "outboundAPI", "outboundDial"],
         "x-enum-varnames": ["INBOUND", "OUTBOUND_API", "OUTBOUND_DIAL"],
         "description": "Direction of the Call. `inbound` for Calls into FreeClimb, `outboundAPI` for Calls initiated via the REST API,  `outboundDial` for Calls initiated by the `OutDial` PerCL command."
       },
       "CallStatus": {
         "type": "string",
+        "nullable": true,
         "enum": [
           "queued",
           "ringing",
@@ -131,6 +136,7 @@
       },
       "ConferenceStatus": {
         "type": "string",
+        "nullable": true,
         "enum": ["empty", "populated", "inProgress", "terminated"],
         "x-enum-varnames": ["EMPTY", "POPULATED", "IN_PROGRESS", "TERMINATED"],
         "description": "The status of the Conference. One of: creating, empty, populated, inProgress, or terminated."
@@ -194,6 +200,7 @@
       "GrammarType": {
         "type": "string",
         "enum": ["URL", "BUILTIN"],
+        "nullable": true,
         "x-enum-varnames": ["URL", "BUILT_IN"],
         "description": "The grammar file type to use for speech recognition. A value of 'URL' indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of `BUILTIN` indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files."
       },
@@ -265,6 +272,7 @@
       "LogLevel": {
         "type": "string",
         "enum": ["info", "warning", "error"],
+        "nullable": true,
         "x-enum-varnames": ["INFO", "WARNING", "ERROR"],
         "description": "Level of the log. Possible values are info, warning, and error."
       },
@@ -280,6 +288,7 @@
       },
       "MessageStatus": {
         "type": "string",
+        "nullable": true,
         "description": "Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown",
         "enum": [
           "new",
@@ -310,9 +319,10 @@
       },
       "PlayBeep": {
         "type": "string",
+        "nullable": true,
         "enum": ["always", "never", "entryOnly", "exitOnly"],
         "x-enum-varnames": ["ALWAYS", "NEVER", "ENTRY_ONLY", "EXIT_ONLY"],
-        "description": "Controls when a beep is played. Valid values: `always`, `never`, `entryOnly`, `exitOnly`.",
+        "description": "Indicates whether to play a beep when a Participant enters or leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`. Leaving this unset will make conference default to `always` ",
         "default": "always",
         "x-enum-default-attr": "ALWAYS"
       },
@@ -520,7 +530,6 @@
                 "type": "boolean"
               },
               "playBeep": {
-                "description": "Indicates whether to play a beep when a Participant enters or leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`. Leaving this unset will make conference default to `always` ",
                 "$ref": "#/components/schemas/PlayBeep"
               },
               "record": {
@@ -653,8 +662,7 @@
                 "format": "uri"
               },
               "grammarType": {
-                "$ref": "#/components/schemas/GrammarType",
-                "nullable": true
+                "$ref": "#/components/schemas/GrammarType"
               },
               "grammarFile": {
                 "description": "The grammar file to use for speech recognition. If grammarType is set to URL, this attribute is specified as a download URL.",
@@ -1297,12 +1305,10 @@
                 "nullable": true
               },
               "type": {
-                "$ref": "#/components/schemas/AccountType",
-                "nullable": true
+                "$ref": "#/components/schemas/AccountType"
               },
               "status": {
-                "$ref": "#/components/schemas/AccountStatus",
-                "nullable": true
+                "$ref": "#/components/schemas/AccountStatus"
               },
               "subresourceUris": {
                 "type": "object",
@@ -1648,8 +1654,7 @@
                 "nullable": true
               },
               "callStatus": {
-                "$ref": "#/components/schemas/CallStatus",
-                "nullable": true
+                "$ref": "#/components/schemas/CallStatus"
               },
               "startTime": {
                 "type": "string",
@@ -1677,12 +1682,10 @@
                 "nullable": true
               },
               "direction": {
-                "$ref": "#/components/schemas/CallDirection",
-                "nullable": true
+                "$ref": "#/components/schemas/CallDirection"
               },
               "answeredBy": {
-                "$ref": "#/components/schemas/AnsweredBy",
-                "nullable": true
+                "$ref": "#/components/schemas/AnsweredBy"
               },
               "subresourceUris": {
                 "type": "object",
@@ -1834,9 +1837,7 @@
             "nullable": true
           },
           "level": {
-            "$ref": "#/components/schemas/LogLevel",
-
-            "nullable": true
+            "$ref": "#/components/schemas/LogLevel"
           },
           "requestId": {
             "type": "string",
@@ -1909,8 +1910,7 @@
               },
               "playBeep": {
                 "$ref": "#/components/schemas/PlayBeep",
-                "description": "Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.",
-                "nullable": true
+                "description": "Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always."
               },
               "record": {
                 "type": "boolean",
@@ -1918,8 +1918,7 @@
                 "nullable": true
               },
               "status": {
-                "$ref": "#/components/schemas/ConferenceStatus",
-                "nullable": true
+                "$ref": "#/components/schemas/ConferenceStatus"
               },
               "waitUrl": {
                 "type": "string",
@@ -2036,8 +2035,7 @@
                 "nullable": true
               },
               "status": {
-                "$ref": "#/components/schemas/MessageStatus",
-                "nullable": true
+                "$ref": "#/components/schemas/MessageStatus"
               },
               "from": {
                 "type": "string",
@@ -3064,6 +3062,30 @@
             "required": false,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "applicationId",
+            "in": "query",
+            "description": "Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.",
+            "explode": true,
+            "required": false,
+            "schema": {
+              "type": "array",
+              "maxItems": 16,
+              "items": {
+                "type": "string",
+                "pattern": "^AP[0-9a-fA-F]{40}$"
+              }
+            }
+          },
+          {
+            "name": "hasApplication",
+            "in": "query",
+            "description": "Only show calls which are associated with an Application (applicationId != null)",
+            "required": false,
+            "schema": {
+              "type": "boolean"
             }
           },
           {

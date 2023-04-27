@@ -37,7 +37,7 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets PlayBeep
         /// </summary>
-        [DataMember(Name = "playBeep", EmitDefaultValue = false)]
+        [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public PlayBeep? PlayBeep { get; set; }
 
         /// <summary>

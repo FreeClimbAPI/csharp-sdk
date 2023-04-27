@@ -37,7 +37,7 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets Level
         /// </summary>
-        [DataMember(Name = "level", EmitDefaultValue = false)]
+        [DataMember(Name = "level", EmitDefaultValue = true)]
         public LogLevel? Level { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LogResult" /> class.
