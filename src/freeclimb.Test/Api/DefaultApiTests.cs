@@ -523,9 +523,7 @@ namespace freeclimb.Test.Api
 	        
             List<string> applicationId = applicationIdTestArray();
 	        
-            bool? hasApplication = hasApplicationTestValue();
-	        
-            var response = instance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId, hasApplication);
+            var response = instance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId);
             //Assert.IsType<CallList>(response);
             Assert.IsAssignableFrom<CallList>(response);
         }

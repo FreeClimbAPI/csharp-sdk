@@ -3080,15 +3080,6 @@
             }
           },
           {
-            "name": "hasApplication",
-            "in": "query",
-            "description": "Only show calls which are associated with an Application (applicationId != null)",
-            "required": false,
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
             "$ref": "#/components/parameters/AccountId"
           }
         ],
