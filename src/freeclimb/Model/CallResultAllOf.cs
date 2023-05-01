@@ -37,19 +37,19 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets CallStatus
         /// </summary>
-        [DataMember(Name = "callStatus", EmitDefaultValue = false)]
+        [DataMember(Name = "callStatus", EmitDefaultValue = true)]
         public CallStatus? CallStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets Direction
         /// </summary>
-        [DataMember(Name = "direction", EmitDefaultValue = false)]
+        [DataMember(Name = "direction", EmitDefaultValue = true)]
         public CallDirection? Direction { get; set; }
 
         /// <summary>
         /// Gets or Sets AnsweredBy
         /// </summary>
-        [DataMember(Name = "answeredBy", EmitDefaultValue = false)]
+        [DataMember(Name = "answeredBy", EmitDefaultValue = true)]
         public AnsweredBy? AnsweredBy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CallResultAllOf" /> class.

@@ -37,7 +37,7 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets GrammarType
         /// </summary>
-        [DataMember(Name = "grammarType", EmitDefaultValue = false)]
+        [DataMember(Name = "grammarType", EmitDefaultValue = true)]
         public GrammarType? GrammarType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSpeechAllOf" /> class.

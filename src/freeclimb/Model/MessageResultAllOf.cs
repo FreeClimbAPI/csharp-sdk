@@ -37,7 +37,7 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public MessageStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageResultAllOf" /> class.
