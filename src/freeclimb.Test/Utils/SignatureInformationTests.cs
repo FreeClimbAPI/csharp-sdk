@@ -47,7 +47,7 @@ namespace freeclimb.Test.Utils
         public void isRequestTimeValidTest2()
         {
             //For test purposes, this relates to three days, we also want to ensure that the signature header remains the same during tests
-            int tolerance = 5 * 60 * 10000;
+            int tolerance = Int32.MaxValue - 1679944186;
             Boolean isRequestTimeValid = instance.isRequestTimeValid(tolerance);
             Assert.Equal<Boolean>(isRequestTimeValid, false);
         }
