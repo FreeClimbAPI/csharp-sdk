@@ -9,10 +9,11 @@ namespace freeclimb.Test.Utils
     {
         // TODO uncomment below to declare an instance variable for AccountRequest
         private SignatureInformation instance;
+        private int timestamp = 1679944186;
 
         public SignatureInformationTests()
         {
-            string requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+            string requestHeader = "t=" + timestamp.ToString() + ",v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
             instance = new SignatureInformation(requestHeader);
         }
 
@@ -47,7 +48,7 @@ namespace freeclimb.Test.Utils
         public void isRequestTimeValidTest2()
         {
             //For test purposes, this relates to three days, we also want to ensure that the signature header remains the same during tests
-            int tolerance = 5 * 60 * 10000;
+            int tolerance = Int32.MaxValue - timestamp;
             Boolean isRequestTimeValid = instance.isRequestTimeValid(tolerance);
             Assert.Equal<Boolean>(isRequestTimeValid, false);
         }
