@@ -411,6 +411,58 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of MessageResult</returns>
         ApiResponse<MessageResult> GetAnSmsMessageWithHttpInfo(string messageId);
         /// <summary>
+        /// Get list of SMS 10DLC Brnads
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>SMSTenDLCBrandsListResult</returns>
+        SMSTenDLCBrandsListResult GetAnSmsTenDLCBrands();
+
+        /// <summary>
+        /// Get list of SMS 10DLC Brnads
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of SMSTenDLCBrandsListResult</returns>
+        ApiResponse<SMSTenDLCBrandsListResult> GetAnSmsTenDLCBrandsWithHttpInfo();
+        /// <summary>
+        /// Get list of SMS 10DLC Campaigns
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        /// <returns>SMSTenDLCCampaignsListResult</returns>
+        SMSTenDLCCampaignsListResult GetAnSmsTenDLCCampaigns(string brandId = default(string));
+
+        /// <summary>
+        /// Get list of SMS 10DLC Campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        /// <returns>ApiResponse of SMSTenDLCCampaignsListResult</returns>
+        ApiResponse<SMSTenDLCCampaignsListResult> GetAnSmsTenDLCCampaignsWithHttpInfo(string brandId = default(string));
+        /// <summary>
+        /// Get list of SMS 10DLC Partner Campaigns
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        /// <returns>SMSTenDLCPartnerCampaignsListResult</returns>
+        SMSTenDLCPartnerCampaignsListResult GetAnSmsTenDLCPartnerCampaigns(string brandId = default(string));
+
+        /// <summary>
+        /// Get list of SMS 10DLC Partner Campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        /// <returns>ApiResponse of SMSTenDLCPartnerCampaignsListResult</returns>
+        ApiResponse<SMSTenDLCPartnerCampaignsListResult> GetAnSmsTenDLCPartnerCampaignsWithHttpInfo(string brandId = default(string));
+        /// <summary>
         /// Get Head Member
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -428,6 +480,60 @@ namespace freeclimb.Api
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
         /// <returns>ApiResponse of QueueMember</returns>
         ApiResponse<QueueMember> GetHeadMemberWithHttpInfo(string queueId);
+        /// <summary>
+        /// Get a 10DLC SMS Brand
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">String that uniquely identifies this brand resource.</param>
+        /// <returns>SMSTenDLCBrand</returns>
+        SMSTenDLCBrand GetTenDLCSmsBrand(string brandId);
+
+        /// <summary>
+        /// Get a 10DLC SMS Brand
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">String that uniquely identifies this brand resource.</param>
+        /// <returns>ApiResponse of SMSTenDLCBrand</returns>
+        ApiResponse<SMSTenDLCBrand> GetTenDLCSmsBrandWithHttpInfo(string brandId);
+        /// <summary>
+        /// Get a 10DLC SMS Campaign
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        /// <returns>SMSTenDLCCampaign</returns>
+        SMSTenDLCCampaign GetTenDLCSmsCampaign(string campaignId);
+
+        /// <summary>
+        /// Get a 10DLC SMS Campaign
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        /// <returns>ApiResponse of SMSTenDLCCampaign</returns>
+        ApiResponse<SMSTenDLCCampaign> GetTenDLCSmsCampaignWithHttpInfo(string campaignId);
+        /// <summary>
+        /// Get a 10DLC SMS Partner Campaign
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        /// <returns>SMSTenDLCPartnerCampaign</returns>
+        SMSTenDLCPartnerCampaign GetTenDLCSmsPartnerCampaign(string campaignId);
+
+        /// <summary>
+        /// Get a 10DLC SMS Partner Campaign
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        /// <returns>ApiResponse of SMSTenDLCPartnerCampaign</returns>
+        ApiResponse<SMSTenDLCPartnerCampaign> GetTenDLCSmsPartnerCampaignWithHttpInfo(string campaignId);
         /// <summary>
         /// List Active Queues
         /// </summary>
@@ -622,6 +728,7 @@ namespace freeclimb.Api
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
+        /// <param name="hasCampaign">Indication of whether the phone number has a campaign accociatied with it (optional)</param>
         /// <param name="capabilitiesVoice"> (optional)</param>
         /// <param name="capabilitiesSms"> (optional)</param>
         /// <param name="capabilitiesTollFree"> (optional)</param>
@@ -629,7 +736,7 @@ namespace freeclimb.Api
         /// <param name="capabilitiesShortCode"> (optional)</param>
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         /// <returns>IncomingNumberList</returns>
-        IncomingNumberList ListIncomingNumbers(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?));
+        IncomingNumberList ListIncomingNumbers(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?));
 
         /// <summary>
         /// List Incoming Numbers
@@ -646,6 +753,7 @@ namespace freeclimb.Api
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
+        /// <param name="hasCampaign">Indication of whether the phone number has a campaign accociatied with it (optional)</param>
         /// <param name="capabilitiesVoice"> (optional)</param>
         /// <param name="capabilitiesSms"> (optional)</param>
         /// <param name="capabilitiesTollFree"> (optional)</param>
@@ -653,7 +761,7 @@ namespace freeclimb.Api
         /// <param name="capabilitiesShortCode"> (optional)</param>
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         /// <returns>ApiResponse of IncomingNumberList</returns>
-        ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?));
+        ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?));
         /// <summary>
         /// List Members
         /// </summary>
@@ -1541,6 +1649,83 @@ namespace freeclimb.Api
         /// <returns>Task of ApiResponse (MessageResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<MessageResult>> GetAnSmsMessageWithHttpInfoAsync(string messageId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Get list of SMS 10DLC Brnads
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCBrandsListResult</returns>
+        System.Threading.Tasks.Task<SMSTenDLCBrandsListResult> GetAnSmsTenDLCBrandsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get list of SMS 10DLC Brnads
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCBrandsListResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SMSTenDLCBrandsListResult>> GetAnSmsTenDLCBrandsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get list of SMS 10DLC Campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCCampaignsListResult</returns>
+        System.Threading.Tasks.Task<SMSTenDLCCampaignsListResult> GetAnSmsTenDLCCampaignsAsync(string brandId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get list of SMS 10DLC Campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCCampaignsListResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SMSTenDLCCampaignsListResult>> GetAnSmsTenDLCCampaignsWithHttpInfoAsync(string brandId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get list of SMS 10DLC Partner Campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCPartnerCampaignsListResult</returns>
+        System.Threading.Tasks.Task<SMSTenDLCPartnerCampaignsListResult> GetAnSmsTenDLCPartnerCampaignsAsync(string brandId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get list of SMS 10DLC Partner Campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCPartnerCampaignsListResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SMSTenDLCPartnerCampaignsListResult>> GetAnSmsTenDLCPartnerCampaignsWithHttpInfoAsync(string brandId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Get Head Member
         /// </summary>
         /// <remarks>
@@ -1567,6 +1752,87 @@ namespace freeclimb.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
         System.Threading.Tasks.Task<ApiResponse<QueueMember>> GetHeadMemberWithHttpInfoAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get a 10DLC SMS Brand
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">String that uniquely identifies this brand resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCBrand</returns>
+        System.Threading.Tasks.Task<SMSTenDLCBrand> GetTenDLCSmsBrandAsync(string brandId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get a 10DLC SMS Brand
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">String that uniquely identifies this brand resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCBrand)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SMSTenDLCBrand>> GetTenDLCSmsBrandWithHttpInfoAsync(string brandId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get a 10DLC SMS Campaign
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCCampaign</returns>
+        System.Threading.Tasks.Task<SMSTenDLCCampaign> GetTenDLCSmsCampaignAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get a 10DLC SMS Campaign
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCCampaign)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SMSTenDLCCampaign>> GetTenDLCSmsCampaignWithHttpInfoAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get a 10DLC SMS Partner Campaign
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCPartnerCampaign</returns>
+        System.Threading.Tasks.Task<SMSTenDLCPartnerCampaign> GetTenDLCSmsPartnerCampaignAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get a 10DLC SMS Partner Campaign
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCPartnerCampaign)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SMSTenDLCPartnerCampaign>> GetTenDLCSmsPartnerCampaignWithHttpInfoAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Active Queues
         /// </summary>
@@ -1883,6 +2149,8 @@ namespace freeclimb.Api
         
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         
+        /// <param name="hasCampaign">Indication of whether the phone number has a campaign accociatied with it (optional)</param>
+        
         /// <param name="capabilitiesVoice"> (optional)</param>
         
         /// <param name="capabilitiesSms"> (optional)</param>
@@ -1897,7 +2165,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberList</returns>
-        System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Incoming Numbers
@@ -1923,6 +2191,8 @@ namespace freeclimb.Api
         
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         
+        /// <param name="hasCampaign">Indication of whether the phone number has a campaign accociatied with it (optional)</param>
+        
         /// <param name="capabilitiesVoice"> (optional)</param>
         
         /// <param name="capabilitiesSms"> (optional)</param>
@@ -1937,7 +2207,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Members
         /// </summary>
@@ -5813,6 +6083,440 @@ namespace freeclimb.Api
         }
 
         /// <summary>
+        /// Get list of SMS 10DLC Brnads 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>SMSTenDLCBrandsListResult</returns>
+        public SMSTenDLCBrandsListResult GetAnSmsTenDLCBrands()
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult> localVarResponse = GetAnSmsTenDLCBrandsWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Brnads 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of SMSTenDLCBrandsListResult</returns>
+        public freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult> GetAnSmsTenDLCBrandsWithHttpInfo()
+        {
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SMSTenDLCBrandsListResult>("/Accounts/{accountId}/Messages/10DLC/Brands", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAnSmsTenDLCBrands", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Brnads 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCBrandsListResult</returns>
+        public async System.Threading.Tasks.Task<SMSTenDLCBrandsListResult> GetAnSmsTenDLCBrandsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult> localVarResponse = await GetAnSmsTenDLCBrandsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Brnads 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCBrandsListResult)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult>> GetAnSmsTenDLCBrandsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SMSTenDLCBrandsListResult>("/Accounts/{accountId}/Messages/10DLC/Brands", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAnSmsTenDLCBrands", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        /// <returns>SMSTenDLCCampaignsListResult</returns>
+        public SMSTenDLCCampaignsListResult GetAnSmsTenDLCCampaigns(string brandId = default(string))
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCCampaignsListResult> localVarResponse = GetAnSmsTenDLCCampaignsWithHttpInfo(brandId );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        /// <returns>ApiResponse of SMSTenDLCCampaignsListResult</returns>
+        public freeclimb.Client.ApiResponse<SMSTenDLCCampaignsListResult> GetAnSmsTenDLCCampaignsWithHttpInfo(string brandId = default(string))
+        {
+            
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (brandId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "brandId", brandId));
+            }
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SMSTenDLCCampaignsListResult>("/Accounts/{accountId}/Messages/10DLC/Campaigns", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAnSmsTenDLCCampaigns", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCCampaignsListResult</returns>
+        public async System.Threading.Tasks.Task<SMSTenDLCCampaignsListResult> GetAnSmsTenDLCCampaignsAsync(string brandId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCCampaignsListResult> localVarResponse = await GetAnSmsTenDLCCampaignsWithHttpInfoAsync(brandId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCCampaignsListResult)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTenDLCCampaignsListResult>> GetAnSmsTenDLCCampaignsWithHttpInfoAsync(string brandId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (brandId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "brandId", brandId));
+            }
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SMSTenDLCCampaignsListResult>("/Accounts/{accountId}/Messages/10DLC/Campaigns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAnSmsTenDLCCampaigns", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Partner Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        /// <returns>SMSTenDLCPartnerCampaignsListResult</returns>
+        public SMSTenDLCPartnerCampaignsListResult GetAnSmsTenDLCPartnerCampaigns(string brandId = default(string))
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaignsListResult> localVarResponse = GetAnSmsTenDLCPartnerCampaignsWithHttpInfo(brandId );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Partner Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        /// <returns>ApiResponse of SMSTenDLCPartnerCampaignsListResult</returns>
+        public freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaignsListResult> GetAnSmsTenDLCPartnerCampaignsWithHttpInfo(string brandId = default(string))
+        {
+            
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (brandId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "brandId", brandId));
+            }
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SMSTenDLCPartnerCampaignsListResult>("/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAnSmsTenDLCPartnerCampaigns", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Partner Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCPartnerCampaignsListResult</returns>
+        public async System.Threading.Tasks.Task<SMSTenDLCPartnerCampaignsListResult> GetAnSmsTenDLCPartnerCampaignsAsync(string brandId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaignsListResult> localVarResponse = await GetAnSmsTenDLCPartnerCampaignsWithHttpInfoAsync(brandId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get list of SMS 10DLC Partner Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">The unique identifier for a brand (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCPartnerCampaignsListResult)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaignsListResult>> GetAnSmsTenDLCPartnerCampaignsWithHttpInfoAsync(string brandId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (brandId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "brandId", brandId));
+            }
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SMSTenDLCPartnerCampaignsListResult>("/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAnSmsTenDLCPartnerCampaigns", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get Head Member 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -5959,6 +6663,474 @@ namespace freeclimb.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetHeadMember", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Brand 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">String that uniquely identifies this brand resource.</param>
+        /// <returns>SMSTenDLCBrand</returns>
+        public SMSTenDLCBrand GetTenDLCSmsBrand(string brandId)
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCBrand> localVarResponse = GetTenDLCSmsBrandWithHttpInfo(brandId );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Brand 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="brandId">String that uniquely identifies this brand resource.</param>
+        /// <returns>ApiResponse of SMSTenDLCBrand</returns>
+        public freeclimb.Client.ApiResponse<SMSTenDLCBrand> GetTenDLCSmsBrandWithHttpInfo(string brandId)
+        {
+            
+            // verify the required parameter 'brandId' is set
+            if (brandId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'brandId' when calling DefaultApi->GetTenDLCSmsBrand");
+            }
+
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("brandId", freeclimb.Client.ClientUtils.ParameterToString(brandId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SMSTenDLCBrand>("/Accounts/{accountId}/Messages/10DLC/Brands/{brandId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTenDLCSmsBrand", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Brand 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">String that uniquely identifies this brand resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCBrand</returns>
+        public async System.Threading.Tasks.Task<SMSTenDLCBrand> GetTenDLCSmsBrandAsync(string brandId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCBrand> localVarResponse = await GetTenDLCSmsBrandWithHttpInfoAsync(brandId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Brand 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="brandId">String that uniquely identifies this brand resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCBrand)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTenDLCBrand>> GetTenDLCSmsBrandWithHttpInfoAsync(string brandId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+            // verify the required parameter 'brandId' is set
+            if (brandId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'brandId' when calling DefaultApi->GetTenDLCSmsBrand");
+            }
+
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("brandId", freeclimb.Client.ClientUtils.ParameterToString(brandId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SMSTenDLCBrand>("/Accounts/{accountId}/Messages/10DLC/Brands/{brandId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTenDLCSmsBrand", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        /// <returns>SMSTenDLCCampaign</returns>
+        public SMSTenDLCCampaign GetTenDLCSmsCampaign(string campaignId)
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCCampaign> localVarResponse = GetTenDLCSmsCampaignWithHttpInfo(campaignId );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        /// <returns>ApiResponse of SMSTenDLCCampaign</returns>
+        public freeclimb.Client.ApiResponse<SMSTenDLCCampaign> GetTenDLCSmsCampaignWithHttpInfo(string campaignId)
+        {
+            
+            // verify the required parameter 'campaignId' is set
+            if (campaignId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'campaignId' when calling DefaultApi->GetTenDLCSmsCampaign");
+            }
+
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("campaignId", freeclimb.Client.ClientUtils.ParameterToString(campaignId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SMSTenDLCCampaign>("/Accounts/{accountId}/Messages/10DLC/Campaigns/{campaignId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTenDLCSmsCampaign", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCCampaign</returns>
+        public async System.Threading.Tasks.Task<SMSTenDLCCampaign> GetTenDLCSmsCampaignAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCCampaign> localVarResponse = await GetTenDLCSmsCampaignWithHttpInfoAsync(campaignId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCCampaign)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTenDLCCampaign>> GetTenDLCSmsCampaignWithHttpInfoAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+            // verify the required parameter 'campaignId' is set
+            if (campaignId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'campaignId' when calling DefaultApi->GetTenDLCSmsCampaign");
+            }
+
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("campaignId", freeclimb.Client.ClientUtils.ParameterToString(campaignId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SMSTenDLCCampaign>("/Accounts/{accountId}/Messages/10DLC/Campaigns/{campaignId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTenDLCSmsCampaign", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Partner Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        /// <returns>SMSTenDLCPartnerCampaign</returns>
+        public SMSTenDLCPartnerCampaign GetTenDLCSmsPartnerCampaign(string campaignId)
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaign> localVarResponse = GetTenDLCSmsPartnerCampaignWithHttpInfo(campaignId );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Partner Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        /// <returns>ApiResponse of SMSTenDLCPartnerCampaign</returns>
+        public freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaign> GetTenDLCSmsPartnerCampaignWithHttpInfo(string campaignId)
+        {
+            
+            // verify the required parameter 'campaignId' is set
+            if (campaignId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'campaignId' when calling DefaultApi->GetTenDLCSmsPartnerCampaign");
+            }
+
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("campaignId", freeclimb.Client.ClientUtils.ParameterToString(campaignId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SMSTenDLCPartnerCampaign>("/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTenDLCSmsPartnerCampaign", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Partner Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTenDLCPartnerCampaign</returns>
+        public async System.Threading.Tasks.Task<SMSTenDLCPartnerCampaign> GetTenDLCSmsPartnerCampaignAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaign> localVarResponse = await GetTenDLCSmsPartnerCampaignWithHttpInfoAsync(campaignId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a 10DLC SMS Partner Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTenDLCPartnerCampaign)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaign>> GetTenDLCSmsPartnerCampaignWithHttpInfoAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+            // verify the required parameter 'campaignId' is set
+            if (campaignId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'campaignId' when calling DefaultApi->GetTenDLCSmsPartnerCampaign");
+            }
+
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("campaignId", freeclimb.Client.ClientUtils.ParameterToString(campaignId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SMSTenDLCPartnerCampaign>("/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTenDLCSmsPartnerCampaign", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -7494,6 +8666,7 @@ namespace freeclimb.Api
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
+        /// <param name="hasCampaign">Indication of whether the phone number has a campaign accociatied with it (optional)</param>
         /// <param name="capabilitiesVoice"> (optional)</param>
         /// <param name="capabilitiesSms"> (optional)</param>
         /// <param name="capabilitiesTollFree"> (optional)</param>
@@ -7501,9 +8674,9 @@ namespace freeclimb.Api
         /// <param name="capabilitiesShortCode"> (optional)</param>
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         /// <returns>IncomingNumberList</returns>
-        public IncomingNumberList ListIncomingNumbers(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?))
+        public IncomingNumberList ListIncomingNumbers(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = ListIncomingNumbersWithHttpInfo(phoneNumber , alias , region , country , applicationId , hasApplication , voiceEnabled , smsEnabled , capabilitiesVoice , capabilitiesSms , capabilitiesTollFree , capabilitiesTenDLC , capabilitiesShortCode , offnet );
+            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = ListIncomingNumbersWithHttpInfo(phoneNumber , alias , region , country , applicationId , hasApplication , voiceEnabled , smsEnabled , hasCampaign , capabilitiesVoice , capabilitiesSms , capabilitiesTollFree , capabilitiesTenDLC , capabilitiesShortCode , offnet );
             return localVarResponse.Data;
         }
 
@@ -7519,6 +8692,7 @@ namespace freeclimb.Api
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
+        /// <param name="hasCampaign">Indication of whether the phone number has a campaign accociatied with it (optional)</param>
         /// <param name="capabilitiesVoice"> (optional)</param>
         /// <param name="capabilitiesSms"> (optional)</param>
         /// <param name="capabilitiesTollFree"> (optional)</param>
@@ -7526,8 +8700,9 @@ namespace freeclimb.Api
         /// <param name="capabilitiesShortCode"> (optional)</param>
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         /// <returns>ApiResponse of IncomingNumberList</returns>
-        public freeclimb.Client.ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?))
+        public freeclimb.Client.ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?))
         {
+            
             
             
             
@@ -7597,6 +8772,10 @@ namespace freeclimb.Api
             if (smsEnabled != null)
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "smsEnabled", smsEnabled));
+            }
+            if (hasCampaign != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "hasCampaign", hasCampaign));
             }
             if (capabilitiesVoice != null)
             {
@@ -7665,6 +8844,8 @@ namespace freeclimb.Api
         
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         
+        /// <param name="hasCampaign">Indication of whether the phone number has a campaign accociatied with it (optional)</param>
+        
         /// <param name="capabilitiesVoice"> (optional)</param>
         
         /// <param name="capabilitiesSms"> (optional)</param>
@@ -7679,9 +8860,9 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberList</returns>
-        public async System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = await ListIncomingNumbersWithHttpInfoAsync(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = await ListIncomingNumbersWithHttpInfoAsync(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7706,6 +8887,8 @@ namespace freeclimb.Api
         
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         
+        /// <param name="hasCampaign">Indication of whether the phone number has a campaign accociatied with it (optional)</param>
+        
         /// <param name="capabilitiesVoice"> (optional)</param>
         
         /// <param name="capabilitiesSms"> (optional)</param>
@@ -7720,8 +8903,9 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            
             
             
             
@@ -7792,6 +8976,10 @@ namespace freeclimb.Api
             if (smsEnabled != null)
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "smsEnabled", smsEnabled));
+            }
+            if (hasCampaign != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "hasCampaign", hasCampaign));
             }
             if (capabilitiesVoice != null)
             {

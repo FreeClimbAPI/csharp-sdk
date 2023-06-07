@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.5.0"></a>
+
+## [4.5.0] 2023-06-07
+
+### Added
+
+- Number management feature for csharp sdk including methods, properties, and testing
+
 <a name="4.4.0"></a>
 
 ## [4.4.0] 2023-04-27
