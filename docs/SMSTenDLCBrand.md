@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **BrandRelationship** | **string** | Brand relationship to the CSP | 
 **Vertical** | **string** | Vertical or industry segment of the brand. | 
 **AltBusinessId** | **string** | Alternate business identifier such as DUNS, LEI, or GIIN | [optional] 
-**AltBusinessIdType** | **string** |  | [optional] 
+**AltBusinessIdType** | **string** | The type of the Alternative business identifier | [optional] 
 **UniversalEin** | **string** | Universal EIN of Brand, Read Only. | [optional] [readonly] 
 **ReferenceId** | **string** | Caller supplied brand reference ID. If supplied, the value must be unique across all submitted brands. Can be used to prevent duplicate brand registrations. | [optional] 
 **OptionalAttributes** | **Dictionary&lt;string, Object&gt;** | Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names. | [optional] 

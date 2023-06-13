@@ -304,8 +304,9 @@ namespace freeclimb.Model
         [DataMember(Name = "brandRelationship", IsRequired = true, EmitDefaultValue = false)]
         public BrandRelationshipEnum BrandRelationship { get; set; }
         /// <summary>
-        /// Defines AltBusinessIdType
+        /// The type of the Alternative business identifier
         /// </summary>
+        /// <value>The type of the Alternative business identifier</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AltBusinessIdTypeEnum
         {
@@ -337,8 +338,9 @@ namespace freeclimb.Model
 
 
         /// <summary>
-        /// Gets or Sets AltBusinessIdType
+        /// The type of the Alternative business identifier
         /// </summary>
+        /// <value>The type of the Alternative business identifier</value>
         [DataMember(Name = "altBusinessIdType", EmitDefaultValue = false)]
         public AltBusinessIdTypeEnum? AltBusinessIdType { get; set; }
         /// <summary>
@@ -411,7 +413,7 @@ namespace freeclimb.Model
         /// <param name="brandRelationship">Brand relationship to the CSP (required).</param>
         /// <param name="vertical">Vertical or industry segment of the brand. (required).</param>
         /// <param name="altBusinessId">Alternate business identifier such as DUNS, LEI, or GIIN.</param>
-        /// <param name="altBusinessIdType">altBusinessIdType.</param>
+        /// <param name="altBusinessIdType">The type of the Alternative business identifier.</param>
         /// <param name="referenceId">Caller supplied brand reference ID. If supplied, the value must be unique across all submitted brands. Can be used to prevent duplicate brand registrations..</param>
         /// <param name="optionalAttributes">Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names..</param>
         /// <param name="mock">Test brand. (required).</param>

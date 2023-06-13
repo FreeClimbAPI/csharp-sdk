@@ -43,8 +43,8 @@ namespace freeclimb.Model
         /// <param name="numPages">Total number of pages.</param>
         /// <param name="pageSize">Number of items per page.</param>
         /// <param name="nextPageUri">Uri to retrieve the next page of items.</param>
-        /// <param name="queueMembers">queueMembers.</param>
-        public SMSTenDLCCampaignsListResult(int? total = default(int?), int? start = default(int?), int? end = default(int?), int? page = default(int?), int? numPages = default(int?), int? pageSize = default(int?), string nextPageUri = default(string), List<SMSTenDLCCampaign> queueMembers = default(List<SMSTenDLCCampaign>))
+        /// <param name="campaigns">campaigns.</param>
+        public SMSTenDLCCampaignsListResult(int? total = default(int?), int? start = default(int?), int? end = default(int?), int? page = default(int?), int? numPages = default(int?), int? pageSize = default(int?), string nextPageUri = default(string), List<SMSTenDLCCampaign> campaigns = default(List<SMSTenDLCCampaign>))
         {
             this.Total = total;
             this.Start = start;
@@ -53,7 +53,7 @@ namespace freeclimb.Model
             this.NumPages = numPages;
             this.PageSize = pageSize;
             this.NextPageUri = nextPageUri;
-            this.QueueMembers = queueMembers;
+            this.Campaigns = campaigns;
         }
 
         /// <summary>
@@ -106,10 +106,10 @@ namespace freeclimb.Model
         public string NextPageUri { get; set; }
 
         /// <summary>
-        /// Gets or Sets QueueMembers
+        /// Gets or Sets Campaigns
         /// </summary>
-        [DataMember(Name = "queueMembers", EmitDefaultValue = true)]
-        public List<SMSTenDLCCampaign> QueueMembers { get; set; }
+        [DataMember(Name = "campaigns", EmitDefaultValue = true)]
+        public List<SMSTenDLCCampaign> Campaigns { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -126,7 +126,7 @@ namespace freeclimb.Model
             sb.Append("  NumPages: ").Append(NumPages).Append("\n");
             sb.Append("  PageSize: ").Append(PageSize).Append("\n");
             sb.Append("  NextPageUri: ").Append(NextPageUri).Append("\n");
-            sb.Append("  QueueMembers: ").Append(QueueMembers).Append("\n");
+            sb.Append("  Campaigns: ").Append(Campaigns).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -155,11 +155,11 @@ namespace freeclimb.Model
             props.Add("pageSize", PageSize);          
             props.Add("nextPageUri", NextPageUri);          
             List<object> nested = new List<object>();
-            foreach (var item in QueueMembers)
+            foreach (var item in Campaigns)
             {
                 nested.Add(item.ToKvp());
             }
-            props.Add("queueMembers", nested); 
+            props.Add("campaigns", nested); 
             return props;
         }
         
@@ -221,10 +221,10 @@ namespace freeclimb.Model
                     this.NextPageUri.Equals(input.NextPageUri))
                 ) && 
                 (
-                    this.QueueMembers == input.QueueMembers ||
-                    this.QueueMembers != null &&
-                    input.QueueMembers != null &&
-                    this.QueueMembers.SequenceEqual(input.QueueMembers)
+                    this.Campaigns == input.Campaigns ||
+                    this.Campaigns != null &&
+                    input.Campaigns != null &&
+                    this.Campaigns.SequenceEqual(input.Campaigns)
                 );
         }
 
@@ -265,9 +265,9 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.NextPageUri.GetHashCode();
                 }
-                if (this.QueueMembers != null)
+                if (this.Campaigns != null)
                 {
-                    hashCode = (hashCode * 59) + this.QueueMembers.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Campaigns.GetHashCode();
                 }
                 return hashCode;
             }

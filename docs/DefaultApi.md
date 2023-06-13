@@ -25,13 +25,13 @@ Method | HTTP request | Description
 [**GetAnApplication**](DefaultApi.md#getanapplication) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application
 [**GetAnIncomingNumber**](DefaultApi.md#getanincomingnumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number
 [**GetAnSmsMessage**](DefaultApi.md#getansmsmessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message
-[**GetAnSmsTenDLCBrands**](DefaultApi.md#getansmstendlcbrands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brnads
-[**GetAnSmsTenDLCCampaigns**](DefaultApi.md#getansmstendlccampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
-[**GetAnSmsTenDLCPartnerCampaigns**](DefaultApi.md#getansmstendlcpartnercampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 [**GetHeadMember**](DefaultApi.md#getheadmember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member
 [**GetTenDLCSmsBrand**](DefaultApi.md#gettendlcsmsbrand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand
+[**GetTenDLCSmsBrands**](DefaultApi.md#gettendlcsmsbrands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brands
 [**GetTenDLCSmsCampaign**](DefaultApi.md#gettendlcsmscampaign) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns/{campaignId} | Get a 10DLC SMS Campaign
+[**GetTenDLCSmsCampaigns**](DefaultApi.md#gettendlcsmscampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
 [**GetTenDLCSmsPartnerCampaign**](DefaultApi.md#gettendlcsmspartnercampaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign
+[**GetTenDLCSmsPartnerCampaigns**](DefaultApi.md#gettendlcsmspartnercampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 [**ListActiveQueues**](DefaultApi.md#listactivequeues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 [**ListAllAccountLogs**](DefaultApi.md#listallaccountlogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 [**ListApplications**](DefaultApi.md#listapplications) | **GET** /Accounts/{accountId}/Applications | List applications
@@ -1655,229 +1655,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getansmstendlcbrands"></a>
-# **GetAnSmsTenDLCBrands**
-> SMSTenDLCBrandsListResult GetAnSmsTenDLCBrands ()
-
-Get list of SMS 10DLC Brnads
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class GetAnSmsTenDLCBrandsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_ACCOUNT_ID";
-            config.Password = "YOUR_API_KEY";
-
-            var apiInstance = new DefaultApi(config);
-            
-
-            try
-            {
-                // Get list of SMS 10DLC Brnads
-                SMSTenDLCBrandsListResult result = apiInstance.GetAnSmsTenDLCBrands();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.GetAnSmsTenDLCBrands: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-
-### Return type
-
-[**SMSTenDLCBrandsListResult**](SMSTenDLCBrandsListResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The list SMS 10DLC brands |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getansmstendlccampaigns"></a>
-# **GetAnSmsTenDLCCampaigns**
-> SMSTenDLCCampaignsListResult GetAnSmsTenDLCCampaigns (string brandId = null)
-
-Get list of SMS 10DLC Campaigns
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class GetAnSmsTenDLCCampaignsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_ACCOUNT_ID";
-            config.Password = "YOUR_API_KEY";
-
-            var apiInstance = new DefaultApi(config);
-            
-            var brandId = "brandId_example";  // string | The unique identifier for a brand (optional) 
-
-
-            try
-            {
-                // Get list of SMS 10DLC Campaigns
-                SMSTenDLCCampaignsListResult result = apiInstance.GetAnSmsTenDLCCampaigns(brandId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.GetAnSmsTenDLCCampaigns: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **brandId** | **string**| The unique identifier for a brand | [optional] 
-
-
-### Return type
-
-[**SMSTenDLCCampaignsListResult**](SMSTenDLCCampaignsListResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The list SMS 10DLC campaigns |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getansmstendlcpartnercampaigns"></a>
-# **GetAnSmsTenDLCPartnerCampaigns**
-> SMSTenDLCPartnerCampaignsListResult GetAnSmsTenDLCPartnerCampaigns (string brandId = null)
-
-Get list of SMS 10DLC Partner Campaigns
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class GetAnSmsTenDLCPartnerCampaignsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_ACCOUNT_ID";
-            config.Password = "YOUR_API_KEY";
-
-            var apiInstance = new DefaultApi(config);
-            
-            var brandId = "brandId_example";  // string | The unique identifier for a brand (optional) 
-
-
-            try
-            {
-                // Get list of SMS 10DLC Partner Campaigns
-                SMSTenDLCPartnerCampaignsListResult result = apiInstance.GetAnSmsTenDLCPartnerCampaigns(brandId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.GetAnSmsTenDLCPartnerCampaigns: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **brandId** | **string**| The unique identifier for a brand | [optional] 
-
-
-### Return type
-
-[**SMSTenDLCPartnerCampaignsListResult**](SMSTenDLCPartnerCampaignsListResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The list SMS 10DLC partner campaigns |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getheadmember"></a>
 # **GetHeadMember**
 > QueueMember GetHeadMember (string queueId)
@@ -2030,6 +1807,77 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="gettendlcsmsbrands"></a>
+# **GetTenDLCSmsBrands**
+> SMSTenDLCBrandsListResult GetTenDLCSmsBrands ()
+
+Get list of SMS 10DLC Brands
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class GetTenDLCSmsBrandsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
+
+            var apiInstance = new DefaultApi(config);
+            
+
+            try
+            {
+                // Get list of SMS 10DLC Brands
+                SMSTenDLCBrandsListResult result = apiInstance.GetTenDLCSmsBrands();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.GetTenDLCSmsBrands: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+
+### Return type
+
+[**SMSTenDLCBrandsListResult**](SMSTenDLCBrandsListResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The list SMS 10DLC brands |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="gettendlcsmscampaign"></a>
 # **GetTenDLCSmsCampaign**
 > SMSTenDLCCampaign GetTenDLCSmsCampaign (string campaignId)
@@ -2106,6 +1954,82 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="gettendlcsmscampaigns"></a>
+# **GetTenDLCSmsCampaigns**
+> SMSTenDLCCampaignsListResult GetTenDLCSmsCampaigns (string brandId = null)
+
+Get list of SMS 10DLC Campaigns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class GetTenDLCSmsCampaignsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var brandId = "brandId_example";  // string | The unique identifier for a brand (optional) 
+
+
+            try
+            {
+                // Get list of SMS 10DLC Campaigns
+                SMSTenDLCCampaignsListResult result = apiInstance.GetTenDLCSmsCampaigns(brandId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.GetTenDLCSmsCampaigns: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **brandId** | **string**| The unique identifier for a brand | [optional] 
+
+
+### Return type
+
+[**SMSTenDLCCampaignsListResult**](SMSTenDLCCampaignsListResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The list SMS 10DLC campaigns |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="gettendlcsmspartnercampaign"></a>
 # **GetTenDLCSmsPartnerCampaign**
 > SMSTenDLCPartnerCampaign GetTenDLCSmsPartnerCampaign (string campaignId)
@@ -2179,6 +2103,82 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The specific SMS 10DLC Partner Campaign that’s been processed by FreeClimb |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="gettendlcsmspartnercampaigns"></a>
+# **GetTenDLCSmsPartnerCampaigns**
+> SMSTenDLCPartnerCampaignsListResult GetTenDLCSmsPartnerCampaigns (string brandId = null)
+
+Get list of SMS 10DLC Partner Campaigns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class GetTenDLCSmsPartnerCampaignsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var brandId = "brandId_example";  // string | The unique identifier for a brand (optional) 
+
+
+            try
+            {
+                // Get list of SMS 10DLC Partner Campaigns
+                SMSTenDLCPartnerCampaignsListResult result = apiInstance.GetTenDLCSmsPartnerCampaigns(brandId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.GetTenDLCSmsPartnerCampaigns: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **brandId** | **string**| The unique identifier for a brand | [optional] 
+
+
+### Return type
+
+[**SMSTenDLCPartnerCampaignsListResult**](SMSTenDLCPartnerCampaignsListResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The list SMS 10DLC partner campaigns |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2889,7 +2889,7 @@ namespace Example
 
             var smsEnabled = true;  // bool? | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional)  (default to true)
 
-            var hasCampaign = true;  // bool? | Indication of whether the phone number has a campaign accociatied with it (optional) 
+            var hasCampaign = true;  // bool? | Indication of whether the phone number has a campaign associated with it (optional) 
 
             var capabilitiesVoice = true;  // bool? |  (optional) 
 
@@ -2933,7 +2933,7 @@ Name | Type | Description  | Notes
  **hasApplication** | **bool?**| Indication of whether the phone number has an application linked to it. | [optional] [default to false]
  **voiceEnabled** | **bool?**| Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] [default to true]
  **smsEnabled** | **bool?**| Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] [default to true]
- **hasCampaign** | **bool?**| Indication of whether the phone number has a campaign accociatied with it | [optional] 
+ **hasCampaign** | **bool?**| Indication of whether the phone number has a campaign associated with it | [optional] 
  **capabilitiesVoice** | **bool?**|  | [optional] 
  **capabilitiesSms** | **bool?**|  | [optional] 
  **capabilitiesTollFree** | **bool?**|  | [optional] 

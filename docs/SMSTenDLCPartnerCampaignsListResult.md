@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **NumPages** | **int?** | Total number of pages | [optional] 
 **PageSize** | **int?** | Number of items per page | [optional] 
 **NextPageUri** | **string** | Uri to retrieve the next page of items | [optional] 
-**QueueMembers** | [**List&lt;SMSTenDLCPartnerCampaign&gt;**](SMSTenDLCPartnerCampaign.md) |  | [optional] 
+**PartnerCampaigns** | [**List&lt;SMSTenDLCPartnerCampaign&gt;**](SMSTenDLCPartnerCampaign.md) |  | [optional] 
 
 [[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
 [[Back to Enum list]](../README.md#documentation-for-enums)<br /> 

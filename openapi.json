@@ -2332,7 +2332,7 @@
           {
             "type": "object",
             "properties": {
-              "queueMembers": {
+              "campaigns": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/SMSTenDLCCampaign"
@@ -2564,7 +2564,7 @@
           {
             "type": "object",
             "properties": {
-              "queueMembers": {
+              "partnerCampaigns": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/SMSTenDLCPartnerCampaign"
@@ -2855,7 +2855,7 @@
           {
             "type": "object",
             "properties": {
-              "queueMembers": {
+              "brands": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/SMSTenDLCBrand"
@@ -3063,7 +3063,8 @@
               "DUNS",
               "GIIN",
               "LEI"
-            ]
+            ],
+            "description": "The type of the Alternative business identifier"
           },
           "universalEin": {
             "type": "string",
@@ -3636,7 +3637,7 @@
           {
             "name": "hasCampaign",
             "in": "query",
-            "description": "Indication of whether the phone number has a campaign accociatied with it",
+            "description": "Indication of whether the phone number has a campaign associated with it",
             "required": false,
             "schema": {
               "type": "boolean"
@@ -5059,7 +5060,7 @@
       "get": {
         "tags": [],
         "summary": "Get list of SMS 10DLC Campaigns",
-        "operationId": "get-an-sms-tenDLC-Campaigns",
+        "operationId": "get-tenDLC-sms-Campaigns",
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -5171,7 +5172,7 @@
       "get": {
         "tags": [],
         "summary": "Get list of SMS 10DLC Partner Campaigns",
-        "operationId": "get-an-sms-tenDLC-partnerCampaigns",
+        "operationId": "get-tenDLC-sms-partnerCampaigns",
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -5291,8 +5292,8 @@
     "/Accounts/{accountId}/Messages/10DLC/Brands": {
       "get": {
         "tags": [],
-        "summary": "Get list of SMS 10DLC Brnads",
-        "operationId": "get-an-sms-tenDLC-brands",
+        "summary": "Get list of SMS 10DLC Brands",
+        "operationId": "get-tenDLC-sms-brands",
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"

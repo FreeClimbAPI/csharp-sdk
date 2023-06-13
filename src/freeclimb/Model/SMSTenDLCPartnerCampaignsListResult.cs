@@ -43,8 +43,8 @@ namespace freeclimb.Model
         /// <param name="numPages">Total number of pages.</param>
         /// <param name="pageSize">Number of items per page.</param>
         /// <param name="nextPageUri">Uri to retrieve the next page of items.</param>
-        /// <param name="queueMembers">queueMembers.</param>
-        public SMSTenDLCPartnerCampaignsListResult(int? total = default(int?), int? start = default(int?), int? end = default(int?), int? page = default(int?), int? numPages = default(int?), int? pageSize = default(int?), string nextPageUri = default(string), List<SMSTenDLCPartnerCampaign> queueMembers = default(List<SMSTenDLCPartnerCampaign>))
+        /// <param name="partnerCampaigns">partnerCampaigns.</param>
+        public SMSTenDLCPartnerCampaignsListResult(int? total = default(int?), int? start = default(int?), int? end = default(int?), int? page = default(int?), int? numPages = default(int?), int? pageSize = default(int?), string nextPageUri = default(string), List<SMSTenDLCPartnerCampaign> partnerCampaigns = default(List<SMSTenDLCPartnerCampaign>))
         {
             this.Total = total;
             this.Start = start;
@@ -53,7 +53,7 @@ namespace freeclimb.Model
             this.NumPages = numPages;
             this.PageSize = pageSize;
             this.NextPageUri = nextPageUri;
-            this.QueueMembers = queueMembers;
+            this.PartnerCampaigns = partnerCampaigns;
         }
 
         /// <summary>
@@ -106,10 +106,10 @@ namespace freeclimb.Model
         public string NextPageUri { get; set; }
 
         /// <summary>
-        /// Gets or Sets QueueMembers
+        /// Gets or Sets PartnerCampaigns
         /// </summary>
-        [DataMember(Name = "queueMembers", EmitDefaultValue = true)]
-        public List<SMSTenDLCPartnerCampaign> QueueMembers { get; set; }
+        [DataMember(Name = "partnerCampaigns", EmitDefaultValue = true)]
+        public List<SMSTenDLCPartnerCampaign> PartnerCampaigns { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -126,7 +126,7 @@ namespace freeclimb.Model
             sb.Append("  NumPages: ").Append(NumPages).Append("\n");
             sb.Append("  PageSize: ").Append(PageSize).Append("\n");
             sb.Append("  NextPageUri: ").Append(NextPageUri).Append("\n");
-            sb.Append("  QueueMembers: ").Append(QueueMembers).Append("\n");
+            sb.Append("  PartnerCampaigns: ").Append(PartnerCampaigns).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -155,11 +155,11 @@ namespace freeclimb.Model
             props.Add("pageSize", PageSize);          
             props.Add("nextPageUri", NextPageUri);          
             List<object> nested = new List<object>();
-            foreach (var item in QueueMembers)
+            foreach (var item in PartnerCampaigns)
             {
                 nested.Add(item.ToKvp());
             }
-            props.Add("queueMembers", nested); 
+            props.Add("partnerCampaigns", nested); 
             return props;
         }
         
@@ -221,10 +221,10 @@ namespace freeclimb.Model
                     this.NextPageUri.Equals(input.NextPageUri))
                 ) && 
                 (
-                    this.QueueMembers == input.QueueMembers ||
-                    this.QueueMembers != null &&
-                    input.QueueMembers != null &&
-                    this.QueueMembers.SequenceEqual(input.QueueMembers)
+                    this.PartnerCampaigns == input.PartnerCampaigns ||
+                    this.PartnerCampaigns != null &&
+                    input.PartnerCampaigns != null &&
+                    this.PartnerCampaigns.SequenceEqual(input.PartnerCampaigns)
                 );
         }
 
@@ -265,9 +265,9 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.NextPageUri.GetHashCode();
                 }
-                if (this.QueueMembers != null)
+                if (this.PartnerCampaigns != null)
                 {
-                    hashCode = (hashCode * 59) + this.QueueMembers.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PartnerCampaigns.GetHashCode();
                 }
                 return hashCode;
             }

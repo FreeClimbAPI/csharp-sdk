@@ -36,17 +36,17 @@ namespace freeclimb.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTenDLCBrandsListResultAllOf" /> class.
         /// </summary>
-        /// <param name="queueMembers">queueMembers.</param>
-        public SMSTenDLCBrandsListResultAllOf(List<SMSTenDLCBrand> queueMembers = default(List<SMSTenDLCBrand>))
+        /// <param name="brands">brands.</param>
+        public SMSTenDLCBrandsListResultAllOf(List<SMSTenDLCBrand> brands = default(List<SMSTenDLCBrand>))
         {
-            this.QueueMembers = queueMembers;
+            this.Brands = brands;
         }
 
         /// <summary>
-        /// Gets or Sets QueueMembers
+        /// Gets or Sets Brands
         /// </summary>
-        [DataMember(Name = "queueMembers", EmitDefaultValue = true)]
-        public List<SMSTenDLCBrand> QueueMembers { get; set; }
+        [DataMember(Name = "brands", EmitDefaultValue = true)]
+        public List<SMSTenDLCBrand> Brands { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -56,7 +56,7 @@ namespace freeclimb.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SMSTenDLCBrandsListResultAllOf {\n");
-            sb.Append("  QueueMembers: ").Append(QueueMembers).Append("\n");
+            sb.Append("  Brands: ").Append(Brands).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,11 +78,11 @@ namespace freeclimb.Model
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
             List<object> nested = new List<object>();
-            foreach (var item in QueueMembers)
+            foreach (var item in Brands)
             {
                 nested.Add(item.ToKvp());
             }
-            props.Add("queueMembers", nested); 
+            props.Add("brands", nested); 
             return props;
         }
         
@@ -109,10 +109,10 @@ namespace freeclimb.Model
             }
             return 
                 (
-                    this.QueueMembers == input.QueueMembers ||
-                    this.QueueMembers != null &&
-                    input.QueueMembers != null &&
-                    this.QueueMembers.SequenceEqual(input.QueueMembers)
+                    this.Brands == input.Brands ||
+                    this.Brands != null &&
+                    input.Brands != null &&
+                    this.Brands.SequenceEqual(input.Brands)
                 );
         }
 
@@ -125,9 +125,9 @@ namespace freeclimb.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.QueueMembers != null)
+                if (this.Brands != null)
                 {
-                    hashCode = (hashCode * 59) + this.QueueMembers.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Brands.GetHashCode();
                 }
                 return hashCode;
             }

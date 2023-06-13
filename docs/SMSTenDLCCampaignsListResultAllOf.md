@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**QueueMembers** | [**List&lt;SMSTenDLCCampaign&gt;**](SMSTenDLCCampaign.md) |  | [optional] 
+**Campaigns** | [**List&lt;SMSTenDLCCampaign&gt;**](SMSTenDLCCampaign.md) |  | [optional] 
 
 [[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
 [[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
