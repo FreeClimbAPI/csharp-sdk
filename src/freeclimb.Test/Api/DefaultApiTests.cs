@@ -392,6 +392,94 @@ namespace freeclimb.Test.Api
         }
         
         /// <summary>
+        /// Test GetTenDLCSmsBrand
+        /// </summary>
+        [Fact]
+
+        public void GetTenDLCSmsBrandTest()
+        {
+            
+            string brandId = brandIdTestValue();
+	        
+            var response = instance.GetTenDLCSmsBrand(brandId);
+            //Assert.IsType<SMSTenDLCBrand>(response);
+            Assert.IsAssignableFrom<SMSTenDLCBrand>(response);
+        }
+        
+        /// <summary>
+        /// Test GetTenDLCSmsBrands
+        /// </summary>
+        [Fact]
+
+        public void GetTenDLCSmsBrandsTest()
+        {
+            
+            var response = instance.GetTenDLCSmsBrands();
+            //Assert.IsType<SMSTenDLCBrandsListResult>(response);
+            Assert.IsAssignableFrom<SMSTenDLCBrandsListResult>(response);
+        }
+        
+        /// <summary>
+        /// Test GetTenDLCSmsCampaign
+        /// </summary>
+        [Fact]
+
+        public void GetTenDLCSmsCampaignTest()
+        {
+            
+            string campaignId = campaignIdTestValue();
+	        
+            var response = instance.GetTenDLCSmsCampaign(campaignId);
+            //Assert.IsType<SMSTenDLCCampaign>(response);
+            Assert.IsAssignableFrom<SMSTenDLCCampaign>(response);
+        }
+        
+        /// <summary>
+        /// Test GetTenDLCSmsCampaigns
+        /// </summary>
+        [Fact]
+
+        public void GetTenDLCSmsCampaignsTest()
+        {
+            
+            string brandId = brandIdTestValue();
+	        
+            var response = instance.GetTenDLCSmsCampaigns(brandId);
+            //Assert.IsType<SMSTenDLCCampaignsListResult>(response);
+            Assert.IsAssignableFrom<SMSTenDLCCampaignsListResult>(response);
+        }
+        
+        /// <summary>
+        /// Test GetTenDLCSmsPartnerCampaign
+        /// </summary>
+        [Fact]
+
+        public void GetTenDLCSmsPartnerCampaignTest()
+        {
+            
+            string campaignId = campaignIdTestValue();
+	        
+            var response = instance.GetTenDLCSmsPartnerCampaign(campaignId);
+            //Assert.IsType<SMSTenDLCPartnerCampaign>(response);
+            Assert.IsAssignableFrom<SMSTenDLCPartnerCampaign>(response);
+        }
+        
+        /// <summary>
+        /// Test GetTenDLCSmsPartnerCampaigns
+        /// </summary>
+        [Fact]
+
+        public void GetTenDLCSmsPartnerCampaignsTest()
+        {
+            
+            string brandId = brandIdTestValue();
+	        
+            var response = instance.GetTenDLCSmsPartnerCampaigns(brandId);
+            //Assert.IsType<SMSTenDLCPartnerCampaignsListResult>(response);
+            Assert.IsAssignableFrom<SMSTenDLCPartnerCampaignsListResult>(response);
+        }
+        
+        /// <summary>
         /// Test ListActiveQueues
         /// </summary>
         [Fact]
@@ -573,6 +661,8 @@ namespace freeclimb.Test.Api
 	        
             bool? smsEnabled = smsEnabledTestValue();
 	        
+            bool? hasCampaign = hasCampaignTestValue();
+	        
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
 	        
             bool? capabilitiesSms = capabilitiesSmsTestValue();
@@ -585,7 +675,7 @@ namespace freeclimb.Test.Api
 	        
             bool? offnet = offnetTestValue();
 	        
-            var response = instance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet);
+            var response = instance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet);
             //Assert.IsType<IncomingNumberList>(response);
             Assert.IsAssignableFrom<IncomingNumberList>(response);
         }
@@ -1219,6 +1309,21 @@ namespace freeclimb.Test.Api
         {
             return new MessageRequest("example.com", dateCreatedTestValue(), dateUpdatedTestValue(), 2, phoneNumberTestValue(), "+13124445555",
                "test text message", null, accountIdTestValue());
+        }
+
+        private string brandIdTestValue()
+        {
+            return "BX56XX4";
+        }
+
+        private string campaignIdTestValue()
+        {
+            return "CX56XX4";
+        }
+
+        private bool hasCampaignTestValue()
+        {
+            return true;
         }
 
         private System.IO.Stream systemIOStreamTestValue()
