@@ -423,33 +423,28 @@ namespace freeclimb.Model
         {
             this.EntityType = entityType;
             // to ensure "displayName" is required (not null)
-            if (displayName == null)
-            {
+            if (displayName == null) {
                 throw new ArgumentNullException("displayName is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.DisplayName = displayName;
             // to ensure "phone" is required (not null)
-            if (phone == null)
-            {
+            if (phone == null) {
                 throw new ArgumentNullException("phone is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Phone = phone;
             // to ensure "country" is required (not null)
-            if (country == null)
-            {
+            if (country == null) {
                 throw new ArgumentNullException("country is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Country = country;
             // to ensure "email" is required (not null)
-            if (email == null)
-            {
+            if (email == null) {
                 throw new ArgumentNullException("email is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Email = email;
             this.BrandRelationship = brandRelationship;
             // to ensure "vertical" is required (not null)
-            if (vertical == null)
-            {
+            if (vertical == null) {
                 throw new ArgumentNullException("vertical is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Vertical = vertical;
@@ -741,40 +736,40 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);
-            props.Add("entityType", EntityType);
-            props.Add("cspId", CspId);
-            props.Add("brandId", BrandId);
-            props.Add("firstName", FirstName);
-            props.Add("lastName", LastName);
-            props.Add("displayName", DisplayName);
-            props.Add("companyName", CompanyName);
-            props.Add("ein", Ein);
-            props.Add("einIssuingCountry", EinIssuingCountry);
-            props.Add("phone", Phone);
-            props.Add("street", Street);
-            props.Add("city", City);
-            props.Add("state", State);
-            props.Add("postalCode", PostalCode);
-            props.Add("country", Country);
-            props.Add("email", Email);
-            props.Add("stockSymbol", StockSymbol);
-            props.Add("stockExchange", StockExchange);
-            props.Add("ipAddress", IpAddress);
-            props.Add("website", Website);
-            props.Add("brandRelationship", BrandRelationship);
-            props.Add("vertical", Vertical);
-            props.Add("altBusinessId", AltBusinessId);
-            props.Add("altBusinessIdType", AltBusinessIdType);
-            props.Add("universalEin", UniversalEin);
-            props.Add("referenceId", ReferenceId);
-            props.Add("optionalAttributes", OptionalAttributes);
-            props.Add("mock", Mock);
-            props.Add("identityStatus", IdentityStatus);
-            props.Add("createDate", CreateDate);
+            props.Add("accountId", AccountId);          
+            props.Add("entityType", EntityType);          
+            props.Add("cspId", CspId);          
+            props.Add("brandId", BrandId);          
+            props.Add("firstName", FirstName);          
+            props.Add("lastName", LastName);          
+            props.Add("displayName", DisplayName);          
+            props.Add("companyName", CompanyName);          
+            props.Add("ein", Ein);          
+            props.Add("einIssuingCountry", EinIssuingCountry);          
+            props.Add("phone", Phone);          
+            props.Add("street", Street);          
+            props.Add("city", City);          
+            props.Add("state", State);          
+            props.Add("postalCode", PostalCode);          
+            props.Add("country", Country);          
+            props.Add("email", Email);          
+            props.Add("stockSymbol", StockSymbol);          
+            props.Add("stockExchange", StockExchange);          
+            props.Add("ipAddress", IpAddress);          
+            props.Add("website", Website);          
+            props.Add("brandRelationship", BrandRelationship);          
+            props.Add("vertical", Vertical);          
+            props.Add("altBusinessId", AltBusinessId);          
+            props.Add("altBusinessIdType", AltBusinessIdType);          
+            props.Add("universalEin", UniversalEin);          
+            props.Add("referenceId", ReferenceId);          
+            props.Add("optionalAttributes", OptionalAttributes);          
+            props.Add("mock", Mock);          
+            props.Add("identityStatus", IdentityStatus);          
+            props.Add("createDate", CreateDate);          
             return props;
         }
-
+        
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
@@ -796,152 +791,152 @@ namespace freeclimb.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.AccountId == input.AccountId ||
                     (this.AccountId != null &&
                     this.AccountId.Equals(input.AccountId))
-                ) &&
+                ) && 
                 (
                     this.EntityType == input.EntityType ||
                     this.EntityType.Equals(input.EntityType)
-                ) &&
+                ) && 
                 (
                     this.CspId == input.CspId ||
                     (this.CspId != null &&
                     this.CspId.Equals(input.CspId))
-                ) &&
+                ) && 
                 (
                     this.BrandId == input.BrandId ||
                     (this.BrandId != null &&
                     this.BrandId.Equals(input.BrandId))
-                ) &&
+                ) && 
                 (
                     this.FirstName == input.FirstName ||
                     (this.FirstName != null &&
                     this.FirstName.Equals(input.FirstName))
-                ) &&
+                ) && 
                 (
                     this.LastName == input.LastName ||
                     (this.LastName != null &&
                     this.LastName.Equals(input.LastName))
-                ) &&
+                ) && 
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
-                ) &&
+                ) && 
                 (
                     this.CompanyName == input.CompanyName ||
                     (this.CompanyName != null &&
                     this.CompanyName.Equals(input.CompanyName))
-                ) &&
+                ) && 
                 (
                     this.Ein == input.Ein ||
                     (this.Ein != null &&
                     this.Ein.Equals(input.Ein))
-                ) &&
+                ) && 
                 (
                     this.EinIssuingCountry == input.EinIssuingCountry ||
                     (this.EinIssuingCountry != null &&
                     this.EinIssuingCountry.Equals(input.EinIssuingCountry))
-                ) &&
+                ) && 
                 (
                     this.Phone == input.Phone ||
                     (this.Phone != null &&
                     this.Phone.Equals(input.Phone))
-                ) &&
+                ) && 
                 (
                     this.Street == input.Street ||
                     (this.Street != null &&
                     this.Street.Equals(input.Street))
-                ) &&
+                ) && 
                 (
                     this.City == input.City ||
                     (this.City != null &&
                     this.City.Equals(input.City))
-                ) &&
+                ) && 
                 (
                     this.State == input.State ||
                     (this.State != null &&
                     this.State.Equals(input.State))
-                ) &&
+                ) && 
                 (
                     this.PostalCode == input.PostalCode ||
                     (this.PostalCode != null &&
                     this.PostalCode.Equals(input.PostalCode))
-                ) &&
+                ) && 
                 (
                     this.Country == input.Country ||
                     (this.Country != null &&
                     this.Country.Equals(input.Country))
-                ) &&
+                ) && 
                 (
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
-                ) &&
+                ) && 
                 (
                     this.StockSymbol == input.StockSymbol ||
                     (this.StockSymbol != null &&
                     this.StockSymbol.Equals(input.StockSymbol))
-                ) &&
+                ) && 
                 (
                     this.StockExchange == input.StockExchange ||
                     this.StockExchange.Equals(input.StockExchange)
-                ) &&
+                ) && 
                 (
                     this.IpAddress == input.IpAddress ||
                     (this.IpAddress != null &&
                     this.IpAddress.Equals(input.IpAddress))
-                ) &&
+                ) && 
                 (
                     this.Website == input.Website ||
                     (this.Website != null &&
                     this.Website.Equals(input.Website))
-                ) &&
+                ) && 
                 (
                     this.BrandRelationship == input.BrandRelationship ||
                     this.BrandRelationship.Equals(input.BrandRelationship)
-                ) &&
+                ) && 
                 (
                     this.Vertical == input.Vertical ||
                     (this.Vertical != null &&
                     this.Vertical.Equals(input.Vertical))
-                ) &&
+                ) && 
                 (
                     this.AltBusinessId == input.AltBusinessId ||
                     (this.AltBusinessId != null &&
                     this.AltBusinessId.Equals(input.AltBusinessId))
-                ) &&
+                ) && 
                 (
                     this.AltBusinessIdType == input.AltBusinessIdType ||
                     this.AltBusinessIdType.Equals(input.AltBusinessIdType)
-                ) &&
+                ) && 
                 (
                     this.UniversalEin == input.UniversalEin ||
                     (this.UniversalEin != null &&
                     this.UniversalEin.Equals(input.UniversalEin))
-                ) &&
+                ) && 
                 (
                     this.ReferenceId == input.ReferenceId ||
                     (this.ReferenceId != null &&
                     this.ReferenceId.Equals(input.ReferenceId))
-                ) &&
+                ) && 
                 (
                     this.OptionalAttributes == input.OptionalAttributes ||
                     this.OptionalAttributes != null &&
                     input.OptionalAttributes != null &&
                     this.OptionalAttributes.SequenceEqual(input.OptionalAttributes)
-                ) &&
+                ) && 
                 (
                     this.Mock == input.Mock ||
                     this.Mock.Equals(input.Mock)
-                ) &&
+                ) && 
                 (
                     this.IdentityStatus == input.IdentityStatus ||
                     this.IdentityStatus.Equals(input.IdentityStatus)
-                ) &&
+                ) && 
                 (
                     this.CreateDate == input.CreateDate ||
                     (this.CreateDate != null &&
@@ -1078,115 +1073,115 @@ namespace freeclimb.Model
             // FirstName (string) maxLength
             if (this.FirstName != null && this.FirstName.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FirstName, length must be less than 100.", new[] { "FirstName" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FirstName, length must be less than 100.", new [] { "FirstName" });
             }
 
             // LastName (string) maxLength
             if (this.LastName != null && this.LastName.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LastName, length must be less than 100.", new[] { "LastName" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LastName, length must be less than 100.", new [] { "LastName" });
             }
 
             // DisplayName (string) maxLength
             if (this.DisplayName != null && this.DisplayName.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayName, length must be less than 255.", new[] { "DisplayName" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayName, length must be less than 255.", new [] { "DisplayName" });
             }
 
             // CompanyName (string) maxLength
             if (this.CompanyName != null && this.CompanyName.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CompanyName, length must be less than 255.", new[] { "CompanyName" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CompanyName, length must be less than 255.", new [] { "CompanyName" });
             }
 
             // Ein (string) maxLength
             if (this.Ein != null && this.Ein.Length > 21)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Ein, length must be less than 21.", new[] { "Ein" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Ein, length must be less than 21.", new [] { "Ein" });
             }
 
             // EinIssuingCountry (string) maxLength
             if (this.EinIssuingCountry != null && this.EinIssuingCountry.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EinIssuingCountry, length must be less than 2.", new[] { "EinIssuingCountry" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EinIssuingCountry, length must be less than 2.", new [] { "EinIssuingCountry" });
             }
 
             // Phone (string) maxLength
             if (this.Phone != null && this.Phone.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Phone, length must be less than 20.", new[] { "Phone" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Phone, length must be less than 20.", new [] { "Phone" });
             }
 
             // Street (string) maxLength
             if (this.Street != null && this.Street.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Street, length must be less than 100.", new[] { "Street" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Street, length must be less than 100.", new [] { "Street" });
             }
 
             // City (string) maxLength
             if (this.City != null && this.City.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for City, length must be less than 100.", new[] { "City" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for City, length must be less than 100.", new [] { "City" });
             }
 
             // State (string) maxLength
             if (this.State != null && this.State.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for State, length must be less than 20.", new[] { "State" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for State, length must be less than 20.", new [] { "State" });
             }
 
             // PostalCode (string) maxLength
             if (this.PostalCode != null && this.PostalCode.Length > 10)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PostalCode, length must be less than 10.", new[] { "PostalCode" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PostalCode, length must be less than 10.", new [] { "PostalCode" });
             }
 
             // Country (string) maxLength
             if (this.Country != null && this.Country.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Country, length must be less than 2.", new[] { "Country" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Country, length must be less than 2.", new [] { "Country" });
             }
 
             // Email (string) maxLength
             if (this.Email != null && this.Email.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be less than 100.", new[] { "Email" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be less than 100.", new [] { "Email" });
             }
 
             // StockSymbol (string) maxLength
             if (this.StockSymbol != null && this.StockSymbol.Length > 10)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StockSymbol, length must be less than 10.", new[] { "StockSymbol" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StockSymbol, length must be less than 10.", new [] { "StockSymbol" });
             }
 
             // IpAddress (string) maxLength
             if (this.IpAddress != null && this.IpAddress.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IpAddress, length must be less than 50.", new[] { "IpAddress" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IpAddress, length must be less than 50.", new [] { "IpAddress" });
             }
 
             // Website (string) maxLength
             if (this.Website != null && this.Website.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Website, length must be less than 100.", new[] { "Website" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Website, length must be less than 100.", new [] { "Website" });
             }
 
             // Vertical (string) maxLength
             if (this.Vertical != null && this.Vertical.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Vertical, length must be less than 50.", new[] { "Vertical" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Vertical, length must be less than 50.", new [] { "Vertical" });
             }
 
             // AltBusinessId (string) maxLength
             if (this.AltBusinessId != null && this.AltBusinessId.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AltBusinessId, length must be less than 50.", new[] { "AltBusinessId" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AltBusinessId, length must be less than 50.", new [] { "AltBusinessId" });
             }
 
             // ReferenceId (string) maxLength
             if (this.ReferenceId != null && this.ReferenceId.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceId, length must be less than 50.", new[] { "ReferenceId" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceId, length must be less than 50.", new [] { "ReferenceId" });
             }
 
             yield break;
