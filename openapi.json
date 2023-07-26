@@ -85,7 +85,6 @@
         "type": "string",
         "enum": ["closed", "suspended", "active"],
         "x-enum-varnames": ["CLOSED", "SUSPENDED", "ACTIVE"],
-        "x-enum": true,
         "description": "The status of this account. It is one of: active, suspended, or closed.",
         "nullable": true
       },
@@ -93,7 +92,6 @@
         "type": "string",
         "description": "The type of this account. It is one of: trial or full.",
         "enum": ["trial", "full"],
-        "x-enum": true,
         "x-enum-varnames": ["TRIAL", "FULL"],
         "nullable": true
       },
@@ -102,7 +100,6 @@
         "nullable": true,
         "enum": ["human", "machine"],
         "x-enum-varnames": ["HUMAN", "MACHINE"],
-        "x-enum": true,
         "description": "If this Call was initiated with answering machine detection, either `human` or `machine`. Empty otherwise."
       },
       "CallDirection": {
@@ -110,7 +107,6 @@
         "nullable": true,
         "enum": ["inbound", "outboundAPI", "outboundDial"],
         "x-enum-varnames": ["INBOUND", "OUTBOUND_API", "OUTBOUND_DIAL"],
-        "x-enum": true,
         "description": "Direction of the Call. `inbound` for Calls into FreeClimb, `outboundAPI` for Calls initiated via the REST API,  `outboundDial` for Calls initiated by the `OutDial` PerCL command."
       },
       "CallStatus": {
@@ -136,7 +132,6 @@
           "BUSY",
           "NO_ANSWER"
         ],
-        "x-enum": true,
         "description": "* `queued` &ndash; Call is ready and waiting in line before going out. * `ringing` &ndash; Call is currently ringing. * `inProgress` &ndash; Call was answered and is currently in progress. * `canceled` &ndash; Call was hung up while it was queued or ringing. * `completed` &ndash; Call was answered and has ended normally. * `busy` &ndash; Caller received a busy signal. * `failed` &ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * `noAnswer` &ndash; Call ended without being answered."
       },
       "ConferenceStatus": {
@@ -144,7 +139,6 @@
         "nullable": true,
         "enum": ["empty", "populated", "inProgress", "terminated"],
         "x-enum-varnames": ["EMPTY", "POPULATED", "IN_PROGRESS", "TERMINATED"],
-        "x-enum": true,
         "description": "The status of the Conference. One of: creating, empty, populated, inProgress, or terminated."
       },
       "GetSpeechReason": {
@@ -164,8 +158,7 @@
           "NO_INPUT",
           "NO_MATCH",
           "RECOGNITION"
-        ],
-        "x-enum": true
+        ]
       },
       "GrammarFileBuiltIn": {
         "type": "string",
@@ -202,22 +195,19 @@
           "DIG11",
           "UP_TO_20_DIGIT_SEQUENCE",
           "VERSAY_YESNO"
-        ],
-        "x-enum": true
+        ]
       },
       "GrammarType": {
         "type": "string",
         "enum": ["URL", "BUILTIN"],
         "nullable": true,
         "x-enum-varnames": ["URL", "BUILT_IN"],
-        "x-enum": true,
         "description": "The grammar file type to use for speech recognition. A value of 'URL' indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of `BUILTIN` indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files."
       },
       "IfMachine": {
         "type": "string",
         "enum": ["redirect", "hangup"],
         "x-enum-varnames": ["REDIRECT", "HANGUP"],
-        "x-enum": true,
         "description": "Specifies how FreeClimb should handle this OutDial if an answering machine answers the Call. Valid values: `redirect` invokes the ifMachineUrl for instructions. `hangup` hangs up the Call. The ifMachineUrl will not be invoked."
       },
       "Language": {
@@ -277,28 +267,24 @@
           "CHINESE_CN",
           "CHINESE_HK",
           "CHINESE_TW"
-        ],
-        "x-enum": true
+        ]
       },
       "LogLevel": {
         "type": "string",
         "enum": ["info", "warning", "error"],
         "nullable": true,
         "x-enum-varnames": ["INFO", "WARNING", "ERROR"],
-        "x-enum": true,
         "description": "Level of the log. Possible values are info, warning, and error."
       },
       "MachineType": {
         "type": "string",
         "enum": ["answeringMachine", "faxMachine"],
-        "x-enum-varnames": ["ANSWERING_MACHINE", "FAX_MACHINE"],
-        "x-enum": true
+        "x-enum-varnames": ["ANSWERING_MACHINE", "FAX_MACHINE"]
       },
       "MessageDirection": {
         "type": "string",
         "enum": ["inbound", "outbound"],
-        "x-enum-varnames": ["INBOUND", "OUTBOUND"],
-        "x-enum": true
+        "x-enum-varnames": ["INBOUND", "OUTBOUND"]
       },
       "MessageStatus": {
         "type": "string",
@@ -329,15 +315,13 @@
           "EXPIRED",
           "DELETED",
           "UNKNOWN"
-        ],
-        "x-enum": true
+        ]
       },
       "PlayBeep": {
         "type": "string",
         "nullable": true,
         "enum": ["always", "never", "entryOnly", "exitOnly"],
         "x-enum-varnames": ["ALWAYS", "NEVER", "ENTRY_ONLY", "EXIT_ONLY"],
-        "x-enum": true,
         "description": "Indicates whether to play a beep when a Participant enters or leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`. Leaving this unset will make conference default to `always` ",
         "default": "always",
         "x-enum-default-attr": "ALWAYS"
@@ -345,14 +329,12 @@
       "QueueResultStatus": {
         "type": "string",
         "enum": ["queueFull", "dequeued", "hangup", "systemError"],
-        "x-enum-varnames": ["QUEUE_FULL", "DEQUEUED", "HANGUP", "SYSTEM_ERROR"],
-        "x-enum": true
+        "x-enum-varnames": ["QUEUE_FULL", "DEQUEUED", "HANGUP", "SYSTEM_ERROR"]
       },
       "RecordUtteranceTermReason": {
         "type": "string",
         "enum": ["finishKey", "timeout", "hangup", "maxLength"],
-        "x-enum-varnames": ["FINISH_KEY", "TIMEOUT", "HANGUP", "MAX_LENGTH"],
-        "x-enum": true
+        "x-enum-varnames": ["FINISH_KEY", "TIMEOUT", "HANGUP", "MAX_LENGTH"]
       },
       "RequestType": {
         "type": "string",
@@ -405,21 +387,18 @@
           "CONFERENCE_CALL_CONTROL",
           "MESSAGE_DELIVERY",
           "MESSAGE_STATUS"
-        ],
-        "x-enum": true
+        ]
       },
       "UpdateCallRequestStatus": {
         "type": "string",
         "enum": ["canceled", "completed"],
         "x-enum-varnames": ["CANCELED", "COMPLETED"],
-        "x-enum": true,
         "description": "Either `canceled` or `completed`.  Specifying `canceled` attempts to hang up calls that are queued without affecting calls already in progress. Specifying `completed` attempts to hang up a call already in progress."
       },
       "UpdateConferenceRequestStatus": {
         "type": "string",
         "enum": ["empty", "terminated"],
         "x-enum-varnames": ["EMPTY", "TERMINATED"],
-        "x-enum": true,
         "description": "New status of the conference. Valid values: `empty` or `terminated`. For more information, see **Status Parameter** below.**"
       },
       "PerclScript": {
@@ -430,7 +409,6 @@
           "commands": {
             "type": "array",
             "description": "A JSON array of PerCL commands",
-            "x-is-list": true,
             "items": {
               "$ref": "#/components/schemas/PerclCommand"
             }
@@ -506,7 +484,7 @@
               },
               "callId": {
                 "description": "ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.",
-                "type": "string"
+                "type": "boolean"
               },
               "leaveConferenceUrl": {
                 "description": "URL to be invoked when the Participant leaves the Conference. ",
@@ -573,7 +551,6 @@
       "Dequeue": {
         "description": "The `Dequeue` command transfers control of a Call that is in a Queue so that the waiting caller exits the Queue. Execution continues with the first command in the PerCL script returned by the `actionUrl` specified in the `Enqueue` command.",
         "x-percl-command": true,
-        "x-no-properties": true,
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -656,7 +633,6 @@
               "prompts": {
                 "description": "JSON array of PerCL commands to nest within the `GetDigits` command. The `Say`, `Play`, and `Pause` commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller.",
                 "type": "array",
-                "x-is-list": true,
                 "items": {
                   "$ref": "#/components/schemas/PerclCommand"
                 }
@@ -683,8 +659,7 @@
               "actionUrl": {
                 "description": "When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call.",
                 "type": "string",
-                "format": "uri",
-                "x-is-uri": true
+                "format": "uri"
               },
               "grammarType": {
                 "$ref": "#/components/schemas/GrammarType"
@@ -706,8 +681,7 @@
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/PerclCommand"
-                },
-                "x-is-list": true
+                }
               },
               "noInputTimeoutMs": {
                 "description": "When recognition is started and there is no speech detected for `noInputTimeoutMs` milliseconds, the recognizer will terminate the recognition operation.",
@@ -1156,7 +1130,6 @@
       "StartRecordCall": {
         "description": "The `StartRecordCall` command records the current call and returns the URL of a file containing the audio recording when recording completes. `StartRecordCall` is non-blocking. After recording of the current call begins, control of the call moves to the PerCL command that follows `StartRecordCall` in the current PerCL script.",
         "x-percl-command": true,
-        "x-no-properties": true,
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1188,7 +1161,6 @@
       "Unpark": {
         "description": "The `Unpark` command resumes a parked call.  Execution continues with the first command in the PerCL scripted returned by the actionUrl specified in the Park command as long as the call is still in progress.  If the call is no longer in progress, any returned PerCL will not be executed. Unpark is a terminal command -- any commands following it in the same script are not executed.",
         "x-percl-command": true,
-        "x-no-properties": true,
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1263,7 +1235,6 @@
         "description": "Details for which features this number may be used.",
         "type": "object",
         "required": ["voice", "sms", "tollFree", "tenDLC", "shortCode"],
-        "x-is-object": true,
         "properties": {
           "voice": {
             "description": "Indicates whether a number can be used for voice calls. Replaces voiceEnabled.",
@@ -1457,8 +1428,7 @@
                 "items": {
                   "$ref": "#/components/schemas/ApplicationResult"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -1517,8 +1487,7 @@
                 "items": {
                   "$ref": "#/components/schemas/AvailableNumber"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -1627,8 +1596,7 @@
                 "items": {
                   "$ref": "#/components/schemas/IncomingNumberResult"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -1803,8 +1771,7 @@
                 "items": {
                   "$ref": "#/components/schemas/CallResult"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -1860,8 +1827,7 @@
                 "items": {
                   "$ref": "#/components/schemas/RecordingResult"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -1918,8 +1884,7 @@
                 "items": {
                   "$ref": "#/components/schemas/LogResult"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -1998,8 +1963,7 @@
                 "items": {
                   "$ref": "#/components/schemas/MessageResult"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -2051,8 +2015,7 @@
                 "items": {
                   "$ref": "#/components/schemas/ConferenceResult"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -2215,8 +2178,7 @@
                 "items": {
                   "$ref": "#/components/schemas/ConferenceParticipantResult"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -2297,8 +2259,7 @@
                 "items": {
                   "$ref": "#/components/schemas/QueueResult"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -2347,8 +2308,7 @@
                 "items": {
                   "$ref": "#/components/schemas/QueueMember"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -2377,8 +2337,7 @@
                 "items": {
                   "$ref": "#/components/schemas/SMSTenDLCCampaign"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
@@ -2411,23 +2370,22 @@
           },
           "resellerId": {
             "maxLength": 8,
-            "x-max-length-8": true,
             "type": "string",
             "nullable": true,
             "description": "Alphanumeric identifier of the reseller that you want to associate with this campaign."
           },
           "status": {
             "type": "string",
-            "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
-            "enum": ["ACTIVE", "EXPIRED"],
-            "x-enum-varnames": ["ACTIVE", "EXPIRED"]
+            "enum": [
+              "ACTIVE",
+              "EXPIRED"
+            ]
           },
           "createDate": {
             "type": "string",
             "description": "Unix timestamp when campaign was created.",
-            "format": "date-time",
-            "x-is-date-time": true
+            "format": "date-time"
           },
           "autoRenewal": {
             "type": "boolean",
@@ -2437,12 +2395,10 @@
             "type": "string",
             "description": "Campaign recent billed date.",
             "format": "date-time",
-            "x-is-date-time": true,
             "nullable": true
           },
           "brandId": {
             "maxLength": 8,
-            "x-max-length-8": true,
             "type": "string",
             "description": "Alphanumeric identifier of the brand associated with this campaign."
           },
@@ -2453,7 +2409,6 @@
           },
           "subUsecases": {
             "uniqueItems": true,
-            "x-is-set": true,
             "type": "array",
             "description": "Campaign sub-usecases. Must be of defined valid sub-usecase types. Use `/registry/enum/usecase` operation to retrieve list of valid sub-usecases",
             "items": {
@@ -2461,7 +2416,7 @@
               "description": "Campaign sub-usecases. Must be of defined valid sub-usecase types. Use `/registry/enum/usecase` operation to retrieve list of valid sub-usecases"
             }
           },
-          "description": {
+            "description": {
             "maxLength": 4096,
             "type": "string",
             "description": "Summary description of this campaign."
@@ -2563,10 +2518,10 @@
             "nullable": true,
             "description": "When the campaign would be due for its next renew/bill date.",
             "format": "date",
-            "x-is-date": true,
             "example": "2000-01-01"
           }
-        },
+        }
+        ,
         "example": {
           "campaignId": "CX56XX4",
           "accountId": "ACe39970fb7c31c747c67148900b4d9da60a41e532",
@@ -2614,15 +2569,19 @@
                 "items": {
                   "$ref": "#/components/schemas/SMSTenDLCPartnerCampaign"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
         ]
       },
       "SMSTenDLCPartnerCampaign": {
-        "required": ["brandId", "campaignId", "description", "usecase"],
+        "required": [
+          "brandId",
+          "campaignId",
+          "description",
+          "usecase"
+        ],
         "type": "object",
         "properties": {
           "accountId": {
@@ -2636,20 +2595,19 @@
           },
           "status": {
             "type": "string",
-            "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
-            "enum": ["ACTIVE", "EXPIRED"],
-            "x-enum-varnames": ["ACTIVE", "EXPIRED"]
+            "enum": [
+              "ACTIVE",
+              "EXPIRED"
+            ]
           },
           "createDate": {
             "type": "string",
             "description": "Unix timestamp when campaign was created.",
-            "format": "date-time",
-            "x-is-date-time": true
+            "format": "date-time"
           },
           "brandId": {
             "maxLength": 8,
-            "x-max-length-8": true,
             "type": "string",
             "description": "Alphanumeric identifier of the brand associated with this campaign."
           },
@@ -2771,8 +2729,7 @@
             "description": "Subscriber opt-out message."
           },
           "brand": {
-            "$ref": "#/components/schemas/SMSTenDLCPartnerCampaignBrand",
-            "x-partner-campaign-brand": true
+            "$ref": "#/components/schemas/SMSTenDLCPartnerCampaignBrand"
           }
         },
         "example": {
@@ -2818,10 +2775,12 @@
           }
         }
       },
-      "SMSTenDLCPartnerCampaignBrand": {
-        "required": ["email", "phone"],
+      "SMSTenDLCPartnerCampaignBrand":{
+        "required": [
+          "email",
+          "phone"
+        ],
         "type": "object",
-        "x-is-object": true,
         "properties": {
           "accountId": {
             "type": "string",
@@ -2875,9 +2834,7 @@
             "example": "http://www.abcmobile.com"
           },
           "optionalAttributes": {
-            "x-is-map": true,
             "type": "object",
-            "x-is-hash": true,
             "additionalProperties": {
               "type": "object",
               "description": "Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names."
@@ -2903,14 +2860,13 @@
                 "items": {
                   "$ref": "#/components/schemas/SMSTenDLCBrand"
                 },
-                "nullable": true,
-                "x-is-list": true
+                "nullable": true
               }
             }
           }
         ]
       },
-      "SMSTenDLCBrand": {
+      "SMSTenDLCBrand":{
         "required": [
           "brandRelationship",
           "country",
@@ -2932,16 +2888,8 @@
           "entityType": {
             "maxLength": 20,
             "type": "string",
-            "x-has-writer": true,
             "description": "Entity type behind the brand. This is the form of business establishment.",
             "enum": [
-              "PRIVATE_PROFIT",
-              "PUBLIC_PROFIT",
-              "NON_PROFIT",
-              "GOVERNMENT",
-              "SOLE_PROPRIETOR"
-            ],
-            "x-enum-varnames": [
               "PRIVATE_PROFIT",
               "PUBLIC_PROFIT",
               "NON_PROFIT",
@@ -2993,8 +2941,7 @@
             "maxLength": 2,
             "type": "string",
             "description": "ISO2 2 characters country code. Example: US - United States",
-            "example": "US",
-            "x-max-length-2": true
+            "example": "US"
           },
           "phone": {
             "maxLength": 20,
@@ -3022,14 +2969,12 @@
           },
           "postalCode": {
             "maxLength": 10,
-            "x-max-length-10": true,
             "type": "string",
             "description": "Postal codes. Use 5 digit zipcode for United States",
             "example": "10001"
           },
           "country": {
             "maxLength": 2,
-            "x-max-length-2": true,
             "type": "string",
             "description": "ISO2 2 characters country code. Example: US - United States",
             "example": "US"
@@ -3041,46 +2986,15 @@
           },
           "stockSymbol": {
             "maxLength": 10,
-            "x-max-length-10": true,
             "type": "string",
             "description": "(Required for public company) stock symbol.",
             "example": "ABC"
           },
           "stockExchange": {
             "type": "string",
-            "x-has-writer": true,
             "description": "(Required for public company) stock exchange.",
             "example": "NASDAQ",
             "enum": [
-              "NONE",
-              "NASDAQ",
-              "NYSE",
-              "AMEX",
-              "AMX",
-              "ASX",
-              "B3",
-              "BME",
-              "BSE",
-              "FRA",
-              "ICEX",
-              "JPX",
-              "JSE",
-              "KRX",
-              "LON",
-              "NSE",
-              "OMX",
-              "SEHK",
-              "SGX",
-              "SSE",
-              "STO",
-              "SWX",
-              "SZSE",
-              "TSX",
-              "TWSE",
-              "VSE",
-              "OTHER"
-            ],
-            "x-enum-varnames": [
               "NONE",
               "NASDAQ",
               "NYSE",
@@ -3123,16 +3037,8 @@
           },
           "brandRelationship": {
             "type": "string",
-            "x-has-writer": true,
             "description": "Brand relationship to the CSP",
             "enum": [
-              "BASIC_ACCOUNT",
-              "SMALL_ACCOUNT",
-              "MEDIUM_ACCOUNT",
-              "LARGE_ACCOUNT",
-              "KEY_ACCOUNT"
-            ],
-            "x-enum-varnames": [
               "BASIC_ACCOUNT",
               "SMALL_ACCOUNT",
               "MEDIUM_ACCOUNT",
@@ -3152,9 +3058,12 @@
           },
           "altBusinessIdType": {
             "type": "string",
-            "x-has-writer": true,
-            "enum": ["NONE", "DUNS", "GIIN", "LEI"],
-            "x-enum-varnames": ["NONE", "DUNS", "GIIN", "LEI"],
+            "enum": [
+              "NONE",
+              "DUNS",
+              "GIIN",
+              "LEI"
+            ],
             "description": "The type of the Alternative business identifier"
           },
           "universalEin": {
@@ -3168,9 +3077,7 @@
             "description": "Caller supplied brand reference ID. If supplied, the value must be unique across all submitted brands. Can be used to prevent duplicate brand registrations."
           },
           "optionalAttributes": {
-            "x-is-map": true,
             "type": "object",
-            "x-is-hash": true,
             "additionalProperties": {
               "type": "object",
               "description": "Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names."
@@ -3183,15 +3090,8 @@
           },
           "identityStatus": {
             "type": "string",
-            "x-has-writer": true,
             "description": "TCR assessment of the brand identification status.",
             "enum": [
-              "SELF_DECLARED",
-              "UNVERIFIED",
-              "VERIFIED",
-              "VETTED_VERIFIED"
-            ],
-            "x-enum-varnames": [
               "SELF_DECLARED",
               "UNVERIFIED",
               "VERIFIED",
@@ -3201,8 +3101,7 @@
           "createDate": {
             "type": "string",
             "description": "Unix timestamp when brand was created.",
-            "format": "date-time",
-            "x-is-date-time": true
+            "format": "date-time"
           }
         },
         "description": "A brand is a business identity behind the campaign.",
