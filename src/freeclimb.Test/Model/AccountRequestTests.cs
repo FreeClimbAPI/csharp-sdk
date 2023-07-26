@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public AccountRequestTests()
         {
-            //instance = new AccountRequest();
+            instance = new AccountRequest();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void AccountRequestInstanceTest()
         {
             // TODO uncomment below to test "IsType" AccountRequest
-            //Assert.IsType<AccountRequest>(instance);
+            Assert.IsType<AccountRequest>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
         /// <summary>
         /// Test the property 'Label'
@@ -73,8 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LabelTest()
         {
-            // TODO unit test for the property 'Label'
+            instance.Label = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Label);
+            
         }
     }
-
 }
