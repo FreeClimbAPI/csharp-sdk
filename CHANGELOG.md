@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.5.1"></a>
+
+## [4.5.1] 2023-07-26
+
+### Changed
+
+- Changed AddToConference CallId property type from boolean to string
+
 <a name="4.5.0"></a>
 
 ## [4.5.0] 2023-06-07
