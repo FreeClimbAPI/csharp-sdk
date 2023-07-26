@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public CallResultTests()
         {
-            //instance = new CallResult();
+            instance = new CallResult();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void CallResultInstanceTest()
         {
             // TODO uncomment below to test "IsType" CallResult
-            //Assert.IsType<CallResult>(instance);
+            Assert.IsType<CallResult>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UriTest()
         {
-            // TODO unit test for the property 'Uri'
+            instance.Uri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Uri);
+            
         }
         /// <summary>
         /// Test the property 'DateCreated'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateCreatedTest()
         {
-            // TODO unit test for the property 'DateCreated'
+            instance.DateCreated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateCreated);
+            
         }
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateUpdatedTest()
         {
-            // TODO unit test for the property 'DateUpdated'
+            instance.DateUpdated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            
         }
         /// <summary>
         /// Test the property 'Revision'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-            // TODO unit test for the property 'Revision'
+            
+            instance.Revision = 1;
+            Assert.Equal(1, (int) instance.Revision);
         }
         /// <summary>
         /// Test the property 'CallId'
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
         /// <summary>
         /// Test the property 'ParentCallId'
@@ -105,7 +115,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ParentCallIdTest()
         {
-            // TODO unit test for the property 'ParentCallId'
+            instance.ParentCallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ParentCallId);
+            
         }
         /// <summary>
         /// Test the property 'AccountId'
@@ -113,7 +125,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
         /// <summary>
         /// Test the property 'From'
@@ -121,7 +135,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FromTest()
         {
-            // TODO unit test for the property 'From'
+            instance.From = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.From);
+            
         }
         /// <summary>
         /// Test the property 'To'
@@ -129,7 +145,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToTest()
         {
-            // TODO unit test for the property 'To'
+            instance.To = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.To);
+            
         }
         /// <summary>
         /// Test the property 'PhoneNumberId'
@@ -137,7 +155,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PhoneNumberIdTest()
         {
-            // TODO unit test for the property 'PhoneNumberId'
+            instance.PhoneNumberId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.PhoneNumberId);
+            
         }
         /// <summary>
         /// Test the property 'CallStatus'
@@ -145,7 +165,47 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallStatusTest()
         {
-            // TODO unit test for the property 'CallStatus'
+            //model.setCallStatus(CallStatus.QUEUED);
+            //Assert.assertEquals(model.getCallStatus(),CallStatus.QUEUED);
+            //model.setCallStatus(CallStatus.RINGING);
+            //Assert.assertEquals(model.getCallStatus(),CallStatus.RINGING);
+            //model.setCallStatus(CallStatus.IN_PROGRESS);
+            //Assert.assertEquals(model.getCallStatus(),CallStatus.IN_PROGRESS);
+            //model.setCallStatus(CallStatus.CANCELED);
+            //Assert.assertEquals(model.getCallStatus(),CallStatus.CANCELED);
+            //model.setCallStatus(CallStatus.COMPLETED);
+            //Assert.assertEquals(model.getCallStatus(),CallStatus.COMPLETED);
+            //model.setCallStatus(CallStatus.FAILED);
+            //Assert.assertEquals(model.getCallStatus(),CallStatus.FAILED);
+            //model.setCallStatus(CallStatus.BUSY);
+            //Assert.assertEquals(model.getCallStatus(),CallStatus.BUSY);
+            //model.setCallStatus(CallStatus.NO_ANSWER);
+            //Assert.assertEquals(model.getCallStatus(),CallStatus.NO_ANSWER);
+            
+            //model.setCallStatus(CallResult.CallStatus.QUEUED);
+            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.QUEUED);
+            
+            //model.setCallStatus(CallResult.CallStatus.RINGING);
+            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.RINGING);
+            
+            //model.setCallStatus(CallResult.CallStatus.IN_PROGRESS);
+            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.IN_PROGRESS);
+            
+            //model.setCallStatus(CallResult.CallStatus.CANCELED);
+            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.CANCELED);
+            
+            //model.setCallStatus(CallResult.CallStatus.COMPLETED);
+            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.COMPLETED);
+            
+            //model.setCallStatus(CallResult.CallStatus.FAILED);
+            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.FAILED);
+            
+            //model.setCallStatus(CallResult.CallStatus.BUSY);
+            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.BUSY);
+            
+            //model.setCallStatus(CallResult.CallStatus.NO_ANSWER);
+            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.NO_ANSWER);
+            
         }
         /// <summary>
         /// Test the property 'StartTime'
@@ -153,7 +213,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StartTimeTest()
         {
-            // TODO unit test for the property 'StartTime'
+            instance.StartTime = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.StartTime);
+            
         }
         /// <summary>
         /// Test the property 'ConnectTime'
@@ -161,7 +223,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConnectTimeTest()
         {
-            // TODO unit test for the property 'ConnectTime'
+            instance.ConnectTime = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ConnectTime);
+            
         }
         /// <summary>
         /// Test the property 'EndTime'
@@ -169,7 +233,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EndTimeTest()
         {
-            // TODO unit test for the property 'EndTime'
+            instance.EndTime = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.EndTime);
+            
         }
         /// <summary>
         /// Test the property 'Duration'
@@ -177,7 +243,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DurationTest()
         {
-            // TODO unit test for the property 'Duration'
+            
+            instance.Duration = 1;
+            Assert.Equal(1, (int) instance.Duration);
         }
         /// <summary>
         /// Test the property 'ConnectDuration'
@@ -185,7 +253,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConnectDurationTest()
         {
-            // TODO unit test for the property 'ConnectDuration'
+            
+            instance.ConnectDuration = 1;
+            Assert.Equal(1, (int) instance.ConnectDuration);
         }
         /// <summary>
         /// Test the property 'Direction'
@@ -193,7 +263,22 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DirectionTest()
         {
-            // TODO unit test for the property 'Direction'
+            //model.setDirection(CallDirection.INBOUND);
+            //Assert.assertEquals(model.getDirection(),CallDirection.INBOUND);
+            //model.setDirection(CallDirection.OUTBOUND_API);
+            //Assert.assertEquals(model.getDirection(),CallDirection.OUTBOUND_API);
+            //model.setDirection(CallDirection.OUTBOUND_DIAL);
+            //Assert.assertEquals(model.getDirection(),CallDirection.OUTBOUND_DIAL);
+            
+            //model.setDirection(CallResult.CallDirection.INBOUND);
+            //Assert.assertEquals(model.getDirection(),CallResult.CallDirection.INBOUND);
+            
+            //model.setDirection(CallResult.CallDirection.OUTBOUND_API);
+            //Assert.assertEquals(model.getDirection(),CallResult.CallDirection.OUTBOUND_API);
+            
+            //model.setDirection(CallResult.CallDirection.OUTBOUND_DIAL);
+            //Assert.assertEquals(model.getDirection(),CallResult.CallDirection.OUTBOUND_DIAL);
+            
         }
         /// <summary>
         /// Test the property 'AnsweredBy'
@@ -201,7 +286,17 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AnsweredByTest()
         {
-            // TODO unit test for the property 'AnsweredBy'
+            //model.setAnsweredBy(AnsweredBy.HUMAN);
+            //Assert.assertEquals(model.getAnsweredBy(),AnsweredBy.HUMAN);
+            //model.setAnsweredBy(AnsweredBy.MACHINE);
+            //Assert.assertEquals(model.getAnsweredBy(),AnsweredBy.MACHINE);
+            
+            //model.setAnsweredBy(CallResult.AnsweredBy.HUMAN);
+            //Assert.assertEquals(model.getAnsweredBy(),CallResult.AnsweredBy.HUMAN);
+            
+            //model.setAnsweredBy(CallResult.AnsweredBy.MACHINE);
+            //Assert.assertEquals(model.getAnsweredBy(),CallResult.AnsweredBy.MACHINE);
+            
         }
         /// <summary>
         /// Test the property 'SubresourceUris'
@@ -209,7 +304,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SubresourceUrisTest()
         {
-            // TODO unit test for the property 'SubresourceUris'
+            object testObject = new object();
+            instance.SubresourceUris = testObject;
+            Assert.Equal(testObject, instance.SubresourceUris);
+            
         }
     }
 }

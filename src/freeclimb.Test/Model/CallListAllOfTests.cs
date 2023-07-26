@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public CallListAllOfTests()
         {
-            //instance = new CallListAllOf();
+            instance = new CallListAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void CallListAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" CallListAllOf
-            //Assert.IsType<CallListAllOf>(instance);
+            Assert.IsType<CallListAllOf>(instance);
         }
 
 
@@ -65,8 +65,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallsTest()
         {
-            // TODO unit test for the property 'Calls'
+            
+            List<CallResult> testList = new List<CallResult>();
+            instance.Calls = testList;
+            Assert.Equal(testList, instance.Calls); 
         }
     }
-
 }

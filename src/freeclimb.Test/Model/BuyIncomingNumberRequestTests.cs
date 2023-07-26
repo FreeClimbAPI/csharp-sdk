@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public BuyIncomingNumberRequestTests()
         {
-            //instance = new BuyIncomingNumberRequest();
+            instance = new BuyIncomingNumberRequest("TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void BuyIncomingNumberRequestInstanceTest()
         {
             // TODO uncomment below to test "IsType" BuyIncomingNumberRequest
-            //Assert.IsType<BuyIncomingNumberRequest>(instance);
+            Assert.IsType<BuyIncomingNumberRequest>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PhoneNumberTest()
         {
-            // TODO unit test for the property 'PhoneNumber'
+            instance.PhoneNumber = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.PhoneNumber);
+            
         }
         /// <summary>
         /// Test the property 'Alias'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
         /// <summary>
         /// Test the property 'ApplicationId'
@@ -81,8 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ApplicationIdTest()
         {
-            // TODO unit test for the property 'ApplicationId'
+            instance.ApplicationId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            
         }
     }
-
 }

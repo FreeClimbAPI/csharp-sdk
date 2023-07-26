@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public AddToConferenceTests()
         {
-            //instance = new AddToConference();
+            instance = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void AddToConferenceInstanceTest()
         {
             // TODO uncomment below to test "IsType" AddToConference
-            //Assert.IsType<AddToConference>(instance);
+            Assert.IsType<AddToConference>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AllowCallControlTest()
         {
-            // TODO unit test for the property 'AllowCallControl'
+            instance.AllowCallControl = false;
+            Assert.Equal(false, instance.AllowCallControl);       
+            
         }
         /// <summary>
         /// Test the property 'CallControlSequence'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallControlSequenceTest()
         {
-            // TODO unit test for the property 'CallControlSequence'
+            instance.CallControlSequence = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallControlSequence);
+            
         }
         /// <summary>
         /// Test the property 'CallControlUrl'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallControlUrlTest()
         {
-            // TODO unit test for the property 'CallControlUrl'
+            instance.CallControlUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallControlUrl);
+            
         }
         /// <summary>
         /// Test the property 'ConferenceId'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferenceIdTest()
         {
-            // TODO unit test for the property 'ConferenceId'
+            instance.ConferenceId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            
         }
         /// <summary>
         /// Test the property 'CallId'
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = false;
+            Assert.Equal(false, instance.CallId);       
+            
         }
         /// <summary>
         /// Test the property 'LeaveConferenceUrl'
@@ -105,7 +115,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LeaveConferenceUrlTest()
         {
-            // TODO unit test for the property 'LeaveConferenceUrl'
+            instance.LeaveConferenceUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.LeaveConferenceUrl);
+            
         }
         /// <summary>
         /// Test the property 'Listen'
@@ -113,7 +125,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ListenTest()
         {
-            // TODO unit test for the property 'Listen'
+            instance.Listen = false;
+            Assert.Equal(false, instance.Listen);       
+            
         }
         /// <summary>
         /// Test the property 'NotificationUrl'
@@ -121,7 +135,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NotificationUrlTest()
         {
-            // TODO unit test for the property 'NotificationUrl'
+            instance.NotificationUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.NotificationUrl);
+            
         }
         /// <summary>
         /// Test the property 'StartConfOnEnter'
@@ -129,7 +145,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StartConfOnEnterTest()
         {
-            // TODO unit test for the property 'StartConfOnEnter'
+            instance.StartConfOnEnter = false;
+            Assert.Equal(false, instance.StartConfOnEnter);       
+            
         }
         /// <summary>
         /// Test the property 'Talk'
@@ -137,8 +155,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TalkTest()
         {
-            // TODO unit test for the property 'Talk'
+            instance.Talk = false;
+            Assert.Equal(false, instance.Talk);       
+            
         }
     }
-
 }

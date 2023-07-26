@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public ConferenceListAllOfTests()
         {
-            //instance = new ConferenceListAllOf();
+            instance = new ConferenceListAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void ConferenceListAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" ConferenceListAllOf
-            //Assert.IsType<ConferenceListAllOf>(instance);
+            Assert.IsType<ConferenceListAllOf>(instance);
         }
 
 
@@ -65,8 +65,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferencesTest()
         {
-            // TODO unit test for the property 'Conferences'
+            
+            List<ConferenceResult> testList = new List<ConferenceResult>();
+            instance.Conferences = testList;
+            Assert.Equal(testList, instance.Conferences); 
         }
     }
-
 }

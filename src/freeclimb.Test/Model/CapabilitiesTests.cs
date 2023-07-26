@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public CapabilitiesTests()
         {
-            //instance = new Capabilities();
+            instance = new Capabilities(false, false, false, false, false);
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void CapabilitiesInstanceTest()
         {
             // TODO uncomment below to test "IsType" Capabilities
-            //Assert.IsType<Capabilities>(instance);
+            Assert.IsType<Capabilities>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void VoiceTest()
         {
-            // TODO unit test for the property 'Voice'
+            instance.Voice = false;
+            Assert.Equal(false, instance.Voice);       
+            
         }
         /// <summary>
         /// Test the property 'Sms'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SmsTest()
         {
-            // TODO unit test for the property 'Sms'
+            instance.Sms = false;
+            Assert.Equal(false, instance.Sms);       
+            
         }
         /// <summary>
         /// Test the property 'TollFree'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TollFreeTest()
         {
-            // TODO unit test for the property 'TollFree'
+            instance.TollFree = false;
+            Assert.Equal(false, instance.TollFree);       
+            
         }
         /// <summary>
         /// Test the property 'TenDLC'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TenDLCTest()
         {
-            // TODO unit test for the property 'TenDLC'
+            instance.TenDLC = false;
+            Assert.Equal(false, instance.TenDLC);       
+            
         }
         /// <summary>
         /// Test the property 'ShortCode'
@@ -97,8 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ShortCodeTest()
         {
-            // TODO unit test for the property 'ShortCode'
+            instance.ShortCode = false;
+            Assert.Equal(false, instance.ShortCode);       
+            
         }
     }
-
 }

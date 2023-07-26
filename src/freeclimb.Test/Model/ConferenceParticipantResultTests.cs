@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public ConferenceParticipantResultTests()
         {
-            //instance = new ConferenceParticipantResult();
+            instance = new ConferenceParticipantResult();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void ConferenceParticipantResultInstanceTest()
         {
             // TODO uncomment below to test "IsType" ConferenceParticipantResult
-            //Assert.IsType<ConferenceParticipantResult>(instance);
+            Assert.IsType<ConferenceParticipantResult>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UriTest()
         {
-            // TODO unit test for the property 'Uri'
+            instance.Uri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Uri);
+            
         }
         /// <summary>
         /// Test the property 'DateCreated'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateCreatedTest()
         {
-            // TODO unit test for the property 'DateCreated'
+            instance.DateCreated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateCreated);
+            
         }
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateUpdatedTest()
         {
-            // TODO unit test for the property 'DateUpdated'
+            instance.DateUpdated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            
         }
         /// <summary>
         /// Test the property 'Revision'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-            // TODO unit test for the property 'Revision'
+            
+            instance.Revision = 1;
+            Assert.Equal(1, (int) instance.Revision);
         }
         /// <summary>
         /// Test the property 'AccountId'
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
         /// <summary>
         /// Test the property 'ConferenceId'
@@ -105,7 +115,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferenceIdTest()
         {
-            // TODO unit test for the property 'ConferenceId'
+            instance.ConferenceId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            
         }
         /// <summary>
         /// Test the property 'CallId'
@@ -113,7 +125,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
         /// <summary>
         /// Test the property 'Talk'
@@ -121,7 +135,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TalkTest()
         {
-            // TODO unit test for the property 'Talk'
+            instance.Talk = false;
+            Assert.Equal(false, instance.Talk);       
+            
         }
         /// <summary>
         /// Test the property 'Listen'
@@ -129,7 +145,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ListenTest()
         {
-            // TODO unit test for the property 'Listen'
+            instance.Listen = false;
+            Assert.Equal(false, instance.Listen);       
+            
         }
         /// <summary>
         /// Test the property 'StartConfOnEnter'
@@ -137,8 +155,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StartConfOnEnterTest()
         {
-            // TODO unit test for the property 'StartConfOnEnter'
+            instance.StartConfOnEnter = false;
+            Assert.Equal(false, instance.StartConfOnEnter);       
+            
         }
     }
-
 }

@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public AvailableNumberTests()
         {
-            //instance = new AvailableNumber();
+            instance = new AvailableNumber();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void AvailableNumberInstanceTest()
         {
             // TODO uncomment below to test "IsType" AvailableNumber
-            //Assert.IsType<AvailableNumber>(instance);
+            Assert.IsType<AvailableNumber>(instance);
         }
 
 
@@ -65,7 +65,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesTest()
         {
-            // TODO unit test for the property 'Capabilities'
+            //Capabilities object = new Capabilities();
+            //instance.Capabilities = object;
+            //Assert.AreEqual(object.getType(), Capabilities.getType());
+            
         }
         /// <summary>
         /// Test the property 'CampaignId'
@@ -73,7 +76,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CampaignIdTest()
         {
-            // TODO unit test for the property 'CampaignId'
+            instance.CampaignId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CampaignId);
+            
         }
         /// <summary>
         /// Test the property 'PhoneNumber'
@@ -81,7 +86,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PhoneNumberTest()
         {
-            // TODO unit test for the property 'PhoneNumber'
+            instance.PhoneNumber = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.PhoneNumber);
+            
         }
         /// <summary>
         /// Test the property 'VoiceEnabled'
@@ -89,7 +96,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void VoiceEnabledTest()
         {
-            // TODO unit test for the property 'VoiceEnabled'
+            instance.VoiceEnabled = false;
+            Assert.Equal(false, instance.VoiceEnabled);       
+            
         }
         /// <summary>
         /// Test the property 'SmsEnabled'
@@ -97,7 +106,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SmsEnabledTest()
         {
-            // TODO unit test for the property 'SmsEnabled'
+            instance.SmsEnabled = false;
+            Assert.Equal(false, instance.SmsEnabled);       
+            
         }
         /// <summary>
         /// Test the property 'Region'
@@ -105,7 +116,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RegionTest()
         {
-            // TODO unit test for the property 'Region'
+            instance.Region = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Region);
+            
         }
         /// <summary>
         /// Test the property 'Country'
@@ -113,8 +126,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CountryTest()
         {
-            // TODO unit test for the property 'Country'
+            instance.Country = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Country);
+            
         }
     }
-
 }

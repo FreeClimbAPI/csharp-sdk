@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public ApplicationListAllOfTests()
         {
-            //instance = new ApplicationListAllOf();
+            instance = new ApplicationListAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void ApplicationListAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" ApplicationListAllOf
-            //Assert.IsType<ApplicationListAllOf>(instance);
+            Assert.IsType<ApplicationListAllOf>(instance);
         }
 
 
@@ -65,8 +65,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ApplicationsTest()
         {
-            // TODO unit test for the property 'Applications'
+            
+            List<ApplicationResult> testList = new List<ApplicationResult>();
+            instance.Applications = testList;
+            Assert.Equal(testList, instance.Applications); 
         }
     }
-
 }

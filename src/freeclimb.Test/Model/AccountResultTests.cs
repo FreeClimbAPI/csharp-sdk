@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public AccountResultTests()
         {
-            //instance = new AccountResult();
+            instance = new AccountResult();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void AccountResultInstanceTest()
         {
             // TODO uncomment below to test "IsType" AccountResult
-            //Assert.IsType<AccountResult>(instance);
+            Assert.IsType<AccountResult>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UriTest()
         {
-            // TODO unit test for the property 'Uri'
+            instance.Uri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Uri);
+            
         }
         /// <summary>
         /// Test the property 'DateCreated'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateCreatedTest()
         {
-            // TODO unit test for the property 'DateCreated'
+            instance.DateCreated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateCreated);
+            
         }
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateUpdatedTest()
         {
-            // TODO unit test for the property 'DateUpdated'
+            instance.DateUpdated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            
         }
         /// <summary>
         /// Test the property 'Revision'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-            // TODO unit test for the property 'Revision'
+            
+            instance.Revision = 1;
+            Assert.Equal(1, (int) instance.Revision);
         }
         /// <summary>
         /// Test the property 'AccountId'
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
         /// <summary>
         /// Test the property 'ApiKey'
@@ -105,7 +115,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ApiKeyTest()
         {
-            // TODO unit test for the property 'ApiKey'
+            instance.ApiKey = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApiKey);
+            
         }
         /// <summary>
         /// Test the property 'Alias'
@@ -113,7 +125,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
         /// <summary>
         /// Test the property 'Label'
@@ -121,7 +135,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LabelTest()
         {
-            // TODO unit test for the property 'Label'
+            instance.Label = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Label);
+            
         }
         /// <summary>
         /// Test the property 'Type'
@@ -129,7 +145,17 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TypeTest()
         {
-            // TODO unit test for the property 'Type'
+            //model.setType(AccountType.TRIAL);
+            //Assert.assertEquals(model.getType(),AccountType.TRIAL);
+            //model.setType(AccountType.FULL);
+            //Assert.assertEquals(model.getType(),AccountType.FULL);
+            
+            //model.setType(AccountResult.AccountType.TRIAL);
+            //Assert.assertEquals(model.getType(),AccountResult.AccountType.TRIAL);
+            
+            //model.setType(AccountResult.AccountType.FULL);
+            //Assert.assertEquals(model.getType(),AccountResult.AccountType.FULL);
+            
         }
         /// <summary>
         /// Test the property 'Status'
@@ -137,7 +163,22 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            // TODO unit test for the property 'Status'
+            //model.setStatus(AccountStatus.CLOSED);
+            //Assert.assertEquals(model.getStatus(),AccountStatus.CLOSED);
+            //model.setStatus(AccountStatus.SUSPENDED);
+            //Assert.assertEquals(model.getStatus(),AccountStatus.SUSPENDED);
+            //model.setStatus(AccountStatus.ACTIVE);
+            //Assert.assertEquals(model.getStatus(),AccountStatus.ACTIVE);
+            
+            //model.setStatus(AccountResult.AccountStatus.CLOSED);
+            //Assert.assertEquals(model.getStatus(),AccountResult.AccountStatus.CLOSED);
+            
+            //model.setStatus(AccountResult.AccountStatus.SUSPENDED);
+            //Assert.assertEquals(model.getStatus(),AccountResult.AccountStatus.SUSPENDED);
+            
+            //model.setStatus(AccountResult.AccountStatus.ACTIVE);
+            //Assert.assertEquals(model.getStatus(),AccountResult.AccountStatus.ACTIVE);
+            
         }
         /// <summary>
         /// Test the property 'SubresourceUris'
@@ -145,8 +186,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SubresourceUrisTest()
         {
-            // TODO unit test for the property 'SubresourceUris'
+            object testObject = new object();
+            instance.SubresourceUris = testObject;
+            Assert.Equal(testObject, instance.SubresourceUris);
+            
         }
     }
-
 }

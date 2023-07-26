@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public CreateConferenceRequestTests()
         {
-            //instance = new CreateConferenceRequest();
+            instance = new CreateConferenceRequest();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void CreateConferenceRequestInstanceTest()
         {
             // TODO uncomment below to test "IsType" CreateConferenceRequest
-            //Assert.IsType<CreateConferenceRequest>(instance);
+            Assert.IsType<CreateConferenceRequest>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
         /// <summary>
         /// Test the property 'PlayBeep'
@@ -73,7 +75,27 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayBeepTest()
         {
-            // TODO unit test for the property 'PlayBeep'
+            //model.setPlayBeep(PlayBeep.ALWAYS);
+            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ALWAYS);
+            //model.setPlayBeep(PlayBeep.NEVER);
+            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.NEVER);
+            //model.setPlayBeep(PlayBeep.ENTRY_ONLY);
+            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ENTRY_ONLY);
+            //model.setPlayBeep(PlayBeep.EXIT_ONLY);
+            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.EXIT_ONLY);
+            
+            //model.setPlayBeep(CreateConferenceRequest.PlayBeep.ALWAYS);
+            //Assert.assertEquals(model.getPlayBeep(),CreateConferenceRequest.PlayBeep.ALWAYS);
+            
+            //model.setPlayBeep(CreateConferenceRequest.PlayBeep.NEVER);
+            //Assert.assertEquals(model.getPlayBeep(),CreateConferenceRequest.PlayBeep.NEVER);
+            
+            //model.setPlayBeep(CreateConferenceRequest.PlayBeep.ENTRY_ONLY);
+            //Assert.assertEquals(model.getPlayBeep(),CreateConferenceRequest.PlayBeep.ENTRY_ONLY);
+            
+            //model.setPlayBeep(CreateConferenceRequest.PlayBeep.EXIT_ONLY);
+            //Assert.assertEquals(model.getPlayBeep(),CreateConferenceRequest.PlayBeep.EXIT_ONLY);
+            
         }
         /// <summary>
         /// Test the property 'Record'
@@ -81,7 +103,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordTest()
         {
-            // TODO unit test for the property 'Record'
+            instance.Record = false;
+            Assert.Equal(false, instance.Record);       
+            
         }
         /// <summary>
         /// Test the property 'WaitUrl'
@@ -89,7 +113,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void WaitUrlTest()
         {
-            // TODO unit test for the property 'WaitUrl'
+            instance.WaitUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.WaitUrl);
+            
         }
         /// <summary>
         /// Test the property 'StatusCallbackUrl'
@@ -97,8 +123,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusCallbackUrlTest()
         {
-            // TODO unit test for the property 'StatusCallbackUrl'
+            instance.StatusCallbackUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.StatusCallbackUrl);
+            
         }
     }
-
 }
