@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public UpdateConferenceParticipantRequestTests()
         {
-            //instance = new UpdateConferenceParticipantRequest();
+            instance = new UpdateConferenceParticipantRequest();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void UpdateConferenceParticipantRequestInstanceTest()
         {
             // TODO uncomment below to test "IsType" UpdateConferenceParticipantRequest
-            //Assert.IsType<UpdateConferenceParticipantRequest>(instance);
+            Assert.IsType<UpdateConferenceParticipantRequest>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TalkTest()
         {
-            // TODO unit test for the property 'Talk'
+            instance.Talk = false;
+            Assert.Equal(false, instance.Talk);       
+            
         }
         /// <summary>
         /// Test the property 'Listen'
@@ -73,8 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ListenTest()
         {
-            // TODO unit test for the property 'Listen'
+            instance.Listen = false;
+            Assert.Equal(false, instance.Listen);       
+            
         }
     }
-
 }

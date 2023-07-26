@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public PlayEarlyMediaTests()
         {
-            //instance = new PlayEarlyMedia();
+            instance = new PlayEarlyMedia("TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void PlayEarlyMediaInstanceTest()
         {
             // TODO uncomment below to test "IsType" PlayEarlyMedia
-            //Assert.IsType<PlayEarlyMedia>(instance);
+            Assert.IsType<PlayEarlyMedia>(instance);
         }
 
 
@@ -65,8 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FileTest()
         {
-            // TODO unit test for the property 'File'
+            instance.File = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.File);
+            
         }
     }
-
 }

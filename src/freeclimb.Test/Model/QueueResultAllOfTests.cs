@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public QueueResultAllOfTests()
         {
-            //instance = new QueueResultAllOf();
+            instance = new QueueResultAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void QueueResultAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" QueueResultAllOf
-            //Assert.IsType<QueueResultAllOf>(instance);
+            Assert.IsType<QueueResultAllOf>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
         /// <summary>
         /// Test the property 'QueueId'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void QueueIdTest()
         {
-            // TODO unit test for the property 'QueueId'
+            instance.QueueId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.QueueId);
+            
         }
         /// <summary>
         /// Test the property 'Alias'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
         /// <summary>
         /// Test the property 'MaxSize'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MaxSizeTest()
         {
-            // TODO unit test for the property 'MaxSize'
+            
+            instance.MaxSize = 1;
+            Assert.Equal(1, (int) instance.MaxSize);
         }
         /// <summary>
         /// Test the property 'CurrentSize'
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CurrentSizeTest()
         {
-            // TODO unit test for the property 'CurrentSize'
+            
+            instance.CurrentSize = 1;
+            Assert.Equal(1, (int) instance.CurrentSize);
         }
         /// <summary>
         /// Test the property 'AverageQueueRemovalTime'
@@ -105,7 +115,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AverageQueueRemovalTimeTest()
         {
-            // TODO unit test for the property 'AverageQueueRemovalTime'
+            
+            instance.AverageQueueRemovalTime = 1;
+            Assert.Equal(1, (int) instance.AverageQueueRemovalTime);
         }
         /// <summary>
         /// Test the property 'SubresourceUris'
@@ -113,7 +125,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SubresourceUrisTest()
         {
-            // TODO unit test for the property 'SubresourceUris'
+            object testObject = new object();
+            instance.SubresourceUris = testObject;
+            Assert.Equal(testObject, instance.SubresourceUris);
+            
         }
     }
 }

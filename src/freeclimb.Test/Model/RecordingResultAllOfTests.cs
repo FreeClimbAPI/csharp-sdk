@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public RecordingResultAllOfTests()
         {
-            //instance = new RecordingResultAllOf();
+            instance = new RecordingResultAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void RecordingResultAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" RecordingResultAllOf
-            //Assert.IsType<RecordingResultAllOf>(instance);
+            Assert.IsType<RecordingResultAllOf>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordingIdTest()
         {
-            // TODO unit test for the property 'RecordingId'
+            instance.RecordingId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.RecordingId);
+            
         }
         /// <summary>
         /// Test the property 'AccountId'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
         /// <summary>
         /// Test the property 'CallId'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
         /// <summary>
         /// Test the property 'DurationSec'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DurationSecTest()
         {
-            // TODO unit test for the property 'DurationSec'
+            
+            instance.DurationSec = 1;
+            Assert.Equal(1, (int) instance.DurationSec);
         }
         /// <summary>
         /// Test the property 'ConferenceId'
@@ -97,8 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferenceIdTest()
         {
-            // TODO unit test for the property 'ConferenceId'
+            instance.ConferenceId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            
         }
     }
-
 }

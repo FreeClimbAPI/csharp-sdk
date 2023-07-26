@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberListTests()
         {
-            //instance = new IncomingNumberList();
+            instance = new IncomingNumberList();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void IncomingNumberListInstanceTest()
         {
             // TODO uncomment below to test "IsType" IncomingNumberList
-            //Assert.IsType<IncomingNumberList>(instance);
+            Assert.IsType<IncomingNumberList>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TotalTest()
         {
-            // TODO unit test for the property 'Total'
+            
+            instance.Total = 1;
+            Assert.Equal(1, (int) instance.Total);
         }
         /// <summary>
         /// Test the property 'Start'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StartTest()
         {
-            // TODO unit test for the property 'Start'
+            
+            instance.Start = 1;
+            Assert.Equal(1, (int) instance.Start);
         }
         /// <summary>
         /// Test the property 'End'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EndTest()
         {
-            // TODO unit test for the property 'End'
+            
+            instance.End = 1;
+            Assert.Equal(1, (int) instance.End);
         }
         /// <summary>
         /// Test the property 'Page'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PageTest()
         {
-            // TODO unit test for the property 'Page'
+            
+            instance.Page = 1;
+            Assert.Equal(1, (int) instance.Page);
         }
         /// <summary>
         /// Test the property 'NumPages'
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NumPagesTest()
         {
-            // TODO unit test for the property 'NumPages'
+            
+            instance.NumPages = 1;
+            Assert.Equal(1, (int) instance.NumPages);
         }
         /// <summary>
         /// Test the property 'PageSize'
@@ -105,7 +115,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PageSizeTest()
         {
-            // TODO unit test for the property 'PageSize'
+            
+            instance.PageSize = 1;
+            Assert.Equal(1, (int) instance.PageSize);
         }
         /// <summary>
         /// Test the property 'NextPageUri'
@@ -113,7 +125,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NextPageUriTest()
         {
-            // TODO unit test for the property 'NextPageUri'
+            instance.NextPageUri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.NextPageUri);
+            
         }
         /// <summary>
         /// Test the property 'IncomingPhoneNumbers'
@@ -121,8 +135,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void IncomingPhoneNumbersTest()
         {
-            // TODO unit test for the property 'IncomingPhoneNumbers'
+            
+            List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
+            instance.IncomingPhoneNumbers = testList;
+            Assert.Equal(testList, instance.IncomingPhoneNumbers); 
         }
     }
-
 }

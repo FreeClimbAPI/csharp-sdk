@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCBrandsListResultAllOfTests()
         {
-            //instance = new SMSTenDLCBrandsListResultAllOf();
+            instance = new SMSTenDLCBrandsListResultAllOf();
         }
 
         public void Dispose()
@@ -55,17 +55,20 @@ namespace freeclimb.Test.Model
         public void SMSTenDLCBrandsListResultAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" SMSTenDLCBrandsListResultAllOf
-            //Assert.IsType<SMSTenDLCBrandsListResultAllOf>(instance);
+            Assert.IsType<SMSTenDLCBrandsListResultAllOf>(instance);
         }
 
 
         /// <summary>
-        /// Test the property 'QueueMembers'
+        /// Test the property 'Brands'
         /// </summary>
         [Fact]
-        public void QueueMembersTest()
+        public void BrandsTest()
         {
-            // TODO unit test for the property 'QueueMembers'
+            
+            List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
+            instance.Brands = testList;
+            Assert.Equal(testList, instance.Brands); 
         }
     }
 }

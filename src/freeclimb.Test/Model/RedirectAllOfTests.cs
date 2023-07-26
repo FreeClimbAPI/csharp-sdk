@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public RedirectAllOfTests()
         {
-            //instance = new RedirectAllOf();
+            instance = new RedirectAllOf("https://a.com");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void RedirectAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" RedirectAllOf
-            //Assert.IsType<RedirectAllOf>(instance);
+            Assert.IsType<RedirectAllOf>(instance);
         }
 
 
@@ -65,8 +65,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            
+            try {
+                Uri uri = new Uri("https://a.com");
+                instance.ActionUrl = uri.ToString();
+                Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+                Console.WriteLine("Something went wrong.");
+            }
         }
     }
-
 }

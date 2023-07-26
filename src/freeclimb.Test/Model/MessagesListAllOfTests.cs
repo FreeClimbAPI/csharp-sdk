@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public MessagesListAllOfTests()
         {
-            //instance = new MessagesListAllOf();
+            instance = new MessagesListAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void MessagesListAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" MessagesListAllOf
-            //Assert.IsType<MessagesListAllOf>(instance);
+            Assert.IsType<MessagesListAllOf>(instance);
         }
 
 
@@ -65,8 +65,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MessagesTest()
         {
-            // TODO unit test for the property 'Messages'
+            
+            List<MessageResult> testList = new List<MessageResult>();
+            instance.Messages = testList;
+            Assert.Equal(testList, instance.Messages); 
         }
     }
-
 }

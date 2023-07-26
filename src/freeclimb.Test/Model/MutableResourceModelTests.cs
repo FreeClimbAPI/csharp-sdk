@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public MutableResourceModelTests()
         {
-            //instance = new MutableResourceModel();
+            instance = new MutableResourceModel();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void MutableResourceModelInstanceTest()
         {
             // TODO uncomment below to test "IsType" MutableResourceModel
-            //Assert.IsType<MutableResourceModel>(instance);
+            Assert.IsType<MutableResourceModel>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UriTest()
         {
-            // TODO unit test for the property 'Uri'
+            instance.Uri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Uri);
+            
         }
         /// <summary>
         /// Test the property 'DateCreated'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateCreatedTest()
         {
-            // TODO unit test for the property 'DateCreated'
+            instance.DateCreated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateCreated);
+            
         }
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateUpdatedTest()
         {
-            // TODO unit test for the property 'DateUpdated'
+            instance.DateUpdated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            
         }
         /// <summary>
         /// Test the property 'Revision'
@@ -89,8 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-            // TODO unit test for the property 'Revision'
+            
+            instance.Revision = 1;
+            Assert.Equal(1, (int) instance.Revision);
         }
     }
-
 }

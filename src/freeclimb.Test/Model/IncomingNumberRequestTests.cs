@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberRequestTests()
         {
-            //instance = new IncomingNumberRequest();
+            instance = new IncomingNumberRequest();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void IncomingNumberRequestInstanceTest()
         {
             // TODO uncomment below to test "IsType" IncomingNumberRequest
-            //Assert.IsType<IncomingNumberRequest>(instance);
+            Assert.IsType<IncomingNumberRequest>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ApplicationIdTest()
         {
-            // TODO unit test for the property 'ApplicationId'
+            instance.ApplicationId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            
         }
         /// <summary>
         /// Test the property 'Alias'
@@ -73,8 +75,19 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
+        }
+        /// <summary>
+        /// Test the property 'CampaignId'
+        /// </summary>
+        [Fact]
+        public void CampaignIdTest()
+        {
+            instance.CampaignId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CampaignId);
+            
         }
     }
-
 }

@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public UpdateCallRequestTests()
         {
-            //instance = new UpdateCallRequest();
+            instance = new UpdateCallRequest();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void UpdateCallRequestInstanceTest()
         {
             // TODO uncomment below to test "IsType" UpdateCallRequest
-            //Assert.IsType<UpdateCallRequest>(instance);
+            Assert.IsType<UpdateCallRequest>(instance);
         }
 
 
@@ -65,8 +65,17 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            // TODO unit test for the property 'Status'
+            //model.setStatus(UpdateCallRequestStatus.CANCELED);
+            //Assert.assertEquals(model.getStatus(),UpdateCallRequestStatus.CANCELED);
+            //model.setStatus(UpdateCallRequestStatus.COMPLETED);
+            //Assert.assertEquals(model.getStatus(),UpdateCallRequestStatus.COMPLETED);
+            
+            //model.setStatus(UpdateCallRequest.UpdateCallRequestStatus.CANCELED);
+            //Assert.assertEquals(model.getStatus(),UpdateCallRequest.UpdateCallRequestStatus.CANCELED);
+            
+            //model.setStatus(UpdateCallRequest.UpdateCallRequestStatus.COMPLETED);
+            //Assert.assertEquals(model.getStatus(),UpdateCallRequest.UpdateCallRequestStatus.COMPLETED);
+            
         }
     }
-
 }

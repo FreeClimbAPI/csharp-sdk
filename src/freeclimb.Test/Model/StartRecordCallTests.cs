@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public StartRecordCallTests()
         {
-            //instance = new StartRecordCall();
+            instance = new StartRecordCall();
         }
 
         public void Dispose()
@@ -55,10 +55,9 @@ namespace freeclimb.Test.Model
         public void StartRecordCallInstanceTest()
         {
             // TODO uncomment below to test "IsType" StartRecordCall
-            //Assert.IsType<StartRecordCall>(instance);
+            Assert.IsType<StartRecordCall>(instance);
         }
 
 
     }
-
 }

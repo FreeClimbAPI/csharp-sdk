@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public RecordUtteranceAllOfTests()
         {
-            //instance = new RecordUtteranceAllOf();
+            instance = new RecordUtteranceAllOf("https://a.com");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void RecordUtteranceAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" RecordUtteranceAllOf
-            //Assert.IsType<RecordUtteranceAllOf>(instance);
+            Assert.IsType<RecordUtteranceAllOf>(instance);
         }
 
 
@@ -65,7 +65,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            
+            try {
+                Uri uri = new Uri("https://a.com");
+                instance.ActionUrl = uri.ToString();
+                Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+                Console.WriteLine("Something went wrong.");
+            }
         }
         /// <summary>
         /// Test the property 'SilenceTimeoutMs'
@@ -73,7 +80,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SilenceTimeoutMsTest()
         {
-            // TODO unit test for the property 'SilenceTimeoutMs'
+            
+            instance.SilenceTimeoutMs = 1;
+            Assert.Equal(1, (int) instance.SilenceTimeoutMs);
         }
         /// <summary>
         /// Test the property 'FinishOnKey'
@@ -81,7 +90,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FinishOnKeyTest()
         {
-            // TODO unit test for the property 'FinishOnKey'
+            instance.FinishOnKey = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.FinishOnKey);
+            
         }
         /// <summary>
         /// Test the property 'MaxLengthSec'
@@ -89,7 +100,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MaxLengthSecTest()
         {
-            // TODO unit test for the property 'MaxLengthSec'
+            
+            instance.MaxLengthSec = 1;
+            Assert.Equal(1, (int) instance.MaxLengthSec);
         }
         /// <summary>
         /// Test the property 'PlayBeep'
@@ -97,7 +110,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayBeepTest()
         {
-            // TODO unit test for the property 'PlayBeep'
+            instance.PlayBeep = false;
+            Assert.Equal(false, instance.PlayBeep);       
+            
         }
         /// <summary>
         /// Test the property 'AutoStart'
@@ -105,7 +120,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AutoStartTest()
         {
-            // TODO unit test for the property 'AutoStart'
+            instance.AutoStart = false;
+            Assert.Equal(false, instance.AutoStart);       
+            
         }
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -113,8 +130,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
-
 }

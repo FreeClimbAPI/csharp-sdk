@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public LogResultTests()
         {
-            //instance = new LogResult();
+            instance = new LogResult();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void LogResultInstanceTest()
         {
             // TODO uncomment below to test "IsType" LogResult
-            //Assert.IsType<LogResult>(instance);
+            Assert.IsType<LogResult>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TimestampTest()
         {
-            // TODO unit test for the property 'Timestamp'
+            
+            instance.Timestamp = 1;
+            Assert.Equal(1, (int) instance.Timestamp);
         }
         /// <summary>
         /// Test the property 'Level'
@@ -73,7 +75,22 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LevelTest()
         {
-            // TODO unit test for the property 'Level'
+            //model.setLevel(LogLevel.INFO);
+            //Assert.assertEquals(model.getLevel(),LogLevel.INFO);
+            //model.setLevel(LogLevel.WARNING);
+            //Assert.assertEquals(model.getLevel(),LogLevel.WARNING);
+            //model.setLevel(LogLevel.ERROR);
+            //Assert.assertEquals(model.getLevel(),LogLevel.ERROR);
+            
+            //model.setLevel(LogResult.LogLevel.INFO);
+            //Assert.assertEquals(model.getLevel(),LogResult.LogLevel.INFO);
+            
+            //model.setLevel(LogResult.LogLevel.WARNING);
+            //Assert.assertEquals(model.getLevel(),LogResult.LogLevel.WARNING);
+            
+            //model.setLevel(LogResult.LogLevel.ERROR);
+            //Assert.assertEquals(model.getLevel(),LogResult.LogLevel.ERROR);
+            
         }
         /// <summary>
         /// Test the property 'RequestId'
@@ -81,7 +98,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RequestIdTest()
         {
-            // TODO unit test for the property 'RequestId'
+            instance.RequestId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.RequestId);
+            
         }
         /// <summary>
         /// Test the property 'AccountId'
@@ -89,7 +108,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
         /// <summary>
         /// Test the property 'CallId'
@@ -97,7 +118,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
         /// <summary>
         /// Test the property 'Message'
@@ -105,7 +128,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MessageTest()
         {
-            // TODO unit test for the property 'Message'
+            instance.Message = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Message);
+            
         }
         /// <summary>
         /// Test the property 'Metadata'
@@ -113,8 +138,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MetadataTest()
         {
-            // TODO unit test for the property 'Metadata'
+            object testObject = new object();
+            instance.Metadata = testObject;
+            Assert.Equal(testObject, instance.Metadata);
+            
         }
     }
-
 }

@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public RecordingListAllOfTests()
         {
-            //instance = new RecordingListAllOf();
+            instance = new RecordingListAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void RecordingListAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" RecordingListAllOf
-            //Assert.IsType<RecordingListAllOf>(instance);
+            Assert.IsType<RecordingListAllOf>(instance);
         }
 
 
@@ -65,8 +65,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordingsTest()
         {
-            // TODO unit test for the property 'Recordings'
+            
+            List<RecordingResult> testList = new List<RecordingResult>();
+            instance.Recordings = testList;
+            Assert.Equal(testList, instance.Recordings); 
         }
     }
-
 }

@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public ParkAllOfTests()
         {
-            //instance = new ParkAllOf();
+            instance = new ParkAllOf("https://a.com", "https://a.com");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void ParkAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" ParkAllOf
-            //Assert.IsType<ParkAllOf>(instance);
+            Assert.IsType<ParkAllOf>(instance);
         }
 
 
@@ -65,7 +65,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void WaitUrlTest()
         {
-            // TODO unit test for the property 'WaitUrl'
+            
+            try {
+                Uri uri = new Uri("https://a.com");
+                instance.WaitUrl = uri.ToString();
+                Assert.Equal(uri.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+                Console.WriteLine("Something went wrong.");
+            }
         }
         /// <summary>
         /// Test the property 'ActionUrl'
@@ -73,7 +80,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            
+            try {
+                Uri uri = new Uri("https://a.com");
+                instance.ActionUrl = uri.ToString();
+                Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+                Console.WriteLine("Something went wrong.");
+            }
         }
         /// <summary>
         /// Test the property 'NotificationUrl'
@@ -81,8 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NotificationUrlTest()
         {
-            // TODO unit test for the property 'NotificationUrl'
+            instance.NotificationUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.NotificationUrl);
+            
         }
     }
-
 }

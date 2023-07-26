@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public MessageResultTests()
         {
-            //instance = new MessageResult();
+            instance = new MessageResult();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void MessageResultInstanceTest()
         {
             // TODO uncomment below to test "IsType" MessageResult
-            //Assert.IsType<MessageResult>(instance);
+            Assert.IsType<MessageResult>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UriTest()
         {
-            // TODO unit test for the property 'Uri'
+            instance.Uri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Uri);
+            
         }
         /// <summary>
         /// Test the property 'DateCreated'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateCreatedTest()
         {
-            // TODO unit test for the property 'DateCreated'
+            instance.DateCreated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateCreated);
+            
         }
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateUpdatedTest()
         {
-            // TODO unit test for the property 'DateUpdated'
+            instance.DateUpdated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            
         }
         /// <summary>
         /// Test the property 'Revision'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-            // TODO unit test for the property 'Revision'
+            
+            instance.Revision = 1;
+            Assert.Equal(1, (int) instance.Revision);
         }
         /// <summary>
         /// Test the property 'AccountId'
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
         /// <summary>
         /// Test the property 'MessageId'
@@ -105,7 +115,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MessageIdTest()
         {
-            // TODO unit test for the property 'MessageId'
+            instance.MessageId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.MessageId);
+            
         }
         /// <summary>
         /// Test the property 'Status'
@@ -113,7 +125,62 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            // TODO unit test for the property 'Status'
+            //model.setStatus(MessageStatus.NEW);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.NEW);
+            //model.setStatus(MessageStatus.QUEUED);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.QUEUED);
+            //model.setStatus(MessageStatus.REJECTED);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.REJECTED);
+            //model.setStatus(MessageStatus.SENDING);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.SENDING);
+            //model.setStatus(MessageStatus.SENT);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.SENT);
+            //model.setStatus(MessageStatus.FAILED);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.FAILED);
+            //model.setStatus(MessageStatus.RECEIVED);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.RECEIVED);
+            //model.setStatus(MessageStatus.UNDELIVERED);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.UNDELIVERED);
+            //model.setStatus(MessageStatus.EXPIRED);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.EXPIRED);
+            //model.setStatus(MessageStatus.DELETED);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.DELETED);
+            //model.setStatus(MessageStatus.UNKNOWN);
+            //Assert.assertEquals(model.getStatus(),MessageStatus.UNKNOWN);
+            
+            //model.setStatus(MessageResult.MessageStatus.NEW);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.NEW);
+            
+            //model.setStatus(MessageResult.MessageStatus.QUEUED);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.QUEUED);
+            
+            //model.setStatus(MessageResult.MessageStatus.REJECTED);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.REJECTED);
+            
+            //model.setStatus(MessageResult.MessageStatus.SENDING);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.SENDING);
+            
+            //model.setStatus(MessageResult.MessageStatus.SENT);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.SENT);
+            
+            //model.setStatus(MessageResult.MessageStatus.FAILED);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.FAILED);
+            
+            //model.setStatus(MessageResult.MessageStatus.RECEIVED);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.RECEIVED);
+            
+            //model.setStatus(MessageResult.MessageStatus.UNDELIVERED);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.UNDELIVERED);
+            
+            //model.setStatus(MessageResult.MessageStatus.EXPIRED);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.EXPIRED);
+            
+            //model.setStatus(MessageResult.MessageStatus.DELETED);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.DELETED);
+            
+            //model.setStatus(MessageResult.MessageStatus.UNKNOWN);
+            //Assert.assertEquals(model.getStatus(),MessageResult.MessageStatus.UNKNOWN);
+            
         }
         /// <summary>
         /// Test the property 'From'
@@ -121,7 +188,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FromTest()
         {
-            // TODO unit test for the property 'From'
+            instance.From = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.From);
+            
         }
         /// <summary>
         /// Test the property 'To'
@@ -129,7 +198,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToTest()
         {
-            // TODO unit test for the property 'To'
+            instance.To = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.To);
+            
         }
         /// <summary>
         /// Test the property 'Text'
@@ -137,7 +208,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TextTest()
         {
-            // TODO unit test for the property 'Text'
+            instance.Text = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Text);
+            
         }
         /// <summary>
         /// Test the property 'Direction'
@@ -145,7 +218,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DirectionTest()
         {
-            // TODO unit test for the property 'Direction'
+            instance.Direction = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Direction);
+            
         }
         /// <summary>
         /// Test the property 'NotificationUrl'
@@ -153,8 +228,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NotificationUrlTest()
         {
-            // TODO unit test for the property 'NotificationUrl'
+            instance.NotificationUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.NotificationUrl);
+            
         }
     }
-
 }

@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public PauseTests()
         {
-            //instance = new Pause();
+            instance = new Pause();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void PauseInstanceTest()
         {
             // TODO uncomment below to test "IsType" Pause
-            //Assert.IsType<Pause>(instance);
+            Assert.IsType<Pause>(instance);
         }
 
 
@@ -65,8 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LengthTest()
         {
-            // TODO unit test for the property 'Length'
+            
+            instance.Length = 1;
+            Assert.Equal(1, (int) instance.Length);
         }
     }
-
 }

@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public PerclCommandTests()
         {
-            //instance = new PerclCommand();
+            instance = new PerclCommand();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void PerclCommandInstanceTest()
         {
             // TODO uncomment below to test "IsType" PerclCommand
-            //Assert.IsType<PerclCommand>(instance);
+            Assert.IsType<PerclCommand>(instance);
         }
 
         /// <summary>
@@ -281,8 +281,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CommandTest()
         {
-            // TODO unit test for the property 'Command'
+            
         }
     }
-
 }

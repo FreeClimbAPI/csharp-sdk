@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public UnparkTests()
         {
-            //instance = new Unpark();
+            instance = new Unpark();
         }
 
         public void Dispose()
@@ -55,10 +55,9 @@ namespace freeclimb.Test.Model
         public void UnparkInstanceTest()
         {
             // TODO uncomment below to test "IsType" Unpark
-            //Assert.IsType<Unpark>(instance);
+            Assert.IsType<Unpark>(instance);
         }
 
 
     }
-
 }

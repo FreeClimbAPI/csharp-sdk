@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public SayAllOfTests()
         {
-            //instance = new SayAllOf();
+            instance = new SayAllOf("TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void SayAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" SayAllOf
-            //Assert.IsType<SayAllOf>(instance);
+            Assert.IsType<SayAllOf>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TextTest()
         {
-            // TODO unit test for the property 'Text'
+            instance.Text = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Text);
+            
         }
         /// <summary>
         /// Test the property 'Language'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LanguageTest()
         {
-            // TODO unit test for the property 'Language'
+            instance.Language = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Language);
+            
         }
         /// <summary>
         /// Test the property 'Loop'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LoopTest()
         {
-            // TODO unit test for the property 'Loop'
+            
+            instance.Loop = 1;
+            Assert.Equal(1, (int) instance.Loop);
         }
         /// <summary>
         /// Test the property 'ConferenceId'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferenceIdTest()
         {
-            // TODO unit test for the property 'ConferenceId'
+            instance.ConferenceId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            
         }
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -97,8 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
-
 }

@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCCampaignsListResultAllOfTests()
         {
-            //instance = new SMSTenDLCCampaignsListResultAllOf();
+            instance = new SMSTenDLCCampaignsListResultAllOf();
         }
 
         public void Dispose()
@@ -55,17 +55,20 @@ namespace freeclimb.Test.Model
         public void SMSTenDLCCampaignsListResultAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" SMSTenDLCCampaignsListResultAllOf
-            //Assert.IsType<SMSTenDLCCampaignsListResultAllOf>(instance);
+            Assert.IsType<SMSTenDLCCampaignsListResultAllOf>(instance);
         }
 
 
         /// <summary>
-        /// Test the property 'QueueMembers'
+        /// Test the property 'Campaigns'
         /// </summary>
         [Fact]
-        public void QueueMembersTest()
+        public void CampaignsTest()
         {
-            // TODO unit test for the property 'QueueMembers'
+            
+            List<SMSTenDLCCampaign> testList = new List<SMSTenDLCCampaign>();
+            instance.Campaigns = testList;
+            Assert.Equal(testList, instance.Campaigns); 
         }
     }
 }

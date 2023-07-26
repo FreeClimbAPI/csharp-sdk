@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public SetTalkAllOfTests()
         {
-            //instance = new SetTalkAllOf();
+            instance = new SetTalkAllOf("TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void SetTalkAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" SetTalkAllOf
-            //Assert.IsType<SetTalkAllOf>(instance);
+            Assert.IsType<SetTalkAllOf>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
         /// <summary>
         /// Test the property 'Talk'
@@ -73,8 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TalkTest()
         {
-            // TODO unit test for the property 'Talk'
+            instance.Talk = false;
+            Assert.Equal(false, instance.Talk);       
+            
         }
     }
-
 }

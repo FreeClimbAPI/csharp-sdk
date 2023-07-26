@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public QueueMemberTests()
         {
-            //instance = new QueueMember();
+            instance = new QueueMember();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void QueueMemberInstanceTest()
         {
             // TODO uncomment below to test "IsType" QueueMember
-            //Assert.IsType<QueueMember>(instance);
+            Assert.IsType<QueueMember>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UriTest()
         {
-            // TODO unit test for the property 'Uri'
+            instance.Uri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Uri);
+            
         }
         /// <summary>
         /// Test the property 'CallId'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
         /// <summary>
         /// Test the property 'WaitTime'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void WaitTimeTest()
         {
-            // TODO unit test for the property 'WaitTime'
+            
+            instance.WaitTime = 1;
+            Assert.Equal(1, (int) instance.WaitTime);
         }
         /// <summary>
         /// Test the property 'Position'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PositionTest()
         {
-            // TODO unit test for the property 'Position'
+            
+            instance.Position = 1;
+            Assert.Equal(1, (int) instance.Position);
         }
         /// <summary>
         /// Test the property 'DateEnqueued'
@@ -97,8 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateEnqueuedTest()
         {
-            // TODO unit test for the property 'DateEnqueued'
+            instance.DateEnqueued = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateEnqueued);
+            
         }
     }
-
 }

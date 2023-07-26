@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public QueueResultTests()
         {
-            //instance = new QueueResult();
+            instance = new QueueResult();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void QueueResultInstanceTest()
         {
             // TODO uncomment below to test "IsType" QueueResult
-            //Assert.IsType<QueueResult>(instance);
+            Assert.IsType<QueueResult>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UriTest()
         {
-            // TODO unit test for the property 'Uri'
+            instance.Uri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Uri);
+            
         }
         /// <summary>
         /// Test the property 'DateCreated'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateCreatedTest()
         {
-            // TODO unit test for the property 'DateCreated'
+            instance.DateCreated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateCreated);
+            
         }
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateUpdatedTest()
         {
-            // TODO unit test for the property 'DateUpdated'
+            instance.DateUpdated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            
         }
         /// <summary>
         /// Test the property 'Revision'
@@ -89,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-            // TODO unit test for the property 'Revision'
+            
+            instance.Revision = 1;
+            Assert.Equal(1, (int) instance.Revision);
         }
         /// <summary>
         /// Test the property 'AccountId'
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
         /// <summary>
         /// Test the property 'QueueId'
@@ -105,7 +115,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void QueueIdTest()
         {
-            // TODO unit test for the property 'QueueId'
+            instance.QueueId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.QueueId);
+            
         }
         /// <summary>
         /// Test the property 'Alias'
@@ -113,7 +125,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
         /// <summary>
         /// Test the property 'MaxSize'
@@ -121,7 +135,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MaxSizeTest()
         {
-            // TODO unit test for the property 'MaxSize'
+            
+            instance.MaxSize = 1;
+            Assert.Equal(1, (int) instance.MaxSize);
         }
         /// <summary>
         /// Test the property 'CurrentSize'
@@ -129,7 +145,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CurrentSizeTest()
         {
-            // TODO unit test for the property 'CurrentSize'
+            
+            instance.CurrentSize = 1;
+            Assert.Equal(1, (int) instance.CurrentSize);
         }
         /// <summary>
         /// Test the property 'AverageQueueRemovalTime'
@@ -137,7 +155,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AverageQueueRemovalTimeTest()
         {
-            // TODO unit test for the property 'AverageQueueRemovalTime'
+            
+            instance.AverageQueueRemovalTime = 1;
+            Assert.Equal(1, (int) instance.AverageQueueRemovalTime);
         }
         /// <summary>
         /// Test the property 'SubresourceUris'
@@ -145,7 +165,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SubresourceUrisTest()
         {
-            // TODO unit test for the property 'SubresourceUris'
+            object testObject = new object();
+            instance.SubresourceUris = testObject;
+            Assert.Equal(testObject, instance.SubresourceUris);
+            
         }
     }
 }

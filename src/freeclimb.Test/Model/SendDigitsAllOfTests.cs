@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public SendDigitsAllOfTests()
         {
-            //instance = new SendDigitsAllOf();
+            instance = new SendDigitsAllOf("TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void SendDigitsAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" SendDigitsAllOf
-            //Assert.IsType<SendDigitsAllOf>(instance);
+            Assert.IsType<SendDigitsAllOf>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DigitsTest()
         {
-            // TODO unit test for the property 'Digits'
+            instance.Digits = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Digits);
+            
         }
         /// <summary>
         /// Test the property 'PauseMs'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PauseMsTest()
         {
-            // TODO unit test for the property 'PauseMs'
+            
+            instance.PauseMs = 1;
+            Assert.Equal(1, (int) instance.PauseMs);
         }
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -81,8 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
-
 }

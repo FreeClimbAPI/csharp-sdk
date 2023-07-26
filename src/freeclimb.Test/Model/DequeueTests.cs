@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public DequeueTests()
         {
-            //instance = new Dequeue();
+            instance = new Dequeue();
         }
 
         public void Dispose()
@@ -55,10 +55,9 @@ namespace freeclimb.Test.Model
         public void DequeueInstanceTest()
         {
             // TODO uncomment below to test "IsType" Dequeue
-            //Assert.IsType<Dequeue>(instance);
+            Assert.IsType<Dequeue>(instance);
         }
 
 
     }
-
 }

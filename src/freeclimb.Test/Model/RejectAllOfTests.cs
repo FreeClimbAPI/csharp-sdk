@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public RejectAllOfTests()
         {
-            //instance = new RejectAllOf();
+            instance = new RejectAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void RejectAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" RejectAllOf
-            //Assert.IsType<RejectAllOf>(instance);
+            Assert.IsType<RejectAllOf>(instance);
         }
 
 
@@ -65,8 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ReasonTest()
         {
-            // TODO unit test for the property 'Reason'
+            instance.Reason = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Reason);
+            
         }
     }
-
 }

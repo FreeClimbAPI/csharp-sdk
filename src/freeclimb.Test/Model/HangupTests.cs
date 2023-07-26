@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public HangupTests()
         {
-            //instance = new Hangup();
+            instance = new Hangup();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void HangupInstanceTest()
         {
             // TODO uncomment below to test "IsType" Hangup
-            //Assert.IsType<Hangup>(instance);
+            Assert.IsType<Hangup>(instance);
         }
 
 
@@ -65,8 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ReasonTest()
         {
-            // TODO unit test for the property 'Reason'
+            instance.Reason = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Reason);
+            
         }
     }
-
 }

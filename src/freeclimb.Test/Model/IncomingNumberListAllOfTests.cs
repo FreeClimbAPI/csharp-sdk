@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberListAllOfTests()
         {
-            //instance = new IncomingNumberListAllOf();
+            instance = new IncomingNumberListAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void IncomingNumberListAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" IncomingNumberListAllOf
-            //Assert.IsType<IncomingNumberListAllOf>(instance);
+            Assert.IsType<IncomingNumberListAllOf>(instance);
         }
 
 
@@ -65,8 +65,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void IncomingPhoneNumbersTest()
         {
-            // TODO unit test for the property 'IncomingPhoneNumbers'
+            
+            List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
+            instance.IncomingPhoneNumbers = testList;
+            Assert.Equal(testList, instance.IncomingPhoneNumbers); 
         }
     }
-
 }

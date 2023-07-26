@@ -591,7 +591,8 @@
         "x-percl-command": true,
         "allOf": [
           {
-            "$ref": "#/components/schemas/PerclCommand"
+            "$ref": "#/components/schemas/PerclCommand",
+            "x-is-uri": true
           },
           {
             "type": "object",
@@ -599,11 +600,13 @@
             "properties": {
               "actionUrl": {
                 "description": "A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the `Dequeue` command, the REST API (POST to Queue Member resource), or the caller hangs up.",
-                "type": "string"
+                "type": "string",
+                "x-is-uri": true
               },
               "notificationUrl": {
                 "description": "URL to be invoked when the call enters the queue. The request to the URL contains the standard request parameters.This is a notification only; any PerCL returned will be ignored.",
-                "type": "string"
+                "type": "string",
+                "x-is-uri": true
               },
               "queueId": {
                 "description": "ID of the Queue to which to add the Call. If the Queue does not exist, it will be created. The ID must start with QU followed by 40 hex characters.",
@@ -622,7 +625,8 @@
         "x-percl-command": true,
         "allOf": [
           {
-            "$ref": "#/components/schemas/PerclCommand"
+            "$ref": "#/components/schemas/PerclCommand",
+            "x-is-uri": true
           },
           {
             "type": "object",
@@ -768,7 +772,8 @@
         "x-percl-command": true,
         "allOf": [
           {
-            "$ref": "#/components/schemas/PerclCommand"
+            "$ref": "#/components/schemas/PerclCommand",
+            "x-is-uri": true
           },
           {
             "required": [
@@ -781,11 +786,13 @@
             "properties": {
               "actionUrl": {
                 "description": "URL to which FreeClimb sends an HTTP POST request. ",
-                "type": "string"
+                "type": "string",
+                "x-is-uri": true
               },
               "callConnectUrl": {
                 "description": "URL to which FreeClimb makes an HTTP POST request informing the result of the OutDial.",
-                "type": "string"
+                "type": "string",
+                "x-is-uri": true
               },
               "callingNumber": {
                 "description": "he caller ID to show to the called party when FreeClimb calls. This can be one of the following: The To or From number provided in the first Webhook to your webserver. Any phone number you have purchased from FreeClimb.",
@@ -827,7 +834,8 @@
         "x-percl-command": true,
         "allOf": [
           {
-            "$ref": "#/components/schemas/PerclCommand"
+            "$ref": "#/components/schemas/PerclCommand",
+            "x-is-uri": true
           },
           {
             "type": "object",
@@ -835,11 +843,13 @@
             "properties": {
               "waitUrl": {
                 "description": "Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is Parked. Once the script returned by the waitUrl runs out of commands to execute, FreeClimb will re-request the waitUrl and start over, essentially looping the script requests indefinitely.",
-                "type": "string"
+                "type": "string",
+                "x-is-uri": true
               },
               "actionUrl": {
                 "description": "A request is made to this URL when the Call is resumed, which can occur if the Call is resumed via the Unpark command, the REST API (POST to Call resource), or the caller hangs up. The PerCL script returned in response to the actionUrl will be executed on the resumed call.",
-                "type": "string"
+                "type": "string",
+                "x-is-uri": true
               },
               "notificationUrl": {
                 "description": "URL to be invoked when the Call is parked. The request to the URL contains the standard request parameters.",
@@ -923,7 +933,8 @@
         "x-percl-command": true,
         "allOf": [
           {
-            "$ref": "#/components/schemas/PerclCommand"
+            "$ref": "#/components/schemas/PerclCommand",
+            "x-is-uri": true
           },
           {
             "required": ["actionUrl"],
@@ -931,7 +942,8 @@
             "properties": {
               "actionUrl": {
                 "description": "URL to which information on the completed recording is submitted. The PerCL received in response is then used to continue with Call processing.",
-                "type": "string"
+                "type": "string",
+                "x-is-uri": true
               },
               "silenceTimeoutMs": {
                 "description": "Interval of silence that should elapse before ending the recording.",
@@ -966,7 +978,8 @@
         "x-percl-command": true,
         "allOf": [
           {
-            "$ref": "#/components/schemas/PerclCommand"
+            "$ref": "#/components/schemas/PerclCommand",
+            "x-is-uri": true
           },
           {
             "required": ["actionUrl"],
@@ -974,7 +987,8 @@
             "properties": {
               "actionUrl": {
                 "description": "URL to request a new PerCL script to continue with the current Call's processing. When `Redirect` invokes the `actionUrl`, an `inbound` Webhook is sent. This request therefore looks identical to the initial request (made to the `voiceUrl` of the number that was called) for an inbound Call.",
-                "type": "string"
+                "type": "string",
+                "x-is-uri": true
               }
             }
           }

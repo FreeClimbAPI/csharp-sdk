@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public QueueMemberListAllOfTests()
         {
-            //instance = new QueueMemberListAllOf();
+            instance = new QueueMemberListAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void QueueMemberListAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" QueueMemberListAllOf
-            //Assert.IsType<QueueMemberListAllOf>(instance);
+            Assert.IsType<QueueMemberListAllOf>(instance);
         }
 
 
@@ -65,8 +65,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void QueueMembersTest()
         {
-            // TODO unit test for the property 'QueueMembers'
+            
+            List<QueueMember> testList = new List<QueueMember>();
+            instance.QueueMembers = testList;
+            Assert.Equal(testList, instance.QueueMembers); 
         }
     }
-
 }

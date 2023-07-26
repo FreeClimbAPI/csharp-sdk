@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public RemoveFromConferenceTests()
         {
-            //instance = new RemoveFromConference();
+            instance = new RemoveFromConference("TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void RemoveFromConferenceInstanceTest()
         {
             // TODO uncomment below to test "IsType" RemoveFromConference
-            //Assert.IsType<RemoveFromConference>(instance);
+            Assert.IsType<RemoveFromConference>(instance);
         }
 
 
@@ -65,8 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
     }
-
 }

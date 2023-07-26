@@ -147,7 +147,6 @@ src/freeclimb.Test/Model/AnsweredByTests.cs
 src/freeclimb.Test/Model/CallDirectionTests.cs
 src/freeclimb.Test/Model/CallStatusTests.cs
 src/freeclimb.Test/Model/ConferenceStatusTests.cs
-src/freeclimb.Test/Model/CreateConferenceAllOfTests.cs
 src/freeclimb.Test/Model/GetSpeechReasonTests.cs
 src/freeclimb.Test/Model/GrammarFileBuiltInTests.cs
 src/freeclimb.Test/Model/GrammarTypeTests.cs
@@ -161,6 +160,7 @@ src/freeclimb.Test/Model/PlayBeepTests.cs
 src/freeclimb.Test/Model/QueueResultStatusTests.cs
 src/freeclimb.Test/Model/RecordUtteranceTermReasonTests.cs
 src/freeclimb.Test/Model/RequestTypeTests.cs
+src/freeclimb.Test/Model/SMSTenDLCBrandTests.cs
 src/freeclimb.Test/Model/UpdateCallRequestStatusTests.cs
 src/freeclimb.Test/Model/UpdateConferenceRequestStatusTests.cs
 src/freeclimb.Test/freeclimb.Test.csproj

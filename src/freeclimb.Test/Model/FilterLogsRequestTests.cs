@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public FilterLogsRequestTests()
         {
-            //instance = new FilterLogsRequest();
+            instance = new FilterLogsRequest("TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void FilterLogsRequestInstanceTest()
         {
             // TODO uncomment below to test "IsType" FilterLogsRequest
-            //Assert.IsType<FilterLogsRequest>(instance);
+            Assert.IsType<FilterLogsRequest>(instance);
         }
 
 
@@ -65,8 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PqlTest()
         {
-            // TODO unit test for the property 'Pql'
+            instance.Pql = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Pql);
+            
         }
     }
-
 }

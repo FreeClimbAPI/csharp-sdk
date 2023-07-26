@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public LogListAllOfTests()
         {
-            //instance = new LogListAllOf();
+            instance = new LogListAllOf();
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void LogListAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" LogListAllOf
-            //Assert.IsType<LogListAllOf>(instance);
+            Assert.IsType<LogListAllOf>(instance);
         }
 
 
@@ -65,8 +65,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LogsTest()
         {
-            // TODO unit test for the property 'Logs'
+            
+            List<LogResult> testList = new List<LogResult>();
+            instance.Logs = testList;
+            Assert.Equal(testList, instance.Logs); 
         }
     }
-
 }

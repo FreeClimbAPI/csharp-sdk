@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public PlayTests()
         {
-            //instance = new Play();
+            instance = new Play("TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void PlayInstanceTest()
         {
             // TODO uncomment below to test "IsType" Play
-            //Assert.IsType<Play>(instance);
+            Assert.IsType<Play>(instance);
         }
 
 
@@ -65,7 +65,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FileTest()
         {
-            // TODO unit test for the property 'File'
+            instance.File = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.File);
+            
         }
         /// <summary>
         /// Test the property 'Loop'
@@ -73,7 +75,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LoopTest()
         {
-            // TODO unit test for the property 'Loop'
+            
+            instance.Loop = 1;
+            Assert.Equal(1, (int) instance.Loop);
         }
         /// <summary>
         /// Test the property 'ConferenceId'
@@ -81,7 +85,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferenceIdTest()
         {
-            // TODO unit test for the property 'ConferenceId'
+            instance.ConferenceId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            
         }
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -89,8 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
-
 }

@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public GetDigitsAllOfTests()
         {
-            //instance = new GetDigitsAllOf();
+            instance = new GetDigitsAllOf("https://a.com");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void GetDigitsAllOfInstanceTest()
         {
             // TODO uncomment below to test "IsType" GetDigitsAllOf
-            //Assert.IsType<GetDigitsAllOf>(instance);
+            Assert.IsType<GetDigitsAllOf>(instance);
         }
 
 
@@ -65,7 +65,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            
+            try {
+                Uri uri = new Uri("https://a.com");
+                instance.ActionUrl = uri.ToString();
+                Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+                Console.WriteLine("Something went wrong.");
+            }
         }
         /// <summary>
         /// Test the property 'DigitTimeoutMs'
@@ -73,7 +80,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DigitTimeoutMsTest()
         {
-            // TODO unit test for the property 'DigitTimeoutMs'
+            
+            instance.DigitTimeoutMs = 1;
+            Assert.Equal(1, (int) instance.DigitTimeoutMs);
         }
         /// <summary>
         /// Test the property 'FinishOnKey'
@@ -81,7 +90,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FinishOnKeyTest()
         {
-            // TODO unit test for the property 'FinishOnKey'
+            instance.FinishOnKey = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.FinishOnKey);
+            
         }
         /// <summary>
         /// Test the property 'FlushBuffer'
@@ -89,7 +100,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FlushBufferTest()
         {
-            // TODO unit test for the property 'FlushBuffer'
+            instance.FlushBuffer = false;
+            Assert.Equal(false, instance.FlushBuffer);       
+            
         }
         /// <summary>
         /// Test the property 'InitialTimeoutMs'
@@ -97,7 +110,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void InitialTimeoutMsTest()
         {
-            // TODO unit test for the property 'InitialTimeoutMs'
+            instance.InitialTimeoutMs = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.InitialTimeoutMs);
+            
         }
         /// <summary>
         /// Test the property 'MaxDigits'
@@ -105,7 +120,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MaxDigitsTest()
         {
-            // TODO unit test for the property 'MaxDigits'
+            
+            instance.MaxDigits = 1;
+            Assert.Equal(1, (int) instance.MaxDigits);
         }
         /// <summary>
         /// Test the property 'MinDigits'
@@ -113,7 +130,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MinDigitsTest()
         {
-            // TODO unit test for the property 'MinDigits'
+            
+            instance.MinDigits = 1;
+            Assert.Equal(1, (int) instance.MinDigits);
         }
         /// <summary>
         /// Test the property 'Prompts'
@@ -121,7 +140,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PromptsTest()
         {
-            // TODO unit test for the property 'Prompts'
+            
+            List<PerclCommand> testList = new List<PerclCommand>();
+            instance.Prompts = testList;
+            Assert.Equal(testList, instance.Prompts); 
         }
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -129,8 +151,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
-
 }

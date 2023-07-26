@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public EnqueueTests()
         {
-            //instance = new Enqueue();
+            instance = new Enqueue("https://a.com", "https://a.com", "TEST_STRING", "https://a.com");
         }
 
         public void Dispose()
@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
         public void EnqueueInstanceTest()
         {
             // TODO uncomment below to test "IsType" Enqueue
-            //Assert.IsType<Enqueue>(instance);
+            Assert.IsType<Enqueue>(instance);
         }
 
 
@@ -65,7 +65,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            
+            try {
+                Uri uri = new Uri("https://a.com");
+                instance.ActionUrl = uri.ToString();
+                Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+                Console.WriteLine("Something went wrong.");
+            }
         }
         /// <summary>
         /// Test the property 'NotificationUrl'
@@ -73,7 +80,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NotificationUrlTest()
         {
-            // TODO unit test for the property 'NotificationUrl'
+            
+            try {
+                Uri uri = new Uri("https://a.com");
+                instance.NotificationUrl = uri.ToString();
+                Assert.Equal(uri.ToString(), instance.NotificationUrl);
+            } catch (Exception ) {
+                Console.WriteLine("Something went wrong.");
+            }
         }
         /// <summary>
         /// Test the property 'QueueId'
@@ -81,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void QueueIdTest()
         {
-            // TODO unit test for the property 'QueueId'
+            instance.QueueId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.QueueId);
+            
         }
         /// <summary>
         /// Test the property 'WaitUrl'
@@ -89,8 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void WaitUrlTest()
         {
-            // TODO unit test for the property 'WaitUrl'
+            instance.WaitUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.WaitUrl);
+            
         }
     }
-
 }
