@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public MessageRequestAllOfTests()
         {
-            instance = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+            instance = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         public void Dispose()

@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberResultTests()
         {
-            instance = new IncomingNumberResult();
+            instance = new IncomingNumberResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, new Capabilities(true, true, true, true, true), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
         }
 
         public void Dispose()
@@ -105,9 +107,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesTest()
         {
-            //Capabilities object = new Capabilities();
-            //instance.Capabilities = object;
-            //Assert.AreEqual(object.getType(), Capabilities.getType());
+            Capabilities testObject = new Capabilities();
+            instance.Capabilities = testObject;
+            Assert.Equal(testObject, instance.Capabilities);
             
         }
         /// <summary>

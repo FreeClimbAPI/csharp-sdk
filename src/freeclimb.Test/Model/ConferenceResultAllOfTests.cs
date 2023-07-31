@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -95,26 +97,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayBeepTest()
         {
-            //model.setPlayBeep(PlayBeep.ALWAYS);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ALWAYS);
-            //model.setPlayBeep(PlayBeep.NEVER);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.NEVER);
-            //model.setPlayBeep(PlayBeep.ENTRY_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ENTRY_ONLY);
-            //model.setPlayBeep(PlayBeep.EXIT_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.EXIT_ONLY);
-            
-            //model.setPlayBeep(ConferenceResultAllOf.PlayBeep.ALWAYS);
-            //Assert.assertEquals(model.getPlayBeep(),ConferenceResultAllOf.PlayBeep.ALWAYS);
-            
-            //model.setPlayBeep(ConferenceResultAllOf.PlayBeep.NEVER);
-            //Assert.assertEquals(model.getPlayBeep(),ConferenceResultAllOf.PlayBeep.NEVER);
-            
-            //model.setPlayBeep(ConferenceResultAllOf.PlayBeep.ENTRY_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),ConferenceResultAllOf.PlayBeep.ENTRY_ONLY);
-            
-            //model.setPlayBeep(ConferenceResultAllOf.PlayBeep.EXIT_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),ConferenceResultAllOf.PlayBeep.EXIT_ONLY);
+            instance.PlayBeep = PlayBeep.ALWAYS;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ALWAYS);
+            instance.PlayBeep = PlayBeep.NEVER;
+            Assert.Equal(instance.PlayBeep,PlayBeep.NEVER);
+            instance.PlayBeep = PlayBeep.ENTRY_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ENTRY_ONLY);
+            instance.PlayBeep = PlayBeep.EXIT_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.EXIT_ONLY);
             
         }
         /// <summary>
@@ -133,26 +123,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            //model.setStatus(ConferenceStatus.EMPTY);
-            //Assert.assertEquals(model.getStatus(),ConferenceStatus.EMPTY);
-            //model.setStatus(ConferenceStatus.POPULATED);
-            //Assert.assertEquals(model.getStatus(),ConferenceStatus.POPULATED);
-            //model.setStatus(ConferenceStatus.IN_PROGRESS);
-            //Assert.assertEquals(model.getStatus(),ConferenceStatus.IN_PROGRESS);
-            //model.setStatus(ConferenceStatus.TERMINATED);
-            //Assert.assertEquals(model.getStatus(),ConferenceStatus.TERMINATED);
-            
-            //model.setStatus(ConferenceResultAllOf.ConferenceStatus.EMPTY);
-            //Assert.assertEquals(model.getStatus(),ConferenceResultAllOf.ConferenceStatus.EMPTY);
-            
-            //model.setStatus(ConferenceResultAllOf.ConferenceStatus.POPULATED);
-            //Assert.assertEquals(model.getStatus(),ConferenceResultAllOf.ConferenceStatus.POPULATED);
-            
-            //model.setStatus(ConferenceResultAllOf.ConferenceStatus.IN_PROGRESS);
-            //Assert.assertEquals(model.getStatus(),ConferenceResultAllOf.ConferenceStatus.IN_PROGRESS);
-            
-            //model.setStatus(ConferenceResultAllOf.ConferenceStatus.TERMINATED);
-            //Assert.assertEquals(model.getStatus(),ConferenceResultAllOf.ConferenceStatus.TERMINATED);
+            instance.Status = ConferenceStatus.EMPTY;
+            Assert.Equal(instance.Status,ConferenceStatus.EMPTY);
+            instance.Status = ConferenceStatus.POPULATED;
+            Assert.Equal(instance.Status,ConferenceStatus.POPULATED);
+            instance.Status = ConferenceStatus.IN_PROGRESS;
+            Assert.Equal(instance.Status,ConferenceStatus.IN_PROGRESS);
+            instance.Status = ConferenceStatus.TERMINATED;
+            Assert.Equal(instance.Status,ConferenceStatus.TERMINATED);
             
         }
         /// <summary>

@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -75,26 +77,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayBeepTest()
         {
-            //model.setPlayBeep(PlayBeep.ALWAYS);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ALWAYS);
-            //model.setPlayBeep(PlayBeep.NEVER);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.NEVER);
-            //model.setPlayBeep(PlayBeep.ENTRY_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ENTRY_ONLY);
-            //model.setPlayBeep(PlayBeep.EXIT_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.EXIT_ONLY);
-            
-            //model.setPlayBeep(CreateConferenceRequest.PlayBeep.ALWAYS);
-            //Assert.assertEquals(model.getPlayBeep(),CreateConferenceRequest.PlayBeep.ALWAYS);
-            
-            //model.setPlayBeep(CreateConferenceRequest.PlayBeep.NEVER);
-            //Assert.assertEquals(model.getPlayBeep(),CreateConferenceRequest.PlayBeep.NEVER);
-            
-            //model.setPlayBeep(CreateConferenceRequest.PlayBeep.ENTRY_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),CreateConferenceRequest.PlayBeep.ENTRY_ONLY);
-            
-            //model.setPlayBeep(CreateConferenceRequest.PlayBeep.EXIT_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),CreateConferenceRequest.PlayBeep.EXIT_ONLY);
+            instance.PlayBeep = PlayBeep.ALWAYS;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ALWAYS);
+            instance.PlayBeep = PlayBeep.NEVER;
+            Assert.Equal(instance.PlayBeep,PlayBeep.NEVER);
+            instance.PlayBeep = PlayBeep.ENTRY_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ENTRY_ONLY);
+            instance.PlayBeep = PlayBeep.EXIT_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.EXIT_ONLY);
             
         }
         /// <summary>

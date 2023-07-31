@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -75,21 +77,12 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LevelTest()
         {
-            //model.setLevel(LogLevel.INFO);
-            //Assert.assertEquals(model.getLevel(),LogLevel.INFO);
-            //model.setLevel(LogLevel.WARNING);
-            //Assert.assertEquals(model.getLevel(),LogLevel.WARNING);
-            //model.setLevel(LogLevel.ERROR);
-            //Assert.assertEquals(model.getLevel(),LogLevel.ERROR);
-            
-            //model.setLevel(LogResult.LogLevel.INFO);
-            //Assert.assertEquals(model.getLevel(),LogResult.LogLevel.INFO);
-            
-            //model.setLevel(LogResult.LogLevel.WARNING);
-            //Assert.assertEquals(model.getLevel(),LogResult.LogLevel.WARNING);
-            
-            //model.setLevel(LogResult.LogLevel.ERROR);
-            //Assert.assertEquals(model.getLevel(),LogResult.LogLevel.ERROR);
+            instance.Level = LogLevel.INFO;
+            Assert.Equal(instance.Level,LogLevel.INFO);
+            instance.Level = LogLevel.WARNING;
+            Assert.Equal(instance.Level,LogLevel.WARNING);
+            instance.Level = LogLevel.ERROR;
+            Assert.Equal(instance.Level,LogLevel.ERROR);
             
         }
         /// <summary>

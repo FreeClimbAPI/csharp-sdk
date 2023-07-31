@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public OutDialAllOfTests()
         {
-            instance = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING");
+            instance = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         }
 
         public void Dispose()
@@ -115,16 +117,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void IfMachineTest()
         {
-            //model.setIfMachine(IfMachine.REDIRECT);
-            //Assert.assertEquals(model.getIfMachine(),IfMachine.REDIRECT);
-            //model.setIfMachine(IfMachine.HANGUP);
-            //Assert.assertEquals(model.getIfMachine(),IfMachine.HANGUP);
-            
-            //model.setIfMachine(OutDialAllOf.IfMachine.REDIRECT);
-            //Assert.assertEquals(model.getIfMachine(),OutDialAllOf.IfMachine.REDIRECT);
-            
-            //model.setIfMachine(OutDialAllOf.IfMachine.HANGUP);
-            //Assert.assertEquals(model.getIfMachine(),OutDialAllOf.IfMachine.HANGUP);
+            instance.IfMachine = IfMachine.REDIRECT;
+            Assert.Equal(instance.IfMachine,IfMachine.REDIRECT);
+            instance.IfMachine = IfMachine.HANGUP;
+            Assert.Equal(instance.IfMachine,IfMachine.HANGUP);
             
         }
         /// <summary>

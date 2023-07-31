@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -105,16 +107,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TypeTest()
         {
-            //model.setType(AccountType.TRIAL);
-            //Assert.assertEquals(model.getType(),AccountType.TRIAL);
-            //model.setType(AccountType.FULL);
-            //Assert.assertEquals(model.getType(),AccountType.FULL);
-            
-            //model.setType(AccountResultAllOf.AccountType.TRIAL);
-            //Assert.assertEquals(model.getType(),AccountResultAllOf.AccountType.TRIAL);
-            
-            //model.setType(AccountResultAllOf.AccountType.FULL);
-            //Assert.assertEquals(model.getType(),AccountResultAllOf.AccountType.FULL);
+            instance.Type = AccountType.TRIAL;
+            Assert.Equal(instance.Type,AccountType.TRIAL);
+            instance.Type = AccountType.FULL;
+            Assert.Equal(instance.Type,AccountType.FULL);
             
         }
         /// <summary>
@@ -123,21 +119,12 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            //model.setStatus(AccountStatus.CLOSED);
-            //Assert.assertEquals(model.getStatus(),AccountStatus.CLOSED);
-            //model.setStatus(AccountStatus.SUSPENDED);
-            //Assert.assertEquals(model.getStatus(),AccountStatus.SUSPENDED);
-            //model.setStatus(AccountStatus.ACTIVE);
-            //Assert.assertEquals(model.getStatus(),AccountStatus.ACTIVE);
-            
-            //model.setStatus(AccountResultAllOf.AccountStatus.CLOSED);
-            //Assert.assertEquals(model.getStatus(),AccountResultAllOf.AccountStatus.CLOSED);
-            
-            //model.setStatus(AccountResultAllOf.AccountStatus.SUSPENDED);
-            //Assert.assertEquals(model.getStatus(),AccountResultAllOf.AccountStatus.SUSPENDED);
-            
-            //model.setStatus(AccountResultAllOf.AccountStatus.ACTIVE);
-            //Assert.assertEquals(model.getStatus(),AccountResultAllOf.AccountStatus.ACTIVE);
+            instance.Status = AccountStatus.CLOSED;
+            Assert.Equal(instance.Status,AccountStatus.CLOSED);
+            instance.Status = AccountStatus.SUSPENDED;
+            Assert.Equal(instance.Status,AccountStatus.SUSPENDED);
+            instance.Status = AccountStatus.ACTIVE;
+            Assert.Equal(instance.Status,AccountStatus.ACTIVE);
             
         }
         /// <summary>

@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -165,46 +167,22 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallStatusTest()
         {
-            //model.setCallStatus(CallStatus.QUEUED);
-            //Assert.assertEquals(model.getCallStatus(),CallStatus.QUEUED);
-            //model.setCallStatus(CallStatus.RINGING);
-            //Assert.assertEquals(model.getCallStatus(),CallStatus.RINGING);
-            //model.setCallStatus(CallStatus.IN_PROGRESS);
-            //Assert.assertEquals(model.getCallStatus(),CallStatus.IN_PROGRESS);
-            //model.setCallStatus(CallStatus.CANCELED);
-            //Assert.assertEquals(model.getCallStatus(),CallStatus.CANCELED);
-            //model.setCallStatus(CallStatus.COMPLETED);
-            //Assert.assertEquals(model.getCallStatus(),CallStatus.COMPLETED);
-            //model.setCallStatus(CallStatus.FAILED);
-            //Assert.assertEquals(model.getCallStatus(),CallStatus.FAILED);
-            //model.setCallStatus(CallStatus.BUSY);
-            //Assert.assertEquals(model.getCallStatus(),CallStatus.BUSY);
-            //model.setCallStatus(CallStatus.NO_ANSWER);
-            //Assert.assertEquals(model.getCallStatus(),CallStatus.NO_ANSWER);
-            
-            //model.setCallStatus(CallResult.CallStatus.QUEUED);
-            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.QUEUED);
-            
-            //model.setCallStatus(CallResult.CallStatus.RINGING);
-            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.RINGING);
-            
-            //model.setCallStatus(CallResult.CallStatus.IN_PROGRESS);
-            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.IN_PROGRESS);
-            
-            //model.setCallStatus(CallResult.CallStatus.CANCELED);
-            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.CANCELED);
-            
-            //model.setCallStatus(CallResult.CallStatus.COMPLETED);
-            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.COMPLETED);
-            
-            //model.setCallStatus(CallResult.CallStatus.FAILED);
-            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.FAILED);
-            
-            //model.setCallStatus(CallResult.CallStatus.BUSY);
-            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.BUSY);
-            
-            //model.setCallStatus(CallResult.CallStatus.NO_ANSWER);
-            //Assert.assertEquals(model.getCallStatus(),CallResult.CallStatus.NO_ANSWER);
+            instance.CallStatus = CallStatus.QUEUED;
+            Assert.Equal(instance.CallStatus,CallStatus.QUEUED);
+            instance.CallStatus = CallStatus.RINGING;
+            Assert.Equal(instance.CallStatus,CallStatus.RINGING);
+            instance.CallStatus = CallStatus.IN_PROGRESS;
+            Assert.Equal(instance.CallStatus,CallStatus.IN_PROGRESS);
+            instance.CallStatus = CallStatus.CANCELED;
+            Assert.Equal(instance.CallStatus,CallStatus.CANCELED);
+            instance.CallStatus = CallStatus.COMPLETED;
+            Assert.Equal(instance.CallStatus,CallStatus.COMPLETED);
+            instance.CallStatus = CallStatus.FAILED;
+            Assert.Equal(instance.CallStatus,CallStatus.FAILED);
+            instance.CallStatus = CallStatus.BUSY;
+            Assert.Equal(instance.CallStatus,CallStatus.BUSY);
+            instance.CallStatus = CallStatus.NO_ANSWER;
+            Assert.Equal(instance.CallStatus,CallStatus.NO_ANSWER);
             
         }
         /// <summary>
@@ -263,21 +241,12 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DirectionTest()
         {
-            //model.setDirection(CallDirection.INBOUND);
-            //Assert.assertEquals(model.getDirection(),CallDirection.INBOUND);
-            //model.setDirection(CallDirection.OUTBOUND_API);
-            //Assert.assertEquals(model.getDirection(),CallDirection.OUTBOUND_API);
-            //model.setDirection(CallDirection.OUTBOUND_DIAL);
-            //Assert.assertEquals(model.getDirection(),CallDirection.OUTBOUND_DIAL);
-            
-            //model.setDirection(CallResult.CallDirection.INBOUND);
-            //Assert.assertEquals(model.getDirection(),CallResult.CallDirection.INBOUND);
-            
-            //model.setDirection(CallResult.CallDirection.OUTBOUND_API);
-            //Assert.assertEquals(model.getDirection(),CallResult.CallDirection.OUTBOUND_API);
-            
-            //model.setDirection(CallResult.CallDirection.OUTBOUND_DIAL);
-            //Assert.assertEquals(model.getDirection(),CallResult.CallDirection.OUTBOUND_DIAL);
+            instance.Direction = CallDirection.INBOUND;
+            Assert.Equal(instance.Direction,CallDirection.INBOUND);
+            instance.Direction = CallDirection.OUTBOUND_API;
+            Assert.Equal(instance.Direction,CallDirection.OUTBOUND_API);
+            instance.Direction = CallDirection.OUTBOUND_DIAL;
+            Assert.Equal(instance.Direction,CallDirection.OUTBOUND_DIAL);
             
         }
         /// <summary>
@@ -286,16 +255,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AnsweredByTest()
         {
-            //model.setAnsweredBy(AnsweredBy.HUMAN);
-            //Assert.assertEquals(model.getAnsweredBy(),AnsweredBy.HUMAN);
-            //model.setAnsweredBy(AnsweredBy.MACHINE);
-            //Assert.assertEquals(model.getAnsweredBy(),AnsweredBy.MACHINE);
-            
-            //model.setAnsweredBy(CallResult.AnsweredBy.HUMAN);
-            //Assert.assertEquals(model.getAnsweredBy(),CallResult.AnsweredBy.HUMAN);
-            
-            //model.setAnsweredBy(CallResult.AnsweredBy.MACHINE);
-            //Assert.assertEquals(model.getAnsweredBy(),CallResult.AnsweredBy.MACHINE);
+            instance.AnsweredBy = AnsweredBy.HUMAN;
+            Assert.Equal(instance.AnsweredBy,AnsweredBy.HUMAN);
+            instance.AnsweredBy = AnsweredBy.MACHINE;
+            Assert.Equal(instance.AnsweredBy,AnsweredBy.MACHINE);
             
         }
         /// <summary>

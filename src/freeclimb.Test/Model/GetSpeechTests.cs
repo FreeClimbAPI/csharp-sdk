@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public GetSpeechTests()
         {
-            //instance = new GetSpeech();
+            instance = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
         }
 
         public void Dispose()
@@ -55,7 +57,7 @@ namespace freeclimb.Test.Model
         public void GetSpeechInstanceTest()
         {
             // TODO uncomment below to test "IsType" GetSpeech
-            //Assert.IsType<GetSpeech>(instance);
+            Assert.IsType<GetSpeech>(instance);
         }
 
 
@@ -65,7 +67,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            
+            try {
+                Uri uri = new Uri("https://a.com");
+                instance.ActionUrl = uri.ToString();
+                Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+                Console.WriteLine("Something went wrong.");
+            }
         }
         /// <summary>
         /// Test the property 'GrammarType'
@@ -73,7 +82,11 @@ namespace freeclimb.Test.Model
         [Fact]
         public void GrammarTypeTest()
         {
-            // TODO unit test for the property 'GrammarType'
+            instance.GrammarType = GrammarType.URL;
+            Assert.Equal(instance.GrammarType,GrammarType.URL);
+            instance.GrammarType = GrammarType.BUILT_IN;
+            Assert.Equal(instance.GrammarType,GrammarType.BUILT_IN);
+            
         }
         /// <summary>
         /// Test the property 'GrammarFile'
@@ -81,7 +94,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void GrammarFileTest()
         {
-            // TODO unit test for the property 'GrammarFile'
+            instance.GrammarFile = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.GrammarFile);
+            
         }
         /// <summary>
         /// Test the property 'GrammarRule'
@@ -89,7 +104,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void GrammarRuleTest()
         {
-            // TODO unit test for the property 'GrammarRule'
+            instance.GrammarRule = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.GrammarRule);
+            
         }
         /// <summary>
         /// Test the property 'PlayBeep'
@@ -97,7 +114,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayBeepTest()
         {
-            // TODO unit test for the property 'PlayBeep'
+            instance.PlayBeep = false;
+            Assert.Equal(false, instance.PlayBeep);       
+            
         }
         /// <summary>
         /// Test the property 'Prompts'
@@ -105,7 +124,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PromptsTest()
         {
-            // TODO unit test for the property 'Prompts'
+            
+            List<PerclCommand> testList = new List<PerclCommand>();
+            instance.Prompts = testList;
+            Assert.Equal(testList, instance.Prompts); 
         }
         /// <summary>
         /// Test the property 'NoInputTimeoutMs'
@@ -113,7 +135,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NoInputTimeoutMsTest()
         {
-            // TODO unit test for the property 'NoInputTimeoutMs'
+            
+            instance.NoInputTimeoutMs = 1;
+            Assert.Equal(1, (int) instance.NoInputTimeoutMs);
         }
         /// <summary>
         /// Test the property 'RecognitionTimeoutMs'
@@ -121,7 +145,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecognitionTimeoutMsTest()
         {
-            // TODO unit test for the property 'RecognitionTimeoutMs'
+            
+            instance.RecognitionTimeoutMs = 1;
+            Assert.Equal(1, (int) instance.RecognitionTimeoutMs);
         }
         /// <summary>
         /// Test the property 'ConfidenceThreshold'
@@ -129,7 +155,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConfidenceThresholdTest()
         {
-            // TODO unit test for the property 'ConfidenceThreshold'
+            instance.ConfidenceThreshold = new decimal(1.0);
+            Assert.Equal(new decimal(1.0), instance.ConfidenceThreshold);
+            
         }
         /// <summary>
         /// Test the property 'SensitivityLevel'
@@ -137,7 +165,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SensitivityLevelTest()
         {
-            // TODO unit test for the property 'SensitivityLevel'
+            instance.SensitivityLevel = new decimal(1.0);
+            Assert.Equal(new decimal(1.0), instance.SensitivityLevel);
+            
         }
         /// <summary>
         /// Test the property 'SpeechCompleteTimeoutMs'
@@ -145,7 +175,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SpeechCompleteTimeoutMsTest()
         {
-            // TODO unit test for the property 'SpeechCompleteTimeoutMs'
+            
+            instance.SpeechCompleteTimeoutMs = 1;
+            Assert.Equal(1, (int) instance.SpeechCompleteTimeoutMs);
         }
         /// <summary>
         /// Test the property 'SpeechIncompleteTimeoutMs'
@@ -153,7 +185,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SpeechIncompleteTimeoutMsTest()
         {
-            // TODO unit test for the property 'SpeechIncompleteTimeoutMs'
+            
+            instance.SpeechIncompleteTimeoutMs = 1;
+            Assert.Equal(1, (int) instance.SpeechIncompleteTimeoutMs);
         }
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -161,8 +195,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
-
 }

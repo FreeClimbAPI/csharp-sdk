@@ -14,7 +14,6 @@
 using Xunit;
 
 using System;
-
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
@@ -23,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCBrandTests()
         {
-            instance = new SMSTenDLCBrand();
+            instance = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
         }
 
         public void Dispose()
@@ -66,7 +67,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-             instance.AccountId = "TEST_STRING";
+            instance.AccountId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.AccountId);
             
         }
@@ -99,7 +100,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CspIdTest()
         {
-            
+
             Assert.Equal("TEST_STRING", instance.CspId);
             
         }
@@ -109,7 +110,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BrandIdTest()
         {
-            
+
             Assert.Equal("TEST_STRING", instance.BrandId);
             
         }
@@ -119,7 +120,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FirstNameTest()
         {
-             instance.FirstName = "TEST_STRING";
+            instance.FirstName = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.FirstName);
             
         }
@@ -129,7 +130,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LastNameTest()
         {
-             instance.LastName = "TEST_STRING";
+            instance.LastName = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.LastName);
             
         }
@@ -139,7 +140,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DisplayNameTest()
         {
-             instance.DisplayName = "TEST_STRING";
+            instance.DisplayName = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.DisplayName);
             
         }
@@ -149,7 +150,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CompanyNameTest()
         {
-             instance.CompanyName = "TEST_STRING";
+            instance.CompanyName = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CompanyName);
             
         }
@@ -159,7 +160,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EinTest()
         {
-             instance.Ein = "TEST_STRING";
+            instance.Ein = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Ein);
             
         }
@@ -169,7 +170,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EinIssuingCountryTest()
         {
-             instance.EinIssuingCountry = "TEST_STRING";
+            instance.EinIssuingCountry = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.EinIssuingCountry);
             
         }
@@ -179,7 +180,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PhoneTest()
         {
-             instance.Phone = "TEST_STRING";
+            instance.Phone = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Phone);
             
         }
@@ -189,7 +190,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StreetTest()
         {
-             instance.Street = "TEST_STRING";
+            instance.Street = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Street);
             
         }
@@ -199,7 +200,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CityTest()
         {
-             instance.City = "TEST_STRING";
+            instance.City = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.City);
             
         }
@@ -209,7 +210,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StateTest()
         {
-             instance.State = "TEST_STRING";
+            instance.State = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.State);
             
         }
@@ -219,7 +220,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PostalCodeTest()
         {
-             instance.PostalCode = "TEST_STRING";
+            instance.PostalCode = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.PostalCode);
             
         }
@@ -229,7 +230,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CountryTest()
         {
-             instance.Country = "TEST_STRING";
+            instance.Country = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Country);
             
         }
@@ -239,7 +240,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EmailTest()
         {
-             instance.Email = "TEST_STRING";
+            instance.Email = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Email);
             
         }
@@ -249,7 +250,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StockSymbolTest()
         {
-             instance.StockSymbol = "TEST_STRING";
+            instance.StockSymbol = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.StockSymbol);
             
         }
@@ -348,7 +349,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void IpAddressTest()
         {
-             instance.IpAddress = "TEST_STRING";
+            instance.IpAddress = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.IpAddress);
             
         }
@@ -358,7 +359,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void WebsiteTest()
         {
-             instance.Website = "TEST_STRING";
+            instance.Website = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Website);
             
         }
@@ -391,7 +392,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void VerticalTest()
         {
-             instance.Vertical = "TEST_STRING";
+            instance.Vertical = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Vertical);
             
         }
@@ -401,7 +402,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AltBusinessIdTest()
         {
-             instance.AltBusinessId = "TEST_STRING";
+            instance.AltBusinessId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.AltBusinessId);
             
         }
@@ -431,7 +432,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UniversalEinTest()
         {
-            
+
             Assert.Equal("TEST_STRING", instance.UniversalEin);
             
         }
@@ -441,7 +442,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ReferenceIdTest()
         {
-             instance.ReferenceId = "TEST_STRING";
+            instance.ReferenceId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ReferenceId);
             
         }
@@ -492,8 +493,8 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CreateDateTest()
         {
-            //instance.CreateDate = OffsetDateTime.Parse("2022-07-05T15:17:05Z");
-            //Assert.Equal(OffsetDateTime.Parse("2022-07-05T15:17:05Z"), instance.CreateDate);
+            instance.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
+            Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.CreateDate);
             
         }
     }

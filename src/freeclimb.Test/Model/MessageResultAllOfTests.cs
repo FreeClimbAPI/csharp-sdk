@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -85,61 +87,28 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            //model.setStatus(MessageStatus.NEW);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.NEW);
-            //model.setStatus(MessageStatus.QUEUED);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.QUEUED);
-            //model.setStatus(MessageStatus.REJECTED);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.REJECTED);
-            //model.setStatus(MessageStatus.SENDING);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.SENDING);
-            //model.setStatus(MessageStatus.SENT);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.SENT);
-            //model.setStatus(MessageStatus.FAILED);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.FAILED);
-            //model.setStatus(MessageStatus.RECEIVED);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.RECEIVED);
-            //model.setStatus(MessageStatus.UNDELIVERED);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.UNDELIVERED);
-            //model.setStatus(MessageStatus.EXPIRED);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.EXPIRED);
-            //model.setStatus(MessageStatus.DELETED);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.DELETED);
-            //model.setStatus(MessageStatus.UNKNOWN);
-            //Assert.assertEquals(model.getStatus(),MessageStatus.UNKNOWN);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.NEW);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.NEW);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.QUEUED);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.QUEUED);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.REJECTED);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.REJECTED);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.SENDING);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.SENDING);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.SENT);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.SENT);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.FAILED);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.FAILED);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.RECEIVED);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.RECEIVED);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.UNDELIVERED);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.UNDELIVERED);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.EXPIRED);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.EXPIRED);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.DELETED);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.DELETED);
-            
-            //model.setStatus(MessageResultAllOf.MessageStatus.UNKNOWN);
-            //Assert.assertEquals(model.getStatus(),MessageResultAllOf.MessageStatus.UNKNOWN);
+            instance.Status = MessageStatus.NEW;
+            Assert.Equal(instance.Status,MessageStatus.NEW);
+            instance.Status = MessageStatus.QUEUED;
+            Assert.Equal(instance.Status,MessageStatus.QUEUED);
+            instance.Status = MessageStatus.REJECTED;
+            Assert.Equal(instance.Status,MessageStatus.REJECTED);
+            instance.Status = MessageStatus.SENDING;
+            Assert.Equal(instance.Status,MessageStatus.SENDING);
+            instance.Status = MessageStatus.SENT;
+            Assert.Equal(instance.Status,MessageStatus.SENT);
+            instance.Status = MessageStatus.FAILED;
+            Assert.Equal(instance.Status,MessageStatus.FAILED);
+            instance.Status = MessageStatus.RECEIVED;
+            Assert.Equal(instance.Status,MessageStatus.RECEIVED);
+            instance.Status = MessageStatus.UNDELIVERED;
+            Assert.Equal(instance.Status,MessageStatus.UNDELIVERED);
+            instance.Status = MessageStatus.EXPIRED;
+            Assert.Equal(instance.Status,MessageStatus.EXPIRED);
+            instance.Status = MessageStatus.DELETED;
+            Assert.Equal(instance.Status,MessageStatus.DELETED);
+            instance.Status = MessageStatus.UNKNOWN;
+            Assert.Equal(instance.Status,MessageStatus.UNKNOWN);
             
         }
         /// <summary>

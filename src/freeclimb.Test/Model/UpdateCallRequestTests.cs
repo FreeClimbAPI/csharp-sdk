@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -65,16 +67,11 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            //model.setStatus(UpdateCallRequestStatus.CANCELED);
-            //Assert.assertEquals(model.getStatus(),UpdateCallRequestStatus.CANCELED);
-            //model.setStatus(UpdateCallRequestStatus.COMPLETED);
-            //Assert.assertEquals(model.getStatus(),UpdateCallRequestStatus.COMPLETED);
             
-            //model.setStatus(UpdateCallRequest.UpdateCallRequestStatus.CANCELED);
-            //Assert.assertEquals(model.getStatus(),UpdateCallRequest.UpdateCallRequestStatus.CANCELED);
-            
-            //model.setStatus(UpdateCallRequest.UpdateCallRequestStatus.COMPLETED);
-            //Assert.assertEquals(model.getStatus(),UpdateCallRequest.UpdateCallRequestStatus.COMPLETED);
+            instance.Status = UpdateCallRequestStatus.CANCELED;
+            Assert.Equal(instance.Status,UpdateCallRequestStatus.CANCELED);
+            instance.Status = UpdateCallRequestStatus.COMPLETED;
+            Assert.Equal(instance.Status,UpdateCallRequestStatus.COMPLETED);
             
         }
     }

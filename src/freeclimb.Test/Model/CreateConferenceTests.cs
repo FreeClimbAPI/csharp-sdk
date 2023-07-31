@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public CreateConferenceTests()
         {
-            instance = new CreateConference("https://a.com");
+            instance = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         public void Dispose()
@@ -90,26 +92,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayBeepTest()
         {
-            //model.setPlayBeep(PlayBeep.ALWAYS);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ALWAYS);
-            //model.setPlayBeep(PlayBeep.NEVER);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.NEVER);
-            //model.setPlayBeep(PlayBeep.ENTRY_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ENTRY_ONLY);
-            //model.setPlayBeep(PlayBeep.EXIT_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.EXIT_ONLY);
-            
-            //model.setPlayBeep(CreateConference.PlayBeep.ALWAYS);
-            //Assert.assertEquals(model.getPlayBeep(),CreateConference.PlayBeep.ALWAYS);
-            
-            //model.setPlayBeep(CreateConference.PlayBeep.NEVER);
-            //Assert.assertEquals(model.getPlayBeep(),CreateConference.PlayBeep.NEVER);
-            
-            //model.setPlayBeep(CreateConference.PlayBeep.ENTRY_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),CreateConference.PlayBeep.ENTRY_ONLY);
-            
-            //model.setPlayBeep(CreateConference.PlayBeep.EXIT_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),CreateConference.PlayBeep.EXIT_ONLY);
+            instance.PlayBeep = PlayBeep.ALWAYS;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ALWAYS);
+            instance.PlayBeep = PlayBeep.NEVER;
+            Assert.Equal(instance.PlayBeep,PlayBeep.NEVER);
+            instance.PlayBeep = PlayBeep.ENTRY_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ENTRY_ONLY);
+            instance.PlayBeep = PlayBeep.EXIT_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.EXIT_ONLY);
             
         }
         /// <summary>

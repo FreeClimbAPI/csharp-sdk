@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -75,26 +77,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayBeepTest()
         {
-            //model.setPlayBeep(PlayBeep.ALWAYS);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ALWAYS);
-            //model.setPlayBeep(PlayBeep.NEVER);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.NEVER);
-            //model.setPlayBeep(PlayBeep.ENTRY_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.ENTRY_ONLY);
-            //model.setPlayBeep(PlayBeep.EXIT_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),PlayBeep.EXIT_ONLY);
-            
-            //model.setPlayBeep(UpdateConferenceRequest.PlayBeep.ALWAYS);
-            //Assert.assertEquals(model.getPlayBeep(),UpdateConferenceRequest.PlayBeep.ALWAYS);
-            
-            //model.setPlayBeep(UpdateConferenceRequest.PlayBeep.NEVER);
-            //Assert.assertEquals(model.getPlayBeep(),UpdateConferenceRequest.PlayBeep.NEVER);
-            
-            //model.setPlayBeep(UpdateConferenceRequest.PlayBeep.ENTRY_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),UpdateConferenceRequest.PlayBeep.ENTRY_ONLY);
-            
-            //model.setPlayBeep(UpdateConferenceRequest.PlayBeep.EXIT_ONLY);
-            //Assert.assertEquals(model.getPlayBeep(),UpdateConferenceRequest.PlayBeep.EXIT_ONLY);
+            instance.PlayBeep = PlayBeep.ALWAYS;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ALWAYS);
+            instance.PlayBeep = PlayBeep.NEVER;
+            Assert.Equal(instance.PlayBeep,PlayBeep.NEVER);
+            instance.PlayBeep = PlayBeep.ENTRY_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ENTRY_ONLY);
+            instance.PlayBeep = PlayBeep.EXIT_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.EXIT_ONLY);
             
         }
         /// <summary>
@@ -103,16 +93,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            //model.setStatus(UpdateConferenceRequestStatus.EMPTY);
-            //Assert.assertEquals(model.getStatus(),UpdateConferenceRequestStatus.EMPTY);
-            //model.setStatus(UpdateConferenceRequestStatus.TERMINATED);
-            //Assert.assertEquals(model.getStatus(),UpdateConferenceRequestStatus.TERMINATED);
-            
-            //model.setStatus(UpdateConferenceRequest.UpdateConferenceRequestStatus.EMPTY);
-            //Assert.assertEquals(model.getStatus(),UpdateConferenceRequest.UpdateConferenceRequestStatus.EMPTY);
-            
-            //model.setStatus(UpdateConferenceRequest.UpdateConferenceRequestStatus.TERMINATED);
-            //Assert.assertEquals(model.getStatus(),UpdateConferenceRequest.UpdateConferenceRequestStatus.TERMINATED);
+            instance.Status = UpdateConferenceRequestStatus.EMPTY;
+            Assert.Equal(instance.Status,UpdateConferenceRequestStatus.EMPTY);
+            instance.Status = UpdateConferenceRequestStatus.TERMINATED;
+            Assert.Equal(instance.Status,UpdateConferenceRequestStatus.TERMINATED);
             
         }
     }
