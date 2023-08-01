@@ -81,103 +81,108 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Label);
             
         }
-    /// <summary>
-    /// Test the method 'equalsTrue'
-    /// </summary>
-    [Fact]
-    public void equalsTrueTest() {
-      AccountRequest test1 = new AccountRequest();
-        test1.Alias = "TS";
-        test1.Label = "TS";
-        AccountRequest test2 = new AccountRequest();
-        test2.Alias = "TS";
-        test2.Label = "TS";
-
-      Assert.Equal(test1,test2);
-    }
-
-    /// <summary>
-    /// Test the method 'equalsFalse'
-    /// </summary>
-    [Fact]
-    public void equalsFalseTest() {
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
         AccountRequest test1 = new AccountRequest();
-        test1.Alias = "TS";
-        test1.Label = "TS";
+         test1.Alias = "TS";
+         test1.Label = "TS";
         AccountRequest test2 = new AccountRequest();
-        test2.Alias = "ts";
-        test2.Label = "ts";
+         test2.Alias = "TS";
+         test2.Label = "TS";
 
-      Assert.NotEqual(test1,test2);
-    }
+        Assert.Equal(test1,test2);
+        }
 
-
-    /// <summary>
-    /// Test the method 'hashCodeTypeTest'
-    /// </summary>
-    [Fact]
-    public void hashCodeTypeTest()
-    {
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
         AccountRequest test1 = new AccountRequest();
-        test1.Alias = "TS";
-        test1.Label = "TS";
+         test1.Alias = "TS";
+         test1.Label = "TS";
+        AccountRequest test2 = new AccountRequest();
+         test2.Alias = "ts";
+         test2.Label = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        AccountRequest test1 = new AccountRequest();
+         test1.Alias = "TS";
+         test1.Label = "TS";
 
         int hashCode1 = test1.GetHashCode();
         Assert.True(hashCode1.GetType() == typeof(int));
-    }
 
-    /// <summary>
-    /// Test the method 'hashCodeEqualsTest'
-    /// </summary>
-    [Fact]
-    public void hashCodeEqualsTest()
-    {
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
         AccountRequest test1 = new AccountRequest();
-        test1.Alias = "TS";
-        test1.Label = "TS";
+         test1.Alias = "TS";
+         test1.Label = "TS";
 
         AccountRequest test2 = new AccountRequest();
-        test1.Alias = "TS";
-        test1.Label = "TS";
+         test2.Alias = "TS";
+         test2.Label = "TS";
+
 
         int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test1.GetHashCode();
-
+        int hashCode2 = test2.GetHashCode();
         Assert.Equal(hashCode1, hashCode2);
-    }
+        }
 
-    ///<summary>
-    /// Test the method 'toStringEqualsTest'
-    /// </summary>
-
-    [Fact]
-    public void toStringEqualsTest() {
-      AccountRequest test1 = new AccountRequest();
-      test1.Alias = "TS";
-      test1.Label= "TS";
-      AccountRequest test2 = new AccountRequest();
-      test2.Alias = "TS";
-      test2.Label= "TS";
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
         
-      String toString1 = test1.ToString();
-      String toString2 = test2.ToString();
-      Assert.Equal(toString1, toString2);
-    }
+        [Fact]
+        public void ToStringTypeTest() {
+        AccountRequest test1 = new AccountRequest();
+         test1.Alias = "TS";
+         test1.Label = "TS";
 
-     ///<summary>
-    /// Test the method 'toStringTypeTest'
-    /// </summary>
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
 
-    [Fact]
-    public void toStringTypeTest() {
-      AccountRequest test1 = new AccountRequest();
-      test1.Alias = "TS";
-      test1.Label= "TS";
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
         
-      String toString1 = test1.ToString();
+        [Fact]
+        public void ToStringEqualsTest() {
+        AccountRequest test1 = new AccountRequest();
+         test1.Alias = "TS";
+         test1.Label = "TS";
 
-     Assert.True(toString1.GetType() == typeof(string));
-    }
+        AccountRequest test2 = new AccountRequest();
+         test2.Alias = "TS";
+         test2.Label = "TS";
 
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
+        }
     }
 }
