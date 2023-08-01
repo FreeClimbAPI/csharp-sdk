@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -78,6 +80,89 @@ namespace freeclimb.Test.Model
             
             instance.MaxSize = 1;
             Assert.Equal(1, (int) instance.MaxSize);
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        QueueRequest test1 = new QueueRequest();
+         test1.Alias = "TS";
+         test1.MaxSize = 1;
+        QueueRequest test2 = new QueueRequest();
+         test2.Alias = "TS";
+         test2.MaxSize = 1;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        QueueRequest test1 = new QueueRequest();
+         test1.Alias = "TS";
+         test1.MaxSize = 1;
+        QueueRequest test2 = new QueueRequest();
+         test2.Alias = "ts";
+         test2.MaxSize = 2;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        QueueRequest test1 = new QueueRequest();
+         test1.Alias = "TS";
+         test1.MaxSize = 1;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        QueueRequest test1 = new QueueRequest();
+         test1.Alias = "TS";
+         test1.MaxSize = 1;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        QueueRequest test1 = new QueueRequest();
+         test1.Alias = "TS";
+         test1.MaxSize = 1;
+
+        QueueRequest test2 = new QueueRequest();
+         test2.Alias = "TS";
+         test2.MaxSize = 1;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

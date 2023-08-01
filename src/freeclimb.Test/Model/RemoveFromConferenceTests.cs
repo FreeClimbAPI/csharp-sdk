@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public RemoveFromConferenceTests()
         {
-            instance = new RemoveFromConference("TEST_STRING");
+            instance = new RemoveFromConference("TEST_STRING", "TEST_STRING");
         }
 
         public void Dispose()
@@ -68,6 +70,81 @@ namespace freeclimb.Test.Model
             instance.CallId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CallId);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        RemoveFromConference test1 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test1.CallId = "TS";
+        RemoveFromConference test2 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test2.CallId = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        RemoveFromConference test1 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test1.CallId = "TS";
+        RemoveFromConference test2 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test2.CallId = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        RemoveFromConference test1 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test1.CallId = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        RemoveFromConference test1 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test1.CallId = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        RemoveFromConference test1 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test1.CallId = "TS";
+
+        RemoveFromConference test2 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test2.CallId = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

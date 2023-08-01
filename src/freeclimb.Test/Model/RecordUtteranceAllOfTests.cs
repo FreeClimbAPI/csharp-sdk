@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public RecordUtteranceAllOfTests()
         {
-            instance = new RecordUtteranceAllOf("https://a.com");
+            instance = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
         }
 
         public void Dispose()
@@ -133,6 +135,177 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.Equal(false, instance.PrivacyMode);       
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.SilenceTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.MaxLengthSec = 1;
+         test1.PlayBeep = true;
+         test1.AutoStart = true;
+         test1.PrivacyMode = true;
+        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.SilenceTimeoutMs = 1;
+         test2.FinishOnKey = "TS";
+         test2.MaxLengthSec = 1;
+         test2.PlayBeep = true;
+         test2.AutoStart = true;
+         test2.PrivacyMode = true;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.SilenceTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.MaxLengthSec = 1;
+         test1.PlayBeep = true;
+         test1.AutoStart = true;
+         test1.PrivacyMode = true;
+        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.SilenceTimeoutMs = 2;
+         test2.FinishOnKey = "ts";
+         test2.MaxLengthSec = 2;
+         test2.PlayBeep = false;
+         test2.AutoStart = false;
+         test2.PrivacyMode = false;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.SilenceTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.MaxLengthSec = 1;
+         test1.PlayBeep = true;
+         test1.AutoStart = true;
+         test1.PrivacyMode = true;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.SilenceTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.MaxLengthSec = 1;
+         test1.PlayBeep = true;
+         test1.AutoStart = true;
+         test1.PrivacyMode = true;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.SilenceTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.MaxLengthSec = 1;
+         test1.PlayBeep = true;
+         test1.AutoStart = true;
+         test1.PrivacyMode = true;
+
+        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.SilenceTimeoutMs = 1;
+         test2.FinishOnKey = "TS";
+         test2.MaxLengthSec = 1;
+         test2.PlayBeep = true;
+         test2.AutoStart = true;
+         test2.PrivacyMode = true;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }
