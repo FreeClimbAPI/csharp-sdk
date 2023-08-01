@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -188,6 +190,177 @@ namespace freeclimb.Test.Model
             instance.SmsFallbackUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.SmsFallbackUrl);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        ApplicationResult test1 = new ApplicationResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.AccountId = "TS";
+         test1.ApplicationId = "TS";
+         test1.Alias = "TS";
+         test1.VoiceUrl = "TS";
+         test1.VoiceFallbackUrl = "TS";
+         test1.CallConnectUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.SmsUrl = "TS";
+         test1.SmsFallbackUrl = "TS";
+        ApplicationResult test2 = new ApplicationResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.AccountId = "TS";
+         test2.ApplicationId = "TS";
+         test2.Alias = "TS";
+         test2.VoiceUrl = "TS";
+         test2.VoiceFallbackUrl = "TS";
+         test2.CallConnectUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+         test2.SmsUrl = "TS";
+         test2.SmsFallbackUrl = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        ApplicationResult test1 = new ApplicationResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.AccountId = "TS";
+         test1.ApplicationId = "TS";
+         test1.Alias = "TS";
+         test1.VoiceUrl = "TS";
+         test1.VoiceFallbackUrl = "TS";
+         test1.CallConnectUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.SmsUrl = "TS";
+         test1.SmsFallbackUrl = "TS";
+        ApplicationResult test2 = new ApplicationResult();
+         test2.Uri = "ts";
+         test2.DateCreated = "ts";
+         test2.DateUpdated = "ts";
+         test2.Revision = 1;
+         test2.AccountId = "ts";
+         test2.ApplicationId = "ts";
+         test2.Alias = "ts";
+         test2.VoiceUrl = "ts";
+         test2.VoiceFallbackUrl = "ts";
+         test2.CallConnectUrl = "ts";
+         test2.StatusCallbackUrl = "ts";
+         test2.SmsUrl = "ts";
+         test2.SmsFallbackUrl = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        ApplicationResult test1 = new ApplicationResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.AccountId = "TS";
+         test1.ApplicationId = "TS";
+         test1.Alias = "TS";
+         test1.VoiceUrl = "TS";
+         test1.VoiceFallbackUrl = "TS";
+         test1.CallConnectUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.SmsUrl = "TS";
+         test1.SmsFallbackUrl = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        ApplicationResult test1 = new ApplicationResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.AccountId = "TS";
+         test1.ApplicationId = "TS";
+         test1.Alias = "TS";
+         test1.VoiceUrl = "TS";
+         test1.VoiceFallbackUrl = "TS";
+         test1.CallConnectUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.SmsUrl = "TS";
+         test1.SmsFallbackUrl = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        ApplicationResult test1 = new ApplicationResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.AccountId = "TS";
+         test1.ApplicationId = "TS";
+         test1.Alias = "TS";
+         test1.VoiceUrl = "TS";
+         test1.VoiceFallbackUrl = "TS";
+         test1.CallConnectUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.SmsUrl = "TS";
+         test1.SmsFallbackUrl = "TS";
+
+        ApplicationResult test2 = new ApplicationResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.AccountId = "TS";
+         test2.ApplicationId = "TS";
+         test2.Alias = "TS";
+         test2.VoiceUrl = "TS";
+         test2.VoiceFallbackUrl = "TS";
+         test2.CallConnectUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+         test2.SmsUrl = "TS";
+         test2.SmsFallbackUrl = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

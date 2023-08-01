@@ -42,7 +42,6 @@ namespace freeclimb.Test.Model
 
         public AvailableNumberTests()
         {
-
             instance = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
         }
 
@@ -132,6 +131,137 @@ namespace freeclimb.Test.Model
             instance.Country = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Country);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject = new Capabilities(false, false, false, false, false);
+         test1.Capabilities = testObject;
+         test1.CampaignId = "TS";
+         test1.PhoneNumber = "TS";
+         test1.VoiceEnabled = true;
+         test1.SmsEnabled = true;
+         test1.Region = "TS";
+         test1.Country = "TS";
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
+         test2.Capabilities = testObject2;
+         test2.CampaignId = "TS";
+         test2.PhoneNumber = "TS";
+         test2.VoiceEnabled = true;
+         test2.SmsEnabled = true;
+         test2.Region = "TS";
+         test2.Country = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject = new Capabilities(false, false, false, false, false);
+         test1.Capabilities = testObject;
+         test1.CampaignId = "TS";
+         test1.PhoneNumber = "TS";
+         test1.VoiceEnabled = true;
+         test1.SmsEnabled = true;
+         test1.Region = "TS";
+         test1.Country = "TS";
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
+         test2.Capabilities = testObject2;
+         test2.CampaignId = "ts";
+         test2.PhoneNumber = "ts";
+         test2.VoiceEnabled = true;
+         test2.SmsEnabled = true;
+         test2.Region = "ts";
+         test2.Country = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject = new Capabilities(false, false, false, false, false);
+         test1.Capabilities = testObject;
+         test1.CampaignId = "TS";
+         test1.PhoneNumber = "TS";
+         test1.VoiceEnabled = true;
+         test1.SmsEnabled = true;
+         test1.Region = "TS";
+         test1.Country = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject = new Capabilities(false, false, false, false, false);
+         test1.Capabilities = testObject;
+         test1.CampaignId = "TS";
+         test1.PhoneNumber = "TS";
+         test1.VoiceEnabled = true;
+         test1.SmsEnabled = true;
+         test1.Region = "TS";
+         test1.Country = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject = new Capabilities(false, false, false, false, false);
+         test1.Capabilities = testObject;
+         test1.CampaignId = "TS";
+         test1.PhoneNumber = "TS";
+         test1.VoiceEnabled = true;
+         test1.SmsEnabled = true;
+         test1.Region = "TS";
+         test1.Country = "TS";
+
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
+         test2.Capabilities = testObject2;
+         test2.CampaignId = "TS";
+         test2.PhoneNumber = "TS";
+         test2.VoiceEnabled = true;
+         test2.SmsEnabled = true;
+         test2.Region = "TS";
+         test2.Country = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }
