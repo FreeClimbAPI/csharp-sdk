@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public CapabilitiesTests()
         {
-            string jsonData = @"
+             string jsonData = @"
             {
                 ""voice"":""false"",
                 ""sms"":""false"",
@@ -117,6 +119,113 @@ namespace freeclimb.Test.Model
             instance.ShortCode = false;
             Assert.Equal(false, instance.ShortCode);       
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        Capabilities test1 = new Capabilities(false, false, false, false, false);
+         test1.Voice = true;
+         test1.Sms = true;
+         test1.TollFree = true;
+         test1.TenDLC = true;
+         test1.ShortCode = true;
+        Capabilities test2 = new Capabilities(false, false, false, false, false);
+         test2.Voice = true;
+         test2.Sms = true;
+         test2.TollFree = true;
+         test2.TenDLC = true;
+         test2.ShortCode = true;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        Capabilities test1 = new Capabilities(false, false, false, false, false);
+         test1.Voice = true;
+         test1.Sms = true;
+         test1.TollFree = true;
+         test1.TenDLC = true;
+         test1.ShortCode = true;
+        Capabilities test2 = new Capabilities(false, false, false, false, false);
+         test2.Voice = false;
+         test2.Sms = false;
+         test2.TollFree = false;
+         test2.TenDLC = false;
+         test2.ShortCode = false;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        Capabilities test1 = new Capabilities(false, false, false, false, false);
+         test1.Voice = true;
+         test1.Sms = true;
+         test1.TollFree = true;
+         test1.TenDLC = true;
+         test1.ShortCode = true;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        Capabilities test1 = new Capabilities(false, false, false, false, false);
+         test1.Voice = true;
+         test1.Sms = true;
+         test1.TollFree = true;
+         test1.TenDLC = true;
+         test1.ShortCode = true;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        Capabilities test1 = new Capabilities(false, false, false, false, false);
+         test1.Voice = true;
+         test1.Sms = true;
+         test1.TollFree = true;
+         test1.TenDLC = true;
+         test1.ShortCode = true;
+
+        Capabilities test2 = new Capabilities(false, false, false, false, false);
+         test2.Voice = true;
+         test2.Sms = true;
+         test2.TollFree = true;
+         test2.TenDLC = true;
+         test2.ShortCode = true;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -69,6 +71,89 @@ namespace freeclimb.Test.Model
             List<ConferenceResult> testList = new List<ConferenceResult>();
             instance.Conferences = testList;
             Assert.Equal(testList, instance.Conferences); 
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        ConferenceListAllOf test1 = new ConferenceListAllOf();
+         List<ConferenceResult> testList = new List<ConferenceResult>();
+         test1.Conferences = testList;
+        ConferenceListAllOf test2 = new ConferenceListAllOf();
+         List<ConferenceResult> testList2 = new List<ConferenceResult>();
+         test2.Conferences = testList2;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        ConferenceListAllOf test1 = new ConferenceListAllOf();
+         List<ConferenceResult> testList = new List<ConferenceResult>();
+         test1.Conferences = testList;
+        ConferenceListAllOf test2 = new ConferenceListAllOf();
+         List<ConferenceResult> testList2 = null;
+         test2.Conferences = testList2;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        ConferenceListAllOf test1 = new ConferenceListAllOf();
+         List<ConferenceResult> testList = new List<ConferenceResult>();
+         test1.Conferences = testList;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        ConferenceListAllOf test1 = new ConferenceListAllOf();
+         List<ConferenceResult> testList = new List<ConferenceResult>();
+         test1.Conferences = testList;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        ConferenceListAllOf test1 = new ConferenceListAllOf();
+         List<ConferenceResult> testList = new List<ConferenceResult>();
+         test1.Conferences = testList;
+
+        ConferenceListAllOf test2 = new ConferenceListAllOf();
+         List<ConferenceResult> testList2 = new List<ConferenceResult>();
+         test2.Conferences = testList2;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

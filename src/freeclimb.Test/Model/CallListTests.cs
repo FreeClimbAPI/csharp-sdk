@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -139,6 +141,145 @@ namespace freeclimb.Test.Model
             List<CallResult> testList = new List<CallResult>();
             instance.Calls = testList;
             Assert.Equal(testList, instance.Calls); 
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        CallList test1 = new CallList();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+         List<CallResult> testList = new List<CallResult>();
+         test1.Calls = testList;
+        CallList test2 = new CallList();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "TS";
+         List<CallResult> testList2 = new List<CallResult>();
+         test2.Calls = testList2;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        CallList test1 = new CallList();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+         List<CallResult> testList = new List<CallResult>();
+         test1.Calls = testList;
+        CallList test2 = new CallList();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "ts";
+         List<CallResult> testList2 = null;
+         test2.Calls = testList2;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        CallList test1 = new CallList();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+         List<CallResult> testList = new List<CallResult>();
+         test1.Calls = testList;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        CallList test1 = new CallList();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+         List<CallResult> testList = new List<CallResult>();
+         test1.Calls = testList;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        CallList test1 = new CallList();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+         List<CallResult> testList = new List<CallResult>();
+         test1.Calls = testList;
+
+        CallList test2 = new CallList();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "TS";
+         List<CallResult> testList2 = new List<CallResult>();
+         test2.Calls = testList2;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }
