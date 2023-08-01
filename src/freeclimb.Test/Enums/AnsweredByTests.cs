@@ -22,8 +22,9 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
-
+using System.Globalization;
 using freeclimb.Enums;
+
 
 namespace freeclimb.Test.Enums
 {
@@ -56,7 +57,7 @@ namespace freeclimb.Test.Enums
         public void AnsweredByInstanceTest()
         {
             // TODO uncomment below to test "IsType" AnsweredBy
-            //Assert.IsType<AnsweredBy>(instance);
+            Assert.IsType<AnsweredBy>(instance);
         }
 
 

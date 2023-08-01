@@ -22,8 +22,9 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
-
+using System.Globalization;
 using freeclimb.Enums;
+
 
 namespace freeclimb.Test.Enums
 {
@@ -56,7 +57,7 @@ namespace freeclimb.Test.Enums
         public void LogLevelInstanceTest()
         {
             // TODO uncomment below to test "IsType" LogLevel
-            //Assert.IsType<LogLevel>(instance);
+            Assert.IsType<LogLevel>(instance);
         }
 
 

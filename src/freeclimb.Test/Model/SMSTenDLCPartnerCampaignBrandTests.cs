@@ -42,8 +42,26 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignBrandTests()
         {
-            instance = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            string jsonData = @"
+            {
+                ""accountId"":""TEST_STRING"",
+                ""entityType"":""PRIVATE_PROFIT"",
+                ""cspId"": ""TEST_STRING"",
+                ""brandId"": ""TEST_STRING"",
+                ""universalEin"": ""TEST_STRING"",
+                ""brandRelationship"":""BASIC_ACCOUNT"",
+                ""identityStatus"":""SELF_DECLARED"",
+                ""displayName"":""TEST_STRING"",
+                ""phone"":""TEST_STRING"",
+                ""country"":""TEST_STRING"",
+                ""email"":""TEST_STRING"",
+                ""vertical"":""TEST_STRING"",
+                ""mock"":""false"",
+            }
+            ";
+            instance = JsonConvert.DeserializeObject<SMSTenDLCPartnerCampaignBrand>(jsonData);
         }
+        
 
         public void Dispose()
         {

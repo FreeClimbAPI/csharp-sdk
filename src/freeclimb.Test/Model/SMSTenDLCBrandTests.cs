@@ -42,7 +42,24 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCBrandTests()
         {
-            instance = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+            string jsonData = @"
+            {
+                ""accountId"":""TEST_STRING"",
+                ""entityType"":""PRIVATE_PROFIT"",
+                ""cspId"": ""TEST_STRING"",
+                ""brandId"": ""TEST_STRING"",
+                ""universalEin"": ""TEST_STRING"",
+                ""brandRelationship"":""BASIC_ACCOUNT"",
+                ""identityStatus"":""SELF_DECLARED"",
+                ""displayName"":""TEST_STRING"",
+                ""phone"":""TEST_STRING"",
+                ""country"":""TEST_STRING"",
+                ""email"":""TEST_STRING"",
+                ""vertical"":""TEST_STRING"",
+                ""mock"":""false"",
+            }
+            ";
+            instance = JsonConvert.DeserializeObject<SMSTenDLCBrand>(jsonData);
         }
 
         public void Dispose()

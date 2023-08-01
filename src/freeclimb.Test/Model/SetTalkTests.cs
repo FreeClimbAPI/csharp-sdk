@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public SetTalkTests()
         {
-            instance = new SetTalk("TEST_STRING");
+            instance = new SetTalk("TEST_STRING", false, "TEST_STRING");
         }
 
         public void Dispose()

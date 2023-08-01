@@ -40,7 +40,7 @@ namespace freeclimb.Test.Model
 
         public PlayTests()
         {
-            instance = new Play("TEST_STRING");
+            instance = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
         }
 
         public void Dispose()

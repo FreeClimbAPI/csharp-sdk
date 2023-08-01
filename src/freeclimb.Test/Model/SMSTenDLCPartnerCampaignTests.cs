@@ -39,10 +39,23 @@ namespace freeclimb.Test.Model
     {
         // TODO uncomment below to declare an instance variable for SMSTenDLCPartnerCampaign
         private SMSTenDLCPartnerCampaign instance;
+        private Capabilities capabilitiesInstance;
 
         public SMSTenDLCPartnerCampaignTests()
         {
+             string jsonData = @"
+            {
+                ""campaignId"":""TEST_STRING"",
+                ""usecase"":""PRIVATE_PROFIT"",
+                ""description"": ""TEST_STRING"",
+                ""brandId"": ""TEST_STRING"",
+                ""phone"":""TEST_STRING"",
+            }
+            ";
+            instance = JsonConvert.DeserializeObject<SMSTenDLCPartnerCampaign>(jsonData);
+
             instance = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE, DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
+
         }
 
         public void Dispose()

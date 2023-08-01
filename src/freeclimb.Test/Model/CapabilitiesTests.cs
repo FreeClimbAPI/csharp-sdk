@@ -40,7 +40,16 @@ namespace freeclimb.Test.Model
 
         public CapabilitiesTests()
         {
-            instance = new Capabilities(false, false, false, false, false);
+            string jsonData = @"
+            {
+                ""voice"":""false"",
+                ""sms"":""false"",
+                ""tollFree"":""false"",
+                ""tenDLC"":""false"",
+                ""shortCode"":""false""
+            }
+            ";
+            instance = JsonConvert.DeserializeObject<Capabilities>(jsonData);
         }
 
         public void Dispose()
