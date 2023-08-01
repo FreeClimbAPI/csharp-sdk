@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public MessageResultAllOfTests()
         {
-            instance = new MessageResultAllOf();
+            instance = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         public void Dispose()
@@ -160,6 +160,269 @@ namespace freeclimb.Test.Model
             instance.NotificationUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.NotificationUrl);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.AccountId = "TS";
+         test1.MessageId = "TS";
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.Direction = "TS";
+         test1.NotificationUrl = "TS";
+        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.AccountId = "TS";
+         test2.MessageId = "TS";
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.Direction = "TS";
+         test2.NotificationUrl = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.AccountId = "TS";
+         test1.MessageId = "TS";
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.Direction = "TS";
+         test1.NotificationUrl = "TS";
+        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.AccountId = "ts";
+         test2.MessageId = "ts";
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.From = "ts";
+         test2.To = "ts";
+         test2.Text = "ts";
+         test2.Direction = "ts";
+         test2.NotificationUrl = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.AccountId = "TS";
+         test1.MessageId = "TS";
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.Direction = "TS";
+         test1.NotificationUrl = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.AccountId = "TS";
+         test1.MessageId = "TS";
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.Direction = "TS";
+         test1.NotificationUrl = "TS";
+
+        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.AccountId = "TS";
+         test2.MessageId = "TS";
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.Direction = "TS";
+         test2.NotificationUrl = "TS";
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.AccountId = "TS";
+         test1.MessageId = "TS";
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.Direction = "TS";
+         test1.NotificationUrl = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.AccountId = "TS";
+         test1.MessageId = "TS";
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.Direction = "TS";
+         test1.NotificationUrl = "TS";
+
+        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.AccountId = "TS";
+         test2.MessageId = "TS";
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.Direction = "TS";
+         test2.NotificationUrl = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

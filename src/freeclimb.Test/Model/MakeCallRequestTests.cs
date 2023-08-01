@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public MakeCallRequestTests()
         {
-            instance = new MakeCallRequest("TEST_STRING", "TEST_STRING");
+            instance = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
         }
 
         public void Dispose()
@@ -158,6 +160,189 @@ namespace freeclimb.Test.Model
             instance.CallConnectUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CallConnectUrl);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        MakeCallRequest test1 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.ApplicationId = "TS";
+         test1.SendDigits = "TS";
+         test1.IfMachine = "TS";
+         test1.IfMachineUrl = "TS";
+         test1.Timeout = 1;
+         test1.ParentCallId = "TS";
+         test1.PrivacyMode = true;
+         test1.CallConnectUrl = "TS";
+        MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.ApplicationId = "TS";
+         test2.SendDigits = "TS";
+         test2.IfMachine = "TS";
+         test2.IfMachineUrl = "TS";
+         test2.Timeout = 1;
+         test2.ParentCallId = "TS";
+         test2.PrivacyMode = true;
+         test2.CallConnectUrl = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        MakeCallRequest test1 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.ApplicationId = "TS";
+         test1.SendDigits = "TS";
+         test1.IfMachine = "TS";
+         test1.IfMachineUrl = "TS";
+         test1.Timeout = 1;
+         test1.ParentCallId = "TS";
+         test1.PrivacyMode = true;
+         test1.CallConnectUrl = "TS";
+        MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.From = "ts";
+         test2.To = "ts";
+         test2.ApplicationId = "ts";
+         test2.SendDigits = "ts";
+         test2.IfMachine = "ts";
+         test2.IfMachineUrl = "ts";
+         test2.Timeout = 1;
+         test2.ParentCallId = "ts";
+         test2.PrivacyMode = false;
+         test2.CallConnectUrl = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        MakeCallRequest test1 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.ApplicationId = "TS";
+         test1.SendDigits = "TS";
+         test1.IfMachine = "TS";
+         test1.IfMachineUrl = "TS";
+         test1.Timeout = 1;
+         test1.ParentCallId = "TS";
+         test1.PrivacyMode = true;
+         test1.CallConnectUrl = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        MakeCallRequest test1 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.ApplicationId = "TS";
+         test1.SendDigits = "TS";
+         test1.IfMachine = "TS";
+         test1.IfMachineUrl = "TS";
+         test1.Timeout = 1;
+         test1.ParentCallId = "TS";
+         test1.PrivacyMode = true;
+         test1.CallConnectUrl = "TS";
+
+        MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.ApplicationId = "TS";
+         test2.SendDigits = "TS";
+         test2.IfMachine = "TS";
+         test2.IfMachineUrl = "TS";
+         test2.Timeout = 1;
+         test2.ParentCallId = "TS";
+         test2.PrivacyMode = true;
+         test2.CallConnectUrl = "TS";
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        MakeCallRequest test1 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.ApplicationId = "TS";
+         test1.SendDigits = "TS";
+         test1.IfMachine = "TS";
+         test1.IfMachineUrl = "TS";
+         test1.Timeout = 1;
+         test1.ParentCallId = "TS";
+         test1.PrivacyMode = true;
+         test1.CallConnectUrl = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        MakeCallRequest test1 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.ApplicationId = "TS";
+         test1.SendDigits = "TS";
+         test1.IfMachine = "TS";
+         test1.IfMachineUrl = "TS";
+         test1.Timeout = 1;
+         test1.ParentCallId = "TS";
+         test1.PrivacyMode = true;
+         test1.CallConnectUrl = "TS";
+
+        MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.ApplicationId = "TS";
+         test2.SendDigits = "TS";
+         test2.IfMachine = "TS";
+         test2.IfMachineUrl = "TS";
+         test2.Timeout = 1;
+         test2.ParentCallId = "TS";
+         test2.PrivacyMode = true;
+         test2.CallConnectUrl = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

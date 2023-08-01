@@ -300,7 +300,7 @@ namespace freeclimb.Test.Model
          test1.Prompts = testList;
          test1.PrivacyMode = true;
 
-        GetDigits test2 = new GetDigits();
+        GetDigits test2 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
