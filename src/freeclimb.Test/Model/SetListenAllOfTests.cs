@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SetListenAllOfTests()
         {
-            instance = new SetListenAllOf("TEST_STRING");
+            instance = new SetListenAllOf("TEST_STRING", false);
         }
 
         public void Dispose()
@@ -78,6 +80,89 @@ namespace freeclimb.Test.Model
             instance.Listen = false;
             Assert.Equal(false, instance.Listen);       
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
+         test1.CallId = "TS";
+         test1.Listen = true;
+        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
+         test2.CallId = "TS";
+         test2.Listen = true;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
+         test1.CallId = "TS";
+         test1.Listen = true;
+        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
+         test2.CallId = "ts";
+         test2.Listen = false;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
+         test1.CallId = "TS";
+         test1.Listen = true;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
+         test1.CallId = "TS";
+         test1.Listen = true;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
+         test1.CallId = "TS";
+         test1.Listen = true;
+
+        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
+         test2.CallId = "TS";
+         test2.Listen = true;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

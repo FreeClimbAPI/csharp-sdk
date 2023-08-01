@@ -67,12 +67,94 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            
             instance.Status = UpdateCallRequestStatus.CANCELED;
             Assert.Equal(instance.Status,UpdateCallRequestStatus.CANCELED);
             instance.Status = UpdateCallRequestStatus.COMPLETED;
             Assert.Equal(instance.Status,UpdateCallRequestStatus.COMPLETED);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        UpdateCallRequest test1 = new UpdateCallRequest();
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+        UpdateCallRequest test2 = new UpdateCallRequest();
+         test2.Status = UpdateCallRequestStatus.CANCELED;
+         test2.Status = UpdateCallRequestStatus.CANCELED;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        UpdateCallRequest test1 = new UpdateCallRequest();
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+        UpdateCallRequest test2 = new UpdateCallRequest();
+         test2.Status = UpdateCallRequestStatus.COMPLETED;
+         test2.Status = UpdateCallRequestStatus.COMPLETED;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        UpdateCallRequest test1 = new UpdateCallRequest();
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        UpdateCallRequest test1 = new UpdateCallRequest();
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        UpdateCallRequest test1 = new UpdateCallRequest();
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+         test1.Status = UpdateCallRequestStatus.CANCELED;
+
+        UpdateCallRequest test2 = new UpdateCallRequest();
+         test2.Status = UpdateCallRequestStatus.CANCELED;
+         test2.Status = UpdateCallRequestStatus.CANCELED;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }
