@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public ParkAllOfTests()
         {
-            instance = new ParkAllOf("https://a.com", "https://a.com");
+            instance = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         public void Dispose()
@@ -98,6 +100,239 @@ namespace freeclimb.Test.Model
             instance.NotificationUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.NotificationUrl);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.WaitUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.NotificationUrl = "TS";
+        ParkAllOf test2 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.WaitUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.NotificationUrl = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.WaitUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.NotificationUrl = "TS";
+        ParkAllOf test2 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.WaitUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.NotificationUrl = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.WaitUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.NotificationUrl = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.WaitUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.NotificationUrl = "TS";
+
+        ParkAllOf test2 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.WaitUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.NotificationUrl = "TS";
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.WaitUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.NotificationUrl = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.WaitUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.NotificationUrl = "TS";
+
+        ParkAllOf test2 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.WaitUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.NotificationUrl = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

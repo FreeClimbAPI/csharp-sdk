@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -68,6 +70,99 @@ namespace freeclimb.Test.Model
             
             instance.Length = 1;
             Assert.Equal(1, (int) instance.Length);
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        PauseAllOf test1 = new PauseAllOf();
+         test1.Length = 1;
+        PauseAllOf test2 = new PauseAllOf();
+         test2.Length = 1;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        PauseAllOf test1 = new PauseAllOf();
+         test1.Length = 1;
+        PauseAllOf test2 = new PauseAllOf();
+         test2.Length = 2;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        PauseAllOf test1 = new PauseAllOf();
+         test1.Length = 1;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        PauseAllOf test1 = new PauseAllOf();
+         test1.Length = 1;
+
+        PauseAllOf test2 = new PauseAllOf();
+         test2.Length = 1;
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        PauseAllOf test1 = new PauseAllOf();
+         test1.Length = 1;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        PauseAllOf test1 = new PauseAllOf();
+         test1.Length = 1;
+
+        PauseAllOf test2 = new PauseAllOf();
+         test2.Length = 1;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

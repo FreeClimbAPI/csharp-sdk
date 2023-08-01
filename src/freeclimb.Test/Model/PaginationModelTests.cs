@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -128,6 +130,159 @@ namespace freeclimb.Test.Model
             instance.NextPageUri = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.NextPageUri);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        PaginationModel test1 = new PaginationModel();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+        PaginationModel test2 = new PaginationModel();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        PaginationModel test1 = new PaginationModel();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+        PaginationModel test2 = new PaginationModel();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        PaginationModel test1 = new PaginationModel();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        PaginationModel test1 = new PaginationModel();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+
+        PaginationModel test2 = new PaginationModel();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "TS";
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        PaginationModel test1 = new PaginationModel();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        PaginationModel test1 = new PaginationModel();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+
+        PaginationModel test2 = new PaginationModel();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

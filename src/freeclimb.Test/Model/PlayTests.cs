@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -98,6 +100,129 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.Equal(false, instance.PrivacyMode);       
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        Play test1 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.ConferenceId = "TS";
+         test1.PrivacyMode = true;
+        Play test2 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.File = "TS";
+         test2.Loop = 1;
+         test2.ConferenceId = "TS";
+         test2.PrivacyMode = true;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        Play test1 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.ConferenceId = "TS";
+         test1.PrivacyMode = true;
+        Play test2 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.File = "ts";
+         test2.Loop = 1;
+         test2.ConferenceId = "ts";
+         test2.PrivacyMode = false;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        Play test1 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.ConferenceId = "TS";
+         test1.PrivacyMode = true;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        Play test1 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.ConferenceId = "TS";
+         test1.PrivacyMode = true;
+
+        Play test2 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.File = "TS";
+         test2.Loop = 1;
+         test2.ConferenceId = "TS";
+         test2.PrivacyMode = true;
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        Play test1 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.ConferenceId = "TS";
+         test1.PrivacyMode = true;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        Play test1 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.ConferenceId = "TS";
+         test1.PrivacyMode = true;
+
+        Play test2 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.File = "TS";
+         test2.Loop = 1;
+         test2.ConferenceId = "TS";
+         test2.PrivacyMode = true;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

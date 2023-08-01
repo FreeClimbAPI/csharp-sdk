@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public PlayEarlyMediaTests()
         {
-            instance = new PlayEarlyMedia("TEST_STRING");
+            instance = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
         }
 
         public void Dispose()
@@ -68,6 +70,99 @@ namespace freeclimb.Test.Model
             instance.File = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.File);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test1.File = "TS";
+        PlayEarlyMedia test2 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test2.File = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test1.File = "TS";
+        PlayEarlyMedia test2 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test2.File = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test1.File = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test1.File = "TS";
+
+        PlayEarlyMedia test2 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test2.File = "TS";
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test1.File = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test1.File = "TS";
+
+        PlayEarlyMedia test2 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test2.File = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }
