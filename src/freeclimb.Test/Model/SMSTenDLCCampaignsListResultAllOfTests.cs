@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -69,6 +71,89 @@ namespace freeclimb.Test.Model
             List<SMSTenDLCCampaign> testList = new List<SMSTenDLCCampaign>();
             instance.Campaigns = testList;
             Assert.Equal(testList, instance.Campaigns); 
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        SMSTenDLCCampaignsListResultAllOf test1 = new SMSTenDLCCampaignsListResultAllOf();
+         List<SMSTenDLCCampaign> testList = new List<SMSTenDLCCampaign>();
+         test1.Campaigns = testList;
+        SMSTenDLCCampaignsListResultAllOf test2 = new SMSTenDLCCampaignsListResultAllOf();
+         List<SMSTenDLCCampaign> testList2 = new List<SMSTenDLCCampaign>();
+         test2.Campaigns = testList2;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        SMSTenDLCCampaignsListResultAllOf test1 = new SMSTenDLCCampaignsListResultAllOf();
+         List<SMSTenDLCCampaign> testList = new List<SMSTenDLCCampaign>();
+         test1.Campaigns = testList;
+        SMSTenDLCCampaignsListResultAllOf test2 = new SMSTenDLCCampaignsListResultAllOf();
+         List<SMSTenDLCCampaign> testList2 = null;
+         test2.Campaigns = testList2;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        SMSTenDLCCampaignsListResultAllOf test1 = new SMSTenDLCCampaignsListResultAllOf();
+         List<SMSTenDLCCampaign> testList = new List<SMSTenDLCCampaign>();
+         test1.Campaigns = testList;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        SMSTenDLCCampaignsListResultAllOf test1 = new SMSTenDLCCampaignsListResultAllOf();
+         List<SMSTenDLCCampaign> testList = new List<SMSTenDLCCampaign>();
+         test1.Campaigns = testList;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        SMSTenDLCCampaignsListResultAllOf test1 = new SMSTenDLCCampaignsListResultAllOf();
+         List<SMSTenDLCCampaign> testList = new List<SMSTenDLCCampaign>();
+         test1.Campaigns = testList;
+
+        SMSTenDLCCampaignsListResultAllOf test2 = new SMSTenDLCCampaignsListResultAllOf();
+         List<SMSTenDLCCampaign> testList2 = new List<SMSTenDLCCampaign>();
+         test2.Campaigns = testList2;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }
