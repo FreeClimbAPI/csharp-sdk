@@ -60,7 +60,7 @@ namespace freeclimb.Test.Model
     public void PerclScriptInstanceTest()
     {
         // TODO uncomment below to test "IsType" PerclScript
-        //Assert.IsType<PerclScript>(instance);
+        Assert.IsType<PerclScript>(instance);
     }
 
 

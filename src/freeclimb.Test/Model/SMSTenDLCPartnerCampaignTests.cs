@@ -362,7 +362,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BrandTest()
         {
-            SMSTenDLCPartnerCampaignBrand testObject = new SMSTenDLCPartnerCampaignBrand();
+            SMSTenDLCPartnerCampaignBrand testObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
             instance.Brand = testObject;
             Assert.Equal(testObject, instance.Brand);
             

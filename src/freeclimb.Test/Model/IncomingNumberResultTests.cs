@@ -107,7 +107,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesTest()
         {
-            Capabilities testObject = new Capabilities();
+            Capabilities testObject = new Capabilities(false, false, false, false, false);
             instance.Capabilities = testObject;
             Assert.Equal(testObject, instance.Capabilities);
             
