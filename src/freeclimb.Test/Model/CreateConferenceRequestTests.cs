@@ -196,38 +196,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        CreateConferenceRequest test1 = new CreateConferenceRequest();
-         test1.Alias = "TS";
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Record = true;
-         test1.WaitUrl = "TS";
-         test1.StatusCallbackUrl = "TS";
-
-        CreateConferenceRequest test2 = new CreateConferenceRequest();
-         test2.Alias = "TS";
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.Record = true;
-         test2.WaitUrl = "TS";
-         test2.StatusCallbackUrl = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

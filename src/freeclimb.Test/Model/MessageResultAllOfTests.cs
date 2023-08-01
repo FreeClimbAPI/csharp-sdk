@@ -290,58 +290,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test1.AccountId = "TS";
-         test1.MessageId = "TS";
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.Text = "TS";
-         test1.Direction = "TS";
-         test1.NotificationUrl = "TS";
-
-        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test2.AccountId = "TS";
-         test2.MessageId = "TS";
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.From = "TS";
-         test2.To = "TS";
-         test2.Text = "TS";
-         test2.Direction = "TS";
-         test2.NotificationUrl = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

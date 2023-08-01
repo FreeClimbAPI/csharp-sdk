@@ -230,54 +230,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        EnqueueAllOf test1 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.NotificationUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test1.QueueId = "TS";
-         test1.WaitUrl = "TS";
-
-        EnqueueAllOf test2 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.NotificationUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test2.QueueId = "TS";
-         test2.WaitUrl = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

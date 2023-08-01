@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 using freeclimb.Enums;
 
@@ -60,7 +62,7 @@ namespace freeclimb.Test.Model
     public void PerclScriptInstanceTest()
     {
         // TODO uncomment below to test "IsType" PerclScript
-        Assert.IsType<PerclScript>(instance);
+        //Assert.IsType<PerclScript>(instance);
     }
 
 

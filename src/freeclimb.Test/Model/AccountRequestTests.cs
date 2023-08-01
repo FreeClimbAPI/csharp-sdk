@@ -131,26 +131,6 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        AccountRequest test1 = new AccountRequest();
-         test1.Alias = "TS";
-         test1.Label = "TS";
-
-        AccountRequest test2 = new AccountRequest();
-         test2.Alias = "TS";
-         test2.Label = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
-        /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
         

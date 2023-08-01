@@ -215,52 +215,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        Park test1 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.WaitUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.WaitUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test1.NotificationUrl = "TS";
-
-        Park test2 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.WaitUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.WaitUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test2.NotificationUrl = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

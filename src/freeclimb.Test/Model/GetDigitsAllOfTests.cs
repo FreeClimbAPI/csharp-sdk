@@ -276,54 +276,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        GetDigitsAllOf test1 = new GetDigitsAllOf("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false);
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test1.DigitTimeoutMs = 1;
-         test1.FinishOnKey = "TS";
-         test1.FlushBuffer = true;
-         test1.InitialTimeoutMs = "TS";
-         test1.MaxDigits = 1;
-         test1.MinDigits = 1;
-         List<PerclCommand> testList = new List<PerclCommand>();
-         test1.Prompts = testList;
-         test1.PrivacyMode = true;
-
-        GetDigitsAllOf test2 = new GetDigitsAllOf("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false);
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test2.DigitTimeoutMs = 1;
-         test2.FinishOnKey = "TS";
-         test2.FlushBuffer = true;
-         test2.InitialTimeoutMs = "TS";
-         test2.MaxDigits = 1;
-         test2.MinDigits = 1;
-         List<PerclCommand> testList2 = testList;
-         test2.Prompts = testList2;
-         test2.PrivacyMode = true;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

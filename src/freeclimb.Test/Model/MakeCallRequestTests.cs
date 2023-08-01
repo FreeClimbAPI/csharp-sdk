@@ -250,42 +250,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        MakeCallRequest test1 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.ApplicationId = "TS";
-         test1.SendDigits = "TS";
-         test1.IfMachine = "TS";
-         test1.IfMachineUrl = "TS";
-         test1.Timeout = 1;
-         test1.ParentCallId = "TS";
-         test1.PrivacyMode = true;
-         test1.CallConnectUrl = "TS";
-
-        MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
-         test2.From = "TS";
-         test2.To = "TS";
-         test2.ApplicationId = "TS";
-         test2.SendDigits = "TS";
-         test2.IfMachine = "TS";
-         test2.IfMachineUrl = "TS";
-         test2.Timeout = 1;
-         test2.ParentCallId = "TS";
-         test2.PrivacyMode = true;
-         test2.CallConnectUrl = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

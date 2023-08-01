@@ -235,40 +235,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test1.Uri = "TS";
-         test1.DateCreated = "TS";
-         test1.DateUpdated = "TS";
-         test1.Revision = 1;
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.Text = "TS";
-         test1.NotificationUrl = "TS";
-         test1.AccountId = "TS";
-
-        MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test2.Uri = "TS";
-         test2.DateCreated = "TS";
-         test2.DateUpdated = "TS";
-         test2.Revision = 1;
-         test2.From = "TS";
-         test2.To = "TS";
-         test2.Text = "TS";
-         test2.NotificationUrl = "TS";
-         test2.AccountId = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

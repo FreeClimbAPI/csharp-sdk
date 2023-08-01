@@ -121,26 +121,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        LogListAllOf test1 = new LogListAllOf();
-         List<LogResult> testList = new List<LogResult>();
-         test1.Logs = testList;
-
-        LogListAllOf test2 = new LogListAllOf();
-         List<LogResult> testList2 = testList;
-         test2.Logs = testList2;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

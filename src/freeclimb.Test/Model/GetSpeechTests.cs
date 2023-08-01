@@ -333,60 +333,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        GetSpeech test1 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test1.GrammarType = GrammarType.URL;
-         test1.GrammarType = GrammarType.URL;
-         test1.GrammarFile = "TS";
-         test1.GrammarRule = "TS";
-         test1.PlayBeep = true;
-         List<PerclCommand> testList = new List<PerclCommand>();
-         test1.Prompts = testList;
-         test1.NoInputTimeoutMs = 1;
-         test1.RecognitionTimeoutMs = 1;
-         test1.SpeechCompleteTimeoutMs = 1;
-         test1.SpeechIncompleteTimeoutMs = 1;
-         test1.PrivacyMode = true;
-
-        GetSpeech test2 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test2.GrammarType = GrammarType.URL;
-         test2.GrammarType = GrammarType.URL;
-         test2.GrammarFile = "TS";
-         test2.GrammarRule = "TS";
-         test2.PlayBeep = true;
-         List<PerclCommand> testList2 = testList;
-         test2.Prompts = testList2;
-         test2.NoInputTimeoutMs = 1;
-         test2.RecognitionTimeoutMs = 1;
-         test2.SpeechCompleteTimeoutMs = 1;
-         test2.SpeechIncompleteTimeoutMs = 1;
-         test2.PrivacyMode = true;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

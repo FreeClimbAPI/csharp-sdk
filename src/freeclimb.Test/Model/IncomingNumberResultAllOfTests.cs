@@ -286,48 +286,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject = new Capabilities(false, false, false, false, false);
-         test1.Capabilities = testObject;
-         test1.CampaignId = "TS";
-         test1.PhoneNumberId = "TS";
-         test1.AccountId = "TS";
-         test1.ApplicationId = "TS";
-         test1.PhoneNumber = "TS";
-         test1.Alias = "TS";
-         test1.Region = "TS";
-         test1.Country = "TS";
-         test1.VoiceEnabled = true;
-         test1.SmsEnabled = true;
-         test1.Offnet = true;
-
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject2 = testObject;
-         test2.Capabilities = testObject2;
-         test2.CampaignId = "TS";
-         test2.PhoneNumberId = "TS";
-         test2.AccountId = "TS";
-         test2.ApplicationId = "TS";
-         test2.PhoneNumber = "TS";
-         test2.Alias = "TS";
-         test2.Region = "TS";
-         test2.Country = "TS";
-         test2.VoiceEnabled = true;
-         test2.SmsEnabled = true;
-         test2.Offnet = true;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

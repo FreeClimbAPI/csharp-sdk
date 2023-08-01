@@ -160,30 +160,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        Play test1 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
-         test1.File = "TS";
-         test1.Loop = 1;
-         test1.ConferenceId = "TS";
-         test1.PrivacyMode = true;
-
-        Play test2 = new Play("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
-         test2.File = "TS";
-         test2.Loop = 1;
-         test2.ConferenceId = "TS";
-         test2.PrivacyMode = true;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

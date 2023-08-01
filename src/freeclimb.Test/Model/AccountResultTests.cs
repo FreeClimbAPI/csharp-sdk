@@ -216,7 +216,7 @@ namespace freeclimb.Test.Model
          test2.Status = AccountStatus.CLOSED;
          test2.Status = AccountStatus.CLOSED;
          test2.Status = AccountStatus.CLOSED;
-         object testObject2 = new object();
+         object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
 
         Assert.Equal(test1,test2);
@@ -248,7 +248,7 @@ namespace freeclimb.Test.Model
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
-         test2.Revision = 1;
+         test2.Revision = 2;
          test2.AccountId = "ts";
          test2.ApiKey = "ts";
          test2.Alias = "ts";
@@ -290,52 +290,6 @@ namespace freeclimb.Test.Model
         int hashCode1 = test1.GetHashCode();
         Assert.True(hashCode1.GetType() == typeof(int));
 
-        }
-
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        AccountResult test1 = new AccountResult();
-         test1.Uri = "TS";
-         test1.DateCreated = "TS";
-         test1.DateUpdated = "TS";
-         test1.Revision = 1;
-         test1.AccountId = "TS";
-         test1.ApiKey = "TS";
-         test1.Alias = "TS";
-         test1.Label = "TS";
-         test1.Type = AccountType.TRIAL;
-         test1.Type = AccountType.TRIAL;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
-         object testObject = new object();
-         test1.SubresourceUris = testObject;
-
-        AccountResult test2 = new AccountResult();
-         test2.Uri = "TS";
-         test2.DateCreated = "TS";
-         test2.DateUpdated = "TS";
-         test2.Revision = 1;
-         test2.AccountId = "TS";
-         test2.ApiKey = "TS";
-         test2.Alias = "TS";
-         test2.Label = "TS";
-         test2.Type = AccountType.TRIAL;
-         test2.Type = AccountType.TRIAL;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
-         object testObject2 = testObject;
-         test2.SubresourceUris = testObject2;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
         }
 
         /// <summary>

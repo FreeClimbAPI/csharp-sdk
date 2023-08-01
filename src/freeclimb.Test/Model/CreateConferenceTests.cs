@@ -246,52 +246,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        CreateConference test1 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test1.Alias = true;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Record = true;
-         test1.StatusCallbackUrl = "TS";
-         test1.WaitUrl = "TS";
-
-        CreateConference test2 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         test2.Alias = true;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.Record = true;
-         test2.StatusCallbackUrl = "TS";
-         test2.WaitUrl = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

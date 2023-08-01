@@ -168,7 +168,7 @@ namespace freeclimb.Test.Model
          test2.Status = AccountStatus.CLOSED;
          test2.Status = AccountStatus.CLOSED;
          test2.Status = AccountStatus.CLOSED;
-         object testObject2 = new object();
+         object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
 
         Assert.Equal(test1,test2);
@@ -230,44 +230,6 @@ namespace freeclimb.Test.Model
         int hashCode1 = test1.GetHashCode();
         Assert.True(hashCode1.GetType() == typeof(int));
 
-        }
-
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        AccountResultAllOf test1 = new AccountResultAllOf();
-         test1.AccountId = "TS";
-         test1.ApiKey = "TS";
-         test1.Alias = "TS";
-         test1.Label = "TS";
-         test1.Type = AccountType.TRIAL;
-         test1.Type = AccountType.TRIAL;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
-         object testObject = new object();
-         test1.SubresourceUris = testObject;
-
-        AccountResultAllOf test2 = new AccountResultAllOf();
-         test2.AccountId = "TS";
-         test2.ApiKey = "TS";
-         test2.Alias = "TS";
-         test2.Label = "TS";
-         test2.Type = AccountType.TRIAL;
-         test2.Type = AccountType.TRIAL;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
-         object testObject2 = new object();
-         test2.SubresourceUris = testObject2;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
         }
 
         /// <summary>

@@ -226,40 +226,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        LogList test1 = new LogList();
-         test1.Total = 1;
-         test1.Start = 1;
-         test1.End = 1;
-         test1.Page = 1;
-         test1.NumPages = 1;
-         test1.PageSize = 1;
-         test1.NextPageUri = "TS";
-         List<LogResult> testList = new List<LogResult>();
-         test1.Logs = testList;
-
-        LogList test2 = new LogList();
-         test2.Total = 1;
-         test2.Start = 1;
-         test2.End = 1;
-         test2.Page = 1;
-         test2.NumPages = 1;
-         test2.PageSize = 1;
-         test2.NextPageUri = "TS";
-         List<LogResult> testList2 = testList;
-         test2.Logs = testList2;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

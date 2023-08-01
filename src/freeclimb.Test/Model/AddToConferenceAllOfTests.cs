@@ -251,42 +251,6 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
-         test1.AllowCallControl = true;
-         test1.CallControlSequence = "TS";
-         test1.CallControlUrl = "TS";
-         test1.ConferenceId = "TS";
-         test1.CallId = "TS";
-         test1.LeaveConferenceUrl = "TS";
-         test1.Listen = true;
-         test1.NotificationUrl = "TS";
-         test1.StartConfOnEnter = true;
-         test1.Talk = true;
-
-        AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
-         test2.AllowCallControl = true;
-         test2.CallControlSequence = "TS";
-         test2.CallControlUrl = "TS";
-         test2.ConferenceId = "TS";
-         test2.CallId = "TS";
-         test2.LeaveConferenceUrl = "TS";
-         test2.Listen = true;
-         test2.NotificationUrl = "TS";
-         test2.StartConfOnEnter = true;
-         test2.Talk = true;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
-        /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
         

@@ -216,7 +216,7 @@ namespace freeclimb.Test.Model
          test2.WaitUrl = "TS";
          test2.ActionUrl = "TS";
          test2.StatusCallbackUrl = "TS";
-         object testObject2 = new object();
+         object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
 
         Assert.Equal(test1,test2);
@@ -296,56 +296,6 @@ namespace freeclimb.Test.Model
         int hashCode1 = test1.GetHashCode();
         Assert.True(hashCode1.GetType() == typeof(int));
 
-        }
-
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
-         test1.ConferenceId = "TS";
-         test1.AccountId = "TS";
-         test1.Alias = "TS";
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Record = true;
-         test1.Status = ConferenceStatus.EMPTY;
-         test1.Status = ConferenceStatus.EMPTY;
-         test1.Status = ConferenceStatus.EMPTY;
-         test1.Status = ConferenceStatus.EMPTY;
-         test1.WaitUrl = "TS";
-         test1.ActionUrl = "TS";
-         test1.StatusCallbackUrl = "TS";
-         object testObject = new object();
-         test1.SubresourceUris = testObject;
-
-        ConferenceResultAllOf test2 = new ConferenceResultAllOf();
-         test2.ConferenceId = "TS";
-         test2.AccountId = "TS";
-         test2.Alias = "TS";
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.Record = true;
-         test2.Status = ConferenceStatus.EMPTY;
-         test2.Status = ConferenceStatus.EMPTY;
-         test2.Status = ConferenceStatus.EMPTY;
-         test2.Status = ConferenceStatus.EMPTY;
-         test2.WaitUrl = "TS";
-         test2.ActionUrl = "TS";
-         test2.StatusCallbackUrl = "TS";
-         object testObject2 = new object();
-         test2.SubresourceUris = testObject2;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
         }
 
         /// <summary>

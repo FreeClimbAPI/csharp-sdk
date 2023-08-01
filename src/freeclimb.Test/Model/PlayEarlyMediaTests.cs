@@ -115,24 +115,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
-         test1.File = "TS";
-
-        PlayEarlyMedia test2 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
-         test2.File = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>

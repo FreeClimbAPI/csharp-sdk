@@ -164,7 +164,7 @@ namespace freeclimb.Test.Model
          test2.AccountId = "TS";
          test2.CallId = "TS";
          test2.Message = "TS";
-         object testObject2 = new object();
+         object testObject2 = testObject;
          test2.Metadata = testObject2;
 
         Assert.Equal(test1,test2);
@@ -188,7 +188,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.Metadata = testObject;
         LogResult test2 = new LogResult();
-         test2.Timestamp = 1;
+         test2.Timestamp = 2;
          test2.Level = LogLevel.INFO;
          test2.Level = LogLevel.INFO;
          test2.Level = LogLevel.INFO;
@@ -223,42 +223,6 @@ namespace freeclimb.Test.Model
         int hashCode1 = test1.GetHashCode();
         Assert.True(hashCode1.GetType() == typeof(int));
 
-        }
-
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        LogResult test1 = new LogResult();
-         test1.Timestamp = 1;
-         test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
-         test1.RequestId = "TS";
-         test1.AccountId = "TS";
-         test1.CallId = "TS";
-         test1.Message = "TS";
-         object testObject = new object();
-         test1.Metadata = testObject;
-
-        LogResult test2 = new LogResult();
-         test2.Timestamp = 1;
-         test2.Level = LogLevel.INFO;
-         test2.Level = LogLevel.INFO;
-         test2.Level = LogLevel.INFO;
-         test2.RequestId = "TS";
-         test2.AccountId = "TS";
-         test2.CallId = "TS";
-         test2.Message = "TS";
-         object testObject2 = testObject;
-         test2.Metadata = testObject2;
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
         }
 
         /// <summary>

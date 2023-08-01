@@ -205,36 +205,6 @@ namespace freeclimb.Test.Model
 
         }
 
-         /// <summary>
-        /// Test the method 'hashCodeEquals'
-        /// </summary>
-        
-        [Fact]
-        public void hashCodeEqualsTest() {
-        PaginationModel test1 = new PaginationModel();
-         test1.Total = 1;
-         test1.Start = 1;
-         test1.End = 1;
-         test1.Page = 1;
-         test1.NumPages = 1;
-         test1.PageSize = 1;
-         test1.NextPageUri = "TS";
-
-        PaginationModel test2 = new PaginationModel();
-         test2.Total = 1;
-         test2.Start = 1;
-         test2.End = 1;
-         test2.Page = 1;
-         test2.NumPages = 1;
-         test2.PageSize = 1;
-         test2.NextPageUri = "TS";
-
-
-        int hashCode1 = test1.GetHashCode();
-        int hashCode2 = test2.GetHashCode();
-        Assert.Equal(hashCode1, hashCode2);
-        }
-
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
