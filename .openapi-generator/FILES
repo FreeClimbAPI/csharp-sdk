@@ -143,6 +143,8 @@ freeclimb.sln
 git_push.sh
 src/freeclimb.Test/Model/AccountStatusTests.cs
 src/freeclimb.Test/Model/AccountTypeTests.cs
+src/freeclimb.Test/Model/AddToConferenceAllOfTests.cs
+src/freeclimb.Test/Model/AddToConferenceTests.cs
 src/freeclimb.Test/Model/AnsweredByTests.cs
 src/freeclimb.Test/Model/CallDirectionTests.cs
 src/freeclimb.Test/Model/CallStatusTests.cs
@@ -156,7 +158,6 @@ src/freeclimb.Test/Model/LogLevelTests.cs
 src/freeclimb.Test/Model/MachineTypeTests.cs
 src/freeclimb.Test/Model/MessageDirectionTests.cs
 src/freeclimb.Test/Model/MessageStatusTests.cs
-src/freeclimb.Test/Model/PerclCommandTests.cs
 src/freeclimb.Test/Model/PlayBeepTests.cs
 src/freeclimb.Test/Model/QueueResultStatusTests.cs
 src/freeclimb.Test/Model/RecordUtteranceTermReasonTests.cs

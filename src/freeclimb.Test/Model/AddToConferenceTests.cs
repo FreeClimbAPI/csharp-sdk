@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public AddToConferenceTests()
         {
-            instance = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            instance = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false,  "TEST_STRING");
         }
 
         public void Dispose()
@@ -105,8 +107,8 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            instance.CallId = false;
-            Assert.Equal(false, instance.CallId);       
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
             
         }
         /// <summary>
