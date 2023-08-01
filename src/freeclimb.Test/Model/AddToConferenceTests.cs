@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public AddToConferenceTests()
         {
-            instance = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false,  "TEST_STRING");
+            instance = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false, "TEST_STRING");
         }
 
         public void Dispose()
@@ -161,5 +161,6 @@ namespace freeclimb.Test.Model
             Assert.Equal(false, instance.Talk);       
             
         }
+        
     }
 }

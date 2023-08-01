@@ -161,5 +161,6 @@ namespace freeclimb.Test.Model
             Assert.Equal(false, instance.Talk);       
             
         }
+        
     }
 }
