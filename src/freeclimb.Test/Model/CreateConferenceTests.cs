@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public CreateConferenceTests()
         {
-            instance = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            instance = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
         }
 
         public void Dispose()
@@ -131,6 +131,239 @@ namespace freeclimb.Test.Model
             instance.WaitUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.WaitUrl);
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        CreateConference test1 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.Alias = true;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.StatusCallbackUrl = "TS";
+         test1.WaitUrl = "TS";
+        CreateConference test2 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.Alias = true;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.StatusCallbackUrl = "TS";
+         test2.WaitUrl = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        CreateConference test1 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.Alias = true;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.StatusCallbackUrl = "TS";
+         test1.WaitUrl = "TS";
+        CreateConference test2 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.Alias = false;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = false;
+         test2.StatusCallbackUrl = "ts";
+         test2.WaitUrl = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        CreateConference test1 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.Alias = true;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.StatusCallbackUrl = "TS";
+         test1.WaitUrl = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        CreateConference test1 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.Alias = true;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.StatusCallbackUrl = "TS";
+         test1.WaitUrl = "TS";
+
+        CreateConference test2 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.Alias = true;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.StatusCallbackUrl = "TS";
+         test2.WaitUrl = "TS";
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        CreateConference test1 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.Alias = true;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.StatusCallbackUrl = "TS";
+         test1.WaitUrl = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        CreateConference test1 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.Alias = true;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.StatusCallbackUrl = "TS";
+         test1.WaitUrl = "TS";
+
+        CreateConference test2 = new CreateConference("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com", "TEST_STRING");
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.Alias = true;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.StatusCallbackUrl = "TS";
+         test2.WaitUrl = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

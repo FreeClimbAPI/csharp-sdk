@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -40,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public GetDigitsTests()
         {
-            instance = new GetDigits("https://a.com");
+            instance = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
         }
 
         public void Dispose()
@@ -154,6 +156,249 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.Equal(false, instance.PrivacyMode);       
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        GetDigits test1 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.DigitTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.FlushBuffer = true;
+         test1.InitialTimeoutMs = "TS";
+         test1.MaxDigits = 1;
+         test1.MinDigits = 1;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.PrivacyMode = true;
+        GetDigits test2 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.DigitTimeoutMs = 1;
+         test2.FinishOnKey = "TS";
+         test2.FlushBuffer = true;
+         test2.InitialTimeoutMs = "TS";
+         test2.MaxDigits = 1;
+         test2.MinDigits = 1;
+         List<PerclCommand> testList2 = new List<PerclCommand>();
+         test2.Prompts = testList2;
+         test2.PrivacyMode = true;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        GetDigits test1 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.DigitTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.FlushBuffer = true;
+         test1.InitialTimeoutMs = "TS";
+         test1.MaxDigits = 1;
+         test1.MinDigits = 1;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.PrivacyMode = true;
+        GetDigits test2 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.DigitTimeoutMs = 1;
+         test2.FinishOnKey = "ts";
+         test2.FlushBuffer = false;
+         test2.InitialTimeoutMs = "ts";
+         test2.MaxDigits = 1;
+         test2.MinDigits = 1;
+         List<PerclCommand> testList2 = null;
+         test2.Prompts = testList2;
+         test2.PrivacyMode = false;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        GetDigits test1 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.DigitTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.FlushBuffer = true;
+         test1.InitialTimeoutMs = "TS";
+         test1.MaxDigits = 1;
+         test1.MinDigits = 1;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.PrivacyMode = true;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        GetDigits test1 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.DigitTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.FlushBuffer = true;
+         test1.InitialTimeoutMs = "TS";
+         test1.MaxDigits = 1;
+         test1.MinDigits = 1;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.PrivacyMode = true;
+
+        GetDigits test2 = new GetDigits();
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.DigitTimeoutMs = 1;
+         test2.FinishOnKey = "TS";
+         test2.FlushBuffer = true;
+         test2.InitialTimeoutMs = "TS";
+         test2.MaxDigits = 1;
+         test2.MinDigits = 1;
+         List<PerclCommand> testList2 = testList;
+         test2.Prompts = testList2;
+         test2.PrivacyMode = true;
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        GetDigits test1 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.DigitTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.FlushBuffer = true;
+         test1.InitialTimeoutMs = "TS";
+         test1.MaxDigits = 1;
+         test1.MinDigits = 1;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.PrivacyMode = true;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        GetDigits test1 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.DigitTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.FlushBuffer = true;
+         test1.InitialTimeoutMs = "TS";
+         test1.MaxDigits = 1;
+         test1.MinDigits = 1;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.PrivacyMode = true;
+
+        GetDigits test2 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.DigitTimeoutMs = 1;
+         test2.FinishOnKey = "TS";
+         test2.FlushBuffer = true;
+         test2.InitialTimeoutMs = "TS";
+         test2.MaxDigits = 1;
+         test2.MinDigits = 1;
+         List<PerclCommand> testList2 = new List<PerclCommand>();
+         test2.Prompts = testList2;
+         test2.PrivacyMode = true;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

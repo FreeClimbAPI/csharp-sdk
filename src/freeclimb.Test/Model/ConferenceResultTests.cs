@@ -214,5 +214,298 @@ namespace freeclimb.Test.Model
             Assert.Equal(testObject, instance.SubresourceUris);
             
         }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        ConferenceResult test1 = new ConferenceResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.ConferenceId = "TS";
+         test1.AccountId = "TS";
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.WaitUrl = "TS";
+         test1.ActionUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+        ConferenceResult test2 = new ConferenceResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.ConferenceId = "TS";
+         test2.AccountId = "TS";
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.WaitUrl = "TS";
+         test2.ActionUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+         object testObject2 = new object();
+         test2.SubresourceUris = testObject2;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        ConferenceResult test1 = new ConferenceResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.ConferenceId = "TS";
+         test1.AccountId = "TS";
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.WaitUrl = "TS";
+         test1.ActionUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+        ConferenceResult test2 = new ConferenceResult();
+         test2.Uri = "ts";
+         test2.DateCreated = "ts";
+         test2.DateUpdated = "ts";
+         test2.Revision = 1;
+         test2.ConferenceId = "ts";
+         test2.AccountId = "ts";
+         test2.Alias = "ts";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = false;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.WaitUrl = "ts";
+         test2.ActionUrl = "ts";
+         test2.StatusCallbackUrl = "ts";
+         object testObject2 = new object();
+         test2.SubresourceUris = testObject2;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        ConferenceResult test1 = new ConferenceResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.ConferenceId = "TS";
+         test1.AccountId = "TS";
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.WaitUrl = "TS";
+         test1.ActionUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        ConferenceResult test1 = new ConferenceResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.ConferenceId = "TS";
+         test1.AccountId = "TS";
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.WaitUrl = "TS";
+         test1.ActionUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        ConferenceResult test2 = new ConferenceResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.ConferenceId = "TS";
+         test2.AccountId = "TS";
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.WaitUrl = "TS";
+         test2.ActionUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+         object testObject2 = new object();
+         test2.SubresourceUris = testObject2;
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        ConferenceResult test1 = new ConferenceResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.ConferenceId = "TS";
+         test1.AccountId = "TS";
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.WaitUrl = "TS";
+         test1.ActionUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        ConferenceResult test1 = new ConferenceResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.ConferenceId = "TS";
+         test1.AccountId = "TS";
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.WaitUrl = "TS";
+         test1.ActionUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        ConferenceResult test2 = new ConferenceResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.ConferenceId = "TS";
+         test2.AccountId = "TS";
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.WaitUrl = "TS";
+         test2.ActionUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+         object testObject2 = new object();
+         test2.SubresourceUris = testObject2;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
+        }
     }
 }

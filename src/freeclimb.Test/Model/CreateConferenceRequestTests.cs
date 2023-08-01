@@ -117,5 +117,168 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.StatusCallbackUrl);
             
         }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        CreateConferenceRequest test1 = new CreateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.WaitUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+        CreateConferenceRequest test2 = new CreateConferenceRequest();
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.WaitUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        CreateConferenceRequest test1 = new CreateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.WaitUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+        CreateConferenceRequest test2 = new CreateConferenceRequest();
+         test2.Alias = "ts";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = false;
+         test2.WaitUrl = "ts";
+         test2.StatusCallbackUrl = "ts";
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        CreateConferenceRequest test1 = new CreateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.WaitUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        CreateConferenceRequest test1 = new CreateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.WaitUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+
+        CreateConferenceRequest test2 = new CreateConferenceRequest();
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.WaitUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        CreateConferenceRequest test1 = new CreateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.WaitUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        CreateConferenceRequest test1 = new CreateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.WaitUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+
+        CreateConferenceRequest test2 = new CreateConferenceRequest();
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.WaitUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
+        }
     }
 }

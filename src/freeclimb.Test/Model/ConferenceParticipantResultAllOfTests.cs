@@ -22,6 +22,8 @@ using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Globalization;
+using freeclimb.Enums;
 
 
 namespace freeclimb.Test.Model
@@ -118,6 +120,149 @@ namespace freeclimb.Test.Model
             instance.StartConfOnEnter = false;
             Assert.Equal(false, instance.StartConfOnEnter);       
             
+        }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+         test1.AccountId = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.Talk = true;
+         test1.Listen = true;
+         test1.StartConfOnEnter = true;
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf();
+         test2.AccountId = "TS";
+         test2.ConferenceId = "TS";
+         test2.CallId = "TS";
+         test2.Talk = true;
+         test2.Listen = true;
+         test2.StartConfOnEnter = true;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+         test1.AccountId = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.Talk = true;
+         test1.Listen = true;
+         test1.StartConfOnEnter = true;
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf();
+         test2.AccountId = "ts";
+         test2.ConferenceId = "ts";
+         test2.CallId = "ts";
+         test2.Talk = false;
+         test2.Listen = false;
+         test2.StartConfOnEnter = false;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+         test1.AccountId = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.Talk = true;
+         test1.Listen = true;
+         test1.StartConfOnEnter = true;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+         test1.AccountId = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.Talk = true;
+         test1.Listen = true;
+         test1.StartConfOnEnter = true;
+
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf();
+         test2.AccountId = "TS";
+         test2.ConferenceId = "TS";
+         test2.CallId = "TS";
+         test2.Talk = true;
+         test2.Listen = true;
+         test2.StartConfOnEnter = true;
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+         test1.AccountId = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.Talk = true;
+         test1.Listen = true;
+         test1.StartConfOnEnter = true;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+         test1.AccountId = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.Talk = true;
+         test1.Listen = true;
+         test1.StartConfOnEnter = true;
+
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf();
+         test2.AccountId = "TS";
+         test2.ConferenceId = "TS";
+         test2.CallId = "TS";
+         test2.Talk = true;
+         test2.Listen = true;
+         test2.StartConfOnEnter = true;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
         }
     }
 }

@@ -199,5 +199,278 @@ namespace freeclimb.Test.Model
             Assert.Equal(false, instance.PrivacyMode);       
             
         }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarFile = "TS";
+         test1.GrammarRule = "TS";
+         test1.PlayBeep = true;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.NoInputTimeoutMs = 1;
+         test1.RecognitionTimeoutMs = 1;
+         test1.SpeechCompleteTimeoutMs = 1;
+         test1.SpeechIncompleteTimeoutMs = 1;
+         test1.PrivacyMode = true;
+        GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarFile = "TS";
+         test2.GrammarRule = "TS";
+         test2.PlayBeep = true;
+         List<PerclCommand> testList2 = new List<PerclCommand>();
+         test2.Prompts = testList2;
+         test2.NoInputTimeoutMs = 1;
+         test2.RecognitionTimeoutMs = 1;
+         test2.SpeechCompleteTimeoutMs = 1;
+         test2.SpeechIncompleteTimeoutMs = 1;
+         test2.PrivacyMode = true;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarFile = "TS";
+         test1.GrammarRule = "TS";
+         test1.PlayBeep = true;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.NoInputTimeoutMs = 1;
+         test1.RecognitionTimeoutMs = 1;
+         test1.SpeechCompleteTimeoutMs = 1;
+         test1.SpeechIncompleteTimeoutMs = 1;
+         test1.PrivacyMode = true;
+        GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarFile = "ts";
+         test2.GrammarRule = "ts";
+         test2.PlayBeep = false;
+         List<PerclCommand> testList2 = null;
+         test2.Prompts = testList2;
+         test2.NoInputTimeoutMs = 1;
+         test2.RecognitionTimeoutMs = 1;
+         test2.SpeechCompleteTimeoutMs = 1;
+         test2.SpeechIncompleteTimeoutMs = 1;
+         test2.PrivacyMode = false;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarFile = "TS";
+         test1.GrammarRule = "TS";
+         test1.PlayBeep = true;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.NoInputTimeoutMs = 1;
+         test1.RecognitionTimeoutMs = 1;
+         test1.SpeechCompleteTimeoutMs = 1;
+         test1.SpeechIncompleteTimeoutMs = 1;
+         test1.PrivacyMode = true;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+         /// <summary>
+        /// Test the method 'hashCodeEquals'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeEqualsTest() {
+        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarFile = "TS";
+         test1.GrammarRule = "TS";
+         test1.PlayBeep = true;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.NoInputTimeoutMs = 1;
+         test1.RecognitionTimeoutMs = 1;
+         test1.SpeechCompleteTimeoutMs = 1;
+         test1.SpeechIncompleteTimeoutMs = 1;
+         test1.PrivacyMode = true;
+
+        GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarFile = "TS";
+         test2.GrammarRule = "TS";
+         test2.PlayBeep = true;
+         List<PerclCommand> testList2 = testList;
+         test2.Prompts = testList2;
+         test2.NoInputTimeoutMs = 1;
+         test2.RecognitionTimeoutMs = 1;
+         test2.SpeechCompleteTimeoutMs = 1;
+         test2.SpeechIncompleteTimeoutMs = 1;
+         test2.PrivacyMode = true;
+
+
+        int hashCode1 = test1.GetHashCode();
+        int hashCode2 = test2.GetHashCode();
+        Assert.Equal(hashCode1, hashCode2);
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarFile = "TS";
+         test1.GrammarRule = "TS";
+         test1.PlayBeep = true;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.NoInputTimeoutMs = 1;
+         test1.RecognitionTimeoutMs = 1;
+         test1.SpeechCompleteTimeoutMs = 1;
+         test1.SpeechIncompleteTimeoutMs = 1;
+         test1.PrivacyMode = true;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+         try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarFile = "TS";
+         test1.GrammarRule = "TS";
+         test1.PlayBeep = true;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.NoInputTimeoutMs = 1;
+         test1.RecognitionTimeoutMs = 1;
+         test1.SpeechCompleteTimeoutMs = 1;
+         test1.SpeechIncompleteTimeoutMs = 1;
+         test1.PrivacyMode = true;
+
+        GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+         try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarFile = "TS";
+         test2.GrammarRule = "TS";
+         test2.PlayBeep = true;
+         List<PerclCommand> testList2 = new List<PerclCommand>();
+         test2.Prompts = testList2;
+         test2.NoInputTimeoutMs = 1;
+         test2.RecognitionTimeoutMs = 1;
+         test2.SpeechCompleteTimeoutMs = 1;
+         test2.SpeechIncompleteTimeoutMs = 1;
+         test2.PrivacyMode = true;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
+        }
     }
 }
