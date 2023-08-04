@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -344,6 +345,25 @@ namespace freeclimb.Test.Model
          test2.Command = "TS";
 
         Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        PerclCommand test1 = new PerclCommand();
+         test1.Command = "TS";
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
+
+        PerclCommand test2 = new PerclCommand();
+         test2.Command = "TS";
+
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

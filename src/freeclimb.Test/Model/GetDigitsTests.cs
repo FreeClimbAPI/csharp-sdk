@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -391,6 +392,55 @@ namespace freeclimb.Test.Model
          test2.PrivacyMode = true;
 
         Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        GetDigits test1 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.DigitTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.FlushBuffer = true;
+         test1.InitialTimeoutMs = "TS";
+         test1.MaxDigits = 1;
+         test1.MinDigits = 1;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.PrivacyMode = true;
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
+
+        GetDigits test2 = new GetDigits("https://a.com", 1, "TEST_STRING", false, "TEST_STRING", 1, 1 , new List<PerclCommand>(), false, "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.DigitTimeoutMs = 1;
+         test2.FinishOnKey = "TS";
+         test2.FlushBuffer = true;
+         test2.InitialTimeoutMs = "TS";
+         test2.MaxDigits = 1;
+         test2.MinDigits = 1;
+         List<PerclCommand> testList2 = new List<PerclCommand>();
+         test2.Prompts = testList2;
+         test2.PrivacyMode = true;
+
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

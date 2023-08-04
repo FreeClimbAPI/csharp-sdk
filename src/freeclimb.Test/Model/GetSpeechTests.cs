@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -463,6 +464,61 @@ namespace freeclimb.Test.Model
          test2.PrivacyMode = true;
 
         Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        GetSpeech test1 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarType = GrammarType.URL;
+         test1.GrammarFile = "TS";
+         test1.GrammarRule = "TS";
+         test1.PlayBeep = true;
+         List<PerclCommand> testList = new List<PerclCommand>();
+         test1.Prompts = testList;
+         test1.NoInputTimeoutMs = 1;
+         test1.RecognitionTimeoutMs = 1;
+         test1.SpeechCompleteTimeoutMs = 1;
+         test1.SpeechIncompleteTimeoutMs = 1;
+         test1.PrivacyMode = true;
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
+
+        GetSpeech test2 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarType = GrammarType.URL;
+         test2.GrammarFile = "TS";
+         test2.GrammarRule = "TS";
+         test2.PlayBeep = true;
+         List<PerclCommand> testList2 = new List<PerclCommand>();
+         test2.Prompts = testList2;
+         test2.NoInputTimeoutMs = 1;
+         test2.RecognitionTimeoutMs = 1;
+         test2.SpeechCompleteTimeoutMs = 1;
+         test2.SpeechIncompleteTimeoutMs = 1;
+         test2.PrivacyMode = true;
+
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

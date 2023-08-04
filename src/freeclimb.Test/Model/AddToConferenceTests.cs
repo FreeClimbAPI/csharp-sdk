@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -335,6 +336,43 @@ namespace freeclimb.Test.Model
          test2.Talk = true;
 
         Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        AddToConference test1 = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false, "TEST_STRING");
+         test1.AllowCallControl = true;
+         test1.CallControlSequence = "TS";
+         test1.CallControlUrl = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.LeaveConferenceUrl = "TS";
+         test1.Listen = true;
+         test1.NotificationUrl = "TS";
+         test1.StartConfOnEnter = true;
+         test1.Talk = true;
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
+
+        AddToConference test2 = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false, "TEST_STRING");
+         test2.AllowCallControl = true;
+         test2.CallControlSequence = "TS";
+         test2.CallControlUrl = "TS";
+         test2.ConferenceId = "TS";
+         test2.CallId = "TS";
+         test2.LeaveConferenceUrl = "TS";
+         test2.Listen = true;
+         test2.NotificationUrl = "TS";
+         test2.StartConfOnEnter = true;
+         test2.Talk = true;
+
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

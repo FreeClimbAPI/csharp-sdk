@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -235,6 +236,33 @@ namespace freeclimb.Test.Model
          test2.PrivacyMode = true;
 
         Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        Say test1 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
+         test1.Text = "TS";
+         test1.Language = "TS";
+         test1.Loop = 1;
+         test1.ConferenceId = "TS";
+         test1.PrivacyMode = true;
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
+
+        Say test2 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
+         test2.Text = "TS";
+         test2.Language = "TS";
+         test2.Loop = 1;
+         test2.ConferenceId = "TS";
+         test2.PrivacyMode = true;
+
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

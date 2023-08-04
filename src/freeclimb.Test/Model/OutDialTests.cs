@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -477,6 +478,69 @@ namespace freeclimb.Test.Model
          test2.PrivacyMode = true;
 
         Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        OutDial test1 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.CallConnectUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.CallingNumber = "TS";
+         test1.Destination = "TS";
+         test1.IfMachine = IfMachine.REDIRECT;
+         test1.IfMachine = IfMachine.REDIRECT;
+         test1.IfMachineUrl = "TS";
+         test1.SendDigits = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.Timeout = 1;
+         test1.PrivacyMode = true;
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
+
+        OutDial test2 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.CallConnectUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.CallingNumber = "TS";
+         test2.Destination = "TS";
+         test2.IfMachine = IfMachine.REDIRECT;
+         test2.IfMachine = IfMachine.REDIRECT;
+         test2.IfMachineUrl = "TS";
+         test2.SendDigits = "TS";
+         test2.StatusCallbackUrl = "TS";
+         test2.Timeout = 1;
+         test2.PrivacyMode = true;
+
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }
