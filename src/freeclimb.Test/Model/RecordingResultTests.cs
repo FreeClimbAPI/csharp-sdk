@@ -162,6 +162,7 @@ namespace freeclimb.Test.Model
          test1.CallId = "TS";
          test1.DurationSec = 1;
          test1.ConferenceId = "TS";
+
         RecordingResult test2 = new RecordingResult();
          test2.Uri = "TS";
          test2.DateCreated = "TS";
@@ -192,6 +193,7 @@ namespace freeclimb.Test.Model
          test1.CallId = "TS";
          test1.DurationSec = 1;
          test1.ConferenceId = "TS";
+
         RecordingResult test2 = new RecordingResult();
          test2.Uri = "ts";
          test2.DateCreated = "ts";
@@ -282,6 +284,69 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        RecordingResult test1 = new RecordingResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.RecordingId = "TS";
+         test1.AccountId = "TS";
+         test1.CallId = "TS";
+         test1.DurationSec = 1;
+         test1.ConferenceId = "TS";
+
+        RecordingResult test2 = new RecordingResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.RecordingId = "TS";
+         test2.AccountId = "TS";
+         test2.CallId = "TS";
+         test2.DurationSec = 1;
+         test2.ConferenceId = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        RecordingResult test1 = new RecordingResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.RecordingId = "TS";
+         test1.AccountId = "TS";
+         test1.CallId = "TS";
+         test1.DurationSec = 1;
+         test1.ConferenceId = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        RecordingResult test2 = new RecordingResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.RecordingId = "TS";
+         test2.AccountId = "TS";
+         test2.CallId = "TS";
+         test2.DurationSec = 1;
+         test2.ConferenceId = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

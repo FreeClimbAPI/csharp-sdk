@@ -127,6 +127,7 @@ namespace freeclimb.Test.Model
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
+
         CreateConferenceRequest test2 = new CreateConferenceRequest();
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
@@ -155,12 +156,13 @@ namespace freeclimb.Test.Model
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
+
         CreateConferenceRequest test2 = new CreateConferenceRequest();
          test2.Alias = "ts";
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.PlayBeep = PlayBeep.NEVER;
          test2.Record = false;
          test2.WaitUrl = "ts";
          test2.StatusCallbackUrl = "ts";
@@ -240,6 +242,65 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        CreateConferenceRequest test1 = new CreateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.WaitUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+
+        CreateConferenceRequest test2 = new CreateConferenceRequest();
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.WaitUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        CreateConferenceRequest test1 = new CreateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.WaitUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        CreateConferenceRequest test2 = new CreateConferenceRequest();
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.WaitUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

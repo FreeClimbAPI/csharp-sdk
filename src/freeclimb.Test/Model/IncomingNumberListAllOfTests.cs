@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
         IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
+
         IncomingNumberListAllOf test2 = new IncomingNumberListAllOf();
          List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
          test2.IncomingPhoneNumbers = testList2;
@@ -92,6 +93,7 @@ namespace freeclimb.Test.Model
         IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
+
         IncomingNumberListAllOf test2 = new IncomingNumberListAllOf();
          List<IncomingNumberResult> testList2 = null;
          test2.IncomingPhoneNumbers = testList2;
@@ -147,6 +149,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
+         List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
+         test1.IncomingPhoneNumbers = testList;
+
+        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf();
+         List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
+         test2.IncomingPhoneNumbers = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
+         List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
+         test1.IncomingPhoneNumbers = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf();
+         List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
+         test2.IncomingPhoneNumbers = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

@@ -41,7 +41,7 @@ namespace freeclimb.Test.Model
 
         public EnqueueAllOfTests()
         {
-            instance = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
+            instance = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        EnqueueAllOf test1 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
+        EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -129,7 +129,8 @@ namespace freeclimb.Test.Model
             }
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
-        EnqueueAllOf test2 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
+
+        EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -156,7 +157,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        EnqueueAllOf test1 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
+        EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -173,16 +174,17 @@ namespace freeclimb.Test.Model
             }
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
-        EnqueueAllOf test2 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
+
+        EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
          try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.NotificationUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.NotificationUrl);
             } catch (Exception ) {
@@ -200,7 +202,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        EnqueueAllOf test1 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
+        EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -229,7 +231,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        EnqueueAllOf test1 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
+        EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -258,7 +260,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        EnqueueAllOf test1 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
+        EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -276,7 +278,7 @@ namespace freeclimb.Test.Model
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
-        EnqueueAllOf test2 = new EnqueueAllOf("https://a.com", "TEST_STRING", "https://a.com", "https://a.com");
+        EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -298,6 +300,97 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.NotificationUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.NotificationUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.QueueId = "TS";
+         test1.WaitUrl = "TS";
+
+        EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.NotificationUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.NotificationUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.QueueId = "TS";
+         test2.WaitUrl = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.NotificationUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.NotificationUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.QueueId = "TS";
+         test1.WaitUrl = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.NotificationUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.NotificationUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.QueueId = "TS";
+         test2.WaitUrl = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

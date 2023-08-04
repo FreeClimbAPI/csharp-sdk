@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
         ConferenceListAllOf test1 = new ConferenceListAllOf();
          List<ConferenceResult> testList = new List<ConferenceResult>();
          test1.Conferences = testList;
+
         ConferenceListAllOf test2 = new ConferenceListAllOf();
          List<ConferenceResult> testList2 = new List<ConferenceResult>();
          test2.Conferences = testList2;
@@ -92,6 +93,7 @@ namespace freeclimb.Test.Model
         ConferenceListAllOf test1 = new ConferenceListAllOf();
          List<ConferenceResult> testList = new List<ConferenceResult>();
          test1.Conferences = testList;
+
         ConferenceListAllOf test2 = new ConferenceListAllOf();
          List<ConferenceResult> testList2 = null;
          test2.Conferences = testList2;
@@ -147,6 +149,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        ConferenceListAllOf test1 = new ConferenceListAllOf();
+         List<ConferenceResult> testList = new List<ConferenceResult>();
+         test1.Conferences = testList;
+
+        ConferenceListAllOf test2 = new ConferenceListAllOf();
+         List<ConferenceResult> testList2 = new List<ConferenceResult>();
+         test2.Conferences = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        ConferenceListAllOf test1 = new ConferenceListAllOf();
+         List<ConferenceResult> testList = new List<ConferenceResult>();
+         test1.Conferences = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        ConferenceListAllOf test2 = new ConferenceListAllOf();
+         List<ConferenceResult> testList2 = new List<ConferenceResult>();
+         test2.Conferences = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

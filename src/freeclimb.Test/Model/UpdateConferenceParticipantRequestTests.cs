@@ -85,6 +85,7 @@ namespace freeclimb.Test.Model
         UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
          test1.Talk = true;
          test1.Listen = true;
+
         UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest();
          test2.Talk = true;
          test2.Listen = true;
@@ -101,6 +102,7 @@ namespace freeclimb.Test.Model
         UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
          test1.Talk = true;
          test1.Listen = true;
+
         UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest();
          test2.Talk = false;
          test2.Listen = false;
@@ -156,6 +158,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
+         test1.Talk = true;
+         test1.Listen = true;
+
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest();
+         test2.Talk = true;
+         test2.Listen = true;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
+         test1.Talk = true;
+         test1.Listen = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest();
+         test2.Talk = true;
+         test2.Listen = true;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

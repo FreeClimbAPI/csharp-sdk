@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
         ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
+
         ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf();
          List<ConferenceParticipantResult> testList2 = new List<ConferenceParticipantResult>();
          test2.Participants = testList2;
@@ -92,6 +93,7 @@ namespace freeclimb.Test.Model
         ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
+
         ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf();
          List<ConferenceParticipantResult> testList2 = null;
          test2.Participants = testList2;
@@ -113,7 +115,6 @@ namespace freeclimb.Test.Model
         Assert.True(hashCode1.GetType() == typeof(int));
 
         }
-
 
         /// <summary>
         /// Test the method 'ToStringType'
@@ -148,6 +149,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
+         List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
+         test1.Participants = testList;
+
+        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf();
+         List<ConferenceParticipantResult> testList2 = new List<ConferenceParticipantResult>();
+         test2.Participants = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
+         List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
+         test1.Participants = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf();
+         List<ConferenceParticipantResult> testList2 = new List<ConferenceParticipantResult>();
+         test2.Participants = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

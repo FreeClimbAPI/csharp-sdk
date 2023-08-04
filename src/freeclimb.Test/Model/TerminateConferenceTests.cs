@@ -74,6 +74,7 @@ namespace freeclimb.Test.Model
         public void equalsTrueTest() {
         TerminateConference test1 = new TerminateConference("TEST_STRING", "TEST_STRING");
          test1.ConferenceId = "TS";
+
         TerminateConference test2 = new TerminateConference("TEST_STRING", "TEST_STRING");
          test2.ConferenceId = "TS";
 
@@ -88,6 +89,7 @@ namespace freeclimb.Test.Model
         public void equalsFalseTest() {
         TerminateConference test1 = new TerminateConference("TEST_STRING", "TEST_STRING");
          test1.ConferenceId = "TS";
+
         TerminateConference test2 = new TerminateConference("TEST_STRING", "TEST_STRING");
          test2.ConferenceId = "ts";
 
@@ -138,6 +140,21 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        TerminateConference test1 = new TerminateConference("TEST_STRING", "TEST_STRING");
+         test1.ConferenceId = "TS";
+
+        TerminateConference test2 = new TerminateConference("TEST_STRING", "TEST_STRING");
+         test2.ConferenceId = "TS";
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

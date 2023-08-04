@@ -74,6 +74,7 @@ namespace freeclimb.Test.Model
         public void equalsTrueTest() {
         HangupAllOf test1 = new HangupAllOf();
          test1.Reason = "TS";
+
         HangupAllOf test2 = new HangupAllOf();
          test2.Reason = "TS";
 
@@ -88,6 +89,7 @@ namespace freeclimb.Test.Model
         public void equalsFalseTest() {
         HangupAllOf test1 = new HangupAllOf();
          test1.Reason = "TS";
+
         HangupAllOf test2 = new HangupAllOf();
          test2.Reason = "ts";
 
@@ -138,6 +140,37 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        HangupAllOf test1 = new HangupAllOf();
+         test1.Reason = "TS";
+
+        HangupAllOf test2 = new HangupAllOf();
+         test2.Reason = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        HangupAllOf test1 = new HangupAllOf();
+         test1.Reason = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        HangupAllOf test2 = new HangupAllOf();
+         test2.Reason = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

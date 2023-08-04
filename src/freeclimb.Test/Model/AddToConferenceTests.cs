@@ -173,6 +173,7 @@ namespace freeclimb.Test.Model
          test1.NotificationUrl = "TS";
          test1.StartConfOnEnter = true;
          test1.Talk = true;
+
         AddToConference test2 = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false, "TEST_STRING");
          test2.AllowCallControl = true;
          test2.CallControlSequence = "TS";
@@ -205,17 +206,18 @@ namespace freeclimb.Test.Model
          test1.NotificationUrl = "TS";
          test1.StartConfOnEnter = true;
          test1.Talk = true;
+
         AddToConference test2 = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false, "TEST_STRING");
-         test2.AllowCallControl = true;
+         test2.AllowCallControl = false;
          test2.CallControlSequence = "ts";
          test2.CallControlUrl = "ts";
          test2.ConferenceId = "ts";
          test2.CallId = "ts";
          test2.LeaveConferenceUrl = "ts";
-         test2.Listen = true;
+         test2.Listen = false;
          test2.NotificationUrl = "ts";
-         test2.StartConfOnEnter = true;
-         test2.Talk = true;
+         test2.StartConfOnEnter = false;
+         test2.Talk = false;
 
         Assert.NotEqual(test1,test2);
         }
@@ -300,6 +302,39 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        AddToConference test1 = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false, "TEST_STRING");
+         test1.AllowCallControl = true;
+         test1.CallControlSequence = "TS";
+         test1.CallControlUrl = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.LeaveConferenceUrl = "TS";
+         test1.Listen = true;
+         test1.NotificationUrl = "TS";
+         test1.StartConfOnEnter = true;
+         test1.Talk = true;
+
+        AddToConference test2 = new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false, "TEST_STRING");
+         test2.AllowCallControl = true;
+         test2.CallControlSequence = "TS";
+         test2.CallControlUrl = "TS";
+         test2.ConferenceId = "TS";
+         test2.CallId = "TS";
+         test2.LeaveConferenceUrl = "TS";
+         test2.Listen = true;
+         test2.NotificationUrl = "TS";
+         test2.StartConfOnEnter = true;
+         test2.Talk = true;
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

@@ -118,6 +118,7 @@ namespace freeclimb.Test.Model
          test1.Loop = 1;
          test1.ConferenceId = "TS";
          test1.PrivacyMode = true;
+
         Say test2 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
          test2.Text = "TS";
          test2.Language = "TS";
@@ -140,6 +141,7 @@ namespace freeclimb.Test.Model
          test1.Loop = 1;
          test1.ConferenceId = "TS";
          test1.PrivacyMode = true;
+
         Say test2 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
          test2.Text = "ts";
          test2.Language = "ts";
@@ -210,6 +212,29 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        Say test1 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
+         test1.Text = "TS";
+         test1.Language = "TS";
+         test1.Loop = 1;
+         test1.ConferenceId = "TS";
+         test1.PrivacyMode = true;
+
+        Say test2 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
+         test2.Text = "TS";
+         test2.Language = "TS";
+         test2.Loop = 1;
+         test2.ConferenceId = "TS";
+         test2.PrivacyMode = true;
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

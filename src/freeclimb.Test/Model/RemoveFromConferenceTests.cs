@@ -74,6 +74,7 @@ namespace freeclimb.Test.Model
         public void equalsTrueTest() {
         RemoveFromConference test1 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
          test1.CallId = "TS";
+
         RemoveFromConference test2 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
          test2.CallId = "TS";
 
@@ -88,6 +89,7 @@ namespace freeclimb.Test.Model
         public void equalsFalseTest() {
         RemoveFromConference test1 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
          test1.CallId = "TS";
+
         RemoveFromConference test2 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
          test2.CallId = "ts";
 
@@ -138,6 +140,21 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        RemoveFromConference test1 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test1.CallId = "TS";
+
+        RemoveFromConference test2 = new RemoveFromConference("TEST_STRING", "TEST_STRING");
+         test2.CallId = "TS";
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

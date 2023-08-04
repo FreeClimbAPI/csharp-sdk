@@ -74,6 +74,7 @@ namespace freeclimb.Test.Model
         public void equalsTrueTest() {
         Pause test1 = new Pause();
          test1.Length = 1;
+
         Pause test2 = new Pause();
          test2.Length = 1;
 
@@ -88,6 +89,7 @@ namespace freeclimb.Test.Model
         public void equalsFalseTest() {
         Pause test1 = new Pause();
          test1.Length = 1;
+
         Pause test2 = new Pause();
          test2.Length = 2;
 
@@ -138,6 +140,21 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        Pause test1 = new Pause();
+         test1.Length = 1;
+
+        Pause test2 = new Pause();
+         test2.Length = 1;
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

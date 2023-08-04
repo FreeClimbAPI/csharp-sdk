@@ -148,6 +148,7 @@ namespace freeclimb.Test.Model
          test1.Message = "TS";
          object testObject = new object();
          test1.Metadata = testObject;
+
         LogResult test2 = new LogResult();
          test2.Timestamp = 1;
          test2.Level = LogLevel.INFO;
@@ -180,11 +181,12 @@ namespace freeclimb.Test.Model
          test1.Message = "TS";
          object testObject = new object();
          test1.Metadata = testObject;
+
         LogResult test2 = new LogResult();
          test2.Timestamp = 2;
-         test2.Level = LogLevel.INFO;
-         test2.Level = LogLevel.INFO;
-         test2.Level = LogLevel.INFO;
+         test2.Level = LogLevel.WARNING;
+         test2.Level = LogLevel.WARNING;
+         test2.Level = LogLevel.WARNING;
          test2.RequestId = "ts";
          test2.AccountId = "ts";
          test2.CallId = "ts";
@@ -275,6 +277,73 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        LogResult test1 = new LogResult();
+         test1.Timestamp = 1;
+         test1.Level = LogLevel.INFO;
+         test1.Level = LogLevel.INFO;
+         test1.Level = LogLevel.INFO;
+         test1.RequestId = "TS";
+         test1.AccountId = "TS";
+         test1.CallId = "TS";
+         test1.Message = "TS";
+         object testObject = new object();
+         test1.Metadata = testObject;
+
+        LogResult test2 = new LogResult();
+         test2.Timestamp = 1;
+         test2.Level = LogLevel.INFO;
+         test2.Level = LogLevel.INFO;
+         test2.Level = LogLevel.INFO;
+         test2.RequestId = "TS";
+         test2.AccountId = "TS";
+         test2.CallId = "TS";
+         test2.Message = "TS";
+         object testObject2 = testObject;
+         test2.Metadata = testObject2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        LogResult test1 = new LogResult();
+         test1.Timestamp = 1;
+         test1.Level = LogLevel.INFO;
+         test1.Level = LogLevel.INFO;
+         test1.Level = LogLevel.INFO;
+         test1.RequestId = "TS";
+         test1.AccountId = "TS";
+         test1.CallId = "TS";
+         test1.Message = "TS";
+         object testObject = new object();
+         test1.Metadata = testObject;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        LogResult test2 = new LogResult();
+         test2.Timestamp = 1;
+         test2.Level = LogLevel.INFO;
+         test2.Level = LogLevel.INFO;
+         test2.Level = LogLevel.INFO;
+         test2.RequestId = "TS";
+         test2.AccountId = "TS";
+         test2.CallId = "TS";
+         test2.Message = "TS";
+         object testObject2 = testObject;
+         test2.Metadata = testObject2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

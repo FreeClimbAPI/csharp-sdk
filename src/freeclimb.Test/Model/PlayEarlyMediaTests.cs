@@ -74,6 +74,7 @@ namespace freeclimb.Test.Model
         public void equalsTrueTest() {
         PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
          test1.File = "TS";
+
         PlayEarlyMedia test2 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
          test2.File = "TS";
 
@@ -88,6 +89,7 @@ namespace freeclimb.Test.Model
         public void equalsFalseTest() {
         PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
          test1.File = "TS";
+
         PlayEarlyMedia test2 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
          test2.File = "ts";
 
@@ -138,6 +140,21 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        PlayEarlyMedia test1 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test1.File = "TS";
+
+        PlayEarlyMedia test2 = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+         test2.File = "TS";
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

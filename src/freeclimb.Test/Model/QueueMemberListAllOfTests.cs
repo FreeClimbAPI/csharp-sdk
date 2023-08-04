@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
         QueueMemberListAllOf test1 = new QueueMemberListAllOf();
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
+
         QueueMemberListAllOf test2 = new QueueMemberListAllOf();
          List<QueueMember> testList2 = new List<QueueMember>();
          test2.QueueMembers = testList2;
@@ -92,6 +93,7 @@ namespace freeclimb.Test.Model
         QueueMemberListAllOf test1 = new QueueMemberListAllOf();
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
+
         QueueMemberListAllOf test2 = new QueueMemberListAllOf();
          List<QueueMember> testList2 = null;
          test2.QueueMembers = testList2;
@@ -147,6 +149,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        QueueMemberListAllOf test1 = new QueueMemberListAllOf();
+         List<QueueMember> testList = new List<QueueMember>();
+         test1.QueueMembers = testList;
+
+        QueueMemberListAllOf test2 = new QueueMemberListAllOf();
+         List<QueueMember> testList2 = new List<QueueMember>();
+         test2.QueueMembers = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        QueueMemberListAllOf test1 = new QueueMemberListAllOf();
+         List<QueueMember> testList = new List<QueueMember>();
+         test1.QueueMembers = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        QueueMemberListAllOf test2 = new QueueMemberListAllOf();
+         List<QueueMember> testList2 = new List<QueueMember>();
+         test2.QueueMembers = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

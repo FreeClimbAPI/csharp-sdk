@@ -265,5 +265,461 @@ namespace freeclimb.Test.Model
             Assert.Equal(testObject, instance.SubresourceUris);
             
         }
+        
+        
+        /// <summary>
+        /// Test the method 'equalsTrue'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTrueTest() {
+        CallResult test1 = new CallResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.CallId = "TS";
+         test1.ParentCallId = "TS";
+         test1.AccountId = "TS";
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.PhoneNumberId = "TS";
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.StartTime = "TS";
+         test1.ConnectTime = "TS";
+         test1.EndTime = "TS";
+         test1.Duration = 1;
+         test1.ConnectDuration = 1;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        CallResult test2 = new CallResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.CallId = "TS";
+         test2.ParentCallId = "TS";
+         test2.AccountId = "TS";
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.PhoneNumberId = "TS";
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.StartTime = "TS";
+         test2.ConnectTime = "TS";
+         test2.EndTime = "TS";
+         test2.Duration = 1;
+         test2.ConnectDuration = 1;
+         test2.Direction = CallDirection.INBOUND;
+         test2.Direction = CallDirection.INBOUND;
+         test2.Direction = CallDirection.INBOUND;
+         test2.AnsweredBy = AnsweredBy.HUMAN;
+         test2.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject2 = testObject;
+         test2.SubresourceUris = testObject2;
+
+        Assert.Equal(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'equalsFalse'
+        /// </summary>
+        
+        [Fact]
+        public void equalsFalseTest() {
+        CallResult test1 = new CallResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.CallId = "TS";
+         test1.ParentCallId = "TS";
+         test1.AccountId = "TS";
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.PhoneNumberId = "TS";
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.StartTime = "TS";
+         test1.ConnectTime = "TS";
+         test1.EndTime = "TS";
+         test1.Duration = 1;
+         test1.ConnectDuration = 1;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        CallResult test2 = new CallResult();
+         test2.Uri = "ts";
+         test2.DateCreated = "ts";
+         test2.DateUpdated = "ts";
+         test2.Revision = 2;
+         test2.CallId = "ts";
+         test2.ParentCallId = "ts";
+         test2.AccountId = "ts";
+         test2.From = "ts";
+         test2.To = "ts";
+         test2.PhoneNumberId = "ts";
+         test2.CallStatus = CallStatus.RINGING;
+         test2.CallStatus = CallStatus.RINGING;
+         test2.CallStatus = CallStatus.RINGING;
+         test2.CallStatus = CallStatus.RINGING;
+         test2.CallStatus = CallStatus.RINGING;
+         test2.CallStatus = CallStatus.RINGING;
+         test2.CallStatus = CallStatus.RINGING;
+         test2.CallStatus = CallStatus.RINGING;
+         test2.StartTime = "ts";
+         test2.ConnectTime = "ts";
+         test2.EndTime = "ts";
+         test2.Duration = 2;
+         test2.ConnectDuration = 2;
+         test2.Direction = CallDirection.OUTBOUND_API;
+         test2.Direction = CallDirection.OUTBOUND_API;
+         test2.Direction = CallDirection.OUTBOUND_API;
+         test2.AnsweredBy = AnsweredBy.MACHINE;
+         test2.AnsweredBy = AnsweredBy.MACHINE;
+         object testObject2 = new object();
+         test2.SubresourceUris = testObject2;
+
+        Assert.NotEqual(test1,test2);
+        }
+
+        /// <summary>
+        /// Test the method 'hashCodeType'
+        /// </summary>
+        
+        [Fact]
+        public void hashCodeTypeTest() {
+        CallResult test1 = new CallResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.CallId = "TS";
+         test1.ParentCallId = "TS";
+         test1.AccountId = "TS";
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.PhoneNumberId = "TS";
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.StartTime = "TS";
+         test1.ConnectTime = "TS";
+         test1.EndTime = "TS";
+         test1.Duration = 1;
+         test1.ConnectDuration = 1;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringType'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringTypeTest() {
+        CallResult test1 = new CallResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.CallId = "TS";
+         test1.ParentCallId = "TS";
+         test1.AccountId = "TS";
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.PhoneNumberId = "TS";
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.StartTime = "TS";
+         test1.ConnectTime = "TS";
+         test1.EndTime = "TS";
+         test1.Duration = 1;
+         test1.ConnectDuration = 1;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
+
+        }
+
+        /// <summary>
+        /// Test the method 'ToStringEquals'
+        /// </summary>
+        
+        [Fact]
+        public void ToStringEqualsTest() {
+        CallResult test1 = new CallResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.CallId = "TS";
+         test1.ParentCallId = "TS";
+         test1.AccountId = "TS";
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.PhoneNumberId = "TS";
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.StartTime = "TS";
+         test1.ConnectTime = "TS";
+         test1.EndTime = "TS";
+         test1.Duration = 1;
+         test1.ConnectDuration = 1;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        CallResult test2 = new CallResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.CallId = "TS";
+         test2.ParentCallId = "TS";
+         test2.AccountId = "TS";
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.PhoneNumberId = "TS";
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.StartTime = "TS";
+         test2.ConnectTime = "TS";
+         test2.EndTime = "TS";
+         test2.Duration = 1;
+         test2.ConnectDuration = 1;
+         test2.Direction = CallDirection.INBOUND;
+         test2.Direction = CallDirection.INBOUND;
+         test2.Direction = CallDirection.INBOUND;
+         test2.AnsweredBy = AnsweredBy.HUMAN;
+         test2.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject2 = new object();
+         test2.SubresourceUris = testObject2;
+
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
+
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        CallResult test1 = new CallResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.CallId = "TS";
+         test1.ParentCallId = "TS";
+         test1.AccountId = "TS";
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.PhoneNumberId = "TS";
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.StartTime = "TS";
+         test1.ConnectTime = "TS";
+         test1.EndTime = "TS";
+         test1.Duration = 1;
+         test1.ConnectDuration = 1;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        CallResult test2 = new CallResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.CallId = "TS";
+         test2.ParentCallId = "TS";
+         test2.AccountId = "TS";
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.PhoneNumberId = "TS";
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.StartTime = "TS";
+         test2.ConnectTime = "TS";
+         test2.EndTime = "TS";
+         test2.Duration = 1;
+         test2.ConnectDuration = 1;
+         test2.Direction = CallDirection.INBOUND;
+         test2.Direction = CallDirection.INBOUND;
+         test2.Direction = CallDirection.INBOUND;
+         test2.AnsweredBy = AnsweredBy.HUMAN;
+         test2.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject2 = testObject;
+         test2.SubresourceUris = testObject2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        CallResult test1 = new CallResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.CallId = "TS";
+         test1.ParentCallId = "TS";
+         test1.AccountId = "TS";
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.PhoneNumberId = "TS";
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.CallStatus = CallStatus.QUEUED;
+         test1.StartTime = "TS";
+         test1.ConnectTime = "TS";
+         test1.EndTime = "TS";
+         test1.Duration = 1;
+         test1.ConnectDuration = 1;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.Direction = CallDirection.INBOUND;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         test1.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        CallResult test2 = new CallResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.CallId = "TS";
+         test2.ParentCallId = "TS";
+         test2.AccountId = "TS";
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.PhoneNumberId = "TS";
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.CallStatus = CallStatus.QUEUED;
+         test2.StartTime = "TS";
+         test2.ConnectTime = "TS";
+         test2.EndTime = "TS";
+         test2.Duration = 1;
+         test2.ConnectDuration = 1;
+         test2.Direction = CallDirection.INBOUND;
+         test2.Direction = CallDirection.INBOUND;
+         test2.Direction = CallDirection.INBOUND;
+         test2.AnsweredBy = AnsweredBy.HUMAN;
+         test2.AnsweredBy = AnsweredBy.HUMAN;
+         object testObject2 = testObject;
+         test2.SubresourceUris = testObject2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
+        }
     }
 }

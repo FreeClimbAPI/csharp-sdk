@@ -85,6 +85,7 @@ namespace freeclimb.Test.Model
         SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
          test1.CallId = "TS";
          test1.Listen = true;
+
         SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
          test2.CallId = "TS";
          test2.Listen = true;
@@ -101,6 +102,7 @@ namespace freeclimb.Test.Model
         SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
          test1.CallId = "TS";
          test1.Listen = true;
+
         SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
          test2.CallId = "ts";
          test2.Listen = false;
@@ -156,6 +158,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
+         test1.CallId = "TS";
+         test1.Listen = true;
+
+        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
+         test2.CallId = "TS";
+         test2.Listen = true;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
+         test1.CallId = "TS";
+         test1.Listen = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
+         test2.CallId = "TS";
+         test2.Listen = true;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

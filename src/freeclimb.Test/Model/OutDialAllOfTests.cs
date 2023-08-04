@@ -198,6 +198,7 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          test1.Timeout = 1;
          test1.PrivacyMode = true;
+
         OutDialAllOf test2 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         try {
             Uri uri2 = new Uri("https://a.com");
@@ -256,16 +257,17 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          test1.Timeout = 1;
          test1.PrivacyMode = true;
+
         OutDialAllOf test2 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
          try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
          try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.CallConnectUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
             } catch (Exception ) {
@@ -273,12 +275,12 @@ namespace freeclimb.Test.Model
             }
          test2.CallingNumber = "ts";
          test2.Destination = "ts";
-         test2.IfMachine = IfMachine.REDIRECT;
-         test2.IfMachine = IfMachine.REDIRECT;
+         test2.IfMachine = IfMachine.HANGUP;
+         test2.IfMachine = IfMachine.HANGUP;
          test2.IfMachineUrl = "ts";
          test2.SendDigits = "ts";
          test2.StatusCallbackUrl = "ts";
-         test2.Timeout = 1;
+         test2.Timeout = 2;
          test2.PrivacyMode = false;
 
         Assert.NotEqual(test1,test2);
@@ -416,6 +418,125 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        OutDialAllOf test1 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.CallConnectUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.CallingNumber = "TS";
+         test1.Destination = "TS";
+         test1.IfMachine = IfMachine.REDIRECT;
+         test1.IfMachine = IfMachine.REDIRECT;
+         test1.IfMachineUrl = "TS";
+         test1.SendDigits = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.Timeout = 1;
+         test1.PrivacyMode = true;
+
+        OutDialAllOf test2 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.CallConnectUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.CallingNumber = "TS";
+         test2.Destination = "TS";
+         test2.IfMachine = IfMachine.REDIRECT;
+         test2.IfMachine = IfMachine.REDIRECT;
+         test2.IfMachineUrl = "TS";
+         test2.SendDigits = "TS";
+         test2.StatusCallbackUrl = "TS";
+         test2.Timeout = 1;
+         test2.PrivacyMode = true;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        OutDialAllOf test1 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.CallConnectUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.CallingNumber = "TS";
+         test1.Destination = "TS";
+         test1.IfMachine = IfMachine.REDIRECT;
+         test1.IfMachine = IfMachine.REDIRECT;
+         test1.IfMachineUrl = "TS";
+         test1.SendDigits = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.Timeout = 1;
+         test1.PrivacyMode = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        OutDialAllOf test2 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.CallConnectUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.CallingNumber = "TS";
+         test2.Destination = "TS";
+         test2.IfMachine = IfMachine.REDIRECT;
+         test2.IfMachine = IfMachine.REDIRECT;
+         test2.IfMachineUrl = "TS";
+         test2.SendDigits = "TS";
+         test2.StatusCallbackUrl = "TS";
+         test2.Timeout = 1;
+         test2.PrivacyMode = true;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

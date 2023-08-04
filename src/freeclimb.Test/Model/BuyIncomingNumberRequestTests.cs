@@ -41,7 +41,7 @@ namespace freeclimb.Test.Model
 
         public BuyIncomingNumberRequestTests()
         {
-            instance = new BuyIncomingNumberRequest("TEST_STRING");
+            instance = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         /// <summary>
@@ -92,11 +92,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING");
+        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.PhoneNumber = "TS";
          test1.Alias = "TS";
          test1.ApplicationId = "TS";
-        BuyIncomingNumberRequest test2 = new BuyIncomingNumberRequest("TEST_STRING");
+
+        BuyIncomingNumberRequest test2 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.PhoneNumber = "TS";
          test2.Alias = "TS";
          test2.ApplicationId = "TS";
@@ -110,11 +111,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING");
+        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.PhoneNumber = "TS";
          test1.Alias = "TS";
          test1.ApplicationId = "TS";
-        BuyIncomingNumberRequest test2 = new BuyIncomingNumberRequest("TEST_STRING");
+
+        BuyIncomingNumberRequest test2 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.PhoneNumber = "ts";
          test2.Alias = "ts";
          test2.ApplicationId = "ts";
@@ -128,7 +130,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING");
+        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.PhoneNumber = "TS";
          test1.Alias = "TS";
          test1.ApplicationId = "TS";
@@ -144,7 +146,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING");
+        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.PhoneNumber = "TS";
          test1.Alias = "TS";
          test1.ApplicationId = "TS";
@@ -160,12 +162,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING");
+        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.PhoneNumber = "TS";
          test1.Alias = "TS";
          test1.ApplicationId = "TS";
 
-        BuyIncomingNumberRequest test2 = new BuyIncomingNumberRequest("TEST_STRING");
+        BuyIncomingNumberRequest test2 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.PhoneNumber = "TS";
          test2.Alias = "TS";
          test2.ApplicationId = "TS";
@@ -174,6 +176,45 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.PhoneNumber = "TS";
+         test1.Alias = "TS";
+         test1.ApplicationId = "TS";
+
+        BuyIncomingNumberRequest test2 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.PhoneNumber = "TS";
+         test2.Alias = "TS";
+         test2.ApplicationId = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        BuyIncomingNumberRequest test1 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.PhoneNumber = "TS";
+         test1.Alias = "TS";
+         test1.ApplicationId = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        BuyIncomingNumberRequest test2 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.PhoneNumber = "TS";
+         test2.Alias = "TS";
+         test2.ApplicationId = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

@@ -142,6 +142,7 @@ namespace freeclimb.Test.Model
          test1.AverageQueueRemovalTime = 1;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+
         QueueResultAllOf test2 = new QueueResultAllOf();
          test2.AccountId = "TS";
          test2.QueueId = "TS";
@@ -170,6 +171,7 @@ namespace freeclimb.Test.Model
          test1.AverageQueueRemovalTime = 1;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+
         QueueResultAllOf test2 = new QueueResultAllOf();
          test2.AccountId = "ts";
          test2.QueueId = "ts";
@@ -255,6 +257,65 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        QueueResultAllOf test1 = new QueueResultAllOf();
+         test1.AccountId = "TS";
+         test1.QueueId = "TS";
+         test1.Alias = "TS";
+         test1.MaxSize = 1;
+         test1.CurrentSize = 1;
+         test1.AverageQueueRemovalTime = 1;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        QueueResultAllOf test2 = new QueueResultAllOf();
+         test2.AccountId = "TS";
+         test2.QueueId = "TS";
+         test2.Alias = "TS";
+         test2.MaxSize = 1;
+         test2.CurrentSize = 1;
+         test2.AverageQueueRemovalTime = 1;
+         object testObject2 = testObject;
+         test2.SubresourceUris = testObject2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        QueueResultAllOf test1 = new QueueResultAllOf();
+         test1.AccountId = "TS";
+         test1.QueueId = "TS";
+         test1.Alias = "TS";
+         test1.MaxSize = 1;
+         test1.CurrentSize = 1;
+         test1.AverageQueueRemovalTime = 1;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        QueueResultAllOf test2 = new QueueResultAllOf();
+         test2.AccountId = "TS";
+         test2.QueueId = "TS";
+         test2.Alias = "TS";
+         test2.MaxSize = 1;
+         test2.CurrentSize = 1;
+         test2.AverageQueueRemovalTime = 1;
+         object testObject2 = testObject;
+         test2.SubresourceUris = testObject2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

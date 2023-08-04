@@ -142,6 +142,7 @@ namespace freeclimb.Test.Model
          test1.SmsEnabled = true;
          test1.Region = "TS";
          test1.Country = "TS";
+
         AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
          Capabilities testObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = testObject2;
@@ -170,13 +171,14 @@ namespace freeclimb.Test.Model
          test1.SmsEnabled = true;
          test1.Region = "TS";
          test1.Country = "TS";
+
         AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
          Capabilities testObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = testObject2;
          test2.CampaignId = "ts";
          test2.PhoneNumber = "ts";
-         test2.VoiceEnabled = true;
-         test2.SmsEnabled = true;
+         test2.VoiceEnabled = false;
+         test2.SmsEnabled = false;
          test2.Region = "ts";
          test2.Country = "ts";
 
@@ -255,6 +257,65 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject = new Capabilities(false, false, false, false, false);
+         test1.Capabilities = testObject;
+         test1.CampaignId = "TS";
+         test1.PhoneNumber = "TS";
+         test1.VoiceEnabled = true;
+         test1.SmsEnabled = true;
+         test1.Region = "TS";
+         test1.Country = "TS";
+
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
+         test2.Capabilities = testObject2;
+         test2.CampaignId = "TS";
+         test2.PhoneNumber = "TS";
+         test2.VoiceEnabled = true;
+         test2.SmsEnabled = true;
+         test2.Region = "TS";
+         test2.Country = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject = new Capabilities(false, false, false, false, false);
+         test1.Capabilities = testObject;
+         test1.CampaignId = "TS";
+         test1.PhoneNumber = "TS";
+         test1.VoiceEnabled = true;
+         test1.SmsEnabled = true;
+         test1.Region = "TS";
+         test1.Country = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
+         test2.Capabilities = testObject2;
+         test2.CampaignId = "TS";
+         test2.PhoneNumber = "TS";
+         test2.VoiceEnabled = true;
+         test2.SmsEnabled = true;
+         test2.Region = "TS";
+         test2.Country = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

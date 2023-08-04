@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
         RecordingListAllOf test1 = new RecordingListAllOf();
          List<RecordingResult> testList = new List<RecordingResult>();
          test1.Recordings = testList;
+
         RecordingListAllOf test2 = new RecordingListAllOf();
          List<RecordingResult> testList2 = new List<RecordingResult>();
          test2.Recordings = testList2;
@@ -92,6 +93,7 @@ namespace freeclimb.Test.Model
         RecordingListAllOf test1 = new RecordingListAllOf();
          List<RecordingResult> testList = new List<RecordingResult>();
          test1.Recordings = testList;
+
         RecordingListAllOf test2 = new RecordingListAllOf();
          List<RecordingResult> testList2 = null;
          test2.Recordings = testList2;
@@ -147,6 +149,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        RecordingListAllOf test1 = new RecordingListAllOf();
+         List<RecordingResult> testList = new List<RecordingResult>();
+         test1.Recordings = testList;
+
+        RecordingListAllOf test2 = new RecordingListAllOf();
+         List<RecordingResult> testList2 = new List<RecordingResult>();
+         test2.Recordings = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        RecordingListAllOf test1 = new RecordingListAllOf();
+         List<RecordingResult> testList = new List<RecordingResult>();
+         test1.Recordings = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        RecordingListAllOf test2 = new RecordingListAllOf();
+         List<RecordingResult> testList2 = new List<RecordingResult>();
+         test2.Recordings = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

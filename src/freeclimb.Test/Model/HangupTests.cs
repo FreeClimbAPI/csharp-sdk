@@ -74,6 +74,7 @@ namespace freeclimb.Test.Model
         public void equalsTrueTest() {
         Hangup test1 = new Hangup();
          test1.Reason = "TS";
+
         Hangup test2 = new Hangup();
          test2.Reason = "TS";
 
@@ -88,6 +89,7 @@ namespace freeclimb.Test.Model
         public void equalsFalseTest() {
         Hangup test1 = new Hangup();
          test1.Reason = "TS";
+
         Hangup test2 = new Hangup();
          test2.Reason = "ts";
 
@@ -138,6 +140,21 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        Hangup test1 = new Hangup();
+         test1.Reason = "TS";
+
+        Hangup test2 = new Hangup();
+         test2.Reason = "TS";
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

@@ -96,6 +96,7 @@ namespace freeclimb.Test.Model
          test1.Digits = "TS";
          test1.PauseMs = 1;
          test1.PrivacyMode = true;
+
         SendDigitsAllOf test2 = new SendDigitsAllOf("TEST_STRING", 1, false);
          test2.Digits = "TS";
          test2.PauseMs = 1;
@@ -114,6 +115,7 @@ namespace freeclimb.Test.Model
          test1.Digits = "TS";
          test1.PauseMs = 1;
          test1.PrivacyMode = true;
+
         SendDigitsAllOf test2 = new SendDigitsAllOf("TEST_STRING", 1, false);
          test2.Digits = "ts";
          test2.PauseMs = 2;
@@ -174,6 +176,45 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        SendDigitsAllOf test1 = new SendDigitsAllOf("TEST_STRING", 1, false);
+         test1.Digits = "TS";
+         test1.PauseMs = 1;
+         test1.PrivacyMode = true;
+
+        SendDigitsAllOf test2 = new SendDigitsAllOf("TEST_STRING", 1, false);
+         test2.Digits = "TS";
+         test2.PauseMs = 1;
+         test2.PrivacyMode = true;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        SendDigitsAllOf test1 = new SendDigitsAllOf("TEST_STRING", 1, false);
+         test1.Digits = "TS";
+         test1.PauseMs = 1;
+         test1.PrivacyMode = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        SendDigitsAllOf test2 = new SendDigitsAllOf("TEST_STRING", 1, false);
+         test2.Digits = "TS";
+         test2.PauseMs = 1;
+         test2.PrivacyMode = true;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

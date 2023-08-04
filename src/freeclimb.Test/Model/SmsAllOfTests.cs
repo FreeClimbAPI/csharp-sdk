@@ -107,6 +107,7 @@ namespace freeclimb.Test.Model
          test1.From = "TS";
          test1.Text = "TS";
          test1.NotificationUrl = "TS";
+
         SmsAllOf test2 = new SmsAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.To = "TS";
          test2.From = "TS";
@@ -127,6 +128,7 @@ namespace freeclimb.Test.Model
          test1.From = "TS";
          test1.Text = "TS";
          test1.NotificationUrl = "TS";
+
         SmsAllOf test2 = new SmsAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.To = "ts";
          test2.From = "ts";
@@ -192,6 +194,49 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        SmsAllOf test1 = new SmsAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.To = "TS";
+         test1.From = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+
+        SmsAllOf test2 = new SmsAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.To = "TS";
+         test2.From = "TS";
+         test2.Text = "TS";
+         test2.NotificationUrl = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        SmsAllOf test1 = new SmsAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.To = "TS";
+         test1.From = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        SmsAllOf test2 = new SmsAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.To = "TS";
+         test2.From = "TS";
+         test2.Text = "TS";
+         test2.NotificationUrl = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

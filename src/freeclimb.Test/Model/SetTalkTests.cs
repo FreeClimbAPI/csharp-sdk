@@ -85,6 +85,7 @@ namespace freeclimb.Test.Model
         SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
          test1.CallId = "TS";
          test1.Talk = true;
+
         SetTalk test2 = new SetTalk("TEST_STRING", false, "TEST_STRING");
          test2.CallId = "TS";
          test2.Talk = true;
@@ -101,6 +102,7 @@ namespace freeclimb.Test.Model
         SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
          test1.CallId = "TS";
          test1.Talk = true;
+
         SetTalk test2 = new SetTalk("TEST_STRING", false, "TEST_STRING");
          test2.CallId = "ts";
          test2.Talk = false;
@@ -156,6 +158,23 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
+         test1.CallId = "TS";
+         test1.Talk = true;
+
+        SetTalk test2 = new SetTalk("TEST_STRING", false, "TEST_STRING");
+         test2.CallId = "TS";
+         test2.Talk = true;
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

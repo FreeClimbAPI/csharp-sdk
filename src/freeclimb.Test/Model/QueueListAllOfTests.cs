@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
         QueueListAllOf test1 = new QueueListAllOf();
          List<QueueResult> testList = new List<QueueResult>();
          test1.Queues = testList;
+
         QueueListAllOf test2 = new QueueListAllOf();
          List<QueueResult> testList2 = new List<QueueResult>();
          test2.Queues = testList2;
@@ -92,6 +93,7 @@ namespace freeclimb.Test.Model
         QueueListAllOf test1 = new QueueListAllOf();
          List<QueueResult> testList = new List<QueueResult>();
          test1.Queues = testList;
+
         QueueListAllOf test2 = new QueueListAllOf();
          List<QueueResult> testList2 = null;
          test2.Queues = testList2;
@@ -147,6 +149,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        QueueListAllOf test1 = new QueueListAllOf();
+         List<QueueResult> testList = new List<QueueResult>();
+         test1.Queues = testList;
+
+        QueueListAllOf test2 = new QueueListAllOf();
+         List<QueueResult> testList2 = new List<QueueResult>();
+         test2.Queues = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        QueueListAllOf test1 = new QueueListAllOf();
+         List<QueueResult> testList = new List<QueueResult>();
+         test1.Queues = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        QueueListAllOf test2 = new QueueListAllOf();
+         List<QueueResult> testList2 = new List<QueueResult>();
+         test2.Queues = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

@@ -193,6 +193,7 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          object testObject = new object();
          test1.SubresourceUris = testObject;
+
         ConferenceResultAllOf test2 = new ConferenceResultAllOf();
          test2.ConferenceId = "TS";
          test2.AccountId = "TS";
@@ -239,19 +240,20 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          object testObject = new object();
          test1.SubresourceUris = testObject;
+
         ConferenceResultAllOf test2 = new ConferenceResultAllOf();
          test2.ConferenceId = "ts";
          test2.AccountId = "ts";
          test2.Alias = "ts";
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.PlayBeep = PlayBeep.NEVER;
          test2.Record = false;
-         test2.Status = ConferenceStatus.EMPTY;
-         test2.Status = ConferenceStatus.EMPTY;
-         test2.Status = ConferenceStatus.EMPTY;
-         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.POPULATED;
+         test2.Status = ConferenceStatus.POPULATED;
+         test2.Status = ConferenceStatus.POPULATED;
+         test2.Status = ConferenceStatus.POPULATED;
          test2.WaitUrl = "ts";
          test2.ActionUrl = "ts";
          test2.StatusCallbackUrl = "ts";
@@ -369,6 +371,101 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
+         test1.ConferenceId = "TS";
+         test1.AccountId = "TS";
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.WaitUrl = "TS";
+         test1.ActionUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        ConferenceResultAllOf test2 = new ConferenceResultAllOf();
+         test2.ConferenceId = "TS";
+         test2.AccountId = "TS";
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.WaitUrl = "TS";
+         test2.ActionUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+         object testObject2 = testObject;
+         test2.SubresourceUris = testObject2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
+         test1.ConferenceId = "TS";
+         test1.AccountId = "TS";
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Record = true;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.Status = ConferenceStatus.EMPTY;
+         test1.WaitUrl = "TS";
+         test1.ActionUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        ConferenceResultAllOf test2 = new ConferenceResultAllOf();
+         test2.ConferenceId = "TS";
+         test2.AccountId = "TS";
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Record = true;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.Status = ConferenceStatus.EMPTY;
+         test2.WaitUrl = "TS";
+         test2.ActionUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+         object testObject2 = testObject;
+         test2.SubresourceUris = testObject2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

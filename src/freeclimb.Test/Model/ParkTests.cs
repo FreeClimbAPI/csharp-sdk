@@ -118,6 +118,7 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.NotificationUrl = "TS";
+
         Park test2 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
@@ -160,16 +161,17 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.NotificationUrl = "TS";
+
         Park test2 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.WaitUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.WaitUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
          try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
@@ -280,6 +282,49 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        Park test1 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.WaitUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.NotificationUrl = "TS";
+
+        Park test2 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.WaitUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.WaitUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.NotificationUrl = "TS";
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

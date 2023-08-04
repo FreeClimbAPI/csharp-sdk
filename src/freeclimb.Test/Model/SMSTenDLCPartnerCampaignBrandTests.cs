@@ -41,7 +41,7 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignBrandTests()
         {
-            string jsonData = @"
+             string jsonData = @"
             {
                 ""accountId"":""TEST_STRING"",
                 ""entityType"":""PRIVATE_PROFIT"",
@@ -202,6 +202,7 @@ namespace freeclimb.Test.Model
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
          test1.EvpVettingScore = 1;
+
         SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.AccountId = "TS";
          test2.FirstName = "TS";
@@ -236,8 +237,10 @@ namespace freeclimb.Test.Model
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
          test1.EvpVettingScore = 1;
+
         SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.AccountId = "ts";
+         
          test2.FirstName = "ts";
          test2.LastName = "ts";
          test2.DisplayName = "ts";
@@ -336,6 +339,77 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+         test1.AccountId = "TS";
+         test1.FirstName = "TS";
+         test1.LastName = "TS";
+         test1.DisplayName = "TS";
+         test1.CompanyName = "TS";
+         test1.Phone = "TS";
+         test1.Email = "TS";
+         test1.Website = "TS";
+         Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
+         test1.OptionalAttributes = testDictionary;
+         test1.EvpVettingScore = 1;
+
+        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+         test2.AccountId = "TS";
+         test2.FirstName = "TS";
+         test2.LastName = "TS";
+         test2.DisplayName = "TS";
+         test2.CompanyName = "TS";
+         test2.Phone = "TS";
+         test2.Email = "TS";
+         test2.Website = "TS";
+         Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
+         test2.OptionalAttributes = testDictionary2;
+         test2.EvpVettingScore = 1;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+         test1.AccountId = "TS";
+         test1.FirstName = "TS";
+         test1.LastName = "TS";
+         test1.DisplayName = "TS";
+         test1.CompanyName = "TS";
+         test1.Phone = "TS";
+         test1.Email = "TS";
+         test1.Website = "TS";
+         Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
+         test1.OptionalAttributes = testDictionary;
+         test1.EvpVettingScore = 1;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+         test2.AccountId = "TS";
+         test2.FirstName = "TS";
+         test2.LastName = "TS";
+         test2.DisplayName = "TS";
+         test2.CompanyName = "TS";
+         test2.Phone = "TS";
+         test2.Email = "TS";
+         test2.Website = "TS";
+         Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
+         test2.OptionalAttributes = testDictionary2;
+         test2.EvpVettingScore = 1;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

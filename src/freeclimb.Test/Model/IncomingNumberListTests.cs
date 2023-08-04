@@ -153,6 +153,7 @@ namespace freeclimb.Test.Model
          test1.NextPageUri = "TS";
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
+
         IncomingNumberList test2 = new IncomingNumberList();
          test2.Total = 1;
          test2.Start = 1;
@@ -183,13 +184,14 @@ namespace freeclimb.Test.Model
          test1.NextPageUri = "TS";
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
+
         IncomingNumberList test2 = new IncomingNumberList();
-         test2.Total = 1;
-         test2.Start = 1;
-         test2.End = 1;
-         test2.Page = 1;
-         test2.NumPages = 1;
-         test2.PageSize = 1;
+         test2.Total = 2;
+         test2.Start = 2;
+         test2.End = 2;
+         test2.Page = 2;
+         test2.NumPages = 2;
+         test2.PageSize = 2;
          test2.NextPageUri = "ts";
          List<IncomingNumberResult> testList2 = null;
          test2.IncomingPhoneNumbers = testList2;
@@ -273,6 +275,69 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        IncomingNumberList test1 = new IncomingNumberList();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+         List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
+         test1.IncomingPhoneNumbers = testList;
+
+        IncomingNumberList test2 = new IncomingNumberList();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "TS";
+         List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
+         test2.IncomingPhoneNumbers = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        IncomingNumberList test1 = new IncomingNumberList();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+         List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
+         test1.IncomingPhoneNumbers = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        IncomingNumberList test2 = new IncomingNumberList();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "TS";
+         List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
+         test2.IncomingPhoneNumbers = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

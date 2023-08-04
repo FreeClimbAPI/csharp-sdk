@@ -41,7 +41,7 @@ namespace freeclimb.Test.Model
 
         public AddToConferenceAllOfTests()
         {
-            instance = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
+             instance = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
+        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
          test1.AllowCallControl = true;
          test1.CallControlSequence = "TS";
          test1.CallControlUrl = "TS";
@@ -173,7 +173,8 @@ namespace freeclimb.Test.Model
          test1.NotificationUrl = "TS";
          test1.StartConfOnEnter = true;
          test1.Talk = true;
-        AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
+
+        AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
          test2.AllowCallControl = true;
          test2.CallControlSequence = "TS";
          test2.CallControlUrl = "TS";
@@ -194,7 +195,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
+        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
          test1.AllowCallControl = true;
          test1.CallControlSequence = "TS";
          test1.CallControlUrl = "TS";
@@ -205,17 +206,18 @@ namespace freeclimb.Test.Model
          test1.NotificationUrl = "TS";
          test1.StartConfOnEnter = true;
          test1.Talk = true;
-        AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
-         test2.AllowCallControl = true;
+
+        AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
+         test2.AllowCallControl = false;
          test2.CallControlSequence = "ts";
          test2.CallControlUrl = "ts";
          test2.ConferenceId = "ts";
          test2.CallId = "ts";
          test2.LeaveConferenceUrl = "ts";
-         test2.Listen = true;
+         test2.Listen = false;
          test2.NotificationUrl = "ts";
-         test2.StartConfOnEnter = true;
-         test2.Talk = true;
+         test2.StartConfOnEnter = false;
+         test2.Talk = false;
 
         Assert.NotEqual(test1,test2);
         }
@@ -226,7 +228,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
+        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
          test1.AllowCallControl = true;
          test1.CallControlSequence = "TS";
          test1.CallControlUrl = "TS";
@@ -249,7 +251,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
+        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
          test1.AllowCallControl = true;
          test1.CallControlSequence = "TS";
          test1.CallControlUrl = "TS";
@@ -272,7 +274,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
+        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
          test1.AllowCallControl = true;
          test1.CallControlSequence = "TS";
          test1.CallControlUrl = "TS";
@@ -284,7 +286,7 @@ namespace freeclimb.Test.Model
          test1.StartConfOnEnter = true;
          test1.Talk = true;
 
-        AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,false, "TEST_STRING", false, false);
+        AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
          test2.AllowCallControl = true;
          test2.CallControlSequence = "TS";
          test2.CallControlUrl = "TS";
@@ -300,6 +302,73 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
+         test1.AllowCallControl = true;
+         test1.CallControlSequence = "TS";
+         test1.CallControlUrl = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.LeaveConferenceUrl = "TS";
+         test1.Listen = true;
+         test1.NotificationUrl = "TS";
+         test1.StartConfOnEnter = true;
+         test1.Talk = true;
+
+        AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
+         test2.AllowCallControl = true;
+         test2.CallControlSequence = "TS";
+         test2.CallControlUrl = "TS";
+         test2.ConferenceId = "TS";
+         test2.CallId = "TS";
+         test2.LeaveConferenceUrl = "TS";
+         test2.Listen = true;
+         test2.NotificationUrl = "TS";
+         test2.StartConfOnEnter = true;
+         test2.Talk = true;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        AddToConferenceAllOf test1 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
+         test1.AllowCallControl = true;
+         test1.CallControlSequence = "TS";
+         test1.CallControlUrl = "TS";
+         test1.ConferenceId = "TS";
+         test1.CallId = "TS";
+         test1.LeaveConferenceUrl = "TS";
+         test1.Listen = true;
+         test1.NotificationUrl = "TS";
+         test1.StartConfOnEnter = true;
+         test1.Talk = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
+         test2.AllowCallControl = true;
+         test2.CallControlSequence = "TS";
+         test2.CallControlUrl = "TS";
+         test2.ConferenceId = "TS";
+         test2.CallId = "TS";
+         test2.LeaveConferenceUrl = "TS";
+         test2.Listen = true;
+         test2.NotificationUrl = "TS";
+         test2.StartConfOnEnter = true;
+         test2.Talk = true;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

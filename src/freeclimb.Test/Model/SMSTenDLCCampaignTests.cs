@@ -407,6 +407,7 @@ namespace freeclimb.Test.Model
          test1.ReferenceId = "TS";
          test1.Mock = true;
          test1.NextRenewalOrExpirationDate = DateTime.Parse("2000-01-01");
+
         SMSTenDLCCampaign test2 = new SMSTenDLCCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCCampaign.StatusEnum.ACTIVE, DateTime.Parse("2022-07-05T15:17:05+00:00"), false, DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", new List<string>(), "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, DateTime.Parse("2000-01-01"));
          test2.AccountId = "TS";
          test2.CampaignId = "TS";
@@ -481,6 +482,7 @@ namespace freeclimb.Test.Model
          test1.ReferenceId = "TS";
          test1.Mock = true;
          test1.NextRenewalOrExpirationDate = DateTime.Parse("2000-01-01");
+
         SMSTenDLCCampaign test2 = new SMSTenDLCCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCCampaign.StatusEnum.ACTIVE, DateTime.Parse("2022-07-05T15:17:05+00:00"), false, DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", new List<string>(), "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, DateTime.Parse("2000-01-01"));
          test2.AccountId = "ts";
          test2.CampaignId = "ts";
@@ -681,6 +683,157 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        SMSTenDLCCampaign test1 = new SMSTenDLCCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCCampaign.StatusEnum.ACTIVE, DateTime.Parse("2022-07-05T15:17:05+00:00"), false, DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", new List<string>(), "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, DateTime.Parse("2000-01-01"));
+         test1.AccountId = "TS";
+         test1.CampaignId = "TS";
+         test1.CspId = "TS";
+         test1.ResellerId = "TS";
+         test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
+         test1.AutoRenewal = true;
+         test1.BilledDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
+         test1.BrandId = "TS";
+         test1.Usecase = "TS";
+         List<string> testList = new List<string>();
+         test1.SubUsecases = testList;
+         test1.Description = "TS";
+         test1.EmbeddedLink = true;
+         test1.EmbeddedPhone = true;
+         test1.AffiliateMarketing = true;
+         test1.NumberPool = true;
+         test1.AgeGated = true;
+         test1.DirectLending = true;
+         test1.SubscriberOptin = true;
+         test1.SubscriberOptout = true;
+         test1.SubscriberHelp = true;
+         test1.Sample1 = "TS";
+         test1.Sample2 = "TS";
+         test1.Sample3 = "TS";
+         test1.Sample4 = "TS";
+         test1.Sample5 = "TS";
+         test1.MessageFlow = "TS";
+         test1.HelpMessage = "TS";
+         test1.ReferenceId = "TS";
+         test1.Mock = true;
+         test1.NextRenewalOrExpirationDate = DateTime.Parse("2000-01-01");
+
+        SMSTenDLCCampaign test2 = new SMSTenDLCCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCCampaign.StatusEnum.ACTIVE, DateTime.Parse("2022-07-05T15:17:05+00:00"), false, DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", new List<string>(), "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, DateTime.Parse("2000-01-01"));
+         test2.AccountId = "TS";
+         test2.CampaignId = "TS";
+         test2.CspId = "TS";
+         test2.ResellerId = "TS";
+         test2.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
+         test2.AutoRenewal = true;
+         test2.BilledDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
+         test2.BrandId = "TS";
+         test2.Usecase = "TS";
+         List<string> testList2 = new List<string>();
+         test2.SubUsecases = testList2;
+         test2.Description = "TS";
+         test2.EmbeddedLink = true;
+         test2.EmbeddedPhone = true;
+         test2.AffiliateMarketing = true;
+         test2.NumberPool = true;
+         test2.AgeGated = true;
+         test2.DirectLending = true;
+         test2.SubscriberOptin = true;
+         test2.SubscriberOptout = true;
+         test2.SubscriberHelp = true;
+         test2.Sample1 = "TS";
+         test2.Sample2 = "TS";
+         test2.Sample3 = "TS";
+         test2.Sample4 = "TS";
+         test2.Sample5 = "TS";
+         test2.MessageFlow = "TS";
+         test2.HelpMessage = "TS";
+         test2.ReferenceId = "TS";
+         test2.Mock = true;
+         test2.NextRenewalOrExpirationDate = DateTime.Parse("2000-01-01");
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        SMSTenDLCCampaign test1 = new SMSTenDLCCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCCampaign.StatusEnum.ACTIVE, DateTime.Parse("2022-07-05T15:17:05+00:00"), false, DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", new List<string>(), "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, DateTime.Parse("2000-01-01"));
+         test1.AccountId = "TS";
+         test1.CampaignId = "TS";
+         test1.CspId = "TS";
+         test1.ResellerId = "TS";
+         test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
+         test1.AutoRenewal = true;
+         test1.BilledDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
+         test1.BrandId = "TS";
+         test1.Usecase = "TS";
+         List<string> testList = new List<string>();
+         test1.SubUsecases = testList;
+         test1.Description = "TS";
+         test1.EmbeddedLink = true;
+         test1.EmbeddedPhone = true;
+         test1.AffiliateMarketing = true;
+         test1.NumberPool = true;
+         test1.AgeGated = true;
+         test1.DirectLending = true;
+         test1.SubscriberOptin = true;
+         test1.SubscriberOptout = true;
+         test1.SubscriberHelp = true;
+         test1.Sample1 = "TS";
+         test1.Sample2 = "TS";
+         test1.Sample3 = "TS";
+         test1.Sample4 = "TS";
+         test1.Sample5 = "TS";
+         test1.MessageFlow = "TS";
+         test1.HelpMessage = "TS";
+         test1.ReferenceId = "TS";
+         test1.Mock = true;
+         test1.NextRenewalOrExpirationDate = DateTime.Parse("2000-01-01");
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        SMSTenDLCCampaign test2 = new SMSTenDLCCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCCampaign.StatusEnum.ACTIVE, DateTime.Parse("2022-07-05T15:17:05+00:00"), false, DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", new List<string>(), "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, DateTime.Parse("2000-01-01"));
+         test2.AccountId = "TS";
+         test2.CampaignId = "TS";
+         test2.CspId = "TS";
+         test2.ResellerId = "TS";
+         test2.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
+         test2.AutoRenewal = true;
+         test2.BilledDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
+         test2.BrandId = "TS";
+         test2.Usecase = "TS";
+         List<string> testList2 = new List<string>();
+         test2.SubUsecases = testList2;
+         test2.Description = "TS";
+         test2.EmbeddedLink = true;
+         test2.EmbeddedPhone = true;
+         test2.AffiliateMarketing = true;
+         test2.NumberPool = true;
+         test2.AgeGated = true;
+         test2.DirectLending = true;
+         test2.SubscriberOptin = true;
+         test2.SubscriberOptout = true;
+         test2.SubscriberHelp = true;
+         test2.Sample1 = "TS";
+         test2.Sample2 = "TS";
+         test2.Sample3 = "TS";
+         test2.Sample4 = "TS";
+         test2.Sample5 = "TS";
+         test2.MessageFlow = "TS";
+         test2.HelpMessage = "TS";
+         test2.ReferenceId = "TS";
+         test2.Mock = true;
+         test2.NextRenewalOrExpirationDate = DateTime.Parse("2000-01-01");
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

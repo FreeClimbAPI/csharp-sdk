@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
         ApplicationListAllOf test1 = new ApplicationListAllOf();
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
+
         ApplicationListAllOf test2 = new ApplicationListAllOf();
          List<ApplicationResult> testList2 = new List<ApplicationResult>();
          test2.Applications = testList2;
@@ -92,6 +93,7 @@ namespace freeclimb.Test.Model
         ApplicationListAllOf test1 = new ApplicationListAllOf();
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
+
         ApplicationListAllOf test2 = new ApplicationListAllOf();
          List<ApplicationResult> testList2 = null;
          test2.Applications = testList2;
@@ -147,6 +149,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        ApplicationListAllOf test1 = new ApplicationListAllOf();
+         List<ApplicationResult> testList = new List<ApplicationResult>();
+         test1.Applications = testList;
+
+        ApplicationListAllOf test2 = new ApplicationListAllOf();
+         List<ApplicationResult> testList2 = new List<ApplicationResult>();
+         test2.Applications = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        ApplicationListAllOf test1 = new ApplicationListAllOf();
+         List<ApplicationResult> testList = new List<ApplicationResult>();
+         test1.Applications = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        ApplicationListAllOf test2 = new ApplicationListAllOf();
+         List<ApplicationResult> testList2 = new List<ApplicationResult>();
+         test2.Applications = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

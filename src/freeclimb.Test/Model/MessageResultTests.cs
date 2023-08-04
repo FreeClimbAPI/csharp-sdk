@@ -225,6 +225,7 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
+
         MessageResult test2 = new MessageResult();
          test2.Uri = "TS";
          test2.DateCreated = "TS";
@@ -281,24 +282,25 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
+
         MessageResult test2 = new MessageResult();
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
-         test2.Revision = 1;
+         test2.Revision = 2;
          test2.AccountId = "ts";
          test2.MessageId = "ts";
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
+         test2.Status = MessageStatus.QUEUED;
          test2.From = "ts";
          test2.To = "ts";
          test2.Text = "ts";
@@ -436,6 +438,121 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        MessageResult test1 = new MessageResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.AccountId = "TS";
+         test1.MessageId = "TS";
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.Direction = "TS";
+         test1.NotificationUrl = "TS";
+
+        MessageResult test2 = new MessageResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.AccountId = "TS";
+         test2.MessageId = "TS";
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.Direction = "TS";
+         test2.NotificationUrl = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        MessageResult test1 = new MessageResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.AccountId = "TS";
+         test1.MessageId = "TS";
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.Status = MessageStatus.NEW;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.Direction = "TS";
+         test1.NotificationUrl = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        MessageResult test2 = new MessageResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.AccountId = "TS";
+         test2.MessageId = "TS";
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.Status = MessageStatus.NEW;
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.Direction = "TS";
+         test2.NotificationUrl = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

@@ -107,6 +107,7 @@ namespace freeclimb.Test.Model
          test1.Loop = 1;
          test1.ConferenceId = "TS";
          test1.PrivacyMode = true;
+
         PlayAllOf test2 = new PlayAllOf("TEST_STRING", 1, "TEST_STRING", false);
          test2.File = "TS";
          test2.Loop = 1;
@@ -127,9 +128,10 @@ namespace freeclimb.Test.Model
          test1.Loop = 1;
          test1.ConferenceId = "TS";
          test1.PrivacyMode = true;
+
         PlayAllOf test2 = new PlayAllOf("TEST_STRING", 1, "TEST_STRING", false);
          test2.File = "ts";
-         test2.Loop = 1;
+         test2.Loop = 2;
          test2.ConferenceId = "ts";
          test2.PrivacyMode = false;
 
@@ -192,6 +194,27 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        PlayAllOf test1 = new PlayAllOf("TEST_STRING", 1, "TEST_STRING", false);
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.ConferenceId = "TS";
+         test1.PrivacyMode = true;
+
+        PlayAllOf test2 = new PlayAllOf("TEST_STRING", 1, "TEST_STRING", false);
+         test2.File = "TS";
+         test2.Loop = 1;
+         test2.ConferenceId = "TS";
+         test2.PrivacyMode = true;
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

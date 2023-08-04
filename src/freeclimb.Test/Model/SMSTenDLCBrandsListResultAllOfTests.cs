@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
         SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
+
         SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf();
          List<SMSTenDLCBrand> testList2 = new List<SMSTenDLCBrand>();
          test2.Brands = testList2;
@@ -92,6 +93,7 @@ namespace freeclimb.Test.Model
         SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
+
         SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf();
          List<SMSTenDLCBrand> testList2 = null;
          test2.Brands = testList2;
@@ -147,6 +149,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
+         List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
+         test1.Brands = testList;
+
+        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf();
+         List<SMSTenDLCBrand> testList2 = new List<SMSTenDLCBrand>();
+         test2.Brands = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
+         List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
+         test1.Brands = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf();
+         List<SMSTenDLCBrand> testList2 = new List<SMSTenDLCBrand>();
+         test2.Brands = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

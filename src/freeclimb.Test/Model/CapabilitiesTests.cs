@@ -37,12 +37,11 @@ namespace freeclimb.Test.Model
     /// </remarks>
     public class CapabilitiesTests
     {
-
         private Capabilities instance;
 
         public CapabilitiesTests()
         {
-             string jsonData = @"
+               string jsonData = @"
             {
                 ""voice"":""false"",
                 ""sms"":""false"",
@@ -52,6 +51,7 @@ namespace freeclimb.Test.Model
             }
             ";
             instance = JsonConvert.DeserializeObject<Capabilities>(jsonData);
+
         }
 
         /// <summary>
@@ -128,6 +128,7 @@ namespace freeclimb.Test.Model
          test1.TollFree = true;
          test1.TenDLC = true;
          test1.ShortCode = true;
+
         Capabilities test2 = new Capabilities(false, false, false, false, false);
          test2.Voice = true;
          test2.Sms = true;
@@ -150,6 +151,7 @@ namespace freeclimb.Test.Model
          test1.TollFree = true;
          test1.TenDLC = true;
          test1.ShortCode = true;
+
         Capabilities test2 = new Capabilities(false, false, false, false, false);
          test2.Voice = false;
          test2.Sms = false;
@@ -220,6 +222,53 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        Capabilities test1 = new Capabilities(false, false, false, false, false);
+         test1.Voice = true;
+         test1.Sms = true;
+         test1.TollFree = true;
+         test1.TenDLC = true;
+         test1.ShortCode = true;
+
+        Capabilities test2 = new Capabilities(false, false, false, false, false);
+         test2.Voice = true;
+         test2.Sms = true;
+         test2.TollFree = true;
+         test2.TenDLC = true;
+         test2.ShortCode = true;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        Capabilities test1 = new Capabilities(false, false, false, false, false);
+         test1.Voice = true;
+         test1.Sms = true;
+         test1.TollFree = true;
+         test1.TenDLC = true;
+         test1.ShortCode = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        Capabilities test2 = new Capabilities(false, false, false, false, false);
+         test2.Voice = true;
+         test2.Sms = true;
+         test2.TollFree = true;
+         test2.TenDLC = true;
+         test2.ShortCode = true;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

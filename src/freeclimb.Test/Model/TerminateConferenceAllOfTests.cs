@@ -74,6 +74,7 @@ namespace freeclimb.Test.Model
         public void equalsTrueTest() {
         TerminateConferenceAllOf test1 = new TerminateConferenceAllOf("TEST_STRING");
          test1.ConferenceId = "TS";
+
         TerminateConferenceAllOf test2 = new TerminateConferenceAllOf("TEST_STRING");
          test2.ConferenceId = "TS";
 
@@ -88,6 +89,7 @@ namespace freeclimb.Test.Model
         public void equalsFalseTest() {
         TerminateConferenceAllOf test1 = new TerminateConferenceAllOf("TEST_STRING");
          test1.ConferenceId = "TS";
+
         TerminateConferenceAllOf test2 = new TerminateConferenceAllOf("TEST_STRING");
          test2.ConferenceId = "ts";
 
@@ -138,6 +140,37 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        TerminateConferenceAllOf test1 = new TerminateConferenceAllOf("TEST_STRING");
+         test1.ConferenceId = "TS";
+
+        TerminateConferenceAllOf test2 = new TerminateConferenceAllOf("TEST_STRING");
+         test2.ConferenceId = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        TerminateConferenceAllOf test1 = new TerminateConferenceAllOf("TEST_STRING");
+         test1.ConferenceId = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        TerminateConferenceAllOf test2 = new TerminateConferenceAllOf("TEST_STRING");
+         test2.ConferenceId = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

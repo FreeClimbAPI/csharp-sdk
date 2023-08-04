@@ -162,6 +162,7 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
+
         ApplicationResultAllOf test2 = new ApplicationResultAllOf();
          test2.AccountId = "TS";
          test2.ApplicationId = "TS";
@@ -192,6 +193,7 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
+
         ApplicationResultAllOf test2 = new ApplicationResultAllOf();
          test2.AccountId = "ts";
          test2.ApplicationId = "ts";
@@ -282,6 +284,69 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        ApplicationResultAllOf test1 = new ApplicationResultAllOf();
+         test1.AccountId = "TS";
+         test1.ApplicationId = "TS";
+         test1.Alias = "TS";
+         test1.VoiceUrl = "TS";
+         test1.VoiceFallbackUrl = "TS";
+         test1.CallConnectUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.SmsUrl = "TS";
+         test1.SmsFallbackUrl = "TS";
+
+        ApplicationResultAllOf test2 = new ApplicationResultAllOf();
+         test2.AccountId = "TS";
+         test2.ApplicationId = "TS";
+         test2.Alias = "TS";
+         test2.VoiceUrl = "TS";
+         test2.VoiceFallbackUrl = "TS";
+         test2.CallConnectUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+         test2.SmsUrl = "TS";
+         test2.SmsFallbackUrl = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        ApplicationResultAllOf test1 = new ApplicationResultAllOf();
+         test1.AccountId = "TS";
+         test1.ApplicationId = "TS";
+         test1.Alias = "TS";
+         test1.VoiceUrl = "TS";
+         test1.VoiceFallbackUrl = "TS";
+         test1.CallConnectUrl = "TS";
+         test1.StatusCallbackUrl = "TS";
+         test1.SmsUrl = "TS";
+         test1.SmsFallbackUrl = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        ApplicationResultAllOf test2 = new ApplicationResultAllOf();
+         test2.AccountId = "TS";
+         test2.ApplicationId = "TS";
+         test2.Alias = "TS";
+         test2.VoiceUrl = "TS";
+         test2.VoiceFallbackUrl = "TS";
+         test2.CallConnectUrl = "TS";
+         test2.StatusCallbackUrl = "TS";
+         test2.SmsUrl = "TS";
+         test2.SmsFallbackUrl = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

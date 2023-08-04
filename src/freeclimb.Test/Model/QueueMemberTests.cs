@@ -118,6 +118,7 @@ namespace freeclimb.Test.Model
          test1.WaitTime = 1;
          test1.Position = 1;
          test1.DateEnqueued = "TS";
+
         QueueMember test2 = new QueueMember();
          test2.Uri = "TS";
          test2.CallId = "TS";
@@ -140,6 +141,7 @@ namespace freeclimb.Test.Model
          test1.WaitTime = 1;
          test1.Position = 1;
          test1.DateEnqueued = "TS";
+
         QueueMember test2 = new QueueMember();
          test2.Uri = "ts";
          test2.CallId = "ts";
@@ -210,6 +212,53 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        QueueMember test1 = new QueueMember();
+         test1.Uri = "TS";
+         test1.CallId = "TS";
+         test1.WaitTime = 1;
+         test1.Position = 1;
+         test1.DateEnqueued = "TS";
+
+        QueueMember test2 = new QueueMember();
+         test2.Uri = "TS";
+         test2.CallId = "TS";
+         test2.WaitTime = 1;
+         test2.Position = 1;
+         test2.DateEnqueued = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        QueueMember test1 = new QueueMember();
+         test1.Uri = "TS";
+         test1.CallId = "TS";
+         test1.WaitTime = 1;
+         test1.Position = 1;
+         test1.DateEnqueued = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        QueueMember test2 = new QueueMember();
+         test2.Uri = "TS";
+         test2.CallId = "TS";
+         test2.WaitTime = 1;
+         test2.Position = 1;
+         test2.DateEnqueued = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

@@ -37,7 +37,6 @@ namespace freeclimb.Test.Model
     /// </remarks>
     public class UpdateConferenceRequestTests
     {
-        // TODO uncomment below to declare an instance variable for UpdateConferenceRequest
         private UpdateConferenceRequest instance;
 
         public UpdateConferenceRequestTests()
@@ -109,6 +108,7 @@ namespace freeclimb.Test.Model
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
+
         UpdateConferenceRequest test2 = new UpdateConferenceRequest();
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
@@ -135,14 +135,15 @@ namespace freeclimb.Test.Model
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
+
         UpdateConferenceRequest test2 = new UpdateConferenceRequest();
          test2.Alias = "ts";
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.Status = UpdateConferenceRequestStatus.EMPTY;
-         test2.Status = UpdateConferenceRequestStatus.EMPTY;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.PlayBeep = PlayBeep.NEVER;
+         test2.Status = UpdateConferenceRequestStatus.TERMINATED;
+         test2.Status = UpdateConferenceRequestStatus.TERMINATED;
 
         Assert.NotEqual(test1,test2);
         }
@@ -215,6 +216,61 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        UpdateConferenceRequest test1 = new UpdateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Status = UpdateConferenceRequestStatus.EMPTY;
+         test1.Status = UpdateConferenceRequestStatus.EMPTY;
+
+        UpdateConferenceRequest test2 = new UpdateConferenceRequest();
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Status = UpdateConferenceRequestStatus.EMPTY;
+         test2.Status = UpdateConferenceRequestStatus.EMPTY;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        UpdateConferenceRequest test1 = new UpdateConferenceRequest();
+         test1.Alias = "TS";
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.PlayBeep = PlayBeep.ALWAYS;
+         test1.Status = UpdateConferenceRequestStatus.EMPTY;
+         test1.Status = UpdateConferenceRequestStatus.EMPTY;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        UpdateConferenceRequest test2 = new UpdateConferenceRequest();
+         test2.Alias = "TS";
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.PlayBeep = PlayBeep.ALWAYS;
+         test2.Status = UpdateConferenceRequestStatus.EMPTY;
+         test2.Status = UpdateConferenceRequestStatus.EMPTY;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

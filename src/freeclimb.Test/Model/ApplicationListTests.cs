@@ -153,6 +153,7 @@ namespace freeclimb.Test.Model
          test1.NextPageUri = "TS";
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
+
         ApplicationList test2 = new ApplicationList();
          test2.Total = 1;
          test2.Start = 1;
@@ -183,15 +184,16 @@ namespace freeclimb.Test.Model
          test1.NextPageUri = "TS";
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
+
         ApplicationList test2 = new ApplicationList();
-         test2.Total = 1;
-         test2.Start = 1;
-         test2.End = 1;
-         test2.Page = 1;
-         test2.NumPages = 1;
-         test2.PageSize = 1;
+         test2.Total = 2;
+         test2.Start = 2;
+         test2.End = 2;
+         test2.Page = 2;
+         test2.NumPages = 2;
+         test2.PageSize = 2;
          test2.NextPageUri = "ts";
-         List<ApplicationResult> testList2 = new List<ApplicationResult>();
+         List<ApplicationResult> testList2 = null;
          test2.Applications = testList2;
 
         Assert.NotEqual(test1,test2);
@@ -273,6 +275,69 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        ApplicationList test1 = new ApplicationList();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+         List<ApplicationResult> testList = new List<ApplicationResult>();
+         test1.Applications = testList;
+
+        ApplicationList test2 = new ApplicationList();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "TS";
+         List<ApplicationResult> testList2 = new List<ApplicationResult>();
+         test2.Applications = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        ApplicationList test1 = new ApplicationList();
+         test1.Total = 1;
+         test1.Start = 1;
+         test1.End = 1;
+         test1.Page = 1;
+         test1.NumPages = 1;
+         test1.PageSize = 1;
+         test1.NextPageUri = "TS";
+         List<ApplicationResult> testList = new List<ApplicationResult>();
+         test1.Applications = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        ApplicationList test2 = new ApplicationList();
+         test2.Total = 1;
+         test2.Start = 1;
+         test2.End = 1;
+         test2.Page = 1;
+         test2.NumPages = 1;
+         test2.PageSize = 1;
+         test2.NextPageUri = "TS";
+         List<ApplicationResult> testList2 = new List<ApplicationResult>();
+         test2.Applications = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

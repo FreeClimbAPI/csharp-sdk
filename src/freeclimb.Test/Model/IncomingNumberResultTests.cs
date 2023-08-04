@@ -241,6 +241,7 @@ namespace freeclimb.Test.Model
          test1.VoiceEnabled = true;
          test1.SmsEnabled = true;
          test1.Offnet = true;
+
         IncomingNumberResult test2 = new IncomingNumberResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.Uri = "TS";
          test2.DateCreated = "TS";
@@ -287,11 +288,12 @@ namespace freeclimb.Test.Model
          test1.VoiceEnabled = true;
          test1.SmsEnabled = true;
          test1.Offnet = true;
+
         IncomingNumberResult test2 = new IncomingNumberResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
-         test2.Revision = 1;
+         test2.Revision = 2;
          Capabilities testObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = testObject2;
          test2.CampaignId = "ts";
@@ -417,6 +419,101 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        IncomingNumberResult test1 = new IncomingNumberResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         Capabilities testObject = new Capabilities(false, false, false, false, false);
+         test1.Capabilities = testObject;
+         test1.CampaignId = "TS";
+         test1.PhoneNumberId = "TS";
+         test1.AccountId = "TS";
+         test1.ApplicationId = "TS";
+         test1.PhoneNumber = "TS";
+         test1.Alias = "TS";
+         test1.Region = "TS";
+         test1.Country = "TS";
+         test1.VoiceEnabled = true;
+         test1.SmsEnabled = true;
+         test1.Offnet = true;
+
+        IncomingNumberResult test2 = new IncomingNumberResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
+         test2.Capabilities = testObject2;
+         test2.CampaignId = "TS";
+         test2.PhoneNumberId = "TS";
+         test2.AccountId = "TS";
+         test2.ApplicationId = "TS";
+         test2.PhoneNumber = "TS";
+         test2.Alias = "TS";
+         test2.Region = "TS";
+         test2.Country = "TS";
+         test2.VoiceEnabled = true;
+         test2.SmsEnabled = true;
+         test2.Offnet = true;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        IncomingNumberResult test1 = new IncomingNumberResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         Capabilities testObject = new Capabilities(false, false, false, false, false);
+         test1.Capabilities = testObject;
+         test1.CampaignId = "TS";
+         test1.PhoneNumberId = "TS";
+         test1.AccountId = "TS";
+         test1.ApplicationId = "TS";
+         test1.PhoneNumber = "TS";
+         test1.Alias = "TS";
+         test1.Region = "TS";
+         test1.Country = "TS";
+         test1.VoiceEnabled = true;
+         test1.SmsEnabled = true;
+         test1.Offnet = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        IncomingNumberResult test2 = new IncomingNumberResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
+         test2.Capabilities = testObject2;
+         test2.CampaignId = "TS";
+         test2.PhoneNumberId = "TS";
+         test2.AccountId = "TS";
+         test2.ApplicationId = "TS";
+         test2.PhoneNumber = "TS";
+         test2.Alias = "TS";
+         test2.Region = "TS";
+         test2.Country = "TS";
+         test2.VoiceEnabled = true;
+         test2.SmsEnabled = true;
+         test2.Offnet = true;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

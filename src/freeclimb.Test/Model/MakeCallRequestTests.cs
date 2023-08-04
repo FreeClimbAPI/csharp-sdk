@@ -173,6 +173,7 @@ namespace freeclimb.Test.Model
          test1.ParentCallId = "TS";
          test1.PrivacyMode = true;
          test1.CallConnectUrl = "TS";
+
         MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
          test2.From = "TS";
          test2.To = "TS";
@@ -205,6 +206,7 @@ namespace freeclimb.Test.Model
          test1.ParentCallId = "TS";
          test1.PrivacyMode = true;
          test1.CallConnectUrl = "TS";
+
         MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
          test2.From = "ts";
          test2.To = "ts";
@@ -212,7 +214,7 @@ namespace freeclimb.Test.Model
          test2.SendDigits = "ts";
          test2.IfMachine = "ts";
          test2.IfMachineUrl = "ts";
-         test2.Timeout = 1;
+         test2.Timeout = 2;
          test2.ParentCallId = "ts";
          test2.PrivacyMode = false;
          test2.CallConnectUrl = "ts";
@@ -300,6 +302,73 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        MakeCallRequest test1 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.ApplicationId = "TS";
+         test1.SendDigits = "TS";
+         test1.IfMachine = "TS";
+         test1.IfMachineUrl = "TS";
+         test1.Timeout = 1;
+         test1.ParentCallId = "TS";
+         test1.PrivacyMode = true;
+         test1.CallConnectUrl = "TS";
+
+        MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.ApplicationId = "TS";
+         test2.SendDigits = "TS";
+         test2.IfMachine = "TS";
+         test2.IfMachineUrl = "TS";
+         test2.Timeout = 1;
+         test2.ParentCallId = "TS";
+         test2.PrivacyMode = true;
+         test2.CallConnectUrl = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        MakeCallRequest test1 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.ApplicationId = "TS";
+         test1.SendDigits = "TS";
+         test1.IfMachine = "TS";
+         test1.IfMachineUrl = "TS";
+         test1.Timeout = 1;
+         test1.ParentCallId = "TS";
+         test1.PrivacyMode = true;
+         test1.CallConnectUrl = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.ApplicationId = "TS";
+         test2.SendDigits = "TS";
+         test2.IfMachine = "TS";
+         test2.IfMachineUrl = "TS";
+         test2.Timeout = 1;
+         test2.ParentCallId = "TS";
+         test2.PrivacyMode = true;
+         test2.CallConnectUrl = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

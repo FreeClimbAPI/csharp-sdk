@@ -118,6 +118,7 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.NotificationUrl = "TS";
          test1.AccountId = "TS";
+
         MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.From = "TS";
          test2.To = "TS";
@@ -140,6 +141,7 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.NotificationUrl = "TS";
          test1.AccountId = "TS";
+
         MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.From = "ts";
          test2.To = "ts";
@@ -210,6 +212,53 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         test1.AccountId = "TS";
+
+        MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.NotificationUrl = "TS";
+         test2.AccountId = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         test1.AccountId = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.NotificationUrl = "TS";
+         test2.AccountId = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

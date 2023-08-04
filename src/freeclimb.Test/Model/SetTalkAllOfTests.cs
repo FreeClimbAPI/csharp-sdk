@@ -85,6 +85,7 @@ namespace freeclimb.Test.Model
         SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
          test1.CallId = "TS";
          test1.Talk = true;
+
         SetTalkAllOf test2 = new SetTalkAllOf("TEST_STRING", false);
          test2.CallId = "TS";
          test2.Talk = true;
@@ -101,6 +102,7 @@ namespace freeclimb.Test.Model
         SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
          test1.CallId = "TS";
          test1.Talk = true;
+
         SetTalkAllOf test2 = new SetTalkAllOf("TEST_STRING", false);
          test2.CallId = "ts";
          test2.Talk = false;
@@ -156,6 +158,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
+         test1.CallId = "TS";
+         test1.Talk = true;
+
+        SetTalkAllOf test2 = new SetTalkAllOf("TEST_STRING", false);
+         test2.CallId = "TS";
+         test2.Talk = true;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
+         test1.CallId = "TS";
+         test1.Talk = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        SetTalkAllOf test2 = new SetTalkAllOf("TEST_STRING", false);
+         test2.CallId = "TS";
+         test2.Talk = true;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

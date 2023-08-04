@@ -195,6 +195,7 @@ namespace freeclimb.Test.Model
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+
         AccountResult test2 = new AccountResult();
          test2.Uri = "TS";
          test2.DateCreated = "TS";
@@ -237,6 +238,7 @@ namespace freeclimb.Test.Model
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+
         AccountResult test2 = new AccountResult();
          test2.Uri = "ts";
          test2.DateCreated = "ts";
@@ -246,11 +248,11 @@ namespace freeclimb.Test.Model
          test2.ApiKey = "ts";
          test2.Alias = "ts";
          test2.Label = "ts";
-         test2.Type = AccountType.TRIAL;
-         test2.Type = AccountType.TRIAL;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
+         test2.Type = AccountType.FULL;
+         test2.Type = AccountType.FULL;
+         test2.Status = AccountStatus.SUSPENDED;
+         test2.Status = AccountStatus.SUSPENDED;
+         test2.Status = AccountStatus.SUSPENDED;
          object testObject2 = new object();
          test2.SubresourceUris = testObject2;
 
@@ -357,6 +359,93 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        AccountResult test1 = new AccountResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.AccountId = "TS";
+         test1.ApiKey = "TS";
+         test1.Alias = "TS";
+         test1.Label = "TS";
+         test1.Type = AccountType.TRIAL;
+         test1.Type = AccountType.TRIAL;
+         test1.Status = AccountStatus.CLOSED;
+         test1.Status = AccountStatus.CLOSED;
+         test1.Status = AccountStatus.CLOSED;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+
+        AccountResult test2 = new AccountResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.AccountId = "TS";
+         test2.ApiKey = "TS";
+         test2.Alias = "TS";
+         test2.Label = "TS";
+         test2.Type = AccountType.TRIAL;
+         test2.Type = AccountType.TRIAL;
+         test2.Status = AccountStatus.CLOSED;
+         test2.Status = AccountStatus.CLOSED;
+         test2.Status = AccountStatus.CLOSED;
+         object testObject2 = testObject;
+         test2.SubresourceUris = testObject2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        AccountResult test1 = new AccountResult();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.AccountId = "TS";
+         test1.ApiKey = "TS";
+         test1.Alias = "TS";
+         test1.Label = "TS";
+         test1.Type = AccountType.TRIAL;
+         test1.Type = AccountType.TRIAL;
+         test1.Status = AccountStatus.CLOSED;
+         test1.Status = AccountStatus.CLOSED;
+         test1.Status = AccountStatus.CLOSED;
+         object testObject = new object();
+         test1.SubresourceUris = testObject;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        AccountResult test2 = new AccountResult();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.AccountId = "TS";
+         test2.ApiKey = "TS";
+         test2.Alias = "TS";
+         test2.Label = "TS";
+         test2.Type = AccountType.TRIAL;
+         test2.Type = AccountType.TRIAL;
+         test2.Status = AccountStatus.CLOSED;
+         test2.Status = AccountStatus.CLOSED;
+         test2.Status = AccountStatus.CLOSED;
+         object testObject2 = testObject;
+         test2.SubresourceUris = testObject2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

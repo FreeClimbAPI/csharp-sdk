@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
         MessagesListAllOf test1 = new MessagesListAllOf();
          List<MessageResult> testList = new List<MessageResult>();
          test1.Messages = testList;
+
         MessagesListAllOf test2 = new MessagesListAllOf();
          List<MessageResult> testList2 = new List<MessageResult>();
          test2.Messages = testList2;
@@ -92,6 +93,7 @@ namespace freeclimb.Test.Model
         MessagesListAllOf test1 = new MessagesListAllOf();
          List<MessageResult> testList = new List<MessageResult>();
          test1.Messages = testList;
+
         MessagesListAllOf test2 = new MessagesListAllOf();
          List<MessageResult> testList2 = null;
          test2.Messages = testList2;
@@ -147,6 +149,41 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        MessagesListAllOf test1 = new MessagesListAllOf();
+         List<MessageResult> testList = new List<MessageResult>();
+         test1.Messages = testList;
+
+        MessagesListAllOf test2 = new MessagesListAllOf();
+         List<MessageResult> testList2 = new List<MessageResult>();
+         test2.Messages = testList2;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        MessagesListAllOf test1 = new MessagesListAllOf();
+         List<MessageResult> testList = new List<MessageResult>();
+         test1.Messages = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        MessagesListAllOf test2 = new MessagesListAllOf();
+         List<MessageResult> testList2 = new List<MessageResult>();
+         test2.Messages = testList2;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

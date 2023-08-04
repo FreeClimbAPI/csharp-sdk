@@ -85,6 +85,7 @@ namespace freeclimb.Test.Model
         SetListen test1 = new SetListen("TEST_STRING", false, "TEST_STRING");
          test1.CallId = "TS";
          test1.Listen = true;
+
         SetListen test2 = new SetListen("TEST_STRING", false, "TEST_STRING");
          test2.CallId = "TS";
          test2.Listen = true;
@@ -101,6 +102,7 @@ namespace freeclimb.Test.Model
         SetListen test1 = new SetListen("TEST_STRING", false, "TEST_STRING");
          test1.CallId = "TS";
          test1.Listen = true;
+
         SetListen test2 = new SetListen("TEST_STRING", false, "TEST_STRING");
          test2.CallId = "ts";
          test2.Listen = false;
@@ -156,6 +158,23 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        SetListen test1 = new SetListen("TEST_STRING", false, "TEST_STRING");
+         test1.CallId = "TS";
+         test1.Listen = true;
+
+        SetListen test2 = new SetListen("TEST_STRING", false, "TEST_STRING");
+         test2.CallId = "TS";
+         test2.Listen = true;
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

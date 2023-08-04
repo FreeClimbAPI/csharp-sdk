@@ -107,6 +107,7 @@ namespace freeclimb.Test.Model
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
          test1.Revision = 1;
+
         MutableResourceModel test2 = new MutableResourceModel();
          test2.Uri = "TS";
          test2.DateCreated = "TS";
@@ -127,11 +128,12 @@ namespace freeclimb.Test.Model
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
          test1.Revision = 1;
+
         MutableResourceModel test2 = new MutableResourceModel();
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
-         test2.Revision = 1;
+         test2.Revision = 2;
 
         Assert.NotEqual(test1,test2);
         }
@@ -192,6 +194,49 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        MutableResourceModel test1 = new MutableResourceModel();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+
+        MutableResourceModel test2 = new MutableResourceModel();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        MutableResourceModel test1 = new MutableResourceModel();
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        MutableResourceModel test2 = new MutableResourceModel();
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

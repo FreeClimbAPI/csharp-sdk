@@ -151,6 +151,7 @@ namespace freeclimb.Test.Model
          test1.PlayBeep = true;
          test1.AutoStart = true;
          test1.PrivacyMode = true;
+
         RecordUtterance test2 = new RecordUtterance("https://a.com", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
@@ -189,9 +190,10 @@ namespace freeclimb.Test.Model
          test1.PlayBeep = true;
          test1.AutoStart = true;
          test1.PrivacyMode = true;
+
         RecordUtterance test2 = new RecordUtterance("https://a.com", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
          try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
@@ -299,6 +301,45 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        RecordUtterance test1 = new RecordUtterance("https://a.com", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+        try {
+            Uri uri = new Uri("https://a.com");
+            instance.ActionUrl = uri.ToString();
+            Assert.Equal(uri.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test1.SilenceTimeoutMs = 1;
+         test1.FinishOnKey = "TS";
+         test1.MaxLengthSec = 1;
+         test1.PlayBeep = true;
+         test1.AutoStart = true;
+         test1.PrivacyMode = true;
+
+        RecordUtterance test2 = new RecordUtterance("https://a.com", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+        try {
+            Uri uri2 = new Uri("https://a.com");
+            instance.ActionUrl = uri2.ToString();
+            Assert.Equal(uri2.ToString(), instance.ActionUrl);
+            } catch (Exception ) {
+            Console.WriteLine("Something went wrong.");
+            }
+         test2.SilenceTimeoutMs = 1;
+         test2.FinishOnKey = "TS";
+         test2.MaxLengthSec = 1;
+         test2.PlayBeep = true;
+         test2.AutoStart = true;
+         test2.PrivacyMode = true;
+
+        Assert.True(test1.Equals(test2));
         }
     }
 }

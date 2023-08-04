@@ -74,6 +74,7 @@ namespace freeclimb.Test.Model
         public void equalsTrueTest() {
         PlayEarlyMediaAllOf test1 = new PlayEarlyMediaAllOf("TEST_STRING");
          test1.File = "TS";
+
         PlayEarlyMediaAllOf test2 = new PlayEarlyMediaAllOf("TEST_STRING");
          test2.File = "TS";
 
@@ -88,6 +89,7 @@ namespace freeclimb.Test.Model
         public void equalsFalseTest() {
         PlayEarlyMediaAllOf test1 = new PlayEarlyMediaAllOf("TEST_STRING");
          test1.File = "TS";
+
         PlayEarlyMediaAllOf test2 = new PlayEarlyMediaAllOf("TEST_STRING");
          test2.File = "ts";
 
@@ -107,7 +109,6 @@ namespace freeclimb.Test.Model
         Assert.True(hashCode1.GetType() == typeof(int));
 
         }
-
 
         /// <summary>
         /// Test the method 'ToStringType'
@@ -139,6 +140,37 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        PlayEarlyMediaAllOf test1 = new PlayEarlyMediaAllOf("TEST_STRING");
+         test1.File = "TS";
+
+        PlayEarlyMediaAllOf test2 = new PlayEarlyMediaAllOf("TEST_STRING");
+         test2.File = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        PlayEarlyMediaAllOf test1 = new PlayEarlyMediaAllOf("TEST_STRING");
+         test1.File = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        PlayEarlyMediaAllOf test2 = new PlayEarlyMediaAllOf("TEST_STRING");
+         test2.File = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

@@ -96,6 +96,7 @@ namespace freeclimb.Test.Model
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
          test1.CampaignId = "TS";
+
         IncomingNumberRequest test2 = new IncomingNumberRequest();
          test2.ApplicationId = "TS";
          test2.Alias = "TS";
@@ -114,6 +115,7 @@ namespace freeclimb.Test.Model
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
          test1.CampaignId = "TS";
+
         IncomingNumberRequest test2 = new IncomingNumberRequest();
          test2.ApplicationId = "ts";
          test2.Alias = "ts";
@@ -174,6 +176,45 @@ namespace freeclimb.Test.Model
         string toString2 = test2.ToString();
         Assert.Equal(toString1, toString2);
 
+        }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        IncomingNumberRequest test1 = new IncomingNumberRequest();
+         test1.ApplicationId = "TS";
+         test1.Alias = "TS";
+         test1.CampaignId = "TS";
+
+        IncomingNumberRequest test2 = new IncomingNumberRequest();
+         test2.ApplicationId = "TS";
+         test2.Alias = "TS";
+         test2.CampaignId = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
+
+        /// <summary>
+        /// Test the method 'ToJson'
+        /// </summary>
+        
+        [Fact]
+        public void ToJsonTest() {
+        IncomingNumberRequest test1 = new IncomingNumberRequest();
+         test1.ApplicationId = "TS";
+         test1.Alias = "TS";
+         test1.CampaignId = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+
+        IncomingNumberRequest test2 = new IncomingNumberRequest();
+         test2.ApplicationId = "TS";
+         test2.Alias = "TS";
+         test2.CampaignId = "TS";
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

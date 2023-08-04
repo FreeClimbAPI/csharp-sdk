@@ -330,5 +330,20 @@ namespace freeclimb.Test.Model
         Assert.Equal(toString1, toString2);
 
         }
+
+        /// <summary>
+        /// Test the method 'equals'
+        /// </summary>
+        
+        [Fact]
+        public void equalsTest() {
+        PerclCommand test1 = new PerclCommand();
+         test1.Command = "TS";
+
+        PerclCommand test2 = new PerclCommand();
+         test2.Command = "TS";
+
+        Assert.True(test1.Equals(test2));
+        }
     }
 }
