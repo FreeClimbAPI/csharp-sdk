@@ -155,6 +155,8 @@ src/freeclimb.Test/Model/LanguageTests.cs
 src/freeclimb.Test/Model/LogLevelTests.cs
 src/freeclimb.Test/Model/MachineTypeTests.cs
 src/freeclimb.Test/Model/MessageDirectionTests.cs
+src/freeclimb.Test/Model/MessageResultAllOfTests.cs
+src/freeclimb.Test/Model/MessageResultTests.cs
 src/freeclimb.Test/Model/MessageStatusTests.cs
 src/freeclimb.Test/Model/PlayBeepTests.cs
 src/freeclimb.Test/Model/QueueResultStatusTests.cs

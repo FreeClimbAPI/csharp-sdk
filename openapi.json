@@ -2103,6 +2103,21 @@
                 "type": "string",
                 "description": "URL invoked when message sent",
                 "nullable": true
+              },
+              "brandId": {
+                "type": "string",
+                "description": "The unique identifier for the brand associated with the message",
+                "nullable": true
+              },
+              "campaignId": {
+                "type": "string",
+                "description": "The unique identifier for the campaign associated with the message",
+                "nullable": true
+              },
+              "segmentCount": {
+                "type": "number",
+                "description": "The number of segments into which the message was split",
+                "nullable": true
               }
             }
           }
@@ -5071,6 +5086,33 @@
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/MessageDirection"
+            }
+          },
+          {
+            "name": "campaignId",
+            "in": "query",
+            "description": "Only show messages associated with this campaign ID.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "brandId",
+            "in": "query",
+            "description": "Only show messages associated with this brand ID",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "is10DLC",
+            "in": "query",
+            "description": "Only show messages that were sent as part of a 10DLC campaign.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
             }
           }
         ],

@@ -3205,7 +3205,7 @@ Name | Type | Description  | Notes
 
 <a name="listsmsmessages"></a>
 # **ListSmsMessages**
-> MessagesList ListSmsMessages (string to = null, string from = null, string beginTime = null, string endTime = null, MessageDirection? direction = null)
+> MessagesList ListSmsMessages (string to = null, string from = null, string beginTime = null, string endTime = null, MessageDirection? direction = null, string campaignId = null, string brandId = null, bool? is10DLC = null)
 
 List SMS Messages
 
@@ -3241,11 +3241,17 @@ namespace Example
 
             var direction = (MessageDirection) "inbound";  // MessageDirection? | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional) 
 
+            var campaignId = "campaignId_example";  // string | Only show messages associated with this campaign ID. (optional) 
+
+            var brandId = "brandId_example";  // string | Only show messages associated with this brand ID (optional) 
+
+            var is10DLC = true;  // bool? | Only show messages that were sent as part of a 10DLC campaign. (optional) 
+
 
             try
             {
                 // List SMS Messages
-                MessagesList result = apiInstance.ListSmsMessages(to, from, beginTime, endTime, direction);
+                MessagesList result = apiInstance.ListSmsMessages(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3268,6 +3274,9 @@ Name | Type | Description  | Notes
  **beginTime** | **string**| Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional] 
  **endTime** | **string**| Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional] 
  **direction** | **MessageDirection?**| Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] 
+ **campaignId** | **string**| Only show messages associated with this campaign ID. | [optional] 
+ **brandId** | **string**| Only show messages associated with this brand ID | [optional] 
+ **is10DLC** | **bool?**| Only show messages that were sent as part of a 10DLC campaign. | [optional] 
 
 
 ### Return type

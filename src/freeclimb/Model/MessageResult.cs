@@ -54,7 +54,10 @@ namespace freeclimb.Model
         /// <param name="text">Message contents.</param>
         /// <param name="direction">Noting whether the message was inbound or outbound.</param>
         /// <param name="notificationUrl">URL invoked when message sent.</param>
-        public MessageResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string messageId = default(string), MessageStatus? status = default(MessageStatus?), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string notificationUrl = default(string))
+        /// <param name="brandId">The unique identifier for the brand associated with the message.</param>
+        /// <param name="campaignId">The unique identifier for the campaign associated with the message.</param>
+        /// <param name="segmentCount">The number of segments into which the message was split.</param>
+        public MessageResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string messageId = default(string), MessageStatus? status = default(MessageStatus?), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string notificationUrl = default(string), string brandId = default(string), string campaignId = default(string), decimal? segmentCount = default(decimal?))
         {
             this.Uri = uri;
             this.DateCreated = dateCreated;
@@ -68,6 +71,9 @@ namespace freeclimb.Model
             this.Text = text;
             this.Direction = direction;
             this.NotificationUrl = notificationUrl;
+            this.BrandId = brandId;
+            this.CampaignId = campaignId;
+            this.SegmentCount = segmentCount;
         }
 
         /// <summary>
@@ -148,6 +154,27 @@ namespace freeclimb.Model
         public string NotificationUrl { get; set; }
 
         /// <summary>
+        /// The unique identifier for the brand associated with the message
+        /// </summary>
+        /// <value>The unique identifier for the brand associated with the message</value>
+        [DataMember(Name = "brandId", EmitDefaultValue = true)]
+        public string BrandId { get; set; }
+
+        /// <summary>
+        /// The unique identifier for the campaign associated with the message
+        /// </summary>
+        /// <value>The unique identifier for the campaign associated with the message</value>
+        [DataMember(Name = "campaignId", EmitDefaultValue = true)]
+        public string CampaignId { get; set; }
+
+        /// <summary>
+        /// The number of segments into which the message was split
+        /// </summary>
+        /// <value>The number of segments into which the message was split</value>
+        [DataMember(Name = "segmentCount", EmitDefaultValue = true)]
+        public decimal? SegmentCount { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -167,6 +194,9 @@ namespace freeclimb.Model
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Direction: ").Append(Direction).Append("\n");
             sb.Append("  NotificationUrl: ").Append(NotificationUrl).Append("\n");
+            sb.Append("  BrandId: ").Append(BrandId).Append("\n");
+            sb.Append("  CampaignId: ").Append(CampaignId).Append("\n");
+            sb.Append("  SegmentCount: ").Append(SegmentCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -199,6 +229,9 @@ namespace freeclimb.Model
             props.Add("text", Text);          
             props.Add("direction", Direction);          
             props.Add("notificationUrl", NotificationUrl);          
+            props.Add("brandId", BrandId);          
+            props.Add("campaignId", CampaignId);          
+            props.Add("segmentCount", SegmentCount);          
             return props;
         }
         
@@ -281,6 +314,21 @@ namespace freeclimb.Model
                     this.NotificationUrl == input.NotificationUrl ||
                     (this.NotificationUrl != null &&
                     this.NotificationUrl.Equals(input.NotificationUrl))
+                ) && 
+                (
+                    this.BrandId == input.BrandId ||
+                    (this.BrandId != null &&
+                    this.BrandId.Equals(input.BrandId))
+                ) && 
+                (
+                    this.CampaignId == input.CampaignId ||
+                    (this.CampaignId != null &&
+                    this.CampaignId.Equals(input.CampaignId))
+                ) && 
+                (
+                    this.SegmentCount == input.SegmentCount ||
+                    (this.SegmentCount != null &&
+                    this.SegmentCount.Equals(input.SegmentCount))
                 );
         }
 
@@ -334,6 +382,18 @@ namespace freeclimb.Model
                 if (this.NotificationUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.NotificationUrl.GetHashCode();
+                }
+                if (this.BrandId != null)
+                {
+                    hashCode = (hashCode * 59) + this.BrandId.GetHashCode();
+                }
+                if (this.CampaignId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CampaignId.GetHashCode();
+                }
+                if (this.SegmentCount != null)
+                {
+                    hashCode = (hashCode * 59) + this.SegmentCount.GetHashCode();
                 }
                 return hashCode;
             }
