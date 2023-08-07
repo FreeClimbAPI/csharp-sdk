@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public CreateConferenceAllOfTests()
         {
-             instance = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+            instance = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
         }
 
         /// <summary>
@@ -143,9 +144,6 @@ namespace freeclimb.Test.Model
             }
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
@@ -159,9 +157,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test2.Alias = true;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.StatusCallbackUrl = "TS";
@@ -186,9 +181,6 @@ namespace freeclimb.Test.Model
             }
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
@@ -202,9 +194,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test2.Alias = false;
-         test2.PlayBeep = PlayBeep.NEVER;
-         test2.PlayBeep = PlayBeep.NEVER;
-         test2.PlayBeep = PlayBeep.NEVER;
          test2.PlayBeep = PlayBeep.NEVER;
          test2.Record = false;
          test2.StatusCallbackUrl = "ts";
@@ -228,9 +217,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.Alias = true;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
@@ -257,9 +243,6 @@ namespace freeclimb.Test.Model
             }
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
@@ -285,9 +268,6 @@ namespace freeclimb.Test.Model
             }
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
@@ -301,9 +281,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test2.Alias = true;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.StatusCallbackUrl = "TS";
@@ -331,9 +308,6 @@ namespace freeclimb.Test.Model
             }
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
@@ -347,9 +321,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test2.Alias = true;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.StatusCallbackUrl = "TS";
@@ -374,9 +345,6 @@ namespace freeclimb.Test.Model
             }
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
@@ -384,16 +352,13 @@ namespace freeclimb.Test.Model
 
         CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
          test2.Alias = true;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.StatusCallbackUrl = "TS";

@@ -193,7 +193,6 @@ namespace freeclimb.Test.Model
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
-         test1.IfMachine = IfMachine.REDIRECT;
          test1.IfMachineUrl = "TS";
          test1.SendDigits = "TS";
          test1.StatusCallbackUrl = "TS";
@@ -217,7 +216,6 @@ namespace freeclimb.Test.Model
             }
          test2.CallingNumber = "TS";
          test2.Destination = "TS";
-         test2.IfMachine = IfMachine.REDIRECT;
          test2.IfMachine = IfMachine.REDIRECT;
          test2.IfMachineUrl = "TS";
          test2.SendDigits = "TS";
@@ -252,7 +250,6 @@ namespace freeclimb.Test.Model
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
-         test1.IfMachine = IfMachine.REDIRECT;
          test1.IfMachineUrl = "TS";
          test1.SendDigits = "TS";
          test1.StatusCallbackUrl = "TS";
@@ -276,7 +273,6 @@ namespace freeclimb.Test.Model
             }
          test2.CallingNumber = "ts";
          test2.Destination = "ts";
-         test2.IfMachine = IfMachine.HANGUP;
          test2.IfMachine = IfMachine.HANGUP;
          test2.IfMachineUrl = "ts";
          test2.SendDigits = "ts";
@@ -310,7 +306,6 @@ namespace freeclimb.Test.Model
             }
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
-         test1.IfMachine = IfMachine.REDIRECT;
          test1.IfMachine = IfMachine.REDIRECT;
          test1.IfMachineUrl = "TS";
          test1.SendDigits = "TS";
@@ -347,7 +342,6 @@ namespace freeclimb.Test.Model
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
-         test1.IfMachine = IfMachine.REDIRECT;
          test1.IfMachineUrl = "TS";
          test1.SendDigits = "TS";
          test1.StatusCallbackUrl = "TS";
@@ -383,7 +377,6 @@ namespace freeclimb.Test.Model
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
-         test1.IfMachine = IfMachine.REDIRECT;
          test1.IfMachineUrl = "TS";
          test1.SendDigits = "TS";
          test1.StatusCallbackUrl = "TS";
@@ -407,7 +400,6 @@ namespace freeclimb.Test.Model
             }
          test2.CallingNumber = "TS";
          test2.Destination = "TS";
-         test2.IfMachine = IfMachine.REDIRECT;
          test2.IfMachine = IfMachine.REDIRECT;
          test2.IfMachineUrl = "TS";
          test2.SendDigits = "TS";
@@ -445,7 +437,6 @@ namespace freeclimb.Test.Model
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
-         test1.IfMachine = IfMachine.REDIRECT;
          test1.IfMachineUrl = "TS";
          test1.SendDigits = "TS";
          test1.StatusCallbackUrl = "TS";
@@ -469,7 +460,6 @@ namespace freeclimb.Test.Model
             }
          test2.CallingNumber = "TS";
          test2.Destination = "TS";
-         test2.IfMachine = IfMachine.REDIRECT;
          test2.IfMachine = IfMachine.REDIRECT;
          test2.IfMachineUrl = "TS";
          test2.SendDigits = "TS";
@@ -504,7 +494,6 @@ namespace freeclimb.Test.Model
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
-         test1.IfMachine = IfMachine.REDIRECT;
          test1.IfMachineUrl = "TS";
          test1.SendDigits = "TS";
          test1.StatusCallbackUrl = "TS";
@@ -517,14 +506,14 @@ namespace freeclimb.Test.Model
 
         OutDial test2 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.CallConnectUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
             } catch (Exception ) {
@@ -532,7 +521,6 @@ namespace freeclimb.Test.Model
             }
          test2.CallingNumber = "TS";
          test2.Destination = "TS";
-         test2.IfMachine = IfMachine.REDIRECT;
          test2.IfMachine = IfMachine.REDIRECT;
          test2.IfMachineUrl = "TS";
          test2.SendDigits = "TS";

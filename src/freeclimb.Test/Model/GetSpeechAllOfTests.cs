@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -209,7 +210,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.GrammarType = GrammarType.URL;
-         test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
          test1.PlayBeep = true;
@@ -229,7 +229,6 @@ namespace freeclimb.Test.Model
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
-         test2.GrammarType = GrammarType.URL;
          test2.GrammarType = GrammarType.URL;
          test2.GrammarFile = "TS";
          test2.GrammarRule = "TS";
@@ -260,7 +259,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.GrammarType = GrammarType.URL;
-         test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
          test1.PlayBeep = true;
@@ -280,7 +278,6 @@ namespace freeclimb.Test.Model
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
-         test2.GrammarType = GrammarType.BUILT_IN;
          test2.GrammarType = GrammarType.BUILT_IN;
          test2.GrammarFile = "ts";
          test2.GrammarRule = "ts";
@@ -310,7 +307,6 @@ namespace freeclimb.Test.Model
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
-         test1.GrammarType = GrammarType.URL;
          test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
@@ -343,7 +339,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.GrammarType = GrammarType.URL;
-         test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
          test1.PlayBeep = true;
@@ -375,7 +370,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.GrammarType = GrammarType.URL;
-         test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
          test1.PlayBeep = true;
@@ -395,7 +389,6 @@ namespace freeclimb.Test.Model
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
-         test2.GrammarType = GrammarType.URL;
          test2.GrammarType = GrammarType.URL;
          test2.GrammarFile = "TS";
          test2.GrammarRule = "TS";
@@ -429,7 +422,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.GrammarType = GrammarType.URL;
-         test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
          test1.PlayBeep = true;
@@ -449,7 +441,6 @@ namespace freeclimb.Test.Model
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
-         test2.GrammarType = GrammarType.URL;
          test2.GrammarType = GrammarType.URL;
          test2.GrammarFile = "TS";
          test2.GrammarRule = "TS";
@@ -480,7 +471,6 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.GrammarType = GrammarType.URL;
-         test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
          test1.PlayBeep = true;
@@ -495,13 +485,12 @@ namespace freeclimb.Test.Model
 
         GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
-         test2.GrammarType = GrammarType.URL;
          test2.GrammarType = GrammarType.URL;
          test2.GrammarFile = "TS";
          test2.GrammarRule = "TS";

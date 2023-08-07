@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -145,9 +146,6 @@ namespace freeclimb.Test.Model
          test1.Alias = "TS";
          test1.Label = "TS";
          test1.Type = AccountType.TRIAL;
-         test1.Type = AccountType.TRIAL;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
@@ -158,9 +156,6 @@ namespace freeclimb.Test.Model
          test2.Alias = "TS";
          test2.Label = "TS";
          test2.Type = AccountType.TRIAL;
-         test2.Type = AccountType.TRIAL;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
          test2.Status = AccountStatus.CLOSED;
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
@@ -180,9 +175,6 @@ namespace freeclimb.Test.Model
          test1.Alias = "TS";
          test1.Label = "TS";
          test1.Type = AccountType.TRIAL;
-         test1.Type = AccountType.TRIAL;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
@@ -193,9 +185,6 @@ namespace freeclimb.Test.Model
          test2.Alias = "ts";
          test2.Label = "ts";
          test2.Type = AccountType.FULL;
-         test2.Type = AccountType.FULL;
-         test2.Status = AccountStatus.SUSPENDED;
-         test2.Status = AccountStatus.SUSPENDED;
          test2.Status = AccountStatus.SUSPENDED;
          object testObject2 = new object();
          test2.SubresourceUris = testObject2;
@@ -215,9 +204,6 @@ namespace freeclimb.Test.Model
          test1.Alias = "TS";
          test1.Label = "TS";
          test1.Type = AccountType.TRIAL;
-         test1.Type = AccountType.TRIAL;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
@@ -239,9 +225,6 @@ namespace freeclimb.Test.Model
          test1.Alias = "TS";
          test1.Label = "TS";
          test1.Type = AccountType.TRIAL;
-         test1.Type = AccountType.TRIAL;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
@@ -263,9 +246,6 @@ namespace freeclimb.Test.Model
          test1.Alias = "TS";
          test1.Label = "TS";
          test1.Type = AccountType.TRIAL;
-         test1.Type = AccountType.TRIAL;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
@@ -276,9 +256,6 @@ namespace freeclimb.Test.Model
          test2.Alias = "TS";
          test2.Label = "TS";
          test2.Type = AccountType.TRIAL;
-         test2.Type = AccountType.TRIAL;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
          test2.Status = AccountStatus.CLOSED;
          object testObject2 = new object();
          test2.SubresourceUris = testObject2;
@@ -301,9 +278,6 @@ namespace freeclimb.Test.Model
          test1.Alias = "TS";
          test1.Label = "TS";
          test1.Type = AccountType.TRIAL;
-         test1.Type = AccountType.TRIAL;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
@@ -314,9 +288,6 @@ namespace freeclimb.Test.Model
          test2.Alias = "TS";
          test2.Label = "TS";
          test2.Type = AccountType.TRIAL;
-         test2.Type = AccountType.TRIAL;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
          test2.Status = AccountStatus.CLOSED;
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
@@ -336,9 +307,6 @@ namespace freeclimb.Test.Model
          test1.Alias = "TS";
          test1.Label = "TS";
          test1.Type = AccountType.TRIAL;
-         test1.Type = AccountType.TRIAL;
-         test1.Status = AccountStatus.CLOSED;
-         test1.Status = AccountStatus.CLOSED;
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
@@ -350,9 +318,6 @@ namespace freeclimb.Test.Model
          test2.Alias = "TS";
          test2.Label = "TS";
          test2.Type = AccountType.TRIAL;
-         test2.Type = AccountType.TRIAL;
-         test2.Status = AccountStatus.CLOSED;
-         test2.Status = AccountStatus.CLOSED;
          test2.Status = AccountStatus.CLOSED;
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;

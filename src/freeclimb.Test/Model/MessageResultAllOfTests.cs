@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public MessageResultAllOfTests()
         {
-            instance = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            instance = new MessageResultAllOf();
         }
 
         /// <summary>
@@ -162,19 +163,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test1 = new MessageResultAllOf();
          test1.AccountId = "TS";
          test1.MessageId = "TS";
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
          test1.Status = MessageStatus.NEW;
          test1.From = "TS";
          test1.To = "TS";
@@ -182,19 +173,9 @@ namespace freeclimb.Test.Model
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
 
-        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test2 = new MessageResultAllOf();
          test2.AccountId = "TS";
          test2.MessageId = "TS";
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
          test2.Status = MessageStatus.NEW;
          test2.From = "TS";
          test2.To = "TS";
@@ -211,19 +192,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test1 = new MessageResultAllOf();
          test1.AccountId = "TS";
          test1.MessageId = "TS";
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
          test1.Status = MessageStatus.NEW;
          test1.From = "TS";
          test1.To = "TS";
@@ -231,19 +202,9 @@ namespace freeclimb.Test.Model
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
 
-        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test2 = new MessageResultAllOf();
          test2.AccountId = "ts";
          test2.MessageId = "ts";
-         test2.Status = MessageStatus.QUEUED;
-         test2.Status = MessageStatus.QUEUED;
-         test2.Status = MessageStatus.QUEUED;
-         test2.Status = MessageStatus.QUEUED;
-         test2.Status = MessageStatus.QUEUED;
-         test2.Status = MessageStatus.QUEUED;
-         test2.Status = MessageStatus.QUEUED;
-         test2.Status = MessageStatus.QUEUED;
-         test2.Status = MessageStatus.QUEUED;
-         test2.Status = MessageStatus.QUEUED;
          test2.Status = MessageStatus.QUEUED;
          test2.From = "ts";
          test2.To = "ts";
@@ -260,19 +221,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test1 = new MessageResultAllOf();
          test1.AccountId = "TS";
          test1.MessageId = "TS";
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
          test1.Status = MessageStatus.NEW;
          test1.From = "TS";
          test1.To = "TS";
@@ -291,19 +242,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test1 = new MessageResultAllOf();
          test1.AccountId = "TS";
          test1.MessageId = "TS";
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
          test1.Status = MessageStatus.NEW;
          test1.From = "TS";
          test1.To = "TS";
@@ -322,19 +263,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test1 = new MessageResultAllOf();
          test1.AccountId = "TS";
          test1.MessageId = "TS";
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
          test1.Status = MessageStatus.NEW;
          test1.From = "TS";
          test1.To = "TS";
@@ -342,19 +273,9 @@ namespace freeclimb.Test.Model
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
 
-        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test2 = new MessageResultAllOf();
          test2.AccountId = "TS";
          test2.MessageId = "TS";
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
          test2.Status = MessageStatus.NEW;
          test2.From = "TS";
          test2.To = "TS";
@@ -374,19 +295,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test1 = new MessageResultAllOf();
          test1.AccountId = "TS";
          test1.MessageId = "TS";
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
          test1.Status = MessageStatus.NEW;
          test1.From = "TS";
          test1.To = "TS";
@@ -394,19 +305,9 @@ namespace freeclimb.Test.Model
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
 
-        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test2 = new MessageResultAllOf();
          test2.AccountId = "TS";
          test2.MessageId = "TS";
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
          test2.Status = MessageStatus.NEW;
          test2.From = "TS";
          test2.To = "TS";
@@ -423,19 +324,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        MessageResultAllOf test1 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test1 = new MessageResultAllOf();
          test1.AccountId = "TS";
          test1.MessageId = "TS";
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
-         test1.Status = MessageStatus.NEW;
          test1.Status = MessageStatus.NEW;
          test1.From = "TS";
          test1.To = "TS";
@@ -444,19 +335,9 @@ namespace freeclimb.Test.Model
          test1.NotificationUrl = "TS";
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        MessageResultAllOf test2 = new MessageResultAllOf("TEST_STRING", "TEST_STRING",  MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        MessageResultAllOf test2 = new MessageResultAllOf();
          test2.AccountId = "TS";
          test2.MessageId = "TS";
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
-         test2.Status = MessageStatus.NEW;
          test2.Status = MessageStatus.NEW;
          test2.From = "TS";
          test2.To = "TS";

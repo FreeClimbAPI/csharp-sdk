@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -140,8 +141,6 @@ namespace freeclimb.Test.Model
         LogResult test1 = new LogResult();
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
@@ -151,8 +150,6 @@ namespace freeclimb.Test.Model
 
         LogResult test2 = new LogResult();
          test2.Timestamp = 1;
-         test2.Level = LogLevel.INFO;
-         test2.Level = LogLevel.INFO;
          test2.Level = LogLevel.INFO;
          test2.RequestId = "TS";
          test2.AccountId = "TS";
@@ -173,8 +170,6 @@ namespace freeclimb.Test.Model
         LogResult test1 = new LogResult();
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
@@ -184,8 +179,6 @@ namespace freeclimb.Test.Model
 
         LogResult test2 = new LogResult();
          test2.Timestamp = 2;
-         test2.Level = LogLevel.WARNING;
-         test2.Level = LogLevel.WARNING;
          test2.Level = LogLevel.WARNING;
          test2.RequestId = "ts";
          test2.AccountId = "ts";
@@ -205,8 +198,6 @@ namespace freeclimb.Test.Model
         public void hashCodeTypeTest() {
         LogResult test1 = new LogResult();
          test1.Timestamp = 1;
-         test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
          test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
          test1.AccountId = "TS";
@@ -229,8 +220,6 @@ namespace freeclimb.Test.Model
         LogResult test1 = new LogResult();
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
@@ -252,8 +241,6 @@ namespace freeclimb.Test.Model
         LogResult test1 = new LogResult();
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
@@ -263,8 +250,6 @@ namespace freeclimb.Test.Model
 
         LogResult test2 = new LogResult();
          test2.Timestamp = 1;
-         test2.Level = LogLevel.INFO;
-         test2.Level = LogLevel.INFO;
          test2.Level = LogLevel.INFO;
          test2.RequestId = "TS";
          test2.AccountId = "TS";
@@ -288,8 +273,6 @@ namespace freeclimb.Test.Model
         LogResult test1 = new LogResult();
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
@@ -299,8 +282,6 @@ namespace freeclimb.Test.Model
 
         LogResult test2 = new LogResult();
          test2.Timestamp = 1;
-         test2.Level = LogLevel.INFO;
-         test2.Level = LogLevel.INFO;
          test2.Level = LogLevel.INFO;
          test2.RequestId = "TS";
          test2.AccountId = "TS";
@@ -321,8 +302,6 @@ namespace freeclimb.Test.Model
         LogResult test1 = new LogResult();
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
-         test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
@@ -333,8 +312,6 @@ namespace freeclimb.Test.Model
 
         LogResult test2 = new LogResult();
          test2.Timestamp = 1;
-         test2.Level = LogLevel.INFO;
-         test2.Level = LogLevel.INFO;
          test2.Level = LogLevel.INFO;
          test2.RequestId = "TS";
          test2.AccountId = "TS";

@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -103,19 +104,11 @@ namespace freeclimb.Test.Model
         UpdateConferenceRequest test1 = new UpdateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Status = UpdateConferenceRequestStatus.EMPTY;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
 
         UpdateConferenceRequest test2 = new UpdateConferenceRequest();
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.Status = UpdateConferenceRequestStatus.EMPTY;
          test2.Status = UpdateConferenceRequestStatus.EMPTY;
 
         Assert.Equal(test1,test2);
@@ -130,19 +123,11 @@ namespace freeclimb.Test.Model
         UpdateConferenceRequest test1 = new UpdateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Status = UpdateConferenceRequestStatus.EMPTY;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
 
         UpdateConferenceRequest test2 = new UpdateConferenceRequest();
          test2.Alias = "ts";
          test2.PlayBeep = PlayBeep.NEVER;
-         test2.PlayBeep = PlayBeep.NEVER;
-         test2.PlayBeep = PlayBeep.NEVER;
-         test2.PlayBeep = PlayBeep.NEVER;
-         test2.Status = UpdateConferenceRequestStatus.TERMINATED;
          test2.Status = UpdateConferenceRequestStatus.TERMINATED;
 
         Assert.NotEqual(test1,test2);
@@ -157,10 +142,6 @@ namespace freeclimb.Test.Model
         UpdateConferenceRequest test1 = new UpdateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Status = UpdateConferenceRequestStatus.EMPTY;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
 
         int hashCode1 = test1.GetHashCode();
@@ -177,10 +158,6 @@ namespace freeclimb.Test.Model
         UpdateConferenceRequest test1 = new UpdateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Status = UpdateConferenceRequestStatus.EMPTY;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
 
         string toString1 = test1.ToString();
@@ -197,19 +174,11 @@ namespace freeclimb.Test.Model
         UpdateConferenceRequest test1 = new UpdateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Status = UpdateConferenceRequestStatus.EMPTY;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
 
         UpdateConferenceRequest test2 = new UpdateConferenceRequest();
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.Status = UpdateConferenceRequestStatus.EMPTY;
          test2.Status = UpdateConferenceRequestStatus.EMPTY;
 
         string toString1 = test1.ToString();
@@ -227,19 +196,11 @@ namespace freeclimb.Test.Model
         UpdateConferenceRequest test1 = new UpdateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Status = UpdateConferenceRequestStatus.EMPTY;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
 
         UpdateConferenceRequest test2 = new UpdateConferenceRequest();
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.Status = UpdateConferenceRequestStatus.EMPTY;
          test2.Status = UpdateConferenceRequestStatus.EMPTY;
 
         Assert.True(test1.Equals(test2));
@@ -254,20 +215,12 @@ namespace freeclimb.Test.Model
         UpdateConferenceRequest test1 = new UpdateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.Status = UpdateConferenceRequestStatus.EMPTY;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
         UpdateConferenceRequest test2 = new UpdateConferenceRequest();
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.Status = UpdateConferenceRequestStatus.EMPTY;
          test2.Status = UpdateConferenceRequestStatus.EMPTY;
 
         Assert.True(jsonStr.Equals(test2.ToJson()));

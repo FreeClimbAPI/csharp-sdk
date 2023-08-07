@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -121,18 +122,12 @@ namespace freeclimb.Test.Model
         CreateConferenceRequest test1 = new CreateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
 
         CreateConferenceRequest test2 = new CreateConferenceRequest();
          test2.Alias = "TS";
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.WaitUrl = "TS";
@@ -150,18 +145,12 @@ namespace freeclimb.Test.Model
         CreateConferenceRequest test1 = new CreateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
 
         CreateConferenceRequest test2 = new CreateConferenceRequest();
          test2.Alias = "ts";
-         test2.PlayBeep = PlayBeep.NEVER;
-         test2.PlayBeep = PlayBeep.NEVER;
-         test2.PlayBeep = PlayBeep.NEVER;
          test2.PlayBeep = PlayBeep.NEVER;
          test2.Record = false;
          test2.WaitUrl = "ts";
@@ -178,9 +167,6 @@ namespace freeclimb.Test.Model
         public void hashCodeTypeTest() {
         CreateConferenceRequest test1 = new CreateConferenceRequest();
          test1.Alias = "TS";
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
@@ -200,9 +186,6 @@ namespace freeclimb.Test.Model
         CreateConferenceRequest test1 = new CreateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
@@ -221,18 +204,12 @@ namespace freeclimb.Test.Model
         CreateConferenceRequest test1 = new CreateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
 
         CreateConferenceRequest test2 = new CreateConferenceRequest();
          test2.Alias = "TS";
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.WaitUrl = "TS";
@@ -253,18 +230,12 @@ namespace freeclimb.Test.Model
         CreateConferenceRequest test1 = new CreateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
 
         CreateConferenceRequest test2 = new CreateConferenceRequest();
          test2.Alias = "TS";
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.WaitUrl = "TS";
@@ -282,9 +253,6 @@ namespace freeclimb.Test.Model
         CreateConferenceRequest test1 = new CreateConferenceRequest();
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
-         test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
@@ -292,9 +260,6 @@ namespace freeclimb.Test.Model
 
         CreateConferenceRequest test2 = new CreateConferenceRequest();
          test2.Alias = "TS";
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
-         test2.PlayBeep = PlayBeep.ALWAYS;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.WaitUrl = "TS";
