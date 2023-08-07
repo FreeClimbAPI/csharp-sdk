@@ -103,32 +103,38 @@ namespace freeclimb.Model
         public SMSTenDLCCampaign(string accountId = default(string), string campaignId = default(string), string cspId = default(string), string resellerId = default(string), StatusEnum? status = default(StatusEnum?), DateTime createDate = default(DateTime), bool autoRenewal = default(bool), DateTime? billedDate = default(DateTime?), string brandId = default(string), string usecase = default(string), List<string> subUsecases = default(List<string>), string description = default(string), bool embeddedLink = false, bool embeddedPhone = false, bool affiliateMarketing = default(bool), bool numberPool = false, bool ageGated = default(bool), bool directLending = default(bool), bool subscriberOptin = false, bool subscriberOptout = false, bool subscriberHelp = false, string sample1 = default(string), string sample2 = default(string), string sample3 = default(string), string sample4 = default(string), string sample5 = default(string), string messageFlow = default(string), string helpMessage = default(string), string referenceId = default(string), bool mock = default(bool), DateTime? nextRenewalOrExpirationDate = default(DateTime?))
         {
             // to ensure "campaignId" is required (not null)
-            if (campaignId == null) {
+            if (campaignId == null)
+            {
                 throw new ArgumentNullException("campaignId is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.CampaignId = campaignId;
             // to ensure "cspId" is required (not null)
-            if (cspId == null) {
+            if (cspId == null)
+            {
                 throw new ArgumentNullException("cspId is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.CspId = cspId;
             // to ensure "brandId" is required (not null)
-            if (brandId == null) {
+            if (brandId == null)
+            {
                 throw new ArgumentNullException("brandId is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.BrandId = brandId;
             // to ensure "usecase" is required (not null)
-            if (usecase == null) {
+            if (usecase == null)
+            {
                 throw new ArgumentNullException("usecase is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.Usecase = usecase;
             // to ensure "subUsecases" is required (not null)
-            if (subUsecases == null) {
+            if (subUsecases == null)
+            {
                 throw new ArgumentNullException("subUsecases is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.SubUsecases = subUsecases;
             // to ensure "description" is required (not null)
-            if (description == null) {
+            if (description == null)
+            {
                 throw new ArgumentNullException("description is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.Description = description;
@@ -428,45 +434,45 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);          
-            props.Add("campaignId", CampaignId);          
-            props.Add("cspId", CspId);          
-            props.Add("resellerId", ResellerId);          
-            props.Add("status", Status);          
-            props.Add("createDate", CreateDate);          
-            props.Add("autoRenewal", AutoRenewal);          
-            props.Add("billedDate", BilledDate);          
-            props.Add("brandId", BrandId);          
-            props.Add("usecase", Usecase);          
+            props.Add("accountId", AccountId);
+            props.Add("campaignId", CampaignId);
+            props.Add("cspId", CspId);
+            props.Add("resellerId", ResellerId);
+            props.Add("status", Status);
+            props.Add("createDate", CreateDate);
+            props.Add("autoRenewal", AutoRenewal);
+            props.Add("billedDate", BilledDate);
+            props.Add("brandId", BrandId);
+            props.Add("usecase", Usecase);
             List<object> nested = new List<object>();
             foreach (var item in SubUsecases)
             {
                 nested.Add(item);
             }
-            props.Add("subUsecases", nested); 
-            props.Add("description", Description);          
-            props.Add("embeddedLink", EmbeddedLink);          
-            props.Add("embeddedPhone", EmbeddedPhone);          
-            props.Add("affiliateMarketing", AffiliateMarketing);          
-            props.Add("numberPool", NumberPool);          
-            props.Add("ageGated", AgeGated);          
-            props.Add("directLending", DirectLending);          
-            props.Add("subscriberOptin", SubscriberOptin);          
-            props.Add("subscriberOptout", SubscriberOptout);          
-            props.Add("subscriberHelp", SubscriberHelp);          
-            props.Add("sample1", Sample1);          
-            props.Add("sample2", Sample2);          
-            props.Add("sample3", Sample3);          
-            props.Add("sample4", Sample4);          
-            props.Add("sample5", Sample5);          
-            props.Add("messageFlow", MessageFlow);          
-            props.Add("helpMessage", HelpMessage);          
-            props.Add("referenceId", ReferenceId);          
-            props.Add("mock", Mock);          
-            props.Add("nextRenewalOrExpirationDate", NextRenewalOrExpirationDate);          
+            props.Add("subUsecases", nested);
+            props.Add("description", Description);
+            props.Add("embeddedLink", EmbeddedLink);
+            props.Add("embeddedPhone", EmbeddedPhone);
+            props.Add("affiliateMarketing", AffiliateMarketing);
+            props.Add("numberPool", NumberPool);
+            props.Add("ageGated", AgeGated);
+            props.Add("directLending", DirectLending);
+            props.Add("subscriberOptin", SubscriberOptin);
+            props.Add("subscriberOptout", SubscriberOptout);
+            props.Add("subscriberHelp", SubscriberHelp);
+            props.Add("sample1", Sample1);
+            props.Add("sample2", Sample2);
+            props.Add("sample3", Sample3);
+            props.Add("sample4", Sample4);
+            props.Add("sample5", Sample5);
+            props.Add("messageFlow", MessageFlow);
+            props.Add("helpMessage", HelpMessage);
+            props.Add("referenceId", ReferenceId);
+            props.Add("mock", Mock);
+            props.Add("nextRenewalOrExpirationDate", NextRenewalOrExpirationDate);
             return props;
         }
-        
+
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
@@ -488,146 +494,146 @@ namespace freeclimb.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.AccountId == input.AccountId ||
                     (this.AccountId != null &&
                     this.AccountId.Equals(input.AccountId))
-                ) && 
+                ) &&
                 (
                     this.CampaignId == input.CampaignId ||
                     (this.CampaignId != null &&
                     this.CampaignId.Equals(input.CampaignId))
-                ) && 
+                ) &&
                 (
                     this.CspId == input.CspId ||
                     (this.CspId != null &&
                     this.CspId.Equals(input.CspId))
-                ) && 
+                ) &&
                 (
                     this.ResellerId == input.ResellerId ||
                     (this.ResellerId != null &&
                     this.ResellerId.Equals(input.ResellerId))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
-                ) && 
+                ) &&
                 (
                     this.CreateDate == input.CreateDate ||
                     (this.CreateDate != null &&
                     this.CreateDate.Equals(input.CreateDate))
-                ) && 
+                ) &&
                 (
                     this.AutoRenewal == input.AutoRenewal ||
                     this.AutoRenewal.Equals(input.AutoRenewal)
-                ) && 
+                ) &&
                 (
                     this.BilledDate == input.BilledDate ||
                     (this.BilledDate != null &&
                     this.BilledDate.Equals(input.BilledDate))
-                ) && 
+                ) &&
                 (
                     this.BrandId == input.BrandId ||
                     (this.BrandId != null &&
                     this.BrandId.Equals(input.BrandId))
-                ) && 
+                ) &&
                 (
                     this.Usecase == input.Usecase ||
                     (this.Usecase != null &&
                     this.Usecase.Equals(input.Usecase))
-                ) && 
+                ) &&
                 (
                     this.SubUsecases == input.SubUsecases ||
                     this.SubUsecases != null &&
                     input.SubUsecases != null &&
                     this.SubUsecases.SequenceEqual(input.SubUsecases)
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.EmbeddedLink == input.EmbeddedLink ||
                     this.EmbeddedLink.Equals(input.EmbeddedLink)
-                ) && 
+                ) &&
                 (
                     this.EmbeddedPhone == input.EmbeddedPhone ||
                     this.EmbeddedPhone.Equals(input.EmbeddedPhone)
-                ) && 
+                ) &&
                 (
                     this.AffiliateMarketing == input.AffiliateMarketing ||
                     this.AffiliateMarketing.Equals(input.AffiliateMarketing)
-                ) && 
+                ) &&
                 (
                     this.NumberPool == input.NumberPool ||
                     this.NumberPool.Equals(input.NumberPool)
-                ) && 
+                ) &&
                 (
                     this.AgeGated == input.AgeGated ||
                     this.AgeGated.Equals(input.AgeGated)
-                ) && 
+                ) &&
                 (
                     this.DirectLending == input.DirectLending ||
                     this.DirectLending.Equals(input.DirectLending)
-                ) && 
+                ) &&
                 (
                     this.SubscriberOptin == input.SubscriberOptin ||
                     this.SubscriberOptin.Equals(input.SubscriberOptin)
-                ) && 
+                ) &&
                 (
                     this.SubscriberOptout == input.SubscriberOptout ||
                     this.SubscriberOptout.Equals(input.SubscriberOptout)
-                ) && 
+                ) &&
                 (
                     this.SubscriberHelp == input.SubscriberHelp ||
                     this.SubscriberHelp.Equals(input.SubscriberHelp)
-                ) && 
+                ) &&
                 (
                     this.Sample1 == input.Sample1 ||
                     (this.Sample1 != null &&
                     this.Sample1.Equals(input.Sample1))
-                ) && 
+                ) &&
                 (
                     this.Sample2 == input.Sample2 ||
                     (this.Sample2 != null &&
                     this.Sample2.Equals(input.Sample2))
-                ) && 
+                ) &&
                 (
                     this.Sample3 == input.Sample3 ||
                     (this.Sample3 != null &&
                     this.Sample3.Equals(input.Sample3))
-                ) && 
+                ) &&
                 (
                     this.Sample4 == input.Sample4 ||
                     (this.Sample4 != null &&
                     this.Sample4.Equals(input.Sample4))
-                ) && 
+                ) &&
                 (
                     this.Sample5 == input.Sample5 ||
                     (this.Sample5 != null &&
                     this.Sample5.Equals(input.Sample5))
-                ) && 
+                ) &&
                 (
                     this.MessageFlow == input.MessageFlow ||
                     (this.MessageFlow != null &&
                     this.MessageFlow.Equals(input.MessageFlow))
-                ) && 
+                ) &&
                 (
                     this.HelpMessage == input.HelpMessage ||
                     (this.HelpMessage != null &&
                     this.HelpMessage.Equals(input.HelpMessage))
-                ) && 
+                ) &&
                 (
                     this.ReferenceId == input.ReferenceId ||
                     (this.ReferenceId != null &&
                     this.ReferenceId.Equals(input.ReferenceId))
-                ) && 
+                ) &&
                 (
                     this.Mock == input.Mock ||
                     this.Mock.Equals(input.Mock)
-                ) && 
+                ) &&
                 (
                     this.NextRenewalOrExpirationDate == input.NextRenewalOrExpirationDate ||
                     (this.NextRenewalOrExpirationDate != null &&
@@ -746,73 +752,73 @@ namespace freeclimb.Model
             // ResellerId (string) maxLength
             if (this.ResellerId != null && this.ResellerId.Length > 8)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ResellerId, length must be less than 8.", new [] { "ResellerId" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ResellerId, length must be less than 8.", new[] { "ResellerId" });
             }
 
             // BrandId (string) maxLength
             if (this.BrandId != null && this.BrandId.Length > 8)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BrandId, length must be less than 8.", new [] { "BrandId" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BrandId, length must be less than 8.", new[] { "BrandId" });
             }
 
             // Usecase (string) maxLength
             if (this.Usecase != null && this.Usecase.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Usecase, length must be less than 20.", new [] { "Usecase" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Usecase, length must be less than 20.", new[] { "Usecase" });
             }
 
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 4096)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 4096.", new [] { "Description" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 4096.", new[] { "Description" });
             }
 
             // Sample1 (string) maxLength
             if (this.Sample1 != null && this.Sample1.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample1, length must be less than 1024.", new [] { "Sample1" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample1, length must be less than 1024.", new[] { "Sample1" });
             }
 
             // Sample2 (string) maxLength
             if (this.Sample2 != null && this.Sample2.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample2, length must be less than 1024.", new [] { "Sample2" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample2, length must be less than 1024.", new[] { "Sample2" });
             }
 
             // Sample3 (string) maxLength
             if (this.Sample3 != null && this.Sample3.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample3, length must be less than 1024.", new [] { "Sample3" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample3, length must be less than 1024.", new[] { "Sample3" });
             }
 
             // Sample4 (string) maxLength
             if (this.Sample4 != null && this.Sample4.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample4, length must be less than 1024.", new [] { "Sample4" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample4, length must be less than 1024.", new[] { "Sample4" });
             }
 
             // Sample5 (string) maxLength
             if (this.Sample5 != null && this.Sample5.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample5, length must be less than 1024.", new [] { "Sample5" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Sample5, length must be less than 1024.", new[] { "Sample5" });
             }
 
             // MessageFlow (string) maxLength
             if (this.MessageFlow != null && this.MessageFlow.Length > 2048)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MessageFlow, length must be less than 2048.", new [] { "MessageFlow" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MessageFlow, length must be less than 2048.", new[] { "MessageFlow" });
             }
 
             // HelpMessage (string) maxLength
             if (this.HelpMessage != null && this.HelpMessage.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HelpMessage, length must be less than 255.", new [] { "HelpMessage" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HelpMessage, length must be less than 255.", new[] { "HelpMessage" });
             }
 
             // ReferenceId (string) maxLength
             if (this.ReferenceId != null && this.ReferenceId.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceId, length must be less than 50.", new [] { "ReferenceId" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceId, length must be less than 50.", new[] { "ReferenceId" });
             }
 
             yield break;
