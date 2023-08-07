@@ -211,7 +211,7 @@ namespace freeclimb.Model
             List<object> nested = new List<object>();
             foreach (var item in Prompts)
             {
-                nested.Add(item.ToKvp());
+                nested.Add(item);
             }
             props.Add("prompts", nested); 
             props.Add("privacyMode", PrivacyMode);          
