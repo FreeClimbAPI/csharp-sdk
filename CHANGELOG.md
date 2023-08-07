@@ -8,6 +8,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 
 None
+<a name="4.5.2"></a>
+
+## [4.5.2] 2023-07-26
+
+### Changed
+
+- Added C# SDK Unit Testing
 
 <a name="4.5.1"></a>
 
