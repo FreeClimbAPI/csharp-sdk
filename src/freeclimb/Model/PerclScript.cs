@@ -93,7 +93,7 @@ namespace freeclimb.Model
             List<object> nested = new List<object>();
             foreach (var item in Commands)
             {
-                nested.Add(item);
+                nested.Add(item.ToKvp());
             }
             props.Add("commands", nested); 
             return props;

@@ -9,15 +9,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
-<a name="4.6.0"></a>
-
-## [4.6.0] 2023-08-07
-
-### Changed
-
-- Added Unit Testing for C# SDK
-- Updated Enum Values in C# SDK
-
 <a name="4.5.1"></a>
 
 ## [4.5.1] 2023-07-26
