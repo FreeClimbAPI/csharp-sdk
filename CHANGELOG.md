@@ -11,11 +11,12 @@ None
 
 <a name="4.5.2"></a>
 
-## [4.5.2] 2023-08-02
+## [4.6.0] 2023-08-07
 
 ### Changed
 
 - Added Unit Testing for C# SDK
+- Updated Enum Values in C# SDK
 
 <a name="4.5.1"></a>
 
