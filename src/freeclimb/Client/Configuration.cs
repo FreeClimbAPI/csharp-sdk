@@ -32,7 +32,7 @@ namespace freeclimb.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "4.5.1";
+        public const string Version = "4.5.2";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -107,7 +107,7 @@ namespace freeclimb.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "OpenAPI-Generator/4.5.1/csharp";
+            UserAgent = "OpenAPI-Generator/4.5.2/csharp";
             BasePath = "https://www.freeclimb.com/apiserver";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -452,7 +452,7 @@ namespace freeclimb.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 1.0.0\n";
-            report += "    SDK Package Version: 4.5.1\n";
+            report += "    SDK Package Version: 4.5.2\n";
 
             return report;
         }

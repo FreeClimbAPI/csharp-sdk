@@ -155,15 +155,15 @@ src/freeclimb.Test/Model/LanguageTests.cs
 src/freeclimb.Test/Model/LogLevelTests.cs
 src/freeclimb.Test/Model/MachineTypeTests.cs
 src/freeclimb.Test/Model/MessageDirectionTests.cs
+src/freeclimb.Test/Model/MessageResultAllOfTests.cs
+src/freeclimb.Test/Model/MessageResultTests.cs
 src/freeclimb.Test/Model/MessageStatusTests.cs
 src/freeclimb.Test/Model/PlayBeepTests.cs
 src/freeclimb.Test/Model/QueueResultStatusTests.cs
 src/freeclimb.Test/Model/RecordUtteranceTermReasonTests.cs
 src/freeclimb.Test/Model/RequestTypeTests.cs
 src/freeclimb.Test/Model/UpdateCallRequestStatusTests.cs
-src/freeclimb.Test/Model/UpdateCallRequestTests.cs
 src/freeclimb.Test/Model/UpdateConferenceRequestStatusTests.cs
-src/freeclimb.Test/Model/UpdateConferenceRequestTests.cs
 src/freeclimb.Test/freeclimb.Test.csproj
 src/freeclimb/Api/DefaultApi.cs
 src/freeclimb/Client/ApiClient.cs

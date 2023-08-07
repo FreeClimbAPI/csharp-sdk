@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **Text** | **string** | Message contents | [optional] 
 **Direction** | **string** | Noting whether the message was inbound or outbound | [optional] 
 **NotificationUrl** | **string** | URL invoked when message sent | [optional] 
+**BrandId** | **string** | The unique identifier for the brand associated with the message | [optional] 
+**CampaignId** | **string** | The unique identifier for the campaign associated with the message | [optional] 
+**SegmentCount** | **decimal?** | The number of segments into which the message was split | [optional] 
 
 [[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
 [[Back to Enum list]](../README.md#documentation-for-enums)<br /> 

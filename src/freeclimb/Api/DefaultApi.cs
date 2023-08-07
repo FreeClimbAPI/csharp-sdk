@@ -833,8 +833,11 @@ namespace freeclimb.Api
         /// <param name="beginTime">Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)</param>
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
+        /// <param name="campaignId">Only show messages associated with this campaign ID. (optional)</param>
+        /// <param name="brandId">Only show messages associated with this brand ID (optional)</param>
+        /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
         /// <returns>MessagesList</returns>
-        MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?));
+        MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), string campaignId = default(string), string brandId = default(string), bool? is10DLC = default(bool?));
 
         /// <summary>
         /// List SMS Messages
@@ -848,8 +851,11 @@ namespace freeclimb.Api
         /// <param name="beginTime">Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)</param>
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
+        /// <param name="campaignId">Only show messages associated with this campaign ID. (optional)</param>
+        /// <param name="brandId">Only show messages associated with this brand ID (optional)</param>
+        /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
         /// <returns>ApiResponse of MessagesList</returns>
-        ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?));
+        ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), string campaignId = default(string), string brandId = default(string), bool? is10DLC = default(bool?));
         /// <summary>
         /// Make a Call
         /// </summary>
@@ -2323,9 +2329,15 @@ namespace freeclimb.Api
         
         /// <param name="direction">Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         
+        /// <param name="campaignId">Only show messages associated with this campaign ID. (optional)</param>
+        
+        /// <param name="brandId">Only show messages associated with this brand ID (optional)</param>
+        
+        /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
+        
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessagesList</returns>
-        System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), string campaignId = default(string), string brandId = default(string), bool? is10DLC = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List SMS Messages
@@ -2345,9 +2357,15 @@ namespace freeclimb.Api
         
         /// <param name="direction">Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         
+        /// <param name="campaignId">Only show messages associated with this campaign ID. (optional)</param>
+        
+        /// <param name="brandId">Only show messages associated with this brand ID (optional)</param>
+        
+        /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
+        
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessagesList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), string campaignId = default(string), string brandId = default(string), bool? is10DLC = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Make a Call
         /// </summary>
@@ -9563,10 +9581,13 @@ namespace freeclimb.Api
         /// <param name="beginTime">Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)</param>
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
+        /// <param name="campaignId">Only show messages associated with this campaign ID. (optional)</param>
+        /// <param name="brandId">Only show messages associated with this brand ID (optional)</param>
+        /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
         /// <returns>MessagesList</returns>
-        public MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?))
+        public MessagesList ListSmsMessages(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), string campaignId = default(string), string brandId = default(string), bool? is10DLC = default(bool?))
         {
-            freeclimb.Client.ApiResponse<MessagesList> localVarResponse = ListSmsMessagesWithHttpInfo(to , from , beginTime , endTime , direction );
+            freeclimb.Client.ApiResponse<MessagesList> localVarResponse = ListSmsMessagesWithHttpInfo(to , from , beginTime , endTime , direction , campaignId , brandId , is10DLC );
             return localVarResponse.Data;
         }
 
@@ -9579,9 +9600,15 @@ namespace freeclimb.Api
         /// <param name="beginTime">Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)</param>
         /// <param name="endTime">Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)</param>
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
+        /// <param name="campaignId">Only show messages associated with this campaign ID. (optional)</param>
+        /// <param name="brandId">Only show messages associated with this brand ID (optional)</param>
+        /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
         /// <returns>ApiResponse of MessagesList</returns>
-        public freeclimb.Client.ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?))
+        public freeclimb.Client.ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), string campaignId = default(string), string brandId = default(string), bool? is10DLC = default(bool?))
         {
+            
+            
+            
             
             
             
@@ -9630,6 +9657,18 @@ namespace freeclimb.Api
             if (direction != null)
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "direction", direction));
+            }
+            if (campaignId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "campaignId", campaignId));
+            }
+            if (brandId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "brandId", brandId));
+            }
+            if (is10DLC != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "is10DLC", is10DLC));
             }
 
             // authentication (fc) required
@@ -9668,11 +9707,17 @@ namespace freeclimb.Api
         
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         
+        /// <param name="campaignId">Only show messages associated with this campaign ID. (optional)</param>
+        
+        /// <param name="brandId">Only show messages associated with this brand ID (optional)</param>
+        
+        /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
+        
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessagesList</returns>
-        public async System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), string campaignId = default(string), string brandId = default(string), bool? is10DLC = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<MessagesList> localVarResponse = await ListSmsMessagesWithHttpInfoAsync(to, from, beginTime, endTime, direction, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<MessagesList> localVarResponse = await ListSmsMessagesWithHttpInfoAsync(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -9691,10 +9736,19 @@ namespace freeclimb.Api
         
         /// <param name="direction">Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)</param>
         
+        /// <param name="campaignId">Only show messages associated with this campaign ID. (optional)</param>
+        
+        /// <param name="brandId">Only show messages associated with this brand ID (optional)</param>
+        
+        /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
+        
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessagesList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<MessagesList>> ListSmsMessagesWithHttpInfoAsync(string to = default(string), string from = default(string), string beginTime = default(string), string endTime = default(string), MessageDirection? direction = default(MessageDirection?), string campaignId = default(string), string brandId = default(string), bool? is10DLC = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            
+            
+            
             
             
             
@@ -9744,6 +9798,18 @@ namespace freeclimb.Api
             if (direction != null)
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "direction", direction));
+            }
+            if (campaignId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "campaignId", campaignId));
+            }
+            if (brandId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "brandId", brandId));
+            }
+            if (is10DLC != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "is10DLC", is10DLC));
             }
 
             // authentication (fc) required

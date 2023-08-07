@@ -195,6 +195,36 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.NotificationUrl);
             
         }
+        /// <summary>
+        /// Test the property 'BrandId'
+        /// </summary>
+        [Fact]
+        public void BrandIdTest()
+        {
+            instance.BrandId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.BrandId);
+            
+        }
+        /// <summary>
+        /// Test the property 'CampaignId'
+        /// </summary>
+        [Fact]
+        public void CampaignIdTest()
+        {
+            instance.CampaignId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CampaignId);
+            
+        }
+        /// <summary>
+        /// Test the property 'SegmentCount'
+        /// </summary>
+        [Fact]
+        public void SegmentCountTest()
+        {
+            instance.SegmentCount = new decimal(1.0);
+            Assert.Equal(new decimal(1.0), instance.SegmentCount);
+            
+        }
         
         
         /// <summary>
@@ -216,6 +246,8 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
+         test1.BrandId = "TS";
+         test1.CampaignId = "TS";
 
         MessageResult test2 = new MessageResult();
          test2.Uri = "TS";
@@ -230,6 +262,8 @@ namespace freeclimb.Test.Model
          test2.Text = "TS";
          test2.Direction = "TS";
          test2.NotificationUrl = "TS";
+         test2.BrandId = "TS";
+         test2.CampaignId = "TS";
 
         Assert.Equal(test1,test2);
         }
@@ -253,6 +287,8 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
+         test1.BrandId = "TS";
+         test1.CampaignId = "TS";
 
         MessageResult test2 = new MessageResult();
          test2.Uri = "ts";
@@ -267,6 +303,8 @@ namespace freeclimb.Test.Model
          test2.Text = "ts";
          test2.Direction = "ts";
          test2.NotificationUrl = "ts";
+         test2.BrandId = "ts";
+         test2.CampaignId = "ts";
 
         Assert.NotEqual(test1,test2);
         }
@@ -290,6 +328,8 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
+         test1.BrandId = "TS";
+         test1.CampaignId = "TS";
 
         int hashCode1 = test1.GetHashCode();
         Assert.True(hashCode1.GetType() == typeof(int));
@@ -315,6 +355,8 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
+         test1.BrandId = "TS";
+         test1.CampaignId = "TS";
 
         string toString1 = test1.ToString();
         Assert.True(toString1.GetType() == typeof(string));
@@ -340,6 +382,8 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
+         test1.BrandId = "TS";
+         test1.CampaignId = "TS";
 
         MessageResult test2 = new MessageResult();
          test2.Uri = "TS";
@@ -354,6 +398,8 @@ namespace freeclimb.Test.Model
          test2.Text = "TS";
          test2.Direction = "TS";
          test2.NotificationUrl = "TS";
+         test2.BrandId = "TS";
+         test2.CampaignId = "TS";
 
         string toString1 = test1.ToString();
         string toString2 = test2.ToString();
@@ -380,6 +426,8 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
+         test1.BrandId = "TS";
+         test1.CampaignId = "TS";
 
         MessageResult test2 = new MessageResult();
          test2.Uri = "TS";
@@ -394,6 +442,8 @@ namespace freeclimb.Test.Model
          test2.Text = "TS";
          test2.Direction = "TS";
          test2.NotificationUrl = "TS";
+         test2.BrandId = "TS";
+         test2.CampaignId = "TS";
 
         Assert.True(test1.Equals(test2));
         }
@@ -417,6 +467,8 @@ namespace freeclimb.Test.Model
          test1.Text = "TS";
          test1.Direction = "TS";
          test1.NotificationUrl = "TS";
+         test1.BrandId = "TS";
+         test1.CampaignId = "TS";
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
         MessageResult test2 = new MessageResult();
@@ -432,6 +484,8 @@ namespace freeclimb.Test.Model
          test2.Text = "TS";
          test2.Direction = "TS";
          test2.NotificationUrl = "TS";
+         test2.BrandId = "TS";
+         test2.CampaignId = "TS";
 
         Assert.True(jsonStr.Equals(test2.ToJson()));
         }
