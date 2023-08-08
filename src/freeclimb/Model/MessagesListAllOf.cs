@@ -81,7 +81,7 @@ namespace freeclimb.Model
             List<object> nested = new List<object>();
             foreach (var item in Messages)
             {
-                nested.Add(item.ToKvp());
+                nested.Add(item);
             }
             props.Add("messages", nested); 
             return props;

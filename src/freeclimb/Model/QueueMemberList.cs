@@ -157,7 +157,7 @@ namespace freeclimb.Model
             List<object> nested = new List<object>();
             foreach (var item in QueueMembers)
             {
-                nested.Add(item.ToKvp());
+                nested.Add(item);
             }
             props.Add("queueMembers", nested); 
             return props;
