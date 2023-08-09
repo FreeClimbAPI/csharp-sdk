@@ -133,6 +133,8 @@ docs/SmsAllOf.md
 docs/StartRecordCall.md
 docs/TerminateConference.md
 docs/TerminateConferenceAllOf.md
+docs/TranscribeUtterance.md
+docs/TranscribeUtteranceRecord.md
 docs/Unpark.md
 docs/UpdateCallRequest.md
 docs/UpdateCallRequestStatus.md
@@ -155,13 +157,13 @@ src/freeclimb.Test/Model/LanguageTests.cs
 src/freeclimb.Test/Model/LogLevelTests.cs
 src/freeclimb.Test/Model/MachineTypeTests.cs
 src/freeclimb.Test/Model/MessageDirectionTests.cs
-src/freeclimb.Test/Model/MessageResultAllOfTests.cs
-src/freeclimb.Test/Model/MessageResultTests.cs
 src/freeclimb.Test/Model/MessageStatusTests.cs
 src/freeclimb.Test/Model/PlayBeepTests.cs
 src/freeclimb.Test/Model/QueueResultStatusTests.cs
 src/freeclimb.Test/Model/RecordUtteranceTermReasonTests.cs
 src/freeclimb.Test/Model/RequestTypeTests.cs
+src/freeclimb.Test/Model/TranscribeUtteranceRecordTests.cs
+src/freeclimb.Test/Model/TranscribeUtteranceTests.cs
 src/freeclimb.Test/Model/UpdateCallRequestStatusTests.cs
 src/freeclimb.Test/Model/UpdateConferenceRequestStatusTests.cs
 src/freeclimb.Test/freeclimb.Test.csproj
@@ -314,6 +316,8 @@ src/freeclimb/Model/SmsAllOf.cs
 src/freeclimb/Model/StartRecordCall.cs
 src/freeclimb/Model/TerminateConference.cs
 src/freeclimb/Model/TerminateConferenceAllOf.cs
+src/freeclimb/Model/TranscribeUtterance.cs
+src/freeclimb/Model/TranscribeUtteranceRecord.cs
 src/freeclimb/Model/Unpark.cs
 src/freeclimb/Model/UpdateCallRequest.cs
 src/freeclimb/Model/UpdateCallRequestStatus.cs
