@@ -50,8 +50,7 @@ namespace freeclimb.Model
         public TranscribeUtterance(string actionUrl = default(string), bool playBeep = false, TranscribeUtteranceRecord record = default(TranscribeUtteranceRecord), bool privacyForLogging = false, bool privacyForRecording = false, List<Object> prompts = default(List<Object>))
         {
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null)
-            {
+            if (actionUrl == null) {
                 throw new ArgumentNullException("actionUrl is a required property for TranscribeUtterance and cannot be null");
             }
             this.ActionUrl = actionUrl;
@@ -132,20 +131,20 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);
-            props.Add("playBeep", PlayBeep);
-            props.Add("record", Record);
-            props.Add("privacyForLogging", PrivacyForLogging);
-            props.Add("privacyForRecording", PrivacyForRecording);
+            props.Add("actionUrl", ActionUrl);          
+            props.Add("playBeep", PlayBeep);          
+            props.Add("record", Record);          
+            props.Add("privacyForLogging", PrivacyForLogging);          
+            props.Add("privacyForRecording", PrivacyForRecording);          
             List<object> nested = new List<object>();
             foreach (var item in Prompts)
             {
                 nested.Add(item);
             }
-            props.Add("prompts", nested);
+            props.Add("prompts", nested); 
             return props;
         }
-
+        
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
@@ -167,29 +166,29 @@ namespace freeclimb.Model
             {
                 return false;
             }
-            return
+            return 
                 (
                     this.ActionUrl == input.ActionUrl ||
                     (this.ActionUrl != null &&
                     this.ActionUrl.Equals(input.ActionUrl))
-                ) &&
+                ) && 
                 (
                     this.PlayBeep == input.PlayBeep ||
                     this.PlayBeep.Equals(input.PlayBeep)
-                ) &&
+                ) && 
                 (
                     this.Record == input.Record ||
                     (this.Record != null &&
                     this.Record.Equals(input.Record))
-                ) &&
+                ) && 
                 (
                     this.PrivacyForLogging == input.PrivacyForLogging ||
                     this.PrivacyForLogging.Equals(input.PrivacyForLogging)
-                ) &&
+                ) && 
                 (
                     this.PrivacyForRecording == input.PrivacyForRecording ||
                     this.PrivacyForRecording.Equals(input.PrivacyForRecording)
-                ) &&
+                ) && 
                 (
                     this.Prompts == input.Prompts ||
                     this.Prompts != null &&
