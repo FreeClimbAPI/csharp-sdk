@@ -110,10 +110,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PromptsTest()
         {
-            //object[] testArray = {"ElementOne", "ElementTwo", "ElementThree"};
-            //instance.Prompts = testArray;
-            //Assert.Equal(testArray, instance.Prompts); 
-
+            object[] testArray = { "ElementOne", "ElementTwo", "ElementThree" };
+            List<object> testList = testArray.ToList();
+            instance.Prompts = testList;
+            Assert.Equal(testList, instance.Prompts);
         }
 
 
