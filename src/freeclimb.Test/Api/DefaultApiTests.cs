@@ -751,7 +751,13 @@ namespace freeclimb.Test.Api
 	        
             MessageDirection? direction = directionTestEnum();
 	        
-            var response = instance.ListSmsMessages(to, from, beginTime, endTime, direction);
+            string campaignId = campaignIdTestValue();
+	        
+            string brandId = brandIdTestValue();
+	        
+            bool? is10DLC = is10DLCTestValue();
+	        
+            var response = instance.ListSmsMessages(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
             //Assert.IsType<MessagesList>(response);
             Assert.IsAssignableFrom<MessagesList>(response);
         }
@@ -1322,6 +1328,11 @@ namespace freeclimb.Test.Api
         }
 
         private bool hasCampaignTestValue()
+        {
+            return true;
+        }
+
+        private bool is10DLCTestValue() 
         {
             return true;
         }
