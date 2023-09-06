@@ -121,7 +121,13 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
+
+            return strb.ToString();
         }
 
         /// <summary>
@@ -142,7 +148,9 @@ namespace freeclimb.Model
                 nested.Add(item);
             }
             props.Add("prompts", nested); 
-            return props;
+            IDictionary<string, object> command = new Dictionary<string, object>();
+            command.Add("TranscribeUtterance",props);
+            return command;
         }
         
         /// <summary>
