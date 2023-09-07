@@ -83,16 +83,8 @@
     "schemas": {
       "AccountStatus": {
         "type": "string",
-        "enum": [
-          "closed",
-          "suspended",
-          "active"
-        ],
-        "x-enum-varnames": [
-          "CLOSED",
-          "SUSPENDED",
-          "ACTIVE"
-        ],
+        "enum": ["closed", "suspended", "active"],
+        "x-enum-varnames": ["CLOSED", "SUSPENDED", "ACTIVE"],
         "x-enum": true,
         "description": "The status of this account. It is one of: active, suspended, or closed.",
         "nullable": true
@@ -100,44 +92,24 @@
       "AccountType": {
         "type": "string",
         "description": "The type of this account. It is one of: trial or full.",
-        "enum": [
-          "trial",
-          "full"
-        ],
+        "enum": ["trial", "full"],
         "x-enum": true,
-        "x-enum-varnames": [
-          "TRIAL",
-          "FULL"
-        ],
+        "x-enum-varnames": ["TRIAL", "FULL"],
         "nullable": true
       },
       "AnsweredBy": {
         "type": "string",
         "nullable": true,
-        "enum": [
-          "human",
-          "machine"
-        ],
-        "x-enum-varnames": [
-          "HUMAN",
-          "MACHINE"
-        ],
+        "enum": ["human", "machine"],
+        "x-enum-varnames": ["HUMAN", "MACHINE"],
         "x-enum": true,
         "description": "If this Call was initiated with answering machine detection, either `human` or `machine`. Empty otherwise."
       },
       "CallDirection": {
         "type": "string",
         "nullable": true,
-        "enum": [
-          "inbound",
-          "outboundAPI",
-          "outboundDial"
-        ],
-        "x-enum-varnames": [
-          "INBOUND",
-          "OUTBOUND_API",
-          "OUTBOUND_DIAL"
-        ],
+        "enum": ["inbound", "outboundAPI", "outboundDial"],
+        "x-enum-varnames": ["INBOUND", "OUTBOUND_API", "OUTBOUND_DIAL"],
         "x-enum": true,
         "description": "Direction of the Call. `inbound` for Calls into FreeClimb, `outboundAPI` for Calls initiated via the REST API,  `outboundDial` for Calls initiated by the `OutDial` PerCL command."
       },
@@ -170,18 +142,8 @@
       "ConferenceStatus": {
         "type": "string",
         "nullable": true,
-        "enum": [
-          "empty",
-          "populated",
-          "inProgress",
-          "terminated"
-        ],
-        "x-enum-varnames": [
-          "EMPTY",
-          "POPULATED",
-          "IN_PROGRESS",
-          "TERMINATED"
-        ],
+        "enum": ["empty", "populated", "inProgress", "terminated"],
+        "x-enum-varnames": ["EMPTY", "POPULATED", "IN_PROGRESS", "TERMINATED"],
         "x-enum": true,
         "description": "The status of the Conference. One of: creating, empty, populated, inProgress, or terminated."
       },
@@ -245,28 +207,16 @@
       },
       "GrammarType": {
         "type": "string",
-        "enum": [
-          "URL",
-          "BUILTIN"
-        ],
+        "enum": ["URL", "BUILTIN"],
         "nullable": true,
-        "x-enum-varnames": [
-          "URL",
-          "BUILT_IN"
-        ],
+        "x-enum-varnames": ["URL", "BUILT_IN"],
         "x-enum": true,
         "description": "The grammar file type to use for speech recognition. A value of 'URL' indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of `BUILTIN` indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files."
       },
       "IfMachine": {
         "type": "string",
-        "enum": [
-          "redirect",
-          "hangup"
-        ],
-        "x-enum-varnames": [
-          "REDIRECT",
-          "HANGUP"
-        ],
+        "enum": ["redirect", "hangup"],
+        "x-enum-varnames": ["REDIRECT", "HANGUP"],
         "x-enum": true,
         "description": "Specifies how FreeClimb should handle this OutDial if an answering machine answers the Call. Valid values: `redirect` invokes the ifMachineUrl for instructions. `hangup` hangs up the Call. The ifMachineUrl will not be invoked."
       },
@@ -332,42 +282,22 @@
       },
       "LogLevel": {
         "type": "string",
-        "enum": [
-          "info",
-          "warning",
-          "error"
-        ],
+        "enum": ["info", "warning", "error"],
         "nullable": true,
-        "x-enum-varnames": [
-          "INFO",
-          "WARNING",
-          "ERROR"
-        ],
+        "x-enum-varnames": ["INFO", "WARNING", "ERROR"],
         "x-enum": true,
         "description": "Level of the log. Possible values are info, warning, and error."
       },
       "MachineType": {
         "type": "string",
-        "enum": [
-          "answeringMachine",
-          "faxMachine"
-        ],
-        "x-enum-varnames": [
-          "ANSWERING_MACHINE",
-          "FAX_MACHINE"
-        ],
+        "enum": ["answeringMachine", "faxMachine"],
+        "x-enum-varnames": ["ANSWERING_MACHINE", "FAX_MACHINE"],
         "x-enum": true
       },
       "MessageDirection": {
         "type": "string",
-        "enum": [
-          "inbound",
-          "outbound"
-        ],
-        "x-enum-varnames": [
-          "INBOUND",
-          "OUTBOUND"
-        ],
+        "enum": ["inbound", "outbound"],
+        "x-enum-varnames": ["INBOUND", "OUTBOUND"],
         "x-enum": true
       },
       "MessageStatus": {
@@ -405,18 +335,8 @@
       "PlayBeep": {
         "type": "string",
         "nullable": true,
-        "enum": [
-          "always",
-          "never",
-          "entryOnly",
-          "exitOnly"
-        ],
-        "x-enum-varnames": [
-          "ALWAYS",
-          "NEVER",
-          "ENTRY_ONLY",
-          "EXIT_ONLY"
-        ],
+        "enum": ["always", "never", "entryOnly", "exitOnly"],
+        "x-enum-varnames": ["ALWAYS", "NEVER", "ENTRY_ONLY", "EXIT_ONLY"],
         "x-enum": true,
         "description": "Indicates whether to play a beep when a Participant enters or leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`. Leaving this unset will make conference default to `always` ",
         "default": "always",
@@ -424,34 +344,14 @@
       },
       "QueueResultStatus": {
         "type": "string",
-        "enum": [
-          "queueFull",
-          "dequeued",
-          "hangup",
-          "systemError"
-        ],
-        "x-enum-varnames": [
-          "QUEUE_FULL",
-          "DEQUEUED",
-          "HANGUP",
-          "SYSTEM_ERROR"
-        ],
+        "enum": ["queueFull", "dequeued", "hangup", "systemError"],
+        "x-enum-varnames": ["QUEUE_FULL", "DEQUEUED", "HANGUP", "SYSTEM_ERROR"],
         "x-enum": true
       },
       "RecordUtteranceTermReason": {
         "type": "string",
-        "enum": [
-          "finishKey",
-          "timeout",
-          "hangup",
-          "maxLength"
-        ],
-        "x-enum-varnames": [
-          "FINISH_KEY",
-          "TIMEOUT",
-          "HANGUP",
-          "MAX_LENGTH"
-        ],
+        "enum": ["finishKey", "timeout", "hangup", "maxLength"],
+        "x-enum-varnames": ["FINISH_KEY", "TIMEOUT", "HANGUP", "MAX_LENGTH"],
         "x-enum": true
       },
       "RequestType": {
@@ -510,27 +410,15 @@
       },
       "UpdateCallRequestStatus": {
         "type": "string",
-        "enum": [
-          "canceled",
-          "completed"
-        ],
-        "x-enum-varnames": [
-          "CANCELED",
-          "COMPLETED"
-        ],
+        "enum": ["canceled", "completed"],
+        "x-enum-varnames": ["CANCELED", "COMPLETED"],
         "x-enum": true,
         "description": "Either `canceled` or `completed`.  Specifying `canceled` attempts to hang up calls that are queued without affecting calls already in progress. Specifying `completed` attempts to hang up a call already in progress."
       },
       "UpdateConferenceRequestStatus": {
         "type": "string",
-        "enum": [
-          "empty",
-          "terminated"
-        ],
-        "x-enum-varnames": [
-          "EMPTY",
-          "TERMINATED"
-        ],
+        "enum": ["empty", "terminated"],
+        "x-enum-varnames": ["EMPTY", "TERMINATED"],
         "x-enum": true,
         "description": "New status of the conference. Valid values: `empty` or `terminated`. For more information, see **Status Parameter** below.**"
       },
@@ -579,6 +467,7 @@
             "Sms": "#/components/schemas/Sms",
             "StartRecordCall": "#/components/schemas/StartRecordCall",
             "TerminateConference": "#/components/schemas/TerminateConference",
+            "TranscribeUtterance": "#/components/schemas/TranscribeUtterance",
             "Unpark": "#/components/schemas/Unpark"
           }
         },
@@ -598,9 +487,7 @@
           },
           {
             "type": "object",
-            "required": [
-              "conferenceId"
-            ],
+            "required": ["conferenceId"],
             "properties": {
               "allowCallControl": {
                 "description": "If `true`, Call control will be enabled for this Participant's Call leg.",
@@ -656,9 +543,7 @@
           },
           {
             "type": "object",
-            "required": [
-              "actionUrl"
-            ],
+            "required": ["actionUrl"],
             "properties": {
               "actionUrl": {
                 "description": " This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response. ",
@@ -711,11 +596,7 @@
           },
           {
             "type": "object",
-            "required": [
-              "queueId",
-              "waitUrl",
-              "actionUrl"
-            ],
+            "required": ["queueId", "waitUrl", "actionUrl"],
             "properties": {
               "actionUrl": {
                 "description": "A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the `Dequeue` command, the REST API (POST to Queue Member resource), or the caller hangs up.",
@@ -749,9 +630,7 @@
           },
           {
             "type": "object",
-            "required": [
-              "actionUrl"
-            ],
+            "required": ["actionUrl"],
             "properties": {
               "actionUrl": {
                 "description": "When the Caller has finished entering digits, FreeClimb will make an HTTP POST request to this URL. A PerCL response is expected to continue handling the Call. Make sure to keep “http://“ in the URL.",
@@ -807,10 +686,7 @@
           },
           {
             "type": "object",
-            "required": [
-              "actionUrl",
-              "grammarFile"
-            ],
+            "required": ["actionUrl", "grammarFile"],
             "properties": {
               "actionUrl": {
                 "description": "When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call.",
@@ -963,10 +839,7 @@
           },
           {
             "type": "object",
-            "required": [
-              "waitUrl",
-              "actionUrl"
-            ],
+            "required": ["waitUrl", "actionUrl"],
             "properties": {
               "waitUrl": {
                 "description": "Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is Parked. Once the script returned by the waitUrl runs out of commands to execute, FreeClimb will re-request the waitUrl and start over, essentially looping the script requests indefinitely.",
@@ -995,9 +868,7 @@
           },
           {
             "type": "object",
-            "required": [
-              "length"
-            ],
+            "required": ["length"],
             "properties": {
               "length": {
                 "description": "Length in milliseconds. FreeClimb will wait silently before continuing on.",
@@ -1015,9 +886,7 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": [
-              "file"
-            ],
+            "required": ["file"],
             "type": "object",
             "properties": {
               "file": {
@@ -1048,9 +917,7 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": [
-              "file"
-            ],
+            "required": ["file"],
             "type": "object",
             "properties": {
               "file": {
@@ -1070,9 +937,7 @@
             "x-is-uri": true
           },
           {
-            "required": [
-              "actionUrl"
-            ],
+            "required": ["actionUrl"],
             "type": "object",
             "properties": {
               "actionUrl": {
@@ -1117,9 +982,7 @@
             "x-is-uri": true
           },
           {
-            "required": [
-              "actionUrl"
-            ],
+            "required": ["actionUrl"],
             "type": "object",
             "properties": {
               "actionUrl": {
@@ -1157,9 +1020,7 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": [
-              "callId"
-            ],
+            "required": ["callId"],
             "type": "object",
             "properties": {
               "callId": {
@@ -1178,9 +1039,7 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": [
-              "text"
-            ],
+            "required": ["text"],
             "type": "object",
             "properties": {
               "text": {
@@ -1216,9 +1075,7 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": [
-              "digits"
-            ],
+            "required": ["digits"],
             "type": "object",
             "properties": {
               "digits": {
@@ -1245,9 +1102,7 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": [
-              "callId"
-            ],
+            "required": ["callId"],
             "type": "object",
             "properties": {
               "callId": {
@@ -1270,9 +1125,7 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": [
-              "callId"
-            ],
+            "required": ["callId"],
             "type": "object",
             "properties": {
               "callId": {
@@ -1295,11 +1148,7 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": [
-              "to",
-              "from",
-              "text"
-            ],
+            "required": ["to", "from", "text"],
             "type": "object",
             "properties": {
               "to": {
@@ -1343,9 +1192,7 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": [
-              "conferenceId"
-            ],
+            "required": ["conferenceId"],
             "type": "object",
             "properties": {
               "conferenceId": {
@@ -1433,13 +1280,7 @@
       "Capabilities": {
         "description": "Details for which features this number may be used.",
         "type": "object",
-        "required": [
-          "voice",
-          "sms",
-          "tollFree",
-          "tenDLC",
-          "shortCode"
-        ],
+        "required": ["voice", "sms", "tollFree", "tenDLC", "shortCode"],
         "x-is-object": true,
         "properties": {
           "voice": {
@@ -1813,9 +1654,7 @@
       },
       "BuyIncomingNumberRequest": {
         "type": "object",
-        "required": [
-          "phoneNumber"
-        ],
+        "required": ["phoneNumber"],
         "properties": {
           "phoneNumber": {
             "type": "string",
@@ -1914,9 +1753,7 @@
       },
       "UpdateCallRequest": {
         "type": "object",
-        "required": [
-          "status"
-        ],
+        "required": ["status"],
         "properties": {
           "status": {
             "$ref": "#/components/schemas/UpdateCallRequestStatus"
@@ -1925,10 +1762,7 @@
       },
       "MakeCallRequest": {
         "type": "object",
-        "required": [
-          "from",
-          "to"
-        ],
+        "required": ["from", "to"],
         "properties": {
           "from": {
             "type": "string",
@@ -2196,11 +2030,7 @@
           },
           {
             "type": "object",
-            "required": [
-              "from",
-              "to",
-              "text"
-            ],
+            "required": ["from", "to", "text"],
             "properties": {
               "from": {
                 "type": "string",
@@ -2559,9 +2389,7 @@
       },
       "FilterLogsRequest": {
         "type": "object",
-        "required": [
-          "pql"
-        ],
+        "required": ["pql"],
         "properties": {
           "pql": {
             "type": "string",
@@ -2616,7 +2444,6 @@
           },
           "resellerId": {
             "maxLength": 8,
-            "x-max-length-8": true,
             "type": "string",
             "nullable": true,
             "description": "Alphanumeric identifier of the reseller that you want to associate with this campaign."
@@ -2625,14 +2452,8 @@
             "type": "string",
             "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
-            "enum": [
-              "ACTIVE",
-              "EXPIRED"
-            ],
-            "x-enum-varnames": [
-              "ACTIVE",
-              "EXPIRED"
-            ]
+            "enum": ["ACTIVE", "EXPIRED"],
+            "x-enum-varnames": ["ACTIVE", "EXPIRED"]
           },
           "createDate": {
             "type": "string",
@@ -2653,7 +2474,6 @@
           },
           "brandId": {
             "maxLength": 8,
-            "x-max-length-8": true,
             "type": "string",
             "description": "Alphanumeric identifier of the brand associated with this campaign."
           },
@@ -2833,12 +2653,7 @@
         ]
       },
       "SMSTenDLCPartnerCampaign": {
-        "required": [
-          "brandId",
-          "campaignId",
-          "description",
-          "usecase"
-        ],
+        "required": ["brandId", "campaignId", "description", "usecase"],
         "type": "object",
         "properties": {
           "accountId": {
@@ -2854,14 +2669,8 @@
             "type": "string",
             "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
-            "enum": [
-              "ACTIVE",
-              "EXPIRED"
-            ],
-            "x-enum-varnames": [
-              "ACTIVE",
-              "EXPIRED"
-            ]
+            "enum": ["ACTIVE", "EXPIRED"],
+            "x-enum-varnames": ["ACTIVE", "EXPIRED"]
           },
           "createDate": {
             "type": "string",
@@ -2871,7 +2680,6 @@
           },
           "brandId": {
             "maxLength": 8,
-            "x-max-length-8": true,
             "type": "string",
             "description": "Alphanumeric identifier of the brand associated with this campaign."
           },
@@ -3041,10 +2849,7 @@
         }
       },
       "SMSTenDLCPartnerCampaignBrand": {
-        "required": [
-          "email",
-          "phone"
-        ],
+        "required": ["email", "phone"],
         "type": "object",
         "x-is-object": true,
         "properties": {
@@ -3218,8 +3023,7 @@
             "maxLength": 2,
             "type": "string",
             "description": "ISO2 2 characters country code. Example: US - United States",
-            "example": "US",
-            "x-max-length-2": true
+            "example": "US"
           },
           "phone": {
             "maxLength": 20,
@@ -3247,14 +3051,12 @@
           },
           "postalCode": {
             "maxLength": 10,
-            "x-max-length-10": true,
             "type": "string",
             "description": "Postal codes. Use 5 digit zipcode for United States",
             "example": "10001"
           },
           "country": {
             "maxLength": 2,
-            "x-max-length-2": true,
             "type": "string",
             "description": "ISO2 2 characters country code. Example: US - United States",
             "example": "US"
@@ -3266,7 +3068,6 @@
           },
           "stockSymbol": {
             "maxLength": 10,
-            "x-max-length-10": true,
             "type": "string",
             "description": "(Required for public company) stock symbol.",
             "example": "ABC"
@@ -3378,18 +3179,8 @@
           "altBusinessIdType": {
             "type": "string",
             "x-has-writer": true,
-            "enum": [
-              "NONE",
-              "DUNS",
-              "GIIN",
-              "LEI"
-            ],
-            "x-enum-varnames": [
-              "NONE",
-              "DUNS",
-              "GIIN",
-              "LEI"
-            ],
+            "enum": ["NONE", "DUNS", "GIIN", "LEI"],
+            "x-enum-varnames": ["NONE", "DUNS", "GIIN", "LEI"],
             "description": "The type of the Alternative business identifier"
           },
           "universalEin": {
@@ -3478,6 +3269,7 @@
         "x-stoplight": {
           "id": "u509r3zqc38ze"
         },
+        "x-percl-command": true,
         "type": "object",
         "description": "The `TranscribeUtterance` command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.\n\n`TranscribeUtterance` is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the `PerCL` returned in response of the `actionUrl`. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.",
         "properties": {
@@ -3522,9 +3314,7 @@
             "items": {}
           }
         },
-        "required": [
-          "actionUrl"
-        ],
+        "required": ["actionUrl"],
         "x-examples": {
           "Example 1": {
             "TranscribeUtterance": {
@@ -3538,7 +3328,7 @@
               "prompts": [
                 {
                   "Play": {
-                    "file": "http://dplutil01.vail/~user/prompts/please-record-greeting.wav"
+                    "file": "https://yoursite.com/path/to/please-record-greeting.wav"
                   }
                 }
               ]
@@ -5831,11 +5621,5 @@
   "x-explorer-enabled": true,
   "x-proxy-enabled": true,
   "x-samples-enabled": false,
-  "x-samples-languages": [
-    "curl",
-    "node",
-    "ruby",
-    "javascript",
-    "python"
-  ]
+  "x-samples-languages": ["curl", "node", "ruby", "javascript", "python"]
 }

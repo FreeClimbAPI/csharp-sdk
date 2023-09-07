@@ -56,6 +56,7 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
     [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
     [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
+    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
     [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
     public partial class SetTalk : PerclCommand, IEquatable<SetTalk>, IValidatableObject
     {

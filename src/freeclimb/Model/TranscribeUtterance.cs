@@ -21,6 +21,7 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
@@ -31,7 +32,33 @@ namespace freeclimb.Model
     /// The &#x60;TranscribeUtterance&#x60; command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.  &#x60;TranscribeUtterance&#x60; is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the &#x60;PerCL&#x60; returned in response of the &#x60;actionUrl&#x60;. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
     /// </summary>
     [DataContract(Name = "TranscribeUtterance")]
-    public partial class TranscribeUtterance : IEquatable<TranscribeUtterance>, IValidatableObject
+    [JsonConverter(typeof(JsonSubtypes), "Command")]
+    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
+    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
+    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
+    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
+    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
+    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
+    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
+    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
+    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
+    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
+    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
+    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
+    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
+    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
+    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
+    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
+    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
+    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
+    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
+    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
+    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
+    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
+    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
+    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
+    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
+    public partial class TranscribeUtterance : PerclCommand, IEquatable<TranscribeUtterance>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscribeUtterance" /> class.
@@ -50,7 +77,8 @@ namespace freeclimb.Model
         public TranscribeUtterance(string actionUrl = default(string), bool playBeep = false, TranscribeUtteranceRecord record = default(TranscribeUtteranceRecord), bool privacyForLogging = false, bool privacyForRecording = false, List<Object> prompts = default(List<Object>))
         {
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null) {
+            if (actionUrl == null)
+            {
                 throw new ArgumentNullException("actionUrl is a required property for TranscribeUtterance and cannot be null");
             }
             this.ActionUrl = actionUrl;
@@ -121,7 +149,13 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
+
+            return strb.ToString();
         }
 
         /// <summary>
@@ -131,20 +165,22 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("playBeep", PlayBeep);          
-            props.Add("record", Record);          
-            props.Add("privacyForLogging", PrivacyForLogging);          
-            props.Add("privacyForRecording", PrivacyForRecording);          
+            props.Add("actionUrl", ActionUrl);
+            props.Add("playBeep", PlayBeep);
+            props.Add("record", Record);
+            props.Add("privacyForLogging", PrivacyForLogging);
+            props.Add("privacyForRecording", PrivacyForRecording);
             List<object> nested = new List<object>();
             foreach (var item in Prompts)
             {
                 nested.Add(item);
             }
-            props.Add("prompts", nested); 
-            return props;
+            props.Add("prompts", nested);
+            IDictionary<string, object> command = new Dictionary<string, object>();
+            command.Add("TranscribeUtterance", props);
+            return command;
         }
-        
+
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
@@ -166,29 +202,29 @@ namespace freeclimb.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.ActionUrl == input.ActionUrl ||
                     (this.ActionUrl != null &&
                     this.ActionUrl.Equals(input.ActionUrl))
-                ) && 
+                ) &&
                 (
                     this.PlayBeep == input.PlayBeep ||
                     this.PlayBeep.Equals(input.PlayBeep)
-                ) && 
+                ) &&
                 (
                     this.Record == input.Record ||
                     (this.Record != null &&
                     this.Record.Equals(input.Record))
-                ) && 
+                ) &&
                 (
                     this.PrivacyForLogging == input.PrivacyForLogging ||
                     this.PrivacyForLogging.Equals(input.PrivacyForLogging)
-                ) && 
+                ) &&
                 (
                     this.PrivacyForRecording == input.PrivacyForRecording ||
                     this.PrivacyForRecording.Equals(input.PrivacyForRecording)
-                ) && 
+                ) &&
                 (
                     this.Prompts == input.Prompts ||
                     this.Prompts != null &&

@@ -8,6 +8,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 
 None
+
+<a name="4.6.2"></a>
+
+## [4.6.2] - 2023-09-06
+
+### Changed
+
+- TranscribeUtterance into a PerCL command
+
 <a name="4.6.1"></a>
 
 ## [4.6.1] - 2023-09-01
