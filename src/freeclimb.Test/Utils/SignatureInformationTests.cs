@@ -40,7 +40,9 @@ namespace freeclimb.Test.Utils
         public void isRequestTimeValidTest()
         {
             //For test purposes, this relates to three days, we also want to ensure that the signature header remains the same during tests
-            int tolerance = 5 * 60;
+            string requestHeader = "t=" + instance.getCurrentUnixTime().ToString() + ",v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+            instance = new SignatureInformation(requestHeader);
+            int tolerance = 5 * 60 * 1000;
             Boolean isRequestTimeValid = instance.isRequestTimeValid(tolerance);
             Assert.Equal<Boolean>(isRequestTimeValid, true);
         }
@@ -48,7 +50,9 @@ namespace freeclimb.Test.Utils
         public void isRequestTimeValidTest2()
         {
             //For test purposes, this relates to three days, we also want to ensure that the signature header remains the same during tests
-            int tolerance = Int32.MaxValue - timestamp;
+            string requestHeader = "t=" + (instance.getCurrentUnixTime() - (600 * 60 * 1000)).ToString() + ",v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+            instance = new SignatureInformation(requestHeader);
+            int tolerance = 500 * 60 * 1000;
             Boolean isRequestTimeValid = instance.isRequestTimeValid(tolerance);
             Assert.Equal<Boolean>(isRequestTimeValid, false);
         }

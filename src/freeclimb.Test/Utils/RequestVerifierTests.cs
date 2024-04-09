@@ -123,20 +123,22 @@ namespace freeclimb.Test.Utils
         {
             string requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
-            string requestHeader = "t=1900871395,v1=1d798c86e977ff734dec3a8b8d67fe8621dcc1df46ef4212e0bfe2e122b01bfd,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
-            int tolerance = 5 * 60;
             int currentTime = (int)((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
+            string requestTime = (currentTime - (6 * 60 * 1000)).ToString();
+            string requestHeader = "t=" + requestTime + ",v1=1d798c86e977ff734dec3a8b8d67fe8621dcc1df46ef4212e0bfe2e122b01bfd,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+            int tolerance = 5 * 60 * 1000;
             Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
-            Assert.Equal("Request time exceeded tolerance threshold. Request: 1900871395, CurrentTime: " + currentTime.ToString() + ", tolerance: 300", exception.Message);
+            Assert.Equal("Request time exceeded tolerance threshold. Request: " + requestTime + ", CurrentTime: " + currentTime.ToString() + ", tolerance: 300000", exception.Message);
         }
         [Fact]
         public void verifySignatureTest()
         {
             string requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
-            string requestHeader = "t=1679944186,v1=1d798c86e977ff734dec3a8b8d67fe8621dcc1df46ef4212e0bfe2e122b01bfd,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
-            int tolerance = 5 * 60;
+            int currentTime = (int)((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
+            string requestHeader = "t=" + currentTime.ToString() + ",v1=1d798c86e977ff734dec3a8b8d67fe8621dcc1df46ef4212e0bfe2e122b01bfd,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+            int tolerance = 5 * 60 * 1000;
             Action act = () => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance);
             Exception exception = Assert.Throws<Exception>(act);
             Assert.Equal("Unverified signature request, If this request was unexpected, it may be from a bad actor. Please proceed with caution. If the request was exepected, please check any typos or issues with the signingSecret", exception.Message);
@@ -146,8 +148,8 @@ namespace freeclimb.Test.Utils
         {
             string requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
-            string requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
-            int tolerance = 5 * 60;
+            string requestHeader = "t=2140000000,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=814978ae2603594cfc9310680625ea6cdb958d7c940f0695726048f1e4d7af9e";
+            int tolerance = 5 * 60 * 1000;
             var exception = Record.Exception(() => RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance));
             Assert.Null(exception);
         }

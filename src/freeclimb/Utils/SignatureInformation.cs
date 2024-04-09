@@ -43,7 +43,7 @@ namespace freeclimb.Utils
         public Boolean isRequestTimeValid(int tolerance)
         {
             var currentUnixTimestamp = getCurrentUnixTime();
-            return (requestTimestamp + tolerance) < currentUnixTimestamp;
+            return currentUnixTimestamp < (requestTimestamp + tolerance);
         }
         /// <summary>
         /// This is the signature validity function, this checks if the request timestamp is valid
