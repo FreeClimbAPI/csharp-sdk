@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Command** | **string** | Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) | [optional] 
-**ConferenceId** | **string** | ID of the conference to terminate. | 
 
 [[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
 [[Back to Enum list]](../README.md#documentation-for-enums)<br /> 

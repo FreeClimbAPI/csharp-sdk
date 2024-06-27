@@ -83,8 +83,16 @@
     "schemas": {
       "AccountStatus": {
         "type": "string",
-        "enum": ["closed", "suspended", "active"],
-        "x-enum-varnames": ["CLOSED", "SUSPENDED", "ACTIVE"],
+        "enum": [
+          "closed",
+          "suspended",
+          "active"
+        ],
+        "x-enum-varnames": [
+          "CLOSED",
+          "SUSPENDED",
+          "ACTIVE"
+        ],
         "x-enum": true,
         "description": "The status of this account. It is one of: active, suspended, or closed.",
         "nullable": true
@@ -92,24 +100,44 @@
       "AccountType": {
         "type": "string",
         "description": "The type of this account. It is one of: trial or full.",
-        "enum": ["trial", "full"],
+        "enum": [
+          "trial",
+          "full"
+        ],
         "x-enum": true,
-        "x-enum-varnames": ["TRIAL", "FULL"],
+        "x-enum-varnames": [
+          "TRIAL",
+          "FULL"
+        ],
         "nullable": true
       },
       "AnsweredBy": {
         "type": "string",
         "nullable": true,
-        "enum": ["human", "machine"],
-        "x-enum-varnames": ["HUMAN", "MACHINE"],
+        "enum": [
+          "human",
+          "machine"
+        ],
+        "x-enum-varnames": [
+          "HUMAN",
+          "MACHINE"
+        ],
         "x-enum": true,
         "description": "If this Call was initiated with answering machine detection, either `human` or `machine`. Empty otherwise."
       },
       "CallDirection": {
         "type": "string",
         "nullable": true,
-        "enum": ["inbound", "outboundAPI", "outboundDial"],
-        "x-enum-varnames": ["INBOUND", "OUTBOUND_API", "OUTBOUND_DIAL"],
+        "enum": [
+          "inbound",
+          "outboundAPI",
+          "outboundDial"
+        ],
+        "x-enum-varnames": [
+          "INBOUND",
+          "OUTBOUND_API",
+          "OUTBOUND_DIAL"
+        ],
         "x-enum": true,
         "description": "Direction of the Call. `inbound` for Calls into FreeClimb, `outboundAPI` for Calls initiated via the REST API,  `outboundDial` for Calls initiated by the `OutDial` PerCL command."
       },
@@ -142,8 +170,18 @@
       "ConferenceStatus": {
         "type": "string",
         "nullable": true,
-        "enum": ["empty", "populated", "inProgress", "terminated"],
-        "x-enum-varnames": ["EMPTY", "POPULATED", "IN_PROGRESS", "TERMINATED"],
+        "enum": [
+          "empty",
+          "populated",
+          "inProgress",
+          "terminated"
+        ],
+        "x-enum-varnames": [
+          "EMPTY",
+          "POPULATED",
+          "IN_PROGRESS",
+          "TERMINATED"
+        ],
         "x-enum": true,
         "description": "The status of the Conference. One of: creating, empty, populated, inProgress, or terminated."
       },
@@ -207,16 +245,28 @@
       },
       "GrammarType": {
         "type": "string",
-        "enum": ["URL", "BUILTIN"],
+        "enum": [
+          "URL",
+          "BUILTIN"
+        ],
         "nullable": true,
-        "x-enum-varnames": ["URL", "BUILT_IN"],
+        "x-enum-varnames": [
+          "URL",
+          "BUILT_IN"
+        ],
         "x-enum": true,
         "description": "The grammar file type to use for speech recognition. A value of 'URL' indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of `BUILTIN` indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files."
       },
       "IfMachine": {
         "type": "string",
-        "enum": ["redirect", "hangup"],
-        "x-enum-varnames": ["REDIRECT", "HANGUP"],
+        "enum": [
+          "redirect",
+          "hangup"
+        ],
+        "x-enum-varnames": [
+          "REDIRECT",
+          "HANGUP"
+        ],
         "x-enum": true,
         "description": "Specifies how FreeClimb should handle this OutDial if an answering machine answers the Call. Valid values: `redirect` invokes the ifMachineUrl for instructions. `hangup` hangs up the Call. The ifMachineUrl will not be invoked."
       },
@@ -282,22 +332,42 @@
       },
       "LogLevel": {
         "type": "string",
-        "enum": ["info", "warning", "error"],
+        "enum": [
+          "info",
+          "warning",
+          "error"
+        ],
         "nullable": true,
-        "x-enum-varnames": ["INFO", "WARNING", "ERROR"],
+        "x-enum-varnames": [
+          "INFO",
+          "WARNING",
+          "ERROR"
+        ],
         "x-enum": true,
         "description": "Level of the log. Possible values are info, warning, and error."
       },
       "MachineType": {
         "type": "string",
-        "enum": ["answeringMachine", "faxMachine"],
-        "x-enum-varnames": ["ANSWERING_MACHINE", "FAX_MACHINE"],
+        "enum": [
+          "answeringMachine",
+          "faxMachine"
+        ],
+        "x-enum-varnames": [
+          "ANSWERING_MACHINE",
+          "FAX_MACHINE"
+        ],
         "x-enum": true
       },
       "MessageDirection": {
         "type": "string",
-        "enum": ["inbound", "outbound"],
-        "x-enum-varnames": ["INBOUND", "OUTBOUND"],
+        "enum": [
+          "inbound",
+          "outbound"
+        ],
+        "x-enum-varnames": [
+          "INBOUND",
+          "OUTBOUND"
+        ],
         "x-enum": true
       },
       "MessageStatus": {
@@ -335,8 +405,18 @@
       "PlayBeep": {
         "type": "string",
         "nullable": true,
-        "enum": ["always", "never", "entryOnly", "exitOnly"],
-        "x-enum-varnames": ["ALWAYS", "NEVER", "ENTRY_ONLY", "EXIT_ONLY"],
+        "enum": [
+          "always",
+          "never",
+          "entryOnly",
+          "exitOnly"
+        ],
+        "x-enum-varnames": [
+          "ALWAYS",
+          "NEVER",
+          "ENTRY_ONLY",
+          "EXIT_ONLY"
+        ],
         "x-enum": true,
         "description": "Indicates whether to play a beep when a Participant enters or leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`. Leaving this unset will make conference default to `always` ",
         "default": "always",
@@ -344,14 +424,34 @@
       },
       "QueueResultStatus": {
         "type": "string",
-        "enum": ["queueFull", "dequeued", "hangup", "systemError"],
-        "x-enum-varnames": ["QUEUE_FULL", "DEQUEUED", "HANGUP", "SYSTEM_ERROR"],
+        "enum": [
+          "queueFull",
+          "dequeued",
+          "hangup",
+          "systemError"
+        ],
+        "x-enum-varnames": [
+          "QUEUE_FULL",
+          "DEQUEUED",
+          "HANGUP",
+          "SYSTEM_ERROR"
+        ],
         "x-enum": true
       },
       "RecordUtteranceTermReason": {
         "type": "string",
-        "enum": ["finishKey", "timeout", "hangup", "maxLength"],
-        "x-enum-varnames": ["FINISH_KEY", "TIMEOUT", "HANGUP", "MAX_LENGTH"],
+        "enum": [
+          "finishKey",
+          "timeout",
+          "hangup",
+          "maxLength"
+        ],
+        "x-enum-varnames": [
+          "FINISH_KEY",
+          "TIMEOUT",
+          "HANGUP",
+          "MAX_LENGTH"
+        ],
         "x-enum": true
       },
       "RequestType": {
@@ -410,15 +510,27 @@
       },
       "UpdateCallRequestStatus": {
         "type": "string",
-        "enum": ["canceled", "completed"],
-        "x-enum-varnames": ["CANCELED", "COMPLETED"],
+        "enum": [
+          "canceled",
+          "completed"
+        ],
+        "x-enum-varnames": [
+          "CANCELED",
+          "COMPLETED"
+        ],
         "x-enum": true,
         "description": "Either `canceled` or `completed`.  Specifying `canceled` attempts to hang up calls that are queued without affecting calls already in progress. Specifying `completed` attempts to hang up a call already in progress."
       },
       "UpdateConferenceRequestStatus": {
         "type": "string",
-        "enum": ["empty", "terminated"],
-        "x-enum-varnames": ["EMPTY", "TERMINATED"],
+        "enum": [
+          "empty",
+          "terminated"
+        ],
+        "x-enum-varnames": [
+          "EMPTY",
+          "TERMINATED"
+        ],
         "x-enum": true,
         "description": "New status of the conference. Valid values: `empty` or `terminated`. For more information, see **Status Parameter** below.**"
       },
@@ -487,7 +599,9 @@
           },
           {
             "type": "object",
-            "required": ["conferenceId"],
+            "required": [
+              "conferenceId"
+            ],
             "properties": {
               "allowCallControl": {
                 "description": "If `true`, Call control will be enabled for this Participant's Call leg.",
@@ -503,10 +617,6 @@
               },
               "conferenceId": {
                 "description": "ID of the Conference to which to add the Participant (Call leg). Conference must exist or an error will result.",
-                "type": "string"
-              },
-              "callId": {
-                "description": "ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.",
                 "type": "string"
               },
               "leaveConferenceUrl": {
@@ -543,7 +653,9 @@
           },
           {
             "type": "object",
-            "required": ["actionUrl"],
+            "required": [
+              "actionUrl"
+            ],
             "properties": {
               "actionUrl": {
                 "description": " This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response. ",
@@ -596,7 +708,11 @@
           },
           {
             "type": "object",
-            "required": ["queueId", "waitUrl", "actionUrl"],
+            "required": [
+              "queueId",
+              "waitUrl",
+              "actionUrl"
+            ],
             "properties": {
               "actionUrl": {
                 "description": "A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the `Dequeue` command, the REST API (POST to Queue Member resource), or the caller hangs up.",
@@ -630,7 +746,9 @@
           },
           {
             "type": "object",
-            "required": ["actionUrl"],
+            "required": [
+              "actionUrl"
+            ],
             "properties": {
               "actionUrl": {
                 "description": "When the Caller has finished entering digits, FreeClimb will make an HTTP POST request to this URL. A PerCL response is expected to continue handling the Call. Make sure to keep “http://“ in the URL.",
@@ -651,7 +769,7 @@
               },
               "initialTimeoutMs": {
                 "description": "Maximum time in milliseconds that FreeClimb will wait for the Caller to press the first digit before making a determination that a `timeout` has occurred and moving on to make the request to the `actionUrl` to submit the results of the `GetDigits` command. This timeout interval begins when all nested commands have been fully executed.",
-                "type": "string"
+                "type": "integer"
               },
               "maxDigits": {
                 "description": "Maximum number of digits expected in the input. If the terminating digit is not entered and the caller has entered the maximum number of digits allowed, the `GetDigits` command terminates regardless of the value of `finishOnKey`.",
@@ -686,7 +804,10 @@
           },
           {
             "type": "object",
-            "required": ["actionUrl", "grammarFile"],
+            "required": [
+              "actionUrl",
+              "grammarFile"
+            ],
             "properties": {
               "actionUrl": {
                 "description": "When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call.",
@@ -839,7 +960,10 @@
           },
           {
             "type": "object",
-            "required": ["waitUrl", "actionUrl"],
+            "required": [
+              "waitUrl",
+              "actionUrl"
+            ],
             "properties": {
               "waitUrl": {
                 "description": "Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is Parked. Once the script returned by the waitUrl runs out of commands to execute, FreeClimb will re-request the waitUrl and start over, essentially looping the script requests indefinitely.",
@@ -868,7 +992,9 @@
           },
           {
             "type": "object",
-            "required": ["length"],
+            "required": [
+              "length"
+            ],
             "properties": {
               "length": {
                 "description": "Length in milliseconds. FreeClimb will wait silently before continuing on.",
@@ -886,7 +1012,9 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": ["file"],
+            "required": [
+              "file"
+            ],
             "type": "object",
             "properties": {
               "file": {
@@ -896,10 +1024,6 @@
               "loop": {
                 "description": "Number of times the audio file is played. Specifying '0' causes the Play action to loop until the Call is hung up.",
                 "type": "integer"
-              },
-              "conferenceId": {
-                "description": "ID of the Conference the audio should be rendered to. If this is not specified, the audio is by default rendered to the caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error.",
-                "type": "string"
               },
               "privacyMode": {
                 "description": "Parameter `privacyMode` will not log the `text` as required by PCI compliance.",
@@ -917,7 +1041,9 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": ["file"],
+            "required": [
+              "file"
+            ],
             "type": "object",
             "properties": {
               "file": {
@@ -937,7 +1063,9 @@
             "x-is-uri": true
           },
           {
-            "required": ["actionUrl"],
+            "required": [
+              "actionUrl"
+            ],
             "type": "object",
             "properties": {
               "actionUrl": {
@@ -982,7 +1110,9 @@
             "x-is-uri": true
           },
           {
-            "required": ["actionUrl"],
+            "required": [
+              "actionUrl"
+            ],
             "type": "object",
             "properties": {
               "actionUrl": {
@@ -1020,14 +1150,9 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": ["callId"],
+            "required": [],
             "type": "object",
-            "properties": {
-              "callId": {
-                "description": "ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered.",
-                "type": "string"
-              }
-            }
+            "properties": {}
           }
         ]
       },
@@ -1039,7 +1164,9 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": ["text"],
+            "required": [
+              "text"
+            ],
             "type": "object",
             "properties": {
               "text": {
@@ -1054,10 +1181,6 @@
                 "description": "Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.",
                 "type": "integer",
                 "default": 1
-              },
-              "conferenceId": {
-                "description": "D of the Conference the speech should be rendered to. If this is not specified, the speech is by default rendered to the Caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error.",
-                "type": "string"
               },
               "privacyMode": {
                 "description": "Parameter `privacyMode` will not log the `text` as required by PCI compliance.",
@@ -1075,7 +1198,9 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": ["digits"],
+            "required": [
+              "digits"
+            ],
             "type": "object",
             "properties": {
               "digits": {
@@ -1102,13 +1227,9 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": ["callId"],
+            "required": [],
             "type": "object",
             "properties": {
-              "callId": {
-                "description": "ID of the call leg that is to be assigned the listen privilege. The Call must be in a Conference or an error will be triggered.",
-                "type": "string"
-              },
               "listen": {
                 "description": "Specifying `false` will silence the Conference for this Participant.",
                 "type": "boolean"
@@ -1125,13 +1246,9 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": ["callId"],
+            "required": [],
             "type": "object",
             "properties": {
-              "callId": {
-                "description": "ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.",
-                "type": "string"
-              },
               "talk": {
                 "description": "Specifying `false` mutes the Participant.",
                 "type": "boolean"
@@ -1148,7 +1265,11 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": ["to", "from", "text"],
+            "required": [
+              "to",
+              "from",
+              "text"
+            ],
             "type": "object",
             "properties": {
               "to": {
@@ -1192,14 +1313,9 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "required": ["conferenceId"],
+            "required": [],
             "type": "object",
-            "properties": {
-              "conferenceId": {
-                "description": "ID of the conference to terminate.",
-                "type": "string"
-              }
-            }
+            "properties": {}
           }
         ]
       },
@@ -1280,7 +1396,13 @@
       "Capabilities": {
         "description": "Details for which features this number may be used.",
         "type": "object",
-        "required": ["voice", "sms", "tollFree", "tenDLC", "shortCode"],
+        "required": [
+          "voice",
+          "sms",
+          "tollFree",
+          "tenDLC",
+          "shortCode"
+        ],
         "x-is-object": true,
         "properties": {
           "voice": {
@@ -1307,6 +1429,20 @@
             "description": "Indicates that a number is a short code and can be used for short code messaging",
             "type": "boolean",
             "nullable": true
+          }
+        }
+      },
+      "TFN": {
+        "description": "TollFree Campaign details for this number",
+        "type": "object",
+        "required": [
+          "campaignId"
+        ],
+        "x-is-object": true,
+        "properties": {
+          "campaignId": {
+            "description": "alphanumeric identifier for the TollFree campaign associated with this number",
+            "type": "string"
           }
         }
       },
@@ -1609,6 +1745,10 @@
                 "type": "boolean",
                 "description": "The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource.",
                 "nullable": true
+              },
+              "tfn": {
+                "$ref": "#/components/schemas/TFN",
+                "nullable": true
               }
             }
           }
@@ -1654,7 +1794,9 @@
       },
       "BuyIncomingNumberRequest": {
         "type": "object",
-        "required": ["phoneNumber"],
+        "required": [
+          "phoneNumber"
+        ],
         "properties": {
           "phoneNumber": {
             "type": "string",
@@ -1753,7 +1895,9 @@
       },
       "UpdateCallRequest": {
         "type": "object",
-        "required": ["status"],
+        "required": [
+          "status"
+        ],
         "properties": {
           "status": {
             "$ref": "#/components/schemas/UpdateCallRequestStatus"
@@ -1762,7 +1906,10 @@
       },
       "MakeCallRequest": {
         "type": "object",
-        "required": ["from", "to"],
+        "required": [
+          "from",
+          "to"
+        ],
         "properties": {
           "from": {
             "type": "string",
@@ -2030,7 +2177,11 @@
           },
           {
             "type": "object",
-            "required": ["from", "to", "text"],
+            "required": [
+              "from",
+              "to",
+              "text"
+            ],
             "properties": {
               "from": {
                 "type": "string",
@@ -2048,9 +2199,13 @@
                 "type": "string",
                 "description": "When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored."
               },
-              "accountId": {
-                "type": "string",
-                "description": "String that uniquely identifies this account resource."
+              "mediaUrls": {
+                "type": "array",
+                "description": "an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
               }
             }
           }
@@ -2136,6 +2291,14 @@
                 "type": "number",
                 "description": "The number of segments into which the message was split",
                 "nullable": true
+              },
+              "mediaUrls": {
+                "type": "array",
+                "description": "an array of HTTP URLs which were attached this this message",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
               }
             }
           }
@@ -2389,7 +2552,9 @@
       },
       "FilterLogsRequest": {
         "type": "object",
-        "required": ["pql"],
+        "required": [
+          "pql"
+        ],
         "properties": {
           "pql": {
             "type": "string",
@@ -2452,8 +2617,14 @@
             "type": "string",
             "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
-            "enum": ["ACTIVE", "EXPIRED"],
-            "x-enum-varnames": ["ACTIVE", "EXPIRED"]
+            "enum": [
+              "ACTIVE",
+              "EXPIRED"
+            ],
+            "x-enum-varnames": [
+              "ACTIVE",
+              "EXPIRED"
+            ]
           },
           "createDate": {
             "type": "string",
@@ -2579,6 +2750,31 @@
             "nullable": true,
             "description": "Help message of the campaign."
           },
+          "optinKeywords": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Subscriber opt-in keywords. Multiple keywords are comma separated without space."
+          },
+          "optoutKeywords": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Subscriber opt-out keywords. Multiple keywords are comma separated without space."
+          },
+          "helpKeywords": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Subscriber help keywords. Multiple keywords are comma separated without space."
+          },
+          "optinMessage": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Subscriber opt-in message."
+          },
+          "optoutMessage": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Subscriber opt-out message."
+          },
           "referenceId": {
             "maxLength": 50,
             "type": "string",
@@ -2653,7 +2849,12 @@
         ]
       },
       "SMSTenDLCPartnerCampaign": {
-        "required": ["brandId", "campaignId", "description", "usecase"],
+        "required": [
+          "brandId",
+          "campaignId",
+          "description",
+          "usecase"
+        ],
         "type": "object",
         "properties": {
           "accountId": {
@@ -2669,8 +2870,14 @@
             "type": "string",
             "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
-            "enum": ["ACTIVE", "EXPIRED"],
-            "x-enum-varnames": ["ACTIVE", "EXPIRED"]
+            "enum": [
+              "ACTIVE",
+              "EXPIRED"
+            ],
+            "x-enum-varnames": [
+              "ACTIVE",
+              "EXPIRED"
+            ]
           },
           "createDate": {
             "type": "string",
@@ -2849,7 +3056,10 @@
         }
       },
       "SMSTenDLCPartnerCampaignBrand": {
-        "required": ["email", "phone"],
+        "required": [
+          "email",
+          "phone"
+        ],
         "type": "object",
         "x-is-object": true,
         "properties": {
@@ -3179,8 +3389,18 @@
           "altBusinessIdType": {
             "type": "string",
             "x-has-writer": true,
-            "enum": ["NONE", "DUNS", "GIIN", "LEI"],
-            "x-enum-varnames": ["NONE", "DUNS", "GIIN", "LEI"],
+            "enum": [
+              "NONE",
+              "DUNS",
+              "GIIN",
+              "LEI"
+            ],
+            "x-enum-varnames": [
+              "NONE",
+              "DUNS",
+              "GIIN",
+              "LEI"
+            ],
             "description": "The type of the Alternative business identifier"
           },
           "universalEin": {
@@ -3264,6 +3484,80 @@
           "createDate": "2022-07-01T20:29:23Z"
         }
       },
+      "SMSTollFreeCampaignsListResult": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PaginationModel"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "brands": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SMSTollFreeCampaign"
+                },
+                "nullable": true,
+                "x-is-list": true
+              }
+            }
+          }
+        ]
+      },
+      "SMSTollFreeCampaign": {
+        "type": "object",
+        "required": [
+          "accountId",
+          "campaignId",
+          "useCase",
+          "registrationStatus",
+          "dateCreated",
+          "dateUpdated",
+          "revision"
+        ],
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "description": "ID of the account that created this toll-free campaign",
+            "nullable": true
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "Alphanumeric identifier used by the platform to identify this toll-free campaign"
+          },
+          "useCase": {
+            "type": "string"
+          },
+          "registrationStatus": {
+            "type": "string",
+            "x-has-writer": true,
+            "description": "Current toll-free campaign registration status.Possible values: UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign defaults to INITIATED status. ",
+            "enum": [
+              "UNREGISTERED",
+              "INITIATED",
+              "PENDING",
+              "DECLINED",
+              "REGISTERED"
+            ],
+            "x-enum-varnames": [
+              "UNREGISTERED",
+              "INITIATED",
+              "PENDING",
+              "DECLINED",
+              "REGISTERED"
+            ]
+          },
+          "dateCreated": {
+            "type": "string"
+          },
+          "dateUpdated": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          }
+        }
+      },
       "TranscribeUtterance": {
         "title": "TranscribeUtterance",
         "x-stoplight": {
@@ -3314,7 +3608,9 @@
             "items": {}
           }
         },
-        "required": ["actionUrl"],
+        "required": [
+          "actionUrl"
+        ],
         "x-examples": {
           "Example 1": {
             "TranscribeUtterance": {
@@ -3858,6 +4154,15 @@
             "$ref": "#/components/parameters/Capabilities.ShortCode"
           },
           {
+            "name": "tfn.campaignId",
+            "in": "query",
+            "required": false,
+            "description": "Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "offnet",
             "in": "query",
             "required": false,
@@ -4193,6 +4498,63 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LogList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Accounts/{accountId}/Calls/WebRTC/Token": {
+      "post": {
+        "summary": "Make a JWT for WebRTC calling",
+        "description": "Make a JWT for WebRTC calling",
+        "operationId": "make-a-webrtc-jwt",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          }
+        ],
+        "requestBody": {
+          "description": "Information needed to craft a JWT compatible with the platforms WebRTC APIs",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "to",
+                  "from",
+                  "uses"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "to": {
+                    "type": "string",
+                    "description": "E.164 formatted phone number to which calls using this token will be made."
+                  },
+                  "from": {
+                    "type": "string",
+                    "description": "E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made."
+                  },
+                  "uses": {
+                    "type": "integer",
+                    "description": "number of times this token may be used for a WebRTC call",
+                    "minimum": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The created JWT",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjEyMzQ1Njc4LCJjdXN0b20iOnsidG8iOiIrMTEyMjMzMzQ0NDQiLCJmcm9tIjoiKzE0NDQ0MzMzMjIxIiwidXNlcyI6MX19.H3UKv7poe0adLoFpilxOtC5dGsE5eb2ZxiuygDPs23E"
                 }
               }
             }
@@ -4548,6 +4910,58 @@
             }
           }
         }
+      }
+    },
+    "/Accounts/{accountId}/Conferences/{conferenceId}/Recordings": {
+      "get": {
+        "tags": [],
+        "summary": "List Conference Recordings",
+        "operationId": "list-conference-recordings",
+        "parameters": [
+          {
+            "name": "callId",
+            "in": "query",
+            "description": "Show only Recordings made during the Call with this ID.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "conferenceId",
+            "in": "query",
+            "description": "Show only Recordings made during the conference with this ID.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateCreated",
+            "in": "query",
+            "description": "Only show Recordings created on this date, formatted as *YYYY-MM-DD*.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/AccountId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Recordings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordingList"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
       }
     },
     "/Accounts/{accountId}/Queues/{queueId}": {
@@ -5615,11 +6029,96 @@
         },
         "deprecated": false
       }
+    },
+    "/Accounts/{accountId}/Messages/TollFree/Campaigns": {
+      "get": {
+        "tags": [],
+        "summary": "Get list of TollFree Campaigns",
+        "operationId": "get-tollFree-sms-campaigns",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list toll-free campaigns",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SMSTollFreeCampaignsListResult"
+                },
+                "example": {
+                  "total": 1,
+                  "start": 0,
+                  "end": 0,
+                  "page": 0,
+                  "numPages": 1,
+                  "pageSize": 100,
+                  "nextPageUri": null,
+                  "tfnCampaigns": [
+                    {
+                      "accountId": "ACe39970fb7c31c747c67148900b4d9da60a41e532",
+                      "campaignId": "cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a",
+                      "useCase": "example use case",
+                      "registrationStatus": "PENDING",
+                      "dateCreated": 1704839615,
+                      "dateUpdated": 1704839615,
+                      "revision": 1
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId}": {
+      "get": {
+        "tags": [],
+        "summary": "Get a TollFree SMS Campaign",
+        "operationId": "get-tollFree-sms-campaign",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "name": "campaignId",
+            "in": "path",
+            "description": "String that uniquely identifies this TollFree Campaign resource.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The specific SMS TollFree Campaign that’s been processed by FreeClimb",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SMSTollFreeCampaign"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "x-headers": [],
   "x-explorer-enabled": true,
   "x-proxy-enabled": true,
   "x-samples-enabled": false,
-  "x-samples-languages": ["curl", "node", "ruby", "javascript", "python"]
+  "x-samples-languages": [
+    "curl",
+    "node",
+    "ruby",
+    "javascript",
+    "python"
+  ]
 }

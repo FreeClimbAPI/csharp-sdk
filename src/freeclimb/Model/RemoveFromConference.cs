@@ -63,28 +63,10 @@ namespace freeclimb.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RemoveFromConference" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected RemoveFromConference() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RemoveFromConference" /> class.
-        /// </summary>
-        /// <param name="callId">ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered. (required).</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;RemoveFromConference&quot;).</param>
-        public RemoveFromConference(string callId = default(string), string command = "RemoveFromConference") : base(command)
+        public RemoveFromConference(string command = "RemoveFromConference") : base(command)
         {
-            // to ensure "callId" is required (not null)
-            if (callId == null) {
-                throw new ArgumentNullException("callId is a required property for RemoveFromConference and cannot be null");
-            }
-            this.CallId = callId;
         }
-
-        /// <summary>
-        /// ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered.
-        /// </summary>
-        /// <value>ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered.</value>
-        [DataMember(Name = "callId", IsRequired = true, EmitDefaultValue = false)]
-        public string CallId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -95,7 +77,6 @@ namespace freeclimb.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class RemoveFromConference {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  CallId: ").Append(CallId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -122,7 +103,6 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("callId", CallId);          
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("RemoveFromConference",props);
             return command;
@@ -149,12 +129,7 @@ namespace freeclimb.Model
             {
                 return false;
             }
-            return base.Equals(input) && 
-                (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                );
+            return base.Equals(input);
         }
 
         /// <summary>
@@ -166,10 +141,6 @@ namespace freeclimb.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
-                }
                 return hashCode;
             }
         }

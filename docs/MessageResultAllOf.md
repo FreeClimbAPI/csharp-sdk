@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **BrandId** | **string** | The unique identifier for the brand associated with the message | [optional] 
 **CampaignId** | **string** | The unique identifier for the campaign associated with the message | [optional] 
 **SegmentCount** | **decimal?** | The number of segments into which the message was split | [optional] 
+**MediaUrls** | **List&lt;string&gt;** | an array of HTTP URLs which were attached this this message | [optional] 
 
 [[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
 [[Back to Enum list]](../README.md#documentation-for-enums)<br /> 

@@ -63,30 +63,12 @@ namespace freeclimb.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SetTalk" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SetTalk() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SetTalk" /> class.
-        /// </summary>
-        /// <param name="callId">ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered. (required).</param>
         /// <param name="talk">Specifying &#x60;false&#x60; mutes the Participant..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;SetTalk&quot;).</param>
-        public SetTalk(string callId = default(string), bool talk = default(bool), string command = "SetTalk") : base(command)
+        public SetTalk(bool talk = default(bool), string command = "SetTalk") : base(command)
         {
-            // to ensure "callId" is required (not null)
-            if (callId == null) {
-                throw new ArgumentNullException("callId is a required property for SetTalk and cannot be null");
-            }
-            this.CallId = callId;
             this.Talk = talk;
         }
-
-        /// <summary>
-        /// ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.
-        /// </summary>
-        /// <value>ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.</value>
-        [DataMember(Name = "callId", IsRequired = true, EmitDefaultValue = false)]
-        public string CallId { get; set; }
 
         /// <summary>
         /// Specifying &#x60;false&#x60; mutes the Participant.
@@ -104,7 +86,6 @@ namespace freeclimb.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class SetTalk {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  CallId: ").Append(CallId).Append("\n");
             sb.Append("  Talk: ").Append(Talk).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -132,7 +113,6 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("callId", CallId);          
             props.Add("talk", Talk);          
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("SetTalk",props);
@@ -162,11 +142,6 @@ namespace freeclimb.Model
             }
             return base.Equals(input) && 
                 (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                ) && base.Equals(input) && 
-                (
                     this.Talk == input.Talk ||
                     this.Talk.Equals(input.Talk)
                 );
@@ -181,10 +156,6 @@ namespace freeclimb.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.Talk.GetHashCode();
                 return hashCode;
             }

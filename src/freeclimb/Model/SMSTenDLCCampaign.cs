@@ -97,10 +97,15 @@ namespace freeclimb.Model
         /// <param name="sample5">Message sample. Some campaign tiers require 5 or more message samples..</param>
         /// <param name="messageFlow">Message flow description..</param>
         /// <param name="helpMessage">Help message of the campaign..</param>
+        /// <param name="optinKeywords">Subscriber opt-in keywords. Multiple keywords are comma separated without space..</param>
+        /// <param name="optoutKeywords">Subscriber opt-out keywords. Multiple keywords are comma separated without space..</param>
+        /// <param name="helpKeywords">Subscriber help keywords. Multiple keywords are comma separated without space..</param>
+        /// <param name="optinMessage">Subscriber opt-in message..</param>
+        /// <param name="optoutMessage">Subscriber opt-out message..</param>
         /// <param name="referenceId">Caller supplied campaign reference ID. If supplied, the value must be unique across all submitted campaigns. Can be used to prevent duplicate campaign registrations..</param>
         /// <param name="mock">Campaign created from mock brand. Mocked campaign cannot be shared with an upstream CNP. (required).</param>
         /// <param name="nextRenewalOrExpirationDate">When the campaign would be due for its next renew/bill date..</param>
-        public SMSTenDLCCampaign(string accountId = default(string), string campaignId = default(string), string cspId = default(string), string resellerId = default(string), StatusEnum? status = default(StatusEnum?), DateTime createDate = default(DateTime), bool autoRenewal = default(bool), DateTime? billedDate = default(DateTime?), string brandId = default(string), string usecase = default(string), List<string> subUsecases = default(List<string>), string description = default(string), bool embeddedLink = false, bool embeddedPhone = false, bool affiliateMarketing = default(bool), bool numberPool = false, bool ageGated = default(bool), bool directLending = default(bool), bool subscriberOptin = false, bool subscriberOptout = false, bool subscriberHelp = false, string sample1 = default(string), string sample2 = default(string), string sample3 = default(string), string sample4 = default(string), string sample5 = default(string), string messageFlow = default(string), string helpMessage = default(string), string referenceId = default(string), bool mock = default(bool), DateTime? nextRenewalOrExpirationDate = default(DateTime?))
+        public SMSTenDLCCampaign(string accountId = default(string), string campaignId = default(string), string cspId = default(string), string resellerId = default(string), StatusEnum? status = default(StatusEnum?), DateTime createDate = default(DateTime), bool autoRenewal = default(bool), DateTime? billedDate = default(DateTime?), string brandId = default(string), string usecase = default(string), List<string> subUsecases = default(List<string>), string description = default(string), bool embeddedLink = false, bool embeddedPhone = false, bool affiliateMarketing = default(bool), bool numberPool = false, bool ageGated = default(bool), bool directLending = default(bool), bool subscriberOptin = false, bool subscriberOptout = false, bool subscriberHelp = false, string sample1 = default(string), string sample2 = default(string), string sample3 = default(string), string sample4 = default(string), string sample5 = default(string), string messageFlow = default(string), string helpMessage = default(string), string optinKeywords = default(string), string optoutKeywords = default(string), string helpKeywords = default(string), string optinMessage = default(string), string optoutMessage = default(string), string referenceId = default(string), bool mock = default(bool), DateTime? nextRenewalOrExpirationDate = default(DateTime?))
         {
             // to ensure "campaignId" is required (not null)
             if (campaignId == null) {
@@ -155,6 +160,11 @@ namespace freeclimb.Model
             this.Sample5 = sample5;
             this.MessageFlow = messageFlow;
             this.HelpMessage = helpMessage;
+            this.OptinKeywords = optinKeywords;
+            this.OptoutKeywords = optoutKeywords;
+            this.HelpKeywords = helpKeywords;
+            this.OptinMessage = optinMessage;
+            this.OptoutMessage = optoutMessage;
             this.ReferenceId = referenceId;
             this.NextRenewalOrExpirationDate = nextRenewalOrExpirationDate;
         }
@@ -348,6 +358,41 @@ namespace freeclimb.Model
         public string HelpMessage { get; set; }
 
         /// <summary>
+        /// Subscriber opt-in keywords. Multiple keywords are comma separated without space.
+        /// </summary>
+        /// <value>Subscriber opt-in keywords. Multiple keywords are comma separated without space.</value>
+        [DataMember(Name = "optinKeywords", EmitDefaultValue = false)]
+        public string OptinKeywords { get; set; }
+
+        /// <summary>
+        /// Subscriber opt-out keywords. Multiple keywords are comma separated without space.
+        /// </summary>
+        /// <value>Subscriber opt-out keywords. Multiple keywords are comma separated without space.</value>
+        [DataMember(Name = "optoutKeywords", EmitDefaultValue = false)]
+        public string OptoutKeywords { get; set; }
+
+        /// <summary>
+        /// Subscriber help keywords. Multiple keywords are comma separated without space.
+        /// </summary>
+        /// <value>Subscriber help keywords. Multiple keywords are comma separated without space.</value>
+        [DataMember(Name = "helpKeywords", EmitDefaultValue = false)]
+        public string HelpKeywords { get; set; }
+
+        /// <summary>
+        /// Subscriber opt-in message.
+        /// </summary>
+        /// <value>Subscriber opt-in message.</value>
+        [DataMember(Name = "optinMessage", EmitDefaultValue = false)]
+        public string OptinMessage { get; set; }
+
+        /// <summary>
+        /// Subscriber opt-out message.
+        /// </summary>
+        /// <value>Subscriber opt-out message.</value>
+        [DataMember(Name = "optoutMessage", EmitDefaultValue = false)]
+        public string OptoutMessage { get; set; }
+
+        /// <summary>
         /// Caller supplied campaign reference ID. If supplied, the value must be unique across all submitted campaigns. Can be used to prevent duplicate campaign registrations.
         /// </summary>
         /// <value>Caller supplied campaign reference ID. If supplied, the value must be unique across all submitted campaigns. Can be used to prevent duplicate campaign registrations.</value>
@@ -405,6 +450,11 @@ namespace freeclimb.Model
             sb.Append("  Sample5: ").Append(Sample5).Append("\n");
             sb.Append("  MessageFlow: ").Append(MessageFlow).Append("\n");
             sb.Append("  HelpMessage: ").Append(HelpMessage).Append("\n");
+            sb.Append("  OptinKeywords: ").Append(OptinKeywords).Append("\n");
+            sb.Append("  OptoutKeywords: ").Append(OptoutKeywords).Append("\n");
+            sb.Append("  HelpKeywords: ").Append(HelpKeywords).Append("\n");
+            sb.Append("  OptinMessage: ").Append(OptinMessage).Append("\n");
+            sb.Append("  OptoutMessage: ").Append(OptoutMessage).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  Mock: ").Append(Mock).Append("\n");
             sb.Append("  NextRenewalOrExpirationDate: ").Append(NextRenewalOrExpirationDate).Append("\n");
@@ -461,6 +511,11 @@ namespace freeclimb.Model
             props.Add("sample5", Sample5);          
             props.Add("messageFlow", MessageFlow);          
             props.Add("helpMessage", HelpMessage);          
+            props.Add("optinKeywords", OptinKeywords);          
+            props.Add("optoutKeywords", OptoutKeywords);          
+            props.Add("helpKeywords", HelpKeywords);          
+            props.Add("optinMessage", OptinMessage);          
+            props.Add("optoutMessage", OptoutMessage);          
             props.Add("referenceId", ReferenceId);          
             props.Add("mock", Mock);          
             props.Add("nextRenewalOrExpirationDate", NextRenewalOrExpirationDate);          
@@ -620,6 +675,31 @@ namespace freeclimb.Model
                     this.HelpMessage.Equals(input.HelpMessage))
                 ) && 
                 (
+                    this.OptinKeywords == input.OptinKeywords ||
+                    (this.OptinKeywords != null &&
+                    this.OptinKeywords.Equals(input.OptinKeywords))
+                ) && 
+                (
+                    this.OptoutKeywords == input.OptoutKeywords ||
+                    (this.OptoutKeywords != null &&
+                    this.OptoutKeywords.Equals(input.OptoutKeywords))
+                ) && 
+                (
+                    this.HelpKeywords == input.HelpKeywords ||
+                    (this.HelpKeywords != null &&
+                    this.HelpKeywords.Equals(input.HelpKeywords))
+                ) && 
+                (
+                    this.OptinMessage == input.OptinMessage ||
+                    (this.OptinMessage != null &&
+                    this.OptinMessage.Equals(input.OptinMessage))
+                ) && 
+                (
+                    this.OptoutMessage == input.OptoutMessage ||
+                    (this.OptoutMessage != null &&
+                    this.OptoutMessage.Equals(input.OptoutMessage))
+                ) && 
+                (
                     this.ReferenceId == input.ReferenceId ||
                     (this.ReferenceId != null &&
                     this.ReferenceId.Equals(input.ReferenceId))
@@ -723,6 +803,26 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.HelpMessage.GetHashCode();
                 }
+                if (this.OptinKeywords != null)
+                {
+                    hashCode = (hashCode * 59) + this.OptinKeywords.GetHashCode();
+                }
+                if (this.OptoutKeywords != null)
+                {
+                    hashCode = (hashCode * 59) + this.OptoutKeywords.GetHashCode();
+                }
+                if (this.HelpKeywords != null)
+                {
+                    hashCode = (hashCode * 59) + this.HelpKeywords.GetHashCode();
+                }
+                if (this.OptinMessage != null)
+                {
+                    hashCode = (hashCode * 59) + this.OptinMessage.GetHashCode();
+                }
+                if (this.OptoutMessage != null)
+                {
+                    hashCode = (hashCode * 59) + this.OptoutMessage.GetHashCode();
+                }
                 if (this.ReferenceId != null)
                 {
                     hashCode = (hashCode * 59) + this.ReferenceId.GetHashCode();
@@ -807,6 +907,36 @@ namespace freeclimb.Model
             if (this.HelpMessage != null && this.HelpMessage.Length > 255)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HelpMessage, length must be less than 255.", new [] { "HelpMessage" });
+            }
+
+            // OptinKeywords (string) maxLength
+            if (this.OptinKeywords != null && this.OptinKeywords.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OptinKeywords, length must be less than 255.", new [] { "OptinKeywords" });
+            }
+
+            // OptoutKeywords (string) maxLength
+            if (this.OptoutKeywords != null && this.OptoutKeywords.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OptoutKeywords, length must be less than 255.", new [] { "OptoutKeywords" });
+            }
+
+            // HelpKeywords (string) maxLength
+            if (this.HelpKeywords != null && this.HelpKeywords.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HelpKeywords, length must be less than 255.", new [] { "HelpKeywords" });
+            }
+
+            // OptinMessage (string) maxLength
+            if (this.OptinMessage != null && this.OptinMessage.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OptinMessage, length must be less than 255.", new [] { "OptinMessage" });
+            }
+
+            // OptoutMessage (string) maxLength
+            if (this.OptoutMessage != null && this.OptoutMessage.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OptoutMessage, length must be less than 255.", new [] { "OptoutMessage" });
             }
 
             // ReferenceId (string) maxLength

@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SetTalkTests()
         {
-            instance = new SetTalk("TEST_STRING", false, "TEST_STRING");
+            instance = new SetTalk(false);
         }
 
         /// <summary>
@@ -56,147 +56,132 @@ namespace freeclimb.Test.Model
 
 
         /// <summary>
-        /// Test the property 'CallId'
-        /// </summary>
-        [Fact]
-        public void CallIdTest()
-        {
-            instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
-            
-        }
-        /// <summary>
         /// Test the property 'Talk'
         /// </summary>
         [Fact]
         public void TalkTest()
         {
             instance.Talk = false;
-            Assert.Equal(false, instance.Talk);       
-            
+            Assert.Equal(false, instance.Talk);
+
         }
-        
-        
+
+
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTrueTest() {
-        SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test1.CallId = "TS";
-         test1.Talk = true;
+        public void equalsTrueTest()
+        {
+            SetTalk test1 = new SetTalk(false);
+            test1.Talk = true;
 
-        SetTalk test2 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test2.CallId = "TS";
-         test2.Talk = true;
+            SetTalk test2 = new SetTalk(false);
+            test2.Talk = true;
 
-        Assert.Equal(test1,test2);
+            Assert.Equal(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-        
+
         [Fact]
-        public void equalsFalseTest() {
-        SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test1.CallId = "TS";
-         test1.Talk = true;
+        public void equalsFalseTest()
+        {
+            SetTalk test1 = new SetTalk(false);
+            test1.Talk = true;
 
-        SetTalk test2 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test2.CallId = "ts";
-         test2.Talk = false;
+            SetTalk test2 = new SetTalk(false);
+            test2.Talk = false;
 
-        Assert.NotEqual(test1,test2);
+            Assert.NotEqual(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-        
-        [Fact]
-        public void hashCodeTypeTest() {
-        SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test1.CallId = "TS";
-         test1.Talk = true;
 
-        int hashCode1 = test1.GetHashCode();
-        Assert.True(hashCode1.GetType() == typeof(int));
+        [Fact]
+        public void hashCodeTypeTest()
+        {
+            SetTalk test1 = new SetTalk(false);
+            test1.Talk = true;
+
+            int hashCode1 = test1.GetHashCode();
+            Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-        
-        [Fact]
-        public void ToStringTypeTest() {
-        SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test1.CallId = "TS";
-         test1.Talk = true;
 
-        string toString1 = test1.ToString();
-        Assert.True(toString1.GetType() == typeof(string));
+        [Fact]
+        public void ToStringTypeTest()
+        {
+            SetTalk test1 = new SetTalk(false);
+            test1.Talk = true;
+
+            string toString1 = test1.ToString();
+            Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-        
+
         [Fact]
-        public void ToStringEqualsTest() {
-        SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test1.CallId = "TS";
-         test1.Talk = true;
+        public void ToStringEqualsTest()
+        {
+            SetTalk test1 = new SetTalk(false);
+            test1.Talk = true;
 
-        SetTalk test2 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test2.CallId = "TS";
-         test2.Talk = true;
+            SetTalk test2 = new SetTalk(false);
+            test2.Talk = true;
 
-        string toString1 = test1.ToString();
-        string toString2 = test2.ToString();
-        Assert.Equal(toString1, toString2);
+            string toString1 = test1.ToString();
+            string toString2 = test2.ToString();
+            Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTest() {
-        SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test1.CallId = "TS";
-         test1.Talk = true;
+        public void equalsTest()
+        {
+            SetTalk test1 = new SetTalk(false);
+            test1.Talk = true;
 
-        SetTalk test2 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test2.CallId = "TS";
-         test2.Talk = true;
+            SetTalk test2 = new SetTalk(false);
+            test2.Talk = true;
 
-        Assert.True(test1.Equals(test2));
+            Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-        
+
         [Fact]
-        public void ToJsonTest() {
-        SetTalk test1 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test1.CallId = "TS";
-         test1.Talk = true;
-        JsonSerializer jsonSerializer = JsonSerializer.Create();
-        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-        StringBuilder strb = new StringBuilder();
-        jsonSerializer.Serialize(new StringWriter(strb), test1);
+        public void ToJsonTest()
+        {
+            SetTalk test1 = new SetTalk(false);
+            test1.Talk = true;
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        SetTalk test2 = new SetTalk("TEST_STRING", false, "TEST_STRING");
-         test2.CallId = "TS";
-         test2.Talk = true;
+            SetTalk test2 = new SetTalk(false);
+            test2.Talk = true;
 
-        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+            Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

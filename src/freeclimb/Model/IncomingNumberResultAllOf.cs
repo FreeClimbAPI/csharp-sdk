@@ -48,7 +48,8 @@ namespace freeclimb.Model
         /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers..</param>
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers..</param>
         /// <param name="offnet">The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource..</param>
-        public IncomingNumberResultAllOf(Capabilities capabilities = default(Capabilities), string campaignId = default(string), string phoneNumberId = default(string), string accountId = default(string), string applicationId = default(string), string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? offnet = default(bool?))
+        /// <param name="tfn">tfn.</param>
+        public IncomingNumberResultAllOf(Capabilities capabilities = default(Capabilities), string campaignId = default(string), string phoneNumberId = default(string), string accountId = default(string), string applicationId = default(string), string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? offnet = default(bool?), TFN tfn = default(TFN))
         {
             this.Capabilities = capabilities;
             this.CampaignId = campaignId;
@@ -62,6 +63,7 @@ namespace freeclimb.Model
             this.VoiceEnabled = voiceEnabled;
             this.SmsEnabled = smsEnabled;
             this.Offnet = offnet;
+            this.Tfn = tfn;
         }
 
         /// <summary>
@@ -150,6 +152,12 @@ namespace freeclimb.Model
         public bool? Offnet { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tfn
+        /// </summary>
+        [DataMember(Name = "tfn", EmitDefaultValue = false)]
+        public TFN Tfn { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -169,6 +177,7 @@ namespace freeclimb.Model
             sb.Append("  VoiceEnabled: ").Append(VoiceEnabled).Append("\n");
             sb.Append("  SmsEnabled: ").Append(SmsEnabled).Append("\n");
             sb.Append("  Offnet: ").Append(Offnet).Append("\n");
+            sb.Append("  Tfn: ").Append(Tfn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -201,6 +210,7 @@ namespace freeclimb.Model
             props.Add("voiceEnabled", VoiceEnabled);          
             props.Add("smsEnabled", SmsEnabled);          
             props.Add("offnet", Offnet);          
+            props.Add("tfn", Tfn);          
             return props;
         }
         
@@ -285,6 +295,11 @@ namespace freeclimb.Model
                     this.Offnet == input.Offnet ||
                     (this.Offnet != null &&
                     this.Offnet.Equals(input.Offnet))
+                ) && 
+                (
+                    this.Tfn == input.Tfn ||
+                    (this.Tfn != null &&
+                    this.Tfn.Equals(input.Tfn))
                 );
         }
 
@@ -344,6 +359,10 @@ namespace freeclimb.Model
                 if (this.Offnet != null)
                 {
                     hashCode = (hashCode * 59) + this.Offnet.GetHashCode();
+                }
+                if (this.Tfn != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tfn.GetHashCode();
                 }
                 return hashCode;
             }

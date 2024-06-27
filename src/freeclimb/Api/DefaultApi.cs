@@ -535,6 +535,40 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of SMSTenDLCPartnerCampaignsListResult</returns>
         ApiResponse<SMSTenDLCPartnerCampaignsListResult> GetTenDLCSmsPartnerCampaignsWithHttpInfo(string brandId = default(string));
         /// <summary>
+        /// Get a TollFree SMS Campaign
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
+        /// <returns>SMSTollFreeCampaign</returns>
+        SMSTollFreeCampaign GetTollFreeSmsCampaign(string campaignId);
+
+        /// <summary>
+        /// Get a TollFree SMS Campaign
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
+        /// <returns>ApiResponse of SMSTollFreeCampaign</returns>
+        ApiResponse<SMSTollFreeCampaign> GetTollFreeSmsCampaignWithHttpInfo(string campaignId);
+        /// <summary>
+        /// Get list of TollFree Campaigns
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>SMSTollFreeCampaignsListResult</returns>
+        SMSTollFreeCampaignsListResult GetTollFreeSmsCampaigns();
+
+        /// <summary>
+        /// Get list of TollFree Campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of SMSTollFreeCampaignsListResult</returns>
+        ApiResponse<SMSTollFreeCampaignsListResult> GetTollFreeSmsCampaignsWithHttpInfo();
+        /// <summary>
         /// List Active Queues
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -693,6 +727,28 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of CallList</returns>
         ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), List<string> applicationId = default(List<string>));
         /// <summary>
+        /// List Conference Recordings
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
+        /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
+        /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <returns>RecordingList</returns>
+        RecordingList ListConferenceRecordings(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string));
+
+        /// <summary>
+        /// List Conference Recordings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
+        /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
+        /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <returns>ApiResponse of RecordingList</returns>
+        ApiResponse<RecordingList> ListConferenceRecordingsWithHttpInfo(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string));
+        /// <summary>
         /// List Conferences
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -734,9 +790,10 @@ namespace freeclimb.Api
         /// <param name="capabilitiesTollFree"> (optional)</param>
         /// <param name="capabilitiesTenDLC"> (optional)</param>
         /// <param name="capabilitiesShortCode"> (optional)</param>
+        /// <param name="tfnCampaignId">Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)</param>
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         /// <returns>IncomingNumberList</returns>
-        IncomingNumberList ListIncomingNumbers(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?));
+        IncomingNumberList ListIncomingNumbers(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string tfnCampaignId = default(string), bool? offnet = default(bool?));
 
         /// <summary>
         /// List Incoming Numbers
@@ -759,9 +816,10 @@ namespace freeclimb.Api
         /// <param name="capabilitiesTollFree"> (optional)</param>
         /// <param name="capabilitiesTenDLC"> (optional)</param>
         /// <param name="capabilitiesShortCode"> (optional)</param>
+        /// <param name="tfnCampaignId">Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)</param>
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         /// <returns>ApiResponse of IncomingNumberList</returns>
-        ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?));
+        ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string tfnCampaignId = default(string), bool? offnet = default(bool?));
         /// <summary>
         /// List Members
         /// </summary>
@@ -874,6 +932,27 @@ namespace freeclimb.Api
         /// <param name="makeCallRequest">Call details for making a call (optional)</param>
         /// <returns>ApiResponse of CallResult</returns>
         ApiResponse<CallResult> MakeACallWithHttpInfo(MakeCallRequest makeCallRequest = default(MakeCallRequest));
+        /// <summary>
+        /// Make a JWT for WebRTC calling
+        /// </summary>
+        /// <remarks>
+        /// Make a JWT for WebRTC calling
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"></param>
+        /// <returns>string</returns>
+        string MakeAWebrtcJwt(InlineObject inlineObject);
+
+        /// <summary>
+        /// Make a JWT for WebRTC calling
+        /// </summary>
+        /// <remarks>
+        /// Make a JWT for WebRTC calling
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"></param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> MakeAWebrtcJwtWithHttpInfo(InlineObject inlineObject);
         /// <summary>
         /// Remove a Participant
         /// </summary>
@@ -1840,6 +1919,56 @@ namespace freeclimb.Api
         /// <returns>Task of ApiResponse (SMSTenDLCPartnerCampaignsListResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<SMSTenDLCPartnerCampaignsListResult>> GetTenDLCSmsPartnerCampaignsWithHttpInfoAsync(string brandId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Get a TollFree SMS Campaign
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTollFreeCampaign</returns>
+        System.Threading.Tasks.Task<SMSTollFreeCampaign> GetTollFreeSmsCampaignAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get a TollFree SMS Campaign
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTollFreeCampaign)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SMSTollFreeCampaign>> GetTollFreeSmsCampaignWithHttpInfoAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get list of TollFree Campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTollFreeCampaignsListResult</returns>
+        System.Threading.Tasks.Task<SMSTollFreeCampaignsListResult> GetTollFreeSmsCampaignsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get list of TollFree Campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTollFreeCampaignsListResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SMSTollFreeCampaignsListResult>> GetTollFreeSmsCampaignsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// List Active Queues
         /// </summary>
         /// <remarks>
@@ -2093,6 +2222,41 @@ namespace freeclimb.Api
         /// <returns>Task of ApiResponse (CallList)</returns>
         System.Threading.Tasks.Task<ApiResponse<CallList>> ListCallsWithHttpInfoAsync(bool? active = default(bool?), string to = default(string), string from = default(string), CallStatus? status = default(CallStatus?), string startTime = default(string), string endTime = default(string), string parentCallId = default(string), List<string> applicationId = default(List<string>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// List Conference Recordings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
+        
+        /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
+        
+        /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RecordingList</returns>
+        System.Threading.Tasks.Task<RecordingList> ListConferenceRecordingsAsync(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List Conference Recordings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
+        
+        /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
+        
+        /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RecordingList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RecordingList>> ListConferenceRecordingsWithHttpInfoAsync(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// List Conferences
         /// </summary>
         /// <remarks>
@@ -2167,11 +2331,13 @@ namespace freeclimb.Api
         
         /// <param name="capabilitiesShortCode"> (optional)</param>
         
+        /// <param name="tfnCampaignId">Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)</param>
+        
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberList</returns>
-        System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string tfnCampaignId = default(string), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Incoming Numbers
@@ -2209,11 +2375,13 @@ namespace freeclimb.Api
         
         /// <param name="capabilitiesShortCode"> (optional)</param>
         
+        /// <param name="tfnCampaignId">Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)</param>
+        
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string tfnCampaignId = default(string), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Members
         /// </summary>
@@ -2393,6 +2561,33 @@ namespace freeclimb.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<CallResult>> MakeACallWithHttpInfoAsync(MakeCallRequest makeCallRequest = default(MakeCallRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Make a JWT for WebRTC calling
+        /// </summary>
+        /// <remarks>
+        /// Make a JWT for WebRTC calling
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="inlineObject"></param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> MakeAWebrtcJwtAsync(InlineObject inlineObject, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Make a JWT for WebRTC calling
+        /// </summary>
+        /// <remarks>
+        /// Make a JWT for WebRTC calling
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="inlineObject"></param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> MakeAWebrtcJwtWithHttpInfoAsync(InlineObject inlineObject, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove a Participant
         /// </summary>
@@ -7159,6 +7354,296 @@ namespace freeclimb.Api
         }
 
         /// <summary>
+        /// Get a TollFree SMS Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
+        /// <returns>SMSTollFreeCampaign</returns>
+        public SMSTollFreeCampaign GetTollFreeSmsCampaign(string campaignId)
+        {
+            freeclimb.Client.ApiResponse<SMSTollFreeCampaign> localVarResponse = GetTollFreeSmsCampaignWithHttpInfo(campaignId );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a TollFree SMS Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
+        /// <returns>ApiResponse of SMSTollFreeCampaign</returns>
+        public freeclimb.Client.ApiResponse<SMSTollFreeCampaign> GetTollFreeSmsCampaignWithHttpInfo(string campaignId)
+        {
+            
+            // verify the required parameter 'campaignId' is set
+            if (campaignId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'campaignId' when calling DefaultApi->GetTollFreeSmsCampaign");
+            }
+
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("campaignId", freeclimb.Client.ClientUtils.ParameterToString(campaignId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SMSTollFreeCampaign>("/Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTollFreeSmsCampaign", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a TollFree SMS Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTollFreeCampaign</returns>
+        public async System.Threading.Tasks.Task<SMSTollFreeCampaign> GetTollFreeSmsCampaignAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<SMSTollFreeCampaign> localVarResponse = await GetTollFreeSmsCampaignWithHttpInfoAsync(campaignId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a TollFree SMS Campaign 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTollFreeCampaign)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTollFreeCampaign>> GetTollFreeSmsCampaignWithHttpInfoAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+            // verify the required parameter 'campaignId' is set
+            if (campaignId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'campaignId' when calling DefaultApi->GetTollFreeSmsCampaign");
+            }
+
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("campaignId", freeclimb.Client.ClientUtils.ParameterToString(campaignId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SMSTollFreeCampaign>("/Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTollFreeSmsCampaign", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get list of TollFree Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>SMSTollFreeCampaignsListResult</returns>
+        public SMSTollFreeCampaignsListResult GetTollFreeSmsCampaigns()
+        {
+            freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult> localVarResponse = GetTollFreeSmsCampaignsWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get list of TollFree Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of SMSTollFreeCampaignsListResult</returns>
+        public freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult> GetTollFreeSmsCampaignsWithHttpInfo()
+        {
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SMSTollFreeCampaignsListResult>("/Accounts/{accountId}/Messages/TollFree/Campaigns", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTollFreeSmsCampaigns", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get list of TollFree Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SMSTollFreeCampaignsListResult</returns>
+        public async System.Threading.Tasks.Task<SMSTollFreeCampaignsListResult> GetTollFreeSmsCampaignsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult> localVarResponse = await GetTollFreeSmsCampaignsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get list of TollFree Campaigns 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SMSTollFreeCampaignsListResult)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult>> GetTollFreeSmsCampaignsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SMSTollFreeCampaignsListResult>("/Accounts/{accountId}/Messages/TollFree/Campaigns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTollFreeSmsCampaigns", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// List Active Queues 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -8475,6 +8960,188 @@ namespace freeclimb.Api
         }
 
         /// <summary>
+        /// List Conference Recordings 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
+        /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
+        /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <returns>RecordingList</returns>
+        public RecordingList ListConferenceRecordings(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string))
+        {
+            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = ListConferenceRecordingsWithHttpInfo(callId , conferenceId , dateCreated );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Conference Recordings 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
+        /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
+        /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <returns>ApiResponse of RecordingList</returns>
+        public freeclimb.Client.ApiResponse<RecordingList> ListConferenceRecordingsWithHttpInfo(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string))
+        {
+            
+            
+            
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (callId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "callId", callId));
+            }
+            if (conferenceId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "conferenceId", conferenceId));
+            }
+            if (dateCreated != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "dateCreated", dateCreated));
+            }
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<RecordingList>("/Accounts/{accountId}/Conferences/{conferenceId}/Recordings", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListConferenceRecordings", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Conference Recordings 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
+        
+        /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
+        
+        /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RecordingList</returns>
+        public async System.Threading.Tasks.Task<RecordingList> ListConferenceRecordingsAsync(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = await ListConferenceRecordingsWithHttpInfoAsync(callId, conferenceId, dateCreated, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Conference Recordings 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
+        
+        /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
+        
+        /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RecordingList)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<RecordingList>> ListConferenceRecordingsWithHttpInfoAsync(string callId = default(string), string conferenceId = default(string), string dateCreated = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+            
+            
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (callId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "callId", callId));
+            }
+            if (conferenceId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "conferenceId", conferenceId));
+            }
+            if (dateCreated != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "dateCreated", dateCreated));
+            }
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<RecordingList>("/Accounts/{accountId}/Conferences/{conferenceId}/Recordings", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListConferenceRecordings", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// List Conferences 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -8690,11 +9357,12 @@ namespace freeclimb.Api
         /// <param name="capabilitiesTollFree"> (optional)</param>
         /// <param name="capabilitiesTenDLC"> (optional)</param>
         /// <param name="capabilitiesShortCode"> (optional)</param>
+        /// <param name="tfnCampaignId">Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)</param>
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         /// <returns>IncomingNumberList</returns>
-        public IncomingNumberList ListIncomingNumbers(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?))
+        public IncomingNumberList ListIncomingNumbers(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string tfnCampaignId = default(string), bool? offnet = default(bool?))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = ListIncomingNumbersWithHttpInfo(phoneNumber , alias , region , country , applicationId , hasApplication , voiceEnabled , smsEnabled , hasCampaign , capabilitiesVoice , capabilitiesSms , capabilitiesTollFree , capabilitiesTenDLC , capabilitiesShortCode , offnet );
+            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = ListIncomingNumbersWithHttpInfo(phoneNumber , alias , region , country , applicationId , hasApplication , voiceEnabled , smsEnabled , hasCampaign , capabilitiesVoice , capabilitiesSms , capabilitiesTollFree , capabilitiesTenDLC , capabilitiesShortCode , tfnCampaignId , offnet );
             return localVarResponse.Data;
         }
 
@@ -8716,10 +9384,12 @@ namespace freeclimb.Api
         /// <param name="capabilitiesTollFree"> (optional)</param>
         /// <param name="capabilitiesTenDLC"> (optional)</param>
         /// <param name="capabilitiesShortCode"> (optional)</param>
+        /// <param name="tfnCampaignId">Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)</param>
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         /// <returns>ApiResponse of IncomingNumberList</returns>
-        public freeclimb.Client.ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?))
+        public freeclimb.Client.ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string tfnCampaignId = default(string), bool? offnet = default(bool?))
         {
+            
             
             
             
@@ -8814,6 +9484,10 @@ namespace freeclimb.Api
             if (capabilitiesShortCode != null)
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "capabilities.shortCode", capabilitiesShortCode));
+            }
+            if (tfnCampaignId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "tfn.campaignId", tfnCampaignId));
             }
             if (offnet != null)
             {
@@ -8874,13 +9548,15 @@ namespace freeclimb.Api
         
         /// <param name="capabilitiesShortCode"> (optional)</param>
         
+        /// <param name="tfnCampaignId">Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)</param>
+        
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IncomingNumberList</returns>
-        public async System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string tfnCampaignId = default(string), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = await ListIncomingNumbersWithHttpInfoAsync(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = await ListIncomingNumbersWithHttpInfoAsync(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -8917,12 +9593,15 @@ namespace freeclimb.Api
         
         /// <param name="capabilitiesShortCode"> (optional)</param>
         
+        /// <param name="tfnCampaignId">Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)</param>
+        
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<IncomingNumberList>> ListIncomingNumbersWithHttpInfoAsync(string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), string applicationId = default(string), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string tfnCampaignId = default(string), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            
             
             
             
@@ -9018,6 +9697,10 @@ namespace freeclimb.Api
             if (capabilitiesShortCode != null)
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "capabilities.shortCode", capabilitiesShortCode));
+            }
+            if (tfnCampaignId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "tfn.campaignId", tfnCampaignId));
             }
             if (offnet != null)
             {
@@ -9971,6 +10654,164 @@ namespace freeclimb.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("MakeACall", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Make a JWT for WebRTC calling Make a JWT for WebRTC calling
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"></param>
+        /// <returns>string</returns>
+        public string MakeAWebrtcJwt(InlineObject inlineObject)
+        {
+            freeclimb.Client.ApiResponse<string> localVarResponse = MakeAWebrtcJwtWithHttpInfo(inlineObject );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Make a JWT for WebRTC calling Make a JWT for WebRTC calling
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"></param>
+        /// <returns>ApiResponse of string</returns>
+        public freeclimb.Client.ApiResponse<string> MakeAWebrtcJwtWithHttpInfo(InlineObject inlineObject)
+        {
+            
+            // verify the required parameter 'inlineObject' is set
+            if (inlineObject == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'inlineObject' when calling DefaultApi->MakeAWebrtcJwt");
+            }
+
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.Data = inlineObject;
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<string>("/Accounts/{accountId}/Calls/WebRTC/Token", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("MakeAWebrtcJwt", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Make a JWT for WebRTC calling Make a JWT for WebRTC calling
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="inlineObject"></param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> MakeAWebrtcJwtAsync(InlineObject inlineObject, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<string> localVarResponse = await MakeAWebrtcJwtWithHttpInfoAsync(inlineObject, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Make a JWT for WebRTC calling Make a JWT for WebRTC calling
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="inlineObject"></param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<string>> MakeAWebrtcJwtWithHttpInfoAsync(InlineObject inlineObject, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+            // verify the required parameter 'inlineObject' is set
+            if (inlineObject == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'inlineObject' when calling DefaultApi->MakeAWebrtcJwt");
+            }
+
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.Data = inlineObject;
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/Accounts/{accountId}/Calls/WebRTC/Token", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("MakeAWebrtcJwt", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
