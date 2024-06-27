@@ -829,7 +829,7 @@ namespace freeclimb.Test.Api
         /// <summary>
         /// Test MakeAWebrtcJwt
         /// </summary>
-        [Fact]
+        // [Fact]
 
         //Need to revisit this depending on whether other SDKs are facing the same issues
         // public void MakeAWebrtcJwtTest()
