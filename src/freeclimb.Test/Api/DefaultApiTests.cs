@@ -839,7 +839,6 @@ namespace freeclimb.Test.Api
 
             var response = instance.MakeAWebrtcJwt(inlineObject);
             //Assert.IsType<string>(response);
-            Console.WriteLine(response);
             Assert.IsAssignableFrom<string>(response);
         }
 
