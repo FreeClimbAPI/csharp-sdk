@@ -63,28 +63,10 @@ namespace freeclimb.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TerminateConference" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TerminateConference() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TerminateConference" /> class.
-        /// </summary>
-        /// <param name="conferenceId">ID of the conference to terminate. (required).</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;TerminateConference&quot;).</param>
-        public TerminateConference(string conferenceId = default(string), string command = "TerminateConference") : base(command)
+        public TerminateConference(string command = "TerminateConference") : base(command)
         {
-            // to ensure "conferenceId" is required (not null)
-            if (conferenceId == null) {
-                throw new ArgumentNullException("conferenceId is a required property for TerminateConference and cannot be null");
-            }
-            this.ConferenceId = conferenceId;
         }
-
-        /// <summary>
-        /// ID of the conference to terminate.
-        /// </summary>
-        /// <value>ID of the conference to terminate.</value>
-        [DataMember(Name = "conferenceId", IsRequired = true, EmitDefaultValue = false)]
-        public string ConferenceId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -95,7 +77,6 @@ namespace freeclimb.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class TerminateConference {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  ConferenceId: ").Append(ConferenceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -122,7 +103,6 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("conferenceId", ConferenceId);          
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("TerminateConference",props);
             return command;
@@ -149,12 +129,7 @@ namespace freeclimb.Model
             {
                 return false;
             }
-            return base.Equals(input) && 
-                (
-                    this.ConferenceId == input.ConferenceId ||
-                    (this.ConferenceId != null &&
-                    this.ConferenceId.Equals(input.ConferenceId))
-                );
+            return base.Equals(input);
         }
 
         /// <summary>
@@ -166,10 +141,6 @@ namespace freeclimb.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.ConferenceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConferenceId.GetHashCode();
-                }
                 return hashCode;
             }
         }

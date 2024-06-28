@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SayTests()
         {
-            instance = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
+            instance = new Say("TEST_STRING", "TEST_STRING", 1, false);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             instance.Text = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Text);
-            
+
         }
         /// <summary>
         /// Test the property 'Language'
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         {
             instance.Language = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Language);
-            
+
         }
         /// <summary>
         /// Test the property 'Loop'
@@ -81,19 +81,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LoopTest()
         {
-            
+
             instance.Loop = 1;
-            Assert.Equal(1, (int) instance.Loop);
-        }
-        /// <summary>
-        /// Test the property 'ConferenceId'
-        /// </summary>
-        [Fact]
-        public void ConferenceIdTest()
-        {
-            instance.ConferenceId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ConferenceId);
-            
+            Assert.Equal(1, (int)instance.Loop);
         }
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -102,167 +92,162 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);       
-            
+            Assert.Equal(false, instance.PrivacyMode);
+
         }
-        
-        
+
+
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTrueTest() {
-        Say test1 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test1.Text = "TS";
-         test1.Language = "TS";
-         test1.Loop = 1;
-         test1.ConferenceId = "TS";
-         test1.PrivacyMode = true;
+        public void equalsTrueTest()
+        {
+            Say test1 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test1.Text = "TS";
+            test1.Language = "TS";
+            test1.Loop = 1;
+            test1.PrivacyMode = true;
 
-        Say test2 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test2.Text = "TS";
-         test2.Language = "TS";
-         test2.Loop = 1;
-         test2.ConferenceId = "TS";
-         test2.PrivacyMode = true;
+            Say test2 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test2.Text = "TS";
+            test2.Language = "TS";
+            test2.Loop = 1;
+            test2.PrivacyMode = true;
 
-        Assert.Equal(test1,test2);
+            Assert.Equal(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-        
+
         [Fact]
-        public void equalsFalseTest() {
-        Say test1 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test1.Text = "TS";
-         test1.Language = "TS";
-         test1.Loop = 1;
-         test1.ConferenceId = "TS";
-         test1.PrivacyMode = true;
+        public void equalsFalseTest()
+        {
+            Say test1 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test1.Text = "TS";
+            test1.Language = "TS";
+            test1.Loop = 1;
+            test1.PrivacyMode = true;
 
-        Say test2 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test2.Text = "ts";
-         test2.Language = "ts";
-         test2.Loop = 2;
-         test2.ConferenceId = "ts";
-         test2.PrivacyMode = false;
+            Say test2 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test2.Text = "ts";
+            test2.Language = "ts";
+            test2.Loop = 2;
+            test2.PrivacyMode = false;
 
-        Assert.NotEqual(test1,test2);
+            Assert.NotEqual(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-        
-        [Fact]
-        public void hashCodeTypeTest() {
-        Say test1 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test1.Text = "TS";
-         test1.Language = "TS";
-         test1.Loop = 1;
-         test1.ConferenceId = "TS";
-         test1.PrivacyMode = true;
 
-        int hashCode1 = test1.GetHashCode();
-        Assert.True(hashCode1.GetType() == typeof(int));
+        [Fact]
+        public void hashCodeTypeTest()
+        {
+            Say test1 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test1.Text = "TS";
+            test1.Language = "TS";
+            test1.Loop = 1;
+            test1.PrivacyMode = true;
+
+            int hashCode1 = test1.GetHashCode();
+            Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-        
-        [Fact]
-        public void ToStringTypeTest() {
-        Say test1 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test1.Text = "TS";
-         test1.Language = "TS";
-         test1.Loop = 1;
-         test1.ConferenceId = "TS";
-         test1.PrivacyMode = true;
 
-        string toString1 = test1.ToString();
-        Assert.True(toString1.GetType() == typeof(string));
+        [Fact]
+        public void ToStringTypeTest()
+        {
+            Say test1 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test1.Text = "TS";
+            test1.Language = "TS";
+            test1.Loop = 1;
+            test1.PrivacyMode = true;
+
+            string toString1 = test1.ToString();
+            Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-        
+
         [Fact]
-        public void ToStringEqualsTest() {
-        Say test1 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test1.Text = "TS";
-         test1.Language = "TS";
-         test1.Loop = 1;
-         test1.ConferenceId = "TS";
-         test1.PrivacyMode = true;
+        public void ToStringEqualsTest()
+        {
+            Say test1 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test1.Text = "TS";
+            test1.Language = "TS";
+            test1.Loop = 1;
+            test1.PrivacyMode = true;
 
-        Say test2 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test2.Text = "TS";
-         test2.Language = "TS";
-         test2.Loop = 1;
-         test2.ConferenceId = "TS";
-         test2.PrivacyMode = true;
+            Say test2 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test2.Text = "TS";
+            test2.Language = "TS";
+            test2.Loop = 1;
+            test2.PrivacyMode = true;
 
-        string toString1 = test1.ToString();
-        string toString2 = test2.ToString();
-        Assert.Equal(toString1, toString2);
+            string toString1 = test1.ToString();
+            string toString2 = test2.ToString();
+            Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTest() {
-        Say test1 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test1.Text = "TS";
-         test1.Language = "TS";
-         test1.Loop = 1;
-         test1.ConferenceId = "TS";
-         test1.PrivacyMode = true;
+        public void equalsTest()
+        {
+            Say test1 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test1.Text = "TS";
+            test1.Language = "TS";
+            test1.Loop = 1;
+            test1.PrivacyMode = true;
 
-        Say test2 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test2.Text = "TS";
-         test2.Language = "TS";
-         test2.Loop = 1;
-         test2.ConferenceId = "TS";
-         test2.PrivacyMode = true;
+            Say test2 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test2.Text = "TS";
+            test2.Language = "TS";
+            test2.Loop = 1;
+            test2.PrivacyMode = true;
 
-        Assert.True(test1.Equals(test2));
+            Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-        
+
         [Fact]
-        public void ToJsonTest() {
-        Say test1 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test1.Text = "TS";
-         test1.Language = "TS";
-         test1.Loop = 1;
-         test1.ConferenceId = "TS";
-         test1.PrivacyMode = true;
-        JsonSerializer jsonSerializer = JsonSerializer.Create();
-        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-        StringBuilder strb = new StringBuilder();
-        jsonSerializer.Serialize(new StringWriter(strb), test1);
+        public void ToJsonTest()
+        {
+            Say test1 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test1.Text = "TS";
+            test1.Language = "TS";
+            test1.Loop = 1;
+            test1.PrivacyMode = true;
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        Say test2 = new Say("TEST_STRING", "TEST_STRING", 1 , "TEST_STRING", false, "TEST_STRING");
-         test2.Text = "TS";
-         test2.Language = "TS";
-         test2.Loop = 1;
-         test2.ConferenceId = "TS";
-         test2.PrivacyMode = true;
+            Say test2 = new Say("TEST_STRING", "TEST_STRING", 1, false);
+            test2.Text = "TS";
+            test2.Language = "TS";
+            test2.Loop = 1;
+            test2.PrivacyMode = true;
 
-        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+            Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

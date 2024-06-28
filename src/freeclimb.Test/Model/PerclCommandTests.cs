@@ -68,7 +68,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RemoveFromConferenceDeserializeFromPerclCommandTest()
         {
-            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new RemoveFromConference("TEST_STRING", "TEST_STRING").ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new RemoveFromConference().ToJson()));
         }
         /// <summary>
         /// Test deserialize a TerminateConference from type PerclCommand
@@ -76,7 +76,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TerminateConferenceDeserializeFromPerclCommandTest()
         {
-            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new TerminateConference("TEST_STRING", "TEST_STRING").ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new TerminateConference().ToJson()));
         }
         /// <summary>
         /// Test deserialize a Park from type PerclCommand
@@ -100,7 +100,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AddToConferenceDeserializeFromPerclCommandTest()
         {
-            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false, "TEST_STRING").ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new AddToConference(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false).ToJson()));
         }
         /// <summary>
         /// Test deserialize a Sms from type PerclCommand
@@ -140,7 +140,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayDeserializeFromPerclCommandTest()
         {
-            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Play("TEST_STRING", 1 ,"TEST_STRING", false, "TEST_STRING").ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Play("TEST_STRING", 1, false).ToJson()));
         }
         /// <summary>
         /// Test deserialize a SetTalk from type PerclCommand
@@ -148,7 +148,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SetTalkDeserializeFromPerclCommandTest()
         {
-            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetTalk("TEST_STRING", false, "TEST_STRING").ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetTalk(false).ToJson()));
         }
         /// <summary>
         /// Test deserialize a OutDial from type PerclCommand
@@ -172,7 +172,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void GetDigitsDeserializeFromPerclCommandTest()
         {
-            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new GetDigits("TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING", 1, 1, new List<PerclCommand>(), false, "TEST_STRING").ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new GetDigits("https://a.com", 1, "TEST_STRING", false, 300, 1, 1, new List<PerclCommand>(), false, "TEST_STRING").ToJson()));
         }
         /// <summary>
         /// Test deserialize a CreateConference from type PerclCommand
@@ -180,7 +180,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CreateConferenceDeserializeFromPerclCommandTest()
         {
-            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new CreateConference("TEST_STRING", false,  PlayBeep.ALWAYS, false, "https://a.com", "https://a.com", "TEST_STRING").ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new CreateConference("TEST_STRING", false, PlayBeep.ALWAYS, false, "https://a.com", "https://a.com", "TEST_STRING").ToJson()));
         }
         /// <summary>
         /// Test deserialize a StartRecordCall from type PerclCommand
@@ -196,7 +196,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SetListenDeserializeFromPerclCommandTest()
         {
-            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetListen("TEST_STRING", false, "TEST_STRING").ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetListen().ToJson()));
         }
         /// <summary>
         /// Test deserialize a PlayEarlyMedia from type PerclCommand
@@ -220,7 +220,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SayDeserializeFromPerclCommandTest()
         {
-            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Say("TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING").ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Say("TEST_STRING", "TEST_STRING", 1, false).ToJson()));
         }
         /// <summary>
         /// Test deserialize a Enqueue from type PerclCommand
@@ -256,114 +256,121 @@ namespace freeclimb.Test.Model
             instance.Command = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Command);
         }
-        
-        
+
+
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-        
-        [Fact]
-        public void equalsTrueTest() {
-        PerclCommand test1 = new PerclCommand("TEST_STRING");
-         test1.Command = "TS";
-        PerclCommand test2 = new PerclCommand("TEST_STRING");
-         test2.Command = "TS";
 
-        Assert.Equal(test1,test2);
+        [Fact]
+        public void equalsTrueTest()
+        {
+            PerclCommand test1 = new PerclCommand("TEST_STRING");
+            test1.Command = "TS";
+            PerclCommand test2 = new PerclCommand("TEST_STRING");
+            test2.Command = "TS";
+
+            Assert.Equal(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-        
-        [Fact]
-        public void equalsFalseTest() {
-        PerclCommand test1 = new PerclCommand("TEST_STRING");
-         test1.Command = "TS";
-        PerclCommand test2 = new PerclCommand("TEST_STRING");
-         test2.Command = "ts";
 
-        Assert.NotEqual(test1,test2);
+        [Fact]
+        public void equalsFalseTest()
+        {
+            PerclCommand test1 = new PerclCommand("TEST_STRING");
+            test1.Command = "TS";
+            PerclCommand test2 = new PerclCommand("TEST_STRING");
+            test2.Command = "ts";
+
+            Assert.NotEqual(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-        
-        [Fact]
-        public void hashCodeTypeTest() {
-        PerclCommand test1 = new PerclCommand("TEST_STRING");
-         test1.Command = "TS";
 
-        int hashCode1 = test1.GetHashCode();
-        Assert.True(hashCode1.GetType() == typeof(int));
+        [Fact]
+        public void hashCodeTypeTest()
+        {
+            PerclCommand test1 = new PerclCommand("TEST_STRING");
+            test1.Command = "TS";
+
+            int hashCode1 = test1.GetHashCode();
+            Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-        
-        [Fact]
-        public void ToStringTypeTest() {
-        PerclCommand test1 = new PerclCommand("TEST_STRING");
-         test1.Command = "TS";
 
-        string toString1 = test1.ToString();
-        Assert.True(toString1.GetType() == typeof(string));
+        [Fact]
+        public void ToStringTypeTest()
+        {
+            PerclCommand test1 = new PerclCommand("TEST_STRING");
+            test1.Command = "TS";
+
+            string toString1 = test1.ToString();
+            Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-        
+
         [Fact]
-        public void ToStringEqualsTest() {
-        PerclCommand test1 = new PerclCommand("TEST_STRING");
-         test1.Command = "TS";
+        public void ToStringEqualsTest()
+        {
+            PerclCommand test1 = new PerclCommand("TEST_STRING");
+            test1.Command = "TS";
 
-        PerclCommand test2 = new PerclCommand("TEST_STRING");
-         test2.Command = "TS";
+            PerclCommand test2 = new PerclCommand("TEST_STRING");
+            test2.Command = "TS";
 
-        string toString1 = test1.ToString();
-        string toString2 = test2.ToString();
-        Assert.Equal(toString1, toString2);
+            string toString1 = test1.ToString();
+            string toString2 = test2.ToString();
+            Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTest() {
-        PerclCommand test1 = new PerclCommand();
-         test1.Command = "TS";
+        public void equalsTest()
+        {
+            PerclCommand test1 = new PerclCommand();
+            test1.Command = "TS";
 
-        PerclCommand test2 = new PerclCommand();
-         test2.Command = "TS";
+            PerclCommand test2 = new PerclCommand();
+            test2.Command = "TS";
 
-        Assert.True(test1.Equals(test2));
+            Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-        
+
         [Fact]
-        public void ToJsonTest() {
-        PerclCommand test1 = new PerclCommand();
-         test1.Command = "TS";
-        JsonSerializer jsonSerializer = JsonSerializer.Create();
-        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-        StringBuilder strb = new StringBuilder();
-        jsonSerializer.Serialize(new StringWriter(strb), test1);
+        public void ToJsonTest()
+        {
+            PerclCommand test1 = new PerclCommand();
+            test1.Command = "TS";
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        PerclCommand test2 = new PerclCommand();
-         test2.Command = "TS";
+            PerclCommand test2 = new PerclCommand();
+            test2.Command = "TS";
 
-        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+            Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

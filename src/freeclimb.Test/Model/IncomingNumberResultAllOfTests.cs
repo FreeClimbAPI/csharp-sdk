@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -63,7 +64,7 @@ namespace freeclimb.Test.Model
             Capabilities testObject = new Capabilities(false, false, false, false, false);
             instance.Capabilities = testObject;
             Assert.Equal(testObject, instance.Capabilities);
-            
+
         }
         /// <summary>
         /// Test the property 'CampaignId'
@@ -73,7 +74,7 @@ namespace freeclimb.Test.Model
         {
             instance.CampaignId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CampaignId);
-            
+
         }
         /// <summary>
         /// Test the property 'PhoneNumberId'
@@ -83,7 +84,7 @@ namespace freeclimb.Test.Model
         {
             instance.PhoneNumberId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.PhoneNumberId);
-            
+
         }
         /// <summary>
         /// Test the property 'AccountId'
@@ -93,7 +94,7 @@ namespace freeclimb.Test.Model
         {
             instance.AccountId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.AccountId);
-            
+
         }
         /// <summary>
         /// Test the property 'ApplicationId'
@@ -103,7 +104,7 @@ namespace freeclimb.Test.Model
         {
             instance.ApplicationId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ApplicationId);
-            
+
         }
         /// <summary>
         /// Test the property 'PhoneNumber'
@@ -113,7 +114,7 @@ namespace freeclimb.Test.Model
         {
             instance.PhoneNumber = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.PhoneNumber);
-            
+
         }
         /// <summary>
         /// Test the property 'Alias'
@@ -123,7 +124,7 @@ namespace freeclimb.Test.Model
         {
             instance.Alias = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Alias);
-            
+
         }
         /// <summary>
         /// Test the property 'Region'
@@ -133,7 +134,7 @@ namespace freeclimb.Test.Model
         {
             instance.Region = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Region);
-            
+
         }
         /// <summary>
         /// Test the property 'Country'
@@ -143,7 +144,7 @@ namespace freeclimb.Test.Model
         {
             instance.Country = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Country);
-            
+
         }
         /// <summary>
         /// Test the property 'VoiceEnabled'
@@ -152,8 +153,8 @@ namespace freeclimb.Test.Model
         public void VoiceEnabledTest()
         {
             instance.VoiceEnabled = false;
-            Assert.Equal(false, instance.VoiceEnabled);       
-            
+            Assert.Equal(false, instance.VoiceEnabled);
+
         }
         /// <summary>
         /// Test the property 'SmsEnabled'
@@ -162,8 +163,8 @@ namespace freeclimb.Test.Model
         public void SmsEnabledTest()
         {
             instance.SmsEnabled = false;
-            Assert.Equal(false, instance.SmsEnabled);       
-            
+            Assert.Equal(false, instance.SmsEnabled);
+
         }
         /// <summary>
         /// Test the property 'Offnet'
@@ -172,260 +173,302 @@ namespace freeclimb.Test.Model
         public void OffnetTest()
         {
             instance.Offnet = false;
-            Assert.Equal(false, instance.Offnet);       
-            
+            Assert.Equal(false, instance.Offnet);
+
         }
-        
-        
+        /// <summary>
+        /// Test the property 'Tfn'
+        /// </summary>
+        [Fact]
+        public void TfnTest()
+        {
+            TFN testObject = new TFN("TEST_CAMPAIGN_ID");
+            instance.Tfn = testObject;
+            Assert.Equal(testObject, instance.Tfn);
+
+        }
+
+
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTrueTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject = new Capabilities(false, false, false, false, false);
-         test1.Capabilities = testObject;
-         test1.CampaignId = "TS";
-         test1.PhoneNumberId = "TS";
-         test1.AccountId = "TS";
-         test1.ApplicationId = "TS";
-         test1.PhoneNumber = "TS";
-         test1.Alias = "TS";
-         test1.Region = "TS";
-         test1.Country = "TS";
-         test1.VoiceEnabled = true;
-         test1.SmsEnabled = true;
-         test1.Offnet = true;
+        public void equalsTrueTest()
+        {
+            IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
+            test1.Capabilities = CapabilitiestestObject;
+            test1.CampaignId = "TS";
+            test1.PhoneNumberId = "TS";
+            test1.AccountId = "TS";
+            test1.ApplicationId = "TS";
+            test1.PhoneNumber = "TS";
+            test1.Alias = "TS";
+            test1.Region = "TS";
+            test1.Country = "TS";
+            test1.VoiceEnabled = true;
+            test1.SmsEnabled = true;
+            test1.Offnet = true;
+            TFN TfntestObject = new TFN("TEST_CAMPAIGN_ID");
+            test1.Tfn = TfntestObject;
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
-         test2.Capabilities = testObject2;
-         test2.CampaignId = "TS";
-         test2.PhoneNumberId = "TS";
-         test2.AccountId = "TS";
-         test2.ApplicationId = "TS";
-         test2.PhoneNumber = "TS";
-         test2.Alias = "TS";
-         test2.Region = "TS";
-         test2.Country = "TS";
-         test2.VoiceEnabled = true;
-         test2.SmsEnabled = true;
-         test2.Offnet = true;
+            IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
+            test2.Capabilities = CapabilitiestestObject2;
+            test2.CampaignId = "TS";
+            test2.PhoneNumberId = "TS";
+            test2.AccountId = "TS";
+            test2.ApplicationId = "TS";
+            test2.PhoneNumber = "TS";
+            test2.Alias = "TS";
+            test2.Region = "TS";
+            test2.Country = "TS";
+            test2.VoiceEnabled = true;
+            test2.SmsEnabled = true;
+            test2.Offnet = true;
+            TFN TfntestObject2 = new TFN("TEST_CAMPAIGN_ID");
+            test2.Tfn = TfntestObject2;
 
-        Assert.Equal(test1,test2);
+            Assert.Equal(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-        
+
         [Fact]
-        public void equalsFalseTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject = new Capabilities(false, false, false, false, false);
-         test1.Capabilities = testObject;
-         test1.CampaignId = "TS";
-         test1.PhoneNumberId = "TS";
-         test1.AccountId = "TS";
-         test1.ApplicationId = "TS";
-         test1.PhoneNumber = "TS";
-         test1.Alias = "TS";
-         test1.Region = "TS";
-         test1.Country = "TS";
-         test1.VoiceEnabled = true;
-         test1.SmsEnabled = true;
-         test1.Offnet = true;
+        public void equalsFalseTest()
+        {
+            IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
+            test1.Capabilities = CapabilitiestestObject;
+            test1.CampaignId = "TS";
+            test1.PhoneNumberId = "TS";
+            test1.AccountId = "TS";
+            test1.ApplicationId = "TS";
+            test1.PhoneNumber = "TS";
+            test1.Alias = "TS";
+            test1.Region = "TS";
+            test1.Country = "TS";
+            test1.VoiceEnabled = true;
+            test1.SmsEnabled = true;
+            test1.Offnet = true;
+            TFN TfntestObject = new TFN("TEST_CAMPAIGN_ID");
+            test1.Tfn = TfntestObject;
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
-         test2.Capabilities = testObject2;
-         test2.CampaignId = "ts";
-         test2.PhoneNumberId = "ts";
-         test2.AccountId = "ts";
-         test2.ApplicationId = "ts";
-         test2.PhoneNumber = "ts";
-         test2.Alias = "ts";
-         test2.Region = "ts";
-         test2.Country = "ts";
-         test2.VoiceEnabled = false;
-         test2.SmsEnabled = false;
-         test2.Offnet = false;
+            IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
+            test2.Capabilities = CapabilitiestestObject2;
+            test2.CampaignId = "ts";
+            test2.PhoneNumberId = "ts";
+            test2.AccountId = "ts";
+            test2.ApplicationId = "ts";
+            test2.PhoneNumber = "ts";
+            test2.Alias = "ts";
+            test2.Region = "ts";
+            test2.Country = "ts";
+            test2.VoiceEnabled = false;
+            test2.SmsEnabled = false;
+            test2.Offnet = false;
+            TFN TfntestObject2 = new TFN("TEST_CAMPAIGN_ID");
+            test2.Tfn = TfntestObject2;
 
-        Assert.NotEqual(test1,test2);
+            Assert.NotEqual(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-        
-        [Fact]
-        public void hashCodeTypeTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject = new Capabilities(false, false, false, false, false);
-         test1.Capabilities = testObject;
-         test1.CampaignId = "TS";
-         test1.PhoneNumberId = "TS";
-         test1.AccountId = "TS";
-         test1.ApplicationId = "TS";
-         test1.PhoneNumber = "TS";
-         test1.Alias = "TS";
-         test1.Region = "TS";
-         test1.Country = "TS";
-         test1.VoiceEnabled = true;
-         test1.SmsEnabled = true;
-         test1.Offnet = true;
 
-        int hashCode1 = test1.GetHashCode();
-        Assert.True(hashCode1.GetType() == typeof(int));
+        [Fact]
+        public void hashCodeTypeTest()
+        {
+            IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
+            test1.Capabilities = CapabilitiestestObject;
+            test1.CampaignId = "TS";
+            test1.PhoneNumberId = "TS";
+            test1.AccountId = "TS";
+            test1.ApplicationId = "TS";
+            test1.PhoneNumber = "TS";
+            test1.Alias = "TS";
+            test1.Region = "TS";
+            test1.Country = "TS";
+            test1.VoiceEnabled = true;
+            test1.SmsEnabled = true;
+            test1.Offnet = true;
+            TFN TfntestObject = new TFN("TEST_CAMPAIGN_ID");
+            test1.Tfn = TfntestObject;
+
+            int hashCode1 = test1.GetHashCode();
+            Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-        
-        [Fact]
-        public void ToStringTypeTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject = new Capabilities(false, false, false, false, false);
-         test1.Capabilities = testObject;
-         test1.CampaignId = "TS";
-         test1.PhoneNumberId = "TS";
-         test1.AccountId = "TS";
-         test1.ApplicationId = "TS";
-         test1.PhoneNumber = "TS";
-         test1.Alias = "TS";
-         test1.Region = "TS";
-         test1.Country = "TS";
-         test1.VoiceEnabled = true;
-         test1.SmsEnabled = true;
-         test1.Offnet = true;
 
-        string toString1 = test1.ToString();
-        Assert.True(toString1.GetType() == typeof(string));
+        [Fact]
+        public void ToStringTypeTest()
+        {
+            IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
+            test1.Capabilities = CapabilitiestestObject;
+            test1.CampaignId = "TS";
+            test1.PhoneNumberId = "TS";
+            test1.AccountId = "TS";
+            test1.ApplicationId = "TS";
+            test1.PhoneNumber = "TS";
+            test1.Alias = "TS";
+            test1.Region = "TS";
+            test1.Country = "TS";
+            test1.VoiceEnabled = true;
+            test1.SmsEnabled = true;
+            test1.Offnet = true;
+            TFN TfntestObject = new TFN("TEST_CAMPAIGN_ID");
+            test1.Tfn = TfntestObject;
+
+            string toString1 = test1.ToString();
+            Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-        
+
         [Fact]
-        public void ToStringEqualsTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject = new Capabilities(false, false, false, false, false);
-         test1.Capabilities = testObject;
-         test1.CampaignId = "TS";
-         test1.PhoneNumberId = "TS";
-         test1.AccountId = "TS";
-         test1.ApplicationId = "TS";
-         test1.PhoneNumber = "TS";
-         test1.Alias = "TS";
-         test1.Region = "TS";
-         test1.Country = "TS";
-         test1.VoiceEnabled = true;
-         test1.SmsEnabled = true;
-         test1.Offnet = true;
+        public void ToStringEqualsTest()
+        {
+            IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
+            test1.Capabilities = CapabilitiestestObject;
+            test1.CampaignId = "TS";
+            test1.PhoneNumberId = "TS";
+            test1.AccountId = "TS";
+            test1.ApplicationId = "TS";
+            test1.PhoneNumber = "TS";
+            test1.Alias = "TS";
+            test1.Region = "TS";
+            test1.Country = "TS";
+            test1.VoiceEnabled = true;
+            test1.SmsEnabled = true;
+            test1.Offnet = true;
+            TFN TfntestObject = new TFN("TEST_CAMPAIGN_ID");
+            test1.Tfn = TfntestObject;
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
-         test2.Capabilities = testObject2;
-         test2.CampaignId = "TS";
-         test2.PhoneNumberId = "TS";
-         test2.AccountId = "TS";
-         test2.ApplicationId = "TS";
-         test2.PhoneNumber = "TS";
-         test2.Alias = "TS";
-         test2.Region = "TS";
-         test2.Country = "TS";
-         test2.VoiceEnabled = true;
-         test2.SmsEnabled = true;
-         test2.Offnet = true;
+            IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
+            test2.Capabilities = CapabilitiestestObject2;
+            test2.CampaignId = "TS";
+            test2.PhoneNumberId = "TS";
+            test2.AccountId = "TS";
+            test2.ApplicationId = "TS";
+            test2.PhoneNumber = "TS";
+            test2.Alias = "TS";
+            test2.Region = "TS";
+            test2.Country = "TS";
+            test2.VoiceEnabled = true;
+            test2.SmsEnabled = true;
+            test2.Offnet = true;
+            TFN TfntestObject2 = new TFN("TEST_CAMPAIGN_ID");
+            test2.Tfn = TfntestObject2;
 
-        string toString1 = test1.ToString();
-        string toString2 = test2.ToString();
-        Assert.Equal(toString1, toString2);
+            string toString1 = test1.ToString();
+            string toString2 = test2.ToString();
+            Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject = new Capabilities(false, false, false, false, false);
-         test1.Capabilities = testObject;
-         test1.CampaignId = "TS";
-         test1.PhoneNumberId = "TS";
-         test1.AccountId = "TS";
-         test1.ApplicationId = "TS";
-         test1.PhoneNumber = "TS";
-         test1.Alias = "TS";
-         test1.Region = "TS";
-         test1.Country = "TS";
-         test1.VoiceEnabled = true;
-         test1.SmsEnabled = true;
-         test1.Offnet = true;
+        public void equalsTest()
+        {
+            IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
+            test1.Capabilities = CapabilitiestestObject;
+            test1.CampaignId = "TS";
+            test1.PhoneNumberId = "TS";
+            test1.AccountId = "TS";
+            test1.ApplicationId = "TS";
+            test1.PhoneNumber = "TS";
+            test1.Alias = "TS";
+            test1.Region = "TS";
+            test1.Country = "TS";
+            test1.VoiceEnabled = true;
+            test1.SmsEnabled = true;
+            test1.Offnet = true;
+            TFN TfntestObject = new TFN("TEST_CAMPAIGN_ID");
+            test1.Tfn = TfntestObject;
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
-         test2.Capabilities = testObject2;
-         test2.CampaignId = "TS";
-         test2.PhoneNumberId = "TS";
-         test2.AccountId = "TS";
-         test2.ApplicationId = "TS";
-         test2.PhoneNumber = "TS";
-         test2.Alias = "TS";
-         test2.Region = "TS";
-         test2.Country = "TS";
-         test2.VoiceEnabled = true;
-         test2.SmsEnabled = true;
-         test2.Offnet = true;
+            IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
+            test2.Capabilities = CapabilitiestestObject2;
+            test2.CampaignId = "TS";
+            test2.PhoneNumberId = "TS";
+            test2.AccountId = "TS";
+            test2.ApplicationId = "TS";
+            test2.PhoneNumber = "TS";
+            test2.Alias = "TS";
+            test2.Region = "TS";
+            test2.Country = "TS";
+            test2.VoiceEnabled = true;
+            test2.SmsEnabled = true;
+            test2.Offnet = true;
+            TFN TfntestObject2 = new TFN("TEST_CAMPAIGN_ID");
+            test2.Tfn = TfntestObject2;
 
-        Assert.True(test1.Equals(test2));
+            Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-        
+
         [Fact]
-        public void ToJsonTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject = new Capabilities(false, false, false, false, false);
-         test1.Capabilities = testObject;
-         test1.CampaignId = "TS";
-         test1.PhoneNumberId = "TS";
-         test1.AccountId = "TS";
-         test1.ApplicationId = "TS";
-         test1.PhoneNumber = "TS";
-         test1.Alias = "TS";
-         test1.Region = "TS";
-         test1.Country = "TS";
-         test1.VoiceEnabled = true;
-         test1.SmsEnabled = true;
-         test1.Offnet = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        public void ToJsonTest()
+        {
+            IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
+            test1.Capabilities = CapabilitiestestObject;
+            test1.CampaignId = "TS";
+            test1.PhoneNumberId = "TS";
+            test1.AccountId = "TS";
+            test1.ApplicationId = "TS";
+            test1.PhoneNumber = "TS";
+            test1.Alias = "TS";
+            test1.Region = "TS";
+            test1.Country = "TS";
+            test1.VoiceEnabled = true;
+            test1.SmsEnabled = true;
+            test1.Offnet = true;
+            TFN TfntestObject = new TFN("TEST_CAMPAIGN_ID");
+            test1.Tfn = TfntestObject;
+            string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
-         Capabilities testObject2 = new Capabilities(false, false, false, false, false);
-         test2.Capabilities = testObject2;
-         test2.CampaignId = "TS";
-         test2.PhoneNumberId = "TS";
-         test2.AccountId = "TS";
-         test2.ApplicationId = "TS";
-         test2.PhoneNumber = "TS";
-         test2.Alias = "TS";
-         test2.Region = "TS";
-         test2.Country = "TS";
-         test2.VoiceEnabled = true;
-         test2.SmsEnabled = true;
-         test2.Offnet = true;
+            IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
+            test2.Capabilities = CapabilitiestestObject2;
+            test2.CampaignId = "TS";
+            test2.PhoneNumberId = "TS";
+            test2.AccountId = "TS";
+            test2.ApplicationId = "TS";
+            test2.PhoneNumber = "TS";
+            test2.Alias = "TS";
+            test2.Region = "TS";
+            test2.Country = "TS";
+            test2.VoiceEnabled = true;
+            test2.SmsEnabled = true;
+            test2.Offnet = true;
+            TFN TfntestObject2 = new TFN("TEST_CAMPAIGN_ID");
+            test2.Tfn = TfntestObject2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+            Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

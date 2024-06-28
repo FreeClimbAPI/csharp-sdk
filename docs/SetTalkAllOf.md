@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CallId** | **string** | ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered. | 
 **Talk** | **bool** | Specifying &#x60;false&#x60; mutes the Participant. | [optional] 
 
 [[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 

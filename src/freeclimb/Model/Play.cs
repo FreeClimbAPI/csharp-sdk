@@ -70,10 +70,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="file">RL of the audio file to be played to the caller. The URL can be the &#x60;recordingUrl&#x60; generated from the &#x60;RecordUtterance&#x60; or &#x60;StartRecordCall&#x60; PerCL commands.  (required).</param>
         /// <param name="loop">Number of times the audio file is played. Specifying &#39;0&#39; causes the Play action to loop until the Call is hung up..</param>
-        /// <param name="conferenceId">ID of the Conference the audio should be rendered to. If this is not specified, the audio is by default rendered to the caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Play&quot;).</param>
-        public Play(string file = default(string), int loop = default(int), string conferenceId = default(string), bool privacyMode = default(bool), string command = "Play") : base(command)
+        public Play(string file = default(string), int loop = default(int), bool privacyMode = default(bool), string command = "Play") : base(command)
         {
             // to ensure "file" is required (not null)
             if (file == null) {
@@ -81,7 +80,6 @@ namespace freeclimb.Model
             }
             this.File = file;
             this.Loop = loop;
-            this.ConferenceId = conferenceId;
             this.PrivacyMode = privacyMode;
         }
 
@@ -98,13 +96,6 @@ namespace freeclimb.Model
         /// <value>Number of times the audio file is played. Specifying &#39;0&#39; causes the Play action to loop until the Call is hung up.</value>
         [DataMember(Name = "loop", EmitDefaultValue = false)]
         public int Loop { get; set; }
-
-        /// <summary>
-        /// ID of the Conference the audio should be rendered to. If this is not specified, the audio is by default rendered to the caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error.
-        /// </summary>
-        /// <value>ID of the Conference the audio should be rendered to. If this is not specified, the audio is by default rendered to the caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error.</value>
-        [DataMember(Name = "conferenceId", EmitDefaultValue = false)]
-        public string ConferenceId { get; set; }
 
         /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
@@ -124,7 +115,6 @@ namespace freeclimb.Model
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  File: ").Append(File).Append("\n");
             sb.Append("  Loop: ").Append(Loop).Append("\n");
-            sb.Append("  ConferenceId: ").Append(ConferenceId).Append("\n");
             sb.Append("  PrivacyMode: ").Append(PrivacyMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -154,7 +144,6 @@ namespace freeclimb.Model
             IDictionary<string, object> props = new Dictionary<string, object>();
             props.Add("file", File);          
             props.Add("loop", Loop);          
-            props.Add("conferenceId", ConferenceId);          
             props.Add("privacyMode", PrivacyMode);          
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("Play",props);
@@ -193,11 +182,6 @@ namespace freeclimb.Model
                     this.Loop.Equals(input.Loop)
                 ) && base.Equals(input) && 
                 (
-                    this.ConferenceId == input.ConferenceId ||
-                    (this.ConferenceId != null &&
-                    this.ConferenceId.Equals(input.ConferenceId))
-                ) && base.Equals(input) && 
-                (
                     this.PrivacyMode == input.PrivacyMode ||
                     this.PrivacyMode.Equals(input.PrivacyMode)
                 );
@@ -217,10 +201,6 @@ namespace freeclimb.Model
                     hashCode = (hashCode * 59) + this.File.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Loop.GetHashCode();
-                if (this.ConferenceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConferenceId.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.PrivacyMode.GetHashCode();
                 return hashCode;
             }

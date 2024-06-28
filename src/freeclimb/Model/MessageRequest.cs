@@ -49,8 +49,8 @@ namespace freeclimb.Model
         /// <param name="to">Phone number to receive the message. Must be within FreeClimb&#39;s service area. (required).</param>
         /// <param name="text">Text contained in the message (maximum 160 characters).   **Note:** For text, only ASCII characters are supported. (required).</param>
         /// <param name="notificationUrl">When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored..</param>
-        /// <param name="accountId">String that uniquely identifies this account resource..</param>
-        public MessageRequest(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string from = default(string), string to = default(string), string text = default(string), string notificationUrl = default(string), string accountId = default(string))
+        /// <param name="mediaUrls">an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile..</param>
+        public MessageRequest(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string from = default(string), string to = default(string), string text = default(string), string notificationUrl = default(string), List<string> mediaUrls = default(List<string>))
         {
             // to ensure "from" is required (not null)
             if (from == null) {
@@ -72,7 +72,7 @@ namespace freeclimb.Model
             this.DateUpdated = dateUpdated;
             this.Revision = revision;
             this.NotificationUrl = notificationUrl;
-            this.AccountId = accountId;
+            this.MediaUrls = mediaUrls;
         }
 
         /// <summary>
@@ -132,11 +132,11 @@ namespace freeclimb.Model
         public string NotificationUrl { get; set; }
 
         /// <summary>
-        /// String that uniquely identifies this account resource.
+        /// an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.
         /// </summary>
-        /// <value>String that uniquely identifies this account resource.</value>
-        [DataMember(Name = "accountId", EmitDefaultValue = false)]
-        public string AccountId { get; set; }
+        /// <value>an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.</value>
+        [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
+        public List<string> MediaUrls { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -154,7 +154,7 @@ namespace freeclimb.Model
             sb.Append("  To: ").Append(To).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  NotificationUrl: ").Append(NotificationUrl).Append("\n");
-            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
+            sb.Append("  MediaUrls: ").Append(MediaUrls).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,7 +183,12 @@ namespace freeclimb.Model
             props.Add("to", To);          
             props.Add("text", Text);          
             props.Add("notificationUrl", NotificationUrl);          
-            props.Add("accountId", AccountId);          
+            List<object> nested = new List<object>();
+            foreach (var item in MediaUrls)
+            {
+                nested.Add(item);
+            }
+            props.Add("mediaUrls", nested); 
             return props;
         }
         
@@ -249,9 +254,10 @@ namespace freeclimb.Model
                     this.NotificationUrl.Equals(input.NotificationUrl))
                 ) && 
                 (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
+                    this.MediaUrls == input.MediaUrls ||
+                    this.MediaUrls != null &&
+                    input.MediaUrls != null &&
+                    this.MediaUrls.SequenceEqual(input.MediaUrls)
                 );
         }
 
@@ -293,9 +299,9 @@ namespace freeclimb.Model
                 {
                     hashCode = (hashCode * 59) + this.NotificationUrl.GetHashCode();
                 }
-                if (this.AccountId != null)
+                if (this.MediaUrls != null)
                 {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MediaUrls.GetHashCode();
                 }
                 return hashCode;
             }

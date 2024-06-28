@@ -72,14 +72,13 @@ namespace freeclimb.Model
         /// <param name="callControlSequence">Defines a sequence of digits that, when entered by this caller, invokes the &#x60;callControlUrl&#x60;. Only digits plus &#39;*&#39;, and &#39;#&#39; may be used..</param>
         /// <param name="callControlUrl">URL to be invoked when this Participant enters the digit sequence defined in the &#x60;callControlSequence&#x60; attribute..</param>
         /// <param name="conferenceId">ID of the Conference to which to add the Participant (Call leg). Conference must exist or an error will result. (required).</param>
-        /// <param name="callId">ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one..</param>
         /// <param name="leaveConferenceUrl">URL to be invoked when the Participant leaves the Conference. .</param>
         /// <param name="listen">If &#x60;true&#x60;, the Participant joins the Conference with listen privileges. This may be modified later via the REST API or &#x60;SetListen&#x60; PerCL command..</param>
         /// <param name="notificationUrl">When the Participant enters the Conference, this URL will be invoked using an HTTP POST request with the standard request parameters..</param>
         /// <param name="startConfOnEnter">Flag that indicates whether a Conference starts upon entry of this particular Participant. This is usually set to &#x60;true&#x60; for moderators and &#x60;false&#x60; for all other Participants..</param>
         /// <param name="talk">If &#x60;true&#x60;, the Participant joins the Conference with talk privileges. This may be modified later via the REST API or &#x60;SetTalk&#x60; PerCL command. .</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;AddToConference&quot;).</param>
-        public AddToConference(bool allowCallControl = default(bool), string callControlSequence = default(string), string callControlUrl = default(string), string conferenceId = default(string), string callId = default(string), string leaveConferenceUrl = default(string), bool listen = default(bool), string notificationUrl = default(string), bool startConfOnEnter = default(bool), bool talk = default(bool), string command = "AddToConference") : base(command)
+        public AddToConference(bool allowCallControl = default(bool), string callControlSequence = default(string), string callControlUrl = default(string), string conferenceId = default(string), string leaveConferenceUrl = default(string), bool listen = default(bool), string notificationUrl = default(string), bool startConfOnEnter = default(bool), bool talk = default(bool), string command = "AddToConference") : base(command)
         {
             // to ensure "conferenceId" is required (not null)
             if (conferenceId == null) {
@@ -89,7 +88,6 @@ namespace freeclimb.Model
             this.AllowCallControl = allowCallControl;
             this.CallControlSequence = callControlSequence;
             this.CallControlUrl = callControlUrl;
-            this.CallId = callId;
             this.LeaveConferenceUrl = leaveConferenceUrl;
             this.Listen = listen;
             this.NotificationUrl = notificationUrl;
@@ -124,13 +122,6 @@ namespace freeclimb.Model
         /// <value>ID of the Conference to which to add the Participant (Call leg). Conference must exist or an error will result.</value>
         [DataMember(Name = "conferenceId", IsRequired = true, EmitDefaultValue = false)]
         public string ConferenceId { get; set; }
-
-        /// <summary>
-        /// ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.
-        /// </summary>
-        /// <value>ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.</value>
-        [DataMember(Name = "callId", EmitDefaultValue = false)]
-        public string CallId { get; set; }
 
         /// <summary>
         /// URL to be invoked when the Participant leaves the Conference. 
@@ -180,7 +171,6 @@ namespace freeclimb.Model
             sb.Append("  CallControlSequence: ").Append(CallControlSequence).Append("\n");
             sb.Append("  CallControlUrl: ").Append(CallControlUrl).Append("\n");
             sb.Append("  ConferenceId: ").Append(ConferenceId).Append("\n");
-            sb.Append("  CallId: ").Append(CallId).Append("\n");
             sb.Append("  LeaveConferenceUrl: ").Append(LeaveConferenceUrl).Append("\n");
             sb.Append("  Listen: ").Append(Listen).Append("\n");
             sb.Append("  NotificationUrl: ").Append(NotificationUrl).Append("\n");
@@ -216,7 +206,6 @@ namespace freeclimb.Model
             props.Add("callControlSequence", CallControlSequence);          
             props.Add("callControlUrl", CallControlUrl);          
             props.Add("conferenceId", ConferenceId);          
-            props.Add("callId", CallId);          
             props.Add("leaveConferenceUrl", LeaveConferenceUrl);          
             props.Add("listen", Listen);          
             props.Add("notificationUrl", NotificationUrl);          
@@ -269,11 +258,6 @@ namespace freeclimb.Model
                     this.ConferenceId.Equals(input.ConferenceId))
                 ) && base.Equals(input) && 
                 (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                ) && base.Equals(input) && 
-                (
                     this.LeaveConferenceUrl == input.LeaveConferenceUrl ||
                     (this.LeaveConferenceUrl != null &&
                     this.LeaveConferenceUrl.Equals(input.LeaveConferenceUrl))
@@ -318,10 +302,6 @@ namespace freeclimb.Model
                 if (this.ConferenceId != null)
                 {
                     hashCode = (hashCode * 59) + this.ConferenceId.GetHashCode();
-                }
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
                 }
                 if (this.LeaveConferenceUrl != null)
                 {

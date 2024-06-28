@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public MessageRequestAllOfTests()
         {
-            instance = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            instance = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             instance.From = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.From);
-            
+
         }
         /// <summary>
         /// Test the property 'To'
@@ -72,7 +73,7 @@ namespace freeclimb.Test.Model
         {
             instance.To = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.To);
-            
+
         }
         /// <summary>
         /// Test the property 'Text'
@@ -82,7 +83,7 @@ namespace freeclimb.Test.Model
         {
             instance.Text = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Text);
-            
+
         }
         /// <summary>
         /// Test the property 'NotificationUrl'
@@ -92,173 +93,170 @@ namespace freeclimb.Test.Model
         {
             instance.NotificationUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.NotificationUrl);
-            
+
         }
         /// <summary>
-        /// Test the property 'AccountId'
+        /// Test the property 'MediaUrls'
         /// </summary>
         [Fact]
-        public void AccountIdTest()
+        public void MediaUrlsTest()
         {
-            instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
-            
+            string[] testArray = { "ElementOne", "ElementTwo", "ElementThree" };
+            List<string> testList = testArray.ToList();
+            instance.MediaUrls = testList;
+            Assert.Equal(testList, instance.MediaUrls);
+
         }
-        
-        
+
+
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTrueTest() {
-        MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.Text = "TS";
-         test1.NotificationUrl = "TS";
-         test1.AccountId = "TS";
+        public void equalsTrueTest()
+        {
+            MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test1.From = "TS";
+            test1.To = "TS";
+            test1.Text = "TS";
+            test1.NotificationUrl = "TS";
 
-        MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test2.From = "TS";
-         test2.To = "TS";
-         test2.Text = "TS";
-         test2.NotificationUrl = "TS";
-         test2.AccountId = "TS";
+            MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test2.From = "TS";
+            test2.To = "TS";
+            test2.Text = "TS";
+            test2.NotificationUrl = "TS";
 
-        Assert.Equal(test1,test2);
+            Assert.Equal(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-        
+
         [Fact]
-        public void equalsFalseTest() {
-        MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.Text = "TS";
-         test1.NotificationUrl = "TS";
-         test1.AccountId = "TS";
+        public void equalsFalseTest()
+        {
+            MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test1.From = "TS";
+            test1.To = "TS";
+            test1.Text = "TS";
+            test1.NotificationUrl = "TS";
 
-        MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test2.From = "ts";
-         test2.To = "ts";
-         test2.Text = "ts";
-         test2.NotificationUrl = "ts";
-         test2.AccountId = "ts";
+            MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test2.From = "ts";
+            test2.To = "ts";
+            test2.Text = "ts";
+            test2.NotificationUrl = "ts";
 
-        Assert.NotEqual(test1,test2);
+            Assert.NotEqual(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-        
-        [Fact]
-        public void hashCodeTypeTest() {
-        MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.Text = "TS";
-         test1.NotificationUrl = "TS";
-         test1.AccountId = "TS";
 
-        int hashCode1 = test1.GetHashCode();
-        Assert.True(hashCode1.GetType() == typeof(int));
+        [Fact]
+        public void hashCodeTypeTest()
+        {
+            MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test1.From = "TS";
+            test1.To = "TS";
+            test1.Text = "TS";
+            test1.NotificationUrl = "TS";
+
+            int hashCode1 = test1.GetHashCode();
+            Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-        
-        [Fact]
-        public void ToStringTypeTest() {
-        MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.Text = "TS";
-         test1.NotificationUrl = "TS";
-         test1.AccountId = "TS";
 
-        string toString1 = test1.ToString();
-        Assert.True(toString1.GetType() == typeof(string));
+        [Fact]
+        public void ToStringTypeTest()
+        {
+            MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test1.From = "TS";
+            test1.To = "TS";
+            test1.Text = "TS";
+            test1.NotificationUrl = "TS";
+
+            string toString1 = test1.ToString();
+            Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-        
+
         [Fact]
-        public void ToStringEqualsTest() {
-        MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.Text = "TS";
-         test1.NotificationUrl = "TS";
-         test1.AccountId = "TS";
+        public void ToStringEqualsTest()
+        {
+            MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test1.From = "TS";
+            test1.To = "TS";
+            test1.Text = "TS";
+            test1.NotificationUrl = "TS";
 
-        MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test2.From = "TS";
-         test2.To = "TS";
-         test2.Text = "TS";
-         test2.NotificationUrl = "TS";
-         test2.AccountId = "TS";
+            MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test2.From = "TS";
+            test2.To = "TS";
+            test2.Text = "TS";
+            test2.NotificationUrl = "TS";
 
-        string toString1 = test1.ToString();
-        string toString2 = test2.ToString();
-        Assert.Equal(toString1, toString2);
+            string toString1 = test1.ToString();
+            string toString2 = test2.ToString();
+            Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTest() {
-        MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.Text = "TS";
-         test1.NotificationUrl = "TS";
-         test1.AccountId = "TS";
+        public void equalsTest()
+        {
+            MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test1.From = "TS";
+            test1.To = "TS";
+            test1.Text = "TS";
+            test1.NotificationUrl = "TS";
 
-        MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test2.From = "TS";
-         test2.To = "TS";
-         test2.Text = "TS";
-         test2.NotificationUrl = "TS";
-         test2.AccountId = "TS";
+            MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test2.From = "TS";
+            test2.To = "TS";
+            test2.Text = "TS";
+            test2.NotificationUrl = "TS";
 
-        Assert.True(test1.Equals(test2));
+            Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-        
+
         [Fact]
-        public void ToJsonTest() {
-        MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test1.From = "TS";
-         test1.To = "TS";
-         test1.Text = "TS";
-         test1.NotificationUrl = "TS";
-         test1.AccountId = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        public void ToJsonTest()
+        {
+            MessageRequestAllOf test1 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test1.From = "TS";
+            test1.To = "TS";
+            test1.Text = "TS";
+            test1.NotificationUrl = "TS";
+            string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         test2.From = "TS";
-         test2.To = "TS";
-         test2.Text = "TS";
-         test2.NotificationUrl = "TS";
-         test2.AccountId = "TS";
+            MessageRequestAllOf test2 = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            test2.From = "TS";
+            test2.To = "TS";
+            test2.Text = "TS";
+            test2.NotificationUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+            Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

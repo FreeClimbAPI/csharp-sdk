@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SetTalkAllOfTests()
         {
-            instance = new SetTalkAllOf("TEST_STRING", false);
+            instance = new SetTalkAllOf();
         }
 
         /// <summary>
@@ -54,16 +55,6 @@ namespace freeclimb.Test.Model
         }
 
 
-        /// <summary>
-        /// Test the property 'CallId'
-        /// </summary>
-        [Fact]
-        public void CallIdTest()
-        {
-            instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
-            
-        }
         /// <summary>
         /// Test the property 'Talk'
         /// </summary>
@@ -82,12 +73,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetTalkAllOf test1 = new SetTalkAllOf();
          test1.Talk = true;
 
-        SetTalkAllOf test2 = new SetTalkAllOf("TEST_STRING", false);
-         test2.CallId = "TS";
+        SetTalkAllOf test2 = new SetTalkAllOf();
          test2.Talk = true;
 
         Assert.Equal(test1,test2);
@@ -99,12 +88,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetTalkAllOf test1 = new SetTalkAllOf();
          test1.Talk = true;
 
-        SetTalkAllOf test2 = new SetTalkAllOf("TEST_STRING", false);
-         test2.CallId = "ts";
+        SetTalkAllOf test2 = new SetTalkAllOf();
          test2.Talk = false;
 
         Assert.NotEqual(test1,test2);
@@ -116,8 +103,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetTalkAllOf test1 = new SetTalkAllOf();
          test1.Talk = true;
 
         int hashCode1 = test1.GetHashCode();
@@ -131,8 +117,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetTalkAllOf test1 = new SetTalkAllOf();
          test1.Talk = true;
 
         string toString1 = test1.ToString();
@@ -146,12 +131,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetTalkAllOf test1 = new SetTalkAllOf();
          test1.Talk = true;
 
-        SetTalkAllOf test2 = new SetTalkAllOf("TEST_STRING", false);
-         test2.CallId = "TS";
+        SetTalkAllOf test2 = new SetTalkAllOf();
          test2.Talk = true;
 
         string toString1 = test1.ToString();
@@ -166,12 +149,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetTalkAllOf test1 = new SetTalkAllOf();
          test1.Talk = true;
 
-        SetTalkAllOf test2 = new SetTalkAllOf("TEST_STRING", false);
-         test2.CallId = "TS";
+        SetTalkAllOf test2 = new SetTalkAllOf();
          test2.Talk = true;
 
         Assert.True(test1.Equals(test2));
@@ -183,13 +164,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetTalkAllOf test1 = new SetTalkAllOf();
          test1.Talk = true;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        SetTalkAllOf test2 = new SetTalkAllOf("TEST_STRING", false);
-         test2.CallId = "TS";
+        SetTalkAllOf test2 = new SetTalkAllOf();
          test2.Talk = true;
 
         Assert.True(jsonStr.Equals(test2.ToJson()));

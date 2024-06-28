@@ -32,6 +32,8 @@ Method | HTTP request | Description
 [**GetTenDLCSmsCampaigns**](DefaultApi.md#gettendlcsmscampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
 [**GetTenDLCSmsPartnerCampaign**](DefaultApi.md#gettendlcsmspartnercampaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign
 [**GetTenDLCSmsPartnerCampaigns**](DefaultApi.md#gettendlcsmspartnercampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
+[**GetTollFreeSmsCampaign**](DefaultApi.md#gettollfreesmscampaign) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId} | Get a TollFree SMS Campaign
+[**GetTollFreeSmsCampaigns**](DefaultApi.md#gettollfreesmscampaigns) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns | Get list of TollFree Campaigns
 [**ListActiveQueues**](DefaultApi.md#listactivequeues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 [**ListAllAccountLogs**](DefaultApi.md#listallaccountlogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 [**ListApplications**](DefaultApi.md#listapplications) | **GET** /Accounts/{accountId}/Applications | List applications
@@ -39,6 +41,7 @@ Method | HTTP request | Description
 [**ListCallLogs**](DefaultApi.md#listcalllogs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs
 [**ListCallRecordings**](DefaultApi.md#listcallrecordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings
 [**ListCalls**](DefaultApi.md#listcalls) | **GET** /Accounts/{accountId}/Calls | List Calls
+[**ListConferenceRecordings**](DefaultApi.md#listconferencerecordings) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Recordings | List Conference Recordings
 [**ListConferences**](DefaultApi.md#listconferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences
 [**ListIncomingNumbers**](DefaultApi.md#listincomingnumbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers
 [**ListMembers**](DefaultApi.md#listmembers) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members | List Members
@@ -46,6 +49,7 @@ Method | HTTP request | Description
 [**ListRecordings**](DefaultApi.md#listrecordings) | **GET** /Accounts/{accountId}/Recordings | List Recordings
 [**ListSmsMessages**](DefaultApi.md#listsmsmessages) | **GET** /Accounts/{accountId}/Messages | List SMS Messages
 [**MakeACall**](DefaultApi.md#makeacall) | **POST** /Accounts/{accountId}/Calls | Make a Call
+[**MakeAWebrtcJwt**](DefaultApi.md#makeawebrtcjwt) | **POST** /Accounts/{accountId}/Calls/WebRTC/Token | Make a JWT for WebRTC calling
 [**RemoveAParticipant**](DefaultApi.md#removeaparticipant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant
 [**SendAnSmsMessage**](DefaultApi.md#sendansmsmessage) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message
 [**StreamARecordingFile**](DefaultApi.md#streamarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream | Stream a Recording File
@@ -2182,6 +2186,153 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="gettollfreesmscampaign"></a>
+# **GetTollFreeSmsCampaign**
+> SMSTollFreeCampaign GetTollFreeSmsCampaign (string campaignId)
+
+Get a TollFree SMS Campaign
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class GetTollFreeSmsCampaignExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var campaignId = "campaignId_example";  // string | String that uniquely identifies this TollFree Campaign resource.
+
+
+            try
+            {
+                // Get a TollFree SMS Campaign
+                SMSTollFreeCampaign result = apiInstance.GetTollFreeSmsCampaign(campaignId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.GetTollFreeSmsCampaign: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaignId** | **string**| String that uniquely identifies this TollFree Campaign resource. | 
+
+
+### Return type
+
+[**SMSTollFreeCampaign**](SMSTollFreeCampaign.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The specific SMS TollFree Campaign that’s been processed by FreeClimb |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="gettollfreesmscampaigns"></a>
+# **GetTollFreeSmsCampaigns**
+> SMSTollFreeCampaignsListResult GetTollFreeSmsCampaigns ()
+
+Get list of TollFree Campaigns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class GetTollFreeSmsCampaignsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
+
+            var apiInstance = new DefaultApi(config);
+            
+
+            try
+            {
+                // Get list of TollFree Campaigns
+                SMSTollFreeCampaignsListResult result = apiInstance.GetTollFreeSmsCampaigns();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.GetTollFreeSmsCampaigns: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+
+### Return type
+
+[**SMSTollFreeCampaignsListResult**](SMSTollFreeCampaignsListResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The list toll-free campaigns |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="listactivequeues"></a>
 # **ListActiveQueues**
 > QueueList ListActiveQueues (string alias = null)
@@ -2760,6 +2911,88 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="listconferencerecordings"></a>
+# **ListConferenceRecordings**
+> RecordingList ListConferenceRecordings (string callId = null, string conferenceId = null, string dateCreated = null)
+
+List Conference Recordings
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class ListConferenceRecordingsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var callId = "callId_example";  // string | Show only Recordings made during the Call with this ID. (optional) 
+
+            var conferenceId = "conferenceId_example";  // string | Show only Recordings made during the conference with this ID. (optional) 
+
+            var dateCreated = "dateCreated_example";  // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional) 
+
+
+            try
+            {
+                // List Conference Recordings
+                RecordingList result = apiInstance.ListConferenceRecordings(callId, conferenceId, dateCreated);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.ListConferenceRecordings: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **callId** | **string**| Show only Recordings made during the Call with this ID. | [optional] 
+ **conferenceId** | **string**| Show only Recordings made during the conference with this ID. | [optional] 
+ **dateCreated** | **string**| Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] 
+
+
+### Return type
+
+[**RecordingList**](RecordingList.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | List of Recordings |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="listconferences"></a>
 # **ListConferences**
 > ConferenceList ListConferences (string status = null, string alias = null, string dateCreated = null, string dateUpdated = null)
@@ -2847,7 +3080,7 @@ Name | Type | Description  | Notes
 
 <a name="listincomingnumbers"></a>
 # **ListIncomingNumbers**
-> IncomingNumberList ListIncomingNumbers (string phoneNumber = null, string alias = null, string region = null, string country = null, string applicationId = null, bool? hasApplication = null, bool? voiceEnabled = null, bool? smsEnabled = null, bool? hasCampaign = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null, bool? offnet = null)
+> IncomingNumberList ListIncomingNumbers (string phoneNumber = null, string alias = null, string region = null, string country = null, string applicationId = null, bool? hasApplication = null, bool? voiceEnabled = null, bool? smsEnabled = null, bool? hasCampaign = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null, string tfnCampaignId = null, bool? offnet = null)
 
 List Incoming Numbers
 
@@ -2901,13 +3134,15 @@ namespace Example
 
             var capabilitiesShortCode = true;  // bool? |  (optional) 
 
+            var tfnCampaignId = "tfnCampaignId_example";  // string | Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional) 
+
             var offnet = true;  // bool? | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional) 
 
 
             try
             {
                 // List Incoming Numbers
-                IncomingNumberList result = apiInstance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, offnet);
+                IncomingNumberList result = apiInstance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2939,6 +3174,7 @@ Name | Type | Description  | Notes
  **capabilitiesTollFree** | **bool?**|  | [optional] 
  **capabilitiesTenDLC** | **bool?**|  | [optional] 
  **capabilitiesShortCode** | **bool?**|  | [optional] 
+ **tfnCampaignId** | **string**| Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. | [optional] 
  **offnet** | **bool?**| Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. | [optional] 
 
 
@@ -3373,6 +3609,84 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Call that was created |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="makeawebrtcjwt"></a>
+# **MakeAWebrtcJwt**
+> string MakeAWebrtcJwt (InlineObject inlineObject)
+
+Make a JWT for WebRTC calling
+
+Make a JWT for WebRTC calling
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class MakeAWebrtcJwtExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
+
+            var apiInstance = new DefaultApi(config);
+            
+
+            var inlineObject = new InlineObject(); // InlineObject | 
+
+            try
+            {
+                // Make a JWT for WebRTC calling
+                string result = apiInstance.MakeAWebrtcJwt(inlineObject);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.MakeAWebrtcJwt: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inlineObject** | [**InlineObject**](InlineObject.md)|  | 
+
+
+### Return type
+
+**string**
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The created JWT |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
