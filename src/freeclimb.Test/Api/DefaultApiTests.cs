@@ -829,19 +829,19 @@ namespace freeclimb.Test.Api
         /// <summary>
         /// Test MakeAWebrtcJwt
         /// </summary>
-        // [Fact]
+        [Fact]
 
         //Need to revisit this depending on whether other SDKs are facing the same issues
-        // public void MakeAWebrtcJwtTest()
-        // {
+        public void MakeAWebrtcJwtTest()
+        {
 
-        //     InlineObject inlineObject = inlineObjectTestValue();
+            InlineObject inlineObject = inlineObjectTestValue();
 
-        //     var response = instance.MakeAWebrtcJwt(inlineObject);
-        //     //Assert.IsType<string>(response);
-        //     Console.WriteLine(response);
-        //     Assert.IsAssignableFrom<string>(response);
-        // }
+            var response = instance.MakeAWebrtcJwt(inlineObject);
+            //Assert.IsType<string>(response);
+            Console.WriteLine(response);
+            Assert.IsAssignableFrom<string>(response);
+        }
 
         /// <summary>
         /// Test RemoveAParticipant

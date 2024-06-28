@@ -10672,7 +10672,7 @@ namespace freeclimb.Api
         public string MakeAWebrtcJwt(InlineObject inlineObject)
         {
             freeclimb.Client.ApiResponse<string> localVarResponse = MakeAWebrtcJwtWithHttpInfo(inlineObject );
-            return localVarResponse.Data;
+            return localVarResponse.RawContent;
         }
 
         /// <summary>
