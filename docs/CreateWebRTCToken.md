@@ -1,4 +1,4 @@
-# freeclimb.Model.InlineObject
+# freeclimb.Model.CreateWebRTCToken
 
 
 ## Properties

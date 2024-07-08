@@ -3631,6 +3631,30 @@
             }
           }
         }
+      },
+      "CreateWebRTCToken": {
+        "type": "object",
+        "required": [
+          "to",
+          "from",
+          "uses"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "to": {
+            "type": "string",
+            "description": "E.164 formatted phone number to which calls using this token will be made."
+          },
+          "from": {
+            "type": "string",
+            "description": "E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made."
+          },
+          "uses": {
+            "type": "integer",
+            "description": "number of times this token may be used for a WebRTC call",
+            "minimum": 1
+          }
+        }
       }
     }
   },
@@ -4521,28 +4545,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "required": [
-                  "to",
-                  "from",
-                  "uses"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                  "to": {
-                    "type": "string",
-                    "description": "E.164 formatted phone number to which calls using this token will be made."
-                  },
-                  "from": {
-                    "type": "string",
-                    "description": "E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made."
-                  },
-                  "uses": {
-                    "type": "integer",
-                    "description": "number of times this token may be used for a WebRTC call",
-                    "minimum": 1
-                  }
-                }
+                "$ref": "#/components/schemas/CreateWebRTCToken"
               }
             }
           }
@@ -4687,15 +4690,8 @@
         },
         "deprecated": false,
         "responses": {
-          "200": {
-            "description": "Conference Details to Update",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConferenceResult"
-                }
-              }
-            }
+          "204": {
+            "description": "Successful conference details update"
           }
         }
       },

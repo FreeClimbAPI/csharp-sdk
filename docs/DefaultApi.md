@@ -3614,7 +3614,7 @@ Name | Type | Description  | Notes
 
 <a name="makeawebrtcjwt"></a>
 # **MakeAWebrtcJwt**
-> string MakeAWebrtcJwt (InlineObject inlineObject)
+> string MakeAWebrtcJwt (CreateWebRTCToken createWebRTCToken)
 
 Make a JWT for WebRTC calling
 
@@ -3643,12 +3643,12 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             
 
-            var inlineObject = new InlineObject(); // InlineObject | 
+            var createWebRTCToken = new CreateWebRTCToken(); // CreateWebRTCToken | Information needed to craft a JWT compatible with the platforms WebRTC APIs
 
             try
             {
                 // Make a JWT for WebRTC calling
-                string result = apiInstance.MakeAWebrtcJwt(inlineObject);
+                string result = apiInstance.MakeAWebrtcJwt(createWebRTCToken);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3666,7 +3666,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject** | [**InlineObject**](InlineObject.md)|  | 
+ **createWebRTCToken** | [**CreateWebRTCToken**](CreateWebRTCToken.md)| Information needed to craft a JWT compatible with the platforms WebRTC APIs | 
 
 
 ### Return type
@@ -3922,7 +3922,7 @@ Name | Type | Description  | Notes
 
 <a name="updateaconference"></a>
 # **UpdateAConference**
-> ConferenceResult UpdateAConference (string conferenceId, UpdateConferenceRequest updateConferenceRequest = null)
+> void UpdateAConference (string conferenceId, UpdateConferenceRequest updateConferenceRequest = null)
 
 Update a Conference
 
@@ -3956,8 +3956,7 @@ namespace Example
             try
             {
                 // Update a Conference
-                ConferenceResult result = apiInstance.UpdateAConference(conferenceId, updateConferenceRequest);
-                Debug.WriteLine(result);
+                apiInstance.UpdateAConference(conferenceId, updateConferenceRequest);
             }
             catch (ApiException  e)
             {
@@ -3980,7 +3979,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConferenceResult**](ConferenceResult.md)
+void (empty response body)
 
 ### Authorization
 
@@ -3989,13 +3988,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Conference Details to Update |  -  |
+| **204** | Successful conference details update |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

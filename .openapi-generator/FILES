@@ -37,6 +37,7 @@ docs/ConferenceStatus.md
 docs/CreateConference.md
 docs/CreateConferenceAllOf.md
 docs/CreateConferenceRequest.md
+docs/CreateWebRTCToken.md
 docs/DefaultApi.md
 docs/Dequeue.md
 docs/Enqueue.md
@@ -57,7 +58,6 @@ docs/IncomingNumberListAllOf.md
 docs/IncomingNumberRequest.md
 docs/IncomingNumberResult.md
 docs/IncomingNumberResultAllOf.md
-docs/InlineObject.md
 docs/Language.md
 docs/LogLevel.md
 docs/LogList.md
@@ -146,6 +146,7 @@ docs/UpdateConferenceRequest.md
 docs/UpdateConferenceRequestStatus.md
 freeclimb.sln
 git_push.sh
+src/freeclimb.Test/Api/DefaultApiTests.cs
 src/freeclimb.Test/Model/AccountStatusTests.cs
 src/freeclimb.Test/Model/AccountTypeTests.cs
 src/freeclimb.Test/Model/AnsweredByTests.cs
@@ -165,7 +166,6 @@ src/freeclimb.Test/Model/PlayBeepTests.cs
 src/freeclimb.Test/Model/QueueResultStatusTests.cs
 src/freeclimb.Test/Model/RecordUtteranceTermReasonTests.cs
 src/freeclimb.Test/Model/RequestTypeTests.cs
-src/freeclimb.Test/Model/TerminateConferenceTests.cs
 src/freeclimb.Test/Model/UpdateCallRequestStatusTests.cs
 src/freeclimb.Test/Model/UpdateConferenceRequestStatusTests.cs
 src/freeclimb.Test/freeclimb.Test.csproj
@@ -223,6 +223,7 @@ src/freeclimb/Model/ConferenceStatus.cs
 src/freeclimb/Model/CreateConference.cs
 src/freeclimb/Model/CreateConferenceAllOf.cs
 src/freeclimb/Model/CreateConferenceRequest.cs
+src/freeclimb/Model/CreateWebRTCToken.cs
 src/freeclimb/Model/Dequeue.cs
 src/freeclimb/Model/Enqueue.cs
 src/freeclimb/Model/EnqueueAllOf.cs
@@ -242,7 +243,6 @@ src/freeclimb/Model/IncomingNumberListAllOf.cs
 src/freeclimb/Model/IncomingNumberRequest.cs
 src/freeclimb/Model/IncomingNumberResult.cs
 src/freeclimb/Model/IncomingNumberResultAllOf.cs
-src/freeclimb/Model/InlineObject.cs
 src/freeclimb/Model/Language.cs
 src/freeclimb/Model/LogLevel.cs
 src/freeclimb/Model/LogList.cs

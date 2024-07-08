@@ -831,13 +831,12 @@ namespace freeclimb.Test.Api
         /// </summary>
         [Fact]
 
-        //Need to revisit this depending on whether other SDKs are facing the same issues
         public void MakeAWebrtcJwtTest()
         {
 
-            InlineObject inlineObject = inlineObjectTestValue();
+            CreateWebRTCToken createWebRTCToken = createWebRTCTokenTestValue();
 
-            var response = instance.MakeAWebrtcJwt(inlineObject);
+            var response = instance.MakeAWebrtcJwt(createWebRTCToken);
             //Assert.IsType<string>(response);
             Assert.IsAssignableFrom<string>(response);
         }
@@ -899,9 +898,7 @@ namespace freeclimb.Test.Api
 
             UpdateConferenceRequest updateConferenceRequest = updateConferenceRequestTestValue();
 
-            var response = instance.UpdateAConference(conferenceId, updateConferenceRequest);
-            //Assert.IsType<ConferenceResult>(response);
-            Assert.IsAssignableFrom<ConferenceResult>(response);
+            instance.UpdateAConference(conferenceId, updateConferenceRequest);
         }
 
         /// <summary>
@@ -1416,9 +1413,9 @@ namespace freeclimb.Test.Api
             return "TEST-TFN-CAMPAIGN";
         }
 
-        private InlineObject inlineObjectTestValue()
+        private CreateWebRTCToken createWebRTCTokenTestValue()
         {
-            return new InlineObject("to_example", "from_example", 1);
+            return new CreateWebRTCToken("to_example", "from_example", 1);
         }
     }
 }

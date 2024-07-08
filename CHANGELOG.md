@@ -9,6 +9,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.7.0"></a>
+
+## [4.7.0] - 2024-07-05
+
+### Changed
+
+- GetDigit initialTimeoutMS property type change from string to integer
+
+### Removed
+
+- Deprecated percl fields
+
 <a name="4.6.3"></a>
 
 ## [4.6.3] - 2024-04-09

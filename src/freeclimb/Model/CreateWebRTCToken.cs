@@ -28,32 +28,32 @@ using freeclimb.Enums;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// InlineObject
+    /// CreateWebRTCToken
     /// </summary>
-    [DataContract(Name = "inline_object")]
-    public partial class InlineObject : IEquatable<InlineObject>, IValidatableObject
+    [DataContract(Name = "CreateWebRTCToken")]
+    public partial class CreateWebRTCToken : IEquatable<CreateWebRTCToken>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject" /> class.
+        /// Initializes a new instance of the <see cref="CreateWebRTCToken" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineObject() { }
+        protected CreateWebRTCToken() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject" /> class.
+        /// Initializes a new instance of the <see cref="CreateWebRTCToken" /> class.
         /// </summary>
         /// <param name="to">E.164 formatted phone number to which calls using this token will be made. (required).</param>
         /// <param name="from">E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made. (required).</param>
         /// <param name="uses">number of times this token may be used for a WebRTC call (required).</param>
-        public InlineObject(string to = default(string), string from = default(string), int uses = default(int))
+        public CreateWebRTCToken(string to = default(string), string from = default(string), int uses = default(int))
         {
             // to ensure "to" is required (not null)
             if (to == null) {
-                throw new ArgumentNullException("to is a required property for InlineObject and cannot be null");
+                throw new ArgumentNullException("to is a required property for CreateWebRTCToken and cannot be null");
             }
             this.To = to;
             // to ensure "from" is required (not null)
             if (from == null) {
-                throw new ArgumentNullException("from is a required property for InlineObject and cannot be null");
+                throw new ArgumentNullException("from is a required property for CreateWebRTCToken and cannot be null");
             }
             this.From = from;
             this.Uses = uses;
@@ -87,7 +87,7 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class InlineObject {\n");
+            sb.Append("class CreateWebRTCToken {\n");
             sb.Append("  To: ").Append(To).Append("\n");
             sb.Append("  From: ").Append(From).Append("\n");
             sb.Append("  Uses: ").Append(Uses).Append("\n");
@@ -105,7 +105,7 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the InlineObject instance. 
+        /// Retrieve the KVP Dictionary for the CreateWebRTCToken instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
@@ -124,15 +124,15 @@ namespace freeclimb.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineObject);
+            return this.Equals(input as CreateWebRTCToken);
         }
 
         /// <summary>
-        /// Returns true if InlineObject instances are equal
+        /// Returns true if CreateWebRTCToken instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineObject to be compared</param>
+        /// <param name="input">Instance of CreateWebRTCToken to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineObject input)
+        public bool Equals(CreateWebRTCToken input)
         {
             if (input == null)
             {
