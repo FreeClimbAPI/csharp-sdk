@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SetListenAllOfTests()
         {
-            instance = new SetListenAllOf("TEST_STRING", false);
+            instance = new SetListenAllOf();
         }
 
         /// <summary>
@@ -54,16 +55,6 @@ namespace freeclimb.Test.Model
         }
 
 
-        /// <summary>
-        /// Test the property 'CallId'
-        /// </summary>
-        [Fact]
-        public void CallIdTest()
-        {
-            instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
-            
-        }
         /// <summary>
         /// Test the property 'Listen'
         /// </summary>
@@ -82,12 +73,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetListenAllOf test1 = new SetListenAllOf();
          test1.Listen = true;
 
-        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
-         test2.CallId = "TS";
+        SetListenAllOf test2 = new SetListenAllOf();
          test2.Listen = true;
 
         Assert.Equal(test1,test2);
@@ -99,12 +88,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetListenAllOf test1 = new SetListenAllOf();
          test1.Listen = true;
 
-        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
-         test2.CallId = "ts";
+        SetListenAllOf test2 = new SetListenAllOf();
          test2.Listen = false;
 
         Assert.NotEqual(test1,test2);
@@ -116,8 +103,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetListenAllOf test1 = new SetListenAllOf();
          test1.Listen = true;
 
         int hashCode1 = test1.GetHashCode();
@@ -131,8 +117,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetListenAllOf test1 = new SetListenAllOf();
          test1.Listen = true;
 
         string toString1 = test1.ToString();
@@ -146,12 +131,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetListenAllOf test1 = new SetListenAllOf();
          test1.Listen = true;
 
-        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
-         test2.CallId = "TS";
+        SetListenAllOf test2 = new SetListenAllOf();
          test2.Listen = true;
 
         string toString1 = test1.ToString();
@@ -166,12 +149,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetListenAllOf test1 = new SetListenAllOf();
          test1.Listen = true;
 
-        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
-         test2.CallId = "TS";
+        SetListenAllOf test2 = new SetListenAllOf();
          test2.Listen = true;
 
         Assert.True(test1.Equals(test2));
@@ -183,13 +164,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SetListenAllOf test1 = new SetListenAllOf("TEST_STRING", false);
-         test1.CallId = "TS";
+        SetListenAllOf test1 = new SetListenAllOf();
          test1.Listen = true;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        SetListenAllOf test2 = new SetListenAllOf("TEST_STRING", false);
-         test2.CallId = "TS";
+        SetListenAllOf test2 = new SetListenAllOf();
          test2.Listen = true;
 
         Assert.True(jsonStr.Equals(test2.ToJson()));

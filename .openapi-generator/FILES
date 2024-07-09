@@ -37,6 +37,7 @@ docs/ConferenceStatus.md
 docs/CreateConference.md
 docs/CreateConferenceAllOf.md
 docs/CreateConferenceRequest.md
+docs/CreateWebRTCToken.md
 docs/DefaultApi.md
 docs/Dequeue.md
 docs/Enqueue.md
@@ -108,7 +109,6 @@ docs/RedirectAllOf.md
 docs/Reject.md
 docs/RejectAllOf.md
 docs/RemoveFromConference.md
-docs/RemoveFromConferenceAllOf.md
 docs/RequestType.md
 docs/SMSTenDLCBrand.md
 docs/SMSTenDLCBrandsListResult.md
@@ -120,6 +120,9 @@ docs/SMSTenDLCPartnerCampaign.md
 docs/SMSTenDLCPartnerCampaignBrand.md
 docs/SMSTenDLCPartnerCampaignsListResult.md
 docs/SMSTenDLCPartnerCampaignsListResultAllOf.md
+docs/SMSTollFreeCampaign.md
+docs/SMSTollFreeCampaignsListResult.md
+docs/SMSTollFreeCampaignsListResultAllOf.md
 docs/Say.md
 docs/SayAllOf.md
 docs/SendDigits.md
@@ -131,8 +134,8 @@ docs/SetTalkAllOf.md
 docs/Sms.md
 docs/SmsAllOf.md
 docs/StartRecordCall.md
+docs/TFN.md
 docs/TerminateConference.md
-docs/TerminateConferenceAllOf.md
 docs/TranscribeUtterance.md
 docs/TranscribeUtteranceRecord.md
 docs/Unpark.md
@@ -143,6 +146,7 @@ docs/UpdateConferenceRequest.md
 docs/UpdateConferenceRequestStatus.md
 freeclimb.sln
 git_push.sh
+src/freeclimb.Test/Api/DefaultApiTests.cs
 src/freeclimb.Test/Model/AccountStatusTests.cs
 src/freeclimb.Test/Model/AccountTypeTests.cs
 src/freeclimb.Test/Model/AnsweredByTests.cs
@@ -219,6 +223,7 @@ src/freeclimb/Model/ConferenceStatus.cs
 src/freeclimb/Model/CreateConference.cs
 src/freeclimb/Model/CreateConferenceAllOf.cs
 src/freeclimb/Model/CreateConferenceRequest.cs
+src/freeclimb/Model/CreateWebRTCToken.cs
 src/freeclimb/Model/Dequeue.cs
 src/freeclimb/Model/Enqueue.cs
 src/freeclimb/Model/EnqueueAllOf.cs
@@ -289,7 +294,6 @@ src/freeclimb/Model/RedirectAllOf.cs
 src/freeclimb/Model/Reject.cs
 src/freeclimb/Model/RejectAllOf.cs
 src/freeclimb/Model/RemoveFromConference.cs
-src/freeclimb/Model/RemoveFromConferenceAllOf.cs
 src/freeclimb/Model/RequestType.cs
 src/freeclimb/Model/SMSTenDLCBrand.cs
 src/freeclimb/Model/SMSTenDLCBrandsListResult.cs
@@ -301,6 +305,9 @@ src/freeclimb/Model/SMSTenDLCPartnerCampaign.cs
 src/freeclimb/Model/SMSTenDLCPartnerCampaignBrand.cs
 src/freeclimb/Model/SMSTenDLCPartnerCampaignsListResult.cs
 src/freeclimb/Model/SMSTenDLCPartnerCampaignsListResultAllOf.cs
+src/freeclimb/Model/SMSTollFreeCampaign.cs
+src/freeclimb/Model/SMSTollFreeCampaignsListResult.cs
+src/freeclimb/Model/SMSTollFreeCampaignsListResultAllOf.cs
 src/freeclimb/Model/Say.cs
 src/freeclimb/Model/SayAllOf.cs
 src/freeclimb/Model/SendDigits.cs
@@ -312,8 +319,8 @@ src/freeclimb/Model/SetTalkAllOf.cs
 src/freeclimb/Model/Sms.cs
 src/freeclimb/Model/SmsAllOf.cs
 src/freeclimb/Model/StartRecordCall.cs
+src/freeclimb/Model/TFN.cs
 src/freeclimb/Model/TerminateConference.cs
-src/freeclimb/Model/TerminateConferenceAllOf.cs
 src/freeclimb/Model/TranscribeUtterance.cs
 src/freeclimb/Model/TranscribeUtteranceRecord.cs
 src/freeclimb/Model/Unpark.cs

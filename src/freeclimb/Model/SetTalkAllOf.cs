@@ -36,29 +36,11 @@ namespace freeclimb.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SetTalkAllOf" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SetTalkAllOf() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SetTalkAllOf" /> class.
-        /// </summary>
-        /// <param name="callId">ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered. (required).</param>
         /// <param name="talk">Specifying &#x60;false&#x60; mutes the Participant..</param>
-        public SetTalkAllOf(string callId = default(string), bool talk = default(bool))
+        public SetTalkAllOf(bool talk = default(bool))
         {
-            // to ensure "callId" is required (not null)
-            if (callId == null) {
-                throw new ArgumentNullException("callId is a required property for SetTalkAllOf and cannot be null");
-            }
-            this.CallId = callId;
             this.Talk = talk;
         }
-
-        /// <summary>
-        /// ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.
-        /// </summary>
-        /// <value>ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.</value>
-        [DataMember(Name = "callId", IsRequired = true, EmitDefaultValue = false)]
-        public string CallId { get; set; }
 
         /// <summary>
         /// Specifying &#x60;false&#x60; mutes the Participant.
@@ -75,7 +57,6 @@ namespace freeclimb.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SetTalkAllOf {\n");
-            sb.Append("  CallId: ").Append(CallId).Append("\n");
             sb.Append("  Talk: ").Append(Talk).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,7 +78,6 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("callId", CallId);          
             props.Add("talk", Talk);          
             return props;
         }
@@ -125,11 +105,6 @@ namespace freeclimb.Model
             }
             return 
                 (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                ) && 
-                (
                     this.Talk == input.Talk ||
                     this.Talk.Equals(input.Talk)
                 );
@@ -144,10 +119,6 @@ namespace freeclimb.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.Talk.GetHashCode();
                 return hashCode;
             }

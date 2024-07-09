@@ -78,7 +78,7 @@ namespace freeclimb.Model
         /// <param name="prompts">JSON array of PerCL commands to nest within the &#x60;GetDigits&#x60; command. The &#x60;Say&#x60;, &#x60;Play&#x60;, and &#x60;Pause&#x60; commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;GetDigits&quot;).</param>
-        public GetDigits(string actionUrl = default(string), int digitTimeoutMs = default(int), string finishOnKey = default(string), bool flushBuffer = default(bool), string initialTimeoutMs = default(string), int maxDigits = default(int), int minDigits = default(int), List<PerclCommand> prompts = default(List<PerclCommand>), bool privacyMode = default(bool), string command = "GetDigits") : base(command)
+        public GetDigits(string actionUrl = default(string), int digitTimeoutMs = default(int), string finishOnKey = default(string), bool flushBuffer = default(bool), int initialTimeoutMs = default(int), int maxDigits = default(int), int minDigits = default(int), List<PerclCommand> prompts = default(List<PerclCommand>), bool privacyMode = default(bool), string command = "GetDigits") : base(command)
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null) {
@@ -128,7 +128,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <value>Maximum time in milliseconds that FreeClimb will wait for the Caller to press the first digit before making a determination that a &#x60;timeout&#x60; has occurred and moving on to make the request to the &#x60;actionUrl&#x60; to submit the results of the &#x60;GetDigits&#x60; command. This timeout interval begins when all nested commands have been fully executed.</value>
         [DataMember(Name = "initialTimeoutMs", EmitDefaultValue = false)]
-        public string InitialTimeoutMs { get; set; }
+        public int InitialTimeoutMs { get; set; }
 
         /// <summary>
         /// Maximum number of digits expected in the input. If the terminating digit is not entered and the caller has entered the maximum number of digits allowed, the &#x60;GetDigits&#x60; command terminates regardless of the value of &#x60;finishOnKey&#x60;.
@@ -263,8 +263,7 @@ namespace freeclimb.Model
                 ) && base.Equals(input) && 
                 (
                     this.InitialTimeoutMs == input.InitialTimeoutMs ||
-                    (this.InitialTimeoutMs != null &&
-                    this.InitialTimeoutMs.Equals(input.InitialTimeoutMs))
+                    this.InitialTimeoutMs.Equals(input.InitialTimeoutMs)
                 ) && base.Equals(input) && 
                 (
                     this.MaxDigits == input.MaxDigits ||
@@ -305,10 +304,7 @@ namespace freeclimb.Model
                     hashCode = (hashCode * 59) + this.FinishOnKey.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.FlushBuffer.GetHashCode();
-                if (this.InitialTimeoutMs != null)
-                {
-                    hashCode = (hashCode * 59) + this.InitialTimeoutMs.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.InitialTimeoutMs.GetHashCode();
                 hashCode = (hashCode * 59) + this.MaxDigits.GetHashCode();
                 hashCode = (hashCode * 59) + this.MinDigits.GetHashCode();
                 if (this.Prompts != null)

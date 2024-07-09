@@ -71,10 +71,9 @@ namespace freeclimb.Model
         /// <param name="text">The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped. (required).</param>
         /// <param name="language">Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below..</param>
         /// <param name="loop">Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up. (default to 1).</param>
-        /// <param name="conferenceId">D of the Conference the speech should be rendered to. If this is not specified, the speech is by default rendered to the Caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Say&quot;).</param>
-        public Say(string text = default(string), string language = default(string), int loop = 1, string conferenceId = default(string), bool privacyMode = default(bool), string command = "Say") : base(command)
+        public Say(string text = default(string), string language = default(string), int loop = 1, bool privacyMode = default(bool), string command = "Say") : base(command)
         {
             // to ensure "text" is required (not null)
             if (text == null) {
@@ -83,7 +82,6 @@ namespace freeclimb.Model
             this.Text = text;
             this.Language = language;
             this.Loop = loop;
-            this.ConferenceId = conferenceId;
             this.PrivacyMode = privacyMode;
         }
 
@@ -109,13 +107,6 @@ namespace freeclimb.Model
         public int Loop { get; set; }
 
         /// <summary>
-        /// D of the Conference the speech should be rendered to. If this is not specified, the speech is by default rendered to the Caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error.
-        /// </summary>
-        /// <value>D of the Conference the speech should be rendered to. If this is not specified, the speech is by default rendered to the Caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error.</value>
-        [DataMember(Name = "conferenceId", EmitDefaultValue = false)]
-        public string ConferenceId { get; set; }
-
-        /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
         /// <value>Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.</value>
@@ -134,7 +125,6 @@ namespace freeclimb.Model
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  Loop: ").Append(Loop).Append("\n");
-            sb.Append("  ConferenceId: ").Append(ConferenceId).Append("\n");
             sb.Append("  PrivacyMode: ").Append(PrivacyMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -165,7 +155,6 @@ namespace freeclimb.Model
             props.Add("text", Text);          
             props.Add("language", Language);          
             props.Add("loop", Loop);          
-            props.Add("conferenceId", ConferenceId);          
             props.Add("privacyMode", PrivacyMode);          
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("Say",props);
@@ -209,11 +198,6 @@ namespace freeclimb.Model
                     this.Loop.Equals(input.Loop)
                 ) && base.Equals(input) && 
                 (
-                    this.ConferenceId == input.ConferenceId ||
-                    (this.ConferenceId != null &&
-                    this.ConferenceId.Equals(input.ConferenceId))
-                ) && base.Equals(input) && 
-                (
                     this.PrivacyMode == input.PrivacyMode ||
                     this.PrivacyMode.Equals(input.PrivacyMode)
                 );
@@ -237,10 +221,6 @@ namespace freeclimb.Model
                     hashCode = (hashCode * 59) + this.Language.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Loop.GetHashCode();
-                if (this.ConferenceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConferenceId.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.PrivacyMode.GetHashCode();
                 return hashCode;
             }

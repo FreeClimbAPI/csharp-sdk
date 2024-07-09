@@ -53,7 +53,8 @@ namespace freeclimb.Model
         /// <param name="brandId">The unique identifier for the brand associated with the message.</param>
         /// <param name="campaignId">The unique identifier for the campaign associated with the message.</param>
         /// <param name="segmentCount">The number of segments into which the message was split.</param>
-        public MessageResultAllOf(string accountId = default(string), string messageId = default(string), MessageStatus? status = default(MessageStatus?), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string notificationUrl = default(string), string brandId = default(string), string campaignId = default(string), decimal? segmentCount = default(decimal?))
+        /// <param name="mediaUrls">an array of HTTP URLs which were attached this this message.</param>
+        public MessageResultAllOf(string accountId = default(string), string messageId = default(string), MessageStatus? status = default(MessageStatus?), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string notificationUrl = default(string), string brandId = default(string), string campaignId = default(string), decimal? segmentCount = default(decimal?), List<string> mediaUrls = default(List<string>))
         {
             this.AccountId = accountId;
             this.MessageId = messageId;
@@ -66,6 +67,7 @@ namespace freeclimb.Model
             this.BrandId = brandId;
             this.CampaignId = campaignId;
             this.SegmentCount = segmentCount;
+            this.MediaUrls = mediaUrls;
         }
 
         /// <summary>
@@ -139,6 +141,13 @@ namespace freeclimb.Model
         public decimal? SegmentCount { get; set; }
 
         /// <summary>
+        /// an array of HTTP URLs which were attached this this message
+        /// </summary>
+        /// <value>an array of HTTP URLs which were attached this this message</value>
+        [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
+        public List<string> MediaUrls { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -157,6 +166,7 @@ namespace freeclimb.Model
             sb.Append("  BrandId: ").Append(BrandId).Append("\n");
             sb.Append("  CampaignId: ").Append(CampaignId).Append("\n");
             sb.Append("  SegmentCount: ").Append(SegmentCount).Append("\n");
+            sb.Append("  MediaUrls: ").Append(MediaUrls).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -188,6 +198,12 @@ namespace freeclimb.Model
             props.Add("brandId", BrandId);          
             props.Add("campaignId", CampaignId);          
             props.Add("segmentCount", SegmentCount);          
+            List<object> nested = new List<object>();
+            foreach (var item in MediaUrls)
+            {
+                nested.Add(item);
+            }
+            props.Add("mediaUrls", nested); 
             return props;
         }
         
@@ -266,6 +282,12 @@ namespace freeclimb.Model
                     this.SegmentCount == input.SegmentCount ||
                     (this.SegmentCount != null &&
                     this.SegmentCount.Equals(input.SegmentCount))
+                ) && 
+                (
+                    this.MediaUrls == input.MediaUrls ||
+                    this.MediaUrls != null &&
+                    input.MediaUrls != null &&
+                    this.MediaUrls.SequenceEqual(input.MediaUrls)
                 );
         }
 
@@ -318,6 +340,10 @@ namespace freeclimb.Model
                 if (this.SegmentCount != null)
                 {
                     hashCode = (hashCode * 59) + this.SegmentCount.GetHashCode();
+                }
+                if (this.MediaUrls != null)
+                {
+                    hashCode = (hashCode * 59) + this.MediaUrls.GetHashCode();
                 }
                 return hashCode;
             }
