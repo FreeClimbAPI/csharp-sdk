@@ -26,10 +26,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - name: Install Prism
-        run: (yarn global add @stoplight/prism-cli)
       - name: Start Prism Server
-        run: (prism mock -h 127.0.0.1 openapi.json &)
+        run: |
+          yarn install
+          ./node_modules/.bin/prism mock -h 127.0.0.1 openapi.json &
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
