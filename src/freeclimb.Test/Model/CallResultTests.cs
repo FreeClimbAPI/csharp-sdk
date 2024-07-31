@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public CallResultTests()
         {
-            instance = new CallResult();
+            instance = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
         }
 
         /// <summary>
@@ -274,7 +274,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        CallResult test1 = new CallResult();
+        CallResult test1 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -296,7 +296,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        CallResult test2 = new CallResult();
+        CallResult test2 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -327,7 +327,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        CallResult test1 = new CallResult();
+        CallResult test1 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -349,7 +349,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        CallResult test2 = new CallResult();
+        CallResult test2 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
@@ -380,7 +380,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        CallResult test1 = new CallResult();
+        CallResult test1 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -413,7 +413,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        CallResult test1 = new CallResult();
+        CallResult test1 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -446,7 +446,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        CallResult test1 = new CallResult();
+        CallResult test1 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -468,7 +468,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        CallResult test2 = new CallResult();
+        CallResult test2 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -502,7 +502,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        CallResult test1 = new CallResult();
+        CallResult test1 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -524,7 +524,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        CallResult test2 = new CallResult();
+        CallResult test2 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -555,7 +555,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        CallResult test1 = new CallResult();
+        CallResult test1 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -578,7 +578,7 @@ namespace freeclimb.Test.Model
          test1.SubresourceUris = testObject;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        CallResult test2 = new CallResult();
+        CallResult test2 = new CallResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";

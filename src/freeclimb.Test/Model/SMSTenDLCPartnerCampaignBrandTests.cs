@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,24 +42,7 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignBrandTests()
         {
-             string jsonData = @"
-            {
-                ""accountId"":""TEST_STRING"",
-                ""entityType"":""PRIVATE_PROFIT"",
-                ""cspId"": ""TEST_STRING"",
-                ""brandId"": ""TEST_STRING"",
-                ""universalEin"": ""TEST_STRING"",
-                ""brandRelationship"":""BASIC_ACCOUNT"",
-                ""identityStatus"":""SELF_DECLARED"",
-                ""displayName"":""TEST_STRING"",
-                ""phone"":""TEST_STRING"",
-                ""country"":""TEST_STRING"",
-                ""email"":""TEST_STRING"",
-                ""vertical"":""TEST_STRING"",
-                ""mock"":""false"",
-            }
-            ";
-            instance = JsonConvert.DeserializeObject<SMSTenDLCPartnerCampaignBrand>(jsonData);
+            instance = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
         }
 
         /// <summary>
@@ -190,8 +174,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.AccountId = "TS";
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -203,8 +188,9 @@ namespace freeclimb.Test.Model
          test1.OptionalAttributes = testDictionary;
          test1.EvpVettingScore = 1;
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.AccountId = "TS";
+
          test2.FirstName = "TS";
          test2.LastName = "TS";
          test2.DisplayName = "TS";
@@ -225,8 +211,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.AccountId = "TS";
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -238,9 +225,9 @@ namespace freeclimb.Test.Model
          test1.OptionalAttributes = testDictionary;
          test1.EvpVettingScore = 1;
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.AccountId = "ts";
-         
+
          test2.FirstName = "ts";
          test2.LastName = "ts";
          test2.DisplayName = "ts";
@@ -261,8 +248,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.AccountId = "TS";
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -285,8 +273,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.AccountId = "TS";
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -309,8 +298,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.AccountId = "TS";
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -322,8 +312,9 @@ namespace freeclimb.Test.Model
          test1.OptionalAttributes = testDictionary;
          test1.EvpVettingScore = 1;
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.AccountId = "TS";
+
          test2.FirstName = "TS";
          test2.LastName = "TS";
          test2.DisplayName = "TS";
@@ -347,8 +338,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.AccountId = "TS";
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -360,8 +352,9 @@ namespace freeclimb.Test.Model
          test1.OptionalAttributes = testDictionary;
          test1.EvpVettingScore = 1;
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.AccountId = "TS";
+
          test2.FirstName = "TS";
          test2.LastName = "TS";
          test2.DisplayName = "TS";
@@ -382,8 +375,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.AccountId = "TS";
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -396,8 +390,9 @@ namespace freeclimb.Test.Model
          test1.EvpVettingScore = 1;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING" ,"TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.AccountId = "TS";
+
          test2.FirstName = "TS";
          test2.LastName = "TS";
          test2.DisplayName = "TS";

@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public MessagesListAllOfTests()
         {
-            instance = new MessagesListAllOf();
+            instance = new MessagesListAllOf(new List<MessageResult>());
         }
 
         /// <summary>
@@ -73,11 +74,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        MessagesListAllOf test1 = new MessagesListAllOf();
+        MessagesListAllOf test1 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList = new List<MessageResult>();
          test1.Messages = testList;
 
-        MessagesListAllOf test2 = new MessagesListAllOf();
+        MessagesListAllOf test2 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList2 = new List<MessageResult>();
          test2.Messages = testList2;
 
@@ -90,11 +91,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        MessagesListAllOf test1 = new MessagesListAllOf();
+        MessagesListAllOf test1 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList = new List<MessageResult>();
          test1.Messages = testList;
 
-        MessagesListAllOf test2 = new MessagesListAllOf();
+        MessagesListAllOf test2 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList2 = null;
          test2.Messages = testList2;
 
@@ -107,7 +108,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        MessagesListAllOf test1 = new MessagesListAllOf();
+        MessagesListAllOf test1 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList = new List<MessageResult>();
          test1.Messages = testList;
 
@@ -122,7 +123,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        MessagesListAllOf test1 = new MessagesListAllOf();
+        MessagesListAllOf test1 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList = new List<MessageResult>();
          test1.Messages = testList;
 
@@ -137,11 +138,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        MessagesListAllOf test1 = new MessagesListAllOf();
+        MessagesListAllOf test1 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList = new List<MessageResult>();
          test1.Messages = testList;
 
-        MessagesListAllOf test2 = new MessagesListAllOf();
+        MessagesListAllOf test2 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList2 = new List<MessageResult>();
          test2.Messages = testList2;
 
@@ -157,11 +158,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        MessagesListAllOf test1 = new MessagesListAllOf();
+        MessagesListAllOf test1 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList = new List<MessageResult>();
          test1.Messages = testList;
 
-        MessagesListAllOf test2 = new MessagesListAllOf();
+        MessagesListAllOf test2 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList2 = new List<MessageResult>();
          test2.Messages = testList2;
 
@@ -174,12 +175,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        MessagesListAllOf test1 = new MessagesListAllOf();
+        MessagesListAllOf test1 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList = new List<MessageResult>();
          test1.Messages = testList;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        MessagesListAllOf test2 = new MessagesListAllOf();
+        MessagesListAllOf test2 = new MessagesListAllOf(new List<MessageResult>());
          List<MessageResult> testList2 = new List<MessageResult>();
          test2.Messages = testList2;
 

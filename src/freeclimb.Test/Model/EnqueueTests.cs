@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public EnqueueTests()
         {
-            instance = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            instance = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        Enqueue test1 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test1 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -131,7 +131,7 @@ namespace freeclimb.Test.Model
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
-        Enqueue test2 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test2 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -158,7 +158,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        Enqueue test1 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test1 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -176,7 +176,7 @@ namespace freeclimb.Test.Model
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
-        Enqueue test2 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test2 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
@@ -203,7 +203,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        Enqueue test1 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test1 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -232,7 +232,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        Enqueue test1 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test1 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -261,7 +261,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        Enqueue test1 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test1 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -279,7 +279,7 @@ namespace freeclimb.Test.Model
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
-        Enqueue test2 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test2 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -309,7 +309,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        Enqueue test1 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test1 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -327,7 +327,7 @@ namespace freeclimb.Test.Model
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
-        Enqueue test2 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test2 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -348,13 +348,13 @@ namespace freeclimb.Test.Model
         Assert.True(test1.Equals(test2));
         }
 
-         /// <summary>
+        /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
         
         [Fact]
         public void ToJsonTest() {
-        Enqueue test1 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test1 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -371,21 +371,18 @@ namespace freeclimb.Test.Model
             }
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
-        JsonSerializer jsonSerializer = JsonSerializer.Create();
-        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-        StringBuilder strb = new StringBuilder();
-        jsonSerializer.Serialize(new StringWriter(strb), test1);
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        Enqueue test2 = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Enqueue test2 = new Enqueue(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", "TEST_STRING");
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.NotificationUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.NotificationUrl);
             } catch (Exception ) {
@@ -394,7 +391,7 @@ namespace freeclimb.Test.Model
          test2.QueueId = "TS";
          test2.WaitUrl = "TS";
 
-        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

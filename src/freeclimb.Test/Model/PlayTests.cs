@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public PlayTests()
         {
-            instance = new Play("TEST_STRING", 1, false);
+            instance = new Play("TEST_STRING", 1, false, "TEST_STRING");
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             instance.File = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.File);
-
+            
         }
         /// <summary>
         /// Test the property 'Loop'
@@ -71,9 +71,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LoopTest()
         {
-
+            
             instance.Loop = 1;
-            Assert.Equal(1, (int)instance.Loop);
+            Assert.Equal(1, (int) instance.Loop);
         }
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -82,149 +82,140 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);
-
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
-
-
+        
+        
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTrueTest()
-        {
-            Play test1 = new Play("TEST_STRING", 1, false);
-            test1.File = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void equalsTrueTest() {
+        Play test1 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            Play test2 = new Play("TEST_STRING", 1, false);
-            test2.File = "TS";
-            test2.Loop = 1;
-            test2.PrivacyMode = true;
+        Play test2 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test2.File = "TS";
+         test2.Loop = 1;
+         test2.PrivacyMode = true;
 
-            Assert.Equal(test1, test2);
+        Assert.Equal(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-
+        
         [Fact]
-        public void equalsFalseTest()
-        {
-            Play test1 = new Play("TEST_STRING", 1, false);
-            test1.File = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void equalsFalseTest() {
+        Play test1 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            Play test2 = new Play("TEST_STRING", 1, false);
-            test2.File = "ts";
-            test2.Loop = 2;
-            test2.PrivacyMode = false;
+        Play test2 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test2.File = "ts";
+         test2.Loop = 2;
+         test2.PrivacyMode = false;
 
-            Assert.NotEqual(test1, test2);
+        Assert.NotEqual(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-
+        
         [Fact]
-        public void hashCodeTypeTest()
-        {
-            Play test1 = new Play("TEST_STRING", 1, false);
-            test1.File = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void hashCodeTypeTest() {
+        Play test1 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            int hashCode1 = test1.GetHashCode();
-            Assert.True(hashCode1.GetType() == typeof(int));
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringTypeTest()
-        {
-            Play test1 = new Play("TEST_STRING", 1, false);
-            test1.File = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void ToStringTypeTest() {
+        Play test1 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            string toString1 = test1.ToString();
-            Assert.True(toString1.GetType() == typeof(string));
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringEqualsTest()
-        {
-            Play test1 = new Play("TEST_STRING", 1, false);
-            test1.File = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void ToStringEqualsTest() {
+        Play test1 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            Play test2 = new Play("TEST_STRING", 1, false);
-            test2.File = "TS";
-            test2.Loop = 1;
-            test2.PrivacyMode = true;
+        Play test2 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test2.File = "TS";
+         test2.Loop = 1;
+         test2.PrivacyMode = true;
 
-            string toString1 = test1.ToString();
-            string toString2 = test2.ToString();
-            Assert.Equal(toString1, toString2);
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTest()
-        {
-            Play test1 = new Play("TEST_STRING", 1, false);
-            test1.File = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void equalsTest() {
+        Play test1 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            Play test2 = new Play("TEST_STRING", 1, false);
-            test2.File = "TS";
-            test2.Loop = 1;
-            test2.PrivacyMode = true;
+        Play test2 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test2.File = "TS";
+         test2.Loop = 1;
+         test2.PrivacyMode = true;
 
-            Assert.True(test1.Equals(test2));
+        Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-
+        
         [Fact]
-        public void ToJsonTest()
-        {
-            Play test1 = new Play("TEST_STRING", 1, false);
-            test1.File = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), test1);
-            Play test2 = new Play("TEST_STRING", 1, false);
-            test2.File = "TS";
-            test2.Loop = 1;
-            test2.PrivacyMode = true;
+        public void ToJsonTest() {
+        Play test1 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test1.File = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-            Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+        Play test2 = new Play("TEST_STRING", 1, false, "TEST_STRING");
+         test2.File = "TS";
+         test2.Loop = 1;
+         test2.PrivacyMode = true;
+
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

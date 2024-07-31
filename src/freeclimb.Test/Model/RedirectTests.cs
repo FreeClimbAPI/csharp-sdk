@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public RedirectTests()
         {
-            instance = new Redirect("https://a.com", "TEST_STRING");
+            instance = new Redirect(new Uri("https://a.com"), "TEST_STRING");
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        Redirect test1 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test1 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -87,7 +87,7 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
 
-        Redirect test2 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test2 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -105,7 +105,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        Redirect test1 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test1 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -114,7 +114,7 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
 
-        Redirect test2 = new Redirect("https://abc.com", "TEST_STRING");
+        Redirect test2 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
@@ -132,7 +132,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        Redirect test1 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test1 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -152,7 +152,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        Redirect test1 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test1 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -172,7 +172,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        Redirect test1 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test1 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -181,7 +181,7 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
 
-        Redirect test2 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test2 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -202,7 +202,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        Redirect test1 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test1 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -211,7 +211,7 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
 
-        Redirect test2 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test2 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -229,7 +229,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        Redirect test1 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test1 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -237,21 +237,18 @@ namespace freeclimb.Test.Model
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
-        JsonSerializer jsonSerializer = JsonSerializer.Create();
-        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-        StringBuilder strb = new StringBuilder();
-        jsonSerializer.Serialize(new StringWriter(strb), test1);
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        Redirect test2 = new Redirect("https://a.com", "TEST_STRING");
+        Redirect test2 = new Redirect(new Uri("https://a.com"), "TEST_STRING");
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
 
-        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public CreateConferenceAllOfTests()
         {
-            instance = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+            instance = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -148,7 +148,7 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -171,7 +171,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -185,7 +185,7 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
@@ -208,7 +208,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -233,7 +233,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -258,7 +258,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -272,7 +272,7 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -298,7 +298,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -312,7 +312,7 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -335,7 +335,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -350,7 +350,7 @@ namespace freeclimb.Test.Model
          test1.WaitUrl = "TS";
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf(new Uri("https://a.com"), false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();

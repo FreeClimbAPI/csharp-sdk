@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public ApplicationListAllOfTests()
         {
-            instance = new ApplicationListAllOf();
+            instance = new ApplicationListAllOf(new List<ApplicationResult>());
         }
 
         /// <summary>
@@ -73,11 +74,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ApplicationListAllOf test1 = new ApplicationListAllOf();
+        ApplicationListAllOf test1 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
 
-        ApplicationListAllOf test2 = new ApplicationListAllOf();
+        ApplicationListAllOf test2 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList2 = new List<ApplicationResult>();
          test2.Applications = testList2;
 
@@ -90,11 +91,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ApplicationListAllOf test1 = new ApplicationListAllOf();
+        ApplicationListAllOf test1 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
 
-        ApplicationListAllOf test2 = new ApplicationListAllOf();
+        ApplicationListAllOf test2 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList2 = null;
          test2.Applications = testList2;
 
@@ -107,7 +108,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ApplicationListAllOf test1 = new ApplicationListAllOf();
+        ApplicationListAllOf test1 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
 
@@ -122,7 +123,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ApplicationListAllOf test1 = new ApplicationListAllOf();
+        ApplicationListAllOf test1 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
 
@@ -137,11 +138,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ApplicationListAllOf test1 = new ApplicationListAllOf();
+        ApplicationListAllOf test1 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
 
-        ApplicationListAllOf test2 = new ApplicationListAllOf();
+        ApplicationListAllOf test2 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList2 = new List<ApplicationResult>();
          test2.Applications = testList2;
 
@@ -157,11 +158,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ApplicationListAllOf test1 = new ApplicationListAllOf();
+        ApplicationListAllOf test1 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
 
-        ApplicationListAllOf test2 = new ApplicationListAllOf();
+        ApplicationListAllOf test2 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList2 = new List<ApplicationResult>();
          test2.Applications = testList2;
 
@@ -174,12 +175,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ApplicationListAllOf test1 = new ApplicationListAllOf();
+        ApplicationListAllOf test1 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        ApplicationListAllOf test2 = new ApplicationListAllOf();
+        ApplicationListAllOf test2 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList2 = new List<ApplicationResult>();
          test2.Applications = testList2;
 

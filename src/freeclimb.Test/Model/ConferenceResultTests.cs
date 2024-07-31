@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public ConferenceResultTests()
         {
-            instance = new ConferenceResult();
+            instance = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
         }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ConferenceResult test1 = new ConferenceResult();
+        ConferenceResult test1 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -233,7 +233,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        ConferenceResult test2 = new ConferenceResult();
+        ConferenceResult test2 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -259,7 +259,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ConferenceResult test1 = new ConferenceResult();
+        ConferenceResult test1 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -276,7 +276,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        ConferenceResult test2 = new ConferenceResult();
+        ConferenceResult test2 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
@@ -302,7 +302,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ConferenceResult test1 = new ConferenceResult();
+        ConferenceResult test1 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -330,7 +330,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ConferenceResult test1 = new ConferenceResult();
+        ConferenceResult test1 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -358,7 +358,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ConferenceResult test1 = new ConferenceResult();
+        ConferenceResult test1 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -375,7 +375,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        ConferenceResult test2 = new ConferenceResult();
+        ConferenceResult test2 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -404,7 +404,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ConferenceResult test1 = new ConferenceResult();
+        ConferenceResult test1 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -421,7 +421,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        ConferenceResult test2 = new ConferenceResult();
+        ConferenceResult test2 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -447,7 +447,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ConferenceResult test1 = new ConferenceResult();
+        ConferenceResult test1 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -465,7 +465,7 @@ namespace freeclimb.Test.Model
          test1.SubresourceUris = testObject;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        ConferenceResult test2 = new ConferenceResult();
+        ConferenceResult test2 = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";

@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public ParkAllOfTests()
         {
-            instance = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+            instance = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
         }
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test1 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -119,7 +120,7 @@ namespace freeclimb.Test.Model
             }
          test1.NotificationUrl = "TS";
 
-        ParkAllOf test2 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test2 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.WaitUrl = uri2.ToString();
@@ -145,7 +146,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test1 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -162,7 +163,7 @@ namespace freeclimb.Test.Model
             }
          test1.NotificationUrl = "TS";
 
-        ParkAllOf test2 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test2 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://abc.com");
             instance.WaitUrl = uri2.ToString();
@@ -188,7 +189,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test1 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -216,7 +217,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test1 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -244,7 +245,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test1 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -261,7 +262,7 @@ namespace freeclimb.Test.Model
             }
          test1.NotificationUrl = "TS";
 
-        ParkAllOf test2 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test2 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.WaitUrl = uri2.ToString();
@@ -290,7 +291,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test1 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -307,7 +308,7 @@ namespace freeclimb.Test.Model
             }
          test1.NotificationUrl = "TS";
 
-        ParkAllOf test2 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test2 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.WaitUrl = uri2.ToString();
@@ -333,7 +334,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ParkAllOf test1 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test1 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -351,16 +352,16 @@ namespace freeclimb.Test.Model
          test1.NotificationUrl = "TS";
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        ParkAllOf test2 = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+        ParkAllOf test2 = new ParkAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING");
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.WaitUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.WaitUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {

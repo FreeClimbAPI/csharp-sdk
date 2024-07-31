@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             instance.Uri = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Uri);
-
+            
         }
         /// <summary>
         /// Test the property 'DateCreated'
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         {
             instance.DateCreated = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.DateCreated);
-
+            
         }
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -83,7 +83,7 @@ namespace freeclimb.Test.Model
         {
             instance.DateUpdated = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.DateUpdated);
-
+            
         }
         /// <summary>
         /// Test the property 'Revision'
@@ -91,9 +91,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-
+            
             instance.Revision = 1;
-            Assert.Equal(1, (int)instance.Revision);
+            Assert.Equal(1, (int) instance.Revision);
         }
         /// <summary>
         /// Test the property 'From'
@@ -103,7 +103,7 @@ namespace freeclimb.Test.Model
         {
             instance.From = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.From);
-
+            
         }
         /// <summary>
         /// Test the property 'To'
@@ -113,7 +113,7 @@ namespace freeclimb.Test.Model
         {
             instance.To = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.To);
-
+            
         }
         /// <summary>
         /// Test the property 'Text'
@@ -123,7 +123,7 @@ namespace freeclimb.Test.Model
         {
             instance.Text = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Text);
-
+            
         }
         /// <summary>
         /// Test the property 'NotificationUrl'
@@ -133,7 +133,7 @@ namespace freeclimb.Test.Model
         {
             instance.NotificationUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.NotificationUrl);
-
+            
         }
         /// <summary>
         /// Test the property 'MediaUrls'
@@ -141,210 +141,226 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MediaUrlsTest()
         {
-            string[] testArray = { "ElementOne", "ElementTwo", "ElementThree" };
-            List<string> testList = testArray.ToList();
+            
+            List<string> testList = new List<string>();
             instance.MediaUrls = testList;
-            Assert.Equal(testList, instance.MediaUrls);
-
+            Assert.Equal(testList, instance.MediaUrls); 
         }
-
-
+        
+        
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTrueTest()
-        {
-            MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test1.Uri = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
-            test1.From = "TS";
-            test1.To = "TS";
-            test1.Text = "TS";
-            test1.NotificationUrl = "TS";
+        public void equalsTrueTest() {
+        MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         List<string> testList = new List<string>();
+         test1.MediaUrls = testList;
 
-            MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test2.Uri = "TS";
-            test2.DateCreated = "TS";
-            test2.DateUpdated = "TS";
-            test2.Revision = 1;
-            test2.From = "TS";
-            test2.To = "TS";
-            test2.Text = "TS";
-            test2.NotificationUrl = "TS";
+        MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.NotificationUrl = "TS";
+         List<string> testList2 = new List<string>();
+         test2.MediaUrls = testList2;
 
-            Assert.Equal(test1, test2);
+        Assert.Equal(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-
+        
         [Fact]
-        public void equalsFalseTest()
-        {
-            MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test1.Uri = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
-            test1.From = "TS";
-            test1.To = "TS";
-            test1.Text = "TS";
-            test1.NotificationUrl = "TS";
+        public void equalsFalseTest() {
+        MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         List<string> testList = new List<string>();
+         test1.MediaUrls = testList;
 
-            MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test2.Uri = "ts";
-            test2.DateCreated = "ts";
-            test2.DateUpdated = "ts";
-            test2.Revision = 2;
-            test2.From = "ts";
-            test2.To = "ts";
-            test2.Text = "ts";
-            test2.NotificationUrl = "ts";
+        MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test2.Uri = "ts";
+         test2.DateCreated = "ts";
+         test2.DateUpdated = "ts";
+         test2.Revision = 2;
+         test2.From = "ts";
+         test2.To = "ts";
+         test2.Text = "ts";
+         test2.NotificationUrl = "ts";
+         List<string> testList2 = null;
+         test2.MediaUrls = testList2;
 
-            Assert.NotEqual(test1, test2);
+        Assert.NotEqual(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-
+        
         [Fact]
-        public void hashCodeTypeTest()
-        {
-            MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test1.Uri = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
-            test1.From = "TS";
-            test1.To = "TS";
-            test1.Text = "TS";
-            test1.NotificationUrl = "TS";
+        public void hashCodeTypeTest() {
+        MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         List<string> testList = new List<string>();
+         test1.MediaUrls = testList;
 
-            int hashCode1 = test1.GetHashCode();
-            Assert.True(hashCode1.GetType() == typeof(int));
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringTypeTest()
-        {
-            MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test1.Uri = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
-            test1.From = "TS";
-            test1.To = "TS";
-            test1.Text = "TS";
-            test1.NotificationUrl = "TS";
+        public void ToStringTypeTest() {
+        MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         List<string> testList = new List<string>();
+         test1.MediaUrls = testList;
 
-            string toString1 = test1.ToString();
-            Assert.True(toString1.GetType() == typeof(string));
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringEqualsTest()
-        {
-            MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test1.Uri = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
-            test1.From = "TS";
-            test1.To = "TS";
-            test1.Text = "TS";
-            test1.NotificationUrl = "TS";
+        public void ToStringEqualsTest() {
+        MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         List<string> testList = new List<string>();
+         test1.MediaUrls = testList;
 
-            MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test2.Uri = "TS";
-            test2.DateCreated = "TS";
-            test2.DateUpdated = "TS";
-            test2.Revision = 1;
-            test2.From = "TS";
-            test2.To = "TS";
-            test2.Text = "TS";
-            test2.NotificationUrl = "TS";
+        MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.NotificationUrl = "TS";
+         List<string> testList2 = new List<string>();
+         test2.MediaUrls = testList2;
 
-            string toString1 = test1.ToString();
-            string toString2 = test2.ToString();
-            Assert.Equal(toString1, toString2);
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTest()
-        {
-            MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test1.Uri = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
-            test1.From = "TS";
-            test1.To = "TS";
-            test1.Text = "TS";
-            test1.NotificationUrl = "TS";
+        public void equalsTest() {
+        MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         List<string> testList = new List<string>();
+         test1.MediaUrls = testList;
 
-            MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test2.Uri = "TS";
-            test2.DateCreated = "TS";
-            test2.DateUpdated = "TS";
-            test2.Revision = 1;
-            test2.From = "TS";
-            test2.To = "TS";
-            test2.Text = "TS";
-            test2.NotificationUrl = "TS";
+        MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.NotificationUrl = "TS";
+         List<string> testList2 = new List<string>();
+         test2.MediaUrls = testList2;
 
-            Assert.True(test1.Equals(test2));
+        Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-
+        
         [Fact]
-        public void ToJsonTest()
-        {
-            MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test1.Uri = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
-            test1.From = "TS";
-            test1.To = "TS";
-            test1.Text = "TS";
-            test1.NotificationUrl = "TS";
-            string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        public void ToJsonTest() {
+        MessageRequest test1 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test1.Uri = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+         test1.From = "TS";
+         test1.To = "TS";
+         test1.Text = "TS";
+         test1.NotificationUrl = "TS";
+         List<string> testList = new List<string>();
+         test1.MediaUrls = testList;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-            MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
-            test2.Uri = "TS";
-            test2.DateCreated = "TS";
-            test2.DateUpdated = "TS";
-            test2.Revision = 1;
-            test2.From = "TS";
-            test2.To = "TS";
-            test2.Text = "TS";
-            test2.NotificationUrl = "TS";
+        MessageRequest test2 = new MessageRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+         test2.Uri = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
+         test2.From = "TS";
+         test2.To = "TS";
+         test2.Text = "TS";
+         test2.NotificationUrl = "TS";
+         List<string> testList2 = new List<string>();
+         test2.MediaUrls = testList2;
 
-            Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

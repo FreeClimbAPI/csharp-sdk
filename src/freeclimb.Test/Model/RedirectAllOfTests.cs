@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public RedirectAllOfTests()
         {
-            instance = new RedirectAllOf("https://a.com");
+            instance = new RedirectAllOf(new Uri("https://a.com"));
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        RedirectAllOf test1 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -86,7 +87,7 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
 
-        RedirectAllOf test2 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -104,7 +105,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        RedirectAllOf test1 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -113,7 +114,7 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
 
-        RedirectAllOf test2 = new RedirectAllOf("https://abc.com");
+        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
          try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
@@ -131,7 +132,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        RedirectAllOf test1 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -151,7 +152,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        RedirectAllOf test1 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -171,7 +172,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        RedirectAllOf test1 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -180,7 +181,7 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
 
-        RedirectAllOf test2 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -201,7 +202,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        RedirectAllOf test1 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -210,7 +211,7 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
 
-        RedirectAllOf test2 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -228,7 +229,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        RedirectAllOf test1 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -238,7 +239,7 @@ namespace freeclimb.Test.Model
             }
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        RedirectAllOf test2 = new RedirectAllOf("https://a.com");
+        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
         try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();

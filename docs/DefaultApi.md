@@ -2913,7 +2913,7 @@ Name | Type | Description  | Notes
 
 <a name="listconferencerecordings"></a>
 # **ListConferenceRecordings**
-> RecordingList ListConferenceRecordings (string callId = null, string conferenceId = null, string dateCreated = null)
+> RecordingList ListConferenceRecordings (string conferenceId, string callId = null, string dateCreated = null)
 
 List Conference Recordings
 
@@ -2939,9 +2939,9 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             
-            var callId = "callId_example";  // string | Show only Recordings made during the Call with this ID. (optional) 
+            var conferenceId = "conferenceId_example";  // string | Show only Recordings made during the conference with this ID.
 
-            var conferenceId = "conferenceId_example";  // string | Show only Recordings made during the conference with this ID. (optional) 
+            var callId = "callId_example";  // string | Show only Recordings made during the Call with this ID. (optional) 
 
             var dateCreated = "dateCreated_example";  // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional) 
 
@@ -2949,7 +2949,7 @@ namespace Example
             try
             {
                 // List Conference Recordings
-                RecordingList result = apiInstance.ListConferenceRecordings(callId, conferenceId, dateCreated);
+                RecordingList result = apiInstance.ListConferenceRecordings(conferenceId, callId, dateCreated);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2967,8 +2967,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **conferenceId** | **string**| Show only Recordings made during the conference with this ID. | 
  **callId** | **string**| Show only Recordings made during the Call with this ID. | [optional] 
- **conferenceId** | **string**| Show only Recordings made during the conference with this ID. | [optional] 
  **dateCreated** | **string**| Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] 
 
 

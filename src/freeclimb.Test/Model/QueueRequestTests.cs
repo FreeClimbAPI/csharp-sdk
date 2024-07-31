@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public QueueRequestTests()
         {
-            instance = new QueueRequest();
+            instance = new QueueRequest("TEST_STRING", 1);
         }
 
         /// <summary>
@@ -82,11 +83,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        QueueRequest test1 = new QueueRequest();
+        QueueRequest test1 = new QueueRequest("TEST_STRING", 1);
          test1.Alias = "TS";
          test1.MaxSize = 1;
 
-        QueueRequest test2 = new QueueRequest();
+        QueueRequest test2 = new QueueRequest("TEST_STRING", 1);
          test2.Alias = "TS";
          test2.MaxSize = 1;
 
@@ -99,11 +100,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        QueueRequest test1 = new QueueRequest();
+        QueueRequest test1 = new QueueRequest("TEST_STRING", 1);
          test1.Alias = "TS";
          test1.MaxSize = 1;
 
-        QueueRequest test2 = new QueueRequest();
+        QueueRequest test2 = new QueueRequest("TEST_STRING", 1);
          test2.Alias = "ts";
          test2.MaxSize = 2;
 
@@ -116,7 +117,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        QueueRequest test1 = new QueueRequest();
+        QueueRequest test1 = new QueueRequest("TEST_STRING", 1);
          test1.Alias = "TS";
          test1.MaxSize = 1;
 
@@ -131,7 +132,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        QueueRequest test1 = new QueueRequest();
+        QueueRequest test1 = new QueueRequest("TEST_STRING", 1);
          test1.Alias = "TS";
          test1.MaxSize = 1;
 
@@ -146,11 +147,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        QueueRequest test1 = new QueueRequest();
+        QueueRequest test1 = new QueueRequest("TEST_STRING", 1);
          test1.Alias = "TS";
          test1.MaxSize = 1;
 
-        QueueRequest test2 = new QueueRequest();
+        QueueRequest test2 = new QueueRequest("TEST_STRING", 1);
          test2.Alias = "TS";
          test2.MaxSize = 1;
 
@@ -166,11 +167,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        QueueRequest test1 = new QueueRequest();
+        QueueRequest test1 = new QueueRequest("TEST_STRING", 1);
          test1.Alias = "TS";
          test1.MaxSize = 1;
 
-        QueueRequest test2 = new QueueRequest();
+        QueueRequest test2 = new QueueRequest("TEST_STRING", 1);
          test2.Alias = "TS";
          test2.MaxSize = 1;
 
@@ -183,12 +184,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        QueueRequest test1 = new QueueRequest();
+        QueueRequest test1 = new QueueRequest("TEST_STRING", 1);
          test1.Alias = "TS";
          test1.MaxSize = 1;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        QueueRequest test2 = new QueueRequest();
+        QueueRequest test2 = new QueueRequest("TEST_STRING", 1);
          test2.Alias = "TS";
          test2.MaxSize = 1;
 

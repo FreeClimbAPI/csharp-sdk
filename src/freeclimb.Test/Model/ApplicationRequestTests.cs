@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public ApplicationRequestTests()
         {
-            instance = new ApplicationRequest();
+            instance = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ApplicationRequest test1 = new ApplicationRequest();
+        ApplicationRequest test1 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.VoiceUrl = "TS";
          test1.VoiceFallbackUrl = "TS";
@@ -141,7 +142,7 @@ namespace freeclimb.Test.Model
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
 
-        ApplicationRequest test2 = new ApplicationRequest();
+        ApplicationRequest test2 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.VoiceUrl = "TS";
          test2.VoiceFallbackUrl = "TS";
@@ -159,7 +160,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ApplicationRequest test1 = new ApplicationRequest();
+        ApplicationRequest test1 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.VoiceUrl = "TS";
          test1.VoiceFallbackUrl = "TS";
@@ -168,7 +169,7 @@ namespace freeclimb.Test.Model
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
 
-        ApplicationRequest test2 = new ApplicationRequest();
+        ApplicationRequest test2 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.Alias = "ts";
          test2.VoiceUrl = "ts";
          test2.VoiceFallbackUrl = "ts";
@@ -186,7 +187,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ApplicationRequest test1 = new ApplicationRequest();
+        ApplicationRequest test1 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.VoiceUrl = "TS";
          test1.VoiceFallbackUrl = "TS";
@@ -206,7 +207,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ApplicationRequest test1 = new ApplicationRequest();
+        ApplicationRequest test1 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.VoiceUrl = "TS";
          test1.VoiceFallbackUrl = "TS";
@@ -226,7 +227,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ApplicationRequest test1 = new ApplicationRequest();
+        ApplicationRequest test1 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.VoiceUrl = "TS";
          test1.VoiceFallbackUrl = "TS";
@@ -235,7 +236,7 @@ namespace freeclimb.Test.Model
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
 
-        ApplicationRequest test2 = new ApplicationRequest();
+        ApplicationRequest test2 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.VoiceUrl = "TS";
          test2.VoiceFallbackUrl = "TS";
@@ -256,7 +257,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ApplicationRequest test1 = new ApplicationRequest();
+        ApplicationRequest test1 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.VoiceUrl = "TS";
          test1.VoiceFallbackUrl = "TS";
@@ -265,7 +266,7 @@ namespace freeclimb.Test.Model
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
 
-        ApplicationRequest test2 = new ApplicationRequest();
+        ApplicationRequest test2 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.VoiceUrl = "TS";
          test2.VoiceFallbackUrl = "TS";
@@ -283,7 +284,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ApplicationRequest test1 = new ApplicationRequest();
+        ApplicationRequest test1 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.VoiceUrl = "TS";
          test1.VoiceFallbackUrl = "TS";
@@ -293,7 +294,7 @@ namespace freeclimb.Test.Model
          test1.SmsFallbackUrl = "TS";
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        ApplicationRequest test2 = new ApplicationRequest();
+        ApplicationRequest test2 = new ApplicationRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.VoiceUrl = "TS";
          test2.VoiceFallbackUrl = "TS";

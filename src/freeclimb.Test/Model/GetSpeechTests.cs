@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public GetSpeechTests()
         {
-            instance = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+            instance = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        GetSpeech test1 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test1 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -221,7 +221,7 @@ namespace freeclimb.Test.Model
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
 
-        GetSpeech test2 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test2 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -250,7 +250,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        GetSpeech test1 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test1 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -270,7 +270,7 @@ namespace freeclimb.Test.Model
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
 
-        GetSpeech test2 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test2 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
@@ -299,7 +299,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        GetSpeech test1 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test1 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -330,7 +330,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        GetSpeech test1 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test1 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -361,7 +361,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        GetSpeech test1 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test1 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -381,7 +381,7 @@ namespace freeclimb.Test.Model
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
 
-        GetSpeech test2 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test2 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -413,7 +413,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        GetSpeech test1 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test1 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -433,7 +433,7 @@ namespace freeclimb.Test.Model
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
 
-        GetSpeech test2 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test2 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -462,7 +462,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        GetSpeech test1 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test1 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -481,12 +481,9 @@ namespace freeclimb.Test.Model
          test1.SpeechCompleteTimeoutMs = 1;
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
-        JsonSerializer jsonSerializer = JsonSerializer.Create();
-        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-        StringBuilder strb = new StringBuilder();
-        jsonSerializer.Serialize(new StringWriter(strb), test1);
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        GetSpeech test2 = new GetSpeech("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false, "TEST_STRING");
+        GetSpeech test2 = new GetSpeech(new Uri("https://a.com"), GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false, "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
@@ -506,7 +503,7 @@ namespace freeclimb.Test.Model
          test2.SpeechIncompleteTimeoutMs = 1;
          test2.PrivacyMode = true;
 
-        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

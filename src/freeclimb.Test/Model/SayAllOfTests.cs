@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             instance.Text = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Text);
-
+            
         }
         /// <summary>
         /// Test the property 'Language'
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         {
             instance.Language = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Language);
-
+            
         }
         /// <summary>
         /// Test the property 'Loop'
@@ -81,9 +81,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LoopTest()
         {
-
+            
             instance.Loop = 1;
-            Assert.Equal(1, (int)instance.Loop);
+            Assert.Equal(1, (int) instance.Loop);
         }
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -92,159 +92,152 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);
-
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
-
-
+        
+        
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTrueTest()
-        {
-            SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test1.Text = "TS";
-            test1.Language = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void equalsTrueTest() {
+        SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test1.Text = "TS";
+         test1.Language = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test2.Text = "TS";
-            test2.Language = "TS";
-            test2.Loop = 1;
-            test2.PrivacyMode = true;
+        SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test2.Text = "TS";
+         test2.Language = "TS";
+         test2.Loop = 1;
+         test2.PrivacyMode = true;
 
-            Assert.Equal(test1, test2);
+        Assert.Equal(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-
+        
         [Fact]
-        public void equalsFalseTest()
-        {
-            SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test1.Text = "TS";
-            test1.Language = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void equalsFalseTest() {
+        SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test1.Text = "TS";
+         test1.Language = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test2.Text = "ts";
-            test2.Language = "ts";
-            test2.Loop = 2;
-            test2.PrivacyMode = false;
+        SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test2.Text = "ts";
+         test2.Language = "ts";
+         test2.Loop = 2;
+         test2.PrivacyMode = false;
 
-            Assert.NotEqual(test1, test2);
+        Assert.NotEqual(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-
+        
         [Fact]
-        public void hashCodeTypeTest()
-        {
-            SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test1.Text = "TS";
-            test1.Language = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void hashCodeTypeTest() {
+        SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test1.Text = "TS";
+         test1.Language = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            int hashCode1 = test1.GetHashCode();
-            Assert.True(hashCode1.GetType() == typeof(int));
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringTypeTest()
-        {
-            SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test1.Text = "TS";
-            test1.Language = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void ToStringTypeTest() {
+        SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test1.Text = "TS";
+         test1.Language = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            string toString1 = test1.ToString();
-            Assert.True(toString1.GetType() == typeof(string));
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringEqualsTest()
-        {
-            SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test1.Text = "TS";
-            test1.Language = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void ToStringEqualsTest() {
+        SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test1.Text = "TS";
+         test1.Language = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test2.Text = "TS";
-            test2.Language = "TS";
-            test2.Loop = 1;
-            test2.PrivacyMode = true;
+        SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test2.Text = "TS";
+         test2.Language = "TS";
+         test2.Loop = 1;
+         test2.PrivacyMode = true;
 
-            string toString1 = test1.ToString();
-            string toString2 = test2.ToString();
-            Assert.Equal(toString1, toString2);
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTest()
-        {
-            SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test1.Text = "TS";
-            test1.Language = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
+        public void equalsTest() {
+        SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test1.Text = "TS";
+         test1.Language = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
 
-            SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test2.Text = "TS";
-            test2.Language = "TS";
-            test2.Loop = 1;
-            test2.PrivacyMode = true;
+        SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test2.Text = "TS";
+         test2.Language = "TS";
+         test2.Loop = 1;
+         test2.PrivacyMode = true;
 
-            Assert.True(test1.Equals(test2));
+        Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-
+        
         [Fact]
-        public void ToJsonTest()
-        {
-            SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test1.Text = "TS";
-            test1.Language = "TS";
-            test1.Loop = 1;
-            test1.PrivacyMode = true;
-            string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        public void ToJsonTest() {
+        SayAllOf test1 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test1.Text = "TS";
+         test1.Language = "TS";
+         test1.Loop = 1;
+         test1.PrivacyMode = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-            SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
-            test2.Text = "TS";
-            test2.Language = "TS";
-            test2.Loop = 1;
-            test2.PrivacyMode = true;
+        SayAllOf test2 = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+         test2.Text = "TS";
+         test2.Language = "TS";
+         test2.Loop = 1;
+         test2.PrivacyMode = true;
 
-            Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

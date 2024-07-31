@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public OutDialAllOfTests()
         {
-            instance = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+            instance = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        OutDialAllOf test1 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test1 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -199,7 +199,7 @@ namespace freeclimb.Test.Model
          test1.Timeout = 1;
          test1.PrivacyMode = true;
 
-        OutDialAllOf test2 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test2 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -232,7 +232,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        OutDialAllOf test1 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test1 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -256,7 +256,7 @@ namespace freeclimb.Test.Model
          test1.Timeout = 1;
          test1.PrivacyMode = true;
 
-        OutDialAllOf test2 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test2 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
          try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
@@ -289,7 +289,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        OutDialAllOf test1 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test1 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -324,7 +324,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        OutDialAllOf test1 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test1 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -359,7 +359,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        OutDialAllOf test1 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test1 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -383,7 +383,7 @@ namespace freeclimb.Test.Model
          test1.Timeout = 1;
          test1.PrivacyMode = true;
 
-        OutDialAllOf test2 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test2 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -419,7 +419,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        OutDialAllOf test1 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test1 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -443,7 +443,7 @@ namespace freeclimb.Test.Model
          test1.Timeout = 1;
          test1.PrivacyMode = true;
 
-        OutDialAllOf test2 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test2 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -476,7 +476,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        OutDialAllOf test1 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test1 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -501,7 +501,7 @@ namespace freeclimb.Test.Model
          test1.PrivacyMode = true;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        OutDialAllOf test2 = new OutDialAllOf("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+        OutDialAllOf test2 = new OutDialAllOf(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
         try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();

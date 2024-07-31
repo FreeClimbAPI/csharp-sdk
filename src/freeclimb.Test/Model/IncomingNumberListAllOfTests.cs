@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberListAllOfTests()
         {
-            instance = new IncomingNumberListAllOf();
+            instance = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
         }
 
         /// <summary>
@@ -73,11 +74,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
 
-        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
          test2.IncomingPhoneNumbers = testList2;
 
@@ -90,11 +91,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
 
-        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList2 = null;
          test2.IncomingPhoneNumbers = testList2;
 
@@ -107,7 +108,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
 
@@ -122,7 +123,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
 
@@ -137,11 +138,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
 
-        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
          test2.IncomingPhoneNumbers = testList2;
 
@@ -157,11 +158,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
 
-        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
          test2.IncomingPhoneNumbers = testList2;
 
@@ -174,12 +175,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test1 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf();
+        IncomingNumberListAllOf test2 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
          test2.IncomingPhoneNumbers = testList2;
 

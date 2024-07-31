@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public ParkTests()
         {
-            instance = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            instance = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        Park test1 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test1 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -120,7 +120,7 @@ namespace freeclimb.Test.Model
             }
          test1.NotificationUrl = "TS";
 
-        Park test2 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test2 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.WaitUrl = uri2.ToString();
@@ -146,7 +146,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        Park test1 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test1 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -163,7 +163,7 @@ namespace freeclimb.Test.Model
             }
          test1.NotificationUrl = "TS";
 
-        Park test2 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test2 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://abc.com");
             instance.WaitUrl = uri2.ToString();
@@ -189,7 +189,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        Park test1 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test1 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -217,7 +217,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        Park test1 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test1 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -245,7 +245,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        Park test1 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test1 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
          try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -262,7 +262,7 @@ namespace freeclimb.Test.Model
             }
          test1.NotificationUrl = "TS";
 
-        Park test2 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test2 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.WaitUrl = uri2.ToString();
@@ -291,7 +291,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        Park test1 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test1 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -308,7 +308,7 @@ namespace freeclimb.Test.Model
             }
          test1.NotificationUrl = "TS";
 
-        Park test2 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test2 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.WaitUrl = uri2.ToString();
@@ -334,7 +334,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        Park test1 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test1 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
         try {
             Uri uri = new Uri("https://a.com");
             instance.WaitUrl = uri.ToString();
@@ -350,22 +350,18 @@ namespace freeclimb.Test.Model
             Console.WriteLine("Something went wrong.");
             }
          test1.NotificationUrl = "TS";
-        JsonSerializer jsonSerializer = JsonSerializer.Create();
-        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-        StringBuilder strb = new StringBuilder();
-        jsonSerializer.Serialize(new StringWriter(strb), test1);
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-
-        Park test2 = new Park("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+        Park test2 = new Park(new Uri("https://a.com"), new Uri("https://a.com"), "TEST_STRING", "TEST_STRING");
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.WaitUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.WaitUrl);
             } catch (Exception ) {
             Console.WriteLine("Something went wrong.");
             }
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {
@@ -373,7 +369,7 @@ namespace freeclimb.Test.Model
             }
          test2.NotificationUrl = "TS";
 
-        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

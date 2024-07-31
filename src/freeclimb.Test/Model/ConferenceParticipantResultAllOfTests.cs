@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public ConferenceParticipantResultAllOfTests()
         {
-            instance = new ConferenceParticipantResultAllOf();
+            instance = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
         }
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
@@ -130,7 +131,7 @@ namespace freeclimb.Test.Model
          test1.Listen = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.AccountId = "TS";
          test2.ConferenceId = "TS";
          test2.CallId = "TS";
@@ -147,7 +148,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
@@ -155,7 +156,7 @@ namespace freeclimb.Test.Model
          test1.Listen = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.AccountId = "ts";
          test2.ConferenceId = "ts";
          test2.CallId = "ts";
@@ -172,7 +173,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
@@ -191,7 +192,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
@@ -210,7 +211,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
@@ -218,7 +219,7 @@ namespace freeclimb.Test.Model
          test1.Listen = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.AccountId = "TS";
          test2.ConferenceId = "TS";
          test2.CallId = "TS";
@@ -238,7 +239,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
@@ -246,7 +247,7 @@ namespace freeclimb.Test.Model
          test1.Listen = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.AccountId = "TS";
          test2.ConferenceId = "TS";
          test2.CallId = "TS";
@@ -263,7 +264,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
@@ -272,7 +273,7 @@ namespace freeclimb.Test.Model
          test1.StartConfOnEnter = true;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf();
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.AccountId = "TS";
          test2.ConferenceId = "TS";
          test2.CallId = "TS";

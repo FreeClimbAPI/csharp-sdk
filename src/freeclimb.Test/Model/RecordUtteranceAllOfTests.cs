@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public RecordUtteranceAllOfTests()
         {
-            instance = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+            instance = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -152,7 +153,7 @@ namespace freeclimb.Test.Model
          test1.AutoStart = true;
          test1.PrivacyMode = true;
 
-        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -176,7 +177,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -191,7 +192,7 @@ namespace freeclimb.Test.Model
          test1.AutoStart = true;
          test1.PrivacyMode = true;
 
-        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
          try {
             Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
@@ -215,7 +216,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -241,7 +242,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -267,7 +268,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
          try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -282,7 +283,7 @@ namespace freeclimb.Test.Model
          test1.AutoStart = true;
          test1.PrivacyMode = true;
 
-        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
          try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -309,7 +310,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -324,7 +325,7 @@ namespace freeclimb.Test.Model
          test1.AutoStart = true;
          test1.PrivacyMode = true;
 
-        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
         try {
             Uri uri2 = new Uri("https://a.com");
             instance.ActionUrl = uri2.ToString();
@@ -348,7 +349,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test1 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
         try {
             Uri uri = new Uri("https://a.com");
             instance.ActionUrl = uri.ToString();
@@ -364,9 +365,9 @@ namespace freeclimb.Test.Model
          test1.PrivacyMode = true;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf("https://a.com", 1, "TEST_STRING", 1, false, false, false);
+        RecordUtteranceAllOf test2 = new RecordUtteranceAllOf(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false);
         try {
-            Uri uri2 = new Uri("https://a.com");
+            Uri uri2 = new Uri("https://abc.com");
             instance.ActionUrl = uri2.ToString();
             Assert.Equal(uri2.ToString(), instance.ActionUrl);
             } catch (Exception ) {

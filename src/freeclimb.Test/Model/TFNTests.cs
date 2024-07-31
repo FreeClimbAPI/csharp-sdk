@@ -63,122 +63,115 @@ namespace freeclimb.Test.Model
         {
             instance.CampaignId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CampaignId);
-
+            
         }
-
-
+        
+        
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTrueTest()
-        {
-            TFN test1 = new TFN("TEST_STRING");
-            test1.CampaignId = "TS";
+        public void equalsTrueTest() {
+        TFN test1 = new TFN("TEST_STRING");
+         test1.CampaignId = "TS";
 
-            TFN test2 = new TFN("TEST_STRING");
-            test2.CampaignId = "TS";
+        TFN test2 = new TFN("TEST_STRING");
+         test2.CampaignId = "TS";
 
-            Assert.Equal(test1, test2);
+        Assert.Equal(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-
+        
         [Fact]
-        public void equalsFalseTest()
-        {
-            TFN test1 = new TFN("TEST_STRING");
-            test1.CampaignId = "TS";
+        public void equalsFalseTest() {
+        TFN test1 = new TFN("TEST_STRING");
+         test1.CampaignId = "TS";
 
-            TFN test2 = new TFN("TEST_STRING");
-            test2.CampaignId = "ts";
+        TFN test2 = new TFN("TEST_STRING");
+         test2.CampaignId = "ts";
 
-            Assert.NotEqual(test1, test2);
+        Assert.NotEqual(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-
+        
         [Fact]
-        public void hashCodeTypeTest()
-        {
-            TFN test1 = new TFN("TEST_STRING");
-            test1.CampaignId = "TS";
+        public void hashCodeTypeTest() {
+        TFN test1 = new TFN("TEST_STRING");
+         test1.CampaignId = "TS";
 
-            int hashCode1 = test1.GetHashCode();
-            Assert.True(hashCode1.GetType() == typeof(int));
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringTypeTest()
-        {
-            TFN test1 = new TFN("TEST_STRING");
-            test1.CampaignId = "TS";
+        public void ToStringTypeTest() {
+        TFN test1 = new TFN("TEST_STRING");
+         test1.CampaignId = "TS";
 
-            string toString1 = test1.ToString();
-            Assert.True(toString1.GetType() == typeof(string));
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringEqualsTest()
-        {
-            TFN test1 = new TFN("TEST_STRING");
-            test1.CampaignId = "TS";
+        public void ToStringEqualsTest() {
+        TFN test1 = new TFN("TEST_STRING");
+         test1.CampaignId = "TS";
 
-            TFN test2 = new TFN("TEST_STRING");
-            test2.CampaignId = "TS";
+        TFN test2 = new TFN("TEST_STRING");
+         test2.CampaignId = "TS";
 
-            string toString1 = test1.ToString();
-            string toString2 = test2.ToString();
-            Assert.Equal(toString1, toString2);
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTest()
-        {
-            TFN test1 = new TFN("TEST_STRING");
-            test1.CampaignId = "TS";
+        public void equalsTest() {
+        TFN test1 = new TFN("TEST_STRING");
+         test1.CampaignId = "TS";
 
-            TFN test2 = new TFN("TEST_STRING");
-            test2.CampaignId = "TS";
+        TFN test2 = new TFN("TEST_STRING");
+         test2.CampaignId = "TS";
 
-            Assert.True(test1.Equals(test2));
+        Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-
+        
         [Fact]
-        public void ToJsonTest()
-        {
-            TFN test1 = new TFN("TEST_STRING");
-            test1.CampaignId = "TS";
-            string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        public void ToJsonTest() {
+        TFN test1 = new TFN("TEST_STRING");
+         test1.CampaignId = "TS";
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-            TFN test2 = new TFN("TEST_STRING");
-            test2.CampaignId = "TS";
+        TFN test2 = new TFN("TEST_STRING");
+         test2.CampaignId = "TS";
 
-            Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public ConferenceResultAllOfTests()
         {
-            instance = new ConferenceResultAllOf();
+            instance = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test1 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.ConferenceId = "TS";
          test1.AccountId = "TS";
          test1.Alias = "TS";
@@ -189,7 +189,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        ConferenceResultAllOf test2 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test2 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.ConferenceId = "TS";
          test2.AccountId = "TS";
          test2.Alias = "TS";
@@ -211,7 +211,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test1 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.ConferenceId = "TS";
          test1.AccountId = "TS";
          test1.Alias = "TS";
@@ -224,7 +224,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        ConferenceResultAllOf test2 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test2 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.ConferenceId = "ts";
          test2.AccountId = "ts";
          test2.Alias = "ts";
@@ -246,7 +246,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test1 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.ConferenceId = "TS";
          test1.AccountId = "TS";
          test1.Alias = "TS";
@@ -270,7 +270,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test1 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.ConferenceId = "TS";
          test1.AccountId = "TS";
          test1.Alias = "TS";
@@ -294,7 +294,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test1 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.ConferenceId = "TS";
          test1.AccountId = "TS";
          test1.Alias = "TS";
@@ -307,7 +307,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        ConferenceResultAllOf test2 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test2 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.ConferenceId = "TS";
          test2.AccountId = "TS";
          test2.Alias = "TS";
@@ -332,7 +332,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test1 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.ConferenceId = "TS";
          test1.AccountId = "TS";
          test1.Alias = "TS";
@@ -345,7 +345,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        ConferenceResultAllOf test2 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test2 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.ConferenceId = "TS";
          test2.AccountId = "TS";
          test2.Alias = "TS";
@@ -367,7 +367,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ConferenceResultAllOf test1 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test1 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.ConferenceId = "TS";
          test1.AccountId = "TS";
          test1.Alias = "TS";
@@ -381,7 +381,7 @@ namespace freeclimb.Test.Model
          test1.SubresourceUris = testObject;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        ConferenceResultAllOf test2 = new ConferenceResultAllOf();
+        ConferenceResultAllOf test2 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.ConferenceId = "TS";
          test2.AccountId = "TS";
          test2.Alias = "TS";

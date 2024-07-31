@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,17 +42,7 @@ namespace freeclimb.Test.Model
 
         public CapabilitiesTests()
         {
-               string jsonData = @"
-            {
-                ""voice"":""false"",
-                ""sms"":""false"",
-                ""tollFree"":""false"",
-                ""tenDLC"":""false"",
-                ""shortCode"":""false""
-            }
-            ";
-            instance = JsonConvert.DeserializeObject<Capabilities>(jsonData);
-
+            instance = new Capabilities(false, false, false, false, false);
         }
 
         /// <summary>

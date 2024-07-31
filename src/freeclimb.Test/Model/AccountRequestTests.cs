@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public AccountRequestTests()
         {
-            instance = new AccountRequest();
+            instance = new AccountRequest("TEST_STRING", "TEST_STRING");
         }
 
         /// <summary>
@@ -82,11 +83,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        AccountRequest test1 = new AccountRequest();
+        AccountRequest test1 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.Label = "TS";
 
-        AccountRequest test2 = new AccountRequest();
+        AccountRequest test2 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.Label = "TS";
 
@@ -99,11 +100,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        AccountRequest test1 = new AccountRequest();
+        AccountRequest test1 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.Label = "TS";
 
-        AccountRequest test2 = new AccountRequest();
+        AccountRequest test2 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test2.Alias = "ts";
          test2.Label = "ts";
 
@@ -116,7 +117,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        AccountRequest test1 = new AccountRequest();
+        AccountRequest test1 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.Label = "TS";
 
@@ -131,7 +132,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        AccountRequest test1 = new AccountRequest();
+        AccountRequest test1 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.Label = "TS";
 
@@ -146,11 +147,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        AccountRequest test1 = new AccountRequest();
+        AccountRequest test1 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.Label = "TS";
 
-        AccountRequest test2 = new AccountRequest();
+        AccountRequest test2 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.Label = "TS";
 
@@ -166,11 +167,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        AccountRequest test1 = new AccountRequest();
+        AccountRequest test1 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.Label = "TS";
 
-        AccountRequest test2 = new AccountRequest();
+        AccountRequest test2 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.Label = "TS";
 
@@ -183,12 +184,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        AccountRequest test1 = new AccountRequest();
+        AccountRequest test1 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.Label = "TS";
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        AccountRequest test2 = new AccountRequest();
+        AccountRequest test2 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.Label = "TS";
 
