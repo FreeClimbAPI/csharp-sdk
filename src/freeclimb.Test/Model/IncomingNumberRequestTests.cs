@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberRequestTests()
         {
-            instance = new IncomingNumberRequest();
+            instance = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
         }
 
         /// <summary>
@@ -92,12 +93,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        IncomingNumberRequest test1 = new IncomingNumberRequest();
+        IncomingNumberRequest test1 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
          test1.CampaignId = "TS";
 
-        IncomingNumberRequest test2 = new IncomingNumberRequest();
+        IncomingNumberRequest test2 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.ApplicationId = "TS";
          test2.Alias = "TS";
          test2.CampaignId = "TS";
@@ -111,12 +112,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        IncomingNumberRequest test1 = new IncomingNumberRequest();
+        IncomingNumberRequest test1 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
          test1.CampaignId = "TS";
 
-        IncomingNumberRequest test2 = new IncomingNumberRequest();
+        IncomingNumberRequest test2 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.ApplicationId = "ts";
          test2.Alias = "ts";
          test2.CampaignId = "ts";
@@ -130,7 +131,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        IncomingNumberRequest test1 = new IncomingNumberRequest();
+        IncomingNumberRequest test1 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
          test1.CampaignId = "TS";
@@ -146,7 +147,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        IncomingNumberRequest test1 = new IncomingNumberRequest();
+        IncomingNumberRequest test1 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
          test1.CampaignId = "TS";
@@ -162,12 +163,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        IncomingNumberRequest test1 = new IncomingNumberRequest();
+        IncomingNumberRequest test1 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
          test1.CampaignId = "TS";
 
-        IncomingNumberRequest test2 = new IncomingNumberRequest();
+        IncomingNumberRequest test2 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.ApplicationId = "TS";
          test2.Alias = "TS";
          test2.CampaignId = "TS";
@@ -184,12 +185,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        IncomingNumberRequest test1 = new IncomingNumberRequest();
+        IncomingNumberRequest test1 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
          test1.CampaignId = "TS";
 
-        IncomingNumberRequest test2 = new IncomingNumberRequest();
+        IncomingNumberRequest test2 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.ApplicationId = "TS";
          test2.Alias = "TS";
          test2.CampaignId = "TS";
@@ -203,13 +204,13 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        IncomingNumberRequest test1 = new IncomingNumberRequest();
+        IncomingNumberRequest test1 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
          test1.CampaignId = "TS";
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        IncomingNumberRequest test2 = new IncomingNumberRequest();
+        IncomingNumberRequest test2 = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.ApplicationId = "TS";
          test2.Alias = "TS";
          test2.CampaignId = "TS";

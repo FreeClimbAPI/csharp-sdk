@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public MutableResourceModelTests()
         {
-            instance = new MutableResourceModel();
+            instance = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
         }
 
         /// <summary>
@@ -102,13 +103,13 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        MutableResourceModel test1 = new MutableResourceModel();
+        MutableResourceModel test1 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
          test1.Revision = 1;
 
-        MutableResourceModel test2 = new MutableResourceModel();
+        MutableResourceModel test2 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -123,13 +124,13 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        MutableResourceModel test1 = new MutableResourceModel();
+        MutableResourceModel test1 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
          test1.Revision = 1;
 
-        MutableResourceModel test2 = new MutableResourceModel();
+        MutableResourceModel test2 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
@@ -144,7 +145,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        MutableResourceModel test1 = new MutableResourceModel();
+        MutableResourceModel test1 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -161,7 +162,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        MutableResourceModel test1 = new MutableResourceModel();
+        MutableResourceModel test1 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -178,13 +179,13 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        MutableResourceModel test1 = new MutableResourceModel();
+        MutableResourceModel test1 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
          test1.Revision = 1;
 
-        MutableResourceModel test2 = new MutableResourceModel();
+        MutableResourceModel test2 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -202,13 +203,13 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        MutableResourceModel test1 = new MutableResourceModel();
+        MutableResourceModel test1 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
          test1.Revision = 1;
 
-        MutableResourceModel test2 = new MutableResourceModel();
+        MutableResourceModel test2 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -223,14 +224,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        MutableResourceModel test1 = new MutableResourceModel();
+        MutableResourceModel test1 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
          test1.Revision = 1;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        MutableResourceModel test2 = new MutableResourceModel();
+        MutableResourceModel test2 = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";

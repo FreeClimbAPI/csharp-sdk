@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignsListResultTests()
         {
-            instance = new SMSTenDLCPartnerCampaignsListResult();
+            instance = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
         }
 
         /// <summary>
@@ -143,7 +144,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -154,7 +155,7 @@ namespace freeclimb.Test.Model
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
-        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test2.Total = 1;
          test2.Start = 1;
          test2.End = 1;
@@ -174,7 +175,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -185,7 +186,7 @@ namespace freeclimb.Test.Model
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
-        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test2.Total = 2;
          test2.Start = 2;
          test2.End = 2;
@@ -205,7 +206,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -227,7 +228,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -249,7 +250,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -260,7 +261,7 @@ namespace freeclimb.Test.Model
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
-        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test2.Total = 1;
          test2.Start = 1;
          test2.End = 1;
@@ -283,7 +284,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -294,7 +295,7 @@ namespace freeclimb.Test.Model
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
-        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test2.Total = 1;
          test2.Start = 1;
          test2.End = 1;
@@ -314,7 +315,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test1 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -326,7 +327,7 @@ namespace freeclimb.Test.Model
          test1.PartnerCampaigns = testList;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult();
+        SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test2.Total = 1;
          test2.Start = 1;
          test2.End = 1;

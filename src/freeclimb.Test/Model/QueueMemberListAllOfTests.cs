@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public QueueMemberListAllOfTests()
         {
-            instance = new QueueMemberListAllOf();
+            instance = new QueueMemberListAllOf(new List<QueueMember>());
         }
 
         /// <summary>
@@ -73,11 +74,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        QueueMemberListAllOf test1 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test1 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
 
-        QueueMemberListAllOf test2 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test2 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList2 = new List<QueueMember>();
          test2.QueueMembers = testList2;
 
@@ -90,11 +91,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        QueueMemberListAllOf test1 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test1 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
 
-        QueueMemberListAllOf test2 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test2 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList2 = null;
          test2.QueueMembers = testList2;
 
@@ -107,7 +108,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        QueueMemberListAllOf test1 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test1 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
 
@@ -122,7 +123,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        QueueMemberListAllOf test1 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test1 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
 
@@ -137,11 +138,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        QueueMemberListAllOf test1 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test1 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
 
-        QueueMemberListAllOf test2 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test2 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList2 = new List<QueueMember>();
          test2.QueueMembers = testList2;
 
@@ -157,11 +158,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        QueueMemberListAllOf test1 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test1 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
 
-        QueueMemberListAllOf test2 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test2 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList2 = new List<QueueMember>();
          test2.QueueMembers = testList2;
 
@@ -174,12 +175,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        QueueMemberListAllOf test1 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test1 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        QueueMemberListAllOf test2 = new QueueMemberListAllOf();
+        QueueMemberListAllOf test2 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList2 = new List<QueueMember>();
          test2.QueueMembers = testList2;
 

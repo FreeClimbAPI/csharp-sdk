@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SetListenTests()
         {
-            instance = new SetListen();
+            instance = new SetListen(false, "TEST_STRING");
         }
 
         /// <summary>
@@ -62,126 +62,116 @@ namespace freeclimb.Test.Model
         public void ListenTest()
         {
             instance.Listen = false;
-            Assert.Equal(false, instance.Listen);
-
+            Assert.Equal(false, instance.Listen);       
+            
         }
-
-
+        
+        
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTrueTest()
-        {
-            SetListen test1 = new SetListen();
-            test1.Listen = true;
+        public void equalsTrueTest() {
+        SetListen test1 = new SetListen(false, "TEST_STRING");
+         test1.Listen = true;
 
-            SetListen test2 = new SetListen();
-            test2.Listen = true;
+        SetListen test2 = new SetListen(false, "TEST_STRING");
+         test2.Listen = true;
 
-            Assert.Equal(test1, test2);
+        Assert.Equal(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-
+        
         [Fact]
-        public void equalsFalseTest()
-        {
-            SetListen test1 = new SetListen();
-            test1.Listen = true;
+        public void equalsFalseTest() {
+        SetListen test1 = new SetListen(false, "TEST_STRING");
+         test1.Listen = true;
 
-            SetListen test2 = new SetListen();
-            test2.Listen = false;
+        SetListen test2 = new SetListen(false, "TEST_STRING");
+         test2.Listen = false;
 
-            Assert.NotEqual(test1, test2);
+        Assert.NotEqual(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-
+        
         [Fact]
-        public void hashCodeTypeTest()
-        {
-            SetListen test1 = new SetListen();
-            test1.Listen = true;
+        public void hashCodeTypeTest() {
+        SetListen test1 = new SetListen(false, "TEST_STRING");
+         test1.Listen = true;
 
-            int hashCode1 = test1.GetHashCode();
-            Assert.True(hashCode1.GetType() == typeof(int));
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringTypeTest()
-        {
-            SetListen test1 = new SetListen();
-            test1.Listen = true;
+        public void ToStringTypeTest() {
+        SetListen test1 = new SetListen(false, "TEST_STRING");
+         test1.Listen = true;
 
-            string toString1 = test1.ToString();
-            Assert.True(toString1.GetType() == typeof(string));
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringEqualsTest()
-        {
-            SetListen test1 = new SetListen();
-            test1.Listen = true;
+        public void ToStringEqualsTest() {
+        SetListen test1 = new SetListen(false, "TEST_STRING");
+         test1.Listen = true;
 
-            SetListen test2 = new SetListen();
-            test2.Listen = true;
+        SetListen test2 = new SetListen(false, "TEST_STRING");
+         test2.Listen = true;
 
-            string toString1 = test1.ToString();
-            string toString2 = test2.ToString();
-            Assert.Equal(toString1, toString2);
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTest()
-        {
-            SetListen test1 = new SetListen();
-            test1.Listen = true;
+        public void equalsTest() {
+        SetListen test1 = new SetListen(false, "TEST_STRING");
+         test1.Listen = true;
 
-            SetListen test2 = new SetListen();
-            test2.Listen = true;
+        SetListen test2 = new SetListen(false, "TEST_STRING");
+         test2.Listen = true;
 
-            Assert.True(test1.Equals(test2));
+        Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-
+        
         [Fact]
-        public void ToJsonTest()
-        {
-            SetListen test1 = new SetListen();
-            test1.Listen = true;
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), test1);
+        public void ToJsonTest() {
+        SetListen test1 = new SetListen(false, "TEST_STRING");
+         test1.Listen = true;
+         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-            SetListen test2 = new SetListen();
-            test2.Listen = true;
+        SetListen test2 = new SetListen(false, "TEST_STRING");
+         test2.Listen = true;
 
-            Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+        Assert.True(jsonStr.Equals(test2.ToJson()));
         }
     }
 }

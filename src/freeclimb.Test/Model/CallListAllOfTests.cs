@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public CallListAllOfTests()
         {
-            instance = new CallListAllOf();
+            instance = new CallListAllOf(new List<CallResult>());
         }
 
         /// <summary>
@@ -73,11 +74,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        CallListAllOf test1 = new CallListAllOf();
+        CallListAllOf test1 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList = new List<CallResult>();
          test1.Calls = testList;
 
-        CallListAllOf test2 = new CallListAllOf();
+        CallListAllOf test2 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList2 = new List<CallResult>();
          test2.Calls = testList2;
 
@@ -90,11 +91,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        CallListAllOf test1 = new CallListAllOf();
+        CallListAllOf test1 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList = new List<CallResult>();
          test1.Calls = testList;
 
-        CallListAllOf test2 = new CallListAllOf();
+        CallListAllOf test2 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList2 = null;
          test2.Calls = testList2;
 
@@ -107,7 +108,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        CallListAllOf test1 = new CallListAllOf();
+        CallListAllOf test1 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList = new List<CallResult>();
          test1.Calls = testList;
 
@@ -122,7 +123,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        CallListAllOf test1 = new CallListAllOf();
+        CallListAllOf test1 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList = new List<CallResult>();
          test1.Calls = testList;
 
@@ -137,11 +138,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        CallListAllOf test1 = new CallListAllOf();
+        CallListAllOf test1 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList = new List<CallResult>();
          test1.Calls = testList;
 
-        CallListAllOf test2 = new CallListAllOf();
+        CallListAllOf test2 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList2 = new List<CallResult>();
          test2.Calls = testList2;
 
@@ -157,11 +158,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        CallListAllOf test1 = new CallListAllOf();
+        CallListAllOf test1 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList = new List<CallResult>();
          test1.Calls = testList;
 
-        CallListAllOf test2 = new CallListAllOf();
+        CallListAllOf test2 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList2 = new List<CallResult>();
          test2.Calls = testList2;
 
@@ -174,12 +175,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        CallListAllOf test1 = new CallListAllOf();
+        CallListAllOf test1 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList = new List<CallResult>();
          test1.Calls = testList;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        CallListAllOf test2 = new CallListAllOf();
+        CallListAllOf test2 = new CallListAllOf(new List<CallResult>());
          List<CallResult> testList2 = new List<CallResult>();
          test2.Calls = testList2;
 

@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public ConferenceParticipantListAllOfTests()
         {
-            instance = new ConferenceParticipantListAllOf();
+            instance = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
         }
 
         /// <summary>
@@ -73,11 +74,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
 
-        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList2 = new List<ConferenceParticipantResult>();
          test2.Participants = testList2;
 
@@ -90,11 +91,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
 
-        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList2 = null;
          test2.Participants = testList2;
 
@@ -107,7 +108,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
 
@@ -122,7 +123,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
 
@@ -137,11 +138,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
 
-        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList2 = new List<ConferenceParticipantResult>();
          test2.Participants = testList2;
 
@@ -157,11 +158,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
 
-        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList2 = new List<ConferenceParticipantResult>();
          test2.Participants = testList2;
 
@@ -174,12 +175,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf();
+        ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList2 = new List<ConferenceParticipantResult>();
          test2.Participants = testList2;
 

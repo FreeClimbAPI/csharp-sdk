@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public LogResultTests()
         {
-            instance = new LogResult();
+            instance = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        LogResult test1 = new LogResult();
+        LogResult test1 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
@@ -148,7 +148,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.Metadata = testObject;
 
-        LogResult test2 = new LogResult();
+        LogResult test2 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Timestamp = 1;
          test2.Level = LogLevel.INFO;
          test2.RequestId = "TS";
@@ -167,7 +167,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        LogResult test1 = new LogResult();
+        LogResult test1 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
@@ -177,7 +177,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.Metadata = testObject;
 
-        LogResult test2 = new LogResult();
+        LogResult test2 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Timestamp = 2;
          test2.Level = LogLevel.WARNING;
          test2.RequestId = "ts";
@@ -196,7 +196,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        LogResult test1 = new LogResult();
+        LogResult test1 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
@@ -217,7 +217,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        LogResult test1 = new LogResult();
+        LogResult test1 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
@@ -238,7 +238,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        LogResult test1 = new LogResult();
+        LogResult test1 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
@@ -248,7 +248,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.Metadata = testObject;
 
-        LogResult test2 = new LogResult();
+        LogResult test2 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Timestamp = 1;
          test2.Level = LogLevel.INFO;
          test2.RequestId = "TS";
@@ -270,7 +270,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        LogResult test1 = new LogResult();
+        LogResult test1 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
@@ -280,7 +280,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.Metadata = testObject;
 
-        LogResult test2 = new LogResult();
+        LogResult test2 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Timestamp = 1;
          test2.Level = LogLevel.INFO;
          test2.RequestId = "TS";
@@ -299,7 +299,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        LogResult test1 = new LogResult();
+        LogResult test1 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test1.Timestamp = 1;
          test1.Level = LogLevel.INFO;
          test1.RequestId = "TS";
@@ -310,7 +310,7 @@ namespace freeclimb.Test.Model
          test1.Metadata = testObject;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        LogResult test2 = new LogResult();
+        LogResult test2 = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.Timestamp = 1;
          test2.Level = LogLevel.INFO;
          test2.RequestId = "TS";

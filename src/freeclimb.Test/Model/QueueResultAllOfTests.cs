@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public QueueResultAllOfTests()
         {
-            instance = new QueueResultAllOf();
+            instance = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        QueueResultAllOf test1 = new QueueResultAllOf();
+        QueueResultAllOf test1 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.AccountId = "TS";
          test1.QueueId = "TS";
          test1.Alias = "TS";
@@ -143,7 +144,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        QueueResultAllOf test2 = new QueueResultAllOf();
+        QueueResultAllOf test2 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.AccountId = "TS";
          test2.QueueId = "TS";
          test2.Alias = "TS";
@@ -162,7 +163,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        QueueResultAllOf test1 = new QueueResultAllOf();
+        QueueResultAllOf test1 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.AccountId = "TS";
          test1.QueueId = "TS";
          test1.Alias = "TS";
@@ -172,7 +173,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        QueueResultAllOf test2 = new QueueResultAllOf();
+        QueueResultAllOf test2 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.AccountId = "ts";
          test2.QueueId = "ts";
          test2.Alias = "ts";
@@ -191,7 +192,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        QueueResultAllOf test1 = new QueueResultAllOf();
+        QueueResultAllOf test1 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.AccountId = "TS";
          test1.QueueId = "TS";
          test1.Alias = "TS";
@@ -212,7 +213,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        QueueResultAllOf test1 = new QueueResultAllOf();
+        QueueResultAllOf test1 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.AccountId = "TS";
          test1.QueueId = "TS";
          test1.Alias = "TS";
@@ -233,7 +234,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        QueueResultAllOf test1 = new QueueResultAllOf();
+        QueueResultAllOf test1 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.AccountId = "TS";
          test1.QueueId = "TS";
          test1.Alias = "TS";
@@ -243,7 +244,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        QueueResultAllOf test2 = new QueueResultAllOf();
+        QueueResultAllOf test2 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.AccountId = "TS";
          test2.QueueId = "TS";
          test2.Alias = "TS";
@@ -265,7 +266,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        QueueResultAllOf test1 = new QueueResultAllOf();
+        QueueResultAllOf test1 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.AccountId = "TS";
          test1.QueueId = "TS";
          test1.Alias = "TS";
@@ -275,7 +276,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        QueueResultAllOf test2 = new QueueResultAllOf();
+        QueueResultAllOf test2 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.AccountId = "TS";
          test2.QueueId = "TS";
          test2.Alias = "TS";
@@ -294,7 +295,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        QueueResultAllOf test1 = new QueueResultAllOf();
+        QueueResultAllOf test1 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.AccountId = "TS";
          test1.QueueId = "TS";
          test1.Alias = "TS";
@@ -305,7 +306,7 @@ namespace freeclimb.Test.Model
          test1.SubresourceUris = testObject;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        QueueResultAllOf test2 = new QueueResultAllOf();
+        QueueResultAllOf test2 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.AccountId = "TS";
          test2.QueueId = "TS";
          test2.Alias = "TS";

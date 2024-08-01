@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public AccountResultAllOfTests()
         {
-            instance = new AccountResultAllOf();
+            instance = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        AccountResultAllOf test1 = new AccountResultAllOf();
+        AccountResultAllOf test1 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.AccountId = "TS";
          test1.ApiKey = "TS";
          test1.Alias = "TS";
@@ -150,7 +150,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        AccountResultAllOf test2 = new AccountResultAllOf();
+        AccountResultAllOf test2 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.AccountId = "TS";
          test2.ApiKey = "TS";
          test2.Alias = "TS";
@@ -169,7 +169,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        AccountResultAllOf test1 = new AccountResultAllOf();
+        AccountResultAllOf test1 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.AccountId = "TS";
          test1.ApiKey = "TS";
          test1.Alias = "TS";
@@ -179,7 +179,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        AccountResultAllOf test2 = new AccountResultAllOf();
+        AccountResultAllOf test2 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.AccountId = "ts";
          test2.ApiKey = "ts";
          test2.Alias = "ts";
@@ -198,7 +198,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        AccountResultAllOf test1 = new AccountResultAllOf();
+        AccountResultAllOf test1 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.AccountId = "TS";
          test1.ApiKey = "TS";
          test1.Alias = "TS";
@@ -219,7 +219,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        AccountResultAllOf test1 = new AccountResultAllOf();
+        AccountResultAllOf test1 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.AccountId = "TS";
          test1.ApiKey = "TS";
          test1.Alias = "TS";
@@ -240,7 +240,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        AccountResultAllOf test1 = new AccountResultAllOf();
+        AccountResultAllOf test1 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.AccountId = "TS";
          test1.ApiKey = "TS";
          test1.Alias = "TS";
@@ -250,7 +250,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        AccountResultAllOf test2 = new AccountResultAllOf();
+        AccountResultAllOf test2 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.AccountId = "TS";
          test2.ApiKey = "TS";
          test2.Alias = "TS";
@@ -272,7 +272,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        AccountResultAllOf test1 = new AccountResultAllOf();
+        AccountResultAllOf test1 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.AccountId = "TS";
          test1.ApiKey = "TS";
          test1.Alias = "TS";
@@ -282,7 +282,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        AccountResultAllOf test2 = new AccountResultAllOf();
+        AccountResultAllOf test2 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.AccountId = "TS";
          test2.ApiKey = "TS";
          test2.Alias = "TS";
@@ -301,7 +301,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        AccountResultAllOf test1 = new AccountResultAllOf();
+        AccountResultAllOf test1 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.AccountId = "TS";
          test1.ApiKey = "TS";
          test1.Alias = "TS";
@@ -312,7 +312,7 @@ namespace freeclimb.Test.Model
          test1.SubresourceUris = testObject;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        AccountResultAllOf test2 = new AccountResultAllOf();
+        AccountResultAllOf test2 = new AccountResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.AccountId = "TS";
          test2.ApiKey = "TS";
          test2.Alias = "TS";

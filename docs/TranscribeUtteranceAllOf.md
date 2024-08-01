@@ -1,11 +1,10 @@
-# freeclimb.Model.TranscribeUtterance
+# freeclimb.Model.TranscribeUtteranceAllOf
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Command** | **string** | Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) | [optional] 
 **ActionUrl** | **string** |  | 
 **PlayBeep** | **bool** |  | [optional] [default to false]
 **Record** | [**TranscribeUtteranceAllOfRecord**](TranscribeUtteranceAllOfRecord.md) |  | [optional] 

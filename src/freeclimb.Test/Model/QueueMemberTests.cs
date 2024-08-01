@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public QueueMemberTests()
         {
-            instance = new QueueMember();
+            instance = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
         }
 
         /// <summary>
@@ -112,14 +113,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        QueueMember test1 = new QueueMember();
+        QueueMember test1 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test1.Uri = "TS";
          test1.CallId = "TS";
          test1.WaitTime = 1;
          test1.Position = 1;
          test1.DateEnqueued = "TS";
 
-        QueueMember test2 = new QueueMember();
+        QueueMember test2 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test2.Uri = "TS";
          test2.CallId = "TS";
          test2.WaitTime = 1;
@@ -135,14 +136,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        QueueMember test1 = new QueueMember();
+        QueueMember test1 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test1.Uri = "TS";
          test1.CallId = "TS";
          test1.WaitTime = 1;
          test1.Position = 1;
          test1.DateEnqueued = "TS";
 
-        QueueMember test2 = new QueueMember();
+        QueueMember test2 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test2.Uri = "ts";
          test2.CallId = "ts";
          test2.WaitTime = 2;
@@ -158,7 +159,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        QueueMember test1 = new QueueMember();
+        QueueMember test1 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test1.Uri = "TS";
          test1.CallId = "TS";
          test1.WaitTime = 1;
@@ -176,7 +177,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        QueueMember test1 = new QueueMember();
+        QueueMember test1 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test1.Uri = "TS";
          test1.CallId = "TS";
          test1.WaitTime = 1;
@@ -194,14 +195,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        QueueMember test1 = new QueueMember();
+        QueueMember test1 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test1.Uri = "TS";
          test1.CallId = "TS";
          test1.WaitTime = 1;
          test1.Position = 1;
          test1.DateEnqueued = "TS";
 
-        QueueMember test2 = new QueueMember();
+        QueueMember test2 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test2.Uri = "TS";
          test2.CallId = "TS";
          test2.WaitTime = 1;
@@ -220,14 +221,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        QueueMember test1 = new QueueMember();
+        QueueMember test1 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test1.Uri = "TS";
          test1.CallId = "TS";
          test1.WaitTime = 1;
          test1.Position = 1;
          test1.DateEnqueued = "TS";
 
-        QueueMember test2 = new QueueMember();
+        QueueMember test2 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test2.Uri = "TS";
          test2.CallId = "TS";
          test2.WaitTime = 1;
@@ -243,7 +244,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        QueueMember test1 = new QueueMember();
+        QueueMember test1 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test1.Uri = "TS";
          test1.CallId = "TS";
          test1.WaitTime = 1;
@@ -251,7 +252,7 @@ namespace freeclimb.Test.Model
          test1.DateEnqueued = "TS";
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        QueueMember test2 = new QueueMember();
+        QueueMember test2 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test2.Uri = "TS";
          test2.CallId = "TS";
          test2.WaitTime = 1;

@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SetTalkAllOfTests()
         {
-            instance = new SetTalkAllOf();
+            instance = new SetTalkAllOf(false);
         }
 
         /// <summary>
@@ -73,10 +73,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf();
+        SetTalkAllOf test1 = new SetTalkAllOf(false);
          test1.Talk = true;
 
-        SetTalkAllOf test2 = new SetTalkAllOf();
+        SetTalkAllOf test2 = new SetTalkAllOf(false);
          test2.Talk = true;
 
         Assert.Equal(test1,test2);
@@ -88,10 +88,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf();
+        SetTalkAllOf test1 = new SetTalkAllOf(false);
          test1.Talk = true;
 
-        SetTalkAllOf test2 = new SetTalkAllOf();
+        SetTalkAllOf test2 = new SetTalkAllOf(false);
          test2.Talk = false;
 
         Assert.NotEqual(test1,test2);
@@ -103,7 +103,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf();
+        SetTalkAllOf test1 = new SetTalkAllOf(false);
          test1.Talk = true;
 
         int hashCode1 = test1.GetHashCode();
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf();
+        SetTalkAllOf test1 = new SetTalkAllOf(false);
          test1.Talk = true;
 
         string toString1 = test1.ToString();
@@ -131,10 +131,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf();
+        SetTalkAllOf test1 = new SetTalkAllOf(false);
          test1.Talk = true;
 
-        SetTalkAllOf test2 = new SetTalkAllOf();
+        SetTalkAllOf test2 = new SetTalkAllOf(false);
          test2.Talk = true;
 
         string toString1 = test1.ToString();
@@ -149,10 +149,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf();
+        SetTalkAllOf test1 = new SetTalkAllOf(false);
          test1.Talk = true;
 
-        SetTalkAllOf test2 = new SetTalkAllOf();
+        SetTalkAllOf test2 = new SetTalkAllOf(false);
          test2.Talk = true;
 
         Assert.True(test1.Equals(test2));
@@ -164,11 +164,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SetTalkAllOf test1 = new SetTalkAllOf();
+        SetTalkAllOf test1 = new SetTalkAllOf(false);
          test1.Talk = true;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        SetTalkAllOf test2 = new SetTalkAllOf();
+        SetTalkAllOf test2 = new SetTalkAllOf(false);
          test2.Talk = true;
 
         Assert.True(jsonStr.Equals(test2.ToJson()));

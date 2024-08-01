@@ -41,22 +41,22 @@ namespace freeclimb.Model
         public enum EntityTypeEnum
         {
             /// <summary>
-            /// Enum PRIVATEPROFIT for value: PRIVATE_PROFIT
+            /// Enum PRIVATE_PROFIT for value: PRIVATE_PROFIT
             /// </summary>
             [EnumMember(Value = "PRIVATE_PROFIT")]
-            PRIVATEPROFIT = 1,
+            PRIVATE_PROFIT = 1,
 
             /// <summary>
-            /// Enum PUBLICPROFIT for value: PUBLIC_PROFIT
+            /// Enum PUBLIC_PROFIT for value: PUBLIC_PROFIT
             /// </summary>
             [EnumMember(Value = "PUBLIC_PROFIT")]
-            PUBLICPROFIT = 2,
+            PUBLIC_PROFIT = 2,
 
             /// <summary>
-            /// Enum NONPROFIT for value: NON_PROFIT
+            /// Enum NON_PROFIT for value: NON_PROFIT
             /// </summary>
             [EnumMember(Value = "NON_PROFIT")]
-            NONPROFIT = 3,
+            NON_PROFIT = 3,
 
             /// <summary>
             /// Enum GOVERNMENT for value: GOVERNMENT
@@ -65,10 +65,10 @@ namespace freeclimb.Model
             GOVERNMENT = 4,
 
             /// <summary>
-            /// Enum SOLEPROPRIETOR for value: SOLE_PROPRIETOR
+            /// Enum SOLE_PROPRIETOR for value: SOLE_PROPRIETOR
             /// </summary>
             [EnumMember(Value = "SOLE_PROPRIETOR")]
-            SOLEPROPRIETOR = 5
+            SOLE_PROPRIETOR = 5
 
         }
 
@@ -265,34 +265,34 @@ namespace freeclimb.Model
         public enum BrandRelationshipEnum
         {
             /// <summary>
-            /// Enum BASICACCOUNT for value: BASIC_ACCOUNT
+            /// Enum BASIC_ACCOUNT for value: BASIC_ACCOUNT
             /// </summary>
             [EnumMember(Value = "BASIC_ACCOUNT")]
-            BASICACCOUNT = 1,
+            BASIC_ACCOUNT = 1,
 
             /// <summary>
-            /// Enum SMALLACCOUNT for value: SMALL_ACCOUNT
+            /// Enum SMALL_ACCOUNT for value: SMALL_ACCOUNT
             /// </summary>
             [EnumMember(Value = "SMALL_ACCOUNT")]
-            SMALLACCOUNT = 2,
+            SMALL_ACCOUNT = 2,
 
             /// <summary>
-            /// Enum MEDIUMACCOUNT for value: MEDIUM_ACCOUNT
+            /// Enum MEDIUM_ACCOUNT for value: MEDIUM_ACCOUNT
             /// </summary>
             [EnumMember(Value = "MEDIUM_ACCOUNT")]
-            MEDIUMACCOUNT = 3,
+            MEDIUM_ACCOUNT = 3,
 
             /// <summary>
-            /// Enum LARGEACCOUNT for value: LARGE_ACCOUNT
+            /// Enum LARGE_ACCOUNT for value: LARGE_ACCOUNT
             /// </summary>
             [EnumMember(Value = "LARGE_ACCOUNT")]
-            LARGEACCOUNT = 4,
+            LARGE_ACCOUNT = 4,
 
             /// <summary>
-            /// Enum KEYACCOUNT for value: KEY_ACCOUNT
+            /// Enum KEY_ACCOUNT for value: KEY_ACCOUNT
             /// </summary>
             [EnumMember(Value = "KEY_ACCOUNT")]
-            KEYACCOUNT = 5
+            KEY_ACCOUNT = 5
 
         }
 
@@ -351,10 +351,10 @@ namespace freeclimb.Model
         public enum IdentityStatusEnum
         {
             /// <summary>
-            /// Enum SELFDECLARED for value: SELF_DECLARED
+            /// Enum SELF_DECLARED for value: SELF_DECLARED
             /// </summary>
             [EnumMember(Value = "SELF_DECLARED")]
-            SELFDECLARED = 1,
+            SELF_DECLARED = 1,
 
             /// <summary>
             /// Enum UNVERIFIED for value: UNVERIFIED
@@ -369,10 +369,10 @@ namespace freeclimb.Model
             VERIFIED = 3,
 
             /// <summary>
-            /// Enum VETTEDVERIFIED for value: VETTED_VERIFIED
+            /// Enum VETTED_VERIFIED for value: VETTED_VERIFIED
             /// </summary>
             [EnumMember(Value = "VETTED_VERIFIED")]
-            VETTEDVERIFIED = 4
+            VETTED_VERIFIED = 4
 
         }
 
