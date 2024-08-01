@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public RedirectAllOfTests()
         {
-            instance = new RedirectAllOf(new Uri("https://a.com"));
+            instance = new RedirectAllOf("TEST_STRING");
         }
 
         /// <summary>
@@ -62,13 +62,8 @@ namespace freeclimb.Test.Model
         public void ActionUrlTest()
         {
             
-            try {
-                Uri uri = new Uri("https://a.com");
-                instance.ActionUrl = uri.ToString();
-                Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-                Console.WriteLine("Something went wrong.");
-            }
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
         
         
@@ -78,23 +73,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test1 = new RedirectAllOf("TEST_STRING");
+         test1.ActionUrl = "TS";
 
-        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test2 = new RedirectAllOf("TEST_STRING");
+         test2.ActionUrl = "TS";
 
         Assert.Equal(test1,test2);
         }
@@ -105,23 +88,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test1 = new RedirectAllOf("TEST_STRING");
+         test1.ActionUrl = "TS";
 
-        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
-         try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test2 = new RedirectAllOf("TEST_STRING");
+         test2.ActionUrl = "ts";
 
         Assert.NotEqual(test1,test2);
         }
@@ -132,14 +103,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test1 = new RedirectAllOf("TEST_STRING");
+         test1.ActionUrl = "TS";
 
         int hashCode1 = test1.GetHashCode();
         Assert.True(hashCode1.GetType() == typeof(int));
@@ -152,14 +117,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test1 = new RedirectAllOf("TEST_STRING");
+         test1.ActionUrl = "TS";
 
         string toString1 = test1.ToString();
         Assert.True(toString1.GetType() == typeof(string));
@@ -172,23 +131,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test1 = new RedirectAllOf("TEST_STRING");
+         test1.ActionUrl = "TS";
 
-        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test2 = new RedirectAllOf("TEST_STRING");
+         test2.ActionUrl = "TS";
 
         string toString1 = test1.ToString();
         string toString2 = test2.ToString();
@@ -202,23 +149,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test1 = new RedirectAllOf("TEST_STRING");
+         test1.ActionUrl = "TS";
 
-        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test2 = new RedirectAllOf("TEST_STRING");
+         test2.ActionUrl = "TS";
 
         Assert.True(test1.Equals(test2));
         }
@@ -229,24 +164,12 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        RedirectAllOf test1 = new RedirectAllOf(new Uri("https://a.com"));
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test1 = new RedirectAllOf("TEST_STRING");
+         test1.ActionUrl = "TS";
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        RedirectAllOf test2 = new RedirectAllOf(new Uri("https://a.com"));
-        try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RedirectAllOf test2 = new RedirectAllOf("TEST_STRING");
+         test2.ActionUrl = "TS";
 
         Assert.True(jsonStr.Equals(test2.ToJson()));
         }

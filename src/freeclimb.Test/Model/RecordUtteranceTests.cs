@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public RecordUtteranceTests()
         {
-            instance = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+            instance = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
         }
 
         /// <summary>
@@ -62,13 +62,8 @@ namespace freeclimb.Test.Model
         public void ActionUrlTest()
         {
             
-            try {
-                Uri uri = new Uri("https://a.com");
-                instance.ActionUrl = uri.ToString();
-                Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-                Console.WriteLine("Something went wrong.");
-            }
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
         /// <summary>
         /// Test the property 'SilenceTimeoutMs'
@@ -138,14 +133,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        RecordUtterance test1 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test1 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.SilenceTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.MaxLengthSec = 1;
@@ -153,14 +142,8 @@ namespace freeclimb.Test.Model
          test1.AutoStart = true;
          test1.PrivacyMode = true;
 
-        RecordUtterance test2 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test2 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.SilenceTimeoutMs = 1;
          test2.FinishOnKey = "TS";
          test2.MaxLengthSec = 1;
@@ -177,14 +160,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        RecordUtterance test1 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test1 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.SilenceTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.MaxLengthSec = 1;
@@ -192,14 +169,8 @@ namespace freeclimb.Test.Model
          test1.AutoStart = true;
          test1.PrivacyMode = true;
 
-        RecordUtterance test2 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test2 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test2.ActionUrl = "ts";
          test2.SilenceTimeoutMs = 2;
          test2.FinishOnKey = "ts";
          test2.MaxLengthSec = 2;
@@ -216,14 +187,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        RecordUtterance test1 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test1 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.SilenceTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.MaxLengthSec = 1;
@@ -242,14 +207,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        RecordUtterance test1 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test1 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.SilenceTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.MaxLengthSec = 1;
@@ -268,14 +227,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        RecordUtterance test1 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test1 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.SilenceTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.MaxLengthSec = 1;
@@ -283,14 +236,8 @@ namespace freeclimb.Test.Model
          test1.AutoStart = true;
          test1.PrivacyMode = true;
 
-        RecordUtterance test2 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test2 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.SilenceTimeoutMs = 1;
          test2.FinishOnKey = "TS";
          test2.MaxLengthSec = 1;
@@ -310,14 +257,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        RecordUtterance test1 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test1 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.SilenceTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.MaxLengthSec = 1;
@@ -325,14 +266,8 @@ namespace freeclimb.Test.Model
          test1.AutoStart = true;
          test1.PrivacyMode = true;
 
-        RecordUtterance test2 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test2 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.SilenceTimeoutMs = 1;
          test2.FinishOnKey = "TS";
          test2.MaxLengthSec = 1;
@@ -349,14 +284,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        RecordUtterance test1 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test1 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.SilenceTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.MaxLengthSec = 1;
@@ -365,14 +294,8 @@ namespace freeclimb.Test.Model
          test1.PrivacyMode = true;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        RecordUtterance test2 = new RecordUtterance(new Uri("https://a.com"), 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        RecordUtterance test2 = new RecordUtterance("TEST_STRING", 1, "TEST_STRING", 1, false, false, false, "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.SilenceTimeoutMs = 1;
          test2.FinishOnKey = "TS";
          test2.MaxLengthSec = 1;

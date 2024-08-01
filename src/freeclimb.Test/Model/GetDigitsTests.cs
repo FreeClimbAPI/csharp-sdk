@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public GetDigitsTests()
         {
-            instance = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+            instance = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
         }
 
         /// <summary>
@@ -62,13 +62,8 @@ namespace freeclimb.Test.Model
         public void ActionUrlTest()
         {
             
-            try {
-                Uri uri = new Uri("https://a.com");
-                instance.ActionUrl = uri.ToString();
-                Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-                Console.WriteLine("Something went wrong.");
-            }
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
         /// <summary>
         /// Test the property 'DigitTimeoutMs'
@@ -159,14 +154,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        GetDigits test1 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test1 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.DigitTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.FlushBuffer = true;
@@ -177,14 +166,8 @@ namespace freeclimb.Test.Model
          test1.Prompts = testList;
          test1.PrivacyMode = true;
 
-        GetDigits test2 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test2 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.DigitTimeoutMs = 1;
          test2.FinishOnKey = "TS";
          test2.FlushBuffer = true;
@@ -204,14 +187,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        GetDigits test1 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test1 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.DigitTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.FlushBuffer = true;
@@ -222,14 +199,8 @@ namespace freeclimb.Test.Model
          test1.Prompts = testList;
          test1.PrivacyMode = true;
 
-        GetDigits test2 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test2 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test2.ActionUrl = "ts";
          test2.DigitTimeoutMs = 2;
          test2.FinishOnKey = "ts";
          test2.FlushBuffer = false;
@@ -249,14 +220,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        GetDigits test1 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test1 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.DigitTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.FlushBuffer = true;
@@ -278,14 +243,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        GetDigits test1 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test1 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.DigitTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.FlushBuffer = true;
@@ -307,14 +266,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        GetDigits test1 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test1 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.DigitTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.FlushBuffer = true;
@@ -325,14 +278,8 @@ namespace freeclimb.Test.Model
          test1.Prompts = testList;
          test1.PrivacyMode = true;
 
-        GetDigits test2 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test2 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.DigitTimeoutMs = 1;
          test2.FinishOnKey = "TS";
          test2.FlushBuffer = true;
@@ -355,14 +302,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        GetDigits test1 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test1 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.DigitTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.FlushBuffer = true;
@@ -373,14 +314,8 @@ namespace freeclimb.Test.Model
          test1.Prompts = testList;
          test1.PrivacyMode = true;
 
-        GetDigits test2 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test2 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.DigitTimeoutMs = 1;
          test2.FinishOnKey = "TS";
          test2.FlushBuffer = true;
@@ -400,14 +335,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        GetDigits test1 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test1 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.DigitTimeoutMs = 1;
          test1.FinishOnKey = "TS";
          test1.FlushBuffer = true;
@@ -419,14 +348,8 @@ namespace freeclimb.Test.Model
          test1.PrivacyMode = true;
          string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
 
-        GetDigits test2 = new GetDigits(new Uri("https://a.com"), 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetDigits test2 = new GetDigits("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false, "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.DigitTimeoutMs = 1;
          test2.FinishOnKey = "TS";
          test2.FlushBuffer = true;
