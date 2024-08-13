@@ -935,9 +935,6 @@ namespace freeclimb.Api
         /// <summary>
         /// Make a JWT for WebRTC calling
         /// </summary>
-        /// <remarks>
-        /// Make a JWT for WebRTC calling
-        /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebRTCToken">Information needed to craft a JWT compatible with the platforms WebRTC APIs</param>
         /// <returns>string</returns>
@@ -947,7 +944,7 @@ namespace freeclimb.Api
         /// Make a JWT for WebRTC calling
         /// </summary>
         /// <remarks>
-        /// Make a JWT for WebRTC calling
+        /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebRTCToken">Information needed to craft a JWT compatible with the platforms WebRTC APIs</param>
@@ -2565,7 +2562,7 @@ namespace freeclimb.Api
         /// Make a JWT for WebRTC calling
         /// </summary>
         /// <remarks>
-        /// Make a JWT for WebRTC calling
+        /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -2579,7 +2576,7 @@ namespace freeclimb.Api
         /// Make a JWT for WebRTC calling
         /// </summary>
         /// <remarks>
-        /// Make a JWT for WebRTC calling
+        /// 
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -10670,7 +10667,7 @@ namespace freeclimb.Api
         }
 
         /// <summary>
-        /// Make a JWT for WebRTC calling Make a JWT for WebRTC calling
+        /// Make a JWT for WebRTC calling 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebRTCToken">Information needed to craft a JWT compatible with the platforms WebRTC APIs</param>
@@ -10687,7 +10684,7 @@ namespace freeclimb.Api
         }
 
         /// <summary>
-        /// Make a JWT for WebRTC calling Make a JWT for WebRTC calling
+        /// Make a JWT for WebRTC calling 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebRTCToken">Information needed to craft a JWT compatible with the platforms WebRTC APIs</param>
@@ -10750,7 +10747,7 @@ namespace freeclimb.Api
         }
 
         /// <summary>
-        /// Make a JWT for WebRTC calling Make a JWT for WebRTC calling
+        /// Make a JWT for WebRTC calling 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -10765,7 +10762,7 @@ namespace freeclimb.Api
         }
 
         /// <summary>
-        /// Make a JWT for WebRTC calling Make a JWT for WebRTC calling
+        /// Make a JWT for WebRTC calling 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         

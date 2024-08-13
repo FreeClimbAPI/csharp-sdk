@@ -3618,8 +3618,6 @@ Name | Type | Description  | Notes
 
 Make a JWT for WebRTC calling
 
-Make a JWT for WebRTC calling
-
 ### Example
 ```csharp
 using System.Collections.Generic;

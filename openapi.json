@@ -4369,7 +4369,6 @@
     "/Accounts/{accountId}/Calls/WebRTC/Token": {
       "post": {
         "summary": "Make a JWT for WebRTC calling",
-        "description": "Make a JWT for WebRTC calling",
         "operationId": "make-a-webrtc-jwt",
         "x-web-rtc": true,
         "parameters": [
