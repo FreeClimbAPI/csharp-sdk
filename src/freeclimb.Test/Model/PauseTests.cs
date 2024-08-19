@@ -166,12 +166,15 @@ namespace freeclimb.Test.Model
         public void ToJsonTest() {
         Pause test1 = new Pause(1, "TEST_STRING");
          test1.Length = 1;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         Pause test2 = new Pause(1, "TEST_STRING");
          test2.Length = 1;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

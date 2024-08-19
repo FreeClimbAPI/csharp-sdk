@@ -295,7 +295,10 @@ namespace freeclimb.Test.Model
          test1.PrivacyForRecording = true;
          List<Object> testList = new List<Object>();
          test1.Prompts = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         TranscribeUtterance test2 = new TranscribeUtterance("TEST_STRING", false, new TranscribeUtteranceAllOfRecord(), false, false, new List<Object>(), "TEST_STRING");
          test2.ActionUrl = "TS";
@@ -307,7 +310,7 @@ namespace freeclimb.Test.Model
          List<Object> testList2 = new List<Object>();
          test2.Prompts = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

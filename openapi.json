@@ -1256,6 +1256,7 @@
         "type": "object",
         "required": ["voice", "sms", "tollFree", "tenDLC", "shortCode"],
         "x-is-object": true,
+        "x-ref-properties": [false, false, false, false, false],
         "properties": {
           "voice": {
             "description": "Indicates whether a number can be used for voice calls. Replaces voiceEnabled.",
@@ -1289,6 +1290,7 @@
         "type": "object",
         "required": ["campaignId"],
         "x-is-object": true,
+        "x-ref-properties": ["\"TEST_STRING\""],
         "properties": {
           "campaignId": {
             "description": "alphanumeric identifier for the TollFree campaign associated with this number",
@@ -2889,6 +2891,18 @@
         "required": ["email", "phone"],
         "type": "object",
         "x-is-object": true,
+        "x-ref-properties": [
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "new Dictionary<string, object>()",
+          "1"
+        ],
         "properties": {
           "accountId": {
             "type": "string",

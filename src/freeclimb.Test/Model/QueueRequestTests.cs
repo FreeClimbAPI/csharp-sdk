@@ -187,13 +187,16 @@ namespace freeclimb.Test.Model
         QueueRequest test1 = new QueueRequest("TEST_STRING", 1);
          test1.Alias = "TS";
          test1.MaxSize = 1;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         QueueRequest test2 = new QueueRequest("TEST_STRING", 1);
          test2.Alias = "TS";
          test2.MaxSize = 1;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

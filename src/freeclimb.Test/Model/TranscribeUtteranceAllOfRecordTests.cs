@@ -208,14 +208,17 @@ namespace freeclimb.Test.Model
          test1.SaveRecording = true;
          test1.MaxLengthSec = 1;
          test1.RcrdTerminationSilenceTimeMs = 1;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         TranscribeUtteranceAllOfRecord test2 = new TranscribeUtteranceAllOfRecord(false, 1, 1);
          test2.SaveRecording = true;
          test2.MaxLengthSec = 1;
          test2.RcrdTerminationSilenceTimeMs = 1;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

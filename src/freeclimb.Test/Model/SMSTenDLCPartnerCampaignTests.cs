@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignTests()
         {
-            instance = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+            instance = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
         }
 
         /// <summary>
@@ -339,7 +339,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BrandTest()
         {
-            SMSTenDLCPartnerCampaignBrand testObject = new SMSTenDLCPartnerCampaignBrand();
+            SMSTenDLCPartnerCampaignBrand testObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
             instance.Brand = testObject;
             Assert.Equal(testObject, instance.Brand);
             
@@ -352,7 +352,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test1.AccountId = "TS";
          test1.CampaignId = "TS";
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -380,10 +380,10 @@ namespace freeclimb.Test.Model
          test1.HelpKeywords = "TS";
          test1.OptinMessage = "TS";
          test1.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.Brand = BrandtestObject;
 
-        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test2.AccountId = "TS";
          test2.CampaignId = "TS";
          test2.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -411,7 +411,7 @@ namespace freeclimb.Test.Model
          test2.HelpKeywords = "TS";
          test2.OptinMessage = "TS";
          test2.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.Brand = BrandtestObject2;
 
         Assert.Equal(test1,test2);
@@ -423,7 +423,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test1.AccountId = "TS";
          test1.CampaignId = "TS";
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -451,10 +451,10 @@ namespace freeclimb.Test.Model
          test1.HelpKeywords = "TS";
          test1.OptinMessage = "TS";
          test1.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.Brand = BrandtestObject;
 
-        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test2.AccountId = "ts";
          test2.CampaignId = "ts";
          test2.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -482,7 +482,7 @@ namespace freeclimb.Test.Model
          test2.HelpKeywords = "ts";
          test2.OptinMessage = "ts";
          test2.OptoutMessage = "ts";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.Brand = BrandtestObject2;
 
         Assert.NotEqual(test1,test2);
@@ -494,7 +494,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test1.AccountId = "TS";
          test1.CampaignId = "TS";
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -522,7 +522,7 @@ namespace freeclimb.Test.Model
          test1.HelpKeywords = "TS";
          test1.OptinMessage = "TS";
          test1.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.Brand = BrandtestObject;
 
         int hashCode1 = test1.GetHashCode();
@@ -536,7 +536,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test1.AccountId = "TS";
          test1.CampaignId = "TS";
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -564,7 +564,7 @@ namespace freeclimb.Test.Model
          test1.HelpKeywords = "TS";
          test1.OptinMessage = "TS";
          test1.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.Brand = BrandtestObject;
 
         string toString1 = test1.ToString();
@@ -578,7 +578,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test1.AccountId = "TS";
          test1.CampaignId = "TS";
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -606,10 +606,10 @@ namespace freeclimb.Test.Model
          test1.HelpKeywords = "TS";
          test1.OptinMessage = "TS";
          test1.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.Brand = BrandtestObject;
 
-        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test2.AccountId = "TS";
          test2.CampaignId = "TS";
          test2.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -637,7 +637,7 @@ namespace freeclimb.Test.Model
          test2.HelpKeywords = "TS";
          test2.OptinMessage = "TS";
          test2.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.Brand = BrandtestObject2;
 
         string toString1 = test1.ToString();
@@ -652,7 +652,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test1.AccountId = "TS";
          test1.CampaignId = "TS";
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -680,10 +680,10 @@ namespace freeclimb.Test.Model
          test1.HelpKeywords = "TS";
          test1.OptinMessage = "TS";
          test1.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.Brand = BrandtestObject;
 
-        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test2.AccountId = "TS";
          test2.CampaignId = "TS";
          test2.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -711,7 +711,7 @@ namespace freeclimb.Test.Model
          test2.HelpKeywords = "TS";
          test2.OptinMessage = "TS";
          test2.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.Brand = BrandtestObject2;
 
         Assert.True(test1.Equals(test2));
@@ -723,7 +723,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test1 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test1.AccountId = "TS";
          test1.CampaignId = "TS";
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -751,11 +751,14 @@ namespace freeclimb.Test.Model
          test1.HelpKeywords = "TS";
          test1.OptinMessage = "TS";
          test1.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test1.Brand = BrandtestObject;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand());
+        SMSTenDLCPartnerCampaign test2 = new SMSTenDLCPartnerCampaign("TEST_STRING", "TEST_STRING", SMSTenDLCPartnerCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1));
          test2.AccountId = "TS";
          test2.CampaignId = "TS";
          test2.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
@@ -783,10 +786,10 @@ namespace freeclimb.Test.Model
          test2.HelpKeywords = "TS";
          test2.OptinMessage = "TS";
          test2.OptoutMessage = "TS";
-         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand();
+         SMSTenDLCPartnerCampaignBrand BrandtestObject2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.Brand = BrandtestObject2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -229,7 +229,10 @@ namespace freeclimb.Test.Model
          test1.Language = "TS";
          test1.Loop = 1;
          test1.PrivacyMode = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         Say test2 = new Say("TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
          test2.Text = "TS";
@@ -237,7 +240,7 @@ namespace freeclimb.Test.Model
          test2.Loop = 1;
          test2.PrivacyMode = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

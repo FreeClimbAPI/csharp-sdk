@@ -166,12 +166,15 @@ namespace freeclimb.Test.Model
         public void ToJsonTest() {
         RedirectAllOf test1 = new RedirectAllOf("TEST_STRING");
          test1.ActionUrl = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         RedirectAllOf test2 = new RedirectAllOf("TEST_STRING");
          test2.ActionUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

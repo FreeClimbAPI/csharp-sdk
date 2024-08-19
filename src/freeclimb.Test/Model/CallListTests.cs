@@ -325,7 +325,10 @@ namespace freeclimb.Test.Model
          test1.NextPageUri = "TS";
          List<CallResult> testList = new List<CallResult>();
          test1.Calls = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         CallList test2 = new CallList(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<CallResult>());
          test2.Total = 1;
@@ -338,7 +341,7 @@ namespace freeclimb.Test.Model
          List<CallResult> testList2 = new List<CallResult>();
          test2.Calls = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

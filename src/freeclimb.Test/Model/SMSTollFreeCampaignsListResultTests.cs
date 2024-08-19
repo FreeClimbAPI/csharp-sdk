@@ -325,7 +325,10 @@ namespace freeclimb.Test.Model
          test1.NextPageUri = "TS";
          List<SMSTollFreeCampaign> testList = new List<SMSTollFreeCampaign>();
          test1.Brands = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SMSTollFreeCampaignsListResult test2 = new SMSTollFreeCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTollFreeCampaign>());
          test2.Total = 1;
@@ -338,7 +341,7 @@ namespace freeclimb.Test.Model
          List<SMSTollFreeCampaign> testList2 = new List<SMSTollFreeCampaign>();
          test2.Brands = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

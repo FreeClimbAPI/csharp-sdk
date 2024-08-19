@@ -178,13 +178,16 @@ namespace freeclimb.Test.Model
         SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList2 = new List<SMSTenDLCBrand>();
          test2.Brands = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

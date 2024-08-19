@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public AvailableNumberTests()
         {
-            instance = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+            instance = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesTest()
         {
-            Capabilities testObject = new Capabilities();
+            Capabilities testObject = new Capabilities(false, false, false, false, false);
             instance.Capabilities = testObject;
             Assert.Equal(testObject, instance.Capabilities);
             
@@ -134,8 +134,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        AvailableNumber test1 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject = new Capabilities();
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumber = "TS";
@@ -144,8 +144,8 @@ namespace freeclimb.Test.Model
          test1.Region = "TS";
          test1.Country = "TS";
 
-        AvailableNumber test2 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "TS";
          test2.PhoneNumber = "TS";
@@ -163,8 +163,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        AvailableNumber test1 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject = new Capabilities();
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumber = "TS";
@@ -173,8 +173,8 @@ namespace freeclimb.Test.Model
          test1.Region = "TS";
          test1.Country = "TS";
 
-        AvailableNumber test2 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "ts";
          test2.PhoneNumber = "ts";
@@ -192,8 +192,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        AvailableNumber test1 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject = new Capabilities();
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumber = "TS";
@@ -213,8 +213,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        AvailableNumber test1 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject = new Capabilities();
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumber = "TS";
@@ -234,8 +234,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        AvailableNumber test1 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject = new Capabilities();
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumber = "TS";
@@ -244,8 +244,8 @@ namespace freeclimb.Test.Model
          test1.Region = "TS";
          test1.Country = "TS";
 
-        AvailableNumber test2 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "TS";
          test2.PhoneNumber = "TS";
@@ -266,8 +266,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        AvailableNumber test1 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject = new Capabilities();
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumber = "TS";
@@ -276,8 +276,8 @@ namespace freeclimb.Test.Model
          test1.Region = "TS";
          test1.Country = "TS";
 
-        AvailableNumber test2 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "TS";
          test2.PhoneNumber = "TS";
@@ -295,8 +295,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        AvailableNumber test1 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject = new Capabilities();
+        AvailableNumber test1 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumber = "TS";
@@ -304,10 +304,13 @@ namespace freeclimb.Test.Model
          test1.SmsEnabled = true;
          test1.Region = "TS";
          test1.Country = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        AvailableNumber test2 = new AvailableNumber(new Capabilities(), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        AvailableNumber test2 = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "TS";
          test2.PhoneNumber = "TS";
@@ -316,7 +319,7 @@ namespace freeclimb.Test.Model
          test2.Region = "TS";
          test2.Country = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

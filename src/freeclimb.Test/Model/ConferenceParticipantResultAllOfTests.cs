@@ -271,7 +271,10 @@ namespace freeclimb.Test.Model
          test1.Talk = true;
          test1.Listen = true;
          test1.StartConfOnEnter = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.AccountId = "TS";
@@ -281,7 +284,7 @@ namespace freeclimb.Test.Model
          test2.Listen = true;
          test2.StartConfOnEnter = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

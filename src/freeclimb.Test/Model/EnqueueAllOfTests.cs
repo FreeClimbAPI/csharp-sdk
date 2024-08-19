@@ -229,7 +229,10 @@ namespace freeclimb.Test.Model
          test1.NotificationUrl = "TS";
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.ActionUrl = "TS";
@@ -237,7 +240,7 @@ namespace freeclimb.Test.Model
          test2.QueueId = "TS";
          test2.WaitUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

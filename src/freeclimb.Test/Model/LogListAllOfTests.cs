@@ -178,13 +178,16 @@ namespace freeclimb.Test.Model
         LogListAllOf test1 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList = new List<LogResult>();
          test1.Logs = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         LogListAllOf test2 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList2 = new List<LogResult>();
          test2.Logs = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

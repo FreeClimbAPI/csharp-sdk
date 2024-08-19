@@ -325,7 +325,10 @@ namespace freeclimb.Test.Model
          test1.NextPageUri = "TS";
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         QueueMemberList test2 = new QueueMemberList(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<QueueMember>());
          test2.Total = 1;
@@ -338,7 +341,7 @@ namespace freeclimb.Test.Model
          List<QueueMember> testList2 = new List<QueueMember>();
          test2.QueueMembers = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

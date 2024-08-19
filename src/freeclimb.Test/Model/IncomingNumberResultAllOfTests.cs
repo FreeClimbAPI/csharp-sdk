@@ -42,7 +42,7 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberResultAllOfTests()
         {
-            instance = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
+            instance = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesTest()
         {
-            Capabilities testObject = new Capabilities();
+            Capabilities testObject = new Capabilities(false, false, false, false, false);
             instance.Capabilities = testObject;
             Assert.Equal(testObject, instance.Capabilities);
             
@@ -182,7 +182,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TfnTest()
         {
-            TFN testObject = new TFN();
+            TFN testObject = new TFN("TEST_STRING");
             instance.Tfn = testObject;
             Assert.Equal(testObject, instance.Tfn);
             
@@ -195,8 +195,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject = new Capabilities();
+        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumberId = "TS";
@@ -209,11 +209,11 @@ namespace freeclimb.Test.Model
          test1.VoiceEnabled = true;
          test1.SmsEnabled = true;
          test1.Offnet = true;
-         TFN TfntestObject = new TFN();
+         TFN TfntestObject = new TFN("TEST_STRING");
          test1.Tfn = TfntestObject;
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "TS";
          test2.PhoneNumberId = "TS";
@@ -226,7 +226,7 @@ namespace freeclimb.Test.Model
          test2.VoiceEnabled = true;
          test2.SmsEnabled = true;
          test2.Offnet = true;
-         TFN TfntestObject2 = new TFN();
+         TFN TfntestObject2 = new TFN("TEST_STRING");
          test2.Tfn = TfntestObject2;
 
         Assert.Equal(test1,test2);
@@ -238,8 +238,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject = new Capabilities();
+        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumberId = "TS";
@@ -252,11 +252,11 @@ namespace freeclimb.Test.Model
          test1.VoiceEnabled = true;
          test1.SmsEnabled = true;
          test1.Offnet = true;
-         TFN TfntestObject = new TFN();
+         TFN TfntestObject = new TFN("TEST_STRING");
          test1.Tfn = TfntestObject;
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "ts";
          test2.PhoneNumberId = "ts";
@@ -269,7 +269,7 @@ namespace freeclimb.Test.Model
          test2.VoiceEnabled = false;
          test2.SmsEnabled = false;
          test2.Offnet = false;
-         TFN TfntestObject2 = new TFN();
+         TFN TfntestObject2 = new TFN("TEST_STRING");
          test2.Tfn = TfntestObject2;
 
         Assert.NotEqual(test1,test2);
@@ -281,8 +281,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject = new Capabilities();
+        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumberId = "TS";
@@ -295,7 +295,7 @@ namespace freeclimb.Test.Model
          test1.VoiceEnabled = true;
          test1.SmsEnabled = true;
          test1.Offnet = true;
-         TFN TfntestObject = new TFN();
+         TFN TfntestObject = new TFN("TEST_STRING");
          test1.Tfn = TfntestObject;
 
         int hashCode1 = test1.GetHashCode();
@@ -309,8 +309,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject = new Capabilities();
+        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumberId = "TS";
@@ -323,7 +323,7 @@ namespace freeclimb.Test.Model
          test1.VoiceEnabled = true;
          test1.SmsEnabled = true;
          test1.Offnet = true;
-         TFN TfntestObject = new TFN();
+         TFN TfntestObject = new TFN("TEST_STRING");
          test1.Tfn = TfntestObject;
 
         string toString1 = test1.ToString();
@@ -337,8 +337,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject = new Capabilities();
+        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumberId = "TS";
@@ -351,11 +351,11 @@ namespace freeclimb.Test.Model
          test1.VoiceEnabled = true;
          test1.SmsEnabled = true;
          test1.Offnet = true;
-         TFN TfntestObject = new TFN();
+         TFN TfntestObject = new TFN("TEST_STRING");
          test1.Tfn = TfntestObject;
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "TS";
          test2.PhoneNumberId = "TS";
@@ -368,7 +368,7 @@ namespace freeclimb.Test.Model
          test2.VoiceEnabled = true;
          test2.SmsEnabled = true;
          test2.Offnet = true;
-         TFN TfntestObject2 = new TFN();
+         TFN TfntestObject2 = new TFN("TEST_STRING");
          test2.Tfn = TfntestObject2;
 
         string toString1 = test1.ToString();
@@ -383,8 +383,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject = new Capabilities();
+        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumberId = "TS";
@@ -397,11 +397,11 @@ namespace freeclimb.Test.Model
          test1.VoiceEnabled = true;
          test1.SmsEnabled = true;
          test1.Offnet = true;
-         TFN TfntestObject = new TFN();
+         TFN TfntestObject = new TFN("TEST_STRING");
          test1.Tfn = TfntestObject;
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "TS";
          test2.PhoneNumberId = "TS";
@@ -414,7 +414,7 @@ namespace freeclimb.Test.Model
          test2.VoiceEnabled = true;
          test2.SmsEnabled = true;
          test2.Offnet = true;
-         TFN TfntestObject2 = new TFN();
+         TFN TfntestObject2 = new TFN("TEST_STRING");
          test2.Tfn = TfntestObject2;
 
         Assert.True(test1.Equals(test2));
@@ -426,8 +426,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject = new Capabilities();
+        IncomingNumberResultAllOf test1 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject = new Capabilities(false, false, false, false, false);
          test1.Capabilities = CapabilitiestestObject;
          test1.CampaignId = "TS";
          test1.PhoneNumberId = "TS";
@@ -440,12 +440,15 @@ namespace freeclimb.Test.Model
          test1.VoiceEnabled = true;
          test1.SmsEnabled = true;
          test1.Offnet = true;
-         TFN TfntestObject = new TFN();
+         TFN TfntestObject = new TFN("TEST_STRING");
          test1.Tfn = TfntestObject;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN());
-         Capabilities CapabilitiestestObject2 = new Capabilities();
+        IncomingNumberResultAllOf test2 = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+         Capabilities CapabilitiestestObject2 = new Capabilities(false, false, false, false, false);
          test2.Capabilities = CapabilitiestestObject2;
          test2.CampaignId = "TS";
          test2.PhoneNumberId = "TS";
@@ -458,10 +461,10 @@ namespace freeclimb.Test.Model
          test2.VoiceEnabled = true;
          test2.SmsEnabled = true;
          test2.Offnet = true;
-         TFN TfntestObject2 = new TFN();
+         TFN TfntestObject2 = new TFN("TEST_STRING");
          test2.Tfn = TfntestObject2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -178,13 +178,16 @@ namespace freeclimb.Test.Model
         IncomingNumberListAllOf test1 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
          test1.IncomingPhoneNumbers = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         IncomingNumberListAllOf test2 = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
          List<IncomingNumberResult> testList2 = new List<IncomingNumberResult>();
          test2.IncomingPhoneNumbers = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -229,7 +229,10 @@ namespace freeclimb.Test.Model
          test1.From = "TS";
          test1.Text = "TS";
          test1.NotificationUrl = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SmsAllOf test2 = new SmsAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.To = "TS";
@@ -237,7 +240,7 @@ namespace freeclimb.Test.Model
          test2.Text = "TS";
          test2.NotificationUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

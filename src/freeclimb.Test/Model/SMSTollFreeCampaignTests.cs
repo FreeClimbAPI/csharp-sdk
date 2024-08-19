@@ -279,7 +279,10 @@ namespace freeclimb.Test.Model
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
          test1.Revision = 1;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
          test2.AccountId = "TS";
@@ -289,7 +292,7 @@ namespace freeclimb.Test.Model
          test2.DateUpdated = "TS";
          test2.Revision = 1;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

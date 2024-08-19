@@ -379,7 +379,10 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          object testObject = new object();
          test1.SubresourceUris = testObject;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         ConferenceResultAllOf test2 = new ConferenceResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
          test2.ConferenceId = "TS";
@@ -394,7 +397,7 @@ namespace freeclimb.Test.Model
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

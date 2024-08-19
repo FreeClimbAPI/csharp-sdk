@@ -334,7 +334,10 @@ namespace freeclimb.Test.Model
          test1.NotificationUrl = "TS";
          test1.StartConfOnEnter = true;
          test1.Talk = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         AddToConferenceAllOf test2 = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
          test2.AllowCallControl = true;
@@ -347,7 +350,7 @@ namespace freeclimb.Test.Model
          test2.StartConfOnEnter = true;
          test2.Talk = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

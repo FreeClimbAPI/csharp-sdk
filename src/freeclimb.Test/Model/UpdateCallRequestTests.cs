@@ -168,12 +168,15 @@ namespace freeclimb.Test.Model
         public void ToJsonTest() {
         UpdateCallRequest test1 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test1.Status = UpdateCallRequestStatus.CANCELED;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         UpdateCallRequest test2 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test2.Status = UpdateCallRequestStatus.CANCELED;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

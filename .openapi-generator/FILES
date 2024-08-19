@@ -162,6 +162,7 @@ src/freeclimb.Test/Model/LogLevelTests.cs
 src/freeclimb.Test/Model/MachineTypeTests.cs
 src/freeclimb.Test/Model/MessageDirectionTests.cs
 src/freeclimb.Test/Model/MessageStatusTests.cs
+src/freeclimb.Test/Model/PerclCommandTests.cs
 src/freeclimb.Test/Model/PlayBeepTests.cs
 src/freeclimb.Test/Model/QueueResultStatusTests.cs
 src/freeclimb.Test/Model/RecordUtteranceTermReasonTests.cs

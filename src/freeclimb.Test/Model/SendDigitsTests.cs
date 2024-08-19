@@ -208,14 +208,17 @@ namespace freeclimb.Test.Model
          test1.Digits = "TS";
          test1.PauseMs = 1;
          test1.PrivacyMode = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SendDigits test2 = new SendDigits("TEST_STRING", 1, false, "TEST_STRING");
          test2.Digits = "TS";
          test2.PauseMs = 1;
          test2.PrivacyMode = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -325,7 +325,10 @@ namespace freeclimb.Test.Model
          test1.NextPageUri = "TS";
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SMSTenDLCPartnerCampaignsListResult test2 = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
          test2.Total = 1;
@@ -338,7 +341,7 @@ namespace freeclimb.Test.Model
          List<SMSTenDLCPartnerCampaign> testList2 = new List<SMSTenDLCPartnerCampaign>();
          test2.PartnerCampaigns = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

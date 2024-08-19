@@ -187,13 +187,16 @@ namespace freeclimb.Test.Model
         AccountRequest test1 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.Label = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         AccountRequest test2 = new AccountRequest("TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.Label = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -216,14 +216,17 @@ namespace freeclimb.Test.Model
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Status = UpdateConferenceRequestStatus.EMPTY;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         UpdateConferenceRequest test2 = new UpdateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, UpdateConferenceRequestStatus.EMPTY);
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Status = UpdateConferenceRequestStatus.EMPTY;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

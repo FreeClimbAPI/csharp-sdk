@@ -208,14 +208,17 @@ namespace freeclimb.Test.Model
          test1.PhoneNumber = "TS";
          test1.Alias = "TS";
          test1.ApplicationId = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         BuyIncomingNumberRequest test2 = new BuyIncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.PhoneNumber = "TS";
          test2.Alias = "TS";
          test2.ApplicationId = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

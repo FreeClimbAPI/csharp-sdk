@@ -304,7 +304,10 @@ namespace freeclimb.Test.Model
          test1.AverageQueueRemovalTime = 1;
          object testObject = new object();
          test1.SubresourceUris = testObject;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         QueueResultAllOf test2 = new QueueResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.AccountId = "TS";
@@ -316,7 +319,7 @@ namespace freeclimb.Test.Model
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

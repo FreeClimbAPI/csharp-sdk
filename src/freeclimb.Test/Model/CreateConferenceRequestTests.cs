@@ -256,7 +256,10 @@ namespace freeclimb.Test.Model
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         CreateConferenceRequest test2 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
@@ -265,7 +268,7 @@ namespace freeclimb.Test.Model
          test2.WaitUrl = "TS";
          test2.StatusCallbackUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

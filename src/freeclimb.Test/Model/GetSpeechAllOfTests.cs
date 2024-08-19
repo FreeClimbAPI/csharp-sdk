@@ -410,7 +410,10 @@ namespace freeclimb.Test.Model
          test1.SpeechCompleteTimeoutMs = 1;
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         GetSpeechAllOf test2 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
          test2.ActionUrl = "TS";
@@ -426,7 +429,7 @@ namespace freeclimb.Test.Model
          test2.SpeechIncompleteTimeoutMs = 1;
          test2.PrivacyMode = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

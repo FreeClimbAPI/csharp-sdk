@@ -208,14 +208,17 @@ namespace freeclimb.Test.Model
          test1.To = "TS";
          test1.From = "TS";
          test1.Uses = 1;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         CreateWebRTCToken test2 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
          test2.To = "TS";
          test2.From = "TS";
          test2.Uses = 1;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

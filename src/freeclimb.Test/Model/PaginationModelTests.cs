@@ -292,7 +292,10 @@ namespace freeclimb.Test.Model
          test1.NumPages = 1;
          test1.PageSize = 1;
          test1.NextPageUri = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         PaginationModel test2 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test2.Total = 1;
@@ -303,7 +306,7 @@ namespace freeclimb.Test.Model
          test2.PageSize = 1;
          test2.NextPageUri = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -900,7 +900,10 @@ namespace freeclimb.Test.Model
          test1.ReferenceId = "TS";
          test1.Mock = true;
          test1.NextRenewalOrExpirationDate = DateTime.Parse("2000-01-01");
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SMSTenDLCCampaign test2 = new SMSTenDLCCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), false,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", new List<string>(), "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, DateTime.Parse("2000-01-01"));
          test2.AccountId = "TS";
@@ -940,7 +943,7 @@ namespace freeclimb.Test.Model
          test2.Mock = true;
          test2.NextRenewalOrExpirationDate = DateTime.Parse("2000-01-01");
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

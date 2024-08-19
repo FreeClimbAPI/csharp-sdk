@@ -178,13 +178,16 @@ namespace freeclimb.Test.Model
         ApplicationListAllOf test1 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList = new List<ApplicationResult>();
          test1.Applications = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         ApplicationListAllOf test2 = new ApplicationListAllOf(new List<ApplicationResult>());
          List<ApplicationResult> testList2 = new List<ApplicationResult>();
          test2.Applications = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

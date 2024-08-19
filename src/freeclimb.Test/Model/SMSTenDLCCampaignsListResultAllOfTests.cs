@@ -178,13 +178,16 @@ namespace freeclimb.Test.Model
         SMSTenDLCCampaignsListResultAllOf test1 = new SMSTenDLCCampaignsListResultAllOf(new List<SMSTenDLCCampaign>());
          List<SMSTenDLCCampaign> testList = new List<SMSTenDLCCampaign>();
          test1.Campaigns = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SMSTenDLCCampaignsListResultAllOf test2 = new SMSTenDLCCampaignsListResultAllOf(new List<SMSTenDLCCampaign>());
          List<SMSTenDLCCampaign> testList2 = new List<SMSTenDLCCampaign>();
          test2.Campaigns = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

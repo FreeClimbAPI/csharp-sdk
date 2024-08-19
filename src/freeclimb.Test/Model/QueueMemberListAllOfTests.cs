@@ -178,13 +178,16 @@ namespace freeclimb.Test.Model
         QueueMemberListAllOf test1 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList = new List<QueueMember>();
          test1.QueueMembers = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         QueueMemberListAllOf test2 = new QueueMemberListAllOf(new List<QueueMember>());
          List<QueueMember> testList2 = new List<QueueMember>();
          test2.QueueMembers = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

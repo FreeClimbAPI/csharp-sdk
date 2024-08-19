@@ -250,7 +250,10 @@ namespace freeclimb.Test.Model
          test1.TollFree = true;
          test1.TenDLC = true;
          test1.ShortCode = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         Capabilities test2 = new Capabilities(false, false, false, false, false);
          test2.Voice = true;
@@ -259,7 +262,7 @@ namespace freeclimb.Test.Model
          test2.TenDLC = true;
          test2.ShortCode = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

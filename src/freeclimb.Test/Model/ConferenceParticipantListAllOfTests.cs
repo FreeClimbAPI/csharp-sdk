@@ -178,13 +178,16 @@ namespace freeclimb.Test.Model
         ConferenceParticipantListAllOf test1 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList = new List<ConferenceParticipantResult>();
          test1.Participants = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         ConferenceParticipantListAllOf test2 = new ConferenceParticipantListAllOf(new List<ConferenceParticipantResult>());
          List<ConferenceParticipantResult> testList2 = new List<ConferenceParticipantResult>();
          test2.Participants = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

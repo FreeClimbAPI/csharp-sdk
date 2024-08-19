@@ -388,7 +388,10 @@ namespace freeclimb.Test.Model
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
          test1.EvpVettingScore = 1;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
          test2.AccountId = "TS";
@@ -404,7 +407,7 @@ namespace freeclimb.Test.Model
          test2.OptionalAttributes = testDictionary2;
          test2.EvpVettingScore = 1;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

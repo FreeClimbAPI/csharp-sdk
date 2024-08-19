@@ -346,7 +346,10 @@ namespace freeclimb.Test.Model
          List<PerclCommand> testList = new List<PerclCommand>();
          test1.Prompts = testList;
          test1.PrivacyMode = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         GetDigitsAllOf test2 = new GetDigitsAllOf("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false);
          test2.ActionUrl = "TS";
@@ -360,7 +363,7 @@ namespace freeclimb.Test.Model
          test2.Prompts = testList2;
          test2.PrivacyMode = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

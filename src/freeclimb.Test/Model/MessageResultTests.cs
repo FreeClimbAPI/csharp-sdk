@@ -502,7 +502,10 @@ namespace freeclimb.Test.Model
          test1.CampaignId = "TS";
          List<string> testList = new List<string>();
          test1.MediaUrls = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         MessageResult test2 = new MessageResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", MessageStatus.NEW, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new decimal(1.0), new List<string>());
          test2.Uri = "TS";
@@ -522,7 +525,7 @@ namespace freeclimb.Test.Model
          List<string> testList2 = new List<string>();
          test2.MediaUrls = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -250,7 +250,10 @@ namespace freeclimb.Test.Model
          test1.WaitTime = 1;
          test1.Position = 1;
          test1.DateEnqueued = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         QueueMember test2 = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
          test2.Uri = "TS";
@@ -259,7 +262,7 @@ namespace freeclimb.Test.Model
          test2.Position = 1;
          test2.DateEnqueued = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -292,7 +292,10 @@ namespace freeclimb.Test.Model
          test1.PlayBeep = true;
          test1.AutoStart = true;
          test1.PrivacyMode = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         RecordUtteranceAllOf test2 = new RecordUtteranceAllOf("TEST_STRING", 1, "TEST_STRING", 1, false, false, false);
          test2.ActionUrl = "TS";
@@ -303,7 +306,7 @@ namespace freeclimb.Test.Model
          test2.AutoStart = true;
          test2.PrivacyMode = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }
