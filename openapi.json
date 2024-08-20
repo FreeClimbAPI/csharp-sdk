@@ -482,6 +482,17 @@
       "AddToConference": {
         "description": "The `AddToConference` command adds a Participant to a Conference. If this Participant currently is in another Conference, the Participant is first removed from that Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via `AddToConference`.",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "false",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "false",
+          "\"TEST_STRING\"",
+          "false",
+          "false"
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -533,6 +544,15 @@
       "CreateConference": {
         "description": "The `CreateConference` command does exactly what its name implies — it creates an unpopulated Conference (one without any Participants). Once created, a Conference remains in FreeClimb until explicitly terminated by a customer. Once a Conference has been terminated, it can no longer be used.",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"TEST_STRING\"",
+          "false",
+          "PlayBeep.ALWAYS",
+          "false",
+          "\"https://a.com\"",
+          "\"https://a.com\"",
+          "\"TEST_STRING\""
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -585,6 +605,13 @@
       "Enqueue": {
         "description": "The `Enqueue` command adds the current Call to a call Queue. If the specified Queue does not exist, it is created and then the Call is added to it. The default maximum length of the queue is 100. This can be modified using the REST API.",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\""
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand",
@@ -619,6 +646,18 @@
       "GetDigits": {
         "description": "The `GetDigits` command collects DTMF inputs from the caller. It is only supported only when there is a single party on the Call. `GetDigits` is a Terminal Command — any actions following it are never executed. When the Caller is done entering the digits, FreeClimb submits that data to the provided `actionUrl` using an HTTP POST request. Your server will be required to respond to the FreeClimb Webhook with PerCL to continue handling the call.",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"https://a.com\"",
+          "1",
+          "\"TEST_STRING\"",
+          "false",
+          "300",
+          "1",
+          "1",
+          "new List<PerclCommand>()",
+          "false",
+          "\"TEST_STRING\""
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand",
@@ -676,6 +715,22 @@
       "GetSpeech": {
         "description": "The `GetSpeech` command enables the Caller to respond to the application using a supported language. Unlike DTMF entry, which implicitly restricts the user to using the available buttons on the phone key pad, speech input allows for flexible audio inputs based on grammar. FreeClimb supports grammars written using GRXML compatible with the Microsoft Speech Platform. `GetSpeech` is only supported on a single call leg. It is not supported when there are two or more call legs connected (as in within a Conference).",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"https://a.com\"",
+          "GrammarType.URL",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "false",
+          "new List<PerclCommand>()",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "false",
+          "\"TEST_STRING\""
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -767,6 +822,19 @@
       "OutDial": {
         "description": "The OutDial command is used to call a phone number",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"https://a.com\"",
+          "\"https://a.com\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "IfMachine.REDIRECT",
+          "\"https://a.com\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "1",
+          "false",
+          "\"TEST_STRING\""
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand",
@@ -829,6 +897,12 @@
       "Park": {
         "description": "The `Park` command allows a caller to be put on hold.  You can provide hold music,messages,etc until ready to resume the call. Park is a terminal command.  Actions performed on the Call while on hold are provided in a PerCL script in response to the waitUrl property. Actions performed on the Call after it has been unparked (resumed) will be provided in a PerCL script in response to the actionUrl provided. A Call can be resumed in two ways -- REST API invocation or the Unpark percl command. No actions can be nested within Park and Park cannot be nested in any other actions. ",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"https://a.com\"",
+          "\"https://a.com\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\""
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand",
@@ -859,6 +933,7 @@
       "Pause": {
         "description": "The `Pause` command halts execution of the current PerCL script for a specified number of milliseconds. If `Pause` is the first command in a PerCL document, FreeClimb will wait for the specified time to elapse before picking up the call.",
         "x-percl-command": true,
+        "x-ref-properties": ["1"],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -878,6 +953,7 @@
       "Play": {
         "description": "The `Play` command plays an audio file back to the caller. The audio file may be located at any location accessible via a URL. `Play` can exist as a stand-alone command or as a nested command. It does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.",
         "x-percl-command": true,
+        "x-ref-properties": ["\"TEST_STRING\"", "1", "false"],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -905,6 +981,7 @@
       "PlayEarlyMedia": {
         "description": "`PlayEarlyMedia` is relevant only when present as the very first command in the PerCL script returned for an incoming Call. In such cases, the command is executed before FreeClimb attempts to connect the call. The audio file it uses can be stored in any location that is accessible via URL.",
         "x-percl-command": true,
+        "x-ref-properties": ["\"TEST_STRING\""],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -924,6 +1001,15 @@
       "RecordUtterance": {
         "description": "The `RecordUtterance` command records the caller's voice and returns the URL of a file containing the audio recording. `RecordUtterance` is blocking and is a terminal command. As such, the `actionUrl` property is required, and control of the Call picks up using the PerCL returned in response to the `actionUrl`. Recording information is returned in the `actionUrl` request.",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"https://a.com\"",
+          "1",
+          "\"TEST_STRING\"",
+          "1",
+          "false",
+          "false",
+          "false"
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand",
@@ -969,6 +1055,7 @@
       "Redirect": {
         "description": "The `Redirect` command transfers control of a Call to the PerCL at a different URL. `Redirect` is a terminal command, so any actions following it are never executed. The maximum number of redirections allowed during the life time of a Call is 256. This is intended to prevent a Call from possibly looping infinitely due to errors in PerCL being generated.",
         "x-percl-command": true,
+        "x-ref-properties": ["\"https://a.com\""],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand",
@@ -990,6 +1077,7 @@
       "Reject": {
         "description": "The `Reject` command blocks an incoming Call. Using `Reject` is the only way to prevent FreeClimb from answering a Call. Any other response will result in an answered Call and your account will be billed.",
         "x-percl-command": true,
+        "x-ref-properties": ["\"TEST_STRING\""],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1023,6 +1111,12 @@
       "Say": {
         "description": "The `Say` command provides Text-To-Speech (TTS) support. It converts text to speech and then renders it in a female voice back to the caller. `Say` is useful in cases where it's difficult to pre-record a prompt for any reason. `Say` does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "1",
+          "false"
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1055,6 +1149,7 @@
       "SendDigits": {
         "description": "The `SendDigits` command plays DTMF tones on a live Call. This is useful for navigating through IVR menus or dialing extensions.",
         "x-percl-command": true,
+        "x-ref-properties": ["\"TEST_STRING\"", "1", "false"],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1082,6 +1177,7 @@
       "SetListen": {
         "description": "The `SetListen` command enables or disables the listen privilege for a Conference Participant provided both calls are in the same conference. The Participant can hear what the other participants are saying only if this privilege is enabled.",
         "x-percl-command": true,
+        "x-ref-properties": ["false"],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1101,6 +1197,7 @@
       "SetTalk": {
         "description": "The `SetTalk` command enables or disables the talk privilege for a Participant in a Conference provided both calls are in the same conference. If 'true', no audio from that Participant is shared with the other Participants of the Conference.",
         "x-percl-command": true,
+        "x-ref-properties": ["false"],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1120,6 +1217,11 @@
       "Sms": {
         "description": "The `Sms` command can be used to send an SMS message to a phone number during a phone call. International SMS is disabled by default.",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\"",
+          "\"TEST_STRING\""
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -2891,6 +2993,7 @@
         "required": ["email", "phone"],
         "type": "object",
         "x-is-object": true,
+        "x-sms-ten-dlc-partner-campaign-brand": true,
         "x-ref-properties": [
           "\"TEST_STRING\"",
           "\"TEST_STRING\"",
@@ -3410,6 +3513,15 @@
         },
         "description": "The `TranscribeUtterance` command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.\n\n`TranscribeUtterance` is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the `PerCL` returned in response of the `actionUrl`. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.",
         "x-percl-command": true,
+        "x-ref-properties": [
+          "\"TEST_STRING\"",
+          "false",
+          "new TranscribeUtteranceAllOfRecord()",
+          "false",
+          "false",
+          "new List<Object>()",
+          "\"TEST_STRING\""
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"

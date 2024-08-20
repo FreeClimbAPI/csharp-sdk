@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public LogLevelTests()
         {
             instance = new LogLevel();
+            
         }
 
         /// <summary>

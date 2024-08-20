@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public UpdateCallRequestStatusTests()
         {
             instance = new UpdateCallRequestStatus();
+            
         }
 
         /// <summary>

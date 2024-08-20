@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public PlayBeepTests()
         {
             instance = new PlayBeep();
+            
         }
 
         /// <summary>

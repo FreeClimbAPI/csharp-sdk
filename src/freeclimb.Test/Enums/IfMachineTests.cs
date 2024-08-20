@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public IfMachineTests()
         {
             instance = new IfMachine();
+            
         }
 
         /// <summary>

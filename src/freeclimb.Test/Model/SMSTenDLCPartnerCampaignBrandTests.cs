@@ -42,7 +42,25 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignBrandTests()
         {
-            instance = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            string jsonData = @"
+            {
+                ""accountId"":""TEST_STRING"",
+                ""entityType"":""PRIVATE_PROFIT"",
+                ""cspId"": ""TEST_STRING"",
+                ""brandId"": ""TEST_STRING"",
+                ""universalEin"": ""TEST_STRING"",
+                ""brandRelationship"":""BASIC_ACCOUNT"",
+                ""identityStatus"":""SELF_DECLARED"",
+                ""displayName"":""TEST_STRING"",
+                ""phone"":""TEST_STRING"",
+                ""country"":""TEST_STRING"",
+                ""email"":""TEST_STRING"",
+                ""vertical"":""TEST_STRING"",
+                ""mock"":""false"",
+            }
+            ";
+            instance = JsonConvert.DeserializeObject<SMSTenDLCPartnerCampaignBrand>(jsonData);
+
         }
 
         /// <summary>
@@ -63,7 +81,7 @@ namespace freeclimb.Test.Model
         {
             instance.AccountId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.AccountId);
-            
+
         }
         /// <summary>
         /// Test the property 'BrandId'
@@ -73,7 +91,7 @@ namespace freeclimb.Test.Model
         {
 
             Assert.Equal("TEST_STRING", instance.BrandId);
-            
+
         }
         /// <summary>
         /// Test the property 'FirstName'
@@ -83,7 +101,7 @@ namespace freeclimb.Test.Model
         {
             instance.FirstName = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.FirstName);
-            
+
         }
         /// <summary>
         /// Test the property 'LastName'
@@ -93,7 +111,7 @@ namespace freeclimb.Test.Model
         {
             instance.LastName = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.LastName);
-            
+
         }
         /// <summary>
         /// Test the property 'DisplayName'
@@ -103,7 +121,7 @@ namespace freeclimb.Test.Model
         {
             instance.DisplayName = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.DisplayName);
-            
+
         }
         /// <summary>
         /// Test the property 'CompanyName'
@@ -113,7 +131,7 @@ namespace freeclimb.Test.Model
         {
             instance.CompanyName = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CompanyName);
-            
+
         }
         /// <summary>
         /// Test the property 'Phone'
@@ -123,7 +141,7 @@ namespace freeclimb.Test.Model
         {
             instance.Phone = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Phone);
-            
+
         }
         /// <summary>
         /// Test the property 'Email'
@@ -133,7 +151,7 @@ namespace freeclimb.Test.Model
         {
             instance.Email = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Email);
-            
+
         }
         /// <summary>
         /// Test the property 'Website'
@@ -143,7 +161,7 @@ namespace freeclimb.Test.Model
         {
             instance.Website = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Website);
-            
+
         }
         /// <summary>
         /// Test the property 'OptionalAttributes'
@@ -151,10 +169,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void OptionalAttributesTest()
         {
-            
+
             Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
             instance.OptionalAttributes = testDictionary;
-            Assert.Equal(testDictionary, instance.OptionalAttributes); 
+            Assert.Equal(testDictionary, instance.OptionalAttributes);
         }
         /// <summary>
         /// Test the property 'EvpVettingScore'
@@ -162,252 +180,259 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EvpVettingScoreTest()
         {
-            
+
             instance.EvpVettingScore = 1;
-            Assert.Equal(1, (int) instance.EvpVettingScore);
+            Assert.Equal(1, (int)instance.EvpVettingScore);
         }
-        
-        
+
+
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTrueTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test1.AccountId = "TS";
+        public void equalsTrueTest()
+        {
+            SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test1.AccountId = "TS";
 
-         test1.FirstName = "TS";
-         test1.LastName = "TS";
-         test1.DisplayName = "TS";
-         test1.CompanyName = "TS";
-         test1.Phone = "TS";
-         test1.Email = "TS";
-         test1.Website = "TS";
-         Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
-         test1.OptionalAttributes = testDictionary;
-         test1.EvpVettingScore = 1;
+            test1.FirstName = "TS";
+            test1.LastName = "TS";
+            test1.DisplayName = "TS";
+            test1.CompanyName = "TS";
+            test1.Phone = "TS";
+            test1.Email = "TS";
+            test1.Website = "TS";
+            Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
+            test1.OptionalAttributes = testDictionary;
+            test1.EvpVettingScore = 1;
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test2.AccountId = "TS";
+            SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test2.AccountId = "TS";
 
-         test2.FirstName = "TS";
-         test2.LastName = "TS";
-         test2.DisplayName = "TS";
-         test2.CompanyName = "TS";
-         test2.Phone = "TS";
-         test2.Email = "TS";
-         test2.Website = "TS";
-         Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
-         test2.OptionalAttributes = testDictionary2;
-         test2.EvpVettingScore = 1;
+            test2.FirstName = "TS";
+            test2.LastName = "TS";
+            test2.DisplayName = "TS";
+            test2.CompanyName = "TS";
+            test2.Phone = "TS";
+            test2.Email = "TS";
+            test2.Website = "TS";
+            Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
+            test2.OptionalAttributes = testDictionary2;
+            test2.EvpVettingScore = 1;
 
-        Assert.Equal(test1,test2);
+            Assert.Equal(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-        
+
         [Fact]
-        public void equalsFalseTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test1.AccountId = "TS";
+        public void equalsFalseTest()
+        {
+            SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test1.AccountId = "TS";
 
-         test1.FirstName = "TS";
-         test1.LastName = "TS";
-         test1.DisplayName = "TS";
-         test1.CompanyName = "TS";
-         test1.Phone = "TS";
-         test1.Email = "TS";
-         test1.Website = "TS";
-         Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
-         test1.OptionalAttributes = testDictionary;
-         test1.EvpVettingScore = 1;
+            test1.FirstName = "TS";
+            test1.LastName = "TS";
+            test1.DisplayName = "TS";
+            test1.CompanyName = "TS";
+            test1.Phone = "TS";
+            test1.Email = "TS";
+            test1.Website = "TS";
+            Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
+            test1.OptionalAttributes = testDictionary;
+            test1.EvpVettingScore = 1;
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test2.AccountId = "ts";
+            SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test2.AccountId = "ts";
 
-         test2.FirstName = "ts";
-         test2.LastName = "ts";
-         test2.DisplayName = "ts";
-         test2.CompanyName = "ts";
-         test2.Phone = "ts";
-         test2.Email = "ts";
-         test2.Website = "ts";
-         Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
-         test2.OptionalAttributes = testDictionary2;
-         test2.EvpVettingScore = 2;
+            test2.FirstName = "ts";
+            test2.LastName = "ts";
+            test2.DisplayName = "ts";
+            test2.CompanyName = "ts";
+            test2.Phone = "ts";
+            test2.Email = "ts";
+            test2.Website = "ts";
+            Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
+            test2.OptionalAttributes = testDictionary2;
+            test2.EvpVettingScore = 2;
 
-        Assert.NotEqual(test1,test2);
+            Assert.NotEqual(test1, test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-        
+
         [Fact]
-        public void hashCodeTypeTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test1.AccountId = "TS";
+        public void hashCodeTypeTest()
+        {
+            SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test1.AccountId = "TS";
 
-         test1.FirstName = "TS";
-         test1.LastName = "TS";
-         test1.DisplayName = "TS";
-         test1.CompanyName = "TS";
-         test1.Phone = "TS";
-         test1.Email = "TS";
-         test1.Website = "TS";
-         Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
-         test1.OptionalAttributes = testDictionary;
-         test1.EvpVettingScore = 1;
+            test1.FirstName = "TS";
+            test1.LastName = "TS";
+            test1.DisplayName = "TS";
+            test1.CompanyName = "TS";
+            test1.Phone = "TS";
+            test1.Email = "TS";
+            test1.Website = "TS";
+            Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
+            test1.OptionalAttributes = testDictionary;
+            test1.EvpVettingScore = 1;
 
-        int hashCode1 = test1.GetHashCode();
-        Assert.True(hashCode1.GetType() == typeof(int));
+            int hashCode1 = test1.GetHashCode();
+            Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-        
+
         [Fact]
-        public void ToStringTypeTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test1.AccountId = "TS";
+        public void ToStringTypeTest()
+        {
+            SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test1.AccountId = "TS";
 
-         test1.FirstName = "TS";
-         test1.LastName = "TS";
-         test1.DisplayName = "TS";
-         test1.CompanyName = "TS";
-         test1.Phone = "TS";
-         test1.Email = "TS";
-         test1.Website = "TS";
-         Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
-         test1.OptionalAttributes = testDictionary;
-         test1.EvpVettingScore = 1;
+            test1.FirstName = "TS";
+            test1.LastName = "TS";
+            test1.DisplayName = "TS";
+            test1.CompanyName = "TS";
+            test1.Phone = "TS";
+            test1.Email = "TS";
+            test1.Website = "TS";
+            Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
+            test1.OptionalAttributes = testDictionary;
+            test1.EvpVettingScore = 1;
 
-        string toString1 = test1.ToString();
-        Assert.True(toString1.GetType() == typeof(string));
+            string toString1 = test1.ToString();
+            Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-        
+
         [Fact]
-        public void ToStringEqualsTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test1.AccountId = "TS";
+        public void ToStringEqualsTest()
+        {
+            SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test1.AccountId = "TS";
 
-         test1.FirstName = "TS";
-         test1.LastName = "TS";
-         test1.DisplayName = "TS";
-         test1.CompanyName = "TS";
-         test1.Phone = "TS";
-         test1.Email = "TS";
-         test1.Website = "TS";
-         Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
-         test1.OptionalAttributes = testDictionary;
-         test1.EvpVettingScore = 1;
+            test1.FirstName = "TS";
+            test1.LastName = "TS";
+            test1.DisplayName = "TS";
+            test1.CompanyName = "TS";
+            test1.Phone = "TS";
+            test1.Email = "TS";
+            test1.Website = "TS";
+            Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
+            test1.OptionalAttributes = testDictionary;
+            test1.EvpVettingScore = 1;
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test2.AccountId = "TS";
+            SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test2.AccountId = "TS";
 
-         test2.FirstName = "TS";
-         test2.LastName = "TS";
-         test2.DisplayName = "TS";
-         test2.CompanyName = "TS";
-         test2.Phone = "TS";
-         test2.Email = "TS";
-         test2.Website = "TS";
-         Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
-         test2.OptionalAttributes = testDictionary2;
-         test2.EvpVettingScore = 1;
+            test2.FirstName = "TS";
+            test2.LastName = "TS";
+            test2.DisplayName = "TS";
+            test2.CompanyName = "TS";
+            test2.Phone = "TS";
+            test2.Email = "TS";
+            test2.Website = "TS";
+            Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
+            test2.OptionalAttributes = testDictionary2;
+            test2.EvpVettingScore = 1;
 
-        string toString1 = test1.ToString();
-        string toString2 = test2.ToString();
-        Assert.Equal(toString1, toString2);
+            string toString1 = test1.ToString();
+            string toString2 = test2.ToString();
+            Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-        
+
         [Fact]
-        public void equalsTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test1.AccountId = "TS";
+        public void equalsTest()
+        {
+            SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test1.AccountId = "TS";
 
-         test1.FirstName = "TS";
-         test1.LastName = "TS";
-         test1.DisplayName = "TS";
-         test1.CompanyName = "TS";
-         test1.Phone = "TS";
-         test1.Email = "TS";
-         test1.Website = "TS";
-         Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
-         test1.OptionalAttributes = testDictionary;
-         test1.EvpVettingScore = 1;
+            test1.FirstName = "TS";
+            test1.LastName = "TS";
+            test1.DisplayName = "TS";
+            test1.CompanyName = "TS";
+            test1.Phone = "TS";
+            test1.Email = "TS";
+            test1.Website = "TS";
+            Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
+            test1.OptionalAttributes = testDictionary;
+            test1.EvpVettingScore = 1;
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test2.AccountId = "TS";
+            SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test2.AccountId = "TS";
 
-         test2.FirstName = "TS";
-         test2.LastName = "TS";
-         test2.DisplayName = "TS";
-         test2.CompanyName = "TS";
-         test2.Phone = "TS";
-         test2.Email = "TS";
-         test2.Website = "TS";
-         Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
-         test2.OptionalAttributes = testDictionary2;
-         test2.EvpVettingScore = 1;
+            test2.FirstName = "TS";
+            test2.LastName = "TS";
+            test2.DisplayName = "TS";
+            test2.CompanyName = "TS";
+            test2.Phone = "TS";
+            test2.Email = "TS";
+            test2.Website = "TS";
+            Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
+            test2.OptionalAttributes = testDictionary2;
+            test2.EvpVettingScore = 1;
 
-        Assert.True(test1.Equals(test2));
+            Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-        
+
         [Fact]
-        public void ToJsonTest() {
-        SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test1.AccountId = "TS";
+        public void ToJsonTest()
+        {
+            SMSTenDLCPartnerCampaignBrand test1 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test1.AccountId = "TS";
 
-         test1.FirstName = "TS";
-         test1.LastName = "TS";
-         test1.DisplayName = "TS";
-         test1.CompanyName = "TS";
-         test1.Phone = "TS";
-         test1.Email = "TS";
-         test1.Website = "TS";
-         Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
-         test1.OptionalAttributes = testDictionary;
-         test1.EvpVettingScore = 1;
-        JsonSerializer jsonSerializer = JsonSerializer.Create();
-        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-        StringBuilder strb = new StringBuilder();
-        jsonSerializer.Serialize(new StringWriter(strb), test1);
+            test1.FirstName = "TS";
+            test1.LastName = "TS";
+            test1.DisplayName = "TS";
+            test1.CompanyName = "TS";
+            test1.Phone = "TS";
+            test1.Email = "TS";
+            test1.Website = "TS";
+            Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
+            test1.OptionalAttributes = testDictionary;
+            test1.EvpVettingScore = 1;
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
-         test2.AccountId = "TS";
+            SMSTenDLCPartnerCampaignBrand test2 = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            test2.AccountId = "TS";
 
-         test2.FirstName = "TS";
-         test2.LastName = "TS";
-         test2.DisplayName = "TS";
-         test2.CompanyName = "TS";
-         test2.Phone = "TS";
-         test2.Email = "TS";
-         test2.Website = "TS";
-         Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
-         test2.OptionalAttributes = testDictionary2;
-         test2.EvpVettingScore = 1;
+            test2.FirstName = "TS";
+            test2.LastName = "TS";
+            test2.DisplayName = "TS";
+            test2.CompanyName = "TS";
+            test2.Phone = "TS";
+            test2.Email = "TS";
+            test2.Website = "TS";
+            Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
+            test2.OptionalAttributes = testDictionary2;
+            test2.EvpVettingScore = 1;
 
-        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
+            Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }
