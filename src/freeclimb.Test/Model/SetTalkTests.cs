@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SetTalkTests()
         {
+            
             instance = new SetTalk(false, "TEST_STRING");
+            
         }
 
         /// <summary>

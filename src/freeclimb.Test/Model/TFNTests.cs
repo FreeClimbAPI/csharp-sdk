@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public TFNTests()
         {
+            
             instance = new TFN("TEST_STRING");
+            
         }
 
         /// <summary>

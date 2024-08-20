@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public TerminateConferenceTests()
         {
+            
             instance = new TerminateConference("TEST_STRING");
+            
         }
 
         /// <summary>

@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public QueueListAllOfTests()
         {
+            
             instance = new QueueListAllOf(new List<QueueResult>());
+            
         }
 
         /// <summary>

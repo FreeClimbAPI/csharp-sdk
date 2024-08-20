@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public PlayTests()
         {
+            
             instance = new Play("TEST_STRING", 1, false, "TEST_STRING");
+            
         }
 
         /// <summary>

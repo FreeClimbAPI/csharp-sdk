@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public UnparkTests()
         {
+            
             instance = new Unpark("TEST_STRING");
+            
         }
 
         /// <summary>

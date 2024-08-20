@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public PaginationModelTests()
         {
+            
             instance = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
+            
         }
 
         /// <summary>

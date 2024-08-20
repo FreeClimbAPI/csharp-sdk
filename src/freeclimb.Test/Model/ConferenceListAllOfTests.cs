@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ConferenceListAllOfTests()
         {
+            
             instance = new ConferenceListAllOf(new List<ConferenceResult>());
+            
         }
 
         /// <summary>

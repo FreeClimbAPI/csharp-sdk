@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public GetDigitsAllOfTests()
         {
+            
             instance = new GetDigitsAllOf("TEST_STRING", 1, "TEST_STRING", false, 1, 1, 1, new List<PerclCommand>(), false);
+            
         }
 
         /// <summary>

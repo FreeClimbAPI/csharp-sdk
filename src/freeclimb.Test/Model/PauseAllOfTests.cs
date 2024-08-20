@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public PauseAllOfTests()
         {
+            
             instance = new PauseAllOf(1);
+            
         }
 
         /// <summary>

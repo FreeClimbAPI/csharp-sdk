@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public LogResultTests()
         {
+            
             instance = new LogResult(1, LogLevel.INFO, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
+            
         }
 
         /// <summary>

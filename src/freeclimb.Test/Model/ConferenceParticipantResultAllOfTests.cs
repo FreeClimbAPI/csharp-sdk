@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ConferenceParticipantResultAllOfTests()
         {
+            
             instance = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            
         }
 
         /// <summary>

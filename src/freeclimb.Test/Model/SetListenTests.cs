@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SetListenTests()
         {
+            
             instance = new SetListen(false, "TEST_STRING");
+            
         }
 
         /// <summary>

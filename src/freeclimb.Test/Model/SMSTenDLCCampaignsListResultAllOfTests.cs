@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCCampaignsListResultAllOfTests()
         {
+            
             instance = new SMSTenDLCCampaignsListResultAllOf(new List<SMSTenDLCCampaign>());
+            
         }
 
         /// <summary>

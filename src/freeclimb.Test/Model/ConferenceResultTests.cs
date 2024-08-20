@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ConferenceResultTests()
         {
+            
             instance = new ConferenceResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", PlayBeep.ALWAYS, false, ConferenceStatus.EMPTY, "TEST_STRING", "TEST_STRING", "TEST_STRING", new object());
+            
         }
 
         /// <summary>

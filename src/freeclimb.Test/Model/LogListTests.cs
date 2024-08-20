@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public LogListTests()
         {
+            
             instance = new LogList(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<LogResult>());
+            
         }
 
         /// <summary>

@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public PauseTests()
         {
+            
             instance = new Pause(1, "TEST_STRING");
+            
         }
 
         /// <summary>

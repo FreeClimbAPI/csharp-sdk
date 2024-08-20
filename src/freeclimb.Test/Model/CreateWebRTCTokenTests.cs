@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public CreateWebRTCTokenTests()
         {
+            
             instance = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+            
         }
 
         /// <summary>

@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ConferenceListTests()
         {
+            
             instance = new ConferenceList(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<ConferenceResult>());
+            
         }
 
         /// <summary>

@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public EnqueueAllOfTests()
         {
+            
             instance = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public MessagesListAllOfTests()
         {
+            
             instance = new MessagesListAllOf(new List<MessageResult>());
+            
         }
 
         /// <summary>

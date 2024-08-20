@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SetListenAllOfTests()
         {
+            
             instance = new SetListenAllOf(false);
+            
         }
 
         /// <summary>

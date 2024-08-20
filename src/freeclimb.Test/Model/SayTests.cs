@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SayTests()
         {
+            
             instance = new Say("TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+            
         }
 
         /// <summary>

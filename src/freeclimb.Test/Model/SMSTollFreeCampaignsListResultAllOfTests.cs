@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTollFreeCampaignsListResultAllOfTests()
         {
+            
             instance = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
+            
         }
 
         /// <summary>

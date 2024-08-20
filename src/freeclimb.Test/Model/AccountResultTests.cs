@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public AccountResultTests()
         {
+            
             instance = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
+            
         }
 
         /// <summary>

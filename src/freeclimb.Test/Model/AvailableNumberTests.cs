@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public AvailableNumberTests()
         {
+            
             instance = new AvailableNumber(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", false, false, "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

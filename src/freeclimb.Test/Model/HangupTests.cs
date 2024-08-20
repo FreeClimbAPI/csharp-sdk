@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public HangupTests()
         {
+            
             instance = new Hangup("TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

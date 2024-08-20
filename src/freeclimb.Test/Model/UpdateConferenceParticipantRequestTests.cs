@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public UpdateConferenceParticipantRequestTests()
         {
+            
             instance = new UpdateConferenceParticipantRequest(false, false);
+            
         }
 
         /// <summary>

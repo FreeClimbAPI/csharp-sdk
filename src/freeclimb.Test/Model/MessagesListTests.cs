@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public MessagesListTests()
         {
+            
             instance = new MessagesList(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<MessageResult>());
+            
         }
 
         /// <summary>

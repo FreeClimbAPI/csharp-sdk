@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public MakeCallRequestTests()
         {
+            
             instance = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+            
         }
 
         /// <summary>

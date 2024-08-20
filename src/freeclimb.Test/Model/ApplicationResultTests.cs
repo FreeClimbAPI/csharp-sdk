@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ApplicationResultTests()
         {
+            
             instance = new ApplicationResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

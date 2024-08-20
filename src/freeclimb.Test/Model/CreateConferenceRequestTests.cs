@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public CreateConferenceRequestTests()
         {
+            
             instance = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

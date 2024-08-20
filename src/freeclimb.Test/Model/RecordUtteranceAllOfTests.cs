@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public RecordUtteranceAllOfTests()
         {
+            
             instance = new RecordUtteranceAllOf("TEST_STRING", 1, "TEST_STRING", 1, false, false, false);
+            
         }
 
         /// <summary>

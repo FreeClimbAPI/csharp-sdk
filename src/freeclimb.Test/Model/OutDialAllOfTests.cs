@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public OutDialAllOfTests()
         {
+            
             instance = new OutDialAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false);
+            
         }
 
         /// <summary>

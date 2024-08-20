@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public FilterLogsRequestTests()
         {
+            
             instance = new FilterLogsRequest("TEST_STRING");
+            
         }
 
         /// <summary>

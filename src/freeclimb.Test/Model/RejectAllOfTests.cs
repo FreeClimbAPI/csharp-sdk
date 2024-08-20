@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public RejectAllOfTests()
         {
+            
             instance = new RejectAllOf("TEST_STRING");
+            
         }
 
         /// <summary>

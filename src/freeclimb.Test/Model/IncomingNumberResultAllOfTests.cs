@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberResultAllOfTests()
         {
+            
             instance = new IncomingNumberResultAllOf(new Capabilities(false, false, false, false, false), "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, new TFN("TEST_STRING"));
+            
         }
 
         /// <summary>

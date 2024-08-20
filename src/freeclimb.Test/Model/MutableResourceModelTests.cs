@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public MutableResourceModelTests()
         {
+            
             instance = new MutableResourceModel("TEST_STRING", "TEST_STRING", "TEST_STRING", 1);
+            
         }
 
         /// <summary>

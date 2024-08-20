@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public MessageRequestAllOfTests()
         {
+            
             instance = new MessageRequestAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new List<string>());
+            
         }
 
         /// <summary>

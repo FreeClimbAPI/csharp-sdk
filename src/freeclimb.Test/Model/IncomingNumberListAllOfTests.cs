@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberListAllOfTests()
         {
+            
             instance = new IncomingNumberListAllOf(new List<IncomingNumberResult>());
+            
         }
 
         /// <summary>

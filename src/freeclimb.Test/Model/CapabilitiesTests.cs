@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public CapabilitiesTests()
         {
+            
             instance = new Capabilities(false, false, false, false, false);
+            
         }
 
         /// <summary>

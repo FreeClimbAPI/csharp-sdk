@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTollFreeCampaignTests()
         {
+            
             instance = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+            
         }
 
         /// <summary>
@@ -91,6 +93,21 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RegistrationStatusTest()
         {
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED);
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.INITIATED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.INITIATED);
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.PENDING;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.PENDING);
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.DECLINED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.DECLINED);
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.REGISTERED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.REGISTERED);
             
         }
         /// <summary>

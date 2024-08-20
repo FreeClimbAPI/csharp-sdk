@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SetTalkAllOfTests()
         {
+            
             instance = new SetTalkAllOf(false);
+            
         }
 
         /// <summary>

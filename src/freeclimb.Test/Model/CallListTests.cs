@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public CallListTests()
         {
+            
             instance = new CallList(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<CallResult>());
+            
         }
 
         /// <summary>

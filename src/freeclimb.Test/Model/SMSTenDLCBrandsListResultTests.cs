@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCBrandsListResultTests()
         {
+            
             instance = new SMSTenDLCBrandsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCBrand>());
+            
         }
 
         /// <summary>

@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public EnqueueTests()
         {
+            
             instance = new Enqueue("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

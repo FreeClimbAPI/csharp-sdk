@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public PlayAllOfTests()
         {
+            
             instance = new PlayAllOf("TEST_STRING", 1, false);
+            
         }
 
         /// <summary>

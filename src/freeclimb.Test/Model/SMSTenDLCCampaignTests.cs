@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCCampaignTests()
         {
+            
             instance = new SMSTenDLCCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCCampaign.StatusEnum.ACTIVE,  DateTime.Parse("2022-07-05T15:17:05+00:00"), false,  DateTime.Parse("2022-07-05T15:17:05+00:00"), "TEST_STRING", "TEST_STRING", new List<string>(), "TEST_STRING", false, false, false, false, false, false, false, false, false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, DateTime.Parse("2000-01-01"));
+            
         }
 
         /// <summary>
@@ -101,6 +103,12 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
+            
+            instance.Status = SMSTenDLCCampaign.StatusEnum.ACTIVE;
+            Assert.Equal(instance.Status,SMSTenDLCCampaign.StatusEnum.ACTIVE);
+            
+            instance.Status = SMSTenDLCCampaign.StatusEnum.EXPIRED;
+            Assert.Equal(instance.Status,SMSTenDLCCampaign.StatusEnum.EXPIRED);
             
         }
         /// <summary>

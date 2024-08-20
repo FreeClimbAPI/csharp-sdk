@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberRequestTests()
         {
+            
             instance = new IncomingNumberRequest("TEST_STRING", "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

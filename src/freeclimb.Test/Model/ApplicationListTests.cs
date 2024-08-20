@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ApplicationListTests()
         {
+            
             instance = new ApplicationList(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<ApplicationResult>());
+            
         }
 
         /// <summary>

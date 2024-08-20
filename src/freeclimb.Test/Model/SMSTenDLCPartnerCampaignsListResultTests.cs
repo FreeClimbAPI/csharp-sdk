@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignsListResultTests()
         {
+            
             instance = new SMSTenDLCPartnerCampaignsListResult(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<SMSTenDLCPartnerCampaign>());
+            
         }
 
         /// <summary>

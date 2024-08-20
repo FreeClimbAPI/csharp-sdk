@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public QueueMemberTests()
         {
+            
             instance = new QueueMember("TEST_STRING", "TEST_STRING", 1, 1, "TEST_STRING");
+            
         }
 
         /// <summary>

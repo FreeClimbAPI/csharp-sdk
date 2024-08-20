@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public CallResultAllOfTests()
         {
+            
             instance = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+            
         }
 
         /// <summary>

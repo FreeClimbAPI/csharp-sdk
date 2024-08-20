@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ParkAllOfTests()
         {
+            
             instance = new ParkAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

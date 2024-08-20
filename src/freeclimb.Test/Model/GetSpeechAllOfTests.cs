@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public GetSpeechAllOfTests()
         {
+            
             instance = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+            
         }
 
         /// <summary>

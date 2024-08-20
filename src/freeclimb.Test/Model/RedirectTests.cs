@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public RedirectTests()
         {
+            
             instance = new Redirect("TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

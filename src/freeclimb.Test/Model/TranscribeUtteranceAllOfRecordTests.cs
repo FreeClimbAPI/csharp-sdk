@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public TranscribeUtteranceAllOfRecordTests()
         {
+            
             instance = new TranscribeUtteranceAllOfRecord(false, 1, 1);
+            
         }
 
         /// <summary>

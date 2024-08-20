@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SayAllOfTests()
         {
+            
             instance = new SayAllOf("TEST_STRING", "TEST_STRING", 1, false);
+            
         }
 
         /// <summary>

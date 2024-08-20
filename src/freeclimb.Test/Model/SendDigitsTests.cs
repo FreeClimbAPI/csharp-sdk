@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SendDigitsTests()
         {
+            
             instance = new SendDigits("TEST_STRING", 1, false, "TEST_STRING");
+            
         }
 
         /// <summary>

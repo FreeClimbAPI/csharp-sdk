@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public DequeueTests()
         {
+            
             instance = new Dequeue("TEST_STRING");
+            
         }
 
         /// <summary>

@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public CallListAllOfTests()
         {
+            
             instance = new CallListAllOf(new List<CallResult>());
+            
         }
 
         /// <summary>

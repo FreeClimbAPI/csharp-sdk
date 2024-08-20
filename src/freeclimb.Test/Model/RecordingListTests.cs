@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public RecordingListTests()
         {
+            
             instance = new RecordingList(1, 1, 1, 1, 1, 1, "TEST_STRING", new List<RecordingResult>());
+            
         }
 
         /// <summary>

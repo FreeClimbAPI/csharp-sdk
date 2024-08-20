@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public UpdateCallRequestTests()
         {
+            
             instance = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
+            
         }
 
         /// <summary>

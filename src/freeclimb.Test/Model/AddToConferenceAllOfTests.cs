@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public AddToConferenceAllOfTests()
         {
+            
             instance = new AddToConferenceAllOf(false, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", false, "TEST_STRING", false, false);
+            
         }
 
         /// <summary>
