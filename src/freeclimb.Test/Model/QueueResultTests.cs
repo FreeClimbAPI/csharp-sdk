@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public QueueResultTests()
         {
-            instance = new QueueResult();
+            
+            instance = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
+            
         }
 
         /// <summary>
@@ -173,7 +176,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        QueueResult test1 = new QueueResult();
+        QueueResult test1 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -187,7 +190,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        QueueResult test2 = new QueueResult();
+        QueueResult test2 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -210,7 +213,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        QueueResult test1 = new QueueResult();
+        QueueResult test1 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -224,7 +227,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        QueueResult test2 = new QueueResult();
+        QueueResult test2 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
@@ -247,7 +250,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        QueueResult test1 = new QueueResult();
+        QueueResult test1 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -272,7 +275,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        QueueResult test1 = new QueueResult();
+        QueueResult test1 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -297,7 +300,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        QueueResult test1 = new QueueResult();
+        QueueResult test1 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -311,7 +314,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        QueueResult test2 = new QueueResult();
+        QueueResult test2 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -337,7 +340,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        QueueResult test1 = new QueueResult();
+        QueueResult test1 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -351,7 +354,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        QueueResult test2 = new QueueResult();
+        QueueResult test2 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -374,7 +377,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        QueueResult test1 = new QueueResult();
+        QueueResult test1 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -387,9 +390,12 @@ namespace freeclimb.Test.Model
          test1.AverageQueueRemovalTime = 1;
          object testObject = new object();
          test1.SubresourceUris = testObject;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        QueueResult test2 = new QueueResult();
+        QueueResult test2 = new QueueResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, 1, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -403,7 +409,7 @@ namespace freeclimb.Test.Model
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

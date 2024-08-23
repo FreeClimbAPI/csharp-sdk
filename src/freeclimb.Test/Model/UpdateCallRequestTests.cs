@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public UpdateCallRequestTests()
         {
-            instance = new UpdateCallRequest();
+            
+            instance = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
+            
         }
 
         /// <summary>
@@ -75,10 +77,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        UpdateCallRequest test1 = new UpdateCallRequest();
+        UpdateCallRequest test1 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test1.Status = UpdateCallRequestStatus.CANCELED;
 
-        UpdateCallRequest test2 = new UpdateCallRequest();
+        UpdateCallRequest test2 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test2.Status = UpdateCallRequestStatus.CANCELED;
 
         Assert.Equal(test1,test2);
@@ -90,10 +92,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        UpdateCallRequest test1 = new UpdateCallRequest();
+        UpdateCallRequest test1 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test1.Status = UpdateCallRequestStatus.CANCELED;
 
-        UpdateCallRequest test2 = new UpdateCallRequest();
+        UpdateCallRequest test2 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test2.Status = UpdateCallRequestStatus.COMPLETED;
 
         Assert.NotEqual(test1,test2);
@@ -105,7 +107,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        UpdateCallRequest test1 = new UpdateCallRequest();
+        UpdateCallRequest test1 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test1.Status = UpdateCallRequestStatus.CANCELED;
 
         int hashCode1 = test1.GetHashCode();
@@ -119,7 +121,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        UpdateCallRequest test1 = new UpdateCallRequest();
+        UpdateCallRequest test1 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test1.Status = UpdateCallRequestStatus.CANCELED;
 
         string toString1 = test1.ToString();
@@ -133,10 +135,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        UpdateCallRequest test1 = new UpdateCallRequest();
+        UpdateCallRequest test1 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test1.Status = UpdateCallRequestStatus.CANCELED;
 
-        UpdateCallRequest test2 = new UpdateCallRequest();
+        UpdateCallRequest test2 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test2.Status = UpdateCallRequestStatus.CANCELED;
 
         string toString1 = test1.ToString();
@@ -151,10 +153,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        UpdateCallRequest test1 = new UpdateCallRequest();
+        UpdateCallRequest test1 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test1.Status = UpdateCallRequestStatus.CANCELED;
 
-        UpdateCallRequest test2 = new UpdateCallRequest();
+        UpdateCallRequest test2 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test2.Status = UpdateCallRequestStatus.CANCELED;
 
         Assert.True(test1.Equals(test2));
@@ -166,14 +168,17 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        UpdateCallRequest test1 = new UpdateCallRequest();
+        UpdateCallRequest test1 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test1.Status = UpdateCallRequestStatus.CANCELED;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        UpdateCallRequest test2 = new UpdateCallRequest();
+        UpdateCallRequest test2 = new UpdateCallRequest(UpdateCallRequestStatus.CANCELED);
          test2.Status = UpdateCallRequestStatus.CANCELED;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

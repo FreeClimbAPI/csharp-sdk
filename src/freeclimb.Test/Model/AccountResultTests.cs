@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public AccountResultTests()
         {
-            instance = new AccountResult();
+            
+            instance = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
+            
         }
 
         /// <summary>
@@ -180,7 +182,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        AccountResult test1 = new AccountResult();
+        AccountResult test1 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -194,7 +196,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        AccountResult test2 = new AccountResult();
+        AccountResult test2 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -217,7 +219,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        AccountResult test1 = new AccountResult();
+        AccountResult test1 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -231,7 +233,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        AccountResult test2 = new AccountResult();
+        AccountResult test2 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
@@ -254,7 +256,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        AccountResult test1 = new AccountResult();
+        AccountResult test1 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -279,7 +281,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        AccountResult test1 = new AccountResult();
+        AccountResult test1 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -304,7 +306,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        AccountResult test1 = new AccountResult();
+        AccountResult test1 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -318,7 +320,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        AccountResult test2 = new AccountResult();
+        AccountResult test2 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -344,7 +346,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        AccountResult test1 = new AccountResult();
+        AccountResult test1 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -358,7 +360,7 @@ namespace freeclimb.Test.Model
          object testObject = new object();
          test1.SubresourceUris = testObject;
 
-        AccountResult test2 = new AccountResult();
+        AccountResult test2 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -381,7 +383,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        AccountResult test1 = new AccountResult();
+        AccountResult test1 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -394,9 +396,12 @@ namespace freeclimb.Test.Model
          test1.Status = AccountStatus.CLOSED;
          object testObject = new object();
          test1.SubresourceUris = testObject;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        AccountResult test2 = new AccountResult();
+        AccountResult test2 = new AccountResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", AccountType.TRIAL, AccountStatus.CLOSED, new object());
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -410,7 +415,7 @@ namespace freeclimb.Test.Model
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

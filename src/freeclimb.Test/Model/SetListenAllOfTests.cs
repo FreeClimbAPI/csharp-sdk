@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SetListenAllOfTests()
         {
-            instance = new SetListenAllOf();
+            
+            instance = new SetListenAllOf(false);
+            
         }
 
         /// <summary>
@@ -73,10 +75,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SetListenAllOf test1 = new SetListenAllOf();
+        SetListenAllOf test1 = new SetListenAllOf(false);
          test1.Listen = true;
 
-        SetListenAllOf test2 = new SetListenAllOf();
+        SetListenAllOf test2 = new SetListenAllOf(false);
          test2.Listen = true;
 
         Assert.Equal(test1,test2);
@@ -88,10 +90,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SetListenAllOf test1 = new SetListenAllOf();
+        SetListenAllOf test1 = new SetListenAllOf(false);
          test1.Listen = true;
 
-        SetListenAllOf test2 = new SetListenAllOf();
+        SetListenAllOf test2 = new SetListenAllOf(false);
          test2.Listen = false;
 
         Assert.NotEqual(test1,test2);
@@ -103,7 +105,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SetListenAllOf test1 = new SetListenAllOf();
+        SetListenAllOf test1 = new SetListenAllOf(false);
          test1.Listen = true;
 
         int hashCode1 = test1.GetHashCode();
@@ -117,7 +119,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SetListenAllOf test1 = new SetListenAllOf();
+        SetListenAllOf test1 = new SetListenAllOf(false);
          test1.Listen = true;
 
         string toString1 = test1.ToString();
@@ -131,10 +133,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SetListenAllOf test1 = new SetListenAllOf();
+        SetListenAllOf test1 = new SetListenAllOf(false);
          test1.Listen = true;
 
-        SetListenAllOf test2 = new SetListenAllOf();
+        SetListenAllOf test2 = new SetListenAllOf(false);
          test2.Listen = true;
 
         string toString1 = test1.ToString();
@@ -149,10 +151,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SetListenAllOf test1 = new SetListenAllOf();
+        SetListenAllOf test1 = new SetListenAllOf(false);
          test1.Listen = true;
 
-        SetListenAllOf test2 = new SetListenAllOf();
+        SetListenAllOf test2 = new SetListenAllOf(false);
          test2.Listen = true;
 
         Assert.True(test1.Equals(test2));
@@ -164,14 +166,17 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SetListenAllOf test1 = new SetListenAllOf();
+        SetListenAllOf test1 = new SetListenAllOf(false);
          test1.Listen = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        SetListenAllOf test2 = new SetListenAllOf();
+        SetListenAllOf test2 = new SetListenAllOf(false);
          test2.Listen = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

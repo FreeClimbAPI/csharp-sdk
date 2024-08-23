@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public MessageDirectionTests()
         {
             instance = new MessageDirection();
+            
         }
 
         /// <summary>

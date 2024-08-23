@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public AccountTypeTests()
         {
             instance = new AccountType();
+            
         }
 
         /// <summary>

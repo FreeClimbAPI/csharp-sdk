@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public PauseAllOfTests()
         {
-            instance = new PauseAllOf();
+            
+            instance = new PauseAllOf(1);
+            
         }
 
         /// <summary>
@@ -72,10 +75,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        PauseAllOf test1 = new PauseAllOf();
+        PauseAllOf test1 = new PauseAllOf(1);
          test1.Length = 1;
 
-        PauseAllOf test2 = new PauseAllOf();
+        PauseAllOf test2 = new PauseAllOf(1);
          test2.Length = 1;
 
         Assert.Equal(test1,test2);
@@ -87,10 +90,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        PauseAllOf test1 = new PauseAllOf();
+        PauseAllOf test1 = new PauseAllOf(1);
          test1.Length = 1;
 
-        PauseAllOf test2 = new PauseAllOf();
+        PauseAllOf test2 = new PauseAllOf(1);
          test2.Length = 2;
 
         Assert.NotEqual(test1,test2);
@@ -102,7 +105,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        PauseAllOf test1 = new PauseAllOf();
+        PauseAllOf test1 = new PauseAllOf(1);
          test1.Length = 1;
 
         int hashCode1 = test1.GetHashCode();
@@ -116,7 +119,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        PauseAllOf test1 = new PauseAllOf();
+        PauseAllOf test1 = new PauseAllOf(1);
          test1.Length = 1;
 
         string toString1 = test1.ToString();
@@ -130,10 +133,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        PauseAllOf test1 = new PauseAllOf();
+        PauseAllOf test1 = new PauseAllOf(1);
          test1.Length = 1;
 
-        PauseAllOf test2 = new PauseAllOf();
+        PauseAllOf test2 = new PauseAllOf(1);
          test2.Length = 1;
 
         string toString1 = test1.ToString();
@@ -148,10 +151,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        PauseAllOf test1 = new PauseAllOf();
+        PauseAllOf test1 = new PauseAllOf(1);
          test1.Length = 1;
 
-        PauseAllOf test2 = new PauseAllOf();
+        PauseAllOf test2 = new PauseAllOf(1);
          test2.Length = 1;
 
         Assert.True(test1.Equals(test2));
@@ -163,14 +166,17 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        PauseAllOf test1 = new PauseAllOf();
+        PauseAllOf test1 = new PauseAllOf(1);
          test1.Length = 1;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        PauseAllOf test2 = new PauseAllOf();
+        PauseAllOf test2 = new PauseAllOf(1);
          test2.Length = 1;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ApplicationResultAllOfTests()
         {
-            instance = new ApplicationResultAllOf();
+            
+            instance = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -152,7 +155,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ApplicationResultAllOf test1 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test1 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.AccountId = "TS";
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
@@ -163,7 +166,7 @@ namespace freeclimb.Test.Model
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
 
-        ApplicationResultAllOf test2 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test2 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.AccountId = "TS";
          test2.ApplicationId = "TS";
          test2.Alias = "TS";
@@ -183,7 +186,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ApplicationResultAllOf test1 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test1 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.AccountId = "TS";
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
@@ -194,7 +197,7 @@ namespace freeclimb.Test.Model
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
 
-        ApplicationResultAllOf test2 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test2 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.AccountId = "ts";
          test2.ApplicationId = "ts";
          test2.Alias = "ts";
@@ -214,7 +217,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ApplicationResultAllOf test1 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test1 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.AccountId = "TS";
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
@@ -236,7 +239,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ApplicationResultAllOf test1 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test1 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.AccountId = "TS";
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
@@ -258,7 +261,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ApplicationResultAllOf test1 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test1 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.AccountId = "TS";
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
@@ -269,7 +272,7 @@ namespace freeclimb.Test.Model
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
 
-        ApplicationResultAllOf test2 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test2 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.AccountId = "TS";
          test2.ApplicationId = "TS";
          test2.Alias = "TS";
@@ -292,7 +295,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ApplicationResultAllOf test1 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test1 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.AccountId = "TS";
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
@@ -303,7 +306,7 @@ namespace freeclimb.Test.Model
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
 
-        ApplicationResultAllOf test2 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test2 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.AccountId = "TS";
          test2.ApplicationId = "TS";
          test2.Alias = "TS";
@@ -323,7 +326,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ApplicationResultAllOf test1 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test1 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test1.AccountId = "TS";
          test1.ApplicationId = "TS";
          test1.Alias = "TS";
@@ -333,9 +336,12 @@ namespace freeclimb.Test.Model
          test1.StatusCallbackUrl = "TS";
          test1.SmsUrl = "TS";
          test1.SmsFallbackUrl = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        ApplicationResultAllOf test2 = new ApplicationResultAllOf();
+        ApplicationResultAllOf test2 = new ApplicationResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
          test2.AccountId = "TS";
          test2.ApplicationId = "TS";
          test2.Alias = "TS";
@@ -346,7 +352,7 @@ namespace freeclimb.Test.Model
          test2.SmsUrl = "TS";
          test2.SmsFallbackUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

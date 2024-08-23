@@ -28,18 +28,18 @@ using freeclimb.Enums;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// TranscribeUtteranceRecord
+    /// TranscribeUtteranceAllOfRecord
     /// </summary>
-    [DataContract(Name = "TranscribeUtterance_record")]
-    public partial class TranscribeUtteranceRecord : IEquatable<TranscribeUtteranceRecord>, IValidatableObject
+    [DataContract(Name = "TranscribeUtterance_allOf_record")]
+    public partial class TranscribeUtteranceAllOfRecord : IEquatable<TranscribeUtteranceAllOfRecord>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TranscribeUtteranceRecord" /> class.
+        /// Initializes a new instance of the <see cref="TranscribeUtteranceAllOfRecord" /> class.
         /// </summary>
         /// <param name="saveRecording">saveRecording (default to false).</param>
         /// <param name="maxLengthSec">maxLengthSec (default to 60).</param>
         /// <param name="rcrdTerminationSilenceTimeMs">rcrdTerminationSilenceTimeMs.</param>
-        public TranscribeUtteranceRecord(bool saveRecording = false, int maxLengthSec = 60, int rcrdTerminationSilenceTimeMs = default(int))
+        public TranscribeUtteranceAllOfRecord(bool saveRecording = false, int maxLengthSec = 60, int rcrdTerminationSilenceTimeMs = default(int))
         {
             this.SaveRecording = saveRecording;
             this.MaxLengthSec = maxLengthSec;
@@ -71,7 +71,7 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TranscribeUtteranceRecord {\n");
+            sb.Append("class TranscribeUtteranceAllOfRecord {\n");
             sb.Append("  SaveRecording: ").Append(SaveRecording).Append("\n");
             sb.Append("  MaxLengthSec: ").Append(MaxLengthSec).Append("\n");
             sb.Append("  RcrdTerminationSilenceTimeMs: ").Append(RcrdTerminationSilenceTimeMs).Append("\n");
@@ -89,7 +89,7 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the TranscribeUtteranceRecord instance. 
+        /// Retrieve the KVP Dictionary for the TranscribeUtteranceAllOfRecord instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
@@ -108,15 +108,15 @@ namespace freeclimb.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TranscribeUtteranceRecord);
+            return this.Equals(input as TranscribeUtteranceAllOfRecord);
         }
 
         /// <summary>
-        /// Returns true if TranscribeUtteranceRecord instances are equal
+        /// Returns true if TranscribeUtteranceAllOfRecord instances are equal
         /// </summary>
-        /// <param name="input">Instance of TranscribeUtteranceRecord to be compared</param>
+        /// <param name="input">Instance of TranscribeUtteranceAllOfRecord to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TranscribeUtteranceRecord input)
+        public bool Equals(TranscribeUtteranceAllOfRecord input)
         {
             if (input == null)
             {

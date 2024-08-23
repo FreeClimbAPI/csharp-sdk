@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public ConferenceStatusTests()
         {
             instance = new ConferenceStatus();
+            
         }
 
         /// <summary>

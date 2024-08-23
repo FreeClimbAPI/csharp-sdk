@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCBrandsListResultAllOfTests()
         {
-            instance = new SMSTenDLCBrandsListResultAllOf();
+            
+            instance = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
+            
         }
 
         /// <summary>
@@ -73,11 +76,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
 
-        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList2 = new List<SMSTenDLCBrand>();
          test2.Brands = testList2;
 
@@ -90,11 +93,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
 
-        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList2 = null;
          test2.Brands = testList2;
 
@@ -107,7 +110,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
 
@@ -122,7 +125,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
 
@@ -137,11 +140,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
 
-        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList2 = new List<SMSTenDLCBrand>();
          test2.Brands = testList2;
 
@@ -157,11 +160,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
 
-        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList2 = new List<SMSTenDLCBrand>();
          test2.Brands = testList2;
 
@@ -174,16 +177,19 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test1 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList = new List<SMSTenDLCBrand>();
          test1.Brands = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf();
+        SMSTenDLCBrandsListResultAllOf test2 = new SMSTenDLCBrandsListResultAllOf(new List<SMSTenDLCBrand>());
          List<SMSTenDLCBrand> testList2 = new List<SMSTenDLCBrand>();
          test2.Brands = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

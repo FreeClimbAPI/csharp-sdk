@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public RecordingResultAllOfTests()
         {
-            instance = new RecordingResultAllOf();
+            
+            instance = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -112,14 +115,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        RecordingResultAllOf test1 = new RecordingResultAllOf();
+        RecordingResultAllOf test1 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test1.RecordingId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
          test1.DurationSec = 1;
          test1.ConferenceId = "TS";
 
-        RecordingResultAllOf test2 = new RecordingResultAllOf();
+        RecordingResultAllOf test2 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test2.RecordingId = "TS";
          test2.AccountId = "TS";
          test2.CallId = "TS";
@@ -135,14 +138,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        RecordingResultAllOf test1 = new RecordingResultAllOf();
+        RecordingResultAllOf test1 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test1.RecordingId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
          test1.DurationSec = 1;
          test1.ConferenceId = "TS";
 
-        RecordingResultAllOf test2 = new RecordingResultAllOf();
+        RecordingResultAllOf test2 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test2.RecordingId = "ts";
          test2.AccountId = "ts";
          test2.CallId = "ts";
@@ -158,7 +161,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        RecordingResultAllOf test1 = new RecordingResultAllOf();
+        RecordingResultAllOf test1 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test1.RecordingId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
@@ -176,7 +179,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        RecordingResultAllOf test1 = new RecordingResultAllOf();
+        RecordingResultAllOf test1 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test1.RecordingId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
@@ -194,14 +197,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        RecordingResultAllOf test1 = new RecordingResultAllOf();
+        RecordingResultAllOf test1 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test1.RecordingId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
          test1.DurationSec = 1;
          test1.ConferenceId = "TS";
 
-        RecordingResultAllOf test2 = new RecordingResultAllOf();
+        RecordingResultAllOf test2 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test2.RecordingId = "TS";
          test2.AccountId = "TS";
          test2.CallId = "TS";
@@ -220,14 +223,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        RecordingResultAllOf test1 = new RecordingResultAllOf();
+        RecordingResultAllOf test1 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test1.RecordingId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
          test1.DurationSec = 1;
          test1.ConferenceId = "TS";
 
-        RecordingResultAllOf test2 = new RecordingResultAllOf();
+        RecordingResultAllOf test2 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test2.RecordingId = "TS";
          test2.AccountId = "TS";
          test2.CallId = "TS";
@@ -243,22 +246,25 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        RecordingResultAllOf test1 = new RecordingResultAllOf();
+        RecordingResultAllOf test1 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test1.RecordingId = "TS";
          test1.AccountId = "TS";
          test1.CallId = "TS";
          test1.DurationSec = 1;
          test1.ConferenceId = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        RecordingResultAllOf test2 = new RecordingResultAllOf();
+        RecordingResultAllOf test2 = new RecordingResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING");
          test2.RecordingId = "TS";
          test2.AccountId = "TS";
          test2.CallId = "TS";
          test2.DurationSec = 1;
          test2.ConferenceId = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

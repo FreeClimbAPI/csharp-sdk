@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public LogListAllOfTests()
         {
-            instance = new LogListAllOf();
+            
+            instance = new LogListAllOf(new List<LogResult>());
+            
         }
 
         /// <summary>
@@ -73,11 +76,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        LogListAllOf test1 = new LogListAllOf();
+        LogListAllOf test1 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList = new List<LogResult>();
          test1.Logs = testList;
 
-        LogListAllOf test2 = new LogListAllOf();
+        LogListAllOf test2 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList2 = new List<LogResult>();
          test2.Logs = testList2;
 
@@ -90,11 +93,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        LogListAllOf test1 = new LogListAllOf();
+        LogListAllOf test1 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList = new List<LogResult>();
          test1.Logs = testList;
 
-        LogListAllOf test2 = new LogListAllOf();
+        LogListAllOf test2 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList2 = null;
          test2.Logs = testList2;
 
@@ -107,7 +110,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        LogListAllOf test1 = new LogListAllOf();
+        LogListAllOf test1 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList = new List<LogResult>();
          test1.Logs = testList;
 
@@ -122,7 +125,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        LogListAllOf test1 = new LogListAllOf();
+        LogListAllOf test1 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList = new List<LogResult>();
          test1.Logs = testList;
 
@@ -137,11 +140,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        LogListAllOf test1 = new LogListAllOf();
+        LogListAllOf test1 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList = new List<LogResult>();
          test1.Logs = testList;
 
-        LogListAllOf test2 = new LogListAllOf();
+        LogListAllOf test2 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList2 = new List<LogResult>();
          test2.Logs = testList2;
 
@@ -157,11 +160,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        LogListAllOf test1 = new LogListAllOf();
+        LogListAllOf test1 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList = new List<LogResult>();
          test1.Logs = testList;
 
-        LogListAllOf test2 = new LogListAllOf();
+        LogListAllOf test2 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList2 = new List<LogResult>();
          test2.Logs = testList2;
 
@@ -174,16 +177,19 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        LogListAllOf test1 = new LogListAllOf();
+        LogListAllOf test1 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList = new List<LogResult>();
          test1.Logs = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        LogListAllOf test2 = new LogListAllOf();
+        LogListAllOf test2 = new LogListAllOf(new List<LogResult>());
          List<LogResult> testList2 = new List<LogResult>();
          test2.Logs = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

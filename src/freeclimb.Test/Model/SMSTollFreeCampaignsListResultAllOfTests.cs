@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTollFreeCampaignsListResultAllOfTests()
         {
-            instance = new SMSTollFreeCampaignsListResultAllOf();
+            
+            instance = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
+            
         }
 
         /// <summary>
@@ -74,11 +76,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList = new List<SMSTollFreeCampaign>();
          test1.Brands = testList;
 
-        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList2 = new List<SMSTollFreeCampaign>();
          test2.Brands = testList2;
 
@@ -91,11 +93,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList = new List<SMSTollFreeCampaign>();
          test1.Brands = testList;
 
-        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList2 = null;
          test2.Brands = testList2;
 
@@ -108,7 +110,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList = new List<SMSTollFreeCampaign>();
          test1.Brands = testList;
 
@@ -123,7 +125,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList = new List<SMSTollFreeCampaign>();
          test1.Brands = testList;
 
@@ -138,11 +140,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList = new List<SMSTollFreeCampaign>();
          test1.Brands = testList;
 
-        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList2 = new List<SMSTollFreeCampaign>();
          test2.Brands = testList2;
 
@@ -158,11 +160,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList = new List<SMSTollFreeCampaign>();
          test1.Brands = testList;
 
-        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList2 = new List<SMSTollFreeCampaign>();
          test2.Brands = testList2;
 
@@ -175,16 +177,19 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test1 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList = new List<SMSTollFreeCampaign>();
          test1.Brands = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf();
+        SMSTollFreeCampaignsListResultAllOf test2 = new SMSTollFreeCampaignsListResultAllOf(new List<SMSTollFreeCampaign>());
          List<SMSTollFreeCampaign> testList2 = new List<SMSTollFreeCampaign>();
          test2.Brands = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

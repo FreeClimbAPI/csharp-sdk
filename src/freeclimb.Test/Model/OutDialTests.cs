@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public OutDialTests()
         {
-            instance = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+            
+            instance = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -62,13 +64,8 @@ namespace freeclimb.Test.Model
         public void ActionUrlTest()
         {
             
-            try {
-                Uri uri = new Uri("https://a.com");
-                instance.ActionUrl = uri.ToString();
-                Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-                Console.WriteLine("Something went wrong.");
-            }
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
         /// <summary>
         /// Test the property 'CallConnectUrl'
@@ -77,13 +74,8 @@ namespace freeclimb.Test.Model
         public void CallConnectUrlTest()
         {
             
-            try {
-                Uri uri = new Uri("https://a.com");
-                instance.CallConnectUrl = uri.ToString();
-                Assert.Equal(uri.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-                Console.WriteLine("Something went wrong.");
-            }
+            instance.CallConnectUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallConnectUrl);
         }
         /// <summary>
         /// Test the property 'CallingNumber'
@@ -175,21 +167,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        OutDial test1 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.CallConnectUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test1 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
+         test1.CallConnectUrl = "TS";
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
@@ -199,21 +179,9 @@ namespace freeclimb.Test.Model
          test1.Timeout = 1;
          test1.PrivacyMode = true;
 
-        OutDial test2 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.CallConnectUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test2 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test2.ActionUrl = "TS";
+         test2.CallConnectUrl = "TS";
          test2.CallingNumber = "TS";
          test2.Destination = "TS";
          test2.IfMachine = IfMachine.REDIRECT;
@@ -232,21 +200,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        OutDial test1 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.CallConnectUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test1 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
+         test1.CallConnectUrl = "TS";
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
@@ -256,21 +212,9 @@ namespace freeclimb.Test.Model
          test1.Timeout = 1;
          test1.PrivacyMode = true;
 
-        OutDial test2 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.CallConnectUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test2 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test2.ActionUrl = "ts";
+         test2.CallConnectUrl = "ts";
          test2.CallingNumber = "ts";
          test2.Destination = "ts";
          test2.IfMachine = IfMachine.HANGUP;
@@ -289,21 +233,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        OutDial test1 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.CallConnectUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test1 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
+         test1.CallConnectUrl = "TS";
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
@@ -324,21 +256,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        OutDial test1 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.CallConnectUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test1 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
+         test1.CallConnectUrl = "TS";
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
@@ -359,21 +279,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        OutDial test1 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.CallConnectUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test1 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
+         test1.CallConnectUrl = "TS";
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
@@ -383,21 +291,9 @@ namespace freeclimb.Test.Model
          test1.Timeout = 1;
          test1.PrivacyMode = true;
 
-        OutDial test2 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.CallConnectUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test2 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test2.ActionUrl = "TS";
+         test2.CallConnectUrl = "TS";
          test2.CallingNumber = "TS";
          test2.Destination = "TS";
          test2.IfMachine = IfMachine.REDIRECT;
@@ -419,21 +315,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        OutDial test1 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.CallConnectUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test1 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
+         test1.CallConnectUrl = "TS";
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
@@ -443,21 +327,9 @@ namespace freeclimb.Test.Model
          test1.Timeout = 1;
          test1.PrivacyMode = true;
 
-        OutDial test2 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.CallConnectUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test2 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test2.ActionUrl = "TS";
+         test2.CallConnectUrl = "TS";
          test2.CallingNumber = "TS";
          test2.Destination = "TS";
          test2.IfMachine = IfMachine.REDIRECT;
@@ -476,21 +348,9 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        OutDial test1 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.CallConnectUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test1 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test1.ActionUrl = "TS";
+         test1.CallConnectUrl = "TS";
          test1.CallingNumber = "TS";
          test1.Destination = "TS";
          test1.IfMachine = IfMachine.REDIRECT;
@@ -504,21 +364,9 @@ namespace freeclimb.Test.Model
         StringBuilder strb = new StringBuilder();
         jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        OutDial test2 = new OutDial("https://a.com", "https://a.com", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.CallConnectUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.CallConnectUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        OutDial test2 = new OutDial("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", IfMachine.REDIRECT, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, false, "TEST_STRING");
+         test2.ActionUrl = "TS";
+         test2.CallConnectUrl = "TS";
          test2.CallingNumber = "TS";
          test2.Destination = "TS";
          test2.IfMachine = IfMachine.REDIRECT;

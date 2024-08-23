@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public RecordUtteranceTermReasonTests()
         {
             instance = new RecordUtteranceTermReason();
+            
         }
 
         /// <summary>

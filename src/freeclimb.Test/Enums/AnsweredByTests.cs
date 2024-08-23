@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public AnsweredByTests()
         {
             instance = new AnsweredBy();
+            
         }
 
         /// <summary>

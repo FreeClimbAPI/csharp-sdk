@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ConferenceParticipantResultTests()
         {
-            instance = new ConferenceParticipantResult();
+            
+            instance = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            
         }
 
         /// <summary>
@@ -162,7 +165,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ConferenceParticipantResult test1 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test1 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -174,7 +177,7 @@ namespace freeclimb.Test.Model
          test1.Listen = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResult test2 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test2 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -195,7 +198,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ConferenceParticipantResult test1 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test1 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -207,7 +210,7 @@ namespace freeclimb.Test.Model
          test1.Listen = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResult test2 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test2 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.Uri = "ts";
          test2.DateCreated = "ts";
          test2.DateUpdated = "ts";
@@ -228,7 +231,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ConferenceParticipantResult test1 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test1 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -251,7 +254,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ConferenceParticipantResult test1 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test1 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -274,7 +277,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ConferenceParticipantResult test1 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test1 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -286,7 +289,7 @@ namespace freeclimb.Test.Model
          test1.Listen = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResult test2 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test2 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -310,7 +313,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ConferenceParticipantResult test1 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test1 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -322,7 +325,7 @@ namespace freeclimb.Test.Model
          test1.Listen = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResult test2 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test2 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -343,7 +346,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ConferenceParticipantResult test1 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test1 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test1.Uri = "TS";
          test1.DateCreated = "TS";
          test1.DateUpdated = "TS";
@@ -354,9 +357,12 @@ namespace freeclimb.Test.Model
          test1.Talk = true;
          test1.Listen = true;
          test1.StartConfOnEnter = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        ConferenceParticipantResult test2 = new ConferenceParticipantResult();
+        ConferenceParticipantResult test2 = new ConferenceParticipantResult("TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
          test2.Uri = "TS";
          test2.DateCreated = "TS";
          test2.DateUpdated = "TS";
@@ -368,7 +374,7 @@ namespace freeclimb.Test.Model
          test2.Listen = true;
          test2.StartConfOnEnter = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

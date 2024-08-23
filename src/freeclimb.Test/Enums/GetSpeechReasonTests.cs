@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public GetSpeechReasonTests()
         {
             instance = new GetSpeechReason();
+            
         }
 
         /// <summary>

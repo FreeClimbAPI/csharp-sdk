@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SmsTests()
         {
+            
             instance = new Sms("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

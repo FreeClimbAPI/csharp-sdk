@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public CreateWebRTCTokenTests()
         {
-            instance = new CreateWebRTCToken("to_example", "from_example", 1);
+            
+            instance = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+            
         }
 
         /// <summary>
@@ -63,7 +65,7 @@ namespace freeclimb.Test.Model
         {
             instance.To = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.To);
-
+            
         }
         /// <summary>
         /// Test the property 'From'
@@ -73,7 +75,7 @@ namespace freeclimb.Test.Model
         {
             instance.From = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.From);
-
+            
         }
         /// <summary>
         /// Test the property 'Uses'
@@ -81,148 +83,144 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UsesTest()
         {
-
+            
             instance.Uses = 1;
-            Assert.Equal(1, (int)instance.Uses);
+            Assert.Equal(1, (int) instance.Uses);
         }
-
-
+        
+        
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTrueTest()
-        {
-            CreateWebRTCToken test1 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test1.To = "TS";
-            test1.From = "TS";
-            test1.Uses = 1;
+        public void equalsTrueTest() {
+        CreateWebRTCToken test1 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test1.To = "TS";
+         test1.From = "TS";
+         test1.Uses = 1;
 
-            CreateWebRTCToken test2 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test2.To = "TS";
-            test2.From = "TS";
-            test2.Uses = 1;
+        CreateWebRTCToken test2 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test2.To = "TS";
+         test2.From = "TS";
+         test2.Uses = 1;
 
-            Assert.Equal(test1, test2);
+        Assert.Equal(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-
+        
         [Fact]
-        public void equalsFalseTest()
-        {
-            CreateWebRTCToken test1 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test1.To = "TS";
-            test1.From = "TS";
-            test1.Uses = 1;
+        public void equalsFalseTest() {
+        CreateWebRTCToken test1 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test1.To = "TS";
+         test1.From = "TS";
+         test1.Uses = 1;
 
-            CreateWebRTCToken test2 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test2.To = "ts";
-            test2.From = "ts";
-            test2.Uses = 2;
+        CreateWebRTCToken test2 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test2.To = "ts";
+         test2.From = "ts";
+         test2.Uses = 2;
 
-            Assert.NotEqual(test1, test2);
+        Assert.NotEqual(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-
+        
         [Fact]
-        public void hashCodeTypeTest()
-        {
-            CreateWebRTCToken test1 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test1.To = "TS";
-            test1.From = "TS";
-            test1.Uses = 1;
+        public void hashCodeTypeTest() {
+        CreateWebRTCToken test1 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test1.To = "TS";
+         test1.From = "TS";
+         test1.Uses = 1;
 
-            int hashCode1 = test1.GetHashCode();
-            Assert.True(hashCode1.GetType() == typeof(int));
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringTypeTest()
-        {
-            CreateWebRTCToken test1 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test1.To = "TS";
-            test1.From = "TS";
-            test1.Uses = 1;
+        public void ToStringTypeTest() {
+        CreateWebRTCToken test1 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test1.To = "TS";
+         test1.From = "TS";
+         test1.Uses = 1;
 
-            string toString1 = test1.ToString();
-            Assert.True(toString1.GetType() == typeof(string));
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringEqualsTest()
-        {
-            CreateWebRTCToken test1 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test1.To = "TS";
-            test1.From = "TS";
-            test1.Uses = 1;
+        public void ToStringEqualsTest() {
+        CreateWebRTCToken test1 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test1.To = "TS";
+         test1.From = "TS";
+         test1.Uses = 1;
 
-            CreateWebRTCToken test2 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test2.To = "TS";
-            test2.From = "TS";
-            test2.Uses = 1;
+        CreateWebRTCToken test2 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test2.To = "TS";
+         test2.From = "TS";
+         test2.Uses = 1;
 
-            string toString1 = test1.ToString();
-            string toString2 = test2.ToString();
-            Assert.Equal(toString1, toString2);
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTest()
-        {
-            CreateWebRTCToken test1 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test1.To = "TS";
-            test1.From = "TS";
-            test1.Uses = 1;
+        public void equalsTest() {
+        CreateWebRTCToken test1 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test1.To = "TS";
+         test1.From = "TS";
+         test1.Uses = 1;
 
-            CreateWebRTCToken test2 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test2.To = "TS";
-            test2.From = "TS";
-            test2.Uses = 1;
+        CreateWebRTCToken test2 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test2.To = "TS";
+         test2.From = "TS";
+         test2.Uses = 1;
 
-            Assert.True(test1.Equals(test2));
+        Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-
+        
         [Fact]
-        public void ToJsonTest()
-        {
-            CreateWebRTCToken test1 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test1.To = "TS";
-            test1.From = "TS";
-            test1.Uses = 1;
-            string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        public void ToJsonTest() {
+        CreateWebRTCToken test1 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test1.To = "TS";
+         test1.From = "TS";
+         test1.Uses = 1;
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-            CreateWebRTCToken test2 = new CreateWebRTCToken("to_example", "from_example", 1);
-            test2.To = "TS";
-            test2.From = "TS";
-            test2.Uses = 1;
+        CreateWebRTCToken test2 = new CreateWebRTCToken("TEST_STRING", "TEST_STRING", 1);
+         test2.To = "TS";
+         test2.From = "TS";
+         test2.Uses = 1;
 
-            Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

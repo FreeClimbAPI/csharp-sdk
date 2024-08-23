@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public ConferenceListAllOfTests()
         {
-            instance = new ConferenceListAllOf();
+            
+            instance = new ConferenceListAllOf(new List<ConferenceResult>());
+            
         }
 
         /// <summary>
@@ -73,11 +76,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ConferenceListAllOf test1 = new ConferenceListAllOf();
+        ConferenceListAllOf test1 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList = new List<ConferenceResult>();
          test1.Conferences = testList;
 
-        ConferenceListAllOf test2 = new ConferenceListAllOf();
+        ConferenceListAllOf test2 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList2 = new List<ConferenceResult>();
          test2.Conferences = testList2;
 
@@ -90,11 +93,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ConferenceListAllOf test1 = new ConferenceListAllOf();
+        ConferenceListAllOf test1 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList = new List<ConferenceResult>();
          test1.Conferences = testList;
 
-        ConferenceListAllOf test2 = new ConferenceListAllOf();
+        ConferenceListAllOf test2 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList2 = null;
          test2.Conferences = testList2;
 
@@ -107,7 +110,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ConferenceListAllOf test1 = new ConferenceListAllOf();
+        ConferenceListAllOf test1 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList = new List<ConferenceResult>();
          test1.Conferences = testList;
 
@@ -122,7 +125,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ConferenceListAllOf test1 = new ConferenceListAllOf();
+        ConferenceListAllOf test1 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList = new List<ConferenceResult>();
          test1.Conferences = testList;
 
@@ -137,11 +140,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ConferenceListAllOf test1 = new ConferenceListAllOf();
+        ConferenceListAllOf test1 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList = new List<ConferenceResult>();
          test1.Conferences = testList;
 
-        ConferenceListAllOf test2 = new ConferenceListAllOf();
+        ConferenceListAllOf test2 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList2 = new List<ConferenceResult>();
          test2.Conferences = testList2;
 
@@ -157,11 +160,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ConferenceListAllOf test1 = new ConferenceListAllOf();
+        ConferenceListAllOf test1 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList = new List<ConferenceResult>();
          test1.Conferences = testList;
 
-        ConferenceListAllOf test2 = new ConferenceListAllOf();
+        ConferenceListAllOf test2 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList2 = new List<ConferenceResult>();
          test2.Conferences = testList2;
 
@@ -174,16 +177,19 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ConferenceListAllOf test1 = new ConferenceListAllOf();
+        ConferenceListAllOf test1 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList = new List<ConferenceResult>();
          test1.Conferences = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        ConferenceListAllOf test2 = new ConferenceListAllOf();
+        ConferenceListAllOf test2 = new ConferenceListAllOf(new List<ConferenceResult>());
          List<ConferenceResult> testList2 = new List<ConferenceResult>();
          test2.Conferences = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

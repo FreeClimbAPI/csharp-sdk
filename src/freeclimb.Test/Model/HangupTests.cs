@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public HangupTests()
         {
-            instance = new Hangup();
+            
+            instance = new Hangup("TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -73,10 +75,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        Hangup test1 = new Hangup();
+        Hangup test1 = new Hangup("TEST_STRING", "TEST_STRING");
          test1.Reason = "TS";
 
-        Hangup test2 = new Hangup();
+        Hangup test2 = new Hangup("TEST_STRING", "TEST_STRING");
          test2.Reason = "TS";
 
         Assert.Equal(test1,test2);
@@ -88,10 +90,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        Hangup test1 = new Hangup();
+        Hangup test1 = new Hangup("TEST_STRING", "TEST_STRING");
          test1.Reason = "TS";
 
-        Hangup test2 = new Hangup();
+        Hangup test2 = new Hangup("TEST_STRING", "TEST_STRING");
          test2.Reason = "ts";
 
         Assert.NotEqual(test1,test2);
@@ -103,7 +105,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        Hangup test1 = new Hangup();
+        Hangup test1 = new Hangup("TEST_STRING", "TEST_STRING");
          test1.Reason = "TS";
 
         int hashCode1 = test1.GetHashCode();
@@ -117,7 +119,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        Hangup test1 = new Hangup();
+        Hangup test1 = new Hangup("TEST_STRING", "TEST_STRING");
          test1.Reason = "TS";
 
         string toString1 = test1.ToString();
@@ -131,10 +133,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        Hangup test1 = new Hangup();
+        Hangup test1 = new Hangup("TEST_STRING", "TEST_STRING");
          test1.Reason = "TS";
 
-        Hangup test2 = new Hangup();
+        Hangup test2 = new Hangup("TEST_STRING", "TEST_STRING");
          test2.Reason = "TS";
 
         string toString1 = test1.ToString();
@@ -149,10 +151,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        Hangup test1 = new Hangup();
+        Hangup test1 = new Hangup("TEST_STRING", "TEST_STRING");
          test1.Reason = "TS";
 
-        Hangup test2 = new Hangup();
+        Hangup test2 = new Hangup("TEST_STRING", "TEST_STRING");
          test2.Reason = "TS";
 
         Assert.True(test1.Equals(test2));
@@ -164,14 +166,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        Hangup test1 = new Hangup();
+        Hangup test1 = new Hangup("TEST_STRING", "TEST_STRING");
          test1.Reason = "TS";
         JsonSerializer jsonSerializer = JsonSerializer.Create();
         jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
         StringBuilder strb = new StringBuilder();
         jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        Hangup test2 = new Hangup();
+        Hangup test2 = new Hangup("TEST_STRING", "TEST_STRING");
          test2.Reason = "TS";
 
         Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));

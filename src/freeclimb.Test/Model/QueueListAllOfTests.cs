@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public QueueListAllOfTests()
         {
-            instance = new QueueListAllOf();
+            
+            instance = new QueueListAllOf(new List<QueueResult>());
+            
         }
 
         /// <summary>
@@ -73,11 +76,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        QueueListAllOf test1 = new QueueListAllOf();
+        QueueListAllOf test1 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList = new List<QueueResult>();
          test1.Queues = testList;
 
-        QueueListAllOf test2 = new QueueListAllOf();
+        QueueListAllOf test2 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList2 = new List<QueueResult>();
          test2.Queues = testList2;
 
@@ -90,11 +93,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        QueueListAllOf test1 = new QueueListAllOf();
+        QueueListAllOf test1 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList = new List<QueueResult>();
          test1.Queues = testList;
 
-        QueueListAllOf test2 = new QueueListAllOf();
+        QueueListAllOf test2 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList2 = null;
          test2.Queues = testList2;
 
@@ -107,7 +110,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        QueueListAllOf test1 = new QueueListAllOf();
+        QueueListAllOf test1 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList = new List<QueueResult>();
          test1.Queues = testList;
 
@@ -122,7 +125,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        QueueListAllOf test1 = new QueueListAllOf();
+        QueueListAllOf test1 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList = new List<QueueResult>();
          test1.Queues = testList;
 
@@ -137,11 +140,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        QueueListAllOf test1 = new QueueListAllOf();
+        QueueListAllOf test1 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList = new List<QueueResult>();
          test1.Queues = testList;
 
-        QueueListAllOf test2 = new QueueListAllOf();
+        QueueListAllOf test2 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList2 = new List<QueueResult>();
          test2.Queues = testList2;
 
@@ -157,11 +160,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        QueueListAllOf test1 = new QueueListAllOf();
+        QueueListAllOf test1 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList = new List<QueueResult>();
          test1.Queues = testList;
 
-        QueueListAllOf test2 = new QueueListAllOf();
+        QueueListAllOf test2 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList2 = new List<QueueResult>();
          test2.Queues = testList2;
 
@@ -174,16 +177,19 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        QueueListAllOf test1 = new QueueListAllOf();
+        QueueListAllOf test1 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList = new List<QueueResult>();
          test1.Queues = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        QueueListAllOf test2 = new QueueListAllOf();
+        QueueListAllOf test2 = new QueueListAllOf(new List<QueueResult>());
          List<QueueResult> testList2 = new List<QueueResult>();
          test2.Queues = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

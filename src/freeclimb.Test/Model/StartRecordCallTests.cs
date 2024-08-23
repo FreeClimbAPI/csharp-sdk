@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public StartRecordCallTests()
         {
-            instance = new StartRecordCall();
+            
+            instance = new StartRecordCall("TEST_STRING");
+            
         }
 
         /// <summary>

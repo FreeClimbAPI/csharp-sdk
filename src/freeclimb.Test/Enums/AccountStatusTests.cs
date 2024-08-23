@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public AccountStatusTests()
         {
             instance = new AccountStatus();
+            
         }
 
         /// <summary>

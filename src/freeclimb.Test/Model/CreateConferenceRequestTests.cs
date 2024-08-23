@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public CreateConferenceRequestTests()
         {
-            instance = new CreateConferenceRequest();
+            
+            instance = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -119,14 +121,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        CreateConferenceRequest test1 = new CreateConferenceRequest();
+        CreateConferenceRequest test1 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
 
-        CreateConferenceRequest test2 = new CreateConferenceRequest();
+        CreateConferenceRequest test2 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
@@ -142,14 +144,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        CreateConferenceRequest test1 = new CreateConferenceRequest();
+        CreateConferenceRequest test1 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
 
-        CreateConferenceRequest test2 = new CreateConferenceRequest();
+        CreateConferenceRequest test2 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test2.Alias = "ts";
          test2.PlayBeep = PlayBeep.NEVER;
          test2.Record = false;
@@ -165,7 +167,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        CreateConferenceRequest test1 = new CreateConferenceRequest();
+        CreateConferenceRequest test1 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
@@ -183,7 +185,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        CreateConferenceRequest test1 = new CreateConferenceRequest();
+        CreateConferenceRequest test1 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
@@ -201,14 +203,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        CreateConferenceRequest test1 = new CreateConferenceRequest();
+        CreateConferenceRequest test1 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
 
-        CreateConferenceRequest test2 = new CreateConferenceRequest();
+        CreateConferenceRequest test2 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
@@ -227,14 +229,14 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        CreateConferenceRequest test1 = new CreateConferenceRequest();
+        CreateConferenceRequest test1 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
 
-        CreateConferenceRequest test2 = new CreateConferenceRequest();
+        CreateConferenceRequest test2 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
@@ -250,22 +252,25 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        CreateConferenceRequest test1 = new CreateConferenceRequest();
+        CreateConferenceRequest test1 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test1.Alias = "TS";
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.WaitUrl = "TS";
          test1.StatusCallbackUrl = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        CreateConferenceRequest test2 = new CreateConferenceRequest();
+        CreateConferenceRequest test2 = new CreateConferenceRequest("TEST_STRING", PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
          test2.Alias = "TS";
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.WaitUrl = "TS";
          test2.StatusCallbackUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

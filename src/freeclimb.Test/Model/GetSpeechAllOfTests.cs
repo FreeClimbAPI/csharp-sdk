@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public GetSpeechAllOfTests()
         {
-            instance = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
+            
+            instance = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+            
         }
 
         /// <summary>
@@ -62,13 +64,8 @@ namespace freeclimb.Test.Model
         public void ActionUrlTest()
         {
             
-            try {
-                Uri uri = new Uri("https://a.com");
-                instance.ActionUrl = uri.ToString();
-                Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-                Console.WriteLine("Something went wrong.");
-            }
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
         /// <summary>
         /// Test the property 'GrammarType'
@@ -201,14 +198,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test1 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test1.ActionUrl = "TS";
          test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
@@ -221,14 +212,8 @@ namespace freeclimb.Test.Model
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
 
-        GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test2 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test2.ActionUrl = "TS";
          test2.GrammarType = GrammarType.URL;
          test2.GrammarFile = "TS";
          test2.GrammarRule = "TS";
@@ -250,14 +235,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test1 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test1.ActionUrl = "TS";
          test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
@@ -270,14 +249,8 @@ namespace freeclimb.Test.Model
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
 
-        GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-         try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test2 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test2.ActionUrl = "ts";
          test2.GrammarType = GrammarType.BUILT_IN;
          test2.GrammarFile = "ts";
          test2.GrammarRule = "ts";
@@ -299,14 +272,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test1 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test1.ActionUrl = "TS";
          test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
@@ -330,14 +297,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test1 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test1.ActionUrl = "TS";
          test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
@@ -361,14 +322,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test1 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test1.ActionUrl = "TS";
          test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
@@ -381,14 +336,8 @@ namespace freeclimb.Test.Model
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
 
-        GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test2 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test2.ActionUrl = "TS";
          test2.GrammarType = GrammarType.URL;
          test2.GrammarFile = "TS";
          test2.GrammarRule = "TS";
@@ -413,14 +362,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test1 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test1.ActionUrl = "TS";
          test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
@@ -433,14 +376,8 @@ namespace freeclimb.Test.Model
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
 
-        GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test2 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test2.ActionUrl = "TS";
          test2.GrammarType = GrammarType.URL;
          test2.GrammarFile = "TS";
          test2.GrammarRule = "TS";
@@ -462,14 +399,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        GetSpeechAllOf test1 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test1 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test1.ActionUrl = "TS";
          test1.GrammarType = GrammarType.URL;
          test1.GrammarFile = "TS";
          test1.GrammarRule = "TS";
@@ -481,16 +412,13 @@ namespace freeclimb.Test.Model
          test1.SpeechCompleteTimeoutMs = 1;
          test1.SpeechIncompleteTimeoutMs = 1;
          test1.PrivacyMode = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        GetSpeechAllOf test2 = new GetSpeechAllOf("https://a.com", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, 1, 1, 1, 1, false);
-        try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        GetSpeechAllOf test2 = new GetSpeechAllOf("TEST_STRING", GrammarType.URL, "TEST_STRING", "TEST_STRING", false, new List<PerclCommand>(), 1, 1, new decimal(1.0), new decimal(1.0), 1, 1, false);
+         test2.ActionUrl = "TS";
          test2.GrammarType = GrammarType.URL;
          test2.GrammarFile = "TS";
          test2.GrammarRule = "TS";
@@ -503,7 +431,7 @@ namespace freeclimb.Test.Model
          test2.SpeechIncompleteTimeoutMs = 1;
          test2.PrivacyMode = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

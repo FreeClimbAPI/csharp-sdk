@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public PaginationModelTests()
         {
-            instance = new PaginationModel();
+            
+            instance = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -132,7 +135,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        PaginationModel test1 = new PaginationModel();
+        PaginationModel test1 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -141,7 +144,7 @@ namespace freeclimb.Test.Model
          test1.PageSize = 1;
          test1.NextPageUri = "TS";
 
-        PaginationModel test2 = new PaginationModel();
+        PaginationModel test2 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test2.Total = 1;
          test2.Start = 1;
          test2.End = 1;
@@ -159,7 +162,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        PaginationModel test1 = new PaginationModel();
+        PaginationModel test1 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -168,7 +171,7 @@ namespace freeclimb.Test.Model
          test1.PageSize = 1;
          test1.NextPageUri = "TS";
 
-        PaginationModel test2 = new PaginationModel();
+        PaginationModel test2 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test2.Total = 2;
          test2.Start = 2;
          test2.End = 2;
@@ -186,7 +189,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        PaginationModel test1 = new PaginationModel();
+        PaginationModel test1 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -206,7 +209,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        PaginationModel test1 = new PaginationModel();
+        PaginationModel test1 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -226,7 +229,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        PaginationModel test1 = new PaginationModel();
+        PaginationModel test1 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -235,7 +238,7 @@ namespace freeclimb.Test.Model
          test1.PageSize = 1;
          test1.NextPageUri = "TS";
 
-        PaginationModel test2 = new PaginationModel();
+        PaginationModel test2 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test2.Total = 1;
          test2.Start = 1;
          test2.End = 1;
@@ -256,7 +259,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        PaginationModel test1 = new PaginationModel();
+        PaginationModel test1 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -265,7 +268,7 @@ namespace freeclimb.Test.Model
          test1.PageSize = 1;
          test1.NextPageUri = "TS";
 
-        PaginationModel test2 = new PaginationModel();
+        PaginationModel test2 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test2.Total = 1;
          test2.Start = 1;
          test2.End = 1;
@@ -283,7 +286,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        PaginationModel test1 = new PaginationModel();
+        PaginationModel test1 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test1.Total = 1;
          test1.Start = 1;
          test1.End = 1;
@@ -291,9 +294,12 @@ namespace freeclimb.Test.Model
          test1.NumPages = 1;
          test1.PageSize = 1;
          test1.NextPageUri = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        PaginationModel test2 = new PaginationModel();
+        PaginationModel test2 = new PaginationModel(1, 1, 1, 1, 1, 1, "TEST_STRING");
          test2.Total = 1;
          test2.Start = 1;
          test2.End = 1;
@@ -302,7 +308,7 @@ namespace freeclimb.Test.Model
          test2.PageSize = 1;
          test2.NextPageUri = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

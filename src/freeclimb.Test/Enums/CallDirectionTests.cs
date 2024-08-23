@@ -43,6 +43,7 @@ namespace freeclimb.Test.Enums
         public CallDirectionTests()
         {
             instance = new CallDirection();
+            
         }
 
         /// <summary>

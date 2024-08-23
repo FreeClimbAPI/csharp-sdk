@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public CreateConferenceAllOfTests()
         {
-            instance = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
+            
+            instance = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -62,13 +64,8 @@ namespace freeclimb.Test.Model
         public void ActionUrlTest()
         {
             
-            try {
-                Uri uri = new Uri("https://a.com");
-                instance.ActionUrl = uri.ToString();
-                Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-                Console.WriteLine("Something went wrong.");
-            }
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
         /// <summary>
         /// Test the property 'Alias'
@@ -134,28 +131,16 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.Alias = true;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
@@ -171,28 +156,16 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-         try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test2.ActionUrl = "ts";
          test2.Alias = false;
          test2.PlayBeep = PlayBeep.NEVER;
          test2.Record = false;
@@ -208,14 +181,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
@@ -233,14 +200,8 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
@@ -258,28 +219,16 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.Alias = true;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
@@ -298,28 +247,16 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.Alias = true;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
@@ -335,36 +272,27 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        CreateConferenceAllOf test1 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test1 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test1.ActionUrl = "TS";
          test1.Alias = true;
          test1.PlayBeep = PlayBeep.ALWAYS;
          test1.Record = true;
          test1.StatusCallbackUrl = "TS";
          test1.WaitUrl = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        CreateConferenceAllOf test2 = new CreateConferenceAllOf("https://a.com", false, PlayBeep.ALWAYS, false, "TEST_STRING", "https://a.com");
-        try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+        CreateConferenceAllOf test2 = new CreateConferenceAllOf("TEST_STRING", false, PlayBeep.ALWAYS, false, "TEST_STRING", "TEST_STRING");
+         test2.ActionUrl = "TS";
          test2.Alias = true;
          test2.PlayBeep = PlayBeep.ALWAYS;
          test2.Record = true;
          test2.StatusCallbackUrl = "TS";
          test2.WaitUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

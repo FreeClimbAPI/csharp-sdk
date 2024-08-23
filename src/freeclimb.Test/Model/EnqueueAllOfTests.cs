@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public EnqueueAllOfTests()
         {
+            
             instance = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -61,13 +64,8 @@ namespace freeclimb.Test.Model
         public void ActionUrlTest()
         {
             
-            try {
-                Uri uri = new Uri("https://a.com");
-                instance.ActionUrl = uri.ToString();
-                Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-                Console.WriteLine("Something went wrong.");
-            }
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
         /// <summary>
         /// Test the property 'NotificationUrl'
@@ -76,13 +74,8 @@ namespace freeclimb.Test.Model
         public void NotificationUrlTest()
         {
             
-            try {
-                Uri uri = new Uri("https://a.com");
-                instance.NotificationUrl = uri.ToString();
-                Assert.Equal(uri.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-                Console.WriteLine("Something went wrong.");
-            }
+            instance.NotificationUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.NotificationUrl);
         }
         /// <summary>
         /// Test the property 'QueueId'
@@ -113,38 +106,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void equalsTrueTest() {
         EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.NotificationUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test1.ActionUrl = "TS";
+         test1.NotificationUrl = "TS";
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
         EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.NotificationUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test2.ActionUrl = "TS";
+         test2.NotificationUrl = "TS";
          test2.QueueId = "TS";
          test2.WaitUrl = "TS";
 
@@ -158,38 +127,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void equalsFalseTest() {
         EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.NotificationUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test1.ActionUrl = "TS";
+         test1.NotificationUrl = "TS";
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
         EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri2 = new Uri("https://abc.com");
-            instance.NotificationUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test2.ActionUrl = "ts";
+         test2.NotificationUrl = "ts";
          test2.QueueId = "ts";
          test2.WaitUrl = "ts";
 
@@ -203,20 +148,8 @@ namespace freeclimb.Test.Model
         [Fact]
         public void hashCodeTypeTest() {
         EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.NotificationUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test1.ActionUrl = "TS";
+         test1.NotificationUrl = "TS";
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
@@ -232,20 +165,8 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToStringTypeTest() {
         EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.NotificationUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test1.ActionUrl = "TS";
+         test1.NotificationUrl = "TS";
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
@@ -261,38 +182,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToStringEqualsTest() {
         EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri = new Uri("https://a.com");
-            instance.NotificationUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test1.ActionUrl = "TS";
+         test1.NotificationUrl = "TS";
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
         EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-         try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.NotificationUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test2.ActionUrl = "TS";
+         test2.NotificationUrl = "TS";
          test2.QueueId = "TS";
          test2.WaitUrl = "TS";
 
@@ -309,38 +206,14 @@ namespace freeclimb.Test.Model
         [Fact]
         public void equalsTest() {
         EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.NotificationUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test1.ActionUrl = "TS";
+         test1.NotificationUrl = "TS";
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
 
         EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.NotificationUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test2.ActionUrl = "TS";
+         test2.NotificationUrl = "TS";
          test2.QueueId = "TS";
          test2.WaitUrl = "TS";
 
@@ -354,43 +227,22 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToJsonTest() {
         EnqueueAllOf test1 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.ActionUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri = new Uri("https://a.com");
-            instance.NotificationUrl = uri.ToString();
-            Assert.Equal(uri.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test1.ActionUrl = "TS";
+         test1.NotificationUrl = "TS";
          test1.QueueId = "TS";
          test1.WaitUrl = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         EnqueueAllOf test2 = new EnqueueAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING");
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.ActionUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.ActionUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
-        try {
-            Uri uri2 = new Uri("https://a.com");
-            instance.NotificationUrl = uri2.ToString();
-            Assert.Equal(uri2.ToString(), instance.NotificationUrl);
-            } catch (Exception ) {
-            Console.WriteLine("Something went wrong.");
-            }
+         test2.ActionUrl = "TS";
+         test2.NotificationUrl = "TS";
          test2.QueueId = "TS";
          test2.WaitUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public UpdateConferenceParticipantRequestTests()
         {
-            instance = new UpdateConferenceParticipantRequest();
+            
+            instance = new UpdateConferenceParticipantRequest(false, false);
+            
         }
 
         /// <summary>
@@ -82,11 +85,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
          test1.Talk = true;
          test1.Listen = true;
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
          test2.Talk = true;
          test2.Listen = true;
 
@@ -99,11 +102,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
          test1.Talk = true;
          test1.Listen = true;
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
          test2.Talk = false;
          test2.Listen = false;
 
@@ -116,7 +119,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
          test1.Talk = true;
          test1.Listen = true;
 
@@ -131,7 +134,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
          test1.Talk = true;
          test1.Listen = true;
 
@@ -146,11 +149,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
          test1.Talk = true;
          test1.Listen = true;
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
          test2.Talk = true;
          test2.Listen = true;
 
@@ -166,11 +169,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
          test1.Talk = true;
          test1.Listen = true;
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
          test2.Talk = true;
          test2.Listen = true;
 
@@ -183,16 +186,19 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
          test1.Talk = true;
          test1.Listen = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest();
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
          test2.Talk = true;
          test2.Listen = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

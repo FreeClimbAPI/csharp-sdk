@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SendDigitsAllOfTests()
         {
+            
             instance = new SendDigitsAllOf("TEST_STRING", 1, false);
+            
         }
 
         /// <summary>
@@ -207,14 +210,17 @@ namespace freeclimb.Test.Model
          test1.Digits = "TS";
          test1.PauseMs = 1;
          test1.PrivacyMode = true;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         SendDigitsAllOf test2 = new SendDigitsAllOf("TEST_STRING", 1, false);
          test2.Digits = "TS";
          test2.PauseMs = 1;
          test2.PrivacyMode = true;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

@@ -21,7 +21,6 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
@@ -31,42 +30,16 @@ namespace freeclimb.Model
     /// <summary>
     /// The &#x60;TranscribeUtterance&#x60; command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.  &#x60;TranscribeUtterance&#x60; is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the &#x60;PerCL&#x60; returned in response of the &#x60;actionUrl&#x60;. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
     /// </summary>
-    [DataContract(Name = "TranscribeUtterance")]
-    [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class TranscribeUtterance : PerclCommand, IEquatable<TranscribeUtterance>, IValidatableObject
+    [DataContract(Name = "TranscribeUtterance_allOf")]
+    public partial class TranscribeUtteranceAllOf : IEquatable<TranscribeUtteranceAllOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TranscribeUtterance" /> class.
+        /// Initializes a new instance of the <see cref="TranscribeUtteranceAllOf" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected TranscribeUtterance() { }
+        protected TranscribeUtteranceAllOf() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="TranscribeUtterance" /> class.
+        /// Initializes a new instance of the <see cref="TranscribeUtteranceAllOf" /> class.
         /// </summary>
         /// <param name="actionUrl">actionUrl (required).</param>
         /// <param name="playBeep">playBeep (default to false).</param>
@@ -74,12 +47,11 @@ namespace freeclimb.Model
         /// <param name="privacyForLogging">privacyForLogging (default to false).</param>
         /// <param name="privacyForRecording">privacyForRecording (default to false).</param>
         /// <param name="prompts">prompts.</param>
-        /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;TranscribeUtterance&quot;).</param>
-        public TranscribeUtterance(string actionUrl = default(string), bool playBeep = false, TranscribeUtteranceAllOfRecord record = default(TranscribeUtteranceAllOfRecord), bool privacyForLogging = false, bool privacyForRecording = false, List<Object> prompts = default(List<Object>), string command = "TranscribeUtterance") : base(command)
+        public TranscribeUtteranceAllOf(string actionUrl = default(string), bool playBeep = false, TranscribeUtteranceAllOfRecord record = default(TranscribeUtteranceAllOfRecord), bool privacyForLogging = false, bool privacyForRecording = false, List<Object> prompts = default(List<Object>))
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null) {
-                throw new ArgumentNullException("actionUrl is a required property for TranscribeUtterance and cannot be null");
+                throw new ArgumentNullException("actionUrl is a required property for TranscribeUtteranceAllOf and cannot be null");
             }
             this.ActionUrl = actionUrl;
             this.PlayBeep = playBeep;
@@ -132,8 +104,7 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TranscribeUtterance {\n");
-            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
+            sb.Append("class TranscribeUtteranceAllOf {\n");
             sb.Append("  ActionUrl: ").Append(ActionUrl).Append("\n");
             sb.Append("  PlayBeep: ").Append(PlayBeep).Append("\n");
             sb.Append("  Record: ").Append(Record).Append("\n");
@@ -148,22 +119,16 @@ namespace freeclimb.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public override string ToJson()
+        public virtual string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
-
-            return strb.ToString();
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the TranscribeUtterance instance. 
+        /// Retrieve the KVP Dictionary for the TranscribeUtteranceAllOf instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
-        public override IDictionary<string, object> ToKvp()
+        public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
             props.Add("actionUrl", ActionUrl);          
@@ -177,9 +142,7 @@ namespace freeclimb.Model
                 nested.Add(item);
             }
             props.Add("prompts", nested); 
-            IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("TranscribeUtterance",props);
-            return command;
+            return props;
         }
         
         /// <summary>
@@ -189,43 +152,43 @@ namespace freeclimb.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TranscribeUtterance);
+            return this.Equals(input as TranscribeUtteranceAllOf);
         }
 
         /// <summary>
-        /// Returns true if TranscribeUtterance instances are equal
+        /// Returns true if TranscribeUtteranceAllOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of TranscribeUtterance to be compared</param>
+        /// <param name="input">Instance of TranscribeUtteranceAllOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TranscribeUtterance input)
+        public bool Equals(TranscribeUtteranceAllOf input)
         {
             if (input == null)
             {
                 return false;
             }
-            return base.Equals(input) && 
+            return 
                 (
                     this.ActionUrl == input.ActionUrl ||
                     (this.ActionUrl != null &&
                     this.ActionUrl.Equals(input.ActionUrl))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.PlayBeep == input.PlayBeep ||
                     this.PlayBeep.Equals(input.PlayBeep)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Record == input.Record ||
                     (this.Record != null &&
                     this.Record.Equals(input.Record))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.PrivacyForLogging == input.PrivacyForLogging ||
                     this.PrivacyForLogging.Equals(input.PrivacyForLogging)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.PrivacyForRecording == input.PrivacyForRecording ||
                     this.PrivacyForRecording.Equals(input.PrivacyForRecording)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Prompts == input.Prompts ||
                     this.Prompts != null &&
@@ -242,7 +205,7 @@ namespace freeclimb.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = base.GetHashCode();
+                int hashCode = 41;
                 if (this.ActionUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
@@ -267,22 +230,8 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
-            return this.BaseValidate(validationContext);
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
-        {
-            foreach (var x in BaseValidate(validationContext))
-            {
-                yield return x;
-            }
             yield break;
         }
     }

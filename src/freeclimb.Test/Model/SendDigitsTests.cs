@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SendDigitsTests()
         {
+            
             instance = new SendDigits("TEST_STRING", 1, false, "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -212,7 +214,6 @@ namespace freeclimb.Test.Model
         jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
         StringBuilder strb = new StringBuilder();
         jsonSerializer.Serialize(new StringWriter(strb), test1);
-
 
         SendDigits test2 = new SendDigits("TEST_STRING", 1, false, "TEST_STRING");
          test2.Digits = "TS";

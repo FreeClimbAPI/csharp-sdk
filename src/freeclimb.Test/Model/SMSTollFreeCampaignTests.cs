@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTollFreeCampaignTests()
         {
+            
             instance = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+            
         }
 
         /// <summary>
@@ -63,7 +65,7 @@ namespace freeclimb.Test.Model
         {
             instance.AccountId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.AccountId);
-
+            
         }
         /// <summary>
         /// Test the property 'CampaignId'
@@ -73,7 +75,7 @@ namespace freeclimb.Test.Model
         {
             instance.CampaignId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CampaignId);
-
+            
         }
         /// <summary>
         /// Test the property 'UseCase'
@@ -83,7 +85,7 @@ namespace freeclimb.Test.Model
         {
             instance.UseCase = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.UseCase);
-
+            
         }
         /// <summary>
         /// Test the property 'RegistrationStatus'
@@ -91,7 +93,22 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RegistrationStatusTest()
         {
-
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED);
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.INITIATED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.INITIATED);
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.PENDING;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.PENDING);
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.DECLINED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.DECLINED);
+            
+            instance.RegistrationStatus = SMSTollFreeCampaign.RegistrationStatusEnum.REGISTERED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaign.RegistrationStatusEnum.REGISTERED);
+            
         }
         /// <summary>
         /// Test the property 'DateCreated'
@@ -101,7 +118,7 @@ namespace freeclimb.Test.Model
         {
             instance.DateCreated = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.DateCreated);
-
+            
         }
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -111,7 +128,7 @@ namespace freeclimb.Test.Model
         {
             instance.DateUpdated = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.DateUpdated);
-
+            
         }
         /// <summary>
         /// Test the property 'Revision'
@@ -119,184 +136,180 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-
+            
             instance.Revision = 1;
-            Assert.Equal(1, (int)instance.Revision);
+            Assert.Equal(1, (int) instance.Revision);
         }
-
-
+        
+        
         /// <summary>
         /// Test the method 'equalsTrue'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTrueTest()
-        {
-            SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test1.AccountId = "TS";
-            test1.CampaignId = "TS";
-            test1.UseCase = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
+        public void equalsTrueTest() {
+        SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test1.AccountId = "TS";
+         test1.CampaignId = "TS";
+         test1.UseCase = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
 
-            SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test2.AccountId = "TS";
-            test2.CampaignId = "TS";
-            test2.UseCase = "TS";
-            test2.DateCreated = "TS";
-            test2.DateUpdated = "TS";
-            test2.Revision = 1;
+        SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test2.AccountId = "TS";
+         test2.CampaignId = "TS";
+         test2.UseCase = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
 
-            Assert.Equal(test1, test2);
+        Assert.Equal(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'equalsFalse'
         /// </summary>
-
+        
         [Fact]
-        public void equalsFalseTest()
-        {
-            SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test1.AccountId = "TS";
-            test1.CampaignId = "TS";
-            test1.UseCase = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
+        public void equalsFalseTest() {
+        SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test1.AccountId = "TS";
+         test1.CampaignId = "TS";
+         test1.UseCase = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
 
-            SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test2.AccountId = "ts";
-            test2.CampaignId = "ts";
-            test2.UseCase = "ts";
-            test2.DateCreated = "ts";
-            test2.DateUpdated = "ts";
-            test2.Revision = 2;
+        SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test2.AccountId = "ts";
+         test2.CampaignId = "ts";
+         test2.UseCase = "ts";
+         test2.DateCreated = "ts";
+         test2.DateUpdated = "ts";
+         test2.Revision = 2;
 
-            Assert.NotEqual(test1, test2);
+        Assert.NotEqual(test1,test2);
         }
 
         /// <summary>
         /// Test the method 'hashCodeType'
         /// </summary>
-
+        
         [Fact]
-        public void hashCodeTypeTest()
-        {
-            SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test1.AccountId = "TS";
-            test1.CampaignId = "TS";
-            test1.UseCase = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
+        public void hashCodeTypeTest() {
+        SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test1.AccountId = "TS";
+         test1.CampaignId = "TS";
+         test1.UseCase = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
 
-            int hashCode1 = test1.GetHashCode();
-            Assert.True(hashCode1.GetType() == typeof(int));
+        int hashCode1 = test1.GetHashCode();
+        Assert.True(hashCode1.GetType() == typeof(int));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringType'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringTypeTest()
-        {
-            SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test1.AccountId = "TS";
-            test1.CampaignId = "TS";
-            test1.UseCase = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
+        public void ToStringTypeTest() {
+        SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test1.AccountId = "TS";
+         test1.CampaignId = "TS";
+         test1.UseCase = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
 
-            string toString1 = test1.ToString();
-            Assert.True(toString1.GetType() == typeof(string));
+        string toString1 = test1.ToString();
+        Assert.True(toString1.GetType() == typeof(string));
 
         }
 
         /// <summary>
         /// Test the method 'ToStringEquals'
         /// </summary>
-
+        
         [Fact]
-        public void ToStringEqualsTest()
-        {
-            SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test1.AccountId = "TS";
-            test1.CampaignId = "TS";
-            test1.UseCase = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
+        public void ToStringEqualsTest() {
+        SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test1.AccountId = "TS";
+         test1.CampaignId = "TS";
+         test1.UseCase = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
 
-            SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test2.AccountId = "TS";
-            test2.CampaignId = "TS";
-            test2.UseCase = "TS";
-            test2.DateCreated = "TS";
-            test2.DateUpdated = "TS";
-            test2.Revision = 1;
+        SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test2.AccountId = "TS";
+         test2.CampaignId = "TS";
+         test2.UseCase = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
 
-            string toString1 = test1.ToString();
-            string toString2 = test2.ToString();
-            Assert.Equal(toString1, toString2);
+        string toString1 = test1.ToString();
+        string toString2 = test2.ToString();
+        Assert.Equal(toString1, toString2);
 
         }
 
         /// <summary>
         /// Test the method 'equals'
         /// </summary>
-
+        
         [Fact]
-        public void equalsTest()
-        {
-            SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test1.AccountId = "TS";
-            test1.CampaignId = "TS";
-            test1.UseCase = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
+        public void equalsTest() {
+        SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test1.AccountId = "TS";
+         test1.CampaignId = "TS";
+         test1.UseCase = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
 
-            SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test2.AccountId = "TS";
-            test2.CampaignId = "TS";
-            test2.UseCase = "TS";
-            test2.DateCreated = "TS";
-            test2.DateUpdated = "TS";
-            test2.Revision = 1;
+        SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test2.AccountId = "TS";
+         test2.CampaignId = "TS";
+         test2.UseCase = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
 
-            Assert.True(test1.Equals(test2));
+        Assert.True(test1.Equals(test2));
         }
 
         /// <summary>
         /// Test the method 'ToJson'
         /// </summary>
-
+        
         [Fact]
-        public void ToJsonTest()
-        {
-            SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test1.AccountId = "TS";
-            test1.CampaignId = "TS";
-            test1.UseCase = "TS";
-            test1.DateCreated = "TS";
-            test1.DateUpdated = "TS";
-            test1.Revision = 1;
-            string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        public void ToJsonTest() {
+        SMSTollFreeCampaign test1 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test1.AccountId = "TS";
+         test1.CampaignId = "TS";
+         test1.UseCase = "TS";
+         test1.DateCreated = "TS";
+         test1.DateUpdated = "TS";
+         test1.Revision = 1;
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-            SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
-            test2.AccountId = "TS";
-            test2.CampaignId = "TS";
-            test2.UseCase = "TS";
-            test2.DateCreated = "TS";
-            test2.DateUpdated = "TS";
-            test2.Revision = 1;
+        SMSTollFreeCampaign test2 = new SMSTollFreeCampaign("TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTollFreeCampaign.RegistrationStatusEnum.UNREGISTERED, "TEST_STRING", "TEST_STRING", 1);
+         test2.AccountId = "TS";
+         test2.CampaignId = "TS";
+         test2.UseCase = "TS";
+         test2.DateCreated = "TS";
+         test2.DateUpdated = "TS";
+         test2.Revision = 1;
 
-            Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

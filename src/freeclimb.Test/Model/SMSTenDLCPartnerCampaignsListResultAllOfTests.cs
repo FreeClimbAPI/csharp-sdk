@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignsListResultAllOfTests()
         {
-            instance = new SMSTenDLCPartnerCampaignsListResultAllOf();
+            
+            instance = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
+            
         }
 
         /// <summary>
@@ -73,11 +76,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
-        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList2 = new List<SMSTenDLCPartnerCampaign>();
          test2.PartnerCampaigns = testList2;
 
@@ -90,11 +93,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
-        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList2 = null;
          test2.PartnerCampaigns = testList2;
 
@@ -107,7 +110,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
@@ -122,7 +125,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
@@ -137,11 +140,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
-        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList2 = new List<SMSTenDLCPartnerCampaign>();
          test2.PartnerCampaigns = testList2;
 
@@ -157,11 +160,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
 
-        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList2 = new List<SMSTenDLCPartnerCampaign>();
          test2.PartnerCampaigns = testList2;
 
@@ -174,16 +177,19 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test1 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
          test1.PartnerCampaigns = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+        SMSTenDLCPartnerCampaignsListResultAllOf test2 = new SMSTenDLCPartnerCampaignsListResultAllOf(new List<SMSTenDLCPartnerCampaign>());
          List<SMSTenDLCPartnerCampaign> testList2 = new List<SMSTenDLCPartnerCampaign>();
          test2.PartnerCampaigns = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

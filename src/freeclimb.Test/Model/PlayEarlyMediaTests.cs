@@ -42,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public PlayEarlyMediaTests()
         {
+            
             instance = new PlayEarlyMedia("TEST_STRING", "TEST_STRING");
+            
         }
 
         /// <summary>

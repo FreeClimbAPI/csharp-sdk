@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public RecordingListAllOfTests()
         {
-            instance = new RecordingListAllOf();
+            
+            instance = new RecordingListAllOf(new List<RecordingResult>());
+            
         }
 
         /// <summary>
@@ -73,11 +76,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        RecordingListAllOf test1 = new RecordingListAllOf();
+        RecordingListAllOf test1 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList = new List<RecordingResult>();
          test1.Recordings = testList;
 
-        RecordingListAllOf test2 = new RecordingListAllOf();
+        RecordingListAllOf test2 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList2 = new List<RecordingResult>();
          test2.Recordings = testList2;
 
@@ -90,11 +93,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        RecordingListAllOf test1 = new RecordingListAllOf();
+        RecordingListAllOf test1 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList = new List<RecordingResult>();
          test1.Recordings = testList;
 
-        RecordingListAllOf test2 = new RecordingListAllOf();
+        RecordingListAllOf test2 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList2 = null;
          test2.Recordings = testList2;
 
@@ -107,7 +110,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        RecordingListAllOf test1 = new RecordingListAllOf();
+        RecordingListAllOf test1 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList = new List<RecordingResult>();
          test1.Recordings = testList;
 
@@ -122,7 +125,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        RecordingListAllOf test1 = new RecordingListAllOf();
+        RecordingListAllOf test1 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList = new List<RecordingResult>();
          test1.Recordings = testList;
 
@@ -137,11 +140,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        RecordingListAllOf test1 = new RecordingListAllOf();
+        RecordingListAllOf test1 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList = new List<RecordingResult>();
          test1.Recordings = testList;
 
-        RecordingListAllOf test2 = new RecordingListAllOf();
+        RecordingListAllOf test2 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList2 = new List<RecordingResult>();
          test2.Recordings = testList2;
 
@@ -157,11 +160,11 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        RecordingListAllOf test1 = new RecordingListAllOf();
+        RecordingListAllOf test1 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList = new List<RecordingResult>();
          test1.Recordings = testList;
 
-        RecordingListAllOf test2 = new RecordingListAllOf();
+        RecordingListAllOf test2 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList2 = new List<RecordingResult>();
          test2.Recordings = testList2;
 
@@ -174,16 +177,19 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        RecordingListAllOf test1 = new RecordingListAllOf();
+        RecordingListAllOf test1 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList = new List<RecordingResult>();
          test1.Recordings = testList;
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        RecordingListAllOf test2 = new RecordingListAllOf();
+        RecordingListAllOf test2 = new RecordingListAllOf(new List<RecordingResult>());
          List<RecordingResult> testList2 = new List<RecordingResult>();
          test2.Recordings = testList2;
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

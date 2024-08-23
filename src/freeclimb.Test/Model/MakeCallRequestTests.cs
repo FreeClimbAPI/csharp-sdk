@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -41,7 +42,9 @@ namespace freeclimb.Test.Model
 
         public MakeCallRequestTests()
         {
+            
             instance = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
+            
         }
 
         /// <summary>
@@ -354,7 +357,10 @@ namespace freeclimb.Test.Model
          test1.ParentCallId = "TS";
          test1.PrivacyMode = true;
          test1.CallConnectUrl = "TS";
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
         MakeCallRequest test2 = new MakeCallRequest("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, "TEST_STRING", false, "TEST_STRING");
          test2.From = "TS";
@@ -368,7 +374,7 @@ namespace freeclimb.Test.Model
          test2.PrivacyMode = true;
          test2.CallConnectUrl = "TS";
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }

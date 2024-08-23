@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Text;
 using freeclimb.Api;
 using freeclimb.Model;
 using freeclimb.Client;
@@ -44,12 +45,12 @@ namespace freeclimb.Test.Model
             string jsonData = @"
             {
                 ""accountId"":""TEST_STRING"",
-                ""entityType"":""PRIVATEPROFIT"",
+                ""entityType"":""PRIVATE_PROFIT"",
                 ""cspId"": ""TEST_STRING"",
                 ""brandId"": ""TEST_STRING"",
                 ""universalEin"": ""TEST_STRING"",
-                ""brandRelationship"":""BASICACCOUNT"",
-                ""identityStatus"":""SELFDECLARED"",
+                ""brandRelationship"":""BASIC_ACCOUNT"",
+                ""identityStatus"":""SELF_DECLARED"",
                 ""displayName"":""TEST_STRING"",
                 ""phone"":""TEST_STRING"",
                 ""country"":""TEST_STRING"",
@@ -59,6 +60,7 @@ namespace freeclimb.Test.Model
             }
             ";
             instance = JsonConvert.DeserializeObject<SMSTenDLCBrand>(jsonData);
+            
         }
 
         /// <summary>
@@ -87,21 +89,22 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EntityTypeTest()
         {
-            instance.EntityType = SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT;
-            Assert.Equal(instance.EntityType,SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT);
             
-            instance.EntityType = SMSTenDLCBrand.EntityTypeEnum.PUBLICPROFIT;
-            Assert.Equal(instance.EntityType,SMSTenDLCBrand.EntityTypeEnum.PUBLICPROFIT);
+            instance.EntityType = SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT;
+            Assert.Equal(instance.EntityType,SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT);
             
-            instance.EntityType = SMSTenDLCBrand.EntityTypeEnum.NONPROFIT;
-            Assert.Equal(instance.EntityType,SMSTenDLCBrand.EntityTypeEnum.NONPROFIT);
+            instance.EntityType = SMSTenDLCBrand.EntityTypeEnum.PUBLIC_PROFIT;
+            Assert.Equal(instance.EntityType,SMSTenDLCBrand.EntityTypeEnum.PUBLIC_PROFIT);
+            
+            instance.EntityType = SMSTenDLCBrand.EntityTypeEnum.NON_PROFIT;
+            Assert.Equal(instance.EntityType,SMSTenDLCBrand.EntityTypeEnum.NON_PROFIT);
             
             instance.EntityType = SMSTenDLCBrand.EntityTypeEnum.GOVERNMENT;
             Assert.Equal(instance.EntityType,SMSTenDLCBrand.EntityTypeEnum.GOVERNMENT);
             
-            instance.EntityType = SMSTenDLCBrand.EntityTypeEnum.SOLEPROPRIETOR;
-            Assert.Equal(instance.EntityType,SMSTenDLCBrand.EntityTypeEnum.SOLEPROPRIETOR);
-
+            instance.EntityType = SMSTenDLCBrand.EntityTypeEnum.SOLE_PROPRIETOR;
+            Assert.Equal(instance.EntityType,SMSTenDLCBrand.EntityTypeEnum.SOLE_PROPRIETOR);
+            
         }
         /// <summary>
         /// Test the property 'CspId'
@@ -269,6 +272,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StockExchangeTest()
         {
+            
             instance.StockExchange = SMSTenDLCBrand.StockExchangeEnum.NONE;
             Assert.Equal(instance.StockExchange,SMSTenDLCBrand.StockExchangeEnum.NONE);
             
@@ -348,7 +352,8 @@ namespace freeclimb.Test.Model
             Assert.Equal(instance.StockExchange,SMSTenDLCBrand.StockExchangeEnum.VSE);
             
             instance.StockExchange = SMSTenDLCBrand.StockExchangeEnum.OTHER;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrand.StockExchangeEnum.OTHER);  
+            Assert.Equal(instance.StockExchange,SMSTenDLCBrand.StockExchangeEnum.OTHER);
+            
         }
         /// <summary>
         /// Test the property 'IpAddress'
@@ -376,21 +381,22 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BrandRelationshipTest()
         {
-            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT);
             
-            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.SMALLACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.SMALLACCOUNT);
+            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT;
+            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT);
             
-            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.MEDIUMACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.MEDIUMACCOUNT);
+            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.SMALL_ACCOUNT;
+            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.SMALL_ACCOUNT);
             
-            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.LARGEACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.LARGEACCOUNT);
+            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.MEDIUM_ACCOUNT;
+            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.MEDIUM_ACCOUNT);
             
-            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.KEYACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.KEYACCOUNT);
-
+            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.LARGE_ACCOUNT;
+            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.LARGE_ACCOUNT);
+            
+            instance.BrandRelationship = SMSTenDLCBrand.BrandRelationshipEnum.KEY_ACCOUNT;
+            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrand.BrandRelationshipEnum.KEY_ACCOUNT);
+            
         }
         /// <summary>
         /// Test the property 'Vertical'
@@ -418,6 +424,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AltBusinessIdTypeTest()
         {
+            
             instance.AltBusinessIdType = SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE;
             Assert.Equal(instance.AltBusinessIdType,SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE);
             
@@ -429,7 +436,7 @@ namespace freeclimb.Test.Model
             
             instance.AltBusinessIdType = SMSTenDLCBrand.AltBusinessIdTypeEnum.LEI;
             Assert.Equal(instance.AltBusinessIdType,SMSTenDLCBrand.AltBusinessIdTypeEnum.LEI);
-
+            
         }
         /// <summary>
         /// Test the property 'UniversalEin'
@@ -478,8 +485,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void IdentityStatusTest()
         {
-            instance.IdentityStatus = SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED;
-            Assert.Equal(instance.IdentityStatus,SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED);
+            
+            instance.IdentityStatus = SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED;
+            Assert.Equal(instance.IdentityStatus,SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED);
             
             instance.IdentityStatus = SMSTenDLCBrand.IdentityStatusEnum.UNVERIFIED;
             Assert.Equal(instance.IdentityStatus,SMSTenDLCBrand.IdentityStatusEnum.UNVERIFIED);
@@ -487,9 +495,9 @@ namespace freeclimb.Test.Model
             instance.IdentityStatus = SMSTenDLCBrand.IdentityStatusEnum.VERIFIED;
             Assert.Equal(instance.IdentityStatus,SMSTenDLCBrand.IdentityStatusEnum.VERIFIED);
             
-            instance.IdentityStatus = SMSTenDLCBrand.IdentityStatusEnum.VETTEDVERIFIED;
-            Assert.Equal(instance.IdentityStatus,SMSTenDLCBrand.IdentityStatusEnum.VETTEDVERIFIED);
-
+            instance.IdentityStatus = SMSTenDLCBrand.IdentityStatusEnum.VETTED_VERIFIED;
+            Assert.Equal(instance.IdentityStatus,SMSTenDLCBrand.IdentityStatusEnum.VETTED_VERIFIED);
+            
         }
         /// <summary>
         /// Test the property 'CreateDate'
@@ -509,8 +517,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test1.AccountId = "TS";
+
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -529,14 +539,17 @@ namespace freeclimb.Test.Model
          test1.Website = "TS";
          test1.Vertical = "TS";
          test1.AltBusinessId = "TS";
+
          test1.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
          test1.Mock = true;
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
 
-        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test2.AccountId = "TS";
+
+
          test2.FirstName = "TS";
          test2.LastName = "TS";
          test2.DisplayName = "TS";
@@ -555,6 +568,7 @@ namespace freeclimb.Test.Model
          test2.Website = "TS";
          test2.Vertical = "TS";
          test2.AltBusinessId = "TS";
+
          test2.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
          test2.OptionalAttributes = testDictionary2;
@@ -570,8 +584,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test1.AccountId = "TS";
+
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -590,14 +606,17 @@ namespace freeclimb.Test.Model
          test1.Website = "TS";
          test1.Vertical = "TS";
          test1.AltBusinessId = "TS";
+
          test1.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
          test1.Mock = true;
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
 
-        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test2.AccountId = "ts";
+
+
          test2.FirstName = "ts";
          test2.LastName = "ts";
          test2.DisplayName = "ts";
@@ -616,6 +635,7 @@ namespace freeclimb.Test.Model
          test2.Website = "ts";
          test2.Vertical = "ts";
          test2.AltBusinessId = "ts";
+
          test2.ReferenceId = "ts";
          Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
          test2.OptionalAttributes = testDictionary2;
@@ -631,8 +651,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test1.AccountId = "TS";
+
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -651,6 +673,7 @@ namespace freeclimb.Test.Model
          test1.Website = "TS";
          test1.Vertical = "TS";
          test1.AltBusinessId = "TS";
+
          test1.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
@@ -668,8 +691,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test1.AccountId = "TS";
+
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -688,6 +713,7 @@ namespace freeclimb.Test.Model
          test1.Website = "TS";
          test1.Vertical = "TS";
          test1.AltBusinessId = "TS";
+
          test1.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
@@ -705,8 +731,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test1.AccountId = "TS";
+
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -725,14 +753,17 @@ namespace freeclimb.Test.Model
          test1.Website = "TS";
          test1.Vertical = "TS";
          test1.AltBusinessId = "TS";
+
          test1.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
          test1.Mock = true;
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
 
-        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test2.AccountId = "TS";
+
+
          test2.FirstName = "TS";
          test2.LastName = "TS";
          test2.DisplayName = "TS";
@@ -751,6 +782,7 @@ namespace freeclimb.Test.Model
          test2.Website = "TS";
          test2.Vertical = "TS";
          test2.AltBusinessId = "TS";
+
          test2.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
          test2.OptionalAttributes = testDictionary2;
@@ -769,8 +801,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test1.AccountId = "TS";
+
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -789,14 +823,17 @@ namespace freeclimb.Test.Model
          test1.Website = "TS";
          test1.Vertical = "TS";
          test1.AltBusinessId = "TS";
+
          test1.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
          test1.Mock = true;
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
 
-        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test2.AccountId = "TS";
+
+
          test2.FirstName = "TS";
          test2.LastName = "TS";
          test2.DisplayName = "TS";
@@ -815,6 +852,7 @@ namespace freeclimb.Test.Model
          test2.Website = "TS";
          test2.Vertical = "TS";
          test2.AltBusinessId = "TS";
+
          test2.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
          test2.OptionalAttributes = testDictionary2;
@@ -830,8 +868,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test1 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test1.AccountId = "TS";
+
+
          test1.FirstName = "TS";
          test1.LastName = "TS";
          test1.DisplayName = "TS";
@@ -850,15 +890,21 @@ namespace freeclimb.Test.Model
          test1.Website = "TS";
          test1.Vertical = "TS";
          test1.AltBusinessId = "TS";
+
          test1.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
          test1.OptionalAttributes = testDictionary;
          test1.Mock = true;
          test1.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
-         string jsonStr = JsonConvert.SerializeObject(test1, Newtonsoft.Json.Formatting.Indented);
+        JsonSerializer jsonSerializer = JsonSerializer.Create();
+        jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+        StringBuilder strb = new StringBuilder();
+        jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATEPROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING","TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASICACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELFDECLARED, DateTime.Parse("2022-07-05T15:17:05+00:00"));
+        SMSTenDLCBrand test2 = new SMSTenDLCBrand("TEST_STRING", SMSTenDLCBrand.EntityTypeEnum.PRIVATE_PROFIT, "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.StockExchangeEnum.NONE, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.BrandRelationshipEnum.BASIC_ACCOUNT, "TEST_STRING", "TEST_STRING", SMSTenDLCBrand.AltBusinessIdTypeEnum.NONE, "TEST_STRING", new Dictionary<string, object>(), false, SMSTenDLCBrand.IdentityStatusEnum.SELF_DECLARED,  DateTime.Parse("2022-07-05T15:17:05+00:00"));
          test2.AccountId = "TS";
+
+
          test2.FirstName = "TS";
          test2.LastName = "TS";
          test2.DisplayName = "TS";
@@ -877,13 +923,14 @@ namespace freeclimb.Test.Model
          test2.Website = "TS";
          test2.Vertical = "TS";
          test2.AltBusinessId = "TS";
+
          test2.ReferenceId = "TS";
          Dictionary<string, Object> testDictionary2 = new Dictionary<string, object>();
          test2.OptionalAttributes = testDictionary2;
          test2.Mock = true;
          test2.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
 
-        Assert.True(jsonStr.Equals(test2.ToJson()));
+        Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
     }
 }
