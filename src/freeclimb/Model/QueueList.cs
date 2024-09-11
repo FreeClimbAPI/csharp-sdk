@@ -24,6 +24,7 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
+using freeclimb.Utils;
 
 namespace freeclimb.Model
 {
@@ -31,7 +32,7 @@ namespace freeclimb.Model
     /// QueueList
     /// </summary>
     [DataContract(Name = "QueueList")]
-    public partial class QueueList : IEquatable<QueueList>, IValidatableObject
+    public partial class QueueList : IPagination, IEquatable<QueueList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueList" /> class.

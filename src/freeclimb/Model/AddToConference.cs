@@ -29,7 +29,7 @@ using freeclimb.Enums;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// The &#x60;AddToConference&#x60; command adds a Participant to a Conference. If this Participant currently is in another Conference, the Participant is first removed from that Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via &#x60;AddToConference&#x60;.
+    /// The &#x60;AddToConference&#x60; command adds a Participant to a Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via &#x60;AddToConference&#x60;.
     /// </summary>
     [DataContract(Name = "AddToConference")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]

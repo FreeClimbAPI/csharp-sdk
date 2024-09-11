@@ -999,6 +999,457 @@ namespace freeclimb.Test.Api
             Assert.IsAssignableFrom<IncomingNumberResult>(response);
         }
 
+        
+        /// <summary>
+        /// Test GetTenDLCSmsBrands
+        /// </summary>
+        [Fact]
+
+        public void GetTenDLCSmsBrandsGetNextPageTest()
+        {
+            
+            var response = instance.GetTenDLCSmsBrands();
+            //Assert.IsType<SMSTenDLCBrandsListResult>(response);
+            Assert.IsAssignableFrom<SMSTenDLCBrandsListResult>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Messages/10DLC/Brands?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<SMSTenDLCBrandsListResult>(response);
+            Assert.IsAssignableFrom<SMSTenDLCBrandsListResult>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test GetTenDLCSmsCampaigns
+        /// </summary>
+        [Fact]
+
+        public void GetTenDLCSmsCampaignsGetNextPageTest()
+        {
+            
+            string brandId = brandIdTestValue();
+	        
+            var response = instance.GetTenDLCSmsCampaigns(brandId);
+            //Assert.IsType<SMSTenDLCCampaignsListResult>(response);
+            Assert.IsAssignableFrom<SMSTenDLCCampaignsListResult>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Messages/10DLC/Campaigns?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<SMSTenDLCCampaignsListResult>(response);
+            Assert.IsAssignableFrom<SMSTenDLCCampaignsListResult>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test GetTenDLCSmsPartnerCampaigns
+        /// </summary>
+        [Fact]
+
+        public void GetTenDLCSmsPartnerCampaignsGetNextPageTest()
+        {
+            
+            string brandId = brandIdTestValue();
+	        
+            var response = instance.GetTenDLCSmsPartnerCampaigns(brandId);
+            //Assert.IsType<SMSTenDLCPartnerCampaignsListResult>(response);
+            Assert.IsAssignableFrom<SMSTenDLCPartnerCampaignsListResult>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<SMSTenDLCPartnerCampaignsListResult>(response);
+            Assert.IsAssignableFrom<SMSTenDLCPartnerCampaignsListResult>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test GetTollFreeSmsCampaigns
+        /// </summary>
+        [Fact]
+
+        public void GetTollFreeSmsCampaignsGetNextPageTest()
+        {
+            
+            var response = instance.GetTollFreeSmsCampaigns();
+            //Assert.IsType<SMSTollFreeCampaignsListResult>(response);
+            Assert.IsAssignableFrom<SMSTollFreeCampaignsListResult>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Messages/TollFree/Campaigns?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<SMSTollFreeCampaignsListResult>(response);
+            Assert.IsAssignableFrom<SMSTollFreeCampaignsListResult>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListActiveQueues
+        /// </summary>
+        [Fact]
+
+        public void ListActiveQueuesGetNextPageTest()
+        {
+            
+            string alias = aliasTestValue();
+	        
+            var response = instance.ListActiveQueues(alias);
+            //Assert.IsType<QueueList>(response);
+            Assert.IsAssignableFrom<QueueList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Queues?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<QueueList>(response);
+            Assert.IsAssignableFrom<QueueList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListAllAccountLogs
+        /// </summary>
+        [Fact]
+
+        public void ListAllAccountLogsGetNextPageTest()
+        {
+            
+            var response = instance.ListAllAccountLogs();
+            //Assert.IsType<LogList>(response);
+            Assert.IsAssignableFrom<LogList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Logs?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<LogList>(response);
+            Assert.IsAssignableFrom<LogList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListApplications
+        /// </summary>
+        [Fact]
+
+        public void ListApplicationsGetNextPageTest()
+        {
+            
+            string alias = aliasTestValue();
+	        
+            var response = instance.ListApplications(alias);
+            //Assert.IsType<ApplicationList>(response);
+            Assert.IsAssignableFrom<ApplicationList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Applications?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<ApplicationList>(response);
+            Assert.IsAssignableFrom<ApplicationList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListAvailableNumbers
+        /// </summary>
+        [Fact]
+
+        public void ListAvailableNumbersGetNextPageTest()
+        {
+            
+            string phoneNumber = phoneNumberTestValue();
+	        
+            string region = regionTestValue();
+	        
+            string country = countryTestValue();
+	        
+            bool? voiceEnabled = voiceEnabledTestValue();
+	        
+            bool? smsEnabled = smsEnabledTestValue();
+	        
+            bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+	        
+            bool? capabilitiesSms = capabilitiesSmsTestValue();
+	        
+            bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+	        
+            bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+	        
+            bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+	        
+            var response = instance.ListAvailableNumbers(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
+            //Assert.IsType<AvailableNumberList>(response);
+            Assert.IsAssignableFrom<AvailableNumberList>(response);
+            response.NextPageUri = "/AvailablePhoneNumbers?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<AvailableNumberList>(response);
+            Assert.IsAssignableFrom<AvailableNumberList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListCallLogs
+        /// </summary>
+        [Fact]
+
+        public void ListCallLogsGetNextPageTest()
+        {
+            
+            string callId = callIdTestValue();
+	        
+            var response = instance.ListCallLogs(callId);
+            //Assert.IsType<LogList>(response);
+            Assert.IsAssignableFrom<LogList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Calls/{callId}/Logs?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<LogList>(response);
+            Assert.IsAssignableFrom<LogList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListCallRecordings
+        /// </summary>
+        [Fact]
+
+        public void ListCallRecordingsGetNextPageTest()
+        {
+            
+            string callId = callIdTestValue();
+	        
+            string dateCreated = dateCreatedTestValue();
+	        
+            var response = instance.ListCallRecordings(callId, dateCreated);
+            //Assert.IsType<RecordingList>(response);
+            Assert.IsAssignableFrom<RecordingList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Calls/{callId}/Recordings?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<RecordingList>(response);
+            Assert.IsAssignableFrom<RecordingList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListCalls
+        /// </summary>
+        [Fact]
+
+        public void ListCallsGetNextPageTest()
+        {
+            
+            bool? active = activeTestValue();
+	        
+            string to = toTestValue();
+	        
+            string from = fromTestValue();
+	        
+            CallStatus? status = statusTestEnum();
+	        
+            string startTime = startTimeTestValue();
+	        
+            string endTime = endTimeTestValue();
+	        
+            string parentCallId = parentCallIdTestValue();
+	        
+            List<string> applicationId = applicationIdTestArray();
+	        
+            var response = instance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId);
+            //Assert.IsType<CallList>(response);
+            Assert.IsAssignableFrom<CallList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Calls?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<CallList>(response);
+            Assert.IsAssignableFrom<CallList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListConferenceRecordings
+        /// </summary>
+        [Fact]
+
+        public void ListConferenceRecordingsGetNextPageTest()
+        {
+            
+            string conferenceId = conferenceIdTestValue();
+	        
+            string callId = callIdTestValue();
+	        
+            string dateCreated = dateCreatedTestValue();
+	        
+            var response = instance.ListConferenceRecordings(conferenceId, callId, dateCreated);
+            //Assert.IsType<RecordingList>(response);
+            Assert.IsAssignableFrom<RecordingList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Conferences/{conferenceId}/Recordings?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<RecordingList>(response);
+            Assert.IsAssignableFrom<RecordingList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListConferences
+        /// </summary>
+        [Fact]
+
+        public void ListConferencesGetNextPageTest()
+        {
+            
+            string status = statusTestValue();
+	        
+            string alias = aliasTestValue();
+	        
+            string dateCreated = dateCreatedTestValue();
+	        
+            string dateUpdated = dateUpdatedTestValue();
+	        
+            var response = instance.ListConferences(status, alias, dateCreated, dateUpdated);
+            //Assert.IsType<ConferenceList>(response);
+            Assert.IsAssignableFrom<ConferenceList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Conferences?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<ConferenceList>(response);
+            Assert.IsAssignableFrom<ConferenceList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListIncomingNumbers
+        /// </summary>
+        [Fact]
+
+        public void ListIncomingNumbersGetNextPageTest()
+        {
+            
+            string phoneNumber = phoneNumberTestValue();
+	        
+            string alias = aliasTestValue();
+	        
+            string region = regionTestValue();
+	        
+            string country = countryTestValue();
+	        
+            string applicationId = applicationIdTestValue();
+	        
+            bool? hasApplication = hasApplicationTestValue();
+	        
+            bool? voiceEnabled = voiceEnabledTestValue();
+	        
+            bool? smsEnabled = smsEnabledTestValue();
+	        
+            bool? hasCampaign = hasCampaignTestValue();
+	        
+            bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+	        
+            bool? capabilitiesSms = capabilitiesSmsTestValue();
+	        
+            bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+	        
+            bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+	        
+            bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+	        
+            string tfnCampaignId = tfnCampaignIdTestValue();
+	        
+            bool? offnet = offnetTestValue();
+	        
+            var response = instance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
+            //Assert.IsType<IncomingNumberList>(response);
+            Assert.IsAssignableFrom<IncomingNumberList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/IncomingPhoneNumbers?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<IncomingNumberList>(response);
+            Assert.IsAssignableFrom<IncomingNumberList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListMembers
+        /// </summary>
+        [Fact]
+
+        public void ListMembersGetNextPageTest()
+        {
+            
+            string queueId = queueIdTestValue();
+	        
+            var response = instance.ListMembers(queueId);
+            //Assert.IsType<QueueMemberList>(response);
+            Assert.IsAssignableFrom<QueueMemberList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Queues/{queueId}/Members?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<QueueMemberList>(response);
+            Assert.IsAssignableFrom<QueueMemberList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListParticipants
+        /// </summary>
+        [Fact]
+
+        public void ListParticipantsGetNextPageTest()
+        {
+            
+            string conferenceId = conferenceIdTestValue();
+	        
+            bool? talk = talkTestValue();
+	        
+            bool? listen = listenTestValue();
+	        
+            var response = instance.ListParticipants(conferenceId, talk, listen);
+            //Assert.IsType<ConferenceParticipantList>(response);
+            Assert.IsAssignableFrom<ConferenceParticipantList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Conferences/{conferenceId}/Participants?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<ConferenceParticipantList>(response);
+            Assert.IsAssignableFrom<ConferenceParticipantList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListRecordings
+        /// </summary>
+        [Fact]
+
+        public void ListRecordingsGetNextPageTest()
+        {
+            
+            string callId = callIdTestValue();
+	        
+            string conferenceId = conferenceIdTestValue();
+	        
+            string dateCreated = dateCreatedTestValue();
+	        
+            var response = instance.ListRecordings(callId, conferenceId, dateCreated);
+            //Assert.IsType<RecordingList>(response);
+            Assert.IsAssignableFrom<RecordingList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Recordings?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<RecordingList>(response);
+            Assert.IsAssignableFrom<RecordingList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
+        /// Test ListSmsMessages
+        /// </summary>
+        [Fact]
+
+        public void ListSmsMessagesGetNextPageTest()
+        {
+            
+            string to = toTestValue();
+	        
+            string from = fromTestValue();
+	        
+            string beginTime = beginTimeTestValue();
+	        
+            string endTime = endTimeTestValue();
+	        
+            MessageDirection? direction = directionTestEnum();
+	        
+            string campaignId = campaignIdTestValue();
+	        
+            string brandId = brandIdTestValue();
+	        
+            bool? is10DLC = is10DLCTestValue();
+	        
+            var response = instance.ListSmsMessages(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
+            //Assert.IsType<MessagesList>(response);
+            Assert.IsAssignableFrom<MessagesList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Messages?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<MessagesList>(response);
+            Assert.IsAssignableFrom<MessagesList>(nextPageResponse);
+
+        }
+
         private string accountIdTestValue()
         {
             return "AC0000000000000000000000000000000000000000";

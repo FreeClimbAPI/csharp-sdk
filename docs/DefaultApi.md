@@ -60,7 +60,7 @@ Method | HTTP request | Description
 [**UpdateAnAccount**](DefaultApi.md#updateanaccount) | **POST** /Accounts/{accountId} | Manage an account
 [**UpdateAnApplication**](DefaultApi.md#updateanapplication) | **POST** /Accounts/{accountId}/Applications/{applicationId} | Update an application
 [**UpdateAnIncomingNumber**](DefaultApi.md#updateanincomingnumber) | **POST** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Update an Incoming Number
-
+[**GetNextPage**](DefaultApi.md#GetNextPage) | **GET** | Get next page of paginated resource
 
 <a name="buyaphonenumber"></a>
 # **BuyAPhoneNumber**
@@ -4465,6 +4465,82 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Updated Incoming Phone Number |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="GetNextPage"></a>
+# **GetNextPage**
+> T GetNextPage(T: response) where T : PaginationModel
+
+Get next page of a paginated resource
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class GetNextPageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var alias = "alias_example";  // string | Return only applications with aliases that exactly match this value. (optional) 
+
+
+            try
+            {
+                // List applications
+                ApplicationList result = apiInstance.ListApplications(alias);
+                Debug.WriteLine(result);
+                ApplicationList nextPageResult = apiInstance.GetNextPage(result);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | T where T : PaginationModel | The response from previous request to list paginated resource | 
+
+### Return type
+
+T where T : PaginationModel
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| 200 | Successfully retrieved resource | - |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
