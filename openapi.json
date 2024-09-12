@@ -480,7 +480,7 @@
         }
       },
       "AddToConference": {
-        "description": "The `AddToConference` command adds a Participant to a Conference. If this Participant currently is in another Conference, the Participant is first removed from that Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via `AddToConference`.",
+        "description": "The `AddToConference` command adds a Participant to a Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via `AddToConference`.",
         "x-percl-command": true,
         "x-ref-properties": [
           "false",
@@ -1553,6 +1553,7 @@
         }
       },
       "ApplicationList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -1613,6 +1614,7 @@
         }
       },
       "AvailableNumberList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -1727,6 +1729,7 @@
         }
       },
       "IncomingNumberList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -1905,6 +1908,7 @@
         }
       },
       "CallList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -1962,6 +1966,7 @@
         ]
       },
       "RecordingList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -2020,6 +2025,7 @@
         }
       },
       "LogList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -2099,6 +2105,7 @@
         ]
       },
       "MessagesList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -2159,6 +2166,7 @@
         ]
       },
       "ConferenceList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -2348,6 +2356,7 @@
         }
       },
       "ConferenceParticipantList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -2430,6 +2439,7 @@
         }
       },
       "QueueList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -2480,6 +2490,7 @@
         }
       },
       "QueueMemberList": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -2510,6 +2521,7 @@
         }
       },
       "SMSTenDLCCampaignsListResult": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -2772,6 +2784,7 @@
         }
       },
       "SMSTenDLCPartnerCampaignsListResult": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -3075,6 +3088,7 @@
         }
       },
       "SMSTenDLCBrandsListResult": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -3430,6 +3444,7 @@
         }
       },
       "SMSTollFreeCampaignsListResult": {
+        "x-implements": "Pagination",
         "allOf": [
           {
             "$ref": "#/components/schemas/PaginationModel"
@@ -3783,6 +3798,7 @@
         "tags": [],
         "summary": "List applications",
         "operationId": "list-applications",
+        "x-is-paginated": true,
         "parameters": [
           {
             "name": "alias",
@@ -3850,6 +3866,7 @@
         "tags": [],
         "summary": "List available numbers",
         "operationId": "list-available-numbers",
+        "x-is-paginated": true,
         "parameters": [
           {
             "name": "phoneNumber",
@@ -4035,6 +4052,7 @@
         "tags": [],
         "summary": "List Incoming Numbers",
         "operationId": "list-incoming-numbers",
+        "x-is-paginated": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -4316,6 +4334,7 @@
         "tags": [],
         "summary": "List Calls",
         "operationId": "list-calls",
+        "x-is-paginated": true,
         "parameters": [
           {
             "name": "active",
@@ -4420,6 +4439,7 @@
         "tags": [],
         "summary": "List Call Recordings",
         "operationId": "list-call-recordings",
+        "x-is-paginated": true,
         "parameters": [
           {
             "name": "dateCreated",
@@ -4463,6 +4483,7 @@
         "tags": [],
         "summary": "List Call Logs",
         "operationId": "list-call-logs",
+        "x-is-paginated": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -4566,6 +4587,7 @@
         "tags": [],
         "summary": "List Conferences",
         "operationId": "list-conferences",
+        "x-is-paginated": true,
         "parameters": [
           {
             "name": "status",
@@ -4824,6 +4846,7 @@
         "tags": [],
         "summary": "List Participants",
         "operationId": "list-participants",
+        "x-is-paginated": true,
         "parameters": [
           {
             "name": "talk",
@@ -4876,6 +4899,7 @@
         "tags": [],
         "summary": "List Conference Recordings",
         "operationId": "list-conference-recordings",
+        "x-is-paginated": true,
         "parameters": [
           {
             "name": "callId",
@@ -5004,6 +5028,7 @@
         "tags": [],
         "summary": "List Active Queues",
         "operationId": "list-active-queues",
+        "x-is-paginated": true,
         "parameters": [
           {
             "name": "alias",
@@ -5137,6 +5162,7 @@
         "tags": [],
         "summary": "List Members",
         "operationId": "list-members",
+        "x-is-paginated": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -5255,6 +5281,7 @@
         "tags": [],
         "summary": "List All Account Logs",
         "operationId": "list-all-account-logs",
+        "x-is-paginated": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -5314,6 +5341,7 @@
         "tags": [],
         "summary": "List Recordings",
         "operationId": "list-recordings",
+        "x-is-paginated": true,
         "parameters": [
           {
             "name": "callId",
@@ -5495,6 +5523,7 @@
         "tags": [],
         "summary": "List SMS Messages",
         "operationId": "list-sms-messages",
+        "x-is-paginated": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -5660,6 +5689,7 @@
         "tags": [],
         "summary": "Get list of SMS 10DLC Campaigns",
         "operationId": "get-tenDLC-sms-Campaigns",
+        "x-is-paginated": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -5772,6 +5802,7 @@
         "tags": [],
         "summary": "Get list of SMS 10DLC Partner Campaigns",
         "operationId": "get-tenDLC-sms-partnerCampaigns",
+        "x-is-paginated": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -5893,6 +5924,7 @@
         "tags": [],
         "summary": "Get list of SMS 10DLC Brands",
         "operationId": "get-tenDLC-sms-brands",
+        "x-is-paginated": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"
@@ -5994,6 +6026,7 @@
         "tags": [],
         "summary": "Get list of TollFree Campaigns",
         "operationId": "get-tollFree-sms-campaigns",
+        "x-is-paginated": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"

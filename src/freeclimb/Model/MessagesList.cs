@@ -24,6 +24,7 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
+using freeclimb.Utils;
 
 namespace freeclimb.Model
 {
@@ -31,7 +32,7 @@ namespace freeclimb.Model
     /// MessagesList
     /// </summary>
     [DataContract(Name = "MessagesList")]
-    public partial class MessagesList : IEquatable<MessagesList>, IValidatableObject
+    public partial class MessagesList : IPagination, IEquatable<MessagesList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesList" /> class.
