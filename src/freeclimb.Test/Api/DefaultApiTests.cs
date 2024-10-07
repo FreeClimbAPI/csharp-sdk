@@ -508,6 +508,23 @@ namespace freeclimb.Test.Api
         }
         
         /// <summary>
+        /// Test KnowledgebaseCompletion
+        /// </summary>
+        [Fact]
+
+        public void KnowledgebaseCompletionTest()
+        {
+            
+            string knowledgeBaseId = knowledgeBaseIdTestValue();
+	        
+            CompletionRequest completionRequest = completionRequestTestValue();
+	        
+            var response = instance.KnowledgebaseCompletion(knowledgeBaseId, completionRequest);
+            //Assert.IsType<CompletionResult>(response);
+            Assert.IsAssignableFrom<CompletionResult>(response);
+        }
+        
+        /// <summary>
         /// Test ListActiveQueues
         /// </summary>
         [Fact]
@@ -1869,6 +1886,14 @@ namespace freeclimb.Test.Api
 
         private List<string> mediaUrlsTestValue() {
             return new List<string>();
+        }
+
+        private string knowledgeBaseIdTestValue() {
+            return "KNOWLEDGE-BASE-ID";
+        }
+
+        private CompletionRequest completionRequestTestValue() {
+            return new CompletionRequest("QUERY");
         }
     }
 }
