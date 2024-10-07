@@ -2175,6 +2175,7 @@
       "CompletionResult": {
         "type": "object",
         "required": ["response", "status"],
+        "x-completion-result": true,
         "properties": {
           "response": {
             "type": "string",
@@ -2184,7 +2185,7 @@
             "type": "string",
             "x-has-writer": true,
             "description": "Completion result status. Possible values: success, no_context",
-            "x-enum-type": "KnowledgeBaseCompletionStatusEnum",
+            "x-enum-type": "CompletionResultStatusEnum",
             "x-enum-type-c-sharp": "StatusEnum",
             "enum": ["success", "no_context"],
             "x-enum-varnames": ["SUCCESS", "NO_CONTEXT"]
