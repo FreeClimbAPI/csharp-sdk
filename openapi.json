@@ -2168,7 +2168,8 @@
           "query": {
             "type": "string",
             "maxLength": 2000,
-            "description": "Question to ask the Knowledge Base"
+            "description": "Question to ask the Knowledge Base",
+            "x-completion-request-query": true
           }
         }
       },
@@ -2188,7 +2189,8 @@
             "x-enum-type": "CompletionResultStatusEnum",
             "x-enum-type-c-sharp": "StatusEnum",
             "enum": ["success", "no_context"],
-            "x-enum-varnames": ["SUCCESS", "NO_CONTEXT"]
+            "x-enum-varnames": ["SUCCESS", "NO_CONTEXT"],
+            "x-enum-varnames-python": ["success", "no_context"]
           }
         }
       },
