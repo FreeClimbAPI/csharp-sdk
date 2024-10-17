@@ -2190,7 +2190,7 @@
             "x-enum-type-c-sharp": "StatusEnum",
             "enum": ["success", "no_context"],
             "x-enum-varnames": ["SUCCESS", "NO_CONTEXT"],
-            "x-enum-varnames-python": ["success", "no_context"]
+            "x-enum-varnames-values": ["success", "no_context"]
           }
         }
       },
