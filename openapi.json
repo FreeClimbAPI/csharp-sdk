@@ -4257,7 +4257,7 @@
       "post": {
         "tags": [],
         "summary": "Query the knowledge base",
-        "operationId": "knowledgebase-completion",
+        "operationId": "create-knowledge-base-completion",
         "parameters": [
           {
             "$ref": "#/components/parameters/AccountId"

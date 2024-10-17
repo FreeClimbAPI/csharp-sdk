@@ -149,6 +149,7 @@ docs/UpdateConferenceRequest.md
 docs/UpdateConferenceRequestStatus.md
 freeclimb.sln
 git_push.sh
+src/freeclimb.Test/Api/DefaultApiTests.cs
 src/freeclimb.Test/Model/AccountStatusTests.cs
 src/freeclimb.Test/Model/AccountTypeTests.cs
 src/freeclimb.Test/Model/AnsweredByTests.cs

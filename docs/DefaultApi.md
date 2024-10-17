@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**CreateAConference**](DefaultApi.md#createaconference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference
 [**CreateAQueue**](DefaultApi.md#createaqueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue
 [**CreateAnApplication**](DefaultApi.md#createanapplication) | **POST** /Accounts/{accountId}/Applications | Create an application
+[**CreateKnowledgeBaseCompletion**](DefaultApi.md#createknowledgebasecompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base
 [**DeleteARecording**](DefaultApi.md#deletearecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording
 [**DeleteAnApplication**](DefaultApi.md#deleteanapplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application
 [**DeleteAnIncomingNumber**](DefaultApi.md#deleteanincomingnumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number
@@ -34,7 +35,6 @@ Method | HTTP request | Description
 [**GetTenDLCSmsPartnerCampaigns**](DefaultApi.md#gettendlcsmspartnercampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 [**GetTollFreeSmsCampaign**](DefaultApi.md#gettollfreesmscampaign) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId} | Get a TollFree SMS Campaign
 [**GetTollFreeSmsCampaigns**](DefaultApi.md#gettollfreesmscampaigns) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns | Get list of TollFree Campaigns
-[**KnowledgebaseCompletion**](DefaultApi.md#knowledgebasecompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base
 [**ListActiveQueues**](DefaultApi.md#listactivequeues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 [**ListAllAccountLogs**](DefaultApi.md#listallaccountlogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 [**ListApplications**](DefaultApi.md#listapplications) | **GET** /Accounts/{accountId}/Applications | List applications
@@ -364,6 +364,85 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Application successfuly created |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createknowledgebasecompletion"></a>
+# **CreateKnowledgeBaseCompletion**
+> CompletionResult CreateKnowledgeBaseCompletion (string knowledgeBaseId, CompletionRequest completionRequest = null)
+
+Query the knowledge base
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class CreateKnowledgeBaseCompletionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var knowledgeBaseId = "knowledgeBaseId_example";  // string | A string that uniquely identifies the KnowledgeBase resource.
+
+
+            var completionRequest = new CompletionRequest(); // CompletionRequest | Completion request details (optional) 
+
+            try
+            {
+                // Query the knowledge base
+                CompletionResult result = apiInstance.CreateKnowledgeBaseCompletion(knowledgeBaseId, completionRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.CreateKnowledgeBaseCompletion: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **knowledgeBaseId** | **string**| A string that uniquely identifies the KnowledgeBase resource. | 
+ **completionRequest** | [**CompletionRequest**](CompletionRequest.md)| Completion request details | [optional] 
+
+
+### Return type
+
+[**CompletionResult**](CompletionResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | KnowledgeaBase completion response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2331,85 +2410,6 @@ namespace Example
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The list toll-free campaigns |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="knowledgebasecompletion"></a>
-# **KnowledgebaseCompletion**
-> CompletionResult KnowledgebaseCompletion (string knowledgeBaseId, CompletionRequest completionRequest = null)
-
-Query the knowledge base
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class KnowledgebaseCompletionExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_ACCOUNT_ID";
-            config.Password = "YOUR_API_KEY";
-
-            var apiInstance = new DefaultApi(config);
-            
-            var knowledgeBaseId = "knowledgeBaseId_example";  // string | A string that uniquely identifies the KnowledgeBase resource.
-
-
-            var completionRequest = new CompletionRequest(); // CompletionRequest | Completion request details (optional) 
-
-            try
-            {
-                // Query the knowledge base
-                CompletionResult result = apiInstance.KnowledgebaseCompletion(knowledgeBaseId, completionRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.KnowledgebaseCompletion: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **knowledgeBaseId** | **string**| A string that uniquely identifies the KnowledgeBase resource. | 
- **completionRequest** | [**CompletionRequest**](CompletionRequest.md)| Completion request details | [optional] 
-
-
-### Return type
-
-[**CompletionResult**](CompletionResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | KnowledgeaBase completion response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -124,6 +124,23 @@ namespace freeclimb.Test.Api
         }
         
         /// <summary>
+        /// Test CreateKnowledgeBaseCompletion
+        /// </summary>
+        [Fact]
+
+        public void CreateKnowledgeBaseCompletionTest()
+        {
+            
+            string knowledgeBaseId = knowledgeBaseIdTestValue();
+	        
+            CompletionRequest completionRequest = completionRequestTestValue();
+	        
+            var response = instance.CreateKnowledgeBaseCompletion(knowledgeBaseId, completionRequest);
+            //Assert.IsType<CompletionResult>(response);
+            Assert.IsAssignableFrom<CompletionResult>(response);
+        }
+        
+        /// <summary>
         /// Test DeleteARecording
         /// </summary>
         [Fact]
@@ -505,23 +522,6 @@ namespace freeclimb.Test.Api
             var response = instance.GetTollFreeSmsCampaigns();
             //Assert.IsType<SMSTollFreeCampaignsListResult>(response);
             Assert.IsAssignableFrom<SMSTollFreeCampaignsListResult>(response);
-        }
-        
-        /// <summary>
-        /// Test KnowledgebaseCompletion
-        /// </summary>
-        [Fact]
-
-        public void KnowledgebaseCompletionTest()
-        {
-            
-            string knowledgeBaseId = knowledgeBaseIdTestValue();
-	        
-            CompletionRequest completionRequest = completionRequestTestValue();
-	        
-            var response = instance.KnowledgebaseCompletion(knowledgeBaseId, completionRequest);
-            //Assert.IsType<CompletionResult>(response);
-            Assert.IsAssignableFrom<CompletionResult>(response);
         }
         
         /// <summary>
