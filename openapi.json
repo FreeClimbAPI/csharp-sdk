@@ -2168,8 +2168,7 @@
           "query": {
             "type": "string",
             "maxLength": 2000,
-            "description": "Question to ask the Knowledge Base",
-            "x-completion-request-query": true
+            "description": "Question to ask the Knowledge Base"
           }
         }
       },
