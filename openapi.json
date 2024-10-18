@@ -1235,7 +1235,6 @@
                 "type": "string"
               },
               "from": {
-                "x-is-private-property": true,
                 "description": "E.164 representation of the phone number to use as the sender. This must be an incoming phone number you have purchased from FreeClimb.",
                 "type": "string"
               },
@@ -1791,7 +1790,6 @@
                 "nullable": true
               },
               "from": {
-                "x-is-private-property": true,
                 "type": "string",
                 "description": "Phone number that initiated this Call.",
                 "nullable": true
@@ -1863,7 +1861,6 @@
         "required": ["from", "to"],
         "properties": {
           "from": {
-            "x-is-private-property": true,
             "type": "string",
             "description": "Phone number to use as the caller ID. This can be: (a) The To or From number provided in FreeClimb's initial request to your app or (b) Any incoming phone number you have purchased from FreeClimb."
           },
@@ -2136,7 +2133,6 @@
             "required": ["from", "to", "text"],
             "properties": {
               "from": {
-                "x-is-private-property": true,
                 "type": "string",
                 "description": "Phone number to use as the sender. This must be an incoming phone number that you have purchased from FreeClimb."
               },
@@ -2164,6 +2160,38 @@
             }
           }
         ]
+      },
+      "CompletionRequest": {
+        "type": "object",
+        "required": ["query"],
+        "properties": {
+          "query": {
+            "type": "string",
+            "maxLength": 2000,
+            "description": "Question to ask the Knowledge Base"
+          }
+        }
+      },
+      "CompletionResult": {
+        "type": "object",
+        "required": ["response", "status"],
+        "x-completion-result": true,
+        "properties": {
+          "response": {
+            "type": "string",
+            "description": "The generative response from the KnowledgeBase"
+          },
+          "status": {
+            "type": "string",
+            "x-has-writer": true,
+            "description": "Completion result status. Possible values: success, no_context",
+            "x-enum-type": "CompletionResultStatusEnum",
+            "x-enum-type-c-sharp": "StatusEnum",
+            "enum": ["success", "no_context"],
+            "x-enum-varnames": ["SUCCESS", "NO_CONTEXT"],
+            "x-enum-varnames-values": ["success", "no_context"]
+          }
+        }
       },
       "ConferenceList": {
         "x-implements": "Pagination",
@@ -2208,7 +2236,6 @@
                 "$ref": "#/components/schemas/MessageStatus"
               },
               "from": {
-                "x-is-private-property": true,
                 "type": "string",
                 "description": "Phone number in E.164 format that sent the message.",
                 "nullable": true
@@ -3623,7 +3650,6 @@
             "description": "E.164 formatted phone number to which calls using this token will be made."
           },
           "from": {
-            "x-is-private-property": true,
             "type": "string",
             "description": "E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made."
           },
@@ -4219,6 +4245,50 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IncomingNumberResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion": {
+      "post": {
+        "tags": [],
+        "summary": "Query the knowledge base",
+        "operationId": "create-knowledge-base-completion",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "name": "knowledgeBaseId",
+            "in": "path",
+            "description": "A string that uniquely identifies the KnowledgeBase resource.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Completion request details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionRequest"
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "responses": {
+          "200": {
+            "description": "KnowledgeaBase completion response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompletionResult"
                 }
               }
             }

@@ -102,6 +102,26 @@ namespace freeclimb.Api
         /// <returns>ApiResponse of ApplicationResult</returns>
         ApiResponse<ApplicationResult> CreateAnApplicationWithHttpInfo(ApplicationRequest applicationRequest = default(ApplicationRequest));
         /// <summary>
+        /// Query the knowledge base
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeBaseId">A string that uniquely identifies the KnowledgeBase resource.</param>
+        /// <param name="completionRequest">Completion request details (optional)</param>
+        /// <returns>CompletionResult</returns>
+        CompletionResult CreateKnowledgeBaseCompletion(string knowledgeBaseId, CompletionRequest completionRequest = default(CompletionRequest));
+
+        /// <summary>
+        /// Query the knowledge base
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeBaseId">A string that uniquely identifies the KnowledgeBase resource.</param>
+        /// <param name="completionRequest">Completion request details (optional)</param>
+        /// <returns>ApiResponse of CompletionResult</returns>
+        ApiResponse<CompletionResult> CreateKnowledgeBaseCompletionWithHttpInfo(string knowledgeBaseId, CompletionRequest completionRequest = default(CompletionRequest));
+        /// <summary>
         /// Delete a Recording
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1264,6 +1284,37 @@ namespace freeclimb.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApplicationResult>> CreateAnApplicationWithHttpInfoAsync(ApplicationRequest applicationRequest = default(ApplicationRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Query the knowledge base
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="knowledgeBaseId">A string that uniquely identifies the KnowledgeBase resource.</param>
+        
+        /// <param name="completionRequest">Completion request details (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompletionResult</returns>
+        System.Threading.Tasks.Task<CompletionResult> CreateKnowledgeBaseCompletionAsync(string knowledgeBaseId, CompletionRequest completionRequest = default(CompletionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Query the knowledge base
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="knowledgeBaseId">A string that uniquely identifies the KnowledgeBase resource.</param>
+        
+        /// <param name="completionRequest">Completion request details (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompletionResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CompletionResult>> CreateKnowledgeBaseCompletionWithHttpInfoAsync(string knowledgeBaseId, CompletionRequest completionRequest = default(CompletionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a Recording
         /// </summary>
@@ -3598,6 +3649,174 @@ namespace freeclimb.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateAnApplication", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query the knowledge base 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeBaseId">A string that uniquely identifies the KnowledgeBase resource.</param>
+        /// <param name="completionRequest">Completion request details (optional)</param>
+        /// <returns>CompletionResult</returns>
+        public CompletionResult CreateKnowledgeBaseCompletion(string knowledgeBaseId, CompletionRequest completionRequest = default(CompletionRequest))
+        {
+            freeclimb.Client.ApiResponse<CompletionResult> localVarResponse = CreateKnowledgeBaseCompletionWithHttpInfo(knowledgeBaseId , completionRequest );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query the knowledge base 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeBaseId">A string that uniquely identifies the KnowledgeBase resource.</param>
+        /// <param name="completionRequest">Completion request details (optional)</param>
+        /// <returns>ApiResponse of CompletionResult</returns>
+        public freeclimb.Client.ApiResponse<CompletionResult> CreateKnowledgeBaseCompletionWithHttpInfo(string knowledgeBaseId, CompletionRequest completionRequest = default(CompletionRequest))
+        {
+            
+            // verify the required parameter 'knowledgeBaseId' is set
+            if (knowledgeBaseId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'knowledgeBaseId' when calling DefaultApi->CreateKnowledgeBaseCompletion");
+            }
+
+            
+            
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("knowledgeBaseId", freeclimb.Client.ClientUtils.ParameterToString(knowledgeBaseId)); // path parameter
+            localVarRequestOptions.Data = completionRequest;
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CompletionResult>("/Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateKnowledgeBaseCompletion", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query the knowledge base 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="knowledgeBaseId">A string that uniquely identifies the KnowledgeBase resource.</param>
+        
+        /// <param name="completionRequest">Completion request details (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompletionResult</returns>
+        public async System.Threading.Tasks.Task<CompletionResult> CreateKnowledgeBaseCompletionAsync(string knowledgeBaseId, CompletionRequest completionRequest = default(CompletionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            freeclimb.Client.ApiResponse<CompletionResult> localVarResponse = await CreateKnowledgeBaseCompletionWithHttpInfoAsync(knowledgeBaseId, completionRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query the knowledge base 
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="knowledgeBaseId">A string that uniquely identifies the KnowledgeBase resource.</param>
+        
+        /// <param name="completionRequest">Completion request details (optional)</param>
+        
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompletionResult)</returns>
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<CompletionResult>> CreateKnowledgeBaseCompletionWithHttpInfoAsync(string knowledgeBaseId, CompletionRequest completionRequest = default(CompletionRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            
+            // verify the required parameter 'knowledgeBaseId' is set
+            if (knowledgeBaseId == null)
+            {
+                throw new freeclimb.Client.ApiException(400, "Missing required parameter 'knowledgeBaseId' when calling DefaultApi->CreateKnowledgeBaseCompletion");
+            }
+
+            
+            
+
+            freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("accountId", freeclimb.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("knowledgeBaseId", freeclimb.Client.ClientUtils.ParameterToString(knowledgeBaseId)); // path parameter
+            localVarRequestOptions.Data = completionRequest;
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + freeclimb.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CompletionResult>("/Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateKnowledgeBaseCompletion", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -124,6 +124,23 @@ namespace freeclimb.Test.Api
         }
         
         /// <summary>
+        /// Test CreateKnowledgeBaseCompletion
+        /// </summary>
+        [Fact]
+
+        public void CreateKnowledgeBaseCompletionTest()
+        {
+            
+            string knowledgeBaseId = knowledgeBaseIdTestValue();
+	        
+            CompletionRequest completionRequest = completionRequestTestValue();
+	        
+            var response = instance.CreateKnowledgeBaseCompletion(knowledgeBaseId, completionRequest);
+            //Assert.IsType<CompletionResult>(response);
+            Assert.IsAssignableFrom<CompletionResult>(response);
+        }
+        
+        /// <summary>
         /// Test DeleteARecording
         /// </summary>
         [Fact]
@@ -1869,6 +1886,14 @@ namespace freeclimb.Test.Api
 
         private List<string> mediaUrlsTestValue() {
             return new List<string>();
+        }
+
+        private string knowledgeBaseIdTestValue() {
+            return "KNOWLEDGE-BASE-ID";
+        }
+
+        private CompletionRequest completionRequestTestValue() {
+            return new CompletionRequest("QUERY");
         }
     }
 }
