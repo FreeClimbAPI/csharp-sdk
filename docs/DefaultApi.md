@@ -92,7 +92,7 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             
 
-            var buyIncomingNumberRequest = new BuyIncomingNumberRequest(); // BuyIncomingNumberRequest | Incoming Number transaction details
+            var buyIncomingNumberRequest = new BuyIncomingNumberRequest(PhoneNumber={ Phone number to purchase in E.164 format (as returned in the list of Available Phone Numbers). }, Alias={ Description for this new incoming phone number (max 64 characters). }, ApplicationId={ ID of the application that should handle phone calls to the number. }); // BuyIncomingNumberRequest | Incoming Number transaction details
 
             try
             {
@@ -168,7 +168,7 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             
 
-            var createConferenceRequest = new CreateConferenceRequest(); // CreateConferenceRequest | Conference to create (optional) 
+            var createConferenceRequest = new CreateConferenceRequest(Alias={ A description for this Conference. Maximum 64 characters. }, PlayBeep={  }, Record={ Setting to `true` records the entire Conference. }, WaitUrl={ If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &mdash; when the Conference is created. }, StatusCallbackUrl={ This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below). }); // CreateConferenceRequest | Conference to create (optional) 
 
             try
             {
@@ -244,7 +244,7 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             
 
-            var queueRequest = new QueueRequest(); // QueueRequest | Queue details used to create a queue (optional) 
+            var queueRequest = new QueueRequest(Alias={ Description for this Queue. Max length is 64 characters. }, MaxSize={ Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize. }); // QueueRequest | Queue details used to create a queue (optional) 
 
             try
             {
@@ -320,7 +320,7 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             
 
-            var applicationRequest = new ApplicationRequest(); // ApplicationRequest | Application Details (optional) 
+            var applicationRequest = new ApplicationRequest(Alias={ A human readable description of the application, with maximum length 64 characters. }, VoiceUrl={ The URL that FreeClimb will request when an inbound call arrives on a phone number assigned to this application. Used only for inbound calls. }, VoiceFallbackUrl={ The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only. Note: A PerCL response is expected to control the inbound call. }, CallConnectUrl={ The URL that FreeClimb will request when an outbound call request is complete. Used for outbound calls only.  Note: A PerCL response is expected if the outbound call is connected (status=InProgress) to control the call. }, StatusCallbackUrl={ The URL that FreeClimb will request to pass call status (such as call ended) to the application.  Note: This is a notification only; any PerCL returned will be ignored. }, SmsUrl={ The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. }, SmsFallbackUrl={ The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. }); // ApplicationRequest | Application Details (optional) 
 
             try
             {
@@ -398,7 +398,7 @@ namespace Example
             var knowledgeBaseId = "knowledgeBaseId_example";  // string | A string that uniquely identifies the KnowledgeBase resource.
 
 
-            var completionRequest = new CompletionRequest(); // CompletionRequest | Completion request details (optional) 
+            var completionRequest = new CompletionRequest(Query={ Question to ask the Knowledge Base }); // CompletionRequest | Completion request details (optional) 
 
             try
             {
@@ -931,7 +931,7 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             
 
-            var filterLogsRequest = new FilterLogsRequest(); // FilterLogsRequest | Filter logs request paramters
+            var filterLogsRequest = new FilterLogsRequest(Pql={ The filter query for retrieving logs. See **Performance Query Language** below. }); // FilterLogsRequest | Filter logs request paramters
 
             try
             {
@@ -3645,7 +3645,7 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             
 
-            var makeCallRequest = new MakeCallRequest(); // MakeCallRequest | Call details for making a call (optional) 
+            var makeCallRequest = new MakeCallRequest(From={ Phone number to use as the caller ID. This can be: (a) The To or From number provided in FreeClimb's initial request to your app or (b) Any incoming phone number you have purchased from FreeClimb. }, To={ Phone number to place the Call to. }, ApplicationId={ Required if no `parentCallId` or `callConnectUrl` has been provided. ID of the application FreeClimb should use to handle this phone call. FreeClimb will use the `callConnectUrl` and `statusCallbackUrl` set on the application unless the `callConnectUrl` attribute is also provided with the request. In this case, the URL specified in that `callConnectUrl` attribute will be used as a replacement of the `callConnectUrl` originally assigned in the application. If the `callConnectUrl` is not set as either an attribute of the request or as part of the specified application, an error will be provided. The application’s voiceUrl parameter is not used for outbound calls. }, SendDigits={ String of digits to dial after connecting to the number. It can include digits `0-9`, `*`, and `#`, and allows embedding a pause between the output of individual digits. The default pause is 500 milliseconds. So, a string such as *1234#* will be played in 2 seconds because of the 4 standard pauses implied within the string. A custom pause is specified by including a positive integer wrapped in curly braces: {n}. For more information, see **sendDigits examples** below. }, IfMachine={ Specifies how FreeClimb should handle this Call if an answering machine answers it. }, IfMachineUrl={ This attribute specifies a URL to which FreeClimb will make a POST request when an answering machine or a fax machine is detected. This URL is required if the ifMachine flag is set to redirect. When ifMachine is set to hangup, ifMachineUrl must not be included in the request. For more information, see **ifMachineUrl example** below. }, Timeout={ Number of seconds that FreeClimb should allow the phone to ring before assuming there is no answer. Default is 30 seconds. Maximum allowed ring-time is determined by the target phone's provider. Note that most providers limit ring-time to 120 seconds. }, ParentCallId={ Required if no `applicationId` or `callConnectUrl` has been provided. The ID of the parent Call in the case that this new Call is meant to be treated as a child of an existing Call. This attribute should be included when possible to reduce latency when adding child calls to Conferences containing the parent Call. A call can only be used as a parent once the call is in progress or as an inbound call that is still ringing. An outbound call is considered to be in progress once the `outdialConnect` or `outdialApiConnect` webhook is invoked. An inbound call is ringing when the inbound webhook is invoked. If a `callConnectUrl` attribute is also included with the `parentCallId` in the request, this URL will be used as a replacement of the `callConnectUrl` originally assigned in the parent call. }, PrivacyMode={ Activate privacy mode in order to obscure log data that can potentially expose private information. }, CallConnectUrl={ The URL that FreeClimb should use to handle this phone call. If an applicationId or parentCallId have already been provided, this callConnectUrl attribute will be used as a replacement of the callConnectUrl originally assigned in the application or parent call. }); // MakeCallRequest | Call details for making a call (optional) 
 
             try
             {
@@ -3721,7 +3721,7 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             
 
-            var createWebRTCToken = new CreateWebRTCToken(); // CreateWebRTCToken | Information needed to craft a JWT compatible with the platforms WebRTC APIs
+            var createWebRTCToken = new CreateWebRTCToken(To={ E.164 formatted phone number to which calls using this token will be made. }, From={ E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made. }, Uses={ number of times this token may be used for a WebRTC call }); // CreateWebRTCToken | Information needed to craft a JWT compatible with the platforms WebRTC APIs
 
             try
             {
@@ -4029,7 +4029,7 @@ namespace Example
             var conferenceId = "conferenceId_example";  // string | String that uniquely identifies this conference resource.
 
 
-            var updateConferenceRequest = new UpdateConferenceRequest(); // UpdateConferenceRequest | Conference Details to update (optional) 
+            var updateConferenceRequest = new UpdateConferenceRequest(Alias={ Description for this conference. Maximum 64 characters. }, PlayBeep={  }, Status={  }); // UpdateConferenceRequest | Conference Details to update (optional) 
 
             try
             {
@@ -4107,7 +4107,7 @@ namespace Example
             var callId = "callId_example";  // string | String that uniquely identifies this call resource.
 
 
-            var updateCallRequest = new UpdateCallRequest(); // UpdateCallRequest | Call details to update
+            var updateCallRequest = new UpdateCallRequest(Status={  }); // UpdateCallRequest | Call details to update
 
             try
             {
@@ -4187,7 +4187,7 @@ namespace Example
             var callId = "callId_example";  // string | ID of the Call associated with this participant.
 
 
-            var updateConferenceParticipantRequest = new UpdateConferenceParticipantRequest(); // UpdateConferenceParticipantRequest | Conference participant details to update (optional) 
+            var updateConferenceParticipantRequest = new UpdateConferenceParticipantRequest(Talk={ (Optional) Default is `true`. Setting to `false` mutes the Participant. FreeClimb returns an error and ignores any other value. }, Listen={ (Optional) Default is `true`. Setting to `false` silences the Conference for this Participant. FreeClimb returns an error and ignores any other value. }); // UpdateConferenceParticipantRequest | Conference participant details to update (optional) 
 
             try
             {
@@ -4267,7 +4267,7 @@ namespace Example
             var queueId = "queueId_example";  // string | A string that uniquely identifies this Queue resource.
 
 
-            var queueRequest = new QueueRequest(); // QueueRequest | Queue Details to update (optional) 
+            var queueRequest = new QueueRequest(Alias={ Description for this Queue. Max length is 64 characters. }, MaxSize={ Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize. }); // QueueRequest | Queue Details to update (optional) 
 
             try
             {
@@ -4344,7 +4344,7 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             
 
-            var accountRequest = new AccountRequest(); // AccountRequest | Account details to update (optional) 
+            var accountRequest = new AccountRequest(Alias={ Description for this account. }, Label={ Group to which this account belongs. }); // AccountRequest | Account details to update (optional) 
 
             try
             {
@@ -4421,7 +4421,7 @@ namespace Example
             var applicationId = "applicationId_example";  // string | A string that uniquely identifies this application resource.
 
 
-            var applicationRequest = new ApplicationRequest(); // ApplicationRequest | Application details to update. (optional) 
+            var applicationRequest = new ApplicationRequest(Alias={ A human readable description of the application, with maximum length 64 characters. }, VoiceUrl={ The URL that FreeClimb will request when an inbound call arrives on a phone number assigned to this application. Used only for inbound calls. }, VoiceFallbackUrl={ The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only. Note: A PerCL response is expected to control the inbound call. }, CallConnectUrl={ The URL that FreeClimb will request when an outbound call request is complete. Used for outbound calls only.  Note: A PerCL response is expected if the outbound call is connected (status=InProgress) to control the call. }, StatusCallbackUrl={ The URL that FreeClimb will request to pass call status (such as call ended) to the application.  Note: This is a notification only; any PerCL returned will be ignored. }, SmsUrl={ The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. }, SmsFallbackUrl={ The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. }); // ApplicationRequest | Application details to update. (optional) 
 
             try
             {
@@ -4500,7 +4500,7 @@ namespace Example
             var phoneNumberId = "phoneNumberId_example";  // string | String that uniquely identifies this phone number resource.
 
 
-            var incomingNumberRequest = new IncomingNumberRequest(); // IncomingNumberRequest | Incoming Number details to update (optional) 
+            var incomingNumberRequest = new IncomingNumberRequest(ApplicationId={ ID of the Application that should handle calls to this number. }, Alias={ Description for this phone number. }, CampaignId={ The campaign ID generated by the campaign registry }); // IncomingNumberRequest | Incoming Number details to update (optional) 
 
             try
             {
