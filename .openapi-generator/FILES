@@ -25,6 +25,8 @@ docs/CallResult.md
 docs/CallResultAllOf.md
 docs/CallStatus.md
 docs/Capabilities.md
+docs/CompletionRequest.md
+docs/CompletionResult.md
 docs/ConferenceList.md
 docs/ConferenceListAllOf.md
 docs/ConferenceParticipantList.md
@@ -211,6 +213,8 @@ src/freeclimb/Model/CallResult.cs
 src/freeclimb/Model/CallResultAllOf.cs
 src/freeclimb/Model/CallStatus.cs
 src/freeclimb/Model/Capabilities.cs
+src/freeclimb/Model/CompletionRequest.cs
+src/freeclimb/Model/CompletionResult.cs
 src/freeclimb/Model/ConferenceList.cs
 src/freeclimb/Model/ConferenceListAllOf.cs
 src/freeclimb/Model/ConferenceParticipantList.cs
