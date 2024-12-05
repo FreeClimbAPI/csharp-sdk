@@ -18,6 +18,7 @@ using System.Net.Mime;
 using freeclimb.Client;
 using freeclimb.Model;
 using freeclimb.Enums;
+using freeclimb.Utils;
 
 namespace freeclimb.Api
 {
