@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// LogList
     /// </summary>
     [DataContract(Name = "LogList")]
-    public partial class LogList : IValidatableObject
+    public partial class LogList : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LogList" /> class.

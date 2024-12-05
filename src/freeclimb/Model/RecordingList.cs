@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// RecordingList
     /// </summary>
     [DataContract(Name = "RecordingList")]
-    public partial class RecordingList : IValidatableObject
+    public partial class RecordingList : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordingList" /> class.

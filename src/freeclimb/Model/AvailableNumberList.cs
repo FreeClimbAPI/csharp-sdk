@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// AvailableNumberList
     /// </summary>
     [DataContract(Name = "AvailableNumberList")]
-    public partial class AvailableNumberList : IValidatableObject
+    public partial class AvailableNumberList : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableNumberList" /> class.

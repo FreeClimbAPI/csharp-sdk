@@ -22,6 +22,7 @@ using freeclimb.Api;
 // uncomment below to import models
 using freeclimb.Model;
 using freeclimb.Enums;
+using System.Reflection;
 
 namespace freeclimb.Test.Api
 {

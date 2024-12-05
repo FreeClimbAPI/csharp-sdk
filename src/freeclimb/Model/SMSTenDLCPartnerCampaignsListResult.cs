@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// SMSTenDLCPartnerCampaignsListResult
     /// </summary>
     [DataContract(Name = "SMSTenDLCPartnerCampaignsListResult")]
-    public partial class SMSTenDLCPartnerCampaignsListResult : IValidatableObject
+    public partial class SMSTenDLCPartnerCampaignsListResult : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTenDLCPartnerCampaignsListResult" /> class.

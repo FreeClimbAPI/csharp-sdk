@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// SMSTollFreeCampaignsListResult
     /// </summary>
     [DataContract(Name = "SMSTollFreeCampaignsListResult")]
-    public partial class SMSTollFreeCampaignsListResult : IValidatableObject
+    public partial class SMSTollFreeCampaignsListResult : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTollFreeCampaignsListResult" /> class.

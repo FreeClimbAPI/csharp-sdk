@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// ConferenceParticipantList
     /// </summary>
     [DataContract(Name = "ConferenceParticipantList")]
-    public partial class ConferenceParticipantList : IValidatableObject
+    public partial class ConferenceParticipantList : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConferenceParticipantList" /> class.

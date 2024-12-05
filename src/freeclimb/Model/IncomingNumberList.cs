@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// IncomingNumberList
     /// </summary>
     [DataContract(Name = "IncomingNumberList")]
-    public partial class IncomingNumberList : IValidatableObject
+    public partial class IncomingNumberList : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IncomingNumberList" /> class.

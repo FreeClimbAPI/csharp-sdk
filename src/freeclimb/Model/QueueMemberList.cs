@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// QueueMemberList
     /// </summary>
     [DataContract(Name = "QueueMemberList")]
-    public partial class QueueMemberList : IValidatableObject
+    public partial class QueueMemberList : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueMemberList" /> class.

@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// CallList
     /// </summary>
     [DataContract(Name = "CallList")]
-    public partial class CallList : IValidatableObject
+    public partial class CallList : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CallList" /> class.

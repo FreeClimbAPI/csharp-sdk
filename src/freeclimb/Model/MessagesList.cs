@@ -33,7 +33,7 @@ namespace freeclimb.Model
     /// MessagesList
     /// </summary>
     [DataContract(Name = "MessagesList")]
-    public partial class MessagesList : IValidatableObject
+    public partial class MessagesList : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesList" /> class.
