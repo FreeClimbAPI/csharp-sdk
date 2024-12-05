@@ -3530,7 +3530,7 @@ namespace freeclimb.Api
         /// <returns>Task of IncomingNumberResult</returns>
         public async System.Threading.Tasks.Task<IncomingNumberResult> BuyAPhoneNumberAsync(BuyIncomingNumberRequest buyIncomingNumberRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = await BuyAPhoneNumberWithHttpInfoAsync(buyIncomingNumberRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = await BuyAPhoneNumberWithHttpInfoAsync(buyIncomingNumberRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -3694,7 +3694,7 @@ namespace freeclimb.Api
         /// <returns>Task of ConferenceResult</returns>
         public async System.Threading.Tasks.Task<ConferenceResult> CreateAConferenceAsync(CreateConferenceRequest? createConferenceRequest = default(CreateConferenceRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = await CreateAConferenceWithHttpInfoAsync(createConferenceRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = await CreateAConferenceWithHttpInfoAsync(createConferenceRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -3852,7 +3852,7 @@ namespace freeclimb.Api
         /// <returns>Task of QueueResult</returns>
         public async System.Threading.Tasks.Task<QueueResult> CreateAQueueAsync(QueueRequest? queueRequest = default(QueueRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = await CreateAQueueWithHttpInfoAsync(queueRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = await CreateAQueueWithHttpInfoAsync(queueRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -4010,7 +4010,7 @@ namespace freeclimb.Api
         /// <returns>Task of ApplicationResult</returns>
         public async System.Threading.Tasks.Task<ApplicationResult> CreateAnApplicationAsync(ApplicationRequest? applicationRequest = default(ApplicationRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = await CreateAnApplicationWithHttpInfoAsync(applicationRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = await CreateAnApplicationWithHttpInfoAsync(applicationRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -4178,7 +4178,7 @@ namespace freeclimb.Api
         /// <returns>Task of CompletionResult</returns>
         public async System.Threading.Tasks.Task<CompletionResult> CreateKnowledgeBaseCompletionAsync(string knowledgeBaseId, CompletionRequest? completionRequest = default(CompletionRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<CompletionResult> localVarResponse = await CreateKnowledgeBaseCompletionWithHttpInfoAsync(knowledgeBaseId, completionRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<CompletionResult> localVarResponse = await CreateKnowledgeBaseCompletionWithHttpInfoAsync(knowledgeBaseId, completionRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -4851,7 +4851,7 @@ namespace freeclimb.Api
         /// <returns>Task of QueueMember</returns>
         public async System.Threading.Tasks.Task<QueueMember> DequeueAMemberAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = await DequeueAMemberWithHttpInfoAsync(queueId, callId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = await DequeueAMemberWithHttpInfoAsync(queueId, callId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -5027,7 +5027,7 @@ namespace freeclimb.Api
         /// <returns>Task of QueueMember</returns>
         public async System.Threading.Tasks.Task<QueueMember> DequeueHeadMemberAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = await DequeueHeadMemberWithHttpInfoAsync(queueId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = await DequeueHeadMemberWithHttpInfoAsync(queueId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -5195,7 +5195,7 @@ namespace freeclimb.Api
         /// <returns>Task of System.IO.Stream</returns>
         public async System.Threading.Tasks.Task<System.IO.Stream> DownloadARecordingFileAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadARecordingFileWithHttpInfoAsync(recordingId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadARecordingFileWithHttpInfoAsync(recordingId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -5364,7 +5364,7 @@ namespace freeclimb.Api
         /// <returns>Task of LogList</returns>
         public async System.Threading.Tasks.Task<LogList> FilterLogsAsync(FilterLogsRequest filterLogsRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<LogList> localVarResponse = await FilterLogsWithHttpInfoAsync(filterLogsRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<LogList> localVarResponse = await FilterLogsWithHttpInfoAsync(filterLogsRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -5533,7 +5533,7 @@ namespace freeclimb.Api
         /// <returns>Task of CallResult</returns>
         public async System.Threading.Tasks.Task<CallResult> GetACallAsync(string callId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<CallResult> localVarResponse = await GetACallWithHttpInfoAsync(callId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<CallResult> localVarResponse = await GetACallWithHttpInfoAsync(callId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -5701,7 +5701,7 @@ namespace freeclimb.Api
         /// <returns>Task of ConferenceResult</returns>
         public async System.Threading.Tasks.Task<ConferenceResult> GetAConferenceAsync(string conferenceId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = await GetAConferenceWithHttpInfoAsync(conferenceId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = await GetAConferenceWithHttpInfoAsync(conferenceId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -5879,7 +5879,7 @@ namespace freeclimb.Api
         /// <returns>Task of QueueMember</returns>
         public async System.Threading.Tasks.Task<QueueMember> GetAMemberAsync(string queueId, string callId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = await GetAMemberWithHttpInfoAsync(queueId, callId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = await GetAMemberWithHttpInfoAsync(queueId, callId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -6065,7 +6065,7 @@ namespace freeclimb.Api
         /// <returns>Task of ConferenceParticipantResult</returns>
         public async System.Threading.Tasks.Task<ConferenceParticipantResult> GetAParticipantAsync(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = await GetAParticipantWithHttpInfoAsync(conferenceId, callId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = await GetAParticipantWithHttpInfoAsync(conferenceId, callId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -6241,7 +6241,7 @@ namespace freeclimb.Api
         /// <returns>Task of QueueResult</returns>
         public async System.Threading.Tasks.Task<QueueResult> GetAQueueAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = await GetAQueueWithHttpInfoAsync(queueId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = await GetAQueueWithHttpInfoAsync(queueId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -6409,7 +6409,7 @@ namespace freeclimb.Api
         /// <returns>Task of RecordingResult</returns>
         public async System.Threading.Tasks.Task<RecordingResult> GetARecordingAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<RecordingResult> localVarResponse = await GetARecordingWithHttpInfoAsync(recordingId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<RecordingResult> localVarResponse = await GetARecordingWithHttpInfoAsync(recordingId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -6567,7 +6567,7 @@ namespace freeclimb.Api
         /// <returns>Task of AccountResult</returns>
         public async System.Threading.Tasks.Task<AccountResult> GetAnAccountAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<AccountResult> localVarResponse = await GetAnAccountWithHttpInfoAsync(, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<AccountResult> localVarResponse = await GetAnAccountWithHttpInfoAsync( cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -6727,7 +6727,7 @@ namespace freeclimb.Api
         /// <returns>Task of ApplicationResult</returns>
         public async System.Threading.Tasks.Task<ApplicationResult> GetAnApplicationAsync(string applicationId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = await GetAnApplicationWithHttpInfoAsync(applicationId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = await GetAnApplicationWithHttpInfoAsync(applicationId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -6895,7 +6895,7 @@ namespace freeclimb.Api
         /// <returns>Task of IncomingNumberResult</returns>
         public async System.Threading.Tasks.Task<IncomingNumberResult> GetAnIncomingNumberAsync(string phoneNumberId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = await GetAnIncomingNumberWithHttpInfoAsync(phoneNumberId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = await GetAnIncomingNumberWithHttpInfoAsync(phoneNumberId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -7063,7 +7063,7 @@ namespace freeclimb.Api
         /// <returns>Task of MessageResult</returns>
         public async System.Threading.Tasks.Task<MessageResult> GetAnSmsMessageAsync(string messageId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<MessageResult> localVarResponse = await GetAnSmsMessageWithHttpInfoAsync(messageId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<MessageResult> localVarResponse = await GetAnSmsMessageWithHttpInfoAsync(messageId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -7231,7 +7231,7 @@ namespace freeclimb.Api
         /// <returns>Task of QueueMember</returns>
         public async System.Threading.Tasks.Task<QueueMember> GetHeadMemberAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = await GetHeadMemberWithHttpInfoAsync(queueId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<QueueMember> localVarResponse = await GetHeadMemberWithHttpInfoAsync(queueId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -7399,7 +7399,7 @@ namespace freeclimb.Api
         /// <returns>Task of SMSTenDLCBrand</returns>
         public async System.Threading.Tasks.Task<SMSTenDLCBrand> GetTenDLCSmsBrandAsync(string brandId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<SMSTenDLCBrand> localVarResponse = await GetTenDLCSmsBrandWithHttpInfoAsync(brandId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<SMSTenDLCBrand> localVarResponse = await GetTenDLCSmsBrandWithHttpInfoAsync(brandId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -7557,7 +7557,7 @@ namespace freeclimb.Api
         /// <returns>Task of SMSTenDLCBrandsListResult</returns>
         public async System.Threading.Tasks.Task<SMSTenDLCBrandsListResult> GetTenDLCSmsBrandsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult> localVarResponse = await GetTenDLCSmsBrandsWithHttpInfoAsync(, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult> localVarResponse = await GetTenDLCSmsBrandsWithHttpInfoAsync( cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -7717,7 +7717,7 @@ namespace freeclimb.Api
         /// <returns>Task of SMSTenDLCCampaign</returns>
         public async System.Threading.Tasks.Task<SMSTenDLCCampaign> GetTenDLCSmsCampaignAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<SMSTenDLCCampaign> localVarResponse = await GetTenDLCSmsCampaignWithHttpInfoAsync(campaignId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<SMSTenDLCCampaign> localVarResponse = await GetTenDLCSmsCampaignWithHttpInfoAsync(campaignId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -7882,7 +7882,7 @@ namespace freeclimb.Api
         /// <returns>Task of SMSTenDLCCampaignsListResult</returns>
         public async System.Threading.Tasks.Task<SMSTenDLCCampaignsListResult> GetTenDLCSmsCampaignsAsync(string? brandId = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<SMSTenDLCCampaignsListResult> localVarResponse = await GetTenDLCSmsCampaignsWithHttpInfoAsync(brandId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<SMSTenDLCCampaignsListResult> localVarResponse = await GetTenDLCSmsCampaignsWithHttpInfoAsync(brandId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -8047,7 +8047,7 @@ namespace freeclimb.Api
         /// <returns>Task of SMSTenDLCPartnerCampaign</returns>
         public async System.Threading.Tasks.Task<SMSTenDLCPartnerCampaign> GetTenDLCSmsPartnerCampaignAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaign> localVarResponse = await GetTenDLCSmsPartnerCampaignWithHttpInfoAsync(campaignId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaign> localVarResponse = await GetTenDLCSmsPartnerCampaignWithHttpInfoAsync(campaignId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -8212,7 +8212,7 @@ namespace freeclimb.Api
         /// <returns>Task of SMSTenDLCPartnerCampaignsListResult</returns>
         public async System.Threading.Tasks.Task<SMSTenDLCPartnerCampaignsListResult> GetTenDLCSmsPartnerCampaignsAsync(string? brandId = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaignsListResult> localVarResponse = await GetTenDLCSmsPartnerCampaignsWithHttpInfoAsync(brandId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaignsListResult> localVarResponse = await GetTenDLCSmsPartnerCampaignsWithHttpInfoAsync(brandId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -8377,7 +8377,7 @@ namespace freeclimb.Api
         /// <returns>Task of SMSTollFreeCampaign</returns>
         public async System.Threading.Tasks.Task<SMSTollFreeCampaign> GetTollFreeSmsCampaignAsync(string campaignId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<SMSTollFreeCampaign> localVarResponse = await GetTollFreeSmsCampaignWithHttpInfoAsync(campaignId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<SMSTollFreeCampaign> localVarResponse = await GetTollFreeSmsCampaignWithHttpInfoAsync(campaignId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -8535,7 +8535,7 @@ namespace freeclimb.Api
         /// <returns>Task of SMSTollFreeCampaignsListResult</returns>
         public async System.Threading.Tasks.Task<SMSTollFreeCampaignsListResult> GetTollFreeSmsCampaignsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult> localVarResponse = await GetTollFreeSmsCampaignsWithHttpInfoAsync(, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult> localVarResponse = await GetTollFreeSmsCampaignsWithHttpInfoAsync( cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -8692,7 +8692,7 @@ namespace freeclimb.Api
         /// <returns>Task of QueueList</returns>
         public async System.Threading.Tasks.Task<QueueList> ListActiveQueuesAsync(string? alias = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<QueueList> localVarResponse = await ListActiveQueuesWithHttpInfoAsync(alias, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<QueueList> localVarResponse = await ListActiveQueuesWithHttpInfoAsync(alias,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -8847,7 +8847,7 @@ namespace freeclimb.Api
         /// <returns>Task of LogList</returns>
         public async System.Threading.Tasks.Task<LogList> ListAllAccountLogsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<LogList> localVarResponse = await ListAllAccountLogsWithHttpInfoAsync(, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<LogList> localVarResponse = await ListAllAccountLogsWithHttpInfoAsync( cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -9004,7 +9004,7 @@ namespace freeclimb.Api
         /// <returns>Task of ApplicationList</returns>
         public async System.Threading.Tasks.Task<ApplicationList> ListApplicationsAsync(string? alias = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ApplicationList> localVarResponse = await ListApplicationsWithHttpInfoAsync(alias, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ApplicationList> localVarResponse = await ListApplicationsWithHttpInfoAsync(alias,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -9222,7 +9222,7 @@ namespace freeclimb.Api
         /// <returns>Task of AvailableNumberList</returns>
         public async System.Threading.Tasks.Task<AvailableNumberList> ListAvailableNumbersAsync(string? phoneNumber = default(string?), string? region = default(string?), string? country = default(string?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<AvailableNumberList> localVarResponse = await ListAvailableNumbersWithHttpInfoAsync(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<AvailableNumberList> localVarResponse = await ListAvailableNumbersWithHttpInfoAsync(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -9425,7 +9425,7 @@ namespace freeclimb.Api
         /// <returns>Task of LogList</returns>
         public async System.Threading.Tasks.Task<LogList> ListCallLogsAsync(string callId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<LogList> localVarResponse = await ListCallLogsWithHttpInfoAsync(callId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<LogList> localVarResponse = await ListCallLogsWithHttpInfoAsync(callId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -9600,7 +9600,7 @@ namespace freeclimb.Api
         /// <returns>Task of RecordingList</returns>
         public async System.Threading.Tasks.Task<RecordingList> ListCallRecordingsAsync(string callId, string? dateCreated = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = await ListCallRecordingsWithHttpInfoAsync(callId, dateCreated, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = await ListCallRecordingsWithHttpInfoAsync(callId, dateCreated,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -9819,7 +9819,7 @@ namespace freeclimb.Api
         /// <returns>Task of CallList</returns>
         public async System.Threading.Tasks.Task<CallList> ListCallsAsync(bool? active = default(bool?), string? to = default(string?), string? from = default(string?), CallStatus? status = default(CallStatus?), string? startTime = default(string?), string? endTime = default(string?), string? parentCallId = default(string?), List<string>? applicationId = default(List<string>?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<CallList> localVarResponse = await ListCallsWithHttpInfoAsync(active, to, from, status, startTime, endTime, parentCallId, applicationId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<CallList> localVarResponse = await ListCallsWithHttpInfoAsync(active, to, from, status, startTime, endTime, parentCallId, applicationId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -10033,7 +10033,7 @@ namespace freeclimb.Api
         /// <returns>Task of RecordingList</returns>
         public async System.Threading.Tasks.Task<RecordingList> ListConferenceRecordingsAsync(string conferenceId, string? callId = default(string?), string? dateCreated = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = await ListConferenceRecordingsWithHttpInfoAsync(conferenceId, callId, dateCreated, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = await ListConferenceRecordingsWithHttpInfoAsync(conferenceId, callId, dateCreated,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -10229,7 +10229,7 @@ namespace freeclimb.Api
         /// <returns>Task of ConferenceList</returns>
         public async System.Threading.Tasks.Task<ConferenceList> ListConferencesAsync(string? status = default(string?), string? alias = default(string?), string? dateCreated = default(string?), string? dateUpdated = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ConferenceList> localVarResponse = await ListConferencesWithHttpInfoAsync(status, alias, dateCreated, dateUpdated, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ConferenceList> localVarResponse = await ListConferencesWithHttpInfoAsync(status, alias, dateCreated, dateUpdated,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -10511,7 +10511,7 @@ namespace freeclimb.Api
         /// <returns>Task of IncomingNumberList</returns>
         public async System.Threading.Tasks.Task<IncomingNumberList> ListIncomingNumbersAsync(string? phoneNumber = default(string?), string? alias = default(string?), string? region = default(string?), string? country = default(string?), string? applicationId = default(string?), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string? tfnCampaignId = default(string?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = await ListIncomingNumbersWithHttpInfoAsync(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = await ListIncomingNumbersWithHttpInfoAsync(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -10751,7 +10751,7 @@ namespace freeclimb.Api
         /// <returns>Task of QueueMemberList</returns>
         public async System.Threading.Tasks.Task<QueueMemberList> ListMembersAsync(string queueId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<QueueMemberList> localVarResponse = await ListMembersWithHttpInfoAsync(queueId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<QueueMemberList> localVarResponse = await ListMembersWithHttpInfoAsync(queueId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -10940,7 +10940,7 @@ namespace freeclimb.Api
         /// <returns>Task of ConferenceParticipantList</returns>
         public async System.Threading.Tasks.Task<ConferenceParticipantList> ListParticipantsAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ConferenceParticipantList> localVarResponse = await ListParticipantsWithHttpInfoAsync(conferenceId, talk, listen, dtmfPassThrough, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ConferenceParticipantList> localVarResponse = await ListParticipantsWithHttpInfoAsync(conferenceId, talk, listen, dtmfPassThrough,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -11134,7 +11134,7 @@ namespace freeclimb.Api
         /// <returns>Task of RecordingList</returns>
         public async System.Threading.Tasks.Task<RecordingList> ListRecordingsAsync(string? callId = default(string?), string? conferenceId = default(string?), string? dateCreated = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = await ListRecordingsWithHttpInfoAsync(callId, conferenceId, dateCreated, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<RecordingList> localVarResponse = await ListRecordingsWithHttpInfoAsync(callId, conferenceId, dateCreated,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -11355,7 +11355,7 @@ namespace freeclimb.Api
         /// <returns>Task of MessagesList</returns>
         public async System.Threading.Tasks.Task<MessagesList> ListSmsMessagesAsync(string? to = default(string?), string? from = default(string?), string? beginTime = default(string?), string? endTime = default(string?), MessageDirection? direction = default(MessageDirection?), string? campaignId = default(string?), string? brandId = default(string?), bool? is10DLC = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<MessagesList> localVarResponse = await ListSmsMessagesWithHttpInfoAsync(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<MessagesList> localVarResponse = await ListSmsMessagesWithHttpInfoAsync(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -11550,7 +11550,7 @@ namespace freeclimb.Api
         /// <returns>Task of CallResult</returns>
         public async System.Threading.Tasks.Task<CallResult> MakeACallAsync(MakeCallRequest? makeCallRequest = default(MakeCallRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<CallResult> localVarResponse = await MakeACallWithHttpInfoAsync(makeCallRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<CallResult> localVarResponse = await MakeACallWithHttpInfoAsync(makeCallRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -11714,7 +11714,7 @@ namespace freeclimb.Api
         /// <returns>Task of string</returns>
         public async System.Threading.Tasks.Task<string> MakeAWebrtcJwtAsync(CreateWebRTCToken createWebRTCToken, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<string> localVarResponse = await MakeAWebrtcJwtWithHttpInfoAsync(createWebRTCToken, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<string> localVarResponse = await MakeAWebrtcJwtWithHttpInfoAsync(createWebRTCToken,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -12066,7 +12066,7 @@ namespace freeclimb.Api
         /// <returns>Task of MessageResult</returns>
         public async System.Threading.Tasks.Task<MessageResult> SendAnSmsMessageAsync(MessageRequest messageRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<MessageResult> localVarResponse = await SendAnSmsMessageWithHttpInfoAsync(messageRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<MessageResult> localVarResponse = await SendAnSmsMessageWithHttpInfoAsync(messageRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -12235,7 +12235,7 @@ namespace freeclimb.Api
         /// <returns>Task of System.IO.Stream</returns>
         public async System.Threading.Tasks.Task<System.IO.Stream> StreamARecordingFileAsync(string recordingId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = await StreamARecordingFileWithHttpInfoAsync(recordingId, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = await StreamARecordingFileWithHttpInfoAsync(recordingId,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -12774,7 +12774,7 @@ namespace freeclimb.Api
         /// <returns>Task of ConferenceParticipantResult</returns>
         public async System.Threading.Tasks.Task<ConferenceParticipantResult> UpdateAParticipantAsync(string conferenceId, string callId, UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = await UpdateAParticipantWithHttpInfoAsync(conferenceId, callId, updateConferenceParticipantRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = await UpdateAParticipantWithHttpInfoAsync(conferenceId, callId, updateConferenceParticipantRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -12958,7 +12958,7 @@ namespace freeclimb.Api
         /// <returns>Task of QueueResult</returns>
         public async System.Threading.Tasks.Task<QueueResult> UpdateAQueueAsync(string queueId, QueueRequest? queueRequest = default(QueueRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = await UpdateAQueueWithHttpInfoAsync(queueId, queueRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<QueueResult> localVarResponse = await UpdateAQueueWithHttpInfoAsync(queueId, queueRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -13288,7 +13288,7 @@ namespace freeclimb.Api
         /// <returns>Task of ApplicationResult</returns>
         public async System.Threading.Tasks.Task<ApplicationResult> UpdateAnApplicationAsync(string applicationId, ApplicationRequest? applicationRequest = default(ApplicationRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = await UpdateAnApplicationWithHttpInfoAsync(applicationId, applicationRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = await UpdateAnApplicationWithHttpInfoAsync(applicationId, applicationRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
@@ -13464,7 +13464,7 @@ namespace freeclimb.Api
         /// <returns>Task of IncomingNumberResult</returns>
         public async System.Threading.Tasks.Task<IncomingNumberResult> UpdateAnIncomingNumberAsync(string phoneNumberId, IncomingNumberRequest? incomingNumberRequest = default(IncomingNumberRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = await UpdateAnIncomingNumberWithHttpInfoAsync(phoneNumberId, incomingNumberRequest, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = await UpdateAnIncomingNumberWithHttpInfoAsync(phoneNumberId, incomingNumberRequest,  cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }        
 
