@@ -1160,7 +1160,9 @@ namespace freeclimb.Test.Api
         public void GetTenDLCSmsCampaignsGetNextPageTest()
         {
             
+            
             string? brandId = brandIdTestValue();
+            
 	        
             var response = instance.GetTenDLCSmsCampaigns(brandId);
             //Assert.IsType<SMSTenDLCCampaignsListResult>(response);
@@ -1180,7 +1182,9 @@ namespace freeclimb.Test.Api
         public void GetTenDLCSmsPartnerCampaignsGetNextPageTest()
         {
             
+            
             string? brandId = brandIdTestValue();
+            
 	        
             var response = instance.GetTenDLCSmsPartnerCampaigns(brandId);
             //Assert.IsType<SMSTenDLCPartnerCampaignsListResult>(response);
@@ -1218,7 +1222,9 @@ namespace freeclimb.Test.Api
         public void ListActiveQueuesGetNextPageTest()
         {
             
+            
             string? alias = aliasTestValue();
+            
 	        
             var response = instance.ListActiveQueues(alias);
             //Assert.IsType<QueueList>(response);
@@ -1256,7 +1262,9 @@ namespace freeclimb.Test.Api
         public void ListApplicationsGetNextPageTest()
         {
             
+            
             string? alias = aliasTestValue();
+            
 	        
             var response = instance.ListApplications(alias);
             //Assert.IsType<ApplicationList>(response);
@@ -1276,25 +1284,45 @@ namespace freeclimb.Test.Api
         public void ListAvailableNumbersGetNextPageTest()
         {
             
+            
             string? phoneNumber = phoneNumberTestValue();
+            
 	        
+            
             string? region = regionTestValue();
+            
 	        
+            
             string? country = countryTestValue();
+            
 	        
+            
             bool? voiceEnabled = voiceEnabledTestValue();
+            
 	        
+            
             bool? smsEnabled = smsEnabledTestValue();
+            
 	        
+            
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+            
 	        
+            
             bool? capabilitiesSms = capabilitiesSmsTestValue();
+            
 	        
+            
             bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+            
 	        
+            
             bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+            
 	        
+            
             bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+            
 	        
             var response = instance.ListAvailableNumbers(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
             //Assert.IsType<AvailableNumberList>(response);
@@ -1314,7 +1342,9 @@ namespace freeclimb.Test.Api
         public void ListCallLogsGetNextPageTest()
         {
             
+            
             string callId = callIdTestValue();
+            
 	        
             var response = instance.ListCallLogs(callId);
             //Assert.IsType<LogList>(response);
@@ -1334,9 +1364,13 @@ namespace freeclimb.Test.Api
         public void ListCallRecordingsGetNextPageTest()
         {
             
+            
             string callId = callIdTestValue();
+            
 	        
+            
             string? dateCreated = dateCreatedTestValue();
+            
 	        
             var response = instance.ListCallRecordings(callId, dateCreated);
             //Assert.IsType<RecordingList>(response);
@@ -1356,21 +1390,36 @@ namespace freeclimb.Test.Api
         public void ListCallsGetNextPageTest()
         {
             
+            
             bool? active = activeTestValue();
+            
 	        
+            
             string? to = toTestValue();
+            
 	        
+            
             string? from = fromTestValue();
+            
 	        
-            CallStatus? status = statusTestValue();
+            CallStatus? status = statusTestEnum();
+            
 	        
+            
             string? startTime = startTimeTestValue();
+            
 	        
+            
             string? endTime = endTimeTestValue();
+            
 	        
+            
             string? parentCallId = parentCallIdTestValue();
+            
 	        
+            
             List<string>? applicationId = applicationIdTestArray();
+            
 	        
             var response = instance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId);
             //Assert.IsType<CallList>(response);
@@ -1390,11 +1439,17 @@ namespace freeclimb.Test.Api
         public void ListConferenceRecordingsGetNextPageTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
+            
             string? callId = callIdTestValue();
+            
 	        
+            
             string? dateCreated = dateCreatedTestValue();
+            
 	        
             var response = instance.ListConferenceRecordings(conferenceId, callId, dateCreated);
             //Assert.IsType<RecordingList>(response);
@@ -1414,13 +1469,21 @@ namespace freeclimb.Test.Api
         public void ListConferencesGetNextPageTest()
         {
             
+            
             string? status = statusTestValue();
+            
 	        
+            
             string? alias = aliasTestValue();
+            
 	        
+            
             string? dateCreated = dateCreatedTestValue();
+            
 	        
+            
             string? dateUpdated = dateUpdatedTestValue();
+            
 	        
             var response = instance.ListConferences(status, alias, dateCreated, dateUpdated);
             //Assert.IsType<ConferenceList>(response);
@@ -1440,37 +1503,69 @@ namespace freeclimb.Test.Api
         public void ListIncomingNumbersGetNextPageTest()
         {
             
+            
             string? phoneNumber = phoneNumberTestValue();
+            
 	        
+            
             string? alias = aliasTestValue();
+            
 	        
+            
             string? region = regionTestValue();
+            
 	        
+            
             string? country = countryTestValue();
+            
 	        
+            
             string? applicationId = applicationIdTestValue();
+            
 	        
+            
             bool? hasApplication = hasApplicationTestValue();
+            
 	        
+            
             bool? voiceEnabled = voiceEnabledTestValue();
+            
 	        
+            
             bool? smsEnabled = smsEnabledTestValue();
+            
 	        
+            
             bool? hasCampaign = hasCampaignTestValue();
+            
 	        
+            
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+            
 	        
+            
             bool? capabilitiesSms = capabilitiesSmsTestValue();
+            
 	        
+            
             bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+            
 	        
+            
             bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+            
 	        
+            
             bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+            
 	        
+            
             string? tfnCampaignId = tfnCampaignIdTestValue();
+            
 	        
+            
             bool? offnet = offnetTestValue();
+            
 	        
             var response = instance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
             //Assert.IsType<IncomingNumberList>(response);
@@ -1490,7 +1585,9 @@ namespace freeclimb.Test.Api
         public void ListMembersGetNextPageTest()
         {
             
+            
             string queueId = queueIdTestValue();
+            
 	        
             var response = instance.ListMembers(queueId);
             //Assert.IsType<QueueMemberList>(response);
@@ -1510,13 +1607,21 @@ namespace freeclimb.Test.Api
         public void ListParticipantsGetNextPageTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
+            
             bool? talk = talkTestValue();
+            
 	        
+            
             bool? listen = listenTestValue();
+            
 	        
+            
             bool? dtmfPassThrough = dtmfPassThroughTestValue();
+            
 	        
             var response = instance.ListParticipants(conferenceId, talk, listen, dtmfPassThrough);
             //Assert.IsType<ConferenceParticipantList>(response);
@@ -1536,11 +1641,17 @@ namespace freeclimb.Test.Api
         public void ListRecordingsGetNextPageTest()
         {
             
+            
             string? callId = callIdTestValue();
+            
 	        
+            
             string? conferenceId = conferenceIdTestValue();
+            
 	        
+            
             string? dateCreated = dateCreatedTestValue();
+            
 	        
             var response = instance.ListRecordings(callId, conferenceId, dateCreated);
             //Assert.IsType<RecordingList>(response);
@@ -1560,21 +1671,36 @@ namespace freeclimb.Test.Api
         public void ListSmsMessagesGetNextPageTest()
         {
             
+            
             string? to = toTestValue();
+            
 	        
+            
             string? from = fromTestValue();
+            
 	        
+            
             string? beginTime = beginTimeTestValue();
+            
 	        
+            
             string? endTime = endTimeTestValue();
+            
 	        
-            MessageDirection? direction = directionTestValue();
+            MessageDirection? direction = directionTestEnum();
+            
 	        
+            
             string? campaignId = campaignIdTestValue();
+            
 	        
+            
             string? brandId = brandIdTestValue();
+            
 	        
+            
             bool? is10DLC = is10DLCTestValue();
+            
 	        
             var response = instance.ListSmsMessages(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
             //Assert.IsType<MessagesList>(response);
