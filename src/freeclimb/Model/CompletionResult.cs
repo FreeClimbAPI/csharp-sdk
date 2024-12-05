@@ -25,42 +25,21 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// CompletionResult
     /// </summary>
     [DataContract(Name = "CompletionResult")]
-    public partial class CompletionResult : IEquatable<CompletionResult>, IValidatableObject
+    public partial class CompletionResult : IValidatableObject
     {
-        /// <summary>
-        /// Completion result status. Possible values: success, no_context
-        /// </summary>
-        /// <value>Completion result status. Possible values: success, no_context</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum SUCCESS for value: success
-            /// </summary>
-            [EnumMember(Value = "success")]
-            SUCCESS = 1,
-
-            /// <summary>
-            /// Enum NO_CONTEXT for value: no_context
-            /// </summary>
-            [EnumMember(Value = "no_context")]
-            NO_CONTEXT = 2
-
-        }
-
 
         /// <summary>
-        /// Completion result status. Possible values: success, no_context
+        /// Gets or Sets Status
         /// </summary>
-        /// <value>Completion result status. Possible values: success, no_context</value>
-        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
-        public StatusEnum Status { get; set; }
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        public CompletionResultStatus Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompletionResult" /> class.
         /// </summary>
@@ -70,11 +49,12 @@ namespace freeclimb.Model
         /// Initializes a new instance of the <see cref="CompletionResult" /> class.
         /// </summary>
         /// <param name="response">The generative response from the KnowledgeBase (required).</param>
-        /// <param name="status">Completion result status. Possible values: success, no_context (required).</param>
-        public CompletionResult(string response = default(string), StatusEnum status = default(StatusEnum))
+        /// <param name="status">status (required).</param>
+        public CompletionResult(string response = default(string), CompletionResultStatus status = default(CompletionResultStatus))
         {
             // to ensure "response" is required (not null)
-            if (response == null) {
+            if (response == null)
+            {
                 throw new ArgumentNullException("response is a required property for CompletionResult and cannot be null");
             }
             this.Response = response;
@@ -85,7 +65,7 @@ namespace freeclimb.Model
         /// The generative response from the KnowledgeBase
         /// </summary>
         /// <value>The generative response from the KnowledgeBase</value>
-        [DataMember(Name = "response", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "response", IsRequired = true, EmitDefaultValue = true)]
         public string Response { get; set; }
 
         /// <summary>
@@ -112,74 +92,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the CompletionResult instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("response", Response);          
-            props.Add("status", Status);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CompletionResult);
-        }
-
-        /// <summary>
-        /// Returns true if CompletionResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CompletionResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CompletionResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Response == input.Response ||
-                    (this.Response != null &&
-                    this.Response.Equals(input.Response))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Response != null)
-                {
-                    hashCode = (hashCode * 59) + this.Response.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

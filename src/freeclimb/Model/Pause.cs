@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
@@ -33,32 +34,7 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "Pause")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class Pause : PerclCommand, IEquatable<Pause>, IValidatableObject
+    public partial class Pause : PerclCommand, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Pause" /> class.
@@ -70,7 +46,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="length">Length in milliseconds. FreeClimb will wait silently before continuing on. (required).</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Pause&quot;).</param>
-        public Pause(int length = default(int), string command = "Pause") : base(command)
+        public Pause(int length = default(int), string command = @"Pause") : base(command)
         {
             this.Length = length;
         }
@@ -79,7 +55,7 @@ namespace freeclimb.Model
         /// Length in milliseconds. FreeClimb will wait silently before continuing on.
         /// </summary>
         /// <value>Length in milliseconds. FreeClimb will wait silently before continuing on.</value>
-        [DataMember(Name = "length", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "length", IsRequired = true, EmitDefaultValue = true)]
         public int Length { get; set; }
 
         /// <summary>
@@ -102,68 +78,7 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
-
-            return strb.ToString();
-        }
-
-        /// <summary>
-        /// Retrieve the KVP Dictionary for the Pause instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public override IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("length", Length);          
-            IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Pause",props);
-            return command;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Pause);
-        }
-
-        /// <summary>
-        /// Returns true if Pause instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Pause to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Pause input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.Length == input.Length ||
-                    this.Length.Equals(input.Length)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                hashCode = (hashCode * 59) + this.Length.GetHashCode();
-                return hashCode;
-            }
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
@@ -171,7 +86,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -181,9 +96,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }

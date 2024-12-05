@@ -1,6 +1,5 @@
 # freeclimb.Model.AccountResult
 
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -17,8 +16,5 @@ Name | Type | Description | Notes
 **Status** | **AccountStatus** |  | [optional] 
 **SubresourceUris** | **Object** | The list of subresources for this account. | [optional] 
 
-[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
-[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
-[[Back to Model list]](../README.md#documentation-for-models)<br /> 
-[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
-[[Back to README]](../README.md) <br /> 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

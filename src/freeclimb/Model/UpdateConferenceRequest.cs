@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// UpdateConferenceRequest
     /// </summary>
     [DataContract(Name = "UpdateConferenceRequest")]
-    public partial class UpdateConferenceRequest : IEquatable<UpdateConferenceRequest>, IValidatableObject
+    public partial class UpdateConferenceRequest : IValidatableObject
     {
 
         /// <summary>
@@ -90,80 +91,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the UpdateConferenceRequest instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("alias", Alias);          
-            props.Add("playBeep", PlayBeep);          
-            props.Add("status", Status);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as UpdateConferenceRequest);
-        }
-
-        /// <summary>
-        /// Returns true if UpdateConferenceRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of UpdateConferenceRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(UpdateConferenceRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.PlayBeep == input.PlayBeep ||
-                    this.PlayBeep.Equals(input.PlayBeep)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

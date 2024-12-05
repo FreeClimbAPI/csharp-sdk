@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
@@ -33,32 +34,7 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "Enqueue")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class Enqueue : PerclCommand, IEquatable<Enqueue>, IValidatableObject
+    public partial class Enqueue : PerclCommand, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Enqueue" /> class.
@@ -73,20 +49,23 @@ namespace freeclimb.Model
         /// <param name="queueId">ID of the Queue to which to add the Call. If the Queue does not exist, it will be created. The ID must start with QU followed by 40 hex characters. (required).</param>
         /// <param name="waitUrl">A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the &#x60;Dequeue&#x60; command, the REST API (POST to Queue Member resource), or the caller hangs up. (required).</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Enqueue&quot;).</param>
-        public Enqueue(string actionUrl = default(string), string notificationUrl = default(string), string queueId = default(string), string waitUrl = default(string), string command = "Enqueue") : base(command)
+        public Enqueue(string actionUrl = default(string), string notificationUrl = default(string), string queueId = default(string), string waitUrl = default(string), string command = @"Enqueue") : base(command)
         {
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null) {
+            if (actionUrl == null)
+            {
                 throw new ArgumentNullException("actionUrl is a required property for Enqueue and cannot be null");
             }
             this.ActionUrl = actionUrl;
             // to ensure "queueId" is required (not null)
-            if (queueId == null) {
+            if (queueId == null)
+            {
                 throw new ArgumentNullException("queueId is a required property for Enqueue and cannot be null");
             }
             this.QueueId = queueId;
             // to ensure "waitUrl" is required (not null)
-            if (waitUrl == null) {
+            if (waitUrl == null)
+            {
                 throw new ArgumentNullException("waitUrl is a required property for Enqueue and cannot be null");
             }
             this.WaitUrl = waitUrl;
@@ -97,7 +76,7 @@ namespace freeclimb.Model
         /// A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the &#x60;Dequeue&#x60; command, the REST API (POST to Queue Member resource), or the caller hangs up.
         /// </summary>
         /// <value>A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the &#x60;Dequeue&#x60; command, the REST API (POST to Queue Member resource), or the caller hangs up.</value>
-        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
         /// <summary>
@@ -111,14 +90,14 @@ namespace freeclimb.Model
         /// ID of the Queue to which to add the Call. If the Queue does not exist, it will be created. The ID must start with QU followed by 40 hex characters.
         /// </summary>
         /// <value>ID of the Queue to which to add the Call. If the Queue does not exist, it will be created. The ID must start with QU followed by 40 hex characters.</value>
-        [DataMember(Name = "queueId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "queueId", IsRequired = true, EmitDefaultValue = true)]
         public string QueueId { get; set; }
 
         /// <summary>
         /// A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the &#x60;Dequeue&#x60; command, the REST API (POST to Queue Member resource), or the caller hangs up.
         /// </summary>
         /// <value>A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the &#x60;Dequeue&#x60; command, the REST API (POST to Queue Member resource), or the caller hangs up.</value>
-        [DataMember(Name = "waitUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "waitUrl", IsRequired = true, EmitDefaultValue = true)]
         public string WaitUrl { get; set; }
 
         /// <summary>
@@ -144,102 +123,7 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
-
-            return strb.ToString();
-        }
-
-        /// <summary>
-        /// Retrieve the KVP Dictionary for the Enqueue instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public override IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("notificationUrl", NotificationUrl);          
-            props.Add("queueId", QueueId);          
-            props.Add("waitUrl", WaitUrl);          
-            IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Enqueue",props);
-            return command;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Enqueue);
-        }
-
-        /// <summary>
-        /// Returns true if Enqueue instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Enqueue to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Enqueue input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.ActionUrl == input.ActionUrl ||
-                    (this.ActionUrl != null &&
-                    this.ActionUrl.Equals(input.ActionUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.NotificationUrl == input.NotificationUrl ||
-                    (this.NotificationUrl != null &&
-                    this.NotificationUrl.Equals(input.NotificationUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.QueueId == input.QueueId ||
-                    (this.QueueId != null &&
-                    this.QueueId.Equals(input.QueueId))
-                ) && base.Equals(input) && 
-                (
-                    this.WaitUrl == input.WaitUrl ||
-                    (this.WaitUrl != null &&
-                    this.WaitUrl.Equals(input.WaitUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                if (this.ActionUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
-                }
-                if (this.NotificationUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.NotificationUrl.GetHashCode();
-                }
-                if (this.QueueId != null)
-                {
-                    hashCode = (hashCode * 59) + this.QueueId.GetHashCode();
-                }
-                if (this.WaitUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.WaitUrl.GetHashCode();
-                }
-                return hashCode;
-            }
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
@@ -247,7 +131,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -257,9 +141,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }

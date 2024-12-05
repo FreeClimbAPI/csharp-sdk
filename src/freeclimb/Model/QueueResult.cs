@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// QueueResult
     /// </summary>
     [DataContract(Name = "QueueResult")]
-    public partial class QueueResult : IEquatable<QueueResult>, IValidatableObject
+    public partial class QueueResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueResult" /> class.
@@ -172,164 +173,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the QueueResult instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("accountId", AccountId);          
-            props.Add("queueId", QueueId);          
-            props.Add("alias", Alias);          
-            props.Add("maxSize", MaxSize);          
-            props.Add("currentSize", CurrentSize);          
-            props.Add("averageQueueRemovalTime", AverageQueueRemovalTime);          
-            props.Add("subresourceUris", SubresourceUris);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as QueueResult);
-        }
-
-        /// <summary>
-        /// Returns true if QueueResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of QueueResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(QueueResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.QueueId == input.QueueId ||
-                    (this.QueueId != null &&
-                    this.QueueId.Equals(input.QueueId))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.MaxSize == input.MaxSize ||
-                    (this.MaxSize != null &&
-                    this.MaxSize.Equals(input.MaxSize))
-                ) && 
-                (
-                    this.CurrentSize == input.CurrentSize ||
-                    (this.CurrentSize != null &&
-                    this.CurrentSize.Equals(input.CurrentSize))
-                ) && 
-                (
-                    this.AverageQueueRemovalTime == input.AverageQueueRemovalTime ||
-                    (this.AverageQueueRemovalTime != null &&
-                    this.AverageQueueRemovalTime.Equals(input.AverageQueueRemovalTime))
-                ) && 
-                (
-                    this.SubresourceUris == input.SubresourceUris ||
-                    (this.SubresourceUris != null &&
-                    this.SubresourceUris.Equals(input.SubresourceUris))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.QueueId != null)
-                {
-                    hashCode = (hashCode * 59) + this.QueueId.GetHashCode();
-                }
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                if (this.MaxSize != null)
-                {
-                    hashCode = (hashCode * 59) + this.MaxSize.GetHashCode();
-                }
-                if (this.CurrentSize != null)
-                {
-                    hashCode = (hashCode * 59) + this.CurrentSize.GetHashCode();
-                }
-                if (this.AverageQueueRemovalTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.AverageQueueRemovalTime.GetHashCode();
-                }
-                if (this.SubresourceUris != null)
-                {
-                    hashCode = (hashCode * 59) + this.SubresourceUris.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

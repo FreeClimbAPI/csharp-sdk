@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
@@ -33,32 +34,7 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "CreateConference")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class CreateConference : PerclCommand, IEquatable<CreateConference>, IValidatableObject
+    public partial class CreateConference : PerclCommand, IValidatableObject
     {
 
         /// <summary>
@@ -81,10 +57,11 @@ namespace freeclimb.Model
         /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available..</param>
         /// <param name="waitUrl">If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;CreateConference&quot;).</param>
-        public CreateConference(string actionUrl = default(string), bool alias = default(bool), PlayBeep? playBeep = default(PlayBeep?), bool record = default(bool), string statusCallbackUrl = default(string), string waitUrl = default(string), string command = "CreateConference") : base(command)
+        public CreateConference(string actionUrl = default(string), bool alias = default(bool), PlayBeep? playBeep = default(PlayBeep?), bool record = default(bool), string statusCallbackUrl = default(string), string waitUrl = default(string), string command = @"CreateConference") : base(command)
         {
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null) {
+            if (actionUrl == null)
+            {
                 throw new ArgumentNullException("actionUrl is a required property for CreateConference and cannot be null");
             }
             this.ActionUrl = actionUrl;
@@ -99,7 +76,7 @@ namespace freeclimb.Model
         ///  This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response. 
         /// </summary>
         /// <value> This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response. </value>
-        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
         /// <summary>
@@ -155,110 +132,7 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
-
-            return strb.ToString();
-        }
-
-        /// <summary>
-        /// Retrieve the KVP Dictionary for the CreateConference instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public override IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("alias", Alias);          
-            props.Add("playBeep", PlayBeep);          
-            props.Add("record", Record);          
-            props.Add("statusCallbackUrl", StatusCallbackUrl);          
-            props.Add("waitUrl", WaitUrl);          
-            IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("CreateConference",props);
-            return command;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CreateConference);
-        }
-
-        /// <summary>
-        /// Returns true if CreateConference instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CreateConference to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CreateConference input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.ActionUrl == input.ActionUrl ||
-                    (this.ActionUrl != null &&
-                    this.ActionUrl.Equals(input.ActionUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.Alias == input.Alias ||
-                    this.Alias.Equals(input.Alias)
-                ) && base.Equals(input) && 
-                (
-                    this.PlayBeep == input.PlayBeep ||
-                    this.PlayBeep.Equals(input.PlayBeep)
-                ) && base.Equals(input) && 
-                (
-                    this.Record == input.Record ||
-                    this.Record.Equals(input.Record)
-                ) && base.Equals(input) && 
-                (
-                    this.StatusCallbackUrl == input.StatusCallbackUrl ||
-                    (this.StatusCallbackUrl != null &&
-                    this.StatusCallbackUrl.Equals(input.StatusCallbackUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.WaitUrl == input.WaitUrl ||
-                    (this.WaitUrl != null &&
-                    this.WaitUrl.Equals(input.WaitUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                if (this.ActionUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
-                hashCode = (hashCode * 59) + this.Record.GetHashCode();
-                if (this.StatusCallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCallbackUrl.GetHashCode();
-                }
-                if (this.WaitUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.WaitUrl.GetHashCode();
-                }
-                return hashCode;
-            }
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
@@ -266,7 +140,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -276,9 +150,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }

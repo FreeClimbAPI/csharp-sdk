@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// QueueMember
     /// </summary>
     [DataContract(Name = "QueueMember")]
-    public partial class QueueMember : IEquatable<QueueMember>, IValidatableObject
+    public partial class QueueMember : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueMember" /> class.
@@ -112,108 +113,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the QueueMember instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("callId", CallId);          
-            props.Add("waitTime", WaitTime);          
-            props.Add("position", Position);          
-            props.Add("dateEnqueued", DateEnqueued);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as QueueMember);
-        }
-
-        /// <summary>
-        /// Returns true if QueueMember instances are equal
-        /// </summary>
-        /// <param name="input">Instance of QueueMember to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(QueueMember input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                ) && 
-                (
-                    this.WaitTime == input.WaitTime ||
-                    (this.WaitTime != null &&
-                    this.WaitTime.Equals(input.WaitTime))
-                ) && 
-                (
-                    this.Position == input.Position ||
-                    (this.Position != null &&
-                    this.Position.Equals(input.Position))
-                ) && 
-                (
-                    this.DateEnqueued == input.DateEnqueued ||
-                    (this.DateEnqueued != null &&
-                    this.DateEnqueued.Equals(input.DateEnqueued))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
-                }
-                if (this.WaitTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.WaitTime.GetHashCode();
-                }
-                if (this.Position != null)
-                {
-                    hashCode = (hashCode * 59) + this.Position.GetHashCode();
-                }
-                if (this.DateEnqueued != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateEnqueued.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -188,7 +189,6 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "zh-TW")]
         CHINESE_TW = 26
-
     }
 
 }

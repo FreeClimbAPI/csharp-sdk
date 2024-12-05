@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// TollFree Campaign details for this number
     /// </summary>
     [DataContract(Name = "TFN")]
-    public partial class TFN : IEquatable<TFN>, IValidatableObject
+    public partial class TFN : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TFN" /> class.
@@ -45,7 +46,8 @@ namespace freeclimb.Model
         public TFN(string campaignId = default(string))
         {
             // to ensure "campaignId" is required (not null)
-            if (campaignId == null) {
+            if (campaignId == null)
+            {
                 throw new ArgumentNullException("campaignId is a required property for TFN and cannot be null");
             }
             this.CampaignId = campaignId;
@@ -55,7 +57,7 @@ namespace freeclimb.Model
         /// alphanumeric identifier for the TollFree campaign associated with this number
         /// </summary>
         /// <value>alphanumeric identifier for the TollFree campaign associated with this number</value>
-        [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
         /// <summary>
@@ -81,68 +83,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the TFN instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("campaignId", CampaignId);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TFN);
-        }
-
-        /// <summary>
-        /// Returns true if TFN instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TFN to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TFN input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.CampaignId == input.CampaignId ||
-                    (this.CampaignId != null &&
-                    this.CampaignId.Equals(input.CampaignId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.CampaignId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CampaignId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// BuyIncomingNumberRequest
     /// </summary>
     [DataContract(Name = "BuyIncomingNumberRequest")]
-    public partial class BuyIncomingNumberRequest : IEquatable<BuyIncomingNumberRequest>, IValidatableObject
+    public partial class BuyIncomingNumberRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuyIncomingNumberRequest" /> class.
@@ -47,7 +48,8 @@ namespace freeclimb.Model
         public BuyIncomingNumberRequest(string phoneNumber = default(string), string alias = default(string), string applicationId = default(string))
         {
             // to ensure "phoneNumber" is required (not null)
-            if (phoneNumber == null) {
+            if (phoneNumber == null)
+            {
                 throw new ArgumentNullException("phoneNumber is a required property for BuyIncomingNumberRequest and cannot be null");
             }
             this.PhoneNumber = phoneNumber;
@@ -59,7 +61,7 @@ namespace freeclimb.Model
         /// Phone number to purchase in E.164 format (as returned in the list of Available Phone Numbers).
         /// </summary>
         /// <value>Phone number to purchase in E.164 format (as returned in the list of Available Phone Numbers).</value>
-        [DataMember(Name = "phoneNumber", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "phoneNumber", IsRequired = true, EmitDefaultValue = true)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
@@ -101,88 +103,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the BuyIncomingNumberRequest instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("phoneNumber", PhoneNumber);          
-            props.Add("alias", Alias);          
-            props.Add("applicationId", ApplicationId);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as BuyIncomingNumberRequest);
-        }
-
-        /// <summary>
-        /// Returns true if BuyIncomingNumberRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of BuyIncomingNumberRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(BuyIncomingNumberRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.PhoneNumber == input.PhoneNumber ||
-                    (this.PhoneNumber != null &&
-                    this.PhoneNumber.Equals(input.PhoneNumber))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.ApplicationId == input.ApplicationId ||
-                    (this.ApplicationId != null &&
-                    this.ApplicationId.Equals(input.ApplicationId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.PhoneNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.PhoneNumber.GetHashCode();
-                }
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                if (this.ApplicationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ApplicationId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

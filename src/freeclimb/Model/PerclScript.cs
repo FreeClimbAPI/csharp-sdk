@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// A PerCL script to be returned to the FreeClimb servers in FreeClimb applications
     /// </summary>
     [DataContract(Name = "PerclScript")]
-    public partial class PerclScript : IEquatable<PerclScript>, IValidatableObject
+    public partial class PerclScript : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PerclScript" /> class.
@@ -68,82 +69,7 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            List<object> list = new List<object>();
-            foreach (PerclCommand command in this.Commands.ToList<PerclCommand>())
-            {
-                list.Add(command.ToKvp());
-            }
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), list);
-        
-            return strb.ToString();
-        }
-
-        /// <summary>
-        /// Retrieve the KVP Dictionary for the PerclScript instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            List<object> nested = new List<object>();
-            foreach (var item in Commands)
-            {
-                nested.Add(item);
-            }
-            props.Add("commands", nested); 
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PerclScript);
-        }
-
-        /// <summary>
-        /// Returns true if PerclScript instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PerclScript to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PerclScript input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Commands == input.Commands ||
-                    this.Commands != null &&
-                    input.Commands != null &&
-                    this.Commands.SequenceEqual(input.Commands)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Commands != null)
-                {
-                    hashCode = (hashCode * 59) + this.Commands.GetHashCode();
-                }
-                return hashCode;
-            }
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
@@ -151,7 +77,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

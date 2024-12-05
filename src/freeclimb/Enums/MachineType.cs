@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -34,17 +35,16 @@ namespace freeclimb.Enums
     public enum MachineType
     {
         /// <summary>
-        /// Enum ANSWERING_MACHINE for value: answeringMachine
+        /// Enum ANSWERING_MACHINE for value: answering machine
         /// </summary>
-        [EnumMember(Value = "answeringMachine")]
+        [EnumMember(Value = "answering machine")]
         ANSWERING_MACHINE = 1,
 
         /// <summary>
-        /// Enum FAX_MACHINE for value: faxMachine
+        /// Enum FAX_MODEM for value: fax modem
         /// </summary>
-        [EnumMember(Value = "faxMachine")]
-        FAX_MACHINE = 2
-
+        [EnumMember(Value = "fax modem")]
+        FAX_MODEM = 2
     }
 
 }

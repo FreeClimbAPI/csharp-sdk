@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
@@ -33,32 +34,7 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "Park")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class Park : PerclCommand, IEquatable<Park>, IValidatableObject
+    public partial class Park : PerclCommand, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Park" /> class.
@@ -72,15 +48,17 @@ namespace freeclimb.Model
         /// <param name="actionUrl">A request is made to this URL when the Call is resumed, which can occur if the Call is resumed via the Unpark command, the REST API (POST to Call resource), or the caller hangs up. The PerCL script returned in response to the actionUrl will be executed on the resumed call. (required).</param>
         /// <param name="notificationUrl">URL to be invoked when the Call is parked. The request to the URL contains the standard request parameters..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Park&quot;).</param>
-        public Park(string waitUrl = default(string), string actionUrl = default(string), string notificationUrl = default(string), string command = "Park") : base(command)
+        public Park(string waitUrl = default(string), string actionUrl = default(string), string notificationUrl = default(string), string command = @"Park") : base(command)
         {
             // to ensure "waitUrl" is required (not null)
-            if (waitUrl == null) {
+            if (waitUrl == null)
+            {
                 throw new ArgumentNullException("waitUrl is a required property for Park and cannot be null");
             }
             this.WaitUrl = waitUrl;
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null) {
+            if (actionUrl == null)
+            {
                 throw new ArgumentNullException("actionUrl is a required property for Park and cannot be null");
             }
             this.ActionUrl = actionUrl;
@@ -91,14 +69,14 @@ namespace freeclimb.Model
         /// Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is Parked. Once the script returned by the waitUrl runs out of commands to execute, FreeClimb will re-request the waitUrl and start over, essentially looping the script requests indefinitely.
         /// </summary>
         /// <value>Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is Parked. Once the script returned by the waitUrl runs out of commands to execute, FreeClimb will re-request the waitUrl and start over, essentially looping the script requests indefinitely.</value>
-        [DataMember(Name = "waitUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "waitUrl", IsRequired = true, EmitDefaultValue = true)]
         public string WaitUrl { get; set; }
 
         /// <summary>
         /// A request is made to this URL when the Call is resumed, which can occur if the Call is resumed via the Unpark command, the REST API (POST to Call resource), or the caller hangs up. The PerCL script returned in response to the actionUrl will be executed on the resumed call.
         /// </summary>
         /// <value>A request is made to this URL when the Call is resumed, which can occur if the Call is resumed via the Unpark command, the REST API (POST to Call resource), or the caller hangs up. The PerCL script returned in response to the actionUrl will be executed on the resumed call.</value>
-        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
         /// <summary>
@@ -130,92 +108,7 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
-
-            return strb.ToString();
-        }
-
-        /// <summary>
-        /// Retrieve the KVP Dictionary for the Park instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public override IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("waitUrl", WaitUrl);          
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("notificationUrl", NotificationUrl);          
-            IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Park",props);
-            return command;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Park);
-        }
-
-        /// <summary>
-        /// Returns true if Park instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Park to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Park input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.WaitUrl == input.WaitUrl ||
-                    (this.WaitUrl != null &&
-                    this.WaitUrl.Equals(input.WaitUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.ActionUrl == input.ActionUrl ||
-                    (this.ActionUrl != null &&
-                    this.ActionUrl.Equals(input.ActionUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.NotificationUrl == input.NotificationUrl ||
-                    (this.NotificationUrl != null &&
-                    this.NotificationUrl.Equals(input.NotificationUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                if (this.WaitUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.WaitUrl.GetHashCode();
-                }
-                if (this.ActionUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
-                }
-                if (this.NotificationUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.NotificationUrl.GetHashCode();
-                }
-                return hashCode;
-            }
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
@@ -223,7 +116,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -233,9 +126,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }

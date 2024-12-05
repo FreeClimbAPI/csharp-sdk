@@ -1,6 +1,5 @@
 # freeclimb.Model.AvailableNumber
 
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -13,8 +12,5 @@ Name | Type | Description | Notes
 **Region** | **string** | The state or province of this phone number. | [optional] 
 **Country** | **string** | The country of this phone number. | [optional] 
 
-[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
-[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
-[[Back to Model list]](../README.md#documentation-for-models)<br /> 
-[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
-[[Back to README]](../README.md) <br /> 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

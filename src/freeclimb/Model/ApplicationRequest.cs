@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// ApplicationRequest
     /// </summary>
     [DataContract(Name = "ApplicationRequest")]
-    public partial class ApplicationRequest : IEquatable<ApplicationRequest>, IValidatableObject
+    public partial class ApplicationRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationRequest" /> class.
@@ -132,128 +133,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the ApplicationRequest instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("alias", Alias);          
-            props.Add("voiceUrl", VoiceUrl);          
-            props.Add("voiceFallbackUrl", VoiceFallbackUrl);          
-            props.Add("callConnectUrl", CallConnectUrl);          
-            props.Add("statusCallbackUrl", StatusCallbackUrl);          
-            props.Add("smsUrl", SmsUrl);          
-            props.Add("smsFallbackUrl", SmsFallbackUrl);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ApplicationRequest);
-        }
-
-        /// <summary>
-        /// Returns true if ApplicationRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ApplicationRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ApplicationRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.VoiceUrl == input.VoiceUrl ||
-                    (this.VoiceUrl != null &&
-                    this.VoiceUrl.Equals(input.VoiceUrl))
-                ) && 
-                (
-                    this.VoiceFallbackUrl == input.VoiceFallbackUrl ||
-                    (this.VoiceFallbackUrl != null &&
-                    this.VoiceFallbackUrl.Equals(input.VoiceFallbackUrl))
-                ) && 
-                (
-                    this.CallConnectUrl == input.CallConnectUrl ||
-                    (this.CallConnectUrl != null &&
-                    this.CallConnectUrl.Equals(input.CallConnectUrl))
-                ) && 
-                (
-                    this.StatusCallbackUrl == input.StatusCallbackUrl ||
-                    (this.StatusCallbackUrl != null &&
-                    this.StatusCallbackUrl.Equals(input.StatusCallbackUrl))
-                ) && 
-                (
-                    this.SmsUrl == input.SmsUrl ||
-                    (this.SmsUrl != null &&
-                    this.SmsUrl.Equals(input.SmsUrl))
-                ) && 
-                (
-                    this.SmsFallbackUrl == input.SmsFallbackUrl ||
-                    (this.SmsFallbackUrl != null &&
-                    this.SmsFallbackUrl.Equals(input.SmsFallbackUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                if (this.VoiceUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceUrl.GetHashCode();
-                }
-                if (this.VoiceFallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceFallbackUrl.GetHashCode();
-                }
-                if (this.CallConnectUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallConnectUrl.GetHashCode();
-                }
-                if (this.StatusCallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCallbackUrl.GetHashCode();
-                }
-                if (this.SmsUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsUrl.GetHashCode();
-                }
-                if (this.SmsFallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsFallbackUrl.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

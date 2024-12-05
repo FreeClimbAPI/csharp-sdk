@@ -1,6 +1,5 @@
 # freeclimb.Model.IncomingNumberResult
 
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -23,8 +22,5 @@ Name | Type | Description | Notes
 **Offnet** | **bool?** | The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource. | [optional] 
 **Tfn** | [**TFN**](TFN.md) |  | [optional] 
 
-[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
-[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
-[[Back to Model list]](../README.md#documentation-for-models)<br /> 
-[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
-[[Back to README]](../README.md) <br /> 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

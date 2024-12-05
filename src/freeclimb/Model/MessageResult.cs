@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// MessageResult
     /// </summary>
     [DataContract(Name = "MessageResult")]
-    public partial class MessageResult : IEquatable<MessageResult>, IValidatableObject
+    public partial class MessageResult : IValidatableObject
     {
 
         /// <summary>
@@ -221,216 +222,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the MessageResult instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("accountId", AccountId);          
-            props.Add("messageId", MessageId);          
-            props.Add("status", Status);          
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("text", Text);          
-            props.Add("direction", Direction);          
-            props.Add("notificationUrl", NotificationUrl);          
-            props.Add("brandId", BrandId);          
-            props.Add("campaignId", CampaignId);          
-            props.Add("segmentCount", SegmentCount);          
-            List<object> nested = new List<object>();
-            foreach (var item in MediaUrls)
-            {
-                nested.Add(item);
-            }
-            props.Add("mediaUrls", nested); 
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as MessageResult);
-        }
-
-        /// <summary>
-        /// Returns true if MessageResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of MessageResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(MessageResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.MessageId == input.MessageId ||
-                    (this.MessageId != null &&
-                    this.MessageId.Equals(input.MessageId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
-                ) && 
-                (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
-                ) && 
-                (
-                    this.To == input.To ||
-                    (this.To != null &&
-                    this.To.Equals(input.To))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    (this.Direction != null &&
-                    this.Direction.Equals(input.Direction))
-                ) && 
-                (
-                    this.NotificationUrl == input.NotificationUrl ||
-                    (this.NotificationUrl != null &&
-                    this.NotificationUrl.Equals(input.NotificationUrl))
-                ) && 
-                (
-                    this.BrandId == input.BrandId ||
-                    (this.BrandId != null &&
-                    this.BrandId.Equals(input.BrandId))
-                ) && 
-                (
-                    this.CampaignId == input.CampaignId ||
-                    (this.CampaignId != null &&
-                    this.CampaignId.Equals(input.CampaignId))
-                ) && 
-                (
-                    this.SegmentCount == input.SegmentCount ||
-                    (this.SegmentCount != null &&
-                    this.SegmentCount.Equals(input.SegmentCount))
-                ) && 
-                (
-                    this.MediaUrls == input.MediaUrls ||
-                    this.MediaUrls != null &&
-                    input.MediaUrls != null &&
-                    this.MediaUrls.SequenceEqual(input.MediaUrls)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.MessageId != null)
-                {
-                    hashCode = (hashCode * 59) + this.MessageId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                if (this.From != null)
-                {
-                    hashCode = (hashCode * 59) + this.From.GetHashCode();
-                }
-                if (this.To != null)
-                {
-                    hashCode = (hashCode * 59) + this.To.GetHashCode();
-                }
-                if (this.Text != null)
-                {
-                    hashCode = (hashCode * 59) + this.Text.GetHashCode();
-                }
-                if (this.Direction != null)
-                {
-                    hashCode = (hashCode * 59) + this.Direction.GetHashCode();
-                }
-                if (this.NotificationUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.NotificationUrl.GetHashCode();
-                }
-                if (this.BrandId != null)
-                {
-                    hashCode = (hashCode * 59) + this.BrandId.GetHashCode();
-                }
-                if (this.CampaignId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CampaignId.GetHashCode();
-                }
-                if (this.SegmentCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.SegmentCount.GetHashCode();
-                }
-                if (this.MediaUrls != null)
-                {
-                    hashCode = (hashCode * 59) + this.MediaUrls.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// ConferenceParticipantResult
     /// </summary>
     [DataContract(Name = "ConferenceParticipantResult")]
-    public partial class ConferenceParticipantResult : IEquatable<ConferenceParticipantResult>, IValidatableObject
+    public partial class ConferenceParticipantResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConferenceParticipantResult" /> class.
@@ -45,8 +46,9 @@ namespace freeclimb.Model
         /// <param name="callId">ID of the Call associated with this Participant..</param>
         /// <param name="talk">True if this Participant has talk privileges in the Conference. False otherwise..</param>
         /// <param name="listen">True if this Participant has listen privileges in the Conference. False otherwise..</param>
+        /// <param name="dtmfPassThrough">True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise..</param>
         /// <param name="startConfOnEnter">True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise..</param>
-        public ConferenceParticipantResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string conferenceId = default(string), string callId = default(string), bool? talk = default(bool?), bool? listen = default(bool?), bool? startConfOnEnter = default(bool?))
+        public ConferenceParticipantResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string conferenceId = default(string), string callId = default(string), bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), bool? startConfOnEnter = default(bool?))
         {
             this.Uri = uri;
             this.DateCreated = dateCreated;
@@ -57,6 +59,7 @@ namespace freeclimb.Model
             this.CallId = callId;
             this.Talk = talk;
             this.Listen = listen;
+            this.DtmfPassThrough = dtmfPassThrough;
             this.StartConfOnEnter = startConfOnEnter;
         }
 
@@ -124,6 +127,13 @@ namespace freeclimb.Model
         public bool? Listen { get; set; }
 
         /// <summary>
+        /// True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise.
+        /// </summary>
+        /// <value>True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise.</value>
+        [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
+        public bool? DtmfPassThrough { get; set; }
+
+        /// <summary>
         /// True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise.
         /// </summary>
         /// <value>True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise.</value>
@@ -147,6 +157,7 @@ namespace freeclimb.Model
             sb.Append("  CallId: ").Append(CallId).Append("\n");
             sb.Append("  Talk: ").Append(Talk).Append("\n");
             sb.Append("  Listen: ").Append(Listen).Append("\n");
+            sb.Append("  DtmfPassThrough: ").Append(DtmfPassThrough).Append("\n");
             sb.Append("  StartConfOnEnter: ").Append(StartConfOnEnter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -162,154 +173,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the ConferenceParticipantResult instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("accountId", AccountId);          
-            props.Add("conferenceId", ConferenceId);          
-            props.Add("callId", CallId);          
-            props.Add("talk", Talk);          
-            props.Add("listen", Listen);          
-            props.Add("startConfOnEnter", StartConfOnEnter);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ConferenceParticipantResult);
-        }
-
-        /// <summary>
-        /// Returns true if ConferenceParticipantResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ConferenceParticipantResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ConferenceParticipantResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.ConferenceId == input.ConferenceId ||
-                    (this.ConferenceId != null &&
-                    this.ConferenceId.Equals(input.ConferenceId))
-                ) && 
-                (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                ) && 
-                (
-                    this.Talk == input.Talk ||
-                    (this.Talk != null &&
-                    this.Talk.Equals(input.Talk))
-                ) && 
-                (
-                    this.Listen == input.Listen ||
-                    (this.Listen != null &&
-                    this.Listen.Equals(input.Listen))
-                ) && 
-                (
-                    this.StartConfOnEnter == input.StartConfOnEnter ||
-                    (this.StartConfOnEnter != null &&
-                    this.StartConfOnEnter.Equals(input.StartConfOnEnter))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.ConferenceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConferenceId.GetHashCode();
-                }
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
-                }
-                if (this.Talk != null)
-                {
-                    hashCode = (hashCode * 59) + this.Talk.GetHashCode();
-                }
-                if (this.Listen != null)
-                {
-                    hashCode = (hashCode * 59) + this.Listen.GetHashCode();
-                }
-                if (this.StartConfOnEnter != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartConfOnEnter.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

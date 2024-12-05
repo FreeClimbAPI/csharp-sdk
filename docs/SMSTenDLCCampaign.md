@@ -1,6 +1,5 @@
 # freeclimb.Model.SMSTenDLCCampaign
 
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -9,7 +8,7 @@ Name | Type | Description | Notes
 **CampaignId** | **string** | Alphanumeric identifier assigned by the registry for a campaign. This identifier is required by the NetNumber OSR SMS enabling process of 10DLC. | 
 **CspId** | **string** | Alphanumeric identifier of the CSP associated with this campaign. | 
 **ResellerId** | **string** | Alphanumeric identifier of the reseller that you want to associate with this campaign. | [optional] 
-**Status** | **string** | Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status.  | [optional] 
+**Status** | **SMSTenDLCCampaignStatus** |  | [optional] 
 **CreateDate** | **DateTime** | Unix timestamp when campaign was created. | [optional] 
 **AutoRenewal** | **bool** | Campaign subscription auto-renewal status. | [optional] 
 **BilledDate** | **DateTime?** | Campaign recent billed date. | [optional] 
@@ -40,10 +39,7 @@ Name | Type | Description | Notes
 **OptoutMessage** | **string** | Subscriber opt-out message. | [optional] 
 **ReferenceId** | **string** | Caller supplied campaign reference ID. If supplied, the value must be unique across all submitted campaigns. Can be used to prevent duplicate campaign registrations. | [optional] 
 **Mock** | **bool** | Campaign created from mock brand. Mocked campaign cannot be shared with an upstream CNP. | 
-**NextRenewalOrExpirationDate** | **DateTime?** | When the campaign would be due for its next renew/bill date. | [optional] 
+**NextRenewalOrExpirationDate** | **DateOnly?** | When the campaign would be due for its next renew/bill date. | [optional] 
 
-[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
-[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
-[[Back to Model list]](../README.md#documentation-for-models)<br /> 
-[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
-[[Back to README]](../README.md) <br /> 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

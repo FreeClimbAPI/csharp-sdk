@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// AvailableNumber
     /// </summary>
     [DataContract(Name = "AvailableNumber")]
-    public partial class AvailableNumber : IEquatable<AvailableNumber>, IValidatableObject
+    public partial class AvailableNumber : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableNumber" /> class.
@@ -133,128 +134,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the AvailableNumber instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("capabilities", Capabilities);          
-            props.Add("campaignId", CampaignId);          
-            props.Add("phoneNumber", PhoneNumber);          
-            props.Add("voiceEnabled", VoiceEnabled);          
-            props.Add("smsEnabled", SmsEnabled);          
-            props.Add("region", Region);          
-            props.Add("country", Country);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AvailableNumber);
-        }
-
-        /// <summary>
-        /// Returns true if AvailableNumber instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AvailableNumber to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AvailableNumber input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Capabilities == input.Capabilities ||
-                    (this.Capabilities != null &&
-                    this.Capabilities.Equals(input.Capabilities))
-                ) && 
-                (
-                    this.CampaignId == input.CampaignId ||
-                    (this.CampaignId != null &&
-                    this.CampaignId.Equals(input.CampaignId))
-                ) && 
-                (
-                    this.PhoneNumber == input.PhoneNumber ||
-                    (this.PhoneNumber != null &&
-                    this.PhoneNumber.Equals(input.PhoneNumber))
-                ) && 
-                (
-                    this.VoiceEnabled == input.VoiceEnabled ||
-                    (this.VoiceEnabled != null &&
-                    this.VoiceEnabled.Equals(input.VoiceEnabled))
-                ) && 
-                (
-                    this.SmsEnabled == input.SmsEnabled ||
-                    (this.SmsEnabled != null &&
-                    this.SmsEnabled.Equals(input.SmsEnabled))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Capabilities != null)
-                {
-                    hashCode = (hashCode * 59) + this.Capabilities.GetHashCode();
-                }
-                if (this.CampaignId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CampaignId.GetHashCode();
-                }
-                if (this.PhoneNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.PhoneNumber.GetHashCode();
-                }
-                if (this.VoiceEnabled != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceEnabled.GetHashCode();
-                }
-                if (this.SmsEnabled != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsEnabled.GetHashCode();
-                }
-                if (this.Region != null)
-                {
-                    hashCode = (hashCode * 59) + this.Region.GetHashCode();
-                }
-                if (this.Country != null)
-                {
-                    hashCode = (hashCode * 59) + this.Country.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

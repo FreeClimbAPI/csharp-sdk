@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// PaginationModel
     /// </summary>
     [DataContract(Name = "PaginationModel")]
-    public partial class PaginationModel : IEquatable<PaginationModel>, IValidatableObject
+    public partial class PaginationModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaginationModel" /> class.
@@ -132,128 +133,11 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the PaginationModel instance. 
-        /// </summary>
-        /// <returns>KVP Dictionary</returns>
-        public virtual IDictionary<string, object> ToKvp()
-        {
-            IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("total", Total);          
-            props.Add("start", Start);          
-            props.Add("end", End);          
-            props.Add("page", Page);          
-            props.Add("numPages", NumPages);          
-            props.Add("pageSize", PageSize);          
-            props.Add("nextPageUri", NextPageUri);          
-            return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PaginationModel);
-        }
-
-        /// <summary>
-        /// Returns true if PaginationModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PaginationModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PaginationModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Start == input.Start ||
-                    (this.Start != null &&
-                    this.Start.Equals(input.Start))
-                ) && 
-                (
-                    this.End == input.End ||
-                    (this.End != null &&
-                    this.End.Equals(input.End))
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                ) && 
-                (
-                    this.NumPages == input.NumPages ||
-                    (this.NumPages != null &&
-                    this.NumPages.Equals(input.NumPages))
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    (this.PageSize != null &&
-                    this.PageSize.Equals(input.PageSize))
-                ) && 
-                (
-                    this.NextPageUri == input.NextPageUri ||
-                    (this.NextPageUri != null &&
-                    this.NextPageUri.Equals(input.NextPageUri))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Total != null)
-                {
-                    hashCode = (hashCode * 59) + this.Total.GetHashCode();
-                }
-                if (this.Start != null)
-                {
-                    hashCode = (hashCode * 59) + this.Start.GetHashCode();
-                }
-                if (this.End != null)
-                {
-                    hashCode = (hashCode * 59) + this.End.GetHashCode();
-                }
-                if (this.Page != null)
-                {
-                    hashCode = (hashCode * 59) + this.Page.GetHashCode();
-                }
-                if (this.NumPages != null)
-                {
-                    hashCode = (hashCode * 59) + this.NumPages.GetHashCode();
-                }
-                if (this.PageSize != null)
-                {
-                    hashCode = (hashCode * 59) + this.PageSize.GetHashCode();
-                }
-                if (this.NextPageUri != null)
-                {
-                    hashCode = (hashCode * 59) + this.NextPageUri.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
