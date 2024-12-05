@@ -166,7 +166,7 @@ namespace freeclimb.Client
     /// Provides a default implementation of an Api client (both synchronous and asynchronous implementations),
     /// encapsulating general REST accessor use cases.
     /// </summary>
-    public partial class ApiClient : ISynchronousClient, IAsynchronousClient
+    public partial class ApiClient : ISynchronousClient
     {
         private readonly string _baseUrl;
 
@@ -581,136 +581,6 @@ namespace freeclimb.Client
             return ExecClientAsync(getResponse, setOptions, request, options, configuration).GetAwaiter().GetResult();
         }
 
-        private Task<ApiResponse<T>> ExecAsync<T>(RestRequest request, RequestOptions options, IReadableConfiguration configuration, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            Action<RestClientOptions> setOptions = (clientOptions) =>
-            {
-                //no extra options
-            };
-
-            Func<RestClient, Task<RestResponse<T>>> getResponse = async (client) =>
-            {
-                if (RetryConfiguration.AsyncRetryPolicy != null)
-                {
-                    var policy = RetryConfiguration.AsyncRetryPolicy;
-                    var policyResult = await policy.ExecuteAndCaptureAsync((ct) => client.ExecuteAsync(request, ct), cancellationToken).ConfigureAwait(false);
-                    return DeserializeRestResponseFromPolicy<T>(client, request, policyResult);
-                }
-                else
-                {
-                    return await client.ExecuteAsync<T>(request, cancellationToken).ConfigureAwait(false);
-                }
-            };
-
-            return ExecClientAsync(getResponse, setOptions, request, options, configuration);
-        }
-
-        #region IAsynchronousClient
-        /// <summary>
-        /// Make a HTTP GET request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> GetAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, CancellationToken cancellationToken = default)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Get, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP POST request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> PostAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, CancellationToken cancellationToken = default)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Post, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP PUT request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> PutAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, CancellationToken cancellationToken = default)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Put, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP DELETE request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> DeleteAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, CancellationToken cancellationToken = default)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Delete, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP HEAD request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> HeadAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, CancellationToken cancellationToken = default)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Head, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP OPTION request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> OptionsAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, CancellationToken cancellationToken = default)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Options, path, options, config), options, config, cancellationToken);
-        }
-
-        /// <summary>
-        /// Make a HTTP PATCH request (async).
-        /// </summary>
-        /// <param name="path">The target path (or resource).</param>
-        /// <param name="options">The additional request options.</param>
-        /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
-        /// GlobalConfiguration has been done before calling this method.</param>
-        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
-        /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> PatchAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, CancellationToken cancellationToken = default)
-        {
-            var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Patch, path, options, config), options, config, cancellationToken);
-        }
-        #endregion IAsynchronousClient
 
         #region ISynchronousClient
         /// <summary>

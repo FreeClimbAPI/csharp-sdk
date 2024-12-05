@@ -295,7 +295,6 @@ src/freeclimb/Client/ExceptionFactory.cs
 src/freeclimb/Client/GlobalConfiguration.cs
 src/freeclimb/Client/HttpMethod.cs
 src/freeclimb/Client/IApiAccessor.cs
-src/freeclimb/Client/IAsynchronousClient.cs
 src/freeclimb/Client/IReadableConfiguration.cs
 src/freeclimb/Client/ISynchronousClient.cs
 src/freeclimb/Client/Multimap.cs
