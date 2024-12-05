@@ -38,7 +38,7 @@ namespace freeclimb.Test.Api
 
         public DefaultApiTests()
         {
-            config = new Configuration();
+            Configuration config = new Configuration();
             config.BasePath = "http://127.0.0.1:4010/";
             config.Username = "TEST-ACCOUNT-ID";
             config.Password = "TEST-API-KEY";
