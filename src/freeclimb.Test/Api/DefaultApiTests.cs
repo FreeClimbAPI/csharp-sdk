@@ -1795,7 +1795,7 @@ namespace freeclimb.Test.Api
 
         private CreateConferenceRequest createConferenceRequestTestValue()
         {
-            PlayBeep enumPlayBeepStatus = Reflection.GetEnumByValue<PlayBeep>("always");
+            PlayBeep enumPlayBeepStatus = Enum.Parse(typeof(PlayBeep), "always");
             return new CreateConferenceRequest("TEST-CONF", enumPlayBeepStatus, true);
         }
 
