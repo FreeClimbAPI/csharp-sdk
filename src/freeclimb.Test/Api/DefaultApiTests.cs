@@ -1359,7 +1359,6 @@ namespace freeclimb.Test.Api
 
         }
     
-    }
         private string accountIdTestValue()
         {
             return "AC0000000000000000000000000000000000000000";
@@ -1794,4 +1793,5 @@ namespace freeclimb.Test.Api
             return true;
         }
 
+    }
 }
