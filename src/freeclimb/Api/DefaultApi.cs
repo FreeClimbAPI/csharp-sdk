@@ -6578,7 +6578,7 @@ namespace freeclimb.Api
                 
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountResult)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<AccountResult>> GetAnAccountWithHttpInfoAsync(, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))        
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<AccountResult>> GetAnAccountWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7568,7 +7568,7 @@ namespace freeclimb.Api
                 
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTenDLCBrandsListResult)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult>> GetTenDLCSmsBrandsWithHttpInfoAsync(, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))        
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult>> GetTenDLCSmsBrandsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8546,7 +8546,7 @@ namespace freeclimb.Api
                 
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTollFreeCampaignsListResult)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult>> GetTollFreeSmsCampaignsWithHttpInfoAsync(, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))        
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult>> GetTollFreeSmsCampaignsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8858,7 +8858,7 @@ namespace freeclimb.Api
                 
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<LogList>> ListAllAccountLogsWithHttpInfoAsync(, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))        
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<LogList>> ListAllAccountLogsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
