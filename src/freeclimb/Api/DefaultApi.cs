@@ -3457,7 +3457,7 @@ namespace freeclimb.Api
         /// <param name="buyIncomingNumberRequest">Incoming Number transaction details</param>
                 
         /// <returns>ApiResponse of IncomingNumberResult</returns>
-        public freeclimb.Client.ApiResponse<IncomingNumberResult> BuyAPhoneNumberWithHttpInfo(BuyIncomingNumberRequest buyIncomingNumberRequest);        
+        public freeclimb.Client.ApiResponse<IncomingNumberResult> BuyAPhoneNumberWithHttpInfo(BuyIncomingNumberRequest buyIncomingNumberRequest)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3627,7 +3627,7 @@ namespace freeclimb.Api
         /// <param name="createConferenceRequest">Conference to create (optional)</param>
                 
         /// <returns>ApiResponse of ConferenceResult</returns>
-        public freeclimb.Client.ApiResponse<ConferenceResult> CreateAConferenceWithHttpInfo(CreateConferenceRequest? createConferenceRequest = default(CreateConferenceRequest?));        
+        public freeclimb.Client.ApiResponse<ConferenceResult> CreateAConferenceWithHttpInfo(CreateConferenceRequest? createConferenceRequest = default(CreateConferenceRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3785,7 +3785,7 @@ namespace freeclimb.Api
         /// <param name="queueRequest">Queue details used to create a queue (optional)</param>
                 
         /// <returns>ApiResponse of QueueResult</returns>
-        public freeclimb.Client.ApiResponse<QueueResult> CreateAQueueWithHttpInfo(QueueRequest? queueRequest = default(QueueRequest?));        
+        public freeclimb.Client.ApiResponse<QueueResult> CreateAQueueWithHttpInfo(QueueRequest? queueRequest = default(QueueRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3943,7 +3943,7 @@ namespace freeclimb.Api
         /// <param name="applicationRequest">Application Details (optional)</param>
                 
         /// <returns>ApiResponse of ApplicationResult</returns>
-        public freeclimb.Client.ApiResponse<ApplicationResult> CreateAnApplicationWithHttpInfo(ApplicationRequest? applicationRequest = default(ApplicationRequest?));        
+        public freeclimb.Client.ApiResponse<ApplicationResult> CreateAnApplicationWithHttpInfo(ApplicationRequest? applicationRequest = default(ApplicationRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4103,7 +4103,7 @@ namespace freeclimb.Api
         /// <param name="completionRequest">Completion request details (optional)</param>
                 
         /// <returns>ApiResponse of CompletionResult</returns>
-        public freeclimb.Client.ApiResponse<CompletionResult> CreateKnowledgeBaseCompletionWithHttpInfo(string knowledgeBaseId, CompletionRequest? completionRequest = default(CompletionRequest?));        
+        public freeclimb.Client.ApiResponse<CompletionResult> CreateKnowledgeBaseCompletionWithHttpInfo(string knowledgeBaseId, CompletionRequest? completionRequest = default(CompletionRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4276,7 +4276,7 @@ namespace freeclimb.Api
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
                 
         /// <returns>ApiResponse of Object(void)</returns>
-        public freeclimb.Client.ApiResponse<Object> DeleteARecordingWithHttpInfo(string recordingId);        
+        public freeclimb.Client.ApiResponse<Object> DeleteARecordingWithHttpInfo(string recordingId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4440,7 +4440,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">String that uniquely identifies this application resource.</param>
                 
         /// <returns>ApiResponse of Object(void)</returns>
-        public freeclimb.Client.ApiResponse<Object> DeleteAnApplicationWithHttpInfo(string applicationId);        
+        public freeclimb.Client.ApiResponse<Object> DeleteAnApplicationWithHttpInfo(string applicationId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4604,7 +4604,7 @@ namespace freeclimb.Api
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
                 
         /// <returns>ApiResponse of Object(void)</returns>
-        public freeclimb.Client.ApiResponse<Object> DeleteAnIncomingNumberWithHttpInfo(string phoneNumberId);        
+        public freeclimb.Client.ApiResponse<Object> DeleteAnIncomingNumberWithHttpInfo(string phoneNumberId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4771,7 +4771,7 @@ namespace freeclimb.Api
         /// <param name="callId">ID if the Call that the Member belongs to</param>
                 
         /// <returns>ApiResponse of QueueMember</returns>
-        public freeclimb.Client.ApiResponse<QueueMember> DequeueAMemberWithHttpInfo(string queueId, string callId);        
+        public freeclimb.Client.ApiResponse<QueueMember> DequeueAMemberWithHttpInfo(string queueId, string callId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4955,7 +4955,7 @@ namespace freeclimb.Api
         /// <param name="queueId">String that uniquely identifies this queue resource.</param>
                 
         /// <returns>ApiResponse of QueueMember</returns>
-        public freeclimb.Client.ApiResponse<QueueMember> DequeueHeadMemberWithHttpInfo(string queueId);        
+        public freeclimb.Client.ApiResponse<QueueMember> DequeueHeadMemberWithHttpInfo(string queueId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5123,7 +5123,7 @@ namespace freeclimb.Api
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
                 
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public freeclimb.Client.ApiResponse<System.IO.Stream> DownloadARecordingFileWithHttpInfo(string recordingId);        
+        public freeclimb.Client.ApiResponse<System.IO.Stream> DownloadARecordingFileWithHttpInfo(string recordingId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5291,7 +5291,7 @@ namespace freeclimb.Api
         /// <param name="filterLogsRequest">Filter logs request paramters</param>
                 
         /// <returns>ApiResponse of LogList</returns>
-        public freeclimb.Client.ApiResponse<LogList> FilterLogsWithHttpInfo(FilterLogsRequest filterLogsRequest);        
+        public freeclimb.Client.ApiResponse<LogList> FilterLogsWithHttpInfo(FilterLogsRequest filterLogsRequest)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5461,7 +5461,7 @@ namespace freeclimb.Api
         /// <param name="callId">String that uniquely identifies this call resource.</param>
                 
         /// <returns>ApiResponse of CallResult</returns>
-        public freeclimb.Client.ApiResponse<CallResult> GetACallWithHttpInfo(string callId);        
+        public freeclimb.Client.ApiResponse<CallResult> GetACallWithHttpInfo(string callId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5629,7 +5629,7 @@ namespace freeclimb.Api
         /// <param name="conferenceId">A string that uniquely identifies this conference resource.</param>
                 
         /// <returns>ApiResponse of ConferenceResult</returns>
-        public freeclimb.Client.ApiResponse<ConferenceResult> GetAConferenceWithHttpInfo(string conferenceId);        
+        public freeclimb.Client.ApiResponse<ConferenceResult> GetAConferenceWithHttpInfo(string conferenceId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5799,7 +5799,7 @@ namespace freeclimb.Api
         /// <param name="callId">ID of the Call that the Member belongs to</param>
                 
         /// <returns>ApiResponse of QueueMember</returns>
-        public freeclimb.Client.ApiResponse<QueueMember> GetAMemberWithHttpInfo(string queueId, string callId);        
+        public freeclimb.Client.ApiResponse<QueueMember> GetAMemberWithHttpInfo(string queueId, string callId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5985,7 +5985,7 @@ namespace freeclimb.Api
         /// <param name="callId">ID of the Call associated with this participant.</param>
                 
         /// <returns>ApiResponse of ConferenceParticipantResult</returns>
-        public freeclimb.Client.ApiResponse<ConferenceParticipantResult> GetAParticipantWithHttpInfo(string conferenceId, string callId);        
+        public freeclimb.Client.ApiResponse<ConferenceParticipantResult> GetAParticipantWithHttpInfo(string conferenceId, string callId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6169,7 +6169,7 @@ namespace freeclimb.Api
         /// <param name="queueId">A string that uniquely identifies this queue resource.</param>
                 
         /// <returns>ApiResponse of QueueResult</returns>
-        public freeclimb.Client.ApiResponse<QueueResult> GetAQueueWithHttpInfo(string queueId);        
+        public freeclimb.Client.ApiResponse<QueueResult> GetAQueueWithHttpInfo(string queueId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6337,7 +6337,7 @@ namespace freeclimb.Api
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
                 
         /// <returns>ApiResponse of RecordingResult</returns>
-        public freeclimb.Client.ApiResponse<RecordingResult> GetARecordingWithHttpInfo(string recordingId);        
+        public freeclimb.Client.ApiResponse<RecordingResult> GetARecordingWithHttpInfo(string recordingId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6503,7 +6503,7 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
                 
         /// <returns>ApiResponse of AccountResult</returns>
-        public freeclimb.Client.ApiResponse<AccountResult> GetAnAccountWithHttpInfo();        
+        public freeclimb.Client.ApiResponse<AccountResult> GetAnAccountWithHttpInfo()        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6655,7 +6655,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
                 
         /// <returns>ApiResponse of ApplicationResult</returns>
-        public freeclimb.Client.ApiResponse<ApplicationResult> GetAnApplicationWithHttpInfo(string applicationId);        
+        public freeclimb.Client.ApiResponse<ApplicationResult> GetAnApplicationWithHttpInfo(string applicationId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6823,7 +6823,7 @@ namespace freeclimb.Api
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
                 
         /// <returns>ApiResponse of IncomingNumberResult</returns>
-        public freeclimb.Client.ApiResponse<IncomingNumberResult> GetAnIncomingNumberWithHttpInfo(string phoneNumberId);        
+        public freeclimb.Client.ApiResponse<IncomingNumberResult> GetAnIncomingNumberWithHttpInfo(string phoneNumberId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6991,7 +6991,7 @@ namespace freeclimb.Api
         /// <param name="messageId">String that uniquely identifies this Message resource.</param>
                 
         /// <returns>ApiResponse of MessageResult</returns>
-        public freeclimb.Client.ApiResponse<MessageResult> GetAnSmsMessageWithHttpInfo(string messageId);        
+        public freeclimb.Client.ApiResponse<MessageResult> GetAnSmsMessageWithHttpInfo(string messageId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7159,7 +7159,7 @@ namespace freeclimb.Api
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
                 
         /// <returns>ApiResponse of QueueMember</returns>
-        public freeclimb.Client.ApiResponse<QueueMember> GetHeadMemberWithHttpInfo(string queueId);        
+        public freeclimb.Client.ApiResponse<QueueMember> GetHeadMemberWithHttpInfo(string queueId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7327,7 +7327,7 @@ namespace freeclimb.Api
         /// <param name="brandId">String that uniquely identifies this brand resource.</param>
                 
         /// <returns>ApiResponse of SMSTenDLCBrand</returns>
-        public freeclimb.Client.ApiResponse<SMSTenDLCBrand> GetTenDLCSmsBrandWithHttpInfo(string brandId);        
+        public freeclimb.Client.ApiResponse<SMSTenDLCBrand> GetTenDLCSmsBrandWithHttpInfo(string brandId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7493,7 +7493,7 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
                 
         /// <returns>ApiResponse of SMSTenDLCBrandsListResult</returns>
-        public freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult> GetTenDLCSmsBrandsWithHttpInfo();        
+        public freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult> GetTenDLCSmsBrandsWithHttpInfo()        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7645,7 +7645,7 @@ namespace freeclimb.Api
         /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
                 
         /// <returns>ApiResponse of SMSTenDLCCampaign</returns>
-        public freeclimb.Client.ApiResponse<SMSTenDLCCampaign> GetTenDLCSmsCampaignWithHttpInfo(string campaignId);        
+        public freeclimb.Client.ApiResponse<SMSTenDLCCampaign> GetTenDLCSmsCampaignWithHttpInfo(string campaignId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7813,7 +7813,7 @@ namespace freeclimb.Api
         /// <param name="brandId">The unique identifier for a brand (optional)</param>
                 
         /// <returns>ApiResponse of SMSTenDLCCampaignsListResult</returns>
-        public freeclimb.Client.ApiResponse<SMSTenDLCCampaignsListResult> GetTenDLCSmsCampaignsWithHttpInfo(string? brandId = default(string?));        
+        public freeclimb.Client.ApiResponse<SMSTenDLCCampaignsListResult> GetTenDLCSmsCampaignsWithHttpInfo(string? brandId = default(string?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7975,7 +7975,7 @@ namespace freeclimb.Api
         /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
                 
         /// <returns>ApiResponse of SMSTenDLCPartnerCampaign</returns>
-        public freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaign> GetTenDLCSmsPartnerCampaignWithHttpInfo(string campaignId);        
+        public freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaign> GetTenDLCSmsPartnerCampaignWithHttpInfo(string campaignId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8143,7 +8143,7 @@ namespace freeclimb.Api
         /// <param name="brandId">The unique identifier for a brand (optional)</param>
                 
         /// <returns>ApiResponse of SMSTenDLCPartnerCampaignsListResult</returns>
-        public freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaignsListResult> GetTenDLCSmsPartnerCampaignsWithHttpInfo(string? brandId = default(string?));        
+        public freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaignsListResult> GetTenDLCSmsPartnerCampaignsWithHttpInfo(string? brandId = default(string?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8305,7 +8305,7 @@ namespace freeclimb.Api
         /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
                 
         /// <returns>ApiResponse of SMSTollFreeCampaign</returns>
-        public freeclimb.Client.ApiResponse<SMSTollFreeCampaign> GetTollFreeSmsCampaignWithHttpInfo(string campaignId);        
+        public freeclimb.Client.ApiResponse<SMSTollFreeCampaign> GetTollFreeSmsCampaignWithHttpInfo(string campaignId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8471,7 +8471,7 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
                 
         /// <returns>ApiResponse of SMSTollFreeCampaignsListResult</returns>
-        public freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult> GetTollFreeSmsCampaignsWithHttpInfo();        
+        public freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult> GetTollFreeSmsCampaignsWithHttpInfo()        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8623,7 +8623,7 @@ namespace freeclimb.Api
         /// <param name="alias">Return only the Queue resources with aliases that exactly match this name. (optional)</param>
                 
         /// <returns>ApiResponse of QueueList</returns>
-        public freeclimb.Client.ApiResponse<QueueList> ListActiveQueuesWithHttpInfo(string? alias = default(string?));        
+        public freeclimb.Client.ApiResponse<QueueList> ListActiveQueuesWithHttpInfo(string? alias = default(string?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8783,7 +8783,7 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
                 
         /// <returns>ApiResponse of LogList</returns>
-        public freeclimb.Client.ApiResponse<LogList> ListAllAccountLogsWithHttpInfo();        
+        public freeclimb.Client.ApiResponse<LogList> ListAllAccountLogsWithHttpInfo()        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8935,7 +8935,7 @@ namespace freeclimb.Api
         /// <param name="alias">Return only applications with aliases that exactly match this value. (optional)</param>
                 
         /// <returns>ApiResponse of ApplicationList</returns>
-        public freeclimb.Client.ApiResponse<ApplicationList> ListApplicationsWithHttpInfo(string? alias = default(string?));        
+        public freeclimb.Client.ApiResponse<ApplicationList> ListApplicationsWithHttpInfo(string? alias = default(string?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9115,7 +9115,7 @@ namespace freeclimb.Api
         /// <param name="capabilitiesShortCode"> (optional)</param>
                 
         /// <returns>ApiResponse of AvailableNumberList</returns>
-        public freeclimb.Client.ApiResponse<AvailableNumberList> ListAvailableNumbersWithHttpInfo(string? phoneNumber = default(string?), string? region = default(string?), string? country = default(string?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?));        
+        public freeclimb.Client.ApiResponse<AvailableNumberList> ListAvailableNumbersWithHttpInfo(string? phoneNumber = default(string?), string? region = default(string?), string? country = default(string?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?))        
         {
             freeclimb.Client.RequestOptions localVarRequestOptions = new freeclimb.Client.RequestOptions();
 
@@ -9353,7 +9353,7 @@ namespace freeclimb.Api
         /// <param name="callId">String that uniquely identifies this call resource.</param>
                 
         /// <returns>ApiResponse of LogList</returns>
-        public freeclimb.Client.ApiResponse<LogList> ListCallLogsWithHttpInfo(string callId);        
+        public freeclimb.Client.ApiResponse<LogList> ListCallLogsWithHttpInfo(string callId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9523,7 +9523,7 @@ namespace freeclimb.Api
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
                 
         /// <returns>ApiResponse of RecordingList</returns>
-        public freeclimb.Client.ApiResponse<RecordingList> ListCallRecordingsWithHttpInfo(string callId, string? dateCreated = default(string?));        
+        public freeclimb.Client.ApiResponse<RecordingList> ListCallRecordingsWithHttpInfo(string callId, string? dateCreated = default(string?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9715,7 +9715,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
                 
         /// <returns>ApiResponse of CallList</returns>
-        public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string? to = default(string?), string? from = default(string?), CallStatus? status = default(CallStatus?), string? startTime = default(string?), string? endTime = default(string?), string? parentCallId = default(string?), List<string>? applicationId = default(List<string>?));        
+        public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(bool? active = default(bool?), string? to = default(string?), string? from = default(string?), CallStatus? status = default(CallStatus?), string? startTime = default(string?), string? endTime = default(string?), string? parentCallId = default(string?), List<string>? applicationId = default(List<string>?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9951,7 +9951,7 @@ namespace freeclimb.Api
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
                 
         /// <returns>ApiResponse of RecordingList</returns>
-        public freeclimb.Client.ApiResponse<RecordingList> ListConferenceRecordingsWithHttpInfo(string conferenceId, string? callId = default(string?), string? dateCreated = default(string?));        
+        public freeclimb.Client.ApiResponse<RecordingList> ListConferenceRecordingsWithHttpInfo(string conferenceId, string? callId = default(string?), string? dateCreated = default(string?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10145,7 +10145,7 @@ namespace freeclimb.Api
         /// <param name="dateUpdated">Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
                 
         /// <returns>ApiResponse of ConferenceList</returns>
-        public freeclimb.Client.ApiResponse<ConferenceList> ListConferencesWithHttpInfo(string? status = default(string?), string? alias = default(string?), string? dateCreated = default(string?), string? dateUpdated = default(string?));        
+        public freeclimb.Client.ApiResponse<ConferenceList> ListConferencesWithHttpInfo(string? status = default(string?), string? alias = default(string?), string? dateCreated = default(string?), string? dateUpdated = default(string?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10367,7 +10367,7 @@ namespace freeclimb.Api
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
                 
         /// <returns>ApiResponse of IncomingNumberList</returns>
-        public freeclimb.Client.ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string? phoneNumber = default(string?), string? alias = default(string?), string? region = default(string?), string? country = default(string?), string? applicationId = default(string?), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string? tfnCampaignId = default(string?), bool? offnet = default(bool?));        
+        public freeclimb.Client.ApiResponse<IncomingNumberList> ListIncomingNumbersWithHttpInfo(string? phoneNumber = default(string?), string? alias = default(string?), string? region = default(string?), string? country = default(string?), string? applicationId = default(string?), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string? tfnCampaignId = default(string?), bool? offnet = default(bool?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10679,7 +10679,7 @@ namespace freeclimb.Api
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
                 
         /// <returns>ApiResponse of QueueMemberList</returns>
-        public freeclimb.Client.ApiResponse<QueueMemberList> ListMembersWithHttpInfo(string queueId);        
+        public freeclimb.Client.ApiResponse<QueueMemberList> ListMembersWithHttpInfo(string queueId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10853,7 +10853,7 @@ namespace freeclimb.Api
         /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
                 
         /// <returns>ApiResponse of ConferenceParticipantList</returns>
-        public freeclimb.Client.ApiResponse<ConferenceParticipantList> ListParticipantsWithHttpInfo(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?));        
+        public freeclimb.Client.ApiResponse<ConferenceParticipantList> ListParticipantsWithHttpInfo(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11055,7 +11055,7 @@ namespace freeclimb.Api
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
                 
         /// <returns>ApiResponse of RecordingList</returns>
-        public freeclimb.Client.ApiResponse<RecordingList> ListRecordingsWithHttpInfo(string? callId = default(string?), string? conferenceId = default(string?), string? dateCreated = default(string?));        
+        public freeclimb.Client.ApiResponse<RecordingList> ListRecordingsWithHttpInfo(string? callId = default(string?), string? conferenceId = default(string?), string? dateCreated = default(string?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11251,7 +11251,7 @@ namespace freeclimb.Api
         /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
                 
         /// <returns>ApiResponse of MessagesList</returns>
-        public freeclimb.Client.ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string? to = default(string?), string? from = default(string?), string? beginTime = default(string?), string? endTime = default(string?), MessageDirection? direction = default(MessageDirection?), string? campaignId = default(string?), string? brandId = default(string?), bool? is10DLC = default(bool?));        
+        public freeclimb.Client.ApiResponse<MessagesList> ListSmsMessagesWithHttpInfo(string? to = default(string?), string? from = default(string?), string? beginTime = default(string?), string? endTime = default(string?), MessageDirection? direction = default(MessageDirection?), string? campaignId = default(string?), string? brandId = default(string?), bool? is10DLC = default(bool?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11483,7 +11483,7 @@ namespace freeclimb.Api
         /// <param name="makeCallRequest">Call details for making a call (optional)</param>
                 
         /// <returns>ApiResponse of CallResult</returns>
-        public freeclimb.Client.ApiResponse<CallResult> MakeACallWithHttpInfo(MakeCallRequest? makeCallRequest = default(MakeCallRequest?));        
+        public freeclimb.Client.ApiResponse<CallResult> MakeACallWithHttpInfo(MakeCallRequest? makeCallRequest = default(MakeCallRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11641,7 +11641,7 @@ namespace freeclimb.Api
         /// <param name="createWebRTCToken">Information needed to craft a JWT compatible with the platforms WebRTC APIs</param>
                 
         /// <returns>ApiResponse of string</returns>
-        public freeclimb.Client.ApiResponse<string> MakeAWebrtcJwtWithHttpInfo(CreateWebRTCToken createWebRTCToken);        
+        public freeclimb.Client.ApiResponse<string> MakeAWebrtcJwtWithHttpInfo(CreateWebRTCToken createWebRTCToken)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11812,7 +11812,7 @@ namespace freeclimb.Api
         /// <param name="callId">ID of the Call associated with this participant.</param>
                 
         /// <returns>ApiResponse of Object(void)</returns>
-        public freeclimb.Client.ApiResponse<Object> RemoveAParticipantWithHttpInfo(string conferenceId, string callId);        
+        public freeclimb.Client.ApiResponse<Object> RemoveAParticipantWithHttpInfo(string conferenceId, string callId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11993,7 +11993,7 @@ namespace freeclimb.Api
         /// <param name="messageRequest">Details to create a message</param>
                 
         /// <returns>ApiResponse of MessageResult</returns>
-        public freeclimb.Client.ApiResponse<MessageResult> SendAnSmsMessageWithHttpInfo(MessageRequest messageRequest);        
+        public freeclimb.Client.ApiResponse<MessageResult> SendAnSmsMessageWithHttpInfo(MessageRequest messageRequest)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12163,7 +12163,7 @@ namespace freeclimb.Api
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
                 
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public freeclimb.Client.ApiResponse<System.IO.Stream> StreamARecordingFileWithHttpInfo(string recordingId);        
+        public freeclimb.Client.ApiResponse<System.IO.Stream> StreamARecordingFileWithHttpInfo(string recordingId)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12332,7 +12332,7 @@ namespace freeclimb.Api
         /// <param name="updateConferenceRequest">Conference Details to update (optional)</param>
                 
         /// <returns>ApiResponse of Object(void)</returns>
-        public freeclimb.Client.ApiResponse<Object> UpdateAConferenceWithHttpInfo(string conferenceId, UpdateConferenceRequest? updateConferenceRequest = default(UpdateConferenceRequest?));        
+        public freeclimb.Client.ApiResponse<Object> UpdateAConferenceWithHttpInfo(string conferenceId, UpdateConferenceRequest? updateConferenceRequest = default(UpdateConferenceRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12504,7 +12504,7 @@ namespace freeclimb.Api
         /// <param name="updateCallRequest">Call details to update</param>
                 
         /// <returns>ApiResponse of Object(void)</returns>
-        public freeclimb.Client.ApiResponse<Object> UpdateALiveCallWithHttpInfo(string callId, UpdateCallRequest updateCallRequest);        
+        public freeclimb.Client.ApiResponse<Object> UpdateALiveCallWithHttpInfo(string callId, UpdateCallRequest updateCallRequest)        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12691,7 +12691,7 @@ namespace freeclimb.Api
         /// <param name="updateConferenceParticipantRequest">Conference participant details to update (optional)</param>
                 
         /// <returns>ApiResponse of ConferenceParticipantResult</returns>
-        public freeclimb.Client.ApiResponse<ConferenceParticipantResult> UpdateAParticipantWithHttpInfo(string conferenceId, string callId, UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest?));        
+        public freeclimb.Client.ApiResponse<ConferenceParticipantResult> UpdateAParticipantWithHttpInfo(string conferenceId, string callId, UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12883,7 +12883,7 @@ namespace freeclimb.Api
         /// <param name="queueRequest">Queue Details to update (optional)</param>
                 
         /// <returns>ApiResponse of QueueResult</returns>
-        public freeclimb.Client.ApiResponse<QueueResult> UpdateAQueueWithHttpInfo(string queueId, QueueRequest? queueRequest = default(QueueRequest?));        
+        public freeclimb.Client.ApiResponse<QueueResult> UpdateAQueueWithHttpInfo(string queueId, QueueRequest? queueRequest = default(QueueRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -13056,7 +13056,7 @@ namespace freeclimb.Api
         /// <param name="accountRequest">Account details to update (optional)</param>
                 
         /// <returns>ApiResponse of Object(void)</returns>
-        public freeclimb.Client.ApiResponse<Object> UpdateAnAccountWithHttpInfo(AccountRequest? accountRequest = default(AccountRequest?));        
+        public freeclimb.Client.ApiResponse<Object> UpdateAnAccountWithHttpInfo(AccountRequest? accountRequest = default(AccountRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -13213,7 +13213,7 @@ namespace freeclimb.Api
         /// <param name="applicationRequest">Application details to update. (optional)</param>
                 
         /// <returns>ApiResponse of ApplicationResult</returns>
-        public freeclimb.Client.ApiResponse<ApplicationResult> UpdateAnApplicationWithHttpInfo(string applicationId, ApplicationRequest? applicationRequest = default(ApplicationRequest?));        
+        public freeclimb.Client.ApiResponse<ApplicationResult> UpdateAnApplicationWithHttpInfo(string applicationId, ApplicationRequest? applicationRequest = default(ApplicationRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -13389,7 +13389,7 @@ namespace freeclimb.Api
         /// <param name="incomingNumberRequest">Incoming Number details to update (optional)</param>
                 
         /// <returns>ApiResponse of IncomingNumberResult</returns>
-        public freeclimb.Client.ApiResponse<IncomingNumberResult> UpdateAnIncomingNumberWithHttpInfo(string phoneNumberId, IncomingNumberRequest? incomingNumberRequest = default(IncomingNumberRequest?));        
+        public freeclimb.Client.ApiResponse<IncomingNumberResult> UpdateAnIncomingNumberWithHttpInfo(string phoneNumberId, IncomingNumberRequest? incomingNumberRequest = default(IncomingNumberRequest?))        
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
