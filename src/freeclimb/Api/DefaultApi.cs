@@ -1375,7 +1375,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberResult)</returns>
-        IncomingNumberResult BuyAPhoneNumber(BuyIncomingNumberRequest buyIncomingNumberRequest);        
+        IncomingNumberResult BuyAPhoneNumber(BuyIncomingNumberRequest buyIncomingNumberRequest, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Create a Conference
         /// </summary>
@@ -1403,7 +1403,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceResult)</returns>
-        ConferenceResult CreateAConference(CreateConferenceRequest? createConferenceRequest = default(CreateConferenceRequest?));        
+        ConferenceResult CreateAConference(CreateConferenceRequest? createConferenceRequest = default(CreateConferenceRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Create a Queue
         /// </summary>
@@ -1431,7 +1431,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueResult)</returns>
-        QueueResult CreateAQueue(QueueRequest? queueRequest = default(QueueRequest?));        
+        QueueResult CreateAQueue(QueueRequest? queueRequest = default(QueueRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Create an application
         /// </summary>
@@ -1459,7 +1459,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
-        ApplicationResult CreateAnApplication(ApplicationRequest? applicationRequest = default(ApplicationRequest?));        
+        ApplicationResult CreateAnApplication(ApplicationRequest? applicationRequest = default(ApplicationRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Query the knowledge base
         /// </summary>
@@ -1491,7 +1491,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CompletionResult)</returns>
-        CompletionResult CreateKnowledgeBaseCompletion(string knowledgeBaseId, CompletionRequest? completionRequest = default(CompletionRequest?));        
+        CompletionResult CreateKnowledgeBaseCompletion(string knowledgeBaseId, CompletionRequest? completionRequest = default(CompletionRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Delete a Recording
         /// </summary>
@@ -1519,7 +1519,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        void DeleteARecording(string recordingId);        
+        void DeleteARecording(string recordingId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Delete an application
         /// </summary>
@@ -1547,7 +1547,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        void DeleteAnApplication(string applicationId);        
+        void DeleteAnApplication(string applicationId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Delete an Incoming Number
         /// </summary>
@@ -1575,7 +1575,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        void DeleteAnIncomingNumber(string phoneNumberId);        
+        void DeleteAnIncomingNumber(string phoneNumberId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Dequeue a Member
         /// </summary>
@@ -1607,7 +1607,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
-        QueueMember DequeueAMember(string queueId, string callId);        
+        QueueMember DequeueAMember(string queueId, string callId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Dequeue Head Member
         /// </summary>
@@ -1635,7 +1635,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
-        QueueMember DequeueHeadMember(string queueId);        
+        QueueMember DequeueHeadMember(string queueId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Download a Recording File
         /// </summary>
@@ -1663,7 +1663,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.IO.Stream DownloadARecordingFile(string recordingId);        
+        System.IO.Stream DownloadARecordingFile(string recordingId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Filter Logs
         /// </summary>
@@ -1691,7 +1691,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
-        LogList FilterLogs(FilterLogsRequest filterLogsRequest);        
+        LogList FilterLogs(FilterLogsRequest filterLogsRequest, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a Call
         /// </summary>
@@ -1719,7 +1719,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallResult)</returns>
-        CallResult GetACall(string callId);        
+        CallResult GetACall(string callId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a Conference
         /// </summary>
@@ -1747,7 +1747,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceResult)</returns>
-        ConferenceResult GetAConference(string conferenceId);        
+        ConferenceResult GetAConference(string conferenceId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a Member
         /// </summary>
@@ -1779,7 +1779,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
-        QueueMember GetAMember(string queueId, string callId);        
+        QueueMember GetAMember(string queueId, string callId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a Participant
         /// </summary>
@@ -1811,7 +1811,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantResult)</returns>
-        ConferenceParticipantResult GetAParticipant(string conferenceId, string callId);        
+        ConferenceParticipantResult GetAParticipant(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a Queue
         /// </summary>
@@ -1839,7 +1839,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueResult)</returns>
-        QueueResult GetAQueue(string queueId);        
+        QueueResult GetAQueue(string queueId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a Recording
         /// </summary>
@@ -1867,7 +1867,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingResult)</returns>
-        RecordingResult GetARecording(string recordingId);        
+        RecordingResult GetARecording(string recordingId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get an Account
         /// </summary>
@@ -1891,7 +1891,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountResult)</returns>
-        AccountResult GetAnAccount();        
+        AccountResult GetAnAccount(System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get an Application
         /// </summary>
@@ -1919,7 +1919,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
-        ApplicationResult GetAnApplication(string applicationId);        
+        ApplicationResult GetAnApplication(string applicationId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get an Incoming Number
         /// </summary>
@@ -1947,7 +1947,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberResult)</returns>
-        IncomingNumberResult GetAnIncomingNumber(string phoneNumberId);        
+        IncomingNumberResult GetAnIncomingNumber(string phoneNumberId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get an SMS Message
         /// </summary>
@@ -1975,7 +1975,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageResult)</returns>
-        MessageResult GetAnSmsMessage(string messageId);        
+        MessageResult GetAnSmsMessage(string messageId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get Head Member
         /// </summary>
@@ -2003,7 +2003,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMember)</returns>
-        QueueMember GetHeadMember(string queueId);        
+        QueueMember GetHeadMember(string queueId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a 10DLC SMS Brand
         /// </summary>
@@ -2031,7 +2031,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTenDLCBrand)</returns>
-        SMSTenDLCBrand GetTenDLCSmsBrand(string brandId);        
+        SMSTenDLCBrand GetTenDLCSmsBrand(string brandId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get list of SMS 10DLC Brands
         /// </summary>
@@ -2055,7 +2055,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTenDLCBrandsListResult)</returns>
-        SMSTenDLCBrandsListResult GetTenDLCSmsBrands();        
+        SMSTenDLCBrandsListResult GetTenDLCSmsBrands(System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a 10DLC SMS Campaign
         /// </summary>
@@ -2083,7 +2083,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTenDLCCampaign)</returns>
-        SMSTenDLCCampaign GetTenDLCSmsCampaign(string campaignId);        
+        SMSTenDLCCampaign GetTenDLCSmsCampaign(string campaignId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get list of SMS 10DLC Campaigns
         /// </summary>
@@ -2111,7 +2111,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTenDLCCampaignsListResult)</returns>
-        SMSTenDLCCampaignsListResult GetTenDLCSmsCampaigns(string? brandId = default(string?));        
+        SMSTenDLCCampaignsListResult GetTenDLCSmsCampaigns(string? brandId = default(string?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a 10DLC SMS Partner Campaign
         /// </summary>
@@ -2139,7 +2139,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTenDLCPartnerCampaign)</returns>
-        SMSTenDLCPartnerCampaign GetTenDLCSmsPartnerCampaign(string campaignId);        
+        SMSTenDLCPartnerCampaign GetTenDLCSmsPartnerCampaign(string campaignId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get list of SMS 10DLC Partner Campaigns
         /// </summary>
@@ -2167,7 +2167,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTenDLCPartnerCampaignsListResult)</returns>
-        SMSTenDLCPartnerCampaignsListResult GetTenDLCSmsPartnerCampaigns(string? brandId = default(string?));        
+        SMSTenDLCPartnerCampaignsListResult GetTenDLCSmsPartnerCampaigns(string? brandId = default(string?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get a TollFree SMS Campaign
         /// </summary>
@@ -2195,7 +2195,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTollFreeCampaign)</returns>
-        SMSTollFreeCampaign GetTollFreeSmsCampaign(string campaignId);        
+        SMSTollFreeCampaign GetTollFreeSmsCampaign(string campaignId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Get list of TollFree Campaigns
         /// </summary>
@@ -2219,7 +2219,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SMSTollFreeCampaignsListResult)</returns>
-        SMSTollFreeCampaignsListResult GetTollFreeSmsCampaigns();        
+        SMSTollFreeCampaignsListResult GetTollFreeSmsCampaigns(System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Active Queues
         /// </summary>
@@ -2247,7 +2247,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueList)</returns>
-        QueueList ListActiveQueues(string? alias = default(string?));        
+        QueueList ListActiveQueues(string? alias = default(string?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List All Account Logs
         /// </summary>
@@ -2271,7 +2271,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
-        LogList ListAllAccountLogs();        
+        LogList ListAllAccountLogs(System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List applications
         /// </summary>
@@ -2299,7 +2299,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationList)</returns>
-        ApplicationList ListApplications(string? alias = default(string?));        
+        ApplicationList ListApplications(string? alias = default(string?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List available numbers
         /// </summary>
@@ -2363,7 +2363,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AvailableNumberList)</returns>
-        AvailableNumberList ListAvailableNumbers(string? phoneNumber = default(string?), string? region = default(string?), string? country = default(string?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?));        
+        AvailableNumberList ListAvailableNumbers(string? phoneNumber = default(string?), string? region = default(string?), string? country = default(string?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Call Logs
         /// </summary>
@@ -2391,7 +2391,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LogList)</returns>
-        LogList ListCallLogs(string callId);        
+        LogList ListCallLogs(string callId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Call Recordings
         /// </summary>
@@ -2423,7 +2423,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingList)</returns>
-        RecordingList ListCallRecordings(string callId, string? dateCreated = default(string?));        
+        RecordingList ListCallRecordings(string callId, string? dateCreated = default(string?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Calls
         /// </summary>
@@ -2479,7 +2479,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallList)</returns>
-        CallList ListCalls(bool? active = default(bool?), string? to = default(string?), string? from = default(string?), CallStatus? status = default(CallStatus?), string? startTime = default(string?), string? endTime = default(string?), string? parentCallId = default(string?), List<string>? applicationId = default(List<string>?));        
+        CallList ListCalls(bool? active = default(bool?), string? to = default(string?), string? from = default(string?), CallStatus? status = default(CallStatus?), string? startTime = default(string?), string? endTime = default(string?), string? parentCallId = default(string?), List<string>? applicationId = default(List<string>?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Conference Recordings
         /// </summary>
@@ -2515,7 +2515,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingList)</returns>
-        RecordingList ListConferenceRecordings(string conferenceId, string? callId = default(string?), string? dateCreated = default(string?));        
+        RecordingList ListConferenceRecordings(string conferenceId, string? callId = default(string?), string? dateCreated = default(string?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Conferences
         /// </summary>
@@ -2555,7 +2555,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceList)</returns>
-        ConferenceList ListConferences(string? status = default(string?), string? alias = default(string?), string? dateCreated = default(string?), string? dateUpdated = default(string?));        
+        ConferenceList ListConferences(string? status = default(string?), string? alias = default(string?), string? dateCreated = default(string?), string? dateUpdated = default(string?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Incoming Numbers
         /// </summary>
@@ -2643,7 +2643,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberList)</returns>
-        IncomingNumberList ListIncomingNumbers(string? phoneNumber = default(string?), string? alias = default(string?), string? region = default(string?), string? country = default(string?), string? applicationId = default(string?), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string? tfnCampaignId = default(string?), bool? offnet = default(bool?));        
+        IncomingNumberList ListIncomingNumbers(string? phoneNumber = default(string?), string? alias = default(string?), string? region = default(string?), string? country = default(string?), string? applicationId = default(string?), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string? tfnCampaignId = default(string?), bool? offnet = default(bool?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Members
         /// </summary>
@@ -2671,7 +2671,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueMemberList)</returns>
-        QueueMemberList ListMembers(string queueId);        
+        QueueMemberList ListMembers(string queueId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Participants
         /// </summary>
@@ -2711,7 +2711,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantList)</returns>
-        ConferenceParticipantList ListParticipants(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?));        
+        ConferenceParticipantList ListParticipants(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List Recordings
         /// </summary>
@@ -2747,7 +2747,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordingList)</returns>
-        RecordingList ListRecordings(string? callId = default(string?), string? conferenceId = default(string?), string? dateCreated = default(string?));        
+        RecordingList ListRecordings(string? callId = default(string?), string? conferenceId = default(string?), string? dateCreated = default(string?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// List SMS Messages
         /// </summary>
@@ -2803,7 +2803,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessagesList)</returns>
-        MessagesList ListSmsMessages(string? to = default(string?), string? from = default(string?), string? beginTime = default(string?), string? endTime = default(string?), MessageDirection? direction = default(MessageDirection?), string? campaignId = default(string?), string? brandId = default(string?), bool? is10DLC = default(bool?));        
+        MessagesList ListSmsMessages(string? to = default(string?), string? from = default(string?), string? beginTime = default(string?), string? endTime = default(string?), MessageDirection? direction = default(MessageDirection?), string? campaignId = default(string?), string? brandId = default(string?), bool? is10DLC = default(bool?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Make a Call
         /// </summary>
@@ -2831,7 +2831,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CallResult)</returns>
-        CallResult MakeACall(MakeCallRequest? makeCallRequest = default(MakeCallRequest?));        
+        CallResult MakeACall(MakeCallRequest? makeCallRequest = default(MakeCallRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Make a JWT for WebRTC calling
         /// </summary>
@@ -2859,7 +2859,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        string MakeAWebrtcJwt(CreateWebRTCToken createWebRTCToken);        
+        string MakeAWebrtcJwt(CreateWebRTCToken createWebRTCToken, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Remove a Participant
         /// </summary>
@@ -2891,7 +2891,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        void RemoveAParticipant(string conferenceId, string callId);        
+        void RemoveAParticipant(string conferenceId, string callId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Send an SMS Message
         /// </summary>
@@ -2919,7 +2919,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageResult)</returns>
-        MessageResult SendAnSmsMessage(MessageRequest messageRequest);        
+        MessageResult SendAnSmsMessage(MessageRequest messageRequest, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Stream a Recording File
         /// </summary>
@@ -2947,7 +2947,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.IO.Stream StreamARecordingFile(string recordingId);        
+        System.IO.Stream StreamARecordingFile(string recordingId, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Update a Conference
         /// </summary>
@@ -2979,7 +2979,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        void UpdateAConference(string conferenceId, UpdateConferenceRequest? updateConferenceRequest = default(UpdateConferenceRequest?));        
+        void UpdateAConference(string conferenceId, UpdateConferenceRequest? updateConferenceRequest = default(UpdateConferenceRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Update a Live Call
         /// </summary>
@@ -3011,7 +3011,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        void UpdateALiveCall(string callId, UpdateCallRequest updateCallRequest);        
+        void UpdateALiveCall(string callId, UpdateCallRequest updateCallRequest, System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Update a Participant
         /// </summary>
@@ -3047,7 +3047,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantResult)</returns>
-        ConferenceParticipantResult UpdateAParticipant(string conferenceId, string callId, UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest?));        
+        ConferenceParticipantResult UpdateAParticipant(string conferenceId, string callId, UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Update a Queue
         /// </summary>
@@ -3079,7 +3079,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QueueResult)</returns>
-        QueueResult UpdateAQueue(string queueId, QueueRequest? queueRequest = default(QueueRequest?));        
+        QueueResult UpdateAQueue(string queueId, QueueRequest? queueRequest = default(QueueRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Manage an account
         /// </summary>
@@ -3107,7 +3107,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        void UpdateAnAccount(AccountRequest? accountRequest = default(AccountRequest?));        
+        void UpdateAnAccount(AccountRequest? accountRequest = default(AccountRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Update an application
         /// </summary>
@@ -3139,7 +3139,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationResult)</returns>
-        ApplicationResult UpdateAnApplication(string applicationId, ApplicationRequest? applicationRequest = default(ApplicationRequest?));        
+        ApplicationResult UpdateAnApplication(string applicationId, ApplicationRequest? applicationRequest = default(ApplicationRequest?), System.Threading.CancellationToken cancellationToken);        
         /// <summary>
         /// Update an Incoming Number
         /// </summary>
@@ -3171,7 +3171,7 @@ namespace freeclimb.Api
         
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IncomingNumberResult)</returns>
-        IncomingNumberResult UpdateAnIncomingNumber(string phoneNumberId, IncomingNumberRequest? incomingNumberRequest = default(IncomingNumberRequest?));        
+        IncomingNumberResult UpdateAnIncomingNumber(string phoneNumberId, IncomingNumberRequest? incomingNumberRequest = default(IncomingNumberRequest?), System.Threading.CancellationToken cancellationToken);        
         #endregion Asynchronous Operations
     }
 
