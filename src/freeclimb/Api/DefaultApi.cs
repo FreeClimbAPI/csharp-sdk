@@ -3299,7 +3299,7 @@ namespace freeclimb.Api
         /// Get next page of paginated resource 
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>T<response></returns>
+        /// <returns>T</returns>
         public T GetNextPage<T>(T response) where T : IPagination
         {
             freeclimb.Client.ApiResponse<T> localVarResponse = GetNextPageWithHttpInfo(response);
@@ -3444,7 +3444,7 @@ namespace freeclimb.Api
         /// <param name="buyIncomingNumberRequest">Incoming Number transaction details</param>
                 
         /// <returns>IncomingNumberResult</returns>
-        public IncomingNumberResult BuyAPhoneNumber(BuyIncomingNumberRequest buyIncomingNumberRequest, )
+        public IncomingNumberResult BuyAPhoneNumber(BuyIncomingNumberRequest buyIncomingNumberRequest)
         {
             freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = BuyAPhoneNumberWithHttpInfo(buyIncomingNumberRequest);
             return localVarResponse.Data;
@@ -3614,7 +3614,7 @@ namespace freeclimb.Api
         /// <param name="createConferenceRequest">Conference to create (optional)</param>
                 
         /// <returns>ConferenceResult</returns>
-        public ConferenceResult CreateAConference(CreateConferenceRequest? createConferenceRequest = default(CreateConferenceRequest?), )
+        public ConferenceResult CreateAConference(CreateConferenceRequest? createConferenceRequest = default(CreateConferenceRequest?))
         {
             freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = CreateAConferenceWithHttpInfo(createConferenceRequest);
             return localVarResponse.Data;
@@ -3772,7 +3772,7 @@ namespace freeclimb.Api
         /// <param name="queueRequest">Queue details used to create a queue (optional)</param>
                 
         /// <returns>QueueResult</returns>
-        public QueueResult CreateAQueue(QueueRequest? queueRequest = default(QueueRequest?), )
+        public QueueResult CreateAQueue(QueueRequest? queueRequest = default(QueueRequest?))
         {
             freeclimb.Client.ApiResponse<QueueResult> localVarResponse = CreateAQueueWithHttpInfo(queueRequest);
             return localVarResponse.Data;
@@ -3930,7 +3930,7 @@ namespace freeclimb.Api
         /// <param name="applicationRequest">Application Details (optional)</param>
                 
         /// <returns>ApplicationResult</returns>
-        public ApplicationResult CreateAnApplication(ApplicationRequest? applicationRequest = default(ApplicationRequest?), )
+        public ApplicationResult CreateAnApplication(ApplicationRequest? applicationRequest = default(ApplicationRequest?))
         {
             freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = CreateAnApplicationWithHttpInfo(applicationRequest);
             return localVarResponse.Data;
@@ -4089,7 +4089,7 @@ namespace freeclimb.Api
         /// <param name="completionRequest">Completion request details (optional)</param>
                 
         /// <returns>CompletionResult</returns>
-        public CompletionResult CreateKnowledgeBaseCompletion(string knowledgeBaseId, CompletionRequest? completionRequest = default(CompletionRequest?), )
+        public CompletionResult CreateKnowledgeBaseCompletion(string knowledgeBaseId, CompletionRequest? completionRequest = default(CompletionRequest?))
         {
             freeclimb.Client.ApiResponse<CompletionResult> localVarResponse = CreateKnowledgeBaseCompletionWithHttpInfo(knowledgeBaseId, completionRequest);
             return localVarResponse.Data;
@@ -4264,7 +4264,7 @@ namespace freeclimb.Api
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
                 
         /// <returns></returns>
-        public void DeleteARecording(string recordingId, )
+        public void DeleteARecording(string recordingId)
         {
             DeleteARecordingWithHttpInfo(accountId, recordingId);
         }            
@@ -4428,7 +4428,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">String that uniquely identifies this application resource.</param>
                 
         /// <returns></returns>
-        public void DeleteAnApplication(string applicationId, )
+        public void DeleteAnApplication(string applicationId)
         {
             DeleteAnApplicationWithHttpInfo(accountId, applicationId);
         }            
@@ -4592,7 +4592,7 @@ namespace freeclimb.Api
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
                 
         /// <returns></returns>
-        public void DeleteAnIncomingNumber(string phoneNumberId, )
+        public void DeleteAnIncomingNumber(string phoneNumberId)
         {
             DeleteAnIncomingNumberWithHttpInfo(accountId, phoneNumberId);
         }            
@@ -4757,7 +4757,7 @@ namespace freeclimb.Api
         /// <param name="callId">ID if the Call that the Member belongs to</param>
                 
         /// <returns>QueueMember</returns>
-        public QueueMember DequeueAMember(string queueId, string callId, )
+        public QueueMember DequeueAMember(string queueId, string callId)
         {
             freeclimb.Client.ApiResponse<QueueMember> localVarResponse = DequeueAMemberWithHttpInfo(queueId, callId);
             return localVarResponse.Data;
@@ -4942,7 +4942,7 @@ namespace freeclimb.Api
         /// <param name="queueId">String that uniquely identifies this queue resource.</param>
                 
         /// <returns>QueueMember</returns>
-        public QueueMember DequeueHeadMember(string queueId, )
+        public QueueMember DequeueHeadMember(string queueId)
         {
             freeclimb.Client.ApiResponse<QueueMember> localVarResponse = DequeueHeadMemberWithHttpInfo(queueId);
             return localVarResponse.Data;
@@ -5110,7 +5110,7 @@ namespace freeclimb.Api
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
                 
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream DownloadARecordingFile(string recordingId, )
+        public System.IO.Stream DownloadARecordingFile(string recordingId)
         {
             freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = DownloadARecordingFileWithHttpInfo(recordingId);
             return localVarResponse.Data;
@@ -5278,7 +5278,7 @@ namespace freeclimb.Api
         /// <param name="filterLogsRequest">Filter logs request paramters</param>
                 
         /// <returns>LogList</returns>
-        public LogList FilterLogs(FilterLogsRequest filterLogsRequest, )
+        public LogList FilterLogs(FilterLogsRequest filterLogsRequest)
         {
             freeclimb.Client.ApiResponse<LogList> localVarResponse = FilterLogsWithHttpInfo(filterLogsRequest);
             return localVarResponse.Data;
@@ -5448,7 +5448,7 @@ namespace freeclimb.Api
         /// <param name="callId">String that uniquely identifies this call resource.</param>
                 
         /// <returns>CallResult</returns>
-        public CallResult GetACall(string callId, )
+        public CallResult GetACall(string callId)
         {
             freeclimb.Client.ApiResponse<CallResult> localVarResponse = GetACallWithHttpInfo(callId);
             return localVarResponse.Data;
@@ -5616,7 +5616,7 @@ namespace freeclimb.Api
         /// <param name="conferenceId">A string that uniquely identifies this conference resource.</param>
                 
         /// <returns>ConferenceResult</returns>
-        public ConferenceResult GetAConference(string conferenceId, )
+        public ConferenceResult GetAConference(string conferenceId)
         {
             freeclimb.Client.ApiResponse<ConferenceResult> localVarResponse = GetAConferenceWithHttpInfo(conferenceId);
             return localVarResponse.Data;
@@ -5785,7 +5785,7 @@ namespace freeclimb.Api
         /// <param name="callId">ID of the Call that the Member belongs to</param>
                 
         /// <returns>QueueMember</returns>
-        public QueueMember GetAMember(string queueId, string callId, )
+        public QueueMember GetAMember(string queueId, string callId)
         {
             freeclimb.Client.ApiResponse<QueueMember> localVarResponse = GetAMemberWithHttpInfo(queueId, callId);
             return localVarResponse.Data;
@@ -5971,7 +5971,7 @@ namespace freeclimb.Api
         /// <param name="callId">ID of the Call associated with this participant.</param>
                 
         /// <returns>ConferenceParticipantResult</returns>
-        public ConferenceParticipantResult GetAParticipant(string conferenceId, string callId, )
+        public ConferenceParticipantResult GetAParticipant(string conferenceId, string callId)
         {
             freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = GetAParticipantWithHttpInfo(conferenceId, callId);
             return localVarResponse.Data;
@@ -6156,7 +6156,7 @@ namespace freeclimb.Api
         /// <param name="queueId">A string that uniquely identifies this queue resource.</param>
                 
         /// <returns>QueueResult</returns>
-        public QueueResult GetAQueue(string queueId, )
+        public QueueResult GetAQueue(string queueId)
         {
             freeclimb.Client.ApiResponse<QueueResult> localVarResponse = GetAQueueWithHttpInfo(queueId);
             return localVarResponse.Data;
@@ -6324,7 +6324,7 @@ namespace freeclimb.Api
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
                 
         /// <returns>RecordingResult</returns>
-        public RecordingResult GetARecording(string recordingId, )
+        public RecordingResult GetARecording(string recordingId)
         {
             freeclimb.Client.ApiResponse<RecordingResult> localVarResponse = GetARecordingWithHttpInfo(recordingId);
             return localVarResponse.Data;
@@ -6491,7 +6491,7 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
                 
         /// <returns>AccountResult</returns>
-        public AccountResult GetAnAccount(, )
+        public AccountResult GetAnAccount()
         {
             freeclimb.Client.ApiResponse<AccountResult> localVarResponse = GetAnAccountWithHttpInfo();
             return localVarResponse.Data;
@@ -6642,7 +6642,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">A string that uniquely identifies this application resource.</param>
                 
         /// <returns>ApplicationResult</returns>
-        public ApplicationResult GetAnApplication(string applicationId, )
+        public ApplicationResult GetAnApplication(string applicationId)
         {
             freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = GetAnApplicationWithHttpInfo(applicationId);
             return localVarResponse.Data;
@@ -6810,7 +6810,7 @@ namespace freeclimb.Api
         /// <param name="phoneNumberId">String that uniquely identifies this phone number resource.</param>
                 
         /// <returns>IncomingNumberResult</returns>
-        public IncomingNumberResult GetAnIncomingNumber(string phoneNumberId, )
+        public IncomingNumberResult GetAnIncomingNumber(string phoneNumberId)
         {
             freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = GetAnIncomingNumberWithHttpInfo(phoneNumberId);
             return localVarResponse.Data;
@@ -6978,7 +6978,7 @@ namespace freeclimb.Api
         /// <param name="messageId">String that uniquely identifies this Message resource.</param>
                 
         /// <returns>MessageResult</returns>
-        public MessageResult GetAnSmsMessage(string messageId, )
+        public MessageResult GetAnSmsMessage(string messageId)
         {
             freeclimb.Client.ApiResponse<MessageResult> localVarResponse = GetAnSmsMessageWithHttpInfo(messageId);
             return localVarResponse.Data;
@@ -7146,7 +7146,7 @@ namespace freeclimb.Api
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
                 
         /// <returns>QueueMember</returns>
-        public QueueMember GetHeadMember(string queueId, )
+        public QueueMember GetHeadMember(string queueId)
         {
             freeclimb.Client.ApiResponse<QueueMember> localVarResponse = GetHeadMemberWithHttpInfo(queueId);
             return localVarResponse.Data;
@@ -7314,7 +7314,7 @@ namespace freeclimb.Api
         /// <param name="brandId">String that uniquely identifies this brand resource.</param>
                 
         /// <returns>SMSTenDLCBrand</returns>
-        public SMSTenDLCBrand GetTenDLCSmsBrand(string brandId, )
+        public SMSTenDLCBrand GetTenDLCSmsBrand(string brandId)
         {
             freeclimb.Client.ApiResponse<SMSTenDLCBrand> localVarResponse = GetTenDLCSmsBrandWithHttpInfo(brandId);
             return localVarResponse.Data;
@@ -7481,7 +7481,7 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
                 
         /// <returns>SMSTenDLCBrandsListResult</returns>
-        public SMSTenDLCBrandsListResult GetTenDLCSmsBrands(, )
+        public SMSTenDLCBrandsListResult GetTenDLCSmsBrands()
         {
             freeclimb.Client.ApiResponse<SMSTenDLCBrandsListResult> localVarResponse = GetTenDLCSmsBrandsWithHttpInfo();
             return localVarResponse.Data;
@@ -7632,7 +7632,7 @@ namespace freeclimb.Api
         /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
                 
         /// <returns>SMSTenDLCCampaign</returns>
-        public SMSTenDLCCampaign GetTenDLCSmsCampaign(string campaignId, )
+        public SMSTenDLCCampaign GetTenDLCSmsCampaign(string campaignId)
         {
             freeclimb.Client.ApiResponse<SMSTenDLCCampaign> localVarResponse = GetTenDLCSmsCampaignWithHttpInfo(campaignId);
             return localVarResponse.Data;
@@ -7800,7 +7800,7 @@ namespace freeclimb.Api
         /// <param name="brandId">The unique identifier for a brand (optional)</param>
                 
         /// <returns>SMSTenDLCCampaignsListResult</returns>
-        public SMSTenDLCCampaignsListResult GetTenDLCSmsCampaigns(string? brandId = default(string?), )
+        public SMSTenDLCCampaignsListResult GetTenDLCSmsCampaigns(string? brandId = default(string?))
         {
             freeclimb.Client.ApiResponse<SMSTenDLCCampaignsListResult> localVarResponse = GetTenDLCSmsCampaignsWithHttpInfo(brandId);
             return localVarResponse.Data;
@@ -7962,7 +7962,7 @@ namespace freeclimb.Api
         /// <param name="campaignId">String that uniquely identifies this campaign resource.</param>
                 
         /// <returns>SMSTenDLCPartnerCampaign</returns>
-        public SMSTenDLCPartnerCampaign GetTenDLCSmsPartnerCampaign(string campaignId, )
+        public SMSTenDLCPartnerCampaign GetTenDLCSmsPartnerCampaign(string campaignId)
         {
             freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaign> localVarResponse = GetTenDLCSmsPartnerCampaignWithHttpInfo(campaignId);
             return localVarResponse.Data;
@@ -8130,7 +8130,7 @@ namespace freeclimb.Api
         /// <param name="brandId">The unique identifier for a brand (optional)</param>
                 
         /// <returns>SMSTenDLCPartnerCampaignsListResult</returns>
-        public SMSTenDLCPartnerCampaignsListResult GetTenDLCSmsPartnerCampaigns(string? brandId = default(string?), )
+        public SMSTenDLCPartnerCampaignsListResult GetTenDLCSmsPartnerCampaigns(string? brandId = default(string?))
         {
             freeclimb.Client.ApiResponse<SMSTenDLCPartnerCampaignsListResult> localVarResponse = GetTenDLCSmsPartnerCampaignsWithHttpInfo(brandId);
             return localVarResponse.Data;
@@ -8292,7 +8292,7 @@ namespace freeclimb.Api
         /// <param name="campaignId">String that uniquely identifies this TollFree Campaign resource.</param>
                 
         /// <returns>SMSTollFreeCampaign</returns>
-        public SMSTollFreeCampaign GetTollFreeSmsCampaign(string campaignId, )
+        public SMSTollFreeCampaign GetTollFreeSmsCampaign(string campaignId)
         {
             freeclimb.Client.ApiResponse<SMSTollFreeCampaign> localVarResponse = GetTollFreeSmsCampaignWithHttpInfo(campaignId);
             return localVarResponse.Data;
@@ -8459,7 +8459,7 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
                 
         /// <returns>SMSTollFreeCampaignsListResult</returns>
-        public SMSTollFreeCampaignsListResult GetTollFreeSmsCampaigns(, )
+        public SMSTollFreeCampaignsListResult GetTollFreeSmsCampaigns()
         {
             freeclimb.Client.ApiResponse<SMSTollFreeCampaignsListResult> localVarResponse = GetTollFreeSmsCampaignsWithHttpInfo();
             return localVarResponse.Data;
@@ -8610,7 +8610,7 @@ namespace freeclimb.Api
         /// <param name="alias">Return only the Queue resources with aliases that exactly match this name. (optional)</param>
                 
         /// <returns>QueueList</returns>
-        public QueueList ListActiveQueues(string? alias = default(string?), )
+        public QueueList ListActiveQueues(string? alias = default(string?))
         {
             freeclimb.Client.ApiResponse<QueueList> localVarResponse = ListActiveQueuesWithHttpInfo(alias);
             return localVarResponse.Data;
@@ -8771,7 +8771,7 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
                 
         /// <returns>LogList</returns>
-        public LogList ListAllAccountLogs(, )
+        public LogList ListAllAccountLogs()
         {
             freeclimb.Client.ApiResponse<LogList> localVarResponse = ListAllAccountLogsWithHttpInfo();
             return localVarResponse.Data;
@@ -8922,7 +8922,7 @@ namespace freeclimb.Api
         /// <param name="alias">Return only applications with aliases that exactly match this value. (optional)</param>
                 
         /// <returns>ApplicationList</returns>
-        public ApplicationList ListApplications(string? alias = default(string?), )
+        public ApplicationList ListApplications(string? alias = default(string?))
         {
             freeclimb.Client.ApiResponse<ApplicationList> localVarResponse = ListApplicationsWithHttpInfo(alias);
             return localVarResponse.Data;
@@ -9093,7 +9093,7 @@ namespace freeclimb.Api
         /// <param name="capabilitiesShortCode"> (optional)</param>
                 
         /// <returns>AvailableNumberList</returns>
-        public AvailableNumberList ListAvailableNumbers(string? phoneNumber = default(string?), string? region = default(string?), string? country = default(string?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), )
+        public AvailableNumberList ListAvailableNumbers(string? phoneNumber = default(string?), string? region = default(string?), string? country = default(string?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?))
         {
             freeclimb.Client.ApiResponse<AvailableNumberList> localVarResponse = ListAvailableNumbersWithHttpInfo(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
             return localVarResponse.Data;
@@ -9340,7 +9340,7 @@ namespace freeclimb.Api
         /// <param name="callId">String that uniquely identifies this call resource.</param>
                 
         /// <returns>LogList</returns>
-        public LogList ListCallLogs(string callId, )
+        public LogList ListCallLogs(string callId)
         {
             freeclimb.Client.ApiResponse<LogList> localVarResponse = ListCallLogsWithHttpInfo(callId);
             return localVarResponse.Data;
@@ -9509,7 +9509,7 @@ namespace freeclimb.Api
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
                 
         /// <returns>RecordingList</returns>
-        public RecordingList ListCallRecordings(string callId, string? dateCreated = default(string?), )
+        public RecordingList ListCallRecordings(string callId, string? dateCreated = default(string?))
         {
             freeclimb.Client.ApiResponse<RecordingList> localVarResponse = ListCallRecordingsWithHttpInfo(callId, dateCreated);
             return localVarResponse.Data;
@@ -9695,7 +9695,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
                 
         /// <returns>CallList</returns>
-        public CallList ListCalls(bool? active = default(bool?), string? to = default(string?), string? from = default(string?), CallStatus? status = default(CallStatus?), string? startTime = default(string?), string? endTime = default(string?), string? parentCallId = default(string?), List<string>? applicationId = default(List<string>?), )
+        public CallList ListCalls(bool? active = default(bool?), string? to = default(string?), string? from = default(string?), CallStatus? status = default(CallStatus?), string? startTime = default(string?), string? endTime = default(string?), string? parentCallId = default(string?), List<string>? applicationId = default(List<string>?))
         {
             freeclimb.Client.ApiResponse<CallList> localVarResponse = ListCallsWithHttpInfo(active, to, from, status, startTime, endTime, parentCallId, applicationId);
             return localVarResponse.Data;
@@ -9936,7 +9936,7 @@ namespace freeclimb.Api
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
                 
         /// <returns>RecordingList</returns>
-        public RecordingList ListConferenceRecordings(string conferenceId, string? callId = default(string?), string? dateCreated = default(string?), )
+        public RecordingList ListConferenceRecordings(string conferenceId, string? callId = default(string?), string? dateCreated = default(string?))
         {
             freeclimb.Client.ApiResponse<RecordingList> localVarResponse = ListConferenceRecordingsWithHttpInfo(conferenceId, callId, dateCreated);
             return localVarResponse.Data;
@@ -10129,7 +10129,7 @@ namespace freeclimb.Api
         /// <param name="dateUpdated">Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
                 
         /// <returns>ConferenceList</returns>
-        public ConferenceList ListConferences(string? status = default(string?), string? alias = default(string?), string? dateCreated = default(string?), string? dateUpdated = default(string?), )
+        public ConferenceList ListConferences(string? status = default(string?), string? alias = default(string?), string? dateCreated = default(string?), string? dateUpdated = default(string?))
         {
             freeclimb.Client.ApiResponse<ConferenceList> localVarResponse = ListConferencesWithHttpInfo(status, alias, dateCreated, dateUpdated);
             return localVarResponse.Data;
@@ -10339,7 +10339,7 @@ namespace freeclimb.Api
         /// <param name="offnet">Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)</param>
                 
         /// <returns>IncomingNumberList</returns>
-        public IncomingNumberList ListIncomingNumbers(string? phoneNumber = default(string?), string? alias = default(string?), string? region = default(string?), string? country = default(string?), string? applicationId = default(string?), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string? tfnCampaignId = default(string?), bool? offnet = default(bool?), )
+        public IncomingNumberList ListIncomingNumbers(string? phoneNumber = default(string?), string? alias = default(string?), string? region = default(string?), string? country = default(string?), string? applicationId = default(string?), bool? hasApplication = default(bool?), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? hasCampaign = default(bool?), bool? capabilitiesVoice = default(bool?), bool? capabilitiesSms = default(bool?), bool? capabilitiesTollFree = default(bool?), bool? capabilitiesTenDLC = default(bool?), bool? capabilitiesShortCode = default(bool?), string? tfnCampaignId = default(string?), bool? offnet = default(bool?))
         {
             freeclimb.Client.ApiResponse<IncomingNumberList> localVarResponse = ListIncomingNumbersWithHttpInfo(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
             return localVarResponse.Data;
@@ -10666,7 +10666,7 @@ namespace freeclimb.Api
         /// <param name="queueId">String that uniquely identifies the Queue that the Member belongs to.</param>
                 
         /// <returns>QueueMemberList</returns>
-        public QueueMemberList ListMembers(string queueId, )
+        public QueueMemberList ListMembers(string queueId)
         {
             freeclimb.Client.ApiResponse<QueueMemberList> localVarResponse = ListMembersWithHttpInfo(queueId);
             return localVarResponse.Data;
@@ -10837,7 +10837,7 @@ namespace freeclimb.Api
         /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
                 
         /// <returns>ConferenceParticipantList</returns>
-        public ConferenceParticipantList ListParticipants(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), )
+        public ConferenceParticipantList ListParticipants(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?))
         {
             freeclimb.Client.ApiResponse<ConferenceParticipantList> localVarResponse = ListParticipantsWithHttpInfo(conferenceId, talk, listen, dtmfPassThrough);
             return localVarResponse.Data;
@@ -11040,7 +11040,7 @@ namespace freeclimb.Api
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
                 
         /// <returns>RecordingList</returns>
-        public RecordingList ListRecordings(string? callId = default(string?), string? conferenceId = default(string?), string? dateCreated = default(string?), )
+        public RecordingList ListRecordings(string? callId = default(string?), string? conferenceId = default(string?), string? dateCreated = default(string?))
         {
             freeclimb.Client.ApiResponse<RecordingList> localVarResponse = ListRecordingsWithHttpInfo(callId, conferenceId, dateCreated);
             return localVarResponse.Data;
@@ -11231,7 +11231,7 @@ namespace freeclimb.Api
         /// <param name="is10DLC">Only show messages that were sent as part of a 10DLC campaign. (optional)</param>
                 
         /// <returns>MessagesList</returns>
-        public MessagesList ListSmsMessages(string? to = default(string?), string? from = default(string?), string? beginTime = default(string?), string? endTime = default(string?), MessageDirection? direction = default(MessageDirection?), string? campaignId = default(string?), string? brandId = default(string?), bool? is10DLC = default(bool?), )
+        public MessagesList ListSmsMessages(string? to = default(string?), string? from = default(string?), string? beginTime = default(string?), string? endTime = default(string?), MessageDirection? direction = default(MessageDirection?), string? campaignId = default(string?), string? brandId = default(string?), bool? is10DLC = default(bool?))
         {
             freeclimb.Client.ApiResponse<MessagesList> localVarResponse = ListSmsMessagesWithHttpInfo(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
             return localVarResponse.Data;
@@ -11470,7 +11470,7 @@ namespace freeclimb.Api
         /// <param name="makeCallRequest">Call details for making a call (optional)</param>
                 
         /// <returns>CallResult</returns>
-        public CallResult MakeACall(MakeCallRequest? makeCallRequest = default(MakeCallRequest?), )
+        public CallResult MakeACall(MakeCallRequest? makeCallRequest = default(MakeCallRequest?))
         {
             freeclimb.Client.ApiResponse<CallResult> localVarResponse = MakeACallWithHttpInfo(makeCallRequest);
             return localVarResponse.Data;
@@ -11628,7 +11628,7 @@ namespace freeclimb.Api
         /// <param name="createWebRTCToken">Information needed to craft a JWT compatible with the platforms WebRTC APIs</param>
                 
         /// <returns>string</returns>
-        public string MakeAWebrtcJwt(CreateWebRTCToken createWebRTCToken, )
+        public string MakeAWebrtcJwt(CreateWebRTCToken createWebRTCToken)
         {
             freeclimb.Client.ApiResponse<string> localVarResponse = MakeAWebrtcJwtWithHttpInfo(createWebRTCToken);
             return localVarResponse.Data;
@@ -11799,7 +11799,7 @@ namespace freeclimb.Api
         /// <param name="callId">ID of the Call associated with this participant.</param>
                 
         /// <returns></returns>
-        public void RemoveAParticipant(string conferenceId, string callId, )
+        public void RemoveAParticipant(string conferenceId, string callId)
         {
             RemoveAParticipantWithHttpInfo(accountId, conferenceId, callId);
         }            
@@ -11980,7 +11980,7 @@ namespace freeclimb.Api
         /// <param name="messageRequest">Details to create a message</param>
                 
         /// <returns>MessageResult</returns>
-        public MessageResult SendAnSmsMessage(MessageRequest messageRequest, )
+        public MessageResult SendAnSmsMessage(MessageRequest messageRequest)
         {
             freeclimb.Client.ApiResponse<MessageResult> localVarResponse = SendAnSmsMessageWithHttpInfo(messageRequest);
             return localVarResponse.Data;
@@ -12150,7 +12150,7 @@ namespace freeclimb.Api
         /// <param name="recordingId">String that uniquely identifies this recording resource.</param>
                 
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream StreamARecordingFile(string recordingId, )
+        public System.IO.Stream StreamARecordingFile(string recordingId)
         {
             freeclimb.Client.ApiResponse<System.IO.Stream> localVarResponse = StreamARecordingFileWithHttpInfo(recordingId);
             return localVarResponse.Data;
@@ -12319,7 +12319,7 @@ namespace freeclimb.Api
         /// <param name="updateConferenceRequest">Conference Details to update (optional)</param>
                 
         /// <returns></returns>
-        public void UpdateAConference(string conferenceId, UpdateConferenceRequest? updateConferenceRequest = default(UpdateConferenceRequest?), )
+        public void UpdateAConference(string conferenceId, UpdateConferenceRequest? updateConferenceRequest = default(UpdateConferenceRequest?))
         {
             UpdateAConferenceWithHttpInfo(accountId, conferenceId, updateConferenceRequest);
         }            
@@ -12491,7 +12491,7 @@ namespace freeclimb.Api
         /// <param name="updateCallRequest">Call details to update</param>
                 
         /// <returns></returns>
-        public void UpdateALiveCall(string callId, UpdateCallRequest updateCallRequest, )
+        public void UpdateALiveCall(string callId, UpdateCallRequest updateCallRequest)
         {
             UpdateALiveCallWithHttpInfo(accountId, callId, updateCallRequest);
         }            
@@ -12676,7 +12676,7 @@ namespace freeclimb.Api
         /// <param name="updateConferenceParticipantRequest">Conference participant details to update (optional)</param>
                 
         /// <returns>ConferenceParticipantResult</returns>
-        public ConferenceParticipantResult UpdateAParticipant(string conferenceId, string callId, UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest?), )
+        public ConferenceParticipantResult UpdateAParticipant(string conferenceId, string callId, UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = default(UpdateConferenceParticipantRequest?))
         {
             freeclimb.Client.ApiResponse<ConferenceParticipantResult> localVarResponse = UpdateAParticipantWithHttpInfo(conferenceId, callId, updateConferenceParticipantRequest);
             return localVarResponse.Data;
@@ -12869,7 +12869,7 @@ namespace freeclimb.Api
         /// <param name="queueRequest">Queue Details to update (optional)</param>
                 
         /// <returns>QueueResult</returns>
-        public QueueResult UpdateAQueue(string queueId, QueueRequest? queueRequest = default(QueueRequest?), )
+        public QueueResult UpdateAQueue(string queueId, QueueRequest? queueRequest = default(QueueRequest?))
         {
             freeclimb.Client.ApiResponse<QueueResult> localVarResponse = UpdateAQueueWithHttpInfo(queueId, queueRequest);
             return localVarResponse.Data;
@@ -13044,7 +13044,7 @@ namespace freeclimb.Api
         /// <param name="accountRequest">Account details to update (optional)</param>
                 
         /// <returns></returns>
-        public void UpdateAnAccount(AccountRequest? accountRequest = default(AccountRequest?), )
+        public void UpdateAnAccount(AccountRequest? accountRequest = default(AccountRequest?))
         {
             UpdateAnAccountWithHttpInfo(accountId, accountRequest);
         }            
@@ -13199,7 +13199,7 @@ namespace freeclimb.Api
         /// <param name="applicationRequest">Application details to update. (optional)</param>
                 
         /// <returns>ApplicationResult</returns>
-        public ApplicationResult UpdateAnApplication(string applicationId, ApplicationRequest? applicationRequest = default(ApplicationRequest?), )
+        public ApplicationResult UpdateAnApplication(string applicationId, ApplicationRequest? applicationRequest = default(ApplicationRequest?))
         {
             freeclimb.Client.ApiResponse<ApplicationResult> localVarResponse = UpdateAnApplicationWithHttpInfo(applicationId, applicationRequest);
             return localVarResponse.Data;
@@ -13375,7 +13375,7 @@ namespace freeclimb.Api
         /// <param name="incomingNumberRequest">Incoming Number details to update (optional)</param>
                 
         /// <returns>IncomingNumberResult</returns>
-        public IncomingNumberResult UpdateAnIncomingNumber(string phoneNumberId, IncomingNumberRequest? incomingNumberRequest = default(IncomingNumberRequest?), )
+        public IncomingNumberResult UpdateAnIncomingNumber(string phoneNumberId, IncomingNumberRequest? incomingNumberRequest = default(IncomingNumberRequest?))
         {
             freeclimb.Client.ApiResponse<IncomingNumberResult> localVarResponse = UpdateAnIncomingNumberWithHttpInfo(phoneNumberId, incomingNumberRequest);
             return localVarResponse.Data;
