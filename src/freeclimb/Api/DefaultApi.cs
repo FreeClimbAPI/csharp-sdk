@@ -2007,7 +2007,7 @@ namespace freeclimb.Api
         /// <returns></returns>
         public void DeleteARecording(string recordingId)
         {
-            DeleteARecordingWithHttpInfo(accountId, recordingId);
+            DeleteARecordingWithHttpInfo(recordingId);
         }            
 
         /// <summary>
@@ -2087,7 +2087,7 @@ namespace freeclimb.Api
         /// <returns></returns>
         public void DeleteAnApplication(string applicationId)
         {
-            DeleteAnApplicationWithHttpInfo(accountId, applicationId);
+            DeleteAnApplicationWithHttpInfo(applicationId);
         }            
 
         /// <summary>
@@ -2167,7 +2167,7 @@ namespace freeclimb.Api
         /// <returns></returns>
         public void DeleteAnIncomingNumber(string phoneNumberId)
         {
-            DeleteAnIncomingNumberWithHttpInfo(accountId, phoneNumberId);
+            DeleteAnIncomingNumberWithHttpInfo(phoneNumberId);
         }            
 
         /// <summary>
@@ -5691,7 +5691,7 @@ namespace freeclimb.Api
         /// <returns></returns>
         public void RemoveAParticipant(string conferenceId, string callId)
         {
-            RemoveAParticipantWithHttpInfo(accountId, conferenceId, callId);
+            RemoveAParticipantWithHttpInfo(conferenceId, callId);
         }            
 
         /// <summary>
@@ -5945,7 +5945,7 @@ namespace freeclimb.Api
         /// <returns></returns>
         public void UpdateAConference(string conferenceId, UpdateConferenceRequest? updateConferenceRequest = default(UpdateConferenceRequest?))
         {
-            UpdateAConferenceWithHttpInfo(accountId, conferenceId, updateConferenceRequest);
+            UpdateAConferenceWithHttpInfo(conferenceId, updateConferenceRequest);
         }            
 
         /// <summary>
@@ -6029,7 +6029,7 @@ namespace freeclimb.Api
         /// <returns></returns>
         public void UpdateALiveCall(string callId, UpdateCallRequest updateCallRequest)
         {
-            UpdateALiveCallWithHttpInfo(accountId, callId, updateCallRequest);
+            UpdateALiveCallWithHttpInfo(callId, updateCallRequest);
         }            
 
         /// <summary>
@@ -6299,7 +6299,7 @@ namespace freeclimb.Api
         /// <returns></returns>
         public void UpdateAnAccount(AccountRequest? accountRequest = default(AccountRequest?))
         {
-            UpdateAnAccountWithHttpInfo(accountId, accountRequest);
+            UpdateAnAccountWithHttpInfo(accountRequest);
         }            
 
         /// <summary>
