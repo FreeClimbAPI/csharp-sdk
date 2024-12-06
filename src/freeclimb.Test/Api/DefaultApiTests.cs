@@ -1906,7 +1906,7 @@ namespace freeclimb.Test.Api
 
         private CallResult callResultTestValue()
         {
-            CallStatus enumCallStatus = Reflection.GetEnumByValue<CallStatus>("inProgress");
+            CallStatus enumCallStatus = (CallStatus)Enum.Parse(typeof(CallStatus), "inProgress");
             return new CallResult("example.com", dateCreatedTestValue(), "Mon, 15 Jun 2020 20:45:32 GMT", 
                 1, callIdTestValue(), null, accountIdTestValue(), phoneNumberTestValue(), "+13124567890",
                 null, enumCallStatus, dateCreatedTestValue(), dateCreatedTestValue(), null);
@@ -1930,7 +1930,7 @@ namespace freeclimb.Test.Api
 
         private MessageResult messageResultTestValue()
         {
-            MessageStatus enumMessageStatus = Reflection.GetEnumByValue<MessageStatus>("sent");
+            MessageStatus enumMessageStatus = (MessageStatus)Enum.Parse(typeof(MessageStatus), "sent");
             return new MessageResult("example.com", dateCreatedTestValue(), null, 1, accountIdTestValue(), messageIdTestValue(), enumMessageStatus,
                 phoneNumberTestValue(), "+13121113456", "Test text message", "outbound");
         }
@@ -1987,7 +1987,7 @@ namespace freeclimb.Test.Api
         }
 
         private CallStatus statusTestEnum() {
-            return Reflection.GetEnumByValue<CallStatus>("completed");
+            return (CallStatus)Enum.Parse(typeof(CallStatus), "completed");
         }
 
         private List<string> applicationIdTestArray()
@@ -2054,7 +2054,7 @@ namespace freeclimb.Test.Api
         private string directionTestValue() { return "outbound"; }
 
         private MessageDirection directionTestEnum() { 
-            return Reflection.GetEnumByValue<MessageDirection>("outbound");
+            return (MessageDirection)Enum.Parse(typeof(MessageDirection), "outbound");
         }
 
         private MessagesList messagesListTestValue()
@@ -2066,13 +2066,13 @@ namespace freeclimb.Test.Api
 
         private UpdateConferenceRequest updateConferenceRequestTestValue()
         {
-            PlayBeep enumPlayBeepStatus = Reflection.GetEnumByValue<PlayBeep>("always");
+            PlayBeep enumPlayBeepStatus = (PlayBeep)Enum.Parse(typeof(PlayBeep), "always");
             return new UpdateConferenceRequest("TEST-CONF", enumPlayBeepStatus);
         }
 
         private UpdateCallRequest updateCallRequestTestValue()
         {
-            UpdateCallRequestStatus enumCallRequestStatus = Reflection.GetEnumByValue<UpdateCallRequestStatus>("completed");
+            UpdateCallRequestStatus enumCallRequestStatus = (UpdateCallRequestStatus)Enum.Parse(typeof(UpdateCallRequestStatus), "completed");
             return new UpdateCallRequest(enumCallRequestStatus);
         }
 
