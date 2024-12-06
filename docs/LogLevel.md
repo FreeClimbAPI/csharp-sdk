@@ -6,5 +6,5 @@ Level of the log. Possible values are info, warning, and error.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

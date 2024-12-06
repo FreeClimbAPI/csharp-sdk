@@ -32,20 +32,149 @@ namespace freeclimb.Enums
     /// Specifies how FreeClimb should handle this OutDial if an answering machine answers the Call. Valid values: &#x60;redirect&#x60; invokes the ifMachineUrl for instructions. &#x60;hangup&#x60; hangs up the Call. The ifMachineUrl will not be invoked.
     /// </summary>
     /// <value>Specifies how FreeClimb should handle this OutDial if an answering machine answers the Call. Valid values: &#x60;redirect&#x60; invokes the ifMachineUrl for instructions. &#x60;hangup&#x60; hangs up the Call. The ifMachineUrl will not be invoked.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum IfMachine
     {
         /// <summary>
         /// Enum REDIRECT for value: redirect
         /// </summary>
-        [EnumMember(Value = "redirect")]
         REDIRECT = 1,
 
         /// <summary>
         /// Enum HANGUP for value: hangup
         /// </summary>
-        [EnumMember(Value = "hangup")]
         HANGUP = 2
+    }
+
+    /// <summary>
+    /// Converts <see cref="IfMachine"/> to and from the JSON value
+    /// </summary>
+    public static class IfMachineValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="IfMachine"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static IfMachine FromString(string value)
+        {
+            if (value.Equals("redirect"))
+                return IfMachine.REDIRECT;
+
+            if (value.Equals("hangup"))
+                return IfMachine.HANGUP;
+
+            throw new NotImplementedException($"Could not convert value to type IfMachine: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="IfMachine"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static IfMachine? FromStringOrDefault(string value)
+        {
+            if (value.Equals("redirect"))
+                return IfMachine.REDIRECT;
+
+            if (value.Equals("hangup"))
+                return IfMachine.HANGUP;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="IfMachine"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(IfMachine value)
+        {
+            if (value == IfMachine.REDIRECT)
+                return "redirect";
+
+            if (value == IfMachine.HANGUP)
+                return "hangup";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="IfMachine"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class IfMachineJsonConverter : JsonConverter<IfMachine>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override IfMachine Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            IfMachine? result = rawValue == null
+                ? null
+                : IfMachineValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the IfMachine to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="ifMachine"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, IfMachine ifMachine, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(ifMachine.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="IfMachine"/>
+    /// </summary>
+    public class IfMachineNullableJsonConverter : JsonConverter<IfMachine?>
+    {
+        /// <summary>
+        /// Returns a IfMachine from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override IfMachine? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            IfMachine? result = rawValue == null
+                ? null
+                : IfMachineValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="ifMachine"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, IfMachine? ifMachine, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(ifMachine?.ToString() ?? "null");
+        }
     }
 
 }

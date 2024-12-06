@@ -32,170 +32,499 @@ namespace freeclimb.Enums
     /// (Required for public company) stock exchange.
     /// </summary>
     /// <value>(Required for public company) stock exchange.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum SMSTenDLCBrandStockExchange
     {
         /// <summary>
         /// Enum NONE for value: NONE
         /// </summary>
-        [EnumMember(Value = "NONE")]
         NONE = 1,
 
         /// <summary>
         /// Enum NASDAQ for value: NASDAQ
         /// </summary>
-        [EnumMember(Value = "NASDAQ")]
         NASDAQ = 2,
 
         /// <summary>
         /// Enum NYSE for value: NYSE
         /// </summary>
-        [EnumMember(Value = "NYSE")]
         NYSE = 3,
 
         /// <summary>
         /// Enum AMEX for value: AMEX
         /// </summary>
-        [EnumMember(Value = "AMEX")]
         AMEX = 4,
 
         /// <summary>
         /// Enum AMX for value: AMX
         /// </summary>
-        [EnumMember(Value = "AMX")]
         AMX = 5,
 
         /// <summary>
         /// Enum ASX for value: ASX
         /// </summary>
-        [EnumMember(Value = "ASX")]
         ASX = 6,
 
         /// <summary>
         /// Enum B3 for value: B3
         /// </summary>
-        [EnumMember(Value = "B3")]
         B3 = 7,
 
         /// <summary>
         /// Enum BME for value: BME
         /// </summary>
-        [EnumMember(Value = "BME")]
         BME = 8,
 
         /// <summary>
         /// Enum BSE for value: BSE
         /// </summary>
-        [EnumMember(Value = "BSE")]
         BSE = 9,
 
         /// <summary>
         /// Enum FRA for value: FRA
         /// </summary>
-        [EnumMember(Value = "FRA")]
         FRA = 10,
 
         /// <summary>
         /// Enum ICEX for value: ICEX
         /// </summary>
-        [EnumMember(Value = "ICEX")]
         ICEX = 11,
 
         /// <summary>
         /// Enum JPX for value: JPX
         /// </summary>
-        [EnumMember(Value = "JPX")]
         JPX = 12,
 
         /// <summary>
         /// Enum JSE for value: JSE
         /// </summary>
-        [EnumMember(Value = "JSE")]
         JSE = 13,
 
         /// <summary>
         /// Enum KRX for value: KRX
         /// </summary>
-        [EnumMember(Value = "KRX")]
         KRX = 14,
 
         /// <summary>
         /// Enum LON for value: LON
         /// </summary>
-        [EnumMember(Value = "LON")]
         LON = 15,
 
         /// <summary>
         /// Enum NSE for value: NSE
         /// </summary>
-        [EnumMember(Value = "NSE")]
         NSE = 16,
 
         /// <summary>
         /// Enum OMX for value: OMX
         /// </summary>
-        [EnumMember(Value = "OMX")]
         OMX = 17,
 
         /// <summary>
         /// Enum SEHK for value: SEHK
         /// </summary>
-        [EnumMember(Value = "SEHK")]
         SEHK = 18,
 
         /// <summary>
         /// Enum SGX for value: SGX
         /// </summary>
-        [EnumMember(Value = "SGX")]
         SGX = 19,
 
         /// <summary>
         /// Enum SSE for value: SSE
         /// </summary>
-        [EnumMember(Value = "SSE")]
         SSE = 20,
 
         /// <summary>
         /// Enum STO for value: STO
         /// </summary>
-        [EnumMember(Value = "STO")]
         STO = 21,
 
         /// <summary>
         /// Enum SWX for value: SWX
         /// </summary>
-        [EnumMember(Value = "SWX")]
         SWX = 22,
 
         /// <summary>
         /// Enum SZSE for value: SZSE
         /// </summary>
-        [EnumMember(Value = "SZSE")]
         SZSE = 23,
 
         /// <summary>
         /// Enum TSX for value: TSX
         /// </summary>
-        [EnumMember(Value = "TSX")]
         TSX = 24,
 
         /// <summary>
         /// Enum TWSE for value: TWSE
         /// </summary>
-        [EnumMember(Value = "TWSE")]
         TWSE = 25,
 
         /// <summary>
         /// Enum VSE for value: VSE
         /// </summary>
-        [EnumMember(Value = "VSE")]
         VSE = 26,
 
         /// <summary>
         /// Enum OTHER for value: OTHER
         /// </summary>
-        [EnumMember(Value = "OTHER")]
         OTHER = 27
+    }
+
+    /// <summary>
+    /// Converts <see cref="SMSTenDLCBrandStockExchange"/> to and from the JSON value
+    /// </summary>
+    public static class SMSTenDLCBrandStockExchangeValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="SMSTenDLCBrandStockExchange"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static SMSTenDLCBrandStockExchange FromString(string value)
+        {
+            if (value.Equals("NONE"))
+                return SMSTenDLCBrandStockExchange.NONE;
+
+            if (value.Equals("NASDAQ"))
+                return SMSTenDLCBrandStockExchange.NASDAQ;
+
+            if (value.Equals("NYSE"))
+                return SMSTenDLCBrandStockExchange.NYSE;
+
+            if (value.Equals("AMEX"))
+                return SMSTenDLCBrandStockExchange.AMEX;
+
+            if (value.Equals("AMX"))
+                return SMSTenDLCBrandStockExchange.AMX;
+
+            if (value.Equals("ASX"))
+                return SMSTenDLCBrandStockExchange.ASX;
+
+            if (value.Equals("B3"))
+                return SMSTenDLCBrandStockExchange.B3;
+
+            if (value.Equals("BME"))
+                return SMSTenDLCBrandStockExchange.BME;
+
+            if (value.Equals("BSE"))
+                return SMSTenDLCBrandStockExchange.BSE;
+
+            if (value.Equals("FRA"))
+                return SMSTenDLCBrandStockExchange.FRA;
+
+            if (value.Equals("ICEX"))
+                return SMSTenDLCBrandStockExchange.ICEX;
+
+            if (value.Equals("JPX"))
+                return SMSTenDLCBrandStockExchange.JPX;
+
+            if (value.Equals("JSE"))
+                return SMSTenDLCBrandStockExchange.JSE;
+
+            if (value.Equals("KRX"))
+                return SMSTenDLCBrandStockExchange.KRX;
+
+            if (value.Equals("LON"))
+                return SMSTenDLCBrandStockExchange.LON;
+
+            if (value.Equals("NSE"))
+                return SMSTenDLCBrandStockExchange.NSE;
+
+            if (value.Equals("OMX"))
+                return SMSTenDLCBrandStockExchange.OMX;
+
+            if (value.Equals("SEHK"))
+                return SMSTenDLCBrandStockExchange.SEHK;
+
+            if (value.Equals("SGX"))
+                return SMSTenDLCBrandStockExchange.SGX;
+
+            if (value.Equals("SSE"))
+                return SMSTenDLCBrandStockExchange.SSE;
+
+            if (value.Equals("STO"))
+                return SMSTenDLCBrandStockExchange.STO;
+
+            if (value.Equals("SWX"))
+                return SMSTenDLCBrandStockExchange.SWX;
+
+            if (value.Equals("SZSE"))
+                return SMSTenDLCBrandStockExchange.SZSE;
+
+            if (value.Equals("TSX"))
+                return SMSTenDLCBrandStockExchange.TSX;
+
+            if (value.Equals("TWSE"))
+                return SMSTenDLCBrandStockExchange.TWSE;
+
+            if (value.Equals("VSE"))
+                return SMSTenDLCBrandStockExchange.VSE;
+
+            if (value.Equals("OTHER"))
+                return SMSTenDLCBrandStockExchange.OTHER;
+
+            throw new NotImplementedException($"Could not convert value to type SMSTenDLCBrandStockExchange: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="SMSTenDLCBrandStockExchange"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static SMSTenDLCBrandStockExchange? FromStringOrDefault(string value)
+        {
+            if (value.Equals("NONE"))
+                return SMSTenDLCBrandStockExchange.NONE;
+
+            if (value.Equals("NASDAQ"))
+                return SMSTenDLCBrandStockExchange.NASDAQ;
+
+            if (value.Equals("NYSE"))
+                return SMSTenDLCBrandStockExchange.NYSE;
+
+            if (value.Equals("AMEX"))
+                return SMSTenDLCBrandStockExchange.AMEX;
+
+            if (value.Equals("AMX"))
+                return SMSTenDLCBrandStockExchange.AMX;
+
+            if (value.Equals("ASX"))
+                return SMSTenDLCBrandStockExchange.ASX;
+
+            if (value.Equals("B3"))
+                return SMSTenDLCBrandStockExchange.B3;
+
+            if (value.Equals("BME"))
+                return SMSTenDLCBrandStockExchange.BME;
+
+            if (value.Equals("BSE"))
+                return SMSTenDLCBrandStockExchange.BSE;
+
+            if (value.Equals("FRA"))
+                return SMSTenDLCBrandStockExchange.FRA;
+
+            if (value.Equals("ICEX"))
+                return SMSTenDLCBrandStockExchange.ICEX;
+
+            if (value.Equals("JPX"))
+                return SMSTenDLCBrandStockExchange.JPX;
+
+            if (value.Equals("JSE"))
+                return SMSTenDLCBrandStockExchange.JSE;
+
+            if (value.Equals("KRX"))
+                return SMSTenDLCBrandStockExchange.KRX;
+
+            if (value.Equals("LON"))
+                return SMSTenDLCBrandStockExchange.LON;
+
+            if (value.Equals("NSE"))
+                return SMSTenDLCBrandStockExchange.NSE;
+
+            if (value.Equals("OMX"))
+                return SMSTenDLCBrandStockExchange.OMX;
+
+            if (value.Equals("SEHK"))
+                return SMSTenDLCBrandStockExchange.SEHK;
+
+            if (value.Equals("SGX"))
+                return SMSTenDLCBrandStockExchange.SGX;
+
+            if (value.Equals("SSE"))
+                return SMSTenDLCBrandStockExchange.SSE;
+
+            if (value.Equals("STO"))
+                return SMSTenDLCBrandStockExchange.STO;
+
+            if (value.Equals("SWX"))
+                return SMSTenDLCBrandStockExchange.SWX;
+
+            if (value.Equals("SZSE"))
+                return SMSTenDLCBrandStockExchange.SZSE;
+
+            if (value.Equals("TSX"))
+                return SMSTenDLCBrandStockExchange.TSX;
+
+            if (value.Equals("TWSE"))
+                return SMSTenDLCBrandStockExchange.TWSE;
+
+            if (value.Equals("VSE"))
+                return SMSTenDLCBrandStockExchange.VSE;
+
+            if (value.Equals("OTHER"))
+                return SMSTenDLCBrandStockExchange.OTHER;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="SMSTenDLCBrandStockExchange"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(SMSTenDLCBrandStockExchange value)
+        {
+            if (value == SMSTenDLCBrandStockExchange.NONE)
+                return "NONE";
+
+            if (value == SMSTenDLCBrandStockExchange.NASDAQ)
+                return "NASDAQ";
+
+            if (value == SMSTenDLCBrandStockExchange.NYSE)
+                return "NYSE";
+
+            if (value == SMSTenDLCBrandStockExchange.AMEX)
+                return "AMEX";
+
+            if (value == SMSTenDLCBrandStockExchange.AMX)
+                return "AMX";
+
+            if (value == SMSTenDLCBrandStockExchange.ASX)
+                return "ASX";
+
+            if (value == SMSTenDLCBrandStockExchange.B3)
+                return "B3";
+
+            if (value == SMSTenDLCBrandStockExchange.BME)
+                return "BME";
+
+            if (value == SMSTenDLCBrandStockExchange.BSE)
+                return "BSE";
+
+            if (value == SMSTenDLCBrandStockExchange.FRA)
+                return "FRA";
+
+            if (value == SMSTenDLCBrandStockExchange.ICEX)
+                return "ICEX";
+
+            if (value == SMSTenDLCBrandStockExchange.JPX)
+                return "JPX";
+
+            if (value == SMSTenDLCBrandStockExchange.JSE)
+                return "JSE";
+
+            if (value == SMSTenDLCBrandStockExchange.KRX)
+                return "KRX";
+
+            if (value == SMSTenDLCBrandStockExchange.LON)
+                return "LON";
+
+            if (value == SMSTenDLCBrandStockExchange.NSE)
+                return "NSE";
+
+            if (value == SMSTenDLCBrandStockExchange.OMX)
+                return "OMX";
+
+            if (value == SMSTenDLCBrandStockExchange.SEHK)
+                return "SEHK";
+
+            if (value == SMSTenDLCBrandStockExchange.SGX)
+                return "SGX";
+
+            if (value == SMSTenDLCBrandStockExchange.SSE)
+                return "SSE";
+
+            if (value == SMSTenDLCBrandStockExchange.STO)
+                return "STO";
+
+            if (value == SMSTenDLCBrandStockExchange.SWX)
+                return "SWX";
+
+            if (value == SMSTenDLCBrandStockExchange.SZSE)
+                return "SZSE";
+
+            if (value == SMSTenDLCBrandStockExchange.TSX)
+                return "TSX";
+
+            if (value == SMSTenDLCBrandStockExchange.TWSE)
+                return "TWSE";
+
+            if (value == SMSTenDLCBrandStockExchange.VSE)
+                return "VSE";
+
+            if (value == SMSTenDLCBrandStockExchange.OTHER)
+                return "OTHER";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="SMSTenDLCBrandStockExchange"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class SMSTenDLCBrandStockExchangeJsonConverter : JsonConverter<SMSTenDLCBrandStockExchange>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override SMSTenDLCBrandStockExchange Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            SMSTenDLCBrandStockExchange? result = rawValue == null
+                ? null
+                : SMSTenDLCBrandStockExchangeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the SMSTenDLCBrandStockExchange to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="sMSTenDLCBrandStockExchange"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandStockExchange sMSTenDLCBrandStockExchange, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(sMSTenDLCBrandStockExchange.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="SMSTenDLCBrandStockExchange"/>
+    /// </summary>
+    public class SMSTenDLCBrandStockExchangeNullableJsonConverter : JsonConverter<SMSTenDLCBrandStockExchange?>
+    {
+        /// <summary>
+        /// Returns a SMSTenDLCBrandStockExchange from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override SMSTenDLCBrandStockExchange? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            SMSTenDLCBrandStockExchange? result = rawValue == null
+                ? null
+                : SMSTenDLCBrandStockExchangeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="sMSTenDLCBrandStockExchange"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandStockExchange? sMSTenDLCBrandStockExchange, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(sMSTenDLCBrandStockExchange?.ToString() ?? "null");
+        }
     }
 
 }

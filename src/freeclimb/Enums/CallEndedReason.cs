@@ -32,146 +32,443 @@ namespace freeclimb.Enums
     /// Enhanced status for the Call with additional information where available.
     /// </summary>
     /// <value>Enhanced status for the Call with additional information where available.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum CallEndedReason
     {
         /// <summary>
         /// Enum BUSY for value: busy
         /// </summary>
-        [EnumMember(Value = "busy")]
         BUSY = 1,
 
         /// <summary>
         /// Enum FAILED for value: failed
         /// </summary>
-        [EnumMember(Value = "failed")]
         FAILED = 2,
 
         /// <summary>
         /// Enum NO_ANSWER for value: noAnswer
         /// </summary>
-        [EnumMember(Value = "noAnswer")]
         NO_ANSWER = 3,
 
         /// <summary>
         /// Enum CALL_CANCELED for value: callCanceled
         /// </summary>
-        [EnumMember(Value = "callCanceled")]
         CALL_CANCELED = 4,
 
         /// <summary>
         /// Enum FAR_END_HANGUP for value: farEndHangup
         /// </summary>
-        [EnumMember(Value = "farEndHangup")]
         FAR_END_HANGUP = 5,
 
         /// <summary>
         /// Enum APP_HANGUP for value: appHangup
         /// </summary>
-        [EnumMember(Value = "appHangup")]
         APP_HANGUP = 6,
 
         /// <summary>
         /// Enum APP_REJECT for value: appReject
         /// </summary>
-        [EnumMember(Value = "appReject")]
         APP_REJECT = 7,
 
         /// <summary>
         /// Enum APP_NO_PERCL for value: appNoPercl
         /// </summary>
-        [EnumMember(Value = "appNoPercl")]
         APP_NO_PERCL = 8,
 
         /// <summary>
         /// Enum APP_INVALID_PERCL for value: appInvalidPercl
         /// </summary>
-        [EnumMember(Value = "appInvalidPercl")]
         APP_INVALID_PERCL = 9,
 
         /// <summary>
         /// Enum CONFERENCE_TERMINATED for value: conferenceTerminated
         /// </summary>
-        [EnumMember(Value = "conferenceTerminated")]
         CONFERENCE_TERMINATED = 10,
 
         /// <summary>
         /// Enum CONFERENCE_EMPTIED for value: conferenceEmptied
         /// </summary>
-        [EnumMember(Value = "conferenceEmptied")]
         CONFERENCE_EMPTIED = 11,
 
         /// <summary>
         /// Enum REMOVED_FROM_CONFERENCE for value: removedFromConference
         /// </summary>
-        [EnumMember(Value = "removedFromConference")]
         REMOVED_FROM_CONFERENCE = 12,
 
         /// <summary>
         /// Enum MACHINE_DETECTED for value: machineDetected
         /// </summary>
-        [EnumMember(Value = "machineDetected")]
         MACHINE_DETECTED = 13,
 
         /// <summary>
         /// Enum WEBHOOK_FAILED for value: webhookFailed
         /// </summary>
-        [EnumMember(Value = "webhookFailed")]
         WEBHOOK_FAILED = 14,
 
         /// <summary>
         /// Enum WEBHOOK_INVALID_RESPONSE for value: webhookInvalidResponse
         /// </summary>
-        [EnumMember(Value = "webhookInvalidResponse")]
         WEBHOOK_INVALID_RESPONSE = 15,
 
         /// <summary>
         /// Enum VOICE_DISABLED for value: voiceDisabled
         /// </summary>
-        [EnumMember(Value = "voiceDisabled")]
         VOICE_DISABLED = 16,
 
         /// <summary>
         /// Enum CONFIG_ERROR_NO_APPLICATION for value: configErrorNoApplication
         /// </summary>
-        [EnumMember(Value = "configErrorNoApplication")]
         CONFIG_ERROR_NO_APPLICATION = 17,
 
         /// <summary>
         /// Enum CONFIG_ERROR_NO_VOICE_URL for value: configErrorNoVoiceUrl
         /// </summary>
-        [EnumMember(Value = "configErrorNoVoiceUrl")]
         CONFIG_ERROR_NO_VOICE_URL = 18,
 
         /// <summary>
         /// Enum MAX_REDIRECTS_ERROR for value: maxRedirectsError
         /// </summary>
-        [EnumMember(Value = "maxRedirectsError")]
         MAX_REDIRECTS_ERROR = 19,
 
         /// <summary>
         /// Enum PERCL_PROCESSING_ERROR for value: perclProcessingError
         /// </summary>
-        [EnumMember(Value = "perclProcessingError")]
         PERCL_PROCESSING_ERROR = 20,
 
         /// <summary>
         /// Enum INTERNAL_ERROR for value: internalError
         /// </summary>
-        [EnumMember(Value = "internalError")]
         INTERNAL_ERROR = 21,
 
         /// <summary>
         /// Enum GRPC_HANGUP for value: grpcHangup
         /// </summary>
-        [EnumMember(Value = "grpcHangup")]
         GRPC_HANGUP = 22,
 
         /// <summary>
         /// Enum MAX_DURATION for value: maxDuration
         /// </summary>
-        [EnumMember(Value = "maxDuration")]
         MAX_DURATION = 23
+    }
+
+    /// <summary>
+    /// Converts <see cref="CallEndedReason"/> to and from the JSON value
+    /// </summary>
+    public static class CallEndedReasonValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="CallEndedReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallEndedReason FromString(string value)
+        {
+            if (value.Equals("busy"))
+                return CallEndedReason.BUSY;
+
+            if (value.Equals("failed"))
+                return CallEndedReason.FAILED;
+
+            if (value.Equals("noAnswer"))
+                return CallEndedReason.NO_ANSWER;
+
+            if (value.Equals("callCanceled"))
+                return CallEndedReason.CALL_CANCELED;
+
+            if (value.Equals("farEndHangup"))
+                return CallEndedReason.FAR_END_HANGUP;
+
+            if (value.Equals("appHangup"))
+                return CallEndedReason.APP_HANGUP;
+
+            if (value.Equals("appReject"))
+                return CallEndedReason.APP_REJECT;
+
+            if (value.Equals("appNoPercl"))
+                return CallEndedReason.APP_NO_PERCL;
+
+            if (value.Equals("appInvalidPercl"))
+                return CallEndedReason.APP_INVALID_PERCL;
+
+            if (value.Equals("conferenceTerminated"))
+                return CallEndedReason.CONFERENCE_TERMINATED;
+
+            if (value.Equals("conferenceEmptied"))
+                return CallEndedReason.CONFERENCE_EMPTIED;
+
+            if (value.Equals("removedFromConference"))
+                return CallEndedReason.REMOVED_FROM_CONFERENCE;
+
+            if (value.Equals("machineDetected"))
+                return CallEndedReason.MACHINE_DETECTED;
+
+            if (value.Equals("webhookFailed"))
+                return CallEndedReason.WEBHOOK_FAILED;
+
+            if (value.Equals("webhookInvalidResponse"))
+                return CallEndedReason.WEBHOOK_INVALID_RESPONSE;
+
+            if (value.Equals("voiceDisabled"))
+                return CallEndedReason.VOICE_DISABLED;
+
+            if (value.Equals("configErrorNoApplication"))
+                return CallEndedReason.CONFIG_ERROR_NO_APPLICATION;
+
+            if (value.Equals("configErrorNoVoiceUrl"))
+                return CallEndedReason.CONFIG_ERROR_NO_VOICE_URL;
+
+            if (value.Equals("maxRedirectsError"))
+                return CallEndedReason.MAX_REDIRECTS_ERROR;
+
+            if (value.Equals("perclProcessingError"))
+                return CallEndedReason.PERCL_PROCESSING_ERROR;
+
+            if (value.Equals("internalError"))
+                return CallEndedReason.INTERNAL_ERROR;
+
+            if (value.Equals("grpcHangup"))
+                return CallEndedReason.GRPC_HANGUP;
+
+            if (value.Equals("maxDuration"))
+                return CallEndedReason.MAX_DURATION;
+
+            throw new NotImplementedException($"Could not convert value to type CallEndedReason: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="CallEndedReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallEndedReason? FromStringOrDefault(string value)
+        {
+            if (value.Equals("busy"))
+                return CallEndedReason.BUSY;
+
+            if (value.Equals("failed"))
+                return CallEndedReason.FAILED;
+
+            if (value.Equals("noAnswer"))
+                return CallEndedReason.NO_ANSWER;
+
+            if (value.Equals("callCanceled"))
+                return CallEndedReason.CALL_CANCELED;
+
+            if (value.Equals("farEndHangup"))
+                return CallEndedReason.FAR_END_HANGUP;
+
+            if (value.Equals("appHangup"))
+                return CallEndedReason.APP_HANGUP;
+
+            if (value.Equals("appReject"))
+                return CallEndedReason.APP_REJECT;
+
+            if (value.Equals("appNoPercl"))
+                return CallEndedReason.APP_NO_PERCL;
+
+            if (value.Equals("appInvalidPercl"))
+                return CallEndedReason.APP_INVALID_PERCL;
+
+            if (value.Equals("conferenceTerminated"))
+                return CallEndedReason.CONFERENCE_TERMINATED;
+
+            if (value.Equals("conferenceEmptied"))
+                return CallEndedReason.CONFERENCE_EMPTIED;
+
+            if (value.Equals("removedFromConference"))
+                return CallEndedReason.REMOVED_FROM_CONFERENCE;
+
+            if (value.Equals("machineDetected"))
+                return CallEndedReason.MACHINE_DETECTED;
+
+            if (value.Equals("webhookFailed"))
+                return CallEndedReason.WEBHOOK_FAILED;
+
+            if (value.Equals("webhookInvalidResponse"))
+                return CallEndedReason.WEBHOOK_INVALID_RESPONSE;
+
+            if (value.Equals("voiceDisabled"))
+                return CallEndedReason.VOICE_DISABLED;
+
+            if (value.Equals("configErrorNoApplication"))
+                return CallEndedReason.CONFIG_ERROR_NO_APPLICATION;
+
+            if (value.Equals("configErrorNoVoiceUrl"))
+                return CallEndedReason.CONFIG_ERROR_NO_VOICE_URL;
+
+            if (value.Equals("maxRedirectsError"))
+                return CallEndedReason.MAX_REDIRECTS_ERROR;
+
+            if (value.Equals("perclProcessingError"))
+                return CallEndedReason.PERCL_PROCESSING_ERROR;
+
+            if (value.Equals("internalError"))
+                return CallEndedReason.INTERNAL_ERROR;
+
+            if (value.Equals("grpcHangup"))
+                return CallEndedReason.GRPC_HANGUP;
+
+            if (value.Equals("maxDuration"))
+                return CallEndedReason.MAX_DURATION;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="CallEndedReason"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(CallEndedReason value)
+        {
+            if (value == CallEndedReason.BUSY)
+                return "busy";
+
+            if (value == CallEndedReason.FAILED)
+                return "failed";
+
+            if (value == CallEndedReason.NO_ANSWER)
+                return "noAnswer";
+
+            if (value == CallEndedReason.CALL_CANCELED)
+                return "callCanceled";
+
+            if (value == CallEndedReason.FAR_END_HANGUP)
+                return "farEndHangup";
+
+            if (value == CallEndedReason.APP_HANGUP)
+                return "appHangup";
+
+            if (value == CallEndedReason.APP_REJECT)
+                return "appReject";
+
+            if (value == CallEndedReason.APP_NO_PERCL)
+                return "appNoPercl";
+
+            if (value == CallEndedReason.APP_INVALID_PERCL)
+                return "appInvalidPercl";
+
+            if (value == CallEndedReason.CONFERENCE_TERMINATED)
+                return "conferenceTerminated";
+
+            if (value == CallEndedReason.CONFERENCE_EMPTIED)
+                return "conferenceEmptied";
+
+            if (value == CallEndedReason.REMOVED_FROM_CONFERENCE)
+                return "removedFromConference";
+
+            if (value == CallEndedReason.MACHINE_DETECTED)
+                return "machineDetected";
+
+            if (value == CallEndedReason.WEBHOOK_FAILED)
+                return "webhookFailed";
+
+            if (value == CallEndedReason.WEBHOOK_INVALID_RESPONSE)
+                return "webhookInvalidResponse";
+
+            if (value == CallEndedReason.VOICE_DISABLED)
+                return "voiceDisabled";
+
+            if (value == CallEndedReason.CONFIG_ERROR_NO_APPLICATION)
+                return "configErrorNoApplication";
+
+            if (value == CallEndedReason.CONFIG_ERROR_NO_VOICE_URL)
+                return "configErrorNoVoiceUrl";
+
+            if (value == CallEndedReason.MAX_REDIRECTS_ERROR)
+                return "maxRedirectsError";
+
+            if (value == CallEndedReason.PERCL_PROCESSING_ERROR)
+                return "perclProcessingError";
+
+            if (value == CallEndedReason.INTERNAL_ERROR)
+                return "internalError";
+
+            if (value == CallEndedReason.GRPC_HANGUP)
+                return "grpcHangup";
+
+            if (value == CallEndedReason.MAX_DURATION)
+                return "maxDuration";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="CallEndedReason"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class CallEndedReasonJsonConverter : JsonConverter<CallEndedReason>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override CallEndedReason Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            CallEndedReason? result = rawValue == null
+                ? null
+                : CallEndedReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the CallEndedReason to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="callEndedReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, CallEndedReason callEndedReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(callEndedReason.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="CallEndedReason"/>
+    /// </summary>
+    public class CallEndedReasonNullableJsonConverter : JsonConverter<CallEndedReason?>
+    {
+        /// <summary>
+        /// Returns a CallEndedReason from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override CallEndedReason? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            CallEndedReason? result = rawValue == null
+                ? null
+                : CallEndedReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="callEndedReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, CallEndedReason? callEndedReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(callEndedReason?.ToString() ?? "null");
+        }
     }
 
 }

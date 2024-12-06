@@ -97,25 +97,25 @@ namespace freeclimb.Model
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // MaxLengthSec (int) maximum
-            if (this.MaxLengthSec > (int)60)
+            if (this.MaxLengthSecOption.IsSet && this.MaxLengthSecOption.Value > (int)60)
             {
                 yield return new ValidationResult("Invalid value for MaxLengthSec, must be a value less than or equal to 60.", new [] { "MaxLengthSec" });
             }
 
             // MaxLengthSec (int) minimum
-            if (this.MaxLengthSec < (int)1)
+            if (this.MaxLengthSecOption.IsSet && this.MaxLengthSecOption.Value < (int)1)
             {
                 yield return new ValidationResult("Invalid value for MaxLengthSec, must be a value greater than or equal to 1.", new [] { "MaxLengthSec" });
             }
 
             // RcrdTerminationSilenceTimeMs (int) maximum
-            if (this.RcrdTerminationSilenceTimeMs > (int)3000)
+            if (this.RcrdTerminationSilenceTimeMsOption.IsSet && this.RcrdTerminationSilenceTimeMsOption.Value > (int)3000)
             {
                 yield return new ValidationResult("Invalid value for RcrdTerminationSilenceTimeMs, must be a value less than or equal to 3000.", new [] { "RcrdTerminationSilenceTimeMs" });
             }
 
             // RcrdTerminationSilenceTimeMs (int) minimum
-            if (this.RcrdTerminationSilenceTimeMs < (int)1)
+            if (this.RcrdTerminationSilenceTimeMsOption.IsSet && this.RcrdTerminationSilenceTimeMsOption.Value < (int)1)
             {
                 yield return new ValidationResult("Invalid value for RcrdTerminationSilenceTimeMs, must be a value greater than or equal to 1.", new [] { "RcrdTerminationSilenceTimeMs" });
             }

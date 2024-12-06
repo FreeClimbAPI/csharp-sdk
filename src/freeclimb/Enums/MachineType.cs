@@ -31,20 +31,149 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines MachineType
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum MachineType
     {
         /// <summary>
         /// Enum ANSWERING_MACHINE for value: answering machine
         /// </summary>
-        [EnumMember(Value = "answering machine")]
         ANSWERING_MACHINE = 1,
 
         /// <summary>
         /// Enum FAX_MODEM for value: fax modem
         /// </summary>
-        [EnumMember(Value = "fax modem")]
         FAX_MODEM = 2
+    }
+
+    /// <summary>
+    /// Converts <see cref="MachineType"/> to and from the JSON value
+    /// </summary>
+    public static class MachineTypeValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="MachineType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MachineType FromString(string value)
+        {
+            if (value.Equals("answering machine"))
+                return MachineType.ANSWERING_MACHINE;
+
+            if (value.Equals("fax modem"))
+                return MachineType.FAX_MODEM;
+
+            throw new NotImplementedException($"Could not convert value to type MachineType: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="MachineType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MachineType? FromStringOrDefault(string value)
+        {
+            if (value.Equals("answering machine"))
+                return MachineType.ANSWERING_MACHINE;
+
+            if (value.Equals("fax modem"))
+                return MachineType.FAX_MODEM;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="MachineType"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(MachineType value)
+        {
+            if (value == MachineType.ANSWERING_MACHINE)
+                return "answering machine";
+
+            if (value == MachineType.FAX_MODEM)
+                return "fax modem";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="MachineType"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class MachineTypeJsonConverter : JsonConverter<MachineType>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override MachineType Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            MachineType? result = rawValue == null
+                ? null
+                : MachineTypeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the MachineType to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="machineType"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, MachineType machineType, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(machineType.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="MachineType"/>
+    /// </summary>
+    public class MachineTypeNullableJsonConverter : JsonConverter<MachineType?>
+    {
+        /// <summary>
+        /// Returns a MachineType from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override MachineType? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            MachineType? result = rawValue == null
+                ? null
+                : MachineTypeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="machineType"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, MachineType? machineType, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(machineType?.ToString() ?? "null");
+        }
     }
 
 }

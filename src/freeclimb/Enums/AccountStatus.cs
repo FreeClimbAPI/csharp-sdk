@@ -32,26 +32,163 @@ namespace freeclimb.Enums
     /// The status of this account. It is one of: active, suspended, or closed.
     /// </summary>
     /// <value>The status of this account. It is one of: active, suspended, or closed.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum AccountStatus
     {
         /// <summary>
         /// Enum CLOSED for value: closed
         /// </summary>
-        [EnumMember(Value = "closed")]
         CLOSED = 1,
 
         /// <summary>
         /// Enum SUSPENDED for value: suspended
         /// </summary>
-        [EnumMember(Value = "suspended")]
         SUSPENDED = 2,
 
         /// <summary>
         /// Enum ACTIVE for value: active
         /// </summary>
-        [EnumMember(Value = "active")]
         ACTIVE = 3
+    }
+
+    /// <summary>
+    /// Converts <see cref="AccountStatus"/> to and from the JSON value
+    /// </summary>
+    public static class AccountStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="AccountStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AccountStatus FromString(string value)
+        {
+            if (value.Equals("closed"))
+                return AccountStatus.CLOSED;
+
+            if (value.Equals("suspended"))
+                return AccountStatus.SUSPENDED;
+
+            if (value.Equals("active"))
+                return AccountStatus.ACTIVE;
+
+            throw new NotImplementedException($"Could not convert value to type AccountStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="AccountStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AccountStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("closed"))
+                return AccountStatus.CLOSED;
+
+            if (value.Equals("suspended"))
+                return AccountStatus.SUSPENDED;
+
+            if (value.Equals("active"))
+                return AccountStatus.ACTIVE;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="AccountStatus"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(AccountStatus value)
+        {
+            if (value == AccountStatus.CLOSED)
+                return "closed";
+
+            if (value == AccountStatus.SUSPENDED)
+                return "suspended";
+
+            if (value == AccountStatus.ACTIVE)
+                return "active";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="AccountStatus"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class AccountStatusJsonConverter : JsonConverter<AccountStatus>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override AccountStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            AccountStatus? result = rawValue == null
+                ? null
+                : AccountStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the AccountStatus to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="accountStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, AccountStatus accountStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(accountStatus.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="AccountStatus"/>
+    /// </summary>
+    public class AccountStatusNullableJsonConverter : JsonConverter<AccountStatus?>
+    {
+        /// <summary>
+        /// Returns a AccountStatus from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override AccountStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            AccountStatus? result = rawValue == null
+                ? null
+                : AccountStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="accountStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, AccountStatus? accountStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(accountStatus?.ToString() ?? "null");
+        }
     }
 
 }

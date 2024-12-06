@@ -32,38 +32,191 @@ namespace freeclimb.Enums
     /// Brand relationship to the CSP
     /// </summary>
     /// <value>Brand relationship to the CSP</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum SMSTenDLCBrandRelationship
     {
         /// <summary>
         /// Enum BASIC_ACCOUNT for value: BASIC_ACCOUNT
         /// </summary>
-        [EnumMember(Value = "BASIC_ACCOUNT")]
         BASIC_ACCOUNT = 1,
 
         /// <summary>
         /// Enum SMALL_ACCOUNT for value: SMALL_ACCOUNT
         /// </summary>
-        [EnumMember(Value = "SMALL_ACCOUNT")]
         SMALL_ACCOUNT = 2,
 
         /// <summary>
         /// Enum MEDIUM_ACCOUNT for value: MEDIUM_ACCOUNT
         /// </summary>
-        [EnumMember(Value = "MEDIUM_ACCOUNT")]
         MEDIUM_ACCOUNT = 3,
 
         /// <summary>
         /// Enum LARGE_ACCOUNT for value: LARGE_ACCOUNT
         /// </summary>
-        [EnumMember(Value = "LARGE_ACCOUNT")]
         LARGE_ACCOUNT = 4,
 
         /// <summary>
         /// Enum KEY_ACCOUNT for value: KEY_ACCOUNT
         /// </summary>
-        [EnumMember(Value = "KEY_ACCOUNT")]
         KEY_ACCOUNT = 5
+    }
+
+    /// <summary>
+    /// Converts <see cref="SMSTenDLCBrandRelationship"/> to and from the JSON value
+    /// </summary>
+    public static class SMSTenDLCBrandRelationshipValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="SMSTenDLCBrandRelationship"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static SMSTenDLCBrandRelationship FromString(string value)
+        {
+            if (value.Equals("BASIC_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.BASIC_ACCOUNT;
+
+            if (value.Equals("SMALL_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.SMALL_ACCOUNT;
+
+            if (value.Equals("MEDIUM_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.MEDIUM_ACCOUNT;
+
+            if (value.Equals("LARGE_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.LARGE_ACCOUNT;
+
+            if (value.Equals("KEY_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.KEY_ACCOUNT;
+
+            throw new NotImplementedException($"Could not convert value to type SMSTenDLCBrandRelationship: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="SMSTenDLCBrandRelationship"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static SMSTenDLCBrandRelationship? FromStringOrDefault(string value)
+        {
+            if (value.Equals("BASIC_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.BASIC_ACCOUNT;
+
+            if (value.Equals("SMALL_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.SMALL_ACCOUNT;
+
+            if (value.Equals("MEDIUM_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.MEDIUM_ACCOUNT;
+
+            if (value.Equals("LARGE_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.LARGE_ACCOUNT;
+
+            if (value.Equals("KEY_ACCOUNT"))
+                return SMSTenDLCBrandRelationship.KEY_ACCOUNT;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="SMSTenDLCBrandRelationship"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(SMSTenDLCBrandRelationship value)
+        {
+            if (value == SMSTenDLCBrandRelationship.BASIC_ACCOUNT)
+                return "BASIC_ACCOUNT";
+
+            if (value == SMSTenDLCBrandRelationship.SMALL_ACCOUNT)
+                return "SMALL_ACCOUNT";
+
+            if (value == SMSTenDLCBrandRelationship.MEDIUM_ACCOUNT)
+                return "MEDIUM_ACCOUNT";
+
+            if (value == SMSTenDLCBrandRelationship.LARGE_ACCOUNT)
+                return "LARGE_ACCOUNT";
+
+            if (value == SMSTenDLCBrandRelationship.KEY_ACCOUNT)
+                return "KEY_ACCOUNT";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="SMSTenDLCBrandRelationship"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class SMSTenDLCBrandRelationshipJsonConverter : JsonConverter<SMSTenDLCBrandRelationship>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override SMSTenDLCBrandRelationship Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            SMSTenDLCBrandRelationship? result = rawValue == null
+                ? null
+                : SMSTenDLCBrandRelationshipValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the SMSTenDLCBrandRelationship to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="sMSTenDLCBrandRelationship"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandRelationship sMSTenDLCBrandRelationship, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(sMSTenDLCBrandRelationship.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="SMSTenDLCBrandRelationship"/>
+    /// </summary>
+    public class SMSTenDLCBrandRelationshipNullableJsonConverter : JsonConverter<SMSTenDLCBrandRelationship?>
+    {
+        /// <summary>
+        /// Returns a SMSTenDLCBrandRelationship from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override SMSTenDLCBrandRelationship? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            SMSTenDLCBrandRelationship? result = rawValue == null
+                ? null
+                : SMSTenDLCBrandRelationshipValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="sMSTenDLCBrandRelationship"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandRelationship? sMSTenDLCBrandRelationship, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(sMSTenDLCBrandRelationship?.ToString() ?? "null");
+        }
     }
 
 }

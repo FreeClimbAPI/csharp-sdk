@@ -32,20 +32,149 @@ namespace freeclimb.Enums
     /// New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**
     /// </summary>
     /// <value>New status of the conference. Valid values: &#x60;empty&#x60; or &#x60;terminated&#x60;. For more information, see **Status Parameter** below.**</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum UpdateConferenceRequestStatus
     {
         /// <summary>
         /// Enum EMPTY for value: empty
         /// </summary>
-        [EnumMember(Value = "empty")]
         EMPTY = 1,
 
         /// <summary>
         /// Enum TERMINATED for value: terminated
         /// </summary>
-        [EnumMember(Value = "terminated")]
         TERMINATED = 2
+    }
+
+    /// <summary>
+    /// Converts <see cref="UpdateConferenceRequestStatus"/> to and from the JSON value
+    /// </summary>
+    public static class UpdateConferenceRequestStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateConferenceRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateConferenceRequestStatus FromString(string value)
+        {
+            if (value.Equals("empty"))
+                return UpdateConferenceRequestStatus.EMPTY;
+
+            if (value.Equals("terminated"))
+                return UpdateConferenceRequestStatus.TERMINATED;
+
+            throw new NotImplementedException($"Could not convert value to type UpdateConferenceRequestStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateConferenceRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateConferenceRequestStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("empty"))
+                return UpdateConferenceRequestStatus.EMPTY;
+
+            if (value.Equals("terminated"))
+                return UpdateConferenceRequestStatus.TERMINATED;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="UpdateConferenceRequestStatus"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(UpdateConferenceRequestStatus value)
+        {
+            if (value == UpdateConferenceRequestStatus.EMPTY)
+                return "empty";
+
+            if (value == UpdateConferenceRequestStatus.TERMINATED)
+                return "terminated";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="UpdateConferenceRequestStatus"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class UpdateConferenceRequestStatusJsonConverter : JsonConverter<UpdateConferenceRequestStatus>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override UpdateConferenceRequestStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            UpdateConferenceRequestStatus? result = rawValue == null
+                ? null
+                : UpdateConferenceRequestStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the UpdateConferenceRequestStatus to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="updateConferenceRequestStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, UpdateConferenceRequestStatus updateConferenceRequestStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(updateConferenceRequestStatus.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="UpdateConferenceRequestStatus"/>
+    /// </summary>
+    public class UpdateConferenceRequestStatusNullableJsonConverter : JsonConverter<UpdateConferenceRequestStatus?>
+    {
+        /// <summary>
+        /// Returns a UpdateConferenceRequestStatus from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override UpdateConferenceRequestStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            UpdateConferenceRequestStatus? result = rawValue == null
+                ? null
+                : UpdateConferenceRequestStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="updateConferenceRequestStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, UpdateConferenceRequestStatus? updateConferenceRequestStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(updateConferenceRequestStatus?.ToString() ?? "null");
+        }
     }
 
 }

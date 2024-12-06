@@ -32,20 +32,149 @@ namespace freeclimb.Enums
     /// The type of this account. It is one of: trial or full.
     /// </summary>
     /// <value>The type of this account. It is one of: trial or full.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum AccountType
     {
         /// <summary>
         /// Enum TRIAL for value: trial
         /// </summary>
-        [EnumMember(Value = "trial")]
         TRIAL = 1,
 
         /// <summary>
         /// Enum FULL for value: full
         /// </summary>
-        [EnumMember(Value = "full")]
         FULL = 2
+    }
+
+    /// <summary>
+    /// Converts <see cref="AccountType"/> to and from the JSON value
+    /// </summary>
+    public static class AccountTypeValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="AccountType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AccountType FromString(string value)
+        {
+            if (value.Equals("trial"))
+                return AccountType.TRIAL;
+
+            if (value.Equals("full"))
+                return AccountType.FULL;
+
+            throw new NotImplementedException($"Could not convert value to type AccountType: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="AccountType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AccountType? FromStringOrDefault(string value)
+        {
+            if (value.Equals("trial"))
+                return AccountType.TRIAL;
+
+            if (value.Equals("full"))
+                return AccountType.FULL;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="AccountType"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(AccountType value)
+        {
+            if (value == AccountType.TRIAL)
+                return "trial";
+
+            if (value == AccountType.FULL)
+                return "full";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="AccountType"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class AccountTypeJsonConverter : JsonConverter<AccountType>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override AccountType Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            AccountType? result = rawValue == null
+                ? null
+                : AccountTypeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the AccountType to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="accountType"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, AccountType accountType, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(accountType.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="AccountType"/>
+    /// </summary>
+    public class AccountTypeNullableJsonConverter : JsonConverter<AccountType?>
+    {
+        /// <summary>
+        /// Returns a AccountType from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override AccountType? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            AccountType? result = rawValue == null
+                ? null
+                : AccountTypeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="accountType"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, AccountType? accountType, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(accountType?.ToString() ?? "null");
+        }
     }
 
 }

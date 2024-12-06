@@ -13,5 +13,5 @@ Name | Type | Description | Notes
 **NextPageUri** | **string** | Uri to retrieve the next page of items | [optional] 
 **Logs** | [**List&lt;LogResult&gt;**](LogResult.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

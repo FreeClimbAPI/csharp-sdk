@@ -31,32 +31,177 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines RecordUtteranceTermReason
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum RecordUtteranceTermReason
     {
         /// <summary>
         /// Enum FINISH_KEY for value: finishKey
         /// </summary>
-        [EnumMember(Value = "finishKey")]
         FINISH_KEY = 1,
 
         /// <summary>
         /// Enum TIMEOUT for value: timeout
         /// </summary>
-        [EnumMember(Value = "timeout")]
         TIMEOUT = 2,
 
         /// <summary>
         /// Enum HANGUP for value: hangup
         /// </summary>
-        [EnumMember(Value = "hangup")]
         HANGUP = 3,
 
         /// <summary>
         /// Enum MAX_LENGTH for value: maxLength
         /// </summary>
-        [EnumMember(Value = "maxLength")]
         MAX_LENGTH = 4
+    }
+
+    /// <summary>
+    /// Converts <see cref="RecordUtteranceTermReason"/> to and from the JSON value
+    /// </summary>
+    public static class RecordUtteranceTermReasonValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="RecordUtteranceTermReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static RecordUtteranceTermReason FromString(string value)
+        {
+            if (value.Equals("finishKey"))
+                return RecordUtteranceTermReason.FINISH_KEY;
+
+            if (value.Equals("timeout"))
+                return RecordUtteranceTermReason.TIMEOUT;
+
+            if (value.Equals("hangup"))
+                return RecordUtteranceTermReason.HANGUP;
+
+            if (value.Equals("maxLength"))
+                return RecordUtteranceTermReason.MAX_LENGTH;
+
+            throw new NotImplementedException($"Could not convert value to type RecordUtteranceTermReason: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="RecordUtteranceTermReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static RecordUtteranceTermReason? FromStringOrDefault(string value)
+        {
+            if (value.Equals("finishKey"))
+                return RecordUtteranceTermReason.FINISH_KEY;
+
+            if (value.Equals("timeout"))
+                return RecordUtteranceTermReason.TIMEOUT;
+
+            if (value.Equals("hangup"))
+                return RecordUtteranceTermReason.HANGUP;
+
+            if (value.Equals("maxLength"))
+                return RecordUtteranceTermReason.MAX_LENGTH;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="RecordUtteranceTermReason"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(RecordUtteranceTermReason value)
+        {
+            if (value == RecordUtteranceTermReason.FINISH_KEY)
+                return "finishKey";
+
+            if (value == RecordUtteranceTermReason.TIMEOUT)
+                return "timeout";
+
+            if (value == RecordUtteranceTermReason.HANGUP)
+                return "hangup";
+
+            if (value == RecordUtteranceTermReason.MAX_LENGTH)
+                return "maxLength";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="RecordUtteranceTermReason"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class RecordUtteranceTermReasonJsonConverter : JsonConverter<RecordUtteranceTermReason>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override RecordUtteranceTermReason Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            RecordUtteranceTermReason? result = rawValue == null
+                ? null
+                : RecordUtteranceTermReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the RecordUtteranceTermReason to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="recordUtteranceTermReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, RecordUtteranceTermReason recordUtteranceTermReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(recordUtteranceTermReason.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="RecordUtteranceTermReason"/>
+    /// </summary>
+    public class RecordUtteranceTermReasonNullableJsonConverter : JsonConverter<RecordUtteranceTermReason?>
+    {
+        /// <summary>
+        /// Returns a RecordUtteranceTermReason from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override RecordUtteranceTermReason? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            RecordUtteranceTermReason? result = rawValue == null
+                ? null
+                : RecordUtteranceTermReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="recordUtteranceTermReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, RecordUtteranceTermReason? recordUtteranceTermReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(recordUtteranceTermReason?.ToString() ?? "null");
+        }
     }
 
 }

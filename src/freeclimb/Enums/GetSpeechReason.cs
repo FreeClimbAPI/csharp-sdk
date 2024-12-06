@@ -31,44 +31,205 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines GetSpeechReason
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum GetSpeechReason
     {
         /// <summary>
         /// Enum ERROR for value: error
         /// </summary>
-        [EnumMember(Value = "error")]
         ERROR = 1,
 
         /// <summary>
         /// Enum HANGUP for value: hangup
         /// </summary>
-        [EnumMember(Value = "hangup")]
         HANGUP = 2,
 
         /// <summary>
         /// Enum DIGIT for value: digit
         /// </summary>
-        [EnumMember(Value = "digit")]
         DIGIT = 3,
 
         /// <summary>
         /// Enum NO_INPUT for value: noInput
         /// </summary>
-        [EnumMember(Value = "noInput")]
         NO_INPUT = 4,
 
         /// <summary>
         /// Enum NO_MATCH for value: noMatch
         /// </summary>
-        [EnumMember(Value = "noMatch")]
         NO_MATCH = 5,
 
         /// <summary>
         /// Enum RECOGNITION for value: recognition
         /// </summary>
-        [EnumMember(Value = "recognition")]
         RECOGNITION = 6
+    }
+
+    /// <summary>
+    /// Converts <see cref="GetSpeechReason"/> to and from the JSON value
+    /// </summary>
+    public static class GetSpeechReasonValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="GetSpeechReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GetSpeechReason FromString(string value)
+        {
+            if (value.Equals("error"))
+                return GetSpeechReason.ERROR;
+
+            if (value.Equals("hangup"))
+                return GetSpeechReason.HANGUP;
+
+            if (value.Equals("digit"))
+                return GetSpeechReason.DIGIT;
+
+            if (value.Equals("noInput"))
+                return GetSpeechReason.NO_INPUT;
+
+            if (value.Equals("noMatch"))
+                return GetSpeechReason.NO_MATCH;
+
+            if (value.Equals("recognition"))
+                return GetSpeechReason.RECOGNITION;
+
+            throw new NotImplementedException($"Could not convert value to type GetSpeechReason: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="GetSpeechReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GetSpeechReason? FromStringOrDefault(string value)
+        {
+            if (value.Equals("error"))
+                return GetSpeechReason.ERROR;
+
+            if (value.Equals("hangup"))
+                return GetSpeechReason.HANGUP;
+
+            if (value.Equals("digit"))
+                return GetSpeechReason.DIGIT;
+
+            if (value.Equals("noInput"))
+                return GetSpeechReason.NO_INPUT;
+
+            if (value.Equals("noMatch"))
+                return GetSpeechReason.NO_MATCH;
+
+            if (value.Equals("recognition"))
+                return GetSpeechReason.RECOGNITION;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="GetSpeechReason"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(GetSpeechReason value)
+        {
+            if (value == GetSpeechReason.ERROR)
+                return "error";
+
+            if (value == GetSpeechReason.HANGUP)
+                return "hangup";
+
+            if (value == GetSpeechReason.DIGIT)
+                return "digit";
+
+            if (value == GetSpeechReason.NO_INPUT)
+                return "noInput";
+
+            if (value == GetSpeechReason.NO_MATCH)
+                return "noMatch";
+
+            if (value == GetSpeechReason.RECOGNITION)
+                return "recognition";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="GetSpeechReason"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class GetSpeechReasonJsonConverter : JsonConverter<GetSpeechReason>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override GetSpeechReason Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            GetSpeechReason? result = rawValue == null
+                ? null
+                : GetSpeechReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the GetSpeechReason to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="getSpeechReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, GetSpeechReason getSpeechReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(getSpeechReason.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="GetSpeechReason"/>
+    /// </summary>
+    public class GetSpeechReasonNullableJsonConverter : JsonConverter<GetSpeechReason?>
+    {
+        /// <summary>
+        /// Returns a GetSpeechReason from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override GetSpeechReason? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            GetSpeechReason? result = rawValue == null
+                ? null
+                : GetSpeechReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="getSpeechReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, GetSpeechReason? getSpeechReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(getSpeechReason?.ToString() ?? "null");
+        }
     }
 
 }

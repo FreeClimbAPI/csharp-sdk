@@ -32,26 +32,163 @@ namespace freeclimb.Enums
     /// Direction of the Call. &#x60;inbound&#x60; for Calls into FreeClimb, &#x60;outboundAPI&#x60; for Calls initiated via the REST API,  &#x60;outboundDial&#x60; for Calls initiated by the &#x60;OutDial&#x60; PerCL command.
     /// </summary>
     /// <value>Direction of the Call. &#x60;inbound&#x60; for Calls into FreeClimb, &#x60;outboundAPI&#x60; for Calls initiated via the REST API,  &#x60;outboundDial&#x60; for Calls initiated by the &#x60;OutDial&#x60; PerCL command.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum CallDirection
     {
         /// <summary>
         /// Enum INBOUND for value: inbound
         /// </summary>
-        [EnumMember(Value = "inbound")]
         INBOUND = 1,
 
         /// <summary>
         /// Enum OUTBOUND_API for value: outboundAPI
         /// </summary>
-        [EnumMember(Value = "outboundAPI")]
         OUTBOUND_API = 2,
 
         /// <summary>
         /// Enum OUTBOUND_DIAL for value: outboundDial
         /// </summary>
-        [EnumMember(Value = "outboundDial")]
         OUTBOUND_DIAL = 3
+    }
+
+    /// <summary>
+    /// Converts <see cref="CallDirection"/> to and from the JSON value
+    /// </summary>
+    public static class CallDirectionValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="CallDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallDirection FromString(string value)
+        {
+            if (value.Equals("inbound"))
+                return CallDirection.INBOUND;
+
+            if (value.Equals("outboundAPI"))
+                return CallDirection.OUTBOUND_API;
+
+            if (value.Equals("outboundDial"))
+                return CallDirection.OUTBOUND_DIAL;
+
+            throw new NotImplementedException($"Could not convert value to type CallDirection: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="CallDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallDirection? FromStringOrDefault(string value)
+        {
+            if (value.Equals("inbound"))
+                return CallDirection.INBOUND;
+
+            if (value.Equals("outboundAPI"))
+                return CallDirection.OUTBOUND_API;
+
+            if (value.Equals("outboundDial"))
+                return CallDirection.OUTBOUND_DIAL;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="CallDirection"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(CallDirection value)
+        {
+            if (value == CallDirection.INBOUND)
+                return "inbound";
+
+            if (value == CallDirection.OUTBOUND_API)
+                return "outboundAPI";
+
+            if (value == CallDirection.OUTBOUND_DIAL)
+                return "outboundDial";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="CallDirection"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class CallDirectionJsonConverter : JsonConverter<CallDirection>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override CallDirection Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            CallDirection? result = rawValue == null
+                ? null
+                : CallDirectionValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the CallDirection to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="callDirection"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, CallDirection callDirection, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(callDirection.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="CallDirection"/>
+    /// </summary>
+    public class CallDirectionNullableJsonConverter : JsonConverter<CallDirection?>
+    {
+        /// <summary>
+        /// Returns a CallDirection from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override CallDirection? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            CallDirection? result = rawValue == null
+                ? null
+                : CallDirectionValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="callDirection"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, CallDirection? callDirection, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(callDirection?.ToString() ?? "null");
+        }
     }
 
 }

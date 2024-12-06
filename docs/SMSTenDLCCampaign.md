@@ -41,5 +41,5 @@ Name | Type | Description | Notes
 **Mock** | **bool** | Campaign created from mock brand. Mocked campaign cannot be shared with an upstream CNP. | 
 **NextRenewalOrExpirationDate** | **DateOnly?** | When the campaign would be due for its next renew/bill date. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

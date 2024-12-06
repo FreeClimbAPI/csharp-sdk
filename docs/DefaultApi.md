@@ -155,7 +155,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successful Incoming Number transaction |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="createaconference"></a>
 # **CreateAConference**
@@ -250,7 +250,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Details of created conference |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="createaqueue"></a>
 # **CreateAQueue**
@@ -345,7 +345,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfuly created queue |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="createanapplication"></a>
 # **CreateAnApplication**
@@ -440,7 +440,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Application successfuly created |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="createknowledgebasecompletion"></a>
 # **CreateKnowledgeBaseCompletion**
@@ -537,7 +537,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | KnowledgeaBase completion response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="deletearecording"></a>
 # **DeleteARecording**
@@ -628,7 +628,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Recording Deleted |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="deleteanapplication"></a>
 # **DeleteAnApplication**
@@ -719,7 +719,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Successful application deletion |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="deleteanincomingnumber"></a>
 # **DeleteAnIncomingNumber**
@@ -810,7 +810,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Successful Incoming Number deletion. |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="dequeueamember"></a>
 # **DequeueAMember**
@@ -907,7 +907,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **202** | Accepted dequeue request |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="dequeueheadmember"></a>
 # **DequeueHeadMember**
@@ -1002,7 +1002,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **202** | Accepted dequeue request |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="downloadarecordingfile"></a>
 # **DownloadARecordingFile**
@@ -1097,7 +1097,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Download a Recording file represented with audio/x-wav mime-type |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="filterlogs"></a>
 # **FilterLogs**
@@ -1192,7 +1192,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved log list |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getacall"></a>
 # **GetACall**
@@ -1287,7 +1287,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Call Resource |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getaconference"></a>
 # **GetAConference**
@@ -1382,7 +1382,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved conference |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getamember"></a>
 # **GetAMember**
@@ -1479,7 +1479,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved a queue member |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getaparticipant"></a>
 # **GetAParticipant**
@@ -1576,7 +1576,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved conference participant |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getaqueue"></a>
 # **GetAQueue**
@@ -1671,7 +1671,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved queue |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getarecording"></a>
 # **GetARecording**
@@ -1766,7 +1766,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getanaccount"></a>
 # **GetAnAccount**
@@ -1859,7 +1859,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Account Details |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getanapplication"></a>
 # **GetAnApplication**
@@ -1954,7 +1954,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Application Details |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getanincomingnumber"></a>
 # **GetAnIncomingNumber**
@@ -2049,7 +2049,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Incoming Phone Number result. |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getansmsmessage"></a>
 # **GetAnSmsMessage**
@@ -2144,7 +2144,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The specific SMS message that’s been processed by FreeClimb |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="getheadmember"></a>
 # **GetHeadMember**
@@ -2239,7 +2239,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved queue member |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="gettendlcsmsbrand"></a>
 # **GetTenDLCSmsBrand**
@@ -2334,7 +2334,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The specific SMS 10DLC Brand that’s been processed by FreeClimb |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="gettendlcsmsbrands"></a>
 # **GetTenDLCSmsBrands**
@@ -2427,7 +2427,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The list SMS 10DLC brands |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="gettendlcsmscampaign"></a>
 # **GetTenDLCSmsCampaign**
@@ -2522,7 +2522,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The specific SMS 10DLC Campaign that’s been processed by FreeClimb |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="gettendlcsmscampaigns"></a>
 # **GetTenDLCSmsCampaigns**
@@ -2617,7 +2617,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The list SMS 10DLC campaigns |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="gettendlcsmspartnercampaign"></a>
 # **GetTenDLCSmsPartnerCampaign**
@@ -2712,7 +2712,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The specific SMS 10DLC Partner Campaign that’s been processed by FreeClimb |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="gettendlcsmspartnercampaigns"></a>
 # **GetTenDLCSmsPartnerCampaigns**
@@ -2807,7 +2807,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The list SMS 10DLC partner campaigns |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="gettollfreesmscampaign"></a>
 # **GetTollFreeSmsCampaign**
@@ -2902,7 +2902,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The specific SMS TollFree Campaign that’s been processed by FreeClimb |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="gettollfreesmscampaigns"></a>
 # **GetTollFreeSmsCampaigns**
@@ -2995,7 +2995,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The list toll-free campaigns |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listactivequeues"></a>
 # **ListActiveQueues**
@@ -3090,7 +3090,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfuly retrieved queue list |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listallaccountlogs"></a>
 # **ListAllAccountLogs**
@@ -3183,7 +3183,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved log list |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listapplications"></a>
 # **ListApplications**
@@ -3278,7 +3278,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | List of Applications |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listavailablenumbers"></a>
 # **ListAvailableNumbers**
@@ -3389,7 +3389,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Available Numbers List |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listcalllogs"></a>
 # **ListCallLogs**
@@ -3484,7 +3484,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Logs for this call |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listcallrecordings"></a>
 # **ListCallRecordings**
@@ -3581,7 +3581,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | List of recordings for a call |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listcalls"></a>
 # **ListCalls**
@@ -3690,7 +3690,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successful retrieved call list |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listconferencerecordings"></a>
 # **ListConferenceRecordings**
@@ -3789,7 +3789,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | List of Recordings |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listconferences"></a>
 # **ListConferences**
@@ -3890,7 +3890,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | List of Conferences |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listincomingnumbers"></a>
 # **ListIncomingNumbers**
@@ -4015,7 +4015,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | List of Incoming Phone Numbers |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listmembers"></a>
 # **ListMembers**
@@ -4110,7 +4110,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved queue member list |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listparticipants"></a>
 # **ListParticipants**
@@ -4211,7 +4211,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved conference participant list |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listrecordings"></a>
 # **ListRecordings**
@@ -4310,7 +4310,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | List of Recordings |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="listsmsmessages"></a>
 # **ListSmsMessages**
@@ -4419,7 +4419,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | List of messages |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="makeacall"></a>
 # **MakeACall**
@@ -4514,7 +4514,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Call that was created |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="makeawebrtcjwt"></a>
 # **MakeAWebrtcJwt**
@@ -4609,7 +4609,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | The created JWT |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="removeaparticipant"></a>
 # **RemoveAParticipant**
@@ -4702,7 +4702,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Successfully deleted conference participant |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="sendansmsmessage"></a>
 # **SendAnSmsMessage**
@@ -4797,7 +4797,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **202** | The message has been accepted. |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="streamarecordingfile"></a>
 # **StreamARecordingFile**
@@ -4892,7 +4892,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Streaming a Recording represented with audio/x-wav mime-type |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="updateaconference"></a>
 # **UpdateAConference**
@@ -4985,7 +4985,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Successful conference details update |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="updatealivecall"></a>
 # **UpdateALiveCall**
@@ -5078,7 +5078,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **202** | Successfully queued call |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="updateaparticipant"></a>
 # **UpdateAParticipant**
@@ -5177,7 +5177,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved conference participant |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="updateaqueue"></a>
 # **UpdateAQueue**
@@ -5274,7 +5274,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully updated queue |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="updateanaccount"></a>
 # **UpdateAnAccount**
@@ -5365,7 +5365,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Successful Account update |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="updateanapplication"></a>
 # **UpdateAnApplication**
@@ -5462,7 +5462,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Update Application |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="updateanincomingnumber"></a>
 # **UpdateAnIncomingNumber**
@@ -5559,5 +5559,5 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Updated Incoming Phone Number |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

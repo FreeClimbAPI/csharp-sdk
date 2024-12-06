@@ -32,20 +32,149 @@ namespace freeclimb.Enums
     /// Either &#x60;canceled&#x60; or &#x60;completed&#x60;.  Specifying &#x60;canceled&#x60; attempts to hang up calls that are queued without affecting calls already in progress. Specifying &#x60;completed&#x60; attempts to hang up a call already in progress.
     /// </summary>
     /// <value>Either &#x60;canceled&#x60; or &#x60;completed&#x60;.  Specifying &#x60;canceled&#x60; attempts to hang up calls that are queued without affecting calls already in progress. Specifying &#x60;completed&#x60; attempts to hang up a call already in progress.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum UpdateCallRequestStatus
     {
         /// <summary>
         /// Enum CANCELED for value: canceled
         /// </summary>
-        [EnumMember(Value = "canceled")]
         CANCELED = 1,
 
         /// <summary>
         /// Enum COMPLETED for value: completed
         /// </summary>
-        [EnumMember(Value = "completed")]
         COMPLETED = 2
+    }
+
+    /// <summary>
+    /// Converts <see cref="UpdateCallRequestStatus"/> to and from the JSON value
+    /// </summary>
+    public static class UpdateCallRequestStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateCallRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateCallRequestStatus FromString(string value)
+        {
+            if (value.Equals("canceled"))
+                return UpdateCallRequestStatus.CANCELED;
+
+            if (value.Equals("completed"))
+                return UpdateCallRequestStatus.COMPLETED;
+
+            throw new NotImplementedException($"Could not convert value to type UpdateCallRequestStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateCallRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateCallRequestStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("canceled"))
+                return UpdateCallRequestStatus.CANCELED;
+
+            if (value.Equals("completed"))
+                return UpdateCallRequestStatus.COMPLETED;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="UpdateCallRequestStatus"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(UpdateCallRequestStatus value)
+        {
+            if (value == UpdateCallRequestStatus.CANCELED)
+                return "canceled";
+
+            if (value == UpdateCallRequestStatus.COMPLETED)
+                return "completed";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="UpdateCallRequestStatus"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class UpdateCallRequestStatusJsonConverter : JsonConverter<UpdateCallRequestStatus>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override UpdateCallRequestStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            UpdateCallRequestStatus? result = rawValue == null
+                ? null
+                : UpdateCallRequestStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the UpdateCallRequestStatus to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="updateCallRequestStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, UpdateCallRequestStatus updateCallRequestStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(updateCallRequestStatus.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="UpdateCallRequestStatus"/>
+    /// </summary>
+    public class UpdateCallRequestStatusNullableJsonConverter : JsonConverter<UpdateCallRequestStatus?>
+    {
+        /// <summary>
+        /// Returns a UpdateCallRequestStatus from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override UpdateCallRequestStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            UpdateCallRequestStatus? result = rawValue == null
+                ? null
+                : UpdateCallRequestStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="updateCallRequestStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, UpdateCallRequestStatus? updateCallRequestStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(updateCallRequestStatus?.ToString() ?? "null");
+        }
     }
 
 }

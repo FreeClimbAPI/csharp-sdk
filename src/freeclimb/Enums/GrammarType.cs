@@ -32,20 +32,149 @@ namespace freeclimb.Enums
     /// The grammar file type to use for speech recognition. A value of &#39;URL&#39; indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of &#x60;BUILTIN&#x60; indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files.
     /// </summary>
     /// <value>The grammar file type to use for speech recognition. A value of &#39;URL&#39; indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of &#x60;BUILTIN&#x60; indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum GrammarType
     {
         /// <summary>
         /// Enum URL for value: URL
         /// </summary>
-        [EnumMember(Value = "URL")]
         URL = 1,
 
         /// <summary>
         /// Enum BUILT_IN for value: BUILTIN
         /// </summary>
-        [EnumMember(Value = "BUILTIN")]
         BUILT_IN = 2
+    }
+
+    /// <summary>
+    /// Converts <see cref="GrammarType"/> to and from the JSON value
+    /// </summary>
+    public static class GrammarTypeValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="GrammarType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GrammarType FromString(string value)
+        {
+            if (value.Equals("URL"))
+                return GrammarType.URL;
+
+            if (value.Equals("BUILTIN"))
+                return GrammarType.BUILT_IN;
+
+            throw new NotImplementedException($"Could not convert value to type GrammarType: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="GrammarType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GrammarType? FromStringOrDefault(string value)
+        {
+            if (value.Equals("URL"))
+                return GrammarType.URL;
+
+            if (value.Equals("BUILTIN"))
+                return GrammarType.BUILT_IN;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="GrammarType"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(GrammarType value)
+        {
+            if (value == GrammarType.URL)
+                return "URL";
+
+            if (value == GrammarType.BUILT_IN)
+                return "BUILTIN";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="GrammarType"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class GrammarTypeJsonConverter : JsonConverter<GrammarType>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override GrammarType Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            GrammarType? result = rawValue == null
+                ? null
+                : GrammarTypeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the GrammarType to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="grammarType"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, GrammarType grammarType, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(grammarType.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="GrammarType"/>
+    /// </summary>
+    public class GrammarTypeNullableJsonConverter : JsonConverter<GrammarType?>
+    {
+        /// <summary>
+        /// Returns a GrammarType from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override GrammarType? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            GrammarType? result = rawValue == null
+                ? null
+                : GrammarTypeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="grammarType"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, GrammarType? grammarType, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(grammarType?.ToString() ?? "null");
+        }
     }
 
 }

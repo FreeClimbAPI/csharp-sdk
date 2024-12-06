@@ -32,32 +32,177 @@ namespace freeclimb.Enums
     /// The type of the Alternative business identifier
     /// </summary>
     /// <value>The type of the Alternative business identifier</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum SMSTenDLCBrandAltBusinessIdType
     {
         /// <summary>
         /// Enum NONE for value: NONE
         /// </summary>
-        [EnumMember(Value = "NONE")]
         NONE = 1,
 
         /// <summary>
         /// Enum DUNS for value: DUNS
         /// </summary>
-        [EnumMember(Value = "DUNS")]
         DUNS = 2,
 
         /// <summary>
         /// Enum GIIN for value: GIIN
         /// </summary>
-        [EnumMember(Value = "GIIN")]
         GIIN = 3,
 
         /// <summary>
         /// Enum LEI for value: LEI
         /// </summary>
-        [EnumMember(Value = "LEI")]
         LEI = 4
+    }
+
+    /// <summary>
+    /// Converts <see cref="SMSTenDLCBrandAltBusinessIdType"/> to and from the JSON value
+    /// </summary>
+    public static class SMSTenDLCBrandAltBusinessIdTypeValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="SMSTenDLCBrandAltBusinessIdType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static SMSTenDLCBrandAltBusinessIdType FromString(string value)
+        {
+            if (value.Equals("NONE"))
+                return SMSTenDLCBrandAltBusinessIdType.NONE;
+
+            if (value.Equals("DUNS"))
+                return SMSTenDLCBrandAltBusinessIdType.DUNS;
+
+            if (value.Equals("GIIN"))
+                return SMSTenDLCBrandAltBusinessIdType.GIIN;
+
+            if (value.Equals("LEI"))
+                return SMSTenDLCBrandAltBusinessIdType.LEI;
+
+            throw new NotImplementedException($"Could not convert value to type SMSTenDLCBrandAltBusinessIdType: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="SMSTenDLCBrandAltBusinessIdType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static SMSTenDLCBrandAltBusinessIdType? FromStringOrDefault(string value)
+        {
+            if (value.Equals("NONE"))
+                return SMSTenDLCBrandAltBusinessIdType.NONE;
+
+            if (value.Equals("DUNS"))
+                return SMSTenDLCBrandAltBusinessIdType.DUNS;
+
+            if (value.Equals("GIIN"))
+                return SMSTenDLCBrandAltBusinessIdType.GIIN;
+
+            if (value.Equals("LEI"))
+                return SMSTenDLCBrandAltBusinessIdType.LEI;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="SMSTenDLCBrandAltBusinessIdType"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(SMSTenDLCBrandAltBusinessIdType value)
+        {
+            if (value == SMSTenDLCBrandAltBusinessIdType.NONE)
+                return "NONE";
+
+            if (value == SMSTenDLCBrandAltBusinessIdType.DUNS)
+                return "DUNS";
+
+            if (value == SMSTenDLCBrandAltBusinessIdType.GIIN)
+                return "GIIN";
+
+            if (value == SMSTenDLCBrandAltBusinessIdType.LEI)
+                return "LEI";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="SMSTenDLCBrandAltBusinessIdType"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class SMSTenDLCBrandAltBusinessIdTypeJsonConverter : JsonConverter<SMSTenDLCBrandAltBusinessIdType>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override SMSTenDLCBrandAltBusinessIdType Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            SMSTenDLCBrandAltBusinessIdType? result = rawValue == null
+                ? null
+                : SMSTenDLCBrandAltBusinessIdTypeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the SMSTenDLCBrandAltBusinessIdType to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="sMSTenDLCBrandAltBusinessIdType"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandAltBusinessIdType sMSTenDLCBrandAltBusinessIdType, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(sMSTenDLCBrandAltBusinessIdType.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="SMSTenDLCBrandAltBusinessIdType"/>
+    /// </summary>
+    public class SMSTenDLCBrandAltBusinessIdTypeNullableJsonConverter : JsonConverter<SMSTenDLCBrandAltBusinessIdType?>
+    {
+        /// <summary>
+        /// Returns a SMSTenDLCBrandAltBusinessIdType from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override SMSTenDLCBrandAltBusinessIdType? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            SMSTenDLCBrandAltBusinessIdType? result = rawValue == null
+                ? null
+                : SMSTenDLCBrandAltBusinessIdTypeValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="sMSTenDLCBrandAltBusinessIdType"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandAltBusinessIdType? sMSTenDLCBrandAltBusinessIdType, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(sMSTenDLCBrandAltBusinessIdType?.ToString() ?? "null");
+        }
     }
 
 }

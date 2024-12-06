@@ -23,5 +23,5 @@ Name | Type | Description | Notes
 **MrcpCode** | **int** | Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification. | [optional] 
 **MrcpDiagnostic** | **string** | Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

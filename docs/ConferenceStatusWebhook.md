@@ -19,5 +19,5 @@ Name | Type | Description | Notes
 **RecordingId** | **string** | The unique ID of the Recording from this Conference. Populated only if a Recording exists and the Conference was emptied. Present only if statusCallbackUrl is being invoked. | [optional] 
 **RecordingDurationSec** | **int?** | The duration of the recorded audio rounded up to the nearest second (in seconds). Populated only if a Recording exists and the Conference was emptied. Present only if statusCallbackUrl is being invoked. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

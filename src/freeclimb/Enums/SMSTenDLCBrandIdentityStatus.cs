@@ -32,32 +32,177 @@ namespace freeclimb.Enums
     /// TCR assessment of the brand identification status.
     /// </summary>
     /// <value>TCR assessment of the brand identification status.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum SMSTenDLCBrandIdentityStatus
     {
         /// <summary>
         /// Enum SELF_DECLARED for value: SELF_DECLARED
         /// </summary>
-        [EnumMember(Value = "SELF_DECLARED")]
         SELF_DECLARED = 1,
 
         /// <summary>
         /// Enum UNVERIFIED for value: UNVERIFIED
         /// </summary>
-        [EnumMember(Value = "UNVERIFIED")]
         UNVERIFIED = 2,
 
         /// <summary>
         /// Enum VERIFIED for value: VERIFIED
         /// </summary>
-        [EnumMember(Value = "VERIFIED")]
         VERIFIED = 3,
 
         /// <summary>
         /// Enum VETTED_VERIFIED for value: VETTED_VERIFIED
         /// </summary>
-        [EnumMember(Value = "VETTED_VERIFIED")]
         VETTED_VERIFIED = 4
+    }
+
+    /// <summary>
+    /// Converts <see cref="SMSTenDLCBrandIdentityStatus"/> to and from the JSON value
+    /// </summary>
+    public static class SMSTenDLCBrandIdentityStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="SMSTenDLCBrandIdentityStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static SMSTenDLCBrandIdentityStatus FromString(string value)
+        {
+            if (value.Equals("SELF_DECLARED"))
+                return SMSTenDLCBrandIdentityStatus.SELF_DECLARED;
+
+            if (value.Equals("UNVERIFIED"))
+                return SMSTenDLCBrandIdentityStatus.UNVERIFIED;
+
+            if (value.Equals("VERIFIED"))
+                return SMSTenDLCBrandIdentityStatus.VERIFIED;
+
+            if (value.Equals("VETTED_VERIFIED"))
+                return SMSTenDLCBrandIdentityStatus.VETTED_VERIFIED;
+
+            throw new NotImplementedException($"Could not convert value to type SMSTenDLCBrandIdentityStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="SMSTenDLCBrandIdentityStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static SMSTenDLCBrandIdentityStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("SELF_DECLARED"))
+                return SMSTenDLCBrandIdentityStatus.SELF_DECLARED;
+
+            if (value.Equals("UNVERIFIED"))
+                return SMSTenDLCBrandIdentityStatus.UNVERIFIED;
+
+            if (value.Equals("VERIFIED"))
+                return SMSTenDLCBrandIdentityStatus.VERIFIED;
+
+            if (value.Equals("VETTED_VERIFIED"))
+                return SMSTenDLCBrandIdentityStatus.VETTED_VERIFIED;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="SMSTenDLCBrandIdentityStatus"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(SMSTenDLCBrandIdentityStatus value)
+        {
+            if (value == SMSTenDLCBrandIdentityStatus.SELF_DECLARED)
+                return "SELF_DECLARED";
+
+            if (value == SMSTenDLCBrandIdentityStatus.UNVERIFIED)
+                return "UNVERIFIED";
+
+            if (value == SMSTenDLCBrandIdentityStatus.VERIFIED)
+                return "VERIFIED";
+
+            if (value == SMSTenDLCBrandIdentityStatus.VETTED_VERIFIED)
+                return "VETTED_VERIFIED";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="SMSTenDLCBrandIdentityStatus"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class SMSTenDLCBrandIdentityStatusJsonConverter : JsonConverter<SMSTenDLCBrandIdentityStatus>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override SMSTenDLCBrandIdentityStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            SMSTenDLCBrandIdentityStatus? result = rawValue == null
+                ? null
+                : SMSTenDLCBrandIdentityStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the SMSTenDLCBrandIdentityStatus to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="sMSTenDLCBrandIdentityStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandIdentityStatus sMSTenDLCBrandIdentityStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(sMSTenDLCBrandIdentityStatus.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="SMSTenDLCBrandIdentityStatus"/>
+    /// </summary>
+    public class SMSTenDLCBrandIdentityStatusNullableJsonConverter : JsonConverter<SMSTenDLCBrandIdentityStatus?>
+    {
+        /// <summary>
+        /// Returns a SMSTenDLCBrandIdentityStatus from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override SMSTenDLCBrandIdentityStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            SMSTenDLCBrandIdentityStatus? result = rawValue == null
+                ? null
+                : SMSTenDLCBrandIdentityStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="sMSTenDLCBrandIdentityStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandIdentityStatus? sMSTenDLCBrandIdentityStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(sMSTenDLCBrandIdentityStatus?.ToString() ?? "null");
+        }
     }
 
 }

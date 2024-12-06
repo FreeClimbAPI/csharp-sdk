@@ -31,20 +31,149 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines TranscribeTermReason
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum TranscribeTermReason
     {
         /// <summary>
         /// Enum ERROR for value: error
         /// </summary>
-        [EnumMember(Value = "error")]
         ERROR = 1,
 
         /// <summary>
         /// Enum COMPLETED for value: completed
         /// </summary>
-        [EnumMember(Value = "completed")]
         COMPLETED = 2
+    }
+
+    /// <summary>
+    /// Converts <see cref="TranscribeTermReason"/> to and from the JSON value
+    /// </summary>
+    public static class TranscribeTermReasonValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="TranscribeTermReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static TranscribeTermReason FromString(string value)
+        {
+            if (value.Equals("error"))
+                return TranscribeTermReason.ERROR;
+
+            if (value.Equals("completed"))
+                return TranscribeTermReason.COMPLETED;
+
+            throw new NotImplementedException($"Could not convert value to type TranscribeTermReason: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="TranscribeTermReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static TranscribeTermReason? FromStringOrDefault(string value)
+        {
+            if (value.Equals("error"))
+                return TranscribeTermReason.ERROR;
+
+            if (value.Equals("completed"))
+                return TranscribeTermReason.COMPLETED;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="TranscribeTermReason"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(TranscribeTermReason value)
+        {
+            if (value == TranscribeTermReason.ERROR)
+                return "error";
+
+            if (value == TranscribeTermReason.COMPLETED)
+                return "completed";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="TranscribeTermReason"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class TranscribeTermReasonJsonConverter : JsonConverter<TranscribeTermReason>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override TranscribeTermReason Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            TranscribeTermReason? result = rawValue == null
+                ? null
+                : TranscribeTermReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the TranscribeTermReason to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="transcribeTermReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, TranscribeTermReason transcribeTermReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(transcribeTermReason.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="TranscribeTermReason"/>
+    /// </summary>
+    public class TranscribeTermReasonNullableJsonConverter : JsonConverter<TranscribeTermReason?>
+    {
+        /// <summary>
+        /// Returns a TranscribeTermReason from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override TranscribeTermReason? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            TranscribeTermReason? result = rawValue == null
+                ? null
+                : TranscribeTermReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="transcribeTermReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, TranscribeTermReason? transcribeTermReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(transcribeTermReason?.ToString() ?? "null");
+        }
     }
 
 }

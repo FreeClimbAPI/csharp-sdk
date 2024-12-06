@@ -32,20 +32,149 @@ namespace freeclimb.Enums
     /// Completion result status. Possible values: success, no_context
     /// </summary>
     /// <value>Completion result status. Possible values: success, no_context</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum CompletionResultStatus
     {
         /// <summary>
         /// Enum SUCCESS for value: success
         /// </summary>
-        [EnumMember(Value = "success")]
         SUCCESS = 1,
 
         /// <summary>
         /// Enum NO_CONTEXT for value: no_context
         /// </summary>
-        [EnumMember(Value = "no_context")]
         NO_CONTEXT = 2
+    }
+
+    /// <summary>
+    /// Converts <see cref="CompletionResultStatus"/> to and from the JSON value
+    /// </summary>
+    public static class CompletionResultStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="CompletionResultStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CompletionResultStatus FromString(string value)
+        {
+            if (value.Equals("success"))
+                return CompletionResultStatus.SUCCESS;
+
+            if (value.Equals("no_context"))
+                return CompletionResultStatus.NO_CONTEXT;
+
+            throw new NotImplementedException($"Could not convert value to type CompletionResultStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="CompletionResultStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CompletionResultStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("success"))
+                return CompletionResultStatus.SUCCESS;
+
+            if (value.Equals("no_context"))
+                return CompletionResultStatus.NO_CONTEXT;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="CompletionResultStatus"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(CompletionResultStatus value)
+        {
+            if (value == CompletionResultStatus.SUCCESS)
+                return "success";
+
+            if (value == CompletionResultStatus.NO_CONTEXT)
+                return "no_context";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="CompletionResultStatus"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class CompletionResultStatusJsonConverter : JsonConverter<CompletionResultStatus>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override CompletionResultStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            CompletionResultStatus? result = rawValue == null
+                ? null
+                : CompletionResultStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the CompletionResultStatus to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="completionResultStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, CompletionResultStatus completionResultStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(completionResultStatus.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="CompletionResultStatus"/>
+    /// </summary>
+    public class CompletionResultStatusNullableJsonConverter : JsonConverter<CompletionResultStatus?>
+    {
+        /// <summary>
+        /// Returns a CompletionResultStatus from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override CompletionResultStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            CompletionResultStatus? result = rawValue == null
+                ? null
+                : CompletionResultStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="completionResultStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, CompletionResultStatus? completionResultStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(completionResultStatus?.ToString() ?? "null");
+        }
     }
 
 }

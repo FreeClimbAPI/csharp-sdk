@@ -31,20 +31,149 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines MessageDirection
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum MessageDirection
     {
         /// <summary>
         /// Enum INBOUND for value: inbound
         /// </summary>
-        [EnumMember(Value = "inbound")]
         INBOUND = 1,
 
         /// <summary>
         /// Enum OUTBOUND for value: outbound
         /// </summary>
-        [EnumMember(Value = "outbound")]
         OUTBOUND = 2
+    }
+
+    /// <summary>
+    /// Converts <see cref="MessageDirection"/> to and from the JSON value
+    /// </summary>
+    public static class MessageDirectionValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="MessageDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MessageDirection FromString(string value)
+        {
+            if (value.Equals("inbound"))
+                return MessageDirection.INBOUND;
+
+            if (value.Equals("outbound"))
+                return MessageDirection.OUTBOUND;
+
+            throw new NotImplementedException($"Could not convert value to type MessageDirection: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="MessageDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MessageDirection? FromStringOrDefault(string value)
+        {
+            if (value.Equals("inbound"))
+                return MessageDirection.INBOUND;
+
+            if (value.Equals("outbound"))
+                return MessageDirection.OUTBOUND;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="MessageDirection"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(MessageDirection value)
+        {
+            if (value == MessageDirection.INBOUND)
+                return "inbound";
+
+            if (value == MessageDirection.OUTBOUND)
+                return "outbound";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="MessageDirection"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class MessageDirectionJsonConverter : JsonConverter<MessageDirection>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override MessageDirection Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            MessageDirection? result = rawValue == null
+                ? null
+                : MessageDirectionValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the MessageDirection to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="messageDirection"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, MessageDirection messageDirection, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(messageDirection.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="MessageDirection"/>
+    /// </summary>
+    public class MessageDirectionNullableJsonConverter : JsonConverter<MessageDirection?>
+    {
+        /// <summary>
+        /// Returns a MessageDirection from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override MessageDirection? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            MessageDirection? result = rawValue == null
+                ? null
+                : MessageDirectionValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="messageDirection"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, MessageDirection? messageDirection, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(messageDirection?.ToString() ?? "null");
+        }
     }
 
 }

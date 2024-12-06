@@ -31,26 +31,163 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines BargeInReason
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum BargeInReason
     {
         /// <summary>
         /// Enum NO_BARGE_IN for value: noBargeIn
         /// </summary>
-        [EnumMember(Value = "noBargeIn")]
         NO_BARGE_IN = 1,
 
         /// <summary>
         /// Enum BARGE_IN_BY_DTMF for value: bargeInByDTMF
         /// </summary>
-        [EnumMember(Value = "bargeInByDTMF")]
         BARGE_IN_BY_DTMF = 2,
 
         /// <summary>
         /// Enum BARGE_IN_BY_ENERGY for value: bargeInByEnergy
         /// </summary>
-        [EnumMember(Value = "bargeInByEnergy")]
         BARGE_IN_BY_ENERGY = 3
+    }
+
+    /// <summary>
+    /// Converts <see cref="BargeInReason"/> to and from the JSON value
+    /// </summary>
+    public static class BargeInReasonValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="BargeInReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static BargeInReason FromString(string value)
+        {
+            if (value.Equals("noBargeIn"))
+                return BargeInReason.NO_BARGE_IN;
+
+            if (value.Equals("bargeInByDTMF"))
+                return BargeInReason.BARGE_IN_BY_DTMF;
+
+            if (value.Equals("bargeInByEnergy"))
+                return BargeInReason.BARGE_IN_BY_ENERGY;
+
+            throw new NotImplementedException($"Could not convert value to type BargeInReason: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="BargeInReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static BargeInReason? FromStringOrDefault(string value)
+        {
+            if (value.Equals("noBargeIn"))
+                return BargeInReason.NO_BARGE_IN;
+
+            if (value.Equals("bargeInByDTMF"))
+                return BargeInReason.BARGE_IN_BY_DTMF;
+
+            if (value.Equals("bargeInByEnergy"))
+                return BargeInReason.BARGE_IN_BY_ENERGY;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="BargeInReason"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(BargeInReason value)
+        {
+            if (value == BargeInReason.NO_BARGE_IN)
+                return "noBargeIn";
+
+            if (value == BargeInReason.BARGE_IN_BY_DTMF)
+                return "bargeInByDTMF";
+
+            if (value == BargeInReason.BARGE_IN_BY_ENERGY)
+                return "bargeInByEnergy";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="BargeInReason"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class BargeInReasonJsonConverter : JsonConverter<BargeInReason>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override BargeInReason Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            BargeInReason? result = rawValue == null
+                ? null
+                : BargeInReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the BargeInReason to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="bargeInReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, BargeInReason bargeInReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(bargeInReason.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="BargeInReason"/>
+    /// </summary>
+    public class BargeInReasonNullableJsonConverter : JsonConverter<BargeInReason?>
+    {
+        /// <summary>
+        /// Returns a BargeInReason from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override BargeInReason? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            BargeInReason? result = rawValue == null
+                ? null
+                : BargeInReasonValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="bargeInReason"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, BargeInReason? bargeInReason, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(bargeInReason?.ToString() ?? "null");
+        }
     }
 
 }

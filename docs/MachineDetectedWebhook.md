@@ -17,5 +17,5 @@ Name | Type | Description | Notes
 **ParentCallId** | **string** | Call ID of the leg which initiated the OutDial. | [optional] 
 **MachineType** | **MachineType** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

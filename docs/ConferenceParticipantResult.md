@@ -16,5 +16,5 @@ Name | Type | Description | Notes
 **DtmfPassThrough** | **bool?** | True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise. | [optional] 
 **StartConfOnEnter** | **bool?** | True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

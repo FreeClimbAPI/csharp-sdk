@@ -32,32 +32,177 @@ namespace freeclimb.Enums
     /// The status of the Conference. One of: creating, empty, populated, inProgress, or terminated.
     /// </summary>
     /// <value>The status of the Conference. One of: creating, empty, populated, inProgress, or terminated.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum ConferenceStatus
     {
         /// <summary>
         /// Enum EMPTY for value: empty
         /// </summary>
-        [EnumMember(Value = "empty")]
         EMPTY = 1,
 
         /// <summary>
         /// Enum POPULATED for value: populated
         /// </summary>
-        [EnumMember(Value = "populated")]
         POPULATED = 2,
 
         /// <summary>
         /// Enum IN_PROGRESS for value: inProgress
         /// </summary>
-        [EnumMember(Value = "inProgress")]
         IN_PROGRESS = 3,
 
         /// <summary>
         /// Enum TERMINATED for value: terminated
         /// </summary>
-        [EnumMember(Value = "terminated")]
         TERMINATED = 4
+    }
+
+    /// <summary>
+    /// Converts <see cref="ConferenceStatus"/> to and from the JSON value
+    /// </summary>
+    public static class ConferenceStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="ConferenceStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ConferenceStatus FromString(string value)
+        {
+            if (value.Equals("empty"))
+                return ConferenceStatus.EMPTY;
+
+            if (value.Equals("populated"))
+                return ConferenceStatus.POPULATED;
+
+            if (value.Equals("inProgress"))
+                return ConferenceStatus.IN_PROGRESS;
+
+            if (value.Equals("terminated"))
+                return ConferenceStatus.TERMINATED;
+
+            throw new NotImplementedException($"Could not convert value to type ConferenceStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="ConferenceStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ConferenceStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("empty"))
+                return ConferenceStatus.EMPTY;
+
+            if (value.Equals("populated"))
+                return ConferenceStatus.POPULATED;
+
+            if (value.Equals("inProgress"))
+                return ConferenceStatus.IN_PROGRESS;
+
+            if (value.Equals("terminated"))
+                return ConferenceStatus.TERMINATED;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Converts the <see cref="ConferenceStatus"/> to the json value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static string ToJsonValue(ConferenceStatus value)
+        {
+            if (value == ConferenceStatus.EMPTY)
+                return "empty";
+
+            if (value == ConferenceStatus.POPULATED)
+                return "populated";
+
+            if (value == ConferenceStatus.IN_PROGRESS)
+                return "inProgress";
+
+            if (value == ConferenceStatus.TERMINATED)
+                return "terminated";
+
+            throw new NotImplementedException($"Value could not be handled: '{value}'");
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="ConferenceStatus"/>
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    public class ConferenceStatusJsonConverter : JsonConverter<ConferenceStatus>
+    {
+        /// <summary>
+        /// Returns a  from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override ConferenceStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            ConferenceStatus? result = rawValue == null
+                ? null
+                : ConferenceStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the ConferenceStatus to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="conferenceStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, ConferenceStatus conferenceStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(conferenceStatus.ToString());
+        }
+    }
+
+    /// <summary>
+    /// A Json converter for type <see cref="ConferenceStatus"/>
+    /// </summary>
+    public class ConferenceStatusNullableJsonConverter : JsonConverter<ConferenceStatus?>
+    {
+        /// <summary>
+        /// Returns a ConferenceStatus from the Json object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="typeToConvert"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public override ConferenceStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string? rawValue = reader.GetString();
+
+            ConferenceStatus? result = rawValue == null
+                ? null
+                : ConferenceStatusValueConverter.FromStringOrDefault(rawValue);
+
+            if (result != null)
+                return result.Value;
+
+            throw new JsonException();
+        }
+
+        /// <summary>
+        /// Writes the DateTime to the json writer
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="conferenceStatus"></param>
+        /// <param name="options"></param>
+        public override void Write(Utf8JsonWriter writer, ConferenceStatus? conferenceStatus, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(conferenceStatus?.ToString() ?? "null");
+        }
     }
 
 }
