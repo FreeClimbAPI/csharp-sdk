@@ -2053,8 +2053,12 @@ namespace freeclimb.Test.Api
         
         private string directionTestValue() { return "outbound"; }
 
+        private K parseEnum<K, T>(ref T typ) {
+            return (K)Enum.Parse(typeof(K), typ, out K);
+        }
+
         private MessageDirection directionTestEnum() { 
-            return (MessageDirection)Enum.Parse(typeof(MessageDirection), "outbound");
+            return parseEnum<MessageDirection, string>("outbound");
         }
 
         private MessagesList messagesListTestValue()
