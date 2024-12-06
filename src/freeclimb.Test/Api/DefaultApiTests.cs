@@ -2054,7 +2054,7 @@ namespace freeclimb.Test.Api
         private string directionTestValue() { return "outbound"; }
 
         private MessageDirection directionTestEnum() { 
-            MessageDirection messageDirection = "outbound";
+            MessageDirection messageDirection = (MessageDirection)Enum.Parse<MessageDirection>("outbound");
             return messageDirection;
         }
 
