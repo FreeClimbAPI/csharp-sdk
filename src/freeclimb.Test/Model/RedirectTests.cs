@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public RedirectTests()
         {
-            instance = new Redirect();
+            instance = new Redirect(
+                actionUrl=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -64,6 +66,15 @@ namespace freeclimb.Test.Model
             
             instance.ActionUrl = "TEST_STRING";
             Assert.Equal(instance.ActionUrl, "TEST_STRING");
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

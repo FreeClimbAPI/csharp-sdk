@@ -38,7 +38,25 @@ namespace freeclimb.Test.Model
 
         public RecordWebhookTests()
         {
-            instance = new RecordWebhook();
+            instance = new RecordWebhook(
+                requestType=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                callStatus=getTestValue<CallStatus>(),
+                direction=getTestValue<CallDirection>(),
+                conferenceId=getTestValue<string>(),
+                queueId=getTestValue<string>(),
+                recordingId=getTestValue<string>(),
+                recordingUrl=getTestValue<string>(),
+                recordingSize=getTestValue<string>(),
+                recordingFormat=getTestValue<string>(),
+                recordingDurationSec=getTestValue<int>(),
+                termReason=getTestValue<RecordUtteranceTermReason>(),
+                parentCallId=getTestValue<string>(),
+                privacyMode=getTestValue<bool>()
+            );
         }
 
         public void Dispose()
@@ -262,6 +280,15 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.Equal(instance.PrivacyMode, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

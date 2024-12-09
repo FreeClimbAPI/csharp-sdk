@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public FilterLogsRequestTests()
         {
-            instance = new FilterLogsRequest();
+            instance = new FilterLogsRequest(
+                pql=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -64,6 +66,15 @@ namespace freeclimb.Test.Model
             instance.Pql = "TEST_STRING";
             Assert.Equal(instance.Pql, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

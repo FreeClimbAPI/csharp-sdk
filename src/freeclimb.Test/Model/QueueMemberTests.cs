@@ -38,7 +38,13 @@ namespace freeclimb.Test.Model
 
         public QueueMemberTests()
         {
-            instance = new QueueMember();
+            instance = new QueueMember(
+                uri=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                waitTime=getTestValue<int?>(),
+                position=getTestValue<int?>(),
+                dateEnqueued=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -108,6 +114,15 @@ namespace freeclimb.Test.Model
             instance.DateEnqueued = "TEST_STRING";
             Assert.Equal(instance.DateEnqueued, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

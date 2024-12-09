@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public UpdateCallRequestTests()
         {
-            instance = new UpdateCallRequest();
+            instance = new UpdateCallRequest(
+                status=getTestValue<UpdateCallRequestStatus>()
+            );
         }
 
         public void Dispose()
@@ -66,6 +68,15 @@ namespace freeclimb.Test.Model
             instance.Status = UpdateCallRequestStatus.COMPLETED;
             Assert.Equal(instance.Status, UpdateCallRequestStatus.COMPLETED);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

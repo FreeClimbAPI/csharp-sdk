@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public SMSTenDLCBrandEntityTypeTests()
         {
-            instance = new SMSTenDLCBrandEntityType();
+            instance = new SMSTenDLCBrandEntityType(
+            );
         }
 
         public void Dispose()
@@ -173,6 +174,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "SOLE_PROPRIETOR";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

@@ -38,7 +38,31 @@ namespace freeclimb.Test.Model
 
         public TranscribeWebhookTests()
         {
-            instance = new TranscribeWebhook();
+            instance = new TranscribeWebhook(
+                requestType=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                recordingId=getTestValue<string>(),
+                recordingUrl=getTestValue<string>(),
+                recordingSize=getTestValue<int>(),
+                recordingFormat=getTestValue<string>(),
+                recordingDurationMs=getTestValue<int>(),
+                termReason=getTestValue<TranscribeTermReason>(),
+                recordTermReason=getTestValue<RecordUtteranceTermReason>(),
+                digit=getTestValue<string>(),
+                privacyForLogging=getTestValue<bool>(),
+                privacyForRecording=getTestValue<bool>(),
+                bargeInReason=getTestValue<BargeInReason>(),
+                bargedInPromptNo=getTestValue<int>(),
+                bargedInPromptMs=getTestValue<int>(),
+                bargedInPromptLoopNo=getTestValue<int>(),
+                bargeInTimeMs=getTestValue<int>(),
+                transcript=getTestValue<string>(),
+                transcribeReason=getTestValue<TranscribeReason>(),
+                transcriptionDurationMs=getTestValue<int>()
+            );
         }
 
         public void Dispose()
@@ -324,6 +348,15 @@ namespace freeclimb.Test.Model
             
             instance.TranscriptionDurationMs = 1;
             Assert.Equal((int) instance.TranscriptionDurationMs, 1);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

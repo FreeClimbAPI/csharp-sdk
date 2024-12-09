@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public WebhookTests()
         {
-            instance = new Webhook();
+            instance = new Webhook(
+                requestType=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -269,6 +271,15 @@ namespace freeclimb.Test.Model
         public void RequestTypeTest()
         {
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

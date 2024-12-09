@@ -38,7 +38,13 @@ namespace freeclimb.Test.Model
 
         public CapabilitiesTests()
         {
-            instance = new Capabilities();
+            instance = new Capabilities(
+                voice=getTestValue<bool?>(),
+                sms=getTestValue<bool?>(),
+                tollFree=getTestValue<bool?>(),
+                tenDLC=getTestValue<bool?>(),
+                shortCode=getTestValue<bool?>()
+            );
         }
 
         public void Dispose()
@@ -108,6 +114,15 @@ namespace freeclimb.Test.Model
             instance.ShortCode = false;
             Assert.Equal(instance.ShortCode, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

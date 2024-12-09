@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public SetListenTests()
         {
-            instance = new SetListen();
+            instance = new SetListen(
+                listen=getTestValue<bool>()
+            );
         }
 
         public void Dispose()
@@ -64,6 +66,15 @@ namespace freeclimb.Test.Model
             instance.Listen = false;
             Assert.Equal(instance.Listen, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

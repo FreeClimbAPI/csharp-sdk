@@ -38,7 +38,19 @@ namespace freeclimb.Test.Model
 
         public ConferenceParticipantResultTests()
         {
-            instance = new ConferenceParticipantResult();
+            instance = new ConferenceParticipantResult(
+                uri=getTestValue<string>(),
+                dateCreated=getTestValue<string>(),
+                dateUpdated=getTestValue<string>(),
+                revision=getTestValue<int>(),
+                accountId=getTestValue<string>(),
+                conferenceId=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                talk=getTestValue<bool?>(),
+                listen=getTestValue<bool?>(),
+                dtmfPassThrough=getTestValue<bool?>(),
+                startConfOnEnter=getTestValue<bool?>()
+            );
         }
 
         public void Dispose()
@@ -174,6 +186,15 @@ namespace freeclimb.Test.Model
             instance.StartConfOnEnter = false;
             Assert.Equal(instance.StartConfOnEnter, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

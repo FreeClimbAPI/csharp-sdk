@@ -38,7 +38,28 @@ namespace freeclimb.Test.Model
 
         public CallResultTests()
         {
-            instance = new CallResult();
+            instance = new CallResult(
+                uri=getTestValue<string>(),
+                dateCreated=getTestValue<string>(),
+                dateUpdated=getTestValue<string>(),
+                revision=getTestValue<int>(),
+                callId=getTestValue<string>(),
+                parentCallId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                phoneNumberId=getTestValue<string>(),
+                callStatus=getTestValue<CallStatus>(),
+                startTime=getTestValue<string>(),
+                connectTime=getTestValue<string>(),
+                endTime=getTestValue<string>(),
+                duration=getTestValue<int?>(),
+                connectDuration=getTestValue<int?>(),
+                direction=getTestValue<CallDirection>(),
+                answeredBy=getTestValue<AnsweredBy>(),
+                subresourceUris=getTestValue<Object>(),
+                applicationId=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -294,6 +315,15 @@ namespace freeclimb.Test.Model
             instance.ApplicationId = "TEST_STRING";
             Assert.Equal(instance.ApplicationId, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

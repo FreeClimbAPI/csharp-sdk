@@ -38,7 +38,15 @@ namespace freeclimb.Test.Model
 
         public SMSTollFreeCampaignTests()
         {
-            instance = new SMSTollFreeCampaign();
+            instance = new SMSTollFreeCampaign(
+                accountId=getTestValue<string>(),
+                campaignId=getTestValue<string>(),
+                useCase=getTestValue<string>(),
+                registrationStatus=getTestValue<SMSTollFreeCampaignRegistrationStatus>(),
+                dateCreated=getTestValue<string>(),
+                dateUpdated=getTestValue<string>(),
+                revision=getTestValue<int>()
+            );
         }
 
         public void Dispose()
@@ -138,6 +146,15 @@ namespace freeclimb.Test.Model
             
             instance.Revision = 1;
             Assert.Equal((int) instance.Revision, 1);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

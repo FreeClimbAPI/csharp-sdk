@@ -38,7 +38,18 @@ namespace freeclimb.Test.Model
 
         public AddToConferenceTests()
         {
-            instance = new AddToConference();
+            instance = new AddToConference(
+                allowCallControl=getTestValue<bool>(),
+                callControlSequence=getTestValue<string>(),
+                callControlUrl=getTestValue<string>(),
+                conferenceId=getTestValue<string>(),
+                leaveConferenceUrl=getTestValue<string>(),
+                listen=getTestValue<bool>(),
+                notificationUrl=getTestValue<string>(),
+                startConfOnEnter=getTestValue<bool>(),
+                talk=getTestValue<bool>(),
+                dtmfPassThrough=getTestValue<bool>()
+            );
         }
 
         public void Dispose()
@@ -163,6 +174,15 @@ namespace freeclimb.Test.Model
             instance.DtmfPassThrough = false;
             Assert.Equal(instance.DtmfPassThrough, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

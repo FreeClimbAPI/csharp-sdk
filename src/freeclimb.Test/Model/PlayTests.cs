@@ -38,7 +38,11 @@ namespace freeclimb.Test.Model
 
         public PlayTests()
         {
-            instance = new Play();
+            instance = new Play(
+                file=getTestValue<string>(),
+                loop=getTestValue<int>(),
+                privacyMode=getTestValue<bool>()
+            );
         }
 
         public void Dispose()
@@ -86,6 +90,15 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.Equal(instance.PrivacyMode, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

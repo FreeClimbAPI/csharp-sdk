@@ -38,7 +38,15 @@ namespace freeclimb.Test.Model
 
         public ApplicationRequestTests()
         {
-            instance = new ApplicationRequest();
+            instance = new ApplicationRequest(
+                alias=getTestValue<string>(),
+                voiceUrl=getTestValue<string>(),
+                voiceFallbackUrl=getTestValue<string>(),
+                callConnectUrl=getTestValue<string>(),
+                statusCallbackUrl=getTestValue<string>(),
+                smsUrl=getTestValue<string>(),
+                smsFallbackUrl=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -130,6 +138,15 @@ namespace freeclimb.Test.Model
             instance.SmsFallbackUrl = "TEST_STRING";
             Assert.Equal(instance.SmsFallbackUrl, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

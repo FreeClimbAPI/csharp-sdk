@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public AccountTypeTests()
         {
-            instance = new AccountType();
+            instance = new AccountType(
+            );
         }
 
         public void Dispose()
@@ -101,6 +102,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "FULL";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

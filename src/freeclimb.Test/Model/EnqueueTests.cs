@@ -38,7 +38,12 @@ namespace freeclimb.Test.Model
 
         public EnqueueTests()
         {
-            instance = new Enqueue();
+            instance = new Enqueue(
+                actionUrl=getTestValue<string>(),
+                notificationUrl=getTestValue<string>(),
+                queueId=getTestValue<string>(),
+                waitUrl=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -97,6 +102,15 @@ namespace freeclimb.Test.Model
             instance.WaitUrl = "TEST_STRING";
             Assert.Equal(instance.WaitUrl, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

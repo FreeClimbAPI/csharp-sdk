@@ -38,7 +38,8 @@ namespace freeclimb.Test.Model
 
         public TerminateConferenceTests()
         {
-            instance = new TerminateConference();
+            instance = new TerminateConference(
+            );
         }
 
         public void Dispose()
@@ -53,6 +54,15 @@ namespace freeclimb.Test.Model
         public void TerminateConferenceInstanceTest()
         {
             Assert.IsType<TerminateConference>(instance);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

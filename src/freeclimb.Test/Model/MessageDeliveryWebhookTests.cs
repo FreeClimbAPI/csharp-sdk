@@ -38,7 +38,18 @@ namespace freeclimb.Test.Model
 
         public MessageDeliveryWebhookTests()
         {
-            instance = new MessageDeliveryWebhook();
+            instance = new MessageDeliveryWebhook(
+                requestType=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                text=getTestValue<string>(),
+                direction=getTestValue<string>(),
+                applicationId=getTestValue<string>(),
+                status=getTestValue<string>(),
+                phoneNumberId=getTestValue<string>(),
+                uri=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -161,6 +172,15 @@ namespace freeclimb.Test.Model
             instance.Uri = "TEST_STRING";
             Assert.Equal(instance.Uri, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

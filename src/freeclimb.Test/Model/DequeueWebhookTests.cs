@@ -38,7 +38,19 @@ namespace freeclimb.Test.Model
 
         public DequeueWebhookTests()
         {
-            instance = new DequeueWebhook();
+            instance = new DequeueWebhook(
+                requestType=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                callStatus=getTestValue<CallStatus>(),
+                direction=getTestValue<CallDirection>(),
+                conferenceId=getTestValue<string>(),
+                queueId=getTestValue<string>(),
+                queueResult=getTestValue<string>(),
+                queueTime=getTestValue<int?>()
+            );
         }
 
         public void Dispose()
@@ -190,6 +202,15 @@ namespace freeclimb.Test.Model
             
             instance.QueueTime = 1;
             Assert.Equal((int) instance.QueueTime, 1);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

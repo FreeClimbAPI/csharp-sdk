@@ -38,7 +38,21 @@ namespace freeclimb.Test.Model
 
         public ApplicationResultTests()
         {
-            instance = new ApplicationResult();
+            instance = new ApplicationResult(
+                uri=getTestValue<string>(),
+                dateCreated=getTestValue<string>(),
+                dateUpdated=getTestValue<string>(),
+                revision=getTestValue<int>(),
+                accountId=getTestValue<string>(),
+                applicationId=getTestValue<string>(),
+                alias=getTestValue<string>(),
+                voiceUrl=getTestValue<string>(),
+                voiceFallbackUrl=getTestValue<string>(),
+                callConnectUrl=getTestValue<string>(),
+                statusCallbackUrl=getTestValue<string>(),
+                smsUrl=getTestValue<string>(),
+                smsFallbackUrl=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -196,6 +210,15 @@ namespace freeclimb.Test.Model
             instance.SmsFallbackUrl = "TEST_STRING";
             Assert.Equal(instance.SmsFallbackUrl, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

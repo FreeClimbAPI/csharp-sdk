@@ -38,7 +38,15 @@ namespace freeclimb.Test.Model
 
         public AvailableNumberTests()
         {
-            instance = new AvailableNumber();
+            instance = new AvailableNumber(
+                capabilities=getTestValue<Capabilities>(),
+                campaignId=getTestValue<string>(),
+                phoneNumber=getTestValue<string>(),
+                voiceEnabled=getTestValue<bool?>(),
+                smsEnabled=getTestValue<bool?>(),
+                region=getTestValue<string>(),
+                country=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -131,6 +139,15 @@ namespace freeclimb.Test.Model
             instance.Country = "TEST_STRING";
             Assert.Equal(instance.Country, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

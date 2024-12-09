@@ -38,7 +38,11 @@ namespace freeclimb.Test.Model
 
         public BuyIncomingNumberRequestTests()
         {
-            instance = new BuyIncomingNumberRequest();
+            instance = new BuyIncomingNumberRequest(
+                phoneNumber=getTestValue<string>(),
+                alias=getTestValue<string>(),
+                applicationId=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -86,6 +90,15 @@ namespace freeclimb.Test.Model
             instance.ApplicationId = "TEST_STRING";
             Assert.Equal(instance.ApplicationId, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

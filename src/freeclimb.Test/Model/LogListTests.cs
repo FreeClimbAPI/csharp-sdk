@@ -38,7 +38,16 @@ namespace freeclimb.Test.Model
 
         public LogListTests()
         {
-            instance = new LogList();
+            instance = new LogList(
+                total=getTestValue<int?>(),
+                start=getTestValue<int?>(),
+                end=getTestValue<int?>(),
+                page=getTestValue<int?>(),
+                numPages=getTestValue<int?>(),
+                pageSize=getTestValue<int?>(),
+                nextPageUri=getTestValue<string>(),
+                logs=getTestValue<List<LogResult>>()
+            );
         }
 
         public void Dispose()
@@ -142,6 +151,15 @@ namespace freeclimb.Test.Model
             List<LogResult> testList = new List<LogResult>();
             instance.Logs = testList;
             Assert.Equal(instance.Logs, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

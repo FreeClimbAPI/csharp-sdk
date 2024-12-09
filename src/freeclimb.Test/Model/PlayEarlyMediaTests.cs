@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public PlayEarlyMediaTests()
         {
-            instance = new PlayEarlyMedia();
+            instance = new PlayEarlyMedia(
+                file=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -64,6 +66,15 @@ namespace freeclimb.Test.Model
             instance.File = "TEST_STRING";
             Assert.Equal(instance.File, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

@@ -38,7 +38,11 @@ namespace freeclimb.Test.Model
 
         public ParkTests()
         {
-            instance = new Park();
+            instance = new Park(
+                waitUrl=getTestValue<string>(),
+                actionUrl=getTestValue<string>(),
+                notificationUrl=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -86,6 +90,15 @@ namespace freeclimb.Test.Model
             instance.NotificationUrl = "TEST_STRING";
             Assert.Equal(instance.NotificationUrl, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

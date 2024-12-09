@@ -38,7 +38,14 @@ namespace freeclimb.Test.Model
 
         public TranscribeUtteranceTests()
         {
-            instance = new TranscribeUtterance();
+            instance = new TranscribeUtterance(
+                actionUrl=getTestValue<string>(),
+                playBeep=getTestValue<bool>(),
+                record=getTestValue<TranscribeUtteranceRecord>(),
+                privacyForLogging=getTestValue<bool>(),
+                privacyForRecording=getTestValue<bool>(),
+                prompts=getTestValue<List<PerclCommand>>()
+            );
         }
 
         public void Dispose()
@@ -121,6 +128,15 @@ namespace freeclimb.Test.Model
             List<PerclCommand> testList = new List<PerclCommand>();
             instance.Prompts = testList;
             Assert.Equal(instance.Prompts, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

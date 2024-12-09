@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public HangupTests()
         {
-            instance = new Hangup();
+            instance = new Hangup(
+                reason=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -64,6 +66,15 @@ namespace freeclimb.Test.Model
             instance.Reason = "TEST_STRING";
             Assert.Equal(instance.Reason, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

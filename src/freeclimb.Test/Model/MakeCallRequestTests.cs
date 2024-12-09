@@ -38,7 +38,18 @@ namespace freeclimb.Test.Model
 
         public MakeCallRequestTests()
         {
-            instance = new MakeCallRequest();
+            instance = new MakeCallRequest(
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                applicationId=getTestValue<string>(),
+                sendDigits=getTestValue<string>(),
+                ifMachine=getTestValue<string>(),
+                ifMachineUrl=getTestValue<string>(),
+                timeout=getTestValue<int>(),
+                parentCallId=getTestValue<string>(),
+                privacyMode=getTestValue<bool>(),
+                callConnectUrl=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -163,6 +174,15 @@ namespace freeclimb.Test.Model
             instance.CallConnectUrl = "TEST_STRING";
             Assert.Equal(instance.CallConnectUrl, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

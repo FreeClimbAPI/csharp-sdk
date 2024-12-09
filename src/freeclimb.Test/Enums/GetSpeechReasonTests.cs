@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public GetSpeechReasonTests()
         {
-            instance = new GetSpeechReason();
+            instance = new GetSpeechReason(
+            );
         }
 
         public void Dispose()
@@ -197,6 +198,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "RECOGNITION";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

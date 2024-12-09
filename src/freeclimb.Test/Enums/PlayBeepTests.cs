@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public PlayBeepTests()
         {
-            instance = new PlayBeep();
+            instance = new PlayBeep(
+            );
         }
 
         public void Dispose()
@@ -149,6 +150,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "EXIT_ONLY";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

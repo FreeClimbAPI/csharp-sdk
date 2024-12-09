@@ -38,7 +38,12 @@ namespace freeclimb.Test.Model
 
         public SmsTests()
         {
-            instance = new Sms();
+            instance = new Sms(
+                to=getTestValue<string>(),
+                from=getTestValue<string>(),
+                text=getTestValue<string>(),
+                notificationUrl=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -97,6 +102,15 @@ namespace freeclimb.Test.Model
             instance.NotificationUrl = "TEST_STRING";
             Assert.Equal(instance.NotificationUrl, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

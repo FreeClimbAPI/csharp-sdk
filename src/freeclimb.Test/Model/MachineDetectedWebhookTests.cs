@@ -38,7 +38,19 @@ namespace freeclimb.Test.Model
 
         public MachineDetectedWebhookTests()
         {
-            instance = new MachineDetectedWebhook();
+            instance = new MachineDetectedWebhook(
+                requestType=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                callStatus=getTestValue<CallStatus>(),
+                direction=getTestValue<CallDirection>(),
+                conferenceId=getTestValue<string>(),
+                queueId=getTestValue<string>(),
+                parentCallId=getTestValue<string>(),
+                machineType=getTestValue<MachineType>()
+            );
         }
 
         public void Dispose()
@@ -192,6 +204,15 @@ namespace freeclimb.Test.Model
             instance.MachineType = MachineType.FAX_MODEM;
             Assert.Equal(instance.MachineType, MachineType.FAX_MODEM);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

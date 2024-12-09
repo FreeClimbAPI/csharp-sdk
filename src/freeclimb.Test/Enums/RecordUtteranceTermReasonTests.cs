@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public RecordUtteranceTermReasonTests()
         {
-            instance = new RecordUtteranceTermReason();
+            instance = new RecordUtteranceTermReason(
+            );
         }
 
         public void Dispose()
@@ -149,6 +150,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "MAX_LENGTH";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

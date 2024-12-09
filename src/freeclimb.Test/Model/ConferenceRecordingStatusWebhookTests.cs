@@ -38,7 +38,21 @@ namespace freeclimb.Test.Model
 
         public ConferenceRecordingStatusWebhookTests()
         {
-            instance = new ConferenceRecordingStatusWebhook();
+            instance = new ConferenceRecordingStatusWebhook(
+                requestType=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                callStatus=getTestValue<CallStatus>(),
+                direction=getTestValue<CallDirection>(),
+                conferenceId=getTestValue<string>(),
+                queueId=getTestValue<string>(),
+                status=getTestValue<ConferenceStatus>(),
+                recordingUrl=getTestValue<string>(),
+                recordingId=getTestValue<string>(),
+                recordingDurationSec=getTestValue<int>()
+            );
         }
 
         public void Dispose()
@@ -218,6 +232,15 @@ namespace freeclimb.Test.Model
             
             instance.RecordingDurationSec = 1;
             Assert.Equal((int) instance.RecordingDurationSec, 1);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

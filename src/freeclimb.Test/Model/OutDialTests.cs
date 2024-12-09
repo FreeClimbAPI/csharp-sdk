@@ -38,7 +38,18 @@ namespace freeclimb.Test.Model
 
         public OutDialTests()
         {
-            instance = new OutDial();
+            instance = new OutDial(
+                actionUrl=getTestValue<string>(),
+                callConnectUrl=getTestValue<string>(),
+                callingNumber=getTestValue<string>(),
+                destination=getTestValue<string>(),
+                ifMachine=getTestValue<IfMachine>(),
+                ifMachineUrl=getTestValue<string>(),
+                sendDigits=getTestValue<string>(),
+                statusCallbackUrl=getTestValue<string>(),
+                timeout=getTestValue<int>(),
+                privacyMode=getTestValue<bool>()
+            );
         }
 
         public void Dispose()
@@ -165,6 +176,15 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.Equal(instance.PrivacyMode, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

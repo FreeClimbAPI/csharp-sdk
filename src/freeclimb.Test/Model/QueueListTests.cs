@@ -38,7 +38,16 @@ namespace freeclimb.Test.Model
 
         public QueueListTests()
         {
-            instance = new QueueList();
+            instance = new QueueList(
+                total=getTestValue<int?>(),
+                start=getTestValue<int?>(),
+                end=getTestValue<int?>(),
+                page=getTestValue<int?>(),
+                numPages=getTestValue<int?>(),
+                pageSize=getTestValue<int?>(),
+                nextPageUri=getTestValue<string>(),
+                queues=getTestValue<List<QueueResult>>()
+            );
         }
 
         public void Dispose()
@@ -142,6 +151,15 @@ namespace freeclimb.Test.Model
             List<QueueResult> testList = new List<QueueResult>();
             instance.Queues = testList;
             Assert.Equal(instance.Queues, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public PerclCommandTests()
         {
-            instance = new PerclCommand();
+            instance = new PerclCommand(
+                command=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -296,6 +298,15 @@ namespace freeclimb.Test.Model
         public void CommandTest()
         {
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

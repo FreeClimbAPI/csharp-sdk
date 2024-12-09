@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public SMSTenDLCCampaignStatusTests()
         {
-            instance = new SMSTenDLCCampaignStatus();
+            instance = new SMSTenDLCCampaignStatus(
+            );
         }
 
         public void Dispose()
@@ -101,6 +102,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "EXPIRED";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

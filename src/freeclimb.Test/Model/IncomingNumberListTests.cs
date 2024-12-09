@@ -38,7 +38,16 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberListTests()
         {
-            instance = new IncomingNumberList();
+            instance = new IncomingNumberList(
+                total=getTestValue<int?>(),
+                start=getTestValue<int?>(),
+                end=getTestValue<int?>(),
+                page=getTestValue<int?>(),
+                numPages=getTestValue<int?>(),
+                pageSize=getTestValue<int?>(),
+                nextPageUri=getTestValue<string>(),
+                incomingPhoneNumbers=getTestValue<List<IncomingNumberResult>>()
+            );
         }
 
         public void Dispose()
@@ -142,6 +151,15 @@ namespace freeclimb.Test.Model
             List<IncomingNumberResult> testList = new List<IncomingNumberResult>();
             instance.IncomingPhoneNumbers = testList;
             Assert.Equal(instance.IncomingPhoneNumbers, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

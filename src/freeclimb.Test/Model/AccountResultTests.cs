@@ -38,7 +38,19 @@ namespace freeclimb.Test.Model
 
         public AccountResultTests()
         {
-            instance = new AccountResult();
+            instance = new AccountResult(
+                uri=getTestValue<string>(),
+                dateCreated=getTestValue<string>(),
+                dateUpdated=getTestValue<string>(),
+                revision=getTestValue<int>(),
+                accountId=getTestValue<string>(),
+                apiKey=getTestValue<string>(),
+                alias=getTestValue<string>(),
+                label=getTestValue<string>(),
+                type=getTestValue<AccountType>(),
+                status=getTestValue<AccountStatus>(),
+                subresourceUris=getTestValue<Object>()
+            );
         }
 
         public void Dispose()
@@ -181,6 +193,15 @@ namespace freeclimb.Test.Model
             instance.SubresourceUris = testObject;
             Assert.Equal(instance.SubresourceUris, testObject);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

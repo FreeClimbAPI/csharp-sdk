@@ -38,7 +38,15 @@ namespace freeclimb.Test.Model
 
         public LogResultTests()
         {
-            instance = new LogResult();
+            instance = new LogResult(
+                timestamp=getTestValue<int?>(),
+                level=getTestValue<LogLevel>(),
+                requestId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                message=getTestValue<string>(),
+                metadata=getTestValue<Object>()
+            );
         }
 
         public void Dispose()
@@ -135,6 +143,15 @@ namespace freeclimb.Test.Model
             instance.Metadata = testObject;
             Assert.Equal(instance.Metadata, testObject);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

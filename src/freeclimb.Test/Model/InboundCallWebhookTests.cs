@@ -38,7 +38,18 @@ namespace freeclimb.Test.Model
 
         public InboundCallWebhookTests()
         {
-            instance = new InboundCallWebhook();
+            instance = new InboundCallWebhook(
+                requestType=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                callStatus=getTestValue<CallStatus>(),
+                direction=getTestValue<CallDirection>(),
+                conferenceId=getTestValue<string>(),
+                queueId=getTestValue<string>(),
+                parentCallId=getTestValue<Object>()
+            );
         }
 
         public void Dispose()
@@ -177,6 +188,15 @@ namespace freeclimb.Test.Model
         public void ParentCallIdTest()
         {
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

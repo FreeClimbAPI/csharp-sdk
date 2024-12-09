@@ -38,7 +38,25 @@ namespace freeclimb.Test.Model
 
         public GetSpeechWebhookTests()
         {
-            instance = new GetSpeechWebhook();
+            instance = new GetSpeechWebhook(
+                requestType=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                callStatus=getTestValue<CallStatus>(),
+                direction=getTestValue<CallDirection>(),
+                conferenceId=getTestValue<string>(),
+                queueId=getTestValue<string>(),
+                reason=getTestValue<GetSpeechReason>(),
+                recognitionResult=getTestValue<string>(),
+                confidence=getTestValue<int>(),
+                parentCallId=getTestValue<string>(),
+                completionReason=getTestValue<string>(),
+                completionCause=getTestValue<string>(),
+                mrcpCode=getTestValue<int>(),
+                mrcpDiagnostic=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -266,6 +284,15 @@ namespace freeclimb.Test.Model
             instance.MrcpDiagnostic = "TEST_STRING";
             Assert.Equal(instance.MrcpDiagnostic, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

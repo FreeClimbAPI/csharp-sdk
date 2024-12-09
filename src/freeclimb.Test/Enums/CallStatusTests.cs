@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public CallStatusTests()
         {
-            instance = new CallStatus();
+            instance = new CallStatus(
+            );
         }
 
         public void Dispose()
@@ -245,6 +246,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "NO_ANSWER";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

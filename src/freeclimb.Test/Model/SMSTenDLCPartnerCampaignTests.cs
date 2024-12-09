@@ -38,7 +38,37 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignTests()
         {
-            instance = new SMSTenDLCPartnerCampaign();
+            instance = new SMSTenDLCPartnerCampaign(
+                accountId=getTestValue<string>(),
+                campaignId=getTestValue<string>(),
+                status=getTestValue<SMSTenDLCPartnerCampaignStatus>(),
+                createDate=getTestValue<DateTime>(),
+                brandId=getTestValue<string>(),
+                usecase=getTestValue<string>(),
+                description=getTestValue<string>(),
+                embeddedLink=getTestValue<bool>(),
+                embeddedPhone=getTestValue<bool>(),
+                affiliateMarketing=getTestValue<bool>(),
+                numberPool=getTestValue<bool>(),
+                ageGated=getTestValue<bool>(),
+                directLending=getTestValue<bool>(),
+                subscriberOptin=getTestValue<bool>(),
+                subscriberOptout=getTestValue<bool>(),
+                subscriberHelp=getTestValue<bool>(),
+                sample1=getTestValue<string>(),
+                sample2=getTestValue<string>(),
+                sample3=getTestValue<string>(),
+                sample4=getTestValue<string>(),
+                sample5=getTestValue<string>(),
+                messageFlow=getTestValue<string>(),
+                helpMessage=getTestValue<string>(),
+                optinKeywords=getTestValue<string>(),
+                optoutKeywords=getTestValue<string>(),
+                helpKeywords=getTestValue<string>(),
+                optinMessage=getTestValue<string>(),
+                optoutMessage=getTestValue<string>(),
+                brand=getTestValue<SMSTenDLCPartnerCampaignBrand>()
+            );
         }
 
         public void Dispose()
@@ -375,6 +405,15 @@ namespace freeclimb.Test.Model
             instance.Brand = testObject;
             Assert.Equal(instance.Brand, testObject);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

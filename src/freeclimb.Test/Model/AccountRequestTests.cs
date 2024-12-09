@@ -38,7 +38,10 @@ namespace freeclimb.Test.Model
 
         public AccountRequestTests()
         {
-            instance = new AccountRequest();
+            instance = new AccountRequest(
+                alias=getTestValue<string>(),
+                label=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -75,6 +78,15 @@ namespace freeclimb.Test.Model
             instance.Label = "TEST_STRING";
             Assert.Equal(instance.Label, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

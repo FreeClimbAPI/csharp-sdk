@@ -38,7 +38,13 @@ namespace freeclimb.Test.Model
 
         public CallControlWebhookTests()
         {
-            instance = new CallControlWebhook();
+            instance = new CallControlWebhook(
+                requestType=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                conferenceId=getTestValue<string>(),
+                digits=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -106,6 +112,15 @@ namespace freeclimb.Test.Model
             instance.Digits = "TEST_STRING";
             Assert.Equal(instance.Digits, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

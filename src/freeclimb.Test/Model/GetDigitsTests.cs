@@ -38,7 +38,17 @@ namespace freeclimb.Test.Model
 
         public GetDigitsTests()
         {
-            instance = new GetDigits();
+            instance = new GetDigits(
+                actionUrl=getTestValue<string>(),
+                digitTimeoutMs=getTestValue<int>(),
+                finishOnKey=getTestValue<string>(),
+                flushBuffer=getTestValue<bool>(),
+                initialTimeoutMs=getTestValue<int>(),
+                maxDigits=getTestValue<int>(),
+                minDigits=getTestValue<int>(),
+                prompts=getTestValue<List<PerclCommand>>(),
+                privacyMode=getTestValue<bool>()
+            );
         }
 
         public void Dispose()
@@ -153,6 +163,15 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.Equal(instance.PrivacyMode, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

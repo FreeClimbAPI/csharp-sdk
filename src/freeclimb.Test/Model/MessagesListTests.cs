@@ -38,7 +38,16 @@ namespace freeclimb.Test.Model
 
         public MessagesListTests()
         {
-            instance = new MessagesList();
+            instance = new MessagesList(
+                total=getTestValue<int?>(),
+                start=getTestValue<int?>(),
+                end=getTestValue<int?>(),
+                page=getTestValue<int?>(),
+                numPages=getTestValue<int?>(),
+                pageSize=getTestValue<int?>(),
+                nextPageUri=getTestValue<string>(),
+                messages=getTestValue<List<MessageResult>>()
+            );
         }
 
         public void Dispose()
@@ -142,6 +151,15 @@ namespace freeclimb.Test.Model
             List<MessageResult> testList = new List<MessageResult>();
             instance.Messages = testList;
             Assert.Equal(instance.Messages, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

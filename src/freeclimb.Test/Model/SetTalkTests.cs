@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public SetTalkTests()
         {
-            instance = new SetTalk();
+            instance = new SetTalk(
+                talk=getTestValue<bool>()
+            );
         }
 
         public void Dispose()
@@ -64,6 +66,15 @@ namespace freeclimb.Test.Model
             instance.Talk = false;
             Assert.Equal(instance.Talk, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

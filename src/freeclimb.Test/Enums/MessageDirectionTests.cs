@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public MessageDirectionTests()
         {
-            instance = new MessageDirection();
+            instance = new MessageDirection(
+            );
         }
 
         public void Dispose()
@@ -101,6 +102,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "OUTBOUND";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

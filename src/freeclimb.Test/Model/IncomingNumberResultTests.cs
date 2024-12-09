@@ -38,7 +38,25 @@ namespace freeclimb.Test.Model
 
         public IncomingNumberResultTests()
         {
-            instance = new IncomingNumberResult();
+            instance = new IncomingNumberResult(
+                uri=getTestValue<string>(),
+                dateCreated=getTestValue<string>(),
+                dateUpdated=getTestValue<string>(),
+                revision=getTestValue<int>(),
+                capabilities=getTestValue<Capabilities>(),
+                campaignId=getTestValue<string>(),
+                phoneNumberId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                applicationId=getTestValue<string>(),
+                phoneNumber=getTestValue<string>(),
+                alias=getTestValue<string>(),
+                region=getTestValue<string>(),
+                country=getTestValue<string>(),
+                voiceEnabled=getTestValue<bool?>(),
+                smsEnabled=getTestValue<bool?>(),
+                offnet=getTestValue<bool?>(),
+                tfn=getTestValue<TFN>()
+            );
         }
 
         public void Dispose()
@@ -242,6 +260,15 @@ namespace freeclimb.Test.Model
             instance.Tfn = testObject;
             Assert.Equal(instance.Tfn, testObject);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

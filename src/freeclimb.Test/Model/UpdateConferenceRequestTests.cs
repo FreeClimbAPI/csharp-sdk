@@ -38,7 +38,11 @@ namespace freeclimb.Test.Model
 
         public UpdateConferenceRequestTests()
         {
-            instance = new UpdateConferenceRequest();
+            instance = new UpdateConferenceRequest(
+                alias=getTestValue<string>(),
+                playBeep=getTestValue<PlayBeep>(),
+                status=getTestValue<UpdateConferenceRequestStatus>()
+            );
         }
 
         public void Dispose()
@@ -94,6 +98,15 @@ namespace freeclimb.Test.Model
             instance.Status = UpdateConferenceRequestStatus.TERMINATED;
             Assert.Equal(instance.Status, UpdateConferenceRequestStatus.TERMINATED);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

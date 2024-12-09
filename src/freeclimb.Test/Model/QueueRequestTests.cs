@@ -38,7 +38,10 @@ namespace freeclimb.Test.Model
 
         public QueueRequestTests()
         {
-            instance = new QueueRequest();
+            instance = new QueueRequest(
+                alias=getTestValue<string>(),
+                maxSize=getTestValue<int>()
+            );
         }
 
         public void Dispose()
@@ -75,6 +78,15 @@ namespace freeclimb.Test.Model
             
             instance.MaxSize = 1;
             Assert.Equal((int) instance.MaxSize, 1);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

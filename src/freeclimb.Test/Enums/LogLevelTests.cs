@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public LogLevelTests()
         {
-            instance = new LogLevel();
+            instance = new LogLevel(
+            );
         }
 
         public void Dispose()
@@ -125,6 +126,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "ERROR";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

@@ -38,7 +38,15 @@ namespace freeclimb.Test.Model
 
         public RecordUtteranceTests()
         {
-            instance = new RecordUtterance();
+            instance = new RecordUtterance(
+                actionUrl=getTestValue<string>(),
+                silenceTimeoutMs=getTestValue<int>(),
+                finishOnKey=getTestValue<string>(),
+                maxLengthSec=getTestValue<int>(),
+                playBeep=getTestValue<bool>(),
+                autoStart=getTestValue<bool>(),
+                privacyMode=getTestValue<bool>()
+            );
         }
 
         public void Dispose()
@@ -130,6 +138,15 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.Equal(instance.PrivacyMode, false);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

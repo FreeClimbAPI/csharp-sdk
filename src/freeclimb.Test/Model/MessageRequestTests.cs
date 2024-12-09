@@ -38,7 +38,17 @@ namespace freeclimb.Test.Model
 
         public MessageRequestTests()
         {
-            instance = new MessageRequest();
+            instance = new MessageRequest(
+                uri=getTestValue<string>(),
+                dateCreated=getTestValue<string>(),
+                dateUpdated=getTestValue<string>(),
+                revision=getTestValue<int>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                text=getTestValue<string>(),
+                notificationUrl=getTestValue<string>(),
+                mediaUrls=getTestValue<List<string>>()
+            );
         }
 
         public void Dispose()
@@ -153,6 +163,15 @@ namespace freeclimb.Test.Model
             List<string> testList = new List<string>();
             instance.MediaUrls = testList;
             Assert.Equal(instance.MediaUrls, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

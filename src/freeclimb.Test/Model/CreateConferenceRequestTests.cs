@@ -38,7 +38,13 @@ namespace freeclimb.Test.Model
 
         public CreateConferenceRequestTests()
         {
-            instance = new CreateConferenceRequest();
+            instance = new CreateConferenceRequest(
+                alias=getTestValue<string>(),
+                playBeep=getTestValue<PlayBeep>(),
+                record=getTestValue<bool>(),
+                waitUrl=getTestValue<string>(),
+                statusCallbackUrl=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -114,6 +120,15 @@ namespace freeclimb.Test.Model
             instance.StatusCallbackUrl = "TEST_STRING";
             Assert.Equal(instance.StatusCallbackUrl, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

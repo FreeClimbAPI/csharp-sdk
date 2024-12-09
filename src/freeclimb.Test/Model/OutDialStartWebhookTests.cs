@@ -38,7 +38,19 @@ namespace freeclimb.Test.Model
 
         public OutDialStartWebhookTests()
         {
-            instance = new OutDialStartWebhook();
+            instance = new OutDialStartWebhook(
+                requestType=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                callId=getTestValue<string>(),
+                from=getTestValue<string>(),
+                to=getTestValue<string>(),
+                callStatus=getTestValue<CallStatus>(),
+                direction=getTestValue<CallDirection>(),
+                conferenceId=getTestValue<string>(),
+                queueId=getTestValue<string>(),
+                dialCallId=getTestValue<string>(),
+                parentCallId=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -190,6 +202,15 @@ namespace freeclimb.Test.Model
             instance.ParentCallId = "TEST_STRING";
             Assert.Equal(instance.ParentCallId, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

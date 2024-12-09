@@ -38,7 +38,16 @@ namespace freeclimb.Test.Model
 
         public SMSTollFreeCampaignsListResultTests()
         {
-            instance = new SMSTollFreeCampaignsListResult();
+            instance = new SMSTollFreeCampaignsListResult(
+                total=getTestValue<int?>(),
+                start=getTestValue<int?>(),
+                end=getTestValue<int?>(),
+                page=getTestValue<int?>(),
+                numPages=getTestValue<int?>(),
+                pageSize=getTestValue<int?>(),
+                nextPageUri=getTestValue<string>(),
+                brands=getTestValue<List<SMSTollFreeCampaign>>()
+            );
         }
 
         public void Dispose()
@@ -142,6 +151,15 @@ namespace freeclimb.Test.Model
             List<SMSTollFreeCampaign> testList = new List<SMSTollFreeCampaign>();
             instance.Brands = testList;
             Assert.Equal(instance.Brands, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

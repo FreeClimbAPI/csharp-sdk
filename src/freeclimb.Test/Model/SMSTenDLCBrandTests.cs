@@ -38,7 +38,39 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCBrandTests()
         {
-            instance = new SMSTenDLCBrand();
+            instance = new SMSTenDLCBrand(
+                accountId=getTestValue<string>(),
+                entityType=getTestValue<SMSTenDLCBrandEntityType>(),
+                cspId=getTestValue<string>(),
+                brandId=getTestValue<string>(),
+                firstName=getTestValue<string>(),
+                lastName=getTestValue<string>(),
+                displayName=getTestValue<string>(),
+                companyName=getTestValue<string>(),
+                ein=getTestValue<string>(),
+                einIssuingCountry=getTestValue<string>(),
+                phone=getTestValue<string>(),
+                street=getTestValue<string>(),
+                city=getTestValue<string>(),
+                state=getTestValue<string>(),
+                postalCode=getTestValue<string>(),
+                country=getTestValue<string>(),
+                email=getTestValue<string>(),
+                stockSymbol=getTestValue<string>(),
+                stockExchange=getTestValue<SMSTenDLCBrandStockExchange>(),
+                ipAddress=getTestValue<string>(),
+                website=getTestValue<string>(),
+                brandRelationship=getTestValue<SMSTenDLCBrandRelationship>(),
+                vertical=getTestValue<string>(),
+                altBusinessId=getTestValue<string>(),
+                altBusinessIdType=getTestValue<SMSTenDLCBrandAltBusinessIdType>(),
+                universalEin=getTestValue<string>(),
+                referenceId=getTestValue<string>(),
+                optionalAttributes=getTestValue<Dictionary<string, Object>>(),
+                mock=getTestValue<bool>(),
+                identityStatus=getTestValue<SMSTenDLCBrandIdentityStatus>(),
+                createDate=getTestValue<DateTime>()
+            );
         }
 
         public void Dispose()
@@ -475,6 +507,15 @@ namespace freeclimb.Test.Model
             instance.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
             Assert.Equal(instance.CreateDate, DateTime.Parse("2022-07-05T15:17:05+00:00"));
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

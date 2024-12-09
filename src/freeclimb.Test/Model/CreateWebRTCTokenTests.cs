@@ -38,7 +38,11 @@ namespace freeclimb.Test.Model
 
         public CreateWebRTCTokenTests()
         {
-            instance = new CreateWebRTCToken();
+            instance = new CreateWebRTCToken(
+                to=getTestValue<string>(),
+                from=getTestValue<string>(),
+                uses=getTestValue<int>()
+            );
         }
 
         public void Dispose()
@@ -86,6 +90,15 @@ namespace freeclimb.Test.Model
             
             instance.Uses = 1;
             Assert.Equal((int) instance.Uses, 1);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

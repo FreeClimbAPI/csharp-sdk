@@ -38,7 +38,9 @@ namespace freeclimb.Test.Model
 
         public PauseTests()
         {
-            instance = new Pause();
+            instance = new Pause(
+                length=getTestValue<int>()
+            );
         }
 
         public void Dispose()
@@ -64,6 +66,15 @@ namespace freeclimb.Test.Model
             
             instance.Length = 1;
             Assert.Equal((int) instance.Length, 1);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

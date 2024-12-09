@@ -38,7 +38,10 @@ namespace freeclimb.Test.Model
 
         public CompletionResultTests()
         {
-            instance = new CompletionResult();
+            instance = new CompletionResult(
+                response=getTestValue<string>(),
+                status=getTestValue<CompletionResultStatus>()
+            );
         }
 
         public void Dispose()
@@ -77,6 +80,15 @@ namespace freeclimb.Test.Model
             instance.Status = CompletionResultStatus.NO_CONTEXT;
             Assert.Equal(instance.Status, CompletionResultStatus.NO_CONTEXT);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

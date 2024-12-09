@@ -38,7 +38,22 @@ namespace freeclimb.Test.Model
 
         public ConferenceResultTests()
         {
-            instance = new ConferenceResult();
+            instance = new ConferenceResult(
+                uri=getTestValue<string>(),
+                dateCreated=getTestValue<string>(),
+                dateUpdated=getTestValue<string>(),
+                revision=getTestValue<int>(),
+                conferenceId=getTestValue<string>(),
+                accountId=getTestValue<string>(),
+                alias=getTestValue<string>(),
+                playBeep=getTestValue<PlayBeep>(),
+                record=getTestValue<bool?>(),
+                status=getTestValue<ConferenceStatus>(),
+                waitUrl=getTestValue<string>(),
+                actionUrl=getTestValue<string>(),
+                statusCallbackUrl=getTestValue<string>(),
+                subresourceUris=getTestValue<Object>()
+            );
         }
 
         public void Dispose()
@@ -220,6 +235,15 @@ namespace freeclimb.Test.Model
             instance.SubresourceUris = testObject;
             Assert.Equal(instance.SubresourceUris, testObject);
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

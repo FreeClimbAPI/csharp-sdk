@@ -38,7 +38,16 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCCampaignsListResultTests()
         {
-            instance = new SMSTenDLCCampaignsListResult();
+            instance = new SMSTenDLCCampaignsListResult(
+                total=getTestValue<int?>(),
+                start=getTestValue<int?>(),
+                end=getTestValue<int?>(),
+                page=getTestValue<int?>(),
+                numPages=getTestValue<int?>(),
+                pageSize=getTestValue<int?>(),
+                nextPageUri=getTestValue<string>(),
+                campaigns=getTestValue<List<SMSTenDLCCampaign>>()
+            );
         }
 
         public void Dispose()
@@ -142,6 +151,15 @@ namespace freeclimb.Test.Model
             List<SMSTenDLCCampaign> testList = new List<SMSTenDLCCampaign>();
             instance.Campaigns = testList;
             Assert.Equal(instance.Campaigns, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

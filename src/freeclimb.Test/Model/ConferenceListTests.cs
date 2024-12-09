@@ -38,7 +38,16 @@ namespace freeclimb.Test.Model
 
         public ConferenceListTests()
         {
-            instance = new ConferenceList();
+            instance = new ConferenceList(
+                total=getTestValue<int?>(),
+                start=getTestValue<int?>(),
+                end=getTestValue<int?>(),
+                page=getTestValue<int?>(),
+                numPages=getTestValue<int?>(),
+                pageSize=getTestValue<int?>(),
+                nextPageUri=getTestValue<string>(),
+                conferences=getTestValue<List<ConferenceResult>>()
+            );
         }
 
         public void Dispose()
@@ -142,6 +151,15 @@ namespace freeclimb.Test.Model
             List<ConferenceResult> testList = new List<ConferenceResult>();
             instance.Conferences = testList;
             Assert.Equal(instance.Conferences, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

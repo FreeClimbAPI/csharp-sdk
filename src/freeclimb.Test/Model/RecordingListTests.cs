@@ -38,7 +38,16 @@ namespace freeclimb.Test.Model
 
         public RecordingListTests()
         {
-            instance = new RecordingList();
+            instance = new RecordingList(
+                total=getTestValue<int?>(),
+                start=getTestValue<int?>(),
+                end=getTestValue<int?>(),
+                page=getTestValue<int?>(),
+                numPages=getTestValue<int?>(),
+                pageSize=getTestValue<int?>(),
+                nextPageUri=getTestValue<string>(),
+                recordings=getTestValue<List<RecordingResult>>()
+            );
         }
 
         public void Dispose()
@@ -142,6 +151,15 @@ namespace freeclimb.Test.Model
             List<RecordingResult> testList = new List<RecordingResult>();
             instance.Recordings = testList;
             Assert.Equal(instance.Recordings, testList); 
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

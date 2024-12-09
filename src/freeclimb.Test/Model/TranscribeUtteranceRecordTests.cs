@@ -38,7 +38,11 @@ namespace freeclimb.Test.Model
 
         public TranscribeUtteranceRecordTests()
         {
-            instance = new TranscribeUtteranceRecord();
+            instance = new TranscribeUtteranceRecord(
+                saveRecording=getTestValue<bool>(),
+                maxLengthSec=getTestValue<int>(),
+                rcrdTerminationSilenceTimeMs=getTestValue<int>()
+            );
         }
 
         public void Dispose()
@@ -86,6 +90,15 @@ namespace freeclimb.Test.Model
             
             instance.RcrdTerminationSilenceTimeMs = 1;
             Assert.Equal((int) instance.RcrdTerminationSilenceTimeMs, 1);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

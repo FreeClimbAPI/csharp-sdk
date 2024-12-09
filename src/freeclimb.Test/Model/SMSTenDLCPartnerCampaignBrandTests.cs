@@ -38,7 +38,19 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCPartnerCampaignBrandTests()
         {
-            instance = new SMSTenDLCPartnerCampaignBrand();
+            instance = new SMSTenDLCPartnerCampaignBrand(
+                accountId=getTestValue<string>(),
+                brandId=getTestValue<string>(),
+                firstName=getTestValue<string>(),
+                lastName=getTestValue<string>(),
+                displayName=getTestValue<string>(),
+                companyName=getTestValue<string>(),
+                phone=getTestValue<string>(),
+                email=getTestValue<string>(),
+                website=getTestValue<string>(),
+                optionalAttributes=getTestValue<Dictionary<string, Object>>(),
+                evpVettingScore=getTestValue<int>()
+            );
         }
 
         public void Dispose()
@@ -175,6 +187,15 @@ namespace freeclimb.Test.Model
             
             instance.EvpVettingScore = 1;
             Assert.Equal((int) instance.EvpVettingScore, 1);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

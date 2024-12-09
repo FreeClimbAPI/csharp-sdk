@@ -38,7 +38,8 @@ namespace freeclimb.Test.Enums
 
         public GrammarFileBuiltInTests()
         {
-            instance = new GrammarFileBuiltIn();
+            instance = new GrammarFileBuiltIn(
+            );
         }
 
         public void Dispose()
@@ -413,6 +414,15 @@ namespace freeclimb.Test.Enums
             string expectedValue = "VERSAY_YESNO";
             string calculatedValue = test.ToString();
             Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

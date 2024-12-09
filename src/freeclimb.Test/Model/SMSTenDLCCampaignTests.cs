@@ -38,7 +38,44 @@ namespace freeclimb.Test.Model
 
         public SMSTenDLCCampaignTests()
         {
-            instance = new SMSTenDLCCampaign();
+            instance = new SMSTenDLCCampaign(
+                accountId=getTestValue<string>(),
+                campaignId=getTestValue<string>(),
+                cspId=getTestValue<string>(),
+                resellerId=getTestValue<string>(),
+                status=getTestValue<SMSTenDLCCampaignStatus>(),
+                createDate=getTestValue<DateTime>(),
+                autoRenewal=getTestValue<bool>(),
+                billedDate=getTestValue<DateTime?>(),
+                brandId=getTestValue<string>(),
+                usecase=getTestValue<string>(),
+                subUsecases=getTestValue<List<string>>(),
+                description=getTestValue<string>(),
+                embeddedLink=getTestValue<bool>(),
+                embeddedPhone=getTestValue<bool>(),
+                affiliateMarketing=getTestValue<bool>(),
+                numberPool=getTestValue<bool>(),
+                ageGated=getTestValue<bool>(),
+                directLending=getTestValue<bool>(),
+                subscriberOptin=getTestValue<bool>(),
+                subscriberOptout=getTestValue<bool>(),
+                subscriberHelp=getTestValue<bool>(),
+                sample1=getTestValue<string>(),
+                sample2=getTestValue<string>(),
+                sample3=getTestValue<string>(),
+                sample4=getTestValue<string>(),
+                sample5=getTestValue<string>(),
+                messageFlow=getTestValue<string>(),
+                helpMessage=getTestValue<string>(),
+                optinKeywords=getTestValue<string>(),
+                optoutKeywords=getTestValue<string>(),
+                helpKeywords=getTestValue<string>(),
+                optinMessage=getTestValue<string>(),
+                optoutMessage=getTestValue<string>(),
+                referenceId=getTestValue<string>(),
+                mock=getTestValue<bool>(),
+                nextRenewalOrExpirationDate=getTestValue<DateOnly?>()
+            );
         }
 
         public void Dispose()
@@ -452,6 +489,15 @@ namespace freeclimb.Test.Model
             instance.NextRenewalOrExpirationDate = DateOnly.FromDateTime(DateTime.Parse("2000-01-01"));
             Assert.Equal(instance.NextRenewalOrExpirationDate, DateOnly.FromDateTime(DateTime.Parse("2000-01-01")));
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }

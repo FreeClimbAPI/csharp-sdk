@@ -38,7 +38,15 @@ namespace freeclimb.Test.Model
 
         public PaginationModelTests()
         {
-            instance = new PaginationModel();
+            instance = new PaginationModel(
+                total=getTestValue<int?>(),
+                start=getTestValue<int?>(),
+                end=getTestValue<int?>(),
+                page=getTestValue<int?>(),
+                numPages=getTestValue<int?>(),
+                pageSize=getTestValue<int?>(),
+                nextPageUri=getTestValue<string>()
+            );
         }
 
         public void Dispose()
@@ -130,6 +138,15 @@ namespace freeclimb.Test.Model
             instance.NextPageUri = "TEST_STRING";
             Assert.Equal(instance.NextPageUri, "TEST_STRING");
             
+        }
+
+        public int getTestValue()
+        {
+            return 1;
+        }
+        public string getTestValue()
+        {
+            return "TEST_STRING";
         }
     }
 }
