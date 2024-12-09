@@ -164,6 +164,15 @@ namespace freeclimb.Test.Enums
             if (type == typeof(bool)) {
                 return true;
             }
+            if (type == typeof(CallStatus)) {
+                return CallStatusValueConverter.FromString("completed");
+            }
+            if (type == typeof(CallDirection)) {
+                return CallDirectionValueConverter.FromString("inbound");
+            }    
+            if (type == typeof(GetDigitsReason)) {
+                return GetDigitsReasonValueConverter.FromString("timeout");
+            }
             throw new ArgumentException("Provided type has no test value");
         }
     }
