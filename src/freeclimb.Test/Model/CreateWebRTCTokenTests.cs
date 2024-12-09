@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class CreateWebRTCTokenTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for CreateWebRTCToken
-        //private CreateWebRTCToken instance;
+        private CreateWebRTCToken instance;
 
         public CreateWebRTCTokenTests()
         {
-            // TODO uncomment below to create an instance of CreateWebRTCToken
-            //instance = new CreateWebRTCToken();
+            instance = new CreateWebRTCToken();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CreateWebRTCTokenInstanceTest()
         {
-            // TODO uncomment below to test "IsType" CreateWebRTCToken
-            //Assert.IsType<CreateWebRTCToken>(instance);
+            Assert.IsType<CreateWebRTCToken>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToTest()
         {
-            // TODO unit test for the property 'To'
+            instance.To = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.To);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FromTest()
         {
-            // TODO unit test for the property 'From'
+            instance.From = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.From);
+            
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UsesTest()
         {
-            // TODO unit test for the property 'Uses'
+            
+            instance.Uses = 1;
+            Assert.Equal(1, (int) instance.Uses);
         }
     }
 }

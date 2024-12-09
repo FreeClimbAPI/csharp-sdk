@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class MakeCallRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for MakeCallRequest
-        //private MakeCallRequest instance;
+        private MakeCallRequest instance;
 
         public MakeCallRequestTests()
         {
-            // TODO uncomment below to create an instance of MakeCallRequest
-            //instance = new MakeCallRequest();
+            instance = new MakeCallRequest();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MakeCallRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsType" MakeCallRequest
-            //Assert.IsType<MakeCallRequest>(instance);
+            Assert.IsType<MakeCallRequest>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FromTest()
         {
-            // TODO unit test for the property 'From'
+            instance.From = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.From);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToTest()
         {
-            // TODO unit test for the property 'To'
+            instance.To = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.To);
+            
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ApplicationIdTest()
         {
-            // TODO unit test for the property 'ApplicationId'
+            instance.ApplicationId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            
         }
 
         /// <summary>
@@ -88,7 +94,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SendDigitsTest()
         {
-            // TODO unit test for the property 'SendDigits'
+            instance.SendDigits = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.SendDigits);
+            
         }
 
         /// <summary>
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void IfMachineTest()
         {
-            // TODO unit test for the property 'IfMachine'
+            instance.IfMachine = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.IfMachine);
+            
         }
 
         /// <summary>
@@ -106,7 +116,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void IfMachineUrlTest()
         {
-            // TODO unit test for the property 'IfMachineUrl'
+            instance.IfMachineUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.IfMachineUrl);
+            
         }
 
         /// <summary>
@@ -115,7 +127,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TimeoutTest()
         {
-            // TODO unit test for the property 'Timeout'
+            
+            instance.Timeout = 1;
+            Assert.Equal(1, (int) instance.Timeout);
         }
 
         /// <summary>
@@ -124,7 +138,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ParentCallIdTest()
         {
-            // TODO unit test for the property 'ParentCallId'
+            instance.ParentCallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ParentCallId);
+            
         }
 
         /// <summary>
@@ -133,7 +149,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
 
         /// <summary>
@@ -142,7 +160,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallConnectUrlTest()
         {
-            // TODO unit test for the property 'CallConnectUrl'
+            instance.CallConnectUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallConnectUrl);
+            
         }
     }
 }

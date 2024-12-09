@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class PauseTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Pause
-        //private Pause instance;
+        private Pause instance;
 
         public PauseTests()
         {
-            // TODO uncomment below to create an instance of Pause
-            //instance = new Pause();
+            instance = new Pause();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PauseInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Pause
-            //Assert.IsType<Pause>(instance);
+            Assert.IsType<Pause>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LengthTest()
         {
-            // TODO unit test for the property 'Length'
+            
+            instance.Length = 1;
+            Assert.Equal(1, (int) instance.Length);
         }
     }
 }

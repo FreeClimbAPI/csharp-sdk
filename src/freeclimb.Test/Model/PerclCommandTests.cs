@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class PerclCommandTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for PerclCommand
-        //private PerclCommand instance;
+        private PerclCommand instance;
 
         public PerclCommandTests()
         {
-            // TODO uncomment below to create an instance of PerclCommand
-            //instance = new PerclCommand();
+            instance = new PerclCommand();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PerclCommandInstanceTest()
         {
-            // TODO uncomment below to test "IsType" PerclCommand
-            //Assert.IsType<PerclCommand>(instance);
+            Assert.IsType<PerclCommand>(instance);
         }
 
         /// <summary>
@@ -61,8 +61,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AddToConferenceDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a AddToConference from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new AddToConference().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new AddToConference().ToJson()));
         }
 
         /// <summary>
@@ -71,8 +70,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CreateConferenceDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a CreateConference from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new CreateConference().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new CreateConference().ToJson()));
         }
 
         /// <summary>
@@ -81,8 +79,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DequeueDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Dequeue from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Dequeue().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Dequeue().ToJson()));
         }
 
         /// <summary>
@@ -91,8 +88,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EnqueueDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Enqueue from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Enqueue().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Enqueue().ToJson()));
         }
 
         /// <summary>
@@ -101,8 +97,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void GetDigitsDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a GetDigits from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new GetDigits().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new GetDigits().ToJson()));
         }
 
         /// <summary>
@@ -111,8 +106,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void GetSpeechDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a GetSpeech from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new GetSpeech().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new GetSpeech().ToJson()));
         }
 
         /// <summary>
@@ -121,8 +115,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void HangupDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Hangup from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Hangup().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Hangup().ToJson()));
         }
 
         /// <summary>
@@ -131,8 +124,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void OutDialDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a OutDial from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new OutDial().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new OutDial().ToJson()));
         }
 
         /// <summary>
@@ -141,8 +133,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ParkDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Park from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Park().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Park().ToJson()));
         }
 
         /// <summary>
@@ -151,8 +142,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PauseDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Pause from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Pause().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Pause().ToJson()));
         }
 
         /// <summary>
@@ -161,8 +151,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Play from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Play().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Play().ToJson()));
         }
 
         /// <summary>
@@ -171,8 +160,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayEarlyMediaDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a PlayEarlyMedia from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new PlayEarlyMedia().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new PlayEarlyMedia().ToJson()));
         }
 
         /// <summary>
@@ -181,8 +169,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordUtteranceDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a RecordUtterance from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new RecordUtterance().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new RecordUtterance().ToJson()));
         }
 
         /// <summary>
@@ -191,8 +178,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RedirectDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Redirect from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Redirect().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Redirect().ToJson()));
         }
 
         /// <summary>
@@ -201,8 +187,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RejectDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Reject from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Reject().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Reject().ToJson()));
         }
 
         /// <summary>
@@ -211,8 +196,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RemoveFromConferenceDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a RemoveFromConference from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new RemoveFromConference().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new RemoveFromConference().ToJson()));
         }
 
         /// <summary>
@@ -221,8 +205,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SayDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Say from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Say().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Say().ToJson()));
         }
 
         /// <summary>
@@ -231,8 +214,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SendDigitsDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a SendDigits from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SendDigits().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SendDigits().ToJson()));
         }
 
         /// <summary>
@@ -241,8 +223,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SetDTMFPassThroughDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a SetDTMFPassThrough from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetDTMFPassThrough().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetDTMFPassThrough().ToJson()));
         }
 
         /// <summary>
@@ -251,8 +232,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SetListenDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a SetListen from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetListen().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetListen().ToJson()));
         }
 
         /// <summary>
@@ -261,8 +241,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SetTalkDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a SetTalk from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetTalk().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetTalk().ToJson()));
         }
 
         /// <summary>
@@ -271,8 +250,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SmsDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Sms from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Sms().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Sms().ToJson()));
         }
 
         /// <summary>
@@ -281,8 +259,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StartRecordCallDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a StartRecordCall from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new StartRecordCall().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new StartRecordCall().ToJson()));
         }
 
         /// <summary>
@@ -291,8 +268,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TerminateConferenceDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a TerminateConference from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new TerminateConference().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new TerminateConference().ToJson()));
         }
 
         /// <summary>
@@ -301,8 +277,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TranscribeUtteranceDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a TranscribeUtterance from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new TranscribeUtterance().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new TranscribeUtterance().ToJson()));
         }
 
         /// <summary>
@@ -311,8 +286,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UnparkDeserializeFromPerclCommandTest()
         {
-            // TODO uncomment below to test deserialize a Unpark from type PerclCommand
-            //Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Unpark().ToJson()));
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new Unpark().ToJson()));
         }
 
         /// <summary>
@@ -321,7 +295,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CommandTest()
         {
-            // TODO unit test for the property 'Command'
+            
         }
     }
 }

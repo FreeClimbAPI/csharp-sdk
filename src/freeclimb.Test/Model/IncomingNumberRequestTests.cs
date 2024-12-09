@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class IncomingNumberRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for IncomingNumberRequest
-        //private IncomingNumberRequest instance;
+        private IncomingNumberRequest instance;
 
         public IncomingNumberRequestTests()
         {
-            // TODO uncomment below to create an instance of IncomingNumberRequest
-            //instance = new IncomingNumberRequest();
+            instance = new IncomingNumberRequest();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void IncomingNumberRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsType" IncomingNumberRequest
-            //Assert.IsType<IncomingNumberRequest>(instance);
+            Assert.IsType<IncomingNumberRequest>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ApplicationIdTest()
         {
-            // TODO unit test for the property 'ApplicationId'
+            instance.ApplicationId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CampaignIdTest()
         {
-            // TODO unit test for the property 'CampaignId'
+            instance.CampaignId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CampaignId);
+            
         }
     }
 }

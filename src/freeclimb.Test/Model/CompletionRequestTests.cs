@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class CompletionRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for CompletionRequest
-        //private CompletionRequest instance;
+        private CompletionRequest instance;
 
         public CompletionRequestTests()
         {
-            // TODO uncomment below to create an instance of CompletionRequest
-            //instance = new CompletionRequest();
+            instance = new CompletionRequest();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CompletionRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsType" CompletionRequest
-            //Assert.IsType<CompletionRequest>(instance);
+            Assert.IsType<CompletionRequest>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void QueryTest()
         {
-            // TODO unit test for the property 'Query'
+            instance.Query = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Query);
+            
         }
     }
 }

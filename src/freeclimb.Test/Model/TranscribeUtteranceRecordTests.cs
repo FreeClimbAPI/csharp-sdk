@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class TranscribeUtteranceRecordTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for TranscribeUtteranceRecord
-        //private TranscribeUtteranceRecord instance;
+        private TranscribeUtteranceRecord instance;
 
         public TranscribeUtteranceRecordTests()
         {
-            // TODO uncomment below to create an instance of TranscribeUtteranceRecord
-            //instance = new TranscribeUtteranceRecord();
+            instance = new TranscribeUtteranceRecord();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TranscribeUtteranceRecordInstanceTest()
         {
-            // TODO uncomment below to test "IsType" TranscribeUtteranceRecord
-            //Assert.IsType<TranscribeUtteranceRecord>(instance);
+            Assert.IsType<TranscribeUtteranceRecord>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SaveRecordingTest()
         {
-            // TODO unit test for the property 'SaveRecording'
+            instance.SaveRecording = false;
+            Assert.Equal(false, instance.SaveRecording);       
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MaxLengthSecTest()
         {
-            // TODO unit test for the property 'MaxLengthSec'
+            
+            instance.MaxLengthSec = 1;
+            Assert.Equal(1, (int) instance.MaxLengthSec);
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RcrdTerminationSilenceTimeMsTest()
         {
-            // TODO unit test for the property 'RcrdTerminationSilenceTimeMs'
+            
+            instance.RcrdTerminationSilenceTimeMs = 1;
+            Assert.Equal(1, (int) instance.RcrdTerminationSilenceTimeMs);
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class HangupTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Hangup
-        //private Hangup instance;
+        private Hangup instance;
 
         public HangupTests()
         {
-            // TODO uncomment below to create an instance of Hangup
-            //instance = new Hangup();
+            instance = new Hangup();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void HangupInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Hangup
-            //Assert.IsType<Hangup>(instance);
+            Assert.IsType<Hangup>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ReasonTest()
         {
-            // TODO unit test for the property 'Reason'
+            instance.Reason = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Reason);
+            
         }
     }
 }

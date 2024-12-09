@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class EnqueueTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Enqueue
-        //private Enqueue instance;
+        private Enqueue instance;
 
         public EnqueueTests()
         {
-            // TODO uncomment below to create an instance of Enqueue
-            //instance = new Enqueue();
+            instance = new Enqueue();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EnqueueInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Enqueue
-            //Assert.IsType<Enqueue>(instance);
+            Assert.IsType<Enqueue>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NotificationUrlTest()
         {
-            // TODO unit test for the property 'NotificationUrl'
+            
+            instance.NotificationUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.NotificationUrl);
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void QueueIdTest()
         {
-            // TODO unit test for the property 'QueueId'
+            instance.QueueId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.QueueId);
+            
         }
 
         /// <summary>
@@ -88,7 +94,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void WaitUrlTest()
         {
-            // TODO unit test for the property 'WaitUrl'
+            instance.WaitUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.WaitUrl);
+            
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class RedirectTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Redirect
-        //private Redirect instance;
+        private Redirect instance;
 
         public RedirectTests()
         {
-            // TODO uncomment below to create an instance of Redirect
-            //instance = new Redirect();
+            instance = new Redirect();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RedirectInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Redirect
-            //Assert.IsType<Redirect>(instance);
+            Assert.IsType<Redirect>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
     }
 }

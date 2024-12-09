@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class DequeueTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Dequeue
-        //private Dequeue instance;
+        private Dequeue instance;
 
         public DequeueTests()
         {
-            // TODO uncomment below to create an instance of Dequeue
-            //instance = new Dequeue();
+            instance = new Dequeue();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DequeueInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Dequeue
-            //Assert.IsType<Dequeue>(instance);
+            Assert.IsType<Dequeue>(instance);
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class TranscribeWebhookTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for TranscribeWebhook
-        //private TranscribeWebhook instance;
+        private TranscribeWebhook instance;
 
         public TranscribeWebhookTests()
         {
-            // TODO uncomment below to create an instance of TranscribeWebhook
-            //instance = new TranscribeWebhook();
+            instance = new TranscribeWebhook();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TranscribeWebhookInstanceTest()
         {
-            // TODO uncomment below to test "IsType" TranscribeWebhook
-            //Assert.IsType<TranscribeWebhook>(instance);
+            Assert.IsType<TranscribeWebhook>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RequestTypeTest()
         {
-            // TODO unit test for the property 'RequestType'
+            
         }
 
         /// <summary>
@@ -70,7 +70,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
 
         /// <summary>
@@ -79,7 +81,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
 
         /// <summary>
@@ -88,7 +92,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FromTest()
         {
-            // TODO unit test for the property 'From'
+            instance.From = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.From);
+            
         }
 
         /// <summary>
@@ -97,7 +103,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToTest()
         {
-            // TODO unit test for the property 'To'
+            instance.To = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.To);
+            
         }
 
         /// <summary>
@@ -106,7 +114,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordingIdTest()
         {
-            // TODO unit test for the property 'RecordingId'
+            instance.RecordingId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.RecordingId);
+            
         }
 
         /// <summary>
@@ -115,7 +125,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordingUrlTest()
         {
-            // TODO unit test for the property 'RecordingUrl'
+            instance.RecordingUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.RecordingUrl);
+            
         }
 
         /// <summary>
@@ -124,7 +136,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordingSizeTest()
         {
-            // TODO unit test for the property 'RecordingSize'
+            
+            instance.RecordingSize = 1;
+            Assert.Equal(1, (int) instance.RecordingSize);
         }
 
         /// <summary>
@@ -133,7 +147,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordingFormatTest()
         {
-            // TODO unit test for the property 'RecordingFormat'
+            instance.RecordingFormat = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.RecordingFormat);
+            
         }
 
         /// <summary>
@@ -142,7 +158,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordingDurationMsTest()
         {
-            // TODO unit test for the property 'RecordingDurationMs'
+            
+            instance.RecordingDurationMs = 1;
+            Assert.Equal(1, (int) instance.RecordingDurationMs);
         }
 
         /// <summary>
@@ -151,7 +169,11 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TermReasonTest()
         {
-            // TODO unit test for the property 'TermReason'
+            instance.TermReason = TranscribeTermReason.ERROR;
+            Assert.Equal(instance.TermReason,TranscribeTermReason.ERROR);
+            instance.TermReason = TranscribeTermReason.COMPLETED;
+            Assert.Equal(instance.TermReason,TranscribeTermReason.COMPLETED);
+            
         }
 
         /// <summary>
@@ -160,7 +182,15 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordTermReasonTest()
         {
-            // TODO unit test for the property 'RecordTermReason'
+            instance.RecordTermReason = RecordUtteranceTermReason.FINISH_KEY;
+            Assert.Equal(instance.RecordTermReason,RecordUtteranceTermReason.FINISH_KEY);
+            instance.RecordTermReason = RecordUtteranceTermReason.TIMEOUT;
+            Assert.Equal(instance.RecordTermReason,RecordUtteranceTermReason.TIMEOUT);
+            instance.RecordTermReason = RecordUtteranceTermReason.HANGUP;
+            Assert.Equal(instance.RecordTermReason,RecordUtteranceTermReason.HANGUP);
+            instance.RecordTermReason = RecordUtteranceTermReason.MAX_LENGTH;
+            Assert.Equal(instance.RecordTermReason,RecordUtteranceTermReason.MAX_LENGTH);
+            
         }
 
         /// <summary>
@@ -169,7 +199,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DigitTest()
         {
-            // TODO unit test for the property 'Digit'
+            instance.Digit = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Digit);
+            
         }
 
         /// <summary>
@@ -178,7 +210,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyForLoggingTest()
         {
-            // TODO unit test for the property 'PrivacyForLogging'
+            instance.PrivacyForLogging = false;
+            Assert.Equal(false, instance.PrivacyForLogging);       
+            
         }
 
         /// <summary>
@@ -187,7 +221,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyForRecordingTest()
         {
-            // TODO unit test for the property 'PrivacyForRecording'
+            instance.PrivacyForRecording = false;
+            Assert.Equal(false, instance.PrivacyForRecording);       
+            
         }
 
         /// <summary>
@@ -196,7 +232,13 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BargeInReasonTest()
         {
-            // TODO unit test for the property 'BargeInReason'
+            instance.BargeInReason = BargeInReason.NO_BARGE_IN;
+            Assert.Equal(instance.BargeInReason,BargeInReason.NO_BARGE_IN);
+            instance.BargeInReason = BargeInReason.BARGE_IN_BY_DTMF;
+            Assert.Equal(instance.BargeInReason,BargeInReason.BARGE_IN_BY_DTMF);
+            instance.BargeInReason = BargeInReason.BARGE_IN_BY_ENERGY;
+            Assert.Equal(instance.BargeInReason,BargeInReason.BARGE_IN_BY_ENERGY);
+            
         }
 
         /// <summary>
@@ -205,7 +247,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BargedInPromptNoTest()
         {
-            // TODO unit test for the property 'BargedInPromptNo'
+            
+            instance.BargedInPromptNo = 1;
+            Assert.Equal(1, (int) instance.BargedInPromptNo);
         }
 
         /// <summary>
@@ -214,7 +258,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BargedInPromptMsTest()
         {
-            // TODO unit test for the property 'BargedInPromptMs'
+            
+            instance.BargedInPromptMs = 1;
+            Assert.Equal(1, (int) instance.BargedInPromptMs);
         }
 
         /// <summary>
@@ -223,7 +269,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BargedInPromptLoopNoTest()
         {
-            // TODO unit test for the property 'BargedInPromptLoopNo'
+            
+            instance.BargedInPromptLoopNo = 1;
+            Assert.Equal(1, (int) instance.BargedInPromptLoopNo);
         }
 
         /// <summary>
@@ -232,7 +280,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BargeInTimeMsTest()
         {
-            // TODO unit test for the property 'BargeInTimeMs'
+            
+            instance.BargeInTimeMs = 1;
+            Assert.Equal(1, (int) instance.BargeInTimeMs);
         }
 
         /// <summary>
@@ -241,7 +291,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TranscriptTest()
         {
-            // TODO unit test for the property 'Transcript'
+            instance.Transcript = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Transcript);
+            
         }
 
         /// <summary>
@@ -250,7 +302,17 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TranscribeReasonTest()
         {
-            // TODO unit test for the property 'TranscribeReason'
+            instance.TranscribeReason = TranscribeReason.INTERNAL_ERROR;
+            Assert.Equal(instance.TranscribeReason,TranscribeReason.INTERNAL_ERROR);
+            instance.TranscribeReason = TranscribeReason.HANGUP;
+            Assert.Equal(instance.TranscribeReason,TranscribeReason.HANGUP);
+            instance.TranscribeReason = TranscribeReason.MAX_LENGTH;
+            Assert.Equal(instance.TranscribeReason,TranscribeReason.MAX_LENGTH);
+            instance.TranscribeReason = TranscribeReason.DIGIT;
+            Assert.Equal(instance.TranscribeReason,TranscribeReason.DIGIT);
+            instance.TranscribeReason = TranscribeReason.NO_INPUT;
+            Assert.Equal(instance.TranscribeReason,TranscribeReason.NO_INPUT);
+            
         }
 
         /// <summary>
@@ -259,7 +321,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TranscriptionDurationMsTest()
         {
-            // TODO unit test for the property 'TranscriptionDurationMs'
+            
+            instance.TranscriptionDurationMs = 1;
+            Assert.Equal(1, (int) instance.TranscriptionDurationMs);
         }
     }
 }

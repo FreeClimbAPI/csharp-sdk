@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class WebhookTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Webhook
-        //private Webhook instance;
+        private Webhook instance;
 
         public WebhookTests()
         {
-            // TODO uncomment below to create an instance of Webhook
-            //instance = new Webhook();
+            instance = new Webhook();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void WebhookInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Webhook
-            //Assert.IsType<Webhook>(instance);
+            Assert.IsType<Webhook>(instance);
         }
 
         /// <summary>
@@ -61,8 +61,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AddToConferenceNotificationWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a AddToConferenceNotificationWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new AddToConferenceNotificationWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new AddToConferenceNotificationWebhook().ToJson()));
         }
 
         /// <summary>
@@ -71,8 +70,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AddToQueueNotificationWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a AddToQueueNotificationWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new AddToQueueNotificationWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new AddToQueueNotificationWebhook().ToJson()));
         }
 
         /// <summary>
@@ -81,8 +79,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallControlWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a CallControlWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new CallControlWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new CallControlWebhook().ToJson()));
         }
 
         /// <summary>
@@ -91,8 +88,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallStatusWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a CallStatusWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new CallStatusWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new CallStatusWebhook().ToJson()));
         }
 
         /// <summary>
@@ -101,8 +97,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferenceRecordingStatusWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a ConferenceRecordingStatusWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new ConferenceRecordingStatusWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new ConferenceRecordingStatusWebhook().ToJson()));
         }
 
         /// <summary>
@@ -111,8 +106,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferenceStatusWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a ConferenceStatusWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new ConferenceStatusWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new ConferenceStatusWebhook().ToJson()));
         }
 
         /// <summary>
@@ -121,8 +115,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CreateConferenceWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a CreateConferenceWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new CreateConferenceWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new CreateConferenceWebhook().ToJson()));
         }
 
         /// <summary>
@@ -131,8 +124,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DequeueWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a DequeueWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new DequeueWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new DequeueWebhook().ToJson()));
         }
 
         /// <summary>
@@ -141,8 +133,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void GetDigitsWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a GetDigitsWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new GetDigitsWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new GetDigitsWebhook().ToJson()));
         }
 
         /// <summary>
@@ -151,8 +142,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void GetSpeechWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a GetSpeechWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new GetSpeechWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new GetSpeechWebhook().ToJson()));
         }
 
         /// <summary>
@@ -161,8 +151,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void InboundCallWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a InboundCallWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new InboundCallWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new InboundCallWebhook().ToJson()));
         }
 
         /// <summary>
@@ -171,8 +160,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LeaveConferenceWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a LeaveConferenceWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new LeaveConferenceWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new LeaveConferenceWebhook().ToJson()));
         }
 
         /// <summary>
@@ -181,8 +169,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MachineDetectedWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a MachineDetectedWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new MachineDetectedWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new MachineDetectedWebhook().ToJson()));
         }
 
         /// <summary>
@@ -191,8 +178,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MessageDeliveryWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a MessageDeliveryWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new MessageDeliveryWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new MessageDeliveryWebhook().ToJson()));
         }
 
         /// <summary>
@@ -201,8 +187,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MessageStatusWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a MessageStatusWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new MessageStatusWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new MessageStatusWebhook().ToJson()));
         }
 
         /// <summary>
@@ -211,8 +196,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void OutDialApiConnectWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a OutDialApiConnectWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new OutDialApiConnectWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new OutDialApiConnectWebhook().ToJson()));
         }
 
         /// <summary>
@@ -221,8 +205,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void OutDialConnectWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a OutDialConnectWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new OutDialConnectWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new OutDialConnectWebhook().ToJson()));
         }
 
         /// <summary>
@@ -231,8 +214,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void OutDialStartWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a OutDialStartWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new OutDialStartWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new OutDialStartWebhook().ToJson()));
         }
 
         /// <summary>
@@ -241,8 +223,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void QueueWaitWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a QueueWaitWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new QueueWaitWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new QueueWaitWebhook().ToJson()));
         }
 
         /// <summary>
@@ -251,8 +232,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a RecordWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new RecordWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new RecordWebhook().ToJson()));
         }
 
         /// <summary>
@@ -261,8 +241,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RedirectWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a RedirectWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new RedirectWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new RedirectWebhook().ToJson()));
         }
 
         /// <summary>
@@ -271,8 +250,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RemoveFromQueueNotificationWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a RemoveFromQueueNotificationWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new RemoveFromQueueNotificationWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new RemoveFromQueueNotificationWebhook().ToJson()));
         }
 
         /// <summary>
@@ -281,8 +259,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TranscribeWebhookDeserializeFromWebhookTest()
         {
-            // TODO uncomment below to test deserialize a TranscribeWebhook from type Webhook
-            //Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new TranscribeWebhook().ToJson()));
+            Assert.IsType<Webhook>(JsonConvert.DeserializeObject<Webhook>(new TranscribeWebhook().ToJson()));
         }
 
         /// <summary>
@@ -291,7 +268,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RequestTypeTest()
         {
-            // TODO unit test for the property 'RequestType'
+            
         }
     }
 }

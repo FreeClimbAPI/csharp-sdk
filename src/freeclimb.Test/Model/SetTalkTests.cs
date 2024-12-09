@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class SetTalkTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for SetTalk
-        //private SetTalk instance;
+        private SetTalk instance;
 
         public SetTalkTests()
         {
-            // TODO uncomment below to create an instance of SetTalk
-            //instance = new SetTalk();
+            instance = new SetTalk();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SetTalkInstanceTest()
         {
-            // TODO uncomment below to test "IsType" SetTalk
-            //Assert.IsType<SetTalk>(instance);
+            Assert.IsType<SetTalk>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TalkTest()
         {
-            // TODO unit test for the property 'Talk'
+            instance.Talk = false;
+            Assert.Equal(false, instance.Talk);       
+            
         }
     }
 }

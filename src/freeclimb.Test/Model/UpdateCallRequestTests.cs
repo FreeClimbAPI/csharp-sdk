@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class UpdateCallRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for UpdateCallRequest
-        //private UpdateCallRequest instance;
+        private UpdateCallRequest instance;
 
         public UpdateCallRequestTests()
         {
-            // TODO uncomment below to create an instance of UpdateCallRequest
-            //instance = new UpdateCallRequest();
+            instance = new UpdateCallRequest();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UpdateCallRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsType" UpdateCallRequest
-            //Assert.IsType<UpdateCallRequest>(instance);
+            Assert.IsType<UpdateCallRequest>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,11 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            // TODO unit test for the property 'Status'
+            instance.Status = UpdateCallRequestStatus.CANCELED;
+            Assert.Equal(instance.Status,UpdateCallRequestStatus.CANCELED);
+            instance.Status = UpdateCallRequestStatus.COMPLETED;
+            Assert.Equal(instance.Status,UpdateCallRequestStatus.COMPLETED);
+            
         }
     }
 }

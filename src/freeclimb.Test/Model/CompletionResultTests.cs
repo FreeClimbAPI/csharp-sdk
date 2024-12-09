@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class CompletionResultTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for CompletionResult
-        //private CompletionResult instance;
+        private CompletionResult instance;
 
         public CompletionResultTests()
         {
-            // TODO uncomment below to create an instance of CompletionResult
-            //instance = new CompletionResult();
+            instance = new CompletionResult();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CompletionResultInstanceTest()
         {
-            // TODO uncomment below to test "IsType" CompletionResult
-            //Assert.IsType<CompletionResult>(instance);
+            Assert.IsType<CompletionResult>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ResponseTest()
         {
-            // TODO unit test for the property 'Response'
+            instance.Response = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Response);
+            
         }
 
         /// <summary>
@@ -70,7 +72,11 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            // TODO unit test for the property 'Status'
+            instance.Status = CompletionResultStatus.SUCCESS;
+            Assert.Equal(instance.Status,CompletionResultStatus.SUCCESS);
+            instance.Status = CompletionResultStatus.NO_CONTEXT;
+            Assert.Equal(instance.Status,CompletionResultStatus.NO_CONTEXT);
+            
         }
     }
 }

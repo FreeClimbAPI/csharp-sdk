@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class SetListenTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for SetListen
-        //private SetListen instance;
+        private SetListen instance;
 
         public SetListenTests()
         {
-            // TODO uncomment below to create an instance of SetListen
-            //instance = new SetListen();
+            instance = new SetListen();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SetListenInstanceTest()
         {
-            // TODO uncomment below to test "IsType" SetListen
-            //Assert.IsType<SetListen>(instance);
+            Assert.IsType<SetListen>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ListenTest()
         {
-            // TODO unit test for the property 'Listen'
+            instance.Listen = false;
+            Assert.Equal(false, instance.Listen);       
+            
         }
     }
 }

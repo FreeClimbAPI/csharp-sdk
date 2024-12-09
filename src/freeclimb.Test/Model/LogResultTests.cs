@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class LogResultTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for LogResult
-        //private LogResult instance;
+        private LogResult instance;
 
         public LogResultTests()
         {
-            // TODO uncomment below to create an instance of LogResult
-            //instance = new LogResult();
+            instance = new LogResult();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LogResultInstanceTest()
         {
-            // TODO uncomment below to test "IsType" LogResult
-            //Assert.IsType<LogResult>(instance);
+            Assert.IsType<LogResult>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TimestampTest()
         {
-            // TODO unit test for the property 'Timestamp'
+            
+            instance.Timestamp = 1;
+            Assert.Equal(1, (int) instance.Timestamp);
         }
 
         /// <summary>
@@ -70,7 +72,13 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LevelTest()
         {
-            // TODO unit test for the property 'Level'
+            instance.Level = LogLevel.INFO;
+            Assert.Equal(instance.Level,LogLevel.INFO);
+            instance.Level = LogLevel.WARNING;
+            Assert.Equal(instance.Level,LogLevel.WARNING);
+            instance.Level = LogLevel.ERROR;
+            Assert.Equal(instance.Level,LogLevel.ERROR);
+            
         }
 
         /// <summary>
@@ -79,7 +87,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RequestIdTest()
         {
-            // TODO unit test for the property 'RequestId'
+            instance.RequestId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.RequestId);
+            
         }
 
         /// <summary>
@@ -88,7 +98,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
 
         /// <summary>
@@ -97,7 +109,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
 
         /// <summary>
@@ -106,7 +120,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MessageTest()
         {
-            // TODO unit test for the property 'Message'
+            instance.Message = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Message);
+            
         }
 
         /// <summary>
@@ -115,7 +131,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MetadataTest()
         {
-            // TODO unit test for the property 'Metadata'
+            object testObject = new object();
+            instance.Metadata = testObject;
+            Assert.Equal(testObject, instance.Metadata);
+            
         }
     }
 }

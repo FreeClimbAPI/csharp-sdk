@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class UpdateConferenceParticipantRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for UpdateConferenceParticipantRequest
-        //private UpdateConferenceParticipantRequest instance;
+        private UpdateConferenceParticipantRequest instance;
 
         public UpdateConferenceParticipantRequestTests()
         {
-            // TODO uncomment below to create an instance of UpdateConferenceParticipantRequest
-            //instance = new UpdateConferenceParticipantRequest();
+            instance = new UpdateConferenceParticipantRequest();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UpdateConferenceParticipantRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsType" UpdateConferenceParticipantRequest
-            //Assert.IsType<UpdateConferenceParticipantRequest>(instance);
+            Assert.IsType<UpdateConferenceParticipantRequest>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TalkTest()
         {
-            // TODO unit test for the property 'Talk'
+            instance.Talk = false;
+            Assert.Equal(false, instance.Talk);       
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ListenTest()
         {
-            // TODO unit test for the property 'Listen'
+            instance.Listen = false;
+            Assert.Equal(false, instance.Listen);       
+            
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DtmfPassThroughTest()
         {
-            // TODO unit test for the property 'DtmfPassThrough'
+            instance.DtmfPassThrough = false;
+            Assert.Equal(false, instance.DtmfPassThrough);       
+            
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class SayTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Say
-        //private Say instance;
+        private Say instance;
 
         public SayTests()
         {
-            // TODO uncomment below to create an instance of Say
-            //instance = new Say();
+            instance = new Say();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SayInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Say
-            //Assert.IsType<Say>(instance);
+            Assert.IsType<Say>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TextTest()
         {
-            // TODO unit test for the property 'Text'
+            instance.Text = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Text);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LanguageTest()
         {
-            // TODO unit test for the property 'Language'
+            instance.Language = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Language);
+            
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LoopTest()
         {
-            // TODO unit test for the property 'Loop'
+            
+            instance.Loop = 1;
+            Assert.Equal(1, (int) instance.Loop);
         }
 
         /// <summary>
@@ -88,7 +94,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
 }

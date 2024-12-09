@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class TranscribeUtteranceTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for TranscribeUtterance
-        //private TranscribeUtterance instance;
+        private TranscribeUtterance instance;
 
         public TranscribeUtteranceTests()
         {
-            // TODO uncomment below to create an instance of TranscribeUtterance
-            //instance = new TranscribeUtterance();
+            instance = new TranscribeUtterance();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TranscribeUtteranceInstanceTest()
         {
-            // TODO uncomment below to test "IsType" TranscribeUtterance
-            //Assert.IsType<TranscribeUtterance>(instance);
+            Assert.IsType<TranscribeUtterance>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayBeepTest()
         {
-            // TODO unit test for the property 'PlayBeep'
+            instance.PlayBeep = false;
+            Assert.Equal(false, instance.PlayBeep);       
+            
         }
 
         /// <summary>
@@ -79,7 +83,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordTest()
         {
-            // TODO unit test for the property 'Record'
+            TranscribeUtteranceRecord testObject = new TranscribeUtteranceRecord();
+            instance.Record = testObject;
+            Assert.Equal(testObject, instance.Record);
+            
         }
 
         /// <summary>
@@ -88,7 +95,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyForLoggingTest()
         {
-            // TODO unit test for the property 'PrivacyForLogging'
+            instance.PrivacyForLogging = false;
+            Assert.Equal(false, instance.PrivacyForLogging);       
+            
         }
 
         /// <summary>
@@ -97,7 +106,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyForRecordingTest()
         {
-            // TODO unit test for the property 'PrivacyForRecording'
+            instance.PrivacyForRecording = false;
+            Assert.Equal(false, instance.PrivacyForRecording);       
+            
         }
 
         /// <summary>
@@ -106,7 +117,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PromptsTest()
         {
-            // TODO unit test for the property 'Prompts'
+            
+            List<PerclCommand> testList = new List<PerclCommand>();
+            instance.Prompts = testList;
+            Assert.Equal(testList, instance.Prompts); 
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class MessageDeliveryWebhookTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for MessageDeliveryWebhook
-        //private MessageDeliveryWebhook instance;
+        private MessageDeliveryWebhook instance;
 
         public MessageDeliveryWebhookTests()
         {
-            // TODO uncomment below to create an instance of MessageDeliveryWebhook
-            //instance = new MessageDeliveryWebhook();
+            instance = new MessageDeliveryWebhook();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MessageDeliveryWebhookInstanceTest()
         {
-            // TODO uncomment below to test "IsType" MessageDeliveryWebhook
-            //Assert.IsType<MessageDeliveryWebhook>(instance);
+            Assert.IsType<MessageDeliveryWebhook>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RequestTypeTest()
         {
-            // TODO unit test for the property 'RequestType'
+            
         }
 
         /// <summary>
@@ -70,7 +70,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
 
         /// <summary>
@@ -79,7 +81,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FromTest()
         {
-            // TODO unit test for the property 'From'
+            instance.From = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.From);
+            
         }
 
         /// <summary>
@@ -88,7 +92,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToTest()
         {
-            // TODO unit test for the property 'To'
+            instance.To = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.To);
+            
         }
 
         /// <summary>
@@ -97,7 +103,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TextTest()
         {
-            // TODO unit test for the property 'Text'
+            instance.Text = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Text);
+            
         }
 
         /// <summary>
@@ -106,7 +114,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DirectionTest()
         {
-            // TODO unit test for the property 'Direction'
+            instance.Direction = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Direction);
+            
         }
 
         /// <summary>
@@ -115,7 +125,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ApplicationIdTest()
         {
-            // TODO unit test for the property 'ApplicationId'
+            instance.ApplicationId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            
         }
 
         /// <summary>
@@ -124,7 +136,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            // TODO unit test for the property 'Status'
+            instance.Status = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Status);
+            
         }
 
         /// <summary>
@@ -133,7 +147,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PhoneNumberIdTest()
         {
-            // TODO unit test for the property 'PhoneNumberId'
+            instance.PhoneNumberId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.PhoneNumberId);
+            
         }
 
         /// <summary>
@@ -142,7 +158,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UriTest()
         {
-            // TODO unit test for the property 'Uri'
+            instance.Uri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Uri);
+            
         }
     }
 }

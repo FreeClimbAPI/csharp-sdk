@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class MessageStatusWebhookTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for MessageStatusWebhook
-        //private MessageStatusWebhook instance;
+        private MessageStatusWebhook instance;
 
         public MessageStatusWebhookTests()
         {
-            // TODO uncomment below to create an instance of MessageStatusWebhook
-            //instance = new MessageStatusWebhook();
+            instance = new MessageStatusWebhook();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MessageStatusWebhookInstanceTest()
         {
-            // TODO uncomment below to test "IsType" MessageStatusWebhook
-            //Assert.IsType<MessageStatusWebhook>(instance);
+            Assert.IsType<MessageStatusWebhook>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RequestTypeTest()
         {
-            // TODO unit test for the property 'RequestType'
+            
         }
 
         /// <summary>
@@ -70,7 +70,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
 
         /// <summary>
@@ -79,7 +81,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MessageIdTest()
         {
-            // TODO unit test for the property 'MessageId'
+            instance.MessageId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.MessageId);
+            
         }
 
         /// <summary>
@@ -88,7 +92,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallIdTest()
         {
-            // TODO unit test for the property 'CallId'
+            instance.CallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallId);
+            
         }
 
         /// <summary>
@@ -97,7 +103,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FromTest()
         {
-            // TODO unit test for the property 'From'
+            instance.From = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.From);
+            
         }
 
         /// <summary>
@@ -106,7 +114,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ToTest()
         {
-            // TODO unit test for the property 'To'
+            instance.To = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.To);
+            
         }
 
         /// <summary>
@@ -115,7 +125,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TextTest()
         {
-            // TODO unit test for the property 'Text'
+            instance.Text = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Text);
+            
         }
 
         /// <summary>
@@ -124,7 +136,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DirectionTest()
         {
-            // TODO unit test for the property 'Direction'
+            instance.Direction = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Direction);
+            
         }
 
         /// <summary>
@@ -133,7 +147,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ApplicationIdTest()
         {
-            // TODO unit test for the property 'ApplicationId'
+            instance.ApplicationId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            
         }
 
         /// <summary>
@@ -142,7 +158,29 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            // TODO unit test for the property 'Status'
+            instance.Status = MessageStatus.NEW;
+            Assert.Equal(instance.Status,MessageStatus.NEW);
+            instance.Status = MessageStatus.QUEUED;
+            Assert.Equal(instance.Status,MessageStatus.QUEUED);
+            instance.Status = MessageStatus.REJECTED;
+            Assert.Equal(instance.Status,MessageStatus.REJECTED);
+            instance.Status = MessageStatus.SENDING;
+            Assert.Equal(instance.Status,MessageStatus.SENDING);
+            instance.Status = MessageStatus.SENT;
+            Assert.Equal(instance.Status,MessageStatus.SENT);
+            instance.Status = MessageStatus.FAILED;
+            Assert.Equal(instance.Status,MessageStatus.FAILED);
+            instance.Status = MessageStatus.RECEIVED;
+            Assert.Equal(instance.Status,MessageStatus.RECEIVED);
+            instance.Status = MessageStatus.UNDELIVERED;
+            Assert.Equal(instance.Status,MessageStatus.UNDELIVERED);
+            instance.Status = MessageStatus.EXPIRED;
+            Assert.Equal(instance.Status,MessageStatus.EXPIRED);
+            instance.Status = MessageStatus.DELETED;
+            Assert.Equal(instance.Status,MessageStatus.DELETED);
+            instance.Status = MessageStatus.UNKNOWN;
+            Assert.Equal(instance.Status,MessageStatus.UNKNOWN);
+            
         }
 
         /// <summary>
@@ -151,7 +189,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PhoneNumberIdTest()
         {
-            // TODO unit test for the property 'PhoneNumberId'
+            instance.PhoneNumberId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.PhoneNumberId);
+            
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class AccountRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for AccountRequest
-        //private AccountRequest instance;
+        private AccountRequest instance;
 
         public AccountRequestTests()
         {
-            // TODO uncomment below to create an instance of AccountRequest
-            //instance = new AccountRequest();
+            instance = new AccountRequest();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsType" AccountRequest
-            //Assert.IsType<AccountRequest>(instance);
+            Assert.IsType<AccountRequest>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LabelTest()
         {
-            // TODO unit test for the property 'Label'
+            instance.Label = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Label);
+            
         }
     }
 }

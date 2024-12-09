@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class SendDigitsTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for SendDigits
-        //private SendDigits instance;
+        private SendDigits instance;
 
         public SendDigitsTests()
         {
-            // TODO uncomment below to create an instance of SendDigits
-            //instance = new SendDigits();
+            instance = new SendDigits();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SendDigitsInstanceTest()
         {
-            // TODO uncomment below to test "IsType" SendDigits
-            //Assert.IsType<SendDigits>(instance);
+            Assert.IsType<SendDigits>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DigitsTest()
         {
-            // TODO unit test for the property 'Digits'
+            instance.Digits = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Digits);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PauseMsTest()
         {
-            // TODO unit test for the property 'PauseMs'
+            
+            instance.PauseMs = 1;
+            Assert.Equal(1, (int) instance.PauseMs);
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
 }

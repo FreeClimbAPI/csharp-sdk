@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class UnparkTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Unpark
-        //private Unpark instance;
+        private Unpark instance;
 
         public UnparkTests()
         {
-            // TODO uncomment below to create an instance of Unpark
-            //instance = new Unpark();
+            instance = new Unpark();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UnparkInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Unpark
-            //Assert.IsType<Unpark>(instance);
+            Assert.IsType<Unpark>(instance);
         }
     }
 }

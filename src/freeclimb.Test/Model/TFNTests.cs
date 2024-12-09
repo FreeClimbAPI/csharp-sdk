@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class TFNTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for TFN
-        //private TFN instance;
+        private TFN instance;
 
         public TFNTests()
         {
-            // TODO uncomment below to create an instance of TFN
-            //instance = new TFN();
+            instance = new TFN();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TFNInstanceTest()
         {
-            // TODO uncomment below to test "IsType" TFN
-            //Assert.IsType<TFN>(instance);
+            Assert.IsType<TFN>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CampaignIdTest()
         {
-            // TODO unit test for the property 'CampaignId'
+            instance.CampaignId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CampaignId);
+            
         }
     }
 }

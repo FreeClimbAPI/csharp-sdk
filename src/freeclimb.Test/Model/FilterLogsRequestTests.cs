@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class FilterLogsRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for FilterLogsRequest
-        //private FilterLogsRequest instance;
+        private FilterLogsRequest instance;
 
         public FilterLogsRequestTests()
         {
-            // TODO uncomment below to create an instance of FilterLogsRequest
-            //instance = new FilterLogsRequest();
+            instance = new FilterLogsRequest();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FilterLogsRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsType" FilterLogsRequest
-            //Assert.IsType<FilterLogsRequest>(instance);
+            Assert.IsType<FilterLogsRequest>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PqlTest()
         {
-            // TODO unit test for the property 'Pql'
+            instance.Pql = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Pql);
+            
         }
     }
 }

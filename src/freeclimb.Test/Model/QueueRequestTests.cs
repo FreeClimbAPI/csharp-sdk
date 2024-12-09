@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class QueueRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for QueueRequest
-        //private QueueRequest instance;
+        private QueueRequest instance;
 
         public QueueRequestTests()
         {
-            // TODO uncomment below to create an instance of QueueRequest
-            //instance = new QueueRequest();
+            instance = new QueueRequest();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void QueueRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsType" QueueRequest
-            //Assert.IsType<QueueRequest>(instance);
+            Assert.IsType<QueueRequest>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MaxSizeTest()
         {
-            // TODO unit test for the property 'MaxSize'
+            
+            instance.MaxSize = 1;
+            Assert.Equal(1, (int) instance.MaxSize);
         }
     }
 }

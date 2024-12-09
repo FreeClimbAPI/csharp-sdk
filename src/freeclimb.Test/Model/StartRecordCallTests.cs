@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class StartRecordCallTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for StartRecordCall
-        //private StartRecordCall instance;
+        private StartRecordCall instance;
 
         public StartRecordCallTests()
         {
-            // TODO uncomment below to create an instance of StartRecordCall
-            //instance = new StartRecordCall();
+            instance = new StartRecordCall();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StartRecordCallInstanceTest()
         {
-            // TODO uncomment below to test "IsType" StartRecordCall
-            //Assert.IsType<StartRecordCall>(instance);
+            Assert.IsType<StartRecordCall>(instance);
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class LogListTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for LogList
-        //private LogList instance;
+        private LogList instance;
 
         public LogListTests()
         {
-            // TODO uncomment below to create an instance of LogList
-            //instance = new LogList();
+            instance = new LogList();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LogListInstanceTest()
         {
-            // TODO uncomment below to test "IsType" LogList
-            //Assert.IsType<LogList>(instance);
+            Assert.IsType<LogList>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TotalTest()
         {
-            // TODO unit test for the property 'Total'
+            
+            instance.Total = 1;
+            Assert.Equal(1, (int) instance.Total);
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StartTest()
         {
-            // TODO unit test for the property 'Start'
+            
+            instance.Start = 1;
+            Assert.Equal(1, (int) instance.Start);
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EndTest()
         {
-            // TODO unit test for the property 'End'
+            
+            instance.End = 1;
+            Assert.Equal(1, (int) instance.End);
         }
 
         /// <summary>
@@ -88,7 +94,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PageTest()
         {
-            // TODO unit test for the property 'Page'
+            
+            instance.Page = 1;
+            Assert.Equal(1, (int) instance.Page);
         }
 
         /// <summary>
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NumPagesTest()
         {
-            // TODO unit test for the property 'NumPages'
+            
+            instance.NumPages = 1;
+            Assert.Equal(1, (int) instance.NumPages);
         }
 
         /// <summary>
@@ -106,7 +116,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PageSizeTest()
         {
-            // TODO unit test for the property 'PageSize'
+            
+            instance.PageSize = 1;
+            Assert.Equal(1, (int) instance.PageSize);
         }
 
         /// <summary>
@@ -115,7 +127,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NextPageUriTest()
         {
-            // TODO unit test for the property 'NextPageUri'
+            instance.NextPageUri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.NextPageUri);
+            
         }
 
         /// <summary>
@@ -124,7 +138,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LogsTest()
         {
-            // TODO unit test for the property 'Logs'
+            
+            List<LogResult> testList = new List<LogResult>();
+            instance.Logs = testList;
+            Assert.Equal(testList, instance.Logs); 
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class BuyIncomingNumberRequestTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for BuyIncomingNumberRequest
-        //private BuyIncomingNumberRequest instance;
+        private BuyIncomingNumberRequest instance;
 
         public BuyIncomingNumberRequestTests()
         {
-            // TODO uncomment below to create an instance of BuyIncomingNumberRequest
-            //instance = new BuyIncomingNumberRequest();
+            instance = new BuyIncomingNumberRequest();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BuyIncomingNumberRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsType" BuyIncomingNumberRequest
-            //Assert.IsType<BuyIncomingNumberRequest>(instance);
+            Assert.IsType<BuyIncomingNumberRequest>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PhoneNumberTest()
         {
-            // TODO unit test for the property 'PhoneNumber'
+            instance.PhoneNumber = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.PhoneNumber);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ApplicationIdTest()
         {
-            // TODO unit test for the property 'ApplicationId'
+            instance.ApplicationId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            
         }
     }
 }

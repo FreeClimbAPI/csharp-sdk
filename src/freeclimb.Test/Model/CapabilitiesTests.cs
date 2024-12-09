@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class CapabilitiesTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Capabilities
-        //private Capabilities instance;
+        private Capabilities instance;
 
         public CapabilitiesTests()
         {
-            // TODO uncomment below to create an instance of Capabilities
-            //instance = new Capabilities();
+            instance = new Capabilities();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Capabilities
-            //Assert.IsType<Capabilities>(instance);
+            Assert.IsType<Capabilities>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void VoiceTest()
         {
-            // TODO unit test for the property 'Voice'
+            instance.Voice = false;
+            Assert.Equal(false, instance.Voice);       
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SmsTest()
         {
-            // TODO unit test for the property 'Sms'
+            instance.Sms = false;
+            Assert.Equal(false, instance.Sms);       
+            
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TollFreeTest()
         {
-            // TODO unit test for the property 'TollFree'
+            instance.TollFree = false;
+            Assert.Equal(false, instance.TollFree);       
+            
         }
 
         /// <summary>
@@ -88,7 +94,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TenDLCTest()
         {
-            // TODO unit test for the property 'TenDLC'
+            instance.TenDLC = false;
+            Assert.Equal(false, instance.TenDLC);       
+            
         }
 
         /// <summary>
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ShortCodeTest()
         {
-            // TODO unit test for the property 'ShortCode'
+            instance.ShortCode = false;
+            Assert.Equal(false, instance.ShortCode);       
+            
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class PlayEarlyMediaTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for PlayEarlyMedia
-        //private PlayEarlyMedia instance;
+        private PlayEarlyMedia instance;
 
         public PlayEarlyMediaTests()
         {
-            // TODO uncomment below to create an instance of PlayEarlyMedia
-            //instance = new PlayEarlyMedia();
+            instance = new PlayEarlyMedia();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayEarlyMediaInstanceTest()
         {
-            // TODO uncomment below to test "IsType" PlayEarlyMedia
-            //Assert.IsType<PlayEarlyMedia>(instance);
+            Assert.IsType<PlayEarlyMedia>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FileTest()
         {
-            // TODO unit test for the property 'File'
+            instance.File = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.File);
+            
         }
     }
 }

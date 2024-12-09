@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class SMSTollFreeCampaignTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for SMSTollFreeCampaign
-        //private SMSTollFreeCampaign instance;
+        private SMSTollFreeCampaign instance;
 
         public SMSTollFreeCampaignTests()
         {
-            // TODO uncomment below to create an instance of SMSTollFreeCampaign
-            //instance = new SMSTollFreeCampaign();
+            instance = new SMSTollFreeCampaign();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SMSTollFreeCampaignInstanceTest()
         {
-            // TODO uncomment below to test "IsType" SMSTollFreeCampaign
-            //Assert.IsType<SMSTollFreeCampaign>(instance);
+            Assert.IsType<SMSTollFreeCampaign>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CampaignIdTest()
         {
-            // TODO unit test for the property 'CampaignId'
+            instance.CampaignId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CampaignId);
+            
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UseCaseTest()
         {
-            // TODO unit test for the property 'UseCase'
+            instance.UseCase = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.UseCase);
+            
         }
 
         /// <summary>
@@ -88,7 +94,17 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RegistrationStatusTest()
         {
-            // TODO unit test for the property 'RegistrationStatus'
+            instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.UNREGISTERED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.UNREGISTERED);
+            instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.INITIATED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.INITIATED);
+            instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.PENDING;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.PENDING);
+            instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.DECLINED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.DECLINED);
+            instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.REGISTERED;
+            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.REGISTERED);
+            
         }
 
         /// <summary>
@@ -97,7 +113,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateCreatedTest()
         {
-            // TODO unit test for the property 'DateCreated'
+            instance.DateCreated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateCreated);
+            
         }
 
         /// <summary>
@@ -106,7 +124,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateUpdatedTest()
         {
-            // TODO unit test for the property 'DateUpdated'
+            instance.DateUpdated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            
         }
 
         /// <summary>
@@ -115,7 +135,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-            // TODO unit test for the property 'Revision'
+            
+            instance.Revision = 1;
+            Assert.Equal(1, (int) instance.Revision);
         }
     }
 }

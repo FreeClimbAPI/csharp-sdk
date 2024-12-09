@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class PlayTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for Play
-        //private Play instance;
+        private Play instance;
 
         public PlayTests()
         {
-            // TODO uncomment below to create an instance of Play
-            //instance = new Play();
+            instance = new Play();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayInstanceTest()
         {
-            // TODO uncomment below to test "IsType" Play
-            //Assert.IsType<Play>(instance);
+            Assert.IsType<Play>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FileTest()
         {
-            // TODO unit test for the property 'File'
+            instance.File = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.File);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void LoopTest()
         {
-            // TODO unit test for the property 'Loop'
+            
+            instance.Loop = 1;
+            Assert.Equal(1, (int) instance.Loop);
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
 }

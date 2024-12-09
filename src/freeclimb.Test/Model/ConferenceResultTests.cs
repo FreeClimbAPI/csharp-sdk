@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class ConferenceResultTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for ConferenceResult
-        //private ConferenceResult instance;
+        private ConferenceResult instance;
 
         public ConferenceResultTests()
         {
-            // TODO uncomment below to create an instance of ConferenceResult
-            //instance = new ConferenceResult();
+            instance = new ConferenceResult();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferenceResultInstanceTest()
         {
-            // TODO uncomment below to test "IsType" ConferenceResult
-            //Assert.IsType<ConferenceResult>(instance);
+            Assert.IsType<ConferenceResult>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void UriTest()
         {
-            // TODO unit test for the property 'Uri'
+            instance.Uri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Uri);
+            
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateCreatedTest()
         {
-            // TODO unit test for the property 'DateCreated'
+            instance.DateCreated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateCreated);
+            
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DateUpdatedTest()
         {
-            // TODO unit test for the property 'DateUpdated'
+            instance.DateUpdated = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            
         }
 
         /// <summary>
@@ -88,7 +94,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RevisionTest()
         {
-            // TODO unit test for the property 'Revision'
+            
+            instance.Revision = 1;
+            Assert.Equal(1, (int) instance.Revision);
         }
 
         /// <summary>
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ConferenceIdTest()
         {
-            // TODO unit test for the property 'ConferenceId'
+            instance.ConferenceId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            
         }
 
         /// <summary>
@@ -106,7 +116,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AccountIdTest()
         {
-            // TODO unit test for the property 'AccountId'
+            instance.AccountId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.AccountId);
+            
         }
 
         /// <summary>
@@ -115,7 +127,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            // TODO unit test for the property 'Alias'
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+            
         }
 
         /// <summary>
@@ -124,7 +138,15 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PlayBeepTest()
         {
-            // TODO unit test for the property 'PlayBeep'
+            instance.PlayBeep = PlayBeep.ALWAYS;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ALWAYS);
+            instance.PlayBeep = PlayBeep.NEVER;
+            Assert.Equal(instance.PlayBeep,PlayBeep.NEVER);
+            instance.PlayBeep = PlayBeep.ENTRY_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.ENTRY_ONLY);
+            instance.PlayBeep = PlayBeep.EXIT_ONLY;
+            Assert.Equal(instance.PlayBeep,PlayBeep.EXIT_ONLY);
+            
         }
 
         /// <summary>
@@ -133,7 +155,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordTest()
         {
-            // TODO unit test for the property 'Record'
+            instance.Record = false;
+            Assert.Equal(false, instance.Record);       
+            
         }
 
         /// <summary>
@@ -142,7 +166,15 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusTest()
         {
-            // TODO unit test for the property 'Status'
+            instance.Status = ConferenceStatus.EMPTY;
+            Assert.Equal(instance.Status,ConferenceStatus.EMPTY);
+            instance.Status = ConferenceStatus.POPULATED;
+            Assert.Equal(instance.Status,ConferenceStatus.POPULATED);
+            instance.Status = ConferenceStatus.IN_PROGRESS;
+            Assert.Equal(instance.Status,ConferenceStatus.IN_PROGRESS);
+            instance.Status = ConferenceStatus.TERMINATED;
+            Assert.Equal(instance.Status,ConferenceStatus.TERMINATED);
+            
         }
 
         /// <summary>
@@ -151,7 +183,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void WaitUrlTest()
         {
-            // TODO unit test for the property 'WaitUrl'
+            instance.WaitUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.WaitUrl);
+            
         }
 
         /// <summary>
@@ -160,7 +194,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
+            
         }
 
         /// <summary>
@@ -169,7 +205,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusCallbackUrlTest()
         {
-            // TODO unit test for the property 'StatusCallbackUrl'
+            instance.StatusCallbackUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.StatusCallbackUrl);
+            
         }
 
         /// <summary>
@@ -178,7 +216,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SubresourceUrisTest()
         {
-            // TODO unit test for the property 'SubresourceUris'
+            object testObject = new object();
+            instance.SubresourceUris = testObject;
+            Assert.Equal(testObject, instance.SubresourceUris);
+            
         }
     }
 }

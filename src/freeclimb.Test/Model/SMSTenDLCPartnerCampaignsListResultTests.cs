@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class SMSTenDLCPartnerCampaignsListResultTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for SMSTenDLCPartnerCampaignsListResult
-        //private SMSTenDLCPartnerCampaignsListResult instance;
+        private SMSTenDLCPartnerCampaignsListResult instance;
 
         public SMSTenDLCPartnerCampaignsListResultTests()
         {
-            // TODO uncomment below to create an instance of SMSTenDLCPartnerCampaignsListResult
-            //instance = new SMSTenDLCPartnerCampaignsListResult();
+            instance = new SMSTenDLCPartnerCampaignsListResult();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SMSTenDLCPartnerCampaignsListResultInstanceTest()
         {
-            // TODO uncomment below to test "IsType" SMSTenDLCPartnerCampaignsListResult
-            //Assert.IsType<SMSTenDLCPartnerCampaignsListResult>(instance);
+            Assert.IsType<SMSTenDLCPartnerCampaignsListResult>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TotalTest()
         {
-            // TODO unit test for the property 'Total'
+            
+            instance.Total = 1;
+            Assert.Equal(1, (int) instance.Total);
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StartTest()
         {
-            // TODO unit test for the property 'Start'
+            
+            instance.Start = 1;
+            Assert.Equal(1, (int) instance.Start);
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void EndTest()
         {
-            // TODO unit test for the property 'End'
+            
+            instance.End = 1;
+            Assert.Equal(1, (int) instance.End);
         }
 
         /// <summary>
@@ -88,7 +94,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PageTest()
         {
-            // TODO unit test for the property 'Page'
+            
+            instance.Page = 1;
+            Assert.Equal(1, (int) instance.Page);
         }
 
         /// <summary>
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NumPagesTest()
         {
-            // TODO unit test for the property 'NumPages'
+            
+            instance.NumPages = 1;
+            Assert.Equal(1, (int) instance.NumPages);
         }
 
         /// <summary>
@@ -106,7 +116,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PageSizeTest()
         {
-            // TODO unit test for the property 'PageSize'
+            
+            instance.PageSize = 1;
+            Assert.Equal(1, (int) instance.PageSize);
         }
 
         /// <summary>
@@ -115,7 +127,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NextPageUriTest()
         {
-            // TODO unit test for the property 'NextPageUri'
+            instance.NextPageUri = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.NextPageUri);
+            
         }
 
         /// <summary>
@@ -124,7 +138,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PartnerCampaignsTest()
         {
-            // TODO unit test for the property 'PartnerCampaigns'
+            
+            List<SMSTenDLCPartnerCampaign> testList = new List<SMSTenDLCPartnerCampaign>();
+            instance.PartnerCampaigns = testList;
+            Assert.Equal(testList, instance.PartnerCampaigns); 
         }
     }
 }

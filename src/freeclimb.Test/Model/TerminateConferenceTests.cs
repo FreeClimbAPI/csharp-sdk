@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class TerminateConferenceTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for TerminateConference
-        //private TerminateConference instance;
+        private TerminateConference instance;
 
         public TerminateConferenceTests()
         {
-            // TODO uncomment below to create an instance of TerminateConference
-            //instance = new TerminateConference();
+            instance = new TerminateConference();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TerminateConferenceInstanceTest()
         {
-            // TODO uncomment below to test "IsType" TerminateConference
-            //Assert.IsType<TerminateConference>(instance);
+            Assert.IsType<TerminateConference>(instance);
         }
     }
 }

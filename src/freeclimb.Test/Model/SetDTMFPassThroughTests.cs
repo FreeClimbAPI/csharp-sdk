@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class SetDTMFPassThroughTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for SetDTMFPassThrough
-        //private SetDTMFPassThrough instance;
+        private SetDTMFPassThrough instance;
 
         public SetDTMFPassThroughTests()
         {
-            // TODO uncomment below to create an instance of SetDTMFPassThrough
-            //instance = new SetDTMFPassThrough();
+            instance = new SetDTMFPassThrough();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SetDTMFPassThroughInstanceTest()
         {
-            // TODO uncomment below to test "IsType" SetDTMFPassThrough
-            //Assert.IsType<SetDTMFPassThrough>(instance);
+            Assert.IsType<SetDTMFPassThrough>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DtmfPassThroughTest()
         {
-            // TODO unit test for the property 'DtmfPassThrough'
+            instance.DtmfPassThrough = false;
+            Assert.Equal(false, instance.DtmfPassThrough);       
+            
         }
     }
 }

@@ -20,6 +20,8 @@ using freeclimb.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
+using freeclimb.Enums;
+
 namespace freeclimb.Test.Model
 {
     /// <summary>
@@ -32,12 +34,11 @@ namespace freeclimb.Test.Model
     public class GetDigitsTests : IDisposable
     {
         // TODO uncomment below to declare an instance variable for GetDigits
-        //private GetDigits instance;
+        private GetDigits instance;
 
         public GetDigitsTests()
         {
-            // TODO uncomment below to create an instance of GetDigits
-            //instance = new GetDigits();
+            instance = new GetDigits();
         }
 
         public void Dispose()
@@ -51,8 +52,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void GetDigitsInstanceTest()
         {
-            // TODO uncomment below to test "IsType" GetDigits
-            //Assert.IsType<GetDigits>(instance);
+            Assert.IsType<GetDigits>(instance);
         }
 
         /// <summary>
@@ -61,7 +61,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
-            // TODO unit test for the property 'ActionUrl'
+            
+            instance.ActionUrl = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
 
         /// <summary>
@@ -70,7 +72,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void DigitTimeoutMsTest()
         {
-            // TODO unit test for the property 'DigitTimeoutMs'
+            
+            instance.DigitTimeoutMs = 1;
+            Assert.Equal(1, (int) instance.DigitTimeoutMs);
         }
 
         /// <summary>
@@ -79,7 +83,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FinishOnKeyTest()
         {
-            // TODO unit test for the property 'FinishOnKey'
+            instance.FinishOnKey = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.FinishOnKey);
+            
         }
 
         /// <summary>
@@ -88,7 +94,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void FlushBufferTest()
         {
-            // TODO unit test for the property 'FlushBuffer'
+            instance.FlushBuffer = false;
+            Assert.Equal(false, instance.FlushBuffer);       
+            
         }
 
         /// <summary>
@@ -97,7 +105,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void InitialTimeoutMsTest()
         {
-            // TODO unit test for the property 'InitialTimeoutMs'
+            
+            instance.InitialTimeoutMs = 1;
+            Assert.Equal(1, (int) instance.InitialTimeoutMs);
         }
 
         /// <summary>
@@ -106,7 +116,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MaxDigitsTest()
         {
-            // TODO unit test for the property 'MaxDigits'
+            
+            instance.MaxDigits = 1;
+            Assert.Equal(1, (int) instance.MaxDigits);
         }
 
         /// <summary>
@@ -115,7 +127,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MinDigitsTest()
         {
-            // TODO unit test for the property 'MinDigits'
+            
+            instance.MinDigits = 1;
+            Assert.Equal(1, (int) instance.MinDigits);
         }
 
         /// <summary>
@@ -124,7 +138,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PromptsTest()
         {
-            // TODO unit test for the property 'Prompts'
+            
+            List<PerclCommand> testList = new List<PerclCommand>();
+            instance.Prompts = testList;
+            Assert.Equal(testList, instance.Prompts); 
         }
 
         /// <summary>
@@ -133,7 +150,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void PrivacyModeTest()
         {
-            // TODO unit test for the property 'PrivacyMode'
+            instance.PrivacyMode = false;
+            Assert.Equal(false, instance.PrivacyMode);       
+            
         }
     }
 }
