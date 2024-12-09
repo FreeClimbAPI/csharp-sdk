@@ -246,7 +246,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(bool)) {
                 return true;
             }
-            throw new ArgumentException("Provided type has no test value", type);
+            throw new ArgumentException("Provided type has no test value");
         }
     }
 }
