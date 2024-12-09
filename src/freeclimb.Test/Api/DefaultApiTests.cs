@@ -1795,7 +1795,7 @@ namespace freeclimb.Test.Api
 
         private CreateConferenceRequest createConferenceRequestTestValue()
         {
-            PlayBeep enumPlayBeepStatus = (PlayBeep)Enum.Parse(typeof(PlayBeep), "always");
+            PlayBeep enumPlayBeepStatus = PlayBeepValueConverter.FromString("always");
             return new CreateConferenceRequest("TEST-CONF", enumPlayBeepStatus, true);
         }
 
@@ -1906,7 +1906,7 @@ namespace freeclimb.Test.Api
 
         private CallResult callResultTestValue()
         {
-            CallStatus enumCallStatus = (CallStatus)Enum.Parse(typeof(CallStatus), "inProgress");
+            CallStatus enumCallStatus = CallStatusValueConverter.FromString("inProgress");
             return new CallResult("example.com", dateCreatedTestValue(), "Mon, 15 Jun 2020 20:45:32 GMT", 
                 1, callIdTestValue(), null, accountIdTestValue(), phoneNumberTestValue(), "+13124567890",
                 null, enumCallStatus, dateCreatedTestValue(), dateCreatedTestValue(), null);
@@ -1930,7 +1930,7 @@ namespace freeclimb.Test.Api
 
         private MessageResult messageResultTestValue()
         {
-            MessageStatus enumMessageStatus = (MessageStatus)Enum.Parse(typeof(MessageStatus), "sent");
+            MessageStatus enumMessageStatus = MessageStatusValueConverter.FromString("sent");
             return new MessageResult("example.com", dateCreatedTestValue(), null, 1, accountIdTestValue(), messageIdTestValue(), enumMessageStatus,
                 phoneNumberTestValue(), "+13121113456", "Test text message", "outbound");
         }
@@ -1987,7 +1987,7 @@ namespace freeclimb.Test.Api
         }
 
         private CallStatus statusTestEnum() {
-            return (CallStatus)Enum.Parse(typeof(CallStatus), "completed");
+            return CallStatusValueConverter.FromString("completed");
         }
 
         private List<string> applicationIdTestArray()
@@ -2054,7 +2054,7 @@ namespace freeclimb.Test.Api
         private string directionTestValue() { return "outbound"; }
 
         private MessageDirection directionTestEnum() { 
-            MessageDirection messageDirection = MessageDirection.FromString("outbound");
+            MessageDirection messageDirection = MessageDirectionValueConverter.FromString("outbound");
             return messageDirection;
         }
 
@@ -2067,13 +2067,13 @@ namespace freeclimb.Test.Api
 
         private UpdateConferenceRequest updateConferenceRequestTestValue()
         {
-            PlayBeep enumPlayBeepStatus = (PlayBeep)Enum.Parse(typeof(PlayBeep), "always");
+            PlayBeep enumPlayBeepStatus = PlayBeepValueConverter.FromString(always");
             return new UpdateConferenceRequest("TEST-CONF", enumPlayBeepStatus);
         }
 
         private UpdateCallRequest updateCallRequestTestValue()
         {
-            UpdateCallRequestStatus enumCallRequestStatus = (UpdateCallRequestStatus)Enum.Parse(typeof(UpdateCallRequestStatus), "completed");
+            UpdateCallRequestStatus enumCallRequestStatus = UpdateCallRequestStatus("completed");
             return new UpdateCallRequest(enumCallRequestStatus);
         }
 
