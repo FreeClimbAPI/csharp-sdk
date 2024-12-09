@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public WebhookTests()
         {
             instance = new Webhook(
-                requestType=(string)getTestValue(string)
+                requestType=(string)getTestValue(typeof(string))
             );
         }
 

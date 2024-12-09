@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public OutDialStartWebhookTests()
         {
             instance = new OutDialStartWebhook(
-                requestType=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                callId=(string)getTestValue(string),
-                from=(string)getTestValue(string),
-                to=(string)getTestValue(string),
-                callStatus=(CallStatus)getTestValue(CallStatus),
-                direction=(CallDirection)getTestValue(CallDirection),
-                conferenceId=(string)getTestValue(string),
-                queueId=(string)getTestValue(string),
-                dialCallId=(string)getTestValue(string),
-                parentCallId=(string)getTestValue(string)
+                requestType=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                callId=(string)getTestValue(typeof(string)),
+                from=(string)getTestValue(typeof(string)),
+                to=(string)getTestValue(typeof(string)),
+                callStatus=(CallStatus)getTestValue(typeof(CallStatus)),
+                direction=(CallDirection)getTestValue(typeof(CallDirection)),
+                conferenceId=(string)getTestValue(typeof(string)),
+                queueId=(string)getTestValue(typeof(string)),
+                dialCallId=(string)getTestValue(typeof(string)),
+                parentCallId=(string)getTestValue(typeof(string))
             );
         }
 

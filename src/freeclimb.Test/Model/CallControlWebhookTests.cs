@@ -39,11 +39,11 @@ namespace freeclimb.Test.Model
         public CallControlWebhookTests()
         {
             instance = new CallControlWebhook(
-                requestType=(string)getTestValue(string),
-                callId=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                conferenceId=(string)getTestValue(string),
-                digits=(string)getTestValue(string)
+                requestType=(string)getTestValue(typeof(string)),
+                callId=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                conferenceId=(string)getTestValue(typeof(string)),
+                digits=(string)getTestValue(typeof(string))
             );
         }
 

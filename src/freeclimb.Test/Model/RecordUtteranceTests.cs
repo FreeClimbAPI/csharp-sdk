@@ -39,13 +39,13 @@ namespace freeclimb.Test.Model
         public RecordUtteranceTests()
         {
             instance = new RecordUtterance(
-                actionUrl=(string)getTestValue(string),
-                silenceTimeoutMs=(int)getTestValue(int),
-                finishOnKey=(string)getTestValue(string),
-                maxLengthSec=(int)getTestValue(int),
-                playBeep=(bool)getTestValue(bool),
-                autoStart=(bool)getTestValue(bool),
-                privacyMode=(bool)getTestValue(bool)
+                actionUrl=(string)getTestValue(typeof(string)),
+                silenceTimeoutMs=(int)getTestValue(typeof(int)),
+                finishOnKey=(string)getTestValue(typeof(string)),
+                maxLengthSec=(int)getTestValue(typeof(int)),
+                playBeep=(bool)getTestValue(typeof(bool)),
+                autoStart=(bool)getTestValue(typeof(bool)),
+                privacyMode=(bool)getTestValue(typeof(bool))
             );
         }
 

@@ -39,10 +39,10 @@ namespace freeclimb.Test.Model
         public MutableResourceModelTests()
         {
             instance = new MutableResourceModel(
-                uri=(string)getTestValue(string),
-                dateCreated=(string)getTestValue(string),
-                dateUpdated=(string)getTestValue(string),
-                revision=(int)getTestValue(int)
+                uri=(string)getTestValue(typeof(string)),
+                dateCreated=(string)getTestValue(typeof(string)),
+                dateUpdated=(string)getTestValue(typeof(string)),
+                revision=(int)getTestValue(typeof(int))
             );
         }
 

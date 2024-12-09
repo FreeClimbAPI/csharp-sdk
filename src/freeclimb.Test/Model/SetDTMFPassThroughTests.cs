@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public SetDTMFPassThroughTests()
         {
             instance = new SetDTMFPassThrough(
-                dtmfPassThrough=(bool)getTestValue(bool)
+                dtmfPassThrough=(bool)getTestValue(typeof(bool))
             );
         }
 

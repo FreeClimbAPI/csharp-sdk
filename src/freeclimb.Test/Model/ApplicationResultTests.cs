@@ -39,19 +39,19 @@ namespace freeclimb.Test.Model
         public ApplicationResultTests()
         {
             instance = new ApplicationResult(
-                uri=(string)getTestValue(string),
-                dateCreated=(string)getTestValue(string),
-                dateUpdated=(string)getTestValue(string),
-                revision=(int)getTestValue(int),
-                accountId=(string)getTestValue(string),
-                applicationId=(string)getTestValue(string),
-                alias=(string)getTestValue(string),
-                voiceUrl=(string)getTestValue(string),
-                voiceFallbackUrl=(string)getTestValue(string),
-                callConnectUrl=(string)getTestValue(string),
-                statusCallbackUrl=(string)getTestValue(string),
-                smsUrl=(string)getTestValue(string),
-                smsFallbackUrl=(string)getTestValue(string)
+                uri=(string)getTestValue(typeof(string)),
+                dateCreated=(string)getTestValue(typeof(string)),
+                dateUpdated=(string)getTestValue(typeof(string)),
+                revision=(int)getTestValue(typeof(int)),
+                accountId=(string)getTestValue(typeof(string)),
+                applicationId=(string)getTestValue(typeof(string)),
+                alias=(string)getTestValue(typeof(string)),
+                voiceUrl=(string)getTestValue(typeof(string)),
+                voiceFallbackUrl=(string)getTestValue(typeof(string)),
+                callConnectUrl=(string)getTestValue(typeof(string)),
+                statusCallbackUrl=(string)getTestValue(typeof(string)),
+                smsUrl=(string)getTestValue(typeof(string)),
+                smsFallbackUrl=(string)getTestValue(typeof(string))
             );
         }
 

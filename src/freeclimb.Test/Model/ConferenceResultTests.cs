@@ -39,20 +39,20 @@ namespace freeclimb.Test.Model
         public ConferenceResultTests()
         {
             instance = new ConferenceResult(
-                uri=(string)getTestValue(string),
-                dateCreated=(string)getTestValue(string),
-                dateUpdated=(string)getTestValue(string),
-                revision=(int)getTestValue(int),
-                conferenceId=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                alias=(string)getTestValue(string),
-                playBeep=(PlayBeep)getTestValue(PlayBeep),
-                record=(bool?)getTestValue(bool?),
-                status=(ConferenceStatus)getTestValue(ConferenceStatus),
-                waitUrl=(string)getTestValue(string),
-                actionUrl=(string)getTestValue(string),
-                statusCallbackUrl=(string)getTestValue(string),
-                subresourceUris=(Object)getTestValue(Object)
+                uri=(string)getTestValue(typeof(string)),
+                dateCreated=(string)getTestValue(typeof(string)),
+                dateUpdated=(string)getTestValue(typeof(string)),
+                revision=(int)getTestValue(typeof(int)),
+                conferenceId=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                alias=(string)getTestValue(typeof(string)),
+                playBeep=(PlayBeep)getTestValue(typeof(PlayBeep)),
+                record=(bool?)getTestValue(typeof(bool?)),
+                status=(ConferenceStatus)getTestValue(typeof(ConferenceStatus)),
+                waitUrl=(string)getTestValue(typeof(string)),
+                actionUrl=(string)getTestValue(typeof(string)),
+                statusCallbackUrl=(string)getTestValue(typeof(string)),
+                subresourceUris=(Object)getTestValue(typeof(Object))
             );
         }
 

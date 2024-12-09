@@ -39,26 +39,26 @@ namespace freeclimb.Test.Model
         public CallResultTests()
         {
             instance = new CallResult(
-                uri=(string)getTestValue(string),
-                dateCreated=(string)getTestValue(string),
-                dateUpdated=(string)getTestValue(string),
-                revision=(int)getTestValue(int),
-                callId=(string)getTestValue(string),
-                parentCallId=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                from=(string)getTestValue(string),
-                to=(string)getTestValue(string),
-                phoneNumberId=(string)getTestValue(string),
-                callStatus=(CallStatus)getTestValue(CallStatus),
-                startTime=(string)getTestValue(string),
-                connectTime=(string)getTestValue(string),
-                endTime=(string)getTestValue(string),
-                duration=(int?)getTestValue(int?),
-                connectDuration=(int?)getTestValue(int?),
-                direction=(CallDirection)getTestValue(CallDirection),
-                answeredBy=(AnsweredBy)getTestValue(AnsweredBy),
-                subresourceUris=(Object)getTestValue(Object),
-                applicationId=(string)getTestValue(string)
+                uri=(string)getTestValue(typeof(string)),
+                dateCreated=(string)getTestValue(typeof(string)),
+                dateUpdated=(string)getTestValue(typeof(string)),
+                revision=(int)getTestValue(typeof(int)),
+                callId=(string)getTestValue(typeof(string)),
+                parentCallId=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                from=(string)getTestValue(typeof(string)),
+                to=(string)getTestValue(typeof(string)),
+                phoneNumberId=(string)getTestValue(typeof(string)),
+                callStatus=(CallStatus)getTestValue(typeof(CallStatus)),
+                startTime=(string)getTestValue(typeof(string)),
+                connectTime=(string)getTestValue(typeof(string)),
+                endTime=(string)getTestValue(typeof(string)),
+                duration=(int?)getTestValue(typeof(int?)),
+                connectDuration=(int?)getTestValue(typeof(int?)),
+                direction=(CallDirection)getTestValue(typeof(CallDirection)),
+                answeredBy=(AnsweredBy)getTestValue(typeof(AnsweredBy)),
+                subresourceUris=(Object)getTestValue(typeof(Object)),
+                applicationId=(string)getTestValue(typeof(string))
             );
         }
 

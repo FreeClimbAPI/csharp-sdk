@@ -39,14 +39,14 @@ namespace freeclimb.Test.Model
         public MessagesListTests()
         {
             instance = new MessagesList(
-                total=(int?)getTestValue(int?),
-                start=(int?)getTestValue(int?),
-                end=(int?)getTestValue(int?),
-                page=(int?)getTestValue(int?),
-                numPages=(int?)getTestValue(int?),
-                pageSize=(int?)getTestValue(int?),
-                nextPageUri=(string)getTestValue(string),
-                messages=(List<MessageResult>)getTestValue(List<MessageResult>)
+                total=(int?)getTestValue(typeof(int?)),
+                start=(int?)getTestValue(typeof(int?)),
+                end=(int?)getTestValue(typeof(int?)),
+                page=(int?)getTestValue(typeof(int?)),
+                numPages=(int?)getTestValue(typeof(int?)),
+                pageSize=(int?)getTestValue(typeof(int?)),
+                nextPageUri=(string)getTestValue(typeof(string)),
+                messages=(List<MessageResult>)getTestValue(typeof(List<MessageResult>))
             );
         }
 

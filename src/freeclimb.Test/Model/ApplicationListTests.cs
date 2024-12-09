@@ -39,14 +39,14 @@ namespace freeclimb.Test.Model
         public ApplicationListTests()
         {
             instance = new ApplicationList(
-                total=(int?)getTestValue(int?),
-                start=(int?)getTestValue(int?),
-                end=(int?)getTestValue(int?),
-                page=(int?)getTestValue(int?),
-                numPages=(int?)getTestValue(int?),
-                pageSize=(int?)getTestValue(int?),
-                nextPageUri=(string)getTestValue(string),
-                applications=(List<ApplicationResult>)getTestValue(List<ApplicationResult>)
+                total=(int?)getTestValue(typeof(int?)),
+                start=(int?)getTestValue(typeof(int?)),
+                end=(int?)getTestValue(typeof(int?)),
+                page=(int?)getTestValue(typeof(int?)),
+                numPages=(int?)getTestValue(typeof(int?)),
+                pageSize=(int?)getTestValue(typeof(int?)),
+                nextPageUri=(string)getTestValue(typeof(string)),
+                applications=(List<ApplicationResult>)getTestValue(typeof(List<ApplicationResult>))
             );
         }
 

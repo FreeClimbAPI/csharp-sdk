@@ -39,15 +39,15 @@ namespace freeclimb.Test.Model
         public RecordingResultTests()
         {
             instance = new RecordingResult(
-                uri=(string)getTestValue(string),
-                dateCreated=(string)getTestValue(string),
-                dateUpdated=(string)getTestValue(string),
-                revision=(int)getTestValue(int),
-                recordingId=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                callId=(string)getTestValue(string),
-                durationSec=(int?)getTestValue(int?),
-                conferenceId=(string)getTestValue(string)
+                uri=(string)getTestValue(typeof(string)),
+                dateCreated=(string)getTestValue(typeof(string)),
+                dateUpdated=(string)getTestValue(typeof(string)),
+                revision=(int)getTestValue(typeof(int)),
+                recordingId=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                callId=(string)getTestValue(typeof(string)),
+                durationSec=(int?)getTestValue(typeof(int?)),
+                conferenceId=(string)getTestValue(typeof(string))
             );
         }
 

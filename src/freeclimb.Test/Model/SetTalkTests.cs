@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public SetTalkTests()
         {
             instance = new SetTalk(
-                talk=(bool)getTestValue(bool)
+                talk=(bool)getTestValue(typeof(bool))
             );
         }
 

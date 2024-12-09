@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public ConferenceParticipantResultTests()
         {
             instance = new ConferenceParticipantResult(
-                uri=(string)getTestValue(string),
-                dateCreated=(string)getTestValue(string),
-                dateUpdated=(string)getTestValue(string),
-                revision=(int)getTestValue(int),
-                accountId=(string)getTestValue(string),
-                conferenceId=(string)getTestValue(string),
-                callId=(string)getTestValue(string),
-                talk=(bool?)getTestValue(bool?),
-                listen=(bool?)getTestValue(bool?),
-                dtmfPassThrough=(bool?)getTestValue(bool?),
-                startConfOnEnter=(bool?)getTestValue(bool?)
+                uri=(string)getTestValue(typeof(string)),
+                dateCreated=(string)getTestValue(typeof(string)),
+                dateUpdated=(string)getTestValue(typeof(string)),
+                revision=(int)getTestValue(typeof(int)),
+                accountId=(string)getTestValue(typeof(string)),
+                conferenceId=(string)getTestValue(typeof(string)),
+                callId=(string)getTestValue(typeof(string)),
+                talk=(bool?)getTestValue(typeof(bool?)),
+                listen=(bool?)getTestValue(typeof(bool?)),
+                dtmfPassThrough=(bool?)getTestValue(typeof(bool?)),
+                startConfOnEnter=(bool?)getTestValue(typeof(bool?))
             );
         }
 

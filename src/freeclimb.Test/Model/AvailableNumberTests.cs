@@ -39,13 +39,13 @@ namespace freeclimb.Test.Model
         public AvailableNumberTests()
         {
             instance = new AvailableNumber(
-                capabilities=(Capabilities)getTestValue(Capabilities),
-                campaignId=(string)getTestValue(string),
-                phoneNumber=(string)getTestValue(string),
-                voiceEnabled=(bool?)getTestValue(bool?),
-                smsEnabled=(bool?)getTestValue(bool?),
-                region=(string)getTestValue(string),
-                country=(string)getTestValue(string)
+                capabilities=(Capabilities)getTestValue(typeof(Capabilities)),
+                campaignId=(string)getTestValue(typeof(string)),
+                phoneNumber=(string)getTestValue(typeof(string)),
+                voiceEnabled=(bool?)getTestValue(typeof(bool?)),
+                smsEnabled=(bool?)getTestValue(typeof(bool?)),
+                region=(string)getTestValue(typeof(string)),
+                country=(string)getTestValue(typeof(string))
             );
         }
 

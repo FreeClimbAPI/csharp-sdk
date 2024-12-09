@@ -39,16 +39,16 @@ namespace freeclimb.Test.Model
         public OutDialTests()
         {
             instance = new OutDial(
-                actionUrl=(string)getTestValue(string),
-                callConnectUrl=(string)getTestValue(string),
-                callingNumber=(string)getTestValue(string),
-                destination=(string)getTestValue(string),
-                ifMachine=(IfMachine)getTestValue(IfMachine),
-                ifMachineUrl=(string)getTestValue(string),
-                sendDigits=(string)getTestValue(string),
-                statusCallbackUrl=(string)getTestValue(string),
-                timeout=(int)getTestValue(int),
-                privacyMode=(bool)getTestValue(bool)
+                actionUrl=(string)getTestValue(typeof(string)),
+                callConnectUrl=(string)getTestValue(typeof(string)),
+                callingNumber=(string)getTestValue(typeof(string)),
+                destination=(string)getTestValue(typeof(string)),
+                ifMachine=(IfMachine)getTestValue(typeof(IfMachine)),
+                ifMachineUrl=(string)getTestValue(typeof(string)),
+                sendDigits=(string)getTestValue(typeof(string)),
+                statusCallbackUrl=(string)getTestValue(typeof(string)),
+                timeout=(int)getTestValue(typeof(int)),
+                privacyMode=(bool)getTestValue(typeof(bool))
             );
         }
 

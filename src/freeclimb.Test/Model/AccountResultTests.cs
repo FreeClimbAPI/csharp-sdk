@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public AccountResultTests()
         {
             instance = new AccountResult(
-                uri=(string)getTestValue(string),
-                dateCreated=(string)getTestValue(string),
-                dateUpdated=(string)getTestValue(string),
-                revision=(int)getTestValue(int),
-                accountId=(string)getTestValue(string),
-                apiKey=(string)getTestValue(string),
-                alias=(string)getTestValue(string),
-                label=(string)getTestValue(string),
-                type=(AccountType)getTestValue(AccountType),
-                status=(AccountStatus)getTestValue(AccountStatus),
-                subresourceUris=(Object)getTestValue(Object)
+                uri=(string)getTestValue(typeof(string)),
+                dateCreated=(string)getTestValue(typeof(string)),
+                dateUpdated=(string)getTestValue(typeof(string)),
+                revision=(int)getTestValue(typeof(int)),
+                accountId=(string)getTestValue(typeof(string)),
+                apiKey=(string)getTestValue(typeof(string)),
+                alias=(string)getTestValue(typeof(string)),
+                label=(string)getTestValue(typeof(string)),
+                type=(AccountType)getTestValue(typeof(AccountType)),
+                status=(AccountStatus)getTestValue(typeof(AccountStatus)),
+                subresourceUris=(Object)getTestValue(typeof(Object))
             );
         }
 

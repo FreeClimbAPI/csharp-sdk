@@ -39,22 +39,22 @@ namespace freeclimb.Test.Model
         public MessageResultTests()
         {
             instance = new MessageResult(
-                uri=(string)getTestValue(string),
-                dateCreated=(string)getTestValue(string),
-                dateUpdated=(string)getTestValue(string),
-                revision=(int)getTestValue(int),
-                accountId=(string)getTestValue(string),
-                messageId=(string)getTestValue(string),
-                status=(MessageStatus)getTestValue(MessageStatus),
-                from=(string)getTestValue(string),
-                to=(string)getTestValue(string),
-                text=(string)getTestValue(string),
-                direction=(string)getTestValue(string),
-                notificationUrl=(string)getTestValue(string),
-                brandId=(string)getTestValue(string),
-                campaignId=(string)getTestValue(string),
-                segmentCount=(decimal?)getTestValue(decimal?),
-                mediaUrls=(List<string>)getTestValue(List<string>)
+                uri=(string)getTestValue(typeof(string)),
+                dateCreated=(string)getTestValue(typeof(string)),
+                dateUpdated=(string)getTestValue(typeof(string)),
+                revision=(int)getTestValue(typeof(int)),
+                accountId=(string)getTestValue(typeof(string)),
+                messageId=(string)getTestValue(typeof(string)),
+                status=(MessageStatus)getTestValue(typeof(MessageStatus)),
+                from=(string)getTestValue(typeof(string)),
+                to=(string)getTestValue(typeof(string)),
+                text=(string)getTestValue(typeof(string)),
+                direction=(string)getTestValue(typeof(string)),
+                notificationUrl=(string)getTestValue(typeof(string)),
+                brandId=(string)getTestValue(typeof(string)),
+                campaignId=(string)getTestValue(typeof(string)),
+                segmentCount=(decimal?)getTestValue(typeof(decimal?)),
+                mediaUrls=(List<string>)getTestValue(typeof(List<string>))
             );
         }
 

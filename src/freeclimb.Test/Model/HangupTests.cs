@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public HangupTests()
         {
             instance = new Hangup(
-                reason=(string)getTestValue(string)
+                reason=(string)getTestValue(typeof(string))
             );
         }
 

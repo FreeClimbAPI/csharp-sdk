@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public CreateWebRTCTokenTests()
         {
             instance = new CreateWebRTCToken(
-                to=(string)getTestValue(string),
-                from=(string)getTestValue(string),
-                uses=(int)getTestValue(int)
+                to=(string)getTestValue(typeof(string)),
+                from=(string)getTestValue(typeof(string)),
+                uses=(int)getTestValue(typeof(int))
             );
         }
 

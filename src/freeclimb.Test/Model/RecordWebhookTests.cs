@@ -39,23 +39,23 @@ namespace freeclimb.Test.Model
         public RecordWebhookTests()
         {
             instance = new RecordWebhook(
-                requestType=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                callId=(string)getTestValue(string),
-                from=(string)getTestValue(string),
-                to=(string)getTestValue(string),
-                callStatus=(CallStatus)getTestValue(CallStatus),
-                direction=(CallDirection)getTestValue(CallDirection),
-                conferenceId=(string)getTestValue(string),
-                queueId=(string)getTestValue(string),
-                recordingId=(string)getTestValue(string),
-                recordingUrl=(string)getTestValue(string),
-                recordingSize=(string)getTestValue(string),
-                recordingFormat=(string)getTestValue(string),
-                recordingDurationSec=(int)getTestValue(int),
-                termReason=(RecordUtteranceTermReason)getTestValue(RecordUtteranceTermReason),
-                parentCallId=(string)getTestValue(string),
-                privacyMode=(bool)getTestValue(bool)
+                requestType=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                callId=(string)getTestValue(typeof(string)),
+                from=(string)getTestValue(typeof(string)),
+                to=(string)getTestValue(typeof(string)),
+                callStatus=(CallStatus)getTestValue(typeof(CallStatus)),
+                direction=(CallDirection)getTestValue(typeof(CallDirection)),
+                conferenceId=(string)getTestValue(typeof(string)),
+                queueId=(string)getTestValue(typeof(string)),
+                recordingId=(string)getTestValue(typeof(string)),
+                recordingUrl=(string)getTestValue(typeof(string)),
+                recordingSize=(string)getTestValue(typeof(string)),
+                recordingFormat=(string)getTestValue(typeof(string)),
+                recordingDurationSec=(int)getTestValue(typeof(int)),
+                termReason=(RecordUtteranceTermReason)getTestValue(typeof(RecordUtteranceTermReason)),
+                parentCallId=(string)getTestValue(typeof(string)),
+                privacyMode=(bool)getTestValue(typeof(bool))
             );
         }
 

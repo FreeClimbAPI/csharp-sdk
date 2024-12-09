@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public PlayTests()
         {
             instance = new Play(
-                file=(string)getTestValue(string),
-                loop=(int)getTestValue(int),
-                privacyMode=(bool)getTestValue(bool)
+                file=(string)getTestValue(typeof(string)),
+                loop=(int)getTestValue(typeof(int)),
+                privacyMode=(bool)getTestValue(typeof(bool))
             );
         }
 

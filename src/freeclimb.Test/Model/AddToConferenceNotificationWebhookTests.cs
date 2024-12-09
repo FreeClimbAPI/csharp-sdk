@@ -39,19 +39,19 @@ namespace freeclimb.Test.Model
         public AddToConferenceNotificationWebhookTests()
         {
             instance = new AddToConferenceNotificationWebhook(
-                requestType=(string)getTestValue(string),
-                callId=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                from=(string)getTestValue(string),
-                to=(string)getTestValue(string),
-                callStatus=(CallStatus)getTestValue(CallStatus),
-                direction=(CallDirection)getTestValue(CallDirection),
-                conferenceId=(string)getTestValue(string),
-                queueId=(string)getTestValue(string),
-                status=(ConferenceStatus)getTestValue(ConferenceStatus),
-                recordingUrl=(string)getTestValue(string),
-                recordingId=(string)getTestValue(string),
-                recordingDurationSec=(int)getTestValue(int)
+                requestType=(string)getTestValue(typeof(string)),
+                callId=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                from=(string)getTestValue(typeof(string)),
+                to=(string)getTestValue(typeof(string)),
+                callStatus=(CallStatus)getTestValue(typeof(CallStatus)),
+                direction=(CallDirection)getTestValue(typeof(CallDirection)),
+                conferenceId=(string)getTestValue(typeof(string)),
+                queueId=(string)getTestValue(typeof(string)),
+                status=(ConferenceStatus)getTestValue(typeof(ConferenceStatus)),
+                recordingUrl=(string)getTestValue(typeof(string)),
+                recordingId=(string)getTestValue(typeof(string)),
+                recordingDurationSec=(int)getTestValue(typeof(int))
             );
         }
 

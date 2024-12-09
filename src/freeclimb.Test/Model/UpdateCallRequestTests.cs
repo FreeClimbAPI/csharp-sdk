@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public UpdateCallRequestTests()
         {
             instance = new UpdateCallRequest(
-                status=(UpdateCallRequestStatus)getTestValue(UpdateCallRequestStatus)
+                status=(UpdateCallRequestStatus)getTestValue(typeof(UpdateCallRequestStatus))
             );
         }
 

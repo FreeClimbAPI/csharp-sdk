@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public SMSTenDLCPartnerCampaignBrandTests()
         {
             instance = new SMSTenDLCPartnerCampaignBrand(
-                accountId=(string)getTestValue(string),
-                brandId=(string)getTestValue(string),
-                firstName=(string)getTestValue(string),
-                lastName=(string)getTestValue(string),
-                displayName=(string)getTestValue(string),
-                companyName=(string)getTestValue(string),
-                phone=(string)getTestValue(string),
-                email=(string)getTestValue(string),
-                website=(string)getTestValue(string),
-                optionalAttributes=(Dictionary<string, Object>)getTestValue(Dictionary<string, Object>),
-                evpVettingScore=(int)getTestValue(int)
+                accountId=(string)getTestValue(typeof(string)),
+                brandId=(string)getTestValue(typeof(string)),
+                firstName=(string)getTestValue(typeof(string)),
+                lastName=(string)getTestValue(typeof(string)),
+                displayName=(string)getTestValue(typeof(string)),
+                companyName=(string)getTestValue(typeof(string)),
+                phone=(string)getTestValue(typeof(string)),
+                email=(string)getTestValue(typeof(string)),
+                website=(string)getTestValue(typeof(string)),
+                optionalAttributes=(Dictionary<string, Object>)getTestValue(typeof(Dictionary<string, Object>)),
+                evpVettingScore=(int)getTestValue(typeof(int))
             );
         }
 

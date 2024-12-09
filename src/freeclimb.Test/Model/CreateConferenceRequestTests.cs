@@ -39,11 +39,11 @@ namespace freeclimb.Test.Model
         public CreateConferenceRequestTests()
         {
             instance = new CreateConferenceRequest(
-                alias=(string)getTestValue(string),
-                playBeep=(PlayBeep)getTestValue(PlayBeep),
-                record=(bool)getTestValue(bool),
-                waitUrl=(string)getTestValue(string),
-                statusCallbackUrl=(string)getTestValue(string)
+                alias=(string)getTestValue(typeof(string)),
+                playBeep=(PlayBeep)getTestValue(typeof(PlayBeep)),
+                record=(bool)getTestValue(typeof(bool)),
+                waitUrl=(string)getTestValue(typeof(string)),
+                statusCallbackUrl=(string)getTestValue(typeof(string))
             );
         }
 

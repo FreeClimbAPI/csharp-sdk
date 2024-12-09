@@ -39,11 +39,11 @@ namespace freeclimb.Test.Model
         public QueueMemberTests()
         {
             instance = new QueueMember(
-                uri=(string)getTestValue(string),
-                callId=(string)getTestValue(string),
-                waitTime=(int?)getTestValue(int?),
-                position=(int?)getTestValue(int?),
-                dateEnqueued=(string)getTestValue(string)
+                uri=(string)getTestValue(typeof(string)),
+                callId=(string)getTestValue(typeof(string)),
+                waitTime=(int?)getTestValue(typeof(int?)),
+                position=(int?)getTestValue(typeof(int?)),
+                dateEnqueued=(string)getTestValue(typeof(string))
             );
         }
 

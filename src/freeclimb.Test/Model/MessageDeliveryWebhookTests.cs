@@ -39,16 +39,16 @@ namespace freeclimb.Test.Model
         public MessageDeliveryWebhookTests()
         {
             instance = new MessageDeliveryWebhook(
-                requestType=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                from=(string)getTestValue(string),
-                to=(string)getTestValue(string),
-                text=(string)getTestValue(string),
-                direction=(string)getTestValue(string),
-                applicationId=(string)getTestValue(string),
-                status=(string)getTestValue(string),
-                phoneNumberId=(string)getTestValue(string),
-                uri=(string)getTestValue(string)
+                requestType=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                from=(string)getTestValue(typeof(string)),
+                to=(string)getTestValue(typeof(string)),
+                text=(string)getTestValue(typeof(string)),
+                direction=(string)getTestValue(typeof(string)),
+                applicationId=(string)getTestValue(typeof(string)),
+                status=(string)getTestValue(typeof(string)),
+                phoneNumberId=(string)getTestValue(typeof(string)),
+                uri=(string)getTestValue(typeof(string))
             );
         }
 

@@ -39,23 +39,23 @@ namespace freeclimb.Test.Model
         public GetSpeechWebhookTests()
         {
             instance = new GetSpeechWebhook(
-                requestType=(string)getTestValue(string),
-                callId=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                from=(string)getTestValue(string),
-                to=(string)getTestValue(string),
-                callStatus=(CallStatus)getTestValue(CallStatus),
-                direction=(CallDirection)getTestValue(CallDirection),
-                conferenceId=(string)getTestValue(string),
-                queueId=(string)getTestValue(string),
-                reason=(GetSpeechReason)getTestValue(GetSpeechReason),
-                recognitionResult=(string)getTestValue(string),
-                confidence=(int)getTestValue(int),
-                parentCallId=(string)getTestValue(string),
-                completionReason=(string)getTestValue(string),
-                completionCause=(string)getTestValue(string),
-                mrcpCode=(int)getTestValue(int),
-                mrcpDiagnostic=(string)getTestValue(string)
+                requestType=(string)getTestValue(typeof(string)),
+                callId=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                from=(string)getTestValue(typeof(string)),
+                to=(string)getTestValue(typeof(string)),
+                callStatus=(CallStatus)getTestValue(typeof(CallStatus)),
+                direction=(CallDirection)getTestValue(typeof(CallDirection)),
+                conferenceId=(string)getTestValue(typeof(string)),
+                queueId=(string)getTestValue(typeof(string)),
+                reason=(GetSpeechReason)getTestValue(typeof(GetSpeechReason)),
+                recognitionResult=(string)getTestValue(typeof(string)),
+                confidence=(int)getTestValue(typeof(int)),
+                parentCallId=(string)getTestValue(typeof(string)),
+                completionReason=(string)getTestValue(typeof(string)),
+                completionCause=(string)getTestValue(typeof(string)),
+                mrcpCode=(int)getTestValue(typeof(int)),
+                mrcpDiagnostic=(string)getTestValue(typeof(string))
             );
         }
 

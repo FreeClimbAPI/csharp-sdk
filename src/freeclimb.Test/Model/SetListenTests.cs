@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public SetListenTests()
         {
             instance = new SetListen(
-                listen=(bool)getTestValue(bool)
+                listen=(bool)getTestValue(typeof(bool))
             );
         }
 

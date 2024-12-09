@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public PauseTests()
         {
             instance = new Pause(
-                length=(int)getTestValue(int)
+                length=(int)getTestValue(typeof(int))
             );
         }
 

@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public FilterLogsRequestTests()
         {
             instance = new FilterLogsRequest(
-                pql=(string)getTestValue(string)
+                pql=(string)getTestValue(typeof(string))
             );
         }
 

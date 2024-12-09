@@ -39,14 +39,14 @@ namespace freeclimb.Test.Model
         public SMSTenDLCPartnerCampaignsListResultTests()
         {
             instance = new SMSTenDLCPartnerCampaignsListResult(
-                total=(int?)getTestValue(int?),
-                start=(int?)getTestValue(int?),
-                end=(int?)getTestValue(int?),
-                page=(int?)getTestValue(int?),
-                numPages=(int?)getTestValue(int?),
-                pageSize=(int?)getTestValue(int?),
-                nextPageUri=(string)getTestValue(string),
-                partnerCampaigns=(List<SMSTenDLCPartnerCampaign>)getTestValue(List<SMSTenDLCPartnerCampaign>)
+                total=(int?)getTestValue(typeof(int?)),
+                start=(int?)getTestValue(typeof(int?)),
+                end=(int?)getTestValue(typeof(int?)),
+                page=(int?)getTestValue(typeof(int?)),
+                numPages=(int?)getTestValue(typeof(int?)),
+                pageSize=(int?)getTestValue(typeof(int?)),
+                nextPageUri=(string)getTestValue(typeof(string)),
+                partnerCampaigns=(List<SMSTenDLCPartnerCampaign>)getTestValue(typeof(List<SMSTenDLCPartnerCampaign>))
             );
         }
 

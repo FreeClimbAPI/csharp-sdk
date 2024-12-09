@@ -39,8 +39,8 @@ namespace freeclimb.Test.Model
         public QueueRequestTests()
         {
             instance = new QueueRequest(
-                alias=(string)getTestValue(string),
-                maxSize=(int)getTestValue(int)
+                alias=(string)getTestValue(typeof(string)),
+                maxSize=(int)getTestValue(typeof(int))
             );
         }
 

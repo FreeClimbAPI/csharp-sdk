@@ -39,16 +39,16 @@ namespace freeclimb.Test.Model
         public InboundCallWebhookTests()
         {
             instance = new InboundCallWebhook(
-                requestType=(string)getTestValue(string),
-                callId=(string)getTestValue(string),
-                accountId=(string)getTestValue(string),
-                from=(string)getTestValue(string),
-                to=(string)getTestValue(string),
-                callStatus=(CallStatus)getTestValue(CallStatus),
-                direction=(CallDirection)getTestValue(CallDirection),
-                conferenceId=(string)getTestValue(string),
-                queueId=(string)getTestValue(string),
-                parentCallId=(Object)getTestValue(Object)
+                requestType=(string)getTestValue(typeof(string)),
+                callId=(string)getTestValue(typeof(string)),
+                accountId=(string)getTestValue(typeof(string)),
+                from=(string)getTestValue(typeof(string)),
+                to=(string)getTestValue(typeof(string)),
+                callStatus=(CallStatus)getTestValue(typeof(CallStatus)),
+                direction=(CallDirection)getTestValue(typeof(CallDirection)),
+                conferenceId=(string)getTestValue(typeof(string)),
+                queueId=(string)getTestValue(typeof(string)),
+                parentCallId=(Object)getTestValue(typeof(Object))
             );
         }
 

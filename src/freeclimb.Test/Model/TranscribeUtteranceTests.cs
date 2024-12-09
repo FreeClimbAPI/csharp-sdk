@@ -39,12 +39,12 @@ namespace freeclimb.Test.Model
         public TranscribeUtteranceTests()
         {
             instance = new TranscribeUtterance(
-                actionUrl=(string)getTestValue(string),
-                playBeep=(bool)getTestValue(bool),
-                record=(TranscribeUtteranceRecord)getTestValue(TranscribeUtteranceRecord),
-                privacyForLogging=(bool)getTestValue(bool),
-                privacyForRecording=(bool)getTestValue(bool),
-                prompts=(List<PerclCommand>)getTestValue(List<PerclCommand>)
+                actionUrl=(string)getTestValue(typeof(string)),
+                playBeep=(bool)getTestValue(typeof(bool)),
+                record=(TranscribeUtteranceRecord)getTestValue(typeof(TranscribeUtteranceRecord)),
+                privacyForLogging=(bool)getTestValue(typeof(bool)),
+                privacyForRecording=(bool)getTestValue(typeof(bool)),
+                prompts=(List<PerclCommand>)getTestValue(typeof(List<PerclCommand>))
             );
         }
 

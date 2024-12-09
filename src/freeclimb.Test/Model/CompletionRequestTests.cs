@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public CompletionRequestTests()
         {
             instance = new CompletionRequest(
-                query=(string)getTestValue(string)
+                query=(string)getTestValue(typeof(string))
             );
         }
 
