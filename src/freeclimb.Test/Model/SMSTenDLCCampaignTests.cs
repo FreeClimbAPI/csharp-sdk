@@ -449,8 +449,8 @@ namespace freeclimb.Test.Model
         [Fact]
         public void NextRenewalOrExpirationDateTest()
         {
-            instance.NextRenewalOrExpirationDate = DateTime.Parse("2000-01-01");
-            Assert.Equal(DateTime.Parse("2000-01-01"), instance.NextRenewalOrExpirationDate);
+            instance.NextRenewalOrExpirationDate = DateOnly.FromDateTime(DateTime.Parse("2000-01-01"));
+            Assert.Equal(DateOnly.FromDateTime(DateTime.Parse("2000-01-01")), instance.NextRenewalOrExpirationDate);
             
         }
     }
