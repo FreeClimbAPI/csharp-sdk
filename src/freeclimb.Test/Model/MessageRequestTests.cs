@@ -39,15 +39,25 @@ namespace freeclimb.Test.Model
         public MessageRequestTests()
         {
             instance = new MessageRequest(
+                
                 uri: (string)getTestValue(typeof(string)),
+                
                 dateCreated: (string)getTestValue(typeof(string)),
+                
                 dateUpdated: (string)getTestValue(typeof(string)),
+                
                 revision: (int)getTestValue(typeof(int)),
+                
                 from: (string)getTestValue(typeof(string)),
+                
                 to: (string)getTestValue(typeof(string)),
+                
                 text: (string)getTestValue(typeof(string)),
+                
                 notificationUrl: (string)getTestValue(typeof(string)),
+                
                 mediaUrls: (List<string>)getTestValue(typeof(List<string>))
+                
             );
         }
 

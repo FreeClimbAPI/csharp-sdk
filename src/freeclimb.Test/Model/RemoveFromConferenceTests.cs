@@ -39,6 +39,7 @@ namespace freeclimb.Test.Model
         public RemoveFromConferenceTests()
         {
             instance = new RemoveFromConference(
+                
             );
         }
 

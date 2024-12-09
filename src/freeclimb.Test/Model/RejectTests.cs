@@ -39,7 +39,9 @@ namespace freeclimb.Test.Model
         public RejectTests()
         {
             instance = new Reject(
+                
                 reason: (string)getTestValue(typeof(string))
+                
             );
         }
 

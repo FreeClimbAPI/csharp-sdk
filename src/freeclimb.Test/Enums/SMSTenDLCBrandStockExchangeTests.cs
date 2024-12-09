@@ -39,6 +39,7 @@ namespace freeclimb.Test.Enums
         public SMSTenDLCBrandStockExchangeTests()
         {
             instance = new SMSTenDLCBrandStockExchange(
+                
             );
         }
 

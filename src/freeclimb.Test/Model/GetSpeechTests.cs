@@ -39,19 +39,33 @@ namespace freeclimb.Test.Model
         public GetSpeechTests()
         {
             instance = new GetSpeech(
+                
                 actionUrl: (string)getTestValue(typeof(string)),
+                
                 grammarType: (GrammarType)getTestValue(typeof(GrammarType)),
+                
                 grammarFile: (string)getTestValue(typeof(string)),
+                
                 grammarRule: (string)getTestValue(typeof(string)),
+                
                 playBeep: (bool)getTestValue(typeof(bool)),
+                
                 prompts: (List<PerclCommand>)getTestValue(typeof(List<PerclCommand>)),
+                
                 noInputTimeoutMs: (int)getTestValue(typeof(int)),
+                
                 recognitionTimeoutMs: (int)getTestValue(typeof(int)),
+                
                 confidenceThreshold: (decimal)getTestValue(typeof(decimal)),
+                
                 sensitivityLevel: (decimal)getTestValue(typeof(decimal)),
+                
                 speechCompleteTimeoutMs: (int)getTestValue(typeof(int)),
+                
                 speechIncompleteTimeoutMs: (int)getTestValue(typeof(int)),
+                
                 privacyMode: (bool)getTestValue(typeof(bool))
+                
             );
         }
 

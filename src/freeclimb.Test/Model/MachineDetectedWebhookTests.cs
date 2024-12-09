@@ -39,17 +39,29 @@ namespace freeclimb.Test.Model
         public MachineDetectedWebhookTests()
         {
             instance = new MachineDetectedWebhook(
+                
                 requestType: (string)getTestValue(typeof(string)),
+                
                 callId: (string)getTestValue(typeof(string)),
+                
                 accountId: (string)getTestValue(typeof(string)),
+                
                 from: (string)getTestValue(typeof(string)),
+                
                 to: (string)getTestValue(typeof(string)),
+                
                 callStatus: (CallStatus)getTestValue(typeof(CallStatus)),
+                
                 direction: (CallDirection)getTestValue(typeof(CallDirection)),
+                
                 conferenceId: (string)getTestValue(typeof(string)),
+                
                 queueId: (string)getTestValue(typeof(string)),
+                
                 parentCallId: (string)getTestValue(typeof(string)),
+                
                 machineType: (MachineType)getTestValue(typeof(MachineType))
+                
             );
         }
 

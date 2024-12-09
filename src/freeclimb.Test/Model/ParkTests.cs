@@ -39,9 +39,13 @@ namespace freeclimb.Test.Model
         public ParkTests()
         {
             instance = new Park(
+                
                 waitUrl: (string)getTestValue(typeof(string)),
+                
                 actionUrl: (string)getTestValue(typeof(string)),
+                
                 notificationUrl: (string)getTestValue(typeof(string))
+                
             );
         }
 

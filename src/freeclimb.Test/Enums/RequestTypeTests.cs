@@ -39,6 +39,7 @@ namespace freeclimb.Test.Enums
         public RequestTypeTests()
         {
             instance = new RequestType(
+                
             );
         }
 

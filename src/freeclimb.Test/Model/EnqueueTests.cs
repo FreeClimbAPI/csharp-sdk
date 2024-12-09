@@ -39,10 +39,15 @@ namespace freeclimb.Test.Model
         public EnqueueTests()
         {
             instance = new Enqueue(
+                
                 actionUrl: (string)getTestValue(typeof(string)),
+                
                 notificationUrl: (string)getTestValue(typeof(string)),
+                
                 queueId: (string)getTestValue(typeof(string)),
+                
                 waitUrl: (string)getTestValue(typeof(string))
+                
             );
         }
 

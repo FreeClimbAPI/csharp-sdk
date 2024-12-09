@@ -39,23 +39,41 @@ namespace freeclimb.Test.Model
         public IncomingNumberResultTests()
         {
             instance = new IncomingNumberResult(
+                
                 uri: (string)getTestValue(typeof(string)),
+                
                 dateCreated: (string)getTestValue(typeof(string)),
+                
                 dateUpdated: (string)getTestValue(typeof(string)),
+                
                 revision: (int)getTestValue(typeof(int)),
+                
                 capabilities: (Capabilities)getTestValue(typeof(Capabilities)),
+                
                 campaignId: (string)getTestValue(typeof(string)),
+                
                 phoneNumberId: (string)getTestValue(typeof(string)),
+                
                 accountId: (string)getTestValue(typeof(string)),
+                
                 applicationId: (string)getTestValue(typeof(string)),
+                
                 phoneNumber: (string)getTestValue(typeof(string)),
+                
                 alias: (string)getTestValue(typeof(string)),
+                
                 region: (string)getTestValue(typeof(string)),
+                
                 country: (string)getTestValue(typeof(string)),
+                
                 voiceEnabled: (bool?)getTestValue(typeof(bool?)),
+                
                 smsEnabled: (bool?)getTestValue(typeof(bool?)),
+                
                 offnet: (bool?)getTestValue(typeof(bool?)),
+                
                 tfn: (TFN)getTestValue(typeof(TFN))
+                
             );
         }
 

@@ -39,11 +39,17 @@ namespace freeclimb.Test.Model
         public CapabilitiesTests()
         {
             instance = new Capabilities(
+                
                 voice: (bool?)getTestValue(typeof(bool?)),
+                
                 sms: (bool?)getTestValue(typeof(bool?)),
+                
                 tollFree: (bool?)getTestValue(typeof(bool?)),
+                
                 tenDLC: (bool?)getTestValue(typeof(bool?)),
+                
                 shortCode: (bool?)getTestValue(typeof(bool?))
+                
             );
         }
 

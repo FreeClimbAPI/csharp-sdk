@@ -39,10 +39,15 @@ namespace freeclimb.Test.Model
         public SayTests()
         {
             instance = new Say(
+                
                 text: (string)getTestValue(typeof(string)),
+                
                 language: (string)getTestValue(typeof(string)),
+                
                 loop: (int)getTestValue(typeof(int)),
+                
                 privacyMode: (bool)getTestValue(typeof(bool))
+                
             );
         }
 

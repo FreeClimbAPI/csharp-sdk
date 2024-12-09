@@ -39,16 +39,27 @@ namespace freeclimb.Test.Model
         public MakeCallRequestTests()
         {
             instance = new MakeCallRequest(
+                
                 from: (string)getTestValue(typeof(string)),
+                
                 to: (string)getTestValue(typeof(string)),
+                
                 applicationId: (string)getTestValue(typeof(string)),
+                
                 sendDigits: (string)getTestValue(typeof(string)),
+                
                 ifMachine: (string)getTestValue(typeof(string)),
+                
                 ifMachineUrl: (string)getTestValue(typeof(string)),
+                
                 timeout: (int)getTestValue(typeof(int)),
+                
                 parentCallId: (string)getTestValue(typeof(string)),
+                
                 privacyMode: (bool)getTestValue(typeof(bool)),
+                
                 callConnectUrl: (string)getTestValue(typeof(string))
+                
             );
         }
 

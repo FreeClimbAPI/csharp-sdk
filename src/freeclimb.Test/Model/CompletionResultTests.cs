@@ -39,8 +39,11 @@ namespace freeclimb.Test.Model
         public CompletionResultTests()
         {
             instance = new CompletionResult(
+                
                 response: (string)getTestValue(typeof(string)),
+                
                 status: (CompletionResultStatus)getTestValue(typeof(CompletionResultStatus))
+                
             );
         }
 

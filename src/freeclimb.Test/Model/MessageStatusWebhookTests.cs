@@ -39,17 +39,29 @@ namespace freeclimb.Test.Model
         public MessageStatusWebhookTests()
         {
             instance = new MessageStatusWebhook(
+                
                 requestType: (string)getTestValue(typeof(string)),
+                
                 accountId: (string)getTestValue(typeof(string)),
+                
                 messageId: (string)getTestValue(typeof(string)),
+                
                 callId: (string)getTestValue(typeof(string)),
+                
                 from: (string)getTestValue(typeof(string)),
+                
                 to: (string)getTestValue(typeof(string)),
+                
                 text: (string)getTestValue(typeof(string)),
+                
                 direction: (string)getTestValue(typeof(string)),
+                
                 applicationId: (string)getTestValue(typeof(string)),
+                
                 status: (MessageStatus)getTestValue(typeof(MessageStatus)),
+                
                 phoneNumberId: (string)getTestValue(typeof(string))
+                
             );
         }
 

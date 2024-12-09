@@ -39,7 +39,9 @@ namespace freeclimb.Test.Model
         public PerclCommandTests()
         {
             instance = new PerclCommand(
+                
                 command: (string)getTestValue(typeof(string))
+                
             );
         }
 

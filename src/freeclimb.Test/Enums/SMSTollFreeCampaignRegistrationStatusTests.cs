@@ -39,6 +39,7 @@ namespace freeclimb.Test.Enums
         public SMSTollFreeCampaignRegistrationStatusTests()
         {
             instance = new SMSTollFreeCampaignRegistrationStatus(
+                
             );
         }
 

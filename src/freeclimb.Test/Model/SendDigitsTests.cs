@@ -39,9 +39,13 @@ namespace freeclimb.Test.Model
         public SendDigitsTests()
         {
             instance = new SendDigits(
+                
                 digits: (string)getTestValue(typeof(string)),
+                
                 pauseMs: (int)getTestValue(typeof(int)),
+                
                 privacyMode: (bool)getTestValue(typeof(bool))
+                
             );
         }
 

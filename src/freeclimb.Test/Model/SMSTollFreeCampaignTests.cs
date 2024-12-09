@@ -39,13 +39,21 @@ namespace freeclimb.Test.Model
         public SMSTollFreeCampaignTests()
         {
             instance = new SMSTollFreeCampaign(
+                
                 accountId: (string)getTestValue(typeof(string)),
+                
                 campaignId: (string)getTestValue(typeof(string)),
+                
                 useCase: (string)getTestValue(typeof(string)),
+                
                 registrationStatus: (SMSTollFreeCampaignRegistrationStatus)getTestValue(typeof(SMSTollFreeCampaignRegistrationStatus)),
+                
                 dateCreated: (string)getTestValue(typeof(string)),
+                
                 dateUpdated: (string)getTestValue(typeof(string)),
+                
                 revision: (int)getTestValue(typeof(int))
+                
             );
         }
 

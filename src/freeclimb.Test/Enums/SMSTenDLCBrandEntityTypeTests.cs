@@ -39,6 +39,7 @@ namespace freeclimb.Test.Enums
         public SMSTenDLCBrandEntityTypeTests()
         {
             instance = new SMSTenDLCBrandEntityType(
+                
             );
         }
 

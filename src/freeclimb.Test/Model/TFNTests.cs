@@ -39,7 +39,9 @@ namespace freeclimb.Test.Model
         public TFNTests()
         {
             instance = new TFN(
+                
                 campaignId: (string)getTestValue(typeof(string))
+                
             );
         }
 

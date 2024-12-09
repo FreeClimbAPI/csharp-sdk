@@ -39,7 +39,9 @@ namespace freeclimb.Test.Model
         public RedirectTests()
         {
             instance = new Redirect(
+                
                 actionUrl: (string)getTestValue(typeof(string))
+                
             );
         }
 

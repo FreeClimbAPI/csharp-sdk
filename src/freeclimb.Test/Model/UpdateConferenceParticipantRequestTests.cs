@@ -39,9 +39,13 @@ namespace freeclimb.Test.Model
         public UpdateConferenceParticipantRequestTests()
         {
             instance = new UpdateConferenceParticipantRequest(
+                
                 talk: (bool)getTestValue(typeof(bool)),
+                
                 listen: (bool)getTestValue(typeof(bool)),
+                
                 dtmfPassThrough: (bool)getTestValue(typeof(bool))
+                
             );
         }
 

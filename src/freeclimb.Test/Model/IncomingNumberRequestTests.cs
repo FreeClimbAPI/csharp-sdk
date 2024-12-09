@@ -39,9 +39,13 @@ namespace freeclimb.Test.Model
         public IncomingNumberRequestTests()
         {
             instance = new IncomingNumberRequest(
+                
                 applicationId: (string)getTestValue(typeof(string)),
+                
                 alias: (string)getTestValue(typeof(string)),
+                
                 campaignId: (string)getTestValue(typeof(string))
+                
             );
         }
 

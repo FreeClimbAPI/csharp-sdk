@@ -39,6 +39,7 @@ namespace freeclimb.Test.Enums
         public QueueResultStatusTests()
         {
             instance = new QueueResultStatus(
+                
             );
         }
 

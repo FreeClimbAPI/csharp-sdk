@@ -39,13 +39,21 @@ namespace freeclimb.Test.Model
         public ApplicationRequestTests()
         {
             instance = new ApplicationRequest(
+                
                 alias: (string)getTestValue(typeof(string)),
+                
                 voiceUrl: (string)getTestValue(typeof(string)),
+                
                 voiceFallbackUrl: (string)getTestValue(typeof(string)),
+                
                 callConnectUrl: (string)getTestValue(typeof(string)),
+                
                 statusCallbackUrl: (string)getTestValue(typeof(string)),
+                
                 smsUrl: (string)getTestValue(typeof(string)),
+                
                 smsFallbackUrl: (string)getTestValue(typeof(string))
+                
             );
         }
 

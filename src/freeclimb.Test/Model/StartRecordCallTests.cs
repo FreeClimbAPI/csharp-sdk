@@ -39,6 +39,7 @@ namespace freeclimb.Test.Model
         public StartRecordCallTests()
         {
             instance = new StartRecordCall(
+                
             );
         }
 

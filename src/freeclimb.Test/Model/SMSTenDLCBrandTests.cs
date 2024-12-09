@@ -39,37 +39,63 @@ namespace freeclimb.Test.Model
         public SMSTenDLCBrandTests()
         {
             instance = new SMSTenDLCBrand(
+                
                 accountId: (string)getTestValue(typeof(string)),
+                
                 entityType: (SMSTenDLCBrandEntityType)getTestValue(typeof(SMSTenDLCBrandEntityType)),
-                cspId: (string)getTestValue(typeof(string)),
-                brandId: (string)getTestValue(typeof(string)),
+                
                 firstName: (string)getTestValue(typeof(string)),
+                
                 lastName: (string)getTestValue(typeof(string)),
+                
                 displayName: (string)getTestValue(typeof(string)),
+                
                 companyName: (string)getTestValue(typeof(string)),
+                
                 ein: (string)getTestValue(typeof(string)),
+                
                 einIssuingCountry: (string)getTestValue(typeof(string)),
+                
                 phone: (string)getTestValue(typeof(string)),
+                
                 street: (string)getTestValue(typeof(string)),
+                
                 city: (string)getTestValue(typeof(string)),
+                
                 state: (string)getTestValue(typeof(string)),
+                
                 postalCode: (string)getTestValue(typeof(string)),
+                
                 country: (string)getTestValue(typeof(string)),
+                
                 email: (string)getTestValue(typeof(string)),
+                
                 stockSymbol: (string)getTestValue(typeof(string)),
+                
                 stockExchange: (SMSTenDLCBrandStockExchange)getTestValue(typeof(SMSTenDLCBrandStockExchange)),
+                
                 ipAddress: (string)getTestValue(typeof(string)),
+                
                 website: (string)getTestValue(typeof(string)),
+                
                 brandRelationship: (SMSTenDLCBrandRelationship)getTestValue(typeof(SMSTenDLCBrandRelationship)),
+                
                 vertical: (string)getTestValue(typeof(string)),
+                
                 altBusinessId: (string)getTestValue(typeof(string)),
+                
                 altBusinessIdType: (SMSTenDLCBrandAltBusinessIdType)getTestValue(typeof(SMSTenDLCBrandAltBusinessIdType)),
-                universalEin: (string)getTestValue(typeof(string)),
+                
                 referenceId: (string)getTestValue(typeof(string)),
+                
                 optionalAttributes: (Dictionary<string, Object>)getTestValue(typeof(Dictionary<string, Object>)),
+                
                 mock: (bool)getTestValue(typeof(bool)),
+                
                 identityStatus: (SMSTenDLCBrandIdentityStatus)getTestValue(typeof(SMSTenDLCBrandIdentityStatus)),
+                
                 createDate: (DateTime)getTestValue(typeof(DateTime))
+                
             );
         }
 

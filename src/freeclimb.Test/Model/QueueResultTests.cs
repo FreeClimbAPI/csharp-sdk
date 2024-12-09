@@ -39,17 +39,29 @@ namespace freeclimb.Test.Model
         public QueueResultTests()
         {
             instance = new QueueResult(
+                
                 uri: (string)getTestValue(typeof(string)),
+                
                 dateCreated: (string)getTestValue(typeof(string)),
+                
                 dateUpdated: (string)getTestValue(typeof(string)),
+                
                 revision: (int)getTestValue(typeof(int)),
+                
                 accountId: (string)getTestValue(typeof(string)),
+                
                 queueId: (string)getTestValue(typeof(string)),
+                
                 alias: (string)getTestValue(typeof(string)),
+                
                 maxSize: (int?)getTestValue(typeof(int?)),
+                
                 currentSize: (int?)getTestValue(typeof(int?)),
+                
                 averageQueueRemovalTime: (int?)getTestValue(typeof(int?)),
+                
                 subresourceUris: (Object)getTestValue(typeof(Object))
+                
             );
         }
 

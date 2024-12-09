@@ -39,8 +39,11 @@ namespace freeclimb.Test.Model
         public AccountRequestTests()
         {
             instance = new AccountRequest(
+                
                 alias: (string)getTestValue(typeof(string)),
+                
                 label: (string)getTestValue(typeof(string))
+                
             );
         }
 

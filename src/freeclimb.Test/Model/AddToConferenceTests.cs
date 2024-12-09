@@ -39,16 +39,27 @@ namespace freeclimb.Test.Model
         public AddToConferenceTests()
         {
             instance = new AddToConference(
+                
                 allowCallControl: (bool)getTestValue(typeof(bool)),
+                
                 callControlSequence: (string)getTestValue(typeof(string)),
+                
                 callControlUrl: (string)getTestValue(typeof(string)),
+                
                 conferenceId: (string)getTestValue(typeof(string)),
+                
                 leaveConferenceUrl: (string)getTestValue(typeof(string)),
+                
                 listen: (bool)getTestValue(typeof(bool)),
+                
                 notificationUrl: (string)getTestValue(typeof(string)),
+                
                 startConfOnEnter: (bool)getTestValue(typeof(bool)),
+                
                 talk: (bool)getTestValue(typeof(bool)),
+                
                 dtmfPassThrough: (bool)getTestValue(typeof(bool))
+                
             );
         }
 

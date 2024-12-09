@@ -39,10 +39,15 @@ namespace freeclimb.Test.Model
         public SmsTests()
         {
             instance = new Sms(
+                
                 to: (string)getTestValue(typeof(string)),
+                
                 from: (string)getTestValue(typeof(string)),
+                
                 text: (string)getTestValue(typeof(string)),
+                
                 notificationUrl: (string)getTestValue(typeof(string))
+                
             );
         }
 

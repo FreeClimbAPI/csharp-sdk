@@ -39,9 +39,13 @@ namespace freeclimb.Test.Model
         public TranscribeUtteranceRecordTests()
         {
             instance = new TranscribeUtteranceRecord(
+                
                 saveRecording: (bool)getTestValue(typeof(bool)),
+                
                 maxLengthSec: (int)getTestValue(typeof(int)),
+                
                 rcrdTerminationSilenceTimeMs: (int)getTestValue(typeof(int))
+                
             );
         }
 
