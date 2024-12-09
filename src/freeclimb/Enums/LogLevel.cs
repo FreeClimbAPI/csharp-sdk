@@ -32,24 +32,27 @@ namespace freeclimb.Enums
     /// Level of the log. Possible values are info, warning, and error.
     /// </summary>
     /// <value>Level of the log. Possible values are info, warning, and error.</value>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum LogLevel
     {
         /// <summary>
         /// Enum INFO for value: info
         /// </summary>
+        [EnumMember(Value = "info")]
         INFO = 1,
 
         /// <summary>
         /// Enum WARNING for value: warning
         /// </summary>
+        [EnumMember(Value = "warning")]
         WARNING = 2,
 
         /// <summary>
         /// Enum ERROR for value: error
         /// </summary>
+        [EnumMember(Value = "error")]
         ERROR = 3
     }
-
     /// <summary>
     /// Converts <see cref="LogLevel"/> to and from the JSON value
     /// </summary>
@@ -91,103 +94,6 @@ namespace freeclimb.Enums
                 return LogLevel.ERROR;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="LogLevel"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(LogLevel value)
-        {
-            if (value == LogLevel.INFO)
-                return "info";
-
-            if (value == LogLevel.WARNING)
-                return "warning";
-
-            if (value == LogLevel.ERROR)
-                return "error";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="LogLevel"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class LogLevelJsonConverter : JsonConverter<LogLevel>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override LogLevel Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            LogLevel? result = rawValue == null
-                ? null
-                : LogLevelValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the LogLevel to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="logLevel"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, LogLevel logLevel, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(logLevel.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="LogLevel"/>
-    /// </summary>
-    public class LogLevelNullableJsonConverter : JsonConverter<LogLevel?>
-    {
-        /// <summary>
-        /// Returns a LogLevel from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override LogLevel? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            LogLevel? result = rawValue == null
-                ? null
-                : LogLevelValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="logLevel"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, LogLevel? logLevel, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(logLevel?.ToString() ?? "null");
         }
     }
 

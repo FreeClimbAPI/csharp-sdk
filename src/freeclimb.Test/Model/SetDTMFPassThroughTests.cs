@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using freeclimb.Model;
 using freeclimb.Client;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace freeclimb.Test.Model
 {

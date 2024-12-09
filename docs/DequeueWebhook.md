@@ -17,5 +17,5 @@ Name | Type | Description | Notes
 **QueueResult** | **string** | The final result of the enqueued Call. Valid values are: •dequeued - Enqueued caller exited the Queue via a Dequeue action (Dequeue command or Queue Members POST REST API). | [optional] 
 **QueueTime** | **int?** | Time (in seconds) the call spent in the Queue. This is only available if the Call was actually enqueued. | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

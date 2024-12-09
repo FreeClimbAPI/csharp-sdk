@@ -32,29 +32,33 @@ namespace freeclimb.Enums
     /// This field explains how the GetDigits action ended. The value is one of the below: •finishKey - The finish key as specified had been pressed by the caller. Digit string has all keys up to, but not including, the finish key.  •timeout - The timeout limit was reached prior to any other criteria being met. If any digits were collected, they will be included.  •maxDigits - The maximum number of digits was reached and digit collection ended.  •tone - Answering machine or fax tone detection occurred, interrupting digit collection. Any digits received up to this point are included in this webhook.
     /// </summary>
     /// <value>This field explains how the GetDigits action ended. The value is one of the below: •finishKey - The finish key as specified had been pressed by the caller. Digit string has all keys up to, but not including, the finish key.  •timeout - The timeout limit was reached prior to any other criteria being met. If any digits were collected, they will be included.  •maxDigits - The maximum number of digits was reached and digit collection ended.  •tone - Answering machine or fax tone detection occurred, interrupting digit collection. Any digits received up to this point are included in this webhook.</value>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum GetDigitsReason
     {
         /// <summary>
         /// Enum FINISH_KEY for value: finishKey
         /// </summary>
+        [EnumMember(Value = "finishKey")]
         FINISH_KEY = 1,
 
         /// <summary>
         /// Enum TIMEOUT for value: timeout
         /// </summary>
+        [EnumMember(Value = "timeout")]
         TIMEOUT = 2,
 
         /// <summary>
         /// Enum MAX_DIGITS for value: maxDigits
         /// </summary>
+        [EnumMember(Value = "maxDigits")]
         MAX_DIGITS = 3,
 
         /// <summary>
         /// Enum TONE for value: tone
         /// </summary>
+        [EnumMember(Value = "tone")]
         TONE = 4
     }
-
     /// <summary>
     /// Converts <see cref="GetDigitsReason"/> to and from the JSON value
     /// </summary>
@@ -102,106 +106,6 @@ namespace freeclimb.Enums
                 return GetDigitsReason.TONE;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="GetDigitsReason"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(GetDigitsReason value)
-        {
-            if (value == GetDigitsReason.FINISH_KEY)
-                return "finishKey";
-
-            if (value == GetDigitsReason.TIMEOUT)
-                return "timeout";
-
-            if (value == GetDigitsReason.MAX_DIGITS)
-                return "maxDigits";
-
-            if (value == GetDigitsReason.TONE)
-                return "tone";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="GetDigitsReason"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class GetDigitsReasonJsonConverter : JsonConverter<GetDigitsReason>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override GetDigitsReason Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            GetDigitsReason? result = rawValue == null
-                ? null
-                : GetDigitsReasonValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the GetDigitsReason to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="getDigitsReason"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, GetDigitsReason getDigitsReason, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(getDigitsReason.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="GetDigitsReason"/>
-    /// </summary>
-    public class GetDigitsReasonNullableJsonConverter : JsonConverter<GetDigitsReason?>
-    {
-        /// <summary>
-        /// Returns a GetDigitsReason from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override GetDigitsReason? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            GetDigitsReason? result = rawValue == null
-                ? null
-                : GetDigitsReasonValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="getDigitsReason"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, GetDigitsReason? getDigitsReason, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(getDigitsReason?.ToString() ?? "null");
         }
     }
 

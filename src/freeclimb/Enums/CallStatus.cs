@@ -32,49 +32,57 @@ namespace freeclimb.Enums
     /// * &#x60;queued&#x60; &amp;ndash; Call is ready and waiting in line before going out. * &#x60;ringing&#x60; &amp;ndash; Call is currently ringing. * &#x60;inProgress&#x60; &amp;ndash; Call was answered and is currently in progress. * &#x60;canceled&#x60; &amp;ndash; Call was hung up while it was queued or ringing. * &#x60;completed&#x60; &amp;ndash; Call was answered and has ended normally. * &#x60;busy&#x60; &amp;ndash; Caller received a busy signal. * &#x60;failed&#x60; &amp;ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * &#x60;noAnswer&#x60; &amp;ndash; Call ended without being answered.
     /// </summary>
     /// <value>* &#x60;queued&#x60; &amp;ndash; Call is ready and waiting in line before going out. * &#x60;ringing&#x60; &amp;ndash; Call is currently ringing. * &#x60;inProgress&#x60; &amp;ndash; Call was answered and is currently in progress. * &#x60;canceled&#x60; &amp;ndash; Call was hung up while it was queued or ringing. * &#x60;completed&#x60; &amp;ndash; Call was answered and has ended normally. * &#x60;busy&#x60; &amp;ndash; Caller received a busy signal. * &#x60;failed&#x60; &amp;ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * &#x60;noAnswer&#x60; &amp;ndash; Call ended without being answered.</value>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum CallStatus
     {
         /// <summary>
         /// Enum QUEUED for value: queued
         /// </summary>
+        [EnumMember(Value = "queued")]
         QUEUED = 1,
 
         /// <summary>
         /// Enum RINGING for value: ringing
         /// </summary>
+        [EnumMember(Value = "ringing")]
         RINGING = 2,
 
         /// <summary>
         /// Enum IN_PROGRESS for value: inProgress
         /// </summary>
+        [EnumMember(Value = "inProgress")]
         IN_PROGRESS = 3,
 
         /// <summary>
         /// Enum CANCELED for value: canceled
         /// </summary>
+        [EnumMember(Value = "canceled")]
         CANCELED = 4,
 
         /// <summary>
         /// Enum COMPLETED for value: completed
         /// </summary>
+        [EnumMember(Value = "completed")]
         COMPLETED = 5,
 
         /// <summary>
         /// Enum FAILED for value: failed
         /// </summary>
+        [EnumMember(Value = "failed")]
         FAILED = 6,
 
         /// <summary>
         /// Enum BUSY for value: busy
         /// </summary>
+        [EnumMember(Value = "busy")]
         BUSY = 7,
 
         /// <summary>
         /// Enum NO_ANSWER for value: noAnswer
         /// </summary>
+        [EnumMember(Value = "noAnswer")]
         NO_ANSWER = 8
     }
-
     /// <summary>
     /// Converts <see cref="CallStatus"/> to and from the JSON value
     /// </summary>
@@ -146,118 +154,6 @@ namespace freeclimb.Enums
                 return CallStatus.NO_ANSWER;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="CallStatus"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(CallStatus value)
-        {
-            if (value == CallStatus.QUEUED)
-                return "queued";
-
-            if (value == CallStatus.RINGING)
-                return "ringing";
-
-            if (value == CallStatus.IN_PROGRESS)
-                return "inProgress";
-
-            if (value == CallStatus.CANCELED)
-                return "canceled";
-
-            if (value == CallStatus.COMPLETED)
-                return "completed";
-
-            if (value == CallStatus.FAILED)
-                return "failed";
-
-            if (value == CallStatus.BUSY)
-                return "busy";
-
-            if (value == CallStatus.NO_ANSWER)
-                return "noAnswer";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="CallStatus"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class CallStatusJsonConverter : JsonConverter<CallStatus>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override CallStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            CallStatus? result = rawValue == null
-                ? null
-                : CallStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the CallStatus to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="callStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, CallStatus callStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(callStatus.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="CallStatus"/>
-    /// </summary>
-    public class CallStatusNullableJsonConverter : JsonConverter<CallStatus?>
-    {
-        /// <summary>
-        /// Returns a CallStatus from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override CallStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            CallStatus? result = rawValue == null
-                ? null
-                : CallStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="callStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, CallStatus? callStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(callStatus?.ToString() ?? "null");
         }
     }
 

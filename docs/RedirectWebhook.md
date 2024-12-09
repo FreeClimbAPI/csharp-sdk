@@ -16,5 +16,5 @@ Name | Type | Description | Notes
 **QueueId** | **string** | This is only populated if the request pertains to a queue. Otherwise, it is set to null. | [optional] 
 **ParentCallId** | **string** | ID of Call that created this leg (child call). | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

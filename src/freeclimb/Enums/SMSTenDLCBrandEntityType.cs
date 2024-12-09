@@ -32,34 +32,39 @@ namespace freeclimb.Enums
     /// Entity type behind the brand. This is the form of business establishment.
     /// </summary>
     /// <value>Entity type behind the brand. This is the form of business establishment.</value>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum SMSTenDLCBrandEntityType
     {
         /// <summary>
         /// Enum PRIVATE_PROFIT for value: PRIVATE_PROFIT
         /// </summary>
+        [EnumMember(Value = "PRIVATE_PROFIT")]
         PRIVATE_PROFIT = 1,
 
         /// <summary>
         /// Enum PUBLIC_PROFIT for value: PUBLIC_PROFIT
         /// </summary>
+        [EnumMember(Value = "PUBLIC_PROFIT")]
         PUBLIC_PROFIT = 2,
 
         /// <summary>
         /// Enum NON_PROFIT for value: NON_PROFIT
         /// </summary>
+        [EnumMember(Value = "NON_PROFIT")]
         NON_PROFIT = 3,
 
         /// <summary>
         /// Enum GOVERNMENT for value: GOVERNMENT
         /// </summary>
+        [EnumMember(Value = "GOVERNMENT")]
         GOVERNMENT = 4,
 
         /// <summary>
         /// Enum SOLE_PROPRIETOR for value: SOLE_PROPRIETOR
         /// </summary>
+        [EnumMember(Value = "SOLE_PROPRIETOR")]
         SOLE_PROPRIETOR = 5
     }
-
     /// <summary>
     /// Converts <see cref="SMSTenDLCBrandEntityType"/> to and from the JSON value
     /// </summary>
@@ -113,109 +118,6 @@ namespace freeclimb.Enums
                 return SMSTenDLCBrandEntityType.SOLE_PROPRIETOR;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="SMSTenDLCBrandEntityType"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(SMSTenDLCBrandEntityType value)
-        {
-            if (value == SMSTenDLCBrandEntityType.PRIVATE_PROFIT)
-                return "PRIVATE_PROFIT";
-
-            if (value == SMSTenDLCBrandEntityType.PUBLIC_PROFIT)
-                return "PUBLIC_PROFIT";
-
-            if (value == SMSTenDLCBrandEntityType.NON_PROFIT)
-                return "NON_PROFIT";
-
-            if (value == SMSTenDLCBrandEntityType.GOVERNMENT)
-                return "GOVERNMENT";
-
-            if (value == SMSTenDLCBrandEntityType.SOLE_PROPRIETOR)
-                return "SOLE_PROPRIETOR";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="SMSTenDLCBrandEntityType"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class SMSTenDLCBrandEntityTypeJsonConverter : JsonConverter<SMSTenDLCBrandEntityType>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override SMSTenDLCBrandEntityType Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            SMSTenDLCBrandEntityType? result = rawValue == null
-                ? null
-                : SMSTenDLCBrandEntityTypeValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the SMSTenDLCBrandEntityType to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="sMSTenDLCBrandEntityType"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandEntityType sMSTenDLCBrandEntityType, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(sMSTenDLCBrandEntityType.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="SMSTenDLCBrandEntityType"/>
-    /// </summary>
-    public class SMSTenDLCBrandEntityTypeNullableJsonConverter : JsonConverter<SMSTenDLCBrandEntityType?>
-    {
-        /// <summary>
-        /// Returns a SMSTenDLCBrandEntityType from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override SMSTenDLCBrandEntityType? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            SMSTenDLCBrandEntityType? result = rawValue == null
-                ? null
-                : SMSTenDLCBrandEntityTypeValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="sMSTenDLCBrandEntityType"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, SMSTenDLCBrandEntityType? sMSTenDLCBrandEntityType, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(sMSTenDLCBrandEntityType?.ToString() ?? "null");
         }
     }
 

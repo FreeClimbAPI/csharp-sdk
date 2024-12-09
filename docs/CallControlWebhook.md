@@ -11,5 +11,5 @@ Name | Type | Description | Notes
 **ConferenceId** | **string** | Unique ID of the Conference. | [optional] 
 **Digits** | **string** | String of digits entered by the participant. | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

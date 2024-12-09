@@ -31,34 +31,39 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines TranscribeReason
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum TranscribeReason
     {
         /// <summary>
         /// Enum INTERNAL_ERROR for value: internalError
         /// </summary>
+        [EnumMember(Value = "internalError")]
         INTERNAL_ERROR = 1,
 
         /// <summary>
         /// Enum HANGUP for value: hangup
         /// </summary>
+        [EnumMember(Value = "hangup")]
         HANGUP = 2,
 
         /// <summary>
         /// Enum MAX_LENGTH for value: maxLength
         /// </summary>
+        [EnumMember(Value = "maxLength")]
         MAX_LENGTH = 3,
 
         /// <summary>
         /// Enum DIGIT for value: digit
         /// </summary>
+        [EnumMember(Value = "digit")]
         DIGIT = 4,
 
         /// <summary>
         /// Enum NO_INPUT for value: noInput
         /// </summary>
+        [EnumMember(Value = "noInput")]
         NO_INPUT = 5
     }
-
     /// <summary>
     /// Converts <see cref="TranscribeReason"/> to and from the JSON value
     /// </summary>
@@ -112,109 +117,6 @@ namespace freeclimb.Enums
                 return TranscribeReason.NO_INPUT;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="TranscribeReason"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(TranscribeReason value)
-        {
-            if (value == TranscribeReason.INTERNAL_ERROR)
-                return "internalError";
-
-            if (value == TranscribeReason.HANGUP)
-                return "hangup";
-
-            if (value == TranscribeReason.MAX_LENGTH)
-                return "maxLength";
-
-            if (value == TranscribeReason.DIGIT)
-                return "digit";
-
-            if (value == TranscribeReason.NO_INPUT)
-                return "noInput";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="TranscribeReason"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class TranscribeReasonJsonConverter : JsonConverter<TranscribeReason>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override TranscribeReason Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            TranscribeReason? result = rawValue == null
-                ? null
-                : TranscribeReasonValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the TranscribeReason to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="transcribeReason"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, TranscribeReason transcribeReason, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(transcribeReason.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="TranscribeReason"/>
-    /// </summary>
-    public class TranscribeReasonNullableJsonConverter : JsonConverter<TranscribeReason?>
-    {
-        /// <summary>
-        /// Returns a TranscribeReason from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override TranscribeReason? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            TranscribeReason? result = rawValue == null
-                ? null
-                : TranscribeReasonValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="transcribeReason"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, TranscribeReason? transcribeReason, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(transcribeReason?.ToString() ?? "null");
         }
     }
 

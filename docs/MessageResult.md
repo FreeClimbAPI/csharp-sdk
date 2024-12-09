@@ -21,5 +21,5 @@ Name | Type | Description | Notes
 **SegmentCount** | **decimal?** | The number of segments into which the message was split | [optional] 
 **MediaUrls** | **List&lt;string&gt;** | an array of HTTP URLs which were attached this this message | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

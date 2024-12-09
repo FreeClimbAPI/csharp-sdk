@@ -16,5 +16,5 @@ Name | Type | Description | Notes
 **PhoneNumberId** | **string** | ID of the destination phone number. | [optional] 
 **Uri** | **string** | The URI for this resource, relative to the API base URL | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

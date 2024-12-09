@@ -31,29 +31,33 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines QueueResultStatus
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum QueueResultStatus
     {
         /// <summary>
         /// Enum QUEUE_FULL for value: queueFull
         /// </summary>
+        [EnumMember(Value = "queueFull")]
         QUEUE_FULL = 1,
 
         /// <summary>
         /// Enum DEQUEUED for value: dequeued
         /// </summary>
+        [EnumMember(Value = "dequeued")]
         DEQUEUED = 2,
 
         /// <summary>
         /// Enum HANGUP for value: hangup
         /// </summary>
+        [EnumMember(Value = "hangup")]
         HANGUP = 3,
 
         /// <summary>
         /// Enum SYSTEM_ERROR for value: systemError
         /// </summary>
+        [EnumMember(Value = "systemError")]
         SYSTEM_ERROR = 4
     }
-
     /// <summary>
     /// Converts <see cref="QueueResultStatus"/> to and from the JSON value
     /// </summary>
@@ -101,106 +105,6 @@ namespace freeclimb.Enums
                 return QueueResultStatus.SYSTEM_ERROR;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="QueueResultStatus"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(QueueResultStatus value)
-        {
-            if (value == QueueResultStatus.QUEUE_FULL)
-                return "queueFull";
-
-            if (value == QueueResultStatus.DEQUEUED)
-                return "dequeued";
-
-            if (value == QueueResultStatus.HANGUP)
-                return "hangup";
-
-            if (value == QueueResultStatus.SYSTEM_ERROR)
-                return "systemError";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="QueueResultStatus"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class QueueResultStatusJsonConverter : JsonConverter<QueueResultStatus>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override QueueResultStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            QueueResultStatus? result = rawValue == null
-                ? null
-                : QueueResultStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the QueueResultStatus to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="queueResultStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, QueueResultStatus queueResultStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(queueResultStatus.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="QueueResultStatus"/>
-    /// </summary>
-    public class QueueResultStatusNullableJsonConverter : JsonConverter<QueueResultStatus?>
-    {
-        /// <summary>
-        /// Returns a QueueResultStatus from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override QueueResultStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            QueueResultStatus? result = rawValue == null
-                ? null
-                : QueueResultStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="queueResultStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, QueueResultStatus? queueResultStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(queueResultStatus?.ToString() ?? "null");
         }
     }
 

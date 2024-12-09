@@ -31,139 +31,165 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines Language
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Language
     {
         /// <summary>
         /// Enum CATALAN for value: ca-ES
         /// </summary>
+        [EnumMember(Value = "ca-ES")]
         CATALAN = 1,
 
         /// <summary>
         /// Enum DANISH for value: da-DK
         /// </summary>
+        [EnumMember(Value = "da-DK")]
         DANISH = 2,
 
         /// <summary>
         /// Enum GERMAN for value: de-DE
         /// </summary>
+        [EnumMember(Value = "de-DE")]
         GERMAN = 3,
 
         /// <summary>
         /// Enum ENGLISH_AU for value: en-AU
         /// </summary>
+        [EnumMember(Value = "en-AU")]
         ENGLISH_AU = 4,
 
         /// <summary>
         /// Enum ENGLISH_CA for value: en-CA
         /// </summary>
+        [EnumMember(Value = "en-CA")]
         ENGLISH_CA = 5,
 
         /// <summary>
         /// Enum ENGLISH_UK for value: en-GB
         /// </summary>
+        [EnumMember(Value = "en-GB")]
         ENGLISH_UK = 6,
 
         /// <summary>
         /// Enum ENGLISH_IN for value: en-IN
         /// </summary>
+        [EnumMember(Value = "en-IN")]
         ENGLISH_IN = 7,
 
         /// <summary>
         /// Enum ENGLISH_US for value: en-US
         /// </summary>
+        [EnumMember(Value = "en-US")]
         ENGLISH_US = 8,
 
         /// <summary>
         /// Enum ENGLISH_ES for value: es-ES
         /// </summary>
+        [EnumMember(Value = "es-ES")]
         ENGLISH_ES = 9,
 
         /// <summary>
         /// Enum ENGLISH_MX for value: es-MX
         /// </summary>
+        [EnumMember(Value = "es-MX")]
         ENGLISH_MX = 10,
 
         /// <summary>
         /// Enum FINNISH for value: fi-FI
         /// </summary>
+        [EnumMember(Value = "fi-FI")]
         FINNISH = 11,
 
         /// <summary>
         /// Enum FRENCH_CA for value: fr-CA
         /// </summary>
+        [EnumMember(Value = "fr-CA")]
         FRENCH_CA = 12,
 
         /// <summary>
         /// Enum FRENCH_FR for value: fr-FR
         /// </summary>
+        [EnumMember(Value = "fr-FR")]
         FRENCH_FR = 13,
 
         /// <summary>
         /// Enum ITALIAN for value: it-IT
         /// </summary>
+        [EnumMember(Value = "it-IT")]
         ITALIAN = 14,
 
         /// <summary>
         /// Enum JAPANESE for value: ja-JP
         /// </summary>
+        [EnumMember(Value = "ja-JP")]
         JAPANESE = 15,
 
         /// <summary>
         /// Enum KOREAN for value: ko-KR
         /// </summary>
+        [EnumMember(Value = "ko-KR")]
         KOREAN = 16,
 
         /// <summary>
         /// Enum NORWEGIAN for value: nb-NO
         /// </summary>
+        [EnumMember(Value = "nb-NO")]
         NORWEGIAN = 17,
 
         /// <summary>
         /// Enum DUTCH for value: nl-NL
         /// </summary>
+        [EnumMember(Value = "nl-NL")]
         DUTCH = 18,
 
         /// <summary>
         /// Enum POLISH for value: pl-PL
         /// </summary>
+        [EnumMember(Value = "pl-PL")]
         POLISH = 19,
 
         /// <summary>
         /// Enum PORTUGESE_BR for value: pt-BR
         /// </summary>
+        [EnumMember(Value = "pt-BR")]
         PORTUGESE_BR = 20,
 
         /// <summary>
         /// Enum PORTUGESE_PT for value: pt-PT
         /// </summary>
+        [EnumMember(Value = "pt-PT")]
         PORTUGESE_PT = 21,
 
         /// <summary>
         /// Enum RUSSIAN for value: ru-RU
         /// </summary>
+        [EnumMember(Value = "ru-RU")]
         RUSSIAN = 22,
 
         /// <summary>
         /// Enum SWEDISH for value: sv-SE
         /// </summary>
+        [EnumMember(Value = "sv-SE")]
         SWEDISH = 23,
 
         /// <summary>
         /// Enum CHINESE_CN for value: zh-CN
         /// </summary>
+        [EnumMember(Value = "zh-CN")]
         CHINESE_CN = 24,
 
         /// <summary>
         /// Enum CHINESE_HK for value: zh-HK
         /// </summary>
+        [EnumMember(Value = "zh-HK")]
         CHINESE_HK = 25,
 
         /// <summary>
         /// Enum CHINESE_TW for value: zh-TW
         /// </summary>
+        [EnumMember(Value = "zh-TW")]
         CHINESE_TW = 26
     }
-
     /// <summary>
     /// Converts <see cref="Language"/> to and from the JSON value
     /// </summary>
@@ -343,172 +369,6 @@ namespace freeclimb.Enums
                 return Language.CHINESE_TW;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="Language"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(Language value)
-        {
-            if (value == Language.CATALAN)
-                return "ca-ES";
-
-            if (value == Language.DANISH)
-                return "da-DK";
-
-            if (value == Language.GERMAN)
-                return "de-DE";
-
-            if (value == Language.ENGLISH_AU)
-                return "en-AU";
-
-            if (value == Language.ENGLISH_CA)
-                return "en-CA";
-
-            if (value == Language.ENGLISH_UK)
-                return "en-GB";
-
-            if (value == Language.ENGLISH_IN)
-                return "en-IN";
-
-            if (value == Language.ENGLISH_US)
-                return "en-US";
-
-            if (value == Language.ENGLISH_ES)
-                return "es-ES";
-
-            if (value == Language.ENGLISH_MX)
-                return "es-MX";
-
-            if (value == Language.FINNISH)
-                return "fi-FI";
-
-            if (value == Language.FRENCH_CA)
-                return "fr-CA";
-
-            if (value == Language.FRENCH_FR)
-                return "fr-FR";
-
-            if (value == Language.ITALIAN)
-                return "it-IT";
-
-            if (value == Language.JAPANESE)
-                return "ja-JP";
-
-            if (value == Language.KOREAN)
-                return "ko-KR";
-
-            if (value == Language.NORWEGIAN)
-                return "nb-NO";
-
-            if (value == Language.DUTCH)
-                return "nl-NL";
-
-            if (value == Language.POLISH)
-                return "pl-PL";
-
-            if (value == Language.PORTUGESE_BR)
-                return "pt-BR";
-
-            if (value == Language.PORTUGESE_PT)
-                return "pt-PT";
-
-            if (value == Language.RUSSIAN)
-                return "ru-RU";
-
-            if (value == Language.SWEDISH)
-                return "sv-SE";
-
-            if (value == Language.CHINESE_CN)
-                return "zh-CN";
-
-            if (value == Language.CHINESE_HK)
-                return "zh-HK";
-
-            if (value == Language.CHINESE_TW)
-                return "zh-TW";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="Language"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class LanguageJsonConverter : JsonConverter<Language>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override Language Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            Language? result = rawValue == null
-                ? null
-                : LanguageValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the Language to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="language"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, Language language, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(language.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="Language"/>
-    /// </summary>
-    public class LanguageNullableJsonConverter : JsonConverter<Language?>
-    {
-        /// <summary>
-        /// Returns a Language from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override Language? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            Language? result = rawValue == null
-                ? null
-                : LanguageValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="language"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, Language? language, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(language?.ToString() ?? "null");
         }
     }
 

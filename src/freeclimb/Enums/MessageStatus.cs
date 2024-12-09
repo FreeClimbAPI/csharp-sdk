@@ -32,64 +32,75 @@ namespace freeclimb.Enums
     /// Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown
     /// </summary>
     /// <value>Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown</value>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum MessageStatus
     {
         /// <summary>
         /// Enum NEW for value: new
         /// </summary>
+        [EnumMember(Value = "new")]
         NEW = 1,
 
         /// <summary>
         /// Enum QUEUED for value: queued
         /// </summary>
+        [EnumMember(Value = "queued")]
         QUEUED = 2,
 
         /// <summary>
         /// Enum REJECTED for value: rejected
         /// </summary>
+        [EnumMember(Value = "rejected")]
         REJECTED = 3,
 
         /// <summary>
         /// Enum SENDING for value: sending
         /// </summary>
+        [EnumMember(Value = "sending")]
         SENDING = 4,
 
         /// <summary>
         /// Enum SENT for value: sent
         /// </summary>
+        [EnumMember(Value = "sent")]
         SENT = 5,
 
         /// <summary>
         /// Enum FAILED for value: failed
         /// </summary>
+        [EnumMember(Value = "failed")]
         FAILED = 6,
 
         /// <summary>
         /// Enum RECEIVED for value: received
         /// </summary>
+        [EnumMember(Value = "received")]
         RECEIVED = 7,
 
         /// <summary>
         /// Enum UNDELIVERED for value: undelivered
         /// </summary>
+        [EnumMember(Value = "undelivered")]
         UNDELIVERED = 8,
 
         /// <summary>
         /// Enum EXPIRED for value: expired
         /// </summary>
+        [EnumMember(Value = "expired")]
         EXPIRED = 9,
 
         /// <summary>
         /// Enum DELETED for value: deleted
         /// </summary>
+        [EnumMember(Value = "deleted")]
         DELETED = 10,
 
         /// <summary>
         /// Enum UNKNOWN for value: unknown
         /// </summary>
+        [EnumMember(Value = "unknown")]
         UNKNOWN = 11
     }
-
     /// <summary>
     /// Converts <see cref="MessageStatus"/> to and from the JSON value
     /// </summary>
@@ -179,127 +190,6 @@ namespace freeclimb.Enums
                 return MessageStatus.UNKNOWN;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="MessageStatus"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(MessageStatus value)
-        {
-            if (value == MessageStatus.NEW)
-                return "new";
-
-            if (value == MessageStatus.QUEUED)
-                return "queued";
-
-            if (value == MessageStatus.REJECTED)
-                return "rejected";
-
-            if (value == MessageStatus.SENDING)
-                return "sending";
-
-            if (value == MessageStatus.SENT)
-                return "sent";
-
-            if (value == MessageStatus.FAILED)
-                return "failed";
-
-            if (value == MessageStatus.RECEIVED)
-                return "received";
-
-            if (value == MessageStatus.UNDELIVERED)
-                return "undelivered";
-
-            if (value == MessageStatus.EXPIRED)
-                return "expired";
-
-            if (value == MessageStatus.DELETED)
-                return "deleted";
-
-            if (value == MessageStatus.UNKNOWN)
-                return "unknown";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="MessageStatus"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class MessageStatusJsonConverter : JsonConverter<MessageStatus>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override MessageStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            MessageStatus? result = rawValue == null
-                ? null
-                : MessageStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the MessageStatus to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="messageStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, MessageStatus messageStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(messageStatus.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="MessageStatus"/>
-    /// </summary>
-    public class MessageStatusNullableJsonConverter : JsonConverter<MessageStatus?>
-    {
-        /// <summary>
-        /// Returns a MessageStatus from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override MessageStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            MessageStatus? result = rawValue == null
-                ? null
-                : MessageStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="messageStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, MessageStatus? messageStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(messageStatus?.ToString() ?? "null");
         }
     }
 

@@ -32,19 +32,21 @@ namespace freeclimb.Enums
     /// Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. 
     /// </summary>
     /// <value>Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. </value>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum SMSTenDLCPartnerCampaignStatus
     {
         /// <summary>
         /// Enum ACTIVE for value: ACTIVE
         /// </summary>
+        [EnumMember(Value = "ACTIVE")]
         ACTIVE = 1,
 
         /// <summary>
         /// Enum EXPIRED for value: EXPIRED
         /// </summary>
+        [EnumMember(Value = "EXPIRED")]
         EXPIRED = 2
     }
-
     /// <summary>
     /// Converts <see cref="SMSTenDLCPartnerCampaignStatus"/> to and from the JSON value
     /// </summary>
@@ -80,100 +82,6 @@ namespace freeclimb.Enums
                 return SMSTenDLCPartnerCampaignStatus.EXPIRED;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="SMSTenDLCPartnerCampaignStatus"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(SMSTenDLCPartnerCampaignStatus value)
-        {
-            if (value == SMSTenDLCPartnerCampaignStatus.ACTIVE)
-                return "ACTIVE";
-
-            if (value == SMSTenDLCPartnerCampaignStatus.EXPIRED)
-                return "EXPIRED";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="SMSTenDLCPartnerCampaignStatus"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class SMSTenDLCPartnerCampaignStatusJsonConverter : JsonConverter<SMSTenDLCPartnerCampaignStatus>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override SMSTenDLCPartnerCampaignStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            SMSTenDLCPartnerCampaignStatus? result = rawValue == null
-                ? null
-                : SMSTenDLCPartnerCampaignStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the SMSTenDLCPartnerCampaignStatus to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="sMSTenDLCPartnerCampaignStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, SMSTenDLCPartnerCampaignStatus sMSTenDLCPartnerCampaignStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(sMSTenDLCPartnerCampaignStatus.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="SMSTenDLCPartnerCampaignStatus"/>
-    /// </summary>
-    public class SMSTenDLCPartnerCampaignStatusNullableJsonConverter : JsonConverter<SMSTenDLCPartnerCampaignStatus?>
-    {
-        /// <summary>
-        /// Returns a SMSTenDLCPartnerCampaignStatus from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override SMSTenDLCPartnerCampaignStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            SMSTenDLCPartnerCampaignStatus? result = rawValue == null
-                ? null
-                : SMSTenDLCPartnerCampaignStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="sMSTenDLCPartnerCampaignStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, SMSTenDLCPartnerCampaignStatus? sMSTenDLCPartnerCampaignStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(sMSTenDLCPartnerCampaignStatus?.ToString() ?? "null");
         }
     }
 

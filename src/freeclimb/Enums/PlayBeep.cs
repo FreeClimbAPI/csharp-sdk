@@ -32,29 +32,33 @@ namespace freeclimb.Enums
     /// Indicates whether to play a beep when a Participant enters or leaves the Conference. either &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, or &#x60;exitOnly&#x60;. Leaving this unset will make conference default to &#x60;always&#x60; 
     /// </summary>
     /// <value>Indicates whether to play a beep when a Participant enters or leaves the Conference. either &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, or &#x60;exitOnly&#x60;. Leaving this unset will make conference default to &#x60;always&#x60; </value>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum PlayBeep
     {
         /// <summary>
         /// Enum ALWAYS for value: always
         /// </summary>
+        [EnumMember(Value = "always")]
         ALWAYS = 1,
 
         /// <summary>
         /// Enum NEVER for value: never
         /// </summary>
+        [EnumMember(Value = "never")]
         NEVER = 2,
 
         /// <summary>
         /// Enum ENTRY_ONLY for value: entryOnly
         /// </summary>
+        [EnumMember(Value = "entryOnly")]
         ENTRY_ONLY = 3,
 
         /// <summary>
         /// Enum EXIT_ONLY for value: exitOnly
         /// </summary>
+        [EnumMember(Value = "exitOnly")]
         EXIT_ONLY = 4
     }
-
     /// <summary>
     /// Converts <see cref="PlayBeep"/> to and from the JSON value
     /// </summary>
@@ -102,106 +106,6 @@ namespace freeclimb.Enums
                 return PlayBeep.EXIT_ONLY;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="PlayBeep"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(PlayBeep value)
-        {
-            if (value == PlayBeep.ALWAYS)
-                return "always";
-
-            if (value == PlayBeep.NEVER)
-                return "never";
-
-            if (value == PlayBeep.ENTRY_ONLY)
-                return "entryOnly";
-
-            if (value == PlayBeep.EXIT_ONLY)
-                return "exitOnly";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="PlayBeep"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class PlayBeepJsonConverter : JsonConverter<PlayBeep>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override PlayBeep Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            PlayBeep? result = rawValue == null
-                ? null
-                : PlayBeepValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the PlayBeep to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="playBeep"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, PlayBeep playBeep, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(playBeep.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="PlayBeep"/>
-    /// </summary>
-    public class PlayBeepNullableJsonConverter : JsonConverter<PlayBeep?>
-    {
-        /// <summary>
-        /// Returns a PlayBeep from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override PlayBeep? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            PlayBeep? result = rawValue == null
-                ? null
-                : PlayBeepValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="playBeep"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, PlayBeep? playBeep, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(playBeep?.ToString() ?? "null");
         }
     }
 

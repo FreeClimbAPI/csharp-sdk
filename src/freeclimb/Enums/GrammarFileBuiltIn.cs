@@ -31,84 +31,99 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines GrammarFileBuiltIn
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum GrammarFileBuiltIn
     {
         /// <summary>
         /// Enum ALPHNUM6 for value: ALPHNUM6
         /// </summary>
+        [EnumMember(Value = "ALPHNUM6")]
         ALPHNUM6 = 1,
 
         /// <summary>
         /// Enum ANY_DIG for value: ANY_DIG
         /// </summary>
+        [EnumMember(Value = "ANY_DIG")]
         ANY_DIG = 2,
 
         /// <summary>
         /// Enum DIG1 for value: DIG1
         /// </summary>
+        [EnumMember(Value = "DIG1")]
         DIG1 = 3,
 
         /// <summary>
         /// Enum DIG2 for value: DIG2
         /// </summary>
+        [EnumMember(Value = "DIG2")]
         DIG2 = 4,
 
         /// <summary>
         /// Enum DIG3 for value: DIG3
         /// </summary>
+        [EnumMember(Value = "DIG3")]
         DIG3 = 5,
 
         /// <summary>
         /// Enum DIG4 for value: DIG4
         /// </summary>
+        [EnumMember(Value = "DIG4")]
         DIG4 = 6,
 
         /// <summary>
         /// Enum DIG5 for value: DIG5
         /// </summary>
+        [EnumMember(Value = "DIG5")]
         DIG5 = 7,
 
         /// <summary>
         /// Enum DIG6 for value: DIG6
         /// </summary>
+        [EnumMember(Value = "DIG6")]
         DIG6 = 8,
 
         /// <summary>
         /// Enum DIG7 for value: DIG7
         /// </summary>
+        [EnumMember(Value = "DIG7")]
         DIG7 = 9,
 
         /// <summary>
         /// Enum DIG8 for value: DIG8
         /// </summary>
+        [EnumMember(Value = "DIG8")]
         DIG8 = 10,
 
         /// <summary>
         /// Enum DIG9 for value: DIG9
         /// </summary>
+        [EnumMember(Value = "DIG9")]
         DIG9 = 11,
 
         /// <summary>
         /// Enum DIG10 for value: DIG10
         /// </summary>
+        [EnumMember(Value = "DIG10")]
         DIG10 = 12,
 
         /// <summary>
         /// Enum DIG11 for value: DIG11
         /// </summary>
+        [EnumMember(Value = "DIG11")]
         DIG11 = 13,
 
         /// <summary>
         /// Enum UP_TO_20_DIGIT_SEQUENCE for value: UP_TO_20_DIGIT_SEQUENCE
         /// </summary>
+        [EnumMember(Value = "UP_TO_20_DIGIT_SEQUENCE")]
         UP_TO_20_DIGIT_SEQUENCE = 14,
 
         /// <summary>
         /// Enum VERSAY_YESNO for value: VERSAY_YESNO
         /// </summary>
+        [EnumMember(Value = "VERSAY_YESNO")]
         VERSAY_YESNO = 15
     }
-
     /// <summary>
     /// Converts <see cref="GrammarFileBuiltIn"/> to and from the JSON value
     /// </summary>
@@ -222,139 +237,6 @@ namespace freeclimb.Enums
                 return GrammarFileBuiltIn.VERSAY_YESNO;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="GrammarFileBuiltIn"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(GrammarFileBuiltIn value)
-        {
-            if (value == GrammarFileBuiltIn.ALPHNUM6)
-                return "ALPHNUM6";
-
-            if (value == GrammarFileBuiltIn.ANY_DIG)
-                return "ANY_DIG";
-
-            if (value == GrammarFileBuiltIn.DIG1)
-                return "DIG1";
-
-            if (value == GrammarFileBuiltIn.DIG2)
-                return "DIG2";
-
-            if (value == GrammarFileBuiltIn.DIG3)
-                return "DIG3";
-
-            if (value == GrammarFileBuiltIn.DIG4)
-                return "DIG4";
-
-            if (value == GrammarFileBuiltIn.DIG5)
-                return "DIG5";
-
-            if (value == GrammarFileBuiltIn.DIG6)
-                return "DIG6";
-
-            if (value == GrammarFileBuiltIn.DIG7)
-                return "DIG7";
-
-            if (value == GrammarFileBuiltIn.DIG8)
-                return "DIG8";
-
-            if (value == GrammarFileBuiltIn.DIG9)
-                return "DIG9";
-
-            if (value == GrammarFileBuiltIn.DIG10)
-                return "DIG10";
-
-            if (value == GrammarFileBuiltIn.DIG11)
-                return "DIG11";
-
-            if (value == GrammarFileBuiltIn.UP_TO_20_DIGIT_SEQUENCE)
-                return "UP_TO_20_DIGIT_SEQUENCE";
-
-            if (value == GrammarFileBuiltIn.VERSAY_YESNO)
-                return "VERSAY_YESNO";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="GrammarFileBuiltIn"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class GrammarFileBuiltInJsonConverter : JsonConverter<GrammarFileBuiltIn>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override GrammarFileBuiltIn Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            GrammarFileBuiltIn? result = rawValue == null
-                ? null
-                : GrammarFileBuiltInValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the GrammarFileBuiltIn to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="grammarFileBuiltIn"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, GrammarFileBuiltIn grammarFileBuiltIn, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(grammarFileBuiltIn.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="GrammarFileBuiltIn"/>
-    /// </summary>
-    public class GrammarFileBuiltInNullableJsonConverter : JsonConverter<GrammarFileBuiltIn?>
-    {
-        /// <summary>
-        /// Returns a GrammarFileBuiltIn from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override GrammarFileBuiltIn? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            GrammarFileBuiltIn? result = rawValue == null
-                ? null
-                : GrammarFileBuiltInValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="grammarFileBuiltIn"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, GrammarFileBuiltIn? grammarFileBuiltIn, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(grammarFileBuiltIn?.ToString() ?? "null");
         }
     }
 

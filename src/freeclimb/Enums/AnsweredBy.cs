@@ -32,19 +32,21 @@ namespace freeclimb.Enums
     /// If this Call was initiated with answering machine detection, either &#x60;human&#x60; or &#x60;machine&#x60;. Empty otherwise.
     /// </summary>
     /// <value>If this Call was initiated with answering machine detection, either &#x60;human&#x60; or &#x60;machine&#x60;. Empty otherwise.</value>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum AnsweredBy
     {
         /// <summary>
         /// Enum HUMAN for value: human
         /// </summary>
+        [EnumMember(Value = "human")]
         HUMAN = 1,
 
         /// <summary>
         /// Enum MACHINE for value: machine
         /// </summary>
+        [EnumMember(Value = "machine")]
         MACHINE = 2
     }
-
     /// <summary>
     /// Converts <see cref="AnsweredBy"/> to and from the JSON value
     /// </summary>
@@ -80,100 +82,6 @@ namespace freeclimb.Enums
                 return AnsweredBy.MACHINE;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="AnsweredBy"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(AnsweredBy value)
-        {
-            if (value == AnsweredBy.HUMAN)
-                return "human";
-
-            if (value == AnsweredBy.MACHINE)
-                return "machine";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="AnsweredBy"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class AnsweredByJsonConverter : JsonConverter<AnsweredBy>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override AnsweredBy Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            AnsweredBy? result = rawValue == null
-                ? null
-                : AnsweredByValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the AnsweredBy to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="answeredBy"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, AnsweredBy answeredBy, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(answeredBy.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="AnsweredBy"/>
-    /// </summary>
-    public class AnsweredByNullableJsonConverter : JsonConverter<AnsweredBy?>
-    {
-        /// <summary>
-        /// Returns a AnsweredBy from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override AnsweredBy? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            AnsweredBy? result = rawValue == null
-                ? null
-                : AnsweredByValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="answeredBy"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, AnsweredBy? answeredBy, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(answeredBy?.ToString() ?? "null");
         }
     }
 

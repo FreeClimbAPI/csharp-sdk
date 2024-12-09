@@ -19,5 +19,5 @@ Name | Type | Description | Notes
 **RecordingId** | **string** | Unique ID of the Recording from this Conference. Populated only if a recording exists and the Conference was emptied. | [optional] 
 **RecordingDurationSec** | **int** | Duration of the recorded audio (in seconds), rounded up to the nearest second. Populated only if a Recording exists and the Conference was emptied. | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -31,124 +31,147 @@ namespace freeclimb.Enums
     /// <summary>
     /// Defines RequestType
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum RequestType
     {
         /// <summary>
         /// Enum INBOUND_CALL for value: inboundCall
         /// </summary>
+        [EnumMember(Value = "inboundCall")]
         INBOUND_CALL = 1,
 
         /// <summary>
         /// Enum RECORD for value: record
         /// </summary>
+        [EnumMember(Value = "record")]
         RECORD = 2,
 
         /// <summary>
         /// Enum GET_DIGITS for value: getDigits
         /// </summary>
+        [EnumMember(Value = "getDigits")]
         GET_DIGITS = 3,
 
         /// <summary>
         /// Enum GET_SPEECH for value: getSpeech
         /// </summary>
+        [EnumMember(Value = "getSpeech")]
         GET_SPEECH = 4,
 
         /// <summary>
         /// Enum REDIRECT for value: redirect
         /// </summary>
+        [EnumMember(Value = "redirect")]
         REDIRECT = 5,
 
         /// <summary>
         /// Enum PAUSE for value: pause
         /// </summary>
+        [EnumMember(Value = "pause")]
         PAUSE = 6,
 
         /// <summary>
         /// Enum OUT_DIAL_START for value: outDialStart
         /// </summary>
+        [EnumMember(Value = "outDialStart")]
         OUT_DIAL_START = 7,
 
         /// <summary>
         /// Enum OUT_DIAL_CONNECT for value: outDialConnect
         /// </summary>
+        [EnumMember(Value = "outDialConnect")]
         OUT_DIAL_CONNECT = 8,
 
         /// <summary>
         /// Enum OUT_DIAL_API_CONNECT for value: outDialApiConnect
         /// </summary>
+        [EnumMember(Value = "outDialApiConnect")]
         OUT_DIAL_API_CONNECT = 9,
 
         /// <summary>
         /// Enum MACHINE_DETECTED for value: machineDetected
         /// </summary>
+        [EnumMember(Value = "machineDetected")]
         MACHINE_DETECTED = 10,
 
         /// <summary>
         /// Enum DEQUEUE for value: dequeue
         /// </summary>
+        [EnumMember(Value = "dequeue")]
         DEQUEUE = 11,
 
         /// <summary>
         /// Enum QUEUE_WAIT for value: queueWait
         /// </summary>
+        [EnumMember(Value = "queueWait")]
         QUEUE_WAIT = 12,
 
         /// <summary>
         /// Enum ADD_TO_QUEUE_NOTIFICATION for value: addToQueueNotification
         /// </summary>
+        [EnumMember(Value = "addToQueueNotification")]
         ADD_TO_QUEUE_NOTIFICATION = 13,
 
         /// <summary>
         /// Enum REMOVE_FROM_QUEUE_NOTIFICATION for value: removeFromQueueNotification
         /// </summary>
+        [EnumMember(Value = "removeFromQueueNotification")]
         REMOVE_FROM_QUEUE_NOTIFICATION = 14,
 
         /// <summary>
         /// Enum CALL_STATUS for value: callStatus
         /// </summary>
+        [EnumMember(Value = "callStatus")]
         CALL_STATUS = 15,
 
         /// <summary>
         /// Enum CREATE_CONFERENCE for value: createConference
         /// </summary>
+        [EnumMember(Value = "createConference")]
         CREATE_CONFERENCE = 16,
 
         /// <summary>
         /// Enum CONFERENCE_STATUS for value: conferenceStatus
         /// </summary>
+        [EnumMember(Value = "conferenceStatus")]
         CONFERENCE_STATUS = 17,
 
         /// <summary>
         /// Enum LEAVE_CONFERENCE for value: leaveConference
         /// </summary>
+        [EnumMember(Value = "leaveConference")]
         LEAVE_CONFERENCE = 18,
 
         /// <summary>
         /// Enum ADD_TO_CONFERENCE_NOTIFICATION for value: addToConferenceNotification
         /// </summary>
+        [EnumMember(Value = "addToConferenceNotification")]
         ADD_TO_CONFERENCE_NOTIFICATION = 19,
 
         /// <summary>
         /// Enum CONFERENCE_RECORDING_STATUS for value: conferenceRecordingStatus
         /// </summary>
+        [EnumMember(Value = "conferenceRecordingStatus")]
         CONFERENCE_RECORDING_STATUS = 20,
 
         /// <summary>
         /// Enum CONFERENCE_CALL_CONTROL for value: conferenceCallControl
         /// </summary>
+        [EnumMember(Value = "conferenceCallControl")]
         CONFERENCE_CALL_CONTROL = 21,
 
         /// <summary>
         /// Enum MESSAGE_DELIVERY for value: messageDelivery
         /// </summary>
+        [EnumMember(Value = "messageDelivery")]
         MESSAGE_DELIVERY = 22,
 
         /// <summary>
         /// Enum MESSAGE_STATUS for value: messageStatus
         /// </summary>
+        [EnumMember(Value = "messageStatus")]
         MESSAGE_STATUS = 23
     }
-
     /// <summary>
     /// Converts <see cref="RequestType"/> to and from the JSON value
     /// </summary>
@@ -310,163 +333,6 @@ namespace freeclimb.Enums
                 return RequestType.MESSAGE_STATUS;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="RequestType"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(RequestType value)
-        {
-            if (value == RequestType.INBOUND_CALL)
-                return "inboundCall";
-
-            if (value == RequestType.RECORD)
-                return "record";
-
-            if (value == RequestType.GET_DIGITS)
-                return "getDigits";
-
-            if (value == RequestType.GET_SPEECH)
-                return "getSpeech";
-
-            if (value == RequestType.REDIRECT)
-                return "redirect";
-
-            if (value == RequestType.PAUSE)
-                return "pause";
-
-            if (value == RequestType.OUT_DIAL_START)
-                return "outDialStart";
-
-            if (value == RequestType.OUT_DIAL_CONNECT)
-                return "outDialConnect";
-
-            if (value == RequestType.OUT_DIAL_API_CONNECT)
-                return "outDialApiConnect";
-
-            if (value == RequestType.MACHINE_DETECTED)
-                return "machineDetected";
-
-            if (value == RequestType.DEQUEUE)
-                return "dequeue";
-
-            if (value == RequestType.QUEUE_WAIT)
-                return "queueWait";
-
-            if (value == RequestType.ADD_TO_QUEUE_NOTIFICATION)
-                return "addToQueueNotification";
-
-            if (value == RequestType.REMOVE_FROM_QUEUE_NOTIFICATION)
-                return "removeFromQueueNotification";
-
-            if (value == RequestType.CALL_STATUS)
-                return "callStatus";
-
-            if (value == RequestType.CREATE_CONFERENCE)
-                return "createConference";
-
-            if (value == RequestType.CONFERENCE_STATUS)
-                return "conferenceStatus";
-
-            if (value == RequestType.LEAVE_CONFERENCE)
-                return "leaveConference";
-
-            if (value == RequestType.ADD_TO_CONFERENCE_NOTIFICATION)
-                return "addToConferenceNotification";
-
-            if (value == RequestType.CONFERENCE_RECORDING_STATUS)
-                return "conferenceRecordingStatus";
-
-            if (value == RequestType.CONFERENCE_CALL_CONTROL)
-                return "conferenceCallControl";
-
-            if (value == RequestType.MESSAGE_DELIVERY)
-                return "messageDelivery";
-
-            if (value == RequestType.MESSAGE_STATUS)
-                return "messageStatus";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="RequestType"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class RequestTypeJsonConverter : JsonConverter<RequestType>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override RequestType Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            RequestType? result = rawValue == null
-                ? null
-                : RequestTypeValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the RequestType to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="requestType"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, RequestType requestType, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(requestType.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="RequestType"/>
-    /// </summary>
-    public class RequestTypeNullableJsonConverter : JsonConverter<RequestType?>
-    {
-        /// <summary>
-        /// Returns a RequestType from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override RequestType? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            RequestType? result = rawValue == null
-                ? null
-                : RequestTypeValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="requestType"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, RequestType? requestType, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(requestType?.ToString() ?? "null");
         }
     }
 

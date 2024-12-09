@@ -12,5 +12,5 @@ Name | Type | Description | Notes
 **Message** | **string** | A simple string describing the event being logged. | [optional] 
 **Metadata** | **Object** | JSON document containing metadata about the event. Some log messages may include request and response header content in this field. | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

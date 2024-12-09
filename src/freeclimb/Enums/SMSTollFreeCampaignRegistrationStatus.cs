@@ -32,34 +32,39 @@ namespace freeclimb.Enums
     /// Current toll-free campaign registration status.Possible values: UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign defaults to INITIATED status. 
     /// </summary>
     /// <value>Current toll-free campaign registration status.Possible values: UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign defaults to INITIATED status. </value>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum SMSTollFreeCampaignRegistrationStatus
     {
         /// <summary>
         /// Enum UNREGISTERED for value: UNREGISTERED
         /// </summary>
+        [EnumMember(Value = "UNREGISTERED")]
         UNREGISTERED = 1,
 
         /// <summary>
         /// Enum INITIATED for value: INITIATED
         /// </summary>
+        [EnumMember(Value = "INITIATED")]
         INITIATED = 2,
 
         /// <summary>
         /// Enum PENDING for value: PENDING
         /// </summary>
+        [EnumMember(Value = "PENDING")]
         PENDING = 3,
 
         /// <summary>
         /// Enum DECLINED for value: DECLINED
         /// </summary>
+        [EnumMember(Value = "DECLINED")]
         DECLINED = 4,
 
         /// <summary>
         /// Enum REGISTERED for value: REGISTERED
         /// </summary>
+        [EnumMember(Value = "REGISTERED")]
         REGISTERED = 5
     }
-
     /// <summary>
     /// Converts <see cref="SMSTollFreeCampaignRegistrationStatus"/> to and from the JSON value
     /// </summary>
@@ -113,109 +118,6 @@ namespace freeclimb.Enums
                 return SMSTollFreeCampaignRegistrationStatus.REGISTERED;
 
             return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="SMSTollFreeCampaignRegistrationStatus"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string ToJsonValue(SMSTollFreeCampaignRegistrationStatus value)
-        {
-            if (value == SMSTollFreeCampaignRegistrationStatus.UNREGISTERED)
-                return "UNREGISTERED";
-
-            if (value == SMSTollFreeCampaignRegistrationStatus.INITIATED)
-                return "INITIATED";
-
-            if (value == SMSTollFreeCampaignRegistrationStatus.PENDING)
-                return "PENDING";
-
-            if (value == SMSTollFreeCampaignRegistrationStatus.DECLINED)
-                return "DECLINED";
-
-            if (value == SMSTollFreeCampaignRegistrationStatus.REGISTERED)
-                return "REGISTERED";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="SMSTollFreeCampaignRegistrationStatus"/>
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public class SMSTollFreeCampaignRegistrationStatusJsonConverter : JsonConverter<SMSTollFreeCampaignRegistrationStatus>
-    {
-        /// <summary>
-        /// Returns a  from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override SMSTollFreeCampaignRegistrationStatus Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            SMSTollFreeCampaignRegistrationStatus? result = rawValue == null
-                ? null
-                : SMSTollFreeCampaignRegistrationStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the SMSTollFreeCampaignRegistrationStatus to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="sMSTollFreeCampaignRegistrationStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, SMSTollFreeCampaignRegistrationStatus sMSTollFreeCampaignRegistrationStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(sMSTollFreeCampaignRegistrationStatus.ToString());
-        }
-    }
-
-    /// <summary>
-    /// A Json converter for type <see cref="SMSTollFreeCampaignRegistrationStatus"/>
-    /// </summary>
-    public class SMSTollFreeCampaignRegistrationStatusNullableJsonConverter : JsonConverter<SMSTollFreeCampaignRegistrationStatus?>
-    {
-        /// <summary>
-        /// Returns a SMSTollFreeCampaignRegistrationStatus from the Json object
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="typeToConvert"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public override SMSTollFreeCampaignRegistrationStatus? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            string? rawValue = reader.GetString();
-
-            SMSTollFreeCampaignRegistrationStatus? result = rawValue == null
-                ? null
-                : SMSTollFreeCampaignRegistrationStatusValueConverter.FromStringOrDefault(rawValue);
-
-            if (result != null)
-                return result.Value;
-
-            throw new JsonException();
-        }
-
-        /// <summary>
-        /// Writes the DateTime to the json writer
-        /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="sMSTollFreeCampaignRegistrationStatus"></param>
-        /// <param name="options"></param>
-        public override void Write(Utf8JsonWriter writer, SMSTollFreeCampaignRegistrationStatus? sMSTollFreeCampaignRegistrationStatus, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(sMSTollFreeCampaignRegistrationStatus?.ToString() ?? "null");
         }
     }
 
