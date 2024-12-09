@@ -2073,7 +2073,7 @@ namespace freeclimb.Test.Api
 
         private UpdateCallRequest updateCallRequestTestValue()
         {
-            UpdateCallRequestStatus enumCallRequestStatus = UpdateCallRequestStatus("completed");
+            UpdateCallRequestStatus enumCallRequestStatus = UpdateCallRequestStatusValueConverter.FromString("completed");
             return new UpdateCallRequest(enumCallRequestStatus);
         }
 
