@@ -39,14 +39,14 @@ namespace freeclimb.Test.Model
         public QueueMemberListTests()
         {
             instance = new QueueMemberList(
-                total=(int?)getTestValue(typeof(int?)),
-                start=(int?)getTestValue(typeof(int?)),
-                end=(int?)getTestValue(typeof(int?)),
-                page=(int?)getTestValue(typeof(int?)),
-                numPages=(int?)getTestValue(typeof(int?)),
-                pageSize=(int?)getTestValue(typeof(int?)),
-                nextPageUri=(string)getTestValue(typeof(string)),
-                queueMembers=(List<QueueMember>)getTestValue(typeof(List<QueueMember>))
+                total: (int?)getTestValue(typeof(int?)),
+                start: (int?)getTestValue(typeof(int?)),
+                end: (int?)getTestValue(typeof(int?)),
+                page: (int?)getTestValue(typeof(int?)),
+                numPages: (int?)getTestValue(typeof(int?)),
+                pageSize: (int?)getTestValue(typeof(int?)),
+                nextPageUri: (string)getTestValue(typeof(string)),
+                queueMembers: (List<QueueMember>)getTestValue(typeof(List<QueueMember>))
             );
         }
 
@@ -161,6 +161,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

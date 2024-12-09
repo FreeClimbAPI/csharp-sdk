@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public SetDTMFPassThroughTests()
         {
             instance = new SetDTMFPassThrough(
-                dtmfPassThrough=(bool)getTestValue(typeof(bool))
+                dtmfPassThrough: (bool)getTestValue(typeof(bool))
             );
         }
 
@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public ConferenceParticipantResultTests()
         {
             instance = new ConferenceParticipantResult(
-                uri=(string)getTestValue(typeof(string)),
-                dateCreated=(string)getTestValue(typeof(string)),
-                dateUpdated=(string)getTestValue(typeof(string)),
-                revision=(int)getTestValue(typeof(int)),
-                accountId=(string)getTestValue(typeof(string)),
-                conferenceId=(string)getTestValue(typeof(string)),
-                callId=(string)getTestValue(typeof(string)),
-                talk=(bool?)getTestValue(typeof(bool?)),
-                listen=(bool?)getTestValue(typeof(bool?)),
-                dtmfPassThrough=(bool?)getTestValue(typeof(bool?)),
-                startConfOnEnter=(bool?)getTestValue(typeof(bool?))
+                uri: (string)getTestValue(typeof(string)),
+                dateCreated: (string)getTestValue(typeof(string)),
+                dateUpdated: (string)getTestValue(typeof(string)),
+                revision: (int)getTestValue(typeof(int)),
+                accountId: (string)getTestValue(typeof(string)),
+                conferenceId: (string)getTestValue(typeof(string)),
+                callId: (string)getTestValue(typeof(string)),
+                talk: (bool?)getTestValue(typeof(bool?)),
+                listen: (bool?)getTestValue(typeof(bool?)),
+                dtmfPassThrough: (bool?)getTestValue(typeof(bool?)),
+                startConfOnEnter: (bool?)getTestValue(typeof(bool?))
             );
         }
 
@@ -196,6 +196,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

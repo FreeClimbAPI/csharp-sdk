@@ -39,10 +39,10 @@ namespace freeclimb.Test.Model
         public SayTests()
         {
             instance = new Say(
-                text=(string)getTestValue(typeof(string)),
-                language=(string)getTestValue(typeof(string)),
-                loop=(int)getTestValue(typeof(int)),
-                privacyMode=(bool)getTestValue(typeof(bool))
+                text: (string)getTestValue(typeof(string)),
+                language: (string)getTestValue(typeof(string)),
+                loop: (int)getTestValue(typeof(int)),
+                privacyMode: (bool)getTestValue(typeof(bool))
             );
         }
 
@@ -112,6 +112,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

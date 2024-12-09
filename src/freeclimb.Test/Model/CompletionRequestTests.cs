@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public CompletionRequestTests()
         {
             instance = new CompletionRequest(
-                query=(string)getTestValue(typeof(string))
+                query: (string)getTestValue(typeof(string))
             );
         }
 
@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

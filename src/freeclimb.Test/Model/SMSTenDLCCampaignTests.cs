@@ -39,42 +39,42 @@ namespace freeclimb.Test.Model
         public SMSTenDLCCampaignTests()
         {
             instance = new SMSTenDLCCampaign(
-                accountId=(string)getTestValue(typeof(string)),
-                campaignId=(string)getTestValue(typeof(string)),
-                cspId=(string)getTestValue(typeof(string)),
-                resellerId=(string)getTestValue(typeof(string)),
-                status=(SMSTenDLCCampaignStatus)getTestValue(typeof(SMSTenDLCCampaignStatus)),
-                createDate=(DateTime)getTestValue(typeof(DateTime)),
-                autoRenewal=(bool)getTestValue(typeof(bool)),
-                billedDate=(DateTime?)getTestValue(typeof(DateTime?)),
-                brandId=(string)getTestValue(typeof(string)),
-                usecase=(string)getTestValue(typeof(string)),
-                subUsecases=(List<string>)getTestValue(typeof(List<string>)),
-                description=(string)getTestValue(typeof(string)),
-                embeddedLink=(bool)getTestValue(typeof(bool)),
-                embeddedPhone=(bool)getTestValue(typeof(bool)),
-                affiliateMarketing=(bool)getTestValue(typeof(bool)),
-                numberPool=(bool)getTestValue(typeof(bool)),
-                ageGated=(bool)getTestValue(typeof(bool)),
-                directLending=(bool)getTestValue(typeof(bool)),
-                subscriberOptin=(bool)getTestValue(typeof(bool)),
-                subscriberOptout=(bool)getTestValue(typeof(bool)),
-                subscriberHelp=(bool)getTestValue(typeof(bool)),
-                sample1=(string)getTestValue(typeof(string)),
-                sample2=(string)getTestValue(typeof(string)),
-                sample3=(string)getTestValue(typeof(string)),
-                sample4=(string)getTestValue(typeof(string)),
-                sample5=(string)getTestValue(typeof(string)),
-                messageFlow=(string)getTestValue(typeof(string)),
-                helpMessage=(string)getTestValue(typeof(string)),
-                optinKeywords=(string)getTestValue(typeof(string)),
-                optoutKeywords=(string)getTestValue(typeof(string)),
-                helpKeywords=(string)getTestValue(typeof(string)),
-                optinMessage=(string)getTestValue(typeof(string)),
-                optoutMessage=(string)getTestValue(typeof(string)),
-                referenceId=(string)getTestValue(typeof(string)),
-                mock=(bool)getTestValue(typeof(bool)),
-                nextRenewalOrExpirationDate=(DateOnly?)getTestValue(typeof(DateOnly?))
+                accountId: (string)getTestValue(typeof(string)),
+                campaignId: (string)getTestValue(typeof(string)),
+                cspId: (string)getTestValue(typeof(string)),
+                resellerId: (string)getTestValue(typeof(string)),
+                status: (SMSTenDLCCampaignStatus)getTestValue(typeof(SMSTenDLCCampaignStatus)),
+                createDate: (DateTime)getTestValue(typeof(DateTime)),
+                autoRenewal: (bool)getTestValue(typeof(bool)),
+                billedDate: (DateTime?)getTestValue(typeof(DateTime?)),
+                brandId: (string)getTestValue(typeof(string)),
+                usecase: (string)getTestValue(typeof(string)),
+                subUsecases: (List<string>)getTestValue(typeof(List<string>)),
+                description: (string)getTestValue(typeof(string)),
+                embeddedLink: (bool)getTestValue(typeof(bool)),
+                embeddedPhone: (bool)getTestValue(typeof(bool)),
+                affiliateMarketing: (bool)getTestValue(typeof(bool)),
+                numberPool: (bool)getTestValue(typeof(bool)),
+                ageGated: (bool)getTestValue(typeof(bool)),
+                directLending: (bool)getTestValue(typeof(bool)),
+                subscriberOptin: (bool)getTestValue(typeof(bool)),
+                subscriberOptout: (bool)getTestValue(typeof(bool)),
+                subscriberHelp: (bool)getTestValue(typeof(bool)),
+                sample1: (string)getTestValue(typeof(string)),
+                sample2: (string)getTestValue(typeof(string)),
+                sample3: (string)getTestValue(typeof(string)),
+                sample4: (string)getTestValue(typeof(string)),
+                sample5: (string)getTestValue(typeof(string)),
+                messageFlow: (string)getTestValue(typeof(string)),
+                helpMessage: (string)getTestValue(typeof(string)),
+                optinKeywords: (string)getTestValue(typeof(string)),
+                optoutKeywords: (string)getTestValue(typeof(string)),
+                helpKeywords: (string)getTestValue(typeof(string)),
+                optinMessage: (string)getTestValue(typeof(string)),
+                optoutMessage: (string)getTestValue(typeof(string)),
+                referenceId: (string)getTestValue(typeof(string)),
+                mock: (bool)getTestValue(typeof(bool)),
+                nextRenewalOrExpirationDate: (DateOnly?)getTestValue(typeof(DateOnly?))
             );
         }
 
@@ -499,6 +499,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

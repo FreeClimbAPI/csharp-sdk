@@ -39,13 +39,13 @@ namespace freeclimb.Test.Model
         public LogResultTests()
         {
             instance = new LogResult(
-                timestamp=(int?)getTestValue(typeof(int?)),
-                level=(LogLevel)getTestValue(typeof(LogLevel)),
-                requestId=(string)getTestValue(typeof(string)),
-                accountId=(string)getTestValue(typeof(string)),
-                callId=(string)getTestValue(typeof(string)),
-                message=(string)getTestValue(typeof(string)),
-                metadata=(Object)getTestValue(typeof(Object))
+                timestamp: (int?)getTestValue(typeof(int?)),
+                level: (LogLevel)getTestValue(typeof(LogLevel)),
+                requestId: (string)getTestValue(typeof(string)),
+                accountId: (string)getTestValue(typeof(string)),
+                callId: (string)getTestValue(typeof(string)),
+                message: (string)getTestValue(typeof(string)),
+                metadata: (Object)getTestValue(typeof(Object))
             );
         }
 
@@ -153,6 +153,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

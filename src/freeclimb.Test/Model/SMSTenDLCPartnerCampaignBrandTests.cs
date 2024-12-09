@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public SMSTenDLCPartnerCampaignBrandTests()
         {
             instance = new SMSTenDLCPartnerCampaignBrand(
-                accountId=(string)getTestValue(typeof(string)),
-                brandId=(string)getTestValue(typeof(string)),
-                firstName=(string)getTestValue(typeof(string)),
-                lastName=(string)getTestValue(typeof(string)),
-                displayName=(string)getTestValue(typeof(string)),
-                companyName=(string)getTestValue(typeof(string)),
-                phone=(string)getTestValue(typeof(string)),
-                email=(string)getTestValue(typeof(string)),
-                website=(string)getTestValue(typeof(string)),
-                optionalAttributes=(Dictionary<string, Object>)getTestValue(typeof(Dictionary<string, Object>)),
-                evpVettingScore=(int)getTestValue(typeof(int))
+                accountId: (string)getTestValue(typeof(string)),
+                brandId: (string)getTestValue(typeof(string)),
+                firstName: (string)getTestValue(typeof(string)),
+                lastName: (string)getTestValue(typeof(string)),
+                displayName: (string)getTestValue(typeof(string)),
+                companyName: (string)getTestValue(typeof(string)),
+                phone: (string)getTestValue(typeof(string)),
+                email: (string)getTestValue(typeof(string)),
+                website: (string)getTestValue(typeof(string)),
+                optionalAttributes: (Dictionary<string, Object>)getTestValue(typeof(Dictionary<string, Object>)),
+                evpVettingScore: (int)getTestValue(typeof(int))
             );
         }
 
@@ -197,6 +197,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

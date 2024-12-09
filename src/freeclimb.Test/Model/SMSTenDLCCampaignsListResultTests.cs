@@ -39,14 +39,14 @@ namespace freeclimb.Test.Model
         public SMSTenDLCCampaignsListResultTests()
         {
             instance = new SMSTenDLCCampaignsListResult(
-                total=(int?)getTestValue(typeof(int?)),
-                start=(int?)getTestValue(typeof(int?)),
-                end=(int?)getTestValue(typeof(int?)),
-                page=(int?)getTestValue(typeof(int?)),
-                numPages=(int?)getTestValue(typeof(int?)),
-                pageSize=(int?)getTestValue(typeof(int?)),
-                nextPageUri=(string)getTestValue(typeof(string)),
-                campaigns=(List<SMSTenDLCCampaign>)getTestValue(typeof(List<SMSTenDLCCampaign>))
+                total: (int?)getTestValue(typeof(int?)),
+                start: (int?)getTestValue(typeof(int?)),
+                end: (int?)getTestValue(typeof(int?)),
+                page: (int?)getTestValue(typeof(int?)),
+                numPages: (int?)getTestValue(typeof(int?)),
+                pageSize: (int?)getTestValue(typeof(int?)),
+                nextPageUri: (string)getTestValue(typeof(string)),
+                campaigns: (List<SMSTenDLCCampaign>)getTestValue(typeof(List<SMSTenDLCCampaign>))
             );
         }
 
@@ -161,6 +161,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

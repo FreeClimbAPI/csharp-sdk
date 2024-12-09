@@ -39,29 +39,29 @@ namespace freeclimb.Test.Model
         public TranscribeWebhookTests()
         {
             instance = new TranscribeWebhook(
-                requestType=(string)getTestValue(typeof(string)),
-                accountId=(string)getTestValue(typeof(string)),
-                callId=(string)getTestValue(typeof(string)),
-                from=(string)getTestValue(typeof(string)),
-                to=(string)getTestValue(typeof(string)),
-                recordingId=(string)getTestValue(typeof(string)),
-                recordingUrl=(string)getTestValue(typeof(string)),
-                recordingSize=(int)getTestValue(typeof(int)),
-                recordingFormat=(string)getTestValue(typeof(string)),
-                recordingDurationMs=(int)getTestValue(typeof(int)),
-                termReason=(TranscribeTermReason)getTestValue(typeof(TranscribeTermReason)),
-                recordTermReason=(RecordUtteranceTermReason)getTestValue(typeof(RecordUtteranceTermReason)),
-                digit=(string)getTestValue(typeof(string)),
-                privacyForLogging=(bool)getTestValue(typeof(bool)),
-                privacyForRecording=(bool)getTestValue(typeof(bool)),
-                bargeInReason=(BargeInReason)getTestValue(typeof(BargeInReason)),
-                bargedInPromptNo=(int)getTestValue(typeof(int)),
-                bargedInPromptMs=(int)getTestValue(typeof(int)),
-                bargedInPromptLoopNo=(int)getTestValue(typeof(int)),
-                bargeInTimeMs=(int)getTestValue(typeof(int)),
-                transcript=(string)getTestValue(typeof(string)),
-                transcribeReason=(TranscribeReason)getTestValue(typeof(TranscribeReason)),
-                transcriptionDurationMs=(int)getTestValue(typeof(int))
+                requestType: (string)getTestValue(typeof(string)),
+                accountId: (string)getTestValue(typeof(string)),
+                callId: (string)getTestValue(typeof(string)),
+                from: (string)getTestValue(typeof(string)),
+                to: (string)getTestValue(typeof(string)),
+                recordingId: (string)getTestValue(typeof(string)),
+                recordingUrl: (string)getTestValue(typeof(string)),
+                recordingSize: (int)getTestValue(typeof(int)),
+                recordingFormat: (string)getTestValue(typeof(string)),
+                recordingDurationMs: (int)getTestValue(typeof(int)),
+                termReason: (TranscribeTermReason)getTestValue(typeof(TranscribeTermReason)),
+                recordTermReason: (RecordUtteranceTermReason)getTestValue(typeof(RecordUtteranceTermReason)),
+                digit: (string)getTestValue(typeof(string)),
+                privacyForLogging: (bool)getTestValue(typeof(bool)),
+                privacyForRecording: (bool)getTestValue(typeof(bool)),
+                bargeInReason: (BargeInReason)getTestValue(typeof(BargeInReason)),
+                bargedInPromptNo: (int)getTestValue(typeof(int)),
+                bargedInPromptMs: (int)getTestValue(typeof(int)),
+                bargedInPromptLoopNo: (int)getTestValue(typeof(int)),
+                bargeInTimeMs: (int)getTestValue(typeof(int)),
+                transcript: (string)getTestValue(typeof(string)),
+                transcribeReason: (TranscribeReason)getTestValue(typeof(TranscribeReason)),
+                transcriptionDurationMs: (int)getTestValue(typeof(int))
             );
         }
 
@@ -358,6 +358,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

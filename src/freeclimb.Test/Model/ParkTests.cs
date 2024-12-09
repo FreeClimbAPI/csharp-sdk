@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public ParkTests()
         {
             instance = new Park(
-                waitUrl=(string)getTestValue(typeof(string)),
-                actionUrl=(string)getTestValue(typeof(string)),
-                notificationUrl=(string)getTestValue(typeof(string))
+                waitUrl: (string)getTestValue(typeof(string)),
+                actionUrl: (string)getTestValue(typeof(string)),
+                notificationUrl: (string)getTestValue(typeof(string))
             );
         }
 
@@ -100,6 +100,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

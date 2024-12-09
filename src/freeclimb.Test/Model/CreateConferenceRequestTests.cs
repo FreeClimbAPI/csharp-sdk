@@ -39,11 +39,11 @@ namespace freeclimb.Test.Model
         public CreateConferenceRequestTests()
         {
             instance = new CreateConferenceRequest(
-                alias=(string)getTestValue(typeof(string)),
-                playBeep=(PlayBeep)getTestValue(typeof(PlayBeep)),
-                record=(bool)getTestValue(typeof(bool)),
-                waitUrl=(string)getTestValue(typeof(string)),
-                statusCallbackUrl=(string)getTestValue(typeof(string))
+                alias: (string)getTestValue(typeof(string)),
+                playBeep: (PlayBeep)getTestValue(typeof(PlayBeep)),
+                record: (bool)getTestValue(typeof(bool)),
+                waitUrl: (string)getTestValue(typeof(string)),
+                statusCallbackUrl: (string)getTestValue(typeof(string))
             );
         }
 
@@ -130,6 +130,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

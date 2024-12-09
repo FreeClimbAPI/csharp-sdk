@@ -39,12 +39,12 @@ namespace freeclimb.Test.Model
         public TranscribeUtteranceTests()
         {
             instance = new TranscribeUtterance(
-                actionUrl=(string)getTestValue(typeof(string)),
-                playBeep=(bool)getTestValue(typeof(bool)),
-                record=(TranscribeUtteranceRecord)getTestValue(typeof(TranscribeUtteranceRecord)),
-                privacyForLogging=(bool)getTestValue(typeof(bool)),
-                privacyForRecording=(bool)getTestValue(typeof(bool)),
-                prompts=(List<PerclCommand>)getTestValue(typeof(List<PerclCommand>))
+                actionUrl: (string)getTestValue(typeof(string)),
+                playBeep: (bool)getTestValue(typeof(bool)),
+                record: (TranscribeUtteranceRecord)getTestValue(typeof(TranscribeUtteranceRecord)),
+                privacyForLogging: (bool)getTestValue(typeof(bool)),
+                privacyForRecording: (bool)getTestValue(typeof(bool)),
+                prompts: (List<PerclCommand>)getTestValue(typeof(List<PerclCommand>))
             );
         }
 
@@ -138,6 +138,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public PerclCommandTests()
         {
             instance = new PerclCommand(
-                command=(string)getTestValue(typeof(string))
+                command: (string)getTestValue(typeof(string))
             );
         }
 
@@ -308,6 +308,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

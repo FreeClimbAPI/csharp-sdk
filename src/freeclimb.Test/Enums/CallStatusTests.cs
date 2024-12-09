@@ -256,6 +256,7 @@ namespace freeclimb.Test.Enums
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

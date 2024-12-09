@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public SetTalkTests()
         {
             instance = new SetTalk(
-                talk=(bool)getTestValue(typeof(bool))
+                talk: (bool)getTestValue(typeof(bool))
             );
         }
 
@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

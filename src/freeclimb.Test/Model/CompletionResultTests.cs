@@ -39,8 +39,8 @@ namespace freeclimb.Test.Model
         public CompletionResultTests()
         {
             instance = new CompletionResult(
-                response=(string)getTestValue(typeof(string)),
-                status=(CompletionResultStatus)getTestValue(typeof(CompletionResultStatus))
+                response: (string)getTestValue(typeof(string)),
+                status: (CompletionResultStatus)getTestValue(typeof(CompletionResultStatus))
             );
         }
 
@@ -90,6 +90,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

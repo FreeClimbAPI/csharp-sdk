@@ -39,19 +39,19 @@ namespace freeclimb.Test.Model
         public ConferenceStatusWebhookTests()
         {
             instance = new ConferenceStatusWebhook(
-                requestType=(string)getTestValue(typeof(string)),
-                callId=(string)getTestValue(typeof(string)),
-                accountId=(string)getTestValue(typeof(string)),
-                from=(string)getTestValue(typeof(string)),
-                to=(string)getTestValue(typeof(string)),
-                callStatus=(CallStatus)getTestValue(typeof(CallStatus)),
-                direction=(CallDirection)getTestValue(typeof(CallDirection)),
-                conferenceId=(string)getTestValue(typeof(string)),
-                queueId=(string)getTestValue(typeof(string)),
-                status=(ConferenceStatus)getTestValue(typeof(ConferenceStatus)),
-                recordingUrl=(string)getTestValue(typeof(string)),
-                recordingId=(string)getTestValue(typeof(string)),
-                recordingDurationSec=(int?)getTestValue(typeof(int?))
+                requestType: (string)getTestValue(typeof(string)),
+                callId: (string)getTestValue(typeof(string)),
+                accountId: (string)getTestValue(typeof(string)),
+                from: (string)getTestValue(typeof(string)),
+                to: (string)getTestValue(typeof(string)),
+                callStatus: (CallStatus)getTestValue(typeof(CallStatus)),
+                direction: (CallDirection)getTestValue(typeof(CallDirection)),
+                conferenceId: (string)getTestValue(typeof(string)),
+                queueId: (string)getTestValue(typeof(string)),
+                status: (ConferenceStatus)getTestValue(typeof(ConferenceStatus)),
+                recordingUrl: (string)getTestValue(typeof(string)),
+                recordingId: (string)getTestValue(typeof(string)),
+                recordingDurationSec: (int?)getTestValue(typeof(int?))
             );
         }
 
@@ -242,6 +242,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

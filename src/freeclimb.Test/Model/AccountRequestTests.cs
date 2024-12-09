@@ -39,8 +39,8 @@ namespace freeclimb.Test.Model
         public AccountRequestTests()
         {
             instance = new AccountRequest(
-                alias=(string)getTestValue(typeof(string)),
-                label=(string)getTestValue(typeof(string))
+                alias: (string)getTestValue(typeof(string)),
+                label: (string)getTestValue(typeof(string))
             );
         }
 
@@ -88,6 +88,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

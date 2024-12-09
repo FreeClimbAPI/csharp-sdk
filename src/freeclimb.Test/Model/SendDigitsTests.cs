@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public SendDigitsTests()
         {
             instance = new SendDigits(
-                digits=(string)getTestValue(typeof(string)),
-                pauseMs=(int)getTestValue(typeof(int)),
-                privacyMode=(bool)getTestValue(typeof(bool))
+                digits: (string)getTestValue(typeof(string)),
+                pauseMs: (int)getTestValue(typeof(int)),
+                privacyMode: (bool)getTestValue(typeof(bool))
             );
         }
 
@@ -100,6 +100,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

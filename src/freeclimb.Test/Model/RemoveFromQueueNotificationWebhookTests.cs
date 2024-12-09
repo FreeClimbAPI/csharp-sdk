@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public RemoveFromQueueNotificationWebhookTests()
         {
             instance = new RemoveFromQueueNotificationWebhook(
-                requestType=(string)getTestValue(typeof(string)),
-                accountId=(string)getTestValue(typeof(string)),
-                callId=(string)getTestValue(typeof(string)),
-                from=(string)getTestValue(typeof(string)),
-                to=(string)getTestValue(typeof(string)),
-                callStatus=(CallStatus)getTestValue(typeof(CallStatus)),
-                direction=(CallDirection)getTestValue(typeof(CallDirection)),
-                conferenceId=(string)getTestValue(typeof(string)),
-                queueId=(string)getTestValue(typeof(string)),
-                queueResult=(QueueResultStatus)getTestValue(typeof(QueueResultStatus)),
-                queueTime=(int)getTestValue(typeof(int))
+                requestType: (string)getTestValue(typeof(string)),
+                accountId: (string)getTestValue(typeof(string)),
+                callId: (string)getTestValue(typeof(string)),
+                from: (string)getTestValue(typeof(string)),
+                to: (string)getTestValue(typeof(string)),
+                callStatus: (CallStatus)getTestValue(typeof(CallStatus)),
+                direction: (CallDirection)getTestValue(typeof(CallDirection)),
+                conferenceId: (string)getTestValue(typeof(string)),
+                queueId: (string)getTestValue(typeof(string)),
+                queueResult: (QueueResultStatus)getTestValue(typeof(QueueResultStatus)),
+                queueTime: (int)getTestValue(typeof(int))
             );
         }
 
@@ -218,6 +218,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

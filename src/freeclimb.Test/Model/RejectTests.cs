@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public RejectTests()
         {
             instance = new Reject(
-                reason=(string)getTestValue(typeof(string))
+                reason: (string)getTestValue(typeof(string))
             );
         }
 
@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

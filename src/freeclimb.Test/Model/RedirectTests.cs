@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public RedirectTests()
         {
             instance = new Redirect(
-                actionUrl=(string)getTestValue(typeof(string))
+                actionUrl: (string)getTestValue(typeof(string))
             );
         }
 
@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

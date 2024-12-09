@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public IncomingNumberRequestTests()
         {
             instance = new IncomingNumberRequest(
-                applicationId=(string)getTestValue(typeof(string)),
-                alias=(string)getTestValue(typeof(string)),
-                campaignId=(string)getTestValue(typeof(string))
+                applicationId: (string)getTestValue(typeof(string)),
+                alias: (string)getTestValue(typeof(string)),
+                campaignId: (string)getTestValue(typeof(string))
             );
         }
 
@@ -100,6 +100,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

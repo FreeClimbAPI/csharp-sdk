@@ -39,26 +39,26 @@ namespace freeclimb.Test.Model
         public CallResultTests()
         {
             instance = new CallResult(
-                uri=(string)getTestValue(typeof(string)),
-                dateCreated=(string)getTestValue(typeof(string)),
-                dateUpdated=(string)getTestValue(typeof(string)),
-                revision=(int)getTestValue(typeof(int)),
-                callId=(string)getTestValue(typeof(string)),
-                parentCallId=(string)getTestValue(typeof(string)),
-                accountId=(string)getTestValue(typeof(string)),
-                from=(string)getTestValue(typeof(string)),
-                to=(string)getTestValue(typeof(string)),
-                phoneNumberId=(string)getTestValue(typeof(string)),
-                callStatus=(CallStatus)getTestValue(typeof(CallStatus)),
-                startTime=(string)getTestValue(typeof(string)),
-                connectTime=(string)getTestValue(typeof(string)),
-                endTime=(string)getTestValue(typeof(string)),
-                duration=(int?)getTestValue(typeof(int?)),
-                connectDuration=(int?)getTestValue(typeof(int?)),
-                direction=(CallDirection)getTestValue(typeof(CallDirection)),
-                answeredBy=(AnsweredBy)getTestValue(typeof(AnsweredBy)),
-                subresourceUris=(Object)getTestValue(typeof(Object)),
-                applicationId=(string)getTestValue(typeof(string))
+                uri: (string)getTestValue(typeof(string)),
+                dateCreated: (string)getTestValue(typeof(string)),
+                dateUpdated: (string)getTestValue(typeof(string)),
+                revision: (int)getTestValue(typeof(int)),
+                callId: (string)getTestValue(typeof(string)),
+                parentCallId: (string)getTestValue(typeof(string)),
+                accountId: (string)getTestValue(typeof(string)),
+                from: (string)getTestValue(typeof(string)),
+                to: (string)getTestValue(typeof(string)),
+                phoneNumberId: (string)getTestValue(typeof(string)),
+                callStatus: (CallStatus)getTestValue(typeof(CallStatus)),
+                startTime: (string)getTestValue(typeof(string)),
+                connectTime: (string)getTestValue(typeof(string)),
+                endTime: (string)getTestValue(typeof(string)),
+                duration: (int?)getTestValue(typeof(int?)),
+                connectDuration: (int?)getTestValue(typeof(int?)),
+                direction: (CallDirection)getTestValue(typeof(CallDirection)),
+                answeredBy: (AnsweredBy)getTestValue(typeof(AnsweredBy)),
+                subresourceUris: (Object)getTestValue(typeof(Object)),
+                applicationId: (string)getTestValue(typeof(string))
             );
         }
 
@@ -325,6 +325,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

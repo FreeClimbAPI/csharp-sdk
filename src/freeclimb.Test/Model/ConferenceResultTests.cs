@@ -39,20 +39,20 @@ namespace freeclimb.Test.Model
         public ConferenceResultTests()
         {
             instance = new ConferenceResult(
-                uri=(string)getTestValue(typeof(string)),
-                dateCreated=(string)getTestValue(typeof(string)),
-                dateUpdated=(string)getTestValue(typeof(string)),
-                revision=(int)getTestValue(typeof(int)),
-                conferenceId=(string)getTestValue(typeof(string)),
-                accountId=(string)getTestValue(typeof(string)),
-                alias=(string)getTestValue(typeof(string)),
-                playBeep=(PlayBeep)getTestValue(typeof(PlayBeep)),
-                record=(bool?)getTestValue(typeof(bool?)),
-                status=(ConferenceStatus)getTestValue(typeof(ConferenceStatus)),
-                waitUrl=(string)getTestValue(typeof(string)),
-                actionUrl=(string)getTestValue(typeof(string)),
-                statusCallbackUrl=(string)getTestValue(typeof(string)),
-                subresourceUris=(Object)getTestValue(typeof(Object))
+                uri: (string)getTestValue(typeof(string)),
+                dateCreated: (string)getTestValue(typeof(string)),
+                dateUpdated: (string)getTestValue(typeof(string)),
+                revision: (int)getTestValue(typeof(int)),
+                conferenceId: (string)getTestValue(typeof(string)),
+                accountId: (string)getTestValue(typeof(string)),
+                alias: (string)getTestValue(typeof(string)),
+                playBeep: (PlayBeep)getTestValue(typeof(PlayBeep)),
+                record: (bool?)getTestValue(typeof(bool?)),
+                status: (ConferenceStatus)getTestValue(typeof(ConferenceStatus)),
+                waitUrl: (string)getTestValue(typeof(string)),
+                actionUrl: (string)getTestValue(typeof(string)),
+                statusCallbackUrl: (string)getTestValue(typeof(string)),
+                subresourceUris: (Object)getTestValue(typeof(Object))
             );
         }
 
@@ -245,6 +245,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

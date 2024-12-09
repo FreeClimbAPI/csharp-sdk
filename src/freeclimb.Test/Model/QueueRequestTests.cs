@@ -39,8 +39,8 @@ namespace freeclimb.Test.Model
         public QueueRequestTests()
         {
             instance = new QueueRequest(
-                alias=(string)getTestValue(typeof(string)),
-                maxSize=(int)getTestValue(typeof(int))
+                alias: (string)getTestValue(typeof(string)),
+                maxSize: (int)getTestValue(typeof(int))
             );
         }
 
@@ -88,6 +88,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

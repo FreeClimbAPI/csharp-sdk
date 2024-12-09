@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public TranscribeUtteranceRecordTests()
         {
             instance = new TranscribeUtteranceRecord(
-                saveRecording=(bool)getTestValue(typeof(bool)),
-                maxLengthSec=(int)getTestValue(typeof(int)),
-                rcrdTerminationSilenceTimeMs=(int)getTestValue(typeof(int))
+                saveRecording: (bool)getTestValue(typeof(bool)),
+                maxLengthSec: (int)getTestValue(typeof(int)),
+                rcrdTerminationSilenceTimeMs: (int)getTestValue(typeof(int))
             );
         }
 
@@ -100,6 +100,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public PauseTests()
         {
             instance = new Pause(
-                length=(int)getTestValue(typeof(int))
+                length: (int)getTestValue(typeof(int))
             );
         }
 
@@ -76,6 +76,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

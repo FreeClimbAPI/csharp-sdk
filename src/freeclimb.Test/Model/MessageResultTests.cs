@@ -39,22 +39,22 @@ namespace freeclimb.Test.Model
         public MessageResultTests()
         {
             instance = new MessageResult(
-                uri=(string)getTestValue(typeof(string)),
-                dateCreated=(string)getTestValue(typeof(string)),
-                dateUpdated=(string)getTestValue(typeof(string)),
-                revision=(int)getTestValue(typeof(int)),
-                accountId=(string)getTestValue(typeof(string)),
-                messageId=(string)getTestValue(typeof(string)),
-                status=(MessageStatus)getTestValue(typeof(MessageStatus)),
-                from=(string)getTestValue(typeof(string)),
-                to=(string)getTestValue(typeof(string)),
-                text=(string)getTestValue(typeof(string)),
-                direction=(string)getTestValue(typeof(string)),
-                notificationUrl=(string)getTestValue(typeof(string)),
-                brandId=(string)getTestValue(typeof(string)),
-                campaignId=(string)getTestValue(typeof(string)),
-                segmentCount=(decimal?)getTestValue(typeof(decimal?)),
-                mediaUrls=(List<string>)getTestValue(typeof(List<string>))
+                uri: (string)getTestValue(typeof(string)),
+                dateCreated: (string)getTestValue(typeof(string)),
+                dateUpdated: (string)getTestValue(typeof(string)),
+                revision: (int)getTestValue(typeof(int)),
+                accountId: (string)getTestValue(typeof(string)),
+                messageId: (string)getTestValue(typeof(string)),
+                status: (MessageStatus)getTestValue(typeof(MessageStatus)),
+                from: (string)getTestValue(typeof(string)),
+                to: (string)getTestValue(typeof(string)),
+                text: (string)getTestValue(typeof(string)),
+                direction: (string)getTestValue(typeof(string)),
+                notificationUrl: (string)getTestValue(typeof(string)),
+                brandId: (string)getTestValue(typeof(string)),
+                campaignId: (string)getTestValue(typeof(string)),
+                segmentCount: (decimal?)getTestValue(typeof(decimal?)),
+                mediaUrls: (List<string>)getTestValue(typeof(List<string>))
             );
         }
 
@@ -277,6 +277,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }

@@ -39,14 +39,14 @@ namespace freeclimb.Test.Model
         public MessagesListTests()
         {
             instance = new MessagesList(
-                total=(int?)getTestValue(typeof(int?)),
-                start=(int?)getTestValue(typeof(int?)),
-                end=(int?)getTestValue(typeof(int?)),
-                page=(int?)getTestValue(typeof(int?)),
-                numPages=(int?)getTestValue(typeof(int?)),
-                pageSize=(int?)getTestValue(typeof(int?)),
-                nextPageUri=(string)getTestValue(typeof(string)),
-                messages=(List<MessageResult>)getTestValue(typeof(List<MessageResult>))
+                total: (int?)getTestValue(typeof(int?)),
+                start: (int?)getTestValue(typeof(int?)),
+                end: (int?)getTestValue(typeof(int?)),
+                page: (int?)getTestValue(typeof(int?)),
+                numPages: (int?)getTestValue(typeof(int?)),
+                pageSize: (int?)getTestValue(typeof(int?)),
+                nextPageUri: (string)getTestValue(typeof(string)),
+                messages: (List<MessageResult>)getTestValue(typeof(List<MessageResult>))
             );
         }
 
@@ -161,6 +161,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            throw new ArgumentException("Provided type has no test value", nameof(type));
         }
     }
 }
