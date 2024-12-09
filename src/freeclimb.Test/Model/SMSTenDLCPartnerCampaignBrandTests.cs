@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public SMSTenDLCPartnerCampaignBrandTests()
         {
             instance = new SMSTenDLCPartnerCampaignBrand(
-                accountId=getTestValue<string>(),
-                brandId=getTestValue<string>(),
-                firstName=getTestValue<string>(),
-                lastName=getTestValue<string>(),
-                displayName=getTestValue<string>(),
-                companyName=getTestValue<string>(),
-                phone=getTestValue<string>(),
-                email=getTestValue<string>(),
-                website=getTestValue<string>(),
-                optionalAttributes=getTestValue<Dictionary<string, Object>>(),
-                evpVettingScore=getTestValue<int>()
+                accountId=(string)getTestValue(string),
+                brandId=(string)getTestValue(string),
+                firstName=(string)getTestValue(string),
+                lastName=(string)getTestValue(string),
+                displayName=(string)getTestValue(string),
+                companyName=(string)getTestValue(string),
+                phone=(string)getTestValue(string),
+                email=(string)getTestValue(string),
+                website=(string)getTestValue(string),
+                optionalAttributes=(Dictionary<string, Object>)getTestValue(Dictionary<string, Object>),
+                evpVettingScore=(int)getTestValue(int)
             );
         }
 
@@ -189,13 +189,14 @@ namespace freeclimb.Test.Model
             Assert.Equal((int) instance.EvpVettingScore, 1);
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

@@ -39,20 +39,20 @@ namespace freeclimb.Test.Model
         public ConferenceResultTests()
         {
             instance = new ConferenceResult(
-                uri=getTestValue<string>(),
-                dateCreated=getTestValue<string>(),
-                dateUpdated=getTestValue<string>(),
-                revision=getTestValue<int>(),
-                conferenceId=getTestValue<string>(),
-                accountId=getTestValue<string>(),
-                alias=getTestValue<string>(),
-                playBeep=getTestValue<PlayBeep>(),
-                record=getTestValue<bool?>(),
-                status=getTestValue<ConferenceStatus>(),
-                waitUrl=getTestValue<string>(),
-                actionUrl=getTestValue<string>(),
-                statusCallbackUrl=getTestValue<string>(),
-                subresourceUris=getTestValue<Object>()
+                uri=(string)getTestValue(string),
+                dateCreated=(string)getTestValue(string),
+                dateUpdated=(string)getTestValue(string),
+                revision=(int)getTestValue(int),
+                conferenceId=(string)getTestValue(string),
+                accountId=(string)getTestValue(string),
+                alias=(string)getTestValue(string),
+                playBeep=(PlayBeep)getTestValue(PlayBeep),
+                record=(bool?)getTestValue(bool?),
+                status=(ConferenceStatus)getTestValue(ConferenceStatus),
+                waitUrl=(string)getTestValue(string),
+                actionUrl=(string)getTestValue(string),
+                statusCallbackUrl=(string)getTestValue(string),
+                subresourceUris=(Object)getTestValue(Object)
             );
         }
 
@@ -237,13 +237,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

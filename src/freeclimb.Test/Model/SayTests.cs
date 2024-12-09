@@ -39,10 +39,10 @@ namespace freeclimb.Test.Model
         public SayTests()
         {
             instance = new Say(
-                text=getTestValue<string>(),
-                language=getTestValue<string>(),
-                loop=getTestValue<int>(),
-                privacyMode=getTestValue<bool>()
+                text=(string)getTestValue(string),
+                language=(string)getTestValue(string),
+                loop=(int)getTestValue(int),
+                privacyMode=(bool)getTestValue(bool)
             );
         }
 
@@ -104,13 +104,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

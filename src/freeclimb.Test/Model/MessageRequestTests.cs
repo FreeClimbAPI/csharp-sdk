@@ -39,15 +39,15 @@ namespace freeclimb.Test.Model
         public MessageRequestTests()
         {
             instance = new MessageRequest(
-                uri=getTestValue<string>(),
-                dateCreated=getTestValue<string>(),
-                dateUpdated=getTestValue<string>(),
-                revision=getTestValue<int>(),
-                from=getTestValue<string>(),
-                to=getTestValue<string>(),
-                text=getTestValue<string>(),
-                notificationUrl=getTestValue<string>(),
-                mediaUrls=getTestValue<List<string>>()
+                uri=(string)getTestValue(string),
+                dateCreated=(string)getTestValue(string),
+                dateUpdated=(string)getTestValue(string),
+                revision=(int)getTestValue(int),
+                from=(string)getTestValue(string),
+                to=(string)getTestValue(string),
+                text=(string)getTestValue(string),
+                notificationUrl=(string)getTestValue(string),
+                mediaUrls=(List<string>)getTestValue(List<string>)
             );
         }
 
@@ -165,13 +165,14 @@ namespace freeclimb.Test.Model
             Assert.Equal(instance.MediaUrls, testList); 
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

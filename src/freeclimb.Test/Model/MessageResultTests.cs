@@ -39,22 +39,22 @@ namespace freeclimb.Test.Model
         public MessageResultTests()
         {
             instance = new MessageResult(
-                uri=getTestValue<string>(),
-                dateCreated=getTestValue<string>(),
-                dateUpdated=getTestValue<string>(),
-                revision=getTestValue<int>(),
-                accountId=getTestValue<string>(),
-                messageId=getTestValue<string>(),
-                status=getTestValue<MessageStatus>(),
-                from=getTestValue<string>(),
-                to=getTestValue<string>(),
-                text=getTestValue<string>(),
-                direction=getTestValue<string>(),
-                notificationUrl=getTestValue<string>(),
-                brandId=getTestValue<string>(),
-                campaignId=getTestValue<string>(),
-                segmentCount=getTestValue<decimal?>(),
-                mediaUrls=getTestValue<List<string>>()
+                uri=(string)getTestValue(string),
+                dateCreated=(string)getTestValue(string),
+                dateUpdated=(string)getTestValue(string),
+                revision=(int)getTestValue(int),
+                accountId=(string)getTestValue(string),
+                messageId=(string)getTestValue(string),
+                status=(MessageStatus)getTestValue(MessageStatus),
+                from=(string)getTestValue(string),
+                to=(string)getTestValue(string),
+                text=(string)getTestValue(string),
+                direction=(string)getTestValue(string),
+                notificationUrl=(string)getTestValue(string),
+                brandId=(string)getTestValue(string),
+                campaignId=(string)getTestValue(string),
+                segmentCount=(decimal?)getTestValue(decimal?),
+                mediaUrls=(List<string>)getTestValue(List<string>)
             );
         }
 
@@ -269,13 +269,14 @@ namespace freeclimb.Test.Model
             Assert.Equal(instance.MediaUrls, testList); 
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

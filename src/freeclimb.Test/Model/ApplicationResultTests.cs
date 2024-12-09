@@ -39,19 +39,19 @@ namespace freeclimb.Test.Model
         public ApplicationResultTests()
         {
             instance = new ApplicationResult(
-                uri=getTestValue<string>(),
-                dateCreated=getTestValue<string>(),
-                dateUpdated=getTestValue<string>(),
-                revision=getTestValue<int>(),
-                accountId=getTestValue<string>(),
-                applicationId=getTestValue<string>(),
-                alias=getTestValue<string>(),
-                voiceUrl=getTestValue<string>(),
-                voiceFallbackUrl=getTestValue<string>(),
-                callConnectUrl=getTestValue<string>(),
-                statusCallbackUrl=getTestValue<string>(),
-                smsUrl=getTestValue<string>(),
-                smsFallbackUrl=getTestValue<string>()
+                uri=(string)getTestValue(string),
+                dateCreated=(string)getTestValue(string),
+                dateUpdated=(string)getTestValue(string),
+                revision=(int)getTestValue(int),
+                accountId=(string)getTestValue(string),
+                applicationId=(string)getTestValue(string),
+                alias=(string)getTestValue(string),
+                voiceUrl=(string)getTestValue(string),
+                voiceFallbackUrl=(string)getTestValue(string),
+                callConnectUrl=(string)getTestValue(string),
+                statusCallbackUrl=(string)getTestValue(string),
+                smsUrl=(string)getTestValue(string),
+                smsFallbackUrl=(string)getTestValue(string)
             );
         }
 
@@ -212,13 +212,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

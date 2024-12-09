@@ -39,10 +39,10 @@ namespace freeclimb.Test.Model
         public MutableResourceModelTests()
         {
             instance = new MutableResourceModel(
-                uri=getTestValue<string>(),
-                dateCreated=getTestValue<string>(),
-                dateUpdated=getTestValue<string>(),
-                revision=getTestValue<int>()
+                uri=(string)getTestValue(string),
+                dateCreated=(string)getTestValue(string),
+                dateUpdated=(string)getTestValue(string),
+                revision=(int)getTestValue(int)
             );
         }
 
@@ -104,13 +104,14 @@ namespace freeclimb.Test.Model
             Assert.Equal((int) instance.Revision, 1);
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

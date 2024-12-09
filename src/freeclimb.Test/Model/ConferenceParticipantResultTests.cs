@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public ConferenceParticipantResultTests()
         {
             instance = new ConferenceParticipantResult(
-                uri=getTestValue<string>(),
-                dateCreated=getTestValue<string>(),
-                dateUpdated=getTestValue<string>(),
-                revision=getTestValue<int>(),
-                accountId=getTestValue<string>(),
-                conferenceId=getTestValue<string>(),
-                callId=getTestValue<string>(),
-                talk=getTestValue<bool?>(),
-                listen=getTestValue<bool?>(),
-                dtmfPassThrough=getTestValue<bool?>(),
-                startConfOnEnter=getTestValue<bool?>()
+                uri=(string)getTestValue(string),
+                dateCreated=(string)getTestValue(string),
+                dateUpdated=(string)getTestValue(string),
+                revision=(int)getTestValue(int),
+                accountId=(string)getTestValue(string),
+                conferenceId=(string)getTestValue(string),
+                callId=(string)getTestValue(string),
+                talk=(bool?)getTestValue(bool?),
+                listen=(bool?)getTestValue(bool?),
+                dtmfPassThrough=(bool?)getTestValue(bool?),
+                startConfOnEnter=(bool?)getTestValue(bool?)
             );
         }
 
@@ -188,13 +188,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

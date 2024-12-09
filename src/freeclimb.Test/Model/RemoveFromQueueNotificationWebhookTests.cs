@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public RemoveFromQueueNotificationWebhookTests()
         {
             instance = new RemoveFromQueueNotificationWebhook(
-                requestType=getTestValue<string>(),
-                accountId=getTestValue<string>(),
-                callId=getTestValue<string>(),
-                from=getTestValue<string>(),
-                to=getTestValue<string>(),
-                callStatus=getTestValue<CallStatus>(),
-                direction=getTestValue<CallDirection>(),
-                conferenceId=getTestValue<string>(),
-                queueId=getTestValue<string>(),
-                queueResult=getTestValue<QueueResultStatus>(),
-                queueTime=getTestValue<int>()
+                requestType=(string)getTestValue(string),
+                accountId=(string)getTestValue(string),
+                callId=(string)getTestValue(string),
+                from=(string)getTestValue(string),
+                to=(string)getTestValue(string),
+                callStatus=(CallStatus)getTestValue(CallStatus),
+                direction=(CallDirection)getTestValue(CallDirection),
+                conferenceId=(string)getTestValue(string),
+                queueId=(string)getTestValue(string),
+                queueResult=(QueueResultStatus)getTestValue(QueueResultStatus),
+                queueTime=(int)getTestValue(int)
             );
         }
 
@@ -210,13 +210,14 @@ namespace freeclimb.Test.Model
             Assert.Equal((int) instance.QueueTime, 1);
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

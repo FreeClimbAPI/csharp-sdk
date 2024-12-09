@@ -39,11 +39,11 @@ namespace freeclimb.Test.Model
         public CallControlWebhookTests()
         {
             instance = new CallControlWebhook(
-                requestType=getTestValue<string>(),
-                callId=getTestValue<string>(),
-                accountId=getTestValue<string>(),
-                conferenceId=getTestValue<string>(),
-                digits=getTestValue<string>()
+                requestType=(string)getTestValue(string),
+                callId=(string)getTestValue(string),
+                accountId=(string)getTestValue(string),
+                conferenceId=(string)getTestValue(string),
+                digits=(string)getTestValue(string)
             );
         }
 
@@ -114,13 +114,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

@@ -39,8 +39,8 @@ namespace freeclimb.Test.Model
         public QueueRequestTests()
         {
             instance = new QueueRequest(
-                alias=getTestValue<string>(),
-                maxSize=getTestValue<int>()
+                alias=(string)getTestValue(string),
+                maxSize=(int)getTestValue(int)
             );
         }
 
@@ -80,13 +80,14 @@ namespace freeclimb.Test.Model
             Assert.Equal((int) instance.MaxSize, 1);
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

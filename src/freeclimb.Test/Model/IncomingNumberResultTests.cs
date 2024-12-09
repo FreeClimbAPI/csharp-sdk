@@ -39,23 +39,23 @@ namespace freeclimb.Test.Model
         public IncomingNumberResultTests()
         {
             instance = new IncomingNumberResult(
-                uri=getTestValue<string>(),
-                dateCreated=getTestValue<string>(),
-                dateUpdated=getTestValue<string>(),
-                revision=getTestValue<int>(),
-                capabilities=getTestValue<Capabilities>(),
-                campaignId=getTestValue<string>(),
-                phoneNumberId=getTestValue<string>(),
-                accountId=getTestValue<string>(),
-                applicationId=getTestValue<string>(),
-                phoneNumber=getTestValue<string>(),
-                alias=getTestValue<string>(),
-                region=getTestValue<string>(),
-                country=getTestValue<string>(),
-                voiceEnabled=getTestValue<bool?>(),
-                smsEnabled=getTestValue<bool?>(),
-                offnet=getTestValue<bool?>(),
-                tfn=getTestValue<TFN>()
+                uri=(string)getTestValue(string),
+                dateCreated=(string)getTestValue(string),
+                dateUpdated=(string)getTestValue(string),
+                revision=(int)getTestValue(int),
+                capabilities=(Capabilities)getTestValue(Capabilities),
+                campaignId=(string)getTestValue(string),
+                phoneNumberId=(string)getTestValue(string),
+                accountId=(string)getTestValue(string),
+                applicationId=(string)getTestValue(string),
+                phoneNumber=(string)getTestValue(string),
+                alias=(string)getTestValue(string),
+                region=(string)getTestValue(string),
+                country=(string)getTestValue(string),
+                voiceEnabled=(bool?)getTestValue(bool?),
+                smsEnabled=(bool?)getTestValue(bool?),
+                offnet=(bool?)getTestValue(bool?),
+                tfn=(TFN)getTestValue(TFN)
             );
         }
 
@@ -262,13 +262,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

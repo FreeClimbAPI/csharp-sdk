@@ -39,10 +39,10 @@ namespace freeclimb.Test.Model
         public SmsTests()
         {
             instance = new Sms(
-                to=getTestValue<string>(),
-                from=getTestValue<string>(),
-                text=getTestValue<string>(),
-                notificationUrl=getTestValue<string>()
+                to=(string)getTestValue(string),
+                from=(string)getTestValue(string),
+                text=(string)getTestValue(string),
+                notificationUrl=(string)getTestValue(string)
             );
         }
 
@@ -104,13 +104,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

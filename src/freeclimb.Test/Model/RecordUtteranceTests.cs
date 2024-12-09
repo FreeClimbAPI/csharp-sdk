@@ -39,13 +39,13 @@ namespace freeclimb.Test.Model
         public RecordUtteranceTests()
         {
             instance = new RecordUtterance(
-                actionUrl=getTestValue<string>(),
-                silenceTimeoutMs=getTestValue<int>(),
-                finishOnKey=getTestValue<string>(),
-                maxLengthSec=getTestValue<int>(),
-                playBeep=getTestValue<bool>(),
-                autoStart=getTestValue<bool>(),
-                privacyMode=getTestValue<bool>()
+                actionUrl=(string)getTestValue(string),
+                silenceTimeoutMs=(int)getTestValue(int),
+                finishOnKey=(string)getTestValue(string),
+                maxLengthSec=(int)getTestValue(int),
+                playBeep=(bool)getTestValue(bool),
+                autoStart=(bool)getTestValue(bool),
+                privacyMode=(bool)getTestValue(bool)
             );
         }
 
@@ -140,13 +140,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

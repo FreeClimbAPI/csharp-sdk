@@ -39,13 +39,13 @@ namespace freeclimb.Test.Model
         public AvailableNumberTests()
         {
             instance = new AvailableNumber(
-                capabilities=getTestValue<Capabilities>(),
-                campaignId=getTestValue<string>(),
-                phoneNumber=getTestValue<string>(),
-                voiceEnabled=getTestValue<bool?>(),
-                smsEnabled=getTestValue<bool?>(),
-                region=getTestValue<string>(),
-                country=getTestValue<string>()
+                capabilities=(Capabilities)getTestValue(Capabilities),
+                campaignId=(string)getTestValue(string),
+                phoneNumber=(string)getTestValue(string),
+                voiceEnabled=(bool?)getTestValue(bool?),
+                smsEnabled=(bool?)getTestValue(bool?),
+                region=(string)getTestValue(string),
+                country=(string)getTestValue(string)
             );
         }
 
@@ -141,13 +141,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

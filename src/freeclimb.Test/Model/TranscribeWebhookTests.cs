@@ -39,29 +39,29 @@ namespace freeclimb.Test.Model
         public TranscribeWebhookTests()
         {
             instance = new TranscribeWebhook(
-                requestType=getTestValue<string>(),
-                accountId=getTestValue<string>(),
-                callId=getTestValue<string>(),
-                from=getTestValue<string>(),
-                to=getTestValue<string>(),
-                recordingId=getTestValue<string>(),
-                recordingUrl=getTestValue<string>(),
-                recordingSize=getTestValue<int>(),
-                recordingFormat=getTestValue<string>(),
-                recordingDurationMs=getTestValue<int>(),
-                termReason=getTestValue<TranscribeTermReason>(),
-                recordTermReason=getTestValue<RecordUtteranceTermReason>(),
-                digit=getTestValue<string>(),
-                privacyForLogging=getTestValue<bool>(),
-                privacyForRecording=getTestValue<bool>(),
-                bargeInReason=getTestValue<BargeInReason>(),
-                bargedInPromptNo=getTestValue<int>(),
-                bargedInPromptMs=getTestValue<int>(),
-                bargedInPromptLoopNo=getTestValue<int>(),
-                bargeInTimeMs=getTestValue<int>(),
-                transcript=getTestValue<string>(),
-                transcribeReason=getTestValue<TranscribeReason>(),
-                transcriptionDurationMs=getTestValue<int>()
+                requestType=(string)getTestValue(string),
+                accountId=(string)getTestValue(string),
+                callId=(string)getTestValue(string),
+                from=(string)getTestValue(string),
+                to=(string)getTestValue(string),
+                recordingId=(string)getTestValue(string),
+                recordingUrl=(string)getTestValue(string),
+                recordingSize=(int)getTestValue(int),
+                recordingFormat=(string)getTestValue(string),
+                recordingDurationMs=(int)getTestValue(int),
+                termReason=(TranscribeTermReason)getTestValue(TranscribeTermReason),
+                recordTermReason=(RecordUtteranceTermReason)getTestValue(RecordUtteranceTermReason),
+                digit=(string)getTestValue(string),
+                privacyForLogging=(bool)getTestValue(bool),
+                privacyForRecording=(bool)getTestValue(bool),
+                bargeInReason=(BargeInReason)getTestValue(BargeInReason),
+                bargedInPromptNo=(int)getTestValue(int),
+                bargedInPromptMs=(int)getTestValue(int),
+                bargedInPromptLoopNo=(int)getTestValue(int),
+                bargeInTimeMs=(int)getTestValue(int),
+                transcript=(string)getTestValue(string),
+                transcribeReason=(TranscribeReason)getTestValue(TranscribeReason),
+                transcriptionDurationMs=(int)getTestValue(int)
             );
         }
 
@@ -350,13 +350,14 @@ namespace freeclimb.Test.Model
             Assert.Equal((int) instance.TranscriptionDurationMs, 1);
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public CreateWebRTCTokenTests()
         {
             instance = new CreateWebRTCToken(
-                to=getTestValue<string>(),
-                from=getTestValue<string>(),
-                uses=getTestValue<int>()
+                to=(string)getTestValue(string),
+                from=(string)getTestValue(string),
+                uses=(int)getTestValue(int)
             );
         }
 
@@ -92,13 +92,14 @@ namespace freeclimb.Test.Model
             Assert.Equal((int) instance.Uses, 1);
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

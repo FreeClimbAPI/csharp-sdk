@@ -39,13 +39,13 @@ namespace freeclimb.Test.Model
         public LogResultTests()
         {
             instance = new LogResult(
-                timestamp=getTestValue<int?>(),
-                level=getTestValue<LogLevel>(),
-                requestId=getTestValue<string>(),
-                accountId=getTestValue<string>(),
-                callId=getTestValue<string>(),
-                message=getTestValue<string>(),
-                metadata=getTestValue<Object>()
+                timestamp=(int?)getTestValue(int?),
+                level=(LogLevel)getTestValue(LogLevel),
+                requestId=(string)getTestValue(string),
+                accountId=(string)getTestValue(string),
+                callId=(string)getTestValue(string),
+                message=(string)getTestValue(string),
+                metadata=(Object)getTestValue(Object)
             );
         }
 
@@ -145,13 +145,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

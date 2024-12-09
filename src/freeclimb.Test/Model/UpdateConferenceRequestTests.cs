@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public UpdateConferenceRequestTests()
         {
             instance = new UpdateConferenceRequest(
-                alias=getTestValue<string>(),
-                playBeep=getTestValue<PlayBeep>(),
-                status=getTestValue<UpdateConferenceRequestStatus>()
+                alias=(string)getTestValue(string),
+                playBeep=(PlayBeep)getTestValue(PlayBeep),
+                status=(UpdateConferenceRequestStatus)getTestValue(UpdateConferenceRequestStatus)
             );
         }
 
@@ -100,13 +100,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

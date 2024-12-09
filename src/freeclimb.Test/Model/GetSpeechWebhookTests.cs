@@ -39,23 +39,23 @@ namespace freeclimb.Test.Model
         public GetSpeechWebhookTests()
         {
             instance = new GetSpeechWebhook(
-                requestType=getTestValue<string>(),
-                callId=getTestValue<string>(),
-                accountId=getTestValue<string>(),
-                from=getTestValue<string>(),
-                to=getTestValue<string>(),
-                callStatus=getTestValue<CallStatus>(),
-                direction=getTestValue<CallDirection>(),
-                conferenceId=getTestValue<string>(),
-                queueId=getTestValue<string>(),
-                reason=getTestValue<GetSpeechReason>(),
-                recognitionResult=getTestValue<string>(),
-                confidence=getTestValue<int>(),
-                parentCallId=getTestValue<string>(),
-                completionReason=getTestValue<string>(),
-                completionCause=getTestValue<string>(),
-                mrcpCode=getTestValue<int>(),
-                mrcpDiagnostic=getTestValue<string>()
+                requestType=(string)getTestValue(string),
+                callId=(string)getTestValue(string),
+                accountId=(string)getTestValue(string),
+                from=(string)getTestValue(string),
+                to=(string)getTestValue(string),
+                callStatus=(CallStatus)getTestValue(CallStatus),
+                direction=(CallDirection)getTestValue(CallDirection),
+                conferenceId=(string)getTestValue(string),
+                queueId=(string)getTestValue(string),
+                reason=(GetSpeechReason)getTestValue(GetSpeechReason),
+                recognitionResult=(string)getTestValue(string),
+                confidence=(int)getTestValue(int),
+                parentCallId=(string)getTestValue(string),
+                completionReason=(string)getTestValue(string),
+                completionCause=(string)getTestValue(string),
+                mrcpCode=(int)getTestValue(int),
+                mrcpDiagnostic=(string)getTestValue(string)
             );
         }
 
@@ -286,13 +286,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

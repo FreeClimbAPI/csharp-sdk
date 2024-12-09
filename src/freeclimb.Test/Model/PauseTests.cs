@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public PauseTests()
         {
             instance = new Pause(
-                length=getTestValue<int>()
+                length=(int)getTestValue(int)
             );
         }
 
@@ -68,13 +68,14 @@ namespace freeclimb.Test.Model
             Assert.Equal((int) instance.Length, 1);
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

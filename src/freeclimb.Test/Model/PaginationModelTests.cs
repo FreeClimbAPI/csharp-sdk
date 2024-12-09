@@ -39,13 +39,13 @@ namespace freeclimb.Test.Model
         public PaginationModelTests()
         {
             instance = new PaginationModel(
-                total=getTestValue<int?>(),
-                start=getTestValue<int?>(),
-                end=getTestValue<int?>(),
-                page=getTestValue<int?>(),
-                numPages=getTestValue<int?>(),
-                pageSize=getTestValue<int?>(),
-                nextPageUri=getTestValue<string>()
+                total=(int?)getTestValue(int?),
+                start=(int?)getTestValue(int?),
+                end=(int?)getTestValue(int?),
+                page=(int?)getTestValue(int?),
+                numPages=(int?)getTestValue(int?),
+                pageSize=(int?)getTestValue(int?),
+                nextPageUri=(string)getTestValue(string)
             );
         }
 
@@ -140,13 +140,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

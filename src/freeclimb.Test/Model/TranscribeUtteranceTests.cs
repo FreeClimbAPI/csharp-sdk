@@ -39,12 +39,12 @@ namespace freeclimb.Test.Model
         public TranscribeUtteranceTests()
         {
             instance = new TranscribeUtterance(
-                actionUrl=getTestValue<string>(),
-                playBeep=getTestValue<bool>(),
-                record=getTestValue<TranscribeUtteranceRecord>(),
-                privacyForLogging=getTestValue<bool>(),
-                privacyForRecording=getTestValue<bool>(),
-                prompts=getTestValue<List<PerclCommand>>()
+                actionUrl=(string)getTestValue(string),
+                playBeep=(bool)getTestValue(bool),
+                record=(TranscribeUtteranceRecord)getTestValue(TranscribeUtteranceRecord),
+                privacyForLogging=(bool)getTestValue(bool),
+                privacyForRecording=(bool)getTestValue(bool),
+                prompts=(List<PerclCommand>)getTestValue(List<PerclCommand>)
             );
         }
 
@@ -130,13 +130,14 @@ namespace freeclimb.Test.Model
             Assert.Equal(instance.Prompts, testList); 
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

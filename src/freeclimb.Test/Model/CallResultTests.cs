@@ -39,26 +39,26 @@ namespace freeclimb.Test.Model
         public CallResultTests()
         {
             instance = new CallResult(
-                uri=getTestValue<string>(),
-                dateCreated=getTestValue<string>(),
-                dateUpdated=getTestValue<string>(),
-                revision=getTestValue<int>(),
-                callId=getTestValue<string>(),
-                parentCallId=getTestValue<string>(),
-                accountId=getTestValue<string>(),
-                from=getTestValue<string>(),
-                to=getTestValue<string>(),
-                phoneNumberId=getTestValue<string>(),
-                callStatus=getTestValue<CallStatus>(),
-                startTime=getTestValue<string>(),
-                connectTime=getTestValue<string>(),
-                endTime=getTestValue<string>(),
-                duration=getTestValue<int?>(),
-                connectDuration=getTestValue<int?>(),
-                direction=getTestValue<CallDirection>(),
-                answeredBy=getTestValue<AnsweredBy>(),
-                subresourceUris=getTestValue<Object>(),
-                applicationId=getTestValue<string>()
+                uri=(string)getTestValue(string),
+                dateCreated=(string)getTestValue(string),
+                dateUpdated=(string)getTestValue(string),
+                revision=(int)getTestValue(int),
+                callId=(string)getTestValue(string),
+                parentCallId=(string)getTestValue(string),
+                accountId=(string)getTestValue(string),
+                from=(string)getTestValue(string),
+                to=(string)getTestValue(string),
+                phoneNumberId=(string)getTestValue(string),
+                callStatus=(CallStatus)getTestValue(CallStatus),
+                startTime=(string)getTestValue(string),
+                connectTime=(string)getTestValue(string),
+                endTime=(string)getTestValue(string),
+                duration=(int?)getTestValue(int?),
+                connectDuration=(int?)getTestValue(int?),
+                direction=(CallDirection)getTestValue(CallDirection),
+                answeredBy=(AnsweredBy)getTestValue(AnsweredBy),
+                subresourceUris=(Object)getTestValue(Object),
+                applicationId=(string)getTestValue(string)
             );
         }
 
@@ -317,13 +317,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

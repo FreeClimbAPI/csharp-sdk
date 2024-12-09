@@ -39,7 +39,7 @@ namespace freeclimb.Test.Model
         public PlayEarlyMediaTests()
         {
             instance = new PlayEarlyMedia(
-                file=getTestValue<string>()
+                file=(string)getTestValue(string)
             );
         }
 
@@ -68,13 +68,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

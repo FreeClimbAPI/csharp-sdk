@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public ParkTests()
         {
             instance = new Park(
-                waitUrl=getTestValue<string>(),
-                actionUrl=getTestValue<string>(),
-                notificationUrl=getTestValue<string>()
+                waitUrl=(string)getTestValue(string),
+                actionUrl=(string)getTestValue(string),
+                notificationUrl=(string)getTestValue(string)
             );
         }
 
@@ -92,13 +92,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

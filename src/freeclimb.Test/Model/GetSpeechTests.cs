@@ -39,19 +39,19 @@ namespace freeclimb.Test.Model
         public GetSpeechTests()
         {
             instance = new GetSpeech(
-                actionUrl=getTestValue<string>(),
-                grammarType=getTestValue<GrammarType>(),
-                grammarFile=getTestValue<string>(),
-                grammarRule=getTestValue<string>(),
-                playBeep=getTestValue<bool>(),
-                prompts=getTestValue<List<PerclCommand>>(),
-                noInputTimeoutMs=getTestValue<int>(),
-                recognitionTimeoutMs=getTestValue<int>(),
-                confidenceThreshold=getTestValue<decimal>(),
-                sensitivityLevel=getTestValue<decimal>(),
-                speechCompleteTimeoutMs=getTestValue<int>(),
-                speechIncompleteTimeoutMs=getTestValue<int>(),
-                privacyMode=getTestValue<bool>()
+                actionUrl=(string)getTestValue(string),
+                grammarType=(GrammarType)getTestValue(GrammarType),
+                grammarFile=(string)getTestValue(string),
+                grammarRule=(string)getTestValue(string),
+                playBeep=(bool)getTestValue(bool),
+                prompts=(List<PerclCommand>)getTestValue(List<PerclCommand>),
+                noInputTimeoutMs=(int)getTestValue(int),
+                recognitionTimeoutMs=(int)getTestValue(int),
+                confidenceThreshold=(decimal)getTestValue(decimal),
+                sensitivityLevel=(decimal)getTestValue(decimal),
+                speechCompleteTimeoutMs=(int)getTestValue(int),
+                speechIncompleteTimeoutMs=(int)getTestValue(int),
+                privacyMode=(bool)getTestValue(bool)
             );
         }
 
@@ -215,13 +215,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

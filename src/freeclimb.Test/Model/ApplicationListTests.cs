@@ -39,14 +39,14 @@ namespace freeclimb.Test.Model
         public ApplicationListTests()
         {
             instance = new ApplicationList(
-                total=getTestValue<int?>(),
-                start=getTestValue<int?>(),
-                end=getTestValue<int?>(),
-                page=getTestValue<int?>(),
-                numPages=getTestValue<int?>(),
-                pageSize=getTestValue<int?>(),
-                nextPageUri=getTestValue<string>(),
-                applications=getTestValue<List<ApplicationResult>>()
+                total=(int?)getTestValue(int?),
+                start=(int?)getTestValue(int?),
+                end=(int?)getTestValue(int?),
+                page=(int?)getTestValue(int?),
+                numPages=(int?)getTestValue(int?),
+                pageSize=(int?)getTestValue(int?),
+                nextPageUri=(string)getTestValue(string),
+                applications=(List<ApplicationResult>)getTestValue(List<ApplicationResult>)
             );
         }
 
@@ -153,13 +153,14 @@ namespace freeclimb.Test.Model
             Assert.Equal(instance.Applications, testList); 
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

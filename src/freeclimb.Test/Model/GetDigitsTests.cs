@@ -39,15 +39,15 @@ namespace freeclimb.Test.Model
         public GetDigitsTests()
         {
             instance = new GetDigits(
-                actionUrl=getTestValue<string>(),
-                digitTimeoutMs=getTestValue<int>(),
-                finishOnKey=getTestValue<string>(),
-                flushBuffer=getTestValue<bool>(),
-                initialTimeoutMs=getTestValue<int>(),
-                maxDigits=getTestValue<int>(),
-                minDigits=getTestValue<int>(),
-                prompts=getTestValue<List<PerclCommand>>(),
-                privacyMode=getTestValue<bool>()
+                actionUrl=(string)getTestValue(string),
+                digitTimeoutMs=(int)getTestValue(int),
+                finishOnKey=(string)getTestValue(string),
+                flushBuffer=(bool)getTestValue(bool),
+                initialTimeoutMs=(int)getTestValue(int),
+                maxDigits=(int)getTestValue(int),
+                minDigits=(int)getTestValue(int),
+                prompts=(List<PerclCommand>)getTestValue(List<PerclCommand>),
+                privacyMode=(bool)getTestValue(bool)
             );
         }
 
@@ -165,13 +165,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public BuyIncomingNumberRequestTests()
         {
             instance = new BuyIncomingNumberRequest(
-                phoneNumber=getTestValue<string>(),
-                alias=getTestValue<string>(),
-                applicationId=getTestValue<string>()
+                phoneNumber=(string)getTestValue(string),
+                alias=(string)getTestValue(string),
+                applicationId=(string)getTestValue(string)
             );
         }
 
@@ -92,13 +92,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

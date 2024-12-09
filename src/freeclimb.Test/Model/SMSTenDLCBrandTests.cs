@@ -39,37 +39,37 @@ namespace freeclimb.Test.Model
         public SMSTenDLCBrandTests()
         {
             instance = new SMSTenDLCBrand(
-                accountId=getTestValue<string>(),
-                entityType=getTestValue<SMSTenDLCBrandEntityType>(),
-                cspId=getTestValue<string>(),
-                brandId=getTestValue<string>(),
-                firstName=getTestValue<string>(),
-                lastName=getTestValue<string>(),
-                displayName=getTestValue<string>(),
-                companyName=getTestValue<string>(),
-                ein=getTestValue<string>(),
-                einIssuingCountry=getTestValue<string>(),
-                phone=getTestValue<string>(),
-                street=getTestValue<string>(),
-                city=getTestValue<string>(),
-                state=getTestValue<string>(),
-                postalCode=getTestValue<string>(),
-                country=getTestValue<string>(),
-                email=getTestValue<string>(),
-                stockSymbol=getTestValue<string>(),
-                stockExchange=getTestValue<SMSTenDLCBrandStockExchange>(),
-                ipAddress=getTestValue<string>(),
-                website=getTestValue<string>(),
-                brandRelationship=getTestValue<SMSTenDLCBrandRelationship>(),
-                vertical=getTestValue<string>(),
-                altBusinessId=getTestValue<string>(),
-                altBusinessIdType=getTestValue<SMSTenDLCBrandAltBusinessIdType>(),
-                universalEin=getTestValue<string>(),
-                referenceId=getTestValue<string>(),
-                optionalAttributes=getTestValue<Dictionary<string, Object>>(),
-                mock=getTestValue<bool>(),
-                identityStatus=getTestValue<SMSTenDLCBrandIdentityStatus>(),
-                createDate=getTestValue<DateTime>()
+                accountId=(string)getTestValue(string),
+                entityType=(SMSTenDLCBrandEntityType)getTestValue(SMSTenDLCBrandEntityType),
+                cspId=(string)getTestValue(string),
+                brandId=(string)getTestValue(string),
+                firstName=(string)getTestValue(string),
+                lastName=(string)getTestValue(string),
+                displayName=(string)getTestValue(string),
+                companyName=(string)getTestValue(string),
+                ein=(string)getTestValue(string),
+                einIssuingCountry=(string)getTestValue(string),
+                phone=(string)getTestValue(string),
+                street=(string)getTestValue(string),
+                city=(string)getTestValue(string),
+                state=(string)getTestValue(string),
+                postalCode=(string)getTestValue(string),
+                country=(string)getTestValue(string),
+                email=(string)getTestValue(string),
+                stockSymbol=(string)getTestValue(string),
+                stockExchange=(SMSTenDLCBrandStockExchange)getTestValue(SMSTenDLCBrandStockExchange),
+                ipAddress=(string)getTestValue(string),
+                website=(string)getTestValue(string),
+                brandRelationship=(SMSTenDLCBrandRelationship)getTestValue(SMSTenDLCBrandRelationship),
+                vertical=(string)getTestValue(string),
+                altBusinessId=(string)getTestValue(string),
+                altBusinessIdType=(SMSTenDLCBrandAltBusinessIdType)getTestValue(SMSTenDLCBrandAltBusinessIdType),
+                universalEin=(string)getTestValue(string),
+                referenceId=(string)getTestValue(string),
+                optionalAttributes=(Dictionary<string, Object>)getTestValue(Dictionary<string, Object>),
+                mock=(bool)getTestValue(bool),
+                identityStatus=(SMSTenDLCBrandIdentityStatus)getTestValue(SMSTenDLCBrandIdentityStatus),
+                createDate=(DateTime)getTestValue(DateTime)
             );
         }
 
@@ -509,13 +509,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

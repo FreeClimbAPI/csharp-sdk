@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public QueueResultTests()
         {
             instance = new QueueResult(
-                uri=getTestValue<string>(),
-                dateCreated=getTestValue<string>(),
-                dateUpdated=getTestValue<string>(),
-                revision=getTestValue<int>(),
-                accountId=getTestValue<string>(),
-                queueId=getTestValue<string>(),
-                alias=getTestValue<string>(),
-                maxSize=getTestValue<int?>(),
-                currentSize=getTestValue<int?>(),
-                averageQueueRemovalTime=getTestValue<int?>(),
-                subresourceUris=getTestValue<Object>()
+                uri=(string)getTestValue(string),
+                dateCreated=(string)getTestValue(string),
+                dateUpdated=(string)getTestValue(string),
+                revision=(int)getTestValue(int),
+                accountId=(string)getTestValue(string),
+                queueId=(string)getTestValue(string),
+                alias=(string)getTestValue(string),
+                maxSize=(int?)getTestValue(int?),
+                currentSize=(int?)getTestValue(int?),
+                averageQueueRemovalTime=(int?)getTestValue(int?),
+                subresourceUris=(Object)getTestValue(Object)
             );
         }
 
@@ -189,13 +189,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

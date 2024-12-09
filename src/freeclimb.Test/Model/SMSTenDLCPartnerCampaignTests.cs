@@ -39,35 +39,35 @@ namespace freeclimb.Test.Model
         public SMSTenDLCPartnerCampaignTests()
         {
             instance = new SMSTenDLCPartnerCampaign(
-                accountId=getTestValue<string>(),
-                campaignId=getTestValue<string>(),
-                status=getTestValue<SMSTenDLCPartnerCampaignStatus>(),
-                createDate=getTestValue<DateTime>(),
-                brandId=getTestValue<string>(),
-                usecase=getTestValue<string>(),
-                description=getTestValue<string>(),
-                embeddedLink=getTestValue<bool>(),
-                embeddedPhone=getTestValue<bool>(),
-                affiliateMarketing=getTestValue<bool>(),
-                numberPool=getTestValue<bool>(),
-                ageGated=getTestValue<bool>(),
-                directLending=getTestValue<bool>(),
-                subscriberOptin=getTestValue<bool>(),
-                subscriberOptout=getTestValue<bool>(),
-                subscriberHelp=getTestValue<bool>(),
-                sample1=getTestValue<string>(),
-                sample2=getTestValue<string>(),
-                sample3=getTestValue<string>(),
-                sample4=getTestValue<string>(),
-                sample5=getTestValue<string>(),
-                messageFlow=getTestValue<string>(),
-                helpMessage=getTestValue<string>(),
-                optinKeywords=getTestValue<string>(),
-                optoutKeywords=getTestValue<string>(),
-                helpKeywords=getTestValue<string>(),
-                optinMessage=getTestValue<string>(),
-                optoutMessage=getTestValue<string>(),
-                brand=getTestValue<SMSTenDLCPartnerCampaignBrand>()
+                accountId=(string)getTestValue(string),
+                campaignId=(string)getTestValue(string),
+                status=(SMSTenDLCPartnerCampaignStatus)getTestValue(SMSTenDLCPartnerCampaignStatus),
+                createDate=(DateTime)getTestValue(DateTime),
+                brandId=(string)getTestValue(string),
+                usecase=(string)getTestValue(string),
+                description=(string)getTestValue(string),
+                embeddedLink=(bool)getTestValue(bool),
+                embeddedPhone=(bool)getTestValue(bool),
+                affiliateMarketing=(bool)getTestValue(bool),
+                numberPool=(bool)getTestValue(bool),
+                ageGated=(bool)getTestValue(bool),
+                directLending=(bool)getTestValue(bool),
+                subscriberOptin=(bool)getTestValue(bool),
+                subscriberOptout=(bool)getTestValue(bool),
+                subscriberHelp=(bool)getTestValue(bool),
+                sample1=(string)getTestValue(string),
+                sample2=(string)getTestValue(string),
+                sample3=(string)getTestValue(string),
+                sample4=(string)getTestValue(string),
+                sample5=(string)getTestValue(string),
+                messageFlow=(string)getTestValue(string),
+                helpMessage=(string)getTestValue(string),
+                optinKeywords=(string)getTestValue(string),
+                optoutKeywords=(string)getTestValue(string),
+                helpKeywords=(string)getTestValue(string),
+                optinMessage=(string)getTestValue(string),
+                optoutMessage=(string)getTestValue(string),
+                brand=(SMSTenDLCPartnerCampaignBrand)getTestValue(SMSTenDLCPartnerCampaignBrand)
             );
         }
 
@@ -407,13 +407,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

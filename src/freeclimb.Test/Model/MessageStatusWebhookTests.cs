@@ -39,17 +39,17 @@ namespace freeclimb.Test.Model
         public MessageStatusWebhookTests()
         {
             instance = new MessageStatusWebhook(
-                requestType=getTestValue<string>(),
-                accountId=getTestValue<string>(),
-                messageId=getTestValue<string>(),
-                callId=getTestValue<string>(),
-                from=getTestValue<string>(),
-                to=getTestValue<string>(),
-                text=getTestValue<string>(),
-                direction=getTestValue<string>(),
-                applicationId=getTestValue<string>(),
-                status=getTestValue<MessageStatus>(),
-                phoneNumberId=getTestValue<string>()
+                requestType=(string)getTestValue(string),
+                accountId=(string)getTestValue(string),
+                messageId=(string)getTestValue(string),
+                callId=(string)getTestValue(string),
+                from=(string)getTestValue(string),
+                to=(string)getTestValue(string),
+                text=(string)getTestValue(string),
+                direction=(string)getTestValue(string),
+                applicationId=(string)getTestValue(string),
+                status=(MessageStatus)getTestValue(MessageStatus),
+                phoneNumberId=(string)getTestValue(string)
             );
         }
 
@@ -206,13 +206,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

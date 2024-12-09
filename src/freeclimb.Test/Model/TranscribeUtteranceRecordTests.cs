@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public TranscribeUtteranceRecordTests()
         {
             instance = new TranscribeUtteranceRecord(
-                saveRecording=getTestValue<bool>(),
-                maxLengthSec=getTestValue<int>(),
-                rcrdTerminationSilenceTimeMs=getTestValue<int>()
+                saveRecording=(bool)getTestValue(bool),
+                maxLengthSec=(int)getTestValue(int),
+                rcrdTerminationSilenceTimeMs=(int)getTestValue(int)
             );
         }
 
@@ -92,13 +92,14 @@ namespace freeclimb.Test.Model
             Assert.Equal((int) instance.RcrdTerminationSilenceTimeMs, 1);
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

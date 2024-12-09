@@ -39,9 +39,9 @@ namespace freeclimb.Test.Model
         public UpdateConferenceParticipantRequestTests()
         {
             instance = new UpdateConferenceParticipantRequest(
-                talk=getTestValue<bool>(),
-                listen=getTestValue<bool>(),
-                dtmfPassThrough=getTestValue<bool>()
+                talk=(bool)getTestValue(bool),
+                listen=(bool)getTestValue(bool),
+                dtmfPassThrough=(bool)getTestValue(bool)
             );
         }
 
@@ -92,13 +92,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

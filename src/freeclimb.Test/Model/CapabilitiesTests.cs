@@ -39,11 +39,11 @@ namespace freeclimb.Test.Model
         public CapabilitiesTests()
         {
             instance = new Capabilities(
-                voice=getTestValue<bool?>(),
-                sms=getTestValue<bool?>(),
-                tollFree=getTestValue<bool?>(),
-                tenDLC=getTestValue<bool?>(),
-                shortCode=getTestValue<bool?>()
+                voice=(bool?)getTestValue(bool?),
+                sms=(bool?)getTestValue(bool?),
+                tollFree=(bool?)getTestValue(bool?),
+                tenDLC=(bool?)getTestValue(bool?),
+                shortCode=(bool?)getTestValue(bool?)
             );
         }
 
@@ -116,13 +116,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }

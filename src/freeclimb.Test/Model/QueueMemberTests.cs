@@ -39,11 +39,11 @@ namespace freeclimb.Test.Model
         public QueueMemberTests()
         {
             instance = new QueueMember(
-                uri=getTestValue<string>(),
-                callId=getTestValue<string>(),
-                waitTime=getTestValue<int?>(),
-                position=getTestValue<int?>(),
-                dateEnqueued=getTestValue<string>()
+                uri=(string)getTestValue(string),
+                callId=(string)getTestValue(string),
+                waitTime=(int?)getTestValue(int?),
+                position=(int?)getTestValue(int?),
+                dateEnqueued=(string)getTestValue(string)
             );
         }
 
@@ -116,13 +116,14 @@ namespace freeclimb.Test.Model
             
         }
 
-        public int getTestValue()
+        public object getTestValue(Type type)
         {
-            return 1;
-        }
-        public string getTestValue()
-        {
-            return "TEST_STRING";
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(string)) {
+                return "TEST_STRING";
+            }
         }
     }
 }
