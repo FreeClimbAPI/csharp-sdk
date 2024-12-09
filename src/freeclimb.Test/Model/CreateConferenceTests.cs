@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.ActionUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ActionUrl);
+            Assert.Equal(instance.ActionUrl, "TEST_STRING");
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void AliasTest()
         {
             instance.Alias = false;
-            Assert.Equal(false, instance.Alias);       
+            Assert.Equal(instance.Alias, false);
             
         }
 
@@ -84,13 +84,13 @@ namespace freeclimb.Test.Model
         public void PlayBeepTest()
         {
             instance.PlayBeep = PlayBeep.ALWAYS;
-            Assert.Equal(instance.PlayBeep,PlayBeep.ALWAYS);
+            Assert.Equal(instance.PlayBeep, PlayBeep.ALWAYS);
             instance.PlayBeep = PlayBeep.NEVER;
-            Assert.Equal(instance.PlayBeep,PlayBeep.NEVER);
+            Assert.Equal(instance.PlayBeep, PlayBeep.NEVER);
             instance.PlayBeep = PlayBeep.ENTRY_ONLY;
-            Assert.Equal(instance.PlayBeep,PlayBeep.ENTRY_ONLY);
+            Assert.Equal(instance.PlayBeep, PlayBeep.ENTRY_ONLY);
             instance.PlayBeep = PlayBeep.EXIT_ONLY;
-            Assert.Equal(instance.PlayBeep,PlayBeep.EXIT_ONLY);
+            Assert.Equal(instance.PlayBeep, PlayBeep.EXIT_ONLY);
             
         }
 
@@ -101,7 +101,7 @@ namespace freeclimb.Test.Model
         public void RecordTest()
         {
             instance.Record = false;
-            Assert.Equal(false, instance.Record);       
+            Assert.Equal(instance.Record, false);
             
         }
 
@@ -112,7 +112,7 @@ namespace freeclimb.Test.Model
         public void StatusCallbackUrlTest()
         {
             instance.StatusCallbackUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.StatusCallbackUrl);
+            Assert.Equal(instance.StatusCallbackUrl, "TEST_STRING");
             
         }
 
@@ -123,7 +123,7 @@ namespace freeclimb.Test.Model
         public void WaitUrlTest()
         {
             instance.WaitUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.WaitUrl);
+            Assert.Equal(instance.WaitUrl, "TEST_STRING");
             
         }
     }

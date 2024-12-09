@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void TalkTest()
         {
             instance.Talk = false;
-            Assert.Equal(false, instance.Talk);       
+            Assert.Equal(instance.Talk, false);
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void ListenTest()
         {
             instance.Listen = false;
-            Assert.Equal(false, instance.Listen);       
+            Assert.Equal(instance.Listen, false);
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void DtmfPassThroughTest()
         {
             instance.DtmfPassThrough = false;
-            Assert.Equal(false, instance.DtmfPassThrough);       
+            Assert.Equal(instance.DtmfPassThrough, false);
             
         }
     }

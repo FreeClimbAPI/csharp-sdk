@@ -71,7 +71,7 @@ namespace freeclimb.Test.Model
         public void CallIdTest()
         {
             instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
+            Assert.Equal(instance.CallId, "TEST_STRING");
             
         }
 
@@ -82,7 +82,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -93,7 +93,7 @@ namespace freeclimb.Test.Model
         public void FromTest()
         {
             instance.From = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.From);
+            Assert.Equal(instance.From, "TEST_STRING");
             
         }
 
@@ -104,7 +104,7 @@ namespace freeclimb.Test.Model
         public void ToTest()
         {
             instance.To = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.To);
+            Assert.Equal(instance.To, "TEST_STRING");
             
         }
 
@@ -115,21 +115,21 @@ namespace freeclimb.Test.Model
         public void CallStatusTest()
         {
             instance.CallStatus = CallStatus.QUEUED;
-            Assert.Equal(instance.CallStatus,CallStatus.QUEUED);
+            Assert.Equal(instance.CallStatus, CallStatus.QUEUED);
             instance.CallStatus = CallStatus.RINGING;
-            Assert.Equal(instance.CallStatus,CallStatus.RINGING);
+            Assert.Equal(instance.CallStatus, CallStatus.RINGING);
             instance.CallStatus = CallStatus.IN_PROGRESS;
-            Assert.Equal(instance.CallStatus,CallStatus.IN_PROGRESS);
+            Assert.Equal(instance.CallStatus, CallStatus.IN_PROGRESS);
             instance.CallStatus = CallStatus.CANCELED;
-            Assert.Equal(instance.CallStatus,CallStatus.CANCELED);
+            Assert.Equal(instance.CallStatus, CallStatus.CANCELED);
             instance.CallStatus = CallStatus.COMPLETED;
-            Assert.Equal(instance.CallStatus,CallStatus.COMPLETED);
+            Assert.Equal(instance.CallStatus, CallStatus.COMPLETED);
             instance.CallStatus = CallStatus.FAILED;
-            Assert.Equal(instance.CallStatus,CallStatus.FAILED);
+            Assert.Equal(instance.CallStatus, CallStatus.FAILED);
             instance.CallStatus = CallStatus.BUSY;
-            Assert.Equal(instance.CallStatus,CallStatus.BUSY);
+            Assert.Equal(instance.CallStatus, CallStatus.BUSY);
             instance.CallStatus = CallStatus.NO_ANSWER;
-            Assert.Equal(instance.CallStatus,CallStatus.NO_ANSWER);
+            Assert.Equal(instance.CallStatus, CallStatus.NO_ANSWER);
             
         }
 
@@ -140,11 +140,11 @@ namespace freeclimb.Test.Model
         public void DirectionTest()
         {
             instance.Direction = CallDirection.INBOUND;
-            Assert.Equal(instance.Direction,CallDirection.INBOUND);
+            Assert.Equal(instance.Direction, CallDirection.INBOUND);
             instance.Direction = CallDirection.OUTBOUND_API;
-            Assert.Equal(instance.Direction,CallDirection.OUTBOUND_API);
+            Assert.Equal(instance.Direction, CallDirection.OUTBOUND_API);
             instance.Direction = CallDirection.OUTBOUND_DIAL;
-            Assert.Equal(instance.Direction,CallDirection.OUTBOUND_DIAL);
+            Assert.Equal(instance.Direction, CallDirection.OUTBOUND_DIAL);
             
         }
 
@@ -155,7 +155,7 @@ namespace freeclimb.Test.Model
         public void ConferenceIdTest()
         {
             instance.ConferenceId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            Assert.Equal(instance.ConferenceId, "TEST_STRING");
             
         }
 
@@ -166,7 +166,7 @@ namespace freeclimb.Test.Model
         public void QueueIdTest()
         {
             instance.QueueId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.QueueId);
+            Assert.Equal(instance.QueueId, "TEST_STRING");
             
         }
 
@@ -177,7 +177,7 @@ namespace freeclimb.Test.Model
         public void DigitsTest()
         {
             instance.Digits = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Digits);
+            Assert.Equal(instance.Digits, "TEST_STRING");
             
         }
 
@@ -188,13 +188,13 @@ namespace freeclimb.Test.Model
         public void ReasonTest()
         {
             instance.Reason = GetDigitsReason.FINISH_KEY;
-            Assert.Equal(instance.Reason,GetDigitsReason.FINISH_KEY);
+            Assert.Equal(instance.Reason, GetDigitsReason.FINISH_KEY);
             instance.Reason = GetDigitsReason.TIMEOUT;
-            Assert.Equal(instance.Reason,GetDigitsReason.TIMEOUT);
+            Assert.Equal(instance.Reason, GetDigitsReason.TIMEOUT);
             instance.Reason = GetDigitsReason.MAX_DIGITS;
-            Assert.Equal(instance.Reason,GetDigitsReason.MAX_DIGITS);
+            Assert.Equal(instance.Reason, GetDigitsReason.MAX_DIGITS);
             instance.Reason = GetDigitsReason.TONE;
-            Assert.Equal(instance.Reason,GetDigitsReason.TONE);
+            Assert.Equal(instance.Reason, GetDigitsReason.TONE);
             
         }
 
@@ -205,7 +205,7 @@ namespace freeclimb.Test.Model
         public void ParentCallIdTest()
         {
             instance.ParentCallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ParentCallId);
+            Assert.Equal(instance.ParentCallId, "TEST_STRING");
             
         }
     }

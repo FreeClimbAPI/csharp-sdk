@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void ReasonTest()
         {
             instance.Reason = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Reason);
+            Assert.Equal(instance.Reason, "TEST_STRING");
             
         }
     }

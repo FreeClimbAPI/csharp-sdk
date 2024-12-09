@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.ActionUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ActionUrl);
+            Assert.Equal(instance.ActionUrl, "TEST_STRING");
         }
     }
 }

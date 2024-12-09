@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -73,15 +73,15 @@ namespace freeclimb.Test.Model
         public void EntityTypeTest()
         {
             instance.EntityType = SMSTenDLCBrandEntityType.PRIVATE_PROFIT;
-            Assert.Equal(instance.EntityType,SMSTenDLCBrandEntityType.PRIVATE_PROFIT);
+            Assert.Equal(instance.EntityType, SMSTenDLCBrandEntityType.PRIVATE_PROFIT);
             instance.EntityType = SMSTenDLCBrandEntityType.PUBLIC_PROFIT;
-            Assert.Equal(instance.EntityType,SMSTenDLCBrandEntityType.PUBLIC_PROFIT);
+            Assert.Equal(instance.EntityType, SMSTenDLCBrandEntityType.PUBLIC_PROFIT);
             instance.EntityType = SMSTenDLCBrandEntityType.NON_PROFIT;
-            Assert.Equal(instance.EntityType,SMSTenDLCBrandEntityType.NON_PROFIT);
+            Assert.Equal(instance.EntityType, SMSTenDLCBrandEntityType.NON_PROFIT);
             instance.EntityType = SMSTenDLCBrandEntityType.GOVERNMENT;
-            Assert.Equal(instance.EntityType,SMSTenDLCBrandEntityType.GOVERNMENT);
+            Assert.Equal(instance.EntityType, SMSTenDLCBrandEntityType.GOVERNMENT);
             instance.EntityType = SMSTenDLCBrandEntityType.SOLE_PROPRIETOR;
-            Assert.Equal(instance.EntityType,SMSTenDLCBrandEntityType.SOLE_PROPRIETOR);
+            Assert.Equal(instance.EntityType, SMSTenDLCBrandEntityType.SOLE_PROPRIETOR);
             
         }
 
@@ -92,7 +92,7 @@ namespace freeclimb.Test.Model
         public void CspIdTest()
         {
 
-            Assert.Equal("TEST_STRING", instance.CspId);
+            Assert.Equal(instance.CspId, "TEST_STRING");
             
         }
 
@@ -103,7 +103,7 @@ namespace freeclimb.Test.Model
         public void BrandIdTest()
         {
 
-            Assert.Equal("TEST_STRING", instance.BrandId);
+            Assert.Equal(instance.BrandId, "TEST_STRING");
             
         }
 
@@ -114,7 +114,7 @@ namespace freeclimb.Test.Model
         public void FirstNameTest()
         {
             instance.FirstName = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.FirstName);
+            Assert.Equal(instance.FirstName, "TEST_STRING");
             
         }
 
@@ -125,7 +125,7 @@ namespace freeclimb.Test.Model
         public void LastNameTest()
         {
             instance.LastName = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.LastName);
+            Assert.Equal(instance.LastName, "TEST_STRING");
             
         }
 
@@ -136,7 +136,7 @@ namespace freeclimb.Test.Model
         public void DisplayNameTest()
         {
             instance.DisplayName = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DisplayName);
+            Assert.Equal(instance.DisplayName, "TEST_STRING");
             
         }
 
@@ -147,7 +147,7 @@ namespace freeclimb.Test.Model
         public void CompanyNameTest()
         {
             instance.CompanyName = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CompanyName);
+            Assert.Equal(instance.CompanyName, "TEST_STRING");
             
         }
 
@@ -158,7 +158,7 @@ namespace freeclimb.Test.Model
         public void EinTest()
         {
             instance.Ein = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Ein);
+            Assert.Equal(instance.Ein, "TEST_STRING");
             
         }
 
@@ -169,7 +169,7 @@ namespace freeclimb.Test.Model
         public void EinIssuingCountryTest()
         {
             instance.EinIssuingCountry = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.EinIssuingCountry);
+            Assert.Equal(instance.EinIssuingCountry, "TEST_STRING");
             
         }
 
@@ -180,7 +180,7 @@ namespace freeclimb.Test.Model
         public void PhoneTest()
         {
             instance.Phone = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Phone);
+            Assert.Equal(instance.Phone, "TEST_STRING");
             
         }
 
@@ -191,7 +191,7 @@ namespace freeclimb.Test.Model
         public void StreetTest()
         {
             instance.Street = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Street);
+            Assert.Equal(instance.Street, "TEST_STRING");
             
         }
 
@@ -202,7 +202,7 @@ namespace freeclimb.Test.Model
         public void CityTest()
         {
             instance.City = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.City);
+            Assert.Equal(instance.City, "TEST_STRING");
             
         }
 
@@ -213,7 +213,7 @@ namespace freeclimb.Test.Model
         public void StateTest()
         {
             instance.State = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.State);
+            Assert.Equal(instance.State, "TEST_STRING");
             
         }
 
@@ -224,7 +224,7 @@ namespace freeclimb.Test.Model
         public void PostalCodeTest()
         {
             instance.PostalCode = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.PostalCode);
+            Assert.Equal(instance.PostalCode, "TEST_STRING");
             
         }
 
@@ -235,7 +235,7 @@ namespace freeclimb.Test.Model
         public void CountryTest()
         {
             instance.Country = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Country);
+            Assert.Equal(instance.Country, "TEST_STRING");
             
         }
 
@@ -246,7 +246,7 @@ namespace freeclimb.Test.Model
         public void EmailTest()
         {
             instance.Email = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Email);
+            Assert.Equal(instance.Email, "TEST_STRING");
             
         }
 
@@ -257,7 +257,7 @@ namespace freeclimb.Test.Model
         public void StockSymbolTest()
         {
             instance.StockSymbol = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.StockSymbol);
+            Assert.Equal(instance.StockSymbol, "TEST_STRING");
             
         }
 
@@ -268,59 +268,59 @@ namespace freeclimb.Test.Model
         public void StockExchangeTest()
         {
             instance.StockExchange = SMSTenDLCBrandStockExchange.NONE;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.NONE);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.NONE);
             instance.StockExchange = SMSTenDLCBrandStockExchange.NASDAQ;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.NASDAQ);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.NASDAQ);
             instance.StockExchange = SMSTenDLCBrandStockExchange.NYSE;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.NYSE);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.NYSE);
             instance.StockExchange = SMSTenDLCBrandStockExchange.AMEX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.AMEX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.AMEX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.AMX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.AMX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.AMX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.ASX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.ASX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.ASX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.B3;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.B3);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.B3);
             instance.StockExchange = SMSTenDLCBrandStockExchange.BME;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.BME);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.BME);
             instance.StockExchange = SMSTenDLCBrandStockExchange.BSE;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.BSE);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.BSE);
             instance.StockExchange = SMSTenDLCBrandStockExchange.FRA;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.FRA);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.FRA);
             instance.StockExchange = SMSTenDLCBrandStockExchange.ICEX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.ICEX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.ICEX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.JPX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.JPX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.JPX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.JSE;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.JSE);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.JSE);
             instance.StockExchange = SMSTenDLCBrandStockExchange.KRX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.KRX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.KRX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.LON;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.LON);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.LON);
             instance.StockExchange = SMSTenDLCBrandStockExchange.NSE;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.NSE);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.NSE);
             instance.StockExchange = SMSTenDLCBrandStockExchange.OMX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.OMX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.OMX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.SEHK;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.SEHK);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.SEHK);
             instance.StockExchange = SMSTenDLCBrandStockExchange.SGX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.SGX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.SGX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.SSE;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.SSE);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.SSE);
             instance.StockExchange = SMSTenDLCBrandStockExchange.STO;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.STO);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.STO);
             instance.StockExchange = SMSTenDLCBrandStockExchange.SWX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.SWX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.SWX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.SZSE;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.SZSE);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.SZSE);
             instance.StockExchange = SMSTenDLCBrandStockExchange.TSX;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.TSX);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.TSX);
             instance.StockExchange = SMSTenDLCBrandStockExchange.TWSE;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.TWSE);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.TWSE);
             instance.StockExchange = SMSTenDLCBrandStockExchange.VSE;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.VSE);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.VSE);
             instance.StockExchange = SMSTenDLCBrandStockExchange.OTHER;
-            Assert.Equal(instance.StockExchange,SMSTenDLCBrandStockExchange.OTHER);
+            Assert.Equal(instance.StockExchange, SMSTenDLCBrandStockExchange.OTHER);
             
         }
 
@@ -331,7 +331,7 @@ namespace freeclimb.Test.Model
         public void IpAddressTest()
         {
             instance.IpAddress = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.IpAddress);
+            Assert.Equal(instance.IpAddress, "TEST_STRING");
             
         }
 
@@ -342,7 +342,7 @@ namespace freeclimb.Test.Model
         public void WebsiteTest()
         {
             instance.Website = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Website);
+            Assert.Equal(instance.Website, "TEST_STRING");
             
         }
 
@@ -353,15 +353,15 @@ namespace freeclimb.Test.Model
         public void BrandRelationshipTest()
         {
             instance.BrandRelationship = SMSTenDLCBrandRelationship.BASIC_ACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrandRelationship.BASIC_ACCOUNT);
+            Assert.Equal(instance.BrandRelationship, SMSTenDLCBrandRelationship.BASIC_ACCOUNT);
             instance.BrandRelationship = SMSTenDLCBrandRelationship.SMALL_ACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrandRelationship.SMALL_ACCOUNT);
+            Assert.Equal(instance.BrandRelationship, SMSTenDLCBrandRelationship.SMALL_ACCOUNT);
             instance.BrandRelationship = SMSTenDLCBrandRelationship.MEDIUM_ACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrandRelationship.MEDIUM_ACCOUNT);
+            Assert.Equal(instance.BrandRelationship, SMSTenDLCBrandRelationship.MEDIUM_ACCOUNT);
             instance.BrandRelationship = SMSTenDLCBrandRelationship.LARGE_ACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrandRelationship.LARGE_ACCOUNT);
+            Assert.Equal(instance.BrandRelationship, SMSTenDLCBrandRelationship.LARGE_ACCOUNT);
             instance.BrandRelationship = SMSTenDLCBrandRelationship.KEY_ACCOUNT;
-            Assert.Equal(instance.BrandRelationship,SMSTenDLCBrandRelationship.KEY_ACCOUNT);
+            Assert.Equal(instance.BrandRelationship, SMSTenDLCBrandRelationship.KEY_ACCOUNT);
             
         }
 
@@ -372,7 +372,7 @@ namespace freeclimb.Test.Model
         public void VerticalTest()
         {
             instance.Vertical = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Vertical);
+            Assert.Equal(instance.Vertical, "TEST_STRING");
             
         }
 
@@ -383,7 +383,7 @@ namespace freeclimb.Test.Model
         public void AltBusinessIdTest()
         {
             instance.AltBusinessId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AltBusinessId);
+            Assert.Equal(instance.AltBusinessId, "TEST_STRING");
             
         }
 
@@ -394,13 +394,13 @@ namespace freeclimb.Test.Model
         public void AltBusinessIdTypeTest()
         {
             instance.AltBusinessIdType = SMSTenDLCBrandAltBusinessIdType.NONE;
-            Assert.Equal(instance.AltBusinessIdType,SMSTenDLCBrandAltBusinessIdType.NONE);
+            Assert.Equal(instance.AltBusinessIdType, SMSTenDLCBrandAltBusinessIdType.NONE);
             instance.AltBusinessIdType = SMSTenDLCBrandAltBusinessIdType.DUNS;
-            Assert.Equal(instance.AltBusinessIdType,SMSTenDLCBrandAltBusinessIdType.DUNS);
+            Assert.Equal(instance.AltBusinessIdType, SMSTenDLCBrandAltBusinessIdType.DUNS);
             instance.AltBusinessIdType = SMSTenDLCBrandAltBusinessIdType.GIIN;
-            Assert.Equal(instance.AltBusinessIdType,SMSTenDLCBrandAltBusinessIdType.GIIN);
+            Assert.Equal(instance.AltBusinessIdType, SMSTenDLCBrandAltBusinessIdType.GIIN);
             instance.AltBusinessIdType = SMSTenDLCBrandAltBusinessIdType.LEI;
-            Assert.Equal(instance.AltBusinessIdType,SMSTenDLCBrandAltBusinessIdType.LEI);
+            Assert.Equal(instance.AltBusinessIdType, SMSTenDLCBrandAltBusinessIdType.LEI);
             
         }
 
@@ -411,7 +411,7 @@ namespace freeclimb.Test.Model
         public void UniversalEinTest()
         {
 
-            Assert.Equal("TEST_STRING", instance.UniversalEin);
+            Assert.Equal(instance.UniversalEin, "TEST_STRING");
             
         }
 
@@ -422,7 +422,7 @@ namespace freeclimb.Test.Model
         public void ReferenceIdTest()
         {
             instance.ReferenceId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ReferenceId);
+            Assert.Equal(instance.ReferenceId, "TEST_STRING");
             
         }
 
@@ -435,7 +435,7 @@ namespace freeclimb.Test.Model
             
             Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
             instance.OptionalAttributes = testDictionary;
-            Assert.Equal(testDictionary, instance.OptionalAttributes); 
+            Assert.Equal(instance.OptionalAttributes, testDictionary); 
         }
 
         /// <summary>
@@ -445,7 +445,7 @@ namespace freeclimb.Test.Model
         public void MockTest()
         {
             instance.Mock = false;
-            Assert.Equal(false, instance.Mock);       
+            Assert.Equal(instance.Mock, false);
             
         }
 
@@ -456,13 +456,13 @@ namespace freeclimb.Test.Model
         public void IdentityStatusTest()
         {
             instance.IdentityStatus = SMSTenDLCBrandIdentityStatus.SELF_DECLARED;
-            Assert.Equal(instance.IdentityStatus,SMSTenDLCBrandIdentityStatus.SELF_DECLARED);
+            Assert.Equal(instance.IdentityStatus, SMSTenDLCBrandIdentityStatus.SELF_DECLARED);
             instance.IdentityStatus = SMSTenDLCBrandIdentityStatus.UNVERIFIED;
-            Assert.Equal(instance.IdentityStatus,SMSTenDLCBrandIdentityStatus.UNVERIFIED);
+            Assert.Equal(instance.IdentityStatus, SMSTenDLCBrandIdentityStatus.UNVERIFIED);
             instance.IdentityStatus = SMSTenDLCBrandIdentityStatus.VERIFIED;
-            Assert.Equal(instance.IdentityStatus,SMSTenDLCBrandIdentityStatus.VERIFIED);
+            Assert.Equal(instance.IdentityStatus, SMSTenDLCBrandIdentityStatus.VERIFIED);
             instance.IdentityStatus = SMSTenDLCBrandIdentityStatus.VETTED_VERIFIED;
-            Assert.Equal(instance.IdentityStatus,SMSTenDLCBrandIdentityStatus.VETTED_VERIFIED);
+            Assert.Equal(instance.IdentityStatus, SMSTenDLCBrandIdentityStatus.VETTED_VERIFIED);
             
         }
 
@@ -473,7 +473,7 @@ namespace freeclimb.Test.Model
         public void CreateDateTest()
         {
             instance.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
-            Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.CreateDate);
+            Assert.Equal(instance.CreateDate, DateTime.Parse("2022-07-05T15:17:05+00:00"));
             
         }
     }

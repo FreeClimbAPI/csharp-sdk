@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void CampaignIdTest()
         {
             instance.CampaignId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CampaignId);
+            Assert.Equal(instance.CampaignId, "TEST_STRING");
             
         }
     }

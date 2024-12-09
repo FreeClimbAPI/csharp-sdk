@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void UriTest()
         {
             instance.Uri = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Uri);
+            Assert.Equal(instance.Uri, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void CallIdTest()
         {
             instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
+            Assert.Equal(instance.CallId, "TEST_STRING");
             
         }
 
@@ -85,7 +85,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.WaitTime = 1;
-            Assert.Equal(1, (int) instance.WaitTime);
+            Assert.Equal((int) instance.WaitTime, 1);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Position = 1;
-            Assert.Equal(1, (int) instance.Position);
+            Assert.Equal((int) instance.Position, 1);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void DateEnqueuedTest()
         {
             instance.DateEnqueued = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateEnqueued);
+            Assert.Equal(instance.DateEnqueued, "TEST_STRING");
             
         }
     }

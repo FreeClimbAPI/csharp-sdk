@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void ApplicationIdTest()
         {
             instance.ApplicationId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            Assert.Equal(instance.ApplicationId, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void AliasTest()
         {
             instance.Alias = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Alias);
+            Assert.Equal(instance.Alias, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void CampaignIdTest()
         {
             instance.CampaignId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CampaignId);
+            Assert.Equal(instance.CampaignId, "TEST_STRING");
             
         }
     }

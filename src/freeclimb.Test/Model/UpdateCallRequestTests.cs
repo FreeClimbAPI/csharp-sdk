@@ -62,9 +62,9 @@ namespace freeclimb.Test.Model
         public void StatusTest()
         {
             instance.Status = UpdateCallRequestStatus.CANCELED;
-            Assert.Equal(instance.Status,UpdateCallRequestStatus.CANCELED);
+            Assert.Equal(instance.Status, UpdateCallRequestStatus.CANCELED);
             instance.Status = UpdateCallRequestStatus.COMPLETED;
-            Assert.Equal(instance.Status,UpdateCallRequestStatus.COMPLETED);
+            Assert.Equal(instance.Status, UpdateCallRequestStatus.COMPLETED);
             
         }
     }

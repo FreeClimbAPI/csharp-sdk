@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.ActionUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ActionUrl);
+            Assert.Equal(instance.ActionUrl, "TEST_STRING");
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.DigitTimeoutMs = 1;
-            Assert.Equal(1, (int) instance.DigitTimeoutMs);
+            Assert.Equal((int) instance.DigitTimeoutMs, 1);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void FinishOnKeyTest()
         {
             instance.FinishOnKey = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.FinishOnKey);
+            Assert.Equal(instance.FinishOnKey, "TEST_STRING");
             
         }
 
@@ -95,7 +95,7 @@ namespace freeclimb.Test.Model
         public void FlushBufferTest()
         {
             instance.FlushBuffer = false;
-            Assert.Equal(false, instance.FlushBuffer);       
+            Assert.Equal(instance.FlushBuffer, false);
             
         }
 
@@ -107,7 +107,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.InitialTimeoutMs = 1;
-            Assert.Equal(1, (int) instance.InitialTimeoutMs);
+            Assert.Equal((int) instance.InitialTimeoutMs, 1);
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.MaxDigits = 1;
-            Assert.Equal(1, (int) instance.MaxDigits);
+            Assert.Equal((int) instance.MaxDigits, 1);
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.MinDigits = 1;
-            Assert.Equal(1, (int) instance.MinDigits);
+            Assert.Equal((int) instance.MinDigits, 1);
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace freeclimb.Test.Model
             
             List<PerclCommand> testList = new List<PerclCommand>();
             instance.Prompts = testList;
-            Assert.Equal(testList, instance.Prompts); 
+            Assert.Equal(instance.Prompts, testList); 
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);       
+            Assert.Equal(instance.PrivacyMode, false);
             
         }
     }

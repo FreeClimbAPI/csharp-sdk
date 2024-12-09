@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.WaitUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.WaitUrl);
+            Assert.Equal(instance.WaitUrl, "TEST_STRING");
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.ActionUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ActionUrl);
+            Assert.Equal(instance.ActionUrl, "TEST_STRING");
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void NotificationUrlTest()
         {
             instance.NotificationUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.NotificationUrl);
+            Assert.Equal(instance.NotificationUrl, "TEST_STRING");
             
         }
     }

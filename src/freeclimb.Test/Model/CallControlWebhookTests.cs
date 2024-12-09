@@ -71,7 +71,7 @@ namespace freeclimb.Test.Model
         public void CallIdTest()
         {
             instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
+            Assert.Equal(instance.CallId, "TEST_STRING");
             
         }
 
@@ -82,7 +82,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -93,7 +93,7 @@ namespace freeclimb.Test.Model
         public void ConferenceIdTest()
         {
             instance.ConferenceId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            Assert.Equal(instance.ConferenceId, "TEST_STRING");
             
         }
 
@@ -104,7 +104,7 @@ namespace freeclimb.Test.Model
         public void DigitsTest()
         {
             instance.Digits = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Digits);
+            Assert.Equal(instance.Digits, "TEST_STRING");
             
         }
     }

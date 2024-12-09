@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void ListenTest()
         {
             instance.Listen = false;
-            Assert.Equal(false, instance.Listen);       
+            Assert.Equal(instance.Listen, false);
             
         }
     }

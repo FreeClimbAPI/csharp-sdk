@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.ActionUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ActionUrl);
+            Assert.Equal(instance.ActionUrl, "TEST_STRING");
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.SilenceTimeoutMs = 1;
-            Assert.Equal(1, (int) instance.SilenceTimeoutMs);
+            Assert.Equal((int) instance.SilenceTimeoutMs, 1);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void FinishOnKeyTest()
         {
             instance.FinishOnKey = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.FinishOnKey);
+            Assert.Equal(instance.FinishOnKey, "TEST_STRING");
             
         }
 
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.MaxLengthSec = 1;
-            Assert.Equal(1, (int) instance.MaxLengthSec);
+            Assert.Equal((int) instance.MaxLengthSec, 1);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void PlayBeepTest()
         {
             instance.PlayBeep = false;
-            Assert.Equal(false, instance.PlayBeep);       
+            Assert.Equal(instance.PlayBeep, false);
             
         }
 
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         public void AutoStartTest()
         {
             instance.AutoStart = false;
-            Assert.Equal(false, instance.AutoStart);       
+            Assert.Equal(instance.AutoStart, false);
             
         }
 
@@ -128,7 +128,7 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);       
+            Assert.Equal(instance.PrivacyMode, false);
             
         }
     }

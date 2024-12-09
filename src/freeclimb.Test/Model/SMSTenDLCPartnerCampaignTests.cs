@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void CampaignIdTest()
         {
             instance.CampaignId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CampaignId);
+            Assert.Equal(instance.CampaignId, "TEST_STRING");
             
         }
 
@@ -84,9 +84,9 @@ namespace freeclimb.Test.Model
         public void StatusTest()
         {
             instance.Status = SMSTenDLCPartnerCampaignStatus.ACTIVE;
-            Assert.Equal(instance.Status,SMSTenDLCPartnerCampaignStatus.ACTIVE);
+            Assert.Equal(instance.Status, SMSTenDLCPartnerCampaignStatus.ACTIVE);
             instance.Status = SMSTenDLCPartnerCampaignStatus.EXPIRED;
-            Assert.Equal(instance.Status,SMSTenDLCPartnerCampaignStatus.EXPIRED);
+            Assert.Equal(instance.Status, SMSTenDLCPartnerCampaignStatus.EXPIRED);
             
         }
 
@@ -97,7 +97,7 @@ namespace freeclimb.Test.Model
         public void CreateDateTest()
         {
             instance.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
-            Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.CreateDate);
+            Assert.Equal(instance.CreateDate, DateTime.Parse("2022-07-05T15:17:05+00:00"));
             
         }
 
@@ -108,7 +108,7 @@ namespace freeclimb.Test.Model
         public void BrandIdTest()
         {
             instance.BrandId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.BrandId);
+            Assert.Equal(instance.BrandId, "TEST_STRING");
             
         }
 
@@ -119,7 +119,7 @@ namespace freeclimb.Test.Model
         public void UsecaseTest()
         {
             instance.Usecase = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Usecase);
+            Assert.Equal(instance.Usecase, "TEST_STRING");
             
         }
 
@@ -130,7 +130,7 @@ namespace freeclimb.Test.Model
         public void DescriptionTest()
         {
             instance.Description = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Description);
+            Assert.Equal(instance.Description, "TEST_STRING");
             
         }
 
@@ -141,7 +141,7 @@ namespace freeclimb.Test.Model
         public void EmbeddedLinkTest()
         {
             instance.EmbeddedLink = false;
-            Assert.Equal(false, instance.EmbeddedLink);       
+            Assert.Equal(instance.EmbeddedLink, false);
             
         }
 
@@ -152,7 +152,7 @@ namespace freeclimb.Test.Model
         public void EmbeddedPhoneTest()
         {
             instance.EmbeddedPhone = false;
-            Assert.Equal(false, instance.EmbeddedPhone);       
+            Assert.Equal(instance.EmbeddedPhone, false);
             
         }
 
@@ -163,7 +163,7 @@ namespace freeclimb.Test.Model
         public void AffiliateMarketingTest()
         {
             instance.AffiliateMarketing = false;
-            Assert.Equal(false, instance.AffiliateMarketing);       
+            Assert.Equal(instance.AffiliateMarketing, false);
             
         }
 
@@ -174,7 +174,7 @@ namespace freeclimb.Test.Model
         public void NumberPoolTest()
         {
             instance.NumberPool = false;
-            Assert.Equal(false, instance.NumberPool);       
+            Assert.Equal(instance.NumberPool, false);
             
         }
 
@@ -185,7 +185,7 @@ namespace freeclimb.Test.Model
         public void AgeGatedTest()
         {
             instance.AgeGated = false;
-            Assert.Equal(false, instance.AgeGated);       
+            Assert.Equal(instance.AgeGated, false);
             
         }
 
@@ -196,7 +196,7 @@ namespace freeclimb.Test.Model
         public void DirectLendingTest()
         {
             instance.DirectLending = false;
-            Assert.Equal(false, instance.DirectLending);       
+            Assert.Equal(instance.DirectLending, false);
             
         }
 
@@ -207,7 +207,7 @@ namespace freeclimb.Test.Model
         public void SubscriberOptinTest()
         {
             instance.SubscriberOptin = false;
-            Assert.Equal(false, instance.SubscriberOptin);       
+            Assert.Equal(instance.SubscriberOptin, false);
             
         }
 
@@ -218,7 +218,7 @@ namespace freeclimb.Test.Model
         public void SubscriberOptoutTest()
         {
             instance.SubscriberOptout = false;
-            Assert.Equal(false, instance.SubscriberOptout);       
+            Assert.Equal(instance.SubscriberOptout, false);
             
         }
 
@@ -229,7 +229,7 @@ namespace freeclimb.Test.Model
         public void SubscriberHelpTest()
         {
             instance.SubscriberHelp = false;
-            Assert.Equal(false, instance.SubscriberHelp);       
+            Assert.Equal(instance.SubscriberHelp, false);
             
         }
 
@@ -240,7 +240,7 @@ namespace freeclimb.Test.Model
         public void Sample1Test()
         {
             instance.Sample1 = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Sample1);
+            Assert.Equal(instance.Sample1, "TEST_STRING");
             
         }
 
@@ -251,7 +251,7 @@ namespace freeclimb.Test.Model
         public void Sample2Test()
         {
             instance.Sample2 = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Sample2);
+            Assert.Equal(instance.Sample2, "TEST_STRING");
             
         }
 
@@ -262,7 +262,7 @@ namespace freeclimb.Test.Model
         public void Sample3Test()
         {
             instance.Sample3 = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Sample3);
+            Assert.Equal(instance.Sample3, "TEST_STRING");
             
         }
 
@@ -273,7 +273,7 @@ namespace freeclimb.Test.Model
         public void Sample4Test()
         {
             instance.Sample4 = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Sample4);
+            Assert.Equal(instance.Sample4, "TEST_STRING");
             
         }
 
@@ -284,7 +284,7 @@ namespace freeclimb.Test.Model
         public void Sample5Test()
         {
             instance.Sample5 = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Sample5);
+            Assert.Equal(instance.Sample5, "TEST_STRING");
             
         }
 
@@ -295,7 +295,7 @@ namespace freeclimb.Test.Model
         public void MessageFlowTest()
         {
             instance.MessageFlow = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.MessageFlow);
+            Assert.Equal(instance.MessageFlow, "TEST_STRING");
             
         }
 
@@ -306,7 +306,7 @@ namespace freeclimb.Test.Model
         public void HelpMessageTest()
         {
             instance.HelpMessage = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.HelpMessage);
+            Assert.Equal(instance.HelpMessage, "TEST_STRING");
             
         }
 
@@ -317,7 +317,7 @@ namespace freeclimb.Test.Model
         public void OptinKeywordsTest()
         {
             instance.OptinKeywords = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.OptinKeywords);
+            Assert.Equal(instance.OptinKeywords, "TEST_STRING");
             
         }
 
@@ -328,7 +328,7 @@ namespace freeclimb.Test.Model
         public void OptoutKeywordsTest()
         {
             instance.OptoutKeywords = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.OptoutKeywords);
+            Assert.Equal(instance.OptoutKeywords, "TEST_STRING");
             
         }
 
@@ -339,7 +339,7 @@ namespace freeclimb.Test.Model
         public void HelpKeywordsTest()
         {
             instance.HelpKeywords = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.HelpKeywords);
+            Assert.Equal(instance.HelpKeywords, "TEST_STRING");
             
         }
 
@@ -350,7 +350,7 @@ namespace freeclimb.Test.Model
         public void OptinMessageTest()
         {
             instance.OptinMessage = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.OptinMessage);
+            Assert.Equal(instance.OptinMessage, "TEST_STRING");
             
         }
 
@@ -361,7 +361,7 @@ namespace freeclimb.Test.Model
         public void OptoutMessageTest()
         {
             instance.OptoutMessage = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.OptoutMessage);
+            Assert.Equal(instance.OptoutMessage, "TEST_STRING");
             
         }
 
@@ -373,7 +373,7 @@ namespace freeclimb.Test.Model
         {
             SMSTenDLCPartnerCampaignBrand testObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
             instance.Brand = testObject;
-            Assert.Equal(testObject, instance.Brand);
+            Assert.Equal(instance.Brand, testObject);
             
         }
     }

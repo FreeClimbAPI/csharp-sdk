@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void AllowCallControlTest()
         {
             instance.AllowCallControl = false;
-            Assert.Equal(false, instance.AllowCallControl);       
+            Assert.Equal(instance.AllowCallControl, false);
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void CallControlSequenceTest()
         {
             instance.CallControlSequence = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallControlSequence);
+            Assert.Equal(instance.CallControlSequence, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void CallControlUrlTest()
         {
             instance.CallControlUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallControlUrl);
+            Assert.Equal(instance.CallControlUrl, "TEST_STRING");
             
         }
 
@@ -95,7 +95,7 @@ namespace freeclimb.Test.Model
         public void ConferenceIdTest()
         {
             instance.ConferenceId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            Assert.Equal(instance.ConferenceId, "TEST_STRING");
             
         }
 
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void LeaveConferenceUrlTest()
         {
             instance.LeaveConferenceUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.LeaveConferenceUrl);
+            Assert.Equal(instance.LeaveConferenceUrl, "TEST_STRING");
             
         }
 
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         public void ListenTest()
         {
             instance.Listen = false;
-            Assert.Equal(false, instance.Listen);       
+            Assert.Equal(instance.Listen, false);
             
         }
 
@@ -128,7 +128,7 @@ namespace freeclimb.Test.Model
         public void NotificationUrlTest()
         {
             instance.NotificationUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.NotificationUrl);
+            Assert.Equal(instance.NotificationUrl, "TEST_STRING");
             
         }
 
@@ -139,7 +139,7 @@ namespace freeclimb.Test.Model
         public void StartConfOnEnterTest()
         {
             instance.StartConfOnEnter = false;
-            Assert.Equal(false, instance.StartConfOnEnter);       
+            Assert.Equal(instance.StartConfOnEnter, false);
             
         }
 
@@ -150,7 +150,7 @@ namespace freeclimb.Test.Model
         public void TalkTest()
         {
             instance.Talk = false;
-            Assert.Equal(false, instance.Talk);       
+            Assert.Equal(instance.Talk, false);
             
         }
 
@@ -161,7 +161,7 @@ namespace freeclimb.Test.Model
         public void DtmfPassThroughTest()
         {
             instance.DtmfPassThrough = false;
-            Assert.Equal(false, instance.DtmfPassThrough);       
+            Assert.Equal(instance.DtmfPassThrough, false);
             
         }
     }

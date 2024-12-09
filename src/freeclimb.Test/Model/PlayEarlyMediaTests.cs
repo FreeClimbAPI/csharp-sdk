@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void FileTest()
         {
             instance.File = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.File);
+            Assert.Equal(instance.File, "TEST_STRING");
             
         }
     }

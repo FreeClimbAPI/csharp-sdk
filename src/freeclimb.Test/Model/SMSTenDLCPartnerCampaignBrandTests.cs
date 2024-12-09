@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void BrandIdTest()
         {
 
-            Assert.Equal("TEST_STRING", instance.BrandId);
+            Assert.Equal(instance.BrandId, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void FirstNameTest()
         {
             instance.FirstName = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.FirstName);
+            Assert.Equal(instance.FirstName, "TEST_STRING");
             
         }
 
@@ -95,7 +95,7 @@ namespace freeclimb.Test.Model
         public void LastNameTest()
         {
             instance.LastName = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.LastName);
+            Assert.Equal(instance.LastName, "TEST_STRING");
             
         }
 
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void DisplayNameTest()
         {
             instance.DisplayName = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DisplayName);
+            Assert.Equal(instance.DisplayName, "TEST_STRING");
             
         }
 
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         public void CompanyNameTest()
         {
             instance.CompanyName = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CompanyName);
+            Assert.Equal(instance.CompanyName, "TEST_STRING");
             
         }
 
@@ -128,7 +128,7 @@ namespace freeclimb.Test.Model
         public void PhoneTest()
         {
             instance.Phone = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Phone);
+            Assert.Equal(instance.Phone, "TEST_STRING");
             
         }
 
@@ -139,7 +139,7 @@ namespace freeclimb.Test.Model
         public void EmailTest()
         {
             instance.Email = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Email);
+            Assert.Equal(instance.Email, "TEST_STRING");
             
         }
 
@@ -150,7 +150,7 @@ namespace freeclimb.Test.Model
         public void WebsiteTest()
         {
             instance.Website = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Website);
+            Assert.Equal(instance.Website, "TEST_STRING");
             
         }
 
@@ -163,7 +163,7 @@ namespace freeclimb.Test.Model
             
             Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
             instance.OptionalAttributes = testDictionary;
-            Assert.Equal(testDictionary, instance.OptionalAttributes); 
+            Assert.Equal(instance.OptionalAttributes, testDictionary); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.EvpVettingScore = 1;
-            Assert.Equal(1, (int) instance.EvpVettingScore);
+            Assert.Equal((int) instance.EvpVettingScore, 1);
         }
     }
 }

@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void QueryTest()
         {
             instance.Query = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Query);
+            Assert.Equal(instance.Query, "TEST_STRING");
             
         }
     }

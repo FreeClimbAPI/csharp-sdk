@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void PqlTest()
         {
             instance.Pql = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Pql);
+            Assert.Equal(instance.Pql, "TEST_STRING");
             
         }
     }

@@ -71,7 +71,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -82,7 +82,7 @@ namespace freeclimb.Test.Model
         public void FromTest()
         {
             instance.From = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.From);
+            Assert.Equal(instance.From, "TEST_STRING");
             
         }
 
@@ -93,7 +93,7 @@ namespace freeclimb.Test.Model
         public void ToTest()
         {
             instance.To = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.To);
+            Assert.Equal(instance.To, "TEST_STRING");
             
         }
 
@@ -104,7 +104,7 @@ namespace freeclimb.Test.Model
         public void TextTest()
         {
             instance.Text = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Text);
+            Assert.Equal(instance.Text, "TEST_STRING");
             
         }
 
@@ -115,7 +115,7 @@ namespace freeclimb.Test.Model
         public void DirectionTest()
         {
             instance.Direction = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Direction);
+            Assert.Equal(instance.Direction, "TEST_STRING");
             
         }
 
@@ -126,7 +126,7 @@ namespace freeclimb.Test.Model
         public void ApplicationIdTest()
         {
             instance.ApplicationId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            Assert.Equal(instance.ApplicationId, "TEST_STRING");
             
         }
 
@@ -137,7 +137,7 @@ namespace freeclimb.Test.Model
         public void StatusTest()
         {
             instance.Status = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Status);
+            Assert.Equal(instance.Status, "TEST_STRING");
             
         }
 
@@ -148,7 +148,7 @@ namespace freeclimb.Test.Model
         public void PhoneNumberIdTest()
         {
             instance.PhoneNumberId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.PhoneNumberId);
+            Assert.Equal(instance.PhoneNumberId, "TEST_STRING");
             
         }
 
@@ -159,7 +159,7 @@ namespace freeclimb.Test.Model
         public void UriTest()
         {
             instance.Uri = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Uri);
+            Assert.Equal(instance.Uri, "TEST_STRING");
             
         }
     }

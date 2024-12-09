@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void FromTest()
         {
             instance.From = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.From);
+            Assert.Equal(instance.From, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void ToTest()
         {
             instance.To = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.To);
+            Assert.Equal(instance.To, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void ApplicationIdTest()
         {
             instance.ApplicationId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            Assert.Equal(instance.ApplicationId, "TEST_STRING");
             
         }
 
@@ -95,7 +95,7 @@ namespace freeclimb.Test.Model
         public void SendDigitsTest()
         {
             instance.SendDigits = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.SendDigits);
+            Assert.Equal(instance.SendDigits, "TEST_STRING");
             
         }
 
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void IfMachineTest()
         {
             instance.IfMachine = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.IfMachine);
+            Assert.Equal(instance.IfMachine, "TEST_STRING");
             
         }
 
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         public void IfMachineUrlTest()
         {
             instance.IfMachineUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.IfMachineUrl);
+            Assert.Equal(instance.IfMachineUrl, "TEST_STRING");
             
         }
 
@@ -129,7 +129,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Timeout = 1;
-            Assert.Equal(1, (int) instance.Timeout);
+            Assert.Equal((int) instance.Timeout, 1);
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace freeclimb.Test.Model
         public void ParentCallIdTest()
         {
             instance.ParentCallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ParentCallId);
+            Assert.Equal(instance.ParentCallId, "TEST_STRING");
             
         }
 
@@ -150,7 +150,7 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);       
+            Assert.Equal(instance.PrivacyMode, false);
             
         }
 
@@ -161,7 +161,7 @@ namespace freeclimb.Test.Model
         public void CallConnectUrlTest()
         {
             instance.CallConnectUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallConnectUrl);
+            Assert.Equal(instance.CallConnectUrl, "TEST_STRING");
             
         }
     }

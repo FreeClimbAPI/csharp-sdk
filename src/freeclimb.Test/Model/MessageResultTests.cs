@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void UriTest()
         {
             instance.Uri = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Uri);
+            Assert.Equal(instance.Uri, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void DateCreatedTest()
         {
             instance.DateCreated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateCreated);
+            Assert.Equal(instance.DateCreated, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void DateUpdatedTest()
         {
             instance.DateUpdated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            Assert.Equal(instance.DateUpdated, "TEST_STRING");
             
         }
 
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Revision = 1;
-            Assert.Equal(1, (int) instance.Revision);
+            Assert.Equal((int) instance.Revision, 1);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         public void MessageIdTest()
         {
             instance.MessageId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.MessageId);
+            Assert.Equal(instance.MessageId, "TEST_STRING");
             
         }
 
@@ -128,27 +128,27 @@ namespace freeclimb.Test.Model
         public void StatusTest()
         {
             instance.Status = MessageStatus.NEW;
-            Assert.Equal(instance.Status,MessageStatus.NEW);
+            Assert.Equal(instance.Status, MessageStatus.NEW);
             instance.Status = MessageStatus.QUEUED;
-            Assert.Equal(instance.Status,MessageStatus.QUEUED);
+            Assert.Equal(instance.Status, MessageStatus.QUEUED);
             instance.Status = MessageStatus.REJECTED;
-            Assert.Equal(instance.Status,MessageStatus.REJECTED);
+            Assert.Equal(instance.Status, MessageStatus.REJECTED);
             instance.Status = MessageStatus.SENDING;
-            Assert.Equal(instance.Status,MessageStatus.SENDING);
+            Assert.Equal(instance.Status, MessageStatus.SENDING);
             instance.Status = MessageStatus.SENT;
-            Assert.Equal(instance.Status,MessageStatus.SENT);
+            Assert.Equal(instance.Status, MessageStatus.SENT);
             instance.Status = MessageStatus.FAILED;
-            Assert.Equal(instance.Status,MessageStatus.FAILED);
+            Assert.Equal(instance.Status, MessageStatus.FAILED);
             instance.Status = MessageStatus.RECEIVED;
-            Assert.Equal(instance.Status,MessageStatus.RECEIVED);
+            Assert.Equal(instance.Status, MessageStatus.RECEIVED);
             instance.Status = MessageStatus.UNDELIVERED;
-            Assert.Equal(instance.Status,MessageStatus.UNDELIVERED);
+            Assert.Equal(instance.Status, MessageStatus.UNDELIVERED);
             instance.Status = MessageStatus.EXPIRED;
-            Assert.Equal(instance.Status,MessageStatus.EXPIRED);
+            Assert.Equal(instance.Status, MessageStatus.EXPIRED);
             instance.Status = MessageStatus.DELETED;
-            Assert.Equal(instance.Status,MessageStatus.DELETED);
+            Assert.Equal(instance.Status, MessageStatus.DELETED);
             instance.Status = MessageStatus.UNKNOWN;
-            Assert.Equal(instance.Status,MessageStatus.UNKNOWN);
+            Assert.Equal(instance.Status, MessageStatus.UNKNOWN);
             
         }
 
@@ -159,7 +159,7 @@ namespace freeclimb.Test.Model
         public void FromTest()
         {
             instance.From = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.From);
+            Assert.Equal(instance.From, "TEST_STRING");
             
         }
 
@@ -170,7 +170,7 @@ namespace freeclimb.Test.Model
         public void ToTest()
         {
             instance.To = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.To);
+            Assert.Equal(instance.To, "TEST_STRING");
             
         }
 
@@ -181,7 +181,7 @@ namespace freeclimb.Test.Model
         public void TextTest()
         {
             instance.Text = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Text);
+            Assert.Equal(instance.Text, "TEST_STRING");
             
         }
 
@@ -192,7 +192,7 @@ namespace freeclimb.Test.Model
         public void DirectionTest()
         {
             instance.Direction = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Direction);
+            Assert.Equal(instance.Direction, "TEST_STRING");
             
         }
 
@@ -203,7 +203,7 @@ namespace freeclimb.Test.Model
         public void NotificationUrlTest()
         {
             instance.NotificationUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.NotificationUrl);
+            Assert.Equal(instance.NotificationUrl, "TEST_STRING");
             
         }
 
@@ -214,7 +214,7 @@ namespace freeclimb.Test.Model
         public void BrandIdTest()
         {
             instance.BrandId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.BrandId);
+            Assert.Equal(instance.BrandId, "TEST_STRING");
             
         }
 
@@ -225,7 +225,7 @@ namespace freeclimb.Test.Model
         public void CampaignIdTest()
         {
             instance.CampaignId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CampaignId);
+            Assert.Equal(instance.CampaignId, "TEST_STRING");
             
         }
 
@@ -236,7 +236,7 @@ namespace freeclimb.Test.Model
         public void SegmentCountTest()
         {
             instance.SegmentCount = new decimal(1.0);
-            Assert.Equal(new decimal(1.0), instance.SegmentCount);
+            Assert.Equal(instance.SegmentCount, new decimal(1.0));
             
         }
 
@@ -249,7 +249,7 @@ namespace freeclimb.Test.Model
             
             List<string> testList = new List<string>();
             instance.MediaUrls = testList;
-            Assert.Equal(testList, instance.MediaUrls); 
+            Assert.Equal(instance.MediaUrls, testList); 
         }
     }
 }

@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void AliasTest()
         {
             instance.Alias = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Alias);
+            Assert.Equal(instance.Alias, "TEST_STRING");
             
         }
 
@@ -73,13 +73,13 @@ namespace freeclimb.Test.Model
         public void PlayBeepTest()
         {
             instance.PlayBeep = PlayBeep.ALWAYS;
-            Assert.Equal(instance.PlayBeep,PlayBeep.ALWAYS);
+            Assert.Equal(instance.PlayBeep, PlayBeep.ALWAYS);
             instance.PlayBeep = PlayBeep.NEVER;
-            Assert.Equal(instance.PlayBeep,PlayBeep.NEVER);
+            Assert.Equal(instance.PlayBeep, PlayBeep.NEVER);
             instance.PlayBeep = PlayBeep.ENTRY_ONLY;
-            Assert.Equal(instance.PlayBeep,PlayBeep.ENTRY_ONLY);
+            Assert.Equal(instance.PlayBeep, PlayBeep.ENTRY_ONLY);
             instance.PlayBeep = PlayBeep.EXIT_ONLY;
-            Assert.Equal(instance.PlayBeep,PlayBeep.EXIT_ONLY);
+            Assert.Equal(instance.PlayBeep, PlayBeep.EXIT_ONLY);
             
         }
 
@@ -90,9 +90,9 @@ namespace freeclimb.Test.Model
         public void StatusTest()
         {
             instance.Status = UpdateConferenceRequestStatus.EMPTY;
-            Assert.Equal(instance.Status,UpdateConferenceRequestStatus.EMPTY);
+            Assert.Equal(instance.Status, UpdateConferenceRequestStatus.EMPTY);
             instance.Status = UpdateConferenceRequestStatus.TERMINATED;
-            Assert.Equal(instance.Status,UpdateConferenceRequestStatus.TERMINATED);
+            Assert.Equal(instance.Status, UpdateConferenceRequestStatus.TERMINATED);
             
         }
     }

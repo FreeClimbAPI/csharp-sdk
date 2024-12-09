@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Total = 1;
-            Assert.Equal(1, (int) instance.Total);
+            Assert.Equal((int) instance.Total, 1);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Start = 1;
-            Assert.Equal(1, (int) instance.Start);
+            Assert.Equal((int) instance.Start, 1);
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.End = 1;
-            Assert.Equal(1, (int) instance.End);
+            Assert.Equal((int) instance.End, 1);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Page = 1;
-            Assert.Equal(1, (int) instance.Page);
+            Assert.Equal((int) instance.Page, 1);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.NumPages = 1;
-            Assert.Equal(1, (int) instance.NumPages);
+            Assert.Equal((int) instance.NumPages, 1);
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.PageSize = 1;
-            Assert.Equal(1, (int) instance.PageSize);
+            Assert.Equal((int) instance.PageSize, 1);
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace freeclimb.Test.Model
         public void NextPageUriTest()
         {
             instance.NextPageUri = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.NextPageUri);
+            Assert.Equal(instance.NextPageUri, "TEST_STRING");
             
         }
     }

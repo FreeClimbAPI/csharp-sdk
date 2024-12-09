@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void UriTest()
         {
             instance.Uri = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Uri);
+            Assert.Equal(instance.Uri, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void DateCreatedTest()
         {
             instance.DateCreated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateCreated);
+            Assert.Equal(instance.DateCreated, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void DateUpdatedTest()
         {
             instance.DateUpdated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            Assert.Equal(instance.DateUpdated, "TEST_STRING");
             
         }
 
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Revision = 1;
-            Assert.Equal(1, (int) instance.Revision);
+            Assert.Equal((int) instance.Revision, 1);
         }
     }
 }

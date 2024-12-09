@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void VoiceTest()
         {
             instance.Voice = false;
-            Assert.Equal(false, instance.Voice);       
+            Assert.Equal(instance.Voice, false);
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void SmsTest()
         {
             instance.Sms = false;
-            Assert.Equal(false, instance.Sms);       
+            Assert.Equal(instance.Sms, false);
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void TollFreeTest()
         {
             instance.TollFree = false;
-            Assert.Equal(false, instance.TollFree);       
+            Assert.Equal(instance.TollFree, false);
             
         }
 
@@ -95,7 +95,7 @@ namespace freeclimb.Test.Model
         public void TenDLCTest()
         {
             instance.TenDLC = false;
-            Assert.Equal(false, instance.TenDLC);       
+            Assert.Equal(instance.TenDLC, false);
             
         }
 
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void ShortCodeTest()
         {
             instance.ShortCode = false;
-            Assert.Equal(false, instance.ShortCode);       
+            Assert.Equal(instance.ShortCode, false);
             
         }
     }

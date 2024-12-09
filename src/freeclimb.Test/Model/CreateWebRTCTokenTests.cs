@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void ToTest()
         {
             instance.To = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.To);
+            Assert.Equal(instance.To, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void FromTest()
         {
             instance.From = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.From);
+            Assert.Equal(instance.From, "TEST_STRING");
             
         }
 
@@ -85,7 +85,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Uses = 1;
-            Assert.Equal(1, (int) instance.Uses);
+            Assert.Equal((int) instance.Uses, 1);
         }
     }
 }

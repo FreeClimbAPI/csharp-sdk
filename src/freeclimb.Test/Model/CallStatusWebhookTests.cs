@@ -71,7 +71,7 @@ namespace freeclimb.Test.Model
         public void CallIdTest()
         {
             instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
+            Assert.Equal(instance.CallId, "TEST_STRING");
             
         }
 
@@ -82,7 +82,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -93,7 +93,7 @@ namespace freeclimb.Test.Model
         public void FromTest()
         {
             instance.From = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.From);
+            Assert.Equal(instance.From, "TEST_STRING");
             
         }
 
@@ -104,7 +104,7 @@ namespace freeclimb.Test.Model
         public void ToTest()
         {
             instance.To = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.To);
+            Assert.Equal(instance.To, "TEST_STRING");
             
         }
 
@@ -115,21 +115,21 @@ namespace freeclimb.Test.Model
         public void CallStatusTest()
         {
             instance.CallStatus = CallStatus.QUEUED;
-            Assert.Equal(instance.CallStatus,CallStatus.QUEUED);
+            Assert.Equal(instance.CallStatus, CallStatus.QUEUED);
             instance.CallStatus = CallStatus.RINGING;
-            Assert.Equal(instance.CallStatus,CallStatus.RINGING);
+            Assert.Equal(instance.CallStatus, CallStatus.RINGING);
             instance.CallStatus = CallStatus.IN_PROGRESS;
-            Assert.Equal(instance.CallStatus,CallStatus.IN_PROGRESS);
+            Assert.Equal(instance.CallStatus, CallStatus.IN_PROGRESS);
             instance.CallStatus = CallStatus.CANCELED;
-            Assert.Equal(instance.CallStatus,CallStatus.CANCELED);
+            Assert.Equal(instance.CallStatus, CallStatus.CANCELED);
             instance.CallStatus = CallStatus.COMPLETED;
-            Assert.Equal(instance.CallStatus,CallStatus.COMPLETED);
+            Assert.Equal(instance.CallStatus, CallStatus.COMPLETED);
             instance.CallStatus = CallStatus.FAILED;
-            Assert.Equal(instance.CallStatus,CallStatus.FAILED);
+            Assert.Equal(instance.CallStatus, CallStatus.FAILED);
             instance.CallStatus = CallStatus.BUSY;
-            Assert.Equal(instance.CallStatus,CallStatus.BUSY);
+            Assert.Equal(instance.CallStatus, CallStatus.BUSY);
             instance.CallStatus = CallStatus.NO_ANSWER;
-            Assert.Equal(instance.CallStatus,CallStatus.NO_ANSWER);
+            Assert.Equal(instance.CallStatus, CallStatus.NO_ANSWER);
             
         }
 
@@ -140,51 +140,51 @@ namespace freeclimb.Test.Model
         public void CallEndedReasonTest()
         {
             instance.CallEndedReason = CallEndedReason.BUSY;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.BUSY);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.BUSY);
             instance.CallEndedReason = CallEndedReason.FAILED;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.FAILED);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.FAILED);
             instance.CallEndedReason = CallEndedReason.NO_ANSWER;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.NO_ANSWER);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.NO_ANSWER);
             instance.CallEndedReason = CallEndedReason.CALL_CANCELED;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.CALL_CANCELED);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.CALL_CANCELED);
             instance.CallEndedReason = CallEndedReason.FAR_END_HANGUP;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.FAR_END_HANGUP);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.FAR_END_HANGUP);
             instance.CallEndedReason = CallEndedReason.APP_HANGUP;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.APP_HANGUP);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.APP_HANGUP);
             instance.CallEndedReason = CallEndedReason.APP_REJECT;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.APP_REJECT);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.APP_REJECT);
             instance.CallEndedReason = CallEndedReason.APP_NO_PERCL;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.APP_NO_PERCL);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.APP_NO_PERCL);
             instance.CallEndedReason = CallEndedReason.APP_INVALID_PERCL;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.APP_INVALID_PERCL);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.APP_INVALID_PERCL);
             instance.CallEndedReason = CallEndedReason.CONFERENCE_TERMINATED;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.CONFERENCE_TERMINATED);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.CONFERENCE_TERMINATED);
             instance.CallEndedReason = CallEndedReason.CONFERENCE_EMPTIED;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.CONFERENCE_EMPTIED);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.CONFERENCE_EMPTIED);
             instance.CallEndedReason = CallEndedReason.REMOVED_FROM_CONFERENCE;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.REMOVED_FROM_CONFERENCE);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.REMOVED_FROM_CONFERENCE);
             instance.CallEndedReason = CallEndedReason.MACHINE_DETECTED;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.MACHINE_DETECTED);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.MACHINE_DETECTED);
             instance.CallEndedReason = CallEndedReason.WEBHOOK_FAILED;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.WEBHOOK_FAILED);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.WEBHOOK_FAILED);
             instance.CallEndedReason = CallEndedReason.WEBHOOK_INVALID_RESPONSE;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.WEBHOOK_INVALID_RESPONSE);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.WEBHOOK_INVALID_RESPONSE);
             instance.CallEndedReason = CallEndedReason.VOICE_DISABLED;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.VOICE_DISABLED);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.VOICE_DISABLED);
             instance.CallEndedReason = CallEndedReason.CONFIG_ERROR_NO_APPLICATION;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.CONFIG_ERROR_NO_APPLICATION);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.CONFIG_ERROR_NO_APPLICATION);
             instance.CallEndedReason = CallEndedReason.CONFIG_ERROR_NO_VOICE_URL;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.CONFIG_ERROR_NO_VOICE_URL);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.CONFIG_ERROR_NO_VOICE_URL);
             instance.CallEndedReason = CallEndedReason.MAX_REDIRECTS_ERROR;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.MAX_REDIRECTS_ERROR);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.MAX_REDIRECTS_ERROR);
             instance.CallEndedReason = CallEndedReason.PERCL_PROCESSING_ERROR;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.PERCL_PROCESSING_ERROR);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.PERCL_PROCESSING_ERROR);
             instance.CallEndedReason = CallEndedReason.INTERNAL_ERROR;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.INTERNAL_ERROR);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.INTERNAL_ERROR);
             instance.CallEndedReason = CallEndedReason.GRPC_HANGUP;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.GRPC_HANGUP);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.GRPC_HANGUP);
             instance.CallEndedReason = CallEndedReason.MAX_DURATION;
-            Assert.Equal(instance.CallEndedReason,CallEndedReason.MAX_DURATION);
+            Assert.Equal(instance.CallEndedReason, CallEndedReason.MAX_DURATION);
             
         }
 
@@ -195,11 +195,11 @@ namespace freeclimb.Test.Model
         public void DirectionTest()
         {
             instance.Direction = CallDirection.INBOUND;
-            Assert.Equal(instance.Direction,CallDirection.INBOUND);
+            Assert.Equal(instance.Direction, CallDirection.INBOUND);
             instance.Direction = CallDirection.OUTBOUND_API;
-            Assert.Equal(instance.Direction,CallDirection.OUTBOUND_API);
+            Assert.Equal(instance.Direction, CallDirection.OUTBOUND_API);
             instance.Direction = CallDirection.OUTBOUND_DIAL;
-            Assert.Equal(instance.Direction,CallDirection.OUTBOUND_DIAL);
+            Assert.Equal(instance.Direction, CallDirection.OUTBOUND_DIAL);
             
         }
 
@@ -210,7 +210,7 @@ namespace freeclimb.Test.Model
         public void ConferenceIdTest()
         {
             instance.ConferenceId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            Assert.Equal(instance.ConferenceId, "TEST_STRING");
             
         }
 
@@ -221,7 +221,7 @@ namespace freeclimb.Test.Model
         public void QueueIdTest()
         {
             instance.QueueId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.QueueId);
+            Assert.Equal(instance.QueueId, "TEST_STRING");
             
         }
     }

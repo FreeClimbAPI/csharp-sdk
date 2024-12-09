@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void FileTest()
         {
             instance.File = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.File);
+            Assert.Equal(instance.File, "TEST_STRING");
             
         }
 
@@ -74,7 +74,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Loop = 1;
-            Assert.Equal(1, (int) instance.Loop);
+            Assert.Equal((int) instance.Loop, 1);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);       
+            Assert.Equal(instance.PrivacyMode, false);
             
         }
     }

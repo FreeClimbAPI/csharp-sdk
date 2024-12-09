@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Length = 1;
-            Assert.Equal(1, (int) instance.Length);
+            Assert.Equal((int) instance.Length, 1);
         }
     }
 }

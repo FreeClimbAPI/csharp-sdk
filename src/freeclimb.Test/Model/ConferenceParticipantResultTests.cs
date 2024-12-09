@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void UriTest()
         {
             instance.Uri = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Uri);
+            Assert.Equal(instance.Uri, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void DateCreatedTest()
         {
             instance.DateCreated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateCreated);
+            Assert.Equal(instance.DateCreated, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void DateUpdatedTest()
         {
             instance.DateUpdated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            Assert.Equal(instance.DateUpdated, "TEST_STRING");
             
         }
 
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Revision = 1;
-            Assert.Equal(1, (int) instance.Revision);
+            Assert.Equal((int) instance.Revision, 1);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         public void ConferenceIdTest()
         {
             instance.ConferenceId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ConferenceId);
+            Assert.Equal(instance.ConferenceId, "TEST_STRING");
             
         }
 
@@ -128,7 +128,7 @@ namespace freeclimb.Test.Model
         public void CallIdTest()
         {
             instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
+            Assert.Equal(instance.CallId, "TEST_STRING");
             
         }
 
@@ -139,7 +139,7 @@ namespace freeclimb.Test.Model
         public void TalkTest()
         {
             instance.Talk = false;
-            Assert.Equal(false, instance.Talk);       
+            Assert.Equal(instance.Talk, false);
             
         }
 
@@ -150,7 +150,7 @@ namespace freeclimb.Test.Model
         public void ListenTest()
         {
             instance.Listen = false;
-            Assert.Equal(false, instance.Listen);       
+            Assert.Equal(instance.Listen, false);
             
         }
 
@@ -161,7 +161,7 @@ namespace freeclimb.Test.Model
         public void DtmfPassThroughTest()
         {
             instance.DtmfPassThrough = false;
-            Assert.Equal(false, instance.DtmfPassThrough);       
+            Assert.Equal(instance.DtmfPassThrough, false);
             
         }
 
@@ -172,7 +172,7 @@ namespace freeclimb.Test.Model
         public void StartConfOnEnterTest()
         {
             instance.StartConfOnEnter = false;
-            Assert.Equal(false, instance.StartConfOnEnter);       
+            Assert.Equal(instance.StartConfOnEnter, false);
             
         }
     }

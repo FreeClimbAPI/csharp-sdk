@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void SaveRecordingTest()
         {
             instance.SaveRecording = false;
-            Assert.Equal(false, instance.SaveRecording);       
+            Assert.Equal(instance.SaveRecording, false);
             
         }
 
@@ -74,7 +74,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.MaxLengthSec = 1;
-            Assert.Equal(1, (int) instance.MaxLengthSec);
+            Assert.Equal((int) instance.MaxLengthSec, 1);
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.RcrdTerminationSilenceTimeMs = 1;
-            Assert.Equal(1, (int) instance.RcrdTerminationSilenceTimeMs);
+            Assert.Equal((int) instance.RcrdTerminationSilenceTimeMs, 1);
         }
     }
 }

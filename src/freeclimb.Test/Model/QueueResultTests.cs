@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void UriTest()
         {
             instance.Uri = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Uri);
+            Assert.Equal(instance.Uri, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void DateCreatedTest()
         {
             instance.DateCreated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateCreated);
+            Assert.Equal(instance.DateCreated, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void DateUpdatedTest()
         {
             instance.DateUpdated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            Assert.Equal(instance.DateUpdated, "TEST_STRING");
             
         }
 
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Revision = 1;
-            Assert.Equal(1, (int) instance.Revision);
+            Assert.Equal((int) instance.Revision, 1);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         public void QueueIdTest()
         {
             instance.QueueId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.QueueId);
+            Assert.Equal(instance.QueueId, "TEST_STRING");
             
         }
 
@@ -128,7 +128,7 @@ namespace freeclimb.Test.Model
         public void AliasTest()
         {
             instance.Alias = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Alias);
+            Assert.Equal(instance.Alias, "TEST_STRING");
             
         }
 
@@ -140,7 +140,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.MaxSize = 1;
-            Assert.Equal(1, (int) instance.MaxSize);
+            Assert.Equal((int) instance.MaxSize, 1);
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.CurrentSize = 1;
-            Assert.Equal(1, (int) instance.CurrentSize);
+            Assert.Equal((int) instance.CurrentSize, 1);
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.AverageQueueRemovalTime = 1;
-            Assert.Equal(1, (int) instance.AverageQueueRemovalTime);
+            Assert.Equal((int) instance.AverageQueueRemovalTime, 1);
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace freeclimb.Test.Model
         {
             object testObject = new object();
             instance.SubresourceUris = testObject;
-            Assert.Equal(testObject, instance.SubresourceUris);
+            Assert.Equal(instance.SubresourceUris, testObject);
             
         }
     }

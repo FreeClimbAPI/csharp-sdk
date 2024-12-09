@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void ActionUrlTest()
         {
             instance.ActionUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ActionUrl);
+            Assert.Equal(instance.ActionUrl, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void PlayBeepTest()
         {
             instance.PlayBeep = false;
-            Assert.Equal(false, instance.PlayBeep);       
+            Assert.Equal(instance.PlayBeep, false);
             
         }
 
@@ -85,7 +85,7 @@ namespace freeclimb.Test.Model
         {
             TranscribeUtteranceRecord testObject = new TranscribeUtteranceRecord();
             instance.Record = testObject;
-            Assert.Equal(testObject, instance.Record);
+            Assert.Equal(instance.Record, testObject);
             
         }
 
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         public void PrivacyForLoggingTest()
         {
             instance.PrivacyForLogging = false;
-            Assert.Equal(false, instance.PrivacyForLogging);       
+            Assert.Equal(instance.PrivacyForLogging, false);
             
         }
 
@@ -107,7 +107,7 @@ namespace freeclimb.Test.Model
         public void PrivacyForRecordingTest()
         {
             instance.PrivacyForRecording = false;
-            Assert.Equal(false, instance.PrivacyForRecording);       
+            Assert.Equal(instance.PrivacyForRecording, false);
             
         }
 
@@ -120,7 +120,7 @@ namespace freeclimb.Test.Model
             
             List<PerclCommand> testList = new List<PerclCommand>();
             instance.Prompts = testList;
-            Assert.Equal(testList, instance.Prompts); 
+            Assert.Equal(instance.Prompts, testList); 
         }
     }
 }

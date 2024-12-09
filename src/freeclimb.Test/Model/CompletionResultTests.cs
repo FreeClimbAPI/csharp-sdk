@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void ResponseTest()
         {
             instance.Response = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Response);
+            Assert.Equal(instance.Response, "TEST_STRING");
             
         }
 
@@ -73,9 +73,9 @@ namespace freeclimb.Test.Model
         public void StatusTest()
         {
             instance.Status = CompletionResultStatus.SUCCESS;
-            Assert.Equal(instance.Status,CompletionResultStatus.SUCCESS);
+            Assert.Equal(instance.Status, CompletionResultStatus.SUCCESS);
             instance.Status = CompletionResultStatus.NO_CONTEXT;
-            Assert.Equal(instance.Status,CompletionResultStatus.NO_CONTEXT);
+            Assert.Equal(instance.Status, CompletionResultStatus.NO_CONTEXT);
             
         }
     }

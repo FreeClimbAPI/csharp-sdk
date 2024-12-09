@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void TalkTest()
         {
             instance.Talk = false;
-            Assert.Equal(false, instance.Talk);       
+            Assert.Equal(instance.Talk, false);
             
         }
     }

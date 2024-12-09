@@ -71,7 +71,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -82,7 +82,7 @@ namespace freeclimb.Test.Model
         public void CallIdTest()
         {
             instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
+            Assert.Equal(instance.CallId, "TEST_STRING");
             
         }
 
@@ -93,7 +93,7 @@ namespace freeclimb.Test.Model
         public void FromTest()
         {
             instance.From = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.From);
+            Assert.Equal(instance.From, "TEST_STRING");
             
         }
 
@@ -104,7 +104,7 @@ namespace freeclimb.Test.Model
         public void ToTest()
         {
             instance.To = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.To);
+            Assert.Equal(instance.To, "TEST_STRING");
             
         }
 
@@ -115,7 +115,7 @@ namespace freeclimb.Test.Model
         public void RecordingIdTest()
         {
             instance.RecordingId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.RecordingId);
+            Assert.Equal(instance.RecordingId, "TEST_STRING");
             
         }
 
@@ -126,7 +126,7 @@ namespace freeclimb.Test.Model
         public void RecordingUrlTest()
         {
             instance.RecordingUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.RecordingUrl);
+            Assert.Equal(instance.RecordingUrl, "TEST_STRING");
             
         }
 
@@ -138,7 +138,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.RecordingSize = 1;
-            Assert.Equal(1, (int) instance.RecordingSize);
+            Assert.Equal((int) instance.RecordingSize, 1);
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace freeclimb.Test.Model
         public void RecordingFormatTest()
         {
             instance.RecordingFormat = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.RecordingFormat);
+            Assert.Equal(instance.RecordingFormat, "TEST_STRING");
             
         }
 
@@ -160,7 +160,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.RecordingDurationMs = 1;
-            Assert.Equal(1, (int) instance.RecordingDurationMs);
+            Assert.Equal((int) instance.RecordingDurationMs, 1);
         }
 
         /// <summary>
@@ -170,9 +170,9 @@ namespace freeclimb.Test.Model
         public void TermReasonTest()
         {
             instance.TermReason = TranscribeTermReason.ERROR;
-            Assert.Equal(instance.TermReason,TranscribeTermReason.ERROR);
+            Assert.Equal(instance.TermReason, TranscribeTermReason.ERROR);
             instance.TermReason = TranscribeTermReason.COMPLETED;
-            Assert.Equal(instance.TermReason,TranscribeTermReason.COMPLETED);
+            Assert.Equal(instance.TermReason, TranscribeTermReason.COMPLETED);
             
         }
 
@@ -183,13 +183,13 @@ namespace freeclimb.Test.Model
         public void RecordTermReasonTest()
         {
             instance.RecordTermReason = RecordUtteranceTermReason.FINISH_KEY;
-            Assert.Equal(instance.RecordTermReason,RecordUtteranceTermReason.FINISH_KEY);
+            Assert.Equal(instance.RecordTermReason, RecordUtteranceTermReason.FINISH_KEY);
             instance.RecordTermReason = RecordUtteranceTermReason.TIMEOUT;
-            Assert.Equal(instance.RecordTermReason,RecordUtteranceTermReason.TIMEOUT);
+            Assert.Equal(instance.RecordTermReason, RecordUtteranceTermReason.TIMEOUT);
             instance.RecordTermReason = RecordUtteranceTermReason.HANGUP;
-            Assert.Equal(instance.RecordTermReason,RecordUtteranceTermReason.HANGUP);
+            Assert.Equal(instance.RecordTermReason, RecordUtteranceTermReason.HANGUP);
             instance.RecordTermReason = RecordUtteranceTermReason.MAX_LENGTH;
-            Assert.Equal(instance.RecordTermReason,RecordUtteranceTermReason.MAX_LENGTH);
+            Assert.Equal(instance.RecordTermReason, RecordUtteranceTermReason.MAX_LENGTH);
             
         }
 
@@ -200,7 +200,7 @@ namespace freeclimb.Test.Model
         public void DigitTest()
         {
             instance.Digit = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Digit);
+            Assert.Equal(instance.Digit, "TEST_STRING");
             
         }
 
@@ -211,7 +211,7 @@ namespace freeclimb.Test.Model
         public void PrivacyForLoggingTest()
         {
             instance.PrivacyForLogging = false;
-            Assert.Equal(false, instance.PrivacyForLogging);       
+            Assert.Equal(instance.PrivacyForLogging, false);
             
         }
 
@@ -222,7 +222,7 @@ namespace freeclimb.Test.Model
         public void PrivacyForRecordingTest()
         {
             instance.PrivacyForRecording = false;
-            Assert.Equal(false, instance.PrivacyForRecording);       
+            Assert.Equal(instance.PrivacyForRecording, false);
             
         }
 
@@ -233,11 +233,11 @@ namespace freeclimb.Test.Model
         public void BargeInReasonTest()
         {
             instance.BargeInReason = BargeInReason.NO_BARGE_IN;
-            Assert.Equal(instance.BargeInReason,BargeInReason.NO_BARGE_IN);
+            Assert.Equal(instance.BargeInReason, BargeInReason.NO_BARGE_IN);
             instance.BargeInReason = BargeInReason.BARGE_IN_BY_DTMF;
-            Assert.Equal(instance.BargeInReason,BargeInReason.BARGE_IN_BY_DTMF);
+            Assert.Equal(instance.BargeInReason, BargeInReason.BARGE_IN_BY_DTMF);
             instance.BargeInReason = BargeInReason.BARGE_IN_BY_ENERGY;
-            Assert.Equal(instance.BargeInReason,BargeInReason.BARGE_IN_BY_ENERGY);
+            Assert.Equal(instance.BargeInReason, BargeInReason.BARGE_IN_BY_ENERGY);
             
         }
 
@@ -249,7 +249,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.BargedInPromptNo = 1;
-            Assert.Equal(1, (int) instance.BargedInPromptNo);
+            Assert.Equal((int) instance.BargedInPromptNo, 1);
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.BargedInPromptMs = 1;
-            Assert.Equal(1, (int) instance.BargedInPromptMs);
+            Assert.Equal((int) instance.BargedInPromptMs, 1);
         }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.BargedInPromptLoopNo = 1;
-            Assert.Equal(1, (int) instance.BargedInPromptLoopNo);
+            Assert.Equal((int) instance.BargedInPromptLoopNo, 1);
         }
 
         /// <summary>
@@ -282,7 +282,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.BargeInTimeMs = 1;
-            Assert.Equal(1, (int) instance.BargeInTimeMs);
+            Assert.Equal((int) instance.BargeInTimeMs, 1);
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace freeclimb.Test.Model
         public void TranscriptTest()
         {
             instance.Transcript = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Transcript);
+            Assert.Equal(instance.Transcript, "TEST_STRING");
             
         }
 
@@ -303,15 +303,15 @@ namespace freeclimb.Test.Model
         public void TranscribeReasonTest()
         {
             instance.TranscribeReason = TranscribeReason.INTERNAL_ERROR;
-            Assert.Equal(instance.TranscribeReason,TranscribeReason.INTERNAL_ERROR);
+            Assert.Equal(instance.TranscribeReason, TranscribeReason.INTERNAL_ERROR);
             instance.TranscribeReason = TranscribeReason.HANGUP;
-            Assert.Equal(instance.TranscribeReason,TranscribeReason.HANGUP);
+            Assert.Equal(instance.TranscribeReason, TranscribeReason.HANGUP);
             instance.TranscribeReason = TranscribeReason.MAX_LENGTH;
-            Assert.Equal(instance.TranscribeReason,TranscribeReason.MAX_LENGTH);
+            Assert.Equal(instance.TranscribeReason, TranscribeReason.MAX_LENGTH);
             instance.TranscribeReason = TranscribeReason.DIGIT;
-            Assert.Equal(instance.TranscribeReason,TranscribeReason.DIGIT);
+            Assert.Equal(instance.TranscribeReason, TranscribeReason.DIGIT);
             instance.TranscribeReason = TranscribeReason.NO_INPUT;
-            Assert.Equal(instance.TranscribeReason,TranscribeReason.NO_INPUT);
+            Assert.Equal(instance.TranscribeReason, TranscribeReason.NO_INPUT);
             
         }
 
@@ -323,7 +323,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.TranscriptionDurationMs = 1;
-            Assert.Equal(1, (int) instance.TranscriptionDurationMs);
+            Assert.Equal((int) instance.TranscriptionDurationMs, 1);
         }
     }
 }

@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.ActionUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ActionUrl);
+            Assert.Equal(instance.ActionUrl, "TEST_STRING");
         }
 
         /// <summary>
@@ -73,9 +73,9 @@ namespace freeclimb.Test.Model
         public void GrammarTypeTest()
         {
             instance.GrammarType = GrammarType.URL;
-            Assert.Equal(instance.GrammarType,GrammarType.URL);
+            Assert.Equal(instance.GrammarType, GrammarType.URL);
             instance.GrammarType = GrammarType.BUILT_IN;
-            Assert.Equal(instance.GrammarType,GrammarType.BUILT_IN);
+            Assert.Equal(instance.GrammarType, GrammarType.BUILT_IN);
             
         }
 
@@ -86,7 +86,7 @@ namespace freeclimb.Test.Model
         public void GrammarFileTest()
         {
             instance.GrammarFile = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.GrammarFile);
+            Assert.Equal(instance.GrammarFile, "TEST_STRING");
             
         }
 
@@ -97,7 +97,7 @@ namespace freeclimb.Test.Model
         public void GrammarRuleTest()
         {
             instance.GrammarRule = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.GrammarRule);
+            Assert.Equal(instance.GrammarRule, "TEST_STRING");
             
         }
 
@@ -108,7 +108,7 @@ namespace freeclimb.Test.Model
         public void PlayBeepTest()
         {
             instance.PlayBeep = false;
-            Assert.Equal(false, instance.PlayBeep);       
+            Assert.Equal(instance.PlayBeep, false);
             
         }
 
@@ -121,7 +121,7 @@ namespace freeclimb.Test.Model
             
             List<PerclCommand> testList = new List<PerclCommand>();
             instance.Prompts = testList;
-            Assert.Equal(testList, instance.Prompts); 
+            Assert.Equal(instance.Prompts, testList); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.NoInputTimeoutMs = 1;
-            Assert.Equal(1, (int) instance.NoInputTimeoutMs);
+            Assert.Equal((int) instance.NoInputTimeoutMs, 1);
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.RecognitionTimeoutMs = 1;
-            Assert.Equal(1, (int) instance.RecognitionTimeoutMs);
+            Assert.Equal((int) instance.RecognitionTimeoutMs, 1);
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace freeclimb.Test.Model
         public void ConfidenceThresholdTest()
         {
             instance.ConfidenceThreshold = new decimal(1.0);
-            Assert.Equal(new decimal(1.0), instance.ConfidenceThreshold);
+            Assert.Equal(instance.ConfidenceThreshold, new decimal(1.0));
             
         }
 
@@ -164,7 +164,7 @@ namespace freeclimb.Test.Model
         public void SensitivityLevelTest()
         {
             instance.SensitivityLevel = new decimal(1.0);
-            Assert.Equal(new decimal(1.0), instance.SensitivityLevel);
+            Assert.Equal(instance.SensitivityLevel, new decimal(1.0));
             
         }
 
@@ -176,7 +176,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.SpeechCompleteTimeoutMs = 1;
-            Assert.Equal(1, (int) instance.SpeechCompleteTimeoutMs);
+            Assert.Equal((int) instance.SpeechCompleteTimeoutMs, 1);
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.SpeechIncompleteTimeoutMs = 1;
-            Assert.Equal(1, (int) instance.SpeechIncompleteTimeoutMs);
+            Assert.Equal((int) instance.SpeechIncompleteTimeoutMs, 1);
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);       
+            Assert.Equal(instance.PrivacyMode, false);
             
         }
     }

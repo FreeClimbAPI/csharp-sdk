@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void DigitsTest()
         {
             instance.Digits = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Digits);
+            Assert.Equal(instance.Digits, "TEST_STRING");
             
         }
 
@@ -74,7 +74,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.PauseMs = 1;
-            Assert.Equal(1, (int) instance.PauseMs);
+            Assert.Equal((int) instance.PauseMs, 1);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);       
+            Assert.Equal(instance.PrivacyMode, false);
             
         }
     }

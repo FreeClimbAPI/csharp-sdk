@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void AliasTest()
         {
             instance.Alias = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Alias);
+            Assert.Equal(instance.Alias, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void VoiceUrlTest()
         {
             instance.VoiceUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.VoiceUrl);
+            Assert.Equal(instance.VoiceUrl, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void VoiceFallbackUrlTest()
         {
             instance.VoiceFallbackUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.VoiceFallbackUrl);
+            Assert.Equal(instance.VoiceFallbackUrl, "TEST_STRING");
             
         }
 
@@ -95,7 +95,7 @@ namespace freeclimb.Test.Model
         public void CallConnectUrlTest()
         {
             instance.CallConnectUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallConnectUrl);
+            Assert.Equal(instance.CallConnectUrl, "TEST_STRING");
             
         }
 
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void StatusCallbackUrlTest()
         {
             instance.StatusCallbackUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.StatusCallbackUrl);
+            Assert.Equal(instance.StatusCallbackUrl, "TEST_STRING");
             
         }
 
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         public void SmsUrlTest()
         {
             instance.SmsUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.SmsUrl);
+            Assert.Equal(instance.SmsUrl, "TEST_STRING");
             
         }
 
@@ -128,7 +128,7 @@ namespace freeclimb.Test.Model
         public void SmsFallbackUrlTest()
         {
             instance.SmsFallbackUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.SmsFallbackUrl);
+            Assert.Equal(instance.SmsFallbackUrl, "TEST_STRING");
             
         }
     }

@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void DtmfPassThroughTest()
         {
             instance.DtmfPassThrough = false;
-            Assert.Equal(false, instance.DtmfPassThrough);       
+            Assert.Equal(instance.DtmfPassThrough, false);
             
         }
     }

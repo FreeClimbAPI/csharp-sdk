@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             Capabilities testObject = new Capabilities(false, false, false, false, false);
             instance.Capabilities = testObject;
-            Assert.Equal(testObject, instance.Capabilities);
+            Assert.Equal(instance.Capabilities, testObject);
             
         }
 
@@ -74,7 +74,7 @@ namespace freeclimb.Test.Model
         public void CampaignIdTest()
         {
             instance.CampaignId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CampaignId);
+            Assert.Equal(instance.CampaignId, "TEST_STRING");
             
         }
 
@@ -85,7 +85,7 @@ namespace freeclimb.Test.Model
         public void PhoneNumberTest()
         {
             instance.PhoneNumber = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.PhoneNumber);
+            Assert.Equal(instance.PhoneNumber, "TEST_STRING");
             
         }
 
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         public void VoiceEnabledTest()
         {
             instance.VoiceEnabled = false;
-            Assert.Equal(false, instance.VoiceEnabled);       
+            Assert.Equal(instance.VoiceEnabled, false);
             
         }
 
@@ -107,7 +107,7 @@ namespace freeclimb.Test.Model
         public void SmsEnabledTest()
         {
             instance.SmsEnabled = false;
-            Assert.Equal(false, instance.SmsEnabled);       
+            Assert.Equal(instance.SmsEnabled, false);
             
         }
 
@@ -118,7 +118,7 @@ namespace freeclimb.Test.Model
         public void RegionTest()
         {
             instance.Region = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Region);
+            Assert.Equal(instance.Region, "TEST_STRING");
             
         }
 
@@ -129,7 +129,7 @@ namespace freeclimb.Test.Model
         public void CountryTest()
         {
             instance.Country = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Country);
+            Assert.Equal(instance.Country, "TEST_STRING");
             
         }
     }

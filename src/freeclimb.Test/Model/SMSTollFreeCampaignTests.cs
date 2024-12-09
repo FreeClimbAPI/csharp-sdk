@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void CampaignIdTest()
         {
             instance.CampaignId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CampaignId);
+            Assert.Equal(instance.CampaignId, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void UseCaseTest()
         {
             instance.UseCase = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.UseCase);
+            Assert.Equal(instance.UseCase, "TEST_STRING");
             
         }
 
@@ -95,15 +95,15 @@ namespace freeclimb.Test.Model
         public void RegistrationStatusTest()
         {
             instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.UNREGISTERED;
-            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.UNREGISTERED);
+            Assert.Equal(instance.RegistrationStatus, SMSTollFreeCampaignRegistrationStatus.UNREGISTERED);
             instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.INITIATED;
-            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.INITIATED);
+            Assert.Equal(instance.RegistrationStatus, SMSTollFreeCampaignRegistrationStatus.INITIATED);
             instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.PENDING;
-            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.PENDING);
+            Assert.Equal(instance.RegistrationStatus, SMSTollFreeCampaignRegistrationStatus.PENDING);
             instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.DECLINED;
-            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.DECLINED);
+            Assert.Equal(instance.RegistrationStatus, SMSTollFreeCampaignRegistrationStatus.DECLINED);
             instance.RegistrationStatus = SMSTollFreeCampaignRegistrationStatus.REGISTERED;
-            Assert.Equal(instance.RegistrationStatus,SMSTollFreeCampaignRegistrationStatus.REGISTERED);
+            Assert.Equal(instance.RegistrationStatus, SMSTollFreeCampaignRegistrationStatus.REGISTERED);
             
         }
 
@@ -114,7 +114,7 @@ namespace freeclimb.Test.Model
         public void DateCreatedTest()
         {
             instance.DateCreated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateCreated);
+            Assert.Equal(instance.DateCreated, "TEST_STRING");
             
         }
 
@@ -125,7 +125,7 @@ namespace freeclimb.Test.Model
         public void DateUpdatedTest()
         {
             instance.DateUpdated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            Assert.Equal(instance.DateUpdated, "TEST_STRING");
             
         }
 
@@ -137,7 +137,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Revision = 1;
-            Assert.Equal(1, (int) instance.Revision);
+            Assert.Equal((int) instance.Revision, 1);
         }
     }
 }

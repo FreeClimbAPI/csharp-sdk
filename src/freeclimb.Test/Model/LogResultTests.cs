@@ -63,7 +63,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Timestamp = 1;
-            Assert.Equal(1, (int) instance.Timestamp);
+            Assert.Equal((int) instance.Timestamp, 1);
         }
 
         /// <summary>
@@ -73,11 +73,11 @@ namespace freeclimb.Test.Model
         public void LevelTest()
         {
             instance.Level = LogLevel.INFO;
-            Assert.Equal(instance.Level,LogLevel.INFO);
+            Assert.Equal(instance.Level, LogLevel.INFO);
             instance.Level = LogLevel.WARNING;
-            Assert.Equal(instance.Level,LogLevel.WARNING);
+            Assert.Equal(instance.Level, LogLevel.WARNING);
             instance.Level = LogLevel.ERROR;
-            Assert.Equal(instance.Level,LogLevel.ERROR);
+            Assert.Equal(instance.Level, LogLevel.ERROR);
             
         }
 
@@ -88,7 +88,7 @@ namespace freeclimb.Test.Model
         public void RequestIdTest()
         {
             instance.RequestId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.RequestId);
+            Assert.Equal(instance.RequestId, "TEST_STRING");
             
         }
 
@@ -99,7 +99,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -110,7 +110,7 @@ namespace freeclimb.Test.Model
         public void CallIdTest()
         {
             instance.CallId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallId);
+            Assert.Equal(instance.CallId, "TEST_STRING");
             
         }
 
@@ -121,7 +121,7 @@ namespace freeclimb.Test.Model
         public void MessageTest()
         {
             instance.Message = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Message);
+            Assert.Equal(instance.Message, "TEST_STRING");
             
         }
 
@@ -133,7 +133,7 @@ namespace freeclimb.Test.Model
         {
             object testObject = new object();
             instance.Metadata = testObject;
-            Assert.Equal(testObject, instance.Metadata);
+            Assert.Equal(instance.Metadata, testObject);
             
         }
     }

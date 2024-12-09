@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void UriTest()
         {
             instance.Uri = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Uri);
+            Assert.Equal(instance.Uri, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void DateCreatedTest()
         {
             instance.DateCreated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateCreated);
+            Assert.Equal(instance.DateCreated, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void DateUpdatedTest()
         {
             instance.DateUpdated = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.DateUpdated);
+            Assert.Equal(instance.DateUpdated, "TEST_STRING");
             
         }
 
@@ -96,7 +96,7 @@ namespace freeclimb.Test.Model
         {
             
             instance.Revision = 1;
-            Assert.Equal(1, (int) instance.Revision);
+            Assert.Equal((int) instance.Revision, 1);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace freeclimb.Test.Model
         public void AccountIdTest()
         {
             instance.AccountId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.AccountId);
+            Assert.Equal(instance.AccountId, "TEST_STRING");
             
         }
 
@@ -117,7 +117,7 @@ namespace freeclimb.Test.Model
         public void ApplicationIdTest()
         {
             instance.ApplicationId = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            Assert.Equal(instance.ApplicationId, "TEST_STRING");
             
         }
 
@@ -128,7 +128,7 @@ namespace freeclimb.Test.Model
         public void AliasTest()
         {
             instance.Alias = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Alias);
+            Assert.Equal(instance.Alias, "TEST_STRING");
             
         }
 
@@ -139,7 +139,7 @@ namespace freeclimb.Test.Model
         public void VoiceUrlTest()
         {
             instance.VoiceUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.VoiceUrl);
+            Assert.Equal(instance.VoiceUrl, "TEST_STRING");
             
         }
 
@@ -150,7 +150,7 @@ namespace freeclimb.Test.Model
         public void VoiceFallbackUrlTest()
         {
             instance.VoiceFallbackUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.VoiceFallbackUrl);
+            Assert.Equal(instance.VoiceFallbackUrl, "TEST_STRING");
             
         }
 
@@ -161,7 +161,7 @@ namespace freeclimb.Test.Model
         public void CallConnectUrlTest()
         {
             instance.CallConnectUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.CallConnectUrl);
+            Assert.Equal(instance.CallConnectUrl, "TEST_STRING");
             
         }
 
@@ -172,7 +172,7 @@ namespace freeclimb.Test.Model
         public void StatusCallbackUrlTest()
         {
             instance.StatusCallbackUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.StatusCallbackUrl);
+            Assert.Equal(instance.StatusCallbackUrl, "TEST_STRING");
             
         }
 
@@ -183,7 +183,7 @@ namespace freeclimb.Test.Model
         public void SmsUrlTest()
         {
             instance.SmsUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.SmsUrl);
+            Assert.Equal(instance.SmsUrl, "TEST_STRING");
             
         }
 
@@ -194,7 +194,7 @@ namespace freeclimb.Test.Model
         public void SmsFallbackUrlTest()
         {
             instance.SmsFallbackUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.SmsFallbackUrl);
+            Assert.Equal(instance.SmsFallbackUrl, "TEST_STRING");
             
         }
     }

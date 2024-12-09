@@ -62,7 +62,7 @@ namespace freeclimb.Test.Model
         public void ToTest()
         {
             instance.To = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.To);
+            Assert.Equal(instance.To, "TEST_STRING");
             
         }
 
@@ -73,7 +73,7 @@ namespace freeclimb.Test.Model
         public void FromTest()
         {
             instance.From = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.From);
+            Assert.Equal(instance.From, "TEST_STRING");
             
         }
 
@@ -84,7 +84,7 @@ namespace freeclimb.Test.Model
         public void TextTest()
         {
             instance.Text = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Text);
+            Assert.Equal(instance.Text, "TEST_STRING");
             
         }
 
@@ -95,7 +95,7 @@ namespace freeclimb.Test.Model
         public void NotificationUrlTest()
         {
             instance.NotificationUrl = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.NotificationUrl);
+            Assert.Equal(instance.NotificationUrl, "TEST_STRING");
             
         }
     }
