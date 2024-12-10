@@ -720,7 +720,7 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand();
+                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
@@ -730,6 +730,9 @@ namespace freeclimb.Test.Model
             }
             if (type == typeof(DateOnly)) {
                 return DateOnly.FromDateTime(DateTime.Now); 
+            }
+            if (type == typeof(Nullable<DateOnly>)) {
+                return DateOnly.FromDateTime(DateTime.Now);
             }
             if (type == typeof(Object)) {
                 return new Dictionary<string, string>();
