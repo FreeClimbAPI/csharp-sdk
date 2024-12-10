@@ -430,7 +430,7 @@ namespace freeclimb.Test.Enums
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
             }
-            if (type == typeof(DateOnly) || typeof(Nullable<DateOnly>)) {
+            if (type == typeof(DateOnly)) {
                 return DateOnly.FromDateTime(DateTime.Now); 
             }
             if (type == typeof(Object)) {
