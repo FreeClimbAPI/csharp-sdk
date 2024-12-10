@@ -85,6 +85,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<GetSpeech>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'ActionUrl'
         /// </summary>
@@ -95,6 +97,7 @@ namespace freeclimb.Test.Model
             instance.ActionUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
+        
 
         /// <summary>
         /// Test the property 'GrammarType'
@@ -108,6 +111,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(GrammarType.BUILT_IN, instance.GrammarType);
             
         }
+        
 
         /// <summary>
         /// Test the property 'GrammarFile'
@@ -119,6 +123,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.GrammarFile);
             
         }
+        
 
         /// <summary>
         /// Test the property 'GrammarRule'
@@ -130,6 +135,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.GrammarRule);
             
         }
+        
 
         /// <summary>
         /// Test the property 'PlayBeep'
@@ -141,6 +147,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.PlayBeep);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Prompts'
@@ -153,6 +160,7 @@ namespace freeclimb.Test.Model
             instance.Prompts = testList;
             Assert.Equal(instance.Prompts, testList); 
         }
+        
 
         /// <summary>
         /// Test the property 'NoInputTimeoutMs'
@@ -164,6 +172,7 @@ namespace freeclimb.Test.Model
             instance.NoInputTimeoutMs = 1;
             Assert.Equal(1, (int) instance.NoInputTimeoutMs);
         }
+        
 
         /// <summary>
         /// Test the property 'RecognitionTimeoutMs'
@@ -175,6 +184,7 @@ namespace freeclimb.Test.Model
             instance.RecognitionTimeoutMs = 1;
             Assert.Equal(1, (int) instance.RecognitionTimeoutMs);
         }
+        
 
         /// <summary>
         /// Test the property 'ConfidenceThreshold'
@@ -186,6 +196,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(new decimal(1.0), instance.ConfidenceThreshold);
             
         }
+        
 
         /// <summary>
         /// Test the property 'SensitivityLevel'
@@ -197,6 +208,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(new decimal(1.0), instance.SensitivityLevel);
             
         }
+        
 
         /// <summary>
         /// Test the property 'SpeechCompleteTimeoutMs'
@@ -208,6 +220,7 @@ namespace freeclimb.Test.Model
             instance.SpeechCompleteTimeoutMs = 1;
             Assert.Equal(1, (int) instance.SpeechCompleteTimeoutMs);
         }
+        
 
         /// <summary>
         /// Test the property 'SpeechIncompleteTimeoutMs'
@@ -219,6 +232,7 @@ namespace freeclimb.Test.Model
             instance.SpeechIncompleteTimeoutMs = 1;
             Assert.Equal(1, (int) instance.SpeechIncompleteTimeoutMs);
         }
+        
 
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -414,7 +428,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

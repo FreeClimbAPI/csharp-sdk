@@ -77,6 +77,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<GetDigits>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'ActionUrl'
         /// </summary>
@@ -87,6 +89,7 @@ namespace freeclimb.Test.Model
             instance.ActionUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
+        
 
         /// <summary>
         /// Test the property 'DigitTimeoutMs'
@@ -98,6 +101,7 @@ namespace freeclimb.Test.Model
             instance.DigitTimeoutMs = 1;
             Assert.Equal(1, (int) instance.DigitTimeoutMs);
         }
+        
 
         /// <summary>
         /// Test the property 'FinishOnKey'
@@ -109,6 +113,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.FinishOnKey);
             
         }
+        
 
         /// <summary>
         /// Test the property 'FlushBuffer'
@@ -120,6 +125,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.FlushBuffer);
             
         }
+        
 
         /// <summary>
         /// Test the property 'InitialTimeoutMs'
@@ -131,6 +137,7 @@ namespace freeclimb.Test.Model
             instance.InitialTimeoutMs = 1;
             Assert.Equal(1, (int) instance.InitialTimeoutMs);
         }
+        
 
         /// <summary>
         /// Test the property 'MaxDigits'
@@ -142,6 +149,7 @@ namespace freeclimb.Test.Model
             instance.MaxDigits = 1;
             Assert.Equal(1, (int) instance.MaxDigits);
         }
+        
 
         /// <summary>
         /// Test the property 'MinDigits'
@@ -153,6 +161,7 @@ namespace freeclimb.Test.Model
             instance.MinDigits = 1;
             Assert.Equal(1, (int) instance.MinDigits);
         }
+        
 
         /// <summary>
         /// Test the property 'Prompts'
@@ -165,6 +174,7 @@ namespace freeclimb.Test.Model
             instance.Prompts = testList;
             Assert.Equal(instance.Prompts, testList); 
         }
+        
 
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -360,7 +370,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

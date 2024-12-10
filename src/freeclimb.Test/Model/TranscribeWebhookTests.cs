@@ -105,6 +105,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<TranscribeWebhook>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'RequestType'
         /// </summary>
@@ -113,6 +115,7 @@ namespace freeclimb.Test.Model
         {
             
         }
+        
 
         /// <summary>
         /// Test the property 'AccountId'
@@ -124,6 +127,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.AccountId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CallId'
@@ -135,6 +139,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.CallId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'From'
@@ -146,6 +151,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.From);
             
         }
+        
 
         /// <summary>
         /// Test the property 'To'
@@ -157,6 +163,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.To);
             
         }
+        
 
         /// <summary>
         /// Test the property 'RecordingId'
@@ -168,6 +175,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.RecordingId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'RecordingUrl'
@@ -179,6 +187,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.RecordingUrl);
             
         }
+        
 
         /// <summary>
         /// Test the property 'RecordingSize'
@@ -190,6 +199,7 @@ namespace freeclimb.Test.Model
             instance.RecordingSize = 1;
             Assert.Equal(1, (int) instance.RecordingSize);
         }
+        
 
         /// <summary>
         /// Test the property 'RecordingFormat'
@@ -201,6 +211,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.RecordingFormat);
             
         }
+        
 
         /// <summary>
         /// Test the property 'RecordingDurationMs'
@@ -212,6 +223,7 @@ namespace freeclimb.Test.Model
             instance.RecordingDurationMs = 1;
             Assert.Equal(1, (int) instance.RecordingDurationMs);
         }
+        
 
         /// <summary>
         /// Test the property 'TermReason'
@@ -225,6 +237,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(TranscribeTermReason.COMPLETED, instance.TermReason);
             
         }
+        
 
         /// <summary>
         /// Test the property 'RecordTermReason'
@@ -242,6 +255,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(RecordUtteranceTermReason.MAX_LENGTH, instance.RecordTermReason);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Digit'
@@ -253,6 +267,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Digit);
             
         }
+        
 
         /// <summary>
         /// Test the property 'PrivacyForLogging'
@@ -264,6 +279,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.PrivacyForLogging);
             
         }
+        
 
         /// <summary>
         /// Test the property 'PrivacyForRecording'
@@ -275,6 +291,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.PrivacyForRecording);
             
         }
+        
 
         /// <summary>
         /// Test the property 'BargeInReason'
@@ -290,6 +307,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(BargeInReason.BARGE_IN_BY_ENERGY, instance.BargeInReason);
             
         }
+        
 
         /// <summary>
         /// Test the property 'BargedInPromptNo'
@@ -301,6 +319,7 @@ namespace freeclimb.Test.Model
             instance.BargedInPromptNo = 1;
             Assert.Equal(1, (int) instance.BargedInPromptNo);
         }
+        
 
         /// <summary>
         /// Test the property 'BargedInPromptMs'
@@ -312,6 +331,7 @@ namespace freeclimb.Test.Model
             instance.BargedInPromptMs = 1;
             Assert.Equal(1, (int) instance.BargedInPromptMs);
         }
+        
 
         /// <summary>
         /// Test the property 'BargedInPromptLoopNo'
@@ -323,6 +343,7 @@ namespace freeclimb.Test.Model
             instance.BargedInPromptLoopNo = 1;
             Assert.Equal(1, (int) instance.BargedInPromptLoopNo);
         }
+        
 
         /// <summary>
         /// Test the property 'BargeInTimeMs'
@@ -334,6 +355,7 @@ namespace freeclimb.Test.Model
             instance.BargeInTimeMs = 1;
             Assert.Equal(1, (int) instance.BargeInTimeMs);
         }
+        
 
         /// <summary>
         /// Test the property 'Transcript'
@@ -345,6 +367,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Transcript);
             
         }
+        
 
         /// <summary>
         /// Test the property 'TranscribeReason'
@@ -364,6 +387,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(TranscribeReason.NO_INPUT, instance.TranscribeReason);
             
         }
+        
 
         /// <summary>
         /// Test the property 'TranscriptionDurationMs'
@@ -559,7 +583,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

@@ -81,6 +81,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<MessageStatusWebhook>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'RequestType'
         /// </summary>
@@ -89,6 +91,7 @@ namespace freeclimb.Test.Model
         {
             
         }
+        
 
         /// <summary>
         /// Test the property 'AccountId'
@@ -100,6 +103,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.AccountId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'MessageId'
@@ -111,6 +115,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.MessageId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CallId'
@@ -122,6 +127,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.CallId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'From'
@@ -133,6 +139,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.From);
             
         }
+        
 
         /// <summary>
         /// Test the property 'To'
@@ -144,6 +151,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.To);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Text'
@@ -155,6 +163,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Text);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Direction'
@@ -166,6 +175,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Direction);
             
         }
+        
 
         /// <summary>
         /// Test the property 'ApplicationId'
@@ -177,6 +187,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ApplicationId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Status'
@@ -208,6 +219,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(MessageStatus.UNKNOWN, instance.Status);
             
         }
+        
 
         /// <summary>
         /// Test the property 'PhoneNumberId'
@@ -403,7 +415,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

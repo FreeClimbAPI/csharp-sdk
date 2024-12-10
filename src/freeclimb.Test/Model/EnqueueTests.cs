@@ -67,6 +67,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<Enqueue>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'ActionUrl'
         /// </summary>
@@ -77,6 +79,7 @@ namespace freeclimb.Test.Model
             instance.ActionUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
+        
 
         /// <summary>
         /// Test the property 'NotificationUrl'
@@ -88,6 +91,7 @@ namespace freeclimb.Test.Model
             instance.NotificationUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.NotificationUrl);
         }
+        
 
         /// <summary>
         /// Test the property 'QueueId'
@@ -99,6 +103,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.QueueId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'WaitUrl'
@@ -294,7 +299,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

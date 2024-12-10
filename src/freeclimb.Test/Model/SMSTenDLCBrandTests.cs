@@ -115,6 +115,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<SMSTenDLCBrand>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'AccountId'
         /// </summary>
@@ -125,6 +127,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.AccountId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'EntityType'
@@ -144,28 +147,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(SMSTenDLCBrandEntityType.SOLE_PROPRIETOR, instance.EntityType);
             
         }
-
-        /// <summary>
-        /// Test the property 'CspId'
-        /// </summary>
-        [Fact]
-        public void CspIdTest()
-        {
-
-            Assert.Equal("TEST_STRING", instance.CspId);
-            
-        }
-
-        /// <summary>
-        /// Test the property 'BrandId'
-        /// </summary>
-        [Fact]
-        public void BrandIdTest()
-        {
-
-            Assert.Equal("TEST_STRING", instance.BrandId);
-            
-        }
+        
 
         /// <summary>
         /// Test the property 'FirstName'
@@ -177,6 +159,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.FirstName);
             
         }
+        
 
         /// <summary>
         /// Test the property 'LastName'
@@ -188,6 +171,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.LastName);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DisplayName'
@@ -199,6 +183,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.DisplayName);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CompanyName'
@@ -210,6 +195,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.CompanyName);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Ein'
@@ -221,6 +207,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Ein);
             
         }
+        
 
         /// <summary>
         /// Test the property 'EinIssuingCountry'
@@ -232,6 +219,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.EinIssuingCountry);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Phone'
@@ -243,6 +231,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Phone);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Street'
@@ -254,6 +243,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Street);
             
         }
+        
 
         /// <summary>
         /// Test the property 'City'
@@ -265,6 +255,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.City);
             
         }
+        
 
         /// <summary>
         /// Test the property 'State'
@@ -276,6 +267,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.State);
             
         }
+        
 
         /// <summary>
         /// Test the property 'PostalCode'
@@ -287,6 +279,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.PostalCode);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Country'
@@ -298,6 +291,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Country);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Email'
@@ -309,6 +303,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Email);
             
         }
+        
 
         /// <summary>
         /// Test the property 'StockSymbol'
@@ -320,6 +315,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.StockSymbol);
             
         }
+        
 
         /// <summary>
         /// Test the property 'StockExchange'
@@ -383,6 +379,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(SMSTenDLCBrandStockExchange.OTHER, instance.StockExchange);
             
         }
+        
 
         /// <summary>
         /// Test the property 'IpAddress'
@@ -394,6 +391,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.IpAddress);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Website'
@@ -405,6 +403,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Website);
             
         }
+        
 
         /// <summary>
         /// Test the property 'BrandRelationship'
@@ -424,6 +423,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(SMSTenDLCBrandRelationship.KEY_ACCOUNT, instance.BrandRelationship);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Vertical'
@@ -435,6 +435,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Vertical);
             
         }
+        
 
         /// <summary>
         /// Test the property 'AltBusinessId'
@@ -446,6 +447,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.AltBusinessId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'AltBusinessIdType'
@@ -463,17 +465,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(SMSTenDLCBrandAltBusinessIdType.LEI, instance.AltBusinessIdType);
             
         }
-
-        /// <summary>
-        /// Test the property 'UniversalEin'
-        /// </summary>
-        [Fact]
-        public void UniversalEinTest()
-        {
-
-            Assert.Equal("TEST_STRING", instance.UniversalEin);
-            
-        }
+        
 
         /// <summary>
         /// Test the property 'ReferenceId'
@@ -485,6 +477,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ReferenceId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'OptionalAttributes'
@@ -497,6 +490,7 @@ namespace freeclimb.Test.Model
             instance.OptionalAttributes = testDictionary;
             Assert.Equal(testDictionary, instance.OptionalAttributes); 
         }
+        
 
         /// <summary>
         /// Test the property 'Mock'
@@ -508,6 +502,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.Mock);
             
         }
+        
 
         /// <summary>
         /// Test the property 'IdentityStatus'
@@ -525,6 +520,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(SMSTenDLCBrandIdentityStatus.VETTED_VERIFIED, instance.IdentityStatus);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CreateDate'
@@ -720,7 +716,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

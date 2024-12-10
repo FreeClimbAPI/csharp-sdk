@@ -131,6 +131,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<SMSTenDLCCampaign>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'AccountId'
         /// </summary>
@@ -141,6 +143,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.AccountId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CampaignId'
@@ -152,6 +155,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.CampaignId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CspId'
@@ -163,6 +167,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.CspId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'ResellerId'
@@ -174,6 +179,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ResellerId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Status'
@@ -187,6 +193,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(SMSTenDLCCampaignStatus.EXPIRED, instance.Status);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CreateDate'
@@ -198,6 +205,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.CreateDate);
             
         }
+        
 
         /// <summary>
         /// Test the property 'AutoRenewal'
@@ -209,6 +217,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.AutoRenewal);
             
         }
+        
 
         /// <summary>
         /// Test the property 'BilledDate'
@@ -220,6 +229,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.BilledDate);
             
         }
+        
 
         /// <summary>
         /// Test the property 'BrandId'
@@ -231,6 +241,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.BrandId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Usecase'
@@ -242,6 +253,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Usecase);
             
         }
+        
 
         /// <summary>
         /// Test the property 'SubUsecases'
@@ -254,6 +266,7 @@ namespace freeclimb.Test.Model
             instance.SubUsecases = testList;
             Assert.Equal(testList, instance.SubUsecases);
         }
+        
 
         /// <summary>
         /// Test the property 'Description'
@@ -265,6 +278,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Description);
             
         }
+        
 
         /// <summary>
         /// Test the property 'EmbeddedLink'
@@ -276,6 +290,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.EmbeddedLink);
             
         }
+        
 
         /// <summary>
         /// Test the property 'EmbeddedPhone'
@@ -287,6 +302,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.EmbeddedPhone);
             
         }
+        
 
         /// <summary>
         /// Test the property 'AffiliateMarketing'
@@ -298,6 +314,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.AffiliateMarketing);
             
         }
+        
 
         /// <summary>
         /// Test the property 'NumberPool'
@@ -309,6 +326,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.NumberPool);
             
         }
+        
 
         /// <summary>
         /// Test the property 'AgeGated'
@@ -320,6 +338,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.AgeGated);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DirectLending'
@@ -331,6 +350,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.DirectLending);
             
         }
+        
 
         /// <summary>
         /// Test the property 'SubscriberOptin'
@@ -342,6 +362,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.SubscriberOptin);
             
         }
+        
 
         /// <summary>
         /// Test the property 'SubscriberOptout'
@@ -353,6 +374,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.SubscriberOptout);
             
         }
+        
 
         /// <summary>
         /// Test the property 'SubscriberHelp'
@@ -364,6 +386,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.SubscriberHelp);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Sample1'
@@ -375,6 +398,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Sample1);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Sample2'
@@ -386,6 +410,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Sample2);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Sample3'
@@ -397,6 +422,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Sample3);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Sample4'
@@ -408,6 +434,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Sample4);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Sample5'
@@ -419,6 +446,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Sample5);
             
         }
+        
 
         /// <summary>
         /// Test the property 'MessageFlow'
@@ -430,6 +458,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.MessageFlow);
             
         }
+        
 
         /// <summary>
         /// Test the property 'HelpMessage'
@@ -441,6 +470,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.HelpMessage);
             
         }
+        
 
         /// <summary>
         /// Test the property 'OptinKeywords'
@@ -452,6 +482,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.OptinKeywords);
             
         }
+        
 
         /// <summary>
         /// Test the property 'OptoutKeywords'
@@ -463,6 +494,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.OptoutKeywords);
             
         }
+        
 
         /// <summary>
         /// Test the property 'HelpKeywords'
@@ -474,6 +506,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.HelpKeywords);
             
         }
+        
 
         /// <summary>
         /// Test the property 'OptinMessage'
@@ -485,6 +518,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.OptinMessage);
             
         }
+        
 
         /// <summary>
         /// Test the property 'OptoutMessage'
@@ -496,6 +530,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.OptoutMessage);
             
         }
+        
 
         /// <summary>
         /// Test the property 'ReferenceId'
@@ -507,6 +542,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ReferenceId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Mock'
@@ -518,6 +554,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.Mock);
             
         }
+        
 
         /// <summary>
         /// Test the property 'NextRenewalOrExpirationDate'
@@ -713,7 +750,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

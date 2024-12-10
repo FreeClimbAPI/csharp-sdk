@@ -93,6 +93,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<IncomingNumberResult>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'Uri'
         /// </summary>
@@ -103,6 +105,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Uri);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DateCreated'
@@ -114,6 +117,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.DateCreated);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -125,6 +129,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.DateUpdated);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Revision'
@@ -136,6 +141,7 @@ namespace freeclimb.Test.Model
             instance.Revision = 1;
             Assert.Equal(1, (int) instance.Revision);
         }
+        
 
         /// <summary>
         /// Test the property 'Capabilities'
@@ -148,6 +154,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(testObject, instance.Capabilities);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CampaignId'
@@ -159,6 +166,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.CampaignId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'PhoneNumberId'
@@ -170,6 +178,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.PhoneNumberId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'AccountId'
@@ -181,6 +190,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.AccountId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'ApplicationId'
@@ -192,6 +202,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ApplicationId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'PhoneNumber'
@@ -203,6 +214,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.PhoneNumber);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Alias'
@@ -214,6 +226,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Alias);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Region'
@@ -225,6 +238,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Region);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Country'
@@ -236,6 +250,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Country);
             
         }
+        
 
         /// <summary>
         /// Test the property 'VoiceEnabled'
@@ -247,6 +262,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.VoiceEnabled);
             
         }
+        
 
         /// <summary>
         /// Test the property 'SmsEnabled'
@@ -258,6 +274,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.SmsEnabled);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Offnet'
@@ -269,6 +286,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.Offnet);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Tfn'
@@ -465,7 +483,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

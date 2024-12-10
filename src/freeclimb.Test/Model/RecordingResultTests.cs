@@ -77,6 +77,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<RecordingResult>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'Uri'
         /// </summary>
@@ -87,6 +89,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Uri);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DateCreated'
@@ -98,6 +101,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.DateCreated);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -109,6 +113,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.DateUpdated);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Revision'
@@ -120,6 +125,7 @@ namespace freeclimb.Test.Model
             instance.Revision = 1;
             Assert.Equal(1, (int) instance.Revision);
         }
+        
 
         /// <summary>
         /// Test the property 'RecordingId'
@@ -131,6 +137,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.RecordingId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'AccountId'
@@ -142,6 +149,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.AccountId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CallId'
@@ -153,6 +161,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.CallId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DurationSec'
@@ -164,6 +173,7 @@ namespace freeclimb.Test.Model
             instance.DurationSec = 1;
             Assert.Equal(1, (int) instance.DurationSec);
         }
+        
 
         /// <summary>
         /// Test the property 'ConferenceId'
@@ -359,7 +369,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

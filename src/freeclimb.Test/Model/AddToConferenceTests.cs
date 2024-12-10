@@ -79,6 +79,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<AddToConference>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'AllowCallControl'
         /// </summary>
@@ -89,6 +91,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.AllowCallControl);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CallControlSequence'
@@ -100,6 +103,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.CallControlSequence);
             
         }
+        
 
         /// <summary>
         /// Test the property 'CallControlUrl'
@@ -111,6 +115,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.CallControlUrl);
             
         }
+        
 
         /// <summary>
         /// Test the property 'ConferenceId'
@@ -122,6 +127,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ConferenceId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'LeaveConferenceUrl'
@@ -133,6 +139,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.LeaveConferenceUrl);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Listen'
@@ -144,6 +151,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.Listen);
             
         }
+        
 
         /// <summary>
         /// Test the property 'NotificationUrl'
@@ -155,6 +163,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.NotificationUrl);
             
         }
+        
 
         /// <summary>
         /// Test the property 'StartConfOnEnter'
@@ -166,6 +175,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.StartConfOnEnter);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Talk'
@@ -177,6 +187,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.Talk);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DtmfPassThrough'
@@ -372,7 +383,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

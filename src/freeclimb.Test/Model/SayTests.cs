@@ -67,6 +67,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<Say>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'Text'
         /// </summary>
@@ -77,6 +79,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Text);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Language'
@@ -88,6 +91,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Language);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Loop'
@@ -99,6 +103,7 @@ namespace freeclimb.Test.Model
             instance.Loop = 1;
             Assert.Equal(1, (int) instance.Loop);
         }
+        
 
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -294,7 +299,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

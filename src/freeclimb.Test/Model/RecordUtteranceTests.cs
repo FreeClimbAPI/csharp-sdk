@@ -73,6 +73,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<RecordUtterance>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'ActionUrl'
         /// </summary>
@@ -83,6 +85,7 @@ namespace freeclimb.Test.Model
             instance.ActionUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
+        
 
         /// <summary>
         /// Test the property 'SilenceTimeoutMs'
@@ -94,6 +97,7 @@ namespace freeclimb.Test.Model
             instance.SilenceTimeoutMs = 1;
             Assert.Equal(1, (int) instance.SilenceTimeoutMs);
         }
+        
 
         /// <summary>
         /// Test the property 'FinishOnKey'
@@ -105,6 +109,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.FinishOnKey);
             
         }
+        
 
         /// <summary>
         /// Test the property 'MaxLengthSec'
@@ -116,6 +121,7 @@ namespace freeclimb.Test.Model
             instance.MaxLengthSec = 1;
             Assert.Equal(1, (int) instance.MaxLengthSec);
         }
+        
 
         /// <summary>
         /// Test the property 'PlayBeep'
@@ -127,6 +133,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.PlayBeep);
             
         }
+        
 
         /// <summary>
         /// Test the property 'AutoStart'
@@ -138,6 +145,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.AutoStart);
             
         }
+        
 
         /// <summary>
         /// Test the property 'PrivacyMode'
@@ -333,7 +341,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;

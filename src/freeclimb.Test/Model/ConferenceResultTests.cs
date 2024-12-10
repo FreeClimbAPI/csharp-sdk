@@ -87,6 +87,8 @@ namespace freeclimb.Test.Model
             Assert.IsType<ConferenceResult>(instance);
         }
 
+        
+
         /// <summary>
         /// Test the property 'Uri'
         /// </summary>
@@ -97,6 +99,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Uri);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DateCreated'
@@ -108,6 +111,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.DateCreated);
             
         }
+        
 
         /// <summary>
         /// Test the property 'DateUpdated'
@@ -119,6 +123,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.DateUpdated);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Revision'
@@ -130,6 +135,7 @@ namespace freeclimb.Test.Model
             instance.Revision = 1;
             Assert.Equal(1, (int) instance.Revision);
         }
+        
 
         /// <summary>
         /// Test the property 'ConferenceId'
@@ -141,6 +147,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ConferenceId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'AccountId'
@@ -152,6 +159,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.AccountId);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Alias'
@@ -163,6 +171,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Alias);
             
         }
+        
 
         /// <summary>
         /// Test the property 'PlayBeep'
@@ -180,6 +189,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(PlayBeep.EXIT_ONLY, instance.PlayBeep);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Record'
@@ -191,6 +201,7 @@ namespace freeclimb.Test.Model
             Assert.False(instance.Record);
             
         }
+        
 
         /// <summary>
         /// Test the property 'Status'
@@ -208,6 +219,7 @@ namespace freeclimb.Test.Model
             Assert.Equal(ConferenceStatus.TERMINATED, instance.Status);
             
         }
+        
 
         /// <summary>
         /// Test the property 'WaitUrl'
@@ -219,6 +231,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.WaitUrl);
             
         }
+        
 
         /// <summary>
         /// Test the property 'ActionUrl'
@@ -230,6 +243,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ActionUrl);
             
         }
+        
 
         /// <summary>
         /// Test the property 'StatusCallbackUrl'
@@ -241,6 +255,7 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.StatusCallbackUrl);
             
         }
+        
 
         /// <summary>
         /// Test the property 'SubresourceUris'
@@ -437,7 +452,17 @@ namespace freeclimb.Test.Model
                 return new TranscribeUtteranceRecord();
             }
             if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
-                return new SMSTenDLCPartnerCampaignBrand(phone: "TEST_PHONE_NUMBER");
+                return new SMSTenDLCPartnerCampaignBrand(
+                    firstName: "TEST_FIRST_NAME",
+                    lastName: "TEST_LAST_NAME",
+                    displayName: "TEST_DISPLAY_NAME",
+                    companyName: "TEST_COMPANY_NAME",
+                    website: "TEST_WEBSITE",
+                    evpVettingScore: 0,
+                    accountId: "TEST_ACCOUNT_ID",
+                    phone: "TEST_PHONE_NUMBER",
+                    email: "TEST_EMAIL"
+                );
             }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
