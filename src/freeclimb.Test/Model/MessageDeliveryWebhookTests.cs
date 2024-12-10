@@ -188,13 +188,13 @@ namespace freeclimb.Test.Model
 
         public object getTestValue(Type type)
         {
-            if (type == typeof(int)) {
+            if (type == typeof(int) || type == typeof(Nullable<int>)) {
                 return 1;
             }
-            if (type == typeof(string)) {
+            if (type == typeof(string) || type == typeof(Nullable<string>)) {
                 return "TEST_STRING";
             }
-            if (type == typeof(bool)) {
+            if (type == typeof(bool) || type == typeof(Nullable<bool>)) {
                 return true;
             }
             if (type == typeof(CallStatus)) {
@@ -239,8 +239,50 @@ namespace freeclimb.Test.Model
             if (type == typeof(ConferenceStatus)) {
                 return ConferenceStatusValueConverter.FromString("empty");
             }
+            if (type == typeof(MachineType)) {
+                return MachineTypeValueConverter.FromString("answering machine");
+            }
+            if (type == typeof(SMSTenDLCCampaignStatus)) {
+                return SMSTenDLCCampaignStatusValueConverter.FromString("ACTIVE");
+            }
+            if (type == typeof(SMSTollFreeCampaignRegistrationStatus)) {
+                return SMSTollFreeCampaignRegistrationStatusValueConverter.FromString("UNREGISTERED");
+            }
+            if (type == typeof(MessageStatus)) {
+                return MessageStatusValueConverter.FromString("new");
+            }
+            if (type == typeof(RecordUtteranceTermReason)) {
+                return RecordUtteranceTermReasonValueConverter.FromString("FINISH_KEY");
+            }
+            if (type == typeof(GrammarType)) {
+                return GrammarTypeValueConverter.FromString("URL");
+            }
+            if (type == typeof(CompletionResultStatus)) {
+                return CompletionResultStatusValueConverter.FromString("success");
+            }
+            if (type == typeof(AnsweredBy)) {
+                return AnsweredByValueConverter.FromString("HUMAN");
+            }
+            if (type == typeof(IfMachine)) {
+                return IfMachineValueConverter.FromString("redirect");
+            }
+            if (type == typeof(AccountType)) {
+                return AccountTypeValueConverter.FromString("trial");
+            }
+            if (type == typeof(AccountStatus)) {
+                return AccountStatusValueConverter.FromString("closed");
+            }
             if (type == typeof(List<string>)) {
                 return new List<string>();
+            }
+            if (type == typeof(List<ApplicationResult>)) {
+                return new List<ApplicationResult>();
+            }
+            if (type == typeof(List<IncomingNumberResult>)) {
+                return new List<IncomingNumberResult>();
+            }
+            if (type == typeof(List<SMSTollFreeCampaign>)) {
+                return new List<SMSTollFreeCampaign>();
             }
             if (type == typeof(List<QueueResult>)) {
                 return new List<QueueResult>();
@@ -257,11 +299,32 @@ namespace freeclimb.Test.Model
             if (type == typeof(List<QueueMember>)) {
                 return new List<QueueMember>();
             }
+            if (type == typeof(List<QueueResult>)) {
+                return new List<QueueResult>();
+            }
+            if (type == typeof(List<CallResult)) {
+                return new List<CallResult>();
+            }
+            if (type == typeof(List<ConferenceParticipantResult>)) {
+                return new List<ConferenceParticipantResult>();
+            }
+            if (type == typeof(Capabilities)) {
+                return new Capabilities();
+            }
+            if (type == typeof(TFN)) {
+                return new TFN(campaignId="TEST_CAMPAIGN");
+            }
             if (type == typeof(Dictionary<string, Object>)) {
                 return new Dictionary<string, Object>();
             }
+            if (type == typeof(TranscribeUtteranceRecord)) {
+                return new TranscribeUtteranceRecord();
+            }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
+            }
+            if (type == typeof(DateOnly)) {
+                return DateOnly.FromDateTime(DateTime.Now); 
             }
             if (type == typeof(Object)) {
                 return new Dictionary<string, string>();
