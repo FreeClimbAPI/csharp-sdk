@@ -165,7 +165,7 @@ namespace freeclimb.Test.Model
         public void TalkTest()
         {
             instance.Talk = false;
-            Assert.Equal(false, instance.Talk);
+            Assert.False(instance.Talk);
             
         }
 
@@ -176,7 +176,7 @@ namespace freeclimb.Test.Model
         public void ListenTest()
         {
             instance.Listen = false;
-            Assert.Equal(false, instance.Listen);
+            Assert.False(instance.Listen);
             
         }
 
@@ -187,7 +187,7 @@ namespace freeclimb.Test.Model
         public void DtmfPassThroughTest()
         {
             instance.DtmfPassThrough = false;
-            Assert.Equal(false, instance.DtmfPassThrough);
+            Assert.False(instance.DtmfPassThrough);
             
         }
 
@@ -198,7 +198,7 @@ namespace freeclimb.Test.Model
         public void StartConfOnEnterTest()
         {
             instance.StartConfOnEnter = false;
-            Assert.Equal(false, instance.StartConfOnEnter);
+            Assert.False(instance.StartConfOnEnter);
             
         }
 
@@ -375,7 +375,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
             }
-            if (type == typeof(DateOnly)) {
+            if (type == typeof(DateOnly) || typeof(Nullable<DateOnly>)) {
                 return DateOnly.FromDateTime(DateTime.Now); 
             }
             if (type == typeof(Object)) {

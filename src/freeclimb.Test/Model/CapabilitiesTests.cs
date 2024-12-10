@@ -76,7 +76,7 @@ namespace freeclimb.Test.Model
         public void VoiceTest()
         {
             instance.Voice = false;
-            Assert.Equal(false, instance.Voice);
+            Assert.False(instance.Voice);
             
         }
 
@@ -87,7 +87,7 @@ namespace freeclimb.Test.Model
         public void SmsTest()
         {
             instance.Sms = false;
-            Assert.Equal(false, instance.Sms);
+            Assert.False(instance.Sms);
             
         }
 
@@ -98,7 +98,7 @@ namespace freeclimb.Test.Model
         public void TollFreeTest()
         {
             instance.TollFree = false;
-            Assert.Equal(false, instance.TollFree);
+            Assert.False(instance.TollFree);
             
         }
 
@@ -109,7 +109,7 @@ namespace freeclimb.Test.Model
         public void TenDLCTest()
         {
             instance.TenDLC = false;
-            Assert.Equal(false, instance.TenDLC);
+            Assert.False(instance.TenDLC);
             
         }
 
@@ -120,7 +120,7 @@ namespace freeclimb.Test.Model
         public void ShortCodeTest()
         {
             instance.ShortCode = false;
-            Assert.Equal(false, instance.ShortCode);
+            Assert.False(instance.ShortCode);
             
         }
 
@@ -297,7 +297,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
             }
-            if (type == typeof(DateOnly)) {
+            if (type == typeof(DateOnly) || typeof(Nullable<DateOnly>)) {
                 return DateOnly.FromDateTime(DateTime.Now); 
             }
             if (type == typeof(Object)) {

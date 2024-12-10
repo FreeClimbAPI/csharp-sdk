@@ -188,7 +188,7 @@ namespace freeclimb.Test.Model
         public void RecordTest()
         {
             instance.Record = false;
-            Assert.Equal(false, instance.Record);
+            Assert.False(instance.Record);
             
         }
 
@@ -427,7 +427,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
             }
-            if (type == typeof(DateOnly)) {
+            if (type == typeof(DateOnly) || typeof(Nullable<DateOnly>)) {
                 return DateOnly.FromDateTime(DateTime.Now); 
             }
             if (type == typeof(Object)) {

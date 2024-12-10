@@ -174,7 +174,7 @@ namespace freeclimb.Test.Model
         public void PrivacyModeTest()
         {
             instance.PrivacyMode = false;
-            Assert.Equal(false, instance.PrivacyMode);
+            Assert.False(instance.PrivacyMode);
             
         }
 
@@ -362,7 +362,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
             }
-            if (type == typeof(DateOnly)) {
+            if (type == typeof(DateOnly) || typeof(Nullable<DateOnly>)) {
                 return DateOnly.FromDateTime(DateTime.Now); 
             }
             if (type == typeof(Object)) {

@@ -89,7 +89,7 @@ namespace freeclimb.Test.Model
         public void PlayBeepTest()
         {
             instance.PlayBeep = false;
-            Assert.Equal(false, instance.PlayBeep);
+            Assert.False(instance.PlayBeep);
             
         }
 
@@ -112,7 +112,7 @@ namespace freeclimb.Test.Model
         public void PrivacyForLoggingTest()
         {
             instance.PrivacyForLogging = false;
-            Assert.Equal(false, instance.PrivacyForLogging);
+            Assert.False(instance.PrivacyForLogging);
             
         }
 
@@ -123,7 +123,7 @@ namespace freeclimb.Test.Model
         public void PrivacyForRecordingTest()
         {
             instance.PrivacyForRecording = false;
-            Assert.Equal(false, instance.PrivacyForRecording);
+            Assert.False(instance.PrivacyForRecording);
             
         }
 
@@ -312,7 +312,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
             }
-            if (type == typeof(DateOnly)) {
+            if (type == typeof(DateOnly) || typeof(Nullable<DateOnly>)) {
                 return DateOnly.FromDateTime(DateTime.Now); 
             }
             if (type == typeof(Object)) {

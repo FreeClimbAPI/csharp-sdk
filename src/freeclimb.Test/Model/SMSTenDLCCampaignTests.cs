@@ -206,7 +206,7 @@ namespace freeclimb.Test.Model
         public void AutoRenewalTest()
         {
             instance.AutoRenewal = false;
-            Assert.Equal(false, instance.AutoRenewal);
+            Assert.False(instance.AutoRenewal);
             
         }
 
@@ -273,7 +273,7 @@ namespace freeclimb.Test.Model
         public void EmbeddedLinkTest()
         {
             instance.EmbeddedLink = false;
-            Assert.Equal(false, instance.EmbeddedLink);
+            Assert.False(instance.EmbeddedLink);
             
         }
 
@@ -284,7 +284,7 @@ namespace freeclimb.Test.Model
         public void EmbeddedPhoneTest()
         {
             instance.EmbeddedPhone = false;
-            Assert.Equal(false, instance.EmbeddedPhone);
+            Assert.False(instance.EmbeddedPhone);
             
         }
 
@@ -295,7 +295,7 @@ namespace freeclimb.Test.Model
         public void AffiliateMarketingTest()
         {
             instance.AffiliateMarketing = false;
-            Assert.Equal(false, instance.AffiliateMarketing);
+            Assert.False(instance.AffiliateMarketing);
             
         }
 
@@ -306,7 +306,7 @@ namespace freeclimb.Test.Model
         public void NumberPoolTest()
         {
             instance.NumberPool = false;
-            Assert.Equal(false, instance.NumberPool);
+            Assert.False(instance.NumberPool);
             
         }
 
@@ -317,7 +317,7 @@ namespace freeclimb.Test.Model
         public void AgeGatedTest()
         {
             instance.AgeGated = false;
-            Assert.Equal(false, instance.AgeGated);
+            Assert.False(instance.AgeGated);
             
         }
 
@@ -328,7 +328,7 @@ namespace freeclimb.Test.Model
         public void DirectLendingTest()
         {
             instance.DirectLending = false;
-            Assert.Equal(false, instance.DirectLending);
+            Assert.False(instance.DirectLending);
             
         }
 
@@ -339,7 +339,7 @@ namespace freeclimb.Test.Model
         public void SubscriberOptinTest()
         {
             instance.SubscriberOptin = false;
-            Assert.Equal(false, instance.SubscriberOptin);
+            Assert.False(instance.SubscriberOptin);
             
         }
 
@@ -350,7 +350,7 @@ namespace freeclimb.Test.Model
         public void SubscriberOptoutTest()
         {
             instance.SubscriberOptout = false;
-            Assert.Equal(false, instance.SubscriberOptout);
+            Assert.False(instance.SubscriberOptout);
             
         }
 
@@ -361,7 +361,7 @@ namespace freeclimb.Test.Model
         public void SubscriberHelpTest()
         {
             instance.SubscriberHelp = false;
-            Assert.Equal(false, instance.SubscriberHelp);
+            Assert.False(instance.SubscriberHelp);
             
         }
 
@@ -515,7 +515,7 @@ namespace freeclimb.Test.Model
         public void MockTest()
         {
             instance.Mock = false;
-            Assert.Equal(false, instance.Mock);
+            Assert.False(instance.Mock);
             
         }
 
@@ -703,7 +703,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
             }
-            if (type == typeof(DateOnly)) {
+            if (type == typeof(DateOnly) || typeof(Nullable<DateOnly>)) {
                 return DateOnly.FromDateTime(DateTime.Now); 
             }
             if (type == typeof(Object)) {

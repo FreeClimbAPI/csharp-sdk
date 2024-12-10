@@ -114,7 +114,7 @@ namespace freeclimb.Test.Model
         public void VoiceEnabledTest()
         {
             instance.VoiceEnabled = false;
-            Assert.Equal(false, instance.VoiceEnabled);
+            Assert.False(instance.VoiceEnabled);
             
         }
 
@@ -125,7 +125,7 @@ namespace freeclimb.Test.Model
         public void SmsEnabledTest()
         {
             instance.SmsEnabled = false;
-            Assert.Equal(false, instance.SmsEnabled);
+            Assert.False(instance.SmsEnabled);
             
         }
 
@@ -324,7 +324,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
             }
-            if (type == typeof(DateOnly)) {
+            if (type == typeof(DateOnly) || typeof(Nullable<DateOnly>)) {
                 return DateOnly.FromDateTime(DateTime.Now); 
             }
             if (type == typeof(Object)) {
