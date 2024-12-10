@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "freeclimb", "src\freeclimb\freeclimb.csproj", "{A1B16F2F-E11F-4453-A005-3D81B08D440C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "freeclimb", "src\freeclimb\freeclimb.csproj", "{A9EBE7F3-1523-4F29-A748-49C990B7E444}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "freeclimb.Test", "src\freeclimb.Test\freeclimb.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1B16F2F-E11F-4453-A005-3D81B08D440C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1B16F2F-E11F-4453-A005-3D81B08D440C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1B16F2F-E11F-4453-A005-3D81B08D440C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1B16F2F-E11F-4453-A005-3D81B08D440C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9EBE7F3-1523-4F29-A748-49C990B7E444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9EBE7F3-1523-4F29-A748-49C990B7E444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9EBE7F3-1523-4F29-A748-49C990B7E444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9EBE7F3-1523-4F29-A748-49C990B7E444}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

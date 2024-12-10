@@ -94,7 +94,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
-            if (type == typeof(decimal) || type == Nullable<decimal>) {
+            if (type == typeof(decimal)) {
                 return new decimal(0.1);
             }
             if (type == typeof(bool) || type == typeof(Nullable<bool>)) {
