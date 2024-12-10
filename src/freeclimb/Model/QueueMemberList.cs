@@ -58,6 +58,7 @@ namespace freeclimb.Model
             this.QueueMembers = queueMembers;
         }
 
+        
         /// <summary>
         /// Total amount of requested resource.
         /// </summary>
@@ -65,6 +66,8 @@ namespace freeclimb.Model
         [DataMember(Name = "total", EmitDefaultValue = true)]
         public int? Total { get; set; }
 
+        
+        
         /// <summary>
         /// Resource index at start of current page
         /// </summary>
@@ -72,6 +75,8 @@ namespace freeclimb.Model
         [DataMember(Name = "start", EmitDefaultValue = true)]
         public int? Start { get; set; }
 
+        
+        
         /// <summary>
         /// Resource index at end of current page
         /// </summary>
@@ -79,6 +84,8 @@ namespace freeclimb.Model
         [DataMember(Name = "end", EmitDefaultValue = true)]
         public int? End { get; set; }
 
+        
+        
         /// <summary>
         /// Current page
         /// </summary>
@@ -86,6 +93,8 @@ namespace freeclimb.Model
         [DataMember(Name = "page", EmitDefaultValue = true)]
         public int? Page { get; set; }
 
+        
+        
         /// <summary>
         /// Total number of pages
         /// </summary>
@@ -93,6 +102,8 @@ namespace freeclimb.Model
         [DataMember(Name = "numPages", EmitDefaultValue = true)]
         public int? NumPages { get; set; }
 
+        
+        
         /// <summary>
         /// Number of items per page
         /// </summary>
@@ -100,6 +111,8 @@ namespace freeclimb.Model
         [DataMember(Name = "pageSize", EmitDefaultValue = true)]
         public int? PageSize { get; set; }
 
+        
+        
         /// <summary>
         /// Uri to retrieve the next page of items
         /// </summary>
@@ -107,12 +120,15 @@ namespace freeclimb.Model
         [DataMember(Name = "nextPageUri", EmitDefaultValue = true)]
         public string NextPageUri { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets QueueMembers
         /// </summary>
         [DataMember(Name = "queueMembers", EmitDefaultValue = true)]
         public List<QueueMember> QueueMembers { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

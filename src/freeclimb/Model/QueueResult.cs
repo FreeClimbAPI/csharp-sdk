@@ -63,6 +63,7 @@ namespace freeclimb.Model
             this.SubresourceUris = subresourceUris;
         }
 
+        
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -70,6 +71,8 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+        
+        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -77,6 +80,8 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
+        
+        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -84,6 +89,8 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+        
+        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -91,6 +98,8 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
+        
+        
         /// <summary>
         /// ID of the account that created this Queue.
         /// </summary>
@@ -98,6 +107,8 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+        
+        
         /// <summary>
         /// A string that uniquely identifies this Queue resource.
         /// </summary>
@@ -105,6 +116,8 @@ namespace freeclimb.Model
         [DataMember(Name = "queueId", EmitDefaultValue = true)]
         public string QueueId { get; set; }
 
+        
+        
         /// <summary>
         /// A description for this Queue.
         /// </summary>
@@ -112,6 +125,8 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public string Alias { get; set; }
 
+        
+        
         /// <summary>
         /// The maximum number of Calls permitted in the Queue. Default is 100. Maximum is 1000.
         /// </summary>
@@ -119,6 +134,8 @@ namespace freeclimb.Model
         [DataMember(Name = "maxSize", EmitDefaultValue = true)]
         public int? MaxSize { get; set; }
 
+        
+        
         /// <summary>
         /// Count of Calls currently in the Queue.
         /// </summary>
@@ -126,6 +143,8 @@ namespace freeclimb.Model
         [DataMember(Name = "currentSize", EmitDefaultValue = true)]
         public int? CurrentSize { get; set; }
 
+        
+        
         /// <summary>
         /// The average amount of time (in seconds) for a call to be removed from the queue.
         /// </summary>
@@ -133,6 +152,8 @@ namespace freeclimb.Model
         [DataMember(Name = "averageQueueRemovalTime", EmitDefaultValue = true)]
         public int? AverageQueueRemovalTime { get; set; }
 
+        
+        
         /// <summary>
         /// List of subresources for this Queue (which includes Queue members).
         /// </summary>
@@ -140,6 +161,7 @@ namespace freeclimb.Model
         [DataMember(Name = "subresourceUris", EmitDefaultValue = true)]
         public Object SubresourceUris { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

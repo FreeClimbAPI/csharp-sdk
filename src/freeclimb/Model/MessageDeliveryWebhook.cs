@@ -63,13 +63,8 @@ namespace freeclimb.Model
             this.Uri = uri;
         }
 
-        /// <summary>
-        /// Value will be messageDelivery - An SMS message has been received by the platform and is being delivered to the customer application associated with the destination number.
-        /// </summary>
-        /// <value>Value will be messageDelivery - An SMS message has been received by the platform and is being delivered to the customer application associated with the destination number.</value>
-        [DataMember(Name = "requestType", EmitDefaultValue = false)]
-        public string RequestType { get; set; }
-
+        
+        
         /// <summary>
         /// Account ID associated with your account.
         /// </summary>
@@ -77,6 +72,8 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
+        
+        
         /// <summary>
         /// Phone number of the party that initiated the Call (in E.164 format).
         /// </summary>
@@ -84,6 +81,8 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
+        
+        
         /// <summary>
         /// Phone number provisioned to you and to which this Call is directed (in E.164 format).
         /// </summary>
@@ -91,6 +90,8 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 
+        
+        
         /// <summary>
         /// Body of the SMS message.
         /// </summary>
@@ -98,6 +99,8 @@ namespace freeclimb.Model
         [DataMember(Name = "text", EmitDefaultValue = false)]
         public string Text { get; set; }
 
+        
+        
         /// <summary>
         /// Value will be inbound to indicate the receipt of a message into the FreeClimb platform.
         /// </summary>
@@ -105,6 +108,8 @@ namespace freeclimb.Model
         [DataMember(Name = "direction", EmitDefaultValue = false)]
         public string Direction { get; set; }
 
+        
+        
         /// <summary>
         /// ID of the application to which the destination number is assigned.
         /// </summary>
@@ -112,6 +117,8 @@ namespace freeclimb.Model
         [DataMember(Name = "applicationId", EmitDefaultValue = false)]
         public string ApplicationId { get; set; }
 
+        
+        
         /// <summary>
         /// Value will be received to indicate that the platform has successfully received the incoming message.
         /// </summary>
@@ -119,6 +126,8 @@ namespace freeclimb.Model
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
+        
+        
         /// <summary>
         /// ID of the destination phone number.
         /// </summary>
@@ -126,6 +135,8 @@ namespace freeclimb.Model
         [DataMember(Name = "phoneNumberId", EmitDefaultValue = false)]
         public string PhoneNumberId { get; set; }
 
+        
+        
         /// <summary>
         /// The URI for this resource, relative to the API base URL
         /// </summary>
@@ -133,6 +144,7 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -51,6 +51,7 @@ namespace freeclimb.Model
             this.DateEnqueued = dateEnqueued;
         }
 
+        
         /// <summary>
         /// URI for this Queue Member resource, relative to the API base URL.
         /// </summary>
@@ -58,6 +59,8 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = true)]
         public string Uri { get; set; }
 
+        
+        
         /// <summary>
         /// ID of the Call associated with this Queue Member.
         /// </summary>
@@ -65,6 +68,8 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = true)]
         public string CallId { get; set; }
 
+        
+        
         /// <summary>
         /// Number of seconds the Member has been in the queue.
         /// </summary>
@@ -72,6 +77,8 @@ namespace freeclimb.Model
         [DataMember(Name = "waitTime", EmitDefaultValue = true)]
         public int? WaitTime { get; set; }
 
+        
+        
         /// <summary>
         /// Member&#39;s current position in the Queue, 1 indexed.
         /// </summary>
@@ -79,6 +86,8 @@ namespace freeclimb.Model
         [DataMember(Name = "position", EmitDefaultValue = true)]
         public int? Position { get; set; }
 
+        
+        
         /// <summary>
         /// Date that the Member was enqueued (GMT), given in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -86,6 +95,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dateEnqueued", EmitDefaultValue = true)]
         public string DateEnqueued { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

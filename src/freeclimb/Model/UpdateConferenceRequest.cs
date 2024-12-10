@@ -59,6 +59,7 @@ namespace freeclimb.Model
             this.Status = status;
         }
 
+        
         /// <summary>
         /// Description for this conference. Maximum 64 characters.
         /// </summary>
@@ -66,6 +67,11 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
+        
+        
+        
+        
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

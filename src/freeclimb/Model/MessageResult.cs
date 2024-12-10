@@ -79,6 +79,7 @@ namespace freeclimb.Model
             this.MediaUrls = mediaUrls;
         }
 
+        
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -86,6 +87,8 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+        
+        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -93,6 +96,8 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
+        
+        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -100,6 +105,8 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+        
+        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -107,6 +114,8 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
+        
+        
         /// <summary>
         /// String that uniquely identifies this account resource.
         /// </summary>
@@ -114,6 +123,8 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+        
+        
         /// <summary>
         /// String that uniquely identifies this message resource
         /// </summary>
@@ -121,6 +132,10 @@ namespace freeclimb.Model
         [DataMember(Name = "messageId", EmitDefaultValue = true)]
         public string MessageId { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// Phone number in E.164 format that sent the message.
         /// </summary>
@@ -128,6 +143,8 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = true)]
         public string From { get; set; }
 
+        
+        
         /// <summary>
         /// Phone number in E.164 format that received the message.
         /// </summary>
@@ -135,6 +152,8 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = true)]
         public string To { get; set; }
 
+        
+        
         /// <summary>
         /// Message contents
         /// </summary>
@@ -142,6 +161,8 @@ namespace freeclimb.Model
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
+        
+        
         /// <summary>
         /// Noting whether the message was inbound or outbound
         /// </summary>
@@ -149,6 +170,8 @@ namespace freeclimb.Model
         [DataMember(Name = "direction", EmitDefaultValue = true)]
         public string Direction { get; set; }
 
+        
+        
         /// <summary>
         /// URL invoked when message sent
         /// </summary>
@@ -156,6 +179,8 @@ namespace freeclimb.Model
         [DataMember(Name = "notificationUrl", EmitDefaultValue = true)]
         public string NotificationUrl { get; set; }
 
+        
+        
         /// <summary>
         /// The unique identifier for the brand associated with the message
         /// </summary>
@@ -163,6 +188,8 @@ namespace freeclimb.Model
         [DataMember(Name = "brandId", EmitDefaultValue = true)]
         public string BrandId { get; set; }
 
+        
+        
         /// <summary>
         /// The unique identifier for the campaign associated with the message
         /// </summary>
@@ -170,6 +197,8 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
+        
+        
         /// <summary>
         /// The number of segments into which the message was split
         /// </summary>
@@ -177,6 +206,8 @@ namespace freeclimb.Model
         [DataMember(Name = "segmentCount", EmitDefaultValue = true)]
         public decimal? SegmentCount { get; set; }
 
+        
+        
         /// <summary>
         /// an array of HTTP URLs which were attached this this message
         /// </summary>
@@ -184,6 +215,7 @@ namespace freeclimb.Model
         [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
         public List<string> MediaUrls { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

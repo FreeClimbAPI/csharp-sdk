@@ -53,6 +53,7 @@ namespace freeclimb.Model
             this.Pql = pql;
         }
 
+        
         /// <summary>
         /// The filter query for retrieving logs. See **Performance Query Language** below.
         /// </summary>
@@ -60,6 +61,7 @@ namespace freeclimb.Model
         [DataMember(Name = "pql", IsRequired = true, EmitDefaultValue = true)]
         public string Pql { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

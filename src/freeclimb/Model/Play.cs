@@ -60,6 +60,7 @@ namespace freeclimb.Model
             this.PrivacyMode = privacyMode;
         }
 
+        
         /// <summary>
         /// RL of the audio file to be played to the caller. The URL can be the &#x60;recordingUrl&#x60; generated from the &#x60;RecordUtterance&#x60; or &#x60;StartRecordCall&#x60; PerCL commands. 
         /// </summary>
@@ -67,6 +68,8 @@ namespace freeclimb.Model
         [DataMember(Name = "file", IsRequired = true, EmitDefaultValue = true)]
         public string File { get; set; }
 
+        
+        
         /// <summary>
         /// Number of times the audio file is played. Specifying &#39;0&#39; causes the Play action to loop until the Call is hung up.
         /// </summary>
@@ -74,6 +77,8 @@ namespace freeclimb.Model
         [DataMember(Name = "loop", EmitDefaultValue = false)]
         public int Loop { get; set; }
 
+        
+        
         /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
@@ -81,6 +86,7 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

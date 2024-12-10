@@ -66,42 +66,54 @@ namespace freeclimb.Model
             this.Prompts = prompts;
         }
 
+        
         /// <summary>
         /// Gets or Sets ActionUrl
         /// </summary>
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets PlayBeep
         /// </summary>
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public bool PlayBeep { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets Record
         /// </summary>
         [DataMember(Name = "record", EmitDefaultValue = false)]
         public TranscribeUtteranceRecord Record { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets PrivacyForLogging
         /// </summary>
         [DataMember(Name = "privacyForLogging", EmitDefaultValue = true)]
         public bool PrivacyForLogging { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets PrivacyForRecording
         /// </summary>
         [DataMember(Name = "privacyForRecording", EmitDefaultValue = true)]
         public bool PrivacyForRecording { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets Prompts
         /// </summary>
         [DataMember(Name = "prompts", EmitDefaultValue = false)]
         public List<PerclCommand> Prompts { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

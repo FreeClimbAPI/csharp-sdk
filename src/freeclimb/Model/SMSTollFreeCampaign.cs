@@ -91,6 +91,7 @@ namespace freeclimb.Model
             this.Revision = revision;
         }
 
+        
         /// <summary>
         /// ID of the account that created this toll-free campaign
         /// </summary>
@@ -98,6 +99,8 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", IsRequired = true, EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+        
+        
         /// <summary>
         /// Alphanumeric identifier used by the platform to identify this toll-free campaign
         /// </summary>
@@ -105,30 +108,41 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets UseCase
         /// </summary>
         [DataMember(Name = "useCase", IsRequired = true, EmitDefaultValue = true)]
         public string UseCase { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// Gets or Sets DateCreated
         /// </summary>
         [DataMember(Name = "dateCreated", IsRequired = true, EmitDefaultValue = true)]
         public string DateCreated { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets DateUpdated
         /// </summary>
         [DataMember(Name = "dateUpdated", IsRequired = true, EmitDefaultValue = true)]
         public string DateUpdated { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets Revision
         /// </summary>
         [DataMember(Name = "revision", IsRequired = true, EmitDefaultValue = true)]
         public int Revision { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

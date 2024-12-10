@@ -157,6 +157,7 @@ namespace freeclimb.Model
             this.CreateDate = createDate;
         }
 
+        
         /// <summary>
         /// ID of the account that created this Queue.
         /// </summary>
@@ -164,6 +165,10 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// Unique identifier assigned to the csp by the registry.
         /// </summary>
@@ -179,6 +184,8 @@ namespace freeclimb.Model
         {
             return false;
         }
+        
+        
         /// <summary>
         /// Unique identifier assigned to the brand by the registry.
         /// </summary>
@@ -194,6 +201,8 @@ namespace freeclimb.Model
         {
             return false;
         }
+        
+        
         /// <summary>
         /// First or given name. 
         /// </summary>
@@ -204,6 +213,8 @@ namespace freeclimb.Model
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
         public string FirstName { get; set; }
 
+        
+        
         /// <summary>
         /// Last or Surname.
         /// </summary>
@@ -214,6 +225,8 @@ namespace freeclimb.Model
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
         public string LastName { get; set; }
 
+        
+        
         /// <summary>
         /// Display or marketing name of the brand.
         /// </summary>
@@ -224,6 +237,8 @@ namespace freeclimb.Model
         [DataMember(Name = "displayName", IsRequired = true, EmitDefaultValue = true)]
         public string DisplayName { get; set; }
 
+        
+        
         /// <summary>
         /// (Required for Non-profit/private/public) Legal company name.
         /// </summary>
@@ -234,6 +249,8 @@ namespace freeclimb.Model
         [DataMember(Name = "companyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
+        
+        
         /// <summary>
         /// (Required for Non-profit) Government assigned corporate tax ID. EIN is 9-digits in U.S.
         /// </summary>
@@ -244,6 +261,8 @@ namespace freeclimb.Model
         [DataMember(Name = "ein", EmitDefaultValue = false)]
         public string Ein { get; set; }
 
+        
+        
         /// <summary>
         /// ISO2 2 characters country code. Example: US - United States
         /// </summary>
@@ -254,6 +273,8 @@ namespace freeclimb.Model
         [DataMember(Name = "einIssuingCountry", EmitDefaultValue = false)]
         public string EinIssuingCountry { get; set; }
 
+        
+        
         /// <summary>
         /// Valid phone number in e.164 international format.
         /// </summary>
@@ -264,6 +285,8 @@ namespace freeclimb.Model
         [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
 
+        
+        
         /// <summary>
         /// Street number and name.
         /// </summary>
@@ -274,6 +297,8 @@ namespace freeclimb.Model
         [DataMember(Name = "street", EmitDefaultValue = false)]
         public string Street { get; set; }
 
+        
+        
         /// <summary>
         /// City name
         /// </summary>
@@ -284,6 +309,8 @@ namespace freeclimb.Model
         [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
+        
+        
         /// <summary>
         /// State. Must be 2 letters code for United States.
         /// </summary>
@@ -294,6 +321,8 @@ namespace freeclimb.Model
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
+        
+        
         /// <summary>
         /// Postal codes. Use 5 digit zipcode for United States
         /// </summary>
@@ -304,6 +333,8 @@ namespace freeclimb.Model
         [DataMember(Name = "postalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
+        
+        
         /// <summary>
         /// ISO2 2 characters country code. Example: US - United States
         /// </summary>
@@ -314,6 +345,8 @@ namespace freeclimb.Model
         [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
         public string Country { get; set; }
 
+        
+        
         /// <summary>
         /// Valid email address of brand support contact.
         /// </summary>
@@ -321,6 +354,8 @@ namespace freeclimb.Model
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
+        
+        
         /// <summary>
         /// (Required for public company) stock symbol.
         /// </summary>
@@ -331,6 +366,10 @@ namespace freeclimb.Model
         [DataMember(Name = "stockSymbol", EmitDefaultValue = false)]
         public string StockSymbol { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// IP address of the browser requesting to create brand identity.
         /// </summary>
@@ -338,6 +377,8 @@ namespace freeclimb.Model
         [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
         public string IpAddress { get; set; }
 
+        
+        
         /// <summary>
         /// Brand website URL.
         /// </summary>
@@ -348,6 +389,10 @@ namespace freeclimb.Model
         [DataMember(Name = "website", EmitDefaultValue = false)]
         public string Website { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// Vertical or industry segment of the brand.
         /// </summary>
@@ -355,6 +400,8 @@ namespace freeclimb.Model
         [DataMember(Name = "vertical", IsRequired = true, EmitDefaultValue = true)]
         public string Vertical { get; set; }
 
+        
+        
         /// <summary>
         /// Alternate business identifier such as DUNS, LEI, or GIIN
         /// </summary>
@@ -362,6 +409,10 @@ namespace freeclimb.Model
         [DataMember(Name = "altBusinessId", EmitDefaultValue = false)]
         public string AltBusinessId { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// Universal EIN of Brand, Read Only.
         /// </summary>
@@ -377,6 +428,8 @@ namespace freeclimb.Model
         {
             return false;
         }
+        
+        
         /// <summary>
         /// Caller supplied brand reference ID. If supplied, the value must be unique across all submitted brands. Can be used to prevent duplicate brand registrations.
         /// </summary>
@@ -384,6 +437,8 @@ namespace freeclimb.Model
         [DataMember(Name = "referenceId", EmitDefaultValue = false)]
         public string ReferenceId { get; set; }
 
+        
+        
         /// <summary>
         /// Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names.
         /// </summary>
@@ -391,6 +446,8 @@ namespace freeclimb.Model
         [DataMember(Name = "optionalAttributes", EmitDefaultValue = false)]
         public Dictionary<string, Object> OptionalAttributes { get; set; }
 
+        
+        
         /// <summary>
         /// Test brand.
         /// </summary>
@@ -398,6 +455,10 @@ namespace freeclimb.Model
         [DataMember(Name = "mock", IsRequired = true, EmitDefaultValue = true)]
         public bool Mock { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// Unix timestamp when brand was created.
         /// </summary>
@@ -405,6 +466,7 @@ namespace freeclimb.Model
         [DataMember(Name = "createDate", EmitDefaultValue = false)]
         public DateTime CreateDate { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

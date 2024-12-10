@@ -76,6 +76,7 @@ namespace freeclimb.Model
             this.EvpVettingScore = evpVettingScore;
         }
 
+        
         /// <summary>
         /// ID of the account that created this Queue.
         /// </summary>
@@ -83,6 +84,8 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+        
+        
         /// <summary>
         /// Unique identifier assigned to the brand by the registry.
         /// </summary>
@@ -98,6 +101,8 @@ namespace freeclimb.Model
         {
             return false;
         }
+        
+        
         /// <summary>
         /// First or given name. 
         /// </summary>
@@ -108,6 +113,8 @@ namespace freeclimb.Model
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
         public string FirstName { get; set; }
 
+        
+        
         /// <summary>
         /// Last or Surname.
         /// </summary>
@@ -118,6 +125,8 @@ namespace freeclimb.Model
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
         public string LastName { get; set; }
 
+        
+        
         /// <summary>
         /// Display or marketing name of the brand.
         /// </summary>
@@ -128,6 +137,8 @@ namespace freeclimb.Model
         [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
+        
+        
         /// <summary>
         /// (Required for Non-profit/private/public) Legal company name.
         /// </summary>
@@ -138,6 +149,8 @@ namespace freeclimb.Model
         [DataMember(Name = "companyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
+        
+        
         /// <summary>
         /// Valid phone number in e.164 international format.
         /// </summary>
@@ -148,6 +161,8 @@ namespace freeclimb.Model
         [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
 
+        
+        
         /// <summary>
         /// Valid email address of brand support contact.
         /// </summary>
@@ -155,6 +170,8 @@ namespace freeclimb.Model
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
+        
+        
         /// <summary>
         /// Brand website URL.
         /// </summary>
@@ -165,6 +182,8 @@ namespace freeclimb.Model
         [DataMember(Name = "website", EmitDefaultValue = false)]
         public string Website { get; set; }
 
+        
+        
         /// <summary>
         /// Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names.
         /// </summary>
@@ -172,6 +191,8 @@ namespace freeclimb.Model
         [DataMember(Name = "optionalAttributes", EmitDefaultValue = false)]
         public Dictionary<string, Object> OptionalAttributes { get; set; }
 
+        
+        
         /// <summary>
         /// External vetting score.
         /// </summary>
@@ -179,6 +200,7 @@ namespace freeclimb.Model
         [DataMember(Name = "evpVettingScore", EmitDefaultValue = false)]
         public int EvpVettingScore { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

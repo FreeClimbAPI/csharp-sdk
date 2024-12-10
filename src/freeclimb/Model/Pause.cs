@@ -51,6 +51,7 @@ namespace freeclimb.Model
             this.Length = length;
         }
 
+        
         /// <summary>
         /// Length in milliseconds. FreeClimb will wait silently before continuing on.
         /// </summary>
@@ -58,6 +59,7 @@ namespace freeclimb.Model
         [DataMember(Name = "length", IsRequired = true, EmitDefaultValue = true)]
         public int Length { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

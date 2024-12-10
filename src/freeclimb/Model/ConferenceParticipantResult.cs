@@ -63,6 +63,7 @@ namespace freeclimb.Model
             this.StartConfOnEnter = startConfOnEnter;
         }
 
+        
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -70,6 +71,8 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+        
+        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -77,6 +80,8 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
+        
+        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -84,6 +89,8 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+        
+        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -91,6 +98,8 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
+        
+        
         /// <summary>
         /// ID of the account that created this participant.
         /// </summary>
@@ -98,6 +107,8 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+        
+        
         /// <summary>
         /// ID of the conference this participant is in.
         /// </summary>
@@ -105,6 +116,8 @@ namespace freeclimb.Model
         [DataMember(Name = "conferenceId", EmitDefaultValue = true)]
         public string ConferenceId { get; set; }
 
+        
+        
         /// <summary>
         /// ID of the Call associated with this Participant.
         /// </summary>
@@ -112,6 +125,8 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = true)]
         public string CallId { get; set; }
 
+        
+        
         /// <summary>
         /// True if this Participant has talk privileges in the Conference. False otherwise.
         /// </summary>
@@ -119,6 +134,8 @@ namespace freeclimb.Model
         [DataMember(Name = "talk", EmitDefaultValue = true)]
         public bool? Talk { get; set; }
 
+        
+        
         /// <summary>
         /// True if this Participant has listen privileges in the Conference. False otherwise.
         /// </summary>
@@ -126,6 +143,8 @@ namespace freeclimb.Model
         [DataMember(Name = "listen", EmitDefaultValue = true)]
         public bool? Listen { get; set; }
 
+        
+        
         /// <summary>
         /// True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise.
         /// </summary>
@@ -133,6 +152,8 @@ namespace freeclimb.Model
         [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
         public bool? DtmfPassThrough { get; set; }
 
+        
+        
         /// <summary>
         /// True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise.
         /// </summary>
@@ -140,6 +161,7 @@ namespace freeclimb.Model
         [DataMember(Name = "startConfOnEnter", EmitDefaultValue = true)]
         public bool? StartConfOnEnter { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -62,6 +62,7 @@ namespace freeclimb.Model
             this.Uses = uses;
         }
 
+        
         /// <summary>
         /// E.164 formatted phone number to which calls using this token will be made.
         /// </summary>
@@ -69,6 +70,8 @@ namespace freeclimb.Model
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
 
+        
+        
         /// <summary>
         /// E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made.
         /// </summary>
@@ -76,6 +79,8 @@ namespace freeclimb.Model
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
+        
+        
         /// <summary>
         /// number of times this token may be used for a WebRTC call
         /// </summary>
@@ -83,6 +88,7 @@ namespace freeclimb.Model
         [DataMember(Name = "uses", IsRequired = true, EmitDefaultValue = true)]
         public int Uses { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

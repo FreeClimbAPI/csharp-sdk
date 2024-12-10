@@ -46,6 +46,7 @@ namespace freeclimb.Model
             this.Reason = reason;
         }
 
+        
         /// <summary>
         /// The user defined reason for the hangup. In general, applications should use a set of enumerated values that are predefined to cover all exit points of the Call flows for the given application.
         /// </summary>
@@ -53,6 +54,7 @@ namespace freeclimb.Model
         [DataMember(Name = "reason", EmitDefaultValue = false)]
         public string Reason { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

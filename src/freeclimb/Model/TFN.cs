@@ -53,6 +53,7 @@ namespace freeclimb.Model
             this.CampaignId = campaignId;
         }
 
+        
         /// <summary>
         /// alphanumeric identifier for the TollFree campaign associated with this number
         /// </summary>
@@ -60,6 +61,7 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

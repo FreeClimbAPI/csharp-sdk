@@ -62,6 +62,7 @@ namespace freeclimb.Model
             this.PrivacyMode = privacyMode;
         }
 
+        
         /// <summary>
         /// The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
         /// </summary>
@@ -69,6 +70,8 @@ namespace freeclimb.Model
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
+        
+        
         /// <summary>
         /// Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
         /// </summary>
@@ -76,6 +79,8 @@ namespace freeclimb.Model
         [DataMember(Name = "language", EmitDefaultValue = false)]
         public string Language { get; set; }
 
+        
+        
         /// <summary>
         /// Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up.
         /// </summary>
@@ -83,6 +88,8 @@ namespace freeclimb.Model
         [DataMember(Name = "loop", EmitDefaultValue = false)]
         public int Loop { get; set; }
 
+        
+        
         /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
@@ -90,6 +97,7 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

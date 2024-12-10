@@ -57,6 +57,7 @@ namespace freeclimb.Model
             this.StatusCallbackUrl = statusCallbackUrl;
         }
 
+        
         /// <summary>
         /// A description for this Conference. Maximum 64 characters.
         /// </summary>
@@ -64,6 +65,10 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// Setting to &#x60;true&#x60; records the entire Conference.
         /// </summary>
@@ -71,6 +76,8 @@ namespace freeclimb.Model
         [DataMember(Name = "record", EmitDefaultValue = true)]
         public bool Record { get; set; }
 
+        
+        
         /// <summary>
         /// If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &amp;mdash; when the Conference is created.
         /// </summary>
@@ -78,6 +85,8 @@ namespace freeclimb.Model
         [DataMember(Name = "waitUrl", EmitDefaultValue = false)]
         public string WaitUrl { get; set; }
 
+        
+        
         /// <summary>
         /// This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).
         /// </summary>
@@ -85,6 +94,7 @@ namespace freeclimb.Model
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = false)]
         public string StatusCallbackUrl { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

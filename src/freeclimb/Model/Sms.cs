@@ -72,6 +72,7 @@ namespace freeclimb.Model
             this.NotificationUrl = notificationUrl;
         }
 
+        
         /// <summary>
         /// E.164 representation of the phone number to which the message will be sent. Must be within FreeClimb&#39;s service area and E.164 formatting (e.g., +18003608245).
         /// </summary>
@@ -79,6 +80,8 @@ namespace freeclimb.Model
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
 
+        
+        
         /// <summary>
         /// E.164 representation of the phone number to use as the sender. This must be an incoming phone number you have purchased from FreeClimb.
         /// </summary>
@@ -86,6 +89,8 @@ namespace freeclimb.Model
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
+        
+        
         /// <summary>
         /// Text contained in the message (maximum 160 characters).
         /// </summary>
@@ -93,6 +98,8 @@ namespace freeclimb.Model
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
+        
+        
         /// <summary>
         /// When the message changes status, this URL will be invoked using HTTP POST with the messageStatus parameters. This is a notification only; any PerCL returned will be ignored.
         /// </summary>
@@ -100,6 +107,7 @@ namespace freeclimb.Model
         [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
         public string NotificationUrl { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

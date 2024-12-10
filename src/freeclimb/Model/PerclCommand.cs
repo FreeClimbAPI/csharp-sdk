@@ -71,13 +71,7 @@ namespace freeclimb.Model
             this.Command = command;
         }
 
-        /// <summary>
-        /// Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments)
-        /// </summary>
-        /// <value>Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments)</value>
-        [DataMember(Name = "command", EmitDefaultValue = false)]
-        public string Command { get; set; }
-
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

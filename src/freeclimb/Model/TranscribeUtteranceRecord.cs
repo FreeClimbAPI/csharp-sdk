@@ -47,24 +47,30 @@ namespace freeclimb.Model
             this.RcrdTerminationSilenceTimeMs = rcrdTerminationSilenceTimeMs;
         }
 
+        
         /// <summary>
         /// Gets or Sets SaveRecording
         /// </summary>
         [DataMember(Name = "saveRecording", EmitDefaultValue = true)]
         public bool SaveRecording { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets MaxLengthSec
         /// </summary>
         [DataMember(Name = "maxLengthSec", EmitDefaultValue = false)]
         public int MaxLengthSec { get; set; }
 
+        
+        
         /// <summary>
         /// Gets or Sets RcrdTerminationSilenceTimeMs
         /// </summary>
         [DataMember(Name = "rcrdTerminationSilenceTimeMs", EmitDefaultValue = false)]
         public int RcrdTerminationSilenceTimeMs { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -45,6 +45,7 @@ namespace freeclimb.Model
             this.Label = label;
         }
 
+        
         /// <summary>
         /// Description for this account.
         /// </summary>
@@ -52,6 +53,8 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
+        
+        
         /// <summary>
         /// Group to which this account belongs.
         /// </summary>
@@ -59,6 +62,7 @@ namespace freeclimb.Model
         [DataMember(Name = "label", EmitDefaultValue = false)]
         public string Label { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

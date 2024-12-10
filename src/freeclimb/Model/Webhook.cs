@@ -68,13 +68,7 @@ namespace freeclimb.Model
             this.RequestType = requestType;
         }
 
-        /// <summary>
-        /// Type of webhook request
-        /// </summary>
-        /// <value>Type of webhook request</value>
-        [DataMember(Name = "requestType", EmitDefaultValue = false)]
-        public string RequestType { get; set; }
-
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

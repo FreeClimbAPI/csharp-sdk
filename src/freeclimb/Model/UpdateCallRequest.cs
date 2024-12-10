@@ -54,6 +54,8 @@ namespace freeclimb.Model
             this.Status = status;
         }
 
+        
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

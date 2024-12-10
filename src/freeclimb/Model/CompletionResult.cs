@@ -61,6 +61,7 @@ namespace freeclimb.Model
             this.Status = status;
         }
 
+        
         /// <summary>
         /// The generative response from the KnowledgeBase
         /// </summary>
@@ -68,6 +69,9 @@ namespace freeclimb.Model
         [DataMember(Name = "response", IsRequired = true, EmitDefaultValue = true)]
         public string Response { get; set; }
 
+        
+        
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

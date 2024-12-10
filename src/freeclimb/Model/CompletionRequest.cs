@@ -53,6 +53,7 @@ namespace freeclimb.Model
             this.Query = query;
         }
 
+        
         /// <summary>
         /// Question to ask the Knowledge Base
         /// </summary>
@@ -60,6 +61,7 @@ namespace freeclimb.Model
         [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
         public string Query { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -47,6 +47,7 @@ namespace freeclimb.Model
             this.DtmfPassThrough = dtmfPassThrough;
         }
 
+        
         /// <summary>
         /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes the Participant. FreeClimb returns an error and ignores any other value.
         /// </summary>
@@ -54,6 +55,8 @@ namespace freeclimb.Model
         [DataMember(Name = "talk", EmitDefaultValue = true)]
         public bool Talk { get; set; }
 
+        
+        
         /// <summary>
         /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; silences the Conference for this Participant. FreeClimb returns an error and ignores any other value.
         /// </summary>
@@ -61,6 +64,8 @@ namespace freeclimb.Model
         [DataMember(Name = "listen", EmitDefaultValue = true)]
         public bool Listen { get; set; }
 
+        
+        
         /// <summary>
         /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value.
         /// </summary>
@@ -68,6 +73,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
         public bool DtmfPassThrough { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

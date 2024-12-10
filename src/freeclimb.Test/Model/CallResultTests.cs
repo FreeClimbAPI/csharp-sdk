@@ -342,7 +342,10 @@ namespace freeclimb.Test.Model
 
         public object getTestValue(Type type)
         {
-            if (type == typeof(int) || type == typeof(Nullable<int>)) {
+            if (type == typeof(int)) {
+                return 1;
+            }
+            if (type == typeof(Nullable<int>)) {
                 return 1;
             }
             if (type == typeof(string)) {
@@ -351,7 +354,10 @@ namespace freeclimb.Test.Model
             if (type == typeof(decimal)) {
                 return new decimal(0.1);
             }
-            if (type == typeof(bool) || type == typeof(Nullable<bool>)) {
+            if (type == typeof(bool)) {
+                return true;
+            }
+            if (type == typeof(Nullable<bool>)) {
                 return true;
             }
             if (type == typeof(CallStatus)) {

@@ -81,6 +81,7 @@ namespace freeclimb.Model
             this.SubresourceUris = subresourceUris;
         }
 
+        
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -88,6 +89,8 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+        
+        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -95,6 +98,8 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
+        
+        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -102,6 +107,8 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+        
+        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -109,6 +116,8 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
+        
+        
         /// <summary>
         /// A string that uniquely identifies this Conference resource.
         /// </summary>
@@ -116,6 +125,8 @@ namespace freeclimb.Model
         [DataMember(Name = "conferenceId", EmitDefaultValue = true)]
         public string ConferenceId { get; set; }
 
+        
+        
         /// <summary>
         /// ID of the account that created this Conference.
         /// </summary>
@@ -123,6 +134,8 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+        
+        
         /// <summary>
         /// A description for this Conference.
         /// </summary>
@@ -130,6 +143,10 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public string Alias { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// Flag indicating whether recording is enabled for this Conference.
         /// </summary>
@@ -137,6 +154,10 @@ namespace freeclimb.Model
         [DataMember(Name = "record", EmitDefaultValue = true)]
         public bool? Record { get; set; }
 
+        
+        
+        
+        
         /// <summary>
         /// URL referencing the audio file to be used as default wait music for the Conference when it is in the populated state.
         /// </summary>
@@ -144,6 +165,8 @@ namespace freeclimb.Model
         [DataMember(Name = "waitUrl", EmitDefaultValue = true)]
         public string WaitUrl { get; set; }
 
+        
+        
         /// <summary>
         /// URL invoked once the Conference is successfully created.
         /// </summary>
@@ -151,6 +174,8 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+        
+        
         /// <summary>
         /// URL to inform that the Conference status has changed.
         /// </summary>
@@ -158,6 +183,8 @@ namespace freeclimb.Model
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = true)]
         public string StatusCallbackUrl { get; set; }
 
+        
+        
         /// <summary>
         /// The list of subresources for this Conference. This includes participants and/or recordings.
         /// </summary>
@@ -165,6 +192,7 @@ namespace freeclimb.Model
         [DataMember(Name = "subresourceUris", EmitDefaultValue = true)]
         public Object SubresourceUris { get; set; }
 
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
