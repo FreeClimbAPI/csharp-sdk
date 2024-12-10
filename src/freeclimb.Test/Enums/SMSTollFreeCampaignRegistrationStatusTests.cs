@@ -355,6 +355,9 @@ namespace freeclimb.Test.Enums
             if (type == typeof(TranscribeUtteranceRecord)) {
                 return new TranscribeUtteranceRecord();
             }
+            if (type == typeof(SMSTenDLCPartnerCampaignBrand)) {
+                return new SMSTenDLCPartnerCampaignBrand();
+            }
             if (type == typeof(DateTime)) {
                 return DateTime.Today;
             }
@@ -364,7 +367,7 @@ namespace freeclimb.Test.Enums
             if (type == typeof(Object)) {
                 return new Dictionary<string, string>();
             }
-            throw new ArgumentException("Provided type has no test value");
+            throw new ArgumentException("Provided type has no test value", type.ToString());
         }
     }
     
