@@ -186,6 +186,9 @@ namespace freeclimb.Test.Enums
             if (type == typeof(string)) {
                 return "TEST_STRING";
             }
+            if (type == typeof(decimal) || type == Nullable<decimal>) {
+                return new decimal(0.1);
+            }
             if (type == typeof(bool) || type == typeof(Nullable<bool>)) {
                 return true;
             }
@@ -237,6 +240,9 @@ namespace freeclimb.Test.Enums
             if (type == typeof(SMSTenDLCCampaignStatus)) {
                 return SMSTenDLCCampaignStatusValueConverter.FromString("ACTIVE");
             }
+            if (type == typeof(SMSTenDLCPartnerCampaignStatus)) {
+                return SMSTenDLCPartnerCampaignStatusValueConverter.FromString("ACTIVE");
+            }
             if (type == typeof(SMSTollFreeCampaignRegistrationStatus)) {
                 return SMSTollFreeCampaignRegistrationStatusValueConverter.FromString("UNREGISTERED");
             }
@@ -253,7 +259,7 @@ namespace freeclimb.Test.Enums
                 return CompletionResultStatusValueConverter.FromString("success");
             }
             if (type == typeof(AnsweredBy)) {
-                return AnsweredByValueConverter.FromString("HUMAN");
+                return AnsweredByValueConverter.FromString("human");
             }
             if (type == typeof(IfMachine)) {
                 return IfMachineValueConverter.FromString("redirect");
@@ -264,8 +270,32 @@ namespace freeclimb.Test.Enums
             if (type == typeof(AccountStatus)) {
                 return AccountStatusValueConverter.FromString("closed");
             }
+            if (type == typeof(TranscribeTermReason)) {
+                return TranscribeTermReasonValueConverter.FromString("error");
+            }
+            if (type == typeof(TranscribeReason)) {
+                return TranscribeReasonValueConverter.FromString("internalError");
+            }
+            if (type == typeof(BargeInReason)) {
+                return BargeInReasonValueConverter.FromString("noBargeIn");
+            }
+            if (type == typeof(GetSpeechReason)) {
+                return GetSpeechReasonValueConverter.FromString("error");
+            }
+            if (type == typeof(UpdateConferenceRequestStatus)) {
+                return UpdateConferenceRequestStatusValueConverter.FromString("empty");
+            }
             if (type == typeof(List<string>)) {
                 return new List<string>();
+            }
+            if (type == typeof(List<SMSTenDLCCampaign>)) {
+                return new List<SMSTenDLCCampaign>();
+            }
+            if (type == typeof(List<ConferenceResult>)) {
+                return new List<ConferenceResult>();
+            }
+            if (type == typeof(List<MessageResult>)) {
+                return new List<MessageResult>();
             }
             if (type == typeof(List<ApplicationResult>)) {
                 return new List<ApplicationResult>();
@@ -300,8 +330,14 @@ namespace freeclimb.Test.Enums
             if (type == typeof(List<ConferenceParticipantResult>)) {
                 return new List<ConferenceParticipantResult>();
             }
+            if (type == typeof(List<LogResult>)) {
+                return new List<LogResult>();
+            }
+            if (type == typeof(List<RecordingResult>)) {
+                return new List<RecordingResult>();
+            }
             if (type == typeof(Capabilities)) {
-                return new Capabilities();
+                return new Capabilities(voice: false, sms: false, tenDLC: false, tollFree: false, shortCode: false);
             }
             if (type == typeof(TFN)) {
                 return new TFN(campaignId: "TEST_CAMPAIGN");
