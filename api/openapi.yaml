@@ -3436,6 +3436,7 @@ components:
             configuration and should not be manually supplied in any arguments)
           type: string
           x-is-no-property: true
+          x-percl-command-base: true
       type: object
       x-percl-command-base: true
     Webhook:
