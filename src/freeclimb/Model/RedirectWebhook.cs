@@ -63,16 +63,36 @@ namespace freeclimb.Model
         /// <param name="parentCallId">ID of Call that created this leg (child call)..</param>
         public RedirectWebhook(string requestType = @"RedirectWebhook", string accountId = default(string), string callId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), string parentCallId = default(string)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.AccountId = accountId;
+
             this.CallId = callId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.ParentCallId = parentCallId;
+
         }
 
         

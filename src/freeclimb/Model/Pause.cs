@@ -49,6 +49,8 @@ namespace freeclimb.Model
         public Pause(int length = default(int), string command = @"Pause") : base(command)
         {
             this.Length = length;
+
+
         }
 
         

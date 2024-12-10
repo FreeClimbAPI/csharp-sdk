@@ -54,9 +54,15 @@ namespace freeclimb.Model
         /// <param name="status">status.</param>
         public UpdateConferenceRequest(string alias = default(string), PlayBeep? playBeep = default(PlayBeep?), UpdateConferenceRequestStatus? status = default(UpdateConferenceRequestStatus?))
         {
+
+
+
             this.Alias = alias;
+
             this.PlayBeep = playBeep;
+
             this.Status = status;
+
         }
 
         

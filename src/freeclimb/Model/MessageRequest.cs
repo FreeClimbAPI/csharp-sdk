@@ -53,30 +53,48 @@ namespace freeclimb.Model
         /// <param name="mediaUrls">an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile..</param>
         public MessageRequest(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string from = default(string), string to = default(string), string text = default(string), string notificationUrl = default(string), List<string> mediaUrls = default(List<string>))
         {
+
+
+
+
             // to ensure "from" is required (not null)
             if (from == null)
             {
                 throw new ArgumentNullException("from is a required property for MessageRequest and cannot be null");
             }
             this.From = from;
+
             // to ensure "to" is required (not null)
             if (to == null)
             {
                 throw new ArgumentNullException("to is a required property for MessageRequest and cannot be null");
             }
             this.To = to;
+
             // to ensure "text" is required (not null)
             if (text == null)
             {
                 throw new ArgumentNullException("text is a required property for MessageRequest and cannot be null");
             }
             this.Text = text;
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
+
+
+
             this.NotificationUrl = notificationUrl;
+
             this.MediaUrls = mediaUrls;
+
         }
 
         

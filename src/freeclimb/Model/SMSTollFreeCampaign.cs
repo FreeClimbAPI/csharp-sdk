@@ -63,32 +63,46 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("accountId is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.AccountId = accountId;
+
             // to ensure "campaignId" is required (not null)
             if (campaignId == null)
             {
                 throw new ArgumentNullException("campaignId is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.CampaignId = campaignId;
+
             // to ensure "useCase" is required (not null)
             if (useCase == null)
             {
                 throw new ArgumentNullException("useCase is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.UseCase = useCase;
+
             this.RegistrationStatus = registrationStatus;
+
             // to ensure "dateCreated" is required (not null)
             if (dateCreated == null)
             {
                 throw new ArgumentNullException("dateCreated is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.DateCreated = dateCreated;
+
             // to ensure "dateUpdated" is required (not null)
             if (dateUpdated == null)
             {
                 throw new ArgumentNullException("dateUpdated is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
+
+
+
+
+
+
+
         }
 
         

@@ -59,11 +59,23 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for TranscribeUtterance and cannot be null");
             }
             this.ActionUrl = actionUrl;
+
+
+
+
+
+
+
             this.PlayBeep = playBeep;
+
             this.Record = record;
+
             this.PrivacyForLogging = privacyForLogging;
+
             this.PrivacyForRecording = privacyForRecording;
+
             this.Prompts = prompts;
+
         }
 
         

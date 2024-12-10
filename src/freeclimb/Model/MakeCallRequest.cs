@@ -60,20 +60,40 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("from is a required property for MakeCallRequest and cannot be null");
             }
             this.From = from;
+
             // to ensure "to" is required (not null)
             if (to == null)
             {
                 throw new ArgumentNullException("to is a required property for MakeCallRequest and cannot be null");
             }
             this.To = to;
+
+
+
+
+
+
+
+
+
+
+
             this.ApplicationId = applicationId;
+
             this.SendDigits = sendDigits;
+
             this.IfMachine = ifMachine;
+
             this.IfMachineUrl = ifMachineUrl;
+
             this.Timeout = timeout;
+
             this.ParentCallId = parentCallId;
+
             this.PrivacyMode = privacyMode;
+
             this.CallConnectUrl = callConnectUrl;
+
         }
 
         

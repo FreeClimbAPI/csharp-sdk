@@ -56,8 +56,14 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("digits is a required property for SendDigits and cannot be null");
             }
             this.Digits = digits;
+
+
+
+
             this.PauseMs = pauseMs;
+
             this.PrivacyMode = privacyMode;
+
         }
 
         

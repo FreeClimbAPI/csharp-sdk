@@ -52,13 +52,27 @@ namespace freeclimb.Model
         /// <param name="metadata">JSON document containing metadata about the event. Some log messages may include request and response header content in this field..</param>
         public LogResult(int? timestamp = default(int?), LogLevel? level = default(LogLevel?), string requestId = default(string), string accountId = default(string), string callId = default(string), string message = default(string), Object metadata = default(Object))
         {
+
+
+
+
+
+
+
             this.Timestamp = timestamp;
+
             this.Level = level;
+
             this.RequestId = requestId;
+
             this.AccountId = accountId;
+
             this.CallId = callId;
+
             this.Message = message;
+
             this.Metadata = metadata;
+
         }
 
         

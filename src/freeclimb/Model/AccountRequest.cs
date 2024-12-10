@@ -41,8 +41,12 @@ namespace freeclimb.Model
         /// <param name="label">Group to which this account belongs..</param>
         public AccountRequest(string alias = default(string), string label = default(string))
         {
+
+
             this.Alias = alias;
+
             this.Label = label;
+
         }
 
         

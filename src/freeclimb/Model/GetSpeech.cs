@@ -72,23 +72,49 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for GetSpeech and cannot be null");
             }
             this.ActionUrl = actionUrl;
+
+
             // to ensure "grammarFile" is required (not null)
             if (grammarFile == null)
             {
                 throw new ArgumentNullException("grammarFile is a required property for GetSpeech and cannot be null");
             }
             this.GrammarFile = grammarFile;
+
+
+
+
+
+
+
+
+
+
+
+
             this.GrammarType = grammarType;
+
+
             this.GrammarRule = grammarRule;
+
             this.PlayBeep = playBeep;
+
             this.Prompts = prompts;
+
             this.NoInputTimeoutMs = noInputTimeoutMs;
+
             this.RecognitionTimeoutMs = recognitionTimeoutMs;
+
             this.ConfidenceThreshold = confidenceThreshold;
+
             this.SensitivityLevel = sensitivityLevel;
+
             this.SpeechCompleteTimeoutMs = speechCompleteTimeoutMs;
+
             this.SpeechIncompleteTimeoutMs = speechIncompleteTimeoutMs;
+
             this.PrivacyMode = privacyMode;
+
         }
 
         

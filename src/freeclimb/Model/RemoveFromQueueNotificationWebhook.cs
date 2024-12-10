@@ -70,17 +70,39 @@ namespace freeclimb.Model
         /// <param name="queueTime">Time (in seconds) the Call spent in the Queue. This is only available if the Call was actually enqueued..</param>
         public RemoveFromQueueNotificationWebhook(string requestType = @"RemoveFromQueueNotificationWebhook", string accountId = default(string), string callId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), QueueResultStatus? queueResult = default(QueueResultStatus?), int queueTime = default(int)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.AccountId = accountId;
+
             this.CallId = callId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.QueueResult = queueResult;
+
             this.QueueTime = queueTime;
+
         }
 
         

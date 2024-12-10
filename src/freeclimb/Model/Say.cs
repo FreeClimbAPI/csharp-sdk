@@ -57,9 +57,17 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("text is a required property for Say and cannot be null");
             }
             this.Text = text;
+
+
+
+
+
             this.Language = language;
+
             this.Loop = loop;
+
             this.PrivacyMode = privacyMode;
+
         }
 
         

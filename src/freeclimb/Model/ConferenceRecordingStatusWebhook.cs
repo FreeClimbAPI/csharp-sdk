@@ -72,19 +72,45 @@ namespace freeclimb.Model
         /// <param name="recordingDurationSec">Duration of the recorded audio (in seconds), rounded up to the nearest second. Populated only if a Recording exists and the Conference was emptied..</param>
         public ConferenceRecordingStatusWebhook(string requestType = @"ConferenceRecordingStatusWebhook", string callId = default(string), string accountId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), ConferenceStatus? status = default(ConferenceStatus?), string recordingUrl = default(string), string recordingId = default(string), int recordingDurationSec = default(int)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.CallId = callId;
+
             this.AccountId = accountId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.Status = status;
+
             this.RecordingUrl = recordingUrl;
+
             this.RecordingId = recordingId;
+
             this.RecordingDurationSec = recordingDurationSec;
+
         }
 
         

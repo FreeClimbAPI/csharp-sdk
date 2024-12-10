@@ -60,12 +60,26 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for RecordUtterance and cannot be null");
             }
             this.ActionUrl = actionUrl;
+
+
+
+
+
+
+
+
             this.SilenceTimeoutMs = silenceTimeoutMs;
+
             this.FinishOnKey = finishOnKey;
+
             this.MaxLengthSec = maxLengthSec;
+
             this.PlayBeep = playBeep;
+
             this.AutoStart = autoStart;
+
             this.PrivacyMode = privacyMode;
+
         }
 
         

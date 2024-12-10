@@ -42,9 +42,15 @@ namespace freeclimb.Model
         /// <param name="rcrdTerminationSilenceTimeMs">rcrdTerminationSilenceTimeMs.</param>
         public TranscribeUtteranceRecord(bool saveRecording = false, int maxLengthSec = 60, int rcrdTerminationSilenceTimeMs = default(int))
         {
+
+
+
             this.SaveRecording = saveRecording;
+
             this.MaxLengthSec = maxLengthSec;
+
             this.RcrdTerminationSilenceTimeMs = rcrdTerminationSilenceTimeMs;
+
         }
 
         

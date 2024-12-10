@@ -57,19 +57,27 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for Enqueue and cannot be null");
             }
             this.ActionUrl = actionUrl;
+
+
             // to ensure "queueId" is required (not null)
             if (queueId == null)
             {
                 throw new ArgumentNullException("queueId is a required property for Enqueue and cannot be null");
             }
             this.QueueId = queueId;
+
             // to ensure "waitUrl" is required (not null)
             if (waitUrl == null)
             {
                 throw new ArgumentNullException("waitUrl is a required property for Enqueue and cannot be null");
             }
             this.WaitUrl = waitUrl;
+
+
             this.NotificationUrl = notificationUrl;
+
+
+
         }
 
         

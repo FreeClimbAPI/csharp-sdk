@@ -77,26 +77,66 @@ namespace freeclimb.Model
         /// <param name="applicationId">ApplicationId associated with the Call..</param>
         public CallResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string callId = default(string), string parentCallId = default(string), string accountId = default(string), string from = default(string), string to = default(string), string phoneNumberId = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string connectTime = default(string), string endTime = default(string), int? duration = default(int?), int? connectDuration = default(int?), CallDirection? direction = default(CallDirection?), AnsweredBy? answeredBy = default(AnsweredBy?), Object subresourceUris = default(Object), string applicationId = default(string))
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.CallId = callId;
+
             this.ParentCallId = parentCallId;
+
             this.AccountId = accountId;
+
             this.From = from;
+
             this.To = to;
+
             this.PhoneNumberId = phoneNumberId;
+
             this.CallStatus = callStatus;
+
             this.StartTime = startTime;
+
             this.ConnectTime = connectTime;
+
             this.EndTime = endTime;
+
             this.Duration = duration;
+
             this.ConnectDuration = connectDuration;
+
             this.Direction = direction;
+
             this.AnsweredBy = answeredBy;
+
             this.SubresourceUris = subresourceUris;
+
             this.ApplicationId = applicationId;
+
         }
 
         

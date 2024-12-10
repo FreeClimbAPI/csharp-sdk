@@ -76,23 +76,57 @@ namespace freeclimb.Model
         /// <param name="mrcpDiagnostic">Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification..</param>
         public GetSpeechWebhook(string requestType = @"GetSpeechWebhook", string callId = default(string), string accountId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), GetSpeechReason? reason = default(GetSpeechReason?), string recognitionResult = default(string), int confidence = default(int), string parentCallId = default(string), string completionReason = default(string), string completionCause = default(string), int mrcpCode = default(int), string mrcpDiagnostic = default(string)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.CallId = callId;
+
             this.AccountId = accountId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.Reason = reason;
+
             this.RecognitionResult = recognitionResult;
+
             this.Confidence = confidence;
+
             this.ParentCallId = parentCallId;
+
             this.CompletionReason = completionReason;
+
             this.CompletionCause = completionCause;
+
             this.MrcpCode = mrcpCode;
+
             this.MrcpDiagnostic = mrcpDiagnostic;
+
         }
 
         

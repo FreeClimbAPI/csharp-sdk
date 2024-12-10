@@ -53,8 +53,14 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("phoneNumber is a required property for BuyIncomingNumberRequest and cannot be null");
             }
             this.PhoneNumber = phoneNumber;
+
+
+
+
             this.Alias = alias;
+
             this.ApplicationId = applicationId;
+
         }
 
         

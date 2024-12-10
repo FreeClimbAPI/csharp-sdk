@@ -79,55 +79,113 @@ namespace freeclimb.Model
         /// <param name="brand">brand.</param>
         public SMSTenDLCPartnerCampaign(string accountId = default(string), string campaignId = default(string), SMSTenDLCPartnerCampaignStatus? status = default(SMSTenDLCPartnerCampaignStatus?), DateTime createDate = default(DateTime), string brandId = default(string), string usecase = default(string), string description = default(string), bool embeddedLink = false, bool embeddedPhone = false, bool affiliateMarketing = default(bool), bool numberPool = false, bool ageGated = default(bool), bool directLending = default(bool), bool subscriberOptin = false, bool subscriberOptout = false, bool subscriberHelp = false, string sample1 = default(string), string sample2 = default(string), string sample3 = default(string), string sample4 = default(string), string sample5 = default(string), string messageFlow = default(string), string helpMessage = default(string), string optinKeywords = default(string), string optoutKeywords = default(string), string helpKeywords = default(string), string optinMessage = default(string), string optoutMessage = default(string), SMSTenDLCPartnerCampaignBrand brand = default(SMSTenDLCPartnerCampaignBrand))
         {
+
             // to ensure "campaignId" is required (not null)
             if (campaignId == null)
             {
                 throw new ArgumentNullException("campaignId is a required property for SMSTenDLCPartnerCampaign and cannot be null");
             }
             this.CampaignId = campaignId;
+
+
+
             // to ensure "brandId" is required (not null)
             if (brandId == null)
             {
                 throw new ArgumentNullException("brandId is a required property for SMSTenDLCPartnerCampaign and cannot be null");
             }
             this.BrandId = brandId;
+
             // to ensure "usecase" is required (not null)
             if (usecase == null)
             {
                 throw new ArgumentNullException("usecase is a required property for SMSTenDLCPartnerCampaign and cannot be null");
             }
             this.Usecase = usecase;
+
             // to ensure "description" is required (not null)
             if (description == null)
             {
                 throw new ArgumentNullException("description is a required property for SMSTenDLCPartnerCampaign and cannot be null");
             }
             this.Description = description;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.AccountId = accountId;
+
+
             this.Status = status;
+
             this.CreateDate = createDate;
+
+
+
+
             this.EmbeddedLink = embeddedLink;
+
             this.EmbeddedPhone = embeddedPhone;
+
             this.AffiliateMarketing = affiliateMarketing;
+
             this.NumberPool = numberPool;
+
             this.AgeGated = ageGated;
+
             this.DirectLending = directLending;
+
             this.SubscriberOptin = subscriberOptin;
+
             this.SubscriberOptout = subscriberOptout;
+
             this.SubscriberHelp = subscriberHelp;
+
             this.Sample1 = sample1;
+
             this.Sample2 = sample2;
+
             this.Sample3 = sample3;
+
             this.Sample4 = sample4;
+
             this.Sample5 = sample5;
+
             this.MessageFlow = messageFlow;
+
             this.HelpMessage = helpMessage;
+
             this.OptinKeywords = optinKeywords;
+
             this.OptoutKeywords = optoutKeywords;
+
             this.HelpKeywords = helpKeywords;
+
             this.OptinMessage = optinMessage;
+
             this.OptoutMessage = optoutMessage;
+
             this.Brand = brand;
+
         }
 
         

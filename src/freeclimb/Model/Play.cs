@@ -56,8 +56,14 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("file is a required property for Play and cannot be null");
             }
             this.File = file;
+
+
+
+
             this.Loop = loop;
+
             this.PrivacyMode = privacyMode;
+
         }
 
         

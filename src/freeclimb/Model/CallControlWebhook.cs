@@ -46,11 +46,21 @@ namespace freeclimb.Model
         /// <param name="digits">String of digits entered by the participant..</param>
         public CallControlWebhook(string requestType = @"CallControlWebhook", string callId = default(string), string accountId = default(string), string conferenceId = default(string), string digits = default(string)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.CallId = callId;
+
             this.AccountId = accountId;
+
             this.ConferenceId = conferenceId;
+
             this.Digits = digits;
+
         }
 
         

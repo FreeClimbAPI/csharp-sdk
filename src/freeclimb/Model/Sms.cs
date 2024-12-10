@@ -57,19 +57,27 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("to is a required property for Sms and cannot be null");
             }
             this.To = to;
+
             // to ensure "from" is required (not null)
             if (from == null)
             {
                 throw new ArgumentNullException("from is a required property for Sms and cannot be null");
             }
             this.From = from;
+
             // to ensure "text" is required (not null)
             if (text == null)
             {
                 throw new ArgumentNullException("text is a required property for Sms and cannot be null");
             }
             this.Text = text;
+
+
+
+
+
             this.NotificationUrl = notificationUrl;
+
         }
 
         

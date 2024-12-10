@@ -48,15 +48,33 @@ namespace freeclimb.Model
         /// <param name="conferenceId">ID of the Conference that was recorded. If a Call was recorded, this value is empty and the callId property is populated..</param>
         public RecordingResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string recordingId = default(string), string accountId = default(string), string callId = default(string), int? durationSec = default(int?), string conferenceId = default(string))
         {
+
+
+
+
+
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.RecordingId = recordingId;
+
             this.AccountId = accountId;
+
             this.CallId = callId;
+
             this.DurationSec = durationSec;
+
             this.ConferenceId = conferenceId;
+
         }
 
         

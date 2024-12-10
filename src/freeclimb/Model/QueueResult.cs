@@ -50,17 +50,39 @@ namespace freeclimb.Model
         /// <param name="subresourceUris">List of subresources for this Queue (which includes Queue members)..</param>
         public QueueResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string queueId = default(string), string alias = default(string), int? maxSize = default(int?), int? currentSize = default(int?), int? averageQueueRemovalTime = default(int?), Object subresourceUris = default(Object))
         {
+
+
+
+
+
+
+
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.AccountId = accountId;
+
             this.QueueId = queueId;
+
             this.Alias = alias;
+
             this.MaxSize = maxSize;
+
             this.CurrentSize = currentSize;
+
             this.AverageQueueRemovalTime = averageQueueRemovalTime;
+
             this.SubresourceUris = subresourceUris;
+
         }
 
         

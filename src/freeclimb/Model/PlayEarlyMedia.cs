@@ -54,6 +54,8 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("file is a required property for PlayEarlyMedia and cannot be null");
             }
             this.File = file;
+
+
         }
 
         

@@ -52,19 +52,45 @@ namespace freeclimb.Model
         /// <param name="smsFallbackUrl">The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only..</param>
         public ApplicationResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string applicationId = default(string), string alias = default(string), string voiceUrl = default(string), string voiceFallbackUrl = default(string), string callConnectUrl = default(string), string statusCallbackUrl = default(string), string smsUrl = default(string), string smsFallbackUrl = default(string))
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.AccountId = accountId;
+
             this.ApplicationId = applicationId;
+
             this.Alias = alias;
+
             this.VoiceUrl = voiceUrl;
+
             this.VoiceFallbackUrl = voiceFallbackUrl;
+
             this.CallConnectUrl = callConnectUrl;
+
             this.StatusCallbackUrl = statusCallbackUrl;
+
             this.SmsUrl = smsUrl;
+
             this.SmsFallbackUrl = smsFallbackUrl;
+
         }
 
         

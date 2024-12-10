@@ -50,11 +50,21 @@ namespace freeclimb.Model
         /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below)..</param>
         public CreateConferenceRequest(string alias = default(string), PlayBeep? playBeep = default(PlayBeep?), bool record = default(bool), string waitUrl = default(string), string statusCallbackUrl = default(string))
         {
+
+
+
+
+
             this.Alias = alias;
+
             this.PlayBeep = playBeep;
+
             this.Record = record;
+
             this.WaitUrl = waitUrl;
+
             this.StatusCallbackUrl = statusCallbackUrl;
+
         }
 
         

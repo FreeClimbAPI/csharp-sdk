@@ -56,13 +56,19 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("waitUrl is a required property for Park and cannot be null");
             }
             this.WaitUrl = waitUrl;
+
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null)
             {
                 throw new ArgumentNullException("actionUrl is a required property for Park and cannot be null");
             }
             this.ActionUrl = actionUrl;
+
+
+
+
             this.NotificationUrl = notificationUrl;
+
         }
 
         

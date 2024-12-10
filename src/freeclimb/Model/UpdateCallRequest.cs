@@ -52,6 +52,8 @@ namespace freeclimb.Model
         public UpdateCallRequest(UpdateCallRequestStatus status = default(UpdateCallRequestStatus))
         {
             this.Status = status;
+
+
         }
 
         

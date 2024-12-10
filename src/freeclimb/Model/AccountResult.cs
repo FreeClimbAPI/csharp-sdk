@@ -62,17 +62,39 @@ namespace freeclimb.Model
         /// <param name="subresourceUris">The list of subresources for this account..</param>
         public AccountResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string apiKey = default(string), string alias = default(string), string label = default(string), AccountType? type = default(AccountType?), AccountStatus? status = default(AccountStatus?), Object subresourceUris = default(Object))
         {
+
+
+
+
+
+
+
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.AccountId = accountId;
+
             this.ApiKey = apiKey;
+
             this.Alias = alias;
+
             this.Label = label;
+
             this.Type = type;
+
             this.Status = status;
+
             this.SubresourceUris = subresourceUris;
+
         }
 
         

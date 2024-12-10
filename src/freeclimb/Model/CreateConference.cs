@@ -65,11 +65,23 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for CreateConference and cannot be null");
             }
             this.ActionUrl = actionUrl;
+
+
+
+
+
+
+
             this.Alias = alias;
+
             this.PlayBeep = playBeep;
+
             this.Record = record;
+
             this.StatusCallbackUrl = statusCallbackUrl;
+
             this.WaitUrl = waitUrl;
+
         }
 
         

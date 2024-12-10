@@ -68,7 +68,9 @@ namespace freeclimb.Model
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments).</param>
         public PerclCommand(string command = default(string))
         {
-            this.Command = command;
+
+            base.Command = command;
+
         }
 
         

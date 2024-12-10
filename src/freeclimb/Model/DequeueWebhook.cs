@@ -64,17 +64,39 @@ namespace freeclimb.Model
         /// <param name="queueTime">Time (in seconds) the call spent in the Queue. This is only available if the Call was actually enqueued..</param>
         public DequeueWebhook(string requestType = @"DequeueWebhook", string callId = default(string), string accountId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), string queueResult = default(string), int? queueTime = default(int?)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.CallId = callId;
+
             this.AccountId = accountId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.QueueResult = queueResult;
+
             this.QueueTime = queueTime;
+
         }
 
         

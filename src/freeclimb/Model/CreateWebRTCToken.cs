@@ -53,13 +53,19 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("to is a required property for CreateWebRTCToken and cannot be null");
             }
             this.To = to;
+
             // to ensure "from" is required (not null)
             if (from == null)
             {
                 throw new ArgumentNullException("from is a required property for CreateWebRTCToken and cannot be null");
             }
             this.From = from;
+
             this.Uses = uses;
+
+
+
+
         }
 
         

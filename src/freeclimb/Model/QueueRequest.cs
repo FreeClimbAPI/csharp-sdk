@@ -41,8 +41,12 @@ namespace freeclimb.Model
         /// <param name="maxSize">Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize. (default to 100).</param>
         public QueueRequest(string alias = default(string), int maxSize = 100)
         {
+
+
             this.Alias = alias;
+
             this.MaxSize = maxSize;
+
         }
 
         

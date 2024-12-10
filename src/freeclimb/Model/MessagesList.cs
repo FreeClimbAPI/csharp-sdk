@@ -48,14 +48,30 @@ namespace freeclimb.Model
         /// <param name="messages">Array of messages.</param>
         public MessagesList(int? total = default(int?), int? start = default(int?), int? end = default(int?), int? page = default(int?), int? numPages = default(int?), int? pageSize = default(int?), string nextPageUri = default(string), List<MessageResult> messages = default(List<MessageResult>))
         {
+
+
+
+
+
+
+
+
             this.Total = total;
+
             this.Start = start;
+
             this.End = end;
+
             this.Page = page;
+
             this.NumPages = numPages;
+
             this.PageSize = pageSize;
+
             this.NextPageUri = nextPageUri;
+
             this.Messages = messages;
+
         }
 
         

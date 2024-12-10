@@ -102,59 +102,121 @@ namespace freeclimb.Model
         /// <param name="createDate">Unix timestamp when brand was created..</param>
         public SMSTenDLCBrand(string accountId = default(string), SMSTenDLCBrandEntityType entityType = default(SMSTenDLCBrandEntityType), string firstName = default(string), string lastName = default(string), string displayName = default(string), string companyName = default(string), string ein = default(string), string einIssuingCountry = default(string), string phone = default(string), string street = default(string), string city = default(string), string state = default(string), string postalCode = default(string), string country = default(string), string email = default(string), string stockSymbol = default(string), SMSTenDLCBrandStockExchange? stockExchange = default(SMSTenDLCBrandStockExchange?), string ipAddress = default(string), string website = default(string), SMSTenDLCBrandRelationship brandRelationship = default(SMSTenDLCBrandRelationship), string vertical = default(string), string altBusinessId = default(string), SMSTenDLCBrandAltBusinessIdType? altBusinessIdType = default(SMSTenDLCBrandAltBusinessIdType?), string referenceId = default(string), Dictionary<string, Object> optionalAttributes = default(Dictionary<string, Object>), bool mock = default(bool), SMSTenDLCBrandIdentityStatus identityStatus = default(SMSTenDLCBrandIdentityStatus), DateTime createDate = default(DateTime))
         {
+
             this.EntityType = entityType;
+
+
+
+
+
             // to ensure "displayName" is required (not null)
             if (displayName == null)
             {
                 throw new ArgumentNullException("displayName is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.DisplayName = displayName;
+
+
+
+
             // to ensure "phone" is required (not null)
             if (phone == null)
             {
                 throw new ArgumentNullException("phone is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Phone = phone;
+
+
+
+
+
             // to ensure "country" is required (not null)
             if (country == null)
             {
                 throw new ArgumentNullException("country is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Country = country;
+
             // to ensure "email" is required (not null)
             if (email == null)
             {
                 throw new ArgumentNullException("email is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Email = email;
+
+
+
+
+
             this.BrandRelationship = brandRelationship;
+
             // to ensure "vertical" is required (not null)
             if (vertical == null)
             {
                 throw new ArgumentNullException("vertical is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Vertical = vertical;
+
+
+
+
+
+
             this.Mock = mock;
+
             this.IdentityStatus = identityStatus;
+
+
             this.AccountId = accountId;
+
+
+
+
             this.FirstName = firstName;
+
             this.LastName = lastName;
+
+
             this.CompanyName = companyName;
+
             this.Ein = ein;
+
             this.EinIssuingCountry = einIssuingCountry;
+
+
             this.Street = street;
+
             this.City = city;
+
             this.State = state;
+
             this.PostalCode = postalCode;
+
+
+
             this.StockSymbol = stockSymbol;
+
             this.StockExchange = stockExchange;
+
             this.IpAddress = ipAddress;
+
             this.Website = website;
+
+
+
             this.AltBusinessId = altBusinessId;
+
             this.AltBusinessIdType = altBusinessIdType;
+
+
             this.ReferenceId = referenceId;
+
             this.OptionalAttributes = optionalAttributes;
+
+
+
             this.CreateDate = createDate;
+
         }
 
         

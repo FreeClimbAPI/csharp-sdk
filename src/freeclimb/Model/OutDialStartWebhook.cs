@@ -64,17 +64,39 @@ namespace freeclimb.Model
         /// <param name="parentCallId">ID of the Call that created this leg (child call). If this was an inbound call or call created via REST API with no parent, this field will be null..</param>
         public OutDialStartWebhook(string requestType = @"OutDialStartWebhook", string accountId = default(string), string callId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), string dialCallId = default(string), string parentCallId = default(string)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.AccountId = accountId;
+
             this.CallId = callId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.DialCallId = dialCallId;
+
             this.ParentCallId = parentCallId;
+
         }
 
         

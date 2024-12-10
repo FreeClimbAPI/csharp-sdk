@@ -62,14 +62,32 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for GetDigits and cannot be null");
             }
             this.ActionUrl = actionUrl;
+
+
+
+
+
+
+
+
+
+
             this.DigitTimeoutMs = digitTimeoutMs;
+
             this.FinishOnKey = finishOnKey;
+
             this.FlushBuffer = flushBuffer;
+
             this.InitialTimeoutMs = initialTimeoutMs;
+
             this.MaxDigits = maxDigits;
+
             this.MinDigits = minDigits;
+
             this.Prompts = prompts;
+
             this.PrivacyMode = privacyMode;
+
         }
 
         

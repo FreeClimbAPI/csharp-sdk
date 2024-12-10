@@ -58,17 +58,39 @@ namespace freeclimb.Model
         /// <param name="phoneNumberId">ID of the destination phone number..</param>
         public MessageStatusWebhook(string requestType = @"MessageStatusWebhook", string accountId = default(string), string messageId = default(string), string callId = default(string), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string applicationId = default(string), MessageStatus? status = default(MessageStatus?), string phoneNumberId = default(string)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.AccountId = accountId;
+
             this.MessageId = messageId;
+
             this.CallId = callId;
+
             this.From = from;
+
             this.To = to;
+
             this.Text = text;
+
             this.Direction = direction;
+
             this.ApplicationId = applicationId;
+
             this.Status = status;
+
             this.PhoneNumberId = phoneNumberId;
+
         }
 
         

@@ -55,30 +55,40 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("voice is a required property for Capabilities and cannot be null");
             }
             this.Voice = voice;
+
             // to ensure "sms" is required (not null)
             if (sms == null)
             {
                 throw new ArgumentNullException("sms is a required property for Capabilities and cannot be null");
             }
             this.Sms = sms;
+
             // to ensure "tollFree" is required (not null)
             if (tollFree == null)
             {
                 throw new ArgumentNullException("tollFree is a required property for Capabilities and cannot be null");
             }
             this.TollFree = tollFree;
+
             // to ensure "tenDLC" is required (not null)
             if (tenDLC == null)
             {
                 throw new ArgumentNullException("tenDLC is a required property for Capabilities and cannot be null");
             }
             this.TenDLC = tenDLC;
+
             // to ensure "shortCode" is required (not null)
             if (shortCode == null)
             {
                 throw new ArgumentNullException("shortCode is a required property for Capabilities and cannot be null");
             }
             this.ShortCode = shortCode;
+
+
+
+
+
+
         }
 
         

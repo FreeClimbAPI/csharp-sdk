@@ -54,6 +54,8 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for Redirect and cannot be null");
             }
             this.ActionUrl = actionUrl;
+
+
         }
 
         

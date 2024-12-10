@@ -71,18 +71,42 @@ namespace freeclimb.Model
         /// <param name="parentCallId">ID of the Call that created this leg (child call)..</param>
         public GetDigitsWebhook(string requestType = @"GetDigitsWebhook", string callId = default(string), string accountId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), string digits = default(string), GetDigitsReason? reason = default(GetDigitsReason?), string parentCallId = default(string)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.CallId = callId;
+
             this.AccountId = accountId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.Digits = digits;
+
             this.Reason = reason;
+
             this.ParentCallId = parentCallId;
+
         }
 
         

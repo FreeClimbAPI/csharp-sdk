@@ -46,13 +46,27 @@ namespace freeclimb.Model
         /// <param name="smsFallbackUrl">The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored..</param>
         public ApplicationRequest(string alias = default(string), string voiceUrl = default(string), string voiceFallbackUrl = default(string), string callConnectUrl = default(string), string statusCallbackUrl = default(string), string smsUrl = default(string), string smsFallbackUrl = default(string))
         {
+
+
+
+
+
+
+
             this.Alias = alias;
+
             this.VoiceUrl = voiceUrl;
+
             this.VoiceFallbackUrl = voiceFallbackUrl;
+
             this.CallConnectUrl = callConnectUrl;
+
             this.StatusCallbackUrl = statusCallbackUrl;
+
             this.SmsUrl = smsUrl;
+
             this.SmsFallbackUrl = smsFallbackUrl;
+
         }
 
         

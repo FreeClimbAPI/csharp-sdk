@@ -69,30 +69,50 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for OutDial and cannot be null");
             }
             this.ActionUrl = actionUrl;
+
             // to ensure "callConnectUrl" is required (not null)
             if (callConnectUrl == null)
             {
                 throw new ArgumentNullException("callConnectUrl is a required property for OutDial and cannot be null");
             }
             this.CallConnectUrl = callConnectUrl;
+
             // to ensure "callingNumber" is required (not null)
             if (callingNumber == null)
             {
                 throw new ArgumentNullException("callingNumber is a required property for OutDial and cannot be null");
             }
             this.CallingNumber = callingNumber;
+
             // to ensure "destination" is required (not null)
             if (destination == null)
             {
                 throw new ArgumentNullException("destination is a required property for OutDial and cannot be null");
             }
             this.Destination = destination;
+
+
+
+
+
+
+
+
+
+
+
             this.IfMachine = ifMachine;
+
             this.IfMachineUrl = ifMachineUrl;
+
             this.SendDigits = sendDigits;
+
             this.StatusCallbackUrl = statusCallbackUrl;
+
             this.Timeout = timeout;
+
             this.PrivacyMode = privacyMode;
+
         }
 
         

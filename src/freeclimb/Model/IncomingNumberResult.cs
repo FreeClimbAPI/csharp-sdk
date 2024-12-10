@@ -56,23 +56,57 @@ namespace freeclimb.Model
         /// <param name="tfn">tfn.</param>
         public IncomingNumberResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), Capabilities capabilities = default(Capabilities), string campaignId = default(string), string phoneNumberId = default(string), string accountId = default(string), string applicationId = default(string), string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? offnet = default(bool?), TFN tfn = default(TFN))
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.Capabilities = capabilities;
+
             this.CampaignId = campaignId;
+
             this.PhoneNumberId = phoneNumberId;
+
             this.AccountId = accountId;
+
             this.ApplicationId = applicationId;
+
             this.PhoneNumber = phoneNumber;
+
             this.Alias = alias;
+
             this.Region = region;
+
             this.Country = country;
+
             this.VoiceEnabled = voiceEnabled;
+
             this.SmsEnabled = smsEnabled;
+
             this.Offnet = offnet;
+
             this.Tfn = tfn;
+
         }
 
         

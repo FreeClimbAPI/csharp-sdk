@@ -43,7 +43,9 @@ namespace freeclimb.Model
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;SetTalk&quot;).</param>
         public SetTalk(bool talk = default(bool), string command = @"SetTalk") : base(command)
         {
+
             this.Talk = talk;
+
         }
 
         

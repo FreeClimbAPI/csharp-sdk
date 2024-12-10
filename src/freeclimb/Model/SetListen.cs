@@ -43,7 +43,9 @@ namespace freeclimb.Model
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;SetListen&quot;).</param>
         public SetListen(bool listen = default(bool), string command = @"SetListen") : base(command)
         {
+
             this.Listen = listen;
+
         }
 
         

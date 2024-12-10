@@ -50,17 +50,39 @@ namespace freeclimb.Model
         /// <param name="startConfOnEnter">True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise..</param>
         public ConferenceParticipantResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string conferenceId = default(string), string callId = default(string), bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), bool? startConfOnEnter = default(bool?))
         {
+
+
+
+
+
+
+
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.AccountId = accountId;
+
             this.ConferenceId = conferenceId;
+
             this.CallId = callId;
+
             this.Talk = talk;
+
             this.Listen = listen;
+
             this.DtmfPassThrough = dtmfPassThrough;
+
             this.StartConfOnEnter = startConfOnEnter;
+
         }
 
         

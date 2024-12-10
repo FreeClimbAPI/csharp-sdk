@@ -76,23 +76,57 @@ namespace freeclimb.Model
         /// <param name="privacyMode">If true then it indicates the recording will only be available for download for two minutes prior to it being deleted. This is to minimize risk of anyone else getting access to the url and attempting to access it..</param>
         public RecordWebhook(string requestType = @"RecordWebhook", string accountId = default(string), string callId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), string recordingId = default(string), string recordingUrl = default(string), string recordingSize = default(string), string recordingFormat = default(string), int recordingDurationSec = default(int), RecordUtteranceTermReason? termReason = default(RecordUtteranceTermReason?), string parentCallId = default(string), bool privacyMode = default(bool)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.AccountId = accountId;
+
             this.CallId = callId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.RecordingId = recordingId;
+
             this.RecordingUrl = recordingUrl;
+
             this.RecordingSize = recordingSize;
+
             this.RecordingFormat = recordingFormat;
+
             this.RecordingDurationSec = recordingDurationSec;
+
             this.TermReason = termReason;
+
             this.ParentCallId = parentCallId;
+
             this.PrivacyMode = privacyMode;
+
         }
 
         

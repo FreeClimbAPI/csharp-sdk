@@ -40,7 +40,9 @@ namespace freeclimb.Model
         /// <param name="commands">A JSON array of PerCL commands.</param>
         public PerclScript(List<PerclCommand> commands = default(List<PerclCommand>))
         {
+
             this.Commands = commands;
+
         }
 
         

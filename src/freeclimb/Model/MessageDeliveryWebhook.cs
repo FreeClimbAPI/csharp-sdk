@@ -51,16 +51,36 @@ namespace freeclimb.Model
         /// <param name="uri">The URI for this resource, relative to the API base URL.</param>
         public MessageDeliveryWebhook(string requestType = @"MessageDeliveryWebhook", string accountId = default(string), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string applicationId = default(string), string status = default(string), string phoneNumberId = default(string), string uri = default(string)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.AccountId = accountId;
+
             this.From = from;
+
             this.To = to;
+
             this.Text = text;
+
             this.Direction = direction;
+
             this.ApplicationId = applicationId;
+
             this.Status = status;
+
             this.PhoneNumberId = phoneNumberId;
+
             this.Uri = uri;
+
         }
 
         

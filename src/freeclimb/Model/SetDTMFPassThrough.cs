@@ -43,7 +43,9 @@ namespace freeclimb.Model
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;SetDTMFPassThrough&quot;).</param>
         public SetDTMFPassThrough(bool dtmfPassThrough = default(bool), string command = @"SetDTMFPassThrough") : base(command)
         {
+
             this.DtmfPassThrough = dtmfPassThrough;
+
         }
 
         

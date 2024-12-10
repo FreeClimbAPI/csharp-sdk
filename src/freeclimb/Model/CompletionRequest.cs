@@ -51,6 +51,8 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("query is a required property for CompletionRequest and cannot be null");
             }
             this.Query = query;
+
+
         }
 
         

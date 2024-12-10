@@ -65,7 +65,9 @@ namespace freeclimb.Model
         /// <param name="requestType">Type of webhook request.</param>
         public Webhook(string requestType = default(string))
         {
-            this.RequestType = requestType;
+
+            base.RequestType = requestType;
+
         }
 
         

@@ -65,20 +65,48 @@ namespace freeclimb.Model
         /// <param name="subresourceUris">The list of subresources for this Conference. This includes participants and/or recordings..</param>
         public ConferenceResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string conferenceId = default(string), string accountId = default(string), string alias = default(string), PlayBeep? playBeep = default(PlayBeep?), bool? record = default(bool?), ConferenceStatus? status = default(ConferenceStatus?), string waitUrl = default(string), string actionUrl = default(string), string statusCallbackUrl = default(string), Object subresourceUris = default(Object))
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.ConferenceId = conferenceId;
+
             this.AccountId = accountId;
+
             this.Alias = alias;
+
             this.PlayBeep = playBeep;
+
             this.Record = record;
+
             this.Status = status;
+
             this.WaitUrl = waitUrl;
+
             this.ActionUrl = actionUrl;
+
             this.StatusCallbackUrl = statusCallbackUrl;
+
             this.SubresourceUris = subresourceUris;
+
         }
 
         

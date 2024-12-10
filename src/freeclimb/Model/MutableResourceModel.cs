@@ -43,10 +43,18 @@ namespace freeclimb.Model
         /// <param name="revision">Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated..</param>
         public MutableResourceModel(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int))
         {
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
         }
 
         

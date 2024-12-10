@@ -88,29 +88,75 @@ namespace freeclimb.Model
         /// <param name="transcriptionDurationMs">The duration of the audio being transcribed in milliseconds.</param>
         public TranscribeWebhook(string requestType = @"TranscribeWebhook", string accountId = default(string), string callId = default(string), string from = default(string), string to = default(string), string recordingId = default(string), string recordingUrl = default(string), int recordingSize = default(int), string recordingFormat = default(string), int recordingDurationMs = default(int), TranscribeTermReason? termReason = default(TranscribeTermReason?), RecordUtteranceTermReason? recordTermReason = default(RecordUtteranceTermReason?), string digit = default(string), bool privacyForLogging = default(bool), bool privacyForRecording = default(bool), BargeInReason? bargeInReason = default(BargeInReason?), int bargedInPromptNo = default(int), int bargedInPromptMs = default(int), int bargedInPromptLoopNo = default(int), int bargeInTimeMs = default(int), string transcript = default(string), TranscribeReason? transcribeReason = default(TranscribeReason?), int transcriptionDurationMs = default(int)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.AccountId = accountId;
+
             this.CallId = callId;
+
             this.From = from;
+
             this.To = to;
+
             this.RecordingId = recordingId;
+
             this.RecordingUrl = recordingUrl;
+
             this.RecordingSize = recordingSize;
+
             this.RecordingFormat = recordingFormat;
+
             this.RecordingDurationMs = recordingDurationMs;
+
             this.TermReason = termReason;
+
             this.RecordTermReason = recordTermReason;
+
             this.Digit = digit;
+
             this.PrivacyForLogging = privacyForLogging;
+
             this.PrivacyForRecording = privacyForRecording;
+
             this.BargeInReason = bargeInReason;
+
             this.BargedInPromptNo = bargedInPromptNo;
+
             this.BargedInPromptMs = bargedInPromptMs;
+
             this.BargedInPromptLoopNo = bargedInPromptLoopNo;
+
             this.BargeInTimeMs = bargeInTimeMs;
+
             this.Transcript = transcript;
+
             this.TranscribeReason = transcribeReason;
+
             this.TranscriptionDurationMs = transcriptionDurationMs;
+
         }
 
         

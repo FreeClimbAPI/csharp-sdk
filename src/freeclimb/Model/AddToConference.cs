@@ -57,21 +57,41 @@ namespace freeclimb.Model
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;AddToConference&quot;).</param>
         public AddToConference(bool allowCallControl = default(bool), string callControlSequence = default(string), string callControlUrl = default(string), string conferenceId = default(string), string leaveConferenceUrl = default(string), bool listen = default(bool), string notificationUrl = default(string), bool startConfOnEnter = default(bool), bool talk = default(bool), bool dtmfPassThrough = default(bool), string command = @"AddToConference") : base(command)
         {
+
+
+
             // to ensure "conferenceId" is required (not null)
             if (conferenceId == null)
             {
                 throw new ArgumentNullException("conferenceId is a required property for AddToConference and cannot be null");
             }
             this.ConferenceId = conferenceId;
+
+
+
+
+
+
+
             this.AllowCallControl = allowCallControl;
+
             this.CallControlSequence = callControlSequence;
+
             this.CallControlUrl = callControlUrl;
+
+
             this.LeaveConferenceUrl = leaveConferenceUrl;
+
             this.Listen = listen;
+
             this.NotificationUrl = notificationUrl;
+
             this.StartConfOnEnter = startConfOnEnter;
+
             this.Talk = talk;
+
             this.DtmfPassThrough = dtmfPassThrough;
+
         }
 
         

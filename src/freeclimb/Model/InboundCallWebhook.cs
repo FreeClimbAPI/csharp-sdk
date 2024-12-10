@@ -63,16 +63,36 @@ namespace freeclimb.Model
         /// <param name="parentCallId">parentCallId.</param>
         public InboundCallWebhook(string requestType = @"InboundCallWebhook", string callId = default(string), string accountId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), Object parentCallId = default(Object)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.CallId = callId;
+
             this.AccountId = accountId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.ParentCallId = parentCallId;
+
         }
 
         

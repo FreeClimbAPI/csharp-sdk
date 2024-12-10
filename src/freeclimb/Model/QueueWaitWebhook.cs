@@ -65,18 +65,42 @@ namespace freeclimb.Model
         /// <param name="currentQueueSize">Current number of enqueued Calls in this Queue..</param>
         public QueueWaitWebhook(string requestType = @"QueueWaitWebhook", string accountId = default(string), string callId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), string queuePosition = default(string), int queueTime = default(int), int currentQueueSize = default(int)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.AccountId = accountId;
+
             this.CallId = callId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
             this.QueuePosition = queuePosition;
+
             this.QueueTime = queueTime;
+
             this.CurrentQueueSize = currentQueueSize;
+
         }
 
         

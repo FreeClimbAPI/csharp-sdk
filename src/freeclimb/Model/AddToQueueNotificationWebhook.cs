@@ -62,15 +62,33 @@ namespace freeclimb.Model
         /// <param name="queueId">This is only populated if the request pertains to a Queue. Otherwise, it is set to null..</param>
         public AddToQueueNotificationWebhook(string requestType = @"AddToQueueNotificationWebhook", string callId = default(string), string accountId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string)) : base()
         {
-            this.RequestType = requestType;
+
+
+
+
+
+
+
+
+
+            base.RequestType = requestType;
+
             this.CallId = callId;
+
             this.AccountId = accountId;
+
             this.From = from;
+
             this.To = to;
+
             this.CallStatus = callStatus;
+
             this.Direction = direction;
+
             this.ConferenceId = conferenceId;
+
             this.QueueId = queueId;
+
         }
 
         

@@ -43,7 +43,9 @@ namespace freeclimb.Model
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Hangup&quot;).</param>
         public Hangup(string reason = default(string), string command = @"Hangup") : base(command)
         {
+
             this.Reason = reason;
+
         }
 
         

@@ -54,26 +54,48 @@ namespace freeclimb.Model
         /// <param name="evpVettingScore">External vetting score..</param>
         public SMSTenDLCPartnerCampaignBrand(string accountId = default(string), string firstName = default(string), string lastName = default(string), string displayName = default(string), string companyName = default(string), string phone = default(string), string email = default(string), string website = default(string), Dictionary<string, Object> optionalAttributes = default(Dictionary<string, Object>), int evpVettingScore = default(int))
         {
+
+
+
+
+
+
             // to ensure "phone" is required (not null)
             if (phone == null)
             {
                 throw new ArgumentNullException("phone is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null");
             }
             this.Phone = phone;
+
             // to ensure "email" is required (not null)
             if (email == null)
             {
                 throw new ArgumentNullException("email is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null");
             }
             this.Email = email;
+
+
+
+
             this.AccountId = accountId;
+
+
             this.FirstName = firstName;
+
             this.LastName = lastName;
+
             this.DisplayName = displayName;
+
             this.CompanyName = companyName;
+
+
+
             this.Website = website;
+
             this.OptionalAttributes = optionalAttributes;
+
             this.EvpVettingScore = evpVettingScore;
+
         }
 
         

@@ -42,9 +42,15 @@ namespace freeclimb.Model
         /// <param name="dtmfPassThrough">(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value..</param>
         public UpdateConferenceParticipantRequest(bool talk = default(bool), bool listen = default(bool), bool dtmfPassThrough = default(bool))
         {
+
+
+
             this.Talk = talk;
+
             this.Listen = listen;
+
             this.DtmfPassThrough = dtmfPassThrough;
+
         }
 
         

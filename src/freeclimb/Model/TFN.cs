@@ -51,6 +51,8 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("campaignId is a required property for TFN and cannot be null");
             }
             this.CampaignId = campaignId;
+
+
         }
 
         

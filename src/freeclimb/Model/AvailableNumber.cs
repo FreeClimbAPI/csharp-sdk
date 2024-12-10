@@ -46,13 +46,27 @@ namespace freeclimb.Model
         /// <param name="country">The country of this phone number..</param>
         public AvailableNumber(Capabilities capabilities = default(Capabilities), string campaignId = default(string), string phoneNumber = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), string region = default(string), string country = default(string))
         {
+
+
+
+
+
+
+
             this.Capabilities = capabilities;
+
             this.CampaignId = campaignId;
+
             this.PhoneNumber = phoneNumber;
+
             this.VoiceEnabled = voiceEnabled;
+
             this.SmsEnabled = smsEnabled;
+
             this.Region = region;
+
             this.Country = country;
+
         }
 
         

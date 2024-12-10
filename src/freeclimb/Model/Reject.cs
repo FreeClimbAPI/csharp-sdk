@@ -43,7 +43,9 @@ namespace freeclimb.Model
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Reject&quot;).</param>
         public Reject(string reason = default(string), string command = @"Reject") : base(command)
         {
+
             this.Reason = reason;
+
         }
 
         

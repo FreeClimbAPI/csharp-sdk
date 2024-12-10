@@ -61,22 +61,54 @@ namespace freeclimb.Model
         /// <param name="mediaUrls">an array of HTTP URLs which were attached this this message.</param>
         public MessageResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string messageId = default(string), MessageStatus? status = default(MessageStatus?), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string notificationUrl = default(string), string brandId = default(string), string campaignId = default(string), decimal? segmentCount = default(decimal?), List<string> mediaUrls = default(List<string>))
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.AccountId = accountId;
+
             this.MessageId = messageId;
+
             this.Status = status;
+
             this.From = from;
+
             this.To = to;
+
             this.Text = text;
+
             this.Direction = direction;
+
             this.NotificationUrl = notificationUrl;
+
             this.BrandId = brandId;
+
             this.CampaignId = campaignId;
+
             this.SegmentCount = segmentCount;
+
             this.MediaUrls = mediaUrls;
+
         }
 
         

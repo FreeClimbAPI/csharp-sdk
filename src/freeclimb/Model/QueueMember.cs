@@ -44,11 +44,21 @@ namespace freeclimb.Model
         /// <param name="dateEnqueued">Date that the Member was enqueued (GMT), given in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT)..</param>
         public QueueMember(string uri = default(string), string callId = default(string), int? waitTime = default(int?), int? position = default(int?), string dateEnqueued = default(string))
         {
+
+
+
+
+
             this.Uri = uri;
+
             this.CallId = callId;
+
             this.WaitTime = waitTime;
+
             this.Position = position;
+
             this.DateEnqueued = dateEnqueued;
+
         }
 
         
