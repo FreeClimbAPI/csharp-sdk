@@ -252,7 +252,7 @@ namespace freeclimb.Test.Model
                 return UpdateCallRequestStatusValueConverter.FromString("canceled");
             }
             if (type == typeof(QueueResultStatus)) {
-                return QueueResultStatusValueConvereter.FromString("queueFull");
+                return QueueResultStatusValueConverter.FromString("queueFull");
             }
             if (type == typeof(ConferenceStatus)) {
                 return ConferenceStatusValueConverter.FromString("empty");
