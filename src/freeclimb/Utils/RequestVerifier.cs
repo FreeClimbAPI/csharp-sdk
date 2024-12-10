@@ -5,9 +5,22 @@ using System.Text;
 
 namespace freeclimb.Utils
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class RequestVerifier
     {
+        /// <summary>
+        /// Default tolerance to verify request with - 5 minutes
+        /// </summary>
         public const int DEFAULT_TOLERANCE = 5 * 60 * 1000;
+        /// <summary>
+        /// Verify request signature
+        /// </summary>
+        /// <param name="requestBody"></param>
+        /// <param name="requestHeader"></param>
+        /// <param name="signingSecret"></param>
+        /// <param name="tolerance"></param>
         public static void verifyRequestSignature(String requestBody, String requestHeader, String signingSecret, int tolerance = DEFAULT_TOLERANCE)
         {
             RequestVerifier verifier = new RequestVerifier();

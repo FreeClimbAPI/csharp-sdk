@@ -10,7 +10,13 @@ namespace freeclimb.Utils
     /// </summary>
     public class SignatureInformation
     {
+        /// <summary>
+        /// Request unit timestamp
+        /// </summary>
         public int requestTimestamp;
+        /// <summary>
+        /// List of signatures on the inbound request
+        /// </summary>
         public List<string> signatures;
         /// <summary>
         /// This is the Signature Information constructor, this takes the requestHeader and parses it into the attribute values
