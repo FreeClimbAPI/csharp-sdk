@@ -49,6 +49,7 @@ namespace freeclimb.Model
         public Pause(int length = default(int), string command = @"Pause") : base(command)
         {
             this.Length = length;
+                        
 
 
         }
@@ -60,6 +61,7 @@ namespace freeclimb.Model
         /// <value>Length in milliseconds. FreeClimb will wait silently before continuing on.</value>
         [DataMember(Name = "length", IsRequired = true, EmitDefaultValue = true)]
         public int Length { get; set; }
+
 
         
         /// <summary>

@@ -53,6 +53,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("to is a required property for CreateWebRTCToken and cannot be null");
             }
             this.To = to;
+                        
 
             // to ensure "from" is required (not null)
             if (from == null)
@@ -60,8 +61,10 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("from is a required property for CreateWebRTCToken and cannot be null");
             }
             this.From = from;
+                        
 
             this.Uses = uses;
+                        
 
 
 
@@ -76,6 +79,7 @@ namespace freeclimb.Model
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
 
+
         
         
         /// <summary>
@@ -85,6 +89,7 @@ namespace freeclimb.Model
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
+
         
         
         /// <summary>
@@ -93,6 +98,7 @@ namespace freeclimb.Model
         /// <value>number of times this token may be used for a WebRTC call</value>
         [DataMember(Name = "uses", IsRequired = true, EmitDefaultValue = true)]
         public int Uses { get; set; }
+
 
         
         /// <summary>

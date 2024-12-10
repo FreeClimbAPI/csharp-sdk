@@ -53,13 +53,16 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("phoneNumber is a required property for BuyIncomingNumberRequest and cannot be null");
             }
             this.PhoneNumber = phoneNumber;
+                        
 
 
 
 
             this.Alias = alias;
+                        
 
             this.ApplicationId = applicationId;
+                        
 
         }
 
@@ -71,6 +74,7 @@ namespace freeclimb.Model
         [DataMember(Name = "phoneNumber", IsRequired = true, EmitDefaultValue = true)]
         public string PhoneNumber { get; set; }
 
+
         
         
         /// <summary>
@@ -80,6 +84,7 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
+
         
         
         /// <summary>
@@ -88,6 +93,7 @@ namespace freeclimb.Model
         /// <value>ID of the application that should handle phone calls to the number.</value>
         [DataMember(Name = "applicationId", EmitDefaultValue = false)]
         public string ApplicationId { get; set; }
+
 
         
         /// <summary>

@@ -60,6 +60,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for RecordUtterance and cannot be null");
             }
             this.ActionUrl = actionUrl;
+                        
 
 
 
@@ -69,16 +70,22 @@ namespace freeclimb.Model
 
 
             this.SilenceTimeoutMs = silenceTimeoutMs;
+                        
 
             this.FinishOnKey = finishOnKey;
+                        
 
             this.MaxLengthSec = maxLengthSec;
+                        
 
             this.PlayBeep = playBeep;
+                        
 
             this.AutoStart = autoStart;
+                        
 
             this.PrivacyMode = privacyMode;
+                        
 
         }
 
@@ -90,6 +97,7 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -98,6 +106,7 @@ namespace freeclimb.Model
         /// <value>Interval of silence that should elapse before ending the recording.</value>
         [DataMember(Name = "silenceTimeoutMs", EmitDefaultValue = false)]
         public int SilenceTimeoutMs { get; set; }
+
 
         
         
@@ -108,6 +117,7 @@ namespace freeclimb.Model
         [DataMember(Name = "finishOnKey", EmitDefaultValue = false)]
         public string FinishOnKey { get; set; }
 
+
         
         
         /// <summary>
@@ -116,6 +126,7 @@ namespace freeclimb.Model
         /// <value>Maximum length for the command execution in seconds.</value>
         [DataMember(Name = "maxLengthSec", EmitDefaultValue = false)]
         public int MaxLengthSec { get; set; }
+
 
         
         
@@ -126,6 +137,7 @@ namespace freeclimb.Model
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public bool PlayBeep { get; set; }
 
+
         
         
         /// <summary>
@@ -135,6 +147,7 @@ namespace freeclimb.Model
         [DataMember(Name = "autoStart", EmitDefaultValue = true)]
         public bool AutoStart { get; set; }
 
+
         
         
         /// <summary>
@@ -143,6 +156,7 @@ namespace freeclimb.Model
         /// <value>Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.</value>
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
+
 
         
         /// <summary>

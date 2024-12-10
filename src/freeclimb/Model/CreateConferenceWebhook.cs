@@ -85,31 +85,45 @@ namespace freeclimb.Model
 
 
 
+            
             base.RequestType = requestType;
+                        
 
             this.CallId = callId;
+                        
 
             this.AccountId = accountId;
+                        
 
             this.From = from;
+                        
 
             this.To = to;
+                        
 
             this.CallStatus = callStatus;
+                        
 
             this.Direction = direction;
+                        
 
             this.ConferenceId = conferenceId;
+                        
 
             this.QueueId = queueId;
+                        
 
             this.Status = status;
+                        
 
             this.RecordingUrl = recordingUrl;
+                        
 
             this.RecordingId = recordingId;
+                        
 
             this.RecordingDurationSec = recordingDurationSec;
+                        
 
         }
 
@@ -122,6 +136,7 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = false)]
         public string CallId { get; set; }
 
+
         
         
         /// <summary>
@@ -130,6 +145,7 @@ namespace freeclimb.Model
         /// <value>Account ID associated with your account.</value>
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
+
 
         
         
@@ -140,6 +156,7 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
+
         
         
         /// <summary>
@@ -149,10 +166,13 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 
+
         
         
+
         
         
+
         
         
         /// <summary>
@@ -161,6 +181,7 @@ namespace freeclimb.Model
         /// <value>Unique ID of the Conference.</value>
         [DataMember(Name = "conferenceId", EmitDefaultValue = false)]
         public string ConferenceId { get; set; }
+
 
         
         
@@ -171,8 +192,10 @@ namespace freeclimb.Model
         [DataMember(Name = "queueId", EmitDefaultValue = true)]
         public string QueueId { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -181,6 +204,7 @@ namespace freeclimb.Model
         /// <value>The URL of the Conference’s recorded audio. Populated only if a Recording exists and the Conference was emptied. Present only if statusCallbackUrl is being invoked.</value>
         [DataMember(Name = "recordingUrl", EmitDefaultValue = true)]
         public string RecordingUrl { get; set; }
+
 
         
         
@@ -191,6 +215,7 @@ namespace freeclimb.Model
         [DataMember(Name = "recordingId", EmitDefaultValue = true)]
         public string RecordingId { get; set; }
 
+
         
         
         /// <summary>
@@ -199,6 +224,7 @@ namespace freeclimb.Model
         /// <value>The duration of the recorded audio rounded up to the nearest second (in seconds). Populated only if a Recording exists and the Conference was emptied. Present only if statusCallbackUrl is being invoked.</value>
         [DataMember(Name = "recordingDurationSec", EmitDefaultValue = true)]
         public int? RecordingDurationSec { get; set; }
+
 
         
         /// <summary>

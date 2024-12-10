@@ -45,6 +45,7 @@ namespace freeclimb.Model
         {
 
             this.Listen = listen;
+                        
 
         }
 
@@ -55,6 +56,7 @@ namespace freeclimb.Model
         /// <value>Specifying &#x60;false&#x60; will silence the Conference for this Participant.</value>
         [DataMember(Name = "listen", EmitDefaultValue = true)]
         public bool Listen { get; set; }
+
 
         
         /// <summary>

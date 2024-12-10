@@ -52,11 +52,13 @@ namespace freeclimb.Model
         public UpdateCallRequest(UpdateCallRequestStatus status = default(UpdateCallRequestStatus))
         {
             this.Status = status;
+                        
 
 
         }
 
         
+
         
         /// <summary>
         /// Returns the string presentation of the object

@@ -55,6 +55,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("voice is a required property for Capabilities and cannot be null");
             }
             this.Voice = voice;
+                        
 
             // to ensure "sms" is required (not null)
             if (sms == null)
@@ -62,6 +63,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("sms is a required property for Capabilities and cannot be null");
             }
             this.Sms = sms;
+                        
 
             // to ensure "tollFree" is required (not null)
             if (tollFree == null)
@@ -69,6 +71,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("tollFree is a required property for Capabilities and cannot be null");
             }
             this.TollFree = tollFree;
+                        
 
             // to ensure "tenDLC" is required (not null)
             if (tenDLC == null)
@@ -76,6 +79,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("tenDLC is a required property for Capabilities and cannot be null");
             }
             this.TenDLC = tenDLC;
+                        
 
             // to ensure "shortCode" is required (not null)
             if (shortCode == null)
@@ -83,6 +87,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("shortCode is a required property for Capabilities and cannot be null");
             }
             this.ShortCode = shortCode;
+                        
 
 
 
@@ -99,6 +104,7 @@ namespace freeclimb.Model
         [DataMember(Name = "voice", IsRequired = true, EmitDefaultValue = true)]
         public bool? Voice { get; set; }
 
+
         
         
         /// <summary>
@@ -107,6 +113,7 @@ namespace freeclimb.Model
         /// <value>Indicates whether a number can be used SMS messaging. Replaces smsEnabled.</value>
         [DataMember(Name = "sms", IsRequired = true, EmitDefaultValue = true)]
         public bool? Sms { get; set; }
+
 
         
         
@@ -117,6 +124,7 @@ namespace freeclimb.Model
         [DataMember(Name = "tollFree", IsRequired = true, EmitDefaultValue = true)]
         public bool? TollFree { get; set; }
 
+
         
         
         /// <summary>
@@ -126,6 +134,7 @@ namespace freeclimb.Model
         [DataMember(Name = "tenDLC", IsRequired = true, EmitDefaultValue = true)]
         public bool? TenDLC { get; set; }
 
+
         
         
         /// <summary>
@@ -134,6 +143,7 @@ namespace freeclimb.Model
         /// <value>Indicates that a number is a short code and can be used for short code messaging</value>
         [DataMember(Name = "shortCode", IsRequired = true, EmitDefaultValue = true)]
         public bool? ShortCode { get; set; }
+
 
         
         /// <summary>

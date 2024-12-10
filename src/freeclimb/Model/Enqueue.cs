@@ -57,6 +57,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for Enqueue and cannot be null");
             }
             this.ActionUrl = actionUrl;
+                        
 
 
             // to ensure "queueId" is required (not null)
@@ -65,6 +66,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("queueId is a required property for Enqueue and cannot be null");
             }
             this.QueueId = queueId;
+                        
 
             // to ensure "waitUrl" is required (not null)
             if (waitUrl == null)
@@ -72,9 +74,11 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("waitUrl is a required property for Enqueue and cannot be null");
             }
             this.WaitUrl = waitUrl;
+                        
 
 
             this.NotificationUrl = notificationUrl;
+                        
 
 
 
@@ -88,6 +92,7 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -96,6 +101,7 @@ namespace freeclimb.Model
         /// <value>URL to be invoked when the call enters the queue. The request to the URL contains the standard request parameters.This is a notification only; any PerCL returned will be ignored.</value>
         [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
         public string NotificationUrl { get; set; }
+
 
         
         
@@ -106,6 +112,7 @@ namespace freeclimb.Model
         [DataMember(Name = "queueId", IsRequired = true, EmitDefaultValue = true)]
         public string QueueId { get; set; }
 
+
         
         
         /// <summary>
@@ -114,6 +121,7 @@ namespace freeclimb.Model
         /// <value>A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the &#x60;Dequeue&#x60; command, the REST API (POST to Queue Member resource), or the caller hangs up.</value>
         [DataMember(Name = "waitUrl", IsRequired = true, EmitDefaultValue = true)]
         public string WaitUrl { get; set; }
+
 
         
         /// <summary>

@@ -56,13 +56,16 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("file is a required property for Play and cannot be null");
             }
             this.File = file;
+                        
 
 
 
 
             this.Loop = loop;
+                        
 
             this.PrivacyMode = privacyMode;
+                        
 
         }
 
@@ -74,6 +77,7 @@ namespace freeclimb.Model
         [DataMember(Name = "file", IsRequired = true, EmitDefaultValue = true)]
         public string File { get; set; }
 
+
         
         
         /// <summary>
@@ -83,6 +87,7 @@ namespace freeclimb.Model
         [DataMember(Name = "loop", EmitDefaultValue = false)]
         public int Loop { get; set; }
 
+
         
         
         /// <summary>
@@ -91,6 +96,7 @@ namespace freeclimb.Model
         /// <value>Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.</value>
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
+
 
         
         /// <summary>

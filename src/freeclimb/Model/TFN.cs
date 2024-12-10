@@ -51,6 +51,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("campaignId is a required property for TFN and cannot be null");
             }
             this.CampaignId = campaignId;
+                        
 
 
         }
@@ -62,6 +63,7 @@ namespace freeclimb.Model
         /// <value>alphanumeric identifier for the TollFree campaign associated with this number</value>
         [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = true)]
         public string CampaignId { get; set; }
+
 
         
         /// <summary>

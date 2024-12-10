@@ -51,6 +51,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("pql is a required property for FilterLogsRequest and cannot be null");
             }
             this.Pql = pql;
+                        
 
 
         }
@@ -62,6 +63,7 @@ namespace freeclimb.Model
         /// <value>The filter query for retrieving logs. See **Performance Query Language** below.</value>
         [DataMember(Name = "pql", IsRequired = true, EmitDefaultValue = true)]
         public string Pql { get; set; }
+
 
         
         /// <summary>

@@ -48,12 +48,16 @@ namespace freeclimb.Model
 
 
             this.Uri = uri;
+                        
 
             this.DateCreated = dateCreated;
+                        
 
             this.DateUpdated = dateUpdated;
+                        
 
             this.Revision = revision;
+                        
 
         }
 
@@ -65,6 +69,7 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
         
         
         /// <summary>
@@ -73,6 +78,7 @@ namespace freeclimb.Model
         /// <value>The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).</value>
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
+
 
         
         
@@ -83,6 +89,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
         
         
         /// <summary>
@@ -91,6 +98,7 @@ namespace freeclimb.Model
         /// <value>Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.</value>
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
+
 
         
         /// <summary>

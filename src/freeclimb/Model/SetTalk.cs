@@ -45,6 +45,7 @@ namespace freeclimb.Model
         {
 
             this.Talk = talk;
+                        
 
         }
 
@@ -55,6 +56,7 @@ namespace freeclimb.Model
         /// <value>Specifying &#x60;false&#x60; mutes the Participant.</value>
         [DataMember(Name = "talk", EmitDefaultValue = true)]
         public bool Talk { get; set; }
+
 
         
         /// <summary>

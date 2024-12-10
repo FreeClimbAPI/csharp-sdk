@@ -93,6 +93,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("campaignId is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.CampaignId = campaignId;
+                        
 
             // to ensure "cspId" is required (not null)
             if (cspId == null)
@@ -100,6 +101,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("cspId is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.CspId = cspId;
+                        
 
 
 
@@ -112,6 +114,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("brandId is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.BrandId = brandId;
+                        
 
             // to ensure "usecase" is required (not null)
             if (usecase == null)
@@ -119,6 +122,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("usecase is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.Usecase = usecase;
+                        
 
             // to ensure "subUsecases" is required (not null)
             if (subUsecases == null)
@@ -126,6 +130,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("subUsecases is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.SubUsecases = subUsecases;
+                        
 
             // to ensure "description" is required (not null)
             if (description == null)
@@ -133,6 +138,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("description is a required property for SMSTenDLCCampaign and cannot be null");
             }
             this.Description = description;
+                        
 
 
 
@@ -157,72 +163,102 @@ namespace freeclimb.Model
 
 
             this.Mock = mock;
+                        
 
 
             this.AccountId = accountId;
+                        
 
 
 
             this.ResellerId = resellerId;
+                        
 
             this.Status = status;
+                        
 
             this.CreateDate = createDate;
+                        
 
             this.AutoRenewal = autoRenewal;
+                        
 
             this.BilledDate = billedDate;
+                        
 
 
 
 
 
             this.EmbeddedLink = embeddedLink;
+                        
 
             this.EmbeddedPhone = embeddedPhone;
+                        
 
             this.AffiliateMarketing = affiliateMarketing;
+                        
 
             this.NumberPool = numberPool;
+                        
 
             this.AgeGated = ageGated;
+                        
 
             this.DirectLending = directLending;
+                        
 
             this.SubscriberOptin = subscriberOptin;
+                        
 
             this.SubscriberOptout = subscriberOptout;
+                        
 
             this.SubscriberHelp = subscriberHelp;
+                        
 
             this.Sample1 = sample1;
+                        
 
             this.Sample2 = sample2;
+                        
 
             this.Sample3 = sample3;
+                        
 
             this.Sample4 = sample4;
+                        
 
             this.Sample5 = sample5;
+                        
 
             this.MessageFlow = messageFlow;
+                        
 
             this.HelpMessage = helpMessage;
+                        
 
             this.OptinKeywords = optinKeywords;
+                        
 
             this.OptoutKeywords = optoutKeywords;
+                        
 
             this.HelpKeywords = helpKeywords;
+                        
 
             this.OptinMessage = optinMessage;
+                        
 
             this.OptoutMessage = optoutMessage;
+                        
 
             this.ReferenceId = referenceId;
+                        
 
 
             this.NextRenewalOrExpirationDate = nextRenewalOrExpirationDate;
+                        
 
         }
 
@@ -234,6 +270,7 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
         
         
         /// <summary>
@@ -242,6 +279,7 @@ namespace freeclimb.Model
         /// <value>Alphanumeric identifier assigned by the registry for a campaign. This identifier is required by the NetNumber OSR SMS enabling process of 10DLC.</value>
         [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = true)]
         public string CampaignId { get; set; }
+
 
         
         
@@ -252,6 +290,7 @@ namespace freeclimb.Model
         [DataMember(Name = "cspId", IsRequired = true, EmitDefaultValue = true)]
         public string CspId { get; set; }
 
+
         
         
         /// <summary>
@@ -261,8 +300,10 @@ namespace freeclimb.Model
         [DataMember(Name = "resellerId", EmitDefaultValue = true)]
         public string ResellerId { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -271,6 +312,7 @@ namespace freeclimb.Model
         /// <value>Unix timestamp when campaign was created.</value>
         [DataMember(Name = "createDate", EmitDefaultValue = false)]
         public DateTime CreateDate { get; set; }
+
 
         
         
@@ -281,6 +323,7 @@ namespace freeclimb.Model
         [DataMember(Name = "autoRenewal", EmitDefaultValue = true)]
         public bool AutoRenewal { get; set; }
 
+
         
         
         /// <summary>
@@ -289,6 +332,7 @@ namespace freeclimb.Model
         /// <value>Campaign recent billed date.</value>
         [DataMember(Name = "billedDate", EmitDefaultValue = true)]
         public DateTime? BilledDate { get; set; }
+
 
         
         
@@ -299,6 +343,7 @@ namespace freeclimb.Model
         [DataMember(Name = "brandId", IsRequired = true, EmitDefaultValue = true)]
         public string BrandId { get; set; }
 
+
         
         
         /// <summary>
@@ -307,6 +352,7 @@ namespace freeclimb.Model
         /// <value>Campaign usecase. Must be of defined valid types. Use &#x60;/registry/enum/usecase&#x60; operation to retrieve usecases available for given brand.</value>
         [DataMember(Name = "usecase", IsRequired = true, EmitDefaultValue = true)]
         public string Usecase { get; set; }
+
 
         
         
@@ -317,6 +363,7 @@ namespace freeclimb.Model
         [DataMember(Name = "subUsecases", IsRequired = true, EmitDefaultValue = true)]
         public List<string> SubUsecases { get; set; }
 
+
         
         
         /// <summary>
@@ -325,6 +372,7 @@ namespace freeclimb.Model
         /// <value>Summary description of this campaign.</value>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
+
 
         
         
@@ -335,6 +383,7 @@ namespace freeclimb.Model
         [DataMember(Name = "embeddedLink", EmitDefaultValue = true)]
         public bool EmbeddedLink { get; set; }
 
+
         
         
         /// <summary>
@@ -343,6 +392,7 @@ namespace freeclimb.Model
         /// <value>Does message generated by the campaign include phone number in SMS?</value>
         [DataMember(Name = "embeddedPhone", EmitDefaultValue = true)]
         public bool EmbeddedPhone { get; set; }
+
 
         
         
@@ -353,6 +403,7 @@ namespace freeclimb.Model
         [DataMember(Name = "affiliateMarketing", EmitDefaultValue = true)]
         public bool AffiliateMarketing { get; set; }
 
+
         
         
         /// <summary>
@@ -361,6 +412,7 @@ namespace freeclimb.Model
         /// <value>Does campaign utilize pool of phone nubers?</value>
         [DataMember(Name = "numberPool", EmitDefaultValue = true)]
         public bool NumberPool { get; set; }
+
 
         
         
@@ -371,6 +423,7 @@ namespace freeclimb.Model
         [DataMember(Name = "ageGated", EmitDefaultValue = true)]
         public bool AgeGated { get; set; }
 
+
         
         
         /// <summary>
@@ -378,6 +431,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "directLending", EmitDefaultValue = true)]
         public bool DirectLending { get; set; }
+
 
         
         
@@ -388,6 +442,7 @@ namespace freeclimb.Model
         [DataMember(Name = "subscriberOptin", EmitDefaultValue = true)]
         public bool SubscriberOptin { get; set; }
 
+
         
         
         /// <summary>
@@ -396,6 +451,7 @@ namespace freeclimb.Model
         /// <value>Does campaign support subscriber opt-out keyword(s)?</value>
         [DataMember(Name = "subscriberOptout", EmitDefaultValue = true)]
         public bool SubscriberOptout { get; set; }
+
 
         
         
@@ -406,6 +462,7 @@ namespace freeclimb.Model
         [DataMember(Name = "subscriberHelp", EmitDefaultValue = true)]
         public bool SubscriberHelp { get; set; }
 
+
         
         
         /// <summary>
@@ -414,6 +471,7 @@ namespace freeclimb.Model
         /// <value>Message sample. Some campaign tiers require 1 or more message samples.</value>
         [DataMember(Name = "sample1", EmitDefaultValue = false)]
         public string Sample1 { get; set; }
+
 
         
         
@@ -424,6 +482,7 @@ namespace freeclimb.Model
         [DataMember(Name = "sample2", EmitDefaultValue = true)]
         public string Sample2 { get; set; }
 
+
         
         
         /// <summary>
@@ -432,6 +491,7 @@ namespace freeclimb.Model
         /// <value>Message sample. Some campaign tiers require 3 or more message samples.</value>
         [DataMember(Name = "sample3", EmitDefaultValue = true)]
         public string Sample3 { get; set; }
+
 
         
         
@@ -442,6 +502,7 @@ namespace freeclimb.Model
         [DataMember(Name = "sample4", EmitDefaultValue = true)]
         public string Sample4 { get; set; }
 
+
         
         
         /// <summary>
@@ -450,6 +511,7 @@ namespace freeclimb.Model
         /// <value>Message sample. Some campaign tiers require 5 or more message samples.</value>
         [DataMember(Name = "sample5", EmitDefaultValue = true)]
         public string Sample5 { get; set; }
+
 
         
         
@@ -460,6 +522,7 @@ namespace freeclimb.Model
         [DataMember(Name = "messageFlow", EmitDefaultValue = true)]
         public string MessageFlow { get; set; }
 
+
         
         
         /// <summary>
@@ -468,6 +531,7 @@ namespace freeclimb.Model
         /// <value>Help message of the campaign.</value>
         [DataMember(Name = "helpMessage", EmitDefaultValue = true)]
         public string HelpMessage { get; set; }
+
 
         
         
@@ -478,6 +542,7 @@ namespace freeclimb.Model
         [DataMember(Name = "optinKeywords", EmitDefaultValue = false)]
         public string OptinKeywords { get; set; }
 
+
         
         
         /// <summary>
@@ -486,6 +551,7 @@ namespace freeclimb.Model
         /// <value>Subscriber opt-out keywords. Multiple keywords are comma separated without space.</value>
         [DataMember(Name = "optoutKeywords", EmitDefaultValue = false)]
         public string OptoutKeywords { get; set; }
+
 
         
         
@@ -496,6 +562,7 @@ namespace freeclimb.Model
         [DataMember(Name = "helpKeywords", EmitDefaultValue = false)]
         public string HelpKeywords { get; set; }
 
+
         
         
         /// <summary>
@@ -504,6 +571,7 @@ namespace freeclimb.Model
         /// <value>Subscriber opt-in message.</value>
         [DataMember(Name = "optinMessage", EmitDefaultValue = false)]
         public string OptinMessage { get; set; }
+
 
         
         
@@ -514,6 +582,7 @@ namespace freeclimb.Model
         [DataMember(Name = "optoutMessage", EmitDefaultValue = false)]
         public string OptoutMessage { get; set; }
 
+
         
         
         /// <summary>
@@ -523,6 +592,7 @@ namespace freeclimb.Model
         [DataMember(Name = "referenceId", EmitDefaultValue = true)]
         public string ReferenceId { get; set; }
 
+
         
         
         /// <summary>
@@ -531,6 +601,7 @@ namespace freeclimb.Model
         /// <value>Campaign created from mock brand. Mocked campaign cannot be shared with an upstream CNP.</value>
         [DataMember(Name = "mock", IsRequired = true, EmitDefaultValue = true)]
         public bool Mock { get; set; }
+
 
         
         
@@ -543,6 +614,7 @@ namespace freeclimb.Model
         */
         [DataMember(Name = "nextRenewalOrExpirationDate", EmitDefaultValue = true)]
         public DateOnly? NextRenewalOrExpirationDate { get; set; }
+
 
         
         /// <summary>

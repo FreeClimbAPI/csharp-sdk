@@ -69,6 +69,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for OutDial and cannot be null");
             }
             this.ActionUrl = actionUrl;
+                        
 
             // to ensure "callConnectUrl" is required (not null)
             if (callConnectUrl == null)
@@ -76,6 +77,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("callConnectUrl is a required property for OutDial and cannot be null");
             }
             this.CallConnectUrl = callConnectUrl;
+                        
 
             // to ensure "callingNumber" is required (not null)
             if (callingNumber == null)
@@ -83,6 +85,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("callingNumber is a required property for OutDial and cannot be null");
             }
             this.CallingNumber = callingNumber;
+                        
 
             // to ensure "destination" is required (not null)
             if (destination == null)
@@ -90,6 +93,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("destination is a required property for OutDial and cannot be null");
             }
             this.Destination = destination;
+                        
 
 
 
@@ -102,16 +106,22 @@ namespace freeclimb.Model
 
 
             this.IfMachine = ifMachine;
+                        
 
             this.IfMachineUrl = ifMachineUrl;
+                        
 
             this.SendDigits = sendDigits;
+                        
 
             this.StatusCallbackUrl = statusCallbackUrl;
+                        
 
             this.Timeout = timeout;
+                        
 
             this.PrivacyMode = privacyMode;
+                        
 
         }
 
@@ -123,6 +133,7 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -131,6 +142,7 @@ namespace freeclimb.Model
         /// <value>URL to which FreeClimb makes an HTTP POST request informing the result of the OutDial.</value>
         [DataMember(Name = "callConnectUrl", IsRequired = true, EmitDefaultValue = true)]
         public string CallConnectUrl { get; set; }
+
 
         
         
@@ -141,6 +153,7 @@ namespace freeclimb.Model
         [DataMember(Name = "callingNumber", IsRequired = true, EmitDefaultValue = true)]
         public string CallingNumber { get; set; }
 
+
         
         
         /// <summary>
@@ -150,8 +163,10 @@ namespace freeclimb.Model
         [DataMember(Name = "destination", IsRequired = true, EmitDefaultValue = true)]
         public string Destination { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -160,6 +175,7 @@ namespace freeclimb.Model
         /// <value>When the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;, this attribute specifies a URL to which FreeClimb makes a POST request when an answering machine or a fax machine is detected. This URL is required if the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;. Otherwise, it should not be included.</value>
         [DataMember(Name = "ifMachineUrl", EmitDefaultValue = false)]
         public string IfMachineUrl { get; set; }
+
 
         
         
@@ -170,6 +186,7 @@ namespace freeclimb.Model
         [DataMember(Name = "sendDigits", EmitDefaultValue = false)]
         public string SendDigits { get; set; }
 
+
         
         
         /// <summary>
@@ -178,6 +195,7 @@ namespace freeclimb.Model
         /// <value>When the outdialed Call leg terminates, FreeClimb sends a &#x60;callStatus&#x60; Webhook to the &#x60;statusCallbackUrl&#x60;. This is a notification only; any PerCL command returned is ignored.</value>
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = false)]
         public string StatusCallbackUrl { get; set; }
+
 
         
         
@@ -188,6 +206,7 @@ namespace freeclimb.Model
         [DataMember(Name = "timeout", EmitDefaultValue = false)]
         public int Timeout { get; set; }
 
+
         
         
         /// <summary>
@@ -196,6 +215,7 @@ namespace freeclimb.Model
         /// <value>Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.</value>
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
+
 
         
         /// <summary>

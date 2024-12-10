@@ -74,38 +74,55 @@ namespace freeclimb.Model
 
 
             this.Uri = uri;
+                        
 
             this.DateCreated = dateCreated;
+                        
 
             this.DateUpdated = dateUpdated;
+                        
 
             this.Revision = revision;
+                        
 
             this.Capabilities = capabilities;
+                        
 
             this.CampaignId = campaignId;
+                        
 
             this.PhoneNumberId = phoneNumberId;
+                        
 
             this.AccountId = accountId;
+                        
 
             this.ApplicationId = applicationId;
+                        
 
             this.PhoneNumber = phoneNumber;
+                        
 
             this.Alias = alias;
+                        
 
             this.Region = region;
+                        
 
             this.Country = country;
+                        
 
             this.VoiceEnabled = voiceEnabled;
+                        
 
             this.SmsEnabled = smsEnabled;
+                        
 
             this.Offnet = offnet;
+                        
 
             this.Tfn = tfn;
+                        
 
         }
 
@@ -117,6 +134,7 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
         
         
         /// <summary>
@@ -125,6 +143,7 @@ namespace freeclimb.Model
         /// <value>The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).</value>
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
+
 
         
         
@@ -135,6 +154,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
         
         
         /// <summary>
@@ -144,6 +164,7 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
+
         
         
         /// <summary>
@@ -151,6 +172,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "capabilities", EmitDefaultValue = false)]
         public Capabilities Capabilities { get; set; }
+
 
         
         
@@ -161,6 +183,7 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
+
         
         
         /// <summary>
@@ -169,6 +192,7 @@ namespace freeclimb.Model
         /// <value>String that uniquely identifies this phone number resource.</value>
         [DataMember(Name = "phoneNumberId", EmitDefaultValue = true)]
         public string PhoneNumberId { get; set; }
+
 
         
         
@@ -179,6 +203,7 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
         
         
         /// <summary>
@@ -187,6 +212,7 @@ namespace freeclimb.Model
         /// <value>ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.</value>
         [DataMember(Name = "applicationId", EmitDefaultValue = true)]
         public string ApplicationId { get; set; }
+
 
         
         
@@ -197,6 +223,7 @@ namespace freeclimb.Model
         [DataMember(Name = "phoneNumber", EmitDefaultValue = true)]
         public string PhoneNumber { get; set; }
 
+
         
         
         /// <summary>
@@ -205,6 +232,7 @@ namespace freeclimb.Model
         /// <value>Description for this phone number. Typically the conventionally-formatted version of the phone number.</value>
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public string Alias { get; set; }
+
 
         
         
@@ -215,6 +243,7 @@ namespace freeclimb.Model
         [DataMember(Name = "region", EmitDefaultValue = true)]
         public string Region { get; set; }
 
+
         
         
         /// <summary>
@@ -223,6 +252,7 @@ namespace freeclimb.Model
         /// <value>Country of this phone number.</value>
         [DataMember(Name = "country", EmitDefaultValue = true)]
         public string Country { get; set; }
+
 
         
         
@@ -234,6 +264,7 @@ namespace freeclimb.Model
         [Obsolete]
         public bool? VoiceEnabled { get; set; }
 
+
         
         
         /// <summary>
@@ -244,6 +275,7 @@ namespace freeclimb.Model
         [Obsolete]
         public bool? SmsEnabled { get; set; }
 
+
         
         
         /// <summary>
@@ -253,6 +285,7 @@ namespace freeclimb.Model
         [DataMember(Name = "offnet", EmitDefaultValue = true)]
         public bool? Offnet { get; set; }
 
+
         
         
         /// <summary>
@@ -260,6 +293,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "tfn", EmitDefaultValue = false)]
         public TFN Tfn { get; set; }
+
 
         
         /// <summary>

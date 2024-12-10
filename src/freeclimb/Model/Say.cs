@@ -57,16 +57,20 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("text is a required property for Say and cannot be null");
             }
             this.Text = text;
+                        
 
 
 
 
 
             this.Language = language;
+                        
 
             this.Loop = loop;
+                        
 
             this.PrivacyMode = privacyMode;
+                        
 
         }
 
@@ -78,6 +82,7 @@ namespace freeclimb.Model
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
+
         
         
         /// <summary>
@@ -86,6 +91,7 @@ namespace freeclimb.Model
         /// <value>Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.</value>
         [DataMember(Name = "language", EmitDefaultValue = false)]
         public string Language { get; set; }
+
 
         
         
@@ -96,6 +102,7 @@ namespace freeclimb.Model
         [DataMember(Name = "loop", EmitDefaultValue = false)]
         public int Loop { get; set; }
 
+
         
         
         /// <summary>
@@ -104,6 +111,7 @@ namespace freeclimb.Model
         /// <value>Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.</value>
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
+
 
         
         /// <summary>

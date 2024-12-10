@@ -59,6 +59,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for TranscribeUtterance and cannot be null");
             }
             this.ActionUrl = actionUrl;
+                        
 
 
 
@@ -67,14 +68,19 @@ namespace freeclimb.Model
 
 
             this.PlayBeep = playBeep;
+                        
 
             this.Record = record;
+                        
 
             this.PrivacyForLogging = privacyForLogging;
+                        
 
             this.PrivacyForRecording = privacyForRecording;
+                        
 
             this.Prompts = prompts;
+                        
 
         }
 
@@ -85,6 +91,7 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -92,6 +99,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public bool PlayBeep { get; set; }
+
 
         
         
@@ -101,6 +109,7 @@ namespace freeclimb.Model
         [DataMember(Name = "record", EmitDefaultValue = false)]
         public TranscribeUtteranceRecord Record { get; set; }
 
+
         
         
         /// <summary>
@@ -108,6 +117,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "privacyForLogging", EmitDefaultValue = true)]
         public bool PrivacyForLogging { get; set; }
+
 
         
         
@@ -117,6 +127,7 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyForRecording", EmitDefaultValue = true)]
         public bool PrivacyForRecording { get; set; }
 
+
         
         
         /// <summary>
@@ -124,6 +135,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "prompts", EmitDefaultValue = false)]
         public List<PerclCommand> Prompts { get; set; }
+
 
         
         /// <summary>

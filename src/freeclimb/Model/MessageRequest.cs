@@ -63,6 +63,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("from is a required property for MessageRequest and cannot be null");
             }
             this.From = from;
+                        
 
             // to ensure "to" is required (not null)
             if (to == null)
@@ -70,6 +71,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("to is a required property for MessageRequest and cannot be null");
             }
             this.To = to;
+                        
 
             // to ensure "text" is required (not null)
             if (text == null)
@@ -77,23 +79,30 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("text is a required property for MessageRequest and cannot be null");
             }
             this.Text = text;
+                        
 
 
 
             this.Uri = uri;
+                        
 
             this.DateCreated = dateCreated;
+                        
 
             this.DateUpdated = dateUpdated;
+                        
 
             this.Revision = revision;
+                        
 
 
 
 
             this.NotificationUrl = notificationUrl;
+                        
 
             this.MediaUrls = mediaUrls;
+                        
 
         }
 
@@ -105,6 +114,7 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
         
         
         /// <summary>
@@ -113,6 +123,7 @@ namespace freeclimb.Model
         /// <value>The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).</value>
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
+
 
         
         
@@ -123,6 +134,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
         
         
         /// <summary>
@@ -131,6 +143,7 @@ namespace freeclimb.Model
         /// <value>Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.</value>
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
+
 
         
         
@@ -141,6 +154,7 @@ namespace freeclimb.Model
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
+
         
         
         /// <summary>
@@ -149,6 +163,7 @@ namespace freeclimb.Model
         /// <value>Phone number to receive the message. Must be within FreeClimb&#39;s service area.</value>
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
+
 
         
         
@@ -159,6 +174,7 @@ namespace freeclimb.Model
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
+
         
         
         /// <summary>
@@ -168,6 +184,7 @@ namespace freeclimb.Model
         [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
         public string NotificationUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -176,6 +193,7 @@ namespace freeclimb.Model
         /// <value>an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.</value>
         [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
         public List<string> MediaUrls { get; set; }
+
 
         
         /// <summary>

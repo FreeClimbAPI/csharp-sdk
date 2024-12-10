@@ -58,8 +58,10 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("response is a required property for CompletionResult and cannot be null");
             }
             this.Response = response;
+                        
 
             this.Status = status;
+                        
 
 
 
@@ -73,8 +75,10 @@ namespace freeclimb.Model
         [DataMember(Name = "response", IsRequired = true, EmitDefaultValue = true)]
         public string Response { get; set; }
 
+
         
         
+
         
         /// <summary>
         /// Returns the string presentation of the object

@@ -66,30 +66,43 @@ namespace freeclimb.Model
 
 
             this.Uri = uri;
+                        
 
             this.DateCreated = dateCreated;
+                        
 
             this.DateUpdated = dateUpdated;
+                        
 
             this.Revision = revision;
+                        
 
             this.AccountId = accountId;
+                        
 
             this.ApplicationId = applicationId;
+                        
 
             this.Alias = alias;
+                        
 
             this.VoiceUrl = voiceUrl;
+                        
 
             this.VoiceFallbackUrl = voiceFallbackUrl;
+                        
 
             this.CallConnectUrl = callConnectUrl;
+                        
 
             this.StatusCallbackUrl = statusCallbackUrl;
+                        
 
             this.SmsUrl = smsUrl;
+                        
 
             this.SmsFallbackUrl = smsFallbackUrl;
+                        
 
         }
 
@@ -101,6 +114,7 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
         
         
         /// <summary>
@@ -109,6 +123,7 @@ namespace freeclimb.Model
         /// <value>The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).</value>
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
+
 
         
         
@@ -119,6 +134,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
         
         
         /// <summary>
@@ -127,6 +143,7 @@ namespace freeclimb.Model
         /// <value>Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.</value>
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
+
 
         
         
@@ -137,6 +154,7 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
         
         
         /// <summary>
@@ -145,6 +163,7 @@ namespace freeclimb.Model
         /// <value>ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.</value>
         [DataMember(Name = "applicationId", EmitDefaultValue = true)]
         public string ApplicationId { get; set; }
+
 
         
         
@@ -155,6 +174,7 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public string Alias { get; set; }
 
+
         
         
         /// <summary>
@@ -163,6 +183,7 @@ namespace freeclimb.Model
         /// <value>The URL FreeClimb will request when a phone number assigned to this Application receives a Call. Used for inbound calls only.</value>
         [DataMember(Name = "voiceUrl", EmitDefaultValue = true)]
         public string VoiceUrl { get; set; }
+
 
         
         
@@ -173,6 +194,7 @@ namespace freeclimb.Model
         [DataMember(Name = "voiceFallbackUrl", EmitDefaultValue = true)]
         public string VoiceFallbackUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -181,6 +203,7 @@ namespace freeclimb.Model
         /// <value>The URL to which FreeClimb will make a POST request informing the result of the outbound Call request. The status property of the request message specifies if the Call was connected or not.</value>
         [DataMember(Name = "callConnectUrl", EmitDefaultValue = true)]
         public string CallConnectUrl { get; set; }
+
 
         
         
@@ -191,6 +214,7 @@ namespace freeclimb.Model
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = true)]
         public string StatusCallbackUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -200,6 +224,7 @@ namespace freeclimb.Model
         [DataMember(Name = "smsUrl", EmitDefaultValue = true)]
         public string SmsUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -208,6 +233,7 @@ namespace freeclimb.Model
         /// <value>The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.</value>
         [DataMember(Name = "smsFallbackUrl", EmitDefaultValue = true)]
         public string SmsFallbackUrl { get; set; }
+
 
         
         /// <summary>

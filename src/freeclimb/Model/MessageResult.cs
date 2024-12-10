@@ -78,36 +78,52 @@ namespace freeclimb.Model
 
 
             this.Uri = uri;
+                        
 
             this.DateCreated = dateCreated;
+                        
 
             this.DateUpdated = dateUpdated;
+                        
 
             this.Revision = revision;
+                        
 
             this.AccountId = accountId;
+                        
 
             this.MessageId = messageId;
+                        
 
             this.Status = status;
+                        
 
             this.From = from;
+                        
 
             this.To = to;
+                        
 
             this.Text = text;
+                        
 
             this.Direction = direction;
+                        
 
             this.NotificationUrl = notificationUrl;
+                        
 
             this.BrandId = brandId;
+                        
 
             this.CampaignId = campaignId;
+                        
 
             this.SegmentCount = segmentCount;
+                        
 
             this.MediaUrls = mediaUrls;
+                        
 
         }
 
@@ -119,6 +135,7 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
         
         
         /// <summary>
@@ -127,6 +144,7 @@ namespace freeclimb.Model
         /// <value>The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).</value>
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
+
 
         
         
@@ -137,6 +155,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
         
         
         /// <summary>
@@ -145,6 +164,7 @@ namespace freeclimb.Model
         /// <value>Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.</value>
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
+
 
         
         
@@ -155,6 +175,7 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
         
         
         /// <summary>
@@ -164,8 +185,10 @@ namespace freeclimb.Model
         [DataMember(Name = "messageId", EmitDefaultValue = true)]
         public string MessageId { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -174,6 +197,7 @@ namespace freeclimb.Model
         /// <value>Phone number in E.164 format that sent the message.</value>
         [DataMember(Name = "from", EmitDefaultValue = true)]
         public string From { get; set; }
+
 
         
         
@@ -184,6 +208,7 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = true)]
         public string To { get; set; }
 
+
         
         
         /// <summary>
@@ -192,6 +217,7 @@ namespace freeclimb.Model
         /// <value>Message contents</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
+
 
         
         
@@ -202,6 +228,7 @@ namespace freeclimb.Model
         [DataMember(Name = "direction", EmitDefaultValue = true)]
         public string Direction { get; set; }
 
+
         
         
         /// <summary>
@@ -210,6 +237,7 @@ namespace freeclimb.Model
         /// <value>URL invoked when message sent</value>
         [DataMember(Name = "notificationUrl", EmitDefaultValue = true)]
         public string NotificationUrl { get; set; }
+
 
         
         
@@ -220,6 +248,7 @@ namespace freeclimb.Model
         [DataMember(Name = "brandId", EmitDefaultValue = true)]
         public string BrandId { get; set; }
 
+
         
         
         /// <summary>
@@ -228,6 +257,7 @@ namespace freeclimb.Model
         /// <value>The unique identifier for the campaign associated with the message</value>
         [DataMember(Name = "campaignId", EmitDefaultValue = true)]
         public string CampaignId { get; set; }
+
 
         
         
@@ -238,6 +268,7 @@ namespace freeclimb.Model
         [DataMember(Name = "segmentCount", EmitDefaultValue = true)]
         public decimal? SegmentCount { get; set; }
 
+
         
         
         /// <summary>
@@ -246,6 +277,7 @@ namespace freeclimb.Model
         /// <value>an array of HTTP URLs which were attached this this message</value>
         [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
         public List<string> MediaUrls { get; set; }
+
 
         
         /// <summary>

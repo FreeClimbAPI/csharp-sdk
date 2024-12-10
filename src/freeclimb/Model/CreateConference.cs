@@ -65,6 +65,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for CreateConference and cannot be null");
             }
             this.ActionUrl = actionUrl;
+                        
 
 
 
@@ -73,14 +74,19 @@ namespace freeclimb.Model
 
 
             this.Alias = alias;
+                        
 
             this.PlayBeep = playBeep;
+                        
 
             this.Record = record;
+                        
 
             this.StatusCallbackUrl = statusCallbackUrl;
+                        
 
             this.WaitUrl = waitUrl;
+                        
 
         }
 
@@ -92,6 +98,7 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -101,8 +108,10 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public bool Alias { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -111,6 +120,7 @@ namespace freeclimb.Model
         /// <value>When set to &#x60;true&#x60;, the entire Conference is recorded. The &#x60;statusCallbackUrl&#x60; of the Conference will receive a &#x60;conferenceRecordingEnded&#x60; Webhook when the Conference transitions from the &#x60;inProgress&#x60; to empty state.</value>
         [DataMember(Name = "record", EmitDefaultValue = true)]
         public bool Record { get; set; }
+
 
         
         
@@ -121,6 +131,7 @@ namespace freeclimb.Model
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = false)]
         public string StatusCallbackUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -129,6 +140,7 @@ namespace freeclimb.Model
         /// <value>If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb.</value>
         [DataMember(Name = "waitUrl", EmitDefaultValue = false)]
         public string WaitUrl { get; set; }
+
 
         
         /// <summary>

@@ -104,6 +104,7 @@ namespace freeclimb.Model
         {
 
             this.EntityType = entityType;
+                        
 
 
 
@@ -115,6 +116,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("displayName is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.DisplayName = displayName;
+                        
 
 
 
@@ -125,6 +127,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("phone is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Phone = phone;
+                        
 
 
 
@@ -136,6 +139,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("country is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Country = country;
+                        
 
             // to ensure "email" is required (not null)
             if (email == null)
@@ -143,12 +147,14 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("email is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Email = email;
+                        
 
 
 
 
 
             this.BrandRelationship = brandRelationship;
+                        
 
             // to ensure "vertical" is required (not null)
             if (vertical == null)
@@ -156,6 +162,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("vertical is a required property for SMSTenDLCBrand and cannot be null");
             }
             this.Vertical = vertical;
+                        
 
 
 
@@ -163,59 +170,80 @@ namespace freeclimb.Model
 
 
             this.Mock = mock;
+                        
 
             this.IdentityStatus = identityStatus;
+                        
 
 
             this.AccountId = accountId;
+                        
 
 
 
 
             this.FirstName = firstName;
+                        
 
             this.LastName = lastName;
+                        
 
 
             this.CompanyName = companyName;
+                        
 
             this.Ein = ein;
+                        
 
             this.EinIssuingCountry = einIssuingCountry;
+                        
 
 
             this.Street = street;
+                        
 
             this.City = city;
+                        
 
             this.State = state;
+                        
 
             this.PostalCode = postalCode;
+                        
 
 
 
             this.StockSymbol = stockSymbol;
+                        
 
             this.StockExchange = stockExchange;
+                        
 
             this.IpAddress = ipAddress;
+                        
 
             this.Website = website;
+                        
 
 
 
             this.AltBusinessId = altBusinessId;
+                        
 
             this.AltBusinessIdType = altBusinessIdType;
+                        
 
 
             this.ReferenceId = referenceId;
+                        
 
             this.OptionalAttributes = optionalAttributes;
+                        
 
 
 
             this.CreateDate = createDate;
+                        
 
         }
 
@@ -227,8 +255,10 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -246,6 +276,7 @@ namespace freeclimb.Model
         {
             return false;
         }
+
         
         
         /// <summary>
@@ -263,6 +294,7 @@ namespace freeclimb.Model
         {
             return false;
         }
+
         
         
         /// <summary>
@@ -274,6 +306,7 @@ namespace freeclimb.Model
         */
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
         public string FirstName { get; set; }
+
 
         
         
@@ -287,6 +320,7 @@ namespace freeclimb.Model
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
         public string LastName { get; set; }
 
+
         
         
         /// <summary>
@@ -298,6 +332,7 @@ namespace freeclimb.Model
         */
         [DataMember(Name = "displayName", IsRequired = true, EmitDefaultValue = true)]
         public string DisplayName { get; set; }
+
 
         
         
@@ -311,6 +346,7 @@ namespace freeclimb.Model
         [DataMember(Name = "companyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
+
         
         
         /// <summary>
@@ -322,6 +358,7 @@ namespace freeclimb.Model
         */
         [DataMember(Name = "ein", EmitDefaultValue = false)]
         public string Ein { get; set; }
+
 
         
         
@@ -335,6 +372,7 @@ namespace freeclimb.Model
         [DataMember(Name = "einIssuingCountry", EmitDefaultValue = false)]
         public string EinIssuingCountry { get; set; }
 
+
         
         
         /// <summary>
@@ -346,6 +384,7 @@ namespace freeclimb.Model
         */
         [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
+
 
         
         
@@ -359,6 +398,7 @@ namespace freeclimb.Model
         [DataMember(Name = "street", EmitDefaultValue = false)]
         public string Street { get; set; }
 
+
         
         
         /// <summary>
@@ -370,6 +410,7 @@ namespace freeclimb.Model
         */
         [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
+
 
         
         
@@ -383,6 +424,7 @@ namespace freeclimb.Model
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
+
         
         
         /// <summary>
@@ -394,6 +436,7 @@ namespace freeclimb.Model
         */
         [DataMember(Name = "postalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
+
 
         
         
@@ -407,6 +450,7 @@ namespace freeclimb.Model
         [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
         public string Country { get; set; }
 
+
         
         
         /// <summary>
@@ -415,6 +459,7 @@ namespace freeclimb.Model
         /// <value>Valid email address of brand support contact.</value>
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
+
 
         
         
@@ -428,8 +473,10 @@ namespace freeclimb.Model
         [DataMember(Name = "stockSymbol", EmitDefaultValue = false)]
         public string StockSymbol { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -438,6 +485,7 @@ namespace freeclimb.Model
         /// <value>IP address of the browser requesting to create brand identity.</value>
         [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
         public string IpAddress { get; set; }
+
 
         
         
@@ -451,8 +499,10 @@ namespace freeclimb.Model
         [DataMember(Name = "website", EmitDefaultValue = false)]
         public string Website { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -461,6 +511,7 @@ namespace freeclimb.Model
         /// <value>Vertical or industry segment of the brand.</value>
         [DataMember(Name = "vertical", IsRequired = true, EmitDefaultValue = true)]
         public string Vertical { get; set; }
+
 
         
         
@@ -471,8 +522,10 @@ namespace freeclimb.Model
         [DataMember(Name = "altBusinessId", EmitDefaultValue = false)]
         public string AltBusinessId { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -490,6 +543,7 @@ namespace freeclimb.Model
         {
             return false;
         }
+
         
         
         /// <summary>
@@ -498,6 +552,7 @@ namespace freeclimb.Model
         /// <value>Caller supplied brand reference ID. If supplied, the value must be unique across all submitted brands. Can be used to prevent duplicate brand registrations.</value>
         [DataMember(Name = "referenceId", EmitDefaultValue = false)]
         public string ReferenceId { get; set; }
+
 
         
         
@@ -508,6 +563,7 @@ namespace freeclimb.Model
         [DataMember(Name = "optionalAttributes", EmitDefaultValue = false)]
         public Dictionary<string, Object> OptionalAttributes { get; set; }
 
+
         
         
         /// <summary>
@@ -517,8 +573,10 @@ namespace freeclimb.Model
         [DataMember(Name = "mock", IsRequired = true, EmitDefaultValue = true)]
         public bool Mock { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -527,6 +585,7 @@ namespace freeclimb.Model
         /// <value>Unix timestamp when brand was created.</value>
         [DataMember(Name = "createDate", EmitDefaultValue = false)]
         public DateTime CreateDate { get; set; }
+
 
         
         /// <summary>

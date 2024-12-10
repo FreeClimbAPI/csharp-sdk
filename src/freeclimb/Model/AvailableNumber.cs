@@ -54,18 +54,25 @@ namespace freeclimb.Model
 
 
             this.Capabilities = capabilities;
+                        
 
             this.CampaignId = campaignId;
+                        
 
             this.PhoneNumber = phoneNumber;
+                        
 
             this.VoiceEnabled = voiceEnabled;
+                        
 
             this.SmsEnabled = smsEnabled;
+                        
 
             this.Region = region;
+                        
 
             this.Country = country;
+                        
 
         }
 
@@ -76,6 +83,7 @@ namespace freeclimb.Model
         [DataMember(Name = "capabilities", EmitDefaultValue = false)]
         public Capabilities Capabilities { get; set; }
 
+
         
         
         /// <summary>
@@ -85,6 +93,7 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
+
         
         
         /// <summary>
@@ -93,6 +102,7 @@ namespace freeclimb.Model
         /// <value>The phone number, in E.164 format (+ country code and phone number: +18003608245).</value>
         [DataMember(Name = "phoneNumber", EmitDefaultValue = true)]
         public string PhoneNumber { get; set; }
+
 
         
         
@@ -104,6 +114,7 @@ namespace freeclimb.Model
         [Obsolete]
         public bool? VoiceEnabled { get; set; }
 
+
         
         
         /// <summary>
@@ -114,6 +125,7 @@ namespace freeclimb.Model
         [Obsolete]
         public bool? SmsEnabled { get; set; }
 
+
         
         
         /// <summary>
@@ -123,6 +135,7 @@ namespace freeclimb.Model
         [DataMember(Name = "region", EmitDefaultValue = true)]
         public string Region { get; set; }
 
+
         
         
         /// <summary>
@@ -131,6 +144,7 @@ namespace freeclimb.Model
         /// <value>The country of this phone number.</value>
         [DataMember(Name = "country", EmitDefaultValue = true)]
         public string Country { get; set; }
+
 
         
         /// <summary>

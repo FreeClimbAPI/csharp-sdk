@@ -57,6 +57,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("to is a required property for Sms and cannot be null");
             }
             this.To = to;
+                        
 
             // to ensure "from" is required (not null)
             if (from == null)
@@ -64,6 +65,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("from is a required property for Sms and cannot be null");
             }
             this.From = from;
+                        
 
             // to ensure "text" is required (not null)
             if (text == null)
@@ -71,12 +73,14 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("text is a required property for Sms and cannot be null");
             }
             this.Text = text;
+                        
 
 
 
 
 
             this.NotificationUrl = notificationUrl;
+                        
 
         }
 
@@ -88,6 +92,7 @@ namespace freeclimb.Model
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
 
+
         
         
         /// <summary>
@@ -96,6 +101,7 @@ namespace freeclimb.Model
         /// <value>E.164 representation of the phone number to use as the sender. This must be an incoming phone number you have purchased from FreeClimb.</value>
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
+
 
         
         
@@ -106,6 +112,7 @@ namespace freeclimb.Model
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
+
         
         
         /// <summary>
@@ -114,6 +121,7 @@ namespace freeclimb.Model
         /// <value>When the message changes status, this URL will be invoked using HTTP POST with the messageStatus parameters. This is a notification only; any PerCL returned will be ignored.</value>
         [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
         public string NotificationUrl { get; set; }
+
 
         
         /// <summary>

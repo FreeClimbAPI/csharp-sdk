@@ -98,44 +98,64 @@ namespace freeclimb.Model
 
 
             this.Uri = uri;
+                        
 
             this.DateCreated = dateCreated;
+                        
 
             this.DateUpdated = dateUpdated;
+                        
 
             this.Revision = revision;
+                        
 
             this.CallId = callId;
+                        
 
             this.ParentCallId = parentCallId;
+                        
 
             this.AccountId = accountId;
+                        
 
             this.From = from;
+                        
 
             this.To = to;
+                        
 
             this.PhoneNumberId = phoneNumberId;
+                        
 
             this.CallStatus = callStatus;
+                        
 
             this.StartTime = startTime;
+                        
 
             this.ConnectTime = connectTime;
+                        
 
             this.EndTime = endTime;
+                        
 
             this.Duration = duration;
+                        
 
             this.ConnectDuration = connectDuration;
+                        
 
             this.Direction = direction;
+                        
 
             this.AnsweredBy = answeredBy;
+                        
 
             this.SubresourceUris = subresourceUris;
+                        
 
             this.ApplicationId = applicationId;
+                        
 
         }
 
@@ -147,6 +167,7 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
         
         
         /// <summary>
@@ -155,6 +176,7 @@ namespace freeclimb.Model
         /// <value>The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).</value>
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
+
 
         
         
@@ -165,6 +187,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
         
         
         /// <summary>
@@ -173,6 +196,7 @@ namespace freeclimb.Model
         /// <value>Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.</value>
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
+
 
         
         
@@ -183,6 +207,7 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = true)]
         public string CallId { get; set; }
 
+
         
         
         /// <summary>
@@ -191,6 +216,7 @@ namespace freeclimb.Model
         /// <value>ID of the Call that created this leg (child Call).</value>
         [DataMember(Name = "parentCallId", EmitDefaultValue = true)]
         public string ParentCallId { get; set; }
+
 
         
         
@@ -201,6 +227,7 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
         
         
         /// <summary>
@@ -209,6 +236,7 @@ namespace freeclimb.Model
         /// <value>Phone number that initiated this Call.</value>
         [DataMember(Name = "from", EmitDefaultValue = true)]
         public string From { get; set; }
+
 
         
         
@@ -219,6 +247,7 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = true)]
         public string To { get; set; }
 
+
         
         
         /// <summary>
@@ -228,8 +257,10 @@ namespace freeclimb.Model
         [DataMember(Name = "phoneNumberId", EmitDefaultValue = true)]
         public string PhoneNumberId { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -238,6 +269,7 @@ namespace freeclimb.Model
         /// <value>Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed.</value>
         [DataMember(Name = "startTime", EmitDefaultValue = true)]
         public string StartTime { get; set; }
+
 
         
         
@@ -248,6 +280,7 @@ namespace freeclimb.Model
         [DataMember(Name = "connectTime", EmitDefaultValue = true)]
         public string ConnectTime { get; set; }
 
+
         
         
         /// <summary>
@@ -256,6 +289,7 @@ namespace freeclimb.Model
         /// <value>End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully.</value>
         [DataMember(Name = "endTime", EmitDefaultValue = true)]
         public string EndTime { get; set; }
+
 
         
         
@@ -266,6 +300,7 @@ namespace freeclimb.Model
         [DataMember(Name = "duration", EmitDefaultValue = true)]
         public int? Duration { get; set; }
 
+
         
         
         /// <summary>
@@ -275,10 +310,13 @@ namespace freeclimb.Model
         [DataMember(Name = "connectDuration", EmitDefaultValue = true)]
         public int? ConnectDuration { get; set; }
 
+
         
         
+
         
         
+
         
         
         /// <summary>
@@ -288,6 +326,7 @@ namespace freeclimb.Model
         [DataMember(Name = "subresourceUris", EmitDefaultValue = true)]
         public Object SubresourceUris { get; set; }
 
+
         
         
         /// <summary>
@@ -296,6 +335,7 @@ namespace freeclimb.Model
         /// <value>ApplicationId associated with the Call.</value>
         [DataMember(Name = "applicationId", EmitDefaultValue = true)]
         public string ApplicationId { get; set; }
+
 
         
         /// <summary>

@@ -56,6 +56,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("waitUrl is a required property for Park and cannot be null");
             }
             this.WaitUrl = waitUrl;
+                        
 
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null)
@@ -63,11 +64,13 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for Park and cannot be null");
             }
             this.ActionUrl = actionUrl;
+                        
 
 
 
 
             this.NotificationUrl = notificationUrl;
+                        
 
         }
 
@@ -79,6 +82,7 @@ namespace freeclimb.Model
         [DataMember(Name = "waitUrl", IsRequired = true, EmitDefaultValue = true)]
         public string WaitUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -88,6 +92,7 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -96,6 +101,7 @@ namespace freeclimb.Model
         /// <value>URL to be invoked when the Call is parked. The request to the URL contains the standard request parameters.</value>
         [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
         public string NotificationUrl { get; set; }
+
 
         
         /// <summary>

@@ -81,27 +81,39 @@ namespace freeclimb.Model
 
 
 
+            
             base.RequestType = requestType;
+                        
 
             this.CallId = callId;
+                        
 
             this.AccountId = accountId;
+                        
 
             this.From = from;
+                        
 
             this.To = to;
+                        
 
             this.CallStatus = callStatus;
+                        
 
             this.Direction = direction;
+                        
 
             this.ConferenceId = conferenceId;
+                        
 
             this.QueueId = queueId;
+                        
 
             this.ParentCallId = parentCallId;
+                        
 
             this.MachineType = machineType;
+                        
 
         }
 
@@ -114,6 +126,7 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = false)]
         public string CallId { get; set; }
 
+
         
         
         /// <summary>
@@ -122,6 +135,7 @@ namespace freeclimb.Model
         /// <value>Account ID associated with your account.</value>
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
+
 
         
         
@@ -132,6 +146,7 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
+
         
         
         /// <summary>
@@ -141,10 +156,13 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 
+
         
         
+
         
         
+
         
         
         /// <summary>
@@ -153,6 +171,7 @@ namespace freeclimb.Model
         /// <value>This is only populated if request pertains to a Conference. Otherwise, it is set to null.</value>
         [DataMember(Name = "conferenceId", EmitDefaultValue = true)]
         public string ConferenceId { get; set; }
+
 
         
         
@@ -163,6 +182,7 @@ namespace freeclimb.Model
         [DataMember(Name = "queueId", EmitDefaultValue = true)]
         public string QueueId { get; set; }
 
+
         
         
         /// <summary>
@@ -172,8 +192,10 @@ namespace freeclimb.Model
         [DataMember(Name = "parentCallId", EmitDefaultValue = false)]
         public string ParentCallId { get; set; }
 
+
         
         
+
         
         /// <summary>
         /// Returns the string presentation of the object

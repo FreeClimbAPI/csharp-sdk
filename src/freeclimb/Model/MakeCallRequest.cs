@@ -60,6 +60,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("from is a required property for MakeCallRequest and cannot be null");
             }
             this.From = from;
+                        
 
             // to ensure "to" is required (not null)
             if (to == null)
@@ -67,6 +68,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("to is a required property for MakeCallRequest and cannot be null");
             }
             this.To = to;
+                        
 
 
 
@@ -79,20 +81,28 @@ namespace freeclimb.Model
 
 
             this.ApplicationId = applicationId;
+                        
 
             this.SendDigits = sendDigits;
+                        
 
             this.IfMachine = ifMachine;
+                        
 
             this.IfMachineUrl = ifMachineUrl;
+                        
 
             this.Timeout = timeout;
+                        
 
             this.ParentCallId = parentCallId;
+                        
 
             this.PrivacyMode = privacyMode;
+                        
 
             this.CallConnectUrl = callConnectUrl;
+                        
 
         }
 
@@ -104,6 +114,7 @@ namespace freeclimb.Model
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
+
         
         
         /// <summary>
@@ -112,6 +123,7 @@ namespace freeclimb.Model
         /// <value>Phone number to place the Call to.</value>
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
+
 
         
         
@@ -122,6 +134,7 @@ namespace freeclimb.Model
         [DataMember(Name = "applicationId", EmitDefaultValue = false)]
         public string ApplicationId { get; set; }
 
+
         
         
         /// <summary>
@@ -130,6 +143,7 @@ namespace freeclimb.Model
         /// <value>String of digits to dial after connecting to the number. It can include digits &#x60;0-9&#x60;, &#x60;*&#x60;, and &#x60;#&#x60;, and allows embedding a pause between the output of individual digits. The default pause is 500 milliseconds. So, a string such as *1234#* will be played in 2 seconds because of the 4 standard pauses implied within the string. A custom pause is specified by including a positive integer wrapped in curly braces: {n}. For more information, see **sendDigits examples** below.</value>
         [DataMember(Name = "sendDigits", EmitDefaultValue = false)]
         public string SendDigits { get; set; }
+
 
         
         
@@ -140,6 +154,7 @@ namespace freeclimb.Model
         [DataMember(Name = "ifMachine", EmitDefaultValue = false)]
         public string IfMachine { get; set; }
 
+
         
         
         /// <summary>
@@ -148,6 +163,7 @@ namespace freeclimb.Model
         /// <value>This attribute specifies a URL to which FreeClimb will make a POST request when an answering machine or a fax machine is detected. This URL is required if the ifMachine flag is set to redirect. When ifMachine is set to hangup, ifMachineUrl must not be included in the request. For more information, see **ifMachineUrl example** below.</value>
         [DataMember(Name = "ifMachineUrl", EmitDefaultValue = false)]
         public string IfMachineUrl { get; set; }
+
 
         
         
@@ -158,6 +174,7 @@ namespace freeclimb.Model
         [DataMember(Name = "timeout", EmitDefaultValue = false)]
         public int Timeout { get; set; }
 
+
         
         
         /// <summary>
@@ -166,6 +183,7 @@ namespace freeclimb.Model
         /// <value>Required if no &#x60;applicationId&#x60; or &#x60;callConnectUrl&#x60; has been provided. The ID of the parent Call in the case that this new Call is meant to be treated as a child of an existing Call. This attribute should be included when possible to reduce latency when adding child calls to Conferences containing the parent Call. A call can only be used as a parent once the call is in progress or as an inbound call that is still ringing. An outbound call is considered to be in progress once the &#x60;outdialConnect&#x60; or &#x60;outdialApiConnect&#x60; webhook is invoked. An inbound call is ringing when the inbound webhook is invoked. If a &#x60;callConnectUrl&#x60; attribute is also included with the &#x60;parentCallId&#x60; in the request, this URL will be used as a replacement of the &#x60;callConnectUrl&#x60; originally assigned in the parent call.</value>
         [DataMember(Name = "parentCallId", EmitDefaultValue = false)]
         public string ParentCallId { get; set; }
+
 
         
         
@@ -176,6 +194,7 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
+
         
         
         /// <summary>
@@ -184,6 +203,7 @@ namespace freeclimb.Model
         /// <value>The URL that FreeClimb should use to handle this phone call. If an applicationId or parentCallId have already been provided, this callConnectUrl attribute will be used as a replacement of the callConnectUrl originally assigned in the application or parent call.</value>
         [DataMember(Name = "callConnectUrl", EmitDefaultValue = false)]
         public string CallConnectUrl { get; set; }
+
 
         
         /// <summary>

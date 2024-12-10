@@ -56,14 +56,19 @@ namespace freeclimb.Model
 
 
             this.Alias = alias;
+                        
 
             this.PlayBeep = playBeep;
+                        
 
             this.Record = record;
+                        
 
             this.WaitUrl = waitUrl;
+                        
 
             this.StatusCallbackUrl = statusCallbackUrl;
+                        
 
         }
 
@@ -75,8 +80,10 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -85,6 +92,7 @@ namespace freeclimb.Model
         /// <value>Setting to &#x60;true&#x60; records the entire Conference.</value>
         [DataMember(Name = "record", EmitDefaultValue = true)]
         public bool Record { get; set; }
+
 
         
         
@@ -95,6 +103,7 @@ namespace freeclimb.Model
         [DataMember(Name = "waitUrl", EmitDefaultValue = false)]
         public string WaitUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -103,6 +112,7 @@ namespace freeclimb.Model
         /// <value>This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).</value>
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = false)]
         public string StatusCallbackUrl { get; set; }
+
 
         
         /// <summary>

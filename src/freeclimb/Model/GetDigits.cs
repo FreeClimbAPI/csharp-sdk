@@ -62,6 +62,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for GetDigits and cannot be null");
             }
             this.ActionUrl = actionUrl;
+                        
 
 
 
@@ -73,20 +74,28 @@ namespace freeclimb.Model
 
 
             this.DigitTimeoutMs = digitTimeoutMs;
+                        
 
             this.FinishOnKey = finishOnKey;
+                        
 
             this.FlushBuffer = flushBuffer;
+                        
 
             this.InitialTimeoutMs = initialTimeoutMs;
+                        
 
             this.MaxDigits = maxDigits;
+                        
 
             this.MinDigits = minDigits;
+                        
 
             this.Prompts = prompts;
+                        
 
             this.PrivacyMode = privacyMode;
+                        
 
         }
 
@@ -98,6 +107,7 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -106,6 +116,7 @@ namespace freeclimb.Model
         /// <value> Maximum time in milliseconds that FreeClimb will wait for the Caller to press any digit after the last digit entered, before making a determination that a &#x60;timeout&#x60; has occurred and moving on to make the request to the actionUrl to submit the results of the &#x60;GetDigits&#x60; command. This timeout interval begins and resets after each digit entered.</value>
         [DataMember(Name = "digitTimeoutMs", EmitDefaultValue = false)]
         public int DigitTimeoutMs { get; set; }
+
 
         
         
@@ -116,6 +127,7 @@ namespace freeclimb.Model
         [DataMember(Name = "finishOnKey", EmitDefaultValue = false)]
         public string FinishOnKey { get; set; }
 
+
         
         
         /// <summary>
@@ -124,6 +136,7 @@ namespace freeclimb.Model
         /// <value>If set to true, the FreeClimb platform starts with an empty DTMF buffer to store the digits entered by the caller. If set to false, FreeClimb will append the user inputs to the end of the existing digits buffer and will return digits from the start of the digits buffer.</value>
         [DataMember(Name = "flushBuffer", EmitDefaultValue = true)]
         public bool FlushBuffer { get; set; }
+
 
         
         
@@ -134,6 +147,7 @@ namespace freeclimb.Model
         [DataMember(Name = "initialTimeoutMs", EmitDefaultValue = false)]
         public int InitialTimeoutMs { get; set; }
 
+
         
         
         /// <summary>
@@ -142,6 +156,7 @@ namespace freeclimb.Model
         /// <value>Maximum number of digits expected in the input. If the terminating digit is not entered and the caller has entered the maximum number of digits allowed, the &#x60;GetDigits&#x60; command terminates regardless of the value of &#x60;finishOnKey&#x60;.</value>
         [DataMember(Name = "maxDigits", EmitDefaultValue = false)]
         public int MaxDigits { get; set; }
+
 
         
         
@@ -152,6 +167,7 @@ namespace freeclimb.Model
         [DataMember(Name = "minDigits", EmitDefaultValue = false)]
         public int MinDigits { get; set; }
 
+
         
         
         /// <summary>
@@ -161,6 +177,7 @@ namespace freeclimb.Model
         [DataMember(Name = "prompts", EmitDefaultValue = false)]
         public List<PerclCommand> Prompts { get; set; }
 
+
         
         
         /// <summary>
@@ -169,6 +186,7 @@ namespace freeclimb.Model
         /// <value>Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.</value>
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
+
 
         
         /// <summary>

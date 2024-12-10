@@ -69,7 +69,9 @@ namespace freeclimb.Model
         public PerclCommand(string command = default(string))
         {
 
+            
             base.Command = command;
+                        
 
         }
 

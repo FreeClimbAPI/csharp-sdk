@@ -58,10 +58,13 @@ namespace freeclimb.Model
 
 
             this.Alias = alias;
+                        
 
             this.PlayBeep = playBeep;
+                        
 
             this.Status = status;
+                        
 
         }
 
@@ -73,10 +76,13 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
+
         
         
+
         
         
+
         
         /// <summary>
         /// Returns the string presentation of the object

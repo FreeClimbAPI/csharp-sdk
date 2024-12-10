@@ -66,6 +66,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("phone is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null");
             }
             this.Phone = phone;
+                        
 
             // to ensure "email" is required (not null)
             if (email == null)
@@ -73,28 +74,37 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("email is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null");
             }
             this.Email = email;
+                        
 
 
 
 
             this.AccountId = accountId;
+                        
 
 
             this.FirstName = firstName;
+                        
 
             this.LastName = lastName;
+                        
 
             this.DisplayName = displayName;
+                        
 
             this.CompanyName = companyName;
+                        
 
 
 
             this.Website = website;
+                        
 
             this.OptionalAttributes = optionalAttributes;
+                        
 
             this.EvpVettingScore = evpVettingScore;
+                        
 
         }
 
@@ -105,6 +115,7 @@ namespace freeclimb.Model
         /// <value>ID of the account that created this Queue.</value>
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
+
 
         
         
@@ -123,6 +134,7 @@ namespace freeclimb.Model
         {
             return false;
         }
+
         
         
         /// <summary>
@@ -134,6 +146,7 @@ namespace freeclimb.Model
         */
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
         public string FirstName { get; set; }
+
 
         
         
@@ -147,6 +160,7 @@ namespace freeclimb.Model
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
         public string LastName { get; set; }
 
+
         
         
         /// <summary>
@@ -158,6 +172,7 @@ namespace freeclimb.Model
         */
         [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
+
 
         
         
@@ -171,6 +186,7 @@ namespace freeclimb.Model
         [DataMember(Name = "companyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
+
         
         
         /// <summary>
@@ -183,6 +199,7 @@ namespace freeclimb.Model
         [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
 
+
         
         
         /// <summary>
@@ -191,6 +208,7 @@ namespace freeclimb.Model
         /// <value>Valid email address of brand support contact.</value>
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
+
 
         
         
@@ -204,6 +222,7 @@ namespace freeclimb.Model
         [DataMember(Name = "website", EmitDefaultValue = false)]
         public string Website { get; set; }
 
+
         
         
         /// <summary>
@@ -213,6 +232,7 @@ namespace freeclimb.Model
         [DataMember(Name = "optionalAttributes", EmitDefaultValue = false)]
         public Dictionary<string, Object> OptionalAttributes { get; set; }
 
+
         
         
         /// <summary>
@@ -221,6 +241,7 @@ namespace freeclimb.Model
         /// <value>External vetting score.</value>
         [DataMember(Name = "evpVettingScore", EmitDefaultValue = false)]
         public int EvpVettingScore { get; set; }
+
 
         
         /// <summary>

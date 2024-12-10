@@ -51,15 +51,21 @@ namespace freeclimb.Model
 
 
 
+            
             base.RequestType = requestType;
+                        
 
             this.CallId = callId;
+                        
 
             this.AccountId = accountId;
+                        
 
             this.ConferenceId = conferenceId;
+                        
 
             this.Digits = digits;
+                        
 
         }
 
@@ -72,6 +78,7 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = false)]
         public string CallId { get; set; }
 
+
         
         
         /// <summary>
@@ -80,6 +87,7 @@ namespace freeclimb.Model
         /// <value>Account ID associated with your account.</value>
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
+
 
         
         
@@ -90,6 +98,7 @@ namespace freeclimb.Model
         [DataMember(Name = "conferenceId", EmitDefaultValue = false)]
         public string ConferenceId { get; set; }
 
+
         
         
         /// <summary>
@@ -98,6 +107,7 @@ namespace freeclimb.Model
         /// <value>String of digits entered by the participant.</value>
         [DataMember(Name = "digits", EmitDefaultValue = false)]
         public string Digits { get; set; }
+
 
         
         /// <summary>

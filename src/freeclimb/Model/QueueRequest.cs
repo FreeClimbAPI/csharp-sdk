@@ -44,8 +44,10 @@ namespace freeclimb.Model
 
 
             this.Alias = alias;
+                        
 
             this.MaxSize = maxSize;
+                        
 
         }
 
@@ -57,6 +59,7 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
+
         
         
         /// <summary>
@@ -65,6 +68,7 @@ namespace freeclimb.Model
         /// <value>Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize.</value>
         [DataMember(Name = "maxSize", EmitDefaultValue = false)]
         public int MaxSize { get; set; }
+
 
         
         /// <summary>

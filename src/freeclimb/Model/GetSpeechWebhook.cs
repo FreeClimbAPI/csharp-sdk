@@ -93,39 +93,57 @@ namespace freeclimb.Model
 
 
 
+            
             base.RequestType = requestType;
+                        
 
             this.CallId = callId;
+                        
 
             this.AccountId = accountId;
+                        
 
             this.From = from;
+                        
 
             this.To = to;
+                        
 
             this.CallStatus = callStatus;
+                        
 
             this.Direction = direction;
+                        
 
             this.ConferenceId = conferenceId;
+                        
 
             this.QueueId = queueId;
+                        
 
             this.Reason = reason;
+                        
 
             this.RecognitionResult = recognitionResult;
+                        
 
             this.Confidence = confidence;
+                        
 
             this.ParentCallId = parentCallId;
+                        
 
             this.CompletionReason = completionReason;
+                        
 
             this.CompletionCause = completionCause;
+                        
 
             this.MrcpCode = mrcpCode;
+                        
 
             this.MrcpDiagnostic = mrcpDiagnostic;
+                        
 
         }
 
@@ -138,6 +156,7 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = false)]
         public string CallId { get; set; }
 
+
         
         
         /// <summary>
@@ -146,6 +165,7 @@ namespace freeclimb.Model
         /// <value>Account ID associated with your account.</value>
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
+
 
         
         
@@ -156,6 +176,7 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
+
         
         
         /// <summary>
@@ -165,10 +186,13 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 
+
         
         
+
         
         
+
         
         
         /// <summary>
@@ -177,6 +201,7 @@ namespace freeclimb.Model
         /// <value>Unique ID of the Conference.</value>
         [DataMember(Name = "conferenceId", EmitDefaultValue = false)]
         public string ConferenceId { get; set; }
+
 
         
         
@@ -187,8 +212,10 @@ namespace freeclimb.Model
         [DataMember(Name = "queueId", EmitDefaultValue = true)]
         public string QueueId { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -197,6 +224,7 @@ namespace freeclimb.Model
         /// <value>Semantic content (either a string if speech was recognized or a digit if a digit was input instead of speech) returned from the entry or tag that was recognized within the grammar. The content will be replaced by &#39;xxxxx&#39; when privacyMode is set to true. This field is populated only if the reason field is set to recognition or digit.</value>
         [DataMember(Name = "recognitionResult", EmitDefaultValue = false)]
         public string RecognitionResult { get; set; }
+
 
         
         
@@ -207,6 +235,7 @@ namespace freeclimb.Model
         [DataMember(Name = "confidence", EmitDefaultValue = false)]
         public int Confidence { get; set; }
 
+
         
         
         /// <summary>
@@ -215,6 +244,7 @@ namespace freeclimb.Model
         /// <value>ID of the Call that created this leg (child call).</value>
         [DataMember(Name = "parentCallId", EmitDefaultValue = false)]
         public string ParentCallId { get; set; }
+
 
         
         
@@ -225,6 +255,7 @@ namespace freeclimb.Model
         [DataMember(Name = "completionReason", EmitDefaultValue = false)]
         public string CompletionReason { get; set; }
 
+
         
         
         /// <summary>
@@ -233,6 +264,7 @@ namespace freeclimb.Model
         /// <value>Advanced diagnostic information if reason was error. See RFC 6787 section 9.4.11 - speech recognition.</value>
         [DataMember(Name = "completionCause", EmitDefaultValue = false)]
         public string CompletionCause { get; set; }
+
 
         
         
@@ -243,6 +275,7 @@ namespace freeclimb.Model
         [DataMember(Name = "mrcpCode", EmitDefaultValue = false)]
         public int MrcpCode { get; set; }
 
+
         
         
         /// <summary>
@@ -251,6 +284,7 @@ namespace freeclimb.Model
         /// <value>Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification.</value>
         [DataMember(Name = "mrcpDiagnostic", EmitDefaultValue = false)]
         public string MrcpDiagnostic { get; set; }
+
 
         
         /// <summary>

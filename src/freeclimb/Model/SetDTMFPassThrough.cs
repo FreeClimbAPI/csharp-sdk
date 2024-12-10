@@ -45,6 +45,7 @@ namespace freeclimb.Model
         {
 
             this.DtmfPassThrough = dtmfPassThrough;
+                        
 
         }
 
@@ -55,6 +56,7 @@ namespace freeclimb.Model
         /// <value>Specifying &#x60;false&#x60; mutes the Participant&#39;s dtmf audio.</value>
         [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
         public bool DtmfPassThrough { get; set; }
+
 
         
         /// <summary>

@@ -63,6 +63,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("accountId is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.AccountId = accountId;
+                        
 
             // to ensure "campaignId" is required (not null)
             if (campaignId == null)
@@ -70,6 +71,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("campaignId is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.CampaignId = campaignId;
+                        
 
             // to ensure "useCase" is required (not null)
             if (useCase == null)
@@ -77,8 +79,10 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("useCase is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.UseCase = useCase;
+                        
 
             this.RegistrationStatus = registrationStatus;
+                        
 
             // to ensure "dateCreated" is required (not null)
             if (dateCreated == null)
@@ -86,6 +90,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("dateCreated is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.DateCreated = dateCreated;
+                        
 
             // to ensure "dateUpdated" is required (not null)
             if (dateUpdated == null)
@@ -93,8 +98,10 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("dateUpdated is a required property for SMSTollFreeCampaign and cannot be null");
             }
             this.DateUpdated = dateUpdated;
+                        
 
             this.Revision = revision;
+                        
 
 
 
@@ -113,6 +120,7 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", IsRequired = true, EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
         
         
         /// <summary>
@@ -122,6 +130,7 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
+
         
         
         /// <summary>
@@ -130,8 +139,10 @@ namespace freeclimb.Model
         [DataMember(Name = "useCase", IsRequired = true, EmitDefaultValue = true)]
         public string UseCase { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -139,6 +150,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "dateCreated", IsRequired = true, EmitDefaultValue = true)]
         public string DateCreated { get; set; }
+
 
         
         
@@ -148,6 +160,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", IsRequired = true, EmitDefaultValue = true)]
         public string DateUpdated { get; set; }
 
+
         
         
         /// <summary>
@@ -155,6 +168,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "revision", IsRequired = true, EmitDefaultValue = true)]
         public int Revision { get; set; }
+
 
         
         /// <summary>

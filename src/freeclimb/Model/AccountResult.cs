@@ -74,26 +74,37 @@ namespace freeclimb.Model
 
 
             this.Uri = uri;
+                        
 
             this.DateCreated = dateCreated;
+                        
 
             this.DateUpdated = dateUpdated;
+                        
 
             this.Revision = revision;
+                        
 
             this.AccountId = accountId;
+                        
 
             this.ApiKey = apiKey;
+                        
 
             this.Alias = alias;
+                        
 
             this.Label = label;
+                        
 
             this.Type = type;
+                        
 
             this.Status = status;
+                        
 
             this.SubresourceUris = subresourceUris;
+                        
 
         }
 
@@ -105,6 +116,7 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
         
         
         /// <summary>
@@ -113,6 +125,7 @@ namespace freeclimb.Model
         /// <value>The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).</value>
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
+
 
         
         
@@ -123,6 +136,7 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
         
         
         /// <summary>
@@ -131,6 +145,7 @@ namespace freeclimb.Model
         /// <value>Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.</value>
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
+
 
         
         
@@ -141,6 +156,7 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
         
         
         /// <summary>
@@ -149,6 +165,7 @@ namespace freeclimb.Model
         /// <value>The API key assigned to this account. This key must be kept a secret by the customer.</value>
         [DataMember(Name = "apiKey", EmitDefaultValue = true)]
         public string ApiKey { get; set; }
+
 
         
         
@@ -159,6 +176,7 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public string Alias { get; set; }
 
+
         
         
         /// <summary>
@@ -168,10 +186,13 @@ namespace freeclimb.Model
         [DataMember(Name = "label", EmitDefaultValue = true)]
         public string Label { get; set; }
 
+
         
         
+
         
         
+
         
         
         /// <summary>
@@ -180,6 +201,7 @@ namespace freeclimb.Model
         /// <value>The list of subresources for this account.</value>
         [DataMember(Name = "subresourceUris", EmitDefaultValue = true)]
         public Object SubresourceUris { get; set; }
+
 
         
         /// <summary>

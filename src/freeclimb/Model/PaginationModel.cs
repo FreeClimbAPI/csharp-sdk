@@ -54,18 +54,25 @@ namespace freeclimb.Model
 
 
             this.Total = total;
+                        
 
             this.Start = start;
+                        
 
             this.End = end;
+                        
 
             this.Page = page;
+                        
 
             this.NumPages = numPages;
+                        
 
             this.PageSize = pageSize;
+                        
 
             this.NextPageUri = nextPageUri;
+                        
 
         }
 
@@ -77,6 +84,7 @@ namespace freeclimb.Model
         [DataMember(Name = "total", EmitDefaultValue = true)]
         public int? Total { get; set; }
 
+
         
         
         /// <summary>
@@ -85,6 +93,7 @@ namespace freeclimb.Model
         /// <value>Resource index at start of current page</value>
         [DataMember(Name = "start", EmitDefaultValue = true)]
         public int? Start { get; set; }
+
 
         
         
@@ -95,6 +104,7 @@ namespace freeclimb.Model
         [DataMember(Name = "end", EmitDefaultValue = true)]
         public int? End { get; set; }
 
+
         
         
         /// <summary>
@@ -103,6 +113,7 @@ namespace freeclimb.Model
         /// <value>Current page</value>
         [DataMember(Name = "page", EmitDefaultValue = true)]
         public int? Page { get; set; }
+
 
         
         
@@ -113,6 +124,7 @@ namespace freeclimb.Model
         [DataMember(Name = "numPages", EmitDefaultValue = true)]
         public int? NumPages { get; set; }
 
+
         
         
         /// <summary>
@@ -122,6 +134,7 @@ namespace freeclimb.Model
         [DataMember(Name = "pageSize", EmitDefaultValue = true)]
         public int? PageSize { get; set; }
 
+
         
         
         /// <summary>
@@ -130,6 +143,7 @@ namespace freeclimb.Model
         /// <value>Uri to retrieve the next page of items</value>
         [DataMember(Name = "nextPageUri", EmitDefaultValue = true)]
         public string NextPageUri { get; set; }
+
 
         
         /// <summary>

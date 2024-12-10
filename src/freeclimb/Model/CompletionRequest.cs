@@ -51,6 +51,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("query is a required property for CompletionRequest and cannot be null");
             }
             this.Query = query;
+                        
 
 
         }
@@ -62,6 +63,7 @@ namespace freeclimb.Model
         /// <value>Question to ask the Knowledge Base</value>
         [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
         public string Query { get; set; }
+
 
         
         /// <summary>

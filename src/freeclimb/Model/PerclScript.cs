@@ -42,6 +42,7 @@ namespace freeclimb.Model
         {
 
             this.Commands = commands;
+                        
 
         }
 
@@ -52,6 +53,7 @@ namespace freeclimb.Model
         /// <value>A JSON array of PerCL commands</value>
         [DataMember(Name = "commands", EmitDefaultValue = false)]
         public List<PerclCommand> Commands { get; set; }
+
 
         
         /// <summary>

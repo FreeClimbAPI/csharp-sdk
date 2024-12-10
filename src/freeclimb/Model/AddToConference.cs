@@ -66,6 +66,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("conferenceId is a required property for AddToConference and cannot be null");
             }
             this.ConferenceId = conferenceId;
+                        
 
 
 
@@ -74,23 +75,32 @@ namespace freeclimb.Model
 
 
             this.AllowCallControl = allowCallControl;
+                        
 
             this.CallControlSequence = callControlSequence;
+                        
 
             this.CallControlUrl = callControlUrl;
+                        
 
 
             this.LeaveConferenceUrl = leaveConferenceUrl;
+                        
 
             this.Listen = listen;
+                        
 
             this.NotificationUrl = notificationUrl;
+                        
 
             this.StartConfOnEnter = startConfOnEnter;
+                        
 
             this.Talk = talk;
+                        
 
             this.DtmfPassThrough = dtmfPassThrough;
+                        
 
         }
 
@@ -102,6 +112,7 @@ namespace freeclimb.Model
         [DataMember(Name = "allowCallControl", EmitDefaultValue = true)]
         public bool AllowCallControl { get; set; }
 
+
         
         
         /// <summary>
@@ -110,6 +121,7 @@ namespace freeclimb.Model
         /// <value>Defines a sequence of digits that, when entered by this caller, invokes the &#x60;callControlUrl&#x60;. Only digits plus &#39;*&#39;, and &#39;#&#39; may be used.</value>
         [DataMember(Name = "callControlSequence", EmitDefaultValue = false)]
         public string CallControlSequence { get; set; }
+
 
         
         
@@ -120,6 +132,7 @@ namespace freeclimb.Model
         [DataMember(Name = "callControlUrl", EmitDefaultValue = false)]
         public string CallControlUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -128,6 +141,7 @@ namespace freeclimb.Model
         /// <value>ID of the Conference to which to add the Participant (Call leg). Conference must exist or an error will result.</value>
         [DataMember(Name = "conferenceId", IsRequired = true, EmitDefaultValue = true)]
         public string ConferenceId { get; set; }
+
 
         
         
@@ -138,6 +152,7 @@ namespace freeclimb.Model
         [DataMember(Name = "leaveConferenceUrl", EmitDefaultValue = false)]
         public string LeaveConferenceUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -146,6 +161,7 @@ namespace freeclimb.Model
         /// <value>If &#x60;true&#x60;, the Participant joins the Conference with listen privileges. This may be modified later via the REST API or &#x60;SetListen&#x60; PerCL command.</value>
         [DataMember(Name = "listen", EmitDefaultValue = true)]
         public bool Listen { get; set; }
+
 
         
         
@@ -156,6 +172,7 @@ namespace freeclimb.Model
         [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
         public string NotificationUrl { get; set; }
 
+
         
         
         /// <summary>
@@ -164,6 +181,7 @@ namespace freeclimb.Model
         /// <value>Flag that indicates whether a Conference starts upon entry of this particular Participant. This is usually set to &#x60;true&#x60; for moderators and &#x60;false&#x60; for all other Participants.</value>
         [DataMember(Name = "startConfOnEnter", EmitDefaultValue = true)]
         public bool StartConfOnEnter { get; set; }
+
 
         
         
@@ -174,6 +192,7 @@ namespace freeclimb.Model
         [DataMember(Name = "talk", EmitDefaultValue = true)]
         public bool Talk { get; set; }
 
+
         
         
         /// <summary>
@@ -182,6 +201,7 @@ namespace freeclimb.Model
         /// <value>If &#x60;true&#x60;, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or &#x60;SetDTMFPassThrough&#x60; PerCL command. </value>
         [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
         public bool DtmfPassThrough { get; set; }
+
 
         
         /// <summary>

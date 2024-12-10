@@ -72,6 +72,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("actionUrl is a required property for GetSpeech and cannot be null");
             }
             this.ActionUrl = actionUrl;
+                        
 
 
             // to ensure "grammarFile" is required (not null)
@@ -80,6 +81,7 @@ namespace freeclimb.Model
                 throw new ArgumentNullException("grammarFile is a required property for GetSpeech and cannot be null");
             }
             this.GrammarFile = grammarFile;
+                        
 
 
 
@@ -93,27 +95,38 @@ namespace freeclimb.Model
 
 
             this.GrammarType = grammarType;
+                        
 
 
             this.GrammarRule = grammarRule;
+                        
 
             this.PlayBeep = playBeep;
+                        
 
             this.Prompts = prompts;
+                        
 
             this.NoInputTimeoutMs = noInputTimeoutMs;
+                        
 
             this.RecognitionTimeoutMs = recognitionTimeoutMs;
+                        
 
             this.ConfidenceThreshold = confidenceThreshold;
+                        
 
             this.SensitivityLevel = sensitivityLevel;
+                        
 
             this.SpeechCompleteTimeoutMs = speechCompleteTimeoutMs;
+                        
 
             this.SpeechIncompleteTimeoutMs = speechIncompleteTimeoutMs;
+                        
 
             this.PrivacyMode = privacyMode;
+                        
 
         }
 
@@ -125,8 +138,10 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
         
         
+
         
         
         /// <summary>
@@ -135,6 +150,7 @@ namespace freeclimb.Model
         /// <value>The grammar file to use for speech recognition. If grammarType is set to URL, this attribute is specified as a download URL.</value>
         [DataMember(Name = "grammarFile", IsRequired = true, EmitDefaultValue = true)]
         public string GrammarFile { get; set; }
+
 
         
         
@@ -145,6 +161,7 @@ namespace freeclimb.Model
         [DataMember(Name = "grammarRule", EmitDefaultValue = false)]
         public string GrammarRule { get; set; }
 
+
         
         
         /// <summary>
@@ -153,6 +170,7 @@ namespace freeclimb.Model
         /// <value>Indicates whether a beep should be played just before speech recognition is initiated so that the speaker can start to speak.</value>
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public bool PlayBeep { get; set; }
+
 
         
         
@@ -163,6 +181,7 @@ namespace freeclimb.Model
         [DataMember(Name = "prompts", EmitDefaultValue = false)]
         public List<PerclCommand> Prompts { get; set; }
 
+
         
         
         /// <summary>
@@ -171,6 +190,7 @@ namespace freeclimb.Model
         /// <value>When recognition is started and there is no speech detected for &#x60;noInputTimeoutMs&#x60; milliseconds, the recognizer will terminate the recognition operation.</value>
         [DataMember(Name = "noInputTimeoutMs", EmitDefaultValue = false)]
         public int NoInputTimeoutMs { get; set; }
+
 
         
         
@@ -181,6 +201,7 @@ namespace freeclimb.Model
         [DataMember(Name = "recognitionTimeoutMs", EmitDefaultValue = false)]
         public int RecognitionTimeoutMs { get; set; }
 
+
         
         
         /// <summary>
@@ -189,6 +210,7 @@ namespace freeclimb.Model
         /// <value>When a recognition resource recognizes a spoken phrase, it associates a confidence level with that match. Parameter &#x60;confidenceThreshold&#x60; specifies what confidence level is considered a successful match. Values are between 0.0 and 1.0.</value>
         [DataMember(Name = "confidenceThreshold", EmitDefaultValue = false)]
         public decimal ConfidenceThreshold { get; set; }
+
 
         
         
@@ -199,6 +221,7 @@ namespace freeclimb.Model
         [DataMember(Name = "sensitivityLevel", EmitDefaultValue = false)]
         public decimal SensitivityLevel { get; set; }
 
+
         
         
         /// <summary>
@@ -207,6 +230,7 @@ namespace freeclimb.Model
         /// <value>Parameter &#x60;speechCompleteTimeoutMs&#x60; specifies the length of silence required following user speech before the speech recognizer finalizes a result. This timeout applies when the recognizer currently has a complete match against an active grammar. Reasonable speech complete timeout values are typically in the range of 0.3 seconds to 1.0 seconds.</value>
         [DataMember(Name = "speechCompleteTimeoutMs", EmitDefaultValue = false)]
         public int SpeechCompleteTimeoutMs { get; set; }
+
 
         
         
@@ -217,6 +241,7 @@ namespace freeclimb.Model
         [DataMember(Name = "speechIncompleteTimeoutMs", EmitDefaultValue = false)]
         public int SpeechIncompleteTimeoutMs { get; set; }
 
+
         
         
         /// <summary>
@@ -225,6 +250,7 @@ namespace freeclimb.Model
         /// <value>Parameter privacyMode will not log the &#x60;text&#x60; as required by PCI compliance.</value>
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
+
 
         
         /// <summary>
