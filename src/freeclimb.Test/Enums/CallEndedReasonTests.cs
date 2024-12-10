@@ -726,7 +726,7 @@ namespace freeclimb.Test.Enums
             if (type == typeof(List<QueueResult>)) {
                 return new List<QueueResult>();
             }
-            if (type == typeof(List<CallResult)) {
+            if (type == typeof(List<CallResult>)) {
                 return new List<CallResult>();
             }
             if (type == typeof(List<ConferenceParticipantResult>)) {
