@@ -263,6 +263,9 @@ namespace freeclimb.Test.Model
             if (type == typeof(decimal)) {
                 return new decimal(0.1);
             }
+            if (type == typeof(Nullable<decimal>)) {
+                return new decimal(0.1);
+            }
             if (type == typeof(bool)) {
                 return true;
             }
@@ -383,6 +386,9 @@ namespace freeclimb.Test.Model
             if (type == typeof(List<SMSTollFreeCampaign>)) {
                 return new List<SMSTollFreeCampaign>();
             }
+            if (type == typeof(List<SMSTenDLCBrand>)) {
+                return new List<SMSTenDLCBrand>();
+            }
             if (type == typeof(List<QueueResult>)) {
                 return new List<QueueResult>();
             }
@@ -429,6 +435,9 @@ namespace freeclimb.Test.Model
                 return new SMSTenDLCPartnerCampaignBrand();
             }
             if (type == typeof(DateTime)) {
+                return DateTime.Today;
+            }
+            if (type == typeof(Nullable<DateTime>)) {
                 return DateTime.Today;
             }
             if (type == typeof(DateOnly)) {
