@@ -144,9 +144,69 @@ namespace freeclimb.Test.Model
             }
             if (type == typeof(CallDirection)) {
                 return CallDirectionValueConverter.FromString("inbound");
-            }    
+            }
             if (type == typeof(GetDigitsReason)) {
                 return GetDigitsReasonValueConverter.FromString("timeout");
+            }
+            if (type == typeof(LogLevel)) {
+                return LogLevelValueConverter.FromString("info");
+            }
+            if (type == typeof(CallEndedReason)) {
+                return CallEndedReasonValueConverter.FromString("busy");
+            }
+            if (type == typeof(SMSTenDLCBrandEntityType)) {
+                return SMSTenDLCBrandEntityTypeValueConverter.FromString("PUBLIC_PROFIT");
+            }
+            if (type == typeof(SMSTenDLCBrandStockExchange)) {
+                return SMSTenDLCBrandStockExchangeValueConverter.FromString("NONE");
+            }
+            if (type == typeof(SMSTenDLCBrandRelationship)) {
+                return SMSTenDLCBrandRelationshipValueConverter.FromString("BASIC_ACCOUNT");
+            }
+            if (type == typeof(SMSTenDLCBrandAltBusinessIdType)) {
+                return SMSTenDLCBrandAltBusinessIdTypeValueConverter.FromString("NONE");
+            }
+            if (type == typeof(SMSTenDLCBrandIdentityStatus)) {
+                return SMSTenDLCBrandIdentityStatusValueConverter.FromString("SELF_DECLARED");
+            }
+            if (type == typeof(PlayBeep)) {
+                return PlayBeepValueConverter.FromString("always");
+            }
+            if (type == typeof(UpdateCallRequestStatus)) {
+                return UpdateCallRequestStatusValueConverter.FromString("canceled");
+            }
+            if (type == typeof(QueueResultStatus)) {
+                return QueueResultStatusValueConvereter.FromString("queueFull");
+            }
+            if (type == typeof(ConferenceStatus)) {
+                return ConferenceStatusValueConverter.FromString("empty");
+            }
+            if (type == typeof(List<string>)) {
+                return new ArrayList<string>();
+            }
+            if (type == typeof(List<QueueResult>)) {
+                return new ArrayList<QueueResult>();
+            }
+            if (type == typeof(List<AvailableNumber>)) {
+                return new ArrayList<AvailableNumber>();
+            }
+            if (type == typeof(List<SMSTenDLCPartnerCampaign>)) {
+                return new ArrayList<SMSTenDLCPartnerCampaign>();
+            }
+            if (type == typeof(List<PerclCommand>)) {
+                return new ArrayList<PerclCommand>();
+            }
+            if (type == typeof(List<QueueMember>)) {
+                return new ArrayList<QueueMember>();
+            }
+            if (type == typeof(Dictionary<string, Object>)) {
+                return new Dictionary<string, Object>();
+            }
+            if (type == typeof(DateTime)) {
+                return DateTime.Today;
+            }
+            if (type == typeof(Object)) {
+                return new Dictionary<string, string>();
             }
             throw new ArgumentException("Provided type has no test value");
         }
