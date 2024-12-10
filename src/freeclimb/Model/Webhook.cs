@@ -93,6 +93,7 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,6 +102,7 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
+
 
         /// <summary>
         /// To validate all properties of the instance

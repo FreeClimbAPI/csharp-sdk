@@ -75,8 +75,21 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            JsonSerializer jsonSerializer = JsonSerializer.Create();
+            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+
+            List<object> list = new List<object>();
+            foreach (PerclCommand command in this.Commands.ToList<PerclCommand>())
+            {
+                list.Add(command.ToKvp());
+            }
+
+            StringBuilder strb = new StringBuilder();
+            jsonSerializer.Serialize(new StringWriter(strb), list);
+        
+            return strb.ToString();
         }
+
 
         /// <summary>
         /// To validate all properties of the instance
