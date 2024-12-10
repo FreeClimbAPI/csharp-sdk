@@ -128,7 +128,7 @@ namespace freeclimb.Test.Model
             if (type == typeof(int) || type == typeof(Nullable<int>)) {
                 return 1;
             }
-            if (type == typeof(string) || type == typeof(Nullable<string>)) {
+            if (type == typeof(string)) {
                 return "TEST_STRING";
             }
             if (type == typeof(bool) || type == typeof(Nullable<bool>)) {
@@ -249,7 +249,7 @@ namespace freeclimb.Test.Model
                 return new Capabilities();
             }
             if (type == typeof(TFN)) {
-                return new TFN(campaignId="TEST_CAMPAIGN");
+                return new TFN(campaignId: "TEST_CAMPAIGN");
             }
             if (type == typeof(Dictionary<string, Object>)) {
                 return new Dictionary<string, Object>();
