@@ -304,22 +304,22 @@ namespace freeclimb.Test.Enums
                 return ConferenceStatusValueConverter.FromString("empty");
             }
             if (type == typeof(List<string>)) {
-                return new ArrayList<string>();
+                return new List<string>();
             }
             if (type == typeof(List<QueueResult>)) {
-                return new ArrayList<QueueResult>();
+                return new List<QueueResult>();
             }
             if (type == typeof(List<AvailableNumber>)) {
-                return new ArrayList<AvailableNumber>();
+                return new List<AvailableNumber>();
             }
             if (type == typeof(List<SMSTenDLCPartnerCampaign>)) {
-                return new ArrayList<SMSTenDLCPartnerCampaign>();
+                return new List<SMSTenDLCPartnerCampaign>();
             }
             if (type == typeof(List<PerclCommand>)) {
-                return new ArrayList<PerclCommand>();
+                return new List<PerclCommand>();
             }
             if (type == typeof(List<QueueMember>)) {
-                return new ArrayList<QueueMember>();
+                return new List<QueueMember>();
             }
             if (type == typeof(Dictionary<string, Object>)) {
                 return new Dictionary<string, Object>();
