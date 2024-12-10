@@ -21,6 +21,7 @@ using System.Reflection;
 using Newtonsoft.Json;
 
 using freeclimb.Enums;
+using System.Collections;
 
 namespace freeclimb.Test.Model
 {
