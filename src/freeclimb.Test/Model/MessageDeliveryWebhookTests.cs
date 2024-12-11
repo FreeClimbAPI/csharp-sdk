@@ -203,7 +203,7 @@ namespace freeclimb.Test.Model
             string payload = @"{ ""requestType"": ""messageDelivery"" }";
             MessageDeliveryWebhook deserialized = MessageDeliveryWebhook.Deserialize(payload);
             Assert.IsType<MessageDeliveryWebhook>(deserialized);
-            Assert.Equal("messageDelivery", deserialize.RequestType);
+            Assert.Equal("messageDelivery", deserialized.RequestType);
         }
 
         public object getTestValue(Type type)

@@ -325,7 +325,7 @@ namespace freeclimb.Test.Model
             string payload = @"{ ""requestType"": ""record"" }";
             RecordWebhook deserialized = RecordWebhook.Deserialize(payload);
             Assert.IsType<RecordWebhook>(deserialized);
-            Assert.Equal("record", deserialize.RequestType);
+            Assert.Equal("record", deserialized.RequestType);
         }
 
         public object getTestValue(Type type)

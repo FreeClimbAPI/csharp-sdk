@@ -221,7 +221,7 @@ namespace freeclimb.Test.Model
             string payload = @"{ ""requestType"": ""outDialApiConnect"" }";
             OutDialApiConnectWebhook deserialized = OutDialApiConnectWebhook.Deserialize(payload);
             Assert.IsType<OutDialApiConnectWebhook>(deserialized);
-            Assert.Equal("outDialApiConnect", deserialize.RequestType);
+            Assert.Equal("outDialApiConnect", deserialized.RequestType);
         }
 
         public object getTestValue(Type type)

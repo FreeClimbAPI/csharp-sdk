@@ -237,7 +237,7 @@ namespace freeclimb.Test.Model
             string payload = @"{ ""requestType"": ""machineDetected"" }";
             MachineDetectedWebhook deserialized = MachineDetectedWebhook.Deserialize(payload);
             Assert.IsType<MachineDetectedWebhook>(deserialized);
-            Assert.Equal("machineDetected", deserialize.RequestType);
+            Assert.Equal("machineDetected", deserialized.RequestType);
         }
 
         public object getTestValue(Type type)

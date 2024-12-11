@@ -329,7 +329,7 @@ namespace freeclimb.Test.Model
             string payload = @"{ ""requestType"": ""getSpeech"" }";
             GetSpeechWebhook deserialized = GetSpeechWebhook.Deserialize(payload);
             Assert.IsType<GetSpeechWebhook>(deserialized);
-            Assert.Equal("getSpeech", deserialize.RequestType);
+            Assert.Equal("getSpeech", deserialized.RequestType);
         }
 
         public object getTestValue(Type type)

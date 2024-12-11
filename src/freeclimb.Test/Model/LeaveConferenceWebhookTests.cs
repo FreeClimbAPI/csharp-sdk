@@ -207,7 +207,7 @@ namespace freeclimb.Test.Model
             string payload = @"{ ""requestType"": ""leaveConference"" }";
             LeaveConferenceWebhook deserialized = LeaveConferenceWebhook.Deserialize(payload);
             Assert.IsType<LeaveConferenceWebhook>(deserialized);
-            Assert.Equal("leaveConference", deserialize.RequestType);
+            Assert.Equal("leaveConference", deserialized.RequestType);
         }
 
         public object getTestValue(Type type)

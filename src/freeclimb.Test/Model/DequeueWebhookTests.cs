@@ -235,7 +235,7 @@ namespace freeclimb.Test.Model
             string payload = @"{ ""requestType"": ""dequeue"" }";
             DequeueWebhook deserialized = DequeueWebhook.Deserialize(payload);
             Assert.IsType<DequeueWebhook>(deserialized);
-            Assert.Equal("dequeue", deserialize.RequestType);
+            Assert.Equal("dequeue", deserialized.RequestType);
         }
 
         public object getTestValue(Type type)

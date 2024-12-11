@@ -405,7 +405,7 @@ namespace freeclimb.Test.Model
             string payload = @"{ ""requestType"": ""transcribe"" }";
             TranscribeWebhook deserialized = TranscribeWebhook.Deserialize(payload);
             Assert.IsType<TranscribeWebhook>(deserialized);
-            Assert.Equal("transcribe", deserialize.RequestType);
+            Assert.Equal("transcribe", deserialized.RequestType);
         }
 
         public object getTestValue(Type type)
