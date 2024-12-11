@@ -88,8 +88,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://www.freeclimb.com/apiserver";
             // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
+            config.Username = "YOUR_ACCOUNT_ID";
+            config.Password = "YOUR_API_KEY";            
 
             var apiInstance = new DefaultApi(config);
             
