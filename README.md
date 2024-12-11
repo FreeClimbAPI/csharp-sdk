@@ -92,14 +92,15 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var buyIncomingNumberRequest = new BuyIncomingNumberRequest(); // BuyIncomingNumberRequest | Incoming Number transaction details
+            
 
             try
             {
                 // Buy a Phone Number
-                IncomingNumberResult result = apiInstance.BuyAPhoneNumber(accountId, buyIncomingNumberRequest);
-                Debug.WriteLine(result);
+                IncomingNumberResult result = apiInstance.BuyAPhoneNumber(buyIncomingNumberRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException e)
             {
@@ -333,3 +334,89 @@ Authentication schemes defined for the API:
 
 - **Type**: HTTP basic authentication
 
+
+<a name="documentation-for-serialization-deserialization"></a>
+## Documentation for Serialization/Deserialization for Enums
+
+### These methods are not required unless being used for debugging/logging purposes
+
+- To deserialize (turn value into enum), every enum class has a {classname}ValueConverter class that allows for deserialization into the enum class.
+  
+    For example
+
+  ```csharp
+    using freeclimb.Enums;
+
+    namespace Example
+    {
+        public class DeserializeEnumExample
+        {
+            public static void Main()
+            {
+                AccountStatus accountStatus = AccountStatusValueConverter.FromString("active");
+                Assert.IsType<AccountStatus>(accountStatus);
+            }
+        }
+    }
+    ```
+    
+- To serialize an enum to a value, simply use `nameof` with your enum instance
+
+    For example
+
+  ```csharp
+    using freeclimb.Enums;
+
+    namespace Example
+    {
+        public class SerializeEnumExample
+        {
+            public static void Main()
+            {
+                AccountStatus accountStatus = AccountStatus.ACTIVE;
+                string statusValue = nameof(accountStatus);
+                Assert.Equal("active", statusValue);
+            }
+        }
+    }
+    ```
+
+<a name="documentation-for-verify-request-signature"></a>
+
+## Documentation for verifying request signature
+
+- To verify the request signature, we will need to use the verifyRequestSignature method within the Request Verifier class
+
+  RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance)
+
+  This is a method that you can call directly from the request verifier class, it will throw exceptions depending on whether all parts of the request signature is valid otherwise it will throw a specific error message depending on which request signature part is causing issues
+
+  This method requires a requestBody of type string, a requestHeader of type string, a signingSecret of type string, and a tolerance value of type int
+
+  Example code down below
+
+  ```csharp
+
+    using freeclimb.Utils;
+    using System;
+
+
+    namespace Example
+    {
+    	public class verifySignatureRequestExample
+    	{
+            public static void Main()
+            {
+                    string requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
+
+                    string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
+
+                    string requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+                    int tolerance = 5 * 60;
+
+                    RequestVerifier.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance)
+            }
+       }
+
+    }
+  ```

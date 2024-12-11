@@ -64,7 +64,7 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 
 <a id="buyaphonenumber"></a>
 # **BuyAPhoneNumber**
-> IncomingNumberResult BuyAPhoneNumber (string accountId, BuyIncomingNumberRequest buyIncomingNumberRequest)
+> IncomingNumberResult BuyAPhoneNumber (BuyIncomingNumberRequest buyIncomingNumberRequest)
 
 Buy a Phone Number
 
@@ -159,7 +159,7 @@ catch (ApiException e)
 
 <a id="createaconference"></a>
 # **CreateAConference**
-> ConferenceResult CreateAConference (string accountId, CreateConferenceRequest? createConferenceRequest = null)
+> ConferenceResult CreateAConference (CreateConferenceRequest? createConferenceRequest = null)
 
 Create a Conference
 
@@ -254,7 +254,7 @@ catch (ApiException e)
 
 <a id="createaqueue"></a>
 # **CreateAQueue**
-> QueueResult CreateAQueue (string accountId, QueueRequest? queueRequest = null)
+> QueueResult CreateAQueue (QueueRequest? queueRequest = null)
 
 Create a Queue
 
@@ -349,7 +349,7 @@ catch (ApiException e)
 
 <a id="createanapplication"></a>
 # **CreateAnApplication**
-> ApplicationResult CreateAnApplication (string accountId, ApplicationRequest? applicationRequest = null)
+> ApplicationResult CreateAnApplication (ApplicationRequest? applicationRequest = null)
 
 Create an application
 
@@ -444,7 +444,7 @@ catch (ApiException e)
 
 <a id="createknowledgebasecompletion"></a>
 # **CreateKnowledgeBaseCompletion**
-> CompletionResult CreateKnowledgeBaseCompletion (string accountId, string knowledgeBaseId, CompletionRequest? completionRequest = null)
+> CompletionResult CreateKnowledgeBaseCompletion (string knowledgeBaseId, CompletionRequest? completionRequest = null)
 
 Query the knowledge base
 
@@ -541,7 +541,7 @@ catch (ApiException e)
 
 <a id="deletearecording"></a>
 # **DeleteARecording**
-> void DeleteARecording (string accountId, string recordingId)
+> void DeleteARecording (string recordingId)
 
 Delete a Recording
 
@@ -632,7 +632,7 @@ void (empty response body)
 
 <a id="deleteanapplication"></a>
 # **DeleteAnApplication**
-> void DeleteAnApplication (string accountId, string applicationId)
+> void DeleteAnApplication (string applicationId)
 
 Delete an application
 
@@ -723,7 +723,7 @@ void (empty response body)
 
 <a id="deleteanincomingnumber"></a>
 # **DeleteAnIncomingNumber**
-> void DeleteAnIncomingNumber (string accountId, string phoneNumberId)
+> void DeleteAnIncomingNumber (string phoneNumberId)
 
 Delete an Incoming Number
 
@@ -814,7 +814,7 @@ void (empty response body)
 
 <a id="dequeueamember"></a>
 # **DequeueAMember**
-> QueueMember DequeueAMember (string accountId, string queueId, string callId)
+> QueueMember DequeueAMember (string queueId, string callId)
 
 Dequeue a Member
 
@@ -911,7 +911,7 @@ catch (ApiException e)
 
 <a id="dequeueheadmember"></a>
 # **DequeueHeadMember**
-> QueueMember DequeueHeadMember (string accountId, string queueId)
+> QueueMember DequeueHeadMember (string queueId)
 
 Dequeue Head Member
 
@@ -1006,7 +1006,7 @@ catch (ApiException e)
 
 <a id="downloadarecordingfile"></a>
 # **DownloadARecordingFile**
-> System.IO.Stream DownloadARecordingFile (string accountId, string recordingId)
+> System.IO.Stream DownloadARecordingFile (string recordingId)
 
 Download a Recording File
 
@@ -1101,7 +1101,7 @@ catch (ApiException e)
 
 <a id="filterlogs"></a>
 # **FilterLogs**
-> LogList FilterLogs (string accountId, FilterLogsRequest filterLogsRequest)
+> LogList FilterLogs (FilterLogsRequest filterLogsRequest)
 
 Filter Logs
 
@@ -1196,7 +1196,7 @@ catch (ApiException e)
 
 <a id="getacall"></a>
 # **GetACall**
-> CallResult GetACall (string accountId, string callId)
+> CallResult GetACall (string callId)
 
 Get a Call
 
@@ -1291,7 +1291,7 @@ catch (ApiException e)
 
 <a id="getaconference"></a>
 # **GetAConference**
-> ConferenceResult GetAConference (string accountId, string conferenceId)
+> ConferenceResult GetAConference (string conferenceId)
 
 Get a Conference
 
@@ -1386,7 +1386,7 @@ catch (ApiException e)
 
 <a id="getamember"></a>
 # **GetAMember**
-> QueueMember GetAMember (string accountId, string queueId, string callId)
+> QueueMember GetAMember (string queueId, string callId)
 
 Get a Member
 
@@ -1483,7 +1483,7 @@ catch (ApiException e)
 
 <a id="getaparticipant"></a>
 # **GetAParticipant**
-> ConferenceParticipantResult GetAParticipant (string accountId, string conferenceId, string callId)
+> ConferenceParticipantResult GetAParticipant (string conferenceId, string callId)
 
 Get a Participant
 
@@ -1580,7 +1580,7 @@ catch (ApiException e)
 
 <a id="getaqueue"></a>
 # **GetAQueue**
-> QueueResult GetAQueue (string accountId, string queueId)
+> QueueResult GetAQueue (string queueId)
 
 Get a Queue
 
@@ -1675,7 +1675,7 @@ catch (ApiException e)
 
 <a id="getarecording"></a>
 # **GetARecording**
-> RecordingResult GetARecording (string accountId, string recordingId)
+> RecordingResult GetARecording (string recordingId)
 
 Get a Recording
 
@@ -1770,7 +1770,7 @@ catch (ApiException e)
 
 <a id="getanaccount"></a>
 # **GetAnAccount**
-> AccountResult GetAnAccount (string accountId)
+> AccountResult GetAnAccount ()
 
 Get an Account
 
@@ -1863,7 +1863,7 @@ catch (ApiException e)
 
 <a id="getanapplication"></a>
 # **GetAnApplication**
-> ApplicationResult GetAnApplication (string accountId, string applicationId)
+> ApplicationResult GetAnApplication (string applicationId)
 
 Get an Application
 
@@ -1958,7 +1958,7 @@ catch (ApiException e)
 
 <a id="getanincomingnumber"></a>
 # **GetAnIncomingNumber**
-> IncomingNumberResult GetAnIncomingNumber (string accountId, string phoneNumberId)
+> IncomingNumberResult GetAnIncomingNumber (string phoneNumberId)
 
 Get an Incoming Number
 
@@ -2053,7 +2053,7 @@ catch (ApiException e)
 
 <a id="getansmsmessage"></a>
 # **GetAnSmsMessage**
-> MessageResult GetAnSmsMessage (string accountId, string messageId)
+> MessageResult GetAnSmsMessage (string messageId)
 
 Get an SMS Message
 
@@ -2148,7 +2148,7 @@ catch (ApiException e)
 
 <a id="getheadmember"></a>
 # **GetHeadMember**
-> QueueMember GetHeadMember (string accountId, string queueId)
+> QueueMember GetHeadMember (string queueId)
 
 Get Head Member
 
@@ -2243,7 +2243,7 @@ catch (ApiException e)
 
 <a id="gettendlcsmsbrand"></a>
 # **GetTenDLCSmsBrand**
-> SMSTenDLCBrand GetTenDLCSmsBrand (string accountId, string brandId)
+> SMSTenDLCBrand GetTenDLCSmsBrand (string brandId)
 
 Get a 10DLC SMS Brand
 
@@ -2338,7 +2338,7 @@ catch (ApiException e)
 
 <a id="gettendlcsmsbrands"></a>
 # **GetTenDLCSmsBrands**
-> SMSTenDLCBrandsListResult GetTenDLCSmsBrands (string accountId)
+> SMSTenDLCBrandsListResult GetTenDLCSmsBrands ()
 
 Get list of SMS 10DLC Brands
 
@@ -2431,7 +2431,7 @@ catch (ApiException e)
 
 <a id="gettendlcsmscampaign"></a>
 # **GetTenDLCSmsCampaign**
-> SMSTenDLCCampaign GetTenDLCSmsCampaign (string accountId, string campaignId)
+> SMSTenDLCCampaign GetTenDLCSmsCampaign (string campaignId)
 
 Get a 10DLC SMS Campaign
 
@@ -2526,7 +2526,7 @@ catch (ApiException e)
 
 <a id="gettendlcsmscampaigns"></a>
 # **GetTenDLCSmsCampaigns**
-> SMSTenDLCCampaignsListResult GetTenDLCSmsCampaigns (string accountId, string? brandId = null)
+> SMSTenDLCCampaignsListResult GetTenDLCSmsCampaigns (string? brandId = null)
 
 Get list of SMS 10DLC Campaigns
 
@@ -2621,7 +2621,7 @@ catch (ApiException e)
 
 <a id="gettendlcsmspartnercampaign"></a>
 # **GetTenDLCSmsPartnerCampaign**
-> SMSTenDLCPartnerCampaign GetTenDLCSmsPartnerCampaign (string accountId, string campaignId)
+> SMSTenDLCPartnerCampaign GetTenDLCSmsPartnerCampaign (string campaignId)
 
 Get a 10DLC SMS Partner Campaign
 
@@ -2716,7 +2716,7 @@ catch (ApiException e)
 
 <a id="gettendlcsmspartnercampaigns"></a>
 # **GetTenDLCSmsPartnerCampaigns**
-> SMSTenDLCPartnerCampaignsListResult GetTenDLCSmsPartnerCampaigns (string accountId, string? brandId = null)
+> SMSTenDLCPartnerCampaignsListResult GetTenDLCSmsPartnerCampaigns (string? brandId = null)
 
 Get list of SMS 10DLC Partner Campaigns
 
@@ -2811,7 +2811,7 @@ catch (ApiException e)
 
 <a id="gettollfreesmscampaign"></a>
 # **GetTollFreeSmsCampaign**
-> SMSTollFreeCampaign GetTollFreeSmsCampaign (string accountId, string campaignId)
+> SMSTollFreeCampaign GetTollFreeSmsCampaign (string campaignId)
 
 Get a TollFree SMS Campaign
 
@@ -2906,7 +2906,7 @@ catch (ApiException e)
 
 <a id="gettollfreesmscampaigns"></a>
 # **GetTollFreeSmsCampaigns**
-> SMSTollFreeCampaignsListResult GetTollFreeSmsCampaigns (string accountId)
+> SMSTollFreeCampaignsListResult GetTollFreeSmsCampaigns ()
 
 Get list of TollFree Campaigns
 
@@ -2999,7 +2999,7 @@ catch (ApiException e)
 
 <a id="listactivequeues"></a>
 # **ListActiveQueues**
-> QueueList ListActiveQueues (string accountId, string? alias = null)
+> QueueList ListActiveQueues (string? alias = null)
 
 List Active Queues
 
@@ -3094,7 +3094,7 @@ catch (ApiException e)
 
 <a id="listallaccountlogs"></a>
 # **ListAllAccountLogs**
-> LogList ListAllAccountLogs (string accountId)
+> LogList ListAllAccountLogs ()
 
 List All Account Logs
 
@@ -3187,7 +3187,7 @@ catch (ApiException e)
 
 <a id="listapplications"></a>
 # **ListApplications**
-> ApplicationList ListApplications (string accountId, string? alias = null)
+> ApplicationList ListApplications (string? alias = null)
 
 List applications
 
@@ -3393,7 +3393,7 @@ catch (ApiException e)
 
 <a id="listcalllogs"></a>
 # **ListCallLogs**
-> LogList ListCallLogs (string accountId, string callId)
+> LogList ListCallLogs (string callId)
 
 List Call Logs
 
@@ -3488,7 +3488,7 @@ catch (ApiException e)
 
 <a id="listcallrecordings"></a>
 # **ListCallRecordings**
-> RecordingList ListCallRecordings (string accountId, string callId, string? dateCreated = null)
+> RecordingList ListCallRecordings (string callId, string? dateCreated = null)
 
 List Call Recordings
 
@@ -3585,7 +3585,7 @@ catch (ApiException e)
 
 <a id="listcalls"></a>
 # **ListCalls**
-> CallList ListCalls (string accountId, bool? active = null, string? to = null, string? from = null, CallStatus? status = null, string? startTime = null, string? endTime = null, string? parentCallId = null, List<string>? applicationId = null)
+> CallList ListCalls (bool? active = null, string? to = null, string? from = null, CallStatus? status = null, string? startTime = null, string? endTime = null, string? parentCallId = null, List<string>? applicationId = null)
 
 List Calls
 
@@ -3694,7 +3694,7 @@ catch (ApiException e)
 
 <a id="listconferencerecordings"></a>
 # **ListConferenceRecordings**
-> RecordingList ListConferenceRecordings (string accountId, string conferenceId, string? callId = null, string? dateCreated = null)
+> RecordingList ListConferenceRecordings (string conferenceId, string? callId = null, string? dateCreated = null)
 
 List Conference Recordings
 
@@ -3793,7 +3793,7 @@ catch (ApiException e)
 
 <a id="listconferences"></a>
 # **ListConferences**
-> ConferenceList ListConferences (string accountId, string? status = null, string? alias = null, string? dateCreated = null, string? dateUpdated = null)
+> ConferenceList ListConferences (string? status = null, string? alias = null, string? dateCreated = null, string? dateUpdated = null)
 
 List Conferences
 
@@ -3894,7 +3894,7 @@ catch (ApiException e)
 
 <a id="listincomingnumbers"></a>
 # **ListIncomingNumbers**
-> IncomingNumberList ListIncomingNumbers (string accountId, string? phoneNumber = null, string? alias = null, string? region = null, string? country = null, string? applicationId = null, bool? hasApplication = null, bool? voiceEnabled = null, bool? smsEnabled = null, bool? hasCampaign = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null, string? tfnCampaignId = null, bool? offnet = null)
+> IncomingNumberList ListIncomingNumbers (string? phoneNumber = null, string? alias = null, string? region = null, string? country = null, string? applicationId = null, bool? hasApplication = null, bool? voiceEnabled = null, bool? smsEnabled = null, bool? hasCampaign = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null, string? tfnCampaignId = null, bool? offnet = null)
 
 List Incoming Numbers
 
@@ -4019,7 +4019,7 @@ catch (ApiException e)
 
 <a id="listmembers"></a>
 # **ListMembers**
-> QueueMemberList ListMembers (string accountId, string queueId)
+> QueueMemberList ListMembers (string queueId)
 
 List Members
 
@@ -4114,7 +4114,7 @@ catch (ApiException e)
 
 <a id="listparticipants"></a>
 # **ListParticipants**
-> ConferenceParticipantList ListParticipants (string accountId, string conferenceId, bool? talk = null, bool? listen = null, bool? dtmfPassThrough = null)
+> ConferenceParticipantList ListParticipants (string conferenceId, bool? talk = null, bool? listen = null, bool? dtmfPassThrough = null)
 
 List Participants
 
@@ -4215,7 +4215,7 @@ catch (ApiException e)
 
 <a id="listrecordings"></a>
 # **ListRecordings**
-> RecordingList ListRecordings (string accountId, string? callId = null, string? conferenceId = null, string? dateCreated = null)
+> RecordingList ListRecordings (string? callId = null, string? conferenceId = null, string? dateCreated = null)
 
 List Recordings
 
@@ -4314,7 +4314,7 @@ catch (ApiException e)
 
 <a id="listsmsmessages"></a>
 # **ListSmsMessages**
-> MessagesList ListSmsMessages (string accountId, string? to = null, string? from = null, string? beginTime = null, string? endTime = null, MessageDirection? direction = null, string? campaignId = null, string? brandId = null, bool? is10DLC = null)
+> MessagesList ListSmsMessages (string? to = null, string? from = null, string? beginTime = null, string? endTime = null, MessageDirection? direction = null, string? campaignId = null, string? brandId = null, bool? is10DLC = null)
 
 List SMS Messages
 
@@ -4423,7 +4423,7 @@ catch (ApiException e)
 
 <a id="makeacall"></a>
 # **MakeACall**
-> CallResult MakeACall (string accountId, MakeCallRequest? makeCallRequest = null)
+> CallResult MakeACall (MakeCallRequest? makeCallRequest = null)
 
 Make a Call
 
@@ -4518,7 +4518,7 @@ catch (ApiException e)
 
 <a id="makeawebrtcjwt"></a>
 # **MakeAWebrtcJwt**
-> string MakeAWebrtcJwt (string accountId, CreateWebRTCToken createWebRTCToken)
+> string MakeAWebrtcJwt (CreateWebRTCToken createWebRTCToken)
 
 Make a JWT for WebRTC calling
 
@@ -4613,7 +4613,7 @@ catch (ApiException e)
 
 <a id="removeaparticipant"></a>
 # **RemoveAParticipant**
-> void RemoveAParticipant (string accountId, string conferenceId, string callId)
+> void RemoveAParticipant (string conferenceId, string callId)
 
 Remove a Participant
 
@@ -4706,7 +4706,7 @@ void (empty response body)
 
 <a id="sendansmsmessage"></a>
 # **SendAnSmsMessage**
-> MessageResult SendAnSmsMessage (string accountId, MessageRequest messageRequest)
+> MessageResult SendAnSmsMessage (MessageRequest messageRequest)
 
 Send an SMS Message
 
@@ -4801,7 +4801,7 @@ catch (ApiException e)
 
 <a id="streamarecordingfile"></a>
 # **StreamARecordingFile**
-> System.IO.Stream StreamARecordingFile (string accountId, string recordingId)
+> System.IO.Stream StreamARecordingFile (string recordingId)
 
 Stream a Recording File
 
@@ -4896,7 +4896,7 @@ catch (ApiException e)
 
 <a id="updateaconference"></a>
 # **UpdateAConference**
-> void UpdateAConference (string accountId, string conferenceId, UpdateConferenceRequest? updateConferenceRequest = null)
+> void UpdateAConference (string conferenceId, UpdateConferenceRequest? updateConferenceRequest = null)
 
 Update a Conference
 
@@ -4989,7 +4989,7 @@ void (empty response body)
 
 <a id="updatealivecall"></a>
 # **UpdateALiveCall**
-> void UpdateALiveCall (string accountId, string callId, UpdateCallRequest updateCallRequest)
+> void UpdateALiveCall (string callId, UpdateCallRequest updateCallRequest)
 
 Update a Live Call
 
@@ -5082,7 +5082,7 @@ void (empty response body)
 
 <a id="updateaparticipant"></a>
 # **UpdateAParticipant**
-> ConferenceParticipantResult UpdateAParticipant (string accountId, string conferenceId, string callId, UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = null)
+> ConferenceParticipantResult UpdateAParticipant (string conferenceId, string callId, UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = null)
 
 Update a Participant
 
@@ -5181,7 +5181,7 @@ catch (ApiException e)
 
 <a id="updateaqueue"></a>
 # **UpdateAQueue**
-> QueueResult UpdateAQueue (string accountId, string queueId, QueueRequest? queueRequest = null)
+> QueueResult UpdateAQueue (string queueId, QueueRequest? queueRequest = null)
 
 Update a Queue
 
@@ -5278,7 +5278,7 @@ catch (ApiException e)
 
 <a id="updateanaccount"></a>
 # **UpdateAnAccount**
-> void UpdateAnAccount (string accountId, AccountRequest? accountRequest = null)
+> void UpdateAnAccount (AccountRequest? accountRequest = null)
 
 Manage an account
 
@@ -5369,7 +5369,7 @@ void (empty response body)
 
 <a id="updateanapplication"></a>
 # **UpdateAnApplication**
-> ApplicationResult UpdateAnApplication (string accountId, string applicationId, ApplicationRequest? applicationRequest = null)
+> ApplicationResult UpdateAnApplication (string applicationId, ApplicationRequest? applicationRequest = null)
 
 Update an application
 
@@ -5466,7 +5466,7 @@ catch (ApiException e)
 
 <a id="updateanincomingnumber"></a>
 # **UpdateAnIncomingNumber**
-> IncomingNumberResult UpdateAnIncomingNumber (string accountId, string phoneNumberId, IncomingNumberRequest? incomingNumberRequest = null)
+> IncomingNumberResult UpdateAnIncomingNumber (string phoneNumberId, IncomingNumberRequest? incomingNumberRequest = null)
 
 Update an Incoming Number
 
