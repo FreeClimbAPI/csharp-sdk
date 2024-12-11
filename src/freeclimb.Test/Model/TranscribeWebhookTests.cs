@@ -403,7 +403,7 @@ namespace freeclimb.Test.Model
         public void TestDeserializeJsonToTranscribeWebhook()
         {
             string payload = @"{ ""requestType"": ""transcribe"" }";
-            Assert.IsInstanceOfType(TranscribeWebhook.Deserialize(payload), typeof(TranscribeWebhook));
+            Assert.IsType<TranscribeWebhook>(TranscribeWebhook.Deserialize(payload));
         }
 
         public object getTestValue(Type type)

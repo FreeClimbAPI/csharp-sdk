@@ -131,7 +131,7 @@ namespace freeclimb.Test.Model
         public void TestDeserializeJsonToCallControlWebhook()
         {
             string payload = @"{ ""requestType"": ""callControl"" }";
-            Assert.IsInstanceOfType(CallControlWebhook.Deserialize(payload), typeof(CallControlWebhook));
+            Assert.IsType<CallControlWebhook>(CallControlWebhook.Deserialize(payload));
         }
 
         public object getTestValue(Type type)

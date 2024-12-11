@@ -253,7 +253,7 @@ namespace freeclimb.Test.Model
         public void TestDeserializeJsonToGetDigitsWebhook()
         {
             string payload = @"{ ""requestType"": ""getDigits"" }";
-            Assert.IsInstanceOfType(GetDigitsWebhook.Deserialize(payload), typeof(GetDigitsWebhook));
+            Assert.IsType<GetDigitsWebhook>(GetDigitsWebhook.Deserialize(payload));
         }
 
         public object getTestValue(Type type)

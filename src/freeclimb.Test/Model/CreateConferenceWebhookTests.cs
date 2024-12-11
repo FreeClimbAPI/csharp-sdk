@@ -267,7 +267,7 @@ namespace freeclimb.Test.Model
         public void TestDeserializeJsonToCreateConferenceWebhook()
         {
             string payload = @"{ ""requestType"": ""createConference"" }";
-            Assert.IsInstanceOfType(CreateConferenceWebhook.Deserialize(payload), typeof(CreateConferenceWebhook));
+            Assert.IsType<CreateConferenceWebhook>(CreateConferenceWebhook.Deserialize(payload));
         }
 
         public object getTestValue(Type type)
