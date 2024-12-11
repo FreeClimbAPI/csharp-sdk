@@ -89,14 +89,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var buyIncomingNumberRequest = new BuyIncomingNumberRequest(); // BuyIncomingNumberRequest | Incoming Number transaction details
-
+            
             try
             {
                 // Buy a Phone Number
-                IncomingNumberResult result = apiInstance.BuyAPhoneNumber(accountId, buyIncomingNumberRequest);
-                Debug.WriteLine(result);
+                IncomingNumberResult result = apiInstance.BuyAPhoneNumber(buyIncomingNumberRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -116,10 +116,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Buy a Phone Number
-    ApiResponse<IncomingNumberResult> response = apiInstance.BuyAPhoneNumberWithHttpInfo(accountId, buyIncomingNumberRequest);
+    ApiResponse<IncomingNumberResult> response = apiInstance.BuyAPhoneNumberWithHttpInfo(buyIncomingNumberRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -133,8 +133,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **buyIncomingNumberRequest** | [**BuyIncomingNumberRequest**](BuyIncomingNumberRequest.md) | Incoming Number transaction details |  |
+
 
 ### Return type
 
@@ -184,14 +186,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var createConferenceRequest = new CreateConferenceRequest?(); // CreateConferenceRequest? | Conference to create (optional) 
-
+            
             try
             {
                 // Create a Conference
-                ConferenceResult result = apiInstance.CreateAConference(accountId, createConferenceRequest);
-                Debug.WriteLine(result);
+                ConferenceResult result = apiInstance.CreateAConference(createConferenceRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -211,10 +213,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a Conference
-    ApiResponse<ConferenceResult> response = apiInstance.CreateAConferenceWithHttpInfo(accountId, createConferenceRequest);
+    ApiResponse<ConferenceResult> response = apiInstance.CreateAConferenceWithHttpInfo(createConferenceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -228,8 +230,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **createConferenceRequest** | [**CreateConferenceRequest?**](CreateConferenceRequest?.md) | Conference to create | [optional]  |
+
 
 ### Return type
 
@@ -279,14 +283,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueRequest = new QueueRequest?(); // QueueRequest? | Queue details used to create a queue (optional) 
-
+            
             try
             {
                 // Create a Queue
-                QueueResult result = apiInstance.CreateAQueue(accountId, queueRequest);
-                Debug.WriteLine(result);
+                QueueResult result = apiInstance.CreateAQueue(queueRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -306,10 +310,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a Queue
-    ApiResponse<QueueResult> response = apiInstance.CreateAQueueWithHttpInfo(accountId, queueRequest);
+    ApiResponse<QueueResult> response = apiInstance.CreateAQueueWithHttpInfo(queueRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -323,8 +327,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **queueRequest** | [**QueueRequest?**](QueueRequest?.md) | Queue details used to create a queue | [optional]  |
+
 
 ### Return type
 
@@ -374,14 +380,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var applicationRequest = new ApplicationRequest?(); // ApplicationRequest? | Application Details (optional) 
-
+            
             try
             {
                 // Create an application
-                ApplicationResult result = apiInstance.CreateAnApplication(accountId, applicationRequest);
-                Debug.WriteLine(result);
+                ApplicationResult result = apiInstance.CreateAnApplication(applicationRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -401,10 +407,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create an application
-    ApiResponse<ApplicationResult> response = apiInstance.CreateAnApplicationWithHttpInfo(accountId, applicationRequest);
+    ApiResponse<ApplicationResult> response = apiInstance.CreateAnApplicationWithHttpInfo(applicationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -418,8 +424,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **applicationRequest** | [**ApplicationRequest?**](ApplicationRequest?.md) | Application Details | [optional]  |
+
 
 ### Return type
 
@@ -469,15 +477,16 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var knowledgeBaseId = "knowledgeBaseId_example";  // string | A string that uniquely identifies the KnowledgeBase resource.
+            
             var completionRequest = new CompletionRequest?(); // CompletionRequest? | Completion request details (optional) 
-
+            
             try
             {
                 // Query the knowledge base
-                CompletionResult result = apiInstance.CreateKnowledgeBaseCompletion(accountId, knowledgeBaseId, completionRequest);
-                Debug.WriteLine(result);
+                CompletionResult result = apiInstance.CreateKnowledgeBaseCompletion(knowledgeBaseId, completionRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -497,10 +506,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Query the knowledge base
-    ApiResponse<CompletionResult> response = apiInstance.CreateKnowledgeBaseCompletionWithHttpInfo(accountId, knowledgeBaseId, completionRequest);
+    ApiResponse<CompletionResult> response = apiInstance.CreateKnowledgeBaseCompletionWithHttpInfo(knowledgeBaseId, completionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -514,9 +523,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **knowledgeBaseId** | **string** | A string that uniquely identifies the KnowledgeBase resource. |  |
+
 | **completionRequest** | [**CompletionRequest?**](CompletionRequest?.md) | Completion request details | [optional]  |
+
 
 ### Return type
 
@@ -566,13 +578,13 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var recordingId = "recordingId_example";  // string | String that uniquely identifies this recording resource.
-
+            
             try
             {
                 // Delete a Recording
-                apiInstance.DeleteARecording(accountId, recordingId);
+                apiInstance.DeleteARecording(recordingId);                
             }
             catch (ApiException  e)
             {
@@ -592,7 +604,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete a Recording
-    apiInstance.DeleteARecordingWithHttpInfo(accountId, recordingId);
+    apiInstance.DeleteARecordingWithHttpInfo(recordingId);    
 }
 catch (ApiException e)
 {
@@ -606,8 +618,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **recordingId** | **string** | String that uniquely identifies this recording resource. |  |
+
 
 ### Return type
 
@@ -657,13 +671,13 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var applicationId = "applicationId_example";  // string | String that uniquely identifies this application resource.
-
+            
             try
             {
                 // Delete an application
-                apiInstance.DeleteAnApplication(accountId, applicationId);
+                apiInstance.DeleteAnApplication(applicationId);                
             }
             catch (ApiException  e)
             {
@@ -683,7 +697,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete an application
-    apiInstance.DeleteAnApplicationWithHttpInfo(accountId, applicationId);
+    apiInstance.DeleteAnApplicationWithHttpInfo(applicationId);    
 }
 catch (ApiException e)
 {
@@ -697,8 +711,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **applicationId** | **string** | String that uniquely identifies this application resource. |  |
+
 
 ### Return type
 
@@ -748,13 +764,13 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var phoneNumberId = "phoneNumberId_example";  // string | String that uniquely identifies this phone number resource.
-
+            
             try
             {
                 // Delete an Incoming Number
-                apiInstance.DeleteAnIncomingNumber(accountId, phoneNumberId);
+                apiInstance.DeleteAnIncomingNumber(phoneNumberId);                
             }
             catch (ApiException  e)
             {
@@ -774,7 +790,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete an Incoming Number
-    apiInstance.DeleteAnIncomingNumberWithHttpInfo(accountId, phoneNumberId);
+    apiInstance.DeleteAnIncomingNumberWithHttpInfo(phoneNumberId);    
 }
 catch (ApiException e)
 {
@@ -788,8 +804,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **phoneNumberId** | **string** | String that uniquely identifies this phone number resource. |  |
+
 
 ### Return type
 
@@ -839,15 +857,16 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies the Queue that the Member belongs to.
+            
             var callId = "callId_example";  // string | ID if the Call that the Member belongs to
-
+            
             try
             {
                 // Dequeue a Member
-                QueueMember result = apiInstance.DequeueAMember(accountId, queueId, callId);
-                Debug.WriteLine(result);
+                QueueMember result = apiInstance.DequeueAMember(queueId, callId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -867,10 +886,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Dequeue a Member
-    ApiResponse<QueueMember> response = apiInstance.DequeueAMemberWithHttpInfo(accountId, queueId, callId);
+    ApiResponse<QueueMember> response = apiInstance.DequeueAMemberWithHttpInfo(queueId, callId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -884,9 +903,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **queueId** | **string** | String that uniquely identifies the Queue that the Member belongs to. |  |
+
 | **callId** | **string** | ID if the Call that the Member belongs to |  |
+
 
 ### Return type
 
@@ -936,14 +958,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies this queue resource.
-
+            
             try
             {
                 // Dequeue Head Member
-                QueueMember result = apiInstance.DequeueHeadMember(accountId, queueId);
-                Debug.WriteLine(result);
+                QueueMember result = apiInstance.DequeueHeadMember(queueId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -963,10 +985,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Dequeue Head Member
-    ApiResponse<QueueMember> response = apiInstance.DequeueHeadMemberWithHttpInfo(accountId, queueId);
+    ApiResponse<QueueMember> response = apiInstance.DequeueHeadMemberWithHttpInfo(queueId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -980,8 +1002,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **queueId** | **string** | String that uniquely identifies this queue resource. |  |
+
 
 ### Return type
 
@@ -1031,14 +1055,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var recordingId = "recordingId_example";  // string | String that uniquely identifies this recording resource.
-
+            
             try
             {
                 // Download a Recording File
-                System.IO.Stream result = apiInstance.DownloadARecordingFile(accountId, recordingId);
-                Debug.WriteLine(result);
+                System.IO.Stream result = apiInstance.DownloadARecordingFile(recordingId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1058,10 +1082,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Download a Recording File
-    ApiResponse<System.IO.Stream> response = apiInstance.DownloadARecordingFileWithHttpInfo(accountId, recordingId);
+    ApiResponse<System.IO.Stream> response = apiInstance.DownloadARecordingFileWithHttpInfo(recordingId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1075,8 +1099,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **recordingId** | **string** | String that uniquely identifies this recording resource. |  |
+
 
 ### Return type
 
@@ -1126,14 +1152,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var filterLogsRequest = new FilterLogsRequest(); // FilterLogsRequest | Filter logs request paramters
-
+            
             try
             {
                 // Filter Logs
-                LogList result = apiInstance.FilterLogs(accountId, filterLogsRequest);
-                Debug.WriteLine(result);
+                LogList result = apiInstance.FilterLogs(filterLogsRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1153,10 +1179,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Filter Logs
-    ApiResponse<LogList> response = apiInstance.FilterLogsWithHttpInfo(accountId, filterLogsRequest);
+    ApiResponse<LogList> response = apiInstance.FilterLogsWithHttpInfo(filterLogsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1170,8 +1196,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **filterLogsRequest** | [**FilterLogsRequest**](FilterLogsRequest.md) | Filter logs request paramters |  |
+
 
 ### Return type
 
@@ -1221,14 +1249,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string | String that uniquely identifies this call resource.
-
+            
             try
             {
                 // Get a Call
-                CallResult result = apiInstance.GetACall(accountId, callId);
-                Debug.WriteLine(result);
+                CallResult result = apiInstance.GetACall(callId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1248,10 +1276,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a Call
-    ApiResponse<CallResult> response = apiInstance.GetACallWithHttpInfo(accountId, callId);
+    ApiResponse<CallResult> response = apiInstance.GetACallWithHttpInfo(callId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1265,8 +1293,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **callId** | **string** | String that uniquely identifies this call resource. |  |
+
 
 ### Return type
 
@@ -1316,14 +1346,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | A string that uniquely identifies this conference resource.
-
+            
             try
             {
                 // Get a Conference
-                ConferenceResult result = apiInstance.GetAConference(accountId, conferenceId);
-                Debug.WriteLine(result);
+                ConferenceResult result = apiInstance.GetAConference(conferenceId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1343,10 +1373,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a Conference
-    ApiResponse<ConferenceResult> response = apiInstance.GetAConferenceWithHttpInfo(accountId, conferenceId);
+    ApiResponse<ConferenceResult> response = apiInstance.GetAConferenceWithHttpInfo(conferenceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1360,8 +1390,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **conferenceId** | **string** | A string that uniquely identifies this conference resource. |  |
+
 
 ### Return type
 
@@ -1411,15 +1443,16 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies the Queue that the Member belongs to.
+            
             var callId = "callId_example";  // string | ID of the Call that the Member belongs to
-
+            
             try
             {
                 // Get a Member
-                QueueMember result = apiInstance.GetAMember(accountId, queueId, callId);
-                Debug.WriteLine(result);
+                QueueMember result = apiInstance.GetAMember(queueId, callId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1439,10 +1472,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a Member
-    ApiResponse<QueueMember> response = apiInstance.GetAMemberWithHttpInfo(accountId, queueId, callId);
+    ApiResponse<QueueMember> response = apiInstance.GetAMemberWithHttpInfo(queueId, callId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1456,9 +1489,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **queueId** | **string** | String that uniquely identifies the Queue that the Member belongs to. |  |
+
 | **callId** | **string** | ID of the Call that the Member belongs to |  |
+
 
 ### Return type
 
@@ -1508,15 +1544,16 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | ID of the conference this participant is in.
+            
             var callId = "callId_example";  // string | ID of the Call associated with this participant.
-
+            
             try
             {
                 // Get a Participant
-                ConferenceParticipantResult result = apiInstance.GetAParticipant(accountId, conferenceId, callId);
-                Debug.WriteLine(result);
+                ConferenceParticipantResult result = apiInstance.GetAParticipant(conferenceId, callId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1536,10 +1573,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a Participant
-    ApiResponse<ConferenceParticipantResult> response = apiInstance.GetAParticipantWithHttpInfo(accountId, conferenceId, callId);
+    ApiResponse<ConferenceParticipantResult> response = apiInstance.GetAParticipantWithHttpInfo(conferenceId, callId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1553,9 +1590,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **conferenceId** | **string** | ID of the conference this participant is in. |  |
+
 | **callId** | **string** | ID of the Call associated with this participant. |  |
+
 
 ### Return type
 
@@ -1605,14 +1645,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | A string that uniquely identifies this queue resource.
-
+            
             try
             {
                 // Get a Queue
-                QueueResult result = apiInstance.GetAQueue(accountId, queueId);
-                Debug.WriteLine(result);
+                QueueResult result = apiInstance.GetAQueue(queueId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1632,10 +1672,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a Queue
-    ApiResponse<QueueResult> response = apiInstance.GetAQueueWithHttpInfo(accountId, queueId);
+    ApiResponse<QueueResult> response = apiInstance.GetAQueueWithHttpInfo(queueId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1649,8 +1689,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **queueId** | **string** | A string that uniquely identifies this queue resource. |  |
+
 
 ### Return type
 
@@ -1700,14 +1742,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var recordingId = "recordingId_example";  // string | String that uniquely identifies this recording resource.
-
+            
             try
             {
                 // Get a Recording
-                RecordingResult result = apiInstance.GetARecording(accountId, recordingId);
-                Debug.WriteLine(result);
+                RecordingResult result = apiInstance.GetARecording(recordingId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1727,10 +1769,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a Recording
-    ApiResponse<RecordingResult> response = apiInstance.GetARecordingWithHttpInfo(accountId, recordingId);
+    ApiResponse<RecordingResult> response = apiInstance.GetARecordingWithHttpInfo(recordingId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1744,8 +1786,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **recordingId** | **string** | String that uniquely identifies this recording resource. |  |
+
 
 ### Return type
 
@@ -1795,13 +1839,12 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
-
+            
             try
             {
                 // Get an Account
-                AccountResult result = apiInstance.GetAnAccount(accountId);
-                Debug.WriteLine(result);
+                AccountResult result = apiInstance.GetAnAccount();
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1821,10 +1864,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get an Account
-    ApiResponse<AccountResult> response = apiInstance.GetAnAccountWithHttpInfo(accountId);
+    ApiResponse<AccountResult> response = apiInstance.GetAnAccountWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1836,9 +1879,7 @@ catch (ApiException e)
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
 
 ### Return type
 
@@ -1888,14 +1929,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var applicationId = "applicationId_example";  // string | A string that uniquely identifies this application resource.
-
+            
             try
             {
                 // Get an Application
-                ApplicationResult result = apiInstance.GetAnApplication(accountId, applicationId);
-                Debug.WriteLine(result);
+                ApplicationResult result = apiInstance.GetAnApplication(applicationId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -1915,10 +1956,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get an Application
-    ApiResponse<ApplicationResult> response = apiInstance.GetAnApplicationWithHttpInfo(accountId, applicationId);
+    ApiResponse<ApplicationResult> response = apiInstance.GetAnApplicationWithHttpInfo(applicationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -1932,8 +1973,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **applicationId** | **string** | A string that uniquely identifies this application resource. |  |
+
 
 ### Return type
 
@@ -1983,14 +2026,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var phoneNumberId = "phoneNumberId_example";  // string | String that uniquely identifies this phone number resource.
-
+            
             try
             {
                 // Get an Incoming Number
-                IncomingNumberResult result = apiInstance.GetAnIncomingNumber(accountId, phoneNumberId);
-                Debug.WriteLine(result);
+                IncomingNumberResult result = apiInstance.GetAnIncomingNumber(phoneNumberId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2010,10 +2053,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get an Incoming Number
-    ApiResponse<IncomingNumberResult> response = apiInstance.GetAnIncomingNumberWithHttpInfo(accountId, phoneNumberId);
+    ApiResponse<IncomingNumberResult> response = apiInstance.GetAnIncomingNumberWithHttpInfo(phoneNumberId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2027,8 +2070,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **phoneNumberId** | **string** | String that uniquely identifies this phone number resource. |  |
+
 
 ### Return type
 
@@ -2078,14 +2123,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var messageId = "messageId_example";  // string | String that uniquely identifies this Message resource.
-
+            
             try
             {
                 // Get an SMS Message
-                MessageResult result = apiInstance.GetAnSmsMessage(accountId, messageId);
-                Debug.WriteLine(result);
+                MessageResult result = apiInstance.GetAnSmsMessage(messageId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2105,10 +2150,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get an SMS Message
-    ApiResponse<MessageResult> response = apiInstance.GetAnSmsMessageWithHttpInfo(accountId, messageId);
+    ApiResponse<MessageResult> response = apiInstance.GetAnSmsMessageWithHttpInfo(messageId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2122,8 +2167,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **messageId** | **string** | String that uniquely identifies this Message resource. |  |
+
 
 ### Return type
 
@@ -2173,14 +2220,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies the Queue that the Member belongs to.
-
+            
             try
             {
                 // Get Head Member
-                QueueMember result = apiInstance.GetHeadMember(accountId, queueId);
-                Debug.WriteLine(result);
+                QueueMember result = apiInstance.GetHeadMember(queueId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2200,10 +2247,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Head Member
-    ApiResponse<QueueMember> response = apiInstance.GetHeadMemberWithHttpInfo(accountId, queueId);
+    ApiResponse<QueueMember> response = apiInstance.GetHeadMemberWithHttpInfo(queueId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2217,8 +2264,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **queueId** | **string** | String that uniquely identifies the Queue that the Member belongs to. |  |
+
 
 ### Return type
 
@@ -2268,14 +2317,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var brandId = "brandId_example";  // string | String that uniquely identifies this brand resource.
-
+            
             try
             {
                 // Get a 10DLC SMS Brand
-                SMSTenDLCBrand result = apiInstance.GetTenDLCSmsBrand(accountId, brandId);
-                Debug.WriteLine(result);
+                SMSTenDLCBrand result = apiInstance.GetTenDLCSmsBrand(brandId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2295,10 +2344,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a 10DLC SMS Brand
-    ApiResponse<SMSTenDLCBrand> response = apiInstance.GetTenDLCSmsBrandWithHttpInfo(accountId, brandId);
+    ApiResponse<SMSTenDLCBrand> response = apiInstance.GetTenDLCSmsBrandWithHttpInfo(brandId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2312,8 +2361,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **brandId** | **string** | String that uniquely identifies this brand resource. |  |
+
 
 ### Return type
 
@@ -2363,13 +2414,12 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
-
+            
             try
             {
                 // Get list of SMS 10DLC Brands
-                SMSTenDLCBrandsListResult result = apiInstance.GetTenDLCSmsBrands(accountId);
-                Debug.WriteLine(result);
+                SMSTenDLCBrandsListResult result = apiInstance.GetTenDLCSmsBrands();
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2389,10 +2439,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get list of SMS 10DLC Brands
-    ApiResponse<SMSTenDLCBrandsListResult> response = apiInstance.GetTenDLCSmsBrandsWithHttpInfo(accountId);
+    ApiResponse<SMSTenDLCBrandsListResult> response = apiInstance.GetTenDLCSmsBrandsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2404,9 +2454,7 @@ catch (ApiException e)
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
 
 ### Return type
 
@@ -2456,14 +2504,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var campaignId = "campaignId_example";  // string | String that uniquely identifies this campaign resource.
-
+            
             try
             {
                 // Get a 10DLC SMS Campaign
-                SMSTenDLCCampaign result = apiInstance.GetTenDLCSmsCampaign(accountId, campaignId);
-                Debug.WriteLine(result);
+                SMSTenDLCCampaign result = apiInstance.GetTenDLCSmsCampaign(campaignId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2483,10 +2531,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a 10DLC SMS Campaign
-    ApiResponse<SMSTenDLCCampaign> response = apiInstance.GetTenDLCSmsCampaignWithHttpInfo(accountId, campaignId);
+    ApiResponse<SMSTenDLCCampaign> response = apiInstance.GetTenDLCSmsCampaignWithHttpInfo(campaignId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2500,8 +2548,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **campaignId** | **string** | String that uniquely identifies this campaign resource. |  |
+
 
 ### Return type
 
@@ -2551,14 +2601,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var brandId = "brandId_example";  // string? | The unique identifier for a brand (optional) 
-
+            
             try
             {
                 // Get list of SMS 10DLC Campaigns
-                SMSTenDLCCampaignsListResult result = apiInstance.GetTenDLCSmsCampaigns(accountId, brandId);
-                Debug.WriteLine(result);
+                SMSTenDLCCampaignsListResult result = apiInstance.GetTenDLCSmsCampaigns(brandId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2578,10 +2628,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get list of SMS 10DLC Campaigns
-    ApiResponse<SMSTenDLCCampaignsListResult> response = apiInstance.GetTenDLCSmsCampaignsWithHttpInfo(accountId, brandId);
+    ApiResponse<SMSTenDLCCampaignsListResult> response = apiInstance.GetTenDLCSmsCampaignsWithHttpInfo(brandId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2595,8 +2645,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **brandId** | **string?** | The unique identifier for a brand | [optional]  |
+
 
 ### Return type
 
@@ -2646,14 +2698,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var campaignId = "campaignId_example";  // string | String that uniquely identifies this campaign resource.
-
+            
             try
             {
                 // Get a 10DLC SMS Partner Campaign
-                SMSTenDLCPartnerCampaign result = apiInstance.GetTenDLCSmsPartnerCampaign(accountId, campaignId);
-                Debug.WriteLine(result);
+                SMSTenDLCPartnerCampaign result = apiInstance.GetTenDLCSmsPartnerCampaign(campaignId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2673,10 +2725,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a 10DLC SMS Partner Campaign
-    ApiResponse<SMSTenDLCPartnerCampaign> response = apiInstance.GetTenDLCSmsPartnerCampaignWithHttpInfo(accountId, campaignId);
+    ApiResponse<SMSTenDLCPartnerCampaign> response = apiInstance.GetTenDLCSmsPartnerCampaignWithHttpInfo(campaignId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2690,8 +2742,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **campaignId** | **string** | String that uniquely identifies this campaign resource. |  |
+
 
 ### Return type
 
@@ -2741,14 +2795,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var brandId = "brandId_example";  // string? | The unique identifier for a brand (optional) 
-
+            
             try
             {
                 // Get list of SMS 10DLC Partner Campaigns
-                SMSTenDLCPartnerCampaignsListResult result = apiInstance.GetTenDLCSmsPartnerCampaigns(accountId, brandId);
-                Debug.WriteLine(result);
+                SMSTenDLCPartnerCampaignsListResult result = apiInstance.GetTenDLCSmsPartnerCampaigns(brandId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2768,10 +2822,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get list of SMS 10DLC Partner Campaigns
-    ApiResponse<SMSTenDLCPartnerCampaignsListResult> response = apiInstance.GetTenDLCSmsPartnerCampaignsWithHttpInfo(accountId, brandId);
+    ApiResponse<SMSTenDLCPartnerCampaignsListResult> response = apiInstance.GetTenDLCSmsPartnerCampaignsWithHttpInfo(brandId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2785,8 +2839,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **brandId** | **string?** | The unique identifier for a brand | [optional]  |
+
 
 ### Return type
 
@@ -2836,14 +2892,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var campaignId = "campaignId_example";  // string | String that uniquely identifies this TollFree Campaign resource.
-
+            
             try
             {
                 // Get a TollFree SMS Campaign
-                SMSTollFreeCampaign result = apiInstance.GetTollFreeSmsCampaign(accountId, campaignId);
-                Debug.WriteLine(result);
+                SMSTollFreeCampaign result = apiInstance.GetTollFreeSmsCampaign(campaignId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2863,10 +2919,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a TollFree SMS Campaign
-    ApiResponse<SMSTollFreeCampaign> response = apiInstance.GetTollFreeSmsCampaignWithHttpInfo(accountId, campaignId);
+    ApiResponse<SMSTollFreeCampaign> response = apiInstance.GetTollFreeSmsCampaignWithHttpInfo(campaignId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2880,8 +2936,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **campaignId** | **string** | String that uniquely identifies this TollFree Campaign resource. |  |
+
 
 ### Return type
 
@@ -2931,13 +2989,12 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
-
+            
             try
             {
                 // Get list of TollFree Campaigns
-                SMSTollFreeCampaignsListResult result = apiInstance.GetTollFreeSmsCampaigns(accountId);
-                Debug.WriteLine(result);
+                SMSTollFreeCampaignsListResult result = apiInstance.GetTollFreeSmsCampaigns();
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -2957,10 +3014,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get list of TollFree Campaigns
-    ApiResponse<SMSTollFreeCampaignsListResult> response = apiInstance.GetTollFreeSmsCampaignsWithHttpInfo(accountId);
+    ApiResponse<SMSTollFreeCampaignsListResult> response = apiInstance.GetTollFreeSmsCampaignsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -2972,9 +3029,7 @@ catch (ApiException e)
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
 
 ### Return type
 
@@ -3024,14 +3079,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var alias = "alias_example";  // string? | Return only the Queue resources with aliases that exactly match this name. (optional) 
-
+            
             try
             {
                 // List Active Queues
-                QueueList result = apiInstance.ListActiveQueues(accountId, alias);
-                Debug.WriteLine(result);
+                QueueList result = apiInstance.ListActiveQueues(alias);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3051,10 +3106,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Active Queues
-    ApiResponse<QueueList> response = apiInstance.ListActiveQueuesWithHttpInfo(accountId, alias);
+    ApiResponse<QueueList> response = apiInstance.ListActiveQueuesWithHttpInfo(alias);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3068,8 +3123,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **alias** | **string?** | Return only the Queue resources with aliases that exactly match this name. | [optional]  |
+
 
 ### Return type
 
@@ -3119,13 +3176,12 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
-
+            
             try
             {
                 // List All Account Logs
-                LogList result = apiInstance.ListAllAccountLogs(accountId);
-                Debug.WriteLine(result);
+                LogList result = apiInstance.ListAllAccountLogs();
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3145,10 +3201,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List All Account Logs
-    ApiResponse<LogList> response = apiInstance.ListAllAccountLogsWithHttpInfo(accountId);
+    ApiResponse<LogList> response = apiInstance.ListAllAccountLogsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3160,9 +3216,7 @@ catch (ApiException e)
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
 
 ### Return type
 
@@ -3212,14 +3266,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var alias = "alias_example";  // string? | Return only applications with aliases that exactly match this value. (optional) 
-
+            
             try
             {
                 // List applications
-                ApplicationList result = apiInstance.ListApplications(accountId, alias);
-                Debug.WriteLine(result);
+                ApplicationList result = apiInstance.ListApplications(alias);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3239,10 +3293,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List applications
-    ApiResponse<ApplicationList> response = apiInstance.ListApplicationsWithHttpInfo(accountId, alias);
+    ApiResponse<ApplicationList> response = apiInstance.ListApplicationsWithHttpInfo(alias);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3256,8 +3310,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **alias** | **string?** | Return only applications with aliases that exactly match this value. | [optional]  |
+
 
 ### Return type
 
@@ -3307,22 +3363,32 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
+            
             var phoneNumber = "phoneNumber_example";  // string? | PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format. (optional) 
+            
             var region = "region_example";  // string? | State or province of this phone number. (optional) 
+            
             var country = "country_example";  // string? | Country of this phone number. (optional) 
+            
             var voiceEnabled = true;  // bool? | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional)  (default to true)
+            
             var smsEnabled = true;  // bool? | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional)  (default to true)
+            
             var capabilitiesVoice = true;  // bool? |  (optional) 
+            
             var capabilitiesSms = true;  // bool? |  (optional) 
+            
             var capabilitiesTollFree = true;  // bool? |  (optional) 
+            
             var capabilitiesTenDLC = true;  // bool? |  (optional) 
+            
             var capabilitiesShortCode = true;  // bool? |  (optional) 
-
+            
             try
             {
                 // List available numbers
                 AvailableNumberList result = apiInstance.ListAvailableNumbers(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
-                Debug.WriteLine(result);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3345,7 +3411,7 @@ try
     ApiResponse<AvailableNumberList> response = apiInstance.ListAvailableNumbersWithHttpInfo(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3359,16 +3425,28 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+
+
 | **phoneNumber** | **string?** | PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. | [optional]  |
+
 | **region** | **string?** | State or province of this phone number. | [optional]  |
+
 | **country** | **string?** | Country of this phone number. | [optional]  |
+
 | **voiceEnabled** | **bool?** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] [default to true] |
+
 | **smsEnabled** | **bool?** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] [default to true] |
+
 | **capabilitiesVoice** | **bool?** |  | [optional]  |
+
 | **capabilitiesSms** | **bool?** |  | [optional]  |
+
 | **capabilitiesTollFree** | **bool?** |  | [optional]  |
+
 | **capabilitiesTenDLC** | **bool?** |  | [optional]  |
+
 | **capabilitiesShortCode** | **bool?** |  | [optional]  |
+
 
 ### Return type
 
@@ -3418,14 +3496,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string | String that uniquely identifies this call resource.
-
+            
             try
             {
                 // List Call Logs
-                LogList result = apiInstance.ListCallLogs(accountId, callId);
-                Debug.WriteLine(result);
+                LogList result = apiInstance.ListCallLogs(callId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3445,10 +3523,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Call Logs
-    ApiResponse<LogList> response = apiInstance.ListCallLogsWithHttpInfo(accountId, callId);
+    ApiResponse<LogList> response = apiInstance.ListCallLogsWithHttpInfo(callId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3462,8 +3540,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **callId** | **string** | String that uniquely identifies this call resource. |  |
+
 
 ### Return type
 
@@ -3513,15 +3593,16 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string | String that uniquely identifies this call resource.
+            
             var dateCreated = "dateCreated_example";  // string? | Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional) 
-
+            
             try
             {
                 // List Call Recordings
-                RecordingList result = apiInstance.ListCallRecordings(accountId, callId, dateCreated);
-                Debug.WriteLine(result);
+                RecordingList result = apiInstance.ListCallRecordings(callId, dateCreated);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3541,10 +3622,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Call Recordings
-    ApiResponse<RecordingList> response = apiInstance.ListCallRecordingsWithHttpInfo(accountId, callId, dateCreated);
+    ApiResponse<RecordingList> response = apiInstance.ListCallRecordingsWithHttpInfo(callId, dateCreated);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3558,9 +3639,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **callId** | **string** | String that uniquely identifies this call resource. |  |
+
 | **dateCreated** | **string?** | Only show recordings created on the specified date, in the form *YYYY-MM-DD*. | [optional]  |
+
 
 ### Return type
 
@@ -3610,21 +3694,28 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var active = false;  // bool? | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional)  (default to false)
+            
             var to = "to_example";  // string? | Only show Calls to this phone number. (optional) 
+            
             var from = "from_example";  // string? | Only show Calls from this phone number. (optional) 
+            
             var status = new CallStatus?(); // CallStatus? | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`. (optional) 
+            
             var startTime = "startTime_example";  // string? | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
+            
             var endTime = "endTime_example";  // string? | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional) 
+            
             var parentCallId = "parentCallId_example";  // string? | Only show Calls spawned by the call with this ID. (optional) 
+            
             var applicationId = new List<string>?(); // List<string>? | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional) 
-
+            
             try
             {
                 // List Calls
-                CallList result = apiInstance.ListCalls(accountId, active, to, from, status, startTime, endTime, parentCallId, applicationId);
-                Debug.WriteLine(result);
+                CallList result = apiInstance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3644,10 +3735,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Calls
-    ApiResponse<CallList> response = apiInstance.ListCallsWithHttpInfo(accountId, active, to, from, status, startTime, endTime, parentCallId, applicationId);
+    ApiResponse<CallList> response = apiInstance.ListCallsWithHttpInfo(active, to, from, status, startTime, endTime, parentCallId, applicationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3661,15 +3752,24 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **active** | **bool?** | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional] [default to false] |
+
 | **to** | **string?** | Only show Calls to this phone number. | [optional]  |
+
 | **from** | **string?** | Only show Calls from this phone number. | [optional]  |
+
 | **status** | [**CallStatus?**](CallStatus?.md) | Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional]  |
+
 | **startTime** | **string?** | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional]  |
+
 | **endTime** | **string?** | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional]  |
+
 | **parentCallId** | **string?** | Only show Calls spawned by the call with this ID. | [optional]  |
+
 | **applicationId** | [**List&lt;string&gt;?**](string.md) | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional]  |
+
 
 ### Return type
 
@@ -3719,16 +3819,18 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | Show only Recordings made during the conference with this ID.
+            
             var callId = "callId_example";  // string? | Show only Recordings made during the Call with this ID. (optional) 
+            
             var dateCreated = "dateCreated_example";  // string? | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional) 
-
+            
             try
             {
                 // List Conference Recordings
-                RecordingList result = apiInstance.ListConferenceRecordings(accountId, conferenceId, callId, dateCreated);
-                Debug.WriteLine(result);
+                RecordingList result = apiInstance.ListConferenceRecordings(conferenceId, callId, dateCreated);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3748,10 +3850,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Conference Recordings
-    ApiResponse<RecordingList> response = apiInstance.ListConferenceRecordingsWithHttpInfo(accountId, conferenceId, callId, dateCreated);
+    ApiResponse<RecordingList> response = apiInstance.ListConferenceRecordingsWithHttpInfo(conferenceId, callId, dateCreated);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3765,10 +3867,14 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **conferenceId** | **string** | Show only Recordings made during the conference with this ID. |  |
+
 | **callId** | **string?** | Show only Recordings made during the Call with this ID. | [optional]  |
+
 | **dateCreated** | **string?** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional]  |
+
 
 ### Return type
 
@@ -3818,17 +3924,20 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var status = "status_example";  // string? | Only show conferences that currently have the specified status. Valid values: `empty`, `populated`, `inProgress`, or `terminated`. (optional) 
+            
             var alias = "alias_example";  // string? | List Conferences whose alias exactly matches this string. (optional) 
+            
             var dateCreated = "dateCreated_example";  // string? | Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional) 
+            
             var dateUpdated = "dateUpdated_example";  // string? | Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional) 
-
+            
             try
             {
                 // List Conferences
-                ConferenceList result = apiInstance.ListConferences(accountId, status, alias, dateCreated, dateUpdated);
-                Debug.WriteLine(result);
+                ConferenceList result = apiInstance.ListConferences(status, alias, dateCreated, dateUpdated);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3848,10 +3957,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Conferences
-    ApiResponse<ConferenceList> response = apiInstance.ListConferencesWithHttpInfo(accountId, status, alias, dateCreated, dateUpdated);
+    ApiResponse<ConferenceList> response = apiInstance.ListConferencesWithHttpInfo(status, alias, dateCreated, dateUpdated);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3865,11 +3974,16 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **status** | **string?** | Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. | [optional]  |
+
 | **alias** | **string?** | List Conferences whose alias exactly matches this string. | [optional]  |
+
 | **dateCreated** | **string?** | Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. | [optional]  |
+
 | **dateUpdated** | **string?** | Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. | [optional]  |
+
 
 ### Return type
 
@@ -3919,29 +4033,44 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var phoneNumber = "phoneNumber_example";  // string? | Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional) 
+            
             var alias = "alias_example";  // string? | Only show incoming phone numbers with aliases that exactly match this value. (optional) 
+            
             var region = "region_example";  // string? | State or province of this phone number. (optional) 
+            
             var country = "country_example";  // string? | Country of this phone number. (optional) 
+            
             var applicationId = "applicationId_example";  // string? | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional) 
+            
             var hasApplication = false;  // bool? | Indication of whether the phone number has an application linked to it. (optional)  (default to false)
+            
             var voiceEnabled = true;  // bool? | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional)  (default to true)
+            
             var smsEnabled = true;  // bool? | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional)  (default to true)
+            
             var hasCampaign = true;  // bool? | Indication of whether the phone number has a campaign associated with it (optional) 
+            
             var capabilitiesVoice = true;  // bool? |  (optional) 
+            
             var capabilitiesSms = true;  // bool? |  (optional) 
+            
             var capabilitiesTollFree = true;  // bool? |  (optional) 
+            
             var capabilitiesTenDLC = true;  // bool? |  (optional) 
+            
             var capabilitiesShortCode = true;  // bool? |  (optional) 
+            
             var tfnCampaignId = "tfnCampaignId_example";  // string? | Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional) 
+            
             var offnet = true;  // bool? | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional) 
-
+            
             try
             {
                 // List Incoming Numbers
-                IncomingNumberList result = apiInstance.ListIncomingNumbers(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
-                Debug.WriteLine(result);
+                IncomingNumberList result = apiInstance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -3961,10 +4090,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Incoming Numbers
-    ApiResponse<IncomingNumberList> response = apiInstance.ListIncomingNumbersWithHttpInfo(accountId, phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
+    ApiResponse<IncomingNumberList> response = apiInstance.ListIncomingNumbersWithHttpInfo(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -3978,23 +4107,40 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **phoneNumber** | **string?** | Only show incoming phone number resources that match this PCRE-compatible regular expression. | [optional]  |
+
 | **alias** | **string?** | Only show incoming phone numbers with aliases that exactly match this value. | [optional]  |
+
 | **region** | **string?** | State or province of this phone number. | [optional]  |
+
 | **country** | **string?** | Country of this phone number. | [optional]  |
+
 | **applicationId** | **string?** | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. | [optional]  |
+
 | **hasApplication** | **bool?** | Indication of whether the phone number has an application linked to it. | [optional] [default to false] |
+
 | **voiceEnabled** | **bool?** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] [default to true] |
+
 | **smsEnabled** | **bool?** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] [default to true] |
+
 | **hasCampaign** | **bool?** | Indication of whether the phone number has a campaign associated with it | [optional]  |
+
 | **capabilitiesVoice** | **bool?** |  | [optional]  |
+
 | **capabilitiesSms** | **bool?** |  | [optional]  |
+
 | **capabilitiesTollFree** | **bool?** |  | [optional]  |
+
 | **capabilitiesTenDLC** | **bool?** |  | [optional]  |
+
 | **capabilitiesShortCode** | **bool?** |  | [optional]  |
+
 | **tfnCampaignId** | **string?** | Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. | [optional]  |
+
 | **offnet** | **bool?** | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. | [optional]  |
+
 
 ### Return type
 
@@ -4044,14 +4190,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | String that uniquely identifies the Queue that the Member belongs to.
-
+            
             try
             {
                 // List Members
-                QueueMemberList result = apiInstance.ListMembers(accountId, queueId);
-                Debug.WriteLine(result);
+                QueueMemberList result = apiInstance.ListMembers(queueId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -4071,10 +4217,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Members
-    ApiResponse<QueueMemberList> response = apiInstance.ListMembersWithHttpInfo(accountId, queueId);
+    ApiResponse<QueueMemberList> response = apiInstance.ListMembersWithHttpInfo(queueId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -4088,8 +4234,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **queueId** | **string** | String that uniquely identifies the Queue that the Member belongs to. |  |
+
 
 ### Return type
 
@@ -4139,17 +4287,20 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | ID of the conference this participant is in.
+            
             var talk = true;  // bool? | Only show Participants with the talk privilege. (optional) 
+            
             var listen = true;  // bool? | Only show Participants with the listen privilege. (optional) 
+            
             var dtmfPassThrough = true;  // bool? | Only show Participants with the dtmfPassThrough privilege. (optional) 
-
+            
             try
             {
                 // List Participants
-                ConferenceParticipantList result = apiInstance.ListParticipants(accountId, conferenceId, talk, listen, dtmfPassThrough);
-                Debug.WriteLine(result);
+                ConferenceParticipantList result = apiInstance.ListParticipants(conferenceId, talk, listen, dtmfPassThrough);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -4169,10 +4320,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Participants
-    ApiResponse<ConferenceParticipantList> response = apiInstance.ListParticipantsWithHttpInfo(accountId, conferenceId, talk, listen, dtmfPassThrough);
+    ApiResponse<ConferenceParticipantList> response = apiInstance.ListParticipantsWithHttpInfo(conferenceId, talk, listen, dtmfPassThrough);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -4186,11 +4337,16 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **conferenceId** | **string** | ID of the conference this participant is in. |  |
+
 | **talk** | **bool?** | Only show Participants with the talk privilege. | [optional]  |
+
 | **listen** | **bool?** | Only show Participants with the listen privilege. | [optional]  |
+
 | **dtmfPassThrough** | **bool?** | Only show Participants with the dtmfPassThrough privilege. | [optional]  |
+
 
 ### Return type
 
@@ -4240,16 +4396,18 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string? | Show only Recordings made during the Call with this ID. (optional) 
+            
             var conferenceId = "conferenceId_example";  // string? | Show only Recordings made during the conference with this ID. (optional) 
+            
             var dateCreated = "dateCreated_example";  // string? | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional) 
-
+            
             try
             {
                 // List Recordings
-                RecordingList result = apiInstance.ListRecordings(accountId, callId, conferenceId, dateCreated);
-                Debug.WriteLine(result);
+                RecordingList result = apiInstance.ListRecordings(callId, conferenceId, dateCreated);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -4269,10 +4427,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Recordings
-    ApiResponse<RecordingList> response = apiInstance.ListRecordingsWithHttpInfo(accountId, callId, conferenceId, dateCreated);
+    ApiResponse<RecordingList> response = apiInstance.ListRecordingsWithHttpInfo(callId, conferenceId, dateCreated);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -4286,10 +4444,14 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **callId** | **string?** | Show only Recordings made during the Call with this ID. | [optional]  |
+
 | **conferenceId** | **string?** | Show only Recordings made during the conference with this ID. | [optional]  |
+
 | **dateCreated** | **string?** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional]  |
+
 
 ### Return type
 
@@ -4339,21 +4501,28 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var to = "to_example";  // string? | Only show Messages to this phone number. (optional) 
+            
             var from = "from_example";  // string? | Only show Messages from this phone number. (optional) 
+            
             var beginTime = "beginTime_example";  // string? | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional) 
+            
             var endTime = "endTime_example";  // string? | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional) 
+            
             var direction = new MessageDirection?(); // MessageDirection? | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional) 
+            
             var campaignId = "campaignId_example";  // string? | Only show messages associated with this campaign ID. (optional) 
+            
             var brandId = "brandId_example";  // string? | Only show messages associated with this brand ID (optional) 
+            
             var is10DLC = true;  // bool? | Only show messages that were sent as part of a 10DLC campaign. (optional) 
-
+            
             try
             {
                 // List SMS Messages
-                MessagesList result = apiInstance.ListSmsMessages(accountId, to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
-                Debug.WriteLine(result);
+                MessagesList result = apiInstance.ListSmsMessages(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -4373,10 +4542,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List SMS Messages
-    ApiResponse<MessagesList> response = apiInstance.ListSmsMessagesWithHttpInfo(accountId, to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
+    ApiResponse<MessagesList> response = apiInstance.ListSmsMessagesWithHttpInfo(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -4390,15 +4559,24 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **to** | **string?** | Only show Messages to this phone number. | [optional]  |
+
 | **from** | **string?** | Only show Messages from this phone number. | [optional]  |
+
 | **beginTime** | **string?** | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional]  |
+
 | **endTime** | **string?** | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional]  |
+
 | **direction** | [**MessageDirection?**](MessageDirection?.md) | Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional]  |
+
 | **campaignId** | **string?** | Only show messages associated with this campaign ID. | [optional]  |
+
 | **brandId** | **string?** | Only show messages associated with this brand ID | [optional]  |
+
 | **is10DLC** | **bool?** | Only show messages that were sent as part of a 10DLC campaign. | [optional]  |
+
 
 ### Return type
 
@@ -4448,14 +4626,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var makeCallRequest = new MakeCallRequest?(); // MakeCallRequest? | Call details for making a call (optional) 
-
+            
             try
             {
                 // Make a Call
-                CallResult result = apiInstance.MakeACall(accountId, makeCallRequest);
-                Debug.WriteLine(result);
+                CallResult result = apiInstance.MakeACall(makeCallRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -4475,10 +4653,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Make a Call
-    ApiResponse<CallResult> response = apiInstance.MakeACallWithHttpInfo(accountId, makeCallRequest);
+    ApiResponse<CallResult> response = apiInstance.MakeACallWithHttpInfo(makeCallRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -4492,8 +4670,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **makeCallRequest** | [**MakeCallRequest?**](MakeCallRequest?.md) | Call details for making a call | [optional]  |
+
 
 ### Return type
 
@@ -4543,14 +4723,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var createWebRTCToken = new CreateWebRTCToken(); // CreateWebRTCToken | Information needed to craft a JWT compatible with the platforms WebRTC APIs
-
+            
             try
             {
                 // Make a JWT for WebRTC calling
-                string result = apiInstance.MakeAWebrtcJwt(accountId, createWebRTCToken);
-                Debug.WriteLine(result);
+                string result = apiInstance.MakeAWebrtcJwt(createWebRTCToken);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -4570,10 +4750,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Make a JWT for WebRTC calling
-    ApiResponse<string> response = apiInstance.MakeAWebrtcJwtWithHttpInfo(accountId, createWebRTCToken);
+    ApiResponse<string> response = apiInstance.MakeAWebrtcJwtWithHttpInfo(createWebRTCToken);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -4587,8 +4767,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **createWebRTCToken** | [**CreateWebRTCToken**](CreateWebRTCToken.md) | Information needed to craft a JWT compatible with the platforms WebRTC APIs |  |
+
 
 ### Return type
 
@@ -4638,14 +4820,15 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | ID of the conference this participant is in.
+            
             var callId = "callId_example";  // string | ID of the Call associated with this participant.
-
+            
             try
             {
                 // Remove a Participant
-                apiInstance.RemoveAParticipant(accountId, conferenceId, callId);
+                apiInstance.RemoveAParticipant(conferenceId, callId);                
             }
             catch (ApiException  e)
             {
@@ -4665,7 +4848,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Remove a Participant
-    apiInstance.RemoveAParticipantWithHttpInfo(accountId, conferenceId, callId);
+    apiInstance.RemoveAParticipantWithHttpInfo(conferenceId, callId);    
 }
 catch (ApiException e)
 {
@@ -4679,9 +4862,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **conferenceId** | **string** | ID of the conference this participant is in. |  |
+
 | **callId** | **string** | ID of the Call associated with this participant. |  |
+
 
 ### Return type
 
@@ -4731,14 +4917,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var messageRequest = new MessageRequest(); // MessageRequest | Details to create a message
-
+            
             try
             {
                 // Send an SMS Message
-                MessageResult result = apiInstance.SendAnSmsMessage(accountId, messageRequest);
-                Debug.WriteLine(result);
+                MessageResult result = apiInstance.SendAnSmsMessage(messageRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -4758,10 +4944,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Send an SMS Message
-    ApiResponse<MessageResult> response = apiInstance.SendAnSmsMessageWithHttpInfo(accountId, messageRequest);
+    ApiResponse<MessageResult> response = apiInstance.SendAnSmsMessageWithHttpInfo(messageRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -4775,8 +4961,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **messageRequest** | [**MessageRequest**](MessageRequest.md) | Details to create a message |  |
+
 
 ### Return type
 
@@ -4826,14 +5014,14 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var recordingId = "recordingId_example";  // string | String that uniquely identifies this recording resource.
-
+            
             try
             {
                 // Stream a Recording File
-                System.IO.Stream result = apiInstance.StreamARecordingFile(accountId, recordingId);
-                Debug.WriteLine(result);
+                System.IO.Stream result = apiInstance.StreamARecordingFile(recordingId);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -4853,10 +5041,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Stream a Recording File
-    ApiResponse<System.IO.Stream> response = apiInstance.StreamARecordingFileWithHttpInfo(accountId, recordingId);
+    ApiResponse<System.IO.Stream> response = apiInstance.StreamARecordingFileWithHttpInfo(recordingId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -4870,8 +5058,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **recordingId** | **string** | String that uniquely identifies this recording resource. |  |
+
 
 ### Return type
 
@@ -4921,14 +5111,15 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | String that uniquely identifies this conference resource.
+            
             var updateConferenceRequest = new UpdateConferenceRequest?(); // UpdateConferenceRequest? | Conference Details to update (optional) 
-
+            
             try
             {
                 // Update a Conference
-                apiInstance.UpdateAConference(accountId, conferenceId, updateConferenceRequest);
+                apiInstance.UpdateAConference(conferenceId, updateConferenceRequest);                
             }
             catch (ApiException  e)
             {
@@ -4948,7 +5139,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a Conference
-    apiInstance.UpdateAConferenceWithHttpInfo(accountId, conferenceId, updateConferenceRequest);
+    apiInstance.UpdateAConferenceWithHttpInfo(conferenceId, updateConferenceRequest);    
 }
 catch (ApiException e)
 {
@@ -4962,9 +5153,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **conferenceId** | **string** | String that uniquely identifies this conference resource. |  |
+
 | **updateConferenceRequest** | [**UpdateConferenceRequest?**](UpdateConferenceRequest?.md) | Conference Details to update | [optional]  |
+
 
 ### Return type
 
@@ -5014,14 +5208,15 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var callId = "callId_example";  // string | String that uniquely identifies this call resource.
+            
             var updateCallRequest = new UpdateCallRequest(); // UpdateCallRequest | Call details to update
-
+            
             try
             {
                 // Update a Live Call
-                apiInstance.UpdateALiveCall(accountId, callId, updateCallRequest);
+                apiInstance.UpdateALiveCall(callId, updateCallRequest);                
             }
             catch (ApiException  e)
             {
@@ -5041,7 +5236,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a Live Call
-    apiInstance.UpdateALiveCallWithHttpInfo(accountId, callId, updateCallRequest);
+    apiInstance.UpdateALiveCallWithHttpInfo(callId, updateCallRequest);    
 }
 catch (ApiException e)
 {
@@ -5055,9 +5250,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **callId** | **string** | String that uniquely identifies this call resource. |  |
+
 | **updateCallRequest** | [**UpdateCallRequest**](UpdateCallRequest.md) | Call details to update |  |
+
 
 ### Return type
 
@@ -5107,16 +5305,18 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var conferenceId = "conferenceId_example";  // string | ID of the conference this participant is in.
+            
             var callId = "callId_example";  // string | ID of the Call associated with this participant.
+            
             var updateConferenceParticipantRequest = new UpdateConferenceParticipantRequest?(); // UpdateConferenceParticipantRequest? | Conference participant details to update (optional) 
-
+            
             try
             {
                 // Update a Participant
-                ConferenceParticipantResult result = apiInstance.UpdateAParticipant(accountId, conferenceId, callId, updateConferenceParticipantRequest);
-                Debug.WriteLine(result);
+                ConferenceParticipantResult result = apiInstance.UpdateAParticipant(conferenceId, callId, updateConferenceParticipantRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -5136,10 +5336,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a Participant
-    ApiResponse<ConferenceParticipantResult> response = apiInstance.UpdateAParticipantWithHttpInfo(accountId, conferenceId, callId, updateConferenceParticipantRequest);
+    ApiResponse<ConferenceParticipantResult> response = apiInstance.UpdateAParticipantWithHttpInfo(conferenceId, callId, updateConferenceParticipantRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -5153,10 +5353,14 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **conferenceId** | **string** | ID of the conference this participant is in. |  |
+
 | **callId** | **string** | ID of the Call associated with this participant. |  |
+
 | **updateConferenceParticipantRequest** | [**UpdateConferenceParticipantRequest?**](UpdateConferenceParticipantRequest?.md) | Conference participant details to update | [optional]  |
+
 
 ### Return type
 
@@ -5206,15 +5410,16 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var queueId = "queueId_example";  // string | A string that uniquely identifies this Queue resource.
+            
             var queueRequest = new QueueRequest?(); // QueueRequest? | Queue Details to update (optional) 
-
+            
             try
             {
                 // Update a Queue
-                QueueResult result = apiInstance.UpdateAQueue(accountId, queueId, queueRequest);
-                Debug.WriteLine(result);
+                QueueResult result = apiInstance.UpdateAQueue(queueId, queueRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -5234,10 +5439,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a Queue
-    ApiResponse<QueueResult> response = apiInstance.UpdateAQueueWithHttpInfo(accountId, queueId, queueRequest);
+    ApiResponse<QueueResult> response = apiInstance.UpdateAQueueWithHttpInfo(queueId, queueRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -5251,9 +5456,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **queueId** | **string** | A string that uniquely identifies this Queue resource. |  |
+
 | **queueRequest** | [**QueueRequest?**](QueueRequest?.md) | Queue Details to update | [optional]  |
+
 
 ### Return type
 
@@ -5303,13 +5511,13 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var accountRequest = new AccountRequest?(); // AccountRequest? | Account details to update (optional) 
-
+            
             try
             {
                 // Manage an account
-                apiInstance.UpdateAnAccount(accountId, accountRequest);
+                apiInstance.UpdateAnAccount(accountRequest);                
             }
             catch (ApiException  e)
             {
@@ -5329,7 +5537,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Manage an account
-    apiInstance.UpdateAnAccountWithHttpInfo(accountId, accountRequest);
+    apiInstance.UpdateAnAccountWithHttpInfo(accountRequest);    
 }
 catch (ApiException e)
 {
@@ -5343,8 +5551,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **accountRequest** | [**AccountRequest?**](AccountRequest?.md) | Account details to update | [optional]  |
+
 
 ### Return type
 
@@ -5394,15 +5604,16 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var applicationId = "applicationId_example";  // string | A string that uniquely identifies this application resource.
+            
             var applicationRequest = new ApplicationRequest?(); // ApplicationRequest? | Application details to update. (optional) 
-
+            
             try
             {
                 // Update an application
-                ApplicationResult result = apiInstance.UpdateAnApplication(accountId, applicationId, applicationRequest);
-                Debug.WriteLine(result);
+                ApplicationResult result = apiInstance.UpdateAnApplication(applicationId, applicationRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -5422,10 +5633,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update an application
-    ApiResponse<ApplicationResult> response = apiInstance.UpdateAnApplicationWithHttpInfo(accountId, applicationId, applicationRequest);
+    ApiResponse<ApplicationResult> response = apiInstance.UpdateAnApplicationWithHttpInfo(applicationId, applicationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -5439,9 +5650,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **applicationId** | **string** | A string that uniquely identifies this application resource. |  |
+
 | **applicationRequest** | [**ApplicationRequest?**](ApplicationRequest?.md) | Application details to update. | [optional]  |
+
 
 ### Return type
 
@@ -5491,15 +5705,16 @@ namespace Example
             config.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DefaultApi(config);
-            var accountId = "accountId_example";  // string | ID of the account
+            
             var phoneNumberId = "phoneNumberId_example";  // string | String that uniquely identifies this phone number resource.
+            
             var incomingNumberRequest = new IncomingNumberRequest?(); // IncomingNumberRequest? | Incoming Number details to update (optional) 
-
+            
             try
             {
                 // Update an Incoming Number
-                IncomingNumberResult result = apiInstance.UpdateAnIncomingNumber(accountId, phoneNumberId, incomingNumberRequest);
-                Debug.WriteLine(result);
+                IncomingNumberResult result = apiInstance.UpdateAnIncomingNumber(phoneNumberId, incomingNumberRequest);
+                Debug.WriteLine(result);                
             }
             catch (ApiException  e)
             {
@@ -5519,10 +5734,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update an Incoming Number
-    ApiResponse<IncomingNumberResult> response = apiInstance.UpdateAnIncomingNumberWithHttpInfo(accountId, phoneNumberId, incomingNumberRequest);
+    ApiResponse<IncomingNumberResult> response = apiInstance.UpdateAnIncomingNumberWithHttpInfo(phoneNumberId, incomingNumberRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Debug.Write("Response Body: " + response.Data);    
 }
 catch (ApiException e)
 {
@@ -5536,9 +5751,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | ID of the account |  |
+
+
 | **phoneNumberId** | **string** | String that uniquely identifies this phone number resource. |  |
+
 | **incomingNumberRequest** | [**IncomingNumberRequest?**](IncomingNumberRequest?.md) | Incoming Number details to update | [optional]  |
+
 
 ### Return type
 
