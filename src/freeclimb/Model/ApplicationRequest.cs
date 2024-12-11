@@ -75,7 +75,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// A human readable description of the application, with maximum length 64 characters.

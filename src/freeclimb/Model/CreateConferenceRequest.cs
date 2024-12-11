@@ -71,7 +71,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// A description for this Conference. Maximum 64 characters.

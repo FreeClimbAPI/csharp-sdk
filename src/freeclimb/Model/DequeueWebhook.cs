@@ -110,7 +110,22 @@ namespace freeclimb.Model
                         
 
         }
-
+        private static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
+        {
+            // OpenAPI generated types generally hide default constructors.
+            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+            ContractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy
+                {
+                    OverrideSpecifiedNames = false
+                }
+            }
+        };
+        public static DequeueWebhook Deserialize(string jsonPayload)
+        {
+            return JsonConvert.DeserializeObject(jsonPayload, typeof(DequeueWebhook), this._serializerSettings);
+        }
         
         
         /// <summary>

@@ -43,7 +43,6 @@ namespace freeclimb.Model
         public Unpark(string command = @"Unpark") : base(command)
         {
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

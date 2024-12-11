@@ -103,7 +103,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// If &#x60;true&#x60;, Call control will be enabled for this Participant&#39;s Call leg.

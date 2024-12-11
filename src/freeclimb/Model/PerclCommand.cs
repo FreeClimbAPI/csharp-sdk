@@ -73,7 +73,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments)

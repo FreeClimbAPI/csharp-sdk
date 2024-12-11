@@ -48,7 +48,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Specifying &#x60;false&#x60; mutes the Participant&#39;s dtmf audio.

@@ -55,7 +55,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Gets or Sets SaveRecording

@@ -98,7 +98,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// When the Caller has finished entering digits, FreeClimb will make an HTTP POST request to this URL. A PerCL response is expected to continue handling the Call. Make sure to keep “http://“ in the URL.

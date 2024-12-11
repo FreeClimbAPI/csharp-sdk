@@ -56,7 +56,6 @@ namespace freeclimb.Model
 
 
         }
-
         
 
         

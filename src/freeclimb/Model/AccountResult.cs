@@ -107,7 +107,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// The URI for this resource, relative to /apiserver.

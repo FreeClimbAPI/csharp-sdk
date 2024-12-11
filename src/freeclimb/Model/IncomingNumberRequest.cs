@@ -55,7 +55,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// ID of the Application that should handle calls to this number.

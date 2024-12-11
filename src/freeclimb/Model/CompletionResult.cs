@@ -66,7 +66,6 @@ namespace freeclimb.Model
 
 
         }
-
         
         /// <summary>
         /// The generative response from the KnowledgeBase

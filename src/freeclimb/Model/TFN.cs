@@ -55,7 +55,6 @@ namespace freeclimb.Model
 
 
         }
-
         
         /// <summary>
         /// alphanumeric identifier for the TollFree campaign associated with this number

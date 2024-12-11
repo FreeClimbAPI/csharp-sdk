@@ -65,7 +65,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// URI for this Queue Member resource, relative to the API base URL.

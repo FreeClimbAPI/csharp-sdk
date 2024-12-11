@@ -53,7 +53,6 @@ namespace freeclimb.Model
 
 
         }
-
         
         /// <summary>
         /// Length in milliseconds. FreeClimb will wait silently before continuing on.

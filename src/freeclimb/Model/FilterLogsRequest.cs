@@ -55,7 +55,6 @@ namespace freeclimb.Model
 
 
         }
-
         
         /// <summary>
         /// The filter query for retrieving logs. See **Performance Query Language** below.

@@ -70,7 +70,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Type of webhook request

@@ -43,7 +43,6 @@ namespace freeclimb.Model
         public Dequeue(string command = @"Dequeue") : base(command)
         {
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

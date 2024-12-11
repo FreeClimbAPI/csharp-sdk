@@ -83,7 +83,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// E.164 representation of the phone number to which the message will be sent. Must be within FreeClimb&#39;s service area and E.164 formatting (e.g., +18003608245).

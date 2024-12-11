@@ -73,7 +73,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is Parked. Once the script returned by the waitUrl runs out of commands to execute, FreeClimb will re-request the waitUrl and start over, essentially looping the script requests indefinitely.

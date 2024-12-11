@@ -73,7 +73,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.

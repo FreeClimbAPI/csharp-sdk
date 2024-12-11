@@ -68,7 +68,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// String containing the digits to be played. The string cannot be empty and can include any digit, plus &#x60;#&#x60;, or &#x60;*&#x60;, and allows embedding specification for delay or pause between the output of individual digits.

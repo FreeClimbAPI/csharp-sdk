@@ -43,7 +43,6 @@ namespace freeclimb.Model
         public RemoveFromConference(string command = @"RemoveFromConference") : base(command)
         {
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

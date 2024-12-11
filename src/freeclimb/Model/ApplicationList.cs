@@ -81,7 +81,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Total amount of requested resource.

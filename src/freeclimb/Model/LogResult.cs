@@ -81,7 +81,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Time that the log was generated. The time is represented as microseconds since the Unix Epoch.

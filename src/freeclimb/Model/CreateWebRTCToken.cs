@@ -70,7 +70,6 @@ namespace freeclimb.Model
 
 
         }
-
         
         /// <summary>
         /// E.164 formatted phone number to which calls using this token will be made.

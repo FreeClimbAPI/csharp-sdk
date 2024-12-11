@@ -45,7 +45,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// A JSON array of PerCL commands

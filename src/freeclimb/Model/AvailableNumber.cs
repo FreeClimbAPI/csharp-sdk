@@ -75,7 +75,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Gets or Sets Capabilities

@@ -124,7 +124,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// URL to which FreeClimb sends an HTTP POST request. 

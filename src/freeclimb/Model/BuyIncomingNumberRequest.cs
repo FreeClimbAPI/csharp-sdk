@@ -65,7 +65,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Phone number to purchase in E.164 format (as returned in the list of Available Phone Numbers).

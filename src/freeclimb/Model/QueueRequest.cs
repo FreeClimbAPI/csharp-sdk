@@ -50,7 +50,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Description for this Queue. Max length is 64 characters.

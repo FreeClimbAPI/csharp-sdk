@@ -83,7 +83,6 @@ namespace freeclimb.Model
 
 
         }
-
         
         /// <summary>
         /// A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the &#x60;Dequeue&#x60; command, the REST API (POST to Queue Member resource), or the caller hangs up.

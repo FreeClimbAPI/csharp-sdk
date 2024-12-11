@@ -89,7 +89,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         ///  This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response. 

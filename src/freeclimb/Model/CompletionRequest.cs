@@ -55,7 +55,6 @@ namespace freeclimb.Model
 
 
         }
-
         
         /// <summary>
         /// Question to ask the Knowledge Base

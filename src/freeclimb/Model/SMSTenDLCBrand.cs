@@ -246,7 +246,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// ID of the account that created this Queue.

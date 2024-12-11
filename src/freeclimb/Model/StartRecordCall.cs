@@ -43,7 +43,6 @@ namespace freeclimb.Model
         public StartRecordCall(string command = @"StartRecordCall") : base(command)
         {
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -95,7 +95,6 @@ namespace freeclimb.Model
 
 
         }
-
         
         /// <summary>
         /// Indicates whether a number can be used for voice calls. Replaces voiceEnabled.

@@ -48,7 +48,6 @@ namespace freeclimb.Model
                         
 
         }
-
         
         /// <summary>
         /// Specifying &#x60;false&#x60; will silence the Conference for this Participant.
