@@ -118,6 +118,11 @@ namespace freeclimb.Model
                 }
             }
         };
+        /// <summary>
+        /// Deserializes json payload into instance OutDialApiConnectWebhook
+        /// </summary>
+        /// <param name="jsonPayload"></param>
+        /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static OutDialApiConnectWebhook Deserialize(string jsonPayload)
         {
             return (OutDialApiConnectWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(OutDialApiConnectWebhook), _serializerSettings);

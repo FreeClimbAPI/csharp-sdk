@@ -159,6 +159,11 @@ namespace freeclimb.Model
                 }
             }
         };
+        /// <summary>
+        /// Deserializes json payload into instance RecordWebhook
+        /// </summary>
+        /// <param name="jsonPayload"></param>
+        /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static RecordWebhook Deserialize(string jsonPayload)
         {
             return (RecordWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(RecordWebhook), _serializerSettings);

@@ -159,6 +159,11 @@ namespace freeclimb.Model
                 }
             }
         };
+        /// <summary>
+        /// Deserializes json payload into instance GetSpeechWebhook
+        /// </summary>
+        /// <param name="jsonPayload"></param>
+        /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static GetSpeechWebhook Deserialize(string jsonPayload)
         {
             return (GetSpeechWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(GetSpeechWebhook), _serializerSettings);

@@ -81,6 +81,11 @@ namespace freeclimb.Model
                 }
             }
         };
+        /// <summary>
+        /// Deserializes json payload into instance CallControlWebhook
+        /// </summary>
+        /// <param name="jsonPayload"></param>
+        /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static CallControlWebhook Deserialize(string jsonPayload)
         {
             return (CallControlWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(CallControlWebhook), _serializerSettings);

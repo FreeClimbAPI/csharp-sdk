@@ -134,6 +134,11 @@ namespace freeclimb.Model
                 }
             }
         };
+        /// <summary>
+        /// Deserializes json payload into instance GetDigitsWebhook
+        /// </summary>
+        /// <param name="jsonPayload"></param>
+        /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static GetDigitsWebhook Deserialize(string jsonPayload)
         {
             return (GetDigitsWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(GetDigitsWebhook), _serializerSettings);

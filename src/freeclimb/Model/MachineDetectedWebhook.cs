@@ -129,6 +129,11 @@ namespace freeclimb.Model
                 }
             }
         };
+        /// <summary>
+        /// Deserializes json payload into instance MachineDetectedWebhook
+        /// </summary>
+        /// <param name="jsonPayload"></param>
+        /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static MachineDetectedWebhook Deserialize(string jsonPayload)
         {
             return (MachineDetectedWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(MachineDetectedWebhook), _serializerSettings);
