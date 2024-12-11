@@ -216,7 +216,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TestDeserializeJsonToInboundCallWebhook()
         {
-            string payload = @"{ ""requestType"": ""inboundCall"" }";
+            string payload = @"{ ""requestType"": ""inboundCall"", ""invalid"": true }";
             Assert.IsType<InboundCallWebhook>(InboundCallWebhook.Deserialize(payload));
         }
 

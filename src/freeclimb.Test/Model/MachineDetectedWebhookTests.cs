@@ -234,7 +234,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TestDeserializeJsonToMachineDetectedWebhook()
         {
-            string payload = @"{ ""requestType"": ""machineDetected"" }";
+            string payload = @"{ ""requestType"": ""machineDetected"", ""invalid"": true }";
             Assert.IsType<MachineDetectedWebhook>(MachineDetectedWebhook.Deserialize(payload));
         }
 

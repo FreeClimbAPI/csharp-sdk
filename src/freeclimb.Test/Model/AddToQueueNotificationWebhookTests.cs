@@ -204,7 +204,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TestDeserializeJsonToAddToQueueNotificationWebhook()
         {
-            string payload = @"{ ""requestType"": ""addToQueueNotification"" }";
+            string payload = @"{ ""requestType"": ""addToQueueNotification"", ""invalid"": true }";
             Assert.IsType<AddToQueueNotificationWebhook>(AddToQueueNotificationWebhook.Deserialize(payload));
         }
 

@@ -402,7 +402,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TestDeserializeJsonToTranscribeWebhook()
         {
-            string payload = @"{ ""requestType"": ""transcribe"" }";
+            string payload = @"{ ""requestType"": ""transcribe"", ""invalid"": true }";
             Assert.IsType<TranscribeWebhook>(TranscribeWebhook.Deserialize(payload));
         }
 

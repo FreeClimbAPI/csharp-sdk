@@ -232,7 +232,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TestDeserializeJsonToOutDialStartWebhook()
         {
-            string payload = @"{ ""requestType"": ""outDialStart"" }";
+            string payload = @"{ ""requestType"": ""outDialStart"", ""invalid"": true }";
             Assert.IsType<OutDialStartWebhook>(OutDialStartWebhook.Deserialize(payload));
         }
 
