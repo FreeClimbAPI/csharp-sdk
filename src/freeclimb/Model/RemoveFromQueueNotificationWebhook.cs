@@ -131,7 +131,7 @@ namespace freeclimb.Model
         };
         public static RemoveFromQueueNotificationWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(RemoveFromQueueNotificationWebhook), _serializerSettings);
+            return (RemoveFromQueueNotificationWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(RemoveFromQueueNotificationWebhook), _serializerSettings);
         }
         
         

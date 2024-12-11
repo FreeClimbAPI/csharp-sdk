@@ -141,7 +141,7 @@ namespace freeclimb.Model
         };
         public static ConferenceStatusWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(ConferenceStatusWebhook), _serializerSettings);
+            return (ConferenceStatusWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(ConferenceStatusWebhook), _serializerSettings);
         }
         
         

@@ -108,7 +108,7 @@ namespace freeclimb.Model
         };
         public static MessageDeliveryWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(MessageDeliveryWebhook), _serializerSettings);
+            return (MessageDeliveryWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(MessageDeliveryWebhook), _serializerSettings);
         }
         
         

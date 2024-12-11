@@ -161,7 +161,7 @@ namespace freeclimb.Model
         };
         public static GetSpeechWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(GetSpeechWebhook), _serializerSettings);
+            return (GetSpeechWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(GetSpeechWebhook), _serializerSettings);
         }
         
         

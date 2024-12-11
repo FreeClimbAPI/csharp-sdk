@@ -120,7 +120,7 @@ namespace freeclimb.Model
         };
         public static RedirectWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(RedirectWebhook), _serializerSettings);
+            return (RedirectWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(RedirectWebhook), _serializerSettings);
         }
         
         

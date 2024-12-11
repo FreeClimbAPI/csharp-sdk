@@ -119,7 +119,7 @@ namespace freeclimb.Model
         };
         public static MessageStatusWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(MessageStatusWebhook), _serializerSettings);
+            return (MessageStatusWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(MessageStatusWebhook), _serializerSettings);
         }
         
         

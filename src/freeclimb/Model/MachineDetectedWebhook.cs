@@ -131,7 +131,7 @@ namespace freeclimb.Model
         };
         public static MachineDetectedWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(MachineDetectedWebhook), _serializerSettings);
+            return (MachineDetectedWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(MachineDetectedWebhook), _serializerSettings);
         }
         
         
