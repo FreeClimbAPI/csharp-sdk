@@ -643,6 +643,47 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the SMSTenDLCBrand instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("accountId", AccountId);          
+            props.Add("entityType", EntityType);          
+            props.Add("cspId", CspId);          
+            props.Add("brandId", BrandId);          
+            props.Add("firstName", FirstName);          
+            props.Add("lastName", LastName);          
+            props.Add("displayName", DisplayName);          
+            props.Add("companyName", CompanyName);          
+            props.Add("ein", Ein);          
+            props.Add("einIssuingCountry", EinIssuingCountry);          
+            props.Add("phone", Phone);          
+            props.Add("street", Street);          
+            props.Add("city", City);          
+            props.Add("state", State);          
+            props.Add("postalCode", PostalCode);          
+            props.Add("country", Country);          
+            props.Add("email", Email);          
+            props.Add("stockSymbol", StockSymbol);          
+            props.Add("stockExchange", StockExchange);          
+            props.Add("ipAddress", IpAddress);          
+            props.Add("website", Website);          
+            props.Add("brandRelationship", BrandRelationship);          
+            props.Add("vertical", Vertical);          
+            props.Add("altBusinessId", AltBusinessId);          
+            props.Add("altBusinessIdType", AltBusinessIdType);          
+            props.Add("universalEin", UniversalEin);          
+            props.Add("referenceId", ReferenceId);          
+            props.Add("optionalAttributes", OptionalAttributes);          
+            props.Add("mock", Mock);          
+            props.Add("identityStatus", IdentityStatus);          
+            props.Add("createDate", CreateDate);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

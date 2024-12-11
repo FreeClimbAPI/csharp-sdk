@@ -235,6 +235,27 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the MessageStatusWebhook instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("requestType", RequestType);          
+            props.Add("accountId", AccountId);          
+            props.Add("messageId", MessageId);          
+            props.Add("callId", CallId);          
+            props.Add("from", From);          
+            props.Add("to", To);          
+            props.Add("text", Text);          
+            props.Add("direction", Direction);          
+            props.Add("applicationId", ApplicationId);          
+            props.Add("status", Status);          
+            props.Add("phoneNumberId", PhoneNumberId);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

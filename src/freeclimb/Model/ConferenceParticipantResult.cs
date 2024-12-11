@@ -241,6 +241,27 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the ConferenceParticipantResult instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("uri", Uri);          
+            props.Add("dateCreated", DateCreated);          
+            props.Add("dateUpdated", DateUpdated);          
+            props.Add("revision", Revision);          
+            props.Add("accountId", AccountId);          
+            props.Add("conferenceId", ConferenceId);          
+            props.Add("callId", CallId);          
+            props.Add("talk", Talk);          
+            props.Add("listen", Listen);          
+            props.Add("dtmfPassThrough", DtmfPassThrough);          
+            props.Add("startConfOnEnter", StartConfOnEnter);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

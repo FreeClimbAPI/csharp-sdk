@@ -244,6 +244,28 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the AddToConference instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("allowCallControl", AllowCallControl);          
+            props.Add("callControlSequence", CallControlSequence);          
+            props.Add("callControlUrl", CallControlUrl);          
+            props.Add("conferenceId", ConferenceId);          
+            props.Add("leaveConferenceUrl", LeaveConferenceUrl);          
+            props.Add("listen", Listen);          
+            props.Add("notificationUrl", NotificationUrl);          
+            props.Add("startConfOnEnter", StartConfOnEnter);          
+            props.Add("talk", Talk);          
+            props.Add("dtmfPassThrough", DtmfPassThrough);          
+            IDictionary<string, object> command = new Dictionary<string, object>();
+            command.Add("AddToConference",props);
+            return command;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

@@ -329,6 +329,33 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the GetSpeechWebhook instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("requestType", RequestType);          
+            props.Add("callId", CallId);          
+            props.Add("accountId", AccountId);          
+            props.Add("from", From);          
+            props.Add("to", To);          
+            props.Add("callStatus", CallStatus);          
+            props.Add("direction", Direction);          
+            props.Add("conferenceId", ConferenceId);          
+            props.Add("queueId", QueueId);          
+            props.Add("reason", Reason);          
+            props.Add("recognitionResult", RecognitionResult);          
+            props.Add("confidence", Confidence);          
+            props.Add("parentCallId", ParentCallId);          
+            props.Add("completionReason", CompletionReason);          
+            props.Add("completionCause", CompletionCause);          
+            props.Add("mrcpCode", MrcpCode);          
+            props.Add("mrcpDiagnostic", MrcpDiagnostic);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

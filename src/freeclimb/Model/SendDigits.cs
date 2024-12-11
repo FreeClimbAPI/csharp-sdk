@@ -132,6 +132,21 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the SendDigits instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("digits", Digits);          
+            props.Add("pauseMs", PauseMs);          
+            props.Add("privacyMode", PrivacyMode);          
+            IDictionary<string, object> command = new Dictionary<string, object>();
+            command.Add("SendDigits",props);
+            return command;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

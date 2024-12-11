@@ -422,6 +422,39 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the TranscribeWebhook instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("requestType", RequestType);          
+            props.Add("accountId", AccountId);          
+            props.Add("callId", CallId);          
+            props.Add("from", From);          
+            props.Add("to", To);          
+            props.Add("recordingId", RecordingId);          
+            props.Add("recordingUrl", RecordingUrl);          
+            props.Add("recordingSize", RecordingSize);          
+            props.Add("recordingFormat", RecordingFormat);          
+            props.Add("recordingDurationMs", RecordingDurationMs);          
+            props.Add("termReason", TermReason);          
+            props.Add("recordTermReason", RecordTermReason);          
+            props.Add("digit", Digit);          
+            props.Add("privacyForLogging", PrivacyForLogging);          
+            props.Add("privacyForRecording", PrivacyForRecording);          
+            props.Add("bargeInReason", BargeInReason);          
+            props.Add("bargedInPromptNo", BargedInPromptNo);          
+            props.Add("bargedInPromptMs", BargedInPromptMs);          
+            props.Add("bargedInPromptLoopNo", BargedInPromptLoopNo);          
+            props.Add("bargeInTimeMs", BargeInTimeMs);          
+            props.Add("transcript", Transcript);          
+            props.Add("transcribeReason", TranscribeReason);          
+            props.Add("transcriptionDurationMs", TranscriptionDurationMs);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

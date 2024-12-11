@@ -202,6 +202,23 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the SMSTollFreeCampaign instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("accountId", AccountId);          
+            props.Add("campaignId", CampaignId);          
+            props.Add("useCase", UseCase);          
+            props.Add("registrationStatus", RegistrationStatus);          
+            props.Add("dateCreated", DateCreated);          
+            props.Add("dateUpdated", DateUpdated);          
+            props.Add("revision", Revision);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

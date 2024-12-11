@@ -677,6 +677,57 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the SMSTenDLCCampaign instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("accountId", AccountId);          
+            props.Add("campaignId", CampaignId);          
+            props.Add("cspId", CspId);          
+            props.Add("resellerId", ResellerId);          
+            props.Add("status", Status);          
+            props.Add("createDate", CreateDate);          
+            props.Add("autoRenewal", AutoRenewal);          
+            props.Add("billedDate", BilledDate);          
+            props.Add("brandId", BrandId);          
+            props.Add("usecase", Usecase);          
+            List<object> nested = new List<object>();
+            foreach (var item in SubUsecases)
+            {
+                nested.Add(item);
+            }
+            props.Add("subUsecases", nested); 
+            props.Add("description", Description);          
+            props.Add("embeddedLink", EmbeddedLink);          
+            props.Add("embeddedPhone", EmbeddedPhone);          
+            props.Add("affiliateMarketing", AffiliateMarketing);          
+            props.Add("numberPool", NumberPool);          
+            props.Add("ageGated", AgeGated);          
+            props.Add("directLending", DirectLending);          
+            props.Add("subscriberOptin", SubscriberOptin);          
+            props.Add("subscriberOptout", SubscriberOptout);          
+            props.Add("subscriberHelp", SubscriberHelp);          
+            props.Add("sample1", Sample1);          
+            props.Add("sample2", Sample2);          
+            props.Add("sample3", Sample3);          
+            props.Add("sample4", Sample4);          
+            props.Add("sample5", Sample5);          
+            props.Add("messageFlow", MessageFlow);          
+            props.Add("helpMessage", HelpMessage);          
+            props.Add("optinKeywords", OptinKeywords);          
+            props.Add("optoutKeywords", OptoutKeywords);          
+            props.Add("helpKeywords", HelpKeywords);          
+            props.Add("optinMessage", OptinMessage);          
+            props.Add("optoutMessage", OptoutMessage);          
+            props.Add("referenceId", ReferenceId);          
+            props.Add("mock", Mock);          
+            props.Add("nextRenewalOrExpirationDate", NextRenewalOrExpirationDate);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

@@ -320,6 +320,37 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the MessageResult instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("uri", Uri);          
+            props.Add("dateCreated", DateCreated);          
+            props.Add("dateUpdated", DateUpdated);          
+            props.Add("revision", Revision);          
+            props.Add("accountId", AccountId);          
+            props.Add("messageId", MessageId);          
+            props.Add("status", Status);          
+            props.Add("from", From);          
+            props.Add("to", To);          
+            props.Add("text", Text);          
+            props.Add("direction", Direction);          
+            props.Add("notificationUrl", NotificationUrl);          
+            props.Add("brandId", BrandId);          
+            props.Add("campaignId", CampaignId);          
+            props.Add("segmentCount", SegmentCount);          
+            List<object> nested = new List<object>();
+            foreach (var item in MediaUrls)
+            {
+                nested.Add(item);
+            }
+            props.Add("mediaUrls", nested); 
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

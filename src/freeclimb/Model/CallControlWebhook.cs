@@ -140,6 +140,21 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the CallControlWebhook instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("requestType", RequestType);          
+            props.Add("callId", CallId);          
+            props.Add("accountId", AccountId);          
+            props.Add("conferenceId", ConferenceId);          
+            props.Add("digits", Digits);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

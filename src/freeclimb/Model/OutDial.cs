@@ -258,6 +258,28 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the OutDial instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("actionUrl", ActionUrl);          
+            props.Add("callConnectUrl", CallConnectUrl);          
+            props.Add("callingNumber", CallingNumber);          
+            props.Add("destination", Destination);          
+            props.Add("ifMachine", IfMachine);          
+            props.Add("ifMachineUrl", IfMachineUrl);          
+            props.Add("sendDigits", SendDigits);          
+            props.Add("statusCallbackUrl", StatusCallbackUrl);          
+            props.Add("timeout", Timeout);          
+            props.Add("privacyMode", PrivacyMode);          
+            IDictionary<string, object> command = new Dictionary<string, object>();
+            command.Add("OutDial",props);
+            return command;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

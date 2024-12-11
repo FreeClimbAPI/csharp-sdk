@@ -337,6 +337,33 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the IncomingNumberResult instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("uri", Uri);          
+            props.Add("dateCreated", DateCreated);          
+            props.Add("dateUpdated", DateUpdated);          
+            props.Add("revision", Revision);          
+            props.Add("capabilities", Capabilities);          
+            props.Add("campaignId", CampaignId);          
+            props.Add("phoneNumberId", PhoneNumberId);          
+            props.Add("accountId", AccountId);          
+            props.Add("applicationId", ApplicationId);          
+            props.Add("phoneNumber", PhoneNumber);          
+            props.Add("alias", Alias);          
+            props.Add("region", Region);          
+            props.Add("country", Country);          
+            props.Add("voiceEnabled", VoiceEnabled);          
+            props.Add("smsEnabled", SmsEnabled);          
+            props.Add("offnet", Offnet);          
+            props.Add("tfn", Tfn);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

@@ -296,6 +296,36 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the GetSpeech instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("actionUrl", ActionUrl);          
+            props.Add("grammarType", GrammarType);          
+            props.Add("grammarFile", GrammarFile);          
+            props.Add("grammarRule", GrammarRule);          
+            props.Add("playBeep", PlayBeep);          
+            List<object> nested = new List<object>();
+            foreach (var item in Prompts)
+            {
+                nested.Add(item);
+            }
+            props.Add("prompts", nested); 
+            props.Add("noInputTimeoutMs", NoInputTimeoutMs);          
+            props.Add("recognitionTimeoutMs", RecognitionTimeoutMs);          
+            props.Add("confidenceThreshold", ConfidenceThreshold);          
+            props.Add("sensitivityLevel", SensitivityLevel);          
+            props.Add("speechCompleteTimeoutMs", SpeechCompleteTimeoutMs);          
+            props.Add("speechIncompleteTimeoutMs", SpeechIncompleteTimeoutMs);          
+            props.Add("privacyMode", PrivacyMode);          
+            IDictionary<string, object> command = new Dictionary<string, object>();
+            command.Add("GetSpeech",props);
+            return command;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

@@ -193,6 +193,29 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the SMSTenDLCPartnerCampaignsListResult instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("total", Total);          
+            props.Add("start", Start);          
+            props.Add("end", End);          
+            props.Add("page", Page);          
+            props.Add("numPages", NumPages);          
+            props.Add("pageSize", PageSize);          
+            props.Add("nextPageUri", NextPageUri);          
+            List<object> nested = new List<object>();
+            foreach (var item in PartnerCampaigns)
+            {
+                nested.Add(item);
+            }
+            props.Add("partnerCampaigns", nested); 
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

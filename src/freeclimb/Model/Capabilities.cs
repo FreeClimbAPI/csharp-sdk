@@ -175,6 +175,21 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the Capabilities instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public virtual IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("voice", Voice);          
+            props.Add("sms", Sms);          
+            props.Add("tollFree", TollFree);          
+            props.Add("tenDLC", TenDLC);          
+            props.Add("shortCode", ShortCode);          
+            return props;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>

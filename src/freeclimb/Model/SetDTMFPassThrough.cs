@@ -90,6 +90,19 @@ namespace freeclimb.Model
 
 
         /// <summary>
+        /// Retrieve the KVP Dictionary for the SetDTMFPassThrough instance. 
+        /// </summary>
+        /// <returns>KVP Dictionary</returns>
+        public override IDictionary<string, object> ToKvp()
+        {
+            IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("dtmfPassThrough", DtmfPassThrough);          
+            IDictionary<string, object> command = new Dictionary<string, object>();
+            command.Add("SetDTMFPassThrough",props);
+            return command;
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
