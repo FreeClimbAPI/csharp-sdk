@@ -25,7 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 using freeclimb.Utils;
-using System.Text.Json;
+
 
 namespace freeclimb.Model
 {
