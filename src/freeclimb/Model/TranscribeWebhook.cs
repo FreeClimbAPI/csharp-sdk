@@ -197,7 +197,7 @@ namespace freeclimb.Model
         };
         public static TranscribeWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(TranscribeWebhook), this._serializerSettings);
+            return JsonConvert.DeserializeObject(jsonPayload, typeof(TranscribeWebhook), _serializerSettings);
         }
         
         

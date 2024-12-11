@@ -161,7 +161,7 @@ namespace freeclimb.Model
         };
         public static RecordWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(RecordWebhook), this._serializerSettings);
+            return JsonConvert.DeserializeObject(jsonPayload, typeof(RecordWebhook), _serializerSettings);
         }
         
         

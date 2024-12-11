@@ -130,7 +130,7 @@ namespace freeclimb.Model
         };
         public static QueueWaitWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(QueueWaitWebhook), this._serializerSettings);
+            return JsonConvert.DeserializeObject(jsonPayload, typeof(QueueWaitWebhook), _serializerSettings);
         }
         
         

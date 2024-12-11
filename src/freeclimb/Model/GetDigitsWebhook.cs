@@ -136,7 +136,7 @@ namespace freeclimb.Model
         };
         public static GetDigitsWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(GetDigitsWebhook), this._serializerSettings);
+            return JsonConvert.DeserializeObject(jsonPayload, typeof(GetDigitsWebhook), _serializerSettings);
         }
         
         

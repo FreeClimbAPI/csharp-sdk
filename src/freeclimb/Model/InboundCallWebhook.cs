@@ -120,7 +120,7 @@ namespace freeclimb.Model
         };
         public static InboundCallWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(InboundCallWebhook), this._serializerSettings);
+            return JsonConvert.DeserializeObject(jsonPayload, typeof(InboundCallWebhook), _serializerSettings);
         }
         
         

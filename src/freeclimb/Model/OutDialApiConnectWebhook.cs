@@ -120,7 +120,7 @@ namespace freeclimb.Model
         };
         public static OutDialApiConnectWebhook Deserialize(string jsonPayload)
         {
-            return JsonConvert.DeserializeObject(jsonPayload, typeof(OutDialApiConnectWebhook), this._serializerSettings);
+            return JsonConvert.DeserializeObject(jsonPayload, typeof(OutDialApiConnectWebhook), _serializerSettings);
         }
         
         
