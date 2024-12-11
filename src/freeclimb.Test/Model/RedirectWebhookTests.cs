@@ -215,6 +215,12 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ParentCallId);
             
         }
+        [Fact]
+        public void TestDeserializeJsonToRedirectWebhook()
+        {
+            string payload = @"{ ""requestType"": ""redirect"" }";
+            Assert.IsInstanceOfType(RedirectWebhook.Deserialize(payload), typeof(RedirectWebhook));
+        }
 
         public object getTestValue(Type type)
         {

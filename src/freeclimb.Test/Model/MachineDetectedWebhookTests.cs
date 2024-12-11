@@ -231,6 +231,12 @@ namespace freeclimb.Test.Model
             Assert.Equal(MachineType.FAX_MODEM, instance.MachineType);
             
         }
+        [Fact]
+        public void TestDeserializeJsonToMachineDetectedWebhook()
+        {
+            string payload = @"{ ""requestType"": ""machineDetected"" }";
+            Assert.IsInstanceOfType(MachineDetectedWebhook.Deserialize(payload), typeof(MachineDetectedWebhook));
+        }
 
         public object getTestValue(Type type)
         {

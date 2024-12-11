@@ -243,6 +243,12 @@ namespace freeclimb.Test.Model
             instance.CurrentQueueSize = 1;
             Assert.Equal(1, (int) instance.CurrentQueueSize);
         }
+        [Fact]
+        public void TestDeserializeJsonToQueueWaitWebhook()
+        {
+            string payload = @"{ ""requestType"": ""queueWait"" }";
+            Assert.IsInstanceOfType(QueueWaitWebhook.Deserialize(payload), typeof(QueueWaitWebhook));
+        }
 
         public object getTestValue(Type type)
         {

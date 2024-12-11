@@ -263,6 +263,12 @@ namespace freeclimb.Test.Model
             instance.RecordingDurationSec = 1;
             Assert.Equal(1, (int) instance.RecordingDurationSec);
         }
+        [Fact]
+        public void TestDeserializeJsonToConferenceStatusWebhook()
+        {
+            string payload = @"{ ""requestType"": ""conferenceStatus"" }";
+            Assert.IsInstanceOfType(ConferenceStatusWebhook.Deserialize(payload), typeof(ConferenceStatusWebhook));
+        }
 
         public object getTestValue(Type type)
         {

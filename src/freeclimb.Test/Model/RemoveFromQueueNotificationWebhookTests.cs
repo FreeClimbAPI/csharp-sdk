@@ -235,6 +235,12 @@ namespace freeclimb.Test.Model
             instance.QueueTime = 1;
             Assert.Equal(1, (int) instance.QueueTime);
         }
+        [Fact]
+        public void TestDeserializeJsonToRemoveFromQueueNotificationWebhook()
+        {
+            string payload = @"{ ""requestType"": ""removeFromQueueNotification"" }";
+            Assert.IsInstanceOfType(RemoveFromQueueNotificationWebhook.Deserialize(payload), typeof(RemoveFromQueueNotificationWebhook));
+        }
 
         public object getTestValue(Type type)
         {

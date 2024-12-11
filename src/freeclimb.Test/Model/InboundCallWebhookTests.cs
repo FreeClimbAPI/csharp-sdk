@@ -213,6 +213,12 @@ namespace freeclimb.Test.Model
         {
             
         }
+        [Fact]
+        public void TestDeserializeJsonToInboundCallWebhook()
+        {
+            string payload = @"{ ""requestType"": ""inboundCall"" }";
+            Assert.IsInstanceOfType(InboundCallWebhook.Deserialize(payload), typeof(InboundCallWebhook));
+        }
 
         public object getTestValue(Type type)
         {

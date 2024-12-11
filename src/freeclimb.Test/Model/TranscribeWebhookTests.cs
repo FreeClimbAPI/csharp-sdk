@@ -399,6 +399,12 @@ namespace freeclimb.Test.Model
             instance.TranscriptionDurationMs = 1;
             Assert.Equal(1, (int) instance.TranscriptionDurationMs);
         }
+        [Fact]
+        public void TestDeserializeJsonToTranscribeWebhook()
+        {
+            string payload = @"{ ""requestType"": ""transcribe"" }";
+            Assert.IsInstanceOfType(TranscribeWebhook.Deserialize(payload), typeof(TranscribeWebhook));
+        }
 
         public object getTestValue(Type type)
         {

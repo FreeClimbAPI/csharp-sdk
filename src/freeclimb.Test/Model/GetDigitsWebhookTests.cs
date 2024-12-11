@@ -249,6 +249,12 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ParentCallId);
             
         }
+        [Fact]
+        public void TestDeserializeJsonToGetDigitsWebhook()
+        {
+            string payload = @"{ ""requestType"": ""getDigits"" }";
+            Assert.IsInstanceOfType(GetDigitsWebhook.Deserialize(payload), typeof(GetDigitsWebhook));
+        }
 
         public object getTestValue(Type type)
         {

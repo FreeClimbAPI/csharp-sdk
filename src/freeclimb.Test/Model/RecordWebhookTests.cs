@@ -319,6 +319,12 @@ namespace freeclimb.Test.Model
             Assert.False(instance.PrivacyMode);
             
         }
+        [Fact]
+        public void TestDeserializeJsonToRecordWebhook()
+        {
+            string payload = @"{ ""requestType"": ""record"" }";
+            Assert.IsInstanceOfType(RecordWebhook.Deserialize(payload), typeof(RecordWebhook));
+        }
 
         public object getTestValue(Type type)
         {

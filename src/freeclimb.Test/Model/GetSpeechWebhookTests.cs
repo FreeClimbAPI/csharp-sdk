@@ -323,6 +323,12 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.MrcpDiagnostic);
             
         }
+        [Fact]
+        public void TestDeserializeJsonToGetSpeechWebhook()
+        {
+            string payload = @"{ ""requestType"": ""getSpeech"" }";
+            Assert.IsInstanceOfType(GetSpeechWebhook.Deserialize(payload), typeof(GetSpeechWebhook));
+        }
 
         public object getTestValue(Type type)
         {

@@ -127,6 +127,12 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.Digits);
             
         }
+        [Fact]
+        public void TestDeserializeJsonToCallControlWebhook()
+        {
+            string payload = @"{ ""requestType"": ""callControl"" }";
+            Assert.IsInstanceOfType(CallControlWebhook.Deserialize(payload), typeof(CallControlWebhook));
+        }
 
         public object getTestValue(Type type)
         {

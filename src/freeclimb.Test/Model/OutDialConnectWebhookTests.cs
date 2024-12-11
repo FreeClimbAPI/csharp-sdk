@@ -215,6 +215,12 @@ namespace freeclimb.Test.Model
             Assert.Equal("TEST_STRING", instance.ParentCallId);
             
         }
+        [Fact]
+        public void TestDeserializeJsonToOutDialConnectWebhook()
+        {
+            string payload = @"{ ""requestType"": ""outDialConnect"" }";
+            Assert.IsInstanceOfType(OutDialConnectWebhook.Deserialize(payload), typeof(OutDialConnectWebhook));
+        }
 
         public object getTestValue(Type type)
         {
