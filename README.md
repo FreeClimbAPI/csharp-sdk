@@ -381,6 +381,30 @@ Authentication schemes defined for the API:
     }
     ```
 
+## Using PerCL
+
+The Performance Command Language (PerCL) defines a set of instructions, written in JSON format, that express telephony actions to be performed in response to an event on the FreeClimb platform. FreeClimb communicates with the application server when events associated with the application occur, so the webserver can instruct FreeClimb how to handle such events using PerCL scripts.
+PerCL commands are a part of the model schema and can be serialized into JSON like so:
+
+```csharp
+using freeclimb.Model;
+
+namespace Example
+{
+    public class UsingPerclExample
+    {
+        public static void Main()
+        {
+            CreateConference create = new CreateConference("", false, PlayBeep.ALWAYS, false, "", "");
+            List<PerclCommand> commands = new List<PerclCommand>();
+            commands.Add(create);
+            PerclScript script = new PerclScript(commands);
+            string expectedJSONString = "[{\"CreateConference\":{\"actionUrl\":\"\",\"alias\":false,\"playBeep\":\"always\",\"record\":false,\"statusCallbackUrl\":\"\",\"waitUrl\":\"\"}}]";
+            Assert.Equal(expectedJSONString, script.ToJson());
+        }
+    }
+}
+```
 <a name="documentation-for-verify-request-signature"></a>
 
 ## Documentation for verifying request signature
