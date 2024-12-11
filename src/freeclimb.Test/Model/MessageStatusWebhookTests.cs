@@ -234,8 +234,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TestDeserializeJsonToMessageStatusWebhook()
         {
-            string payload = @"{ ""requestType"": ""messageStatus"", ""invalid"": true }";
-            Assert.IsType<MessageStatusWebhook>(MessageStatusWebhook.Deserialize(payload));
+            string payload = @"{ ""requestType"": ""messageStatus"" }";
+            MessageStatusWebhook deserialized = MessageStatusWebhook.Deserialize(payload);
+            Assert.IsType<MessageStatusWebhook>(deserialized);
+            Assert.Equal("messageStatus", deserialize.RequestType);
         }
 
         public object getTestValue(Type type)

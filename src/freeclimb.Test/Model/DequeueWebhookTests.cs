@@ -232,8 +232,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TestDeserializeJsonToDequeueWebhook()
         {
-            string payload = @"{ ""requestType"": ""dequeue"", ""invalid"": true }";
-            Assert.IsType<DequeueWebhook>(DequeueWebhook.Deserialize(payload));
+            string payload = @"{ ""requestType"": ""dequeue"" }";
+            DequeueWebhook deserialized = DequeueWebhook.Deserialize(payload);
+            Assert.IsType<DequeueWebhook>(deserialized);
+            Assert.Equal("dequeue", deserialize.RequestType);
         }
 
         public object getTestValue(Type type)

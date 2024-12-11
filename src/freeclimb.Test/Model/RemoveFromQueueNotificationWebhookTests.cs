@@ -238,8 +238,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TestDeserializeJsonToRemoveFromQueueNotificationWebhook()
         {
-            string payload = @"{ ""requestType"": ""removeFromQueueNotification"", ""invalid"": true }";
-            Assert.IsType<RemoveFromQueueNotificationWebhook>(RemoveFromQueueNotificationWebhook.Deserialize(payload));
+            string payload = @"{ ""requestType"": ""removeFromQueueNotification"" }";
+            RemoveFromQueueNotificationWebhook deserialized = RemoveFromQueueNotificationWebhook.Deserialize(payload);
+            Assert.IsType<RemoveFromQueueNotificationWebhook>(deserialized);
+            Assert.Equal("removeFromQueueNotification", deserialize.RequestType);
         }
 
         public object getTestValue(Type type)

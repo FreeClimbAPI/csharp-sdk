@@ -218,8 +218,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TestDeserializeJsonToRedirectWebhook()
         {
-            string payload = @"{ ""requestType"": ""redirect"", ""invalid"": true }";
-            Assert.IsType<RedirectWebhook>(RedirectWebhook.Deserialize(payload));
+            string payload = @"{ ""requestType"": ""redirect"" }";
+            RedirectWebhook deserialized = RedirectWebhook.Deserialize(payload);
+            Assert.IsType<RedirectWebhook>(deserialized);
+            Assert.Equal("redirect", deserialize.RequestType);
         }
 
         public object getTestValue(Type type)
