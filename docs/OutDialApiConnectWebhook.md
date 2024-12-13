@@ -1,6 +1,6 @@
 # freeclimb.Model.OutDialApiConnectWebhook
-An outbound call initiated by the REST API has connected and the callConnectUrl specified in the API request is being invoked. A PerCL response is expected if the call was successfully connected (with status of inProgress).
 
+An outbound call initiated by the REST API has connected and the callConnectUrl specified in the API request is being invoked. A PerCL response is expected if the call was successfully connected (with status of inProgress).
 ## Properties
 
 Name | Type | Description | Notes

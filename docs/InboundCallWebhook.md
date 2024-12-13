@@ -1,6 +1,6 @@
 # freeclimb.Model.InboundCallWebhook
-An inbound Call to a number registered on FreeClimb will trigger a request to the voiceUrl of the application the number is assigned to. FreeClimb expects to receive PerCL in response to this request in order to process the Call. The following parameters are sent as the POST body.
 
+An inbound Call to a number registered on FreeClimb will trigger a request to the voiceUrl of the application the number is assigned to. FreeClimb expects to receive PerCL in response to this request in order to process the Call. The following parameters are sent as the POST body.
 ## Properties
 
 Name | Type | Description | Notes

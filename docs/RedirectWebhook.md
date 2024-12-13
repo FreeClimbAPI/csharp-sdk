@@ -1,6 +1,6 @@
 # freeclimb.Model.RedirectWebhook
-The Redirect command is executing and its actionUrl is being invoked. A PerCL response is expected.
 
+The Redirect command is executing and its actionUrl is being invoked. A PerCL response is expected.
 ## Properties
 
 Name | Type | Description | Notes

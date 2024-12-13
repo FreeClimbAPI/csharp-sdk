@@ -1,6 +1,6 @@
 # freeclimb.Model.RecordWebhook
-The RecordUtterance command has completed and its actionUrl is being invoked.
 
+The RecordUtterance command has completed and its actionUrl is being invoked.
 ## Properties
 
 Name | Type | Description | Notes

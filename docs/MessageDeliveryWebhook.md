@@ -1,6 +1,6 @@
 # freeclimb.Model.MessageDeliveryWebhook
-An SMS has been received by the platform and is being delivered to the smsUrl of the customer application that is associated with the destination number. A PerCL response will be ignored.
 
+An SMS has been received by the platform and is being delivered to the smsUrl of the customer application that is associated with the destination number. A PerCL response will be ignored.
 ## Properties
 
 Name | Type | Description | Notes

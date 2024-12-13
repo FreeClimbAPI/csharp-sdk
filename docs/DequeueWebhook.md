@@ -1,6 +1,6 @@
 # freeclimb.Model.DequeueWebhook
-A queued call has been dequeued and the actionUrl of the corresponding Enqueue action is being invoked. A PerCL response is expected.
 
+A queued call has been dequeued and the actionUrl of the corresponding Enqueue action is being invoked. A PerCL response is expected.
 ## Properties
 
 Name | Type | Description | Notes

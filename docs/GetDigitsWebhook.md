@@ -1,6 +1,6 @@
 # freeclimb.Model.GetDigitsWebhook
-A POST request with the following fields will be sent to the actionUrl provided in your GetDigits command.
 
+A POST request with the following fields will be sent to the actionUrl provided in your GetDigits command.
 ## Properties
 
 Name | Type | Description | Notes

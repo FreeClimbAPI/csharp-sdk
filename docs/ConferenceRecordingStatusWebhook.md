@@ -1,6 +1,6 @@
 # freeclimb.Model.ConferenceRecordingStatusWebhook
-The statusCallbackUrl request includes Recording information for a Conference that ended. This is a notification only; any PerCL returned will be ignored.
 
+The statusCallbackUrl request includes Recording information for a Conference that ended. This is a notification only; any PerCL returned will be ignored.
 ## Properties
 
 Name | Type | Description | Notes

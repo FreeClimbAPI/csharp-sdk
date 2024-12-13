@@ -1,6 +1,6 @@
 # freeclimb.Model.AddToConference
-The `AddToConference` command adds a Participant to a Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via `AddToConference`.
 
+The `AddToConference` command adds a Participant to a Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via `AddToConference`.
 ## Properties
 
 Name | Type | Description | Notes

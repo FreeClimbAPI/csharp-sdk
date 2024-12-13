@@ -1,6 +1,6 @@
 # freeclimb.Model.RemoveFromQueueNotificationWebhook
-A call has been removed from a queue and the Enqueue command’s actionUrl is being invoked. A PerCL response is expected except if reason is hangup.
 
+A call has been removed from a queue and the Enqueue command’s actionUrl is being invoked. A PerCL response is expected except if reason is hangup.
 ## Properties
 
 Name | Type | Description | Notes

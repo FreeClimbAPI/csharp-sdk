@@ -1,6 +1,6 @@
 # freeclimb.Model.MessageStatusWebhook
-An outbound SMS has changed status and the notificationUrl from the Sms command or Send an SMS request is being invoked. A PerCL response will be ignored.
 
+An outbound SMS has changed status and the notificationUrl from the Sms command or Send an SMS request is being invoked. A PerCL response will be ignored.
 ## Properties
 
 Name | Type | Description | Notes

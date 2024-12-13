@@ -1,6 +1,6 @@
 # freeclimb.Model.MachineDetectedWebhook
-An outbound call spawned by OutDial detected an answer by a machine (answering machine or fax/modem machine) and ifMachineUrl is being invoked. A PerCL response is expected.
 
+An outbound call spawned by OutDial detected an answer by a machine (answering machine or fax/modem machine) and ifMachineUrl is being invoked. A PerCL response is expected.
 ## Properties
 
 Name | Type | Description | Notes

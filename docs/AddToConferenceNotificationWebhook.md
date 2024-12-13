@@ -1,6 +1,6 @@
 # freeclimb.Model.AddToConferenceNotificationWebhook
-A Call has been bridged to a Conference and the AddToConference command’s notificationUrl is being invoked. This is a notification only; any PerCL returned will be ignored.
 
+A Call has been bridged to a Conference and the AddToConference command’s notificationUrl is being invoked. This is a notification only; any PerCL returned will be ignored.
 ## Properties
 
 Name | Type | Description | Notes

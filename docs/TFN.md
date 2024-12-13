@@ -1,6 +1,6 @@
 # freeclimb.Model.TFN
-TollFree Campaign details for this number
 
+TollFree Campaign details for this number
 ## Properties
 
 Name | Type | Description | Notes

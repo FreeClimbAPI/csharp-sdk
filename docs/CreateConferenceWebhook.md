@@ -1,6 +1,6 @@
 # freeclimb.Model.CreateConferenceWebhook
-A Conference has been created and its statusCallbackUrl or actionUrl is being invoked. A PerCL response is expected if the actionUrl is being invoked.
 
+A Conference has been created and its statusCallbackUrl or actionUrl is being invoked. A PerCL response is expected if the actionUrl is being invoked.
 ## Properties
 
 Name | Type | Description | Notes

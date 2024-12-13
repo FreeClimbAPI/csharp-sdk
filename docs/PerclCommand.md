@@ -1,6 +1,6 @@
 # freeclimb.Model.PerclCommand
-An individual command used in a PerCLScript.
 
+An individual command used in a PerCLScript.
 ## Properties
 
 Name | Type | Description | Notes

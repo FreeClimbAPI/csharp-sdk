@@ -1,6 +1,6 @@
 # freeclimb.Model.LeaveConferenceWebhook
-A Call has been unbridged from a Conference and its leaveConferenceUrl is being invoked. A PerCL response is expected — unless the URL is invoked due to the participant hanging up.
 
+A Call has been unbridged from a Conference and its leaveConferenceUrl is being invoked. A PerCL response is expected — unless the URL is invoked due to the participant hanging up.
 ## Properties
 
 Name | Type | Description | Notes

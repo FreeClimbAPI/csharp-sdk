@@ -1,6 +1,6 @@
 # freeclimb.Model.OutDial
-The OutDial command is used to call a phone number
 
+The OutDial command is used to call a phone number
 ## Properties
 
 Name | Type | Description | Notes

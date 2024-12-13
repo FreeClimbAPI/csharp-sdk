@@ -1,6 +1,6 @@
 # freeclimb.Model.GetSpeechWebhook
-The GetSpeech command has completed and its actionUrl is being invoked. A PerCL response is expected, unless reason is hangup.
 
+The GetSpeech command has completed and its actionUrl is being invoked. A PerCL response is expected, unless reason is hangup.
 ## Properties
 
 Name | Type | Description | Notes

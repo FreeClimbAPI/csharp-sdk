@@ -1,6 +1,6 @@
 # freeclimb.Model.Sms
-The `Sms` command can be used to send an SMS message to a phone number during a phone call. International SMS is disabled by default.
 
+The `Sms` command can be used to send an SMS message to a phone number during a phone call. International SMS is disabled by default.
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,6 +1,6 @@
 # freeclimb.Model.Reject
-The `Reject` command blocks an incoming Call. Using `Reject` is the only way to prevent FreeClimb from answering a Call. Any other response will result in an answered Call and your account will be billed.
 
+The `Reject` command blocks an incoming Call. Using `Reject` is the only way to prevent FreeClimb from answering a Call. Any other response will result in an answered Call and your account will be billed.
 ## Properties
 
 Name | Type | Description | Notes

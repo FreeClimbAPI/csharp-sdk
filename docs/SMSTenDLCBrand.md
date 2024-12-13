@@ -1,6 +1,6 @@
 # freeclimb.Model.SMSTenDLCBrand
-A brand is a business identity behind the campaign.
 
+A brand is a business identity behind the campaign.
 ## Properties
 
 Name | Type | Description | Notes

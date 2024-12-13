@@ -1,6 +1,6 @@
 # freeclimb.Model.QueueWaitWebhook
-A queued Call is requesting instructions to execute during the wait in the Queue and the corresponding waitUrl is being invoked. A PerCL response is expected. The following are the only PerCL commands supported in the PerCL script response to a request to the waitUrl: Play,Say,Pause,GetDigits,Dequeue,Hangup
 
+A queued Call is requesting instructions to execute during the wait in the Queue and the corresponding waitUrl is being invoked. A PerCL response is expected. The following are the only PerCL commands supported in the PerCL script response to a request to the waitUrl: Play,Say,Pause,GetDigits,Dequeue,Hangup
 ## Properties
 
 Name | Type | Description | Notes

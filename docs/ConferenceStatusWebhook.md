@@ -1,6 +1,6 @@
 # freeclimb.Model.ConferenceStatusWebhook
-The context or reason why this request is being made. Will be conferenceStatus - A Conference's status changed and its statusCallbackUrl is being invoked.
 
+The context or reason why this request is being made. Will be conferenceStatus - A Conference's status changed and its statusCallbackUrl is being invoked.
 ## Properties
 
 Name | Type | Description | Notes

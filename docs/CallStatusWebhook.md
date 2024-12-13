@@ -1,6 +1,6 @@
 # freeclimb.Model.CallStatusWebhook
-A Call has ended and the statusCallbackUrl is being invoked. This is a notification only; All PerCL commands will be ignored.
 
+A Call has ended and the statusCallbackUrl is being invoked. This is a notification only; All PerCL commands will be ignored.
 ## Properties
 
 Name | Type | Description | Notes

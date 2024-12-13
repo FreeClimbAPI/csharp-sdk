@@ -1,6 +1,6 @@
 # freeclimb.Model.SendDigits
-The `SendDigits` command plays DTMF tones on a live Call. This is useful for navigating through IVR menus or dialing extensions.
 
+The `SendDigits` command plays DTMF tones on a live Call. This is useful for navigating through IVR menus or dialing extensions.
 ## Properties
 
 Name | Type | Description | Notes

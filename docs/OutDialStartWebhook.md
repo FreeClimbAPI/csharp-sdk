@@ -1,6 +1,6 @@
 # freeclimb.Model.OutDialStartWebhook
-The OutDial command has started and the actionUrl is being invoked. This request is made in the context of the parent call (Call leg that invoked). A PerCL response is expected.
 
+The OutDial command has started and the actionUrl is being invoked. This request is made in the context of the parent call (Call leg that invoked). A PerCL response is expected.
 ## Properties
 
 Name | Type | Description | Notes

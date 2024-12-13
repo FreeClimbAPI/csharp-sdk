@@ -1,6 +1,6 @@
 # freeclimb.Model.Capabilities
-Details for which features this number may be used.
 
+Details for which features this number may be used.
 ## Properties
 
 Name | Type | Description | Notes
