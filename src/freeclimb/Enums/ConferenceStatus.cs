@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -57,7 +58,55 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "terminated")]
         TERMINATED = 4
+    }
+    /// <summary>
+    /// Converts <see cref="ConferenceStatus"/> to and from the JSON value
+    /// </summary>
+    public static class ConferenceStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="ConferenceStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ConferenceStatus FromString(string value)
+        {
+            if (value.Equals("empty"))
+                return ConferenceStatus.EMPTY;
 
+            if (value.Equals("populated"))
+                return ConferenceStatus.POPULATED;
+
+            if (value.Equals("inProgress"))
+                return ConferenceStatus.IN_PROGRESS;
+
+            if (value.Equals("terminated"))
+                return ConferenceStatus.TERMINATED;
+
+            throw new NotImplementedException($"Could not convert value to type ConferenceStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="ConferenceStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ConferenceStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("empty"))
+                return ConferenceStatus.EMPTY;
+
+            if (value.Equals("populated"))
+                return ConferenceStatus.POPULATED;
+
+            if (value.Equals("inProgress"))
+                return ConferenceStatus.IN_PROGRESS;
+
+            if (value.Equals("terminated"))
+                return ConferenceStatus.TERMINATED;
+
+            return null;
+        }
     }
 
 }

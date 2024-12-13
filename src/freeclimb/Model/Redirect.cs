@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
@@ -33,32 +34,7 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "Redirect")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class Redirect : PerclCommand, IEquatable<Redirect>, IValidatableObject
+    public partial class Redirect : PerclCommand, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Redirect" /> class.
@@ -70,22 +46,28 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="actionUrl">URL to request a new PerCL script to continue with the current Call&#39;s processing. When &#x60;Redirect&#x60; invokes the &#x60;actionUrl&#x60;, an &#x60;inbound&#x60; Webhook is sent. This request therefore looks identical to the initial request (made to the &#x60;voiceUrl&#x60; of the number that was called) for an inbound Call. (required).</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Redirect&quot;).</param>
-        public Redirect(string actionUrl = default(string), string command = "Redirect") : base(command)
+        public Redirect(string actionUrl = default(string), string command = @"Redirect") : base(command)
         {
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null) {
+            if (actionUrl == null)
+            {
                 throw new ArgumentNullException("actionUrl is a required property for Redirect and cannot be null");
             }
             this.ActionUrl = actionUrl;
-        }
+                        
 
+
+        }
+        
         /// <summary>
         /// URL to request a new PerCL script to continue with the current Call&#39;s processing. When &#x60;Redirect&#x60; invokes the &#x60;actionUrl&#x60;, an &#x60;inbound&#x60; Webhook is sent. This request therefore looks identical to the initial request (made to the &#x60;voiceUrl&#x60; of the number that was called) for an inbound Call.
         /// </summary>
         /// <value>URL to request a new PerCL script to continue with the current Call&#39;s processing. When &#x60;Redirect&#x60; invokes the &#x60;actionUrl&#x60;, an &#x60;inbound&#x60; Webhook is sent. This request therefore looks identical to the initial request (made to the &#x60;voiceUrl&#x60; of the number that was called) for an inbound Call.</value>
-        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -115,6 +97,7 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
+
         /// <summary>
         /// Retrieve the KVP Dictionary for the Redirect instance. 
         /// </summary>
@@ -127,59 +110,13 @@ namespace freeclimb.Model
             command.Add("Redirect",props);
             return command;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Redirect);
-        }
-
-        /// <summary>
-        /// Returns true if Redirect instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Redirect to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Redirect input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.ActionUrl == input.ActionUrl ||
-                    (this.ActionUrl != null &&
-                    this.ActionUrl.Equals(input.ActionUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                if (this.ActionUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -189,9 +126,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }

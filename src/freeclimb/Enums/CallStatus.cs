@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -81,7 +82,79 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "noAnswer")]
         NO_ANSWER = 8
+    }
+    /// <summary>
+    /// Converts <see cref="CallStatus"/> to and from the JSON value
+    /// </summary>
+    public static class CallStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="CallStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallStatus FromString(string value)
+        {
+            if (value.Equals("queued"))
+                return CallStatus.QUEUED;
 
+            if (value.Equals("ringing"))
+                return CallStatus.RINGING;
+
+            if (value.Equals("inProgress"))
+                return CallStatus.IN_PROGRESS;
+
+            if (value.Equals("canceled"))
+                return CallStatus.CANCELED;
+
+            if (value.Equals("completed"))
+                return CallStatus.COMPLETED;
+
+            if (value.Equals("failed"))
+                return CallStatus.FAILED;
+
+            if (value.Equals("busy"))
+                return CallStatus.BUSY;
+
+            if (value.Equals("noAnswer"))
+                return CallStatus.NO_ANSWER;
+
+            throw new NotImplementedException($"Could not convert value to type CallStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="CallStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("queued"))
+                return CallStatus.QUEUED;
+
+            if (value.Equals("ringing"))
+                return CallStatus.RINGING;
+
+            if (value.Equals("inProgress"))
+                return CallStatus.IN_PROGRESS;
+
+            if (value.Equals("canceled"))
+                return CallStatus.CANCELED;
+
+            if (value.Equals("completed"))
+                return CallStatus.COMPLETED;
+
+            if (value.Equals("failed"))
+                return CallStatus.FAILED;
+
+            if (value.Equals("busy"))
+                return CallStatus.BUSY;
+
+            if (value.Equals("noAnswer"))
+                return CallStatus.NO_ANSWER;
+
+            return null;
+        }
     }
 
 }

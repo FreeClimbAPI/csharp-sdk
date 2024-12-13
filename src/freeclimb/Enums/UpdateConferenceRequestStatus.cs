@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -45,7 +46,43 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "terminated")]
         TERMINATED = 2
+    }
+    /// <summary>
+    /// Converts <see cref="UpdateConferenceRequestStatus"/> to and from the JSON value
+    /// </summary>
+    public static class UpdateConferenceRequestStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateConferenceRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateConferenceRequestStatus FromString(string value)
+        {
+            if (value.Equals("empty"))
+                return UpdateConferenceRequestStatus.EMPTY;
 
+            if (value.Equals("terminated"))
+                return UpdateConferenceRequestStatus.TERMINATED;
+
+            throw new NotImplementedException($"Could not convert value to type UpdateConferenceRequestStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateConferenceRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateConferenceRequestStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("empty"))
+                return UpdateConferenceRequestStatus.EMPTY;
+
+            if (value.Equals("terminated"))
+                return UpdateConferenceRequestStatus.TERMINATED;
+
+            return null;
+        }
     }
 
 }

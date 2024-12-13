@@ -26,13 +26,14 @@ using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 using freeclimb.Utils;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// AvailableNumberList
     /// </summary>
     [DataContract(Name = "AvailableNumberList")]
-    public partial class AvailableNumberList : IPagination, IEquatable<AvailableNumberList>, IValidatableObject
+    public partial class AvailableNumberList : IValidatableObject, IPagination
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableNumberList" /> class.
@@ -47,16 +48,40 @@ namespace freeclimb.Model
         /// <param name="availablePhoneNumbers">availablePhoneNumbers.</param>
         public AvailableNumberList(int? total = default(int?), int? start = default(int?), int? end = default(int?), int? page = default(int?), int? numPages = default(int?), int? pageSize = default(int?), string nextPageUri = default(string), List<AvailableNumber> availablePhoneNumbers = default(List<AvailableNumber>))
         {
-            this.Total = total;
-            this.Start = start;
-            this.End = end;
-            this.Page = page;
-            this.NumPages = numPages;
-            this.PageSize = pageSize;
-            this.NextPageUri = nextPageUri;
-            this.AvailablePhoneNumbers = availablePhoneNumbers;
-        }
 
+
+
+
+
+
+
+
+            this.Total = total;
+                        
+
+            this.Start = start;
+                        
+
+            this.End = end;
+                        
+
+            this.Page = page;
+                        
+
+            this.NumPages = numPages;
+                        
+
+            this.PageSize = pageSize;
+                        
+
+            this.NextPageUri = nextPageUri;
+                        
+
+            this.AvailablePhoneNumbers = availablePhoneNumbers;
+                        
+
+        }
+        
         /// <summary>
         /// Total amount of requested resource.
         /// </summary>
@@ -64,6 +89,9 @@ namespace freeclimb.Model
         [DataMember(Name = "total", EmitDefaultValue = true)]
         public int? Total { get; set; }
 
+
+        
+        
         /// <summary>
         /// Resource index at start of current page
         /// </summary>
@@ -71,6 +99,9 @@ namespace freeclimb.Model
         [DataMember(Name = "start", EmitDefaultValue = true)]
         public int? Start { get; set; }
 
+
+        
+        
         /// <summary>
         /// Resource index at end of current page
         /// </summary>
@@ -78,6 +109,9 @@ namespace freeclimb.Model
         [DataMember(Name = "end", EmitDefaultValue = true)]
         public int? End { get; set; }
 
+
+        
+        
         /// <summary>
         /// Current page
         /// </summary>
@@ -85,6 +119,9 @@ namespace freeclimb.Model
         [DataMember(Name = "page", EmitDefaultValue = true)]
         public int? Page { get; set; }
 
+
+        
+        
         /// <summary>
         /// Total number of pages
         /// </summary>
@@ -92,6 +129,9 @@ namespace freeclimb.Model
         [DataMember(Name = "numPages", EmitDefaultValue = true)]
         public int? NumPages { get; set; }
 
+
+        
+        
         /// <summary>
         /// Number of items per page
         /// </summary>
@@ -99,6 +139,9 @@ namespace freeclimb.Model
         [DataMember(Name = "pageSize", EmitDefaultValue = true)]
         public int? PageSize { get; set; }
 
+
+        
+        
         /// <summary>
         /// Uri to retrieve the next page of items
         /// </summary>
@@ -106,12 +149,17 @@ namespace freeclimb.Model
         [DataMember(Name = "nextPageUri", EmitDefaultValue = true)]
         public string NextPageUri { get; set; }
 
+
+        
+        
         /// <summary>
         /// Gets or Sets AvailablePhoneNumbers
         /// </summary>
         [DataMember(Name = "availablePhoneNumbers", EmitDefaultValue = true)]
         public List<AvailableNumber> AvailablePhoneNumbers { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -132,6 +180,7 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -140,6 +189,7 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
+
 
         /// <summary>
         /// Retrieve the KVP Dictionary for the AvailableNumberList instance. 
@@ -163,123 +213,13 @@ namespace freeclimb.Model
             props.Add("availablePhoneNumbers", nested); 
             return props;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AvailableNumberList);
-        }
-
-        /// <summary>
-        /// Returns true if AvailableNumberList instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AvailableNumberList to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AvailableNumberList input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Start == input.Start ||
-                    (this.Start != null &&
-                    this.Start.Equals(input.Start))
-                ) && 
-                (
-                    this.End == input.End ||
-                    (this.End != null &&
-                    this.End.Equals(input.End))
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                ) && 
-                (
-                    this.NumPages == input.NumPages ||
-                    (this.NumPages != null &&
-                    this.NumPages.Equals(input.NumPages))
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    (this.PageSize != null &&
-                    this.PageSize.Equals(input.PageSize))
-                ) && 
-                (
-                    this.NextPageUri == input.NextPageUri ||
-                    (this.NextPageUri != null &&
-                    this.NextPageUri.Equals(input.NextPageUri))
-                ) && 
-                (
-                    this.AvailablePhoneNumbers == input.AvailablePhoneNumbers ||
-                    this.AvailablePhoneNumbers != null &&
-                    input.AvailablePhoneNumbers != null &&
-                    this.AvailablePhoneNumbers.SequenceEqual(input.AvailablePhoneNumbers)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Total != null)
-                {
-                    hashCode = (hashCode * 59) + this.Total.GetHashCode();
-                }
-                if (this.Start != null)
-                {
-                    hashCode = (hashCode * 59) + this.Start.GetHashCode();
-                }
-                if (this.End != null)
-                {
-                    hashCode = (hashCode * 59) + this.End.GetHashCode();
-                }
-                if (this.Page != null)
-                {
-                    hashCode = (hashCode * 59) + this.Page.GetHashCode();
-                }
-                if (this.NumPages != null)
-                {
-                    hashCode = (hashCode * 59) + this.NumPages.GetHashCode();
-                }
-                if (this.PageSize != null)
-                {
-                    hashCode = (hashCode * 59) + this.PageSize.GetHashCode();
-                }
-                if (this.NextPageUri != null)
-                {
-                    hashCode = (hashCode * 59) + this.NextPageUri.GetHashCode();
-                }
-                if (this.AvailablePhoneNumbers != null)
-                {
-                    hashCode = (hashCode * 59) + this.AvailablePhoneNumbers.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

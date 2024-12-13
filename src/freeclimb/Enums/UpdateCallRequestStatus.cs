@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -45,7 +46,43 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "completed")]
         COMPLETED = 2
+    }
+    /// <summary>
+    /// Converts <see cref="UpdateCallRequestStatus"/> to and from the JSON value
+    /// </summary>
+    public static class UpdateCallRequestStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateCallRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateCallRequestStatus FromString(string value)
+        {
+            if (value.Equals("canceled"))
+                return UpdateCallRequestStatus.CANCELED;
 
+            if (value.Equals("completed"))
+                return UpdateCallRequestStatus.COMPLETED;
+
+            throw new NotImplementedException($"Could not convert value to type UpdateCallRequestStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateCallRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateCallRequestStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("canceled"))
+                return UpdateCallRequestStatus.CANCELED;
+
+            if (value.Equals("completed"))
+                return UpdateCallRequestStatus.COMPLETED;
+
+            return null;
+        }
     }
 
 }

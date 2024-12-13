@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// QueueRequest
     /// </summary>
     [DataContract(Name = "QueueRequest")]
-    public partial class QueueRequest : IEquatable<QueueRequest>, IValidatableObject
+    public partial class QueueRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueRequest" /> class.
@@ -40,10 +41,16 @@ namespace freeclimb.Model
         /// <param name="maxSize">Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize. (default to 100).</param>
         public QueueRequest(string alias = default(string), int maxSize = 100)
         {
-            this.Alias = alias;
-            this.MaxSize = maxSize;
-        }
 
+
+            this.Alias = alias;
+                        
+
+            this.MaxSize = maxSize;
+                        
+
+        }
+        
         /// <summary>
         /// Description for this Queue. Max length is 64 characters.
         /// </summary>
@@ -51,6 +58,9 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
+
+        
+        
         /// <summary>
         /// Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize.
         /// </summary>
@@ -58,6 +68,8 @@ namespace freeclimb.Model
         [DataMember(Name = "maxSize", EmitDefaultValue = false)]
         public int MaxSize { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -72,6 +84,7 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -80,6 +93,7 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
+
 
         /// <summary>
         /// Retrieve the KVP Dictionary for the QueueRequest instance. 
@@ -92,64 +106,13 @@ namespace freeclimb.Model
             props.Add("maxSize", MaxSize);          
             return props;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as QueueRequest);
-        }
-
-        /// <summary>
-        /// Returns true if QueueRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of QueueRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(QueueRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.MaxSize == input.MaxSize ||
-                    this.MaxSize.Equals(input.MaxSize)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.MaxSize.GetHashCode();
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

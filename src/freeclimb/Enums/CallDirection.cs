@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -51,7 +52,49 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "outboundDial")]
         OUTBOUND_DIAL = 3
+    }
+    /// <summary>
+    /// Converts <see cref="CallDirection"/> to and from the JSON value
+    /// </summary>
+    public static class CallDirectionValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="CallDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallDirection FromString(string value)
+        {
+            if (value.Equals("inbound"))
+                return CallDirection.INBOUND;
 
+            if (value.Equals("outboundAPI"))
+                return CallDirection.OUTBOUND_API;
+
+            if (value.Equals("outboundDial"))
+                return CallDirection.OUTBOUND_DIAL;
+
+            throw new NotImplementedException($"Could not convert value to type CallDirection: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="CallDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallDirection? FromStringOrDefault(string value)
+        {
+            if (value.Equals("inbound"))
+                return CallDirection.INBOUND;
+
+            if (value.Equals("outboundAPI"))
+                return CallDirection.OUTBOUND_API;
+
+            if (value.Equals("outboundDial"))
+                return CallDirection.OUTBOUND_DIAL;
+
+            return null;
+        }
     }
 
 }

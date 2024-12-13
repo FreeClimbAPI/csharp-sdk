@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// RecordingResult
     /// </summary>
     [DataContract(Name = "RecordingResult")]
-    public partial class RecordingResult : IEquatable<RecordingResult>, IValidatableObject
+    public partial class RecordingResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordingResult" /> class.
@@ -47,17 +48,44 @@ namespace freeclimb.Model
         /// <param name="conferenceId">ID of the Conference that was recorded. If a Call was recorded, this value is empty and the callId property is populated..</param>
         public RecordingResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string recordingId = default(string), string accountId = default(string), string callId = default(string), int? durationSec = default(int?), string conferenceId = default(string))
         {
-            this.Uri = uri;
-            this.DateCreated = dateCreated;
-            this.DateUpdated = dateUpdated;
-            this.Revision = revision;
-            this.RecordingId = recordingId;
-            this.AccountId = accountId;
-            this.CallId = callId;
-            this.DurationSec = durationSec;
-            this.ConferenceId = conferenceId;
-        }
 
+
+
+
+
+
+
+
+
+            this.Uri = uri;
+                        
+
+            this.DateCreated = dateCreated;
+                        
+
+            this.DateUpdated = dateUpdated;
+                        
+
+            this.Revision = revision;
+                        
+
+            this.RecordingId = recordingId;
+                        
+
+            this.AccountId = accountId;
+                        
+
+            this.CallId = callId;
+                        
+
+            this.DurationSec = durationSec;
+                        
+
+            this.ConferenceId = conferenceId;
+                        
+
+        }
+        
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -65,6 +93,9 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
+        
+        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -72,6 +103,9 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
+
+        
+        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -79,6 +113,9 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
+        
+        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -86,6 +123,9 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
+
+        
+        
         /// <summary>
         /// String that uniquely identifies this recording resource.
         /// </summary>
@@ -93,6 +133,9 @@ namespace freeclimb.Model
         [DataMember(Name = "recordingId", EmitDefaultValue = true)]
         public string RecordingId { get; set; }
 
+
+        
+        
         /// <summary>
         /// ID of the account that created this recording.
         /// </summary>
@@ -100,6 +143,9 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
+        
+        
         /// <summary>
         /// ID of the Call that was recorded. If a Conference was recorded, this value is empty and the conferenceId property is populated.
         /// </summary>
@@ -107,6 +153,9 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = true)]
         public string CallId { get; set; }
 
+
+        
+        
         /// <summary>
         /// Length of the recording in seconds.
         /// </summary>
@@ -114,6 +163,9 @@ namespace freeclimb.Model
         [DataMember(Name = "durationSec", EmitDefaultValue = true)]
         public int? DurationSec { get; set; }
 
+
+        
+        
         /// <summary>
         /// ID of the Conference that was recorded. If a Call was recorded, this value is empty and the callId property is populated.
         /// </summary>
@@ -121,6 +173,8 @@ namespace freeclimb.Model
         [DataMember(Name = "conferenceId", EmitDefaultValue = true)]
         public string ConferenceId { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -142,6 +196,7 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -150,6 +205,7 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
+
 
         /// <summary>
         /// Retrieve the KVP Dictionary for the RecordingResult instance. 
@@ -169,127 +225,13 @@ namespace freeclimb.Model
             props.Add("conferenceId", ConferenceId);          
             return props;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RecordingResult);
-        }
-
-        /// <summary>
-        /// Returns true if RecordingResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RecordingResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RecordingResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.RecordingId == input.RecordingId ||
-                    (this.RecordingId != null &&
-                    this.RecordingId.Equals(input.RecordingId))
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                ) && 
-                (
-                    this.DurationSec == input.DurationSec ||
-                    (this.DurationSec != null &&
-                    this.DurationSec.Equals(input.DurationSec))
-                ) && 
-                (
-                    this.ConferenceId == input.ConferenceId ||
-                    (this.ConferenceId != null &&
-                    this.ConferenceId.Equals(input.ConferenceId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.RecordingId != null)
-                {
-                    hashCode = (hashCode * 59) + this.RecordingId.GetHashCode();
-                }
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
-                }
-                if (this.DurationSec != null)
-                {
-                    hashCode = (hashCode * 59) + this.DurationSec.GetHashCode();
-                }
-                if (this.ConferenceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConferenceId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
@@ -33,32 +34,7 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "RecordUtterance")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class RecordUtterance : PerclCommand, IEquatable<RecordUtterance>, IValidatableObject
+    public partial class RecordUtterance : PerclCommand, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordUtterance" /> class.
@@ -76,28 +52,53 @@ namespace freeclimb.Model
         /// <param name="autoStart">If &#x60;false&#x60;, recording begins immediately after the RecordUtterance command is processed. If &#x60;true&#x60;, recording begins when audio is present and if audio begins before the &#x60;maxLengthSec&#x60; timeout. If no audio begins before &#x60;maxLengthSec&#x60;, no recording is generated..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;RecordUtterance&quot;).</param>
-        public RecordUtterance(string actionUrl = default(string), int silenceTimeoutMs = default(int), string finishOnKey = default(string), int maxLengthSec = default(int), bool playBeep = default(bool), bool autoStart = default(bool), bool privacyMode = default(bool), string command = "RecordUtterance") : base(command)
+        public RecordUtterance(string actionUrl = default(string), int silenceTimeoutMs = default(int), string finishOnKey = default(string), int maxLengthSec = default(int), bool playBeep = default(bool), bool autoStart = default(bool), bool privacyMode = default(bool), string command = @"RecordUtterance") : base(command)
         {
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null) {
+            if (actionUrl == null)
+            {
                 throw new ArgumentNullException("actionUrl is a required property for RecordUtterance and cannot be null");
             }
             this.ActionUrl = actionUrl;
-            this.SilenceTimeoutMs = silenceTimeoutMs;
-            this.FinishOnKey = finishOnKey;
-            this.MaxLengthSec = maxLengthSec;
-            this.PlayBeep = playBeep;
-            this.AutoStart = autoStart;
-            this.PrivacyMode = privacyMode;
-        }
+                        
 
+
+
+
+
+
+
+
+            this.SilenceTimeoutMs = silenceTimeoutMs;
+                        
+
+            this.FinishOnKey = finishOnKey;
+                        
+
+            this.MaxLengthSec = maxLengthSec;
+                        
+
+            this.PlayBeep = playBeep;
+                        
+
+            this.AutoStart = autoStart;
+                        
+
+            this.PrivacyMode = privacyMode;
+                        
+
+        }
+        
         /// <summary>
         /// URL to which information on the completed recording is submitted. The PerCL received in response is then used to continue with Call processing.
         /// </summary>
         /// <value>URL to which information on the completed recording is submitted. The PerCL received in response is then used to continue with Call processing.</value>
-        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// Interval of silence that should elapse before ending the recording.
         /// </summary>
@@ -105,6 +106,9 @@ namespace freeclimb.Model
         [DataMember(Name = "silenceTimeoutMs", EmitDefaultValue = false)]
         public int SilenceTimeoutMs { get; set; }
 
+
+        
+        
         /// <summary>
         /// Key that triggers the end of the recording. any digit, &#39;#&#39;, or &#39;*&#39;
         /// </summary>
@@ -112,6 +116,9 @@ namespace freeclimb.Model
         [DataMember(Name = "finishOnKey", EmitDefaultValue = false)]
         public string FinishOnKey { get; set; }
 
+
+        
+        
         /// <summary>
         /// Maximum length for the command execution in seconds.
         /// </summary>
@@ -119,6 +126,9 @@ namespace freeclimb.Model
         [DataMember(Name = "maxLengthSec", EmitDefaultValue = false)]
         public int MaxLengthSec { get; set; }
 
+
+        
+        
         /// <summary>
         /// Indicates whether to play a beep sound before the start of the recording. If set to &#x60;false&#x60;, no beep is played.
         /// </summary>
@@ -126,6 +136,9 @@ namespace freeclimb.Model
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public bool PlayBeep { get; set; }
 
+
+        
+        
         /// <summary>
         /// If &#x60;false&#x60;, recording begins immediately after the RecordUtterance command is processed. If &#x60;true&#x60;, recording begins when audio is present and if audio begins before the &#x60;maxLengthSec&#x60; timeout. If no audio begins before &#x60;maxLengthSec&#x60;, no recording is generated.
         /// </summary>
@@ -133,6 +146,9 @@ namespace freeclimb.Model
         [DataMember(Name = "autoStart", EmitDefaultValue = true)]
         public bool AutoStart { get; set; }
 
+
+        
+        
         /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
@@ -140,6 +156,8 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -175,6 +193,7 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
+
         /// <summary>
         /// Retrieve the KVP Dictionary for the RecordUtterance instance. 
         /// </summary>
@@ -193,93 +212,13 @@ namespace freeclimb.Model
             command.Add("RecordUtterance",props);
             return command;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RecordUtterance);
-        }
-
-        /// <summary>
-        /// Returns true if RecordUtterance instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RecordUtterance to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RecordUtterance input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.ActionUrl == input.ActionUrl ||
-                    (this.ActionUrl != null &&
-                    this.ActionUrl.Equals(input.ActionUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.SilenceTimeoutMs == input.SilenceTimeoutMs ||
-                    this.SilenceTimeoutMs.Equals(input.SilenceTimeoutMs)
-                ) && base.Equals(input) && 
-                (
-                    this.FinishOnKey == input.FinishOnKey ||
-                    (this.FinishOnKey != null &&
-                    this.FinishOnKey.Equals(input.FinishOnKey))
-                ) && base.Equals(input) && 
-                (
-                    this.MaxLengthSec == input.MaxLengthSec ||
-                    this.MaxLengthSec.Equals(input.MaxLengthSec)
-                ) && base.Equals(input) && 
-                (
-                    this.PlayBeep == input.PlayBeep ||
-                    this.PlayBeep.Equals(input.PlayBeep)
-                ) && base.Equals(input) && 
-                (
-                    this.AutoStart == input.AutoStart ||
-                    this.AutoStart.Equals(input.AutoStart)
-                ) && base.Equals(input) && 
-                (
-                    this.PrivacyMode == input.PrivacyMode ||
-                    this.PrivacyMode.Equals(input.PrivacyMode)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                if (this.ActionUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.SilenceTimeoutMs.GetHashCode();
-                if (this.FinishOnKey != null)
-                {
-                    hashCode = (hashCode * 59) + this.FinishOnKey.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.MaxLengthSec.GetHashCode();
-                hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
-                hashCode = (hashCode * 59) + this.AutoStart.GetHashCode();
-                hashCode = (hashCode * 59) + this.PrivacyMode.GetHashCode();
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -289,9 +228,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }

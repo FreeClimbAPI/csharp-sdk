@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// ApplicationRequest
     /// </summary>
     [DataContract(Name = "ApplicationRequest")]
-    public partial class ApplicationRequest : IEquatable<ApplicationRequest>, IValidatableObject
+    public partial class ApplicationRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationRequest" /> class.
@@ -45,15 +46,36 @@ namespace freeclimb.Model
         /// <param name="smsFallbackUrl">The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored..</param>
         public ApplicationRequest(string alias = default(string), string voiceUrl = default(string), string voiceFallbackUrl = default(string), string callConnectUrl = default(string), string statusCallbackUrl = default(string), string smsUrl = default(string), string smsFallbackUrl = default(string))
         {
-            this.Alias = alias;
-            this.VoiceUrl = voiceUrl;
-            this.VoiceFallbackUrl = voiceFallbackUrl;
-            this.CallConnectUrl = callConnectUrl;
-            this.StatusCallbackUrl = statusCallbackUrl;
-            this.SmsUrl = smsUrl;
-            this.SmsFallbackUrl = smsFallbackUrl;
-        }
 
+
+
+
+
+
+
+            this.Alias = alias;
+                        
+
+            this.VoiceUrl = voiceUrl;
+                        
+
+            this.VoiceFallbackUrl = voiceFallbackUrl;
+                        
+
+            this.CallConnectUrl = callConnectUrl;
+                        
+
+            this.StatusCallbackUrl = statusCallbackUrl;
+                        
+
+            this.SmsUrl = smsUrl;
+                        
+
+            this.SmsFallbackUrl = smsFallbackUrl;
+                        
+
+        }
+        
         /// <summary>
         /// A human readable description of the application, with maximum length 64 characters.
         /// </summary>
@@ -61,6 +83,9 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL that FreeClimb will request when an inbound call arrives on a phone number assigned to this application. Used only for inbound calls.
         /// </summary>
@@ -68,6 +93,9 @@ namespace freeclimb.Model
         [DataMember(Name = "voiceUrl", EmitDefaultValue = true)]
         public string VoiceUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only. Note: A PerCL response is expected to control the inbound call.
         /// </summary>
@@ -75,6 +103,9 @@ namespace freeclimb.Model
         [DataMember(Name = "voiceFallbackUrl", EmitDefaultValue = true)]
         public string VoiceFallbackUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL that FreeClimb will request when an outbound call request is complete. Used for outbound calls only.  Note: A PerCL response is expected if the outbound call is connected (status&#x3D;InProgress) to control the call.
         /// </summary>
@@ -82,6 +113,9 @@ namespace freeclimb.Model
         [DataMember(Name = "callConnectUrl", EmitDefaultValue = true)]
         public string CallConnectUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL that FreeClimb will request to pass call status (such as call ended) to the application.  Note: This is a notification only; any PerCL returned will be ignored.
         /// </summary>
@@ -89,6 +123,9 @@ namespace freeclimb.Model
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = true)]
         public string StatusCallbackUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored.
         /// </summary>
@@ -96,6 +133,9 @@ namespace freeclimb.Model
         [DataMember(Name = "smsUrl", EmitDefaultValue = true)]
         public string SmsUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored.
         /// </summary>
@@ -103,6 +143,8 @@ namespace freeclimb.Model
         [DataMember(Name = "smsFallbackUrl", EmitDefaultValue = true)]
         public string SmsFallbackUrl { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -122,6 +164,7 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -130,6 +173,7 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
+
 
         /// <summary>
         /// Retrieve the KVP Dictionary for the ApplicationRequest instance. 
@@ -147,113 +191,13 @@ namespace freeclimb.Model
             props.Add("smsFallbackUrl", SmsFallbackUrl);          
             return props;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ApplicationRequest);
-        }
-
-        /// <summary>
-        /// Returns true if ApplicationRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ApplicationRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ApplicationRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.VoiceUrl == input.VoiceUrl ||
-                    (this.VoiceUrl != null &&
-                    this.VoiceUrl.Equals(input.VoiceUrl))
-                ) && 
-                (
-                    this.VoiceFallbackUrl == input.VoiceFallbackUrl ||
-                    (this.VoiceFallbackUrl != null &&
-                    this.VoiceFallbackUrl.Equals(input.VoiceFallbackUrl))
-                ) && 
-                (
-                    this.CallConnectUrl == input.CallConnectUrl ||
-                    (this.CallConnectUrl != null &&
-                    this.CallConnectUrl.Equals(input.CallConnectUrl))
-                ) && 
-                (
-                    this.StatusCallbackUrl == input.StatusCallbackUrl ||
-                    (this.StatusCallbackUrl != null &&
-                    this.StatusCallbackUrl.Equals(input.StatusCallbackUrl))
-                ) && 
-                (
-                    this.SmsUrl == input.SmsUrl ||
-                    (this.SmsUrl != null &&
-                    this.SmsUrl.Equals(input.SmsUrl))
-                ) && 
-                (
-                    this.SmsFallbackUrl == input.SmsFallbackUrl ||
-                    (this.SmsFallbackUrl != null &&
-                    this.SmsFallbackUrl.Equals(input.SmsFallbackUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                if (this.VoiceUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceUrl.GetHashCode();
-                }
-                if (this.VoiceFallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceFallbackUrl.GetHashCode();
-                }
-                if (this.CallConnectUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallConnectUrl.GetHashCode();
-                }
-                if (this.StatusCallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCallbackUrl.GetHashCode();
-                }
-                if (this.SmsUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsUrl.GetHashCode();
-                }
-                if (this.SmsFallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsFallbackUrl.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

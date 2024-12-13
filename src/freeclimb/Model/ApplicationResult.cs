@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// ApplicationResult
     /// </summary>
     [DataContract(Name = "ApplicationResult")]
-    public partial class ApplicationResult : IEquatable<ApplicationResult>, IValidatableObject
+    public partial class ApplicationResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationResult" /> class.
@@ -51,21 +52,60 @@ namespace freeclimb.Model
         /// <param name="smsFallbackUrl">The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only..</param>
         public ApplicationResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string applicationId = default(string), string alias = default(string), string voiceUrl = default(string), string voiceFallbackUrl = default(string), string callConnectUrl = default(string), string statusCallbackUrl = default(string), string smsUrl = default(string), string smsFallbackUrl = default(string))
         {
-            this.Uri = uri;
-            this.DateCreated = dateCreated;
-            this.DateUpdated = dateUpdated;
-            this.Revision = revision;
-            this.AccountId = accountId;
-            this.ApplicationId = applicationId;
-            this.Alias = alias;
-            this.VoiceUrl = voiceUrl;
-            this.VoiceFallbackUrl = voiceFallbackUrl;
-            this.CallConnectUrl = callConnectUrl;
-            this.StatusCallbackUrl = statusCallbackUrl;
-            this.SmsUrl = smsUrl;
-            this.SmsFallbackUrl = smsFallbackUrl;
-        }
 
+
+
+
+
+
+
+
+
+
+
+
+
+            this.Uri = uri;
+                        
+
+            this.DateCreated = dateCreated;
+                        
+
+            this.DateUpdated = dateUpdated;
+                        
+
+            this.Revision = revision;
+                        
+
+            this.AccountId = accountId;
+                        
+
+            this.ApplicationId = applicationId;
+                        
+
+            this.Alias = alias;
+                        
+
+            this.VoiceUrl = voiceUrl;
+                        
+
+            this.VoiceFallbackUrl = voiceFallbackUrl;
+                        
+
+            this.CallConnectUrl = callConnectUrl;
+                        
+
+            this.StatusCallbackUrl = statusCallbackUrl;
+                        
+
+            this.SmsUrl = smsUrl;
+                        
+
+            this.SmsFallbackUrl = smsFallbackUrl;
+                        
+
+        }
+        
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -73,6 +113,9 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
+        
+        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -80,6 +123,9 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
+
+        
+        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -87,6 +133,9 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
+        
+        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -94,6 +143,9 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
+
+        
+        
         /// <summary>
         /// ID of the account that owns this phone number.
         /// </summary>
@@ -101,6 +153,9 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
+        
+        
         /// <summary>
         /// ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
         /// </summary>
@@ -108,6 +163,9 @@ namespace freeclimb.Model
         [DataMember(Name = "applicationId", EmitDefaultValue = true)]
         public string ApplicationId { get; set; }
 
+
+        
+        
         /// <summary>
         /// Description for this phone number. Typically the conventionally-formatted version of the phone number.
         /// </summary>
@@ -115,6 +173,9 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public string Alias { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL FreeClimb will request when a phone number assigned to this Application receives a Call. Used for inbound calls only.
         /// </summary>
@@ -122,6 +183,9 @@ namespace freeclimb.Model
         [DataMember(Name = "voiceUrl", EmitDefaultValue = true)]
         public string VoiceUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only.
         /// </summary>
@@ -129,6 +193,9 @@ namespace freeclimb.Model
         [DataMember(Name = "voiceFallbackUrl", EmitDefaultValue = true)]
         public string VoiceFallbackUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL to which FreeClimb will make a POST request informing the result of the outbound Call request. The status property of the request message specifies if the Call was connected or not.
         /// </summary>
@@ -136,6 +203,9 @@ namespace freeclimb.Model
         [DataMember(Name = "callConnectUrl", EmitDefaultValue = true)]
         public string CallConnectUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// A URL to which FreeClimb will make a POST request when the Call ends to notify this app.
         /// </summary>
@@ -143,6 +213,9 @@ namespace freeclimb.Model
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = true)]
         public string StatusCallbackUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL FreeClimb will request when a phone number assigned to this Application receives an incoming SMS message. Used for inbound SMS only.
         /// </summary>
@@ -150,6 +223,9 @@ namespace freeclimb.Model
         [DataMember(Name = "smsUrl", EmitDefaultValue = true)]
         public string SmsUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.
         /// </summary>
@@ -157,6 +233,8 @@ namespace freeclimb.Model
         [DataMember(Name = "smsFallbackUrl", EmitDefaultValue = true)]
         public string SmsFallbackUrl { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -182,6 +260,7 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -190,6 +269,7 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
+
 
         /// <summary>
         /// Retrieve the KVP Dictionary for the ApplicationResult instance. 
@@ -213,163 +293,13 @@ namespace freeclimb.Model
             props.Add("smsFallbackUrl", SmsFallbackUrl);          
             return props;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ApplicationResult);
-        }
-
-        /// <summary>
-        /// Returns true if ApplicationResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ApplicationResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ApplicationResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.ApplicationId == input.ApplicationId ||
-                    (this.ApplicationId != null &&
-                    this.ApplicationId.Equals(input.ApplicationId))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.VoiceUrl == input.VoiceUrl ||
-                    (this.VoiceUrl != null &&
-                    this.VoiceUrl.Equals(input.VoiceUrl))
-                ) && 
-                (
-                    this.VoiceFallbackUrl == input.VoiceFallbackUrl ||
-                    (this.VoiceFallbackUrl != null &&
-                    this.VoiceFallbackUrl.Equals(input.VoiceFallbackUrl))
-                ) && 
-                (
-                    this.CallConnectUrl == input.CallConnectUrl ||
-                    (this.CallConnectUrl != null &&
-                    this.CallConnectUrl.Equals(input.CallConnectUrl))
-                ) && 
-                (
-                    this.StatusCallbackUrl == input.StatusCallbackUrl ||
-                    (this.StatusCallbackUrl != null &&
-                    this.StatusCallbackUrl.Equals(input.StatusCallbackUrl))
-                ) && 
-                (
-                    this.SmsUrl == input.SmsUrl ||
-                    (this.SmsUrl != null &&
-                    this.SmsUrl.Equals(input.SmsUrl))
-                ) && 
-                (
-                    this.SmsFallbackUrl == input.SmsFallbackUrl ||
-                    (this.SmsFallbackUrl != null &&
-                    this.SmsFallbackUrl.Equals(input.SmsFallbackUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.ApplicationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ApplicationId.GetHashCode();
-                }
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                if (this.VoiceUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceUrl.GetHashCode();
-                }
-                if (this.VoiceFallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceFallbackUrl.GetHashCode();
-                }
-                if (this.CallConnectUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallConnectUrl.GetHashCode();
-                }
-                if (this.StatusCallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCallbackUrl.GetHashCode();
-                }
-                if (this.SmsUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsUrl.GetHashCode();
-                }
-                if (this.SmsFallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsFallbackUrl.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

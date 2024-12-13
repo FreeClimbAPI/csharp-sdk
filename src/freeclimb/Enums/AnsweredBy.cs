@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -45,7 +46,43 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "machine")]
         MACHINE = 2
+    }
+    /// <summary>
+    /// Converts <see cref="AnsweredBy"/> to and from the JSON value
+    /// </summary>
+    public static class AnsweredByValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="AnsweredBy"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AnsweredBy FromString(string value)
+        {
+            if (value.Equals("human"))
+                return AnsweredBy.HUMAN;
 
+            if (value.Equals("machine"))
+                return AnsweredBy.MACHINE;
+
+            throw new NotImplementedException($"Could not convert value to type AnsweredBy: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="AnsweredBy"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AnsweredBy? FromStringOrDefault(string value)
+        {
+            if (value.Equals("human"))
+                return AnsweredBy.HUMAN;
+
+            if (value.Equals("machine"))
+                return AnsweredBy.MACHINE;
+
+            return null;
+        }
     }
 
 }

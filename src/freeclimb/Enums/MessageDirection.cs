@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -44,7 +45,43 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "outbound")]
         OUTBOUND = 2
+    }
+    /// <summary>
+    /// Converts <see cref="MessageDirection"/> to and from the JSON value
+    /// </summary>
+    public static class MessageDirectionValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="MessageDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MessageDirection FromString(string value)
+        {
+            if (value.Equals("inbound"))
+                return MessageDirection.INBOUND;
 
+            if (value.Equals("outbound"))
+                return MessageDirection.OUTBOUND;
+
+            throw new NotImplementedException($"Could not convert value to type MessageDirection: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="MessageDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MessageDirection? FromStringOrDefault(string value)
+        {
+            if (value.Equals("inbound"))
+                return MessageDirection.INBOUND;
+
+            if (value.Equals("outbound"))
+                return MessageDirection.OUTBOUND;
+
+            return null;
+        }
     }
 
 }

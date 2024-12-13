@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -57,7 +58,55 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "exitOnly")]
         EXIT_ONLY = 4
+    }
+    /// <summary>
+    /// Converts <see cref="PlayBeep"/> to and from the JSON value
+    /// </summary>
+    public static class PlayBeepValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="PlayBeep"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static PlayBeep FromString(string value)
+        {
+            if (value.Equals("always"))
+                return PlayBeep.ALWAYS;
 
+            if (value.Equals("never"))
+                return PlayBeep.NEVER;
+
+            if (value.Equals("entryOnly"))
+                return PlayBeep.ENTRY_ONLY;
+
+            if (value.Equals("exitOnly"))
+                return PlayBeep.EXIT_ONLY;
+
+            throw new NotImplementedException($"Could not convert value to type PlayBeep: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="PlayBeep"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static PlayBeep? FromStringOrDefault(string value)
+        {
+            if (value.Equals("always"))
+                return PlayBeep.ALWAYS;
+
+            if (value.Equals("never"))
+                return PlayBeep.NEVER;
+
+            if (value.Equals("entryOnly"))
+                return PlayBeep.ENTRY_ONLY;
+
+            if (value.Equals("exitOnly"))
+                return PlayBeep.EXIT_ONLY;
+
+            return null;
+        }
     }
 
 }

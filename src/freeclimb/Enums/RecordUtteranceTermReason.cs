@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -56,7 +57,55 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "maxLength")]
         MAX_LENGTH = 4
+    }
+    /// <summary>
+    /// Converts <see cref="RecordUtteranceTermReason"/> to and from the JSON value
+    /// </summary>
+    public static class RecordUtteranceTermReasonValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="RecordUtteranceTermReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static RecordUtteranceTermReason FromString(string value)
+        {
+            if (value.Equals("finishKey"))
+                return RecordUtteranceTermReason.FINISH_KEY;
 
+            if (value.Equals("timeout"))
+                return RecordUtteranceTermReason.TIMEOUT;
+
+            if (value.Equals("hangup"))
+                return RecordUtteranceTermReason.HANGUP;
+
+            if (value.Equals("maxLength"))
+                return RecordUtteranceTermReason.MAX_LENGTH;
+
+            throw new NotImplementedException($"Could not convert value to type RecordUtteranceTermReason: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="RecordUtteranceTermReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static RecordUtteranceTermReason? FromStringOrDefault(string value)
+        {
+            if (value.Equals("finishKey"))
+                return RecordUtteranceTermReason.FINISH_KEY;
+
+            if (value.Equals("timeout"))
+                return RecordUtteranceTermReason.TIMEOUT;
+
+            if (value.Equals("hangup"))
+                return RecordUtteranceTermReason.HANGUP;
+
+            if (value.Equals("maxLength"))
+                return RecordUtteranceTermReason.MAX_LENGTH;
+
+            return null;
+        }
     }
 
 }

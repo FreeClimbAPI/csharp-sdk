@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// A PerCL script to be returned to the FreeClimb servers in FreeClimb applications
     /// </summary>
     [DataContract(Name = "PerclScript")]
-    public partial class PerclScript : IEquatable<PerclScript>, IValidatableObject
+    public partial class PerclScript : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PerclScript" /> class.
@@ -39,9 +40,12 @@ namespace freeclimb.Model
         /// <param name="commands">A JSON array of PerCL commands.</param>
         public PerclScript(List<PerclCommand> commands = default(List<PerclCommand>))
         {
-            this.Commands = commands;
-        }
 
+            this.Commands = commands;
+                        
+
+        }
+        
         /// <summary>
         /// A JSON array of PerCL commands
         /// </summary>
@@ -49,6 +53,8 @@ namespace freeclimb.Model
         [DataMember(Name = "commands", EmitDefaultValue = false)]
         public List<PerclCommand> Commands { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -83,6 +89,7 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
+
         /// <summary>
         /// Retrieve the KVP Dictionary for the PerclScript instance. 
         /// </summary>
@@ -98,60 +105,13 @@ namespace freeclimb.Model
             props.Add("commands", nested); 
             return props;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PerclScript);
-        }
-
-        /// <summary>
-        /// Returns true if PerclScript instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PerclScript to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PerclScript input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Commands == input.Commands ||
-                    this.Commands != null &&
-                    input.Commands != null &&
-                    this.Commands.SequenceEqual(input.Commands)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Commands != null)
-                {
-                    hashCode = (hashCode * 59) + this.Commands.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

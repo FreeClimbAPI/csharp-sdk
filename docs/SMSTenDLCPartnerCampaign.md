@@ -1,13 +1,12 @@
 # freeclimb.Model.SMSTenDLCPartnerCampaign
 
-
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountId** | **string** | ID of the account that created this Queue. | [optional] 
 **CampaignId** | **string** | Alphanumeric identifier assigned by the registry for a campaign. This identifier is required by the NetNumber OSR SMS enabling process of 10DLC. | 
-**Status** | **string** | Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status.  | [optional] 
+**Status** | **SMSTenDLCPartnerCampaignStatus** |  | [optional] 
 **CreateDate** | **DateTime** | Unix timestamp when campaign was created. | [optional] 
 **BrandId** | **string** | Alphanumeric identifier of the brand associated with this campaign. | 
 **Usecase** | **string** | Campaign usecase. Must be of defined valid types. Use &#x60;/registry/enum/usecase&#x60; operation to retrieve usecases available for given brand. | 
@@ -35,8 +34,5 @@ Name | Type | Description | Notes
 **OptoutMessage** | **string** | Subscriber opt-out message. | [optional] 
 **Brand** | [**SMSTenDLCPartnerCampaignBrand**](SMSTenDLCPartnerCampaignBrand.md) |  | [optional] 
 
-[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
-[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
-[[Back to Model list]](../README.md#documentation-for-models)<br /> 
-[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
-[[Back to README]](../README.md) <br /> 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

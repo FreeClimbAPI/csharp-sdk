@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
@@ -51,6 +52,7 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
     [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
     [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
+    [JsonSubtypes.KnownSubType(typeof(SetDTMFPassThrough), "SetDTMFPassThrough")]
     [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
     [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
     [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
@@ -58,7 +60,7 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
     [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
     [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class PerclCommand : IEquatable<PerclCommand>, IValidatableObject
+    public partial class PerclCommand : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PerclCommand" /> class.
@@ -66,15 +68,19 @@ namespace freeclimb.Model
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments).</param>
         public PerclCommand(string command = default(string))
         {
-            this.Command = command;
-        }
 
+            this.Command = command;
+                        
+
+        }
+        
         /// <summary>
         /// Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments)
         /// </summary>
         /// <value>Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments)</value>
         [DataMember(Name = "command", EmitDefaultValue = false)]
         public string Command { get; set; }
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -104,6 +110,7 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
+
         /// <summary>
         /// Retrieve the KVP Dictionary for the PerclCommand instance. 
         /// </summary>
@@ -114,59 +121,13 @@ namespace freeclimb.Model
             props.Add("command", Command);          
             return props;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PerclCommand);
-        }
-
-        /// <summary>
-        /// Returns true if PerclCommand instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PerclCommand to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PerclCommand input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Command == input.Command ||
-                    (this.Command != null &&
-                    this.Command.Equals(input.Command))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Command != null)
-                {
-                    hashCode = (hashCode * 59) + this.Command.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public virtual IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -176,7 +137,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected virtual IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
             yield break;
         }

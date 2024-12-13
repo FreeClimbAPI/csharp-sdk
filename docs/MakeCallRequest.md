@@ -1,6 +1,5 @@
 # freeclimb.Model.MakeCallRequest
 
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -16,8 +15,5 @@ Name | Type | Description | Notes
 **PrivacyMode** | **bool** | Activate privacy mode in order to obscure log data that can potentially expose private information. | [optional] 
 **CallConnectUrl** | **string** | The URL that FreeClimb should use to handle this phone call. If an applicationId or parentCallId have already been provided, this callConnectUrl attribute will be used as a replacement of the callConnectUrl originally assigned in the application or parent call. | [optional] 
 
-[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
-[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
-[[Back to Model list]](../README.md#documentation-for-models)<br /> 
-[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
-[[Back to README]](../README.md) <br /> 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

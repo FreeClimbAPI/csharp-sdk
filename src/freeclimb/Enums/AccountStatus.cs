@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -51,7 +52,49 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "active")]
         ACTIVE = 3
+    }
+    /// <summary>
+    /// Converts <see cref="AccountStatus"/> to and from the JSON value
+    /// </summary>
+    public static class AccountStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="AccountStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AccountStatus FromString(string value)
+        {
+            if (value.Equals("closed"))
+                return AccountStatus.CLOSED;
 
+            if (value.Equals("suspended"))
+                return AccountStatus.SUSPENDED;
+
+            if (value.Equals("active"))
+                return AccountStatus.ACTIVE;
+
+            throw new NotImplementedException($"Could not convert value to type AccountStatus: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="AccountStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AccountStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("closed"))
+                return AccountStatus.CLOSED;
+
+            if (value.Equals("suspended"))
+                return AccountStatus.SUSPENDED;
+
+            if (value.Equals("active"))
+                return AccountStatus.ACTIVE;
+
+            return null;
+        }
     }
 
 }

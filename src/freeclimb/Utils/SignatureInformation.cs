@@ -10,7 +10,13 @@ namespace freeclimb.Utils
     /// </summary>
     public class SignatureInformation
     {
+        /// <summary>
+        /// Request unit timestamp
+        /// </summary>
         public int requestTimestamp;
+        /// <summary>
+        /// List of signatures on the inbound request
+        /// </summary>
         public List<string> signatures;
         /// <summary>
         /// This is the Signature Information constructor, this takes the requestHeader and parses it into the attribute values
@@ -57,6 +63,15 @@ namespace freeclimb.Utils
             return signatures.Contains(hashValue);
         }
 
+        /// <summary>
+        /// Get current time in unix seconds
+        /// </summary>
+        /// <returns>Get current time in unix seconds</returns>
+        public int getCurrentUnixTime()
+        {
+            return (int)((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
+        }
+
         private String computeHash(String requestBody, String signingSecret)
         {
             string hashSeedString = requestTimestamp + "." + requestBody;
@@ -67,9 +82,5 @@ namespace freeclimb.Utils
             return BitConverter.ToString(hashValue).Replace("-", "").ToLower();
         }
 
-        public int getCurrentUnixTime()
-        {
-            return (int)((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
-        }
     }
 }

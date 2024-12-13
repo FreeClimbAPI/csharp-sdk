@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// MessageResult
     /// </summary>
     [DataContract(Name = "MessageResult")]
-    public partial class MessageResult : IEquatable<MessageResult>, IValidatableObject
+    public partial class MessageResult : IValidatableObject
     {
 
         /// <summary>
@@ -60,24 +61,72 @@ namespace freeclimb.Model
         /// <param name="mediaUrls">an array of HTTP URLs which were attached this this message.</param>
         public MessageResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string messageId = default(string), MessageStatus? status = default(MessageStatus?), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string notificationUrl = default(string), string brandId = default(string), string campaignId = default(string), decimal? segmentCount = default(decimal?), List<string> mediaUrls = default(List<string>))
         {
-            this.Uri = uri;
-            this.DateCreated = dateCreated;
-            this.DateUpdated = dateUpdated;
-            this.Revision = revision;
-            this.AccountId = accountId;
-            this.MessageId = messageId;
-            this.Status = status;
-            this.From = from;
-            this.To = to;
-            this.Text = text;
-            this.Direction = direction;
-            this.NotificationUrl = notificationUrl;
-            this.BrandId = brandId;
-            this.CampaignId = campaignId;
-            this.SegmentCount = segmentCount;
-            this.MediaUrls = mediaUrls;
-        }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this.Uri = uri;
+                        
+
+            this.DateCreated = dateCreated;
+                        
+
+            this.DateUpdated = dateUpdated;
+                        
+
+            this.Revision = revision;
+                        
+
+            this.AccountId = accountId;
+                        
+
+            this.MessageId = messageId;
+                        
+
+            this.Status = status;
+                        
+
+            this.From = from;
+                        
+
+            this.To = to;
+                        
+
+            this.Text = text;
+                        
+
+            this.Direction = direction;
+                        
+
+            this.NotificationUrl = notificationUrl;
+                        
+
+            this.BrandId = brandId;
+                        
+
+            this.CampaignId = campaignId;
+                        
+
+            this.SegmentCount = segmentCount;
+                        
+
+            this.MediaUrls = mediaUrls;
+                        
+
+        }
+        
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -85,6 +134,9 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
+
+        
+        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -92,6 +144,9 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
+
+        
+        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -99,6 +154,9 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
+
+        
+        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -106,6 +164,9 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
+
+        
+        
         /// <summary>
         /// String that uniquely identifies this account resource.
         /// </summary>
@@ -113,6 +174,9 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
+
+        
+        
         /// <summary>
         /// String that uniquely identifies this message resource
         /// </summary>
@@ -120,6 +184,12 @@ namespace freeclimb.Model
         [DataMember(Name = "messageId", EmitDefaultValue = true)]
         public string MessageId { get; set; }
 
+
+        
+        
+
+        
+        
         /// <summary>
         /// Phone number in E.164 format that sent the message.
         /// </summary>
@@ -127,6 +197,9 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = true)]
         public string From { get; set; }
 
+
+        
+        
         /// <summary>
         /// Phone number in E.164 format that received the message.
         /// </summary>
@@ -134,6 +207,9 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = true)]
         public string To { get; set; }
 
+
+        
+        
         /// <summary>
         /// Message contents
         /// </summary>
@@ -141,6 +217,9 @@ namespace freeclimb.Model
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
+
+        
+        
         /// <summary>
         /// Noting whether the message was inbound or outbound
         /// </summary>
@@ -148,6 +227,9 @@ namespace freeclimb.Model
         [DataMember(Name = "direction", EmitDefaultValue = true)]
         public string Direction { get; set; }
 
+
+        
+        
         /// <summary>
         /// URL invoked when message sent
         /// </summary>
@@ -155,6 +237,9 @@ namespace freeclimb.Model
         [DataMember(Name = "notificationUrl", EmitDefaultValue = true)]
         public string NotificationUrl { get; set; }
 
+
+        
+        
         /// <summary>
         /// The unique identifier for the brand associated with the message
         /// </summary>
@@ -162,6 +247,9 @@ namespace freeclimb.Model
         [DataMember(Name = "brandId", EmitDefaultValue = true)]
         public string BrandId { get; set; }
 
+
+        
+        
         /// <summary>
         /// The unique identifier for the campaign associated with the message
         /// </summary>
@@ -169,6 +257,9 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
+
+        
+        
         /// <summary>
         /// The number of segments into which the message was split
         /// </summary>
@@ -176,6 +267,9 @@ namespace freeclimb.Model
         [DataMember(Name = "segmentCount", EmitDefaultValue = true)]
         public decimal? SegmentCount { get; set; }
 
+
+        
+        
         /// <summary>
         /// an array of HTTP URLs which were attached this this message
         /// </summary>
@@ -183,6 +277,8 @@ namespace freeclimb.Model
         [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
         public List<string> MediaUrls { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -211,6 +307,7 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -219,6 +316,7 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
+
 
         /// <summary>
         /// Retrieve the KVP Dictionary for the MessageResult instance. 
@@ -250,187 +348,13 @@ namespace freeclimb.Model
             props.Add("mediaUrls", nested); 
             return props;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as MessageResult);
-        }
-
-        /// <summary>
-        /// Returns true if MessageResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of MessageResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(MessageResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.MessageId == input.MessageId ||
-                    (this.MessageId != null &&
-                    this.MessageId.Equals(input.MessageId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
-                ) && 
-                (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
-                ) && 
-                (
-                    this.To == input.To ||
-                    (this.To != null &&
-                    this.To.Equals(input.To))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    (this.Direction != null &&
-                    this.Direction.Equals(input.Direction))
-                ) && 
-                (
-                    this.NotificationUrl == input.NotificationUrl ||
-                    (this.NotificationUrl != null &&
-                    this.NotificationUrl.Equals(input.NotificationUrl))
-                ) && 
-                (
-                    this.BrandId == input.BrandId ||
-                    (this.BrandId != null &&
-                    this.BrandId.Equals(input.BrandId))
-                ) && 
-                (
-                    this.CampaignId == input.CampaignId ||
-                    (this.CampaignId != null &&
-                    this.CampaignId.Equals(input.CampaignId))
-                ) && 
-                (
-                    this.SegmentCount == input.SegmentCount ||
-                    (this.SegmentCount != null &&
-                    this.SegmentCount.Equals(input.SegmentCount))
-                ) && 
-                (
-                    this.MediaUrls == input.MediaUrls ||
-                    this.MediaUrls != null &&
-                    input.MediaUrls != null &&
-                    this.MediaUrls.SequenceEqual(input.MediaUrls)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.MessageId != null)
-                {
-                    hashCode = (hashCode * 59) + this.MessageId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                if (this.From != null)
-                {
-                    hashCode = (hashCode * 59) + this.From.GetHashCode();
-                }
-                if (this.To != null)
-                {
-                    hashCode = (hashCode * 59) + this.To.GetHashCode();
-                }
-                if (this.Text != null)
-                {
-                    hashCode = (hashCode * 59) + this.Text.GetHashCode();
-                }
-                if (this.Direction != null)
-                {
-                    hashCode = (hashCode * 59) + this.Direction.GetHashCode();
-                }
-                if (this.NotificationUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.NotificationUrl.GetHashCode();
-                }
-                if (this.BrandId != null)
-                {
-                    hashCode = (hashCode * 59) + this.BrandId.GetHashCode();
-                }
-                if (this.CampaignId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CampaignId.GetHashCode();
-                }
-                if (this.SegmentCount != null)
-                {
-                    hashCode = (hashCode * 59) + this.SegmentCount.GetHashCode();
-                }
-                if (this.MediaUrls != null)
-                {
-                    hashCode = (hashCode * 59) + this.MediaUrls.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

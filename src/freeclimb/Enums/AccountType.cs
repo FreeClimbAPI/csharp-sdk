@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -45,7 +46,43 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "full")]
         FULL = 2
+    }
+    /// <summary>
+    /// Converts <see cref="AccountType"/> to and from the JSON value
+    /// </summary>
+    public static class AccountTypeValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="AccountType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AccountType FromString(string value)
+        {
+            if (value.Equals("trial"))
+                return AccountType.TRIAL;
 
+            if (value.Equals("full"))
+                return AccountType.FULL;
+
+            throw new NotImplementedException($"Could not convert value to type AccountType: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="AccountType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AccountType? FromStringOrDefault(string value)
+        {
+            if (value.Equals("trial"))
+                return AccountType.TRIAL;
+
+            if (value.Equals("full"))
+                return AccountType.FULL;
+
+            return null;
+        }
     }
 
 }

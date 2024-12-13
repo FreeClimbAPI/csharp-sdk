@@ -15,8 +15,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using RestSharp;
-using Moq;
-using Moq.Protected;
 using Xunit;
 
 using freeclimb.Client;
@@ -24,6 +22,7 @@ using freeclimb.Api;
 // uncomment below to import models
 using freeclimb.Model;
 using freeclimb.Enums;
+using System.Reflection;
 
 namespace freeclimb.Test.Api
 {
@@ -36,13 +35,11 @@ namespace freeclimb.Test.Api
     /// </remarks>
     public class DefaultApiTests : IDisposable
     {
-        private Configuration config;
-
         private DefaultApi instance;
 
         public DefaultApiTests()
         {
-            config = new Configuration();
+            Configuration config = new Configuration();
             config.BasePath = "http://127.0.0.1:4010/";
             config.Username = "TEST-ACCOUNT-ID";
             config.Password = "TEST-API-KEY";
@@ -61,911 +58,1081 @@ namespace freeclimb.Test.Api
         public void InstanceTest()
         {
             Assert.IsType<DefaultApi>(instance);
-        }
-        
+        }        
+
         /// <summary>
         /// Test BuyAPhoneNumber
         /// </summary>
         [Fact]
-
         public void BuyAPhoneNumberTest()
         {
             
+            
             BuyIncomingNumberRequest buyIncomingNumberRequest = buyIncomingNumberRequestTestValue();
+            
 	        
             var response = instance.BuyAPhoneNumber(buyIncomingNumberRequest);
             Assert.IsAssignableFrom<IncomingNumberResult>(response);
         }
-        
+
         /// <summary>
         /// Test CreateAConference
         /// </summary>
         [Fact]
-
         public void CreateAConferenceTest()
         {
             
-            CreateConferenceRequest createConferenceRequest = createConferenceRequestTestValue();
+            
+            CreateConferenceRequest? createConferenceRequest = createConferenceRequestTestValue();
+            
 	        
             var response = instance.CreateAConference(createConferenceRequest);
             Assert.IsAssignableFrom<ConferenceResult>(response);
         }
-        
+
         /// <summary>
         /// Test CreateAQueue
         /// </summary>
         [Fact]
-
         public void CreateAQueueTest()
         {
             
-            QueueRequest queueRequest = queueRequestTestValue();
+            
+            QueueRequest? queueRequest = queueRequestTestValue();
+            
 	        
             var response = instance.CreateAQueue(queueRequest);
             Assert.IsAssignableFrom<QueueResult>(response);
         }
-        
+
         /// <summary>
         /// Test CreateAnApplication
         /// </summary>
         [Fact]
-
         public void CreateAnApplicationTest()
         {
             
-            ApplicationRequest applicationRequest = applicationRequestTestValue();
+            
+            ApplicationRequest? applicationRequest = applicationRequestTestValue();
+            
 	        
             var response = instance.CreateAnApplication(applicationRequest);
             Assert.IsAssignableFrom<ApplicationResult>(response);
         }
-        
+
         /// <summary>
         /// Test CreateKnowledgeBaseCompletion
         /// </summary>
         [Fact]
-
         public void CreateKnowledgeBaseCompletionTest()
         {
             
+            
             string knowledgeBaseId = knowledgeBaseIdTestValue();
+            
 	        
-            CompletionRequest completionRequest = completionRequestTestValue();
+            
+            CompletionRequest? completionRequest = completionRequestTestValue();
+            
 	        
             var response = instance.CreateKnowledgeBaseCompletion(knowledgeBaseId, completionRequest);
             Assert.IsAssignableFrom<CompletionResult>(response);
         }
-        
+
         /// <summary>
         /// Test DeleteARecording
         /// </summary>
         [Fact]
-
         public void DeleteARecordingTest()
         {
             
+            
             string recordingId = recordingIdTestValue();
+            
 	        
             instance.DeleteARecording(recordingId);
         }
-        
+
         /// <summary>
         /// Test DeleteAnApplication
         /// </summary>
         [Fact]
-
         public void DeleteAnApplicationTest()
         {
             
+            
             string applicationId = applicationIdTestValue();
+            
 	        
             instance.DeleteAnApplication(applicationId);
         }
-        
+
         /// <summary>
         /// Test DeleteAnIncomingNumber
         /// </summary>
         [Fact]
-
         public void DeleteAnIncomingNumberTest()
         {
             
+            
             string phoneNumberId = phoneNumberIdTestValue();
+            
 	        
             instance.DeleteAnIncomingNumber(phoneNumberId);
         }
-        
+
         /// <summary>
         /// Test DequeueAMember
         /// </summary>
         [Fact]
-
         public void DequeueAMemberTest()
         {
             
+            
             string queueId = queueIdTestValue();
+            
 	        
+            
             string callId = callIdTestValue();
+            
 	        
             var response = instance.DequeueAMember(queueId, callId);
             Assert.IsAssignableFrom<QueueMember>(response);
         }
-        
+
         /// <summary>
         /// Test DequeueHeadMember
         /// </summary>
         [Fact]
-
         public void DequeueHeadMemberTest()
         {
             
+            
             string queueId = queueIdTestValue();
+            
 	        
             var response = instance.DequeueHeadMember(queueId);
             Assert.IsAssignableFrom<QueueMember>(response);
         }
-        
+
         /// <summary>
         /// Test DownloadARecordingFile
         /// </summary>
         [Fact]
-
         public void DownloadARecordingFileTest()
         {
             
+            
             string recordingId = recordingIdTestValue();
+            
 	        
             var response = instance.DownloadARecordingFile(recordingId);
             Assert.IsAssignableFrom<System.IO.Stream>(response);
         }
-        
+
         /// <summary>
         /// Test FilterLogs
         /// </summary>
         [Fact]
-
         public void FilterLogsTest()
         {
             
+            
             FilterLogsRequest filterLogsRequest = filterLogsRequestTestValue();
+            
 	        
             var response = instance.FilterLogs(filterLogsRequest);
             Assert.IsAssignableFrom<LogList>(response);
         }
-        
+
         /// <summary>
         /// Test GetACall
         /// </summary>
         [Fact]
-
         public void GetACallTest()
         {
             
+            
             string callId = callIdTestValue();
+            
 	        
             var response = instance.GetACall(callId);
             Assert.IsAssignableFrom<CallResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetAConference
         /// </summary>
         [Fact]
-
         public void GetAConferenceTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
             var response = instance.GetAConference(conferenceId);
             Assert.IsAssignableFrom<ConferenceResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetAMember
         /// </summary>
         [Fact]
-
         public void GetAMemberTest()
         {
             
+            
             string queueId = queueIdTestValue();
+            
 	        
+            
             string callId = callIdTestValue();
+            
 	        
             var response = instance.GetAMember(queueId, callId);
             Assert.IsAssignableFrom<QueueMember>(response);
         }
-        
+
         /// <summary>
         /// Test GetAParticipant
         /// </summary>
         [Fact]
-
         public void GetAParticipantTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
+            
             string callId = callIdTestValue();
+            
 	        
             var response = instance.GetAParticipant(conferenceId, callId);
             Assert.IsAssignableFrom<ConferenceParticipantResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetAQueue
         /// </summary>
         [Fact]
-
         public void GetAQueueTest()
         {
             
+            
             string queueId = queueIdTestValue();
+            
 	        
             var response = instance.GetAQueue(queueId);
             Assert.IsAssignableFrom<QueueResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetARecording
         /// </summary>
         [Fact]
-
         public void GetARecordingTest()
         {
             
+            
             string recordingId = recordingIdTestValue();
+            
 	        
             var response = instance.GetARecording(recordingId);
             Assert.IsAssignableFrom<RecordingResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetAnAccount
         /// </summary>
         [Fact]
-
         public void GetAnAccountTest()
         {
             
             var response = instance.GetAnAccount();
             Assert.IsAssignableFrom<AccountResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetAnApplication
         /// </summary>
         [Fact]
-
         public void GetAnApplicationTest()
         {
             
+            
             string applicationId = applicationIdTestValue();
+            
 	        
             var response = instance.GetAnApplication(applicationId);
             Assert.IsAssignableFrom<ApplicationResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetAnIncomingNumber
         /// </summary>
         [Fact]
-
         public void GetAnIncomingNumberTest()
         {
             
+            
             string phoneNumberId = phoneNumberIdTestValue();
+            
 	        
             var response = instance.GetAnIncomingNumber(phoneNumberId);
             Assert.IsAssignableFrom<IncomingNumberResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetAnSmsMessage
         /// </summary>
         [Fact]
-
         public void GetAnSmsMessageTest()
         {
             
+            
             string messageId = messageIdTestValue();
+            
 	        
             var response = instance.GetAnSmsMessage(messageId);
             Assert.IsAssignableFrom<MessageResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetHeadMember
         /// </summary>
         [Fact]
-
         public void GetHeadMemberTest()
         {
             
+            
             string queueId = queueIdTestValue();
+            
 	        
             var response = instance.GetHeadMember(queueId);
             Assert.IsAssignableFrom<QueueMember>(response);
         }
-        
+
         /// <summary>
         /// Test GetTenDLCSmsBrand
         /// </summary>
         [Fact]
-
         public void GetTenDLCSmsBrandTest()
         {
             
+            
             string brandId = brandIdTestValue();
+            
 	        
             var response = instance.GetTenDLCSmsBrand(brandId);
             Assert.IsAssignableFrom<SMSTenDLCBrand>(response);
         }
-        
+
         /// <summary>
         /// Test GetTenDLCSmsBrands
         /// </summary>
         [Fact]
-
         public void GetTenDLCSmsBrandsTest()
         {
             
             var response = instance.GetTenDLCSmsBrands();
             Assert.IsAssignableFrom<SMSTenDLCBrandsListResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetTenDLCSmsCampaign
         /// </summary>
         [Fact]
-
         public void GetTenDLCSmsCampaignTest()
         {
             
+            
             string campaignId = campaignIdTestValue();
+            
 	        
             var response = instance.GetTenDLCSmsCampaign(campaignId);
             Assert.IsAssignableFrom<SMSTenDLCCampaign>(response);
         }
-        
+
         /// <summary>
         /// Test GetTenDLCSmsCampaigns
         /// </summary>
         [Fact]
-
         public void GetTenDLCSmsCampaignsTest()
         {
             
-            string brandId = brandIdTestValue();
+            
+            string? brandId = brandIdTestValue();
+            
 	        
             var response = instance.GetTenDLCSmsCampaigns(brandId);
             Assert.IsAssignableFrom<SMSTenDLCCampaignsListResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetTenDLCSmsPartnerCampaign
         /// </summary>
         [Fact]
-
         public void GetTenDLCSmsPartnerCampaignTest()
         {
             
+            
             string campaignId = campaignIdTestValue();
+            
 	        
             var response = instance.GetTenDLCSmsPartnerCampaign(campaignId);
             Assert.IsAssignableFrom<SMSTenDLCPartnerCampaign>(response);
         }
-        
+
         /// <summary>
         /// Test GetTenDLCSmsPartnerCampaigns
         /// </summary>
         [Fact]
-
         public void GetTenDLCSmsPartnerCampaignsTest()
         {
             
-            string brandId = brandIdTestValue();
+            
+            string? brandId = brandIdTestValue();
+            
 	        
             var response = instance.GetTenDLCSmsPartnerCampaigns(brandId);
             Assert.IsAssignableFrom<SMSTenDLCPartnerCampaignsListResult>(response);
         }
-        
+
         /// <summary>
         /// Test GetTollFreeSmsCampaign
         /// </summary>
         [Fact]
-
         public void GetTollFreeSmsCampaignTest()
         {
             
+            
             string campaignId = campaignIdTestValue();
+            
 	        
             var response = instance.GetTollFreeSmsCampaign(campaignId);
             Assert.IsAssignableFrom<SMSTollFreeCampaign>(response);
         }
-        
+
         /// <summary>
         /// Test GetTollFreeSmsCampaigns
         /// </summary>
         [Fact]
-
         public void GetTollFreeSmsCampaignsTest()
         {
             
             var response = instance.GetTollFreeSmsCampaigns();
             Assert.IsAssignableFrom<SMSTollFreeCampaignsListResult>(response);
         }
-        
+
         /// <summary>
         /// Test ListActiveQueues
         /// </summary>
         [Fact]
-
         public void ListActiveQueuesTest()
         {
             
-            string alias = aliasTestValue();
+            
+            string? alias = aliasTestValue();
+            
 	        
             var response = instance.ListActiveQueues(alias);
             Assert.IsAssignableFrom<QueueList>(response);
         }
-        
+
         /// <summary>
         /// Test ListAllAccountLogs
         /// </summary>
         [Fact]
-
         public void ListAllAccountLogsTest()
         {
             
             var response = instance.ListAllAccountLogs();
             Assert.IsAssignableFrom<LogList>(response);
         }
-        
+
         /// <summary>
         /// Test ListApplications
         /// </summary>
         [Fact]
-
         public void ListApplicationsTest()
         {
             
-            string alias = aliasTestValue();
+            
+            string? alias = aliasTestValue();
+            
 	        
             var response = instance.ListApplications(alias);
             Assert.IsAssignableFrom<ApplicationList>(response);
         }
-        
+
         /// <summary>
         /// Test ListAvailableNumbers
         /// </summary>
         [Fact]
-
         public void ListAvailableNumbersTest()
         {
             
-            string phoneNumber = phoneNumberTestValue();
+            
+            string? phoneNumber = phoneNumberTestValue();
+            
 	        
-            string region = regionTestValue();
+            
+            string? region = regionTestValue();
+            
 	        
-            string country = countryTestValue();
+            
+            string? country = countryTestValue();
+            
 	        
+            
             bool? voiceEnabled = voiceEnabledTestValue();
+            
 	        
+            
             bool? smsEnabled = smsEnabledTestValue();
+            
 	        
+            
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+            
 	        
+            
             bool? capabilitiesSms = capabilitiesSmsTestValue();
+            
 	        
+            
             bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+            
 	        
+            
             bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+            
 	        
+            
             bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+            
 	        
             var response = instance.ListAvailableNumbers(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
             Assert.IsAssignableFrom<AvailableNumberList>(response);
         }
-        
+
         /// <summary>
         /// Test ListCallLogs
         /// </summary>
         [Fact]
-
         public void ListCallLogsTest()
         {
             
+            
             string callId = callIdTestValue();
+            
 	        
             var response = instance.ListCallLogs(callId);
             Assert.IsAssignableFrom<LogList>(response);
         }
-        
+
         /// <summary>
         /// Test ListCallRecordings
         /// </summary>
         [Fact]
-
         public void ListCallRecordingsTest()
         {
             
+            
             string callId = callIdTestValue();
+            
 	        
-            string dateCreated = dateCreatedTestValue();
+            
+            string? dateCreated = dateCreatedTestValue();
+            
 	        
             var response = instance.ListCallRecordings(callId, dateCreated);
             Assert.IsAssignableFrom<RecordingList>(response);
         }
-        
+
         /// <summary>
         /// Test ListCalls
         /// </summary>
         [Fact]
-
         public void ListCallsTest()
         {
             
+            
             bool? active = activeTestValue();
+            
 	        
-            string to = toTestValue();
+            
+            string? to = toTestValue();
+            
 	        
-            string from = fromTestValue();
+            
+            string? from = fromTestValue();
+            
 	        
             CallStatus? status = statusTestEnum();
+            
 	        
-            string startTime = startTimeTestValue();
+            
+            string? startTime = startTimeTestValue();
+            
 	        
-            string endTime = endTimeTestValue();
+            
+            string? endTime = endTimeTestValue();
+            
 	        
-            string parentCallId = parentCallIdTestValue();
+            
+            string? parentCallId = parentCallIdTestValue();
+            
 	        
-            List<string> applicationId = applicationIdTestArray();
+            
+            List<string>? applicationId = applicationIdTestArray();
+            
 	        
             var response = instance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId);
             Assert.IsAssignableFrom<CallList>(response);
         }
-        
+
         /// <summary>
         /// Test ListConferenceRecordings
         /// </summary>
         [Fact]
-
         public void ListConferenceRecordingsTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
-            string callId = callIdTestValue();
+            
+            string? callId = callIdTestValue();
+            
 	        
-            string dateCreated = dateCreatedTestValue();
+            
+            string? dateCreated = dateCreatedTestValue();
+            
 	        
             var response = instance.ListConferenceRecordings(conferenceId, callId, dateCreated);
             Assert.IsAssignableFrom<RecordingList>(response);
         }
-        
+
         /// <summary>
         /// Test ListConferences
         /// </summary>
         [Fact]
-
         public void ListConferencesTest()
         {
             
-            string status = statusTestValue();
+            
+            string? status = statusTestValue();
+            
 	        
-            string alias = aliasTestValue();
+            
+            string? alias = aliasTestValue();
+            
 	        
-            string dateCreated = dateCreatedTestValue();
+            
+            string? dateCreated = dateCreatedTestValue();
+            
 	        
-            string dateUpdated = dateUpdatedTestValue();
+            
+            string? dateUpdated = dateUpdatedTestValue();
+            
 	        
             var response = instance.ListConferences(status, alias, dateCreated, dateUpdated);
             Assert.IsAssignableFrom<ConferenceList>(response);
         }
-        
+
         /// <summary>
         /// Test ListIncomingNumbers
         /// </summary>
         [Fact]
-
         public void ListIncomingNumbersTest()
         {
             
-            string phoneNumber = phoneNumberTestValue();
+            
+            string? phoneNumber = phoneNumberTestValue();
+            
 	        
-            string alias = aliasTestValue();
+            
+            string? alias = aliasTestValue();
+            
 	        
-            string region = regionTestValue();
+            
+            string? region = regionTestValue();
+            
 	        
-            string country = countryTestValue();
+            
+            string? country = countryTestValue();
+            
 	        
-            string applicationId = applicationIdTestValue();
+            
+            string? applicationId = applicationIdTestValue();
+            
 	        
+            
             bool? hasApplication = hasApplicationTestValue();
+            
 	        
+            
             bool? voiceEnabled = voiceEnabledTestValue();
+            
 	        
+            
             bool? smsEnabled = smsEnabledTestValue();
+            
 	        
+            
             bool? hasCampaign = hasCampaignTestValue();
+            
 	        
+            
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+            
 	        
+            
             bool? capabilitiesSms = capabilitiesSmsTestValue();
+            
 	        
+            
             bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+            
 	        
+            
             bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+            
 	        
+            
             bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+            
 	        
-            string tfnCampaignId = tfnCampaignIdTestValue();
+            
+            string? tfnCampaignId = tfnCampaignIdTestValue();
+            
 	        
+            
             bool? offnet = offnetTestValue();
+            
 	        
             var response = instance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
             Assert.IsAssignableFrom<IncomingNumberList>(response);
         }
-        
+
         /// <summary>
         /// Test ListMembers
         /// </summary>
         [Fact]
-
         public void ListMembersTest()
         {
             
+            
             string queueId = queueIdTestValue();
+            
 	        
             var response = instance.ListMembers(queueId);
             Assert.IsAssignableFrom<QueueMemberList>(response);
         }
-        
+
         /// <summary>
         /// Test ListParticipants
         /// </summary>
         [Fact]
-
         public void ListParticipantsTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
+            
             bool? talk = talkTestValue();
+            
 	        
+            
             bool? listen = listenTestValue();
+            
 	        
-            var response = instance.ListParticipants(conferenceId, talk, listen);
+            
+            bool? dtmfPassThrough = dtmfPassThroughTestValue();
+            
+	        
+            var response = instance.ListParticipants(conferenceId, talk, listen, dtmfPassThrough);
             Assert.IsAssignableFrom<ConferenceParticipantList>(response);
         }
-        
+
         /// <summary>
         /// Test ListRecordings
         /// </summary>
         [Fact]
-
         public void ListRecordingsTest()
         {
             
-            string callId = callIdTestValue();
+            
+            string? callId = callIdTestValue();
+            
 	        
-            string conferenceId = conferenceIdTestValue();
+            
+            string? conferenceId = conferenceIdTestValue();
+            
 	        
-            string dateCreated = dateCreatedTestValue();
+            
+            string? dateCreated = dateCreatedTestValue();
+            
 	        
             var response = instance.ListRecordings(callId, conferenceId, dateCreated);
             Assert.IsAssignableFrom<RecordingList>(response);
         }
-        
+
         /// <summary>
         /// Test ListSmsMessages
         /// </summary>
         [Fact]
-
         public void ListSmsMessagesTest()
         {
             
-            string to = toTestValue();
+            
+            string? to = toTestValue();
+            
 	        
-            string from = fromTestValue();
+            
+            string? from = fromTestValue();
+            
 	        
-            string beginTime = beginTimeTestValue();
+            
+            string? beginTime = beginTimeTestValue();
+            
 	        
-            string endTime = endTimeTestValue();
+            
+            string? endTime = endTimeTestValue();
+            
 	        
             MessageDirection? direction = directionTestEnum();
+            
 	        
-            string campaignId = campaignIdTestValue();
+            
+            string? campaignId = campaignIdTestValue();
+            
 	        
-            string brandId = brandIdTestValue();
+            
+            string? brandId = brandIdTestValue();
+            
 	        
+            
             bool? is10DLC = is10DLCTestValue();
+            
 	        
             var response = instance.ListSmsMessages(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
             Assert.IsAssignableFrom<MessagesList>(response);
         }
-        
+
         /// <summary>
         /// Test MakeACall
         /// </summary>
         [Fact]
-
         public void MakeACallTest()
         {
             
-            MakeCallRequest makeCallRequest = makeCallRequestTestValue();
+            
+            MakeCallRequest? makeCallRequest = makeCallRequestTestValue();
+            
 	        
             var response = instance.MakeACall(makeCallRequest);
             Assert.IsAssignableFrom<CallResult>(response);
         }
-        
+
         /// <summary>
         /// Test MakeAWebrtcJwt
         /// </summary>
         [Fact]
-
         public void MakeAWebrtcJwtTest()
         {
             
+            
             CreateWebRTCToken createWebRTCToken = createWebRTCTokenTestValue();
+            
 	        
             var response = instance.MakeAWebrtcJwt(createWebRTCToken);
             Assert.IsAssignableFrom<string>(response);
         }
-        
+
         /// <summary>
         /// Test RemoveAParticipant
         /// </summary>
         [Fact]
-
         public void RemoveAParticipantTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
+            
             string callId = callIdTestValue();
+            
 	        
             instance.RemoveAParticipant(conferenceId, callId);
         }
-        
+
         /// <summary>
         /// Test SendAnSmsMessage
         /// </summary>
         [Fact]
-
         public void SendAnSmsMessageTest()
         {
             
+            
             MessageRequest messageRequest = messageRequestTestValue();
+            
 	        
             var response = instance.SendAnSmsMessage(messageRequest);
             Assert.IsAssignableFrom<MessageResult>(response);
         }
-        
+
         /// <summary>
         /// Test StreamARecordingFile
         /// </summary>
         [Fact]
-
         public void StreamARecordingFileTest()
         {
             
+            
             string recordingId = recordingIdTestValue();
+            
 	        
             var response = instance.StreamARecordingFile(recordingId);
             Assert.IsAssignableFrom<System.IO.Stream>(response);
         }
-        
+
         /// <summary>
         /// Test UpdateAConference
         /// </summary>
         [Fact]
-
         public void UpdateAConferenceTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
-            UpdateConferenceRequest updateConferenceRequest = updateConferenceRequestTestValue();
+            
+            UpdateConferenceRequest? updateConferenceRequest = updateConferenceRequestTestValue();
+            
 	        
             instance.UpdateAConference(conferenceId, updateConferenceRequest);
         }
-        
+
         /// <summary>
         /// Test UpdateALiveCall
         /// </summary>
         [Fact]
-
         public void UpdateALiveCallTest()
         {
             
+            
             string callId = callIdTestValue();
+            
 	        
+            
             UpdateCallRequest updateCallRequest = updateCallRequestTestValue();
+            
 	        
             instance.UpdateALiveCall(callId, updateCallRequest);
         }
-        
+
         /// <summary>
         /// Test UpdateAParticipant
         /// </summary>
         [Fact]
-
         public void UpdateAParticipantTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
+            
             string callId = callIdTestValue();
+            
 	        
-            UpdateConferenceParticipantRequest updateConferenceParticipantRequest = updateConferenceParticipantRequestTestValue();
+            
+            UpdateConferenceParticipantRequest? updateConferenceParticipantRequest = updateConferenceParticipantRequestTestValue();
+            
 	        
             var response = instance.UpdateAParticipant(conferenceId, callId, updateConferenceParticipantRequest);
             Assert.IsAssignableFrom<ConferenceParticipantResult>(response);
         }
-        
+
         /// <summary>
         /// Test UpdateAQueue
         /// </summary>
         [Fact]
-
         public void UpdateAQueueTest()
         {
             
+            
             string queueId = queueIdTestValue();
+            
 	        
-            QueueRequest queueRequest = queueRequestTestValue();
+            
+            QueueRequest? queueRequest = queueRequestTestValue();
+            
 	        
             var response = instance.UpdateAQueue(queueId, queueRequest);
             Assert.IsAssignableFrom<QueueResult>(response);
         }
-        
+
         /// <summary>
         /// Test UpdateAnAccount
         /// </summary>
         [Fact]
-
         public void UpdateAnAccountTest()
         {
             
-            AccountRequest accountRequest = accountRequestTestValue();
+            
+            AccountRequest? accountRequest = accountRequestTestValue();
+            
 	        
             instance.UpdateAnAccount(accountRequest);
         }
-        
+
         /// <summary>
         /// Test UpdateAnApplication
         /// </summary>
         [Fact]
-
         public void UpdateAnApplicationTest()
         {
             
+            
             string applicationId = applicationIdTestValue();
+            
 	        
-            ApplicationRequest applicationRequest = applicationRequestTestValue();
+            
+            ApplicationRequest? applicationRequest = applicationRequestTestValue();
+            
 	        
             var response = instance.UpdateAnApplication(applicationId, applicationRequest);
             Assert.IsAssignableFrom<ApplicationResult>(response);
         }
-        
+
         /// <summary>
         /// Test UpdateAnIncomingNumber
         /// </summary>
         [Fact]
-
         public void UpdateAnIncomingNumberTest()
         {
             
+            
             string phoneNumberId = phoneNumberIdTestValue();
+            
 	        
-            IncomingNumberRequest incomingNumberRequest = incomingNumberRequestTestValue();
+            
+            IncomingNumberRequest? incomingNumberRequest = incomingNumberRequestTestValue();
+            
 	        
             var response = instance.UpdateAnIncomingNumber(phoneNumberId, incomingNumberRequest);
             Assert.IsAssignableFrom<IncomingNumberResult>(response);
         }
-
         
         /// <summary>
         /// Test GetTenDLCSmsBrands
@@ -993,7 +1160,9 @@ namespace freeclimb.Test.Api
         public void GetTenDLCSmsCampaignsGetNextPageTest()
         {
             
-            string brandId = brandIdTestValue();
+            
+            string? brandId = brandIdTestValue();
+            
 	        
             var response = instance.GetTenDLCSmsCampaigns(brandId);
             //Assert.IsType<SMSTenDLCCampaignsListResult>(response);
@@ -1013,7 +1182,9 @@ namespace freeclimb.Test.Api
         public void GetTenDLCSmsPartnerCampaignsGetNextPageTest()
         {
             
-            string brandId = brandIdTestValue();
+            
+            string? brandId = brandIdTestValue();
+            
 	        
             var response = instance.GetTenDLCSmsPartnerCampaigns(brandId);
             //Assert.IsType<SMSTenDLCPartnerCampaignsListResult>(response);
@@ -1051,7 +1222,9 @@ namespace freeclimb.Test.Api
         public void ListActiveQueuesGetNextPageTest()
         {
             
-            string alias = aliasTestValue();
+            
+            string? alias = aliasTestValue();
+            
 	        
             var response = instance.ListActiveQueues(alias);
             //Assert.IsType<QueueList>(response);
@@ -1089,7 +1262,9 @@ namespace freeclimb.Test.Api
         public void ListApplicationsGetNextPageTest()
         {
             
-            string alias = aliasTestValue();
+            
+            string? alias = aliasTestValue();
+            
 	        
             var response = instance.ListApplications(alias);
             //Assert.IsType<ApplicationList>(response);
@@ -1109,25 +1284,45 @@ namespace freeclimb.Test.Api
         public void ListAvailableNumbersGetNextPageTest()
         {
             
-            string phoneNumber = phoneNumberTestValue();
+            
+            string? phoneNumber = phoneNumberTestValue();
+            
 	        
-            string region = regionTestValue();
+            
+            string? region = regionTestValue();
+            
 	        
-            string country = countryTestValue();
+            
+            string? country = countryTestValue();
+            
 	        
+            
             bool? voiceEnabled = voiceEnabledTestValue();
+            
 	        
+            
             bool? smsEnabled = smsEnabledTestValue();
+            
 	        
+            
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+            
 	        
+            
             bool? capabilitiesSms = capabilitiesSmsTestValue();
+            
 	        
+            
             bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+            
 	        
+            
             bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+            
 	        
+            
             bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+            
 	        
             var response = instance.ListAvailableNumbers(phoneNumber, region, country, voiceEnabled, smsEnabled, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode);
             //Assert.IsType<AvailableNumberList>(response);
@@ -1147,7 +1342,9 @@ namespace freeclimb.Test.Api
         public void ListCallLogsGetNextPageTest()
         {
             
+            
             string callId = callIdTestValue();
+            
 	        
             var response = instance.ListCallLogs(callId);
             //Assert.IsType<LogList>(response);
@@ -1167,9 +1364,13 @@ namespace freeclimb.Test.Api
         public void ListCallRecordingsGetNextPageTest()
         {
             
+            
             string callId = callIdTestValue();
+            
 	        
-            string dateCreated = dateCreatedTestValue();
+            
+            string? dateCreated = dateCreatedTestValue();
+            
 	        
             var response = instance.ListCallRecordings(callId, dateCreated);
             //Assert.IsType<RecordingList>(response);
@@ -1189,21 +1390,36 @@ namespace freeclimb.Test.Api
         public void ListCallsGetNextPageTest()
         {
             
+            
             bool? active = activeTestValue();
+            
 	        
-            string to = toTestValue();
+            
+            string? to = toTestValue();
+            
 	        
-            string from = fromTestValue();
+            
+            string? from = fromTestValue();
+            
 	        
             CallStatus? status = statusTestEnum();
+            
 	        
-            string startTime = startTimeTestValue();
+            
+            string? startTime = startTimeTestValue();
+            
 	        
-            string endTime = endTimeTestValue();
+            
+            string? endTime = endTimeTestValue();
+            
 	        
-            string parentCallId = parentCallIdTestValue();
+            
+            string? parentCallId = parentCallIdTestValue();
+            
 	        
-            List<string> applicationId = applicationIdTestArray();
+            
+            List<string>? applicationId = applicationIdTestArray();
+            
 	        
             var response = instance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId);
             //Assert.IsType<CallList>(response);
@@ -1223,11 +1439,17 @@ namespace freeclimb.Test.Api
         public void ListConferenceRecordingsGetNextPageTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
-            string callId = callIdTestValue();
+            
+            string? callId = callIdTestValue();
+            
 	        
-            string dateCreated = dateCreatedTestValue();
+            
+            string? dateCreated = dateCreatedTestValue();
+            
 	        
             var response = instance.ListConferenceRecordings(conferenceId, callId, dateCreated);
             //Assert.IsType<RecordingList>(response);
@@ -1247,13 +1469,21 @@ namespace freeclimb.Test.Api
         public void ListConferencesGetNextPageTest()
         {
             
-            string status = statusTestValue();
+            
+            string? status = statusTestValue();
+            
 	        
-            string alias = aliasTestValue();
+            
+            string? alias = aliasTestValue();
+            
 	        
-            string dateCreated = dateCreatedTestValue();
+            
+            string? dateCreated = dateCreatedTestValue();
+            
 	        
-            string dateUpdated = dateUpdatedTestValue();
+            
+            string? dateUpdated = dateUpdatedTestValue();
+            
 	        
             var response = instance.ListConferences(status, alias, dateCreated, dateUpdated);
             //Assert.IsType<ConferenceList>(response);
@@ -1273,37 +1503,69 @@ namespace freeclimb.Test.Api
         public void ListIncomingNumbersGetNextPageTest()
         {
             
-            string phoneNumber = phoneNumberTestValue();
+            
+            string? phoneNumber = phoneNumberTestValue();
+            
 	        
-            string alias = aliasTestValue();
+            
+            string? alias = aliasTestValue();
+            
 	        
-            string region = regionTestValue();
+            
+            string? region = regionTestValue();
+            
 	        
-            string country = countryTestValue();
+            
+            string? country = countryTestValue();
+            
 	        
-            string applicationId = applicationIdTestValue();
+            
+            string? applicationId = applicationIdTestValue();
+            
 	        
+            
             bool? hasApplication = hasApplicationTestValue();
+            
 	        
+            
             bool? voiceEnabled = voiceEnabledTestValue();
+            
 	        
+            
             bool? smsEnabled = smsEnabledTestValue();
+            
 	        
+            
             bool? hasCampaign = hasCampaignTestValue();
+            
 	        
+            
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
+            
 	        
+            
             bool? capabilitiesSms = capabilitiesSmsTestValue();
+            
 	        
+            
             bool? capabilitiesTollFree = capabilitiesTollFreeTestValue();
+            
 	        
+            
             bool? capabilitiesTenDLC = capabilitiesTenDLCTestValue();
+            
 	        
+            
             bool? capabilitiesShortCode = capabilitiesShortCodeTestValue();
+            
 	        
-            string tfnCampaignId = tfnCampaignIdTestValue();
+            
+            string? tfnCampaignId = tfnCampaignIdTestValue();
+            
 	        
+            
             bool? offnet = offnetTestValue();
+            
 	        
             var response = instance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
             //Assert.IsType<IncomingNumberList>(response);
@@ -1323,7 +1585,9 @@ namespace freeclimb.Test.Api
         public void ListMembersGetNextPageTest()
         {
             
+            
             string queueId = queueIdTestValue();
+            
 	        
             var response = instance.ListMembers(queueId);
             //Assert.IsType<QueueMemberList>(response);
@@ -1343,13 +1607,23 @@ namespace freeclimb.Test.Api
         public void ListParticipantsGetNextPageTest()
         {
             
+            
             string conferenceId = conferenceIdTestValue();
+            
 	        
+            
             bool? talk = talkTestValue();
+            
 	        
+            
             bool? listen = listenTestValue();
+            
 	        
-            var response = instance.ListParticipants(conferenceId, talk, listen);
+            
+            bool? dtmfPassThrough = dtmfPassThroughTestValue();
+            
+	        
+            var response = instance.ListParticipants(conferenceId, talk, listen, dtmfPassThrough);
             //Assert.IsType<ConferenceParticipantList>(response);
             Assert.IsAssignableFrom<ConferenceParticipantList>(response);
             response.NextPageUri = "/Accounts/{accountId}/Conferences/{conferenceId}/Participants?cursor=1";
@@ -1367,11 +1641,17 @@ namespace freeclimb.Test.Api
         public void ListRecordingsGetNextPageTest()
         {
             
-            string callId = callIdTestValue();
+            
+            string? callId = callIdTestValue();
+            
 	        
-            string conferenceId = conferenceIdTestValue();
+            
+            string? conferenceId = conferenceIdTestValue();
+            
 	        
-            string dateCreated = dateCreatedTestValue();
+            
+            string? dateCreated = dateCreatedTestValue();
+            
 	        
             var response = instance.ListRecordings(callId, conferenceId, dateCreated);
             //Assert.IsType<RecordingList>(response);
@@ -1391,21 +1671,36 @@ namespace freeclimb.Test.Api
         public void ListSmsMessagesGetNextPageTest()
         {
             
-            string to = toTestValue();
+            
+            string? to = toTestValue();
+            
 	        
-            string from = fromTestValue();
+            
+            string? from = fromTestValue();
+            
 	        
-            string beginTime = beginTimeTestValue();
+            
+            string? beginTime = beginTimeTestValue();
+            
 	        
-            string endTime = endTimeTestValue();
+            
+            string? endTime = endTimeTestValue();
+            
 	        
             MessageDirection? direction = directionTestEnum();
+            
 	        
-            string campaignId = campaignIdTestValue();
+            
+            string? campaignId = campaignIdTestValue();
+            
 	        
-            string brandId = brandIdTestValue();
+            
+            string? brandId = brandIdTestValue();
+            
 	        
+            
             bool? is10DLC = is10DLCTestValue();
+            
 	        
             var response = instance.ListSmsMessages(to, from, beginTime, endTime, direction, campaignId, brandId, is10DLC);
             //Assert.IsType<MessagesList>(response);
@@ -1416,7 +1711,7 @@ namespace freeclimb.Test.Api
             Assert.IsAssignableFrom<MessagesList>(nextPageResponse);
 
         }
-
+    
         private string accountIdTestValue()
         {
             return "AC0000000000000000000000000000000000000000";
@@ -1500,7 +1795,7 @@ namespace freeclimb.Test.Api
 
         private CreateConferenceRequest createConferenceRequestTestValue()
         {
-            PlayBeep enumPlayBeepStatus = Reflection.GetEnumByValue<PlayBeep>("always");
+            PlayBeep enumPlayBeepStatus = PlayBeepValueConverter.FromString("always");
             return new CreateConferenceRequest("TEST-CONF", enumPlayBeepStatus, true);
         }
 
@@ -1611,7 +1906,7 @@ namespace freeclimb.Test.Api
 
         private CallResult callResultTestValue()
         {
-            CallStatus enumCallStatus = Reflection.GetEnumByValue<CallStatus>("inProgress");
+            CallStatus enumCallStatus = CallStatusValueConverter.FromString("inProgress");
             return new CallResult("example.com", dateCreatedTestValue(), "Mon, 15 Jun 2020 20:45:32 GMT", 
                 1, callIdTestValue(), null, accountIdTestValue(), phoneNumberTestValue(), "+13124567890",
                 null, enumCallStatus, dateCreatedTestValue(), dateCreatedTestValue(), null);
@@ -1635,7 +1930,7 @@ namespace freeclimb.Test.Api
 
         private MessageResult messageResultTestValue()
         {
-            MessageStatus enumMessageStatus = Reflection.GetEnumByValue<MessageStatus>("sent");
+            MessageStatus enumMessageStatus = MessageStatusValueConverter.FromString("sent");
             return new MessageResult("example.com", dateCreatedTestValue(), null, 1, accountIdTestValue(), messageIdTestValue(), enumMessageStatus,
                 phoneNumberTestValue(), "+13121113456", "Test text message", "outbound");
         }
@@ -1692,7 +1987,7 @@ namespace freeclimb.Test.Api
         }
 
         private CallStatus statusTestEnum() {
-            return Reflection.GetEnumByValue<CallStatus>("completed");
+            return CallStatusValueConverter.FromString("completed");
         }
 
         private List<string> applicationIdTestArray()
@@ -1759,7 +2054,8 @@ namespace freeclimb.Test.Api
         private string directionTestValue() { return "outbound"; }
 
         private MessageDirection directionTestEnum() { 
-            return Reflection.GetEnumByValue<MessageDirection>("outbound");
+            MessageDirection messageDirection = MessageDirectionValueConverter.FromString("outbound");
+            return messageDirection;
         }
 
         private MessagesList messagesListTestValue()
@@ -1771,13 +2067,13 @@ namespace freeclimb.Test.Api
 
         private UpdateConferenceRequest updateConferenceRequestTestValue()
         {
-            PlayBeep enumPlayBeepStatus = Reflection.GetEnumByValue<PlayBeep>("always");
+            PlayBeep enumPlayBeepStatus = PlayBeepValueConverter.FromString("always");
             return new UpdateConferenceRequest("TEST-CONF", enumPlayBeepStatus);
         }
 
         private UpdateCallRequest updateCallRequestTestValue()
         {
-            UpdateCallRequestStatus enumCallRequestStatus = Reflection.GetEnumByValue<UpdateCallRequestStatus>("completed");
+            UpdateCallRequestStatus enumCallRequestStatus = UpdateCallRequestStatusValueConverter.FromString("completed");
             return new UpdateCallRequest(enumCallRequestStatus);
         }
 
@@ -1845,5 +2141,11 @@ namespace freeclimb.Test.Api
         private CompletionRequest completionRequestTestValue() {
             return new CompletionRequest("QUERY");
         }
+        
+        private bool dtmfPassThroughTestValue()
+        {
+            return true;
+        }
+
     }
 }

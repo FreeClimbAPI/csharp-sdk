@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
@@ -33,32 +34,7 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "GetSpeech")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class GetSpeech : PerclCommand, IEquatable<GetSpeech>, IValidatableObject
+    public partial class GetSpeech : PerclCommand, IValidatableObject
     {
 
         /// <summary>
@@ -88,45 +64,95 @@ namespace freeclimb.Model
         /// <param name="speechIncompleteTimeoutMs">Parameter &#x60;speechIncompleteTimeoutMs&#x60; specifies the length of silence following user speech after which a recognizer finalizes a result. This timeout applies when the speech prior to the silence is an incomplete match of all active grammars. Timeout &#x60;speechIncompleteTimeoutMs&#x60; is usually longer than &#x60;speechCompleteTimeoutMs&#x60; to allow users to pause mid-utterance..</param>
         /// <param name="privacyMode">Parameter privacyMode will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;GetSpeech&quot;).</param>
-        public GetSpeech(string actionUrl = default(string), GrammarType? grammarType = default(GrammarType?), string grammarFile = default(string), string grammarRule = default(string), bool playBeep = default(bool), List<PerclCommand> prompts = default(List<PerclCommand>), int noInputTimeoutMs = default(int), int recognitionTimeoutMs = default(int), decimal confidenceThreshold = default(decimal), decimal sensitivityLevel = default(decimal), int speechCompleteTimeoutMs = default(int), int speechIncompleteTimeoutMs = default(int), bool privacyMode = default(bool), string command = "GetSpeech") : base(command)
+        public GetSpeech(string actionUrl = default(string), GrammarType? grammarType = default(GrammarType?), string grammarFile = default(string), string grammarRule = default(string), bool playBeep = default(bool), List<PerclCommand> prompts = default(List<PerclCommand>), int noInputTimeoutMs = default(int), int recognitionTimeoutMs = default(int), decimal confidenceThreshold = default(decimal), decimal sensitivityLevel = default(decimal), int speechCompleteTimeoutMs = default(int), int speechIncompleteTimeoutMs = default(int), bool privacyMode = default(bool), string command = @"GetSpeech") : base(command)
         {
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null) {
+            if (actionUrl == null)
+            {
                 throw new ArgumentNullException("actionUrl is a required property for GetSpeech and cannot be null");
             }
             this.ActionUrl = actionUrl;
+                        
+
+
             // to ensure "grammarFile" is required (not null)
-            if (grammarFile == null) {
+            if (grammarFile == null)
+            {
                 throw new ArgumentNullException("grammarFile is a required property for GetSpeech and cannot be null");
             }
             this.GrammarFile = grammarFile;
-            this.GrammarType = grammarType;
-            this.GrammarRule = grammarRule;
-            this.PlayBeep = playBeep;
-            this.Prompts = prompts;
-            this.NoInputTimeoutMs = noInputTimeoutMs;
-            this.RecognitionTimeoutMs = recognitionTimeoutMs;
-            this.ConfidenceThreshold = confidenceThreshold;
-            this.SensitivityLevel = sensitivityLevel;
-            this.SpeechCompleteTimeoutMs = speechCompleteTimeoutMs;
-            this.SpeechIncompleteTimeoutMs = speechIncompleteTimeoutMs;
-            this.PrivacyMode = privacyMode;
-        }
+                        
 
+
+
+
+
+
+
+
+
+
+
+
+            this.GrammarType = grammarType;
+                        
+
+
+            this.GrammarRule = grammarRule;
+                        
+
+            this.PlayBeep = playBeep;
+                        
+
+            this.Prompts = prompts;
+                        
+
+            this.NoInputTimeoutMs = noInputTimeoutMs;
+                        
+
+            this.RecognitionTimeoutMs = recognitionTimeoutMs;
+                        
+
+            this.ConfidenceThreshold = confidenceThreshold;
+                        
+
+            this.SensitivityLevel = sensitivityLevel;
+                        
+
+            this.SpeechCompleteTimeoutMs = speechCompleteTimeoutMs;
+                        
+
+            this.SpeechIncompleteTimeoutMs = speechIncompleteTimeoutMs;
+                        
+
+            this.PrivacyMode = privacyMode;
+                        
+
+        }
+        
         /// <summary>
         /// When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call.
         /// </summary>
         /// <value>When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call.</value>
-        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
+
+        
+        
+
+        
+        
         /// <summary>
         /// The grammar file to use for speech recognition. If grammarType is set to URL, this attribute is specified as a download URL.
         /// </summary>
         /// <value>The grammar file to use for speech recognition. If grammarType is set to URL, this attribute is specified as a download URL.</value>
-        [DataMember(Name = "grammarFile", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "grammarFile", IsRequired = true, EmitDefaultValue = true)]
         public string GrammarFile { get; set; }
 
+
+        
+        
         /// <summary>
         /// The grammar rule within the specified grammar file to use for speech recognition. This attribute is optional if &#x60;grammarType&#x60; is &#x60;URL&#x60; and ignored if &#x60;grammarType&#x60; is &#x60;BUILTIN&#x60;.
         /// </summary>
@@ -134,6 +160,9 @@ namespace freeclimb.Model
         [DataMember(Name = "grammarRule", EmitDefaultValue = false)]
         public string GrammarRule { get; set; }
 
+
+        
+        
         /// <summary>
         /// Indicates whether a beep should be played just before speech recognition is initiated so that the speaker can start to speak.
         /// </summary>
@@ -141,6 +170,9 @@ namespace freeclimb.Model
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public bool PlayBeep { get; set; }
 
+
+        
+        
         /// <summary>
         /// The JSON array of PerCL commands to nest within the &#x60;GetSpeech&#x60; command. The &#x60;Say&#x60;, &#x60;Play&#x60;, and &#x60;Pause&#x60; commands can be used. The nested actions are executed while FreeClimb is waiting for input from the caller. This allows for playing menu options to the caller and to prompt for the expected input. These commands stop executing when the caller begins to input speech.
         /// </summary>
@@ -148,6 +180,9 @@ namespace freeclimb.Model
         [DataMember(Name = "prompts", EmitDefaultValue = false)]
         public List<PerclCommand> Prompts { get; set; }
 
+
+        
+        
         /// <summary>
         /// When recognition is started and there is no speech detected for &#x60;noInputTimeoutMs&#x60; milliseconds, the recognizer will terminate the recognition operation.
         /// </summary>
@@ -155,6 +190,9 @@ namespace freeclimb.Model
         [DataMember(Name = "noInputTimeoutMs", EmitDefaultValue = false)]
         public int NoInputTimeoutMs { get; set; }
 
+
+        
+        
         /// <summary>
         /// When playback of prompts ends and there is no match for &#x60;recognitionTimeoutMs&#x60; milliseconds, the recognizer will terminate the recognition operation.
         /// </summary>
@@ -162,6 +200,9 @@ namespace freeclimb.Model
         [DataMember(Name = "recognitionTimeoutMs", EmitDefaultValue = false)]
         public int RecognitionTimeoutMs { get; set; }
 
+
+        
+        
         /// <summary>
         /// When a recognition resource recognizes a spoken phrase, it associates a confidence level with that match. Parameter &#x60;confidenceThreshold&#x60; specifies what confidence level is considered a successful match. Values are between 0.0 and 1.0.
         /// </summary>
@@ -169,6 +210,9 @@ namespace freeclimb.Model
         [DataMember(Name = "confidenceThreshold", EmitDefaultValue = false)]
         public decimal ConfidenceThreshold { get; set; }
 
+
+        
+        
         /// <summary>
         /// The speech recognizer supports a variable level of sound sensitivity. The sensitivityLevel attribute allows for filtering out background noise, so it is not mistaken for speech. Values are between 0.0 and 1.0 
         /// </summary>
@@ -176,6 +220,9 @@ namespace freeclimb.Model
         [DataMember(Name = "sensitivityLevel", EmitDefaultValue = false)]
         public decimal SensitivityLevel { get; set; }
 
+
+        
+        
         /// <summary>
         /// Parameter &#x60;speechCompleteTimeoutMs&#x60; specifies the length of silence required following user speech before the speech recognizer finalizes a result. This timeout applies when the recognizer currently has a complete match against an active grammar. Reasonable speech complete timeout values are typically in the range of 0.3 seconds to 1.0 seconds.
         /// </summary>
@@ -183,6 +230,9 @@ namespace freeclimb.Model
         [DataMember(Name = "speechCompleteTimeoutMs", EmitDefaultValue = false)]
         public int SpeechCompleteTimeoutMs { get; set; }
 
+
+        
+        
         /// <summary>
         /// Parameter &#x60;speechIncompleteTimeoutMs&#x60; specifies the length of silence following user speech after which a recognizer finalizes a result. This timeout applies when the speech prior to the silence is an incomplete match of all active grammars. Timeout &#x60;speechIncompleteTimeoutMs&#x60; is usually longer than &#x60;speechCompleteTimeoutMs&#x60; to allow users to pause mid-utterance.
         /// </summary>
@@ -190,6 +240,9 @@ namespace freeclimb.Model
         [DataMember(Name = "speechIncompleteTimeoutMs", EmitDefaultValue = false)]
         public int SpeechIncompleteTimeoutMs { get; set; }
 
+
+        
+        
         /// <summary>
         /// Parameter privacyMode will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
@@ -197,6 +250,8 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -238,6 +293,7 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
+
         /// <summary>
         /// Retrieve the KVP Dictionary for the GetSpeech instance. 
         /// </summary>
@@ -267,132 +323,13 @@ namespace freeclimb.Model
             command.Add("GetSpeech",props);
             return command;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GetSpeech);
-        }
-
-        /// <summary>
-        /// Returns true if GetSpeech instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GetSpeech to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GetSpeech input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.ActionUrl == input.ActionUrl ||
-                    (this.ActionUrl != null &&
-                    this.ActionUrl.Equals(input.ActionUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.GrammarType == input.GrammarType ||
-                    this.GrammarType.Equals(input.GrammarType)
-                ) && base.Equals(input) && 
-                (
-                    this.GrammarFile == input.GrammarFile ||
-                    (this.GrammarFile != null &&
-                    this.GrammarFile.Equals(input.GrammarFile))
-                ) && base.Equals(input) && 
-                (
-                    this.GrammarRule == input.GrammarRule ||
-                    (this.GrammarRule != null &&
-                    this.GrammarRule.Equals(input.GrammarRule))
-                ) && base.Equals(input) && 
-                (
-                    this.PlayBeep == input.PlayBeep ||
-                    this.PlayBeep.Equals(input.PlayBeep)
-                ) && base.Equals(input) && 
-                (
-                    this.Prompts == input.Prompts ||
-                    this.Prompts != null &&
-                    input.Prompts != null &&
-                    this.Prompts.SequenceEqual(input.Prompts)
-                ) && base.Equals(input) && 
-                (
-                    this.NoInputTimeoutMs == input.NoInputTimeoutMs ||
-                    this.NoInputTimeoutMs.Equals(input.NoInputTimeoutMs)
-                ) && base.Equals(input) && 
-                (
-                    this.RecognitionTimeoutMs == input.RecognitionTimeoutMs ||
-                    this.RecognitionTimeoutMs.Equals(input.RecognitionTimeoutMs)
-                ) && base.Equals(input) && 
-                (
-                    this.ConfidenceThreshold == input.ConfidenceThreshold ||
-                    this.ConfidenceThreshold.Equals(input.ConfidenceThreshold)
-                ) && base.Equals(input) && 
-                (
-                    this.SensitivityLevel == input.SensitivityLevel ||
-                    this.SensitivityLevel.Equals(input.SensitivityLevel)
-                ) && base.Equals(input) && 
-                (
-                    this.SpeechCompleteTimeoutMs == input.SpeechCompleteTimeoutMs ||
-                    this.SpeechCompleteTimeoutMs.Equals(input.SpeechCompleteTimeoutMs)
-                ) && base.Equals(input) && 
-                (
-                    this.SpeechIncompleteTimeoutMs == input.SpeechIncompleteTimeoutMs ||
-                    this.SpeechIncompleteTimeoutMs.Equals(input.SpeechIncompleteTimeoutMs)
-                ) && base.Equals(input) && 
-                (
-                    this.PrivacyMode == input.PrivacyMode ||
-                    this.PrivacyMode.Equals(input.PrivacyMode)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                if (this.ActionUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.GrammarType.GetHashCode();
-                if (this.GrammarFile != null)
-                {
-                    hashCode = (hashCode * 59) + this.GrammarFile.GetHashCode();
-                }
-                if (this.GrammarRule != null)
-                {
-                    hashCode = (hashCode * 59) + this.GrammarRule.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
-                if (this.Prompts != null)
-                {
-                    hashCode = (hashCode * 59) + this.Prompts.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.NoInputTimeoutMs.GetHashCode();
-                hashCode = (hashCode * 59) + this.RecognitionTimeoutMs.GetHashCode();
-                hashCode = (hashCode * 59) + this.ConfidenceThreshold.GetHashCode();
-                hashCode = (hashCode * 59) + this.SensitivityLevel.GetHashCode();
-                hashCode = (hashCode * 59) + this.SpeechCompleteTimeoutMs.GetHashCode();
-                hashCode = (hashCode * 59) + this.SpeechIncompleteTimeoutMs.GetHashCode();
-                hashCode = (hashCode * 59) + this.PrivacyMode.GetHashCode();
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -402,9 +339,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }

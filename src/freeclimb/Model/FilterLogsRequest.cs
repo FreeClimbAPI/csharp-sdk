@@ -25,13 +25,14 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
     /// FilterLogsRequest
     /// </summary>
     [DataContract(Name = "FilterLogsRequest")]
-    public partial class FilterLogsRequest : IEquatable<FilterLogsRequest>, IValidatableObject
+    public partial class FilterLogsRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FilterLogsRequest" /> class.
@@ -45,19 +46,25 @@ namespace freeclimb.Model
         public FilterLogsRequest(string pql = default(string))
         {
             // to ensure "pql" is required (not null)
-            if (pql == null) {
+            if (pql == null)
+            {
                 throw new ArgumentNullException("pql is a required property for FilterLogsRequest and cannot be null");
             }
             this.Pql = pql;
-        }
+                        
 
+
+        }
+        
         /// <summary>
         /// The filter query for retrieving logs. See **Performance Query Language** below.
         /// </summary>
         /// <value>The filter query for retrieving logs. See **Performance Query Language** below.</value>
-        [DataMember(Name = "pql", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "pql", IsRequired = true, EmitDefaultValue = true)]
         public string Pql { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -71,6 +78,7 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -79,6 +87,7 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
+
 
         /// <summary>
         /// Retrieve the KVP Dictionary for the FilterLogsRequest instance. 
@@ -90,59 +99,13 @@ namespace freeclimb.Model
             props.Add("pql", Pql);          
             return props;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as FilterLogsRequest);
-        }
-
-        /// <summary>
-        /// Returns true if FilterLogsRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of FilterLogsRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(FilterLogsRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Pql == input.Pql ||
-                    (this.Pql != null &&
-                    this.Pql.Equals(input.Pql))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Pql != null)
-                {
-                    hashCode = (hashCode * 59) + this.Pql.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

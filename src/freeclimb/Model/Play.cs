@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Model
 {
     /// <summary>
@@ -33,32 +34,7 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "Play")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class Play : PerclCommand, IEquatable<Play>, IValidatableObject
+    public partial class Play : PerclCommand, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Play" /> class.
@@ -72,24 +48,37 @@ namespace freeclimb.Model
         /// <param name="loop">Number of times the audio file is played. Specifying &#39;0&#39; causes the Play action to loop until the Call is hung up..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Play&quot;).</param>
-        public Play(string file = default(string), int loop = default(int), bool privacyMode = default(bool), string command = "Play") : base(command)
+        public Play(string file = default(string), int loop = default(int), bool privacyMode = default(bool), string command = @"Play") : base(command)
         {
             // to ensure "file" is required (not null)
-            if (file == null) {
+            if (file == null)
+            {
                 throw new ArgumentNullException("file is a required property for Play and cannot be null");
             }
             this.File = file;
-            this.Loop = loop;
-            this.PrivacyMode = privacyMode;
-        }
+                        
 
+
+
+
+            this.Loop = loop;
+                        
+
+            this.PrivacyMode = privacyMode;
+                        
+
+        }
+        
         /// <summary>
         /// RL of the audio file to be played to the caller. The URL can be the &#x60;recordingUrl&#x60; generated from the &#x60;RecordUtterance&#x60; or &#x60;StartRecordCall&#x60; PerCL commands. 
         /// </summary>
         /// <value>RL of the audio file to be played to the caller. The URL can be the &#x60;recordingUrl&#x60; generated from the &#x60;RecordUtterance&#x60; or &#x60;StartRecordCall&#x60; PerCL commands. </value>
-        [DataMember(Name = "file", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "file", IsRequired = true, EmitDefaultValue = true)]
         public string File { get; set; }
 
+
+        
+        
         /// <summary>
         /// Number of times the audio file is played. Specifying &#39;0&#39; causes the Play action to loop until the Call is hung up.
         /// </summary>
@@ -97,6 +86,9 @@ namespace freeclimb.Model
         [DataMember(Name = "loop", EmitDefaultValue = false)]
         public int Loop { get; set; }
 
+
+        
+        
         /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
@@ -104,6 +96,8 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
+
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -135,6 +129,7 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
+
         /// <summary>
         /// Retrieve the KVP Dictionary for the Play instance. 
         /// </summary>
@@ -149,69 +144,13 @@ namespace freeclimb.Model
             command.Add("Play",props);
             return command;
         }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Play);
-        }
-
-        /// <summary>
-        /// Returns true if Play instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Play to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Play input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.File == input.File ||
-                    (this.File != null &&
-                    this.File.Equals(input.File))
-                ) && base.Equals(input) && 
-                (
-                    this.Loop == input.Loop ||
-                    this.Loop.Equals(input.Loop)
-                ) && base.Equals(input) && 
-                (
-                    this.PrivacyMode == input.PrivacyMode ||
-                    this.PrivacyMode.Equals(input.PrivacyMode)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                if (this.File != null)
-                {
-                    hashCode = (hashCode * 59) + this.File.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Loop.GetHashCode();
-                hashCode = (hashCode * 59) + this.PrivacyMode.GetHashCode();
-                return hashCode;
-            }
-        }
 
         /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -221,9 +160,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }

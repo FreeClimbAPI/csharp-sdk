@@ -25,6 +25,7 @@ using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 using freeclimb.Enums;
 
+
 namespace freeclimb.Enums
 {
     /// <summary>
@@ -68,7 +69,67 @@ namespace freeclimb.Enums
         /// </summary>
         [EnumMember(Value = "recognition")]
         RECOGNITION = 6
+    }
+    /// <summary>
+    /// Converts <see cref="GetSpeechReason"/> to and from the JSON value
+    /// </summary>
+    public static class GetSpeechReasonValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="GetSpeechReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GetSpeechReason FromString(string value)
+        {
+            if (value.Equals("error"))
+                return GetSpeechReason.ERROR;
 
+            if (value.Equals("hangup"))
+                return GetSpeechReason.HANGUP;
+
+            if (value.Equals("digit"))
+                return GetSpeechReason.DIGIT;
+
+            if (value.Equals("noInput"))
+                return GetSpeechReason.NO_INPUT;
+
+            if (value.Equals("noMatch"))
+                return GetSpeechReason.NO_MATCH;
+
+            if (value.Equals("recognition"))
+                return GetSpeechReason.RECOGNITION;
+
+            throw new NotImplementedException($"Could not convert value to type GetSpeechReason: '{value}'");
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="GetSpeechReason"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GetSpeechReason? FromStringOrDefault(string value)
+        {
+            if (value.Equals("error"))
+                return GetSpeechReason.ERROR;
+
+            if (value.Equals("hangup"))
+                return GetSpeechReason.HANGUP;
+
+            if (value.Equals("digit"))
+                return GetSpeechReason.DIGIT;
+
+            if (value.Equals("noInput"))
+                return GetSpeechReason.NO_INPUT;
+
+            if (value.Equals("noMatch"))
+                return GetSpeechReason.NO_MATCH;
+
+            if (value.Equals("recognition"))
+                return GetSpeechReason.RECOGNITION;
+
+            return null;
+        }
     }
 
 }
