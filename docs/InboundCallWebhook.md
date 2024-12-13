@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Direction** | **CallDirection** |  | [optional] 
 **ConferenceId** | **string** | This is only populated if request pertains to a Conference. Otherwise, it is set to null. | [optional] 
 **QueueId** | **string** | This is only populated if the request pertains to a Queue. Otherwise, it is set to null. | [optional] 
-**ParentCallId** | **Object** |  | [optional] 
+**ParentCallId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

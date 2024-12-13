@@ -2688,6 +2688,15 @@ components:
         varname: IN_PROGRESS
       - enum: terminated
         varname: TERMINATED
+      x-php-enum-mapping:
+      - enum: empty
+        varname: EMPTY
+      - enum: populated
+        varname: POPULATED
+      - enum: inProgress
+        varname: IN_PROGRESS
+      - enum: terminated
+        varname: TERMINATED
       x-enum: true
     GetSpeechReason:
       enum:
@@ -2957,6 +2966,29 @@ components:
       - EXPIRED
       - DELETED
       - UNKNOWN
+      x-php-enum-mapping:
+      - enum: new
+        varname: NEW
+      - enum: queued
+        varname: QUEUED
+      - enum: rejected
+        varname: REJECTED
+      - enum: sending
+        varname: SENDING
+      - enum: sent
+        varname: SENT
+      - enum: failed
+        varname: FAILED
+      - enum: received
+        varname: RECEIVED
+      - enum: undelivered
+        varname: UNDELIVERED
+      - enum: expired
+        varname: EXPIRED
+      - enum: deleted
+        varname: DELETED
+      - enum: unknown
+        varname: UNKNOWN
       x-enum: true
     PlayBeep:
       description: "Indicates whether to play a beep when a Participant enters or\
@@ -3202,6 +3234,11 @@ components:
       x-enum-varnames:
       - EMPTY
       - TERMINATED
+      x-php-enum-mapping:
+      - enum: empty
+        varname: EMPTY
+      - enum: terminated
+        varname: TERMINATED
       x-enum: true
     SMSTollFreeCampaignRegistrationStatus:
       description: "Current toll-free campaign registration status.Possible values:\
@@ -4018,6 +4055,7 @@ components:
             type: string
           parentCallId:
             nullable: true
+            type: string
         type: object
       description: An inbound Call to a number registered on FreeClimb will trigger
         a request to the voiceUrl of the application the number is assigned to. FreeClimb

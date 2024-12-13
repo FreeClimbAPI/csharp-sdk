@@ -62,7 +62,7 @@ namespace freeclimb.Model
         /// <param name="conferenceId">This is only populated if request pertains to a Conference. Otherwise, it is set to null..</param>
         /// <param name="queueId">This is only populated if the request pertains to a Queue. Otherwise, it is set to null..</param>
         /// <param name="parentCallId">parentCallId.</param>
-        public InboundCallWebhook(string requestType = @"InboundCallWebhook", string callId = default(string), string accountId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), Object parentCallId = default(Object)) : base()
+        public InboundCallWebhook(string requestType = @"InboundCallWebhook", string callId = default(string), string accountId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), string parentCallId = default(string)) : base()
         {
 
 
@@ -199,7 +199,7 @@ namespace freeclimb.Model
         /// Gets or Sets ParentCallId
         /// </summary>
         [DataMember(Name = "parentCallId", EmitDefaultValue = true)]
-        public Object ParentCallId { get; set; }
+        public string ParentCallId { get; set; }
 
 
         

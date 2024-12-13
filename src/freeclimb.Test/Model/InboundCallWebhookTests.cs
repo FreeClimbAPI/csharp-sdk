@@ -60,7 +60,7 @@ namespace freeclimb.Test.Model
                 
                 queueId: (string)getTestValue(typeof(string)),
                 
-                parentCallId: (Object)getTestValue(typeof(Object))
+                parentCallId: (string)getTestValue(typeof(string))
                 
             );
         }
@@ -211,6 +211,8 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ParentCallIdTest()
         {
+            instance.ParentCallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ParentCallId);
             
         }
         [Fact]
