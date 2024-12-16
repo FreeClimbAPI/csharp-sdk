@@ -45,8 +45,9 @@ namespace freeclimb.Model
         /// <param name="callId">ID of the Call associated with this Participant..</param>
         /// <param name="talk">True if this Participant has talk privileges in the Conference. False otherwise..</param>
         /// <param name="listen">True if this Participant has listen privileges in the Conference. False otherwise..</param>
+        /// <param name="dtmfPassThrough">True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise..</param>
         /// <param name="startConfOnEnter">True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise..</param>
-        public ConferenceParticipantResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string conferenceId = default(string), string callId = default(string), bool? talk = default(bool?), bool? listen = default(bool?), bool? startConfOnEnter = default(bool?))
+        public ConferenceParticipantResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string conferenceId = default(string), string callId = default(string), bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), bool? startConfOnEnter = default(bool?))
         {
             this.Uri = uri;
             this.DateCreated = dateCreated;
@@ -57,6 +58,7 @@ namespace freeclimb.Model
             this.CallId = callId;
             this.Talk = talk;
             this.Listen = listen;
+            this.DtmfPassThrough = dtmfPassThrough;
             this.StartConfOnEnter = startConfOnEnter;
         }
 
@@ -124,6 +126,13 @@ namespace freeclimb.Model
         public bool? Listen { get; set; }
 
         /// <summary>
+        /// True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise.
+        /// </summary>
+        /// <value>True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise.</value>
+        [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
+        public bool? DtmfPassThrough { get; set; }
+
+        /// <summary>
         /// True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise.
         /// </summary>
         /// <value>True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise.</value>
@@ -147,6 +156,7 @@ namespace freeclimb.Model
             sb.Append("  CallId: ").Append(CallId).Append("\n");
             sb.Append("  Talk: ").Append(Talk).Append("\n");
             sb.Append("  Listen: ").Append(Listen).Append("\n");
+            sb.Append("  DtmfPassThrough: ").Append(DtmfPassThrough).Append("\n");
             sb.Append("  StartConfOnEnter: ").Append(StartConfOnEnter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -177,6 +187,7 @@ namespace freeclimb.Model
             props.Add("callId", CallId);          
             props.Add("talk", Talk);          
             props.Add("listen", Listen);          
+            props.Add("dtmfPassThrough", DtmfPassThrough);          
             props.Add("startConfOnEnter", StartConfOnEnter);          
             return props;
         }
@@ -248,6 +259,11 @@ namespace freeclimb.Model
                     this.Listen.Equals(input.Listen))
                 ) && 
                 (
+                    this.DtmfPassThrough == input.DtmfPassThrough ||
+                    (this.DtmfPassThrough != null &&
+                    this.DtmfPassThrough.Equals(input.DtmfPassThrough))
+                ) && 
+                (
                     this.StartConfOnEnter == input.StartConfOnEnter ||
                     (this.StartConfOnEnter != null &&
                     this.StartConfOnEnter.Equals(input.StartConfOnEnter))
@@ -295,6 +311,10 @@ namespace freeclimb.Model
                 if (this.Listen != null)
                 {
                     hashCode = (hashCode * 59) + this.Listen.GetHashCode();
+                }
+                if (this.DtmfPassThrough != null)
+                {
+                    hashCode = (hashCode * 59) + this.DtmfPassThrough.GetHashCode();
                 }
                 if (this.StartConfOnEnter != null)
                 {

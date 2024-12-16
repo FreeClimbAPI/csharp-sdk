@@ -81,6 +81,14 @@ namespace freeclimb.Test.Model
             Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new RemoveFromConference().ToJson()));
         }
         /// <summary>
+        /// Test deserialize a SetDTMFPassThrough from type PerclCommand
+        /// </summary>
+        [Fact]
+        public void SetDTMFPassThroughDeserializeFromPerclCommandTest()
+        {
+            Assert.IsType<PerclCommand>(JsonConvert.DeserializeObject<PerclCommand>(new SetDTMFPassThrough(false).ToJson()));
+        }
+        /// <summary>
         /// Test deserialize a TerminateConference from type PerclCommand
         /// </summary>
         [Fact]

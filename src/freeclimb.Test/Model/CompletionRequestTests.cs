@@ -178,6 +178,5 @@ namespace freeclimb.Test.Model
 
         Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }
-
     }
 }

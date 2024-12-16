@@ -135,7 +135,7 @@ namespace freeclimb.Model
         /// an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.
         /// </summary>
         /// <value>an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.</value>
-        [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
+        [DataMember(Name = "mediaUrls", EmitDefaultValue = true)]
         public List<string> MediaUrls { get; set; }
 
         /// <summary>

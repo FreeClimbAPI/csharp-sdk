@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **Direction** | **CallDirection** |  | [optional] 
 **AnsweredBy** | **AnsweredBy** |  | [optional] 
 **SubresourceUris** | **Object** | The list of subresources for this Call. These include things like logs and recordings associated with the Call. | [optional] 
+**ApplicationId** | **string** | ApplicationId associated with the Call. | [optional] 
 
 [[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
 [[Back to Enum list]](../README.md#documentation-for-enums)<br /> 

@@ -866,8 +866,9 @@ namespace freeclimb.Api
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
         /// <param name="talk">Only show Participants with the talk privilege. (optional)</param>
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
+        /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
         /// <returns>ConferenceParticipantList</returns>
-        ConferenceParticipantList ListParticipants(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?));
+        ConferenceParticipantList ListParticipants(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?));
 
         /// <summary>
         /// List Participants
@@ -879,8 +880,9 @@ namespace freeclimb.Api
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
         /// <param name="talk">Only show Participants with the talk privilege. (optional)</param>
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
+        /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
         /// <returns>ApiResponse of ConferenceParticipantList</returns>
-        ApiResponse<ConferenceParticipantList> ListParticipantsWithHttpInfo(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?));
+        ApiResponse<ConferenceParticipantList> ListParticipantsWithHttpInfo(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?));
         /// <summary>
         /// List Recordings
         /// </summary>
@@ -2472,9 +2474,11 @@ namespace freeclimb.Api
         
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
         
+        /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
+        
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceParticipantList</returns>
-        System.Threading.Tasks.Task<ConferenceParticipantList> ListParticipantsAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConferenceParticipantList> ListParticipantsAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Participants
@@ -2490,9 +2494,11 @@ namespace freeclimb.Api
         
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
         
+        /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
+        
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConferenceParticipantList>> ListParticipantsWithHttpInfoAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConferenceParticipantList>> ListParticipantsWithHttpInfoAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Recordings
         /// </summary>
@@ -10115,10 +10121,11 @@ namespace freeclimb.Api
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
         /// <param name="talk">Only show Participants with the talk privilege. (optional)</param>
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
+        /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
         /// <returns>ConferenceParticipantList</returns>
-        public ConferenceParticipantList ListParticipants(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?))
+        public ConferenceParticipantList ListParticipants(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?))
         {
-            freeclimb.Client.ApiResponse<ConferenceParticipantList> localVarResponse = ListParticipantsWithHttpInfo(conferenceId , talk , listen );
+            freeclimb.Client.ApiResponse<ConferenceParticipantList> localVarResponse = ListParticipantsWithHttpInfo(conferenceId , talk , listen , dtmfPassThrough );
             return localVarResponse.Data;
         }
 
@@ -10129,8 +10136,9 @@ namespace freeclimb.Api
         /// <param name="conferenceId">ID of the conference this participant is in.</param>
         /// <param name="talk">Only show Participants with the talk privilege. (optional)</param>
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
+        /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
         /// <returns>ApiResponse of ConferenceParticipantList</returns>
-        public freeclimb.Client.ApiResponse<ConferenceParticipantList> ListParticipantsWithHttpInfo(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?))
+        public freeclimb.Client.ApiResponse<ConferenceParticipantList> ListParticipantsWithHttpInfo(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?))
         {
             
             // verify the required parameter 'conferenceId' is set
@@ -10139,6 +10147,7 @@ namespace freeclimb.Api
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->ListParticipants");
             }
 
+            
             
             
             
@@ -10173,6 +10182,10 @@ namespace freeclimb.Api
             if (listen != null)
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "listen", listen));
+            }
+            if (dtmfPassThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "dtmfPassThrough", dtmfPassThrough));
             }
 
             // authentication (fc) required
@@ -10207,11 +10220,13 @@ namespace freeclimb.Api
         
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
         
+        /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
+        
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConferenceParticipantList</returns>
-        public async System.Threading.Tasks.Task<ConferenceParticipantList> ListParticipantsAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConferenceParticipantList> ListParticipantsAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            freeclimb.Client.ApiResponse<ConferenceParticipantList> localVarResponse = await ListParticipantsWithHttpInfoAsync(conferenceId, talk, listen, cancellationToken).ConfigureAwait(false);
+            freeclimb.Client.ApiResponse<ConferenceParticipantList> localVarResponse = await ListParticipantsWithHttpInfoAsync(conferenceId, talk, listen, dtmfPassThrough, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -10226,9 +10241,11 @@ namespace freeclimb.Api
         
         /// <param name="listen">Only show Participants with the listen privilege. (optional)</param>
         
+        /// <param name="dtmfPassThrough">Only show Participants with the dtmfPassThrough privilege. (optional)</param>
+        
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConferenceParticipantList)</returns>
-        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ConferenceParticipantList>> ListParticipantsWithHttpInfoAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<freeclimb.Client.ApiResponse<ConferenceParticipantList>> ListParticipantsWithHttpInfoAsync(string conferenceId, bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             
             // verify the required parameter 'conferenceId' is set
@@ -10237,6 +10254,7 @@ namespace freeclimb.Api
                 throw new freeclimb.Client.ApiException(400, "Missing required parameter 'conferenceId' when calling DefaultApi->ListParticipants");
             }
 
+            
             
             
             
@@ -10272,6 +10290,10 @@ namespace freeclimb.Api
             if (listen != null)
             {
                 localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "listen", listen));
+            }
+            if (dtmfPassThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(freeclimb.Client.ClientUtils.ParameterToMultiMap("", "dtmfPassThrough", dtmfPassThrough));
             }
 
             // authentication (fc) required

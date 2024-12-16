@@ -28,42 +28,24 @@ using freeclimb.Enums;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// UpdateConferenceParticipantRequest
+    /// SetDTMFPassThroughAllOf
     /// </summary>
-    [DataContract(Name = "UpdateConferenceParticipantRequest")]
-    public partial class UpdateConferenceParticipantRequest : IEquatable<UpdateConferenceParticipantRequest>, IValidatableObject
+    [DataContract(Name = "SetDTMFPassThrough_allOf")]
+    public partial class SetDTMFPassThroughAllOf : IEquatable<SetDTMFPassThroughAllOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateConferenceParticipantRequest" /> class.
+        /// Initializes a new instance of the <see cref="SetDTMFPassThroughAllOf" /> class.
         /// </summary>
-        /// <param name="talk">(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes the Participant. FreeClimb returns an error and ignores any other value..</param>
-        /// <param name="listen">(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; silences the Conference for this Participant. FreeClimb returns an error and ignores any other value..</param>
-        /// <param name="dtmfPassThrough">(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value..</param>
-        public UpdateConferenceParticipantRequest(bool talk = default(bool), bool listen = default(bool), bool dtmfPassThrough = default(bool))
+        /// <param name="dtmfPassThrough">Specifying &#x60;false&#x60; mutes the Participant&#39;s dtmf audio..</param>
+        public SetDTMFPassThroughAllOf(bool dtmfPassThrough = default(bool))
         {
-            this.Talk = talk;
-            this.Listen = listen;
             this.DtmfPassThrough = dtmfPassThrough;
         }
 
         /// <summary>
-        /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes the Participant. FreeClimb returns an error and ignores any other value.
+        /// Specifying &#x60;false&#x60; mutes the Participant&#39;s dtmf audio.
         /// </summary>
-        /// <value>(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes the Participant. FreeClimb returns an error and ignores any other value.</value>
-        [DataMember(Name = "talk", EmitDefaultValue = true)]
-        public bool Talk { get; set; }
-
-        /// <summary>
-        /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; silences the Conference for this Participant. FreeClimb returns an error and ignores any other value.
-        /// </summary>
-        /// <value>(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; silences the Conference for this Participant. FreeClimb returns an error and ignores any other value.</value>
-        [DataMember(Name = "listen", EmitDefaultValue = true)]
-        public bool Listen { get; set; }
-
-        /// <summary>
-        /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value.
-        /// </summary>
-        /// <value>(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value.</value>
+        /// <value>Specifying &#x60;false&#x60; mutes the Participant&#39;s dtmf audio.</value>
         [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
         public bool DtmfPassThrough { get; set; }
 
@@ -74,9 +56,7 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateConferenceParticipantRequest {\n");
-            sb.Append("  Talk: ").Append(Talk).Append("\n");
-            sb.Append("  Listen: ").Append(Listen).Append("\n");
+            sb.Append("class SetDTMFPassThroughAllOf {\n");
             sb.Append("  DtmfPassThrough: ").Append(DtmfPassThrough).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -92,14 +72,12 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the UpdateConferenceParticipantRequest instance. 
+        /// Retrieve the KVP Dictionary for the SetDTMFPassThroughAllOf instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("talk", Talk);          
-            props.Add("listen", Listen);          
             props.Add("dtmfPassThrough", DtmfPassThrough);          
             return props;
         }
@@ -111,29 +89,21 @@ namespace freeclimb.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateConferenceParticipantRequest);
+            return this.Equals(input as SetDTMFPassThroughAllOf);
         }
 
         /// <summary>
-        /// Returns true if UpdateConferenceParticipantRequest instances are equal
+        /// Returns true if SetDTMFPassThroughAllOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateConferenceParticipantRequest to be compared</param>
+        /// <param name="input">Instance of SetDTMFPassThroughAllOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateConferenceParticipantRequest input)
+        public bool Equals(SetDTMFPassThroughAllOf input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
-                (
-                    this.Talk == input.Talk ||
-                    this.Talk.Equals(input.Talk)
-                ) && 
-                (
-                    this.Listen == input.Listen ||
-                    this.Listen.Equals(input.Listen)
-                ) && 
                 (
                     this.DtmfPassThrough == input.DtmfPassThrough ||
                     this.DtmfPassThrough.Equals(input.DtmfPassThrough)
@@ -149,8 +119,6 @@ namespace freeclimb.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Talk.GetHashCode();
-                hashCode = (hashCode * 59) + this.Listen.GetHashCode();
                 hashCode = (hashCode * 59) + this.DtmfPassThrough.GetHashCode();
                 return hashCode;
             }

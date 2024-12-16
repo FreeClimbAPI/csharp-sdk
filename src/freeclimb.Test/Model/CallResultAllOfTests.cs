@@ -43,7 +43,7 @@ namespace freeclimb.Test.Model
         public CallResultAllOfTests()
         {
             
-            instance = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+            instance = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
             
         }
 
@@ -228,6 +228,16 @@ namespace freeclimb.Test.Model
             Assert.Equal(testObject, instance.SubresourceUris);
             
         }
+        /// <summary>
+        /// Test the property 'ApplicationId'
+        /// </summary>
+        [Fact]
+        public void ApplicationIdTest()
+        {
+            instance.ApplicationId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApplicationId);
+            
+        }
         
         
         /// <summary>
@@ -236,7 +246,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test1.CallId = "TS";
          test1.ParentCallId = "TS";
          test1.AccountId = "TS";
@@ -253,8 +263,9 @@ namespace freeclimb.Test.Model
          test1.AnsweredBy = AnsweredBy.HUMAN;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+         test1.ApplicationId = "TS";
 
-        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test2.CallId = "TS";
          test2.ParentCallId = "TS";
          test2.AccountId = "TS";
@@ -271,6 +282,7 @@ namespace freeclimb.Test.Model
          test2.AnsweredBy = AnsweredBy.HUMAN;
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
+         test2.ApplicationId = "TS";
 
         Assert.Equal(test1,test2);
         }
@@ -281,7 +293,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test1.CallId = "TS";
          test1.ParentCallId = "TS";
          test1.AccountId = "TS";
@@ -298,8 +310,9 @@ namespace freeclimb.Test.Model
          test1.AnsweredBy = AnsweredBy.HUMAN;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+         test1.ApplicationId = "TS";
 
-        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test2.CallId = "ts";
          test2.ParentCallId = "ts";
          test2.AccountId = "ts";
@@ -316,6 +329,7 @@ namespace freeclimb.Test.Model
          test2.AnsweredBy = AnsweredBy.MACHINE;
          object testObject2 = new object();
          test2.SubresourceUris = testObject2;
+         test2.ApplicationId = "ts";
 
         Assert.NotEqual(test1,test2);
         }
@@ -326,7 +340,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test1.CallId = "TS";
          test1.ParentCallId = "TS";
          test1.AccountId = "TS";
@@ -343,6 +357,7 @@ namespace freeclimb.Test.Model
          test1.AnsweredBy = AnsweredBy.HUMAN;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+         test1.ApplicationId = "TS";
 
         int hashCode1 = test1.GetHashCode();
         Assert.True(hashCode1.GetType() == typeof(int));
@@ -355,7 +370,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test1.CallId = "TS";
          test1.ParentCallId = "TS";
          test1.AccountId = "TS";
@@ -372,6 +387,7 @@ namespace freeclimb.Test.Model
          test1.AnsweredBy = AnsweredBy.HUMAN;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+         test1.ApplicationId = "TS";
 
         string toString1 = test1.ToString();
         Assert.True(toString1.GetType() == typeof(string));
@@ -384,7 +400,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test1.CallId = "TS";
          test1.ParentCallId = "TS";
          test1.AccountId = "TS";
@@ -401,8 +417,9 @@ namespace freeclimb.Test.Model
          test1.AnsweredBy = AnsweredBy.HUMAN;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+         test1.ApplicationId = "TS";
 
-        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test2.CallId = "TS";
          test2.ParentCallId = "TS";
          test2.AccountId = "TS";
@@ -419,6 +436,7 @@ namespace freeclimb.Test.Model
          test2.AnsweredBy = AnsweredBy.HUMAN;
          object testObject2 = new object();
          test2.SubresourceUris = testObject2;
+         test2.ApplicationId = "TS";
 
         string toString1 = test1.ToString();
         string toString2 = test2.ToString();
@@ -432,7 +450,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test1.CallId = "TS";
          test1.ParentCallId = "TS";
          test1.AccountId = "TS";
@@ -449,8 +467,9 @@ namespace freeclimb.Test.Model
          test1.AnsweredBy = AnsweredBy.HUMAN;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+         test1.ApplicationId = "TS";
 
-        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test2.CallId = "TS";
          test2.ParentCallId = "TS";
          test2.AccountId = "TS";
@@ -467,6 +486,7 @@ namespace freeclimb.Test.Model
          test2.AnsweredBy = AnsweredBy.HUMAN;
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
+         test2.ApplicationId = "TS";
 
         Assert.True(test1.Equals(test2));
         }
@@ -477,7 +497,7 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test1 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test1.CallId = "TS";
          test1.ParentCallId = "TS";
          test1.AccountId = "TS";
@@ -494,12 +514,13 @@ namespace freeclimb.Test.Model
          test1.AnsweredBy = AnsweredBy.HUMAN;
          object testObject = new object();
          test1.SubresourceUris = testObject;
+         test1.ApplicationId = "TS";
         JsonSerializer jsonSerializer = JsonSerializer.Create();
         jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
         StringBuilder strb = new StringBuilder();
         jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object());
+        CallResultAllOf test2 = new CallResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", CallStatus.QUEUED, "TEST_STRING", "TEST_STRING", "TEST_STRING", 1, 1, CallDirection.INBOUND, AnsweredBy.HUMAN, new object(), "TEST_STRING");
          test2.CallId = "TS";
          test2.ParentCallId = "TS";
          test2.AccountId = "TS";
@@ -516,6 +537,7 @@ namespace freeclimb.Test.Model
          test2.AnsweredBy = AnsweredBy.HUMAN;
          object testObject2 = testObject;
          test2.SubresourceUris = testObject2;
+         test2.ApplicationId = "TS";
 
         Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }

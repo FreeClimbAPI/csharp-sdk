@@ -29,9 +29,9 @@ using freeclimb.Enums;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// The &#x60;RemoveFromConference&#x60; command removes a Participant from a Conference but does not hang up. Instead, the Call is simply unbridged and what happens next with the Call is determined by the PerCL returned in response to the &#x60;leaveConferenceUrl&#x60; attribute.
+    /// The &#x60;SetDTMFPassThrough&#x60; command enables or disables the dtmfPassThrough privilege for this Conference Participant. If &#39;true&#39;, DTMFs will be passed through from this Participant to all other Participants in the Conference
     /// </summary>
-    [DataContract(Name = "RemoveFromConference")]
+    [DataContract(Name = "SetDTMFPassThrough")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
     [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
     [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
@@ -59,15 +59,24 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
     [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
     [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class RemoveFromConference : PerclCommand, IEquatable<RemoveFromConference>, IValidatableObject
+    public partial class SetDTMFPassThrough : PerclCommand, IEquatable<SetDTMFPassThrough>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RemoveFromConference" /> class.
+        /// Initializes a new instance of the <see cref="SetDTMFPassThrough" /> class.
         /// </summary>
-        /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;RemoveFromConference&quot;).</param>
-        public RemoveFromConference(string command = "RemoveFromConference") : base(command)
+        /// <param name="dtmfPassThrough">Specifying &#x60;false&#x60; mutes the Participant&#39;s dtmf audio..</param>
+        /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;SetDTMFPassThrough&quot;).</param>
+        public SetDTMFPassThrough(bool dtmfPassThrough = default(bool), string command = "SetDTMFPassThrough") : base(command)
         {
+            this.DtmfPassThrough = dtmfPassThrough;
         }
+
+        /// <summary>
+        /// Specifying &#x60;false&#x60; mutes the Participant&#39;s dtmf audio.
+        /// </summary>
+        /// <value>Specifying &#x60;false&#x60; mutes the Participant&#39;s dtmf audio.</value>
+        [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
+        public bool DtmfPassThrough { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,8 +85,9 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RemoveFromConference {\n");
+            sb.Append("class SetDTMFPassThrough {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
+            sb.Append("  DtmfPassThrough: ").Append(DtmfPassThrough).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,14 +108,15 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the RemoveFromConference instance. 
+        /// Retrieve the KVP Dictionary for the SetDTMFPassThrough instance. 
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
+            props.Add("dtmfPassThrough", DtmfPassThrough);          
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("RemoveFromConference",props);
+            command.Add("SetDTMFPassThrough",props);
             return command;
         }
         
@@ -116,21 +127,25 @@ namespace freeclimb.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RemoveFromConference);
+            return this.Equals(input as SetDTMFPassThrough);
         }
 
         /// <summary>
-        /// Returns true if RemoveFromConference instances are equal
+        /// Returns true if SetDTMFPassThrough instances are equal
         /// </summary>
-        /// <param name="input">Instance of RemoveFromConference to be compared</param>
+        /// <param name="input">Instance of SetDTMFPassThrough to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RemoveFromConference input)
+        public bool Equals(SetDTMFPassThrough input)
         {
             if (input == null)
             {
                 return false;
             }
-            return base.Equals(input);
+            return base.Equals(input) && 
+                (
+                    this.DtmfPassThrough == input.DtmfPassThrough ||
+                    this.DtmfPassThrough.Equals(input.DtmfPassThrough)
+                );
         }
 
         /// <summary>
@@ -142,6 +157,7 @@ namespace freeclimb.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
+                hashCode = (hashCode * 59) + this.DtmfPassThrough.GetHashCode();
                 return hashCode;
             }
         }

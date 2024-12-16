@@ -73,7 +73,8 @@ namespace freeclimb.Model
         /// <param name="direction">direction.</param>
         /// <param name="answeredBy">answeredBy.</param>
         /// <param name="subresourceUris">The list of subresources for this Call. These include things like logs and recordings associated with the Call..</param>
-        public CallResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string callId = default(string), string parentCallId = default(string), string accountId = default(string), string from = default(string), string to = default(string), string phoneNumberId = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string connectTime = default(string), string endTime = default(string), int? duration = default(int?), int? connectDuration = default(int?), CallDirection? direction = default(CallDirection?), AnsweredBy? answeredBy = default(AnsweredBy?), Object subresourceUris = default(Object))
+        /// <param name="applicationId">ApplicationId associated with the Call..</param>
+        public CallResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string callId = default(string), string parentCallId = default(string), string accountId = default(string), string from = default(string), string to = default(string), string phoneNumberId = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string connectTime = default(string), string endTime = default(string), int? duration = default(int?), int? connectDuration = default(int?), CallDirection? direction = default(CallDirection?), AnsweredBy? answeredBy = default(AnsweredBy?), Object subresourceUris = default(Object), string applicationId = default(string))
         {
             this.Uri = uri;
             this.DateCreated = dateCreated;
@@ -94,6 +95,7 @@ namespace freeclimb.Model
             this.Direction = direction;
             this.AnsweredBy = answeredBy;
             this.SubresourceUris = subresourceUris;
+            this.ApplicationId = applicationId;
         }
 
         /// <summary>
@@ -209,6 +211,13 @@ namespace freeclimb.Model
         public Object SubresourceUris { get; set; }
 
         /// <summary>
+        /// ApplicationId associated with the Call.
+        /// </summary>
+        /// <value>ApplicationId associated with the Call.</value>
+        [DataMember(Name = "applicationId", EmitDefaultValue = true)]
+        public string ApplicationId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -235,6 +244,7 @@ namespace freeclimb.Model
             sb.Append("  Direction: ").Append(Direction).Append("\n");
             sb.Append("  AnsweredBy: ").Append(AnsweredBy).Append("\n");
             sb.Append("  SubresourceUris: ").Append(SubresourceUris).Append("\n");
+            sb.Append("  ApplicationId: ").Append(ApplicationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -274,6 +284,7 @@ namespace freeclimb.Model
             props.Add("direction", Direction);          
             props.Add("answeredBy", AnsweredBy);          
             props.Add("subresourceUris", SubresourceUris);          
+            props.Add("applicationId", ApplicationId);          
             return props;
         }
         
@@ -389,6 +400,11 @@ namespace freeclimb.Model
                     this.SubresourceUris == input.SubresourceUris ||
                     (this.SubresourceUris != null &&
                     this.SubresourceUris.Equals(input.SubresourceUris))
+                ) && 
+                (
+                    this.ApplicationId == input.ApplicationId ||
+                    (this.ApplicationId != null &&
+                    this.ApplicationId.Equals(input.ApplicationId))
                 );
         }
 
@@ -464,6 +480,10 @@ namespace freeclimb.Model
                 if (this.SubresourceUris != null)
                 {
                     hashCode = (hashCode * 59) + this.SubresourceUris.GetHashCode();
+                }
+                if (this.ApplicationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ApplicationId.GetHashCode();
                 }
                 return hashCode;
             }

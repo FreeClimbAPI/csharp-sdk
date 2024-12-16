@@ -43,7 +43,7 @@ namespace freeclimb.Test.Model
         public UpdateConferenceParticipantRequestTests()
         {
             
-            instance = new UpdateConferenceParticipantRequest(false, false);
+            instance = new UpdateConferenceParticipantRequest(false, false, false);
             
         }
 
@@ -77,6 +77,16 @@ namespace freeclimb.Test.Model
             Assert.Equal(false, instance.Listen);       
             
         }
+        /// <summary>
+        /// Test the property 'DtmfPassThrough'
+        /// </summary>
+        [Fact]
+        public void DtmfPassThroughTest()
+        {
+            instance.DtmfPassThrough = false;
+            Assert.Equal(false, instance.DtmfPassThrough);       
+            
+        }
         
         
         /// <summary>
@@ -85,13 +95,15 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false, false);
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false, false);
          test2.Talk = true;
          test2.Listen = true;
+         test2.DtmfPassThrough = true;
 
         Assert.Equal(test1,test2);
         }
@@ -102,13 +114,15 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false, false);
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false, false);
          test2.Talk = false;
          test2.Listen = false;
+         test2.DtmfPassThrough = false;
 
         Assert.NotEqual(test1,test2);
         }
@@ -119,9 +133,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false, false);
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
 
         int hashCode1 = test1.GetHashCode();
         Assert.True(hashCode1.GetType() == typeof(int));
@@ -134,9 +149,10 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false, false);
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
 
         string toString1 = test1.ToString();
         Assert.True(toString1.GetType() == typeof(string));
@@ -149,13 +165,15 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false, false);
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false, false);
          test2.Talk = true;
          test2.Listen = true;
+         test2.DtmfPassThrough = true;
 
         string toString1 = test1.ToString();
         string toString2 = test2.ToString();
@@ -169,13 +187,15 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false, false);
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false, false);
          test2.Talk = true;
          test2.Listen = true;
+         test2.DtmfPassThrough = true;
 
         Assert.True(test1.Equals(test2));
         }
@@ -186,17 +206,19 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test1 = new UpdateConferenceParticipantRequest(false, false, false);
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
         JsonSerializer jsonSerializer = JsonSerializer.Create();
         jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
         StringBuilder strb = new StringBuilder();
         jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false);
+        UpdateConferenceParticipantRequest test2 = new UpdateConferenceParticipantRequest(false, false, false);
          test2.Talk = true;
          test2.Listen = true;
+         test2.DtmfPassThrough = true;
 
         Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
         }

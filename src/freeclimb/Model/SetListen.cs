@@ -29,7 +29,7 @@ using freeclimb.Enums;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// The &#x60;SetListen&#x60; command enables or disables the listen privilege for a Conference Participant provided both calls are in the same conference. The Participant can hear what the other participants are saying only if this privilege is enabled.
+    /// The &#x60;SetListen&#x60; command enables or disables the listen privilege for this Conference Participant. The Participant can hear what the other participants are saying only if this privilege is enabled.
     /// </summary>
     [DataContract(Name = "SetListen")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
@@ -51,6 +51,7 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
     [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
     [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
+    [JsonSubtypes.KnownSubType(typeof(SetDTMFPassThrough), "SetDTMFPassThrough")]
     [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
     [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
     [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]

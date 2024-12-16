@@ -51,6 +51,7 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
     [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
     [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
+    [JsonSubtypes.KnownSubType(typeof(SetDTMFPassThrough), "SetDTMFPassThrough")]
     [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
     [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
     [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
