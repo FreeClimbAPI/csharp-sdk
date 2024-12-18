@@ -736,7 +736,9 @@ namespace freeclimb.Test.Api
 	        
             bool? listen = listenTestValue();
 	        
-            var response = instance.ListParticipants(conferenceId, talk, listen);
+            bool? dtmfPassThrough = dtmfPassThroughTestValue();
+	        
+            var response = instance.ListParticipants(conferenceId, talk, listen, dtmfPassThrough);
             Assert.IsAssignableFrom<ConferenceParticipantList>(response);
         }
         
@@ -1349,7 +1351,9 @@ namespace freeclimb.Test.Api
 	        
             bool? listen = listenTestValue();
 	        
-            var response = instance.ListParticipants(conferenceId, talk, listen);
+            bool? dtmfPassThrough = dtmfPassThroughTestValue();
+	        
+            var response = instance.ListParticipants(conferenceId, talk, listen, dtmfPassThrough);
             //Assert.IsType<ConferenceParticipantList>(response);
             Assert.IsAssignableFrom<ConferenceParticipantList>(response);
             response.NextPageUri = "/Accounts/{accountId}/Conferences/{conferenceId}/Participants?cursor=1";
@@ -1844,6 +1848,11 @@ namespace freeclimb.Test.Api
 
         private CompletionRequest completionRequestTestValue() {
             return new CompletionRequest("QUERY");
+        }
+
+        private bool dtmfPassThroughTestValue() 
+        {
+            return true;
         }
     }
 }

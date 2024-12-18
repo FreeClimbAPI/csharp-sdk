@@ -180,7 +180,7 @@ namespace freeclimb.Model
         /// an array of HTTP URLs which were attached this this message
         /// </summary>
         /// <value>an array of HTTP URLs which were attached this this message</value>
-        [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
+        [DataMember(Name = "mediaUrls", EmitDefaultValue = true)]
         public List<string> MediaUrls { get; set; }
 
         /// <summary>

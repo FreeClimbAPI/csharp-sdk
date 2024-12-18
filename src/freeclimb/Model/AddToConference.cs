@@ -51,6 +51,7 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
     [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
     [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
+    [JsonSubtypes.KnownSubType(typeof(SetDTMFPassThrough), "SetDTMFPassThrough")]
     [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
     [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
     [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
@@ -77,8 +78,9 @@ namespace freeclimb.Model
         /// <param name="notificationUrl">When the Participant enters the Conference, this URL will be invoked using an HTTP POST request with the standard request parameters..</param>
         /// <param name="startConfOnEnter">Flag that indicates whether a Conference starts upon entry of this particular Participant. This is usually set to &#x60;true&#x60; for moderators and &#x60;false&#x60; for all other Participants..</param>
         /// <param name="talk">If &#x60;true&#x60;, the Participant joins the Conference with talk privileges. This may be modified later via the REST API or &#x60;SetTalk&#x60; PerCL command. .</param>
+        /// <param name="dtmfPassThrough">If &#x60;true&#x60;, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or &#x60;SetDTMFPassThrough&#x60; PerCL command. .</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;AddToConference&quot;).</param>
-        public AddToConference(bool allowCallControl = default(bool), string callControlSequence = default(string), string callControlUrl = default(string), string conferenceId = default(string), string leaveConferenceUrl = default(string), bool listen = default(bool), string notificationUrl = default(string), bool startConfOnEnter = default(bool), bool talk = default(bool), string command = "AddToConference") : base(command)
+        public AddToConference(bool allowCallControl = default(bool), string callControlSequence = default(string), string callControlUrl = default(string), string conferenceId = default(string), string leaveConferenceUrl = default(string), bool listen = default(bool), string notificationUrl = default(string), bool startConfOnEnter = default(bool), bool talk = default(bool), bool dtmfPassThrough = default(bool), string command = "AddToConference") : base(command)
         {
             // to ensure "conferenceId" is required (not null)
             if (conferenceId == null) {
@@ -93,6 +95,7 @@ namespace freeclimb.Model
             this.NotificationUrl = notificationUrl;
             this.StartConfOnEnter = startConfOnEnter;
             this.Talk = talk;
+            this.DtmfPassThrough = dtmfPassThrough;
         }
 
         /// <summary>
@@ -159,6 +162,13 @@ namespace freeclimb.Model
         public bool Talk { get; set; }
 
         /// <summary>
+        /// If &#x60;true&#x60;, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or &#x60;SetDTMFPassThrough&#x60; PerCL command. 
+        /// </summary>
+        /// <value>If &#x60;true&#x60;, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or &#x60;SetDTMFPassThrough&#x60; PerCL command. </value>
+        [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
+        public bool DtmfPassThrough { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -176,6 +186,7 @@ namespace freeclimb.Model
             sb.Append("  NotificationUrl: ").Append(NotificationUrl).Append("\n");
             sb.Append("  StartConfOnEnter: ").Append(StartConfOnEnter).Append("\n");
             sb.Append("  Talk: ").Append(Talk).Append("\n");
+            sb.Append("  DtmfPassThrough: ").Append(DtmfPassThrough).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -211,6 +222,7 @@ namespace freeclimb.Model
             props.Add("notificationUrl", NotificationUrl);          
             props.Add("startConfOnEnter", StartConfOnEnter);          
             props.Add("talk", Talk);          
+            props.Add("dtmfPassThrough", DtmfPassThrough);          
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("AddToConference",props);
             return command;
@@ -278,6 +290,10 @@ namespace freeclimb.Model
                 (
                     this.Talk == input.Talk ||
                     this.Talk.Equals(input.Talk)
+                ) && base.Equals(input) && 
+                (
+                    this.DtmfPassThrough == input.DtmfPassThrough ||
+                    this.DtmfPassThrough.Equals(input.DtmfPassThrough)
                 );
         }
 
@@ -314,6 +330,7 @@ namespace freeclimb.Model
                 }
                 hashCode = (hashCode * 59) + this.StartConfOnEnter.GetHashCode();
                 hashCode = (hashCode * 59) + this.Talk.GetHashCode();
+                hashCode = (hashCode * 59) + this.DtmfPassThrough.GetHashCode();
                 return hashCode;
             }
         }

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CallId** | **string** | ID of the Call associated with this Participant. | [optional] 
 **Talk** | **bool?** | True if this Participant has talk privileges in the Conference. False otherwise. | [optional] 
 **Listen** | **bool?** | True if this Participant has listen privileges in the Conference. False otherwise. | [optional] 
+**DtmfPassThrough** | **bool?** | True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise. | [optional] 
 **StartConfOnEnter** | **bool?** | True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise. | [optional] 
 
 [[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 

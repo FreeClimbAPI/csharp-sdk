@@ -3357,7 +3357,7 @@ Name | Type | Description  | Notes
 
 <a name="listparticipants"></a>
 # **ListParticipants**
-> ConferenceParticipantList ListParticipants (string conferenceId, bool? talk = null, bool? listen = null)
+> ConferenceParticipantList ListParticipants (string conferenceId, bool? talk = null, bool? listen = null, bool? dtmfPassThrough = null)
 
 List Participants
 
@@ -3389,11 +3389,13 @@ namespace Example
 
             var listen = true;  // bool? | Only show Participants with the listen privilege. (optional) 
 
+            var dtmfPassThrough = true;  // bool? | Only show Participants with the dtmfPassThrough privilege. (optional) 
+
 
             try
             {
                 // List Participants
-                ConferenceParticipantList result = apiInstance.ListParticipants(conferenceId, talk, listen);
+                ConferenceParticipantList result = apiInstance.ListParticipants(conferenceId, talk, listen, dtmfPassThrough);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3414,6 +3416,7 @@ Name | Type | Description  | Notes
  **conferenceId** | **string**| ID of the conference this participant is in. | 
  **talk** | **bool?**| Only show Participants with the talk privilege. | [optional] 
  **listen** | **bool?**| Only show Participants with the listen privilege. | [optional] 
+ **dtmfPassThrough** | **bool?**| Only show Participants with the dtmfPassThrough privilege. | [optional] 
 
 
 ### Return type
@@ -4187,7 +4190,7 @@ namespace Example
             var callId = "callId_example";  // string | ID of the Call associated with this participant.
 
 
-            var updateConferenceParticipantRequest = new UpdateConferenceParticipantRequest(Talk={ (Optional) Default is `true`. Setting to `false` mutes the Participant. FreeClimb returns an error and ignores any other value. }, Listen={ (Optional) Default is `true`. Setting to `false` silences the Conference for this Participant. FreeClimb returns an error and ignores any other value. }); // UpdateConferenceParticipantRequest | Conference participant details to update (optional) 
+            var updateConferenceParticipantRequest = new UpdateConferenceParticipantRequest(Talk={ (Optional) Default is `true`. Setting to `false` mutes the Participant. FreeClimb returns an error and ignores any other value. }, Listen={ (Optional) Default is `true`. Setting to `false` silences the Conference for this Participant. FreeClimb returns an error and ignores any other value. }, DtmfPassThrough={ (Optional) Default is `true`. Setting to `false` mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value. }); // UpdateConferenceParticipantRequest | Conference participant details to update (optional) 
 
             try
             {

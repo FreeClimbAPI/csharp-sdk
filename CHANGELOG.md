@@ -9,6 +9,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.10.0"></a>
+
+## [4.10.0] - 2024-12-16
+
+### Added
+
+- Add DtmfPassThrough property to certain models
+- Make mediaUrls property nullable
+
 <a name="4.9.0"></a>
 
 ## [4.9.0] - 2024-10-08

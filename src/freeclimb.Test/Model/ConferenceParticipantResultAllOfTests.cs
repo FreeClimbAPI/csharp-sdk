@@ -43,7 +43,7 @@ namespace freeclimb.Test.Model
         public ConferenceParticipantResultAllOfTests()
         {
             
-            instance = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+            instance = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
             
         }
 
@@ -108,6 +108,16 @@ namespace freeclimb.Test.Model
             
         }
         /// <summary>
+        /// Test the property 'DtmfPassThrough'
+        /// </summary>
+        [Fact]
+        public void DtmfPassThroughTest()
+        {
+            instance.DtmfPassThrough = false;
+            Assert.Equal(false, instance.DtmfPassThrough);       
+            
+        }
+        /// <summary>
         /// Test the property 'StartConfOnEnter'
         /// </summary>
         [Fact]
@@ -125,20 +135,22 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTrueTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test2.AccountId = "TS";
          test2.ConferenceId = "TS";
          test2.CallId = "TS";
          test2.Talk = true;
          test2.Listen = true;
+         test2.DtmfPassThrough = true;
          test2.StartConfOnEnter = true;
 
         Assert.Equal(test1,test2);
@@ -150,20 +162,22 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsFalseTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test2.AccountId = "ts";
          test2.ConferenceId = "ts";
          test2.CallId = "ts";
          test2.Talk = false;
          test2.Listen = false;
+         test2.DtmfPassThrough = false;
          test2.StartConfOnEnter = false;
 
         Assert.NotEqual(test1,test2);
@@ -175,12 +189,13 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void hashCodeTypeTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
          test1.StartConfOnEnter = true;
 
         int hashCode1 = test1.GetHashCode();
@@ -194,12 +209,13 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringTypeTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
          test1.StartConfOnEnter = true;
 
         string toString1 = test1.ToString();
@@ -213,20 +229,22 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToStringEqualsTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test2.AccountId = "TS";
          test2.ConferenceId = "TS";
          test2.CallId = "TS";
          test2.Talk = true;
          test2.Listen = true;
+         test2.DtmfPassThrough = true;
          test2.StartConfOnEnter = true;
 
         string toString1 = test1.ToString();
@@ -241,20 +259,22 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void equalsTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
          test1.StartConfOnEnter = true;
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test2.AccountId = "TS";
          test2.ConferenceId = "TS";
          test2.CallId = "TS";
          test2.Talk = true;
          test2.Listen = true;
+         test2.DtmfPassThrough = true;
          test2.StartConfOnEnter = true;
 
         Assert.True(test1.Equals(test2));
@@ -266,24 +286,26 @@ namespace freeclimb.Test.Model
         
         [Fact]
         public void ToJsonTest() {
-        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test1 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test1.AccountId = "TS";
          test1.ConferenceId = "TS";
          test1.CallId = "TS";
          test1.Talk = true;
          test1.Listen = true;
+         test1.DtmfPassThrough = true;
          test1.StartConfOnEnter = true;
         JsonSerializer jsonSerializer = JsonSerializer.Create();
         jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
         StringBuilder strb = new StringBuilder();
         jsonSerializer.Serialize(new StringWriter(strb), test1);
 
-        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false);
+        ConferenceParticipantResultAllOf test2 = new ConferenceParticipantResultAllOf("TEST_STRING", "TEST_STRING", "TEST_STRING", false, false, false, false);
          test2.AccountId = "TS";
          test2.ConferenceId = "TS";
          test2.CallId = "TS";
          test2.Talk = true;
          test2.Listen = true;
+         test2.DtmfPassThrough = true;
          test2.StartConfOnEnter = true;
 
         Assert.True(strb.Equals(JsonConvert.SerializeObject(test2)));
