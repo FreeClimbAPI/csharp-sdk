@@ -79,9 +79,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void ActionUrlTest()
         {
+            
             instance.ActionUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ActionUrl);
-            
         }
         
 
@@ -103,7 +103,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordTest()
         {
-            TranscribeUtteranceRecord testObject = new TranscribeUtteranceRecord();
+            TranscribeUtteranceRecord testObject = getTestValue(typeof(TranscribeUtteranceRecord));
             instance.Record = testObject;
             Assert.Equal(testObject, instance.Record);
             
@@ -261,6 +261,9 @@ namespace freeclimb.Test.Model
             }
             if (type == typeof(UpdateConferenceRequestStatus)) {
                 return UpdateConferenceRequestStatusValueConverter.FromString("empty");
+            }
+            if (type == typeof(Capabilities)) {
+                return new Capabilities(false, false, false, false, false);
             }
             if (type == typeof(List<string>)) {
                 return new List<string>();

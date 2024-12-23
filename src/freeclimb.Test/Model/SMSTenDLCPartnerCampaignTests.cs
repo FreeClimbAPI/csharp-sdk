@@ -463,7 +463,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BrandTest()
         {
-            SMSTenDLCPartnerCampaignBrand testObject = new SMSTenDLCPartnerCampaignBrand("TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", "TEST_STRING", new Dictionary<string, object>(), 1);
+            SMSTenDLCPartnerCampaignBrand testObject = getTestValue(typeof(SMSTenDLCPartnerCampaignBrand));
             instance.Brand = testObject;
             Assert.Equal(testObject, instance.Brand);
             
@@ -584,6 +584,9 @@ namespace freeclimb.Test.Model
             }
             if (type == typeof(UpdateConferenceRequestStatus)) {
                 return UpdateConferenceRequestStatusValueConverter.FromString("empty");
+            }
+            if (type == typeof(Capabilities)) {
+                return new Capabilities(false, false, false, false, false);
             }
             if (type == typeof(List<string>)) {
                 return new List<string>();

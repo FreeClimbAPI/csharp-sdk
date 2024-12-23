@@ -354,6 +354,9 @@ namespace freeclimb.Test.Model
             if (type == typeof(UpdateConferenceRequestStatus)) {
                 return UpdateConferenceRequestStatusValueConverter.FromString("empty");
             }
+            if (type == typeof(Capabilities)) {
+                return new Capabilities(false, false, false, false, false);
+            }
             if (type == typeof(List<string>)) {
                 return new List<string>();
             }

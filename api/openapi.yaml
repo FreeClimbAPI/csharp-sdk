@@ -940,7 +940,6 @@ paths:
                 type: string
           description: The created JWT
       summary: Make a JWT for WebRTC calling
-      x-web-rtc: true
   /Accounts/{accountId}/Conferences:
     get:
       deprecated: false
@@ -1667,6 +1666,7 @@ paths:
           description: Successfully retrieved log list
       summary: Filter Logs
       tags: []
+      x-is-paginated: true
   /Accounts/{accountId}/Recordings:
     get:
       deprecated: false
@@ -2436,11 +2436,18 @@ components:
       - active
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - CLOSED
       - SUSPENDED
       - ACTIVE
-      x-enum: true
+      x-enum-mapping:
+      - enum: closed
+        varname: CLOSED
+      - enum: suspended
+        varname: SUSPENDED
+      - enum: active
+        varname: ACTIVE
     AccountType:
       description: "The type of this account. It is one of: trial or full."
       enum:
@@ -2452,6 +2459,11 @@ components:
       x-enum-varnames:
       - TRIAL
       - FULL
+      x-enum-mapping:
+      - enum: trial
+        varname: TRIAL
+      - enum: full
+        varname: FULL
     AnsweredBy:
       description: "If this Call was initiated with answering machine detection, either\
         \ `human` or `machine`. Empty otherwise."
@@ -2460,10 +2472,15 @@ components:
       - machine
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - HUMAN
       - MACHINE
-      x-enum: true
+      x-enum-mapping:
+      - enum: human
+        varname: HUMAN
+      - enum: machine
+        varname: MACHINE
     CallDirection:
       description: "Direction of the Call. `inbound` for Calls into FreeClimb, `outboundAPI`\
         \ for Calls initiated via the REST API,  `outboundDial` for Calls initiated\
@@ -2474,18 +2491,18 @@ components:
       - outboundDial
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - INBOUND
       - OUTBOUND_API
       - OUTBOUND_DIAL
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: inbound
         varname: INBOUND
       - enum: outboundAPI
         varname: OUTBOUND_API
       - enum: outboundDial
         varname: OUTBOUND_DIAL
-      x-enum: true
     CallStatus:
       description: "* `queued` &ndash; Call is ready and waiting in line before going\
         \ out. * `ringing` &ndash; Call is currently ringing. * `inProgress` &ndash;\
@@ -2506,6 +2523,7 @@ components:
       - noAnswer
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - QUEUED
       - RINGING
@@ -2515,7 +2533,7 @@ components:
       - FAILED
       - BUSY
       - NO_ANSWER
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: queued
         varname: QUEUED
       - enum: ringing
@@ -2532,7 +2550,6 @@ components:
         varname: BUSY
       - enum: noAnswer
         varname: NO_ANSWER
-      x-enum: true
     CallEndedReason:
       description: Enhanced status for the Call with additional information where
         available.
@@ -2562,6 +2579,7 @@ components:
       - maxDuration
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - BUSY
       - FAILED
@@ -2586,7 +2604,7 @@ components:
       - INTERNAL_ERROR
       - GRPC_HANGUP
       - MAX_DURATION
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: busy
         varname: BUSY
       - enum: failed
@@ -2633,7 +2651,6 @@ components:
         varname: GRPC_HANGUP
       - enum: maxDuration
         varname: MAX_DURATION
-      x-enum: true
     GetDigitsReason:
       description: "This field explains how the GetDigits action ended. The value\
         \ is one of the below: •finishKey - The finish key as specified had been pressed\
@@ -2649,12 +2666,13 @@ components:
       - maxDigits
       - tone
       type: string
+      x-enum: true
       x-enum-varnames:
       - FINISH_KEY
       - TIMEOUT
       - MAX_DIGITS
       - TONE
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: finishKey
         varname: FINISH_KEY
       - enum: timeout
@@ -2663,7 +2681,6 @@ components:
         varname: MAX_DIGITS
       - enum: tone
         varname: TONE
-      x-enum: true
     ConferenceStatus:
       description: "The status of the Conference. One of: creating, empty, populated,\
         \ inProgress, or terminated."
@@ -2674,12 +2691,13 @@ components:
       - terminated
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - EMPTY
       - POPULATED
       - IN_PROGRESS
       - TERMINATED
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: empty
         varname: EMPTY
       - enum: populated
@@ -2688,16 +2706,6 @@ components:
         varname: IN_PROGRESS
       - enum: terminated
         varname: TERMINATED
-      x-php-enum-mapping:
-      - enum: empty
-        varname: EMPTY
-      - enum: populated
-        varname: POPULATED
-      - enum: inProgress
-        varname: IN_PROGRESS
-      - enum: terminated
-        varname: TERMINATED
-      x-enum: true
     GetSpeechReason:
       enum:
       - error
@@ -2707,6 +2715,7 @@ components:
       - noMatch
       - recognition
       type: string
+      x-enum: true
       x-enum-varnames:
       - ERROR
       - HANGUP
@@ -2714,7 +2723,7 @@ components:
       - NO_INPUT
       - NO_MATCH
       - RECOGNITION
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: error
         varname: ERROR
       - enum: hangup
@@ -2727,7 +2736,6 @@ components:
         varname: NO_MATCH
       - enum: recognition
         varname: RECOGNITION
-      x-enum: true
     GrammarFileBuiltIn:
       enum:
       - ALPHNUM6
@@ -2746,6 +2754,7 @@ components:
       - UP_TO_20_DIGIT_SEQUENCE
       - VERSAY_YESNO
       type: string
+      x-enum: true
       x-enum-varnames:
       - ALPHNUM6
       - ANY_DIG
@@ -2762,7 +2771,37 @@ components:
       - DIG11
       - UP_TO_20_DIGIT_SEQUENCE
       - VERSAY_YESNO
-      x-enum: true
+      x-enum-mapping:
+      - enum: ALPHNUM6
+        varname: ALPHNUM6
+      - enum: ANY_DIG
+        varname: ANY_DIG
+      - enum: DIG1
+        varname: DIG1
+      - enum: DIG2
+        varname: DIG2
+      - enum: DIG3
+        varname: DIG3
+      - enum: DIG4
+        varname: DIG4
+      - enum: DIG5
+        varname: DIG5
+      - enum: DIG6
+        varname: DIG6
+      - enum: DIG7
+        varname: DIG7
+      - enum: DIG8
+        varname: DIG8
+      - enum: DIG9
+        varname: DIG9
+      - enum: DIG10
+        varname: DIG10
+      - enum: DIG11
+        varname: DIG11
+      - enum: UP_TO_20_DIGIT_SEQUENCE
+        varname: UP_TO_20_DIGIT_SEQUENCE
+      - enum: VERSAY_YESNO
+        varname: VERSAY_YESNO
     GrammarType:
       description: The grammar file type to use for speech recognition. A value of
         'URL' indicates the grammarFile attribute specifies a URL that points to the
@@ -2773,15 +2812,15 @@ components:
       - BUILTIN
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - URL
       - BUILT_IN
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: URL
         varname: URL
       - enum: BUILTIN
         varname: BUILT_IN
-      x-enum: true
     IfMachine:
       description: "Specifies how FreeClimb should handle this OutDial if an answering\
         \ machine answers the Call. Valid values: `redirect` invokes the ifMachineUrl\
@@ -2791,10 +2830,15 @@ components:
       - redirect
       - hangup
       type: string
+      x-enum: true
       x-enum-varnames:
       - REDIRECT
       - HANGUP
-      x-enum: true
+      x-enum-mapping:
+      - enum: redirect
+        varname: REDIRECT
+      - enum: hangup
+        varname: HANGUP
     Language:
       enum:
       - ca-ES
@@ -2824,6 +2868,7 @@ components:
       - zh-HK
       - zh-TW
       type: string
+      x-enum: true
       x-enum-varnames:
       - CATALAN
       - DANISH
@@ -2851,7 +2896,7 @@ components:
       - CHINESE_CN
       - CHINESE_HK
       - CHINESE_TW
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: ca-ES
         varname: CATALAN
       - enum: da-DK
@@ -2904,7 +2949,6 @@ components:
         varname: CHINESE_HK
       - enum: zh-TW
         varname: CHINESE_TW
-      x-enum: true
     LogLevel:
       description: "Level of the log. Possible values are info, warning, and error."
       enum:
@@ -2913,29 +2957,46 @@ components:
       - error
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - INFO
       - WARNING
       - ERROR
-      x-enum: true
+      x-enum-mapping:
+      - enum: info
+        varname: INFO
+      - enum: warning
+        varname: WARNING
+      - enum: error
+        varname: ERROR
     MachineType:
       enum:
       - answering machine
       - fax modem
       type: string
+      x-enum: true
       x-enum-varnames:
       - ANSWERING_MACHINE
       - FAX_MODEM
-      x-enum: true
+      x-enum-mapping:
+      - enum: answering machine
+        varname: ANSWERING_MACHINE
+      - enum: fax modem
+        varname: FAX_MODEM
     MessageDirection:
       enum:
       - inbound
       - outbound
       type: string
+      x-enum: true
       x-enum-varnames:
       - INBOUND
       - OUTBOUND
-      x-enum: true
+      x-enum-mapping:
+      - enum: inbound
+        varname: INBOUND
+      - enum: outbound
+        varname: OUTBOUND
     MessageStatus:
       description: "Indicates the state of the message through the message lifecycle\
         \ including: new, queued, rejected, sending, sent, failed, received, undelivered,\
@@ -2954,6 +3015,7 @@ components:
       - unknown
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - NEW
       - QUEUED
@@ -2966,7 +3028,7 @@ components:
       - EXPIRED
       - DELETED
       - UNKNOWN
-      x-php-enum-mapping:
+      x-enum-mapping:
       - enum: new
         varname: NEW
       - enum: queued
@@ -2989,7 +3051,6 @@ components:
         varname: DELETED
       - enum: unknown
         varname: UNKNOWN
-      x-enum: true
     PlayBeep:
       description: "Indicates whether to play a beep when a Participant enters or\
         \ leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`.\
@@ -3001,12 +3062,13 @@ components:
       - exitOnly
       nullable: true
       type: string
+      x-enum: true
       x-enum-varnames:
       - ALWAYS
       - NEVER
       - ENTRY_ONLY
       - EXIT_ONLY
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: always
         varname: ALWAYS
       - enum: never
@@ -3015,7 +3077,6 @@ components:
         varname: ENTRY_ONLY
       - enum: exitOnly
         varname: EXIT_ONLY
-      x-enum: true
       x-enum-default-attr: ALWAYS
     QueueResultStatus:
       enum:
@@ -3024,12 +3085,13 @@ components:
       - hangup
       - systemError
       type: string
+      x-enum: true
       x-enum-varnames:
       - QUEUE_FULL
       - DEQUEUED
       - HANGUP
       - SYSTEM_ERROR
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: queueFull
         varname: QUEUE_FULL
       - enum: dequeued
@@ -3038,7 +3100,6 @@ components:
         varname: HANGUP
       - enum: systemError
         varname: SYSTEM_ERROR
-      x-enum: true
     RecordUtteranceTermReason:
       enum:
       - finishKey
@@ -3046,12 +3107,13 @@ components:
       - hangup
       - maxLength
       type: string
+      x-enum: true
       x-enum-varnames:
       - FINISH_KEY
       - TIMEOUT
       - HANGUP
       - MAX_LENGTH
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: finishKey
         varname: FINISH_KEY
       - enum: timeout
@@ -3060,34 +3122,38 @@ components:
         varname: HANGUP
       - enum: maxLength
         varname: MAX_LENGTH
-      x-enum: true
     BargeInReason:
       enum:
       - noBargeIn
       - bargeInByDTMF
       - bargeInByEnergy
       type: string
+      x-enum: true
       x-enum-varnames:
       - NO_BARGE_IN
       - BARGE_IN_BY_DTMF
       - BARGE_IN_BY_ENERGY
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: noBargeIn
         varname: NO_BARGE_IN
       - enum: bargeInByDTMF
         varname: BARGE_IN_BY_DTMF
       - enum: bargeInByEnergy
         varname: BARGE_IN_BY_ENERGY
-      x-enum: true
     TranscribeTermReason:
       enum:
       - error
       - completed
       type: string
+      x-enum: true
       x-enum-varnames:
       - ERROR
       - COMPLETED
-      x-enum: true
+      x-enum-mapping:
+      - enum: error
+        varname: ERROR
+      - enum: completed
+        varname: COMPLETED
     TranscribeReason:
       enum:
       - internalError
@@ -3103,7 +3169,7 @@ components:
       - MAX_LENGTH
       - DIGIT
       - NO_INPUT
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: internalError
         varname: INTERNAL_ERROR
       - enum: hangup
@@ -3140,6 +3206,7 @@ components:
       - messageDelivery
       - messageStatus
       type: string
+      x-enum: true
       x-enum-varnames:
       - INBOUND_CALL
       - RECORD
@@ -3164,7 +3231,7 @@ components:
       - CONFERENCE_CALL_CONTROL
       - MESSAGE_DELIVERY
       - MESSAGE_STATUS
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: inboundCall
         varname: INBOUND_CALL
       - enum: record
@@ -3211,7 +3278,6 @@ components:
         varname: MESSAGE_DELIVERY
       - enum: messageStatus
         varname: MESSAGE_STATUS
-      x-enum: true
     UpdateCallRequestStatus:
       description: Either `canceled` or `completed`.  Specifying `canceled` attempts
         to hang up calls that are queued without affecting calls already in progress.
@@ -3220,10 +3286,15 @@ components:
       - canceled
       - completed
       type: string
+      x-enum: true
       x-enum-varnames:
       - CANCELED
       - COMPLETED
-      x-enum: true
+      x-enum-mapping:
+      - enum: canceled
+        varname: CANCELED
+      - enum: completed
+        varname: COMPLETED
     UpdateConferenceRequestStatus:
       description: "New status of the conference. Valid values: `empty` or `terminated`.\
         \ For more information, see **Status Parameter** below.**"
@@ -3231,15 +3302,15 @@ components:
       - empty
       - terminated
       type: string
+      x-enum: true
       x-enum-varnames:
       - EMPTY
       - TERMINATED
-      x-php-enum-mapping:
+      x-enum-mapping:
       - enum: empty
         varname: EMPTY
       - enum: terminated
         varname: TERMINATED
-      x-enum: true
     SMSTollFreeCampaignRegistrationStatus:
       description: "Current toll-free campaign registration status.Possible values:\
         \ UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign\
@@ -3258,6 +3329,17 @@ components:
       - PENDING
       - DECLINED
       - REGISTERED
+      x-enum-mapping:
+      - enum: UNREGISTERED
+        varname: UNREGISTERED
+      - enum: INITIATED
+        varname: INITIATED
+      - enum: PENDING
+        varname: PENDING
+      - enum: DECLINED
+        varname: DECLINED
+      - enum: REGISTERED
+        varname: REGISTERED
     SMSTenDLCCampaignStatus:
       description: "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly\
         \ created campaign defaults to ACTIVE status. "
@@ -3269,6 +3351,11 @@ components:
       x-enum-varnames:
       - ACTIVE
       - EXPIRED
+      x-enum-mapping:
+      - enum: ACTIVE
+        varname: ACTIVE
+      - enum: EXPIRED
+        varname: EXPIRED
     SMSTenDLCPartnerCampaignStatus:
       description: "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly\
         \ created campaign defaults to ACTIVE status. "
@@ -3280,6 +3367,11 @@ components:
       x-enum-varnames:
       - ACTIVE
       - EXPIRED
+      x-enum-mapping:
+      - enum: ACTIVE
+        varname: ACTIVE
+      - enum: EXPIRED
+        varname: EXPIRED
     SMSTenDLCBrandEntityType:
       description: Entity type behind the brand. This is the form of business establishment.
       enum:
@@ -3297,6 +3389,17 @@ components:
       - NON_PROFIT
       - GOVERNMENT
       - SOLE_PROPRIETOR
+      x-enum-mapping:
+      - enum: PRIVATE_PROFIT
+        varname: PRIVATE_PROFIT
+      - enum: PUBLIC_PROFIT
+        varname: PUBLIC_PROFIT
+      - enum: NON_PROFIT
+        varname: NON_PROFIT
+      - enum: GOVERNMENT
+        varname: GOVERNMENT
+      - enum: SOLE_PROPRIETOR
+        varname: SOLE_PROPRIETOR
     SMSTenDLCBrandRelationship:
       description: Brand relationship to the CSP
       enum:
@@ -3313,6 +3416,17 @@ components:
       - MEDIUM_ACCOUNT
       - LARGE_ACCOUNT
       - KEY_ACCOUNT
+      x-enum-mapping:
+      - enum: BASIC_ACCOUNT
+        varname: BASIC_ACCOUNT
+      - enum: SMALL_ACCOUNT
+        varname: SMALL_ACCOUNT
+      - enum: MEDIUM_ACCOUNT
+        varname: MEDIUM_ACCOUNT
+      - enum: LARGE_ACCOUNT
+        varname: LARGE_ACCOUNT
+      - enum: KEY_ACCOUNT
+        varname: KEY_ACCOUNT
     SMSTenDLCBrandStockExchange:
       description: (Required for public company) stock exchange.
       enum:
@@ -3374,6 +3488,61 @@ components:
       - TWSE
       - VSE
       - OTHER
+      x-enum-mapping:
+      - enum: NONE
+        varname: NONE
+      - enum: NASDAQ
+        varname: NASDAQ
+      - enum: NYSE
+        varname: NYSE
+      - enum: AMEX
+        varname: AMEX
+      - enum: AMX
+        varname: AMX
+      - enum: ASX
+        varname: ASX
+      - enum: B3
+        varname: B3
+      - enum: BME
+        varname: BME
+      - enum: BSE
+        varname: BSE
+      - enum: FRA
+        varname: FRA
+      - enum: ICEX
+        varname: ICEX
+      - enum: JPX
+        varname: JPX
+      - enum: JSE
+        varname: JSE
+      - enum: KRX
+        varname: KRX
+      - enum: LON
+        varname: LON
+      - enum: NSE
+        varname: NSE
+      - enum: OMX
+        varname: OMX
+      - enum: SEHK
+        varname: SEHK
+      - enum: SGX
+        varname: SGX
+      - enum: SSE
+        varname: SSE
+      - enum: STO
+        varname: STO
+      - enum: SWX
+        varname: SWX
+      - enum: SZSE
+        varname: SZSE
+      - enum: TSX
+        varname: TSX
+      - enum: TWSE
+        varname: TWSE
+      - enum: VSE
+        varname: VSE
+      - enum: OTHER
+        varname: OTHER
     SMSTenDLCBrandAltBusinessIdType:
       description: The type of the Alternative business identifier
       enum:
@@ -3388,6 +3557,15 @@ components:
       - DUNS
       - GIIN
       - LEI
+      x-enum-mapping:
+      - enum: NONE
+        varname: NONE
+      - enum: DUNS
+        varname: DUNS
+      - enum: GIIN
+        varname: GIIN
+      - enum: LEI
+        varname: LEI
     SMSTenDLCBrandIdentityStatus:
       description: TCR assessment of the brand identification status.
       enum:
@@ -3402,6 +3580,15 @@ components:
       - UNVERIFIED
       - VERIFIED
       - VETTED_VERIFIED
+      x-enum-mapping:
+      - enum: SELF_DECLARED
+        varname: SELF_DECLARED
+      - enum: UNVERIFIED
+        varname: UNVERIFIED
+      - enum: VERIFIED
+        varname: VERIFIED
+      - enum: VETTED_VERIFIED
+        varname: VETTED_VERIFIED
     CompletionResultStatus:
       description: "Completion result status. Possible values: success, no_context"
       enum:
@@ -3412,7 +3599,7 @@ components:
       x-enum-varnames:
       - SUCCESS
       - NO_CONTEXT
-      x-py-enum-mapping:
+      x-enum-mapping:
       - enum: success
         varname: SUCCESS
       - enum: no_context
@@ -3472,8 +3659,8 @@ components:
           description: Name of PerCL Command (this is automatically derived from mapping
             configuration and should not be manually supplied in any arguments)
           type: string
-          x-is-no-property: true
           x-percl-command-base: true
+          x-is-no-property: true
       type: object
       x-percl-command-base: true
     Webhook:
@@ -3551,7 +3738,10 @@ components:
           recordingUrl:
             description: URL of the Conference’s recorded audio. Populated only if
               a Recording exists and the Conference was emptied.
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           recordingId:
             description: Unique ID of the Recording from this Conference. Populated
               only if a recording exists and the Conference was emptied.
@@ -3712,7 +3902,10 @@ components:
           recordingUrl:
             description: URL of the Conference’s recorded audio. Populated only if
               a Recording exists and the Conference was emptied.
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           recordingId:
             description: Unique ID of the Recording from this Conference. Populated
               only if a recording exists and the Conference was emptied.
@@ -3768,8 +3961,11 @@ components:
             description: The URL of the Conference’s recorded audio. Populated only
               if a Recording exists and the Conference was emptied. Present only if
               statusCallbackUrl is being invoked.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           recordingId:
             description: The unique ID of the Recording from this Conference. Populated
               only if a Recording exists and the Conference was emptied. Present only
@@ -3827,8 +4023,11 @@ components:
             description: The URL of the Conference’s recorded audio. Populated only
               if a Recording exists and the Conference was emptied. Present only if
               statusCallbackUrl is being invoked.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           recordingId:
             description: The unique ID of the Recording from this Conference. Populated
               only if a Recording exists and the Conference was emptied. Present only
@@ -4486,7 +4685,10 @@ components:
             description: URL of the recorded audio file. This URL can be used as is
               in a Play command to play the recording (no authentication needed).
               It can also be used to download a recording file via the REST API.
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           recordingSize:
             description: Size of the recording in bytes
             type: string
@@ -4637,8 +4839,11 @@ components:
             description: The URL of the recorded audio file. This URL can be used
               as is in a Play command to play the recording (no authentication needed).
               It can also be used to download the recording file via the REST API.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           recordingSize:
             description: The size of the recording in bytes.
             type: integer
@@ -4712,14 +4917,20 @@ components:
           callControlUrl:
             description: URL to be invoked when this Participant enters the digit
               sequence defined in the `callControlSequence` attribute.
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           conferenceId:
             description: ID of the Conference to which to add the Participant (Call
               leg). Conference must exist or an error will result.
             type: string
           leaveConferenceUrl:
             description: 'URL to be invoked when the Participant leaves the Conference. '
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           listen:
             description: "If `true`, the Participant joins the Conference with listen\
               \ privileges. This may be modified later via the REST API or `SetListen`\
@@ -4728,7 +4939,10 @@ components:
           notificationUrl:
             description: "When the Participant enters the Conference, this URL will\
               \ be invoked using an HTTP POST request with the standard request parameters."
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           startConfOnEnter:
             description: Flag that indicates whether a Conference starts upon entry
               of this particular Participant. This is usually set to `true` for moderators
@@ -4753,16 +4967,6 @@ components:
       required:
       - conferenceId
       x-percl-command: AddToConference
-      x-ref-properties:
-      - "false"
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - "false"
-      - '"TEST_STRING"'
-      - "false"
-      - "false"
     CreateConference:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -4771,8 +4975,10 @@ components:
             description: " This URL is invoked once the Conference is successfully\
               \ created. Actions on the Conference, such as adding Participants, can\
               \ be performed via the PerCL script returned in the response. "
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
           alias:
             description: 'Descriptive name for the Conference. '
             type: boolean
@@ -4787,14 +4993,20 @@ components:
           statusCallbackUrl:
             description: This URL is invoked when the status of the Conference changes
               or when a recording of the Conference has become available.
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           waitUrl:
             description: "If specified, this URL provides the custom hold music for\
               \ the Conference when it is in the populated state. This attribute is\
               \ always fetched using HTTP GET and is fetched just once – when the\
               \ Conference is created. The URL must be an audio file that is reachable\
               \ and readable by FreeClimb."
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
         required:
         - actionUrl
         type: object
@@ -4803,14 +5015,6 @@ components:
         \ created, a Conference remains in FreeClimb until explicitly terminated by\
         \ a customer. Once a Conference has been terminated, it can no longer be used."
       x-percl-command: CreateConference
-      x-ref-properties:
-      - '"TEST_STRING"'
-      - "false"
-      - PlayBeep.ALWAYS
-      - "false"
-      - '"https://a.com"'
-      - '"https://a.com"'
-      - '"TEST_STRING"'
     Dequeue:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -4830,14 +5034,18 @@ components:
               \ which can occur if enqueue of the Call fails or when the call is dequeued\
               \ via the `Dequeue` command, the REST API (POST to Queue Member resource),\
               \ or the caller hangs up."
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
           notificationUrl:
             description: URL to be invoked when the call enters the queue. The request
               to the URL contains the standard request parameters.This is a notification
               only; any PerCL returned will be ignored.
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
           queueId:
             description: "ID of the Queue to which to add the Call. If the Queue does\
               \ not exist, it will be created. The ID must start with QU followed\
@@ -4848,7 +5056,10 @@ components:
               \ which can occur if enqueue of the Call fails or when the call is dequeued\
               \ via the `Dequeue` command, the REST API (POST to Queue Member resource),\
               \ or the caller hangs up."
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
         required:
         - actionUrl
         - queueId
@@ -4863,12 +5074,6 @@ components:
       - queueId
       - waitUrl
       x-percl-command: Enqueue
-      x-ref-properties:
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
     GetDigits:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -4878,8 +5083,10 @@ components:
               \ will make an HTTP POST request to this URL. A PerCL response is expected\
               \ to continue handling the Call. Make sure to keep “http://“ in the\
               \ URL."
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
           digitTimeoutMs:
             description: " Maximum time in milliseconds that FreeClimb will wait for\
               \ the Caller to press any digit after the last digit entered, before\
@@ -4941,17 +5148,6 @@ components:
         \ to respond to the FreeClimb Webhook with PerCL to continue handling the\
         \ call."
       x-percl-command: GetDigits
-      x-ref-properties:
-      - '"https://a.com"'
-      - "1"
-      - '"TEST_STRING"'
-      - "false"
-      - "300"
-      - "1"
-      - "1"
-      - new List<PerclCommand>()
-      - "false"
-      - '"TEST_STRING"'
     GetSpeech:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5043,21 +5239,6 @@ components:
         \ is only supported on a single call leg. It is not supported when there are\
         \ two or more call legs connected (as in within a Conference)."
       x-percl-command: GetSpeech
-      x-ref-properties:
-      - '"https://a.com"'
-      - GrammarType.URL
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - "false"
-      - new List<PerclCommand>()
-      - "1"
-      - "1"
-      - "1"
-      - "1"
-      - "1"
-      - "1"
-      - "false"
-      - '"TEST_STRING"'
     Hangup:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5079,13 +5260,17 @@ components:
       - properties:
           actionUrl:
             description: 'URL to which FreeClimb sends an HTTP POST request. '
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
           callConnectUrl:
             description: URL to which FreeClimb makes an HTTP POST request informing
               the result of the OutDial.
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
           callingNumber:
             description: "he caller ID to show to the called party when FreeClimb\
               \ calls. This can be one of the following: The To or From number provided\
@@ -5103,7 +5288,10 @@ components:
               \ machine or a fax machine is detected. This URL is required if the\
               \ `ifMachine` flag is set to `redirect`. Otherwise, it should not be\
               \ included."
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           sendDigits:
             description: DTMF tones to play to the outdialed Call. This is typically
               used to dial a number and then dial an extension.
@@ -5112,7 +5300,10 @@ components:
             description: "When the outdialed Call leg terminates, FreeClimb sends\
               \ a `callStatus` Webhook to the `statusCallbackUrl`. This is a notification\
               \ only; any PerCL command returned is ignored."
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           timeout:
             description: "Maximum time in seconds the `OutDial` command waits for\
               \ the called party to answer the Call. When a timeout occurs, FreeClimb\
@@ -5131,18 +5322,6 @@ components:
         type: object
       description: The OutDial command is used to call a phone number
       x-percl-command: OutDial
-      x-ref-properties:
-      - '"https://a.com"'
-      - '"https://a.com"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - IfMachine.REDIRECT
-      - '"https://a.com"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - "1"
-      - "false"
-      - '"TEST_STRING"'
     Park:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5153,20 +5332,27 @@ components:
               \ by the waitUrl runs out of commands to execute, FreeClimb will re-request\
               \ the waitUrl and start over, essentially looping the script requests\
               \ indefinitely."
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
           actionUrl:
             description: "A request is made to this URL when the Call is resumed,\
               \ which can occur if the Call is resumed via the Unpark command, the\
               \ REST API (POST to Call resource), or the caller hangs up. The PerCL\
               \ script returned in response to the actionUrl will be executed on the\
               \ resumed call."
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
           notificationUrl:
             description: URL to be invoked when the Call is parked. The request to
               the URL contains the standard request parameters.
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
         required:
         - actionUrl
         - waitUrl
@@ -5180,11 +5366,6 @@ components:
         \ ways -- REST API invocation or the Unpark percl command. No actions can\
         \ be nested within Park and Park cannot be nested in any other actions. "
       x-percl-command: Park
-      x-ref-properties:
-      - '"https://a.com"'
-      - '"https://a.com"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
     Pause:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5201,8 +5382,6 @@ components:
         \ in a PerCL document, FreeClimb will wait for the specified time to elapse\
         \ before picking up the call."
       x-percl-command: Pause
-      x-ref-properties:
-      - "1"
     Play:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5229,10 +5408,6 @@ components:
         unless nested within a `GetSpeech` command. The file will always be played
         to completion unless nested.
       x-percl-command: Play
-      x-ref-properties:
-      - '"TEST_STRING"'
-      - "1"
-      - "false"
     PlayEarlyMedia:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5254,8 +5429,6 @@ components:
         \ audio file it uses can be stored in any location that is accessible via\
         \ URL."
       x-percl-command: PlayEarlyMedia
-      x-ref-properties:
-      - '"TEST_STRING"'
     RecordUtterance:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5263,8 +5436,10 @@ components:
           actionUrl:
             description: URL to which information on the completed recording is submitted.
               The PerCL received in response is then used to continue with Call processing.
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
           silenceTimeoutMs:
             description: Interval of silence that should elapse before ending the
               recording.
@@ -5299,14 +5474,6 @@ components:
         \ and control of the Call picks up using the PerCL returned in response to\
         \ the `actionUrl`. Recording information is returned in the `actionUrl` request."
       x-percl-command: RecordUtterance
-      x-ref-properties:
-      - '"https://a.com"'
-      - "1"
-      - '"TEST_STRING"'
-      - "1"
-      - "false"
-      - "false"
-      - "false"
     Redirect:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5317,8 +5484,10 @@ components:
               \ Webhook is sent. This request therefore looks identical to the initial\
               \ request (made to the `voiceUrl` of the number that was called) for\
               \ an inbound Call."
+            format: uri
             type: string
             x-is-uri: true
+            x-is-url: true
         required:
         - actionUrl
         type: object
@@ -5328,8 +5497,6 @@ components:
         \ the life time of a Call is 256. This is intended to prevent a Call from\
         \ possibly looping infinitely due to errors in PerCL being generated."
       x-percl-command: Redirect
-      x-ref-properties:
-      - '"https://a.com"'
     Reject:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5345,8 +5512,6 @@ components:
         the only way to prevent FreeClimb from answering a Call. Any other response
         will result in an answered Call and your account will be billed.
       x-percl-command: Reject
-      x-ref-properties:
-      - '"TEST_STRING"'
     RemoveFromConference:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5390,11 +5555,6 @@ components:
         `Say` does not allow barge-in unless nested within a `GetSpeech` command.
         The file will always be played to completion unless nested.
       x-percl-command: Say
-      x-ref-properties:
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - "1"
-      - "false"
     SendDigits:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5419,10 +5579,6 @@ components:
       description: The `SendDigits` command plays DTMF tones on a live Call. This
         is useful for navigating through IVR menus or dialing extensions.
       x-percl-command: SendDigits
-      x-ref-properties:
-      - '"TEST_STRING"'
-      - "1"
-      - "false"
     SetListen:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5435,8 +5591,6 @@ components:
         for this Conference Participant. The Participant can hear what the other participants
         are saying only if this privilege is enabled.
       x-percl-command: SetListen
-      x-ref-properties:
-      - "false"
     SetTalk:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5449,8 +5603,6 @@ components:
         \ this Conference Participant. If 'true', no audio from that Participant is\
         \ shared with the other Participants of the Conference."
       x-percl-command: SetTalk
-      x-ref-properties:
-      - "false"
     SetDTMFPassThrough:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5463,8 +5615,6 @@ components:
         \ privilege for this Conference Participant. If 'true', DTMFs will be passed\
         \ through from this Participant to all other Participants in the Conference"
       x-percl-command: SetDTMFPassThrough
-      x-ref-properties:
-      - "false"
     Sms:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5485,7 +5635,10 @@ components:
             description: "When the message changes status, this URL will be invoked\
               \ using HTTP POST with the messageStatus parameters. This is a notification\
               \ only; any PerCL returned will be ignored."
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
         required:
         - from
         - text
@@ -5494,10 +5647,6 @@ components:
       description: The `Sms` command can be used to send an SMS message to a phone
         number during a phone call. International SMS is disabled by default.
       x-percl-command: Sms
-      x-ref-properties:
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
     StartRecordCall:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -5624,12 +5773,6 @@ components:
       - voice
       type: object
       x-is-object: true
-      x-ref-properties:
-      - false
-      - false
-      - false
-      - false
-      - false
     TFN:
       description: TollFree Campaign details for this number
       example:
@@ -5643,8 +5786,6 @@ components:
       - campaignId
       type: object
       x-is-object: true
-      x-ref-properties:
-      - '"TEST_STRING"'
     AccountRequest:
       example:
         alias: alias
@@ -5721,59 +5862,77 @@ components:
           voiceUrl:
             description: The URL FreeClimb will request when a phone number assigned
               to this Application receives a Call. Used for inbound calls only.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           voiceFallbackUrl:
             description: The URL that FreeClimb will request if it times out waiting
               for a response from the voiceUrl. Used for inbound calls only.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           callConnectUrl:
             description: The URL to which FreeClimb will make a POST request informing
               the result of the outbound Call request. The status property of the
               request message specifies if the Call was connected or not.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           statusCallbackUrl:
             description: A URL to which FreeClimb will make a POST request when the
               Call ends to notify this app.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           smsUrl:
             description: The URL FreeClimb will request when a phone number assigned
               to this Application receives an incoming SMS message. Used for inbound
               SMS only.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           smsFallbackUrl:
             description: The URL that FreeClimb will request if it times out waiting
               for a response from the smsUrl. Used for inbound SMS only.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
         type: object
       example:
-        smsUrl: smsUrl
-        statusCallbackUrl: statusCallbackUrl
+        smsUrl: https://openapi-generator.tech
+        statusCallbackUrl: https://openapi-generator.tech
         uri: uri
-        callConnectUrl: callConnectUrl
+        callConnectUrl: https://openapi-generator.tech
         dateUpdated: dateUpdated
         revision: 0
-        voiceUrl: voiceUrl
+        voiceUrl: https://openapi-generator.tech
         accountId: accountId
         dateCreated: dateCreated
-        smsFallbackUrl: smsFallbackUrl
+        smsFallbackUrl: https://openapi-generator.tech
         alias: alias
-        voiceFallbackUrl: voiceFallbackUrl
+        voiceFallbackUrl: https://openapi-generator.tech
         applicationId: applicationId
     ApplicationRequest:
       example:
-        voiceUrl: voiceUrl
-        smsUrl: smsUrl
-        smsFallbackUrl: smsFallbackUrl
+        voiceUrl: https://openapi-generator.tech
+        smsUrl: https://openapi-generator.tech
+        smsFallbackUrl: https://openapi-generator.tech
         alias: alias
-        voiceFallbackUrl: voiceFallbackUrl
-        statusCallbackUrl: statusCallbackUrl
-        callConnectUrl: callConnectUrl
+        voiceFallbackUrl: https://openapi-generator.tech
+        statusCallbackUrl: https://openapi-generator.tech
+        callConnectUrl: https://openapi-generator.tech
       properties:
         alias:
           description: "A human readable description of the application, with maximum\
@@ -5783,39 +5942,57 @@ components:
           description: The URL that FreeClimb will request when an inbound call arrives
             on a phone number assigned to this application. Used only for inbound
             calls.
+          format: uri
           nullable: true
           type: string
+          x-is-uri: true
+          x-is-url: true
         voiceFallbackUrl:
           description: "The URL that FreeClimb will request if it times out waiting\
             \ for a response from the voiceUrl. Used for inbound calls only. Note:\
             \ A PerCL response is expected to control the inbound call."
+          format: uri
           nullable: true
           type: string
+          x-is-uri: true
+          x-is-url: true
         callConnectUrl:
           description: "The URL that FreeClimb will request when an outbound call\
             \ request is complete. Used for outbound calls only.  Note: A PerCL response\
             \ is expected if the outbound call is connected (status=InProgress) to\
             \ control the call."
+          format: uri
           nullable: true
           type: string
+          x-is-uri: true
+          x-is-url: true
         statusCallbackUrl:
           description: "The URL that FreeClimb will request to pass call status (such\
             \ as call ended) to the application.  Note: This is a notification only;\
             \ any PerCL returned will be ignored."
+          format: uri
           nullable: true
           type: string
+          x-is-uri: true
+          x-is-url: true
         smsUrl:
           description: "The URL that FreeClimb will request when a phone number assigned\
             \ to this application receives an incoming SMS message. Used for inbound\
             \ SMS only.  Note: Any PerCL returned will be ignored."
+          format: uri
           nullable: true
           type: string
+          x-is-uri: true
+          x-is-url: true
         smsFallbackUrl:
           description: "The URL that FreeClimb will request if it times out waiting\
             \ for a response from the smsUrl. Used for inbound SMS only.  Note: Any\
             \ PerCL returned will be ignored."
+          format: uri
           nullable: true
           type: string
+          x-is-uri: true
+          x-is-url: true
       type: object
     ApplicationList:
       allOf:
@@ -5837,31 +6014,31 @@ components:
         end: 1
         page: 5
         applications:
-        - smsUrl: smsUrl
-          statusCallbackUrl: statusCallbackUrl
+        - smsUrl: https://openapi-generator.tech
+          statusCallbackUrl: https://openapi-generator.tech
           uri: uri
-          callConnectUrl: callConnectUrl
+          callConnectUrl: https://openapi-generator.tech
           dateUpdated: dateUpdated
           revision: 0
-          voiceUrl: voiceUrl
+          voiceUrl: https://openapi-generator.tech
           accountId: accountId
           dateCreated: dateCreated
-          smsFallbackUrl: smsFallbackUrl
+          smsFallbackUrl: https://openapi-generator.tech
           alias: alias
-          voiceFallbackUrl: voiceFallbackUrl
+          voiceFallbackUrl: https://openapi-generator.tech
           applicationId: applicationId
-        - smsUrl: smsUrl
-          statusCallbackUrl: statusCallbackUrl
+        - smsUrl: https://openapi-generator.tech
+          statusCallbackUrl: https://openapi-generator.tech
           uri: uri
-          callConnectUrl: callConnectUrl
+          callConnectUrl: https://openapi-generator.tech
           dateUpdated: dateUpdated
           revision: 0
-          voiceUrl: voiceUrl
+          voiceUrl: https://openapi-generator.tech
           accountId: accountId
           dateCreated: dateCreated
-          smsFallbackUrl: smsFallbackUrl
+          smsFallbackUrl: https://openapi-generator.tech
           alias: alias
-          voiceFallbackUrl: voiceFallbackUrl
+          voiceFallbackUrl: https://openapi-generator.tech
           applicationId: applicationId
       x-implements: Pagination
     AvailableNumber:
@@ -6250,7 +6427,7 @@ components:
     MakeCallRequest:
       example:
         sendDigits: sendDigits
-        ifMachineUrl: ifMachineUrl
+        ifMachineUrl: https://openapi-generator.tech
         privacyMode: true
         parentCallId: parentCallId
         ifMachine: ifMachine
@@ -6258,7 +6435,7 @@ components:
         to: to
         applicationId: applicationId
         timeout: 0
-        callConnectUrl: callConnectUrl
+        callConnectUrl: https://openapi-generator.tech
       properties:
         from:
           description: "Phone number to use as the caller ID. This can be: (a) The\
@@ -6299,7 +6476,10 @@ components:
             \ This URL is required if the ifMachine flag is set to redirect. When\
             \ ifMachine is set to hangup, ifMachineUrl must not be included in the\
             \ request. For more information, see **ifMachineUrl example** below."
+          format: uri
           type: string
+          x-is-uri: true
+          x-is-url: true
         timeout:
           default: 30
           description: Number of seconds that FreeClimb should allow the phone to
@@ -6331,7 +6511,10 @@ components:
             \ If an applicationId or parentCallId have already been provided, this\
             \ callConnectUrl attribute will be used as a replacement of the callConnectUrl\
             \ originally assigned in the application or parent call."
+          format: uri
           type: string
+          x-is-uri: true
+          x-is-url: true
       required:
       - from
       - to
@@ -6576,29 +6759,38 @@ components:
           waitUrl:
             description: URL referencing the audio file to be used as default wait
               music for the Conference when it is in the populated state.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           actionUrl:
             description: URL invoked once the Conference is successfully created.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           statusCallbackUrl:
             description: URL to inform that the Conference status has changed.
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           subresourceUris:
             $ref: '#/components/schemas/ConferenceResult_allOf_subresourceUris'
         type: object
       example:
-        actionUrl: actionUrl
-        statusCallbackUrl: statusCallbackUrl
+        actionUrl: https://openapi-generator.tech
+        statusCallbackUrl: https://openapi-generator.tech
         uri: uri
         dateUpdated: dateUpdated
         revision: 7
         accountId: accountId
         playBeep: always
         dateCreated: dateCreated
-        waitUrl: waitUrl
+        waitUrl: https://openapi-generator.tech
         conferenceId: conferenceId
         record: true
         subresourceUris: null
@@ -6623,7 +6815,7 @@ components:
         start: 6
         pageSize: 2
         messages:
-        - notificationUrl: notificationUrl
+        - notificationUrl: https://openapi-generator.tech
           campaignId: campaignId
           messageId: messageId
           uri: uri
@@ -6641,7 +6833,7 @@ components:
           - https://openapi-generator.tech
           status: new
           direction: direction
-        - notificationUrl: notificationUrl
+        - notificationUrl: https://openapi-generator.tech
           campaignId: campaignId
           messageId: messageId
           uri: uri
@@ -6682,7 +6874,10 @@ components:
             description: "When the Message changes status, this URL is invoked using\
               \ HTTP POST with the messageStatus parameters.  **Note:** This is a\
               \ notification only; any PerCL returned is ignored."
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           mediaUrls:
             description: an array of HTTP URLs which are to be used as attachments
               to the message. This will force the message into being an MMS message
@@ -6698,7 +6893,7 @@ components:
         - to
         type: object
       example:
-        notificationUrl: notificationUrl
+        notificationUrl: https://openapi-generator.tech
         dateCreated: dateCreated
         from: from
         to: to
@@ -6734,7 +6929,6 @@ components:
       - response
       - status
       type: object
-      x-completion-result: true
     ConferenceList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -6755,29 +6949,29 @@ components:
         end: 1
         page: 5
         conferences:
-        - actionUrl: actionUrl
-          statusCallbackUrl: statusCallbackUrl
+        - actionUrl: https://openapi-generator.tech
+          statusCallbackUrl: https://openapi-generator.tech
           uri: uri
           dateUpdated: dateUpdated
           revision: 7
           accountId: accountId
           playBeep: always
           dateCreated: dateCreated
-          waitUrl: waitUrl
+          waitUrl: https://openapi-generator.tech
           conferenceId: conferenceId
           record: true
           subresourceUris: null
           alias: alias
           status: empty
-        - actionUrl: actionUrl
-          statusCallbackUrl: statusCallbackUrl
+        - actionUrl: https://openapi-generator.tech
+          statusCallbackUrl: https://openapi-generator.tech
           uri: uri
           dateUpdated: dateUpdated
           revision: 7
           accountId: accountId
           playBeep: always
           dateCreated: dateCreated
-          waitUrl: waitUrl
+          waitUrl: https://openapi-generator.tech
           conferenceId: conferenceId
           record: true
           subresourceUris: null
@@ -6816,8 +7010,11 @@ components:
             type: string
           notificationUrl:
             description: URL invoked when message sent
+            format: uri
             nullable: true
             type: string
+            x-is-uri: true
+            x-is-url: true
           brandId:
             description: The unique identifier for the brand associated with the message
             nullable: true
@@ -6840,7 +7037,7 @@ components:
             x-is-list: true
         type: object
       example:
-        notificationUrl: notificationUrl
+        notificationUrl: https://openapi-generator.tech
         campaignId: campaignId
         messageId: messageId
         uri: uri
@@ -6861,10 +7058,10 @@ components:
     CreateConferenceRequest:
       example:
         playBeep: always
-        waitUrl: waitUrl
+        waitUrl: https://openapi-generator.tech
         record: true
         alias: alias
-        statusCallbackUrl: statusCallbackUrl
+        statusCallbackUrl: https://openapi-generator.tech
       properties:
         alias:
           description: A description for this Conference. Maximum 64 characters.
@@ -6879,11 +7076,17 @@ components:
             \ hold music for the Conference when it is in the populated state. Otherwise,\
             \ FreeClimb uses a system default audio file. This is always fetched using\
             \ HTTP GET and is fetched just once &mdash; when the Conference is created."
+          format: uri
           type: string
+          x-is-uri: true
+          x-is-url: true
         statusCallbackUrl:
           description: "This URL is invoked when the status of the Conference changes.\
             \ For more information, see **statusCallbackUrl** (below)."
+          format: uri
           type: string
+          x-is-uri: true
+          x-is-url: true
       type: object
     UpdateConferenceRequest:
       example:
@@ -7832,18 +8035,6 @@ components:
       - phone
       type: object
       x-is-object: true
-      x-sms-ten-dlc-partner-campaign-brand: true
-      x-ref-properties:
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - '"TEST_STRING"'
-      - "new Dictionary<string, object>()"
-      - "1"
     SMSTenDLCBrandsListResult:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -8101,7 +8292,6 @@ components:
       - phone
       - vertical
       type: object
-      x-sms-ten-dlc-brand: true
     SMSTollFreeCampaignsListResult:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -8174,7 +8364,6 @@ components:
       - revision
       - useCase
       type: object
-      x-sms-toll-free-campaign: true
     TranscribeUtteranceRecord:
       properties:
         saveRecording:
@@ -8200,7 +8389,10 @@ components:
           `TranscribeUtterance` is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the `PerCL` returned in response of the `actionUrl`. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
         properties:
           actionUrl:
+            format: uri
             type: string
+            x-is-uri: true
+            x-is-url: true
           playBeep:
             default: false
             type: boolean
@@ -8227,15 +8419,6 @@ components:
       title: TranscribeUtterance
       x-stoplight:
         id: u509r3zqc38ze
-      x-percl-command: TranscribeUtterance
-      x-ref-properties:
-      - '"TEST_STRING"'
-      - "false"
-      - new TranscribeUtteranceAllOfRecord()
-      - "false"
-      - "false"
-      - new List<Object>()
-      - '"TEST_STRING"'
       x-examples:
         Example 1:
           TranscribeUtterance:
@@ -8248,6 +8431,7 @@ components:
             prompts:
             - Play:
                 file: https://yoursite.com/path/to/please-record-greeting.wav
+      x-percl-command: TranscribeUtterance
     CreateWebRTCToken:
       additionalProperties: false
       example:
@@ -8272,7 +8456,6 @@ components:
       - to
       - uses
       type: object
-      x-web-rtc: true
     AccountResult_allOf_subresourceUris:
       description: The list of subresources for this account.
       nullable: true

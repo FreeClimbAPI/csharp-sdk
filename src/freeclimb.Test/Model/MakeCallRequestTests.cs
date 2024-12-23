@@ -147,9 +147,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void IfMachineUrlTest()
         {
+            
             instance.IfMachineUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.IfMachineUrl);
-            
         }
         
 
@@ -195,9 +195,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallConnectUrlTest()
         {
+            
             instance.CallConnectUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CallConnectUrl);
-            
         }
 
         public object getTestValue(Type type)
@@ -315,6 +315,9 @@ namespace freeclimb.Test.Model
             }
             if (type == typeof(UpdateConferenceRequestStatus)) {
                 return UpdateConferenceRequestStatusValueConverter.FromString("empty");
+            }
+            if (type == typeof(Capabilities)) {
+                return new Capabilities(false, false, false, false, false);
             }
             if (type == typeof(List<string>)) {
                 return new List<string>();

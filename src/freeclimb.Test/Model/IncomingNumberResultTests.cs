@@ -149,7 +149,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesTest()
         {
-            Capabilities testObject = new Capabilities(false, false, false, false, false);
+            Capabilities testObject = getTestValue(typeof(Capabilities));
             instance.Capabilities = testObject;
             Assert.Equal(testObject, instance.Capabilities);
             
@@ -294,7 +294,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TfnTest()
         {
-            TFN testObject = new TFN("TEST_STRING");
+            TFN testObject = getTestValue(typeof(TFN));
             instance.Tfn = testObject;
             Assert.Equal(testObject, instance.Tfn);
             
@@ -415,6 +415,9 @@ namespace freeclimb.Test.Model
             }
             if (type == typeof(UpdateConferenceRequestStatus)) {
                 return UpdateConferenceRequestStatusValueConverter.FromString("empty");
+            }
+            if (type == typeof(Capabilities)) {
+                return new Capabilities(false, false, false, false, false);
             }
             if (type == typeof(List<string>)) {
                 return new List<string>();

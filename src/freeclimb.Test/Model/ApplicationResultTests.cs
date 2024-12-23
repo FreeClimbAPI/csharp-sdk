@@ -177,9 +177,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void VoiceUrlTest()
         {
+            
             instance.VoiceUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.VoiceUrl);
-            
         }
         
 
@@ -189,9 +189,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void VoiceFallbackUrlTest()
         {
+            
             instance.VoiceFallbackUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.VoiceFallbackUrl);
-            
         }
         
 
@@ -201,9 +201,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallConnectUrlTest()
         {
+            
             instance.CallConnectUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CallConnectUrl);
-            
         }
         
 
@@ -213,9 +213,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void StatusCallbackUrlTest()
         {
+            
             instance.StatusCallbackUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.StatusCallbackUrl);
-            
         }
         
 
@@ -225,9 +225,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SmsUrlTest()
         {
+            
             instance.SmsUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.SmsUrl);
-            
         }
         
 
@@ -237,9 +237,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SmsFallbackUrlTest()
         {
+            
             instance.SmsFallbackUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.SmsFallbackUrl);
-            
         }
 
         public object getTestValue(Type type)
@@ -357,6 +357,9 @@ namespace freeclimb.Test.Model
             }
             if (type == typeof(UpdateConferenceRequestStatus)) {
                 return UpdateConferenceRequestStatusValueConverter.FromString("empty");
+            }
+            if (type == typeof(Capabilities)) {
+                return new Capabilities(false, false, false, false, false);
             }
             if (type == typeof(List<string>)) {
                 return new List<string>();

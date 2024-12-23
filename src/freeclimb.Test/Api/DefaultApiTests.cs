@@ -1135,6 +1135,28 @@ namespace freeclimb.Test.Api
         }
         
         /// <summary>
+        /// Test FilterLogs
+        /// </summary>
+        [Fact]
+
+        public void FilterLogsGetNextPageTest()
+        {
+            
+            
+            FilterLogsRequest filterLogsRequest = filterLogsRequestTestValue();
+            
+	        
+            var response = instance.FilterLogs(filterLogsRequest);
+            //Assert.IsType<LogList>(response);
+            Assert.IsAssignableFrom<LogList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Logs?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<LogList>(response);
+            Assert.IsAssignableFrom<LogList>(nextPageResponse);
+
+        }
+        
+        /// <summary>
         /// Test GetTenDLCSmsBrands
         /// </summary>
         [Fact]
