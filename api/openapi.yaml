@@ -1990,7 +1990,7 @@ paths:
   /Accounts/{accountId}/Messages/10DLC/Campaigns:
     get:
       deprecated: false
-      operationId: get-tenDLC-sms-Campaigns
+      operationId: get-tenDLC-sms-campaigns
       parameters:
       - description: ID of the account
         explode: false
