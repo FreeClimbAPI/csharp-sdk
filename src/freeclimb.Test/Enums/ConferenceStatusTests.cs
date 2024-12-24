@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class ConferenceStatusTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for ConferenceStatus
         private ConferenceStatus instance;
 
         public ConferenceStatusTests()

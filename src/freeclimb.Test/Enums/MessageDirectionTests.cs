@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class MessageDirectionTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for MessageDirection
         private MessageDirection instance;
 
         public MessageDirectionTests()

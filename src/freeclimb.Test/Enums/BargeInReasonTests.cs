@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class BargeInReasonTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for BargeInReason
         private BargeInReason instance;
 
         public BargeInReasonTests()

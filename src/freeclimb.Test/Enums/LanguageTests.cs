@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class LanguageTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for Language
         private Language instance;
 
         public LanguageTests()

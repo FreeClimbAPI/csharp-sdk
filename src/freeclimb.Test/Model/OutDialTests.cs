@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class OutDialTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for OutDial
         private OutDial instance;
 
         public OutDialTests()

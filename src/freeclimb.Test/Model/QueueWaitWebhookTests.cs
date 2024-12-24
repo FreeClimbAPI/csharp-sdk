@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class QueueWaitWebhookTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for QueueWaitWebhook
         private QueueWaitWebhook instance;
 
         public QueueWaitWebhookTests()

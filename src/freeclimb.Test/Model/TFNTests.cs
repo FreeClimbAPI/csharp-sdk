@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class TFNTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for TFN
         private TFN instance;
 
         public TFNTests()

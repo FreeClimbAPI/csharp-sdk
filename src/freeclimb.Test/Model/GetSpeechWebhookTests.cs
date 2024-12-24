@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class GetSpeechWebhookTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for GetSpeechWebhook
         private GetSpeechWebhook instance;
 
         public GetSpeechWebhookTests()

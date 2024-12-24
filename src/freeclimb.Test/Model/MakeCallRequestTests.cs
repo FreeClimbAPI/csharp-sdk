@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class MakeCallRequestTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for MakeCallRequest
         private MakeCallRequest instance;
 
         public MakeCallRequestTests()

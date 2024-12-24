@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class IfMachineTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for IfMachine
         private IfMachine instance;
 
         public IfMachineTests()

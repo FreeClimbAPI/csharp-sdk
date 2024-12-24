@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class UnparkTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for Unpark
         private Unpark instance;
 
         public UnparkTests()

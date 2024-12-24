@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class SMSTollFreeCampaignTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for SMSTollFreeCampaign
         private SMSTollFreeCampaign instance;
 
         public SMSTollFreeCampaignTests()

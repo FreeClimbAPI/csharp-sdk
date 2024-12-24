@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class QueueResultStatusTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for QueueResultStatus
         private QueueResultStatus instance;
 
         public QueueResultStatusTests()

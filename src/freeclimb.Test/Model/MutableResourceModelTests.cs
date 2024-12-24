@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class MutableResourceModelTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for MutableResourceModel
         private MutableResourceModel instance;
 
         public MutableResourceModelTests()

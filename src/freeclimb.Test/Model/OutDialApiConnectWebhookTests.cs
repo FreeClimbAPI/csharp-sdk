@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class OutDialApiConnectWebhookTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for OutDialApiConnectWebhook
         private OutDialApiConnectWebhook instance;
 
         public OutDialApiConnectWebhookTests()

@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class GetDigitsReasonTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for GetDigitsReason
         private GetDigitsReason instance;
 
         public GetDigitsReasonTests()

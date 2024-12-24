@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class TranscribeReasonTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for TranscribeReason
         private TranscribeReason instance;
 
         public TranscribeReasonTests()

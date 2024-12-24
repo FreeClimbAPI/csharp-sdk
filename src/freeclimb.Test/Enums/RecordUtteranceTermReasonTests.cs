@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class RecordUtteranceTermReasonTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for RecordUtteranceTermReason
         private RecordUtteranceTermReason instance;
 
         public RecordUtteranceTermReasonTests()

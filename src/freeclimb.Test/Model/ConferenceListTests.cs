@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class ConferenceListTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for ConferenceList
         private ConferenceList instance;
 
         public ConferenceListTests()

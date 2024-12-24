@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class HangupTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for Hangup
         private Hangup instance;
 
         public HangupTests()

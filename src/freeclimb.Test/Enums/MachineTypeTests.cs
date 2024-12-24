@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class MachineTypeTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for MachineType
         private MachineType instance;
 
         public MachineTypeTests()

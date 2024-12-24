@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class GetDigitsTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for GetDigits
         private GetDigits instance;
 
         public GetDigitsTests()

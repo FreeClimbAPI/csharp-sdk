@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class MachineDetectedWebhookTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for MachineDetectedWebhook
         private MachineDetectedWebhook instance;
 
         public MachineDetectedWebhookTests()

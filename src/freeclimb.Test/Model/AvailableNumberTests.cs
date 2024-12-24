@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class AvailableNumberTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for AvailableNumber
         private AvailableNumber instance;
 
         public AvailableNumberTests()
@@ -69,7 +68,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesTest()
         {
-            Capabilities testObject = getTestValue(typeof(Capabilities));
+            Capabilities testObject = (Capabilities)getTestValue(typeof(Capabilities));
             instance.Capabilities = testObject;
             Assert.Equal(testObject, instance.Capabilities);
         }

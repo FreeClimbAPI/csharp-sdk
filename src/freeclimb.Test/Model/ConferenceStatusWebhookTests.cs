@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class ConferenceStatusWebhookTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for ConferenceStatusWebhook
         private ConferenceStatusWebhook instance;
 
         public ConferenceStatusWebhookTests()

@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class CallDirectionTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for CallDirection
         private CallDirection instance;
 
         public CallDirectionTests()

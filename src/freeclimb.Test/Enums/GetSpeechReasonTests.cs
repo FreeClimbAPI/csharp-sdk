@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class GetSpeechReasonTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for GetSpeechReason
         private GetSpeechReason instance;
 
         public GetSpeechReasonTests()

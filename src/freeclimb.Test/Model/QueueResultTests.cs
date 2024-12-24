@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class QueueResultTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for QueueResult
         private QueueResult instance;
 
         public QueueResultTests()

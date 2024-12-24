@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class PlayBeepTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for PlayBeep
         private PlayBeep instance;
 
         public PlayBeepTests()

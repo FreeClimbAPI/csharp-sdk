@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class RedirectTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for Redirect
         private Redirect instance;
 
         public RedirectTests()

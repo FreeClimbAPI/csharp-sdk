@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class GrammarFileBuiltInTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for GrammarFileBuiltIn
         private GrammarFileBuiltIn instance;
 
         public GrammarFileBuiltInTests()

@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class MessageRequestTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for MessageRequest
         private MessageRequest instance;
 
         public MessageRequestTests()

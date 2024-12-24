@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class QueueListTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for QueueList
         private QueueList instance;
 
         public QueueListTests()

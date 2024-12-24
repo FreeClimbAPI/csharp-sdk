@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class CreateWebRTCTokenTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for CreateWebRTCToken
         private CreateWebRTCToken instance;
 
         public CreateWebRTCTokenTests()

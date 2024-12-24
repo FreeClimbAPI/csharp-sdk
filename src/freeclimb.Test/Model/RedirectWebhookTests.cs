@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class RedirectWebhookTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for RedirectWebhook
         private RedirectWebhook instance;
 
         public RedirectWebhookTests()

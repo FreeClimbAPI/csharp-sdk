@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class PlayEarlyMediaTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for PlayEarlyMedia
         private PlayEarlyMedia instance;
 
         public PlayEarlyMediaTests()

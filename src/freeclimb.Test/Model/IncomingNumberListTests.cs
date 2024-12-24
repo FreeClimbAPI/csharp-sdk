@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class IncomingNumberListTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for IncomingNumberList
         private IncomingNumberList instance;
 
         public IncomingNumberListTests()

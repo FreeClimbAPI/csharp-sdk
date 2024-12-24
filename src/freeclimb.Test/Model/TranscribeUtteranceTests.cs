@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class TranscribeUtteranceTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for TranscribeUtterance
         private TranscribeUtterance instance;
 
         public TranscribeUtteranceTests()
@@ -88,7 +87,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void RecordTest()
         {
-            TranscribeUtteranceRecord testObject = getTestValue(typeof(TranscribeUtteranceRecord));
+            TranscribeUtteranceRecord testObject = (TranscribeUtteranceRecord)getTestValue(
+                typeof(TranscribeUtteranceRecord)
+            );
             instance.Record = testObject;
             Assert.Equal(testObject, instance.Record);
         }

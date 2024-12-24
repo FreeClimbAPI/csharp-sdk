@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class SMSTenDLCPartnerCampaignStatusTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for SMSTenDLCPartnerCampaignStatus
         private SMSTenDLCPartnerCampaignStatus instance;
 
         public SMSTenDLCPartnerCampaignStatusTests()

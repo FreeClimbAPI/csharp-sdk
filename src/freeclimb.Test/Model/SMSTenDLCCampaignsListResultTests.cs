@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class SMSTenDLCCampaignsListResultTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for SMSTenDLCCampaignsListResult
         private SMSTenDLCCampaignsListResult instance;
 
         public SMSTenDLCCampaignsListResultTests()

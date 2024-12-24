@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class RemoveFromConferenceTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for RemoveFromConference
         private RemoveFromConference instance;
 
         public RemoveFromConferenceTests()

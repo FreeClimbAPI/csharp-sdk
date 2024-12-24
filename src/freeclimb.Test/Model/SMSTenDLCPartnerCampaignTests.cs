@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class SMSTenDLCPartnerCampaignTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for SMSTenDLCPartnerCampaign
         private SMSTenDLCPartnerCampaign instance;
 
         public SMSTenDLCPartnerCampaignTests()
@@ -377,7 +376,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void BrandTest()
         {
-            SMSTenDLCPartnerCampaignBrand testObject = getTestValue(
+            SMSTenDLCPartnerCampaignBrand testObject = (SMSTenDLCPartnerCampaignBrand)getTestValue(
                 typeof(SMSTenDLCPartnerCampaignBrand)
             );
             instance.Brand = testObject;

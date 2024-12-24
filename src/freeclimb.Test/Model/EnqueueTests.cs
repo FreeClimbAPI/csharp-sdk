@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class EnqueueTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for Enqueue
         private Enqueue instance;
 
         public EnqueueTests()

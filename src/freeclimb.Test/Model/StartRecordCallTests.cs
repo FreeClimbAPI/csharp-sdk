@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class StartRecordCallTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for StartRecordCall
         private StartRecordCall instance;
 
         public StartRecordCallTests()

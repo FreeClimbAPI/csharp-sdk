@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class PaginationModelTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for PaginationModel
         private PaginationModel instance;
 
         public PaginationModelTests()

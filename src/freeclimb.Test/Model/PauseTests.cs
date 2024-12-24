@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class PauseTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for Pause
         private Pause instance;
 
         public PauseTests()

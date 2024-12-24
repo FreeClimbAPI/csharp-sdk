@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class SetDTMFPassThroughTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for SetDTMFPassThrough
         private SetDTMFPassThrough instance;
 
         public SetDTMFPassThroughTests()

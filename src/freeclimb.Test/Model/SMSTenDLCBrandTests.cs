@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class SMSTenDLCBrandTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for SMSTenDLCBrand
         private SMSTenDLCBrand instance;
 
         public SMSTenDLCBrandTests()

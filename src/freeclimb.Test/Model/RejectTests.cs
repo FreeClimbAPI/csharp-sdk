@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class RejectTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for Reject
         private Reject instance;
 
         public RejectTests()

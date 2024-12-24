@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class RemoveFromQueueNotificationWebhookTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for RemoveFromQueueNotificationWebhook
         private RemoveFromQueueNotificationWebhook instance;
 
         public RemoveFromQueueNotificationWebhookTests()

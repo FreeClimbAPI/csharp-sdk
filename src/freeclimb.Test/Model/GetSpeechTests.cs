@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class GetSpeechTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for GetSpeech
         private GetSpeech instance;
 
         public GetSpeechTests()

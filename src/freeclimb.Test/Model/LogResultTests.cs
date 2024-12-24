@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class LogResultTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for LogResult
         private LogResult instance;
 
         public LogResultTests()

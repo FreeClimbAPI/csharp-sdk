@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class AccountTypeTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for AccountType
         private AccountType instance;
 
         public AccountTypeTests()

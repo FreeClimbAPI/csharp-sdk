@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class SetListenTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for SetListen
         private SetListen instance;
 
         public SetListenTests()

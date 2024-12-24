@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class SMSTenDLCBrandAltBusinessIdTypeTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for SMSTenDLCBrandAltBusinessIdType
         private SMSTenDLCBrandAltBusinessIdType instance;
 
         public SMSTenDLCBrandAltBusinessIdTypeTests()

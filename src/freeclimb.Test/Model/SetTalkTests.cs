@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class SetTalkTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for SetTalk
         private SetTalk instance;
 
         public SetTalkTests()

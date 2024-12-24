@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class LogLevelTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for LogLevel
         private LogLevel instance;
 
         public LogLevelTests()

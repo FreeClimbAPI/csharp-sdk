@@ -33,7 +33,6 @@ namespace freeclimb.Test.Enums
 
     public class RequestTypeTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for RequestType
         private RequestType instance;
 
         public RequestTypeTests()

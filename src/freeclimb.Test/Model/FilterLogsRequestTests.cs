@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class FilterLogsRequestTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for FilterLogsRequest
         private FilterLogsRequest instance;
 
         public FilterLogsRequestTests()

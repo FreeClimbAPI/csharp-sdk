@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class IncomingNumberResultTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for IncomingNumberResult
         private IncomingNumberResult instance;
 
         public IncomingNumberResultTests()
@@ -119,7 +118,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesTest()
         {
-            Capabilities testObject = getTestValue(typeof(Capabilities));
+            Capabilities testObject = (Capabilities)getTestValue(typeof(Capabilities));
             instance.Capabilities = testObject;
             Assert.Equal(testObject, instance.Capabilities);
         }
@@ -240,7 +239,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TfnTest()
         {
-            TFN testObject = getTestValue(typeof(TFN));
+            TFN testObject = (TFN)getTestValue(typeof(TFN));
             instance.Tfn = testObject;
             Assert.Equal(testObject, instance.Tfn);
         }

@@ -33,7 +33,6 @@ namespace freeclimb.Test.Model
 
     public class AccountRequestTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for AccountRequest
         private AccountRequest instance;
 
         public AccountRequestTests()
