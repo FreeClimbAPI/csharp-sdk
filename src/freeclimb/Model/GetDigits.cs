@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -41,6 +40,7 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected GetDigits() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDigits" /> class.
         /// </summary>
@@ -54,51 +54,46 @@ namespace freeclimb.Model
         /// <param name="prompts">JSON array of PerCL commands to nest within the &#x60;GetDigits&#x60; command. The &#x60;Say&#x60;, &#x60;Play&#x60;, and &#x60;Pause&#x60; commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;GetDigits&quot;).</param>
-        public GetDigits(string actionUrl = default(string), int digitTimeoutMs = default(int), string finishOnKey = default(string), bool flushBuffer = default(bool), int initialTimeoutMs = default(int), int maxDigits = default(int), int minDigits = default(int), List<PerclCommand> prompts = default(List<PerclCommand>), bool privacyMode = default(bool), string command = @"GetDigits") : base(command)
+        public GetDigits(
+            string actionUrl = default(string),
+            int digitTimeoutMs = default(int),
+            string finishOnKey = default(string),
+            bool flushBuffer = default(bool),
+            int initialTimeoutMs = default(int),
+            int maxDigits = default(int),
+            int minDigits = default(int),
+            List<PerclCommand> prompts = default(List<PerclCommand>),
+            bool privacyMode = default(bool),
+            string command = @"GetDigits"
+        )
+            : base(command)
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null)
             {
-                throw new ArgumentNullException("actionUrl is a required property for GetDigits and cannot be null");
+                throw new ArgumentNullException(
+                    "actionUrl is a required property for GetDigits and cannot be null"
+                );
             }
             this.ActionUrl = actionUrl;
-                        
-
-
-
-
-
-
-
-
-
 
             this.DigitTimeoutMs = digitTimeoutMs;
-                        
 
             this.FinishOnKey = finishOnKey;
-                        
 
             this.FlushBuffer = flushBuffer;
-                        
 
             this.InitialTimeoutMs = initialTimeoutMs;
-                        
 
             this.MaxDigits = maxDigits;
-                        
 
             this.MinDigits = minDigits;
-                        
 
             this.Prompts = prompts;
-                        
 
             this.PrivacyMode = privacyMode;
-                        
-
         }
-        
+
         /// <summary>
         /// When the Caller has finished entering digits, FreeClimb will make an HTTP POST request to this URL. A PerCL response is expected to continue handling the Call. Make sure to keep “http://“ in the URL.
         /// </summary>
@@ -106,9 +101,6 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
-
-        
-        
         /// <summary>
         ///  Maximum time in milliseconds that FreeClimb will wait for the Caller to press any digit after the last digit entered, before making a determination that a &#x60;timeout&#x60; has occurred and moving on to make the request to the actionUrl to submit the results of the &#x60;GetDigits&#x60; command. This timeout interval begins and resets after each digit entered.
         /// </summary>
@@ -116,9 +108,6 @@ namespace freeclimb.Model
         [DataMember(Name = "digitTimeoutMs", EmitDefaultValue = false)]
         public int DigitTimeoutMs { get; set; }
 
-
-        
-        
         /// <summary>
         /// Digit that causes the input sequence to be deemed complete. This attribute defers to the &#x60;timeout&#x60; attribute – so, if a &#x60;timeout&#x60; occurs, then the command terminates regardless of the value of &#x60;finishOnKey&#x60;.
         /// </summary>
@@ -126,9 +115,6 @@ namespace freeclimb.Model
         [DataMember(Name = "finishOnKey", EmitDefaultValue = false)]
         public string FinishOnKey { get; set; }
 
-
-        
-        
         /// <summary>
         /// If set to true, the FreeClimb platform starts with an empty DTMF buffer to store the digits entered by the caller. If set to false, FreeClimb will append the user inputs to the end of the existing digits buffer and will return digits from the start of the digits buffer.
         /// </summary>
@@ -136,9 +122,6 @@ namespace freeclimb.Model
         [DataMember(Name = "flushBuffer", EmitDefaultValue = true)]
         public bool FlushBuffer { get; set; }
 
-
-        
-        
         /// <summary>
         /// Maximum time in milliseconds that FreeClimb will wait for the Caller to press the first digit before making a determination that a &#x60;timeout&#x60; has occurred and moving on to make the request to the &#x60;actionUrl&#x60; to submit the results of the &#x60;GetDigits&#x60; command. This timeout interval begins when all nested commands have been fully executed.
         /// </summary>
@@ -146,9 +129,6 @@ namespace freeclimb.Model
         [DataMember(Name = "initialTimeoutMs", EmitDefaultValue = false)]
         public int InitialTimeoutMs { get; set; }
 
-
-        
-        
         /// <summary>
         /// Maximum number of digits expected in the input. If the terminating digit is not entered and the caller has entered the maximum number of digits allowed, the &#x60;GetDigits&#x60; command terminates regardless of the value of &#x60;finishOnKey&#x60;.
         /// </summary>
@@ -156,9 +136,6 @@ namespace freeclimb.Model
         [DataMember(Name = "maxDigits", EmitDefaultValue = false)]
         public int MaxDigits { get; set; }
 
-
-        
-        
         /// <summary>
         /// Minimum number of digits expected in the input. If specified, FreeClimb will return the collected digits only if the Caller has entered at least that many digits.
         /// </summary>
@@ -166,9 +143,6 @@ namespace freeclimb.Model
         [DataMember(Name = "minDigits", EmitDefaultValue = false)]
         public int MinDigits { get; set; }
 
-
-        
-        
         /// <summary>
         /// JSON array of PerCL commands to nest within the &#x60;GetDigits&#x60; command. The &#x60;Say&#x60;, &#x60;Play&#x60;, and &#x60;Pause&#x60; commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller.
         /// </summary>
@@ -176,9 +150,6 @@ namespace freeclimb.Model
         [DataMember(Name = "prompts", EmitDefaultValue = false)]
         public List<PerclCommand> Prompts { get; set; }
 
-
-        
-        
         /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
@@ -186,8 +157,6 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -225,30 +194,29 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the GetDigits instance. 
+        /// Retrieve the KVP Dictionary for the GetDigits instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("digitTimeoutMs", DigitTimeoutMs);          
-            props.Add("finishOnKey", FinishOnKey);          
-            props.Add("flushBuffer", FlushBuffer);          
-            props.Add("initialTimeoutMs", InitialTimeoutMs);          
-            props.Add("maxDigits", MaxDigits);          
-            props.Add("minDigits", MinDigits);          
+            props.Add("actionUrl", ActionUrl);
+            props.Add("digitTimeoutMs", DigitTimeoutMs);
+            props.Add("finishOnKey", FinishOnKey);
+            props.Add("flushBuffer", FlushBuffer);
+            props.Add("initialTimeoutMs", InitialTimeoutMs);
+            props.Add("maxDigits", MaxDigits);
+            props.Add("minDigits", MinDigits);
             List<object> nested = new List<object>();
             foreach (var item in Prompts)
             {
                 nested.Add(item);
             }
-            props.Add("prompts", nested); 
-            props.Add("privacyMode", PrivacyMode);          
+            props.Add("prompts", nested);
+            props.Add("privacyMode", PrivacyMode);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("GetDigits",props);
+            command.Add("GetDigits", props);
             return command;
         }
 
@@ -257,7 +225,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -276,5 +246,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

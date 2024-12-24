@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Enums
 {
@@ -63,8 +62,9 @@ namespace freeclimb.Enums
         /// Enum KEY_ACCOUNT for value: KEY_ACCOUNT
         /// </summary>
         [EnumMember(Value = "KEY_ACCOUNT")]
-        KEY_ACCOUNT = 5
+        KEY_ACCOUNT = 5,
     }
+
     /// <summary>
     /// Converts <see cref="SMSTenDLCBrandRelationship"/> to and from the JSON value
     /// </summary>
@@ -92,7 +92,9 @@ namespace freeclimb.Enums
             if (value.Equals("KEY_ACCOUNT"))
                 return SMSTenDLCBrandRelationship.KEY_ACCOUNT;
 
-            throw new NotImplementedException($"Could not convert value to type SMSTenDLCBrandRelationship: '{value}'");
+            throw new NotImplementedException(
+                $"Could not convert value to type SMSTenDLCBrandRelationship: '{value}'"
+            );
         }
 
         /// <summary>
@@ -120,5 +122,4 @@ namespace freeclimb.Enums
             return null;
         }
     }
-
 }

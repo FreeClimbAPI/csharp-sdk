@@ -13,20 +13,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 using Newtonsoft.Json.Serialization;
-
+using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 
 namespace freeclimb.Model
 {
@@ -37,7 +36,6 @@ namespace freeclimb.Model
     [JsonConverter(typeof(JsonSubtypes), "RequestType")]
     public partial class TranscribeWebhook : Webhook, IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets TermReason
         /// </summary>
@@ -61,6 +59,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "transcribeReason", EmitDefaultValue = false)]
         public TranscribeReason? TranscribeReason { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscribeWebhook" /> class.
         /// </summary>
@@ -87,114 +86,91 @@ namespace freeclimb.Model
         /// <param name="transcript">Transcribed text of the recording. Can be empty or null. null means there was a failure in transcribing the audio, refer to transcribeReason for detailed failure reason..</param>
         /// <param name="transcribeReason">transcribeReason.</param>
         /// <param name="transcriptionDurationMs">The duration of the audio being transcribed in milliseconds.</param>
-        public TranscribeWebhook(string requestType = @"TranscribeWebhook", string accountId = default(string), string callId = default(string), string from = default(string), string to = default(string), string recordingId = default(string), string recordingUrl = default(string), int recordingSize = default(int), string recordingFormat = default(string), int recordingDurationMs = default(int), TranscribeTermReason? termReason = default(TranscribeTermReason?), RecordUtteranceTermReason? recordTermReason = default(RecordUtteranceTermReason?), string digit = default(string), bool privacyForLogging = default(bool), bool privacyForRecording = default(bool), BargeInReason? bargeInReason = default(BargeInReason?), int bargedInPromptNo = default(int), int bargedInPromptMs = default(int), int bargedInPromptLoopNo = default(int), int bargeInTimeMs = default(int), string transcript = default(string), TranscribeReason? transcribeReason = default(TranscribeReason?), int transcriptionDurationMs = default(int)) : base()
+        public TranscribeWebhook(
+            string requestType = @"TranscribeWebhook",
+            string accountId = default(string),
+            string callId = default(string),
+            string from = default(string),
+            string to = default(string),
+            string recordingId = default(string),
+            string recordingUrl = default(string),
+            int recordingSize = default(int),
+            string recordingFormat = default(string),
+            int recordingDurationMs = default(int),
+            TranscribeTermReason? termReason = default(TranscribeTermReason?),
+            RecordUtteranceTermReason? recordTermReason = default(RecordUtteranceTermReason?),
+            string digit = default(string),
+            bool privacyForLogging = default(bool),
+            bool privacyForRecording = default(bool),
+            BargeInReason? bargeInReason = default(BargeInReason?),
+            int bargedInPromptNo = default(int),
+            int bargedInPromptMs = default(int),
+            int bargedInPromptLoopNo = default(int),
+            int bargeInTimeMs = default(int),
+            string transcript = default(string),
+            TranscribeReason? transcribeReason = default(TranscribeReason?),
+            int transcriptionDurationMs = default(int)
+        )
+            : base()
         {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
             base.RequestType = requestType;
-                        
 
             this.AccountId = accountId;
-                        
 
             this.CallId = callId;
-                        
 
             this.From = from;
-                        
 
             this.To = to;
-                        
 
             this.RecordingId = recordingId;
-                        
 
             this.RecordingUrl = recordingUrl;
-                        
 
             this.RecordingSize = recordingSize;
-                        
 
             this.RecordingFormat = recordingFormat;
-                        
 
             this.RecordingDurationMs = recordingDurationMs;
-                        
 
             this.TermReason = termReason;
-                        
 
             this.RecordTermReason = recordTermReason;
-                        
 
             this.Digit = digit;
-                        
 
             this.PrivacyForLogging = privacyForLogging;
-                        
 
             this.PrivacyForRecording = privacyForRecording;
-                        
 
             this.BargeInReason = bargeInReason;
-                        
 
             this.BargedInPromptNo = bargedInPromptNo;
-                        
 
             this.BargedInPromptMs = bargedInPromptMs;
-                        
 
             this.BargedInPromptLoopNo = bargedInPromptLoopNo;
-                        
 
             this.BargeInTimeMs = bargeInTimeMs;
-                        
 
             this.Transcript = transcript;
-                        
 
             this.TranscribeReason = transcribeReason;
-                        
 
             this.TranscriptionDurationMs = transcriptionDurationMs;
-                        
-
         }
-        private static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
-        {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            ContractResolver = new DefaultContractResolver
+
+        private static readonly JsonSerializerSettings _serializerSettings =
+            new JsonSerializerSettings
             {
-                NamingStrategy = new CamelCaseNamingStrategy
+                // OpenAPI generated types generally hide default constructors.
+                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+                ContractResolver = new DefaultContractResolver
                 {
-                    OverrideSpecifiedNames = false
-                }
-            }
-        };
+                    NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false },
+                },
+            };
+
         /// <summary>
         /// Deserializes json payload into instance TranscribeWebhook
         /// </summary>
@@ -202,10 +178,14 @@ namespace freeclimb.Model
         /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static TranscribeWebhook Deserialize(string jsonPayload)
         {
-            return (TranscribeWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(TranscribeWebhook), _serializerSettings);
+            return (TranscribeWebhook)
+                JsonConvert.DeserializeObject(
+                    jsonPayload,
+                    typeof(TranscribeWebhook),
+                    _serializerSettings
+                );
         }
-        
-        
+
         /// <summary>
         /// Account ID associated with your account.
         /// </summary>
@@ -213,9 +193,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Unique identifier for this Call, generated by FreeClimb
         /// </summary>
@@ -223,9 +200,6 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = false)]
         public string CallId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number of the party that initiated the Call (in E.164 format).
         /// </summary>
@@ -233,9 +207,6 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number provisioned to the customer and to which this Call is directed (in E.164 format).
         /// </summary>
@@ -243,9 +214,6 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 
-
-        
-        
         /// <summary>
         /// The ID of the recording. If no recording was made due to errors or the &#39;saveRecording&#39; flag being disabled this field will be set to null.
         /// </summary>
@@ -253,9 +221,6 @@ namespace freeclimb.Model
         [DataMember(Name = "recordingId", EmitDefaultValue = true)]
         public string RecordingId { get; set; }
 
-
-        
-        
         /// <summary>
         /// The URL of the recorded audio file. This URL can be used as is in a Play command to play the recording (no authentication needed). It can also be used to download the recording file via the REST API.
         /// </summary>
@@ -263,9 +228,6 @@ namespace freeclimb.Model
         [DataMember(Name = "recordingUrl", EmitDefaultValue = true)]
         public string RecordingUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// The size of the recording in bytes.
         /// </summary>
@@ -273,9 +235,6 @@ namespace freeclimb.Model
         [DataMember(Name = "recordingSize", EmitDefaultValue = false)]
         public int RecordingSize { get; set; }
 
-
-        
-        
         /// <summary>
         /// The media type of the recording.
         /// </summary>
@@ -283,9 +242,6 @@ namespace freeclimb.Model
         [DataMember(Name = "recordingFormat", EmitDefaultValue = true)]
         public string RecordingFormat { get; set; }
 
-
-        
-        
         /// <summary>
         /// The duration of the recorded audio in milliseconds.
         /// </summary>
@@ -293,15 +249,6 @@ namespace freeclimb.Model
         [DataMember(Name = "recordingDurationMs", EmitDefaultValue = false)]
         public int RecordingDurationMs { get; set; }
 
-
-        
-        
-
-        
-        
-
-        
-        
         /// <summary>
         /// If recordTermReason is digit, this will be the digit that was pressed. Otherwise it will be null.
         /// </summary>
@@ -309,9 +256,6 @@ namespace freeclimb.Model
         [DataMember(Name = "digit", EmitDefaultValue = true)]
         public string Digit { get; set; }
 
-
-        
-        
         /// <summary>
         /// Echo back of the privacyForLogging flag as specified in the transcribe utterance command – confirmation of logging protection has been applied. Can be used by application to know it should also apply protection when handling this request.
         /// </summary>
@@ -319,9 +263,6 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyForLogging", EmitDefaultValue = true)]
         public bool PrivacyForLogging { get; set; }
 
-
-        
-        
         /// <summary>
         /// Echo back of the privacyForRecording flag as specified in the transcribe utterance command – confirmation of logging protection has been applied. Can be used by application to know it should also apply protection when handling this request.
         /// </summary>
@@ -329,21 +270,12 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyForRecording", EmitDefaultValue = true)]
         public bool PrivacyForRecording { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// Gets or Sets BargedInPromptNo
         /// </summary>
         [DataMember(Name = "bargedInPromptNo", EmitDefaultValue = false)]
         public int BargedInPromptNo { get; set; }
 
-
-        
-        
         /// <summary>
         /// duration in ms bargedInPromptNo prompt was executing until barge-in occurred.
         /// </summary>
@@ -351,18 +283,12 @@ namespace freeclimb.Model
         [DataMember(Name = "bargedInPromptMs", EmitDefaultValue = false)]
         public int BargedInPromptMs { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets BargedInPromptLoopNo
         /// </summary>
         [DataMember(Name = "bargedInPromptLoopNo", EmitDefaultValue = false)]
         public int BargedInPromptLoopNo { get; set; }
 
-
-        
-        
         /// <summary>
         /// epoch time in ms
         /// </summary>
@@ -370,9 +296,6 @@ namespace freeclimb.Model
         [DataMember(Name = "bargeInTimeMs", EmitDefaultValue = false)]
         public int BargeInTimeMs { get; set; }
 
-
-        
-        
         /// <summary>
         /// Transcribed text of the recording. Can be empty or null. null means there was a failure in transcribing the audio, refer to transcribeReason for detailed failure reason.
         /// </summary>
@@ -380,12 +303,6 @@ namespace freeclimb.Model
         [DataMember(Name = "transcript", EmitDefaultValue = true)]
         public string Transcript { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// The duration of the audio being transcribed in milliseconds
         /// </summary>
@@ -393,8 +310,6 @@ namespace freeclimb.Model
         [DataMember(Name = "transcriptionDurationMs", EmitDefaultValue = false)]
         public int TranscriptionDurationMs { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -431,47 +346,48 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the TranscribeWebhook instance. 
+        /// Retrieve the KVP Dictionary for the TranscribeWebhook instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);          
-            props.Add("accountId", AccountId);          
-            props.Add("callId", CallId);          
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("recordingId", RecordingId);          
-            props.Add("recordingUrl", RecordingUrl);          
-            props.Add("recordingSize", RecordingSize);          
-            props.Add("recordingFormat", RecordingFormat);          
-            props.Add("recordingDurationMs", RecordingDurationMs);          
-            props.Add("termReason", TermReason);          
-            props.Add("recordTermReason", RecordTermReason);          
-            props.Add("digit", Digit);          
-            props.Add("privacyForLogging", PrivacyForLogging);          
-            props.Add("privacyForRecording", PrivacyForRecording);          
-            props.Add("bargeInReason", BargeInReason);          
-            props.Add("bargedInPromptNo", BargedInPromptNo);          
-            props.Add("bargedInPromptMs", BargedInPromptMs);          
-            props.Add("bargedInPromptLoopNo", BargedInPromptLoopNo);          
-            props.Add("bargeInTimeMs", BargeInTimeMs);          
-            props.Add("transcript", Transcript);          
-            props.Add("transcribeReason", TranscribeReason);          
-            props.Add("transcriptionDurationMs", TranscriptionDurationMs);          
+            props.Add("requestType", RequestType);
+            props.Add("accountId", AccountId);
+            props.Add("callId", CallId);
+            props.Add("from", From);
+            props.Add("to", To);
+            props.Add("recordingId", RecordingId);
+            props.Add("recordingUrl", RecordingUrl);
+            props.Add("recordingSize", RecordingSize);
+            props.Add("recordingFormat", RecordingFormat);
+            props.Add("recordingDurationMs", RecordingDurationMs);
+            props.Add("termReason", TermReason);
+            props.Add("recordTermReason", RecordTermReason);
+            props.Add("digit", Digit);
+            props.Add("privacyForLogging", PrivacyForLogging);
+            props.Add("privacyForRecording", PrivacyForRecording);
+            props.Add("bargeInReason", BargeInReason);
+            props.Add("bargedInPromptNo", BargedInPromptNo);
+            props.Add("bargedInPromptMs", BargedInPromptMs);
+            props.Add("bargedInPromptLoopNo", BargedInPromptLoopNo);
+            props.Add("bargeInTimeMs", BargeInTimeMs);
+            props.Add("transcript", Transcript);
+            props.Add("transcribeReason", TranscribeReason);
+            props.Add("transcriptionDurationMs", TranscriptionDurationMs);
             return props;
         }
 
@@ -480,7 +396,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -499,5 +417,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

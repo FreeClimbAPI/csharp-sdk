@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -40,12 +39,9 @@ namespace freeclimb.Model
         /// <param name="commands">A JSON array of PerCL commands.</param>
         public PerclScript(List<PerclCommand> commands = default(List<PerclCommand>))
         {
-
             this.Commands = commands;
-                        
-
         }
-        
+
         /// <summary>
         /// A JSON array of PerCL commands
         /// </summary>
@@ -53,8 +49,6 @@ namespace freeclimb.Model
         [DataMember(Name = "commands", EmitDefaultValue = false)]
         public List<PerclCommand> Commands { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -85,13 +79,12 @@ namespace freeclimb.Model
 
             StringBuilder strb = new StringBuilder();
             jsonSerializer.Serialize(new StringWriter(strb), list);
-        
+
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the PerclScript instance. 
+        /// Retrieve the KVP Dictionary for the PerclScript instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
@@ -102,7 +95,7 @@ namespace freeclimb.Model
             {
                 nested.Add(item);
             }
-            props.Add("commands", nested); 
+            props.Add("commands", nested);
             return props;
         }
 
@@ -111,10 +104,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -34,17 +33,18 @@ namespace freeclimb.Model
     [DataContract(Name = "SMSTollFreeCampaign")]
     public partial class SMSTollFreeCampaign : IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets RegistrationStatus
         /// </summary>
         [DataMember(Name = "registrationStatus", IsRequired = true, EmitDefaultValue = true)]
         public SMSTollFreeCampaignRegistrationStatus RegistrationStatus { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTollFreeCampaign" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected SMSTollFreeCampaign() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTollFreeCampaign" /> class.
         /// </summary>
@@ -55,63 +55,67 @@ namespace freeclimb.Model
         /// <param name="dateCreated">dateCreated (required).</param>
         /// <param name="dateUpdated">dateUpdated (required).</param>
         /// <param name="revision">revision (required).</param>
-        public SMSTollFreeCampaign(string accountId = default(string), string campaignId = default(string), string useCase = default(string), SMSTollFreeCampaignRegistrationStatus registrationStatus = default(SMSTollFreeCampaignRegistrationStatus), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int))
+        public SMSTollFreeCampaign(
+            string accountId = default(string),
+            string campaignId = default(string),
+            string useCase = default(string),
+            SMSTollFreeCampaignRegistrationStatus registrationStatus =
+                default(SMSTollFreeCampaignRegistrationStatus),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int)
+        )
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
             {
-                throw new ArgumentNullException("accountId is a required property for SMSTollFreeCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "accountId is a required property for SMSTollFreeCampaign and cannot be null"
+                );
             }
             this.AccountId = accountId;
-                        
 
             // to ensure "campaignId" is required (not null)
             if (campaignId == null)
             {
-                throw new ArgumentNullException("campaignId is a required property for SMSTollFreeCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "campaignId is a required property for SMSTollFreeCampaign and cannot be null"
+                );
             }
             this.CampaignId = campaignId;
-                        
 
             // to ensure "useCase" is required (not null)
             if (useCase == null)
             {
-                throw new ArgumentNullException("useCase is a required property for SMSTollFreeCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "useCase is a required property for SMSTollFreeCampaign and cannot be null"
+                );
             }
             this.UseCase = useCase;
-                        
 
             this.RegistrationStatus = registrationStatus;
-                        
 
             // to ensure "dateCreated" is required (not null)
             if (dateCreated == null)
             {
-                throw new ArgumentNullException("dateCreated is a required property for SMSTollFreeCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "dateCreated is a required property for SMSTollFreeCampaign and cannot be null"
+                );
             }
             this.DateCreated = dateCreated;
-                        
 
             // to ensure "dateUpdated" is required (not null)
             if (dateUpdated == null)
             {
-                throw new ArgumentNullException("dateUpdated is a required property for SMSTollFreeCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "dateUpdated is a required property for SMSTollFreeCampaign and cannot be null"
+                );
             }
             this.DateUpdated = dateUpdated;
-                        
 
             this.Revision = revision;
-                        
-
-
-
-
-
-
-
-
         }
-        
+
         /// <summary>
         /// ID of the account that created this toll-free campaign
         /// </summary>
@@ -119,9 +123,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", IsRequired = true, EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Alphanumeric identifier used by the platform to identify this toll-free campaign
         /// </summary>
@@ -129,47 +130,30 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets UseCase
         /// </summary>
         [DataMember(Name = "useCase", IsRequired = true, EmitDefaultValue = true)]
         public string UseCase { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// Gets or Sets DateCreated
         /// </summary>
         [DataMember(Name = "dateCreated", IsRequired = true, EmitDefaultValue = true)]
         public string DateCreated { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets DateUpdated
         /// </summary>
         [DataMember(Name = "dateUpdated", IsRequired = true, EmitDefaultValue = true)]
         public string DateUpdated { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets Revision
         /// </summary>
         [DataMember(Name = "revision", IsRequired = true, EmitDefaultValue = true)]
         public int Revision { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -189,31 +173,32 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SMSTollFreeCampaign instance. 
+        /// Retrieve the KVP Dictionary for the SMSTollFreeCampaign instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);          
-            props.Add("campaignId", CampaignId);          
-            props.Add("useCase", UseCase);          
-            props.Add("registrationStatus", RegistrationStatus);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
+            props.Add("accountId", AccountId);
+            props.Add("campaignId", CampaignId);
+            props.Add("useCase", UseCase);
+            props.Add("registrationStatus", RegistrationStatus);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
             return props;
         }
 
@@ -222,10 +207,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

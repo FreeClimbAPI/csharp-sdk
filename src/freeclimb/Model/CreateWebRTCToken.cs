@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -39,38 +38,40 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected CreateWebRTCToken() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateWebRTCToken" /> class.
         /// </summary>
         /// <param name="to">E.164 formatted phone number to which calls using this token will be made. (required).</param>
         /// <param name="from">E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made. (required).</param>
         /// <param name="uses">number of times this token may be used for a WebRTC call (required).</param>
-        public CreateWebRTCToken(string to = default(string), string from = default(string), int uses = default(int))
+        public CreateWebRTCToken(
+            string to = default(string),
+            string from = default(string),
+            int uses = default(int)
+        )
         {
             // to ensure "to" is required (not null)
             if (to == null)
             {
-                throw new ArgumentNullException("to is a required property for CreateWebRTCToken and cannot be null");
+                throw new ArgumentNullException(
+                    "to is a required property for CreateWebRTCToken and cannot be null"
+                );
             }
             this.To = to;
-                        
 
             // to ensure "from" is required (not null)
             if (from == null)
             {
-                throw new ArgumentNullException("from is a required property for CreateWebRTCToken and cannot be null");
+                throw new ArgumentNullException(
+                    "from is a required property for CreateWebRTCToken and cannot be null"
+                );
             }
             this.From = from;
-                        
 
             this.Uses = uses;
-                        
-
-
-
-
         }
-        
+
         /// <summary>
         /// E.164 formatted phone number to which calls using this token will be made.
         /// </summary>
@@ -78,9 +79,6 @@ namespace freeclimb.Model
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
 
-
-        
-        
         /// <summary>
         /// E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made.
         /// </summary>
@@ -88,9 +86,6 @@ namespace freeclimb.Model
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
-
-        
-        
         /// <summary>
         /// number of times this token may be used for a WebRTC call
         /// </summary>
@@ -98,8 +93,6 @@ namespace freeclimb.Model
         [DataMember(Name = "uses", IsRequired = true, EmitDefaultValue = true)]
         public int Uses { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -115,27 +108,28 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the CreateWebRTCToken instance. 
+        /// Retrieve the KVP Dictionary for the CreateWebRTCToken instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("to", To);          
-            props.Add("from", From);          
-            props.Add("uses", Uses);          
+            props.Add("to", To);
+            props.Add("from", From);
+            props.Add("uses", Uses);
             return props;
         }
 
@@ -144,16 +138,20 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             // Uses (int) minimum
             if (this.Uses < (int)1)
             {
-                yield return new ValidationResult("Invalid value for Uses, must be a value greater than or equal to 1.", new [] { "Uses" });
+                yield return new ValidationResult(
+                    "Invalid value for Uses, must be a value greater than or equal to 1.",
+                    new[] { "Uses" }
+                );
             }
 
             yield break;
         }
     }
-
 }

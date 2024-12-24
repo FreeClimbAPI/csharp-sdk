@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -41,14 +40,12 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="talk">Specifying &#x60;false&#x60; mutes the Participant..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;SetTalk&quot;).</param>
-        public SetTalk(bool talk = default(bool), string command = @"SetTalk") : base(command)
+        public SetTalk(bool talk = default(bool), string command = @"SetTalk")
+            : base(command)
         {
-
             this.Talk = talk;
-                        
-
         }
-        
+
         /// <summary>
         /// Specifying &#x60;false&#x60; mutes the Participant.
         /// </summary>
@@ -56,8 +53,6 @@ namespace freeclimb.Model
         [DataMember(Name = "talk", EmitDefaultValue = true)]
         public bool Talk { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -87,17 +82,16 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SetTalk instance. 
+        /// Retrieve the KVP Dictionary for the SetTalk instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("talk", Talk);          
+            props.Add("talk", Talk);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("SetTalk",props);
+            command.Add("SetTalk", props);
             return command;
         }
 
@@ -106,7 +100,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -125,5 +121,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

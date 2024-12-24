@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -48,54 +47,43 @@ namespace freeclimb.Model
         /// <param name="listen">True if this Participant has listen privileges in the Conference. False otherwise..</param>
         /// <param name="dtmfPassThrough">True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise..</param>
         /// <param name="startConfOnEnter">True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise..</param>
-        public ConferenceParticipantResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string conferenceId = default(string), string callId = default(string), bool? talk = default(bool?), bool? listen = default(bool?), bool? dtmfPassThrough = default(bool?), bool? startConfOnEnter = default(bool?))
+        public ConferenceParticipantResult(
+            string uri = default(string),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int),
+            string accountId = default(string),
+            string conferenceId = default(string),
+            string callId = default(string),
+            bool? talk = default(bool?),
+            bool? listen = default(bool?),
+            bool? dtmfPassThrough = default(bool?),
+            bool? startConfOnEnter = default(bool?)
+        )
         {
-
-
-
-
-
-
-
-
-
-
-
             this.Uri = uri;
-                        
 
             this.DateCreated = dateCreated;
-                        
 
             this.DateUpdated = dateUpdated;
-                        
 
             this.Revision = revision;
-                        
 
             this.AccountId = accountId;
-                        
 
             this.ConferenceId = conferenceId;
-                        
 
             this.CallId = callId;
-                        
 
             this.Talk = talk;
-                        
 
             this.Listen = listen;
-                        
 
             this.DtmfPassThrough = dtmfPassThrough;
-                        
 
             this.StartConfOnEnter = startConfOnEnter;
-                        
-
         }
-        
+
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -103,9 +91,6 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -113,9 +98,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -123,9 +105,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
-
-        
-        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -133,9 +112,6 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the account that created this participant.
         /// </summary>
@@ -143,9 +119,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the conference this participant is in.
         /// </summary>
@@ -153,9 +126,6 @@ namespace freeclimb.Model
         [DataMember(Name = "conferenceId", EmitDefaultValue = true)]
         public string ConferenceId { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the Call associated with this Participant.
         /// </summary>
@@ -163,9 +133,6 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = true)]
         public string CallId { get; set; }
 
-
-        
-        
         /// <summary>
         /// True if this Participant has talk privileges in the Conference. False otherwise.
         /// </summary>
@@ -173,9 +140,6 @@ namespace freeclimb.Model
         [DataMember(Name = "talk", EmitDefaultValue = true)]
         public bool? Talk { get; set; }
 
-
-        
-        
         /// <summary>
         /// True if this Participant has listen privileges in the Conference. False otherwise.
         /// </summary>
@@ -183,9 +147,6 @@ namespace freeclimb.Model
         [DataMember(Name = "listen", EmitDefaultValue = true)]
         public bool? Listen { get; set; }
 
-
-        
-        
         /// <summary>
         /// True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise.
         /// </summary>
@@ -193,9 +154,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
         public bool? DtmfPassThrough { get; set; }
 
-
-        
-        
         /// <summary>
         /// True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise.
         /// </summary>
@@ -203,8 +161,6 @@ namespace freeclimb.Model
         [DataMember(Name = "startConfOnEnter", EmitDefaultValue = true)]
         public bool? StartConfOnEnter { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -228,35 +184,36 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the ConferenceParticipantResult instance. 
+        /// Retrieve the KVP Dictionary for the ConferenceParticipantResult instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("accountId", AccountId);          
-            props.Add("conferenceId", ConferenceId);          
-            props.Add("callId", CallId);          
-            props.Add("talk", Talk);          
-            props.Add("listen", Listen);          
-            props.Add("dtmfPassThrough", DtmfPassThrough);          
-            props.Add("startConfOnEnter", StartConfOnEnter);          
+            props.Add("uri", Uri);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
+            props.Add("accountId", AccountId);
+            props.Add("conferenceId", ConferenceId);
+            props.Add("callId", CallId);
+            props.Add("talk", Talk);
+            props.Add("listen", Listen);
+            props.Add("dtmfPassThrough", DtmfPassThrough);
+            props.Add("startConfOnEnter", StartConfOnEnter);
             return props;
         }
 
@@ -265,10 +222,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

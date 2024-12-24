@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -40,9 +39,9 @@ namespace freeclimb.Model
         /// Initializes a new instance of the <see cref="Unpark" /> class.
         /// </summary>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Unpark&quot;).</param>
-        public Unpark(string command = @"Unpark") : base(command)
-        {
-        }
+        public Unpark(string command = @"Unpark")
+            : base(command) { }
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -71,16 +70,15 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Unpark instance. 
+        /// Retrieve the KVP Dictionary for the Unpark instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Unpark",props);
+            command.Add("Unpark", props);
             return command;
         }
 
@@ -89,7 +87,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -108,5 +108,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

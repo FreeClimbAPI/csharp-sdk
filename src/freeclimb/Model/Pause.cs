@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -41,19 +40,18 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected Pause() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Pause" /> class.
         /// </summary>
         /// <param name="length">Length in milliseconds. FreeClimb will wait silently before continuing on. (required).</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Pause&quot;).</param>
-        public Pause(int length = default(int), string command = @"Pause") : base(command)
+        public Pause(int length = default(int), string command = @"Pause")
+            : base(command)
         {
             this.Length = length;
-                        
-
-
         }
-        
+
         /// <summary>
         /// Length in milliseconds. FreeClimb will wait silently before continuing on.
         /// </summary>
@@ -61,8 +59,6 @@ namespace freeclimb.Model
         [DataMember(Name = "length", IsRequired = true, EmitDefaultValue = true)]
         public int Length { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -92,17 +88,16 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Pause instance. 
+        /// Retrieve the KVP Dictionary for the Pause instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("length", Length);          
+            props.Add("length", Length);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Pause",props);
+            command.Add("Pause", props);
             return command;
         }
 
@@ -111,7 +106,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -130,5 +127,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

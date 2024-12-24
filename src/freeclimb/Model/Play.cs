@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -41,6 +40,7 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected Play() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Play" /> class.
         /// </summary>
@@ -48,37 +48,35 @@ namespace freeclimb.Model
         /// <param name="loop">Number of times the audio file is played. Specifying &#39;0&#39; causes the Play action to loop until the Call is hung up..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Play&quot;).</param>
-        public Play(string file = default(string), int loop = default(int), bool privacyMode = default(bool), string command = @"Play") : base(command)
+        public Play(
+            string file = default(string),
+            int loop = default(int),
+            bool privacyMode = default(bool),
+            string command = @"Play"
+        )
+            : base(command)
         {
             // to ensure "file" is required (not null)
             if (file == null)
             {
-                throw new ArgumentNullException("file is a required property for Play and cannot be null");
+                throw new ArgumentNullException(
+                    "file is a required property for Play and cannot be null"
+                );
             }
             this.File = file;
-                        
-
-
-
 
             this.Loop = loop;
-                        
 
             this.PrivacyMode = privacyMode;
-                        
-
         }
-        
+
         /// <summary>
-        /// RL of the audio file to be played to the caller. The URL can be the &#x60;recordingUrl&#x60; generated from the &#x60;RecordUtterance&#x60; or &#x60;StartRecordCall&#x60; PerCL commands. 
+        /// RL of the audio file to be played to the caller. The URL can be the &#x60;recordingUrl&#x60; generated from the &#x60;RecordUtterance&#x60; or &#x60;StartRecordCall&#x60; PerCL commands.
         /// </summary>
         /// <value>RL of the audio file to be played to the caller. The URL can be the &#x60;recordingUrl&#x60; generated from the &#x60;RecordUtterance&#x60; or &#x60;StartRecordCall&#x60; PerCL commands. </value>
         [DataMember(Name = "file", IsRequired = true, EmitDefaultValue = true)]
         public string File { get; set; }
 
-
-        
-        
         /// <summary>
         /// Number of times the audio file is played. Specifying &#39;0&#39; causes the Play action to loop until the Call is hung up.
         /// </summary>
@@ -86,9 +84,6 @@ namespace freeclimb.Model
         [DataMember(Name = "loop", EmitDefaultValue = false)]
         public int Loop { get; set; }
 
-
-        
-        
         /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
@@ -96,8 +91,6 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -129,19 +122,18 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Play instance. 
+        /// Retrieve the KVP Dictionary for the Play instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("file", File);          
-            props.Add("loop", Loop);          
-            props.Add("privacyMode", PrivacyMode);          
+            props.Add("file", File);
+            props.Add("loop", Loop);
+            props.Add("privacyMode", PrivacyMode);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Play",props);
+            command.Add("Play", props);
             return command;
         }
 
@@ -150,7 +142,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -169,5 +163,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

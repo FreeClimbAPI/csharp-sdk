@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -34,17 +33,18 @@ namespace freeclimb.Model
     [DataContract(Name = "SMSTenDLCCampaign")]
     public partial class SMSTenDLCCampaign : IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public SMSTenDLCCampaignStatus? Status { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTenDLCCampaign" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected SMSTenDLCCampaign() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTenDLCCampaign" /> class.
         /// </summary>
@@ -84,184 +84,160 @@ namespace freeclimb.Model
         /// <param name="referenceId">Caller supplied campaign reference ID. If supplied, the value must be unique across all submitted campaigns. Can be used to prevent duplicate campaign registrations..</param>
         /// <param name="mock">Campaign created from mock brand. Mocked campaign cannot be shared with an upstream CNP. (required).</param>
         /// <param name="nextRenewalOrExpirationDate">When the campaign would be due for its next renew/bill date..</param>
-        public SMSTenDLCCampaign(string accountId = default(string), string campaignId = default(string), string cspId = default(string), string resellerId = default(string), SMSTenDLCCampaignStatus? status = default(SMSTenDLCCampaignStatus?), DateTime createDate = default(DateTime), bool autoRenewal = default(bool), DateTime? billedDate = default(DateTime?), string brandId = default(string), string usecase = default(string), List<string> subUsecases = default(List<string>), string description = default(string), bool embeddedLink = false, bool embeddedPhone = false, bool affiliateMarketing = default(bool), bool numberPool = false, bool ageGated = default(bool), bool directLending = default(bool), bool subscriberOptin = false, bool subscriberOptout = false, bool subscriberHelp = false, string sample1 = default(string), string sample2 = default(string), string sample3 = default(string), string sample4 = default(string), string sample5 = default(string), string messageFlow = default(string), string helpMessage = default(string), string optinKeywords = default(string), string optoutKeywords = default(string), string helpKeywords = default(string), string optinMessage = default(string), string optoutMessage = default(string), string referenceId = default(string), bool mock = default(bool), DateOnly? nextRenewalOrExpirationDate = default(DateOnly?))
+        public SMSTenDLCCampaign(
+            string accountId = default(string),
+            string campaignId = default(string),
+            string cspId = default(string),
+            string resellerId = default(string),
+            SMSTenDLCCampaignStatus? status = default(SMSTenDLCCampaignStatus?),
+            DateTime createDate = default(DateTime),
+            bool autoRenewal = default(bool),
+            DateTime? billedDate = default(DateTime?),
+            string brandId = default(string),
+            string usecase = default(string),
+            List<string> subUsecases = default(List<string>),
+            string description = default(string),
+            bool embeddedLink = false,
+            bool embeddedPhone = false,
+            bool affiliateMarketing = default(bool),
+            bool numberPool = false,
+            bool ageGated = default(bool),
+            bool directLending = default(bool),
+            bool subscriberOptin = false,
+            bool subscriberOptout = false,
+            bool subscriberHelp = false,
+            string sample1 = default(string),
+            string sample2 = default(string),
+            string sample3 = default(string),
+            string sample4 = default(string),
+            string sample5 = default(string),
+            string messageFlow = default(string),
+            string helpMessage = default(string),
+            string optinKeywords = default(string),
+            string optoutKeywords = default(string),
+            string helpKeywords = default(string),
+            string optinMessage = default(string),
+            string optoutMessage = default(string),
+            string referenceId = default(string),
+            bool mock = default(bool),
+            DateOnly? nextRenewalOrExpirationDate = default(DateOnly?)
+        )
         {
-
             // to ensure "campaignId" is required (not null)
             if (campaignId == null)
             {
-                throw new ArgumentNullException("campaignId is a required property for SMSTenDLCCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "campaignId is a required property for SMSTenDLCCampaign and cannot be null"
+                );
             }
             this.CampaignId = campaignId;
-                        
 
             // to ensure "cspId" is required (not null)
             if (cspId == null)
             {
-                throw new ArgumentNullException("cspId is a required property for SMSTenDLCCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "cspId is a required property for SMSTenDLCCampaign and cannot be null"
+                );
             }
             this.CspId = cspId;
-                        
-
-
-
-
-
 
             // to ensure "brandId" is required (not null)
             if (brandId == null)
             {
-                throw new ArgumentNullException("brandId is a required property for SMSTenDLCCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "brandId is a required property for SMSTenDLCCampaign and cannot be null"
+                );
             }
             this.BrandId = brandId;
-                        
 
             // to ensure "usecase" is required (not null)
             if (usecase == null)
             {
-                throw new ArgumentNullException("usecase is a required property for SMSTenDLCCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "usecase is a required property for SMSTenDLCCampaign and cannot be null"
+                );
             }
             this.Usecase = usecase;
-                        
 
             // to ensure "subUsecases" is required (not null)
             if (subUsecases == null)
             {
-                throw new ArgumentNullException("subUsecases is a required property for SMSTenDLCCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "subUsecases is a required property for SMSTenDLCCampaign and cannot be null"
+                );
             }
             this.SubUsecases = subUsecases;
-                        
 
             // to ensure "description" is required (not null)
             if (description == null)
             {
-                throw new ArgumentNullException("description is a required property for SMSTenDLCCampaign and cannot be null");
+                throw new ArgumentNullException(
+                    "description is a required property for SMSTenDLCCampaign and cannot be null"
+                );
             }
             this.Description = description;
-                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             this.Mock = mock;
-                        
-
 
             this.AccountId = accountId;
-                        
-
-
 
             this.ResellerId = resellerId;
-                        
 
             this.Status = status;
-                        
 
             this.CreateDate = createDate;
-                        
 
             this.AutoRenewal = autoRenewal;
-                        
 
             this.BilledDate = billedDate;
-                        
-
-
-
-
 
             this.EmbeddedLink = embeddedLink;
-                        
 
             this.EmbeddedPhone = embeddedPhone;
-                        
 
             this.AffiliateMarketing = affiliateMarketing;
-                        
 
             this.NumberPool = numberPool;
-                        
 
             this.AgeGated = ageGated;
-                        
 
             this.DirectLending = directLending;
-                        
 
             this.SubscriberOptin = subscriberOptin;
-                        
 
             this.SubscriberOptout = subscriberOptout;
-                        
 
             this.SubscriberHelp = subscriberHelp;
-                        
 
             this.Sample1 = sample1;
-                        
 
             this.Sample2 = sample2;
-                        
 
             this.Sample3 = sample3;
-                        
 
             this.Sample4 = sample4;
-                        
 
             this.Sample5 = sample5;
-                        
 
             this.MessageFlow = messageFlow;
-                        
 
             this.HelpMessage = helpMessage;
-                        
 
             this.OptinKeywords = optinKeywords;
-                        
 
             this.OptoutKeywords = optoutKeywords;
-                        
 
             this.HelpKeywords = helpKeywords;
-                        
 
             this.OptinMessage = optinMessage;
-                        
 
             this.OptoutMessage = optoutMessage;
-                        
 
             this.ReferenceId = referenceId;
-                        
-
 
             this.NextRenewalOrExpirationDate = nextRenewalOrExpirationDate;
-                        
-
         }
-        
+
         /// <summary>
         /// ID of the account that created this Queue.
         /// </summary>
@@ -269,9 +245,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Alphanumeric identifier assigned by the registry for a campaign. This identifier is required by the NetNumber OSR SMS enabling process of 10DLC.
         /// </summary>
@@ -279,9 +252,6 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Alphanumeric identifier of the CSP associated with this campaign.
         /// </summary>
@@ -289,9 +259,6 @@ namespace freeclimb.Model
         [DataMember(Name = "cspId", IsRequired = true, EmitDefaultValue = true)]
         public string CspId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Alphanumeric identifier of the reseller that you want to associate with this campaign.
         /// </summary>
@@ -299,12 +266,6 @@ namespace freeclimb.Model
         [DataMember(Name = "resellerId", EmitDefaultValue = true)]
         public string ResellerId { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// Unix timestamp when campaign was created.
         /// </summary>
@@ -312,9 +273,6 @@ namespace freeclimb.Model
         [DataMember(Name = "createDate", EmitDefaultValue = false)]
         public DateTime CreateDate { get; set; }
 
-
-        
-        
         /// <summary>
         /// Campaign subscription auto-renewal status.
         /// </summary>
@@ -322,9 +280,6 @@ namespace freeclimb.Model
         [DataMember(Name = "autoRenewal", EmitDefaultValue = true)]
         public bool AutoRenewal { get; set; }
 
-
-        
-        
         /// <summary>
         /// Campaign recent billed date.
         /// </summary>
@@ -332,9 +287,6 @@ namespace freeclimb.Model
         [DataMember(Name = "billedDate", EmitDefaultValue = true)]
         public DateTime? BilledDate { get; set; }
 
-
-        
-        
         /// <summary>
         /// Alphanumeric identifier of the brand associated with this campaign.
         /// </summary>
@@ -342,9 +294,6 @@ namespace freeclimb.Model
         [DataMember(Name = "brandId", IsRequired = true, EmitDefaultValue = true)]
         public string BrandId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Campaign usecase. Must be of defined valid types. Use &#x60;/registry/enum/usecase&#x60; operation to retrieve usecases available for given brand.
         /// </summary>
@@ -352,9 +301,6 @@ namespace freeclimb.Model
         [DataMember(Name = "usecase", IsRequired = true, EmitDefaultValue = true)]
         public string Usecase { get; set; }
 
-
-        
-        
         /// <summary>
         /// Campaign sub-usecases. Must be of defined valid sub-usecase types. Use &#x60;/registry/enum/usecase&#x60; operation to retrieve list of valid sub-usecases
         /// </summary>
@@ -362,9 +308,6 @@ namespace freeclimb.Model
         [DataMember(Name = "subUsecases", IsRequired = true, EmitDefaultValue = true)]
         public List<string> SubUsecases { get; set; }
 
-
-        
-        
         /// <summary>
         /// Summary description of this campaign.
         /// </summary>
@@ -372,9 +315,6 @@ namespace freeclimb.Model
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
-
-        
-        
         /// <summary>
         /// Does message generated by the campaign include URL link in SMS?
         /// </summary>
@@ -382,9 +322,6 @@ namespace freeclimb.Model
         [DataMember(Name = "embeddedLink", EmitDefaultValue = true)]
         public bool EmbeddedLink { get; set; }
 
-
-        
-        
         /// <summary>
         /// Does message generated by the campaign include phone number in SMS?
         /// </summary>
@@ -392,9 +329,6 @@ namespace freeclimb.Model
         [DataMember(Name = "embeddedPhone", EmitDefaultValue = true)]
         public bool EmbeddedPhone { get; set; }
 
-
-        
-        
         /// <summary>
         /// Does message content controlled by affiliate marketing other than the brand?
         /// </summary>
@@ -402,9 +336,6 @@ namespace freeclimb.Model
         [DataMember(Name = "affiliateMarketing", EmitDefaultValue = true)]
         public bool AffiliateMarketing { get; set; }
 
-
-        
-        
         /// <summary>
         /// Does campaign utilize pool of phone nubers?
         /// </summary>
@@ -412,9 +343,6 @@ namespace freeclimb.Model
         [DataMember(Name = "numberPool", EmitDefaultValue = true)]
         public bool NumberPool { get; set; }
 
-
-        
-        
         /// <summary>
         /// Age gated content in campaign.
         /// </summary>
@@ -422,18 +350,12 @@ namespace freeclimb.Model
         [DataMember(Name = "ageGated", EmitDefaultValue = true)]
         public bool AgeGated { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets DirectLending
         /// </summary>
         [DataMember(Name = "directLending", EmitDefaultValue = true)]
         public bool DirectLending { get; set; }
 
-
-        
-        
         /// <summary>
         /// Does campaign require subscriber to opt-in before SMS is sent to subscriber?
         /// </summary>
@@ -441,9 +363,6 @@ namespace freeclimb.Model
         [DataMember(Name = "subscriberOptin", EmitDefaultValue = true)]
         public bool SubscriberOptin { get; set; }
 
-
-        
-        
         /// <summary>
         /// Does campaign support subscriber opt-out keyword(s)?
         /// </summary>
@@ -451,9 +370,6 @@ namespace freeclimb.Model
         [DataMember(Name = "subscriberOptout", EmitDefaultValue = true)]
         public bool SubscriberOptout { get; set; }
 
-
-        
-        
         /// <summary>
         /// Does campaign responds to help keyword(s)?
         /// </summary>
@@ -461,9 +377,6 @@ namespace freeclimb.Model
         [DataMember(Name = "subscriberHelp", EmitDefaultValue = true)]
         public bool SubscriberHelp { get; set; }
 
-
-        
-        
         /// <summary>
         /// Message sample. Some campaign tiers require 1 or more message samples.
         /// </summary>
@@ -471,9 +384,6 @@ namespace freeclimb.Model
         [DataMember(Name = "sample1", EmitDefaultValue = false)]
         public string Sample1 { get; set; }
 
-
-        
-        
         /// <summary>
         /// Message sample. Some campaign tiers require 2 or more message samples.
         /// </summary>
@@ -481,9 +391,6 @@ namespace freeclimb.Model
         [DataMember(Name = "sample2", EmitDefaultValue = true)]
         public string Sample2 { get; set; }
 
-
-        
-        
         /// <summary>
         /// Message sample. Some campaign tiers require 3 or more message samples.
         /// </summary>
@@ -491,9 +398,6 @@ namespace freeclimb.Model
         [DataMember(Name = "sample3", EmitDefaultValue = true)]
         public string Sample3 { get; set; }
 
-
-        
-        
         /// <summary>
         /// Message sample. Some campaign tiers require 4 or more message samples.
         /// </summary>
@@ -501,9 +405,6 @@ namespace freeclimb.Model
         [DataMember(Name = "sample4", EmitDefaultValue = true)]
         public string Sample4 { get; set; }
 
-
-        
-        
         /// <summary>
         /// Message sample. Some campaign tiers require 5 or more message samples.
         /// </summary>
@@ -511,9 +412,6 @@ namespace freeclimb.Model
         [DataMember(Name = "sample5", EmitDefaultValue = true)]
         public string Sample5 { get; set; }
 
-
-        
-        
         /// <summary>
         /// Message flow description.
         /// </summary>
@@ -521,9 +419,6 @@ namespace freeclimb.Model
         [DataMember(Name = "messageFlow", EmitDefaultValue = true)]
         public string MessageFlow { get; set; }
 
-
-        
-        
         /// <summary>
         /// Help message of the campaign.
         /// </summary>
@@ -531,9 +426,6 @@ namespace freeclimb.Model
         [DataMember(Name = "helpMessage", EmitDefaultValue = true)]
         public string HelpMessage { get; set; }
 
-
-        
-        
         /// <summary>
         /// Subscriber opt-in keywords. Multiple keywords are comma separated without space.
         /// </summary>
@@ -541,9 +433,6 @@ namespace freeclimb.Model
         [DataMember(Name = "optinKeywords", EmitDefaultValue = false)]
         public string OptinKeywords { get; set; }
 
-
-        
-        
         /// <summary>
         /// Subscriber opt-out keywords. Multiple keywords are comma separated without space.
         /// </summary>
@@ -551,9 +440,6 @@ namespace freeclimb.Model
         [DataMember(Name = "optoutKeywords", EmitDefaultValue = false)]
         public string OptoutKeywords { get; set; }
 
-
-        
-        
         /// <summary>
         /// Subscriber help keywords. Multiple keywords are comma separated without space.
         /// </summary>
@@ -561,9 +447,6 @@ namespace freeclimb.Model
         [DataMember(Name = "helpKeywords", EmitDefaultValue = false)]
         public string HelpKeywords { get; set; }
 
-
-        
-        
         /// <summary>
         /// Subscriber opt-in message.
         /// </summary>
@@ -571,9 +454,6 @@ namespace freeclimb.Model
         [DataMember(Name = "optinMessage", EmitDefaultValue = false)]
         public string OptinMessage { get; set; }
 
-
-        
-        
         /// <summary>
         /// Subscriber opt-out message.
         /// </summary>
@@ -581,9 +461,6 @@ namespace freeclimb.Model
         [DataMember(Name = "optoutMessage", EmitDefaultValue = false)]
         public string OptoutMessage { get; set; }
 
-
-        
-        
         /// <summary>
         /// Caller supplied campaign reference ID. If supplied, the value must be unique across all submitted campaigns. Can be used to prevent duplicate campaign registrations.
         /// </summary>
@@ -591,9 +468,6 @@ namespace freeclimb.Model
         [DataMember(Name = "referenceId", EmitDefaultValue = true)]
         public string ReferenceId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Campaign created from mock brand. Mocked campaign cannot be shared with an upstream CNP.
         /// </summary>
@@ -601,9 +475,6 @@ namespace freeclimb.Model
         [DataMember(Name = "mock", IsRequired = true, EmitDefaultValue = true)]
         public bool Mock { get; set; }
 
-
-        
-        
         /// <summary>
         /// When the campaign would be due for its next renew/bill date.
         /// </summary>
@@ -614,8 +485,6 @@ namespace freeclimb.Model
         [DataMember(Name = "nextRenewalOrExpirationDate", EmitDefaultValue = true)]
         public DateOnly? NextRenewalOrExpirationDate { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -659,11 +528,12 @@ namespace freeclimb.Model
             sb.Append("  OptoutMessage: ").Append(OptoutMessage).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  Mock: ").Append(Mock).Append("\n");
-            sb.Append("  NextRenewalOrExpirationDate: ").Append(NextRenewalOrExpirationDate).Append("\n");
+            sb.Append("  NextRenewalOrExpirationDate: ")
+                .Append(NextRenewalOrExpirationDate)
+                .Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-
 
         /// <summary>
         /// Returns the JSON string presentation of the object
@@ -671,58 +541,60 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SMSTenDLCCampaign instance. 
+        /// Retrieve the KVP Dictionary for the SMSTenDLCCampaign instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);          
-            props.Add("campaignId", CampaignId);          
-            props.Add("cspId", CspId);          
-            props.Add("resellerId", ResellerId);          
-            props.Add("status", Status);          
-            props.Add("createDate", CreateDate);          
-            props.Add("autoRenewal", AutoRenewal);          
-            props.Add("billedDate", BilledDate);          
-            props.Add("brandId", BrandId);          
-            props.Add("usecase", Usecase);          
+            props.Add("accountId", AccountId);
+            props.Add("campaignId", CampaignId);
+            props.Add("cspId", CspId);
+            props.Add("resellerId", ResellerId);
+            props.Add("status", Status);
+            props.Add("createDate", CreateDate);
+            props.Add("autoRenewal", AutoRenewal);
+            props.Add("billedDate", BilledDate);
+            props.Add("brandId", BrandId);
+            props.Add("usecase", Usecase);
             List<object> nested = new List<object>();
             foreach (var item in SubUsecases)
             {
                 nested.Add(item);
             }
-            props.Add("subUsecases", nested); 
-            props.Add("description", Description);          
-            props.Add("embeddedLink", EmbeddedLink);          
-            props.Add("embeddedPhone", EmbeddedPhone);          
-            props.Add("affiliateMarketing", AffiliateMarketing);          
-            props.Add("numberPool", NumberPool);          
-            props.Add("ageGated", AgeGated);          
-            props.Add("directLending", DirectLending);          
-            props.Add("subscriberOptin", SubscriberOptin);          
-            props.Add("subscriberOptout", SubscriberOptout);          
-            props.Add("subscriberHelp", SubscriberHelp);          
-            props.Add("sample1", Sample1);          
-            props.Add("sample2", Sample2);          
-            props.Add("sample3", Sample3);          
-            props.Add("sample4", Sample4);          
-            props.Add("sample5", Sample5);          
-            props.Add("messageFlow", MessageFlow);          
-            props.Add("helpMessage", HelpMessage);          
-            props.Add("optinKeywords", OptinKeywords);          
-            props.Add("optoutKeywords", OptoutKeywords);          
-            props.Add("helpKeywords", HelpKeywords);          
-            props.Add("optinMessage", OptinMessage);          
-            props.Add("optoutMessage", OptoutMessage);          
-            props.Add("referenceId", ReferenceId);          
-            props.Add("mock", Mock);          
-            props.Add("nextRenewalOrExpirationDate", NextRenewalOrExpirationDate);          
+            props.Add("subUsecases", nested);
+            props.Add("description", Description);
+            props.Add("embeddedLink", EmbeddedLink);
+            props.Add("embeddedPhone", EmbeddedPhone);
+            props.Add("affiliateMarketing", AffiliateMarketing);
+            props.Add("numberPool", NumberPool);
+            props.Add("ageGated", AgeGated);
+            props.Add("directLending", DirectLending);
+            props.Add("subscriberOptin", SubscriberOptin);
+            props.Add("subscriberOptout", SubscriberOptout);
+            props.Add("subscriberHelp", SubscriberHelp);
+            props.Add("sample1", Sample1);
+            props.Add("sample2", Sample2);
+            props.Add("sample3", Sample3);
+            props.Add("sample4", Sample4);
+            props.Add("sample5", Sample5);
+            props.Add("messageFlow", MessageFlow);
+            props.Add("helpMessage", HelpMessage);
+            props.Add("optinKeywords", OptinKeywords);
+            props.Add("optoutKeywords", OptoutKeywords);
+            props.Add("helpKeywords", HelpKeywords);
+            props.Add("optinMessage", OptinMessage);
+            props.Add("optoutMessage", OptoutMessage);
+            props.Add("referenceId", ReferenceId);
+            props.Add("mock", Mock);
+            props.Add("nextRenewalOrExpirationDate", NextRenewalOrExpirationDate);
             return props;
         }
 
@@ -731,112 +603,164 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             // ResellerId (string) maxLength
             if (this.ResellerId != null && this.ResellerId.Length > 8)
             {
-                yield return new ValidationResult("Invalid value for ResellerId, length must be less than 8.", new [] { "ResellerId" });
+                yield return new ValidationResult(
+                    "Invalid value for ResellerId, length must be less than 8.",
+                    new[] { "ResellerId" }
+                );
             }
 
             // BrandId (string) maxLength
             if (this.BrandId != null && this.BrandId.Length > 8)
             {
-                yield return new ValidationResult("Invalid value for BrandId, length must be less than 8.", new [] { "BrandId" });
+                yield return new ValidationResult(
+                    "Invalid value for BrandId, length must be less than 8.",
+                    new[] { "BrandId" }
+                );
             }
 
             // Usecase (string) maxLength
             if (this.Usecase != null && this.Usecase.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for Usecase, length must be less than 20.", new [] { "Usecase" });
+                yield return new ValidationResult(
+                    "Invalid value for Usecase, length must be less than 20.",
+                    new[] { "Usecase" }
+                );
             }
 
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 4096)
             {
-                yield return new ValidationResult("Invalid value for Description, length must be less than 4096.", new [] { "Description" });
+                yield return new ValidationResult(
+                    "Invalid value for Description, length must be less than 4096.",
+                    new[] { "Description" }
+                );
             }
 
             // Sample1 (string) maxLength
             if (this.Sample1 != null && this.Sample1.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Sample1, length must be less than 1024.", new [] { "Sample1" });
+                yield return new ValidationResult(
+                    "Invalid value for Sample1, length must be less than 1024.",
+                    new[] { "Sample1" }
+                );
             }
 
             // Sample2 (string) maxLength
             if (this.Sample2 != null && this.Sample2.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Sample2, length must be less than 1024.", new [] { "Sample2" });
+                yield return new ValidationResult(
+                    "Invalid value for Sample2, length must be less than 1024.",
+                    new[] { "Sample2" }
+                );
             }
 
             // Sample3 (string) maxLength
             if (this.Sample3 != null && this.Sample3.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Sample3, length must be less than 1024.", new [] { "Sample3" });
+                yield return new ValidationResult(
+                    "Invalid value for Sample3, length must be less than 1024.",
+                    new[] { "Sample3" }
+                );
             }
 
             // Sample4 (string) maxLength
             if (this.Sample4 != null && this.Sample4.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Sample4, length must be less than 1024.", new [] { "Sample4" });
+                yield return new ValidationResult(
+                    "Invalid value for Sample4, length must be less than 1024.",
+                    new[] { "Sample4" }
+                );
             }
 
             // Sample5 (string) maxLength
             if (this.Sample5 != null && this.Sample5.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Sample5, length must be less than 1024.", new [] { "Sample5" });
+                yield return new ValidationResult(
+                    "Invalid value for Sample5, length must be less than 1024.",
+                    new[] { "Sample5" }
+                );
             }
 
             // MessageFlow (string) maxLength
             if (this.MessageFlow != null && this.MessageFlow.Length > 2048)
             {
-                yield return new ValidationResult("Invalid value for MessageFlow, length must be less than 2048.", new [] { "MessageFlow" });
+                yield return new ValidationResult(
+                    "Invalid value for MessageFlow, length must be less than 2048.",
+                    new[] { "MessageFlow" }
+                );
             }
 
             // HelpMessage (string) maxLength
             if (this.HelpMessage != null && this.HelpMessage.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for HelpMessage, length must be less than 255.", new [] { "HelpMessage" });
+                yield return new ValidationResult(
+                    "Invalid value for HelpMessage, length must be less than 255.",
+                    new[] { "HelpMessage" }
+                );
             }
 
             // OptinKeywords (string) maxLength
             if (this.OptinKeywords != null && this.OptinKeywords.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for OptinKeywords, length must be less than 255.", new [] { "OptinKeywords" });
+                yield return new ValidationResult(
+                    "Invalid value for OptinKeywords, length must be less than 255.",
+                    new[] { "OptinKeywords" }
+                );
             }
 
             // OptoutKeywords (string) maxLength
             if (this.OptoutKeywords != null && this.OptoutKeywords.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for OptoutKeywords, length must be less than 255.", new [] { "OptoutKeywords" });
+                yield return new ValidationResult(
+                    "Invalid value for OptoutKeywords, length must be less than 255.",
+                    new[] { "OptoutKeywords" }
+                );
             }
 
             // HelpKeywords (string) maxLength
             if (this.HelpKeywords != null && this.HelpKeywords.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for HelpKeywords, length must be less than 255.", new [] { "HelpKeywords" });
+                yield return new ValidationResult(
+                    "Invalid value for HelpKeywords, length must be less than 255.",
+                    new[] { "HelpKeywords" }
+                );
             }
 
             // OptinMessage (string) maxLength
             if (this.OptinMessage != null && this.OptinMessage.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for OptinMessage, length must be less than 255.", new [] { "OptinMessage" });
+                yield return new ValidationResult(
+                    "Invalid value for OptinMessage, length must be less than 255.",
+                    new[] { "OptinMessage" }
+                );
             }
 
             // OptoutMessage (string) maxLength
             if (this.OptoutMessage != null && this.OptoutMessage.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for OptoutMessage, length must be less than 255.", new [] { "OptoutMessage" });
+                yield return new ValidationResult(
+                    "Invalid value for OptoutMessage, length must be less than 255.",
+                    new[] { "OptoutMessage" }
+                );
             }
 
             // ReferenceId (string) maxLength
             if (this.ReferenceId != null && this.ReferenceId.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for ReferenceId, length must be less than 50.", new [] { "ReferenceId" });
+                yield return new ValidationResult(
+                    "Invalid value for ReferenceId, length must be less than 50.",
+                    new[] { "ReferenceId" }
+                );
             }
 
             yield break;
         }
     }
-
 }

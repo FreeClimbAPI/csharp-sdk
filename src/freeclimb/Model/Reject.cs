@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -41,14 +40,12 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="reason">Reason for the rejection. This can be any string value. In general, applications should use a set of enumerated values that are predefined to cover all exit points of the call flows for the given application..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Reject&quot;).</param>
-        public Reject(string reason = default(string), string command = @"Reject") : base(command)
+        public Reject(string reason = default(string), string command = @"Reject")
+            : base(command)
         {
-
             this.Reason = reason;
-                        
-
         }
-        
+
         /// <summary>
         /// Reason for the rejection. This can be any string value. In general, applications should use a set of enumerated values that are predefined to cover all exit points of the call flows for the given application.
         /// </summary>
@@ -56,8 +53,6 @@ namespace freeclimb.Model
         [DataMember(Name = "reason", EmitDefaultValue = false)]
         public string Reason { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -87,17 +82,16 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Reject instance. 
+        /// Retrieve the KVP Dictionary for the Reject instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("reason", Reason);          
+            props.Add("reason", Reason);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Reject",props);
+            command.Add("Reject", props);
             return command;
         }
 
@@ -106,7 +100,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -125,5 +121,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

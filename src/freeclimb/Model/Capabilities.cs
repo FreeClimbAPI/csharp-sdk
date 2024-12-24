@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -39,6 +38,7 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected Capabilities() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Capabilities" /> class.
         /// </summary>
@@ -47,55 +47,60 @@ namespace freeclimb.Model
         /// <param name="tollFree">Indicates that a number is toll-free and will make toll-free calls, and when enabled, toll-free messages. (required).</param>
         /// <param name="tenDLC">Indicates that a number, if sms is true, will be used for 10DLC messaging (required).</param>
         /// <param name="shortCode">Indicates that a number is a short code and can be used for short code messaging (required).</param>
-        public Capabilities(bool? voice = default(bool?), bool? sms = default(bool?), bool? tollFree = default(bool?), bool? tenDLC = default(bool?), bool? shortCode = default(bool?))
+        public Capabilities(
+            bool? voice = default(bool?),
+            bool? sms = default(bool?),
+            bool? tollFree = default(bool?),
+            bool? tenDLC = default(bool?),
+            bool? shortCode = default(bool?)
+        )
         {
             // to ensure "voice" is required (not null)
             if (voice == null)
             {
-                throw new ArgumentNullException("voice is a required property for Capabilities and cannot be null");
+                throw new ArgumentNullException(
+                    "voice is a required property for Capabilities and cannot be null"
+                );
             }
             this.Voice = voice;
-                        
 
             // to ensure "sms" is required (not null)
             if (sms == null)
             {
-                throw new ArgumentNullException("sms is a required property for Capabilities and cannot be null");
+                throw new ArgumentNullException(
+                    "sms is a required property for Capabilities and cannot be null"
+                );
             }
             this.Sms = sms;
-                        
 
             // to ensure "tollFree" is required (not null)
             if (tollFree == null)
             {
-                throw new ArgumentNullException("tollFree is a required property for Capabilities and cannot be null");
+                throw new ArgumentNullException(
+                    "tollFree is a required property for Capabilities and cannot be null"
+                );
             }
             this.TollFree = tollFree;
-                        
 
             // to ensure "tenDLC" is required (not null)
             if (tenDLC == null)
             {
-                throw new ArgumentNullException("tenDLC is a required property for Capabilities and cannot be null");
+                throw new ArgumentNullException(
+                    "tenDLC is a required property for Capabilities and cannot be null"
+                );
             }
             this.TenDLC = tenDLC;
-                        
 
             // to ensure "shortCode" is required (not null)
             if (shortCode == null)
             {
-                throw new ArgumentNullException("shortCode is a required property for Capabilities and cannot be null");
+                throw new ArgumentNullException(
+                    "shortCode is a required property for Capabilities and cannot be null"
+                );
             }
             this.ShortCode = shortCode;
-                        
-
-
-
-
-
-
         }
-        
+
         /// <summary>
         /// Indicates whether a number can be used for voice calls. Replaces voiceEnabled.
         /// </summary>
@@ -103,9 +108,6 @@ namespace freeclimb.Model
         [DataMember(Name = "voice", IsRequired = true, EmitDefaultValue = true)]
         public bool? Voice { get; set; }
 
-
-        
-        
         /// <summary>
         /// Indicates whether a number can be used SMS messaging. Replaces smsEnabled.
         /// </summary>
@@ -113,9 +115,6 @@ namespace freeclimb.Model
         [DataMember(Name = "sms", IsRequired = true, EmitDefaultValue = true)]
         public bool? Sms { get; set; }
 
-
-        
-        
         /// <summary>
         /// Indicates that a number is toll-free and will make toll-free calls, and when enabled, toll-free messages.
         /// </summary>
@@ -123,9 +122,6 @@ namespace freeclimb.Model
         [DataMember(Name = "tollFree", IsRequired = true, EmitDefaultValue = true)]
         public bool? TollFree { get; set; }
 
-
-        
-        
         /// <summary>
         /// Indicates that a number, if sms is true, will be used for 10DLC messaging
         /// </summary>
@@ -133,9 +129,6 @@ namespace freeclimb.Model
         [DataMember(Name = "tenDLC", IsRequired = true, EmitDefaultValue = true)]
         public bool? TenDLC { get; set; }
 
-
-        
-        
         /// <summary>
         /// Indicates that a number is a short code and can be used for short code messaging
         /// </summary>
@@ -143,8 +136,6 @@ namespace freeclimb.Model
         [DataMember(Name = "shortCode", IsRequired = true, EmitDefaultValue = true)]
         public bool? ShortCode { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -162,29 +153,30 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Capabilities instance. 
+        /// Retrieve the KVP Dictionary for the Capabilities instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("voice", Voice);          
-            props.Add("sms", Sms);          
-            props.Add("tollFree", TollFree);          
-            props.Add("tenDLC", TenDLC);          
-            props.Add("shortCode", ShortCode);          
+            props.Add("voice", Voice);
+            props.Add("sms", Sms);
+            props.Add("tollFree", TollFree);
+            props.Add("tenDLC", TenDLC);
+            props.Add("shortCode", ShortCode);
             return props;
         }
 
@@ -193,10 +185,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

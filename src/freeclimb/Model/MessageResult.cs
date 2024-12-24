@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -34,12 +33,12 @@ namespace freeclimb.Model
     [DataContract(Name = "MessageResult")]
     public partial class MessageResult : IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public MessageStatus? Status { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageResult" /> class.
         /// </summary>
@@ -59,74 +58,58 @@ namespace freeclimb.Model
         /// <param name="campaignId">The unique identifier for the campaign associated with the message.</param>
         /// <param name="segmentCount">The number of segments into which the message was split.</param>
         /// <param name="mediaUrls">an array of HTTP URLs which were attached this this message.</param>
-        public MessageResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string messageId = default(string), MessageStatus? status = default(MessageStatus?), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string notificationUrl = default(string), string brandId = default(string), string campaignId = default(string), decimal? segmentCount = default(decimal?), List<string> mediaUrls = default(List<string>))
+        public MessageResult(
+            string uri = default(string),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int),
+            string accountId = default(string),
+            string messageId = default(string),
+            MessageStatus? status = default(MessageStatus?),
+            string from = default(string),
+            string to = default(string),
+            string text = default(string),
+            string direction = default(string),
+            string notificationUrl = default(string),
+            string brandId = default(string),
+            string campaignId = default(string),
+            decimal? segmentCount = default(decimal?),
+            List<string> mediaUrls = default(List<string>)
+        )
         {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             this.Uri = uri;
-                        
 
             this.DateCreated = dateCreated;
-                        
 
             this.DateUpdated = dateUpdated;
-                        
 
             this.Revision = revision;
-                        
 
             this.AccountId = accountId;
-                        
 
             this.MessageId = messageId;
-                        
 
             this.Status = status;
-                        
 
             this.From = from;
-                        
 
             this.To = to;
-                        
 
             this.Text = text;
-                        
 
             this.Direction = direction;
-                        
 
             this.NotificationUrl = notificationUrl;
-                        
 
             this.BrandId = brandId;
-                        
 
             this.CampaignId = campaignId;
-                        
 
             this.SegmentCount = segmentCount;
-                        
 
             this.MediaUrls = mediaUrls;
-                        
-
         }
-        
+
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -134,9 +117,6 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -144,9 +124,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -154,9 +131,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
-
-        
-        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -164,9 +138,6 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
-
-        
-        
         /// <summary>
         /// String that uniquely identifies this account resource.
         /// </summary>
@@ -174,9 +145,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// String that uniquely identifies this message resource
         /// </summary>
@@ -184,12 +152,6 @@ namespace freeclimb.Model
         [DataMember(Name = "messageId", EmitDefaultValue = true)]
         public string MessageId { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// Phone number in E.164 format that sent the message.
         /// </summary>
@@ -197,9 +159,6 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = true)]
         public string From { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number in E.164 format that received the message.
         /// </summary>
@@ -207,9 +166,6 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = true)]
         public string To { get; set; }
 
-
-        
-        
         /// <summary>
         /// Message contents
         /// </summary>
@@ -217,9 +173,6 @@ namespace freeclimb.Model
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
-
-        
-        
         /// <summary>
         /// Noting whether the message was inbound or outbound
         /// </summary>
@@ -227,9 +180,6 @@ namespace freeclimb.Model
         [DataMember(Name = "direction", EmitDefaultValue = true)]
         public string Direction { get; set; }
 
-
-        
-        
         /// <summary>
         /// URL invoked when message sent
         /// </summary>
@@ -237,9 +187,6 @@ namespace freeclimb.Model
         [DataMember(Name = "notificationUrl", EmitDefaultValue = true)]
         public string NotificationUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// The unique identifier for the brand associated with the message
         /// </summary>
@@ -247,9 +194,6 @@ namespace freeclimb.Model
         [DataMember(Name = "brandId", EmitDefaultValue = true)]
         public string BrandId { get; set; }
 
-
-        
-        
         /// <summary>
         /// The unique identifier for the campaign associated with the message
         /// </summary>
@@ -257,9 +201,6 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
-
-        
-        
         /// <summary>
         /// The number of segments into which the message was split
         /// </summary>
@@ -267,9 +208,6 @@ namespace freeclimb.Model
         [DataMember(Name = "segmentCount", EmitDefaultValue = true)]
         public decimal? SegmentCount { get; set; }
 
-
-        
-        
         /// <summary>
         /// an array of HTTP URLs which were attached this this message
         /// </summary>
@@ -277,8 +215,6 @@ namespace freeclimb.Model
         [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
         public List<string> MediaUrls { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -307,45 +243,46 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the MessageResult instance. 
+        /// Retrieve the KVP Dictionary for the MessageResult instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("accountId", AccountId);          
-            props.Add("messageId", MessageId);          
-            props.Add("status", Status);          
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("text", Text);          
-            props.Add("direction", Direction);          
-            props.Add("notificationUrl", NotificationUrl);          
-            props.Add("brandId", BrandId);          
-            props.Add("campaignId", CampaignId);          
-            props.Add("segmentCount", SegmentCount);          
+            props.Add("uri", Uri);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
+            props.Add("accountId", AccountId);
+            props.Add("messageId", MessageId);
+            props.Add("status", Status);
+            props.Add("from", From);
+            props.Add("to", To);
+            props.Add("text", Text);
+            props.Add("direction", Direction);
+            props.Add("notificationUrl", NotificationUrl);
+            props.Add("brandId", BrandId);
+            props.Add("campaignId", CampaignId);
+            props.Add("segmentCount", SegmentCount);
             List<object> nested = new List<object>();
             foreach (var item in MediaUrls)
             {
                 nested.Add(item);
             }
-            props.Add("mediaUrls", nested); 
+            props.Add("mediaUrls", nested);
             return props;
         }
 
@@ -354,10 +291,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

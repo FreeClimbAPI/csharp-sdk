@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -34,7 +33,6 @@ namespace freeclimb.Model
     [DataContract(Name = "UpdateConferenceRequest")]
     public partial class UpdateConferenceRequest : IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets PlayBeep
         /// </summary>
@@ -46,28 +44,26 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public UpdateConferenceRequestStatus? Status { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateConferenceRequest" /> class.
         /// </summary>
         /// <param name="alias">Description for this conference. Maximum 64 characters..</param>
         /// <param name="playBeep">playBeep.</param>
         /// <param name="status">status.</param>
-        public UpdateConferenceRequest(string alias = default(string), PlayBeep? playBeep = default(PlayBeep?), UpdateConferenceRequestStatus? status = default(UpdateConferenceRequestStatus?))
+        public UpdateConferenceRequest(
+            string alias = default(string),
+            PlayBeep? playBeep = default(PlayBeep?),
+            UpdateConferenceRequestStatus? status = default(UpdateConferenceRequestStatus?)
+        )
         {
-
-
-
             this.Alias = alias;
-                        
 
             this.PlayBeep = playBeep;
-                        
 
             this.Status = status;
-                        
-
         }
-        
+
         /// <summary>
         /// Description for this conference. Maximum 64 characters.
         /// </summary>
@@ -75,14 +71,6 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
-
-        
-        
-
-        
-        
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -98,27 +86,28 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the UpdateConferenceRequest instance. 
+        /// Retrieve the KVP Dictionary for the UpdateConferenceRequest instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("alias", Alias);          
-            props.Add("playBeep", PlayBeep);          
-            props.Add("status", Status);          
+            props.Add("alias", Alias);
+            props.Add("playBeep", PlayBeep);
+            props.Add("status", Status);
             return props;
         }
 
@@ -127,10 +116,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

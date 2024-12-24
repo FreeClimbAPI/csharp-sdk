@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -42,30 +41,25 @@ namespace freeclimb.Model
         /// <param name="waitTime">Number of seconds the Member has been in the queue..</param>
         /// <param name="position">Member&#39;s current position in the Queue, 1 indexed..</param>
         /// <param name="dateEnqueued">Date that the Member was enqueued (GMT), given in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT)..</param>
-        public QueueMember(string uri = default(string), string callId = default(string), int? waitTime = default(int?), int? position = default(int?), string dateEnqueued = default(string))
+        public QueueMember(
+            string uri = default(string),
+            string callId = default(string),
+            int? waitTime = default(int?),
+            int? position = default(int?),
+            string dateEnqueued = default(string)
+        )
         {
-
-
-
-
-
             this.Uri = uri;
-                        
 
             this.CallId = callId;
-                        
 
             this.WaitTime = waitTime;
-                        
 
             this.Position = position;
-                        
 
             this.DateEnqueued = dateEnqueued;
-                        
-
         }
-        
+
         /// <summary>
         /// URI for this Queue Member resource, relative to the API base URL.
         /// </summary>
@@ -73,9 +67,6 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = true)]
         public string Uri { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the Call associated with this Queue Member.
         /// </summary>
@@ -83,9 +74,6 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = true)]
         public string CallId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Number of seconds the Member has been in the queue.
         /// </summary>
@@ -93,9 +81,6 @@ namespace freeclimb.Model
         [DataMember(Name = "waitTime", EmitDefaultValue = true)]
         public int? WaitTime { get; set; }
 
-
-        
-        
         /// <summary>
         /// Member&#39;s current position in the Queue, 1 indexed.
         /// </summary>
@@ -103,9 +88,6 @@ namespace freeclimb.Model
         [DataMember(Name = "position", EmitDefaultValue = true)]
         public int? Position { get; set; }
 
-
-        
-        
         /// <summary>
         /// Date that the Member was enqueued (GMT), given in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -113,8 +95,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateEnqueued", EmitDefaultValue = true)]
         public string DateEnqueued { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -132,29 +112,30 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the QueueMember instance. 
+        /// Retrieve the KVP Dictionary for the QueueMember instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("callId", CallId);          
-            props.Add("waitTime", WaitTime);          
-            props.Add("position", Position);          
-            props.Add("dateEnqueued", DateEnqueued);          
+            props.Add("uri", Uri);
+            props.Add("callId", CallId);
+            props.Add("waitTime", WaitTime);
+            props.Add("position", Position);
+            props.Add("dateEnqueued", DateEnqueued);
             return props;
         }
 
@@ -163,10 +144,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

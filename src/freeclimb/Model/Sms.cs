@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -41,6 +40,7 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected Sms() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Sms" /> class.
         /// </summary>
@@ -49,41 +49,45 @@ namespace freeclimb.Model
         /// <param name="text">Text contained in the message (maximum 160 characters). (required).</param>
         /// <param name="notificationUrl">When the message changes status, this URL will be invoked using HTTP POST with the messageStatus parameters. This is a notification only; any PerCL returned will be ignored..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Sms&quot;).</param>
-        public Sms(string to = default(string), string from = default(string), string text = default(string), string notificationUrl = default(string), string command = @"Sms") : base(command)
+        public Sms(
+            string to = default(string),
+            string from = default(string),
+            string text = default(string),
+            string notificationUrl = default(string),
+            string command = @"Sms"
+        )
+            : base(command)
         {
             // to ensure "to" is required (not null)
             if (to == null)
             {
-                throw new ArgumentNullException("to is a required property for Sms and cannot be null");
+                throw new ArgumentNullException(
+                    "to is a required property for Sms and cannot be null"
+                );
             }
             this.To = to;
-                        
 
             // to ensure "from" is required (not null)
             if (from == null)
             {
-                throw new ArgumentNullException("from is a required property for Sms and cannot be null");
+                throw new ArgumentNullException(
+                    "from is a required property for Sms and cannot be null"
+                );
             }
             this.From = from;
-                        
 
             // to ensure "text" is required (not null)
             if (text == null)
             {
-                throw new ArgumentNullException("text is a required property for Sms and cannot be null");
+                throw new ArgumentNullException(
+                    "text is a required property for Sms and cannot be null"
+                );
             }
             this.Text = text;
-                        
-
-
-
-
 
             this.NotificationUrl = notificationUrl;
-                        
-
         }
-        
+
         /// <summary>
         /// E.164 representation of the phone number to which the message will be sent. Must be within FreeClimb&#39;s service area and E.164 formatting (e.g., +18003608245).
         /// </summary>
@@ -91,9 +95,6 @@ namespace freeclimb.Model
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
 
-
-        
-        
         /// <summary>
         /// E.164 representation of the phone number to use as the sender. This must be an incoming phone number you have purchased from FreeClimb.
         /// </summary>
@@ -101,9 +102,6 @@ namespace freeclimb.Model
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
-
-        
-        
         /// <summary>
         /// Text contained in the message (maximum 160 characters).
         /// </summary>
@@ -111,9 +109,6 @@ namespace freeclimb.Model
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
-
-        
-        
         /// <summary>
         /// When the message changes status, this URL will be invoked using HTTP POST with the messageStatus parameters. This is a notification only; any PerCL returned will be ignored.
         /// </summary>
@@ -121,8 +116,6 @@ namespace freeclimb.Model
         [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
         public string NotificationUrl { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -155,20 +148,19 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Sms instance. 
+        /// Retrieve the KVP Dictionary for the Sms instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("to", To);          
-            props.Add("from", From);          
-            props.Add("text", Text);          
-            props.Add("notificationUrl", NotificationUrl);          
+            props.Add("to", To);
+            props.Add("from", From);
+            props.Add("text", Text);
+            props.Add("notificationUrl", NotificationUrl);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Sms",props);
+            command.Add("Sms", props);
             return command;
         }
 
@@ -177,7 +169,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -196,5 +190,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

@@ -20,17 +20,17 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using System.Text;
-using System.Threading;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
+using freeclimb.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Polly;
 using RestSharp;
 using RestSharp.Serializers;
-using RestSharpMethod = RestSharp.Method;
 using FileIO = System.IO.File;
-using Polly;
-using freeclimb.Model;
+using RestSharpMethod = RestSharp.Method;
 
 namespace freeclimb.Client
 {
@@ -46,11 +46,8 @@ namespace freeclimb.Client
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
             ContractResolver = new DefaultContractResolver
             {
-                NamingStrategy = new CamelCaseNamingStrategy
-                {
-                    OverrideSpecifiedNames = false
-                }
-            }
+                NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false },
+            },
         };
 
         public CustomJsonCodec(IReadableConfiguration configuration)
@@ -58,7 +55,10 @@ namespace freeclimb.Client
             _configuration = configuration;
         }
 
-        public CustomJsonCodec(JsonSerializerSettings serializerSettings, IReadableConfiguration configuration)
+        public CustomJsonCodec(
+            JsonSerializerSettings serializerSettings,
+            IReadableConfiguration configuration
+        )
         {
             _serializerSettings = serializerSettings;
             _configuration = configuration;
@@ -112,13 +112,19 @@ namespace freeclimb.Client
                     var filePath = string.IsNullOrEmpty(_configuration.TempFolderPath)
                         ? Path.GetTempPath()
                         : _configuration.TempFolderPath;
-                    var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
+                    var regex = new Regex(
+                        @"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$"
+                    );
                     foreach (var header in response.Headers)
                     {
                         var match = regex.Match(header.ToString());
                         if (match.Success)
                         {
-                            string fileName = filePath + ClientUtils.SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
+                            string fileName =
+                                filePath
+                                + ClientUtils.SanitizeFilename(
+                                    match.Groups[1].Value.Replace("\"", "").Replace("'", "")
+                                );
                             FileIO.WriteAllBytes(fileName, bytes);
                             return new FileStream(fileName, FileMode.Open);
                         }
@@ -154,14 +160,19 @@ namespace freeclimb.Client
 
         public string[] AcceptedContentTypes => ContentType.JsonAccept;
 
-        public SupportsContentType SupportsContentType => contentType =>
-            contentType.Value.EndsWith("json", StringComparison.InvariantCultureIgnoreCase) ||
-            contentType.Value.EndsWith("javascript", StringComparison.InvariantCultureIgnoreCase);
+        public SupportsContentType SupportsContentType =>
+            contentType =>
+                contentType.Value.EndsWith("json", StringComparison.InvariantCultureIgnoreCase)
+                || contentType.Value.EndsWith(
+                    "javascript",
+                    StringComparison.InvariantCultureIgnoreCase
+                );
 
         public ContentType ContentType { get; set; } = ContentType.Json;
 
         public DataFormat DataFormat => DataFormat.Json;
     }
+
     /// <summary>
     /// Provides a default implementation of an Api client (both synchronous and asynchronous implementations),
     /// encapsulating general REST accessor use cases.
@@ -174,18 +185,16 @@ namespace freeclimb.Client
         /// Specifies the settings on a <see cref="JsonSerializer" /> object.
         /// These settings can be adjusted to accommodate custom serialization rules.
         /// </summary>
-        public JsonSerializerSettings SerializerSettings { get; set; } = new JsonSerializerSettings
-        {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            ContractResolver = new DefaultContractResolver
+        public JsonSerializerSettings SerializerSettings { get; set; } =
+            new JsonSerializerSettings
             {
-                NamingStrategy = new CamelCaseNamingStrategy
+                // OpenAPI generated types generally hide default constructors.
+                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+                ContractResolver = new DefaultContractResolver
                 {
-                    OverrideSpecifiedNames = false
-                }
-            }
-        };
+                    NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false },
+                },
+            };
 
         /// <summary>
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
@@ -262,7 +271,7 @@ namespace freeclimb.Client
 
         /// <summary>
         /// Provides all logic for constructing a new RestSharp <see cref="RestRequest"/>.
-        /// At this point, all information for querying the service is known. 
+        /// At this point, all information for querying the service is known.
         /// Here, it is simply mapped into the RestSharp request.
         /// </summary>
         /// <param name="method">The http verb.</param>
@@ -276,11 +285,15 @@ namespace freeclimb.Client
             HttpMethod method,
             string path,
             RequestOptions options,
-            IReadableConfiguration configuration)
+            IReadableConfiguration configuration
+        )
         {
-            if (path == null) throw new ArgumentNullException("path");
-            if (options == null) throw new ArgumentNullException("options");
-            if (configuration == null) throw new ArgumentNullException("configuration");
+            if (path == null)
+                throw new ArgumentNullException("path");
+            if (options == null)
+                throw new ArgumentNullException("options");
+            if (configuration == null)
+                throw new ArgumentNullException("configuration");
 
             RestRequest request = new RestRequest(path, Method(method));
 
@@ -349,7 +362,10 @@ namespace freeclimb.Client
                     if (options.HeaderParameters != null)
                     {
                         var contentTypes = options.HeaderParameters["Content-Type"];
-                        if (contentTypes == null || contentTypes.Any(header => header.Contains("application/json")))
+                        if (
+                            contentTypes == null
+                            || contentTypes.Any(header => header.Contains("application/json"))
+                        )
                         {
                             request.RequestFormat = DataFormat.Json;
                         }
@@ -377,7 +393,11 @@ namespace freeclimb.Client
                         var bytes = ClientUtils.ReadAsBytes(file);
                         var fileStream = file as FileStream;
                         if (fileStream != null)
-                            request.AddFile(fileParam.Key, bytes, Path.GetFileName(fileStream.Name));
+                            request.AddFile(
+                                fileParam.Key,
+                                bytes,
+                                Path.GetFileName(fileStream.Name)
+                            );
                         else
                             request.AddFile(fileParam.Key, bytes, "no_file_name_provided");
                     }
@@ -399,17 +419,25 @@ namespace freeclimb.Client
             T result = response.Data;
             string rawContent = response.Content;
 
-            var transformed = new ApiResponse<T>(response.StatusCode, new Multimap<string, string>(), result, rawContent)
+            var transformed = new ApiResponse<T>(
+                response.StatusCode,
+                new Multimap<string, string>(),
+                result,
+                rawContent
+            )
             {
                 ErrorText = response.ErrorMessage,
-                Cookies = new List<Cookie>()
+                Cookies = new List<Cookie>(),
             };
 
             if (response.Headers != null)
             {
                 foreach (var responseHeader in response.Headers)
                 {
-                    transformed.Headers.Add(responseHeader.Name, ClientUtils.ParameterToString(responseHeader.Value));
+                    transformed.Headers.Add(
+                        responseHeader.Name,
+                        ClientUtils.ParameterToString(responseHeader.Value)
+                    );
                 }
             }
 
@@ -417,7 +445,10 @@ namespace freeclimb.Client
             {
                 foreach (var responseHeader in response.ContentHeaders)
                 {
-                    transformed.Headers.Add(responseHeader.Name, ClientUtils.ParameterToString(responseHeader.Value));
+                    transformed.Headers.Add(
+                        responseHeader.Name,
+                        ClientUtils.ParameterToString(responseHeader.Value)
+                    );
                 }
             }
 
@@ -430,8 +461,9 @@ namespace freeclimb.Client
                             responseCookies.Name,
                             responseCookies.Value,
                             responseCookies.Path,
-                            responseCookies.Domain)
-                        );
+                            responseCookies.Domain
+                        )
+                    );
                 }
             }
 
@@ -443,15 +475,23 @@ namespace freeclimb.Client
         /// Based on functions received it can be async or sync.
         /// </summary>
         /// <param name="getResponse">Local function that executes http request and returns http response.</param>
-        /// <param name="setOptions">Local function to specify options for the service.</param>        
+        /// <param name="setOptions">Local function to specify options for the service.</param>
         /// <param name="request">The RestSharp request object</param>
         /// <param name="options">The RestSharp options object</param>
         /// <param name="configuration">A per-request configuration object.
         /// It is assumed that any merge with GlobalConfiguration has been done before calling this method.</param>
         /// <returns>A new ApiResponse instance.</returns>
-        private async Task<ApiResponse<T>> ExecClientAsync<T>(Func<RestClient, Task<RestResponse<T>>> getResponse, Action<RestClientOptions> setOptions, RestRequest request, RequestOptions options, IReadableConfiguration configuration)
+        private async Task<ApiResponse<T>> ExecClientAsync<T>(
+            Func<RestClient, Task<RestResponse<T>>> getResponse,
+            Action<RestClientOptions> setOptions,
+            RestRequest request,
+            RequestOptions options,
+            IReadableConfiguration configuration
+        )
         {
-            var baseUrl = configuration.GetOperationServerUrl(options.Operation, options.OperationIndex) ?? _baseUrl;
+            var baseUrl =
+                configuration.GetOperationServerUrl(options.Operation, options.OperationIndex)
+                ?? _baseUrl;
             var clientOptions = new RestClientOptions(baseUrl)
             {
                 ClientCertificates = configuration.ClientCertificates,
@@ -459,12 +499,20 @@ namespace freeclimb.Client
                 Proxy = configuration.Proxy,
                 UserAgent = configuration.UserAgent,
                 UseDefaultCredentials = configuration.UseDefaultCredentials,
-                RemoteCertificateValidationCallback = configuration.RemoteCertificateValidationCallback
+                RemoteCertificateValidationCallback =
+                    configuration.RemoteCertificateValidationCallback,
             };
             setOptions(clientOptions);
-            
-            using (RestClient client = new RestClient(clientOptions,
-                configureSerialization: serializerConfig => serializerConfig.UseSerializer(() => new CustomJsonCodec(SerializerSettings, configuration))))
+
+            using (
+                RestClient client = new RestClient(
+                    clientOptions,
+                    configureSerialization: serializerConfig =>
+                        serializerConfig.UseSerializer(
+                            () => new CustomJsonCodec(SerializerSettings, configuration)
+                        )
+                )
+            )
             {
                 InterceptRequest(request);
 
@@ -475,7 +523,10 @@ namespace freeclimb.Client
                 {
                     try
                     {
-                        response.Data = (T)typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
+                        response.Data = (T)
+                            typeof(T)
+                                .GetMethod("FromJson")
+                                .Invoke(null, new object[] { response.Content });
                     }
                     catch (Exception ex)
                     {
@@ -505,7 +556,8 @@ namespace freeclimb.Client
 
                 if (response.Cookies != null && response.Cookies.Count > 0)
                 {
-                    if (result.Cookies == null) result.Cookies = new List<Cookie>();
+                    if (result.Cookies == null)
+                        result.Cookies = new List<Cookie>();
                     foreach (var restResponseCookie in response.Cookies.Cast<Cookie>())
                     {
                         var cookie = new Cookie(
@@ -523,7 +575,7 @@ namespace freeclimb.Client
                             HttpOnly = restResponseCookie.HttpOnly,
                             Port = restResponseCookie.Port,
                             Secure = restResponseCookie.Secure,
-                            Version = restResponseCookie.Version
+                            Version = restResponseCookie.Version,
                         };
 
                         result.Cookies.Add(cookie);
@@ -533,9 +585,13 @@ namespace freeclimb.Client
             }
         }
 
-        private RestResponse<T> DeserializeRestResponseFromPolicy<T>(RestClient client, RestRequest request, PolicyResult<RestResponse> policyResult)
+        private RestResponse<T> DeserializeRestResponseFromPolicy<T>(
+            RestClient client,
+            RestRequest request,
+            PolicyResult<RestResponse> policyResult
+        )
         {
-            if (policyResult.Outcome == OutcomeType.Successful) 
+            if (policyResult.Outcome == OutcomeType.Successful)
             {
                 return client.Deserialize<T>(policyResult.Result);
             }
@@ -543,12 +599,16 @@ namespace freeclimb.Client
             {
                 return new RestResponse<T>(request)
                 {
-                    ErrorException = policyResult.FinalException
+                    ErrorException = policyResult.FinalException,
                 };
             }
         }
-                
-        private ApiResponse<T> Exec<T>(RestRequest request, RequestOptions options, IReadableConfiguration configuration)
+
+        private ApiResponse<T> Exec<T>(
+            RestRequest request,
+            RequestOptions options,
+            IReadableConfiguration configuration
+        )
         {
             Action<RestClientOptions> setOptions = (clientOptions) =>
             {
@@ -570,7 +630,9 @@ namespace freeclimb.Client
                 {
                     var policy = RetryConfiguration.RetryPolicy;
                     var policyResult = policy.ExecuteAndCapture(() => client.Execute(request));
-                    return Task.FromResult(DeserializeRestResponseFromPolicy<T>(client, request, policyResult));
+                    return Task.FromResult(
+                        DeserializeRestResponseFromPolicy<T>(client, request, policyResult)
+                    );
                 }
                 else
                 {
@@ -578,9 +640,10 @@ namespace freeclimb.Client
                 }
             };
 
-            return ExecClientAsync(getResponse, setOptions, request, options, configuration).GetAwaiter().GetResult();
+            return ExecClientAsync(getResponse, setOptions, request, options, configuration)
+                .GetAwaiter()
+                .GetResult();
         }
-
 
         #region ISynchronousClient
         /// <summary>
@@ -591,7 +654,11 @@ namespace freeclimb.Client
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Get<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public ApiResponse<T> Get<T>(
+            string path,
+            RequestOptions options,
+            IReadableConfiguration configuration = null
+        )
         {
             var config = configuration ?? GlobalConfiguration.Instance;
             return Exec<T>(NewRequest(HttpMethod.Get, path, options, config), options, config);
@@ -605,7 +672,11 @@ namespace freeclimb.Client
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Post<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public ApiResponse<T> Post<T>(
+            string path,
+            RequestOptions options,
+            IReadableConfiguration configuration = null
+        )
         {
             var config = configuration ?? GlobalConfiguration.Instance;
             return Exec<T>(NewRequest(HttpMethod.Post, path, options, config), options, config);
@@ -619,7 +690,11 @@ namespace freeclimb.Client
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Put<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public ApiResponse<T> Put<T>(
+            string path,
+            RequestOptions options,
+            IReadableConfiguration configuration = null
+        )
         {
             var config = configuration ?? GlobalConfiguration.Instance;
             return Exec<T>(NewRequest(HttpMethod.Put, path, options, config), options, config);
@@ -633,7 +708,11 @@ namespace freeclimb.Client
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Delete<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public ApiResponse<T> Delete<T>(
+            string path,
+            RequestOptions options,
+            IReadableConfiguration configuration = null
+        )
         {
             var config = configuration ?? GlobalConfiguration.Instance;
             return Exec<T>(NewRequest(HttpMethod.Delete, path, options, config), options, config);
@@ -647,7 +726,11 @@ namespace freeclimb.Client
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Head<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public ApiResponse<T> Head<T>(
+            string path,
+            RequestOptions options,
+            IReadableConfiguration configuration = null
+        )
         {
             var config = configuration ?? GlobalConfiguration.Instance;
             return Exec<T>(NewRequest(HttpMethod.Head, path, options, config), options, config);
@@ -661,7 +744,11 @@ namespace freeclimb.Client
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Options<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public ApiResponse<T> Options<T>(
+            string path,
+            RequestOptions options,
+            IReadableConfiguration configuration = null
+        )
         {
             var config = configuration ?? GlobalConfiguration.Instance;
             return Exec<T>(NewRequest(HttpMethod.Options, path, options, config), options, config);
@@ -675,7 +762,11 @@ namespace freeclimb.Client
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public ApiResponse<T> Patch<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public ApiResponse<T> Patch<T>(
+            string path,
+            RequestOptions options,
+            IReadableConfiguration configuration = null
+        )
         {
             var config = configuration ?? GlobalConfiguration.Instance;
             return Exec<T>(NewRequest(HttpMethod.Patch, path, options, config), options, config);

@@ -9,19 +9,17 @@
  */
 
 
-using Xunit;
-
 using System;
-using System.Linq;
-using System.IO;
-using System.Collections.Generic;
-using freeclimb.Model;
-using freeclimb.Client;
-using System.Reflection;
-using Newtonsoft.Json;
-
-using freeclimb.Enums;
 using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using freeclimb.Client;
+using freeclimb.Enums;
+using freeclimb.Model;
+using Newtonsoft.Json;
+using Xunit;
 
 namespace freeclimb.Test.Model
 {
@@ -40,7 +38,14 @@ namespace freeclimb.Test.Model
         public PerclScriptTemplateTests()
         {
             instance = new PerclScript();
-            CreateConference create = new CreateConference("", false, PlayBeep.ALWAYS, false, "", "");
+            CreateConference create = new CreateConference(
+                "",
+                false,
+                PlayBeep.ALWAYS,
+                false,
+                "",
+                ""
+            );
             List<PerclCommand> commands = new List<PerclCommand>();
             commands.Add(create);
             instance = new PerclScript(commands);
@@ -60,7 +65,6 @@ namespace freeclimb.Test.Model
             Assert.IsType<PerclScript>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'PerclScript'
         /// </summary>
@@ -69,10 +73,9 @@ namespace freeclimb.Test.Model
         {
             // TODO unit test for the property 'Commands'
             string actualJSONString = instance.ToJson();
-            string expectedJSONString = "[{\"CreateConference\":{\"actionUrl\":\"\",\"alias\":false,\"playBeep\":\"always\",\"record\":false,\"statusCallbackUrl\":\"\",\"waitUrl\":\"\"}}]";
+            string expectedJSONString =
+                "[{\"CreateConference\":{\"actionUrl\":\"\",\"alias\":false,\"playBeep\":\"always\",\"record\":false,\"statusCallbackUrl\":\"\",\"waitUrl\":\"\"}}]";
             Assert.Equal(expectedJSONString, actualJSONString);
         }
     }
-
-    
 }

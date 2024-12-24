@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -54,78 +53,61 @@ namespace freeclimb.Model
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers..</param>
         /// <param name="offnet">The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource..</param>
         /// <param name="tfn">tfn.</param>
-        public IncomingNumberResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), Capabilities capabilities = default(Capabilities), string campaignId = default(string), string phoneNumberId = default(string), string accountId = default(string), string applicationId = default(string), string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? offnet = default(bool?), TFN tfn = default(TFN))
+        public IncomingNumberResult(
+            string uri = default(string),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int),
+            Capabilities capabilities = default(Capabilities),
+            string campaignId = default(string),
+            string phoneNumberId = default(string),
+            string accountId = default(string),
+            string applicationId = default(string),
+            string phoneNumber = default(string),
+            string alias = default(string),
+            string region = default(string),
+            string country = default(string),
+            bool? voiceEnabled = default(bool?),
+            bool? smsEnabled = default(bool?),
+            bool? offnet = default(bool?),
+            TFN tfn = default(TFN)
+        )
         {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             this.Uri = uri;
-                        
 
             this.DateCreated = dateCreated;
-                        
 
             this.DateUpdated = dateUpdated;
-                        
 
             this.Revision = revision;
-                        
 
             this.Capabilities = capabilities;
-                        
 
             this.CampaignId = campaignId;
-                        
 
             this.PhoneNumberId = phoneNumberId;
-                        
 
             this.AccountId = accountId;
-                        
 
             this.ApplicationId = applicationId;
-                        
 
             this.PhoneNumber = phoneNumber;
-                        
 
             this.Alias = alias;
-                        
 
             this.Region = region;
-                        
 
             this.Country = country;
-                        
 
             this.VoiceEnabled = voiceEnabled;
-                        
 
             this.SmsEnabled = smsEnabled;
-                        
 
             this.Offnet = offnet;
-                        
 
             this.Tfn = tfn;
-                        
-
         }
-        
+
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -133,9 +115,6 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -143,9 +122,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -153,9 +129,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
-
-        
-        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -163,18 +136,12 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets Capabilities
         /// </summary>
         [DataMember(Name = "capabilities", EmitDefaultValue = false)]
         public Capabilities Capabilities { get; set; }
 
-
-        
-        
         /// <summary>
         /// The campaign ID generated by the campaign registry
         /// </summary>
@@ -182,9 +149,6 @@ namespace freeclimb.Model
         [DataMember(Name = "campaignId", EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
-
-        
-        
         /// <summary>
         /// String that uniquely identifies this phone number resource.
         /// </summary>
@@ -192,9 +156,6 @@ namespace freeclimb.Model
         [DataMember(Name = "phoneNumberId", EmitDefaultValue = true)]
         public string PhoneNumberId { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the account that owns this phone number.
         /// </summary>
@@ -202,9 +163,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
         /// </summary>
@@ -212,9 +170,6 @@ namespace freeclimb.Model
         [DataMember(Name = "applicationId", EmitDefaultValue = true)]
         public string ApplicationId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number in E.164 format.
         /// </summary>
@@ -222,9 +177,6 @@ namespace freeclimb.Model
         [DataMember(Name = "phoneNumber", EmitDefaultValue = true)]
         public string PhoneNumber { get; set; }
 
-
-        
-        
         /// <summary>
         /// Description for this phone number. Typically the conventionally-formatted version of the phone number.
         /// </summary>
@@ -232,9 +184,6 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public string Alias { get; set; }
 
-
-        
-        
         /// <summary>
         /// State or province of this phone number.
         /// </summary>
@@ -242,9 +191,6 @@ namespace freeclimb.Model
         [DataMember(Name = "region", EmitDefaultValue = true)]
         public string Region { get; set; }
 
-
-        
-        
         /// <summary>
         /// Country of this phone number.
         /// </summary>
@@ -252,9 +198,6 @@ namespace freeclimb.Model
         [DataMember(Name = "country", EmitDefaultValue = true)]
         public string Country { get; set; }
 
-
-        
-        
         /// <summary>
         /// Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
         /// </summary>
@@ -263,9 +206,6 @@ namespace freeclimb.Model
         [Obsolete]
         public bool? VoiceEnabled { get; set; }
 
-
-        
-        
         /// <summary>
         /// Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
         /// </summary>
@@ -274,9 +214,6 @@ namespace freeclimb.Model
         [Obsolete]
         public bool? SmsEnabled { get; set; }
 
-
-        
-        
         /// <summary>
         /// The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource.
         /// </summary>
@@ -284,17 +221,12 @@ namespace freeclimb.Model
         [DataMember(Name = "offnet", EmitDefaultValue = true)]
         public bool? Offnet { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets Tfn
         /// </summary>
         [DataMember(Name = "tfn", EmitDefaultValue = false)]
         public TFN Tfn { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -324,41 +256,42 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the IncomingNumberResult instance. 
+        /// Retrieve the KVP Dictionary for the IncomingNumberResult instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("capabilities", Capabilities);          
-            props.Add("campaignId", CampaignId);          
-            props.Add("phoneNumberId", PhoneNumberId);          
-            props.Add("accountId", AccountId);          
-            props.Add("applicationId", ApplicationId);          
-            props.Add("phoneNumber", PhoneNumber);          
-            props.Add("alias", Alias);          
-            props.Add("region", Region);          
-            props.Add("country", Country);          
-            props.Add("voiceEnabled", VoiceEnabled);          
-            props.Add("smsEnabled", SmsEnabled);          
-            props.Add("offnet", Offnet);          
-            props.Add("tfn", Tfn);          
+            props.Add("uri", Uri);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
+            props.Add("capabilities", Capabilities);
+            props.Add("campaignId", CampaignId);
+            props.Add("phoneNumberId", PhoneNumberId);
+            props.Add("accountId", AccountId);
+            props.Add("applicationId", ApplicationId);
+            props.Add("phoneNumber", PhoneNumber);
+            props.Add("alias", Alias);
+            props.Add("region", Region);
+            props.Add("country", Country);
+            props.Add("voiceEnabled", VoiceEnabled);
+            props.Add("smsEnabled", SmsEnabled);
+            props.Add("offnet", Offnet);
+            props.Add("tfn", Tfn);
             return props;
         }
 
@@ -367,10 +300,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

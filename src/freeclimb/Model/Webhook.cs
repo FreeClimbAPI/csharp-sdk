@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -34,11 +33,17 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "Webhook")]
     [JsonConverter(typeof(JsonSubtypes), "RequestType")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConferenceNotificationWebhook), "addToConferenceNotification")]
+    [JsonSubtypes.KnownSubType(
+        typeof(AddToConferenceNotificationWebhook),
+        "addToConferenceNotification"
+    )]
     [JsonSubtypes.KnownSubType(typeof(AddToQueueNotificationWebhook), "addToQueueNotification")]
     [JsonSubtypes.KnownSubType(typeof(CallControlWebhook), "callControl")]
     [JsonSubtypes.KnownSubType(typeof(CallStatusWebhook), "callStatus")]
-    [JsonSubtypes.KnownSubType(typeof(ConferenceRecordingStatusWebhook), "conferenceRecordingStatus")]
+    [JsonSubtypes.KnownSubType(
+        typeof(ConferenceRecordingStatusWebhook),
+        "conferenceRecordingStatus"
+    )]
     [JsonSubtypes.KnownSubType(typeof(ConferenceStatusWebhook), "conferenceStatus")]
     [JsonSubtypes.KnownSubType(typeof(CreateConferenceWebhook), "createConference")]
     [JsonSubtypes.KnownSubType(typeof(DequeueWebhook), "dequeue")]
@@ -55,7 +60,10 @@ namespace freeclimb.Model
     [JsonSubtypes.KnownSubType(typeof(QueueWaitWebhook), "queueWait")]
     [JsonSubtypes.KnownSubType(typeof(RecordWebhook), "record")]
     [JsonSubtypes.KnownSubType(typeof(RedirectWebhook), "redirect")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromQueueNotificationWebhook), "removeFromQueueNotification")]
+    [JsonSubtypes.KnownSubType(
+        typeof(RemoveFromQueueNotificationWebhook),
+        "removeFromQueueNotification"
+    )]
     [JsonSubtypes.KnownSubType(typeof(TranscribeWebhook), "transcribe")]
     public partial class Webhook : IValidatableObject
     {
@@ -65,19 +73,15 @@ namespace freeclimb.Model
         /// <param name="requestType">Type of webhook request.</param>
         public Webhook(string requestType = default(string))
         {
-
             this.RequestType = requestType;
-                        
-
         }
-        
+
         /// <summary>
         /// Type of webhook request
         /// </summary>
         /// <value>Type of webhook request</value>
         [DataMember(Name = "requestType", EmitDefaultValue = false)]
         public string RequestType { get; set; }
-
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -92,25 +96,26 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Webhook instance. 
+        /// Retrieve the KVP Dictionary for the Webhook instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);          
+            props.Add("requestType", RequestType);
             return props;
         }
 
@@ -119,7 +124,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -134,5 +141,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

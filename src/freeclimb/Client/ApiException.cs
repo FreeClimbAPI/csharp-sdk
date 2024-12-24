@@ -46,7 +46,8 @@ namespace freeclimb.Client
         /// </summary>
         /// <param name="errorCode">HTTP status code.</param>
         /// <param name="message">Error message.</param>
-        public ApiException(int errorCode, string message) : base(message)
+        public ApiException(int errorCode, string message)
+            : base(message)
         {
             this.ErrorCode = errorCode;
         }
@@ -58,12 +59,17 @@ namespace freeclimb.Client
         /// <param name="message">Error message.</param>
         /// <param name="errorContent">Error content.</param>
         /// <param name="headers">HTTP Headers.</param>
-        public ApiException(int errorCode, string message, object errorContent = null, Multimap<string, string> headers = null) : base(message)
+        public ApiException(
+            int errorCode,
+            string message,
+            object errorContent = null,
+            Multimap<string, string> headers = null
+        )
+            : base(message)
         {
             this.ErrorCode = errorCode;
             this.ErrorContent = errorContent;
             this.Headers = headers;
         }
     }
-
 }

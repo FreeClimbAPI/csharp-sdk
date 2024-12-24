@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -40,22 +39,19 @@ namespace freeclimb.Model
         /// <param name="talk">(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes the Participant. FreeClimb returns an error and ignores any other value..</param>
         /// <param name="listen">(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; silences the Conference for this Participant. FreeClimb returns an error and ignores any other value..</param>
         /// <param name="dtmfPassThrough">(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value..</param>
-        public UpdateConferenceParticipantRequest(bool talk = default(bool), bool listen = default(bool), bool dtmfPassThrough = default(bool))
+        public UpdateConferenceParticipantRequest(
+            bool talk = default(bool),
+            bool listen = default(bool),
+            bool dtmfPassThrough = default(bool)
+        )
         {
-
-
-
             this.Talk = talk;
-                        
 
             this.Listen = listen;
-                        
 
             this.DtmfPassThrough = dtmfPassThrough;
-                        
-
         }
-        
+
         /// <summary>
         /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes the Participant. FreeClimb returns an error and ignores any other value.
         /// </summary>
@@ -63,9 +59,6 @@ namespace freeclimb.Model
         [DataMember(Name = "talk", EmitDefaultValue = true)]
         public bool Talk { get; set; }
 
-
-        
-        
         /// <summary>
         /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; silences the Conference for this Participant. FreeClimb returns an error and ignores any other value.
         /// </summary>
@@ -73,9 +66,6 @@ namespace freeclimb.Model
         [DataMember(Name = "listen", EmitDefaultValue = true)]
         public bool Listen { get; set; }
 
-
-        
-        
         /// <summary>
         /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value.
         /// </summary>
@@ -83,8 +73,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
         public bool DtmfPassThrough { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -100,27 +88,28 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the UpdateConferenceParticipantRequest instance. 
+        /// Retrieve the KVP Dictionary for the UpdateConferenceParticipantRequest instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("talk", Talk);          
-            props.Add("listen", Listen);          
-            props.Add("dtmfPassThrough", DtmfPassThrough);          
+            props.Add("talk", Talk);
+            props.Add("listen", Listen);
+            props.Add("dtmfPassThrough", DtmfPassThrough);
             return props;
         }
 
@@ -129,10 +118,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -44,38 +43,31 @@ namespace freeclimb.Model
         /// <param name="numPages">Total number of pages.</param>
         /// <param name="pageSize">Number of items per page.</param>
         /// <param name="nextPageUri">Uri to retrieve the next page of items.</param>
-        public PaginationModel(int? total = default(int?), int? start = default(int?), int? end = default(int?), int? page = default(int?), int? numPages = default(int?), int? pageSize = default(int?), string nextPageUri = default(string))
+        public PaginationModel(
+            int? total = default(int?),
+            int? start = default(int?),
+            int? end = default(int?),
+            int? page = default(int?),
+            int? numPages = default(int?),
+            int? pageSize = default(int?),
+            string nextPageUri = default(string)
+        )
         {
-
-
-
-
-
-
-
             this.Total = total;
-                        
 
             this.Start = start;
-                        
 
             this.End = end;
-                        
 
             this.Page = page;
-                        
 
             this.NumPages = numPages;
-                        
 
             this.PageSize = pageSize;
-                        
 
             this.NextPageUri = nextPageUri;
-                        
-
         }
-        
+
         /// <summary>
         /// Total amount of requested resource.
         /// </summary>
@@ -83,9 +75,6 @@ namespace freeclimb.Model
         [DataMember(Name = "total", EmitDefaultValue = true)]
         public int? Total { get; set; }
 
-
-        
-        
         /// <summary>
         /// Resource index at start of current page
         /// </summary>
@@ -93,9 +82,6 @@ namespace freeclimb.Model
         [DataMember(Name = "start", EmitDefaultValue = true)]
         public int? Start { get; set; }
 
-
-        
-        
         /// <summary>
         /// Resource index at end of current page
         /// </summary>
@@ -103,9 +89,6 @@ namespace freeclimb.Model
         [DataMember(Name = "end", EmitDefaultValue = true)]
         public int? End { get; set; }
 
-
-        
-        
         /// <summary>
         /// Current page
         /// </summary>
@@ -113,9 +96,6 @@ namespace freeclimb.Model
         [DataMember(Name = "page", EmitDefaultValue = true)]
         public int? Page { get; set; }
 
-
-        
-        
         /// <summary>
         /// Total number of pages
         /// </summary>
@@ -123,9 +103,6 @@ namespace freeclimb.Model
         [DataMember(Name = "numPages", EmitDefaultValue = true)]
         public int? NumPages { get; set; }
 
-
-        
-        
         /// <summary>
         /// Number of items per page
         /// </summary>
@@ -133,9 +110,6 @@ namespace freeclimb.Model
         [DataMember(Name = "pageSize", EmitDefaultValue = true)]
         public int? PageSize { get; set; }
 
-
-        
-        
         /// <summary>
         /// Uri to retrieve the next page of items
         /// </summary>
@@ -143,8 +117,6 @@ namespace freeclimb.Model
         [DataMember(Name = "nextPageUri", EmitDefaultValue = true)]
         public string NextPageUri { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -164,31 +136,32 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the PaginationModel instance. 
+        /// Retrieve the KVP Dictionary for the PaginationModel instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("total", Total);          
-            props.Add("start", Start);          
-            props.Add("end", End);          
-            props.Add("page", Page);          
-            props.Add("numPages", NumPages);          
-            props.Add("pageSize", PageSize);          
-            props.Add("nextPageUri", NextPageUri);          
+            props.Add("total", Total);
+            props.Add("start", Start);
+            props.Add("end", End);
+            props.Add("page", Page);
+            props.Add("numPages", NumPages);
+            props.Add("pageSize", PageSize);
+            props.Add("nextPageUri", NextPageUri);
             return props;
         }
 
@@ -197,10 +170,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

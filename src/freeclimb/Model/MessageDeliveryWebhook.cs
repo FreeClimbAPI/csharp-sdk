@@ -13,20 +13,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 using Newtonsoft.Json.Serialization;
-
+using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 
 namespace freeclimb.Model
 {
@@ -50,62 +49,52 @@ namespace freeclimb.Model
         /// <param name="status">Value will be received to indicate that the platform has successfully received the incoming message..</param>
         /// <param name="phoneNumberId">ID of the destination phone number..</param>
         /// <param name="uri">The URI for this resource, relative to the API base URL.</param>
-        public MessageDeliveryWebhook(string requestType = @"MessageDeliveryWebhook", string accountId = default(string), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string applicationId = default(string), string status = default(string), string phoneNumberId = default(string), string uri = default(string)) : base()
+        public MessageDeliveryWebhook(
+            string requestType = @"MessageDeliveryWebhook",
+            string accountId = default(string),
+            string from = default(string),
+            string to = default(string),
+            string text = default(string),
+            string direction = default(string),
+            string applicationId = default(string),
+            string status = default(string),
+            string phoneNumberId = default(string),
+            string uri = default(string)
+        )
+            : base()
         {
-
-
-
-
-
-
-
-
-
-
-            
             base.RequestType = requestType;
-                        
 
             this.AccountId = accountId;
-                        
 
             this.From = from;
-                        
 
             this.To = to;
-                        
 
             this.Text = text;
-                        
 
             this.Direction = direction;
-                        
 
             this.ApplicationId = applicationId;
-                        
 
             this.Status = status;
-                        
 
             this.PhoneNumberId = phoneNumberId;
-                        
 
             this.Uri = uri;
-                        
-
         }
-        private static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
-        {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            ContractResolver = new DefaultContractResolver
+
+        private static readonly JsonSerializerSettings _serializerSettings =
+            new JsonSerializerSettings
             {
-                NamingStrategy = new CamelCaseNamingStrategy
+                // OpenAPI generated types generally hide default constructors.
+                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+                ContractResolver = new DefaultContractResolver
                 {
-                    OverrideSpecifiedNames = false
-                }
-            }
-        };
+                    NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false },
+                },
+            };
+
         /// <summary>
         /// Deserializes json payload into instance MessageDeliveryWebhook
         /// </summary>
@@ -113,10 +102,14 @@ namespace freeclimb.Model
         /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static MessageDeliveryWebhook Deserialize(string jsonPayload)
         {
-            return (MessageDeliveryWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(MessageDeliveryWebhook), _serializerSettings);
+            return (MessageDeliveryWebhook)
+                JsonConvert.DeserializeObject(
+                    jsonPayload,
+                    typeof(MessageDeliveryWebhook),
+                    _serializerSettings
+                );
         }
-        
-        
+
         /// <summary>
         /// Account ID associated with your account.
         /// </summary>
@@ -124,9 +117,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number of the party that initiated the Call (in E.164 format).
         /// </summary>
@@ -134,9 +124,6 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number provisioned to you and to which this Call is directed (in E.164 format).
         /// </summary>
@@ -144,9 +131,6 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 
-
-        
-        
         /// <summary>
         /// Body of the SMS message.
         /// </summary>
@@ -154,9 +138,6 @@ namespace freeclimb.Model
         [DataMember(Name = "text", EmitDefaultValue = false)]
         public string Text { get; set; }
 
-
-        
-        
         /// <summary>
         /// Value will be inbound to indicate the receipt of a message into the FreeClimb platform.
         /// </summary>
@@ -164,9 +145,6 @@ namespace freeclimb.Model
         [DataMember(Name = "direction", EmitDefaultValue = false)]
         public string Direction { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the application to which the destination number is assigned.
         /// </summary>
@@ -174,9 +152,6 @@ namespace freeclimb.Model
         [DataMember(Name = "applicationId", EmitDefaultValue = false)]
         public string ApplicationId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Value will be received to indicate that the platform has successfully received the incoming message.
         /// </summary>
@@ -184,9 +159,6 @@ namespace freeclimb.Model
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the destination phone number.
         /// </summary>
@@ -194,9 +166,6 @@ namespace freeclimb.Model
         [DataMember(Name = "phoneNumberId", EmitDefaultValue = false)]
         public string PhoneNumberId { get; set; }
 
-
-        
-        
         /// <summary>
         /// The URI for this resource, relative to the API base URL
         /// </summary>
@@ -204,8 +173,6 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -229,34 +196,35 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the MessageDeliveryWebhook instance. 
+        /// Retrieve the KVP Dictionary for the MessageDeliveryWebhook instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);          
-            props.Add("accountId", AccountId);          
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("text", Text);          
-            props.Add("direction", Direction);          
-            props.Add("applicationId", ApplicationId);          
-            props.Add("status", Status);          
-            props.Add("phoneNumberId", PhoneNumberId);          
-            props.Add("uri", Uri);          
+            props.Add("requestType", RequestType);
+            props.Add("accountId", AccountId);
+            props.Add("from", From);
+            props.Add("to", To);
+            props.Add("text", Text);
+            props.Add("direction", Direction);
+            props.Add("applicationId", ApplicationId);
+            props.Add("status", Status);
+            props.Add("phoneNumberId", PhoneNumberId);
+            props.Add("uri", Uri);
             return props;
         }
 
@@ -265,7 +233,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -284,5 +254,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

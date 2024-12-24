@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -39,6 +38,7 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected SMSTenDLCPartnerCampaignBrand() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTenDLCPartnerCampaignBrand" /> class.
         /// </summary>
@@ -52,62 +52,54 @@ namespace freeclimb.Model
         /// <param name="website">Brand website URL..</param>
         /// <param name="optionalAttributes">Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names..</param>
         /// <param name="evpVettingScore">External vetting score..</param>
-        public SMSTenDLCPartnerCampaignBrand(string accountId = default(string), string firstName = default(string), string lastName = default(string), string displayName = default(string), string companyName = default(string), string phone = default(string), string email = default(string), string website = default(string), Dictionary<string, Object> optionalAttributes = default(Dictionary<string, Object>), int evpVettingScore = default(int))
+        public SMSTenDLCPartnerCampaignBrand(
+            string accountId = default(string),
+            string firstName = default(string),
+            string lastName = default(string),
+            string displayName = default(string),
+            string companyName = default(string),
+            string phone = default(string),
+            string email = default(string),
+            string website = default(string),
+            Dictionary<string, Object> optionalAttributes = default(Dictionary<string, Object>),
+            int evpVettingScore = default(int)
+        )
         {
-
-
-
-
-
-
             // to ensure "phone" is required (not null)
             if (phone == null)
             {
-                throw new ArgumentNullException("phone is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null");
+                throw new ArgumentNullException(
+                    "phone is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null"
+                );
             }
             this.Phone = phone;
-                        
 
             // to ensure "email" is required (not null)
             if (email == null)
             {
-                throw new ArgumentNullException("email is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null");
+                throw new ArgumentNullException(
+                    "email is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null"
+                );
             }
             this.Email = email;
-                        
-
-
-
 
             this.AccountId = accountId;
-                        
-
 
             this.FirstName = firstName;
-                        
 
             this.LastName = lastName;
-                        
 
             this.DisplayName = displayName;
-                        
 
             this.CompanyName = companyName;
-                        
-
-
 
             this.Website = website;
-                        
 
             this.OptionalAttributes = optionalAttributes;
-                        
 
             this.EvpVettingScore = evpVettingScore;
-                        
-
         }
-        
+
         /// <summary>
         /// ID of the account that created this Queue.
         /// </summary>
@@ -115,9 +107,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Unique identifier assigned to the brand by the registry.
         /// </summary>
@@ -134,10 +123,8 @@ namespace freeclimb.Model
             return false;
         }
 
-        
-        
         /// <summary>
-        /// First or given name. 
+        /// First or given name.
         /// </summary>
         /// <value>First or given name. </value>
         /*
@@ -146,9 +133,6 @@ namespace freeclimb.Model
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
         public string FirstName { get; set; }
 
-
-        
-        
         /// <summary>
         /// Last or Surname.
         /// </summary>
@@ -159,9 +143,6 @@ namespace freeclimb.Model
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
         public string LastName { get; set; }
 
-
-        
-        
         /// <summary>
         /// Display or marketing name of the brand.
         /// </summary>
@@ -172,9 +153,6 @@ namespace freeclimb.Model
         [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
-
-        
-        
         /// <summary>
         /// (Required for Non-profit/private/public) Legal company name.
         /// </summary>
@@ -185,9 +163,6 @@ namespace freeclimb.Model
         [DataMember(Name = "companyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
-
-        
-        
         /// <summary>
         /// Valid phone number in e.164 international format.
         /// </summary>
@@ -198,9 +173,6 @@ namespace freeclimb.Model
         [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
 
-
-        
-        
         /// <summary>
         /// Valid email address of brand support contact.
         /// </summary>
@@ -208,9 +180,6 @@ namespace freeclimb.Model
         [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
-
-        
-        
         /// <summary>
         /// Brand website URL.
         /// </summary>
@@ -221,9 +190,6 @@ namespace freeclimb.Model
         [DataMember(Name = "website", EmitDefaultValue = false)]
         public string Website { get; set; }
 
-
-        
-        
         /// <summary>
         /// Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names.
         /// </summary>
@@ -231,9 +197,6 @@ namespace freeclimb.Model
         [DataMember(Name = "optionalAttributes", EmitDefaultValue = false)]
         public Dictionary<string, Object> OptionalAttributes { get; set; }
 
-
-        
-        
         /// <summary>
         /// External vetting score.
         /// </summary>
@@ -241,8 +204,6 @@ namespace freeclimb.Model
         [DataMember(Name = "evpVettingScore", EmitDefaultValue = false)]
         public int EvpVettingScore { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -266,35 +227,36 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SMSTenDLCPartnerCampaignBrand instance. 
+        /// Retrieve the KVP Dictionary for the SMSTenDLCPartnerCampaignBrand instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);          
-            props.Add("brandId", BrandId);          
-            props.Add("firstName", FirstName);          
-            props.Add("lastName", LastName);          
-            props.Add("displayName", DisplayName);          
-            props.Add("companyName", CompanyName);          
-            props.Add("phone", Phone);          
-            props.Add("email", Email);          
-            props.Add("website", Website);          
-            props.Add("optionalAttributes", OptionalAttributes);          
-            props.Add("evpVettingScore", EvpVettingScore);          
+            props.Add("accountId", AccountId);
+            props.Add("brandId", BrandId);
+            props.Add("firstName", FirstName);
+            props.Add("lastName", LastName);
+            props.Add("displayName", DisplayName);
+            props.Add("companyName", CompanyName);
+            props.Add("phone", Phone);
+            props.Add("email", Email);
+            props.Add("website", Website);
+            props.Add("optionalAttributes", OptionalAttributes);
+            props.Add("evpVettingScore", EvpVettingScore);
             return props;
         }
 
@@ -303,52 +265,74 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             // FirstName (string) maxLength
             if (this.FirstName != null && this.FirstName.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for FirstName, length must be less than 100.", new [] { "FirstName" });
+                yield return new ValidationResult(
+                    "Invalid value for FirstName, length must be less than 100.",
+                    new[] { "FirstName" }
+                );
             }
 
             // LastName (string) maxLength
             if (this.LastName != null && this.LastName.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for LastName, length must be less than 100.", new [] { "LastName" });
+                yield return new ValidationResult(
+                    "Invalid value for LastName, length must be less than 100.",
+                    new[] { "LastName" }
+                );
             }
 
             // DisplayName (string) maxLength
             if (this.DisplayName != null && this.DisplayName.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for DisplayName, length must be less than 255.", new [] { "DisplayName" });
+                yield return new ValidationResult(
+                    "Invalid value for DisplayName, length must be less than 255.",
+                    new[] { "DisplayName" }
+                );
             }
 
             // CompanyName (string) maxLength
             if (this.CompanyName != null && this.CompanyName.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for CompanyName, length must be less than 255.", new [] { "CompanyName" });
+                yield return new ValidationResult(
+                    "Invalid value for CompanyName, length must be less than 255.",
+                    new[] { "CompanyName" }
+                );
             }
 
             // Phone (string) maxLength
             if (this.Phone != null && this.Phone.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for Phone, length must be less than 20.", new [] { "Phone" });
+                yield return new ValidationResult(
+                    "Invalid value for Phone, length must be less than 20.",
+                    new[] { "Phone" }
+                );
             }
 
             // Email (string) maxLength
             if (this.Email != null && this.Email.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for Email, length must be less than 100.", new [] { "Email" });
+                yield return new ValidationResult(
+                    "Invalid value for Email, length must be less than 100.",
+                    new[] { "Email" }
+                );
             }
 
             // Website (string) maxLength
             if (this.Website != null && this.Website.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for Website, length must be less than 100.", new [] { "Website" });
+                yield return new ValidationResult(
+                    "Invalid value for Website, length must be less than 100.",
+                    new[] { "Website" }
+                );
             }
 
             yield break;
         }
     }
-
 }

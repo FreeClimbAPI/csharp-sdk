@@ -45,7 +45,11 @@ namespace freeclimb.Client
         /// <param name="name">Key name.</param>
         /// <param name="value">Value object.</param>
         /// <returns>A multimap of keys with 1..n associated values.</returns>
-        public static Multimap<string, string> ParameterToMultiMap(string collectionFormat, string name, object value)
+        public static Multimap<string, string> ParameterToMultiMap(
+            string collectionFormat,
+            string name,
+            object value
+        )
         {
             var parameters = new Multimap<string, string>();
 
@@ -58,13 +62,18 @@ namespace freeclimb.Client
             }
             else if (value is IDictionary dictionary)
             {
-                if(collectionFormat == "deepObject") {
+                if (collectionFormat == "deepObject")
+                {
                     foreach (DictionaryEntry entry in dictionary)
                     {
-                        parameters.Add(name + "[" + entry.Key + "]", ParameterToString(entry.Value));
+                        parameters.Add(
+                            name + "[" + entry.Key + "]",
+                            ParameterToString(entry.Value)
+                        );
                     }
                 }
-                else {
+                else
+                {
                     foreach (DictionaryEntry entry in dictionary)
                     {
                         parameters.Add(entry.Key.ToString(), ParameterToString(entry.Value));
@@ -87,29 +96,39 @@ namespace freeclimb.Client
         /// <param name="obj">The parameter (header, path, query, form).</param>
         /// <param name="configuration">An optional configuration instance, providing formatting options used in processing.</param>
         /// <returns>Formatted string.</returns>
-        public static string ParameterToString(object obj, IReadableConfiguration configuration = null)
+        public static string ParameterToString(
+            object obj,
+            IReadableConfiguration configuration = null
+        )
         {
             if (obj is DateTime dateTime)
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return dateTime.ToString((configuration ?? GlobalConfiguration.Instance).DateTimeFormat);
+                return dateTime.ToString(
+                    (configuration ?? GlobalConfiguration.Instance).DateTimeFormat
+                );
             if (obj is DateTimeOffset dateTimeOffset)
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return dateTimeOffset.ToString((configuration ?? GlobalConfiguration.Instance).DateTimeFormat);
+                return dateTimeOffset.ToString(
+                    (configuration ?? GlobalConfiguration.Instance).DateTimeFormat
+                );
             if (obj is DateOnly dateOnly)
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15
-                return dateOnly.ToString((configuration ?? GlobalConfiguration.Instance).DateTimeFormat);
+                return dateOnly.ToString(
+                    (configuration ?? GlobalConfiguration.Instance).DateTimeFormat
+                );
             if (obj is bool boolean)
                 return boolean ? "true" : "false";
-            if (obj is ICollection collection) {
+            if (obj is ICollection collection)
+            {
                 List<string> entries = new List<string>();
                 foreach (var entry in collection)
                     entries.Add(ParameterToString(entry, configuration));
@@ -197,7 +216,9 @@ namespace freeclimb.Client
         /// <summary>
         /// Provides a case-insensitive check that a provided content type is a known JSON-like content type.
         /// </summary>
-        public static readonly Regex JsonRegex = new Regex("(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$");
+        public static readonly Regex JsonRegex = new Regex(
+            "(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$"
+        );
 
         /// <summary>
         /// Check if the given MIME is a JSON MIME.
@@ -211,7 +232,8 @@ namespace freeclimb.Client
         /// <returns>Returns True if MIME type is json.</returns>
         public static bool IsJsonMime(string mime)
         {
-            if (string.IsNullOrWhiteSpace(mime)) return false;
+            if (string.IsNullOrWhiteSpace(mime))
+                return false;
 
             return JsonRegex.IsMatch(mime) || mime.Equals("application/json-patch+json");
         }
@@ -226,10 +248,17 @@ namespace freeclimb.Client
             if (enumVal == null)
                 throw new ArgumentNullException(nameof(enumVal));
             var enumType = enumVal.GetType();
-            var memInfo = enumType.GetMember(enumVal.ToString() ?? throw new InvalidOperationException());
-            var attr = memInfo.FirstOrDefault()?.GetCustomAttributes(false).OfType<EnumMemberAttribute>().FirstOrDefault();
-            if (attr != null) return true;
-                return false;
+            var memInfo = enumType.GetMember(
+                enumVal.ToString() ?? throw new InvalidOperationException()
+            );
+            var attr = memInfo
+                .FirstOrDefault()
+                ?.GetCustomAttributes(false)
+                .OfType<EnumMemberAttribute>()
+                .FirstOrDefault();
+            if (attr != null)
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -242,8 +271,14 @@ namespace freeclimb.Client
             if (enumVal == null)
                 throw new ArgumentNullException(nameof(enumVal));
             var enumType = enumVal.GetType();
-            var memInfo = enumType.GetMember(enumVal.ToString() ?? throw new InvalidOperationException());
-            var attr = memInfo.FirstOrDefault()?.GetCustomAttributes(false).OfType<EnumMemberAttribute>().FirstOrDefault();
+            var memInfo = enumType.GetMember(
+                enumVal.ToString() ?? throw new InvalidOperationException()
+            );
+            var attr = memInfo
+                .FirstOrDefault()
+                ?.GetCustomAttributes(false)
+                .OfType<EnumMemberAttribute>()
+                .FirstOrDefault();
             if (attr != null)
             {
                 return attr.Value;

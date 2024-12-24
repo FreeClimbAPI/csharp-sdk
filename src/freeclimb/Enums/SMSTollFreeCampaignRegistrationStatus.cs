@@ -13,23 +13,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Enums
 {
     /// <summary>
-    /// Current toll-free campaign registration status.Possible values: UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign defaults to INITIATED status. 
+    /// Current toll-free campaign registration status.Possible values: UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign defaults to INITIATED status.
     /// </summary>
     /// <value>Current toll-free campaign registration status.Possible values: UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign defaults to INITIATED status. </value>
     [JsonConverter(typeof(StringEnumConverter))]
@@ -63,8 +62,9 @@ namespace freeclimb.Enums
         /// Enum REGISTERED for value: REGISTERED
         /// </summary>
         [EnumMember(Value = "REGISTERED")]
-        REGISTERED = 5
+        REGISTERED = 5,
     }
+
     /// <summary>
     /// Converts <see cref="SMSTollFreeCampaignRegistrationStatus"/> to and from the JSON value
     /// </summary>
@@ -92,7 +92,9 @@ namespace freeclimb.Enums
             if (value.Equals("REGISTERED"))
                 return SMSTollFreeCampaignRegistrationStatus.REGISTERED;
 
-            throw new NotImplementedException($"Could not convert value to type SMSTollFreeCampaignRegistrationStatus: '{value}'");
+            throw new NotImplementedException(
+                $"Could not convert value to type SMSTollFreeCampaignRegistrationStatus: '{value}'"
+            );
         }
 
         /// <summary>
@@ -120,5 +122,4 @@ namespace freeclimb.Enums
             return null;
         }
     }
-
 }

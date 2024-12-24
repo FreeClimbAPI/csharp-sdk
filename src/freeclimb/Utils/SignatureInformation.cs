@@ -14,10 +14,12 @@ namespace freeclimb.Utils
         /// Request unit timestamp
         /// </summary>
         public int requestTimestamp;
+
         /// <summary>
         /// List of signatures on the inbound request
         /// </summary>
         public List<string> signatures;
+
         /// <summary>
         /// This is the Signature Information constructor, this takes the requestHeader and parses it into the attribute values
         /// </summary>
@@ -41,6 +43,7 @@ namespace freeclimb.Utils
             }
             signatures = constructorSignatures;
         }
+
         /// <summary>
         /// This is the timestamp validity function, this checks if the request timestamp is valid
         /// </summary>
@@ -51,6 +54,7 @@ namespace freeclimb.Utils
             var currentUnixTimestamp = getCurrentUnixTime();
             return currentUnixTimestamp < (requestTimestamp + tolerance);
         }
+
         /// <summary>
         /// This is the signature validity function, this checks if the request timestamp is valid
         /// </summary>
@@ -81,6 +85,5 @@ namespace freeclimb.Utils
             byte[] hashValue = hmac.ComputeHash(hashSeed);
             return BitConverter.ToString(hashValue).Replace("-", "").ToLower();
         }
-
     }
 }

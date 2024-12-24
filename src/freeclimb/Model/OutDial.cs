@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -36,17 +35,18 @@ namespace freeclimb.Model
     [JsonConverter(typeof(JsonSubtypes), "Command")]
     public partial class OutDial : PerclCommand, IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets IfMachine
         /// </summary>
         [DataMember(Name = "ifMachine", EmitDefaultValue = false)]
         public IfMachine? IfMachine { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="OutDial" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected OutDial() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="OutDial" /> class.
         /// </summary>
@@ -61,80 +61,77 @@ namespace freeclimb.Model
         /// <param name="timeout">Maximum time in seconds the &#x60;OutDial&#x60; command waits for the called party to answer the Call. When a timeout occurs, FreeClimb invokes the &#x60;callConnectUrl&#x60; Webhook to report that the out-dialed Call has ended with a status of &#x60;noAnswer&#x60;..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;OutDial&quot;).</param>
-        public OutDial(string actionUrl = default(string), string callConnectUrl = default(string), string callingNumber = default(string), string destination = default(string), IfMachine? ifMachine = default(IfMachine?), string ifMachineUrl = default(string), string sendDigits = default(string), string statusCallbackUrl = default(string), int timeout = default(int), bool privacyMode = default(bool), string command = @"OutDial") : base(command)
+        public OutDial(
+            string actionUrl = default(string),
+            string callConnectUrl = default(string),
+            string callingNumber = default(string),
+            string destination = default(string),
+            IfMachine? ifMachine = default(IfMachine?),
+            string ifMachineUrl = default(string),
+            string sendDigits = default(string),
+            string statusCallbackUrl = default(string),
+            int timeout = default(int),
+            bool privacyMode = default(bool),
+            string command = @"OutDial"
+        )
+            : base(command)
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null)
             {
-                throw new ArgumentNullException("actionUrl is a required property for OutDial and cannot be null");
+                throw new ArgumentNullException(
+                    "actionUrl is a required property for OutDial and cannot be null"
+                );
             }
             this.ActionUrl = actionUrl;
-                        
 
             // to ensure "callConnectUrl" is required (not null)
             if (callConnectUrl == null)
             {
-                throw new ArgumentNullException("callConnectUrl is a required property for OutDial and cannot be null");
+                throw new ArgumentNullException(
+                    "callConnectUrl is a required property for OutDial and cannot be null"
+                );
             }
             this.CallConnectUrl = callConnectUrl;
-                        
 
             // to ensure "callingNumber" is required (not null)
             if (callingNumber == null)
             {
-                throw new ArgumentNullException("callingNumber is a required property for OutDial and cannot be null");
+                throw new ArgumentNullException(
+                    "callingNumber is a required property for OutDial and cannot be null"
+                );
             }
             this.CallingNumber = callingNumber;
-                        
 
             // to ensure "destination" is required (not null)
             if (destination == null)
             {
-                throw new ArgumentNullException("destination is a required property for OutDial and cannot be null");
+                throw new ArgumentNullException(
+                    "destination is a required property for OutDial and cannot be null"
+                );
             }
             this.Destination = destination;
-                        
-
-
-
-
-
-
-
-
-
-
 
             this.IfMachine = ifMachine;
-                        
 
             this.IfMachineUrl = ifMachineUrl;
-                        
 
             this.SendDigits = sendDigits;
-                        
 
             this.StatusCallbackUrl = statusCallbackUrl;
-                        
 
             this.Timeout = timeout;
-                        
 
             this.PrivacyMode = privacyMode;
-                        
-
         }
-        
+
         /// <summary>
-        /// URL to which FreeClimb sends an HTTP POST request. 
+        /// URL to which FreeClimb sends an HTTP POST request.
         /// </summary>
         /// <value>URL to which FreeClimb sends an HTTP POST request. </value>
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// URL to which FreeClimb makes an HTTP POST request informing the result of the OutDial.
         /// </summary>
@@ -142,9 +139,6 @@ namespace freeclimb.Model
         [DataMember(Name = "callConnectUrl", IsRequired = true, EmitDefaultValue = true)]
         public string CallConnectUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// he caller ID to show to the called party when FreeClimb calls. This can be one of the following: The To or From number provided in the first Webhook to your webserver. Any phone number you have purchased from FreeClimb.
         /// </summary>
@@ -152,22 +146,13 @@ namespace freeclimb.Model
         [DataMember(Name = "callingNumber", IsRequired = true, EmitDefaultValue = true)]
         public string CallingNumber { get; set; }
 
-
-        
-        
         /// <summary>
-        /// E.164 representation of the phone number to Call. 
+        /// E.164 representation of the phone number to Call.
         /// </summary>
         /// <value>E.164 representation of the phone number to Call. </value>
         [DataMember(Name = "destination", IsRequired = true, EmitDefaultValue = true)]
         public string Destination { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// When the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;, this attribute specifies a URL to which FreeClimb makes a POST request when an answering machine or a fax machine is detected. This URL is required if the &#x60;ifMachine&#x60; flag is set to &#x60;redirect&#x60;. Otherwise, it should not be included.
         /// </summary>
@@ -175,9 +160,6 @@ namespace freeclimb.Model
         [DataMember(Name = "ifMachineUrl", EmitDefaultValue = false)]
         public string IfMachineUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// DTMF tones to play to the outdialed Call. This is typically used to dial a number and then dial an extension.
         /// </summary>
@@ -185,9 +167,6 @@ namespace freeclimb.Model
         [DataMember(Name = "sendDigits", EmitDefaultValue = false)]
         public string SendDigits { get; set; }
 
-
-        
-        
         /// <summary>
         /// When the outdialed Call leg terminates, FreeClimb sends a &#x60;callStatus&#x60; Webhook to the &#x60;statusCallbackUrl&#x60;. This is a notification only; any PerCL command returned is ignored.
         /// </summary>
@@ -195,9 +174,6 @@ namespace freeclimb.Model
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = false)]
         public string StatusCallbackUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// Maximum time in seconds the &#x60;OutDial&#x60; command waits for the called party to answer the Call. When a timeout occurs, FreeClimb invokes the &#x60;callConnectUrl&#x60; Webhook to report that the out-dialed Call has ended with a status of &#x60;noAnswer&#x60;.
         /// </summary>
@@ -205,9 +181,6 @@ namespace freeclimb.Model
         [DataMember(Name = "timeout", EmitDefaultValue = false)]
         public int Timeout { get; set; }
 
-
-        
-        
         /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
@@ -215,8 +188,6 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -255,26 +226,25 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the OutDial instance. 
+        /// Retrieve the KVP Dictionary for the OutDial instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("callConnectUrl", CallConnectUrl);          
-            props.Add("callingNumber", CallingNumber);          
-            props.Add("destination", Destination);          
-            props.Add("ifMachine", IfMachine);          
-            props.Add("ifMachineUrl", IfMachineUrl);          
-            props.Add("sendDigits", SendDigits);          
-            props.Add("statusCallbackUrl", StatusCallbackUrl);          
-            props.Add("timeout", Timeout);          
-            props.Add("privacyMode", PrivacyMode);          
+            props.Add("actionUrl", ActionUrl);
+            props.Add("callConnectUrl", CallConnectUrl);
+            props.Add("callingNumber", CallingNumber);
+            props.Add("destination", Destination);
+            props.Add("ifMachine", IfMachine);
+            props.Add("ifMachineUrl", IfMachineUrl);
+            props.Add("sendDigits", SendDigits);
+            props.Add("statusCallbackUrl", StatusCallbackUrl);
+            props.Add("timeout", Timeout);
+            props.Add("privacyMode", PrivacyMode);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("OutDial",props);
+            command.Add("OutDial", props);
             return command;
         }
 
@@ -283,7 +253,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -302,5 +274,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

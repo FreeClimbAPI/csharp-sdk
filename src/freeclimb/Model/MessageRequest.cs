@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -39,6 +38,7 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected MessageRequest() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageRequest" /> class.
         /// </summary>
@@ -51,61 +51,58 @@ namespace freeclimb.Model
         /// <param name="text">Text contained in the message (maximum 160 characters).   **Note:** For text, only ASCII characters are supported. (required).</param>
         /// <param name="notificationUrl">When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored..</param>
         /// <param name="mediaUrls">an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile..</param>
-        public MessageRequest(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string from = default(string), string to = default(string), string text = default(string), string notificationUrl = default(string), List<string> mediaUrls = default(List<string>))
+        public MessageRequest(
+            string uri = default(string),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int),
+            string from = default(string),
+            string to = default(string),
+            string text = default(string),
+            string notificationUrl = default(string),
+            List<string> mediaUrls = default(List<string>)
+        )
         {
-
-
-
-
             // to ensure "from" is required (not null)
             if (from == null)
             {
-                throw new ArgumentNullException("from is a required property for MessageRequest and cannot be null");
+                throw new ArgumentNullException(
+                    "from is a required property for MessageRequest and cannot be null"
+                );
             }
             this.From = from;
-                        
 
             // to ensure "to" is required (not null)
             if (to == null)
             {
-                throw new ArgumentNullException("to is a required property for MessageRequest and cannot be null");
+                throw new ArgumentNullException(
+                    "to is a required property for MessageRequest and cannot be null"
+                );
             }
             this.To = to;
-                        
 
             // to ensure "text" is required (not null)
             if (text == null)
             {
-                throw new ArgumentNullException("text is a required property for MessageRequest and cannot be null");
+                throw new ArgumentNullException(
+                    "text is a required property for MessageRequest and cannot be null"
+                );
             }
             this.Text = text;
-                        
-
-
 
             this.Uri = uri;
-                        
 
             this.DateCreated = dateCreated;
-                        
 
             this.DateUpdated = dateUpdated;
-                        
 
             this.Revision = revision;
-                        
-
-
-
 
             this.NotificationUrl = notificationUrl;
-                        
 
             this.MediaUrls = mediaUrls;
-                        
-
         }
-        
+
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -113,9 +110,6 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -123,9 +117,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -133,9 +124,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
-
-        
-        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -143,9 +131,6 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number to use as the sender. This must be an incoming phone number that you have purchased from FreeClimb.
         /// </summary>
@@ -153,9 +138,6 @@ namespace freeclimb.Model
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number to receive the message. Must be within FreeClimb&#39;s service area.
         /// </summary>
@@ -163,9 +145,6 @@ namespace freeclimb.Model
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
 
-
-        
-        
         /// <summary>
         /// Text contained in the message (maximum 160 characters).   **Note:** For text, only ASCII characters are supported.
         /// </summary>
@@ -173,9 +152,6 @@ namespace freeclimb.Model
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
-
-        
-        
         /// <summary>
         /// When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored.
         /// </summary>
@@ -183,9 +159,6 @@ namespace freeclimb.Model
         [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
         public string NotificationUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.
         /// </summary>
@@ -193,8 +166,6 @@ namespace freeclimb.Model
         [DataMember(Name = "mediaUrls", EmitDefaultValue = false)]
         public List<string> MediaUrls { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -216,38 +187,39 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the MessageRequest instance. 
+        /// Retrieve the KVP Dictionary for the MessageRequest instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("text", Text);          
-            props.Add("notificationUrl", NotificationUrl);          
+            props.Add("uri", Uri);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
+            props.Add("from", From);
+            props.Add("to", To);
+            props.Add("text", Text);
+            props.Add("notificationUrl", NotificationUrl);
             List<object> nested = new List<object>();
             foreach (var item in MediaUrls)
             {
                 nested.Add(item);
             }
-            props.Add("mediaUrls", nested); 
+            props.Add("mediaUrls", nested);
             return props;
         }
 
@@ -256,10 +228,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

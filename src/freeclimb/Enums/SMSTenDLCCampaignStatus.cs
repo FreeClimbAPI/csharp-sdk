@@ -13,23 +13,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Enums
 {
     /// <summary>
-    /// Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. 
+    /// Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status.
     /// </summary>
     /// <value>Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. </value>
     [JsonConverter(typeof(StringEnumConverter))]
@@ -45,8 +44,9 @@ namespace freeclimb.Enums
         /// Enum EXPIRED for value: EXPIRED
         /// </summary>
         [EnumMember(Value = "EXPIRED")]
-        EXPIRED = 2
+        EXPIRED = 2,
     }
+
     /// <summary>
     /// Converts <see cref="SMSTenDLCCampaignStatus"/> to and from the JSON value
     /// </summary>
@@ -65,7 +65,9 @@ namespace freeclimb.Enums
             if (value.Equals("EXPIRED"))
                 return SMSTenDLCCampaignStatus.EXPIRED;
 
-            throw new NotImplementedException($"Could not convert value to type SMSTenDLCCampaignStatus: '{value}'");
+            throw new NotImplementedException(
+                $"Could not convert value to type SMSTenDLCCampaignStatus: '{value}'"
+            );
         }
 
         /// <summary>
@@ -84,5 +86,4 @@ namespace freeclimb.Enums
             return null;
         }
     }
-
 }

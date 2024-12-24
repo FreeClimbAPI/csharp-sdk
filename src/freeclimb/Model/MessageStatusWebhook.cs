@@ -13,20 +13,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 using Newtonsoft.Json.Serialization;
-
+using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 
 namespace freeclimb.Model
 {
@@ -37,12 +36,12 @@ namespace freeclimb.Model
     [JsonConverter(typeof(JsonSubtypes), "RequestType")]
     public partial class MessageStatusWebhook : Webhook, IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public MessageStatus? Status { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageStatusWebhook" /> class.
         /// </summary>
@@ -57,66 +56,55 @@ namespace freeclimb.Model
         /// <param name="applicationId">ID of the application to which the destination number is assigned. May be null if the originating number is invalid in some way or is not registered to an application..</param>
         /// <param name="status">status.</param>
         /// <param name="phoneNumberId">ID of the destination phone number..</param>
-        public MessageStatusWebhook(string requestType = @"MessageStatusWebhook", string accountId = default(string), string messageId = default(string), string callId = default(string), string from = default(string), string to = default(string), string text = default(string), string direction = default(string), string applicationId = default(string), MessageStatus? status = default(MessageStatus?), string phoneNumberId = default(string)) : base()
+        public MessageStatusWebhook(
+            string requestType = @"MessageStatusWebhook",
+            string accountId = default(string),
+            string messageId = default(string),
+            string callId = default(string),
+            string from = default(string),
+            string to = default(string),
+            string text = default(string),
+            string direction = default(string),
+            string applicationId = default(string),
+            MessageStatus? status = default(MessageStatus?),
+            string phoneNumberId = default(string)
+        )
+            : base()
         {
-
-
-
-
-
-
-
-
-
-
-
-            
             base.RequestType = requestType;
-                        
 
             this.AccountId = accountId;
-                        
 
             this.MessageId = messageId;
-                        
 
             this.CallId = callId;
-                        
 
             this.From = from;
-                        
 
             this.To = to;
-                        
 
             this.Text = text;
-                        
 
             this.Direction = direction;
-                        
 
             this.ApplicationId = applicationId;
-                        
 
             this.Status = status;
-                        
 
             this.PhoneNumberId = phoneNumberId;
-                        
-
         }
-        private static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
-        {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            ContractResolver = new DefaultContractResolver
+
+        private static readonly JsonSerializerSettings _serializerSettings =
+            new JsonSerializerSettings
             {
-                NamingStrategy = new CamelCaseNamingStrategy
+                // OpenAPI generated types generally hide default constructors.
+                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+                ContractResolver = new DefaultContractResolver
                 {
-                    OverrideSpecifiedNames = false
-                }
-            }
-        };
+                    NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false },
+                },
+            };
+
         /// <summary>
         /// Deserializes json payload into instance MessageStatusWebhook
         /// </summary>
@@ -124,10 +112,14 @@ namespace freeclimb.Model
         /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static MessageStatusWebhook Deserialize(string jsonPayload)
         {
-            return (MessageStatusWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(MessageStatusWebhook), _serializerSettings);
+            return (MessageStatusWebhook)
+                JsonConvert.DeserializeObject(
+                    jsonPayload,
+                    typeof(MessageStatusWebhook),
+                    _serializerSettings
+                );
         }
-        
-        
+
         /// <summary>
         /// Account ID associated with your account.
         /// </summary>
@@ -135,9 +127,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Unique ID for this message, generated by FreeClimb.
         /// </summary>
@@ -145,9 +134,6 @@ namespace freeclimb.Model
         [DataMember(Name = "messageId", EmitDefaultValue = false)]
         public string MessageId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Unique ID for the Call in the context of which the Sms PerCL command was issued.
         /// </summary>
@@ -155,9 +141,6 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = false)]
         public string CallId { get; set; }
 
-
-        
-        
         /// <summary>
         /// aPhone number used to initiate the SMS message (in E.164 format).
         /// </summary>
@@ -165,9 +148,6 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
-
-        
-        
         /// <summary>
         /// Destination number of the SMS message (in E.164 format).
         /// </summary>
@@ -175,9 +155,6 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 
-
-        
-        
         /// <summary>
         /// Body of the SMS message.
         /// </summary>
@@ -185,9 +162,6 @@ namespace freeclimb.Model
         [DataMember(Name = "text", EmitDefaultValue = false)]
         public string Text { get; set; }
 
-
-        
-        
         /// <summary>
         /// Value will be outbound to indicate an outgoing SMS from FreeClimb.
         /// </summary>
@@ -195,9 +169,6 @@ namespace freeclimb.Model
         [DataMember(Name = "direction", EmitDefaultValue = false)]
         public string Direction { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the application to which the destination number is assigned. May be null if the originating number is invalid in some way or is not registered to an application.
         /// </summary>
@@ -205,12 +176,6 @@ namespace freeclimb.Model
         [DataMember(Name = "applicationId", EmitDefaultValue = false)]
         public string ApplicationId { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// ID of the destination phone number.
         /// </summary>
@@ -218,8 +183,6 @@ namespace freeclimb.Model
         [DataMember(Name = "phoneNumberId", EmitDefaultValue = false)]
         public string PhoneNumberId { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -244,35 +207,36 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the MessageStatusWebhook instance. 
+        /// Retrieve the KVP Dictionary for the MessageStatusWebhook instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);          
-            props.Add("accountId", AccountId);          
-            props.Add("messageId", MessageId);          
-            props.Add("callId", CallId);          
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("text", Text);          
-            props.Add("direction", Direction);          
-            props.Add("applicationId", ApplicationId);          
-            props.Add("status", Status);          
-            props.Add("phoneNumberId", PhoneNumberId);          
+            props.Add("requestType", RequestType);
+            props.Add("accountId", AccountId);
+            props.Add("messageId", MessageId);
+            props.Add("callId", CallId);
+            props.Add("from", From);
+            props.Add("to", To);
+            props.Add("text", Text);
+            props.Add("direction", Direction);
+            props.Add("applicationId", ApplicationId);
+            props.Add("status", Status);
+            props.Add("phoneNumberId", PhoneNumberId);
             return props;
         }
 
@@ -281,7 +245,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -300,5 +266,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

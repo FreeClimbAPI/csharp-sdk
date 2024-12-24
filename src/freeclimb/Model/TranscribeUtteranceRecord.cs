@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -40,48 +39,37 @@ namespace freeclimb.Model
         /// <param name="saveRecording">saveRecording (default to false).</param>
         /// <param name="maxLengthSec">maxLengthSec (default to 60).</param>
         /// <param name="rcrdTerminationSilenceTimeMs">rcrdTerminationSilenceTimeMs.</param>
-        public TranscribeUtteranceRecord(bool saveRecording = false, int maxLengthSec = 60, int rcrdTerminationSilenceTimeMs = default(int))
+        public TranscribeUtteranceRecord(
+            bool saveRecording = false,
+            int maxLengthSec = 60,
+            int rcrdTerminationSilenceTimeMs = default(int)
+        )
         {
-
-
-
             this.SaveRecording = saveRecording;
-                        
 
             this.MaxLengthSec = maxLengthSec;
-                        
 
             this.RcrdTerminationSilenceTimeMs = rcrdTerminationSilenceTimeMs;
-                        
-
         }
-        
+
         /// <summary>
         /// Gets or Sets SaveRecording
         /// </summary>
         [DataMember(Name = "saveRecording", EmitDefaultValue = true)]
         public bool SaveRecording { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets MaxLengthSec
         /// </summary>
         [DataMember(Name = "maxLengthSec", EmitDefaultValue = false)]
         public int MaxLengthSec { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets RcrdTerminationSilenceTimeMs
         /// </summary>
         [DataMember(Name = "rcrdTerminationSilenceTimeMs", EmitDefaultValue = false)]
         public int RcrdTerminationSilenceTimeMs { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -92,11 +80,12 @@ namespace freeclimb.Model
             sb.Append("class TranscribeUtteranceRecord {\n");
             sb.Append("  SaveRecording: ").Append(SaveRecording).Append("\n");
             sb.Append("  MaxLengthSec: ").Append(MaxLengthSec).Append("\n");
-            sb.Append("  RcrdTerminationSilenceTimeMs: ").Append(RcrdTerminationSilenceTimeMs).Append("\n");
+            sb.Append("  RcrdTerminationSilenceTimeMs: ")
+                .Append(RcrdTerminationSilenceTimeMs)
+                .Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-
 
         /// <summary>
         /// Returns the JSON string presentation of the object
@@ -104,20 +93,22 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the TranscribeUtteranceRecord instance. 
+        /// Retrieve the KVP Dictionary for the TranscribeUtteranceRecord instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("saveRecording", SaveRecording);          
-            props.Add("maxLengthSec", MaxLengthSec);          
-            props.Add("rcrdTerminationSilenceTimeMs", RcrdTerminationSilenceTimeMs);          
+            props.Add("saveRecording", SaveRecording);
+            props.Add("maxLengthSec", MaxLengthSec);
+            props.Add("rcrdTerminationSilenceTimeMs", RcrdTerminationSilenceTimeMs);
             return props;
         }
 
@@ -126,34 +117,47 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             // MaxLengthSec (int) maximum
             if (this.MaxLengthSec > (int)60)
             {
-                yield return new ValidationResult("Invalid value for MaxLengthSec, must be a value less than or equal to 60.", new [] { "MaxLengthSec" });
+                yield return new ValidationResult(
+                    "Invalid value for MaxLengthSec, must be a value less than or equal to 60.",
+                    new[] { "MaxLengthSec" }
+                );
             }
 
             // MaxLengthSec (int) minimum
             if (this.MaxLengthSec < (int)1)
             {
-                yield return new ValidationResult("Invalid value for MaxLengthSec, must be a value greater than or equal to 1.", new [] { "MaxLengthSec" });
+                yield return new ValidationResult(
+                    "Invalid value for MaxLengthSec, must be a value greater than or equal to 1.",
+                    new[] { "MaxLengthSec" }
+                );
             }
 
             // RcrdTerminationSilenceTimeMs (int) maximum
             if (this.RcrdTerminationSilenceTimeMs > (int)3000)
             {
-                yield return new ValidationResult("Invalid value for RcrdTerminationSilenceTimeMs, must be a value less than or equal to 3000.", new [] { "RcrdTerminationSilenceTimeMs" });
+                yield return new ValidationResult(
+                    "Invalid value for RcrdTerminationSilenceTimeMs, must be a value less than or equal to 3000.",
+                    new[] { "RcrdTerminationSilenceTimeMs" }
+                );
             }
 
             // RcrdTerminationSilenceTimeMs (int) minimum
             if (this.RcrdTerminationSilenceTimeMs < (int)1)
             {
-                yield return new ValidationResult("Invalid value for RcrdTerminationSilenceTimeMs, must be a value greater than or equal to 1.", new [] { "RcrdTerminationSilenceTimeMs" });
+                yield return new ValidationResult(
+                    "Invalid value for RcrdTerminationSilenceTimeMs, must be a value greater than or equal to 1.",
+                    new[] { "RcrdTerminationSilenceTimeMs" }
+                );
             }
 
             yield break;
         }
     }
-
 }

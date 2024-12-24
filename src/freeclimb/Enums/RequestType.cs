@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Enums
 {
@@ -170,8 +169,9 @@ namespace freeclimb.Enums
         /// Enum MESSAGE_STATUS for value: messageStatus
         /// </summary>
         [EnumMember(Value = "messageStatus")]
-        MESSAGE_STATUS = 23
+        MESSAGE_STATUS = 23,
     }
+
     /// <summary>
     /// Converts <see cref="RequestType"/> to and from the JSON value
     /// </summary>
@@ -253,7 +253,9 @@ namespace freeclimb.Enums
             if (value.Equals("messageStatus"))
                 return RequestType.MESSAGE_STATUS;
 
-            throw new NotImplementedException($"Could not convert value to type RequestType: '{value}'");
+            throw new NotImplementedException(
+                $"Could not convert value to type RequestType: '{value}'"
+            );
         }
 
         /// <summary>
@@ -335,5 +337,4 @@ namespace freeclimb.Enums
             return null;
         }
     }
-
 }

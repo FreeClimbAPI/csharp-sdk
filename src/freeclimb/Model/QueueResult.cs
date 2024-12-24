@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -48,54 +47,43 @@ namespace freeclimb.Model
         /// <param name="currentSize">Count of Calls currently in the Queue..</param>
         /// <param name="averageQueueRemovalTime">The average amount of time (in seconds) for a call to be removed from the queue..</param>
         /// <param name="subresourceUris">List of subresources for this Queue (which includes Queue members)..</param>
-        public QueueResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string queueId = default(string), string alias = default(string), int? maxSize = default(int?), int? currentSize = default(int?), int? averageQueueRemovalTime = default(int?), Object subresourceUris = default(Object))
+        public QueueResult(
+            string uri = default(string),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int),
+            string accountId = default(string),
+            string queueId = default(string),
+            string alias = default(string),
+            int? maxSize = default(int?),
+            int? currentSize = default(int?),
+            int? averageQueueRemovalTime = default(int?),
+            Object subresourceUris = default(Object)
+        )
         {
-
-
-
-
-
-
-
-
-
-
-
             this.Uri = uri;
-                        
 
             this.DateCreated = dateCreated;
-                        
 
             this.DateUpdated = dateUpdated;
-                        
 
             this.Revision = revision;
-                        
 
             this.AccountId = accountId;
-                        
 
             this.QueueId = queueId;
-                        
 
             this.Alias = alias;
-                        
 
             this.MaxSize = maxSize;
-                        
 
             this.CurrentSize = currentSize;
-                        
 
             this.AverageQueueRemovalTime = averageQueueRemovalTime;
-                        
 
             this.SubresourceUris = subresourceUris;
-                        
-
         }
-        
+
         /// <summary>
         /// The URI for this resource, relative to /apiserver.
         /// </summary>
@@ -103,9 +91,6 @@ namespace freeclimb.Model
         [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -113,9 +98,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public string DateCreated { get; set; }
 
-
-        
-        
         /// <summary>
         /// The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
         /// </summary>
@@ -123,9 +105,6 @@ namespace freeclimb.Model
         [DataMember(Name = "dateUpdated", EmitDefaultValue = false)]
         public string DateUpdated { get; set; }
 
-
-        
-        
         /// <summary>
         /// Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
         /// </summary>
@@ -133,9 +112,6 @@ namespace freeclimb.Model
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the account that created this Queue.
         /// </summary>
@@ -143,9 +119,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// A string that uniquely identifies this Queue resource.
         /// </summary>
@@ -153,9 +126,6 @@ namespace freeclimb.Model
         [DataMember(Name = "queueId", EmitDefaultValue = true)]
         public string QueueId { get; set; }
 
-
-        
-        
         /// <summary>
         /// A description for this Queue.
         /// </summary>
@@ -163,9 +133,6 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public string Alias { get; set; }
 
-
-        
-        
         /// <summary>
         /// The maximum number of Calls permitted in the Queue. Default is 100. Maximum is 1000.
         /// </summary>
@@ -173,9 +140,6 @@ namespace freeclimb.Model
         [DataMember(Name = "maxSize", EmitDefaultValue = true)]
         public int? MaxSize { get; set; }
 
-
-        
-        
         /// <summary>
         /// Count of Calls currently in the Queue.
         /// </summary>
@@ -183,9 +147,6 @@ namespace freeclimb.Model
         [DataMember(Name = "currentSize", EmitDefaultValue = true)]
         public int? CurrentSize { get; set; }
 
-
-        
-        
         /// <summary>
         /// The average amount of time (in seconds) for a call to be removed from the queue.
         /// </summary>
@@ -193,9 +154,6 @@ namespace freeclimb.Model
         [DataMember(Name = "averageQueueRemovalTime", EmitDefaultValue = true)]
         public int? AverageQueueRemovalTime { get; set; }
 
-
-        
-        
         /// <summary>
         /// List of subresources for this Queue (which includes Queue members).
         /// </summary>
@@ -203,8 +161,6 @@ namespace freeclimb.Model
         [DataMember(Name = "subresourceUris", EmitDefaultValue = true)]
         public Object SubresourceUris { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -228,35 +184,36 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the QueueResult instance. 
+        /// Retrieve the KVP Dictionary for the QueueResult instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("accountId", AccountId);          
-            props.Add("queueId", QueueId);          
-            props.Add("alias", Alias);          
-            props.Add("maxSize", MaxSize);          
-            props.Add("currentSize", CurrentSize);          
-            props.Add("averageQueueRemovalTime", AverageQueueRemovalTime);          
-            props.Add("subresourceUris", SubresourceUris);          
+            props.Add("uri", Uri);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
+            props.Add("accountId", AccountId);
+            props.Add("queueId", QueueId);
+            props.Add("alias", Alias);
+            props.Add("maxSize", MaxSize);
+            props.Add("currentSize", CurrentSize);
+            props.Add("averageQueueRemovalTime", AverageQueueRemovalTime);
+            props.Add("subresourceUris", SubresourceUris);
             return props;
         }
 
@@ -265,10 +222,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

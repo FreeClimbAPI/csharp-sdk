@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -41,6 +40,7 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected TranscribeUtterance() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscribeUtterance" /> class.
         /// </summary>
@@ -51,92 +51,73 @@ namespace freeclimb.Model
         /// <param name="privacyForRecording">privacyForRecording (default to false).</param>
         /// <param name="prompts">prompts.</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;TranscribeUtterance&quot;).</param>
-        public TranscribeUtterance(string actionUrl = default(string), bool playBeep = false, TranscribeUtteranceRecord record = default(TranscribeUtteranceRecord), bool privacyForLogging = false, bool privacyForRecording = false, List<PerclCommand> prompts = default(List<PerclCommand>), string command = @"TranscribeUtterance") : base(command)
+        public TranscribeUtterance(
+            string actionUrl = default(string),
+            bool playBeep = false,
+            TranscribeUtteranceRecord record = default(TranscribeUtteranceRecord),
+            bool privacyForLogging = false,
+            bool privacyForRecording = false,
+            List<PerclCommand> prompts = default(List<PerclCommand>),
+            string command = @"TranscribeUtterance"
+        )
+            : base(command)
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null)
             {
-                throw new ArgumentNullException("actionUrl is a required property for TranscribeUtterance and cannot be null");
+                throw new ArgumentNullException(
+                    "actionUrl is a required property for TranscribeUtterance and cannot be null"
+                );
             }
             this.ActionUrl = actionUrl;
-                        
-
-
-
-
-
-
 
             this.PlayBeep = playBeep;
-                        
 
             this.Record = record;
-                        
 
             this.PrivacyForLogging = privacyForLogging;
-                        
 
             this.PrivacyForRecording = privacyForRecording;
-                        
 
             this.Prompts = prompts;
-                        
-
         }
-        
+
         /// <summary>
         /// Gets or Sets ActionUrl
         /// </summary>
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets PlayBeep
         /// </summary>
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public bool PlayBeep { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets Record
         /// </summary>
         [DataMember(Name = "record", EmitDefaultValue = false)]
         public TranscribeUtteranceRecord Record { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets PrivacyForLogging
         /// </summary>
         [DataMember(Name = "privacyForLogging", EmitDefaultValue = true)]
         public bool PrivacyForLogging { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets PrivacyForRecording
         /// </summary>
         [DataMember(Name = "privacyForRecording", EmitDefaultValue = true)]
         public bool PrivacyForRecording { get; set; }
 
-
-        
-        
         /// <summary>
         /// Gets or Sets Prompts
         /// </summary>
         [DataMember(Name = "prompts", EmitDefaultValue = false)]
         public List<PerclCommand> Prompts { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -171,27 +152,26 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the TranscribeUtterance instance. 
+        /// Retrieve the KVP Dictionary for the TranscribeUtterance instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("playBeep", PlayBeep);          
-            props.Add("record", Record);          
-            props.Add("privacyForLogging", PrivacyForLogging);          
-            props.Add("privacyForRecording", PrivacyForRecording);          
+            props.Add("actionUrl", ActionUrl);
+            props.Add("playBeep", PlayBeep);
+            props.Add("record", Record);
+            props.Add("privacyForLogging", PrivacyForLogging);
+            props.Add("privacyForRecording", PrivacyForRecording);
             List<object> nested = new List<object>();
             foreach (var item in Prompts)
             {
                 nested.Add(item);
             }
-            props.Add("prompts", nested); 
+            props.Add("prompts", nested);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("TranscribeUtterance",props);
+            command.Add("TranscribeUtterance", props);
             return command;
         }
 
@@ -200,7 +180,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -219,5 +201,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

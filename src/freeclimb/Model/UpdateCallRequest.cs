@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -34,17 +33,18 @@ namespace freeclimb.Model
     [DataContract(Name = "UpdateCallRequest")]
     public partial class UpdateCallRequest : IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public UpdateCallRequestStatus Status { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCallRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected UpdateCallRequest() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCallRequest" /> class.
         /// </summary>
@@ -52,13 +52,8 @@ namespace freeclimb.Model
         public UpdateCallRequest(UpdateCallRequestStatus status = default(UpdateCallRequestStatus))
         {
             this.Status = status;
-                        
-
-
         }
-        
 
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -72,25 +67,26 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the UpdateCallRequest instance. 
+        /// Retrieve the KVP Dictionary for the UpdateCallRequest instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("status", Status);          
+            props.Add("status", Status);
             return props;
         }
 
@@ -99,10 +95,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

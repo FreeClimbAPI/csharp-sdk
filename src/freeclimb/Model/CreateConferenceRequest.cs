@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -34,12 +33,12 @@ namespace freeclimb.Model
     [DataContract(Name = "CreateConferenceRequest")]
     public partial class CreateConferenceRequest : IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets PlayBeep
         /// </summary>
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public PlayBeep? PlayBeep { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConferenceRequest" /> class.
         /// </summary>
@@ -48,30 +47,25 @@ namespace freeclimb.Model
         /// <param name="record">Setting to &#x60;true&#x60; records the entire Conference..</param>
         /// <param name="waitUrl">If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &amp;mdash; when the Conference is created..</param>
         /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below)..</param>
-        public CreateConferenceRequest(string alias = default(string), PlayBeep? playBeep = default(PlayBeep?), bool record = default(bool), string waitUrl = default(string), string statusCallbackUrl = default(string))
+        public CreateConferenceRequest(
+            string alias = default(string),
+            PlayBeep? playBeep = default(PlayBeep?),
+            bool record = default(bool),
+            string waitUrl = default(string),
+            string statusCallbackUrl = default(string)
+        )
         {
-
-
-
-
-
             this.Alias = alias;
-                        
 
             this.PlayBeep = playBeep;
-                        
 
             this.Record = record;
-                        
 
             this.WaitUrl = waitUrl;
-                        
 
             this.StatusCallbackUrl = statusCallbackUrl;
-                        
-
         }
-        
+
         /// <summary>
         /// A description for this Conference. Maximum 64 characters.
         /// </summary>
@@ -79,12 +73,6 @@ namespace freeclimb.Model
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// Setting to &#x60;true&#x60; records the entire Conference.
         /// </summary>
@@ -92,9 +80,6 @@ namespace freeclimb.Model
         [DataMember(Name = "record", EmitDefaultValue = true)]
         public bool Record { get; set; }
 
-
-        
-        
         /// <summary>
         /// If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &amp;mdash; when the Conference is created.
         /// </summary>
@@ -102,9 +87,6 @@ namespace freeclimb.Model
         [DataMember(Name = "waitUrl", EmitDefaultValue = false)]
         public string WaitUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).
         /// </summary>
@@ -112,8 +94,6 @@ namespace freeclimb.Model
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = false)]
         public string StatusCallbackUrl { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -131,29 +111,30 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the CreateConferenceRequest instance. 
+        /// Retrieve the KVP Dictionary for the CreateConferenceRequest instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("alias", Alias);          
-            props.Add("playBeep", PlayBeep);          
-            props.Add("record", Record);          
-            props.Add("waitUrl", WaitUrl);          
-            props.Add("statusCallbackUrl", StatusCallbackUrl);          
+            props.Add("alias", Alias);
+            props.Add("playBeep", PlayBeep);
+            props.Add("record", Record);
+            props.Add("waitUrl", WaitUrl);
+            props.Add("statusCallbackUrl", StatusCallbackUrl);
             return props;
         }
 
@@ -162,10 +143,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

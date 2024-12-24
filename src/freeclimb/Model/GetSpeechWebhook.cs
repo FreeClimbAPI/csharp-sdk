@@ -13,20 +13,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 using Newtonsoft.Json.Serialization;
-
+using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 
 namespace freeclimb.Model
 {
@@ -37,7 +36,6 @@ namespace freeclimb.Model
     [JsonConverter(typeof(JsonSubtypes), "RequestType")]
     public partial class GetSpeechWebhook : Webhook, IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets CallStatus
         /// </summary>
@@ -55,6 +53,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "reason", EmitDefaultValue = false)]
         public GetSpeechReason? Reason { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSpeechWebhook" /> class.
         /// </summary>
@@ -75,90 +74,73 @@ namespace freeclimb.Model
         /// <param name="completionCause">Advanced diagnostic information if reason was error. See RFC 6787 section 9.4.11 - speech recognition..</param>
         /// <param name="mrcpCode">Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification..</param>
         /// <param name="mrcpDiagnostic">Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification..</param>
-        public GetSpeechWebhook(string requestType = @"GetSpeechWebhook", string callId = default(string), string accountId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), GetSpeechReason? reason = default(GetSpeechReason?), string recognitionResult = default(string), int confidence = default(int), string parentCallId = default(string), string completionReason = default(string), string completionCause = default(string), int mrcpCode = default(int), string mrcpDiagnostic = default(string)) : base()
+        public GetSpeechWebhook(
+            string requestType = @"GetSpeechWebhook",
+            string callId = default(string),
+            string accountId = default(string),
+            string from = default(string),
+            string to = default(string),
+            CallStatus? callStatus = default(CallStatus?),
+            CallDirection? direction = default(CallDirection?),
+            string conferenceId = default(string),
+            string queueId = default(string),
+            GetSpeechReason? reason = default(GetSpeechReason?),
+            string recognitionResult = default(string),
+            int confidence = default(int),
+            string parentCallId = default(string),
+            string completionReason = default(string),
+            string completionCause = default(string),
+            int mrcpCode = default(int),
+            string mrcpDiagnostic = default(string)
+        )
+            : base()
         {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
             base.RequestType = requestType;
-                        
 
             this.CallId = callId;
-                        
 
             this.AccountId = accountId;
-                        
 
             this.From = from;
-                        
 
             this.To = to;
-                        
 
             this.CallStatus = callStatus;
-                        
 
             this.Direction = direction;
-                        
 
             this.ConferenceId = conferenceId;
-                        
 
             this.QueueId = queueId;
-                        
 
             this.Reason = reason;
-                        
 
             this.RecognitionResult = recognitionResult;
-                        
 
             this.Confidence = confidence;
-                        
 
             this.ParentCallId = parentCallId;
-                        
 
             this.CompletionReason = completionReason;
-                        
 
             this.CompletionCause = completionCause;
-                        
 
             this.MrcpCode = mrcpCode;
-                        
 
             this.MrcpDiagnostic = mrcpDiagnostic;
-                        
-
         }
-        private static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
-        {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            ContractResolver = new DefaultContractResolver
+
+        private static readonly JsonSerializerSettings _serializerSettings =
+            new JsonSerializerSettings
             {
-                NamingStrategy = new CamelCaseNamingStrategy
+                // OpenAPI generated types generally hide default constructors.
+                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+                ContractResolver = new DefaultContractResolver
                 {
-                    OverrideSpecifiedNames = false
-                }
-            }
-        };
+                    NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false },
+                },
+            };
+
         /// <summary>
         /// Deserializes json payload into instance GetSpeechWebhook
         /// </summary>
@@ -166,10 +148,14 @@ namespace freeclimb.Model
         /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static GetSpeechWebhook Deserialize(string jsonPayload)
         {
-            return (GetSpeechWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(GetSpeechWebhook), _serializerSettings);
+            return (GetSpeechWebhook)
+                JsonConvert.DeserializeObject(
+                    jsonPayload,
+                    typeof(GetSpeechWebhook),
+                    _serializerSettings
+                );
         }
-        
-        
+
         /// <summary>
         /// Unique ID for this Call, generated by FreeClimb.
         /// </summary>
@@ -177,9 +163,6 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = false)]
         public string CallId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Account ID associated with your account.
         /// </summary>
@@ -187,9 +170,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number of the party that initiated the Call (in E.164 format).
         /// </summary>
@@ -197,9 +177,6 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number provisioned to you and to which this Call is directed (in E.164 format).
         /// </summary>
@@ -207,15 +184,6 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 
-
-        
-        
-
-        
-        
-
-        
-        
         /// <summary>
         /// Unique ID of the Conference.
         /// </summary>
@@ -223,9 +191,6 @@ namespace freeclimb.Model
         [DataMember(Name = "conferenceId", EmitDefaultValue = false)]
         public string ConferenceId { get; set; }
 
-
-        
-        
         /// <summary>
         /// This is only populated if the request pertains to a Queue. Otherwise, it is set to null.
         /// </summary>
@@ -233,12 +198,6 @@ namespace freeclimb.Model
         [DataMember(Name = "queueId", EmitDefaultValue = true)]
         public string QueueId { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// Semantic content (either a string if speech was recognized or a digit if a digit was input instead of speech) returned from the entry or tag that was recognized within the grammar. The content will be replaced by &#39;xxxxx&#39; when privacyMode is set to true. This field is populated only if the reason field is set to recognition or digit.
         /// </summary>
@@ -246,9 +205,6 @@ namespace freeclimb.Model
         [DataMember(Name = "recognitionResult", EmitDefaultValue = false)]
         public string RecognitionResult { get; set; }
 
-
-        
-        
         /// <summary>
         /// Level of confidence in the obtained result. This is a value in the range 0 to 100 – with 0 being total lack of confidence and 100 being absolute certainty in the recognition. This field is populated only if the reason field is set to recognition.
         /// </summary>
@@ -256,9 +212,6 @@ namespace freeclimb.Model
         [DataMember(Name = "confidence", EmitDefaultValue = false)]
         public int Confidence { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the Call that created this leg (child call).
         /// </summary>
@@ -266,9 +219,6 @@ namespace freeclimb.Model
         [DataMember(Name = "parentCallId", EmitDefaultValue = false)]
         public string ParentCallId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Advanced diagnostic information if reason was error. See RFC 6787 section 9.4.12 - speech recognition.
         /// </summary>
@@ -276,9 +226,6 @@ namespace freeclimb.Model
         [DataMember(Name = "completionReason", EmitDefaultValue = false)]
         public string CompletionReason { get; set; }
 
-
-        
-        
         /// <summary>
         /// Advanced diagnostic information if reason was error. See RFC 6787 section 9.4.11 - speech recognition.
         /// </summary>
@@ -286,9 +233,6 @@ namespace freeclimb.Model
         [DataMember(Name = "completionCause", EmitDefaultValue = false)]
         public string CompletionCause { get; set; }
 
-
-        
-        
         /// <summary>
         /// Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification.
         /// </summary>
@@ -296,9 +240,6 @@ namespace freeclimb.Model
         [DataMember(Name = "mrcpCode", EmitDefaultValue = false)]
         public int MrcpCode { get; set; }
 
-
-        
-        
         /// <summary>
         /// Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification.
         /// </summary>
@@ -306,8 +247,6 @@ namespace freeclimb.Model
         [DataMember(Name = "mrcpDiagnostic", EmitDefaultValue = false)]
         public string MrcpDiagnostic { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -338,41 +277,42 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the GetSpeechWebhook instance. 
+        /// Retrieve the KVP Dictionary for the GetSpeechWebhook instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);          
-            props.Add("callId", CallId);          
-            props.Add("accountId", AccountId);          
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("callStatus", CallStatus);          
-            props.Add("direction", Direction);          
-            props.Add("conferenceId", ConferenceId);          
-            props.Add("queueId", QueueId);          
-            props.Add("reason", Reason);          
-            props.Add("recognitionResult", RecognitionResult);          
-            props.Add("confidence", Confidence);          
-            props.Add("parentCallId", ParentCallId);          
-            props.Add("completionReason", CompletionReason);          
-            props.Add("completionCause", CompletionCause);          
-            props.Add("mrcpCode", MrcpCode);          
-            props.Add("mrcpDiagnostic", MrcpDiagnostic);          
+            props.Add("requestType", RequestType);
+            props.Add("callId", CallId);
+            props.Add("accountId", AccountId);
+            props.Add("from", From);
+            props.Add("to", To);
+            props.Add("callStatus", CallStatus);
+            props.Add("direction", Direction);
+            props.Add("conferenceId", ConferenceId);
+            props.Add("queueId", QueueId);
+            props.Add("reason", Reason);
+            props.Add("recognitionResult", RecognitionResult);
+            props.Add("confidence", Confidence);
+            props.Add("parentCallId", ParentCallId);
+            props.Add("completionReason", CompletionReason);
+            props.Add("completionCause", CompletionCause);
+            props.Add("mrcpCode", MrcpCode);
+            props.Add("mrcpDiagnostic", MrcpDiagnostic);
             return props;
         }
 
@@ -381,7 +321,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -400,5 +342,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

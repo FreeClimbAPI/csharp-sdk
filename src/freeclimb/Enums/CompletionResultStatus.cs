@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Enums
 {
@@ -45,8 +44,9 @@ namespace freeclimb.Enums
         /// Enum NO_CONTEXT for value: no_context
         /// </summary>
         [EnumMember(Value = "no_context")]
-        NO_CONTEXT = 2
+        NO_CONTEXT = 2,
     }
+
     /// <summary>
     /// Converts <see cref="CompletionResultStatus"/> to and from the JSON value
     /// </summary>
@@ -65,7 +65,9 @@ namespace freeclimb.Enums
             if (value.Equals("no_context"))
                 return CompletionResultStatus.NO_CONTEXT;
 
-            throw new NotImplementedException($"Could not convert value to type CompletionResultStatus: '{value}'");
+            throw new NotImplementedException(
+                $"Could not convert value to type CompletionResultStatus: '{value}'"
+            );
         }
 
         /// <summary>
@@ -84,5 +86,4 @@ namespace freeclimb.Enums
             return null;
         }
     }
-
 }

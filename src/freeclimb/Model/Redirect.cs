@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -41,24 +40,25 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected Redirect() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Redirect" /> class.
         /// </summary>
         /// <param name="actionUrl">URL to request a new PerCL script to continue with the current Call&#39;s processing. When &#x60;Redirect&#x60; invokes the &#x60;actionUrl&#x60;, an &#x60;inbound&#x60; Webhook is sent. This request therefore looks identical to the initial request (made to the &#x60;voiceUrl&#x60; of the number that was called) for an inbound Call. (required).</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Redirect&quot;).</param>
-        public Redirect(string actionUrl = default(string), string command = @"Redirect") : base(command)
+        public Redirect(string actionUrl = default(string), string command = @"Redirect")
+            : base(command)
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null)
             {
-                throw new ArgumentNullException("actionUrl is a required property for Redirect and cannot be null");
+                throw new ArgumentNullException(
+                    "actionUrl is a required property for Redirect and cannot be null"
+                );
             }
             this.ActionUrl = actionUrl;
-                        
-
-
         }
-        
+
         /// <summary>
         /// URL to request a new PerCL script to continue with the current Call&#39;s processing. When &#x60;Redirect&#x60; invokes the &#x60;actionUrl&#x60;, an &#x60;inbound&#x60; Webhook is sent. This request therefore looks identical to the initial request (made to the &#x60;voiceUrl&#x60; of the number that was called) for an inbound Call.
         /// </summary>
@@ -66,8 +66,6 @@ namespace freeclimb.Model
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -97,17 +95,16 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Redirect instance. 
+        /// Retrieve the KVP Dictionary for the Redirect instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
+            props.Add("actionUrl", ActionUrl);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Redirect",props);
+            command.Add("Redirect", props);
             return command;
         }
 
@@ -116,7 +113,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -135,5 +134,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

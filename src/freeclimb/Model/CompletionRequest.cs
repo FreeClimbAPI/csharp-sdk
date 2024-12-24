@@ -13,18 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -39,6 +38,7 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected CompletionRequest() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CompletionRequest" /> class.
         /// </summary>
@@ -48,14 +48,13 @@ namespace freeclimb.Model
             // to ensure "query" is required (not null)
             if (query == null)
             {
-                throw new ArgumentNullException("query is a required property for CompletionRequest and cannot be null");
+                throw new ArgumentNullException(
+                    "query is a required property for CompletionRequest and cannot be null"
+                );
             }
             this.Query = query;
-                        
-
-
         }
-        
+
         /// <summary>
         /// Question to ask the Knowledge Base
         /// </summary>
@@ -63,8 +62,6 @@ namespace freeclimb.Model
         [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
         public string Query { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -78,25 +75,26 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the CompletionRequest instance. 
+        /// Retrieve the KVP Dictionary for the CompletionRequest instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("query", Query);          
+            props.Add("query", Query);
             return props;
         }
 
@@ -105,16 +103,20 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             // Query (string) maxLength
             if (this.Query != null && this.Query.Length > 2000)
             {
-                yield return new ValidationResult("Invalid value for Query, length must be less than 2000.", new [] { "Query" });
+                yield return new ValidationResult(
+                    "Invalid value for Query, length must be less than 2000.",
+                    new[] { "Query" }
+                );
             }
 
             yield break;
         }
     }
-
 }

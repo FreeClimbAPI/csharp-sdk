@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -41,6 +40,7 @@ namespace freeclimb.Model
         /// </summary>
         [JsonConstructorAttribute]
         protected Say() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Say" /> class.
         /// </summary>
@@ -49,31 +49,31 @@ namespace freeclimb.Model
         /// <param name="loop">Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up. (default to 1).</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Say&quot;).</param>
-        public Say(string text = default(string), string language = default(string), int loop = 1, bool privacyMode = default(bool), string command = @"Say") : base(command)
+        public Say(
+            string text = default(string),
+            string language = default(string),
+            int loop = 1,
+            bool privacyMode = default(bool),
+            string command = @"Say"
+        )
+            : base(command)
         {
             // to ensure "text" is required (not null)
             if (text == null)
             {
-                throw new ArgumentNullException("text is a required property for Say and cannot be null");
+                throw new ArgumentNullException(
+                    "text is a required property for Say and cannot be null"
+                );
             }
             this.Text = text;
-                        
-
-
-
-
 
             this.Language = language;
-                        
 
             this.Loop = loop;
-                        
 
             this.PrivacyMode = privacyMode;
-                        
-
         }
-        
+
         /// <summary>
         /// The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
         /// </summary>
@@ -81,9 +81,6 @@ namespace freeclimb.Model
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
-
-        
-        
         /// <summary>
         /// Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
         /// </summary>
@@ -91,9 +88,6 @@ namespace freeclimb.Model
         [DataMember(Name = "language", EmitDefaultValue = false)]
         public string Language { get; set; }
 
-
-        
-        
         /// <summary>
         /// Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up.
         /// </summary>
@@ -101,9 +95,6 @@ namespace freeclimb.Model
         [DataMember(Name = "loop", EmitDefaultValue = false)]
         public int Loop { get; set; }
 
-
-        
-        
         /// <summary>
         /// Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance.
         /// </summary>
@@ -111,8 +102,6 @@ namespace freeclimb.Model
         [DataMember(Name = "privacyMode", EmitDefaultValue = true)]
         public bool PrivacyMode { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -145,20 +134,19 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Say instance. 
+        /// Retrieve the KVP Dictionary for the Say instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("text", Text);          
-            props.Add("language", Language);          
-            props.Add("loop", Loop);          
-            props.Add("privacyMode", PrivacyMode);          
+            props.Add("text", Text);
+            props.Add("language", Language);
+            props.Add("loop", Loop);
+            props.Add("privacyMode", PrivacyMode);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("Say",props);
+            command.Add("Say", props);
             return command;
         }
 
@@ -167,7 +155,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -186,5 +176,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

@@ -13,23 +13,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Enums
 {
     /// <summary>
-    /// Indicates whether to play a beep when a Participant enters or leaves the Conference. either &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, or &#x60;exitOnly&#x60;. Leaving this unset will make conference default to &#x60;always&#x60; 
+    /// Indicates whether to play a beep when a Participant enters or leaves the Conference. either &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, or &#x60;exitOnly&#x60;. Leaving this unset will make conference default to &#x60;always&#x60;
     /// </summary>
     /// <value>Indicates whether to play a beep when a Participant enters or leaves the Conference. either &#x60;always&#x60;, &#x60;never&#x60;, &#x60;entryOnly&#x60;, or &#x60;exitOnly&#x60;. Leaving this unset will make conference default to &#x60;always&#x60; </value>
     [JsonConverter(typeof(StringEnumConverter))]
@@ -57,8 +56,9 @@ namespace freeclimb.Enums
         /// Enum EXIT_ONLY for value: exitOnly
         /// </summary>
         [EnumMember(Value = "exitOnly")]
-        EXIT_ONLY = 4
+        EXIT_ONLY = 4,
     }
+
     /// <summary>
     /// Converts <see cref="PlayBeep"/> to and from the JSON value
     /// </summary>
@@ -83,7 +83,9 @@ namespace freeclimb.Enums
             if (value.Equals("exitOnly"))
                 return PlayBeep.EXIT_ONLY;
 
-            throw new NotImplementedException($"Could not convert value to type PlayBeep: '{value}'");
+            throw new NotImplementedException(
+                $"Could not convert value to type PlayBeep: '{value}'"
+            );
         }
 
         /// <summary>
@@ -108,5 +110,4 @@ namespace freeclimb.Enums
             return null;
         }
     }
-
 }

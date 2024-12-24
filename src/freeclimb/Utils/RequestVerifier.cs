@@ -6,7 +6,7 @@ using System.Text;
 namespace freeclimb.Utils
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class RequestVerifier
     {
@@ -14,6 +14,7 @@ namespace freeclimb.Utils
         /// Default tolerance to verify request with - 5 minutes
         /// </summary>
         public const int DEFAULT_TOLERANCE = 5 * 60 * 1000;
+
         /// <summary>
         /// Verify request signature
         /// </summary>
@@ -21,7 +22,12 @@ namespace freeclimb.Utils
         /// <param name="requestHeader"></param>
         /// <param name="signingSecret"></param>
         /// <param name="tolerance"></param>
-        public static void verifyRequestSignature(String requestBody, String requestHeader, String signingSecret, int tolerance = DEFAULT_TOLERANCE)
+        public static void verifyRequestSignature(
+            String requestBody,
+            String requestHeader,
+            String signingSecret,
+            int tolerance = DEFAULT_TOLERANCE
+        )
         {
             RequestVerifier verifier = new RequestVerifier();
             verifier.checkRequestBody(requestBody);
@@ -64,6 +70,7 @@ namespace freeclimb.Utils
                 throw new Exception("Signing secret cannot be empty or null");
             }
         }
+
         private void checkTolerance(int tolerance)
         {
             if (tolerance <= 0 || tolerance >= int.MaxValue)
@@ -77,14 +84,28 @@ namespace freeclimb.Utils
             int currentTime = info.getCurrentUnixTime();
             if (!info.isRequestTimeValid(tolerance))
             {
-                throw new Exception(String.Format("Request time exceeded tolerance threshold. Request: {0}, CurrentTime: {1}, tolerance: {2}", info.requestTimestamp, currentTime, tolerance));
+                throw new Exception(
+                    String.Format(
+                        "Request time exceeded tolerance threshold. Request: {0}, CurrentTime: {1}, tolerance: {2}",
+                        info.requestTimestamp,
+                        currentTime,
+                        tolerance
+                    )
+                );
             }
         }
-        private void verifySignature(SignatureInformation info, String requestBody, String signingSecret)
+
+        private void verifySignature(
+            SignatureInformation info,
+            String requestBody,
+            String signingSecret
+        )
         {
             if (!info.isSignatureSafe(requestBody, signingSecret))
             {
-                throw new Exception("Unverified signature request, If this request was unexpected, it may be from a bad actor. Please proceed with caution. If the request was exepected, please check any typos or issues with the signingSecret");
+                throw new Exception(
+                    "Unverified signature request, If this request was unexpected, it may be from a bad actor. Please proceed with caution. If the request was exepected, please check any typos or issues with the signingSecret"
+                );
             }
         }
     }

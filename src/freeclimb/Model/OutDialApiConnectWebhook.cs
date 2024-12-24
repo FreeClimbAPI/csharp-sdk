@@ -13,20 +13,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 using Newtonsoft.Json.Serialization;
-
+using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 
 namespace freeclimb.Model
 {
@@ -37,7 +36,6 @@ namespace freeclimb.Model
     [JsonConverter(typeof(JsonSubtypes), "RequestType")]
     public partial class OutDialApiConnectWebhook : Webhook, IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets CallStatus
         /// </summary>
@@ -49,6 +47,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "direction", EmitDefaultValue = true)]
         public CallDirection? Direction { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="OutDialApiConnectWebhook" /> class.
         /// </summary>
@@ -62,62 +61,52 @@ namespace freeclimb.Model
         /// <param name="conferenceId">This is only populated if request pertains to a conference. Otherwise, it is set to null..</param>
         /// <param name="queueId">This is only populated if the request pertains to a queue. Otherwise, it is set to null..</param>
         /// <param name="parentCallId">ID of the Call that created this leg (child call)..</param>
-        public OutDialApiConnectWebhook(string requestType = @"OutDialApiConnectWebhook", string accountId = default(string), string callId = default(string), string from = default(string), string to = default(string), CallStatus? callStatus = default(CallStatus?), CallDirection? direction = default(CallDirection?), string conferenceId = default(string), string queueId = default(string), string parentCallId = default(string)) : base()
+        public OutDialApiConnectWebhook(
+            string requestType = @"OutDialApiConnectWebhook",
+            string accountId = default(string),
+            string callId = default(string),
+            string from = default(string),
+            string to = default(string),
+            CallStatus? callStatus = default(CallStatus?),
+            CallDirection? direction = default(CallDirection?),
+            string conferenceId = default(string),
+            string queueId = default(string),
+            string parentCallId = default(string)
+        )
+            : base()
         {
-
-
-
-
-
-
-
-
-
-
-            
             base.RequestType = requestType;
-                        
 
             this.AccountId = accountId;
-                        
 
             this.CallId = callId;
-                        
 
             this.From = from;
-                        
 
             this.To = to;
-                        
 
             this.CallStatus = callStatus;
-                        
 
             this.Direction = direction;
-                        
 
             this.ConferenceId = conferenceId;
-                        
 
             this.QueueId = queueId;
-                        
 
             this.ParentCallId = parentCallId;
-                        
-
         }
-        private static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
-        {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            ContractResolver = new DefaultContractResolver
+
+        private static readonly JsonSerializerSettings _serializerSettings =
+            new JsonSerializerSettings
             {
-                NamingStrategy = new CamelCaseNamingStrategy
+                // OpenAPI generated types generally hide default constructors.
+                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+                ContractResolver = new DefaultContractResolver
                 {
-                    OverrideSpecifiedNames = false
-                }
-            }
-        };
+                    NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false },
+                },
+            };
+
         /// <summary>
         /// Deserializes json payload into instance OutDialApiConnectWebhook
         /// </summary>
@@ -125,10 +114,14 @@ namespace freeclimb.Model
         /// <returns>instanceof RemoveFromQueueNotificationWebhook</returns>
         public static OutDialApiConnectWebhook Deserialize(string jsonPayload)
         {
-            return (OutDialApiConnectWebhook)JsonConvert.DeserializeObject(jsonPayload, typeof(OutDialApiConnectWebhook), _serializerSettings);
+            return (OutDialApiConnectWebhook)
+                JsonConvert.DeserializeObject(
+                    jsonPayload,
+                    typeof(OutDialApiConnectWebhook),
+                    _serializerSettings
+                );
         }
-        
-        
+
         /// <summary>
         /// Account ID associated with your account.
         /// </summary>
@@ -136,9 +129,6 @@ namespace freeclimb.Model
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Unique identifier for this Call, generated by FreeClimb
         /// </summary>
@@ -146,9 +136,6 @@ namespace freeclimb.Model
         [DataMember(Name = "callId", EmitDefaultValue = false)]
         public string CallId { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number of the party that initiated the Call (in E.164 format).
         /// </summary>
@@ -156,9 +143,6 @@ namespace freeclimb.Model
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
-
-        
-        
         /// <summary>
         /// Phone number or SIP URL of the party that is receiving the call (phone number in E.164 format).
         /// </summary>
@@ -166,15 +150,6 @@ namespace freeclimb.Model
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 
-
-        
-        
-
-        
-        
-
-        
-        
         /// <summary>
         /// This is only populated if request pertains to a conference. Otherwise, it is set to null.
         /// </summary>
@@ -182,9 +157,6 @@ namespace freeclimb.Model
         [DataMember(Name = "conferenceId", EmitDefaultValue = true)]
         public string ConferenceId { get; set; }
 
-
-        
-        
         /// <summary>
         /// This is only populated if the request pertains to a queue. Otherwise, it is set to null.
         /// </summary>
@@ -192,9 +164,6 @@ namespace freeclimb.Model
         [DataMember(Name = "queueId", EmitDefaultValue = true)]
         public string QueueId { get; set; }
 
-
-        
-        
         /// <summary>
         /// ID of the Call that created this leg (child call).
         /// </summary>
@@ -202,8 +171,6 @@ namespace freeclimb.Model
         [DataMember(Name = "parentCallId", EmitDefaultValue = false)]
         public string ParentCallId { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -227,34 +194,35 @@ namespace freeclimb.Model
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the OutDialApiConnectWebhook instance. 
+        /// Retrieve the KVP Dictionary for the OutDialApiConnectWebhook instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);          
-            props.Add("accountId", AccountId);          
-            props.Add("callId", CallId);          
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("callStatus", CallStatus);          
-            props.Add("direction", Direction);          
-            props.Add("conferenceId", ConferenceId);          
-            props.Add("queueId", QueueId);          
-            props.Add("parentCallId", ParentCallId);          
+            props.Add("requestType", RequestType);
+            props.Add("accountId", AccountId);
+            props.Add("callId", CallId);
+            props.Add("from", From);
+            props.Add("to", To);
+            props.Add("callStatus", CallStatus);
+            props.Add("direction", Direction);
+            props.Add("conferenceId", ConferenceId);
+            props.Add("queueId", QueueId);
+            props.Add("parentCallId", ParentCallId);
             return props;
         }
 
@@ -263,7 +231,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -282,5 +252,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }

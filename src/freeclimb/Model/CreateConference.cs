@@ -13,19 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
-
 
 namespace freeclimb.Model
 {
@@ -36,17 +35,18 @@ namespace freeclimb.Model
     [JsonConverter(typeof(JsonSubtypes), "Command")]
     public partial class CreateConference : PerclCommand, IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets PlayBeep
         /// </summary>
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public PlayBeep? PlayBeep { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConference" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected CreateConference() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConference" /> class.
         /// </summary>
@@ -57,62 +57,51 @@ namespace freeclimb.Model
         /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available..</param>
         /// <param name="waitUrl">If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;CreateConference&quot;).</param>
-        public CreateConference(string actionUrl = default(string), bool alias = default(bool), PlayBeep? playBeep = default(PlayBeep?), bool record = default(bool), string statusCallbackUrl = default(string), string waitUrl = default(string), string command = @"CreateConference") : base(command)
+        public CreateConference(
+            string actionUrl = default(string),
+            bool alias = default(bool),
+            PlayBeep? playBeep = default(PlayBeep?),
+            bool record = default(bool),
+            string statusCallbackUrl = default(string),
+            string waitUrl = default(string),
+            string command = @"CreateConference"
+        )
+            : base(command)
         {
             // to ensure "actionUrl" is required (not null)
             if (actionUrl == null)
             {
-                throw new ArgumentNullException("actionUrl is a required property for CreateConference and cannot be null");
+                throw new ArgumentNullException(
+                    "actionUrl is a required property for CreateConference and cannot be null"
+                );
             }
             this.ActionUrl = actionUrl;
-                        
-
-
-
-
-
-
 
             this.Alias = alias;
-                        
 
             this.PlayBeep = playBeep;
-                        
 
             this.Record = record;
-                        
 
             this.StatusCallbackUrl = statusCallbackUrl;
-                        
 
             this.WaitUrl = waitUrl;
-                        
-
         }
-        
+
         /// <summary>
-        ///  This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response. 
+        ///  This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response.
         /// </summary>
         /// <value> This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response. </value>
         [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
-
-        
-        
         /// <summary>
-        /// Descriptive name for the Conference. 
+        /// Descriptive name for the Conference.
         /// </summary>
         /// <value>Descriptive name for the Conference. </value>
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public bool Alias { get; set; }
 
-
-        
-        
-
-        
-        
         /// <summary>
         /// When set to &#x60;true&#x60;, the entire Conference is recorded. The &#x60;statusCallbackUrl&#x60; of the Conference will receive a &#x60;conferenceRecordingEnded&#x60; Webhook when the Conference transitions from the &#x60;inProgress&#x60; to empty state.
         /// </summary>
@@ -120,9 +109,6 @@ namespace freeclimb.Model
         [DataMember(Name = "record", EmitDefaultValue = true)]
         public bool Record { get; set; }
 
-
-        
-        
         /// <summary>
         /// This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available.
         /// </summary>
@@ -130,9 +116,6 @@ namespace freeclimb.Model
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = false)]
         public string StatusCallbackUrl { get; set; }
 
-
-        
-        
         /// <summary>
         /// If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb.
         /// </summary>
@@ -140,8 +123,6 @@ namespace freeclimb.Model
         [DataMember(Name = "waitUrl", EmitDefaultValue = false)]
         public string WaitUrl { get; set; }
 
-
-        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -176,22 +157,21 @@ namespace freeclimb.Model
             return strb.ToString();
         }
 
-
         /// <summary>
-        /// Retrieve the KVP Dictionary for the CreateConference instance. 
+        /// Retrieve the KVP Dictionary for the CreateConference instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("alias", Alias);          
-            props.Add("playBeep", PlayBeep);          
-            props.Add("record", Record);          
-            props.Add("statusCallbackUrl", StatusCallbackUrl);          
-            props.Add("waitUrl", WaitUrl);          
+            props.Add("actionUrl", ActionUrl);
+            props.Add("alias", Alias);
+            props.Add("playBeep", PlayBeep);
+            props.Add("record", Record);
+            props.Add("statusCallbackUrl", StatusCallbackUrl);
+            props.Add("waitUrl", WaitUrl);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("CreateConference",props);
+            command.Add("CreateConference", props);
             return command;
         }
 
@@ -200,7 +180,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -219,5 +201,4 @@ namespace freeclimb.Model
             yield break;
         }
     }
-
 }
