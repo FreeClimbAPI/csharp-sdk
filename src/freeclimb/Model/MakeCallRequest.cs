@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,13 +31,14 @@ namespace freeclimb.Model
     /// MakeCallRequest
     /// </summary>
     [DataContract(Name = "MakeCallRequest")]
-    public partial class MakeCallRequest : IEquatable<MakeCallRequest>, IValidatableObject
+    public partial class MakeCallRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MakeCallRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected MakeCallRequest() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MakeCallRequest" /> class.
         /// </summary>
@@ -51,25 +52,51 @@ namespace freeclimb.Model
         /// <param name="parentCallId">Required if no &#x60;applicationId&#x60; or &#x60;callConnectUrl&#x60; has been provided. The ID of the parent Call in the case that this new Call is meant to be treated as a child of an existing Call. This attribute should be included when possible to reduce latency when adding child calls to Conferences containing the parent Call. A call can only be used as a parent once the call is in progress or as an inbound call that is still ringing. An outbound call is considered to be in progress once the &#x60;outdialConnect&#x60; or &#x60;outdialApiConnect&#x60; webhook is invoked. An inbound call is ringing when the inbound webhook is invoked. If a &#x60;callConnectUrl&#x60; attribute is also included with the &#x60;parentCallId&#x60; in the request, this URL will be used as a replacement of the &#x60;callConnectUrl&#x60; originally assigned in the parent call..</param>
         /// <param name="privacyMode">Activate privacy mode in order to obscure log data that can potentially expose private information..</param>
         /// <param name="callConnectUrl">The URL that FreeClimb should use to handle this phone call. If an applicationId or parentCallId have already been provided, this callConnectUrl attribute will be used as a replacement of the callConnectUrl originally assigned in the application or parent call..</param>
-        public MakeCallRequest(string from = default(string), string to = default(string), string applicationId = default(string), string sendDigits = default(string), string ifMachine = default(string), string ifMachineUrl = default(string), int timeout = 30, string parentCallId = default(string), bool privacyMode = default(bool), string callConnectUrl = default(string))
+        public MakeCallRequest(
+            string from = default(string),
+            string to = default(string),
+            string applicationId = default(string),
+            string sendDigits = default(string),
+            string ifMachine = default(string),
+            string ifMachineUrl = default(string),
+            int timeout = 30,
+            string parentCallId = default(string),
+            bool privacyMode = default(bool),
+            string callConnectUrl = default(string)
+        )
         {
             // to ensure "from" is required (not null)
-            if (from == null) {
-                throw new ArgumentNullException("from is a required property for MakeCallRequest and cannot be null");
+            if (from == null)
+            {
+                throw new ArgumentNullException(
+                    "from is a required property for MakeCallRequest and cannot be null"
+                );
             }
             this.From = from;
+
             // to ensure "to" is required (not null)
-            if (to == null) {
-                throw new ArgumentNullException("to is a required property for MakeCallRequest and cannot be null");
+            if (to == null)
+            {
+                throw new ArgumentNullException(
+                    "to is a required property for MakeCallRequest and cannot be null"
+                );
             }
             this.To = to;
+
             this.ApplicationId = applicationId;
+
             this.SendDigits = sendDigits;
+
             this.IfMachine = ifMachine;
+
             this.IfMachineUrl = ifMachineUrl;
+
             this.Timeout = timeout;
+
             this.ParentCallId = parentCallId;
+
             this.PrivacyMode = privacyMode;
+
             this.CallConnectUrl = callConnectUrl;
         }
 
@@ -77,14 +104,14 @@ namespace freeclimb.Model
         /// Phone number to use as the caller ID. This can be: (a) The To or From number provided in FreeClimb&#39;s initial request to your app or (b) Any incoming phone number you have purchased from FreeClimb.
         /// </summary>
         /// <value>Phone number to use as the caller ID. This can be: (a) The To or From number provided in FreeClimb&#39;s initial request to your app or (b) Any incoming phone number you have purchased from FreeClimb.</value>
-        [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
         /// <summary>
         /// Phone number to place the Call to.
         /// </summary>
         /// <value>Phone number to place the Call to.</value>
-        [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
 
         /// <summary>
@@ -171,146 +198,30 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the MakeCallRequest instance. 
+        /// Retrieve the KVP Dictionary for the MakeCallRequest instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("applicationId", ApplicationId);          
-            props.Add("sendDigits", SendDigits);          
-            props.Add("ifMachine", IfMachine);          
-            props.Add("ifMachineUrl", IfMachineUrl);          
-            props.Add("timeout", Timeout);          
-            props.Add("parentCallId", ParentCallId);          
-            props.Add("privacyMode", PrivacyMode);          
-            props.Add("callConnectUrl", CallConnectUrl);          
+            props.Add("from", From);
+            props.Add("to", To);
+            props.Add("applicationId", ApplicationId);
+            props.Add("sendDigits", SendDigits);
+            props.Add("ifMachine", IfMachine);
+            props.Add("ifMachineUrl", IfMachineUrl);
+            props.Add("timeout", Timeout);
+            props.Add("parentCallId", ParentCallId);
+            props.Add("privacyMode", PrivacyMode);
+            props.Add("callConnectUrl", CallConnectUrl);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as MakeCallRequest);
-        }
-
-        /// <summary>
-        /// Returns true if MakeCallRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of MakeCallRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(MakeCallRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
-                ) && 
-                (
-                    this.To == input.To ||
-                    (this.To != null &&
-                    this.To.Equals(input.To))
-                ) && 
-                (
-                    this.ApplicationId == input.ApplicationId ||
-                    (this.ApplicationId != null &&
-                    this.ApplicationId.Equals(input.ApplicationId))
-                ) && 
-                (
-                    this.SendDigits == input.SendDigits ||
-                    (this.SendDigits != null &&
-                    this.SendDigits.Equals(input.SendDigits))
-                ) && 
-                (
-                    this.IfMachine == input.IfMachine ||
-                    (this.IfMachine != null &&
-                    this.IfMachine.Equals(input.IfMachine))
-                ) && 
-                (
-                    this.IfMachineUrl == input.IfMachineUrl ||
-                    (this.IfMachineUrl != null &&
-                    this.IfMachineUrl.Equals(input.IfMachineUrl))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    this.Timeout.Equals(input.Timeout)
-                ) && 
-                (
-                    this.ParentCallId == input.ParentCallId ||
-                    (this.ParentCallId != null &&
-                    this.ParentCallId.Equals(input.ParentCallId))
-                ) && 
-                (
-                    this.PrivacyMode == input.PrivacyMode ||
-                    this.PrivacyMode.Equals(input.PrivacyMode)
-                ) && 
-                (
-                    this.CallConnectUrl == input.CallConnectUrl ||
-                    (this.CallConnectUrl != null &&
-                    this.CallConnectUrl.Equals(input.CallConnectUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.From != null)
-                {
-                    hashCode = (hashCode * 59) + this.From.GetHashCode();
-                }
-                if (this.To != null)
-                {
-                    hashCode = (hashCode * 59) + this.To.GetHashCode();
-                }
-                if (this.ApplicationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ApplicationId.GetHashCode();
-                }
-                if (this.SendDigits != null)
-                {
-                    hashCode = (hashCode * 59) + this.SendDigits.GetHashCode();
-                }
-                if (this.IfMachine != null)
-                {
-                    hashCode = (hashCode * 59) + this.IfMachine.GetHashCode();
-                }
-                if (this.IfMachineUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.IfMachineUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Timeout.GetHashCode();
-                if (this.ParentCallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentCallId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PrivacyMode.GetHashCode();
-                if (this.CallConnectUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallConnectUrl.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -318,10 +229,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

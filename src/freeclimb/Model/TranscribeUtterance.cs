@@ -13,18 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -33,39 +33,14 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "TranscribeUtterance")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetDTMFPassThrough), "SetDTMFPassThrough")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class TranscribeUtterance : PerclCommand, IEquatable<TranscribeUtterance>, IValidatableObject
+    public partial class TranscribeUtterance : PerclCommand, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscribeUtterance" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected TranscribeUtterance() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscribeUtterance" /> class.
         /// </summary>
@@ -76,24 +51,41 @@ namespace freeclimb.Model
         /// <param name="privacyForRecording">privacyForRecording (default to false).</param>
         /// <param name="prompts">prompts.</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;TranscribeUtterance&quot;).</param>
-        public TranscribeUtterance(string actionUrl = default(string), bool playBeep = false, TranscribeUtteranceAllOfRecord record = default(TranscribeUtteranceAllOfRecord), bool privacyForLogging = false, bool privacyForRecording = false, List<Object> prompts = default(List<Object>), string command = "TranscribeUtterance") : base(command)
+        public TranscribeUtterance(
+            string actionUrl = default(string),
+            bool playBeep = false,
+            TranscribeUtteranceRecord record = default(TranscribeUtteranceRecord),
+            bool privacyForLogging = false,
+            bool privacyForRecording = false,
+            List<PerclCommand> prompts = default(List<PerclCommand>),
+            string command = @"TranscribeUtterance"
+        )
+            : base(command)
         {
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null) {
-                throw new ArgumentNullException("actionUrl is a required property for TranscribeUtterance and cannot be null");
+            if (actionUrl == null)
+            {
+                throw new ArgumentNullException(
+                    "actionUrl is a required property for TranscribeUtterance and cannot be null"
+                );
             }
             this.ActionUrl = actionUrl;
+
             this.PlayBeep = playBeep;
+
             this.Record = record;
+
             this.PrivacyForLogging = privacyForLogging;
+
             this.PrivacyForRecording = privacyForRecording;
+
             this.Prompts = prompts;
         }
 
         /// <summary>
         /// Gets or Sets ActionUrl
         /// </summary>
-        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
         /// <summary>
@@ -106,7 +98,7 @@ namespace freeclimb.Model
         /// Gets or Sets Record
         /// </summary>
         [DataMember(Name = "record", EmitDefaultValue = false)]
-        public TranscribeUtteranceAllOfRecord Record { get; set; }
+        public TranscribeUtteranceRecord Record { get; set; }
 
         /// <summary>
         /// Gets or Sets PrivacyForLogging
@@ -124,7 +116,7 @@ namespace freeclimb.Model
         /// Gets or Sets Prompts
         /// </summary>
         [DataMember(Name = "prompts", EmitDefaultValue = false)]
-        public List<Object> Prompts { get; set; }
+        public List<PerclCommand> Prompts { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -161,106 +153,26 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the TranscribeUtterance instance. 
+        /// Retrieve the KVP Dictionary for the TranscribeUtterance instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("playBeep", PlayBeep);          
-            props.Add("record", Record);          
-            props.Add("privacyForLogging", PrivacyForLogging);          
-            props.Add("privacyForRecording", PrivacyForRecording);          
+            props.Add("actionUrl", ActionUrl);
+            props.Add("playBeep", PlayBeep);
+            props.Add("record", Record);
+            props.Add("privacyForLogging", PrivacyForLogging);
+            props.Add("privacyForRecording", PrivacyForRecording);
             List<object> nested = new List<object>();
             foreach (var item in Prompts)
             {
                 nested.Add(item);
             }
-            props.Add("prompts", nested); 
+            props.Add("prompts", nested);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("TranscribeUtterance",props);
+            command.Add("TranscribeUtterance", props);
             return command;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TranscribeUtterance);
-        }
-
-        /// <summary>
-        /// Returns true if TranscribeUtterance instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TranscribeUtterance to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TranscribeUtterance input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.ActionUrl == input.ActionUrl ||
-                    (this.ActionUrl != null &&
-                    this.ActionUrl.Equals(input.ActionUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.PlayBeep == input.PlayBeep ||
-                    this.PlayBeep.Equals(input.PlayBeep)
-                ) && base.Equals(input) && 
-                (
-                    this.Record == input.Record ||
-                    (this.Record != null &&
-                    this.Record.Equals(input.Record))
-                ) && base.Equals(input) && 
-                (
-                    this.PrivacyForLogging == input.PrivacyForLogging ||
-                    this.PrivacyForLogging.Equals(input.PrivacyForLogging)
-                ) && base.Equals(input) && 
-                (
-                    this.PrivacyForRecording == input.PrivacyForRecording ||
-                    this.PrivacyForRecording.Equals(input.PrivacyForRecording)
-                ) && base.Equals(input) && 
-                (
-                    this.Prompts == input.Prompts ||
-                    this.Prompts != null &&
-                    input.Prompts != null &&
-                    this.Prompts.SequenceEqual(input.Prompts)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                if (this.ActionUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
-                if (this.Record != null)
-                {
-                    hashCode = (hashCode * 59) + this.Record.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PrivacyForLogging.GetHashCode();
-                hashCode = (hashCode * 59) + this.PrivacyForRecording.GetHashCode();
-                if (this.Prompts != null)
-                {
-                    hashCode = (hashCode * 59) + this.Prompts.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -268,7 +180,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -278,14 +192,13 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }
             yield break;
         }
     }
-
 }

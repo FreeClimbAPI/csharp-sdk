@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,368 +31,49 @@ namespace freeclimb.Model
     /// A brand is a business identity behind the campaign.
     /// </summary>
     [DataContract(Name = "SMSTenDLCBrand")]
-    public partial class SMSTenDLCBrand : IEquatable<SMSTenDLCBrand>, IValidatableObject
+    public partial class SMSTenDLCBrand : IValidatableObject
     {
         /// <summary>
-        /// Entity type behind the brand. This is the form of business establishment.
+        /// Gets or Sets EntityType
         /// </summary>
-        /// <value>Entity type behind the brand. This is the form of business establishment.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EntityTypeEnum
-        {
-            /// <summary>
-            /// Enum PRIVATE_PROFIT for value: PRIVATE_PROFIT
-            /// </summary>
-            [EnumMember(Value = "PRIVATE_PROFIT")]
-            PRIVATE_PROFIT = 1,
-
-            /// <summary>
-            /// Enum PUBLIC_PROFIT for value: PUBLIC_PROFIT
-            /// </summary>
-            [EnumMember(Value = "PUBLIC_PROFIT")]
-            PUBLIC_PROFIT = 2,
-
-            /// <summary>
-            /// Enum NON_PROFIT for value: NON_PROFIT
-            /// </summary>
-            [EnumMember(Value = "NON_PROFIT")]
-            NON_PROFIT = 3,
-
-            /// <summary>
-            /// Enum GOVERNMENT for value: GOVERNMENT
-            /// </summary>
-            [EnumMember(Value = "GOVERNMENT")]
-            GOVERNMENT = 4,
-
-            /// <summary>
-            /// Enum SOLE_PROPRIETOR for value: SOLE_PROPRIETOR
-            /// </summary>
-            [EnumMember(Value = "SOLE_PROPRIETOR")]
-            SOLE_PROPRIETOR = 5
-
-        }
-
+        [DataMember(Name = "entityType", IsRequired = true, EmitDefaultValue = true)]
+        public SMSTenDLCBrandEntityType EntityType { get; set; }
 
         /// <summary>
-        /// Entity type behind the brand. This is the form of business establishment.
+        /// Gets or Sets StockExchange
         /// </summary>
-        /// <value>Entity type behind the brand. This is the form of business establishment.</value>
-        [DataMember(Name = "entityType", IsRequired = true, EmitDefaultValue = false)]
-        public EntityTypeEnum EntityType { get; set; }
-        /// <summary>
-        /// (Required for public company) stock exchange.
-        /// </summary>
-        /// <value>(Required for public company) stock exchange.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StockExchangeEnum
-        {
-            /// <summary>
-            /// Enum NONE for value: NONE
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE = 1,
-
-            /// <summary>
-            /// Enum NASDAQ for value: NASDAQ
-            /// </summary>
-            [EnumMember(Value = "NASDAQ")]
-            NASDAQ = 2,
-
-            /// <summary>
-            /// Enum NYSE for value: NYSE
-            /// </summary>
-            [EnumMember(Value = "NYSE")]
-            NYSE = 3,
-
-            /// <summary>
-            /// Enum AMEX for value: AMEX
-            /// </summary>
-            [EnumMember(Value = "AMEX")]
-            AMEX = 4,
-
-            /// <summary>
-            /// Enum AMX for value: AMX
-            /// </summary>
-            [EnumMember(Value = "AMX")]
-            AMX = 5,
-
-            /// <summary>
-            /// Enum ASX for value: ASX
-            /// </summary>
-            [EnumMember(Value = "ASX")]
-            ASX = 6,
-
-            /// <summary>
-            /// Enum B3 for value: B3
-            /// </summary>
-            [EnumMember(Value = "B3")]
-            B3 = 7,
-
-            /// <summary>
-            /// Enum BME for value: BME
-            /// </summary>
-            [EnumMember(Value = "BME")]
-            BME = 8,
-
-            /// <summary>
-            /// Enum BSE for value: BSE
-            /// </summary>
-            [EnumMember(Value = "BSE")]
-            BSE = 9,
-
-            /// <summary>
-            /// Enum FRA for value: FRA
-            /// </summary>
-            [EnumMember(Value = "FRA")]
-            FRA = 10,
-
-            /// <summary>
-            /// Enum ICEX for value: ICEX
-            /// </summary>
-            [EnumMember(Value = "ICEX")]
-            ICEX = 11,
-
-            /// <summary>
-            /// Enum JPX for value: JPX
-            /// </summary>
-            [EnumMember(Value = "JPX")]
-            JPX = 12,
-
-            /// <summary>
-            /// Enum JSE for value: JSE
-            /// </summary>
-            [EnumMember(Value = "JSE")]
-            JSE = 13,
-
-            /// <summary>
-            /// Enum KRX for value: KRX
-            /// </summary>
-            [EnumMember(Value = "KRX")]
-            KRX = 14,
-
-            /// <summary>
-            /// Enum LON for value: LON
-            /// </summary>
-            [EnumMember(Value = "LON")]
-            LON = 15,
-
-            /// <summary>
-            /// Enum NSE for value: NSE
-            /// </summary>
-            [EnumMember(Value = "NSE")]
-            NSE = 16,
-
-            /// <summary>
-            /// Enum OMX for value: OMX
-            /// </summary>
-            [EnumMember(Value = "OMX")]
-            OMX = 17,
-
-            /// <summary>
-            /// Enum SEHK for value: SEHK
-            /// </summary>
-            [EnumMember(Value = "SEHK")]
-            SEHK = 18,
-
-            /// <summary>
-            /// Enum SGX for value: SGX
-            /// </summary>
-            [EnumMember(Value = "SGX")]
-            SGX = 19,
-
-            /// <summary>
-            /// Enum SSE for value: SSE
-            /// </summary>
-            [EnumMember(Value = "SSE")]
-            SSE = 20,
-
-            /// <summary>
-            /// Enum STO for value: STO
-            /// </summary>
-            [EnumMember(Value = "STO")]
-            STO = 21,
-
-            /// <summary>
-            /// Enum SWX for value: SWX
-            /// </summary>
-            [EnumMember(Value = "SWX")]
-            SWX = 22,
-
-            /// <summary>
-            /// Enum SZSE for value: SZSE
-            /// </summary>
-            [EnumMember(Value = "SZSE")]
-            SZSE = 23,
-
-            /// <summary>
-            /// Enum TSX for value: TSX
-            /// </summary>
-            [EnumMember(Value = "TSX")]
-            TSX = 24,
-
-            /// <summary>
-            /// Enum TWSE for value: TWSE
-            /// </summary>
-            [EnumMember(Value = "TWSE")]
-            TWSE = 25,
-
-            /// <summary>
-            /// Enum VSE for value: VSE
-            /// </summary>
-            [EnumMember(Value = "VSE")]
-            VSE = 26,
-
-            /// <summary>
-            /// Enum OTHER for value: OTHER
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER = 27
-
-        }
-
-
-        /// <summary>
-        /// (Required for public company) stock exchange.
-        /// </summary>
-        /// <value>(Required for public company) stock exchange.</value>
         [DataMember(Name = "stockExchange", EmitDefaultValue = false)]
-        public StockExchangeEnum? StockExchange { get; set; }
-        /// <summary>
-        /// Brand relationship to the CSP
-        /// </summary>
-        /// <value>Brand relationship to the CSP</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum BrandRelationshipEnum
-        {
-            /// <summary>
-            /// Enum BASIC_ACCOUNT for value: BASIC_ACCOUNT
-            /// </summary>
-            [EnumMember(Value = "BASIC_ACCOUNT")]
-            BASIC_ACCOUNT = 1,
-
-            /// <summary>
-            /// Enum SMALL_ACCOUNT for value: SMALL_ACCOUNT
-            /// </summary>
-            [EnumMember(Value = "SMALL_ACCOUNT")]
-            SMALL_ACCOUNT = 2,
-
-            /// <summary>
-            /// Enum MEDIUM_ACCOUNT for value: MEDIUM_ACCOUNT
-            /// </summary>
-            [EnumMember(Value = "MEDIUM_ACCOUNT")]
-            MEDIUM_ACCOUNT = 3,
-
-            /// <summary>
-            /// Enum LARGE_ACCOUNT for value: LARGE_ACCOUNT
-            /// </summary>
-            [EnumMember(Value = "LARGE_ACCOUNT")]
-            LARGE_ACCOUNT = 4,
-
-            /// <summary>
-            /// Enum KEY_ACCOUNT for value: KEY_ACCOUNT
-            /// </summary>
-            [EnumMember(Value = "KEY_ACCOUNT")]
-            KEY_ACCOUNT = 5
-
-        }
-
+        public SMSTenDLCBrandStockExchange? StockExchange { get; set; }
 
         /// <summary>
-        /// Brand relationship to the CSP
+        /// Gets or Sets BrandRelationship
         /// </summary>
-        /// <value>Brand relationship to the CSP</value>
-        [DataMember(Name = "brandRelationship", IsRequired = true, EmitDefaultValue = false)]
-        public BrandRelationshipEnum BrandRelationship { get; set; }
-        /// <summary>
-        /// The type of the Alternative business identifier
-        /// </summary>
-        /// <value>The type of the Alternative business identifier</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AltBusinessIdTypeEnum
-        {
-            /// <summary>
-            /// Enum NONE for value: NONE
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE = 1,
-
-            /// <summary>
-            /// Enum DUNS for value: DUNS
-            /// </summary>
-            [EnumMember(Value = "DUNS")]
-            DUNS = 2,
-
-            /// <summary>
-            /// Enum GIIN for value: GIIN
-            /// </summary>
-            [EnumMember(Value = "GIIN")]
-            GIIN = 3,
-
-            /// <summary>
-            /// Enum LEI for value: LEI
-            /// </summary>
-            [EnumMember(Value = "LEI")]
-            LEI = 4
-
-        }
-
+        [DataMember(Name = "brandRelationship", IsRequired = true, EmitDefaultValue = true)]
+        public SMSTenDLCBrandRelationship BrandRelationship { get; set; }
 
         /// <summary>
-        /// The type of the Alternative business identifier
+        /// Gets or Sets AltBusinessIdType
         /// </summary>
-        /// <value>The type of the Alternative business identifier</value>
         [DataMember(Name = "altBusinessIdType", EmitDefaultValue = false)]
-        public AltBusinessIdTypeEnum? AltBusinessIdType { get; set; }
-        /// <summary>
-        /// TCR assessment of the brand identification status.
-        /// </summary>
-        /// <value>TCR assessment of the brand identification status.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum IdentityStatusEnum
-        {
-            /// <summary>
-            /// Enum SELF_DECLARED for value: SELF_DECLARED
-            /// </summary>
-            [EnumMember(Value = "SELF_DECLARED")]
-            SELF_DECLARED = 1,
-
-            /// <summary>
-            /// Enum UNVERIFIED for value: UNVERIFIED
-            /// </summary>
-            [EnumMember(Value = "UNVERIFIED")]
-            UNVERIFIED = 2,
-
-            /// <summary>
-            /// Enum VERIFIED for value: VERIFIED
-            /// </summary>
-            [EnumMember(Value = "VERIFIED")]
-            VERIFIED = 3,
-
-            /// <summary>
-            /// Enum VETTED_VERIFIED for value: VETTED_VERIFIED
-            /// </summary>
-            [EnumMember(Value = "VETTED_VERIFIED")]
-            VETTED_VERIFIED = 4
-
-        }
-
+        public SMSTenDLCBrandAltBusinessIdType? AltBusinessIdType { get; set; }
 
         /// <summary>
-        /// TCR assessment of the brand identification status.
+        /// Gets or Sets IdentityStatus
         /// </summary>
-        /// <value>TCR assessment of the brand identification status.</value>
-        [DataMember(Name = "identityStatus", IsRequired = true, EmitDefaultValue = false)]
-        public IdentityStatusEnum IdentityStatus { get; set; }
+        [DataMember(Name = "identityStatus", IsRequired = true, EmitDefaultValue = true)]
+        public SMSTenDLCBrandIdentityStatus IdentityStatus { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTenDLCBrand" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected SMSTenDLCBrand() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTenDLCBrand" /> class.
         /// </summary>
         /// <param name="accountId">ID of the account that created this Queue..</param>
-        /// <param name="entityType">Entity type behind the brand. This is the form of business establishment. (required).</param>
+        /// <param name="entityType">entityType (required).</param>
         /// <param name="firstName">First or given name. .</param>
         /// <param name="lastName">Last or Surname..</param>
         /// <param name="displayName">Display or marketing name of the brand. (required).</param>
@@ -407,67 +88,139 @@ namespace freeclimb.Model
         /// <param name="country">ISO2 2 characters country code. Example: US - United States (required).</param>
         /// <param name="email">Valid email address of brand support contact. (required).</param>
         /// <param name="stockSymbol">(Required for public company) stock symbol..</param>
-        /// <param name="stockExchange">(Required for public company) stock exchange..</param>
+        /// <param name="stockExchange">stockExchange.</param>
         /// <param name="ipAddress">IP address of the browser requesting to create brand identity..</param>
         /// <param name="website">Brand website URL..</param>
-        /// <param name="brandRelationship">Brand relationship to the CSP (required).</param>
+        /// <param name="brandRelationship">brandRelationship (required).</param>
         /// <param name="vertical">Vertical or industry segment of the brand. (required).</param>
         /// <param name="altBusinessId">Alternate business identifier such as DUNS, LEI, or GIIN.</param>
-        /// <param name="altBusinessIdType">The type of the Alternative business identifier.</param>
+        /// <param name="altBusinessIdType">altBusinessIdType.</param>
         /// <param name="referenceId">Caller supplied brand reference ID. If supplied, the value must be unique across all submitted brands. Can be used to prevent duplicate brand registrations..</param>
         /// <param name="optionalAttributes">Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names..</param>
         /// <param name="mock">Test brand. (required).</param>
-        /// <param name="identityStatus">TCR assessment of the brand identification status. (required).</param>
+        /// <param name="identityStatus">identityStatus (required).</param>
         /// <param name="createDate">Unix timestamp when brand was created..</param>
-        public SMSTenDLCBrand(string accountId = default(string), EntityTypeEnum entityType = default(EntityTypeEnum), string firstName = default(string), string lastName = default(string), string displayName = default(string), string companyName = default(string), string ein = default(string), string einIssuingCountry = default(string), string phone = default(string), string street = default(string), string city = default(string), string state = default(string), string postalCode = default(string), string country = default(string), string email = default(string), string stockSymbol = default(string), StockExchangeEnum? stockExchange = default(StockExchangeEnum?), string ipAddress = default(string), string website = default(string), BrandRelationshipEnum brandRelationship = default(BrandRelationshipEnum), string vertical = default(string), string altBusinessId = default(string), AltBusinessIdTypeEnum? altBusinessIdType = default(AltBusinessIdTypeEnum?), string referenceId = default(string), Dictionary<string, Object> optionalAttributes = default(Dictionary<string, Object>), bool mock = default(bool), IdentityStatusEnum identityStatus = default(IdentityStatusEnum), DateTime createDate = default(DateTime))
+        public SMSTenDLCBrand(
+            string accountId = default(string),
+            SMSTenDLCBrandEntityType entityType = default(SMSTenDLCBrandEntityType),
+            string firstName = default(string),
+            string lastName = default(string),
+            string displayName = default(string),
+            string companyName = default(string),
+            string ein = default(string),
+            string einIssuingCountry = default(string),
+            string phone = default(string),
+            string street = default(string),
+            string city = default(string),
+            string state = default(string),
+            string postalCode = default(string),
+            string country = default(string),
+            string email = default(string),
+            string stockSymbol = default(string),
+            SMSTenDLCBrandStockExchange? stockExchange = default(SMSTenDLCBrandStockExchange?),
+            string ipAddress = default(string),
+            string website = default(string),
+            SMSTenDLCBrandRelationship brandRelationship = default(SMSTenDLCBrandRelationship),
+            string vertical = default(string),
+            string altBusinessId = default(string),
+            SMSTenDLCBrandAltBusinessIdType? altBusinessIdType =
+                default(SMSTenDLCBrandAltBusinessIdType?),
+            string referenceId = default(string),
+            Dictionary<string, Object> optionalAttributes = default(Dictionary<string, Object>),
+            bool mock = default(bool),
+            SMSTenDLCBrandIdentityStatus identityStatus = default(SMSTenDLCBrandIdentityStatus),
+            DateTime createDate = default(DateTime)
+        )
         {
             this.EntityType = entityType;
+
             // to ensure "displayName" is required (not null)
-            if (displayName == null) {
-                throw new ArgumentNullException("displayName is a required property for SMSTenDLCBrand and cannot be null");
+            if (displayName == null)
+            {
+                throw new ArgumentNullException(
+                    "displayName is a required property for SMSTenDLCBrand and cannot be null"
+                );
             }
             this.DisplayName = displayName;
+
             // to ensure "phone" is required (not null)
-            if (phone == null) {
-                throw new ArgumentNullException("phone is a required property for SMSTenDLCBrand and cannot be null");
+            if (phone == null)
+            {
+                throw new ArgumentNullException(
+                    "phone is a required property for SMSTenDLCBrand and cannot be null"
+                );
             }
             this.Phone = phone;
+
             // to ensure "country" is required (not null)
-            if (country == null) {
-                throw new ArgumentNullException("country is a required property for SMSTenDLCBrand and cannot be null");
+            if (country == null)
+            {
+                throw new ArgumentNullException(
+                    "country is a required property for SMSTenDLCBrand and cannot be null"
+                );
             }
             this.Country = country;
+
             // to ensure "email" is required (not null)
-            if (email == null) {
-                throw new ArgumentNullException("email is a required property for SMSTenDLCBrand and cannot be null");
+            if (email == null)
+            {
+                throw new ArgumentNullException(
+                    "email is a required property for SMSTenDLCBrand and cannot be null"
+                );
             }
             this.Email = email;
+
             this.BrandRelationship = brandRelationship;
+
             // to ensure "vertical" is required (not null)
-            if (vertical == null) {
-                throw new ArgumentNullException("vertical is a required property for SMSTenDLCBrand and cannot be null");
+            if (vertical == null)
+            {
+                throw new ArgumentNullException(
+                    "vertical is a required property for SMSTenDLCBrand and cannot be null"
+                );
             }
             this.Vertical = vertical;
+
             this.Mock = mock;
+
             this.IdentityStatus = identityStatus;
+
             this.AccountId = accountId;
+
             this.FirstName = firstName;
+
             this.LastName = lastName;
+
             this.CompanyName = companyName;
+
             this.Ein = ein;
+
             this.EinIssuingCountry = einIssuingCountry;
+
             this.Street = street;
+
             this.City = city;
+
             this.State = state;
+
             this.PostalCode = postalCode;
+
             this.StockSymbol = stockSymbol;
+
             this.StockExchange = stockExchange;
+
             this.IpAddress = ipAddress;
+
             this.Website = website;
+
             this.AltBusinessId = altBusinessId;
+
             this.AltBusinessIdType = altBusinessIdType;
+
             this.ReferenceId = referenceId;
+
             this.OptionalAttributes = optionalAttributes;
+
             this.CreateDate = createDate;
         }
 
@@ -493,6 +246,7 @@ namespace freeclimb.Model
         {
             return false;
         }
+
         /// <summary>
         /// Unique identifier assigned to the brand by the registry.
         /// </summary>
@@ -508,10 +262,14 @@ namespace freeclimb.Model
         {
             return false;
         }
+
         /// <summary>
-        /// First or given name. 
+        /// First or given name.
         /// </summary>
         /// <value>First or given name. </value>
+        /*
+        <example>John</example>
+        */
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
         public string FirstName { get; set; }
 
@@ -519,6 +277,9 @@ namespace freeclimb.Model
         /// Last or Surname.
         /// </summary>
         /// <value>Last or Surname.</value>
+        /*
+        <example>Doe</example>
+        */
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
         public string LastName { get; set; }
 
@@ -526,13 +287,19 @@ namespace freeclimb.Model
         /// Display or marketing name of the brand.
         /// </summary>
         /// <value>Display or marketing name of the brand.</value>
-        [DataMember(Name = "displayName", IsRequired = true, EmitDefaultValue = false)]
+        /*
+        <example>ABC Mobile</example>
+        */
+        [DataMember(Name = "displayName", IsRequired = true, EmitDefaultValue = true)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// (Required for Non-profit/private/public) Legal company name.
         /// </summary>
         /// <value>(Required for Non-profit/private/public) Legal company name.</value>
+        /*
+        <example>ABC Inc.</example>
+        */
         [DataMember(Name = "companyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
@@ -540,6 +307,9 @@ namespace freeclimb.Model
         /// (Required for Non-profit) Government assigned corporate tax ID. EIN is 9-digits in U.S.
         /// </summary>
         /// <value>(Required for Non-profit) Government assigned corporate tax ID. EIN is 9-digits in U.S.</value>
+        /*
+        <example>111111111</example>
+        */
         [DataMember(Name = "ein", EmitDefaultValue = false)]
         public string Ein { get; set; }
 
@@ -547,6 +317,9 @@ namespace freeclimb.Model
         /// ISO2 2 characters country code. Example: US - United States
         /// </summary>
         /// <value>ISO2 2 characters country code. Example: US - United States</value>
+        /*
+        <example>US</example>
+        */
         [DataMember(Name = "einIssuingCountry", EmitDefaultValue = false)]
         public string EinIssuingCountry { get; set; }
 
@@ -554,13 +327,19 @@ namespace freeclimb.Model
         /// Valid phone number in e.164 international format.
         /// </summary>
         /// <value>Valid phone number in e.164 international format.</value>
-        [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = false)]
+        /*
+        <example>+12024567890</example>
+        */
+        [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
 
         /// <summary>
         /// Street number and name.
         /// </summary>
         /// <value>Street number and name.</value>
+        /*
+        <example>123 6th Ave</example>
+        */
         [DataMember(Name = "street", EmitDefaultValue = false)]
         public string Street { get; set; }
 
@@ -568,6 +347,9 @@ namespace freeclimb.Model
         /// City name
         /// </summary>
         /// <value>City name</value>
+        /*
+        <example>New York</example>
+        */
         [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
@@ -575,6 +357,9 @@ namespace freeclimb.Model
         /// State. Must be 2 letters code for United States.
         /// </summary>
         /// <value>State. Must be 2 letters code for United States.</value>
+        /*
+        <example>NY</example>
+        */
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
@@ -582,6 +367,9 @@ namespace freeclimb.Model
         /// Postal codes. Use 5 digit zipcode for United States
         /// </summary>
         /// <value>Postal codes. Use 5 digit zipcode for United States</value>
+        /*
+        <example>10001</example>
+        */
         [DataMember(Name = "postalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
@@ -589,20 +377,26 @@ namespace freeclimb.Model
         /// ISO2 2 characters country code. Example: US - United States
         /// </summary>
         /// <value>ISO2 2 characters country code. Example: US - United States</value>
-        [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = false)]
+        /*
+        <example>US</example>
+        */
+        [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
         public string Country { get; set; }
 
         /// <summary>
         /// Valid email address of brand support contact.
         /// </summary>
         /// <value>Valid email address of brand support contact.</value>
-        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
         /// <summary>
         /// (Required for public company) stock symbol.
         /// </summary>
         /// <value>(Required for public company) stock symbol.</value>
+        /*
+        <example>ABC</example>
+        */
         [DataMember(Name = "stockSymbol", EmitDefaultValue = false)]
         public string StockSymbol { get; set; }
 
@@ -617,6 +411,9 @@ namespace freeclimb.Model
         /// Brand website URL.
         /// </summary>
         /// <value>Brand website URL.</value>
+        /*
+        <example>http://www.abcmobile.com</example>
+        */
         [DataMember(Name = "website", EmitDefaultValue = false)]
         public string Website { get; set; }
 
@@ -624,7 +421,7 @@ namespace freeclimb.Model
         /// Vertical or industry segment of the brand.
         /// </summary>
         /// <value>Vertical or industry segment of the brand.</value>
-        [DataMember(Name = "vertical", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "vertical", IsRequired = true, EmitDefaultValue = true)]
         public string Vertical { get; set; }
 
         /// <summary>
@@ -649,6 +446,7 @@ namespace freeclimb.Model
         {
             return false;
         }
+
         /// <summary>
         /// Caller supplied brand reference ID. If supplied, the value must be unique across all submitted brands. Can be used to prevent duplicate brand registrations.
         /// </summary>
@@ -726,341 +524,51 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SMSTenDLCBrand instance. 
+        /// Retrieve the KVP Dictionary for the SMSTenDLCBrand instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);          
-            props.Add("entityType", EntityType);          
-            props.Add("cspId", CspId);          
-            props.Add("brandId", BrandId);          
-            props.Add("firstName", FirstName);          
-            props.Add("lastName", LastName);          
-            props.Add("displayName", DisplayName);          
-            props.Add("companyName", CompanyName);          
-            props.Add("ein", Ein);          
-            props.Add("einIssuingCountry", EinIssuingCountry);          
-            props.Add("phone", Phone);          
-            props.Add("street", Street);          
-            props.Add("city", City);          
-            props.Add("state", State);          
-            props.Add("postalCode", PostalCode);          
-            props.Add("country", Country);          
-            props.Add("email", Email);          
-            props.Add("stockSymbol", StockSymbol);          
-            props.Add("stockExchange", StockExchange);          
-            props.Add("ipAddress", IpAddress);          
-            props.Add("website", Website);          
-            props.Add("brandRelationship", BrandRelationship);          
-            props.Add("vertical", Vertical);          
-            props.Add("altBusinessId", AltBusinessId);          
-            props.Add("altBusinessIdType", AltBusinessIdType);          
-            props.Add("universalEin", UniversalEin);          
-            props.Add("referenceId", ReferenceId);          
-            props.Add("optionalAttributes", OptionalAttributes);          
-            props.Add("mock", Mock);          
-            props.Add("identityStatus", IdentityStatus);          
-            props.Add("createDate", CreateDate);          
+            props.Add("accountId", AccountId);
+            props.Add("entityType", EntityType);
+            props.Add("cspId", CspId);
+            props.Add("brandId", BrandId);
+            props.Add("firstName", FirstName);
+            props.Add("lastName", LastName);
+            props.Add("displayName", DisplayName);
+            props.Add("companyName", CompanyName);
+            props.Add("ein", Ein);
+            props.Add("einIssuingCountry", EinIssuingCountry);
+            props.Add("phone", Phone);
+            props.Add("street", Street);
+            props.Add("city", City);
+            props.Add("state", State);
+            props.Add("postalCode", PostalCode);
+            props.Add("country", Country);
+            props.Add("email", Email);
+            props.Add("stockSymbol", StockSymbol);
+            props.Add("stockExchange", StockExchange);
+            props.Add("ipAddress", IpAddress);
+            props.Add("website", Website);
+            props.Add("brandRelationship", BrandRelationship);
+            props.Add("vertical", Vertical);
+            props.Add("altBusinessId", AltBusinessId);
+            props.Add("altBusinessIdType", AltBusinessIdType);
+            props.Add("universalEin", UniversalEin);
+            props.Add("referenceId", ReferenceId);
+            props.Add("optionalAttributes", OptionalAttributes);
+            props.Add("mock", Mock);
+            props.Add("identityStatus", IdentityStatus);
+            props.Add("createDate", CreateDate);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SMSTenDLCBrand);
-        }
-
-        /// <summary>
-        /// Returns true if SMSTenDLCBrand instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SMSTenDLCBrand to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SMSTenDLCBrand input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.EntityType == input.EntityType ||
-                    this.EntityType.Equals(input.EntityType)
-                ) && 
-                (
-                    this.CspId == input.CspId ||
-                    (this.CspId != null &&
-                    this.CspId.Equals(input.CspId))
-                ) && 
-                (
-                    this.BrandId == input.BrandId ||
-                    (this.BrandId != null &&
-                    this.BrandId.Equals(input.BrandId))
-                ) && 
-                (
-                    this.FirstName == input.FirstName ||
-                    (this.FirstName != null &&
-                    this.FirstName.Equals(input.FirstName))
-                ) && 
-                (
-                    this.LastName == input.LastName ||
-                    (this.LastName != null &&
-                    this.LastName.Equals(input.LastName))
-                ) && 
-                (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
-                ) && 
-                (
-                    this.CompanyName == input.CompanyName ||
-                    (this.CompanyName != null &&
-                    this.CompanyName.Equals(input.CompanyName))
-                ) && 
-                (
-                    this.Ein == input.Ein ||
-                    (this.Ein != null &&
-                    this.Ein.Equals(input.Ein))
-                ) && 
-                (
-                    this.EinIssuingCountry == input.EinIssuingCountry ||
-                    (this.EinIssuingCountry != null &&
-                    this.EinIssuingCountry.Equals(input.EinIssuingCountry))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Street == input.Street ||
-                    (this.Street != null &&
-                    this.Street.Equals(input.Street))
-                ) && 
-                (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.PostalCode == input.PostalCode ||
-                    (this.PostalCode != null &&
-                    this.PostalCode.Equals(input.PostalCode))
-                ) && 
-                (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.StockSymbol == input.StockSymbol ||
-                    (this.StockSymbol != null &&
-                    this.StockSymbol.Equals(input.StockSymbol))
-                ) && 
-                (
-                    this.StockExchange == input.StockExchange ||
-                    this.StockExchange.Equals(input.StockExchange)
-                ) && 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    (this.IpAddress != null &&
-                    this.IpAddress.Equals(input.IpAddress))
-                ) && 
-                (
-                    this.Website == input.Website ||
-                    (this.Website != null &&
-                    this.Website.Equals(input.Website))
-                ) && 
-                (
-                    this.BrandRelationship == input.BrandRelationship ||
-                    this.BrandRelationship.Equals(input.BrandRelationship)
-                ) && 
-                (
-                    this.Vertical == input.Vertical ||
-                    (this.Vertical != null &&
-                    this.Vertical.Equals(input.Vertical))
-                ) && 
-                (
-                    this.AltBusinessId == input.AltBusinessId ||
-                    (this.AltBusinessId != null &&
-                    this.AltBusinessId.Equals(input.AltBusinessId))
-                ) && 
-                (
-                    this.AltBusinessIdType == input.AltBusinessIdType ||
-                    this.AltBusinessIdType.Equals(input.AltBusinessIdType)
-                ) && 
-                (
-                    this.UniversalEin == input.UniversalEin ||
-                    (this.UniversalEin != null &&
-                    this.UniversalEin.Equals(input.UniversalEin))
-                ) && 
-                (
-                    this.ReferenceId == input.ReferenceId ||
-                    (this.ReferenceId != null &&
-                    this.ReferenceId.Equals(input.ReferenceId))
-                ) && 
-                (
-                    this.OptionalAttributes == input.OptionalAttributes ||
-                    this.OptionalAttributes != null &&
-                    input.OptionalAttributes != null &&
-                    this.OptionalAttributes.SequenceEqual(input.OptionalAttributes)
-                ) && 
-                (
-                    this.Mock == input.Mock ||
-                    this.Mock.Equals(input.Mock)
-                ) && 
-                (
-                    this.IdentityStatus == input.IdentityStatus ||
-                    this.IdentityStatus.Equals(input.IdentityStatus)
-                ) && 
-                (
-                    this.CreateDate == input.CreateDate ||
-                    (this.CreateDate != null &&
-                    this.CreateDate.Equals(input.CreateDate))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
-                if (this.CspId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CspId.GetHashCode();
-                }
-                if (this.BrandId != null)
-                {
-                    hashCode = (hashCode * 59) + this.BrandId.GetHashCode();
-                }
-                if (this.FirstName != null)
-                {
-                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
-                }
-                if (this.LastName != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
-                }
-                if (this.DisplayName != null)
-                {
-                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
-                }
-                if (this.CompanyName != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompanyName.GetHashCode();
-                }
-                if (this.Ein != null)
-                {
-                    hashCode = (hashCode * 59) + this.Ein.GetHashCode();
-                }
-                if (this.EinIssuingCountry != null)
-                {
-                    hashCode = (hashCode * 59) + this.EinIssuingCountry.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.Street != null)
-                {
-                    hashCode = (hashCode * 59) + this.Street.GetHashCode();
-                }
-                if (this.City != null)
-                {
-                    hashCode = (hashCode * 59) + this.City.GetHashCode();
-                }
-                if (this.State != null)
-                {
-                    hashCode = (hashCode * 59) + this.State.GetHashCode();
-                }
-                if (this.PostalCode != null)
-                {
-                    hashCode = (hashCode * 59) + this.PostalCode.GetHashCode();
-                }
-                if (this.Country != null)
-                {
-                    hashCode = (hashCode * 59) + this.Country.GetHashCode();
-                }
-                if (this.Email != null)
-                {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
-                }
-                if (this.StockSymbol != null)
-                {
-                    hashCode = (hashCode * 59) + this.StockSymbol.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.StockExchange.GetHashCode();
-                if (this.IpAddress != null)
-                {
-                    hashCode = (hashCode * 59) + this.IpAddress.GetHashCode();
-                }
-                if (this.Website != null)
-                {
-                    hashCode = (hashCode * 59) + this.Website.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.BrandRelationship.GetHashCode();
-                if (this.Vertical != null)
-                {
-                    hashCode = (hashCode * 59) + this.Vertical.GetHashCode();
-                }
-                if (this.AltBusinessId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AltBusinessId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.AltBusinessIdType.GetHashCode();
-                if (this.UniversalEin != null)
-                {
-                    hashCode = (hashCode * 59) + this.UniversalEin.GetHashCode();
-                }
-                if (this.ReferenceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ReferenceId.GetHashCode();
-                }
-                if (this.OptionalAttributes != null)
-                {
-                    hashCode = (hashCode * 59) + this.OptionalAttributes.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Mock.GetHashCode();
-                hashCode = (hashCode * 59) + this.IdentityStatus.GetHashCode();
-                if (this.CreateDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreateDate.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -1068,124 +576,182 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             // FirstName (string) maxLength
             if (this.FirstName != null && this.FirstName.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FirstName, length must be less than 100.", new [] { "FirstName" });
+                yield return new ValidationResult(
+                    "Invalid value for FirstName, length must be less than 100.",
+                    new[] { "FirstName" }
+                );
             }
 
             // LastName (string) maxLength
             if (this.LastName != null && this.LastName.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LastName, length must be less than 100.", new [] { "LastName" });
+                yield return new ValidationResult(
+                    "Invalid value for LastName, length must be less than 100.",
+                    new[] { "LastName" }
+                );
             }
 
             // DisplayName (string) maxLength
             if (this.DisplayName != null && this.DisplayName.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayName, length must be less than 255.", new [] { "DisplayName" });
+                yield return new ValidationResult(
+                    "Invalid value for DisplayName, length must be less than 255.",
+                    new[] { "DisplayName" }
+                );
             }
 
             // CompanyName (string) maxLength
             if (this.CompanyName != null && this.CompanyName.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CompanyName, length must be less than 255.", new [] { "CompanyName" });
+                yield return new ValidationResult(
+                    "Invalid value for CompanyName, length must be less than 255.",
+                    new[] { "CompanyName" }
+                );
             }
 
             // Ein (string) maxLength
             if (this.Ein != null && this.Ein.Length > 21)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Ein, length must be less than 21.", new [] { "Ein" });
+                yield return new ValidationResult(
+                    "Invalid value for Ein, length must be less than 21.",
+                    new[] { "Ein" }
+                );
             }
 
             // EinIssuingCountry (string) maxLength
             if (this.EinIssuingCountry != null && this.EinIssuingCountry.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EinIssuingCountry, length must be less than 2.", new [] { "EinIssuingCountry" });
+                yield return new ValidationResult(
+                    "Invalid value for EinIssuingCountry, length must be less than 2.",
+                    new[] { "EinIssuingCountry" }
+                );
             }
 
             // Phone (string) maxLength
             if (this.Phone != null && this.Phone.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Phone, length must be less than 20.", new [] { "Phone" });
+                yield return new ValidationResult(
+                    "Invalid value for Phone, length must be less than 20.",
+                    new[] { "Phone" }
+                );
             }
 
             // Street (string) maxLength
             if (this.Street != null && this.Street.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Street, length must be less than 100.", new [] { "Street" });
+                yield return new ValidationResult(
+                    "Invalid value for Street, length must be less than 100.",
+                    new[] { "Street" }
+                );
             }
 
             // City (string) maxLength
             if (this.City != null && this.City.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for City, length must be less than 100.", new [] { "City" });
+                yield return new ValidationResult(
+                    "Invalid value for City, length must be less than 100.",
+                    new[] { "City" }
+                );
             }
 
             // State (string) maxLength
             if (this.State != null && this.State.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for State, length must be less than 20.", new [] { "State" });
+                yield return new ValidationResult(
+                    "Invalid value for State, length must be less than 20.",
+                    new[] { "State" }
+                );
             }
 
             // PostalCode (string) maxLength
             if (this.PostalCode != null && this.PostalCode.Length > 10)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PostalCode, length must be less than 10.", new [] { "PostalCode" });
+                yield return new ValidationResult(
+                    "Invalid value for PostalCode, length must be less than 10.",
+                    new[] { "PostalCode" }
+                );
             }
 
             // Country (string) maxLength
             if (this.Country != null && this.Country.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Country, length must be less than 2.", new [] { "Country" });
+                yield return new ValidationResult(
+                    "Invalid value for Country, length must be less than 2.",
+                    new[] { "Country" }
+                );
             }
 
             // Email (string) maxLength
             if (this.Email != null && this.Email.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be less than 100.", new [] { "Email" });
+                yield return new ValidationResult(
+                    "Invalid value for Email, length must be less than 100.",
+                    new[] { "Email" }
+                );
             }
 
             // StockSymbol (string) maxLength
             if (this.StockSymbol != null && this.StockSymbol.Length > 10)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StockSymbol, length must be less than 10.", new [] { "StockSymbol" });
+                yield return new ValidationResult(
+                    "Invalid value for StockSymbol, length must be less than 10.",
+                    new[] { "StockSymbol" }
+                );
             }
 
             // IpAddress (string) maxLength
             if (this.IpAddress != null && this.IpAddress.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IpAddress, length must be less than 50.", new [] { "IpAddress" });
+                yield return new ValidationResult(
+                    "Invalid value for IpAddress, length must be less than 50.",
+                    new[] { "IpAddress" }
+                );
             }
 
             // Website (string) maxLength
             if (this.Website != null && this.Website.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Website, length must be less than 100.", new [] { "Website" });
+                yield return new ValidationResult(
+                    "Invalid value for Website, length must be less than 100.",
+                    new[] { "Website" }
+                );
             }
 
             // Vertical (string) maxLength
             if (this.Vertical != null && this.Vertical.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Vertical, length must be less than 50.", new [] { "Vertical" });
+                yield return new ValidationResult(
+                    "Invalid value for Vertical, length must be less than 50.",
+                    new[] { "Vertical" }
+                );
             }
 
             // AltBusinessId (string) maxLength
             if (this.AltBusinessId != null && this.AltBusinessId.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AltBusinessId, length must be less than 50.", new [] { "AltBusinessId" });
+                yield return new ValidationResult(
+                    "Invalid value for AltBusinessId, length must be less than 50.",
+                    new[] { "AltBusinessId" }
+                );
             }
 
             // ReferenceId (string) maxLength
             if (this.ReferenceId != null && this.ReferenceId.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceId, length must be less than 50.", new [] { "ReferenceId" });
+                yield return new ValidationResult(
+                    "Invalid value for ReferenceId, length must be less than 50.",
+                    new[] { "ReferenceId" }
+                );
             }
 
             yield break;
         }
     }
-
 }

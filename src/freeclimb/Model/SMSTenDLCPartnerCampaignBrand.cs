@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,13 +31,14 @@ namespace freeclimb.Model
     /// SMSTenDLCPartnerCampaignBrand
     /// </summary>
     [DataContract(Name = "SMSTenDLCPartnerCampaignBrand")]
-    public partial class SMSTenDLCPartnerCampaignBrand : IEquatable<SMSTenDLCPartnerCampaignBrand>, IValidatableObject
+    public partial class SMSTenDLCPartnerCampaignBrand : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTenDLCPartnerCampaignBrand" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected SMSTenDLCPartnerCampaignBrand() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SMSTenDLCPartnerCampaignBrand" /> class.
         /// </summary>
@@ -51,25 +52,51 @@ namespace freeclimb.Model
         /// <param name="website">Brand website URL..</param>
         /// <param name="optionalAttributes">Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names..</param>
         /// <param name="evpVettingScore">External vetting score..</param>
-        public SMSTenDLCPartnerCampaignBrand(string accountId = default(string), string firstName = default(string), string lastName = default(string), string displayName = default(string), string companyName = default(string), string phone = default(string), string email = default(string), string website = default(string), Dictionary<string, Object> optionalAttributes = default(Dictionary<string, Object>), int evpVettingScore = default(int))
+        public SMSTenDLCPartnerCampaignBrand(
+            string accountId = default(string),
+            string firstName = default(string),
+            string lastName = default(string),
+            string displayName = default(string),
+            string companyName = default(string),
+            string phone = default(string),
+            string email = default(string),
+            string website = default(string),
+            Dictionary<string, Object> optionalAttributes = default(Dictionary<string, Object>),
+            int evpVettingScore = default(int)
+        )
         {
             // to ensure "phone" is required (not null)
-            if (phone == null) {
-                throw new ArgumentNullException("phone is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null");
+            if (phone == null)
+            {
+                throw new ArgumentNullException(
+                    "phone is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null"
+                );
             }
             this.Phone = phone;
+
             // to ensure "email" is required (not null)
-            if (email == null) {
-                throw new ArgumentNullException("email is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null");
+            if (email == null)
+            {
+                throw new ArgumentNullException(
+                    "email is a required property for SMSTenDLCPartnerCampaignBrand and cannot be null"
+                );
             }
             this.Email = email;
+
             this.AccountId = accountId;
+
             this.FirstName = firstName;
+
             this.LastName = lastName;
+
             this.DisplayName = displayName;
+
             this.CompanyName = companyName;
+
             this.Website = website;
+
             this.OptionalAttributes = optionalAttributes;
+
             this.EvpVettingScore = evpVettingScore;
         }
 
@@ -95,10 +122,14 @@ namespace freeclimb.Model
         {
             return false;
         }
+
         /// <summary>
-        /// First or given name. 
+        /// First or given name.
         /// </summary>
         /// <value>First or given name. </value>
+        /*
+        <example>John</example>
+        */
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
         public string FirstName { get; set; }
 
@@ -106,6 +137,9 @@ namespace freeclimb.Model
         /// Last or Surname.
         /// </summary>
         /// <value>Last or Surname.</value>
+        /*
+        <example>Doe</example>
+        */
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
         public string LastName { get; set; }
 
@@ -113,6 +147,9 @@ namespace freeclimb.Model
         /// Display or marketing name of the brand.
         /// </summary>
         /// <value>Display or marketing name of the brand.</value>
+        /*
+        <example>ABC Mobile</example>
+        */
         [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
@@ -120,6 +157,9 @@ namespace freeclimb.Model
         /// (Required for Non-profit/private/public) Legal company name.
         /// </summary>
         /// <value>(Required for Non-profit/private/public) Legal company name.</value>
+        /*
+        <example>ABC Inc.</example>
+        */
         [DataMember(Name = "companyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
@@ -127,20 +167,26 @@ namespace freeclimb.Model
         /// Valid phone number in e.164 international format.
         /// </summary>
         /// <value>Valid phone number in e.164 international format.</value>
-        [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = false)]
+        /*
+        <example>+12024567890</example>
+        */
+        [DataMember(Name = "phone", IsRequired = true, EmitDefaultValue = true)]
         public string Phone { get; set; }
 
         /// <summary>
         /// Valid email address of brand support contact.
         /// </summary>
         /// <value>Valid email address of brand support contact.</value>
-        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
         /// <summary>
         /// Brand website URL.
         /// </summary>
         /// <value>Brand website URL.</value>
+        /*
+        <example>http://www.abcmobile.com</example>
+        */
         [DataMember(Name = "website", EmitDefaultValue = false)]
         public string Website { get; set; }
 
@@ -187,161 +233,31 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SMSTenDLCPartnerCampaignBrand instance. 
+        /// Retrieve the KVP Dictionary for the SMSTenDLCPartnerCampaignBrand instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);          
-            props.Add("brandId", BrandId);          
-            props.Add("firstName", FirstName);          
-            props.Add("lastName", LastName);          
-            props.Add("displayName", DisplayName);          
-            props.Add("companyName", CompanyName);          
-            props.Add("phone", Phone);          
-            props.Add("email", Email);          
-            props.Add("website", Website);          
-            props.Add("optionalAttributes", OptionalAttributes);          
-            props.Add("evpVettingScore", EvpVettingScore);          
+            props.Add("accountId", AccountId);
+            props.Add("brandId", BrandId);
+            props.Add("firstName", FirstName);
+            props.Add("lastName", LastName);
+            props.Add("displayName", DisplayName);
+            props.Add("companyName", CompanyName);
+            props.Add("phone", Phone);
+            props.Add("email", Email);
+            props.Add("website", Website);
+            props.Add("optionalAttributes", OptionalAttributes);
+            props.Add("evpVettingScore", EvpVettingScore);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SMSTenDLCPartnerCampaignBrand);
-        }
-
-        /// <summary>
-        /// Returns true if SMSTenDLCPartnerCampaignBrand instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SMSTenDLCPartnerCampaignBrand to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SMSTenDLCPartnerCampaignBrand input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.BrandId == input.BrandId ||
-                    (this.BrandId != null &&
-                    this.BrandId.Equals(input.BrandId))
-                ) && 
-                (
-                    this.FirstName == input.FirstName ||
-                    (this.FirstName != null &&
-                    this.FirstName.Equals(input.FirstName))
-                ) && 
-                (
-                    this.LastName == input.LastName ||
-                    (this.LastName != null &&
-                    this.LastName.Equals(input.LastName))
-                ) && 
-                (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
-                ) && 
-                (
-                    this.CompanyName == input.CompanyName ||
-                    (this.CompanyName != null &&
-                    this.CompanyName.Equals(input.CompanyName))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Website == input.Website ||
-                    (this.Website != null &&
-                    this.Website.Equals(input.Website))
-                ) && 
-                (
-                    this.OptionalAttributes == input.OptionalAttributes ||
-                    this.OptionalAttributes != null &&
-                    input.OptionalAttributes != null &&
-                    this.OptionalAttributes.SequenceEqual(input.OptionalAttributes)
-                ) && 
-                (
-                    this.EvpVettingScore == input.EvpVettingScore ||
-                    this.EvpVettingScore.Equals(input.EvpVettingScore)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.BrandId != null)
-                {
-                    hashCode = (hashCode * 59) + this.BrandId.GetHashCode();
-                }
-                if (this.FirstName != null)
-                {
-                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
-                }
-                if (this.LastName != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
-                }
-                if (this.DisplayName != null)
-                {
-                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
-                }
-                if (this.CompanyName != null)
-                {
-                    hashCode = (hashCode * 59) + this.CompanyName.GetHashCode();
-                }
-                if (this.Phone != null)
-                {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
-                }
-                if (this.Email != null)
-                {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
-                }
-                if (this.Website != null)
-                {
-                    hashCode = (hashCode * 59) + this.Website.GetHashCode();
-                }
-                if (this.OptionalAttributes != null)
-                {
-                    hashCode = (hashCode * 59) + this.OptionalAttributes.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.EvpVettingScore.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -349,52 +265,74 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             // FirstName (string) maxLength
             if (this.FirstName != null && this.FirstName.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FirstName, length must be less than 100.", new [] { "FirstName" });
+                yield return new ValidationResult(
+                    "Invalid value for FirstName, length must be less than 100.",
+                    new[] { "FirstName" }
+                );
             }
 
             // LastName (string) maxLength
             if (this.LastName != null && this.LastName.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LastName, length must be less than 100.", new [] { "LastName" });
+                yield return new ValidationResult(
+                    "Invalid value for LastName, length must be less than 100.",
+                    new[] { "LastName" }
+                );
             }
 
             // DisplayName (string) maxLength
             if (this.DisplayName != null && this.DisplayName.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayName, length must be less than 255.", new [] { "DisplayName" });
+                yield return new ValidationResult(
+                    "Invalid value for DisplayName, length must be less than 255.",
+                    new[] { "DisplayName" }
+                );
             }
 
             // CompanyName (string) maxLength
             if (this.CompanyName != null && this.CompanyName.Length > 255)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CompanyName, length must be less than 255.", new [] { "CompanyName" });
+                yield return new ValidationResult(
+                    "Invalid value for CompanyName, length must be less than 255.",
+                    new[] { "CompanyName" }
+                );
             }
 
             // Phone (string) maxLength
             if (this.Phone != null && this.Phone.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Phone, length must be less than 20.", new [] { "Phone" });
+                yield return new ValidationResult(
+                    "Invalid value for Phone, length must be less than 20.",
+                    new[] { "Phone" }
+                );
             }
 
             // Email (string) maxLength
             if (this.Email != null && this.Email.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be less than 100.", new [] { "Email" });
+                yield return new ValidationResult(
+                    "Invalid value for Email, length must be less than 100.",
+                    new[] { "Email" }
+                );
             }
 
             // Website (string) maxLength
             if (this.Website != null && this.Website.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Website, length must be less than 100.", new [] { "Website" });
+                yield return new ValidationResult(
+                    "Invalid value for Website, length must be less than 100.",
+                    new[] { "Website" }
+                );
             }
 
             yield break;
         }
     }
-
 }

@@ -12,20 +12,24 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>freeclimb</RootNamespace>
-    <Version>4.10.0</Version>
+    <Version>5.0.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\freeclimb.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/freeclimbapi/csharp-sdk.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/freeclimbapi/csharp-sdk.git</RepositoryUrl>    
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <Nullable>annotations</Nullable>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="1.8.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="RestSharp" Version="106.13.0" />
-    <PackageReference Include="Polly" Version="7.2.2" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="Moq" Version="4.17.2" />	
+    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RestSharp" Version="112.0.0" />
+    <PackageReference Include="Polly" Version="8.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
 </Project>

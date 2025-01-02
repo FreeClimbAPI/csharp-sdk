@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,7 +31,7 @@ namespace freeclimb.Model
     /// ApplicationResult
     /// </summary>
     [DataContract(Name = "ApplicationResult")]
-    public partial class ApplicationResult : IEquatable<ApplicationResult>, IValidatableObject
+    public partial class ApplicationResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationResult" /> class.
@@ -49,20 +49,46 @@ namespace freeclimb.Model
         /// <param name="statusCallbackUrl">A URL to which FreeClimb will make a POST request when the Call ends to notify this app..</param>
         /// <param name="smsUrl">The URL FreeClimb will request when a phone number assigned to this Application receives an incoming SMS message. Used for inbound SMS only..</param>
         /// <param name="smsFallbackUrl">The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only..</param>
-        public ApplicationResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string applicationId = default(string), string alias = default(string), string voiceUrl = default(string), string voiceFallbackUrl = default(string), string callConnectUrl = default(string), string statusCallbackUrl = default(string), string smsUrl = default(string), string smsFallbackUrl = default(string))
+        public ApplicationResult(
+            string uri = default(string),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int),
+            string accountId = default(string),
+            string applicationId = default(string),
+            string alias = default(string),
+            string voiceUrl = default(string),
+            string voiceFallbackUrl = default(string),
+            string callConnectUrl = default(string),
+            string statusCallbackUrl = default(string),
+            string smsUrl = default(string),
+            string smsFallbackUrl = default(string)
+        )
         {
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.AccountId = accountId;
+
             this.ApplicationId = applicationId;
+
             this.Alias = alias;
+
             this.VoiceUrl = voiceUrl;
+
             this.VoiceFallbackUrl = voiceFallbackUrl;
+
             this.CallConnectUrl = callConnectUrl;
+
             this.StatusCallbackUrl = statusCallbackUrl;
+
             this.SmsUrl = smsUrl;
+
             this.SmsFallbackUrl = smsFallbackUrl;
         }
 
@@ -188,180 +214,33 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the ApplicationResult instance. 
+        /// Retrieve the KVP Dictionary for the ApplicationResult instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("accountId", AccountId);          
-            props.Add("applicationId", ApplicationId);          
-            props.Add("alias", Alias);          
-            props.Add("voiceUrl", VoiceUrl);          
-            props.Add("voiceFallbackUrl", VoiceFallbackUrl);          
-            props.Add("callConnectUrl", CallConnectUrl);          
-            props.Add("statusCallbackUrl", StatusCallbackUrl);          
-            props.Add("smsUrl", SmsUrl);          
-            props.Add("smsFallbackUrl", SmsFallbackUrl);          
+            props.Add("uri", Uri);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
+            props.Add("accountId", AccountId);
+            props.Add("applicationId", ApplicationId);
+            props.Add("alias", Alias);
+            props.Add("voiceUrl", VoiceUrl);
+            props.Add("voiceFallbackUrl", VoiceFallbackUrl);
+            props.Add("callConnectUrl", CallConnectUrl);
+            props.Add("statusCallbackUrl", StatusCallbackUrl);
+            props.Add("smsUrl", SmsUrl);
+            props.Add("smsFallbackUrl", SmsFallbackUrl);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ApplicationResult);
-        }
-
-        /// <summary>
-        /// Returns true if ApplicationResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ApplicationResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ApplicationResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.ApplicationId == input.ApplicationId ||
-                    (this.ApplicationId != null &&
-                    this.ApplicationId.Equals(input.ApplicationId))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.VoiceUrl == input.VoiceUrl ||
-                    (this.VoiceUrl != null &&
-                    this.VoiceUrl.Equals(input.VoiceUrl))
-                ) && 
-                (
-                    this.VoiceFallbackUrl == input.VoiceFallbackUrl ||
-                    (this.VoiceFallbackUrl != null &&
-                    this.VoiceFallbackUrl.Equals(input.VoiceFallbackUrl))
-                ) && 
-                (
-                    this.CallConnectUrl == input.CallConnectUrl ||
-                    (this.CallConnectUrl != null &&
-                    this.CallConnectUrl.Equals(input.CallConnectUrl))
-                ) && 
-                (
-                    this.StatusCallbackUrl == input.StatusCallbackUrl ||
-                    (this.StatusCallbackUrl != null &&
-                    this.StatusCallbackUrl.Equals(input.StatusCallbackUrl))
-                ) && 
-                (
-                    this.SmsUrl == input.SmsUrl ||
-                    (this.SmsUrl != null &&
-                    this.SmsUrl.Equals(input.SmsUrl))
-                ) && 
-                (
-                    this.SmsFallbackUrl == input.SmsFallbackUrl ||
-                    (this.SmsFallbackUrl != null &&
-                    this.SmsFallbackUrl.Equals(input.SmsFallbackUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.ApplicationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ApplicationId.GetHashCode();
-                }
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                if (this.VoiceUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceUrl.GetHashCode();
-                }
-                if (this.VoiceFallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceFallbackUrl.GetHashCode();
-                }
-                if (this.CallConnectUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallConnectUrl.GetHashCode();
-                }
-                if (this.StatusCallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCallbackUrl.GetHashCode();
-                }
-                if (this.SmsUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsUrl.GetHashCode();
-                }
-                if (this.SmsFallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsFallbackUrl.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -369,10 +248,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

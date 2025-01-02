@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,7 +31,7 @@ namespace freeclimb.Model
     /// QueueResult
     /// </summary>
     [DataContract(Name = "QueueResult")]
-    public partial class QueueResult : IEquatable<QueueResult>, IValidatableObject
+    public partial class QueueResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueResult" /> class.
@@ -47,18 +47,40 @@ namespace freeclimb.Model
         /// <param name="currentSize">Count of Calls currently in the Queue..</param>
         /// <param name="averageQueueRemovalTime">The average amount of time (in seconds) for a call to be removed from the queue..</param>
         /// <param name="subresourceUris">List of subresources for this Queue (which includes Queue members)..</param>
-        public QueueResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string accountId = default(string), string queueId = default(string), string alias = default(string), int? maxSize = default(int?), int? currentSize = default(int?), int? averageQueueRemovalTime = default(int?), Object subresourceUris = default(Object))
+        public QueueResult(
+            string uri = default(string),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int),
+            string accountId = default(string),
+            string queueId = default(string),
+            string alias = default(string),
+            int? maxSize = default(int?),
+            int? currentSize = default(int?),
+            int? averageQueueRemovalTime = default(int?),
+            Object subresourceUris = default(Object)
+        )
         {
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.AccountId = accountId;
+
             this.QueueId = queueId;
+
             this.Alias = alias;
+
             this.MaxSize = maxSize;
+
             this.CurrentSize = currentSize;
+
             this.AverageQueueRemovalTime = averageQueueRemovalTime;
+
             this.SubresourceUris = subresourceUris;
         }
 
@@ -168,160 +190,31 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the QueueResult instance. 
+        /// Retrieve the KVP Dictionary for the QueueResult instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("accountId", AccountId);          
-            props.Add("queueId", QueueId);          
-            props.Add("alias", Alias);          
-            props.Add("maxSize", MaxSize);          
-            props.Add("currentSize", CurrentSize);          
-            props.Add("averageQueueRemovalTime", AverageQueueRemovalTime);          
-            props.Add("subresourceUris", SubresourceUris);          
+            props.Add("uri", Uri);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
+            props.Add("accountId", AccountId);
+            props.Add("queueId", QueueId);
+            props.Add("alias", Alias);
+            props.Add("maxSize", MaxSize);
+            props.Add("currentSize", CurrentSize);
+            props.Add("averageQueueRemovalTime", AverageQueueRemovalTime);
+            props.Add("subresourceUris", SubresourceUris);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as QueueResult);
-        }
-
-        /// <summary>
-        /// Returns true if QueueResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of QueueResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(QueueResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.QueueId == input.QueueId ||
-                    (this.QueueId != null &&
-                    this.QueueId.Equals(input.QueueId))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.MaxSize == input.MaxSize ||
-                    (this.MaxSize != null &&
-                    this.MaxSize.Equals(input.MaxSize))
-                ) && 
-                (
-                    this.CurrentSize == input.CurrentSize ||
-                    (this.CurrentSize != null &&
-                    this.CurrentSize.Equals(input.CurrentSize))
-                ) && 
-                (
-                    this.AverageQueueRemovalTime == input.AverageQueueRemovalTime ||
-                    (this.AverageQueueRemovalTime != null &&
-                    this.AverageQueueRemovalTime.Equals(input.AverageQueueRemovalTime))
-                ) && 
-                (
-                    this.SubresourceUris == input.SubresourceUris ||
-                    (this.SubresourceUris != null &&
-                    this.SubresourceUris.Equals(input.SubresourceUris))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.QueueId != null)
-                {
-                    hashCode = (hashCode * 59) + this.QueueId.GetHashCode();
-                }
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                if (this.MaxSize != null)
-                {
-                    hashCode = (hashCode * 59) + this.MaxSize.GetHashCode();
-                }
-                if (this.CurrentSize != null)
-                {
-                    hashCode = (hashCode * 59) + this.CurrentSize.GetHashCode();
-                }
-                if (this.AverageQueueRemovalTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.AverageQueueRemovalTime.GetHashCode();
-                }
-                if (this.SubresourceUris != null)
-                {
-                    hashCode = (hashCode * 59) + this.SubresourceUris.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -329,10 +222,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -50,8 +50,52 @@ namespace freeclimb.Enums
         /// Enum ERROR for value: error
         /// </summary>
         [EnumMember(Value = "error")]
-        ERROR = 3
-
+        ERROR = 3,
     }
 
+    /// <summary>
+    /// Converts <see cref="LogLevel"/> to and from the JSON value
+    /// </summary>
+    public static class LogLevelValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="LogLevel"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static LogLevel FromString(string value)
+        {
+            if (value.Equals("info"))
+                return LogLevel.INFO;
+
+            if (value.Equals("warning"))
+                return LogLevel.WARNING;
+
+            if (value.Equals("error"))
+                return LogLevel.ERROR;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type LogLevel: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="LogLevel"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static LogLevel? FromStringOrDefault(string value)
+        {
+            if (value.Equals("info"))
+                return LogLevel.INFO;
+
+            if (value.Equals("warning"))
+                return LogLevel.WARNING;
+
+            if (value.Equals("error"))
+                return LogLevel.ERROR;
+
+            return null;
+        }
+    }
 }

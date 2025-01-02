@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -44,8 +44,46 @@ namespace freeclimb.Enums
         /// Enum MACHINE for value: machine
         /// </summary>
         [EnumMember(Value = "machine")]
-        MACHINE = 2
-
+        MACHINE = 2,
     }
 
+    /// <summary>
+    /// Converts <see cref="AnsweredBy"/> to and from the JSON value
+    /// </summary>
+    public static class AnsweredByValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="AnsweredBy"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AnsweredBy FromString(string value)
+        {
+            if (value.Equals("human"))
+                return AnsweredBy.HUMAN;
+
+            if (value.Equals("machine"))
+                return AnsweredBy.MACHINE;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type AnsweredBy: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="AnsweredBy"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AnsweredBy? FromStringOrDefault(string value)
+        {
+            if (value.Equals("human"))
+                return AnsweredBy.HUMAN;
+
+            if (value.Equals("machine"))
+                return AnsweredBy.MACHINE;
+
+            return null;
+        }
+    }
 }

@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,9 +31,8 @@ namespace freeclimb.Model
     /// CallResult
     /// </summary>
     [DataContract(Name = "CallResult")]
-    public partial class CallResult : IEquatable<CallResult>, IValidatableObject
+    public partial class CallResult : IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets CallStatus
         /// </summary>
@@ -51,6 +50,7 @@ namespace freeclimb.Model
         /// </summary>
         [DataMember(Name = "answeredBy", EmitDefaultValue = true)]
         public AnsweredBy? AnsweredBy { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CallResult" /> class.
         /// </summary>
@@ -74,27 +74,67 @@ namespace freeclimb.Model
         /// <param name="answeredBy">answeredBy.</param>
         /// <param name="subresourceUris">The list of subresources for this Call. These include things like logs and recordings associated with the Call..</param>
         /// <param name="applicationId">ApplicationId associated with the Call..</param>
-        public CallResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), string callId = default(string), string parentCallId = default(string), string accountId = default(string), string from = default(string), string to = default(string), string phoneNumberId = default(string), CallStatus? callStatus = default(CallStatus?), string startTime = default(string), string connectTime = default(string), string endTime = default(string), int? duration = default(int?), int? connectDuration = default(int?), CallDirection? direction = default(CallDirection?), AnsweredBy? answeredBy = default(AnsweredBy?), Object subresourceUris = default(Object), string applicationId = default(string))
+        public CallResult(
+            string uri = default(string),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int),
+            string callId = default(string),
+            string parentCallId = default(string),
+            string accountId = default(string),
+            string from = default(string),
+            string to = default(string),
+            string phoneNumberId = default(string),
+            CallStatus? callStatus = default(CallStatus?),
+            string startTime = default(string),
+            string connectTime = default(string),
+            string endTime = default(string),
+            int? duration = default(int?),
+            int? connectDuration = default(int?),
+            CallDirection? direction = default(CallDirection?),
+            AnsweredBy? answeredBy = default(AnsweredBy?),
+            Object subresourceUris = default(Object),
+            string applicationId = default(string)
+        )
         {
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.CallId = callId;
+
             this.ParentCallId = parentCallId;
+
             this.AccountId = accountId;
+
             this.From = from;
+
             this.To = to;
+
             this.PhoneNumberId = phoneNumberId;
+
             this.CallStatus = callStatus;
+
             this.StartTime = startTime;
+
             this.ConnectTime = connectTime;
+
             this.EndTime = endTime;
+
             this.Duration = duration;
+
             this.ConnectDuration = connectDuration;
+
             this.Direction = direction;
+
             this.AnsweredBy = answeredBy;
+
             this.SubresourceUris = subresourceUris;
+
             this.ApplicationId = applicationId;
         }
 
@@ -255,238 +295,40 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the CallResult instance. 
+        /// Retrieve the KVP Dictionary for the CallResult instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("callId", CallId);          
-            props.Add("parentCallId", ParentCallId);          
-            props.Add("accountId", AccountId);          
-            props.Add("from", From);          
-            props.Add("to", To);          
-            props.Add("phoneNumberId", PhoneNumberId);          
-            props.Add("callStatus", CallStatus);          
-            props.Add("startTime", StartTime);          
-            props.Add("connectTime", ConnectTime);          
-            props.Add("endTime", EndTime);          
-            props.Add("duration", Duration);          
-            props.Add("connectDuration", ConnectDuration);          
-            props.Add("direction", Direction);          
-            props.Add("answeredBy", AnsweredBy);          
-            props.Add("subresourceUris", SubresourceUris);          
-            props.Add("applicationId", ApplicationId);          
+            props.Add("uri", Uri);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
+            props.Add("callId", CallId);
+            props.Add("parentCallId", ParentCallId);
+            props.Add("accountId", AccountId);
+            props.Add("from", From);
+            props.Add("to", To);
+            props.Add("phoneNumberId", PhoneNumberId);
+            props.Add("callStatus", CallStatus);
+            props.Add("startTime", StartTime);
+            props.Add("connectTime", ConnectTime);
+            props.Add("endTime", EndTime);
+            props.Add("duration", Duration);
+            props.Add("connectDuration", ConnectDuration);
+            props.Add("direction", Direction);
+            props.Add("answeredBy", AnsweredBy);
+            props.Add("subresourceUris", SubresourceUris);
+            props.Add("applicationId", ApplicationId);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CallResult);
-        }
-
-        /// <summary>
-        /// Returns true if CallResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CallResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CallResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                ) && 
-                (
-                    this.ParentCallId == input.ParentCallId ||
-                    (this.ParentCallId != null &&
-                    this.ParentCallId.Equals(input.ParentCallId))
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
-                ) && 
-                (
-                    this.To == input.To ||
-                    (this.To != null &&
-                    this.To.Equals(input.To))
-                ) && 
-                (
-                    this.PhoneNumberId == input.PhoneNumberId ||
-                    (this.PhoneNumberId != null &&
-                    this.PhoneNumberId.Equals(input.PhoneNumberId))
-                ) && 
-                (
-                    this.CallStatus == input.CallStatus ||
-                    this.CallStatus.Equals(input.CallStatus)
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.ConnectTime == input.ConnectTime ||
-                    (this.ConnectTime != null &&
-                    this.ConnectTime.Equals(input.ConnectTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.ConnectDuration == input.ConnectDuration ||
-                    (this.ConnectDuration != null &&
-                    this.ConnectDuration.Equals(input.ConnectDuration))
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    this.Direction.Equals(input.Direction)
-                ) && 
-                (
-                    this.AnsweredBy == input.AnsweredBy ||
-                    this.AnsweredBy.Equals(input.AnsweredBy)
-                ) && 
-                (
-                    this.SubresourceUris == input.SubresourceUris ||
-                    (this.SubresourceUris != null &&
-                    this.SubresourceUris.Equals(input.SubresourceUris))
-                ) && 
-                (
-                    this.ApplicationId == input.ApplicationId ||
-                    (this.ApplicationId != null &&
-                    this.ApplicationId.Equals(input.ApplicationId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
-                }
-                if (this.ParentCallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentCallId.GetHashCode();
-                }
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.From != null)
-                {
-                    hashCode = (hashCode * 59) + this.From.GetHashCode();
-                }
-                if (this.To != null)
-                {
-                    hashCode = (hashCode * 59) + this.To.GetHashCode();
-                }
-                if (this.PhoneNumberId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PhoneNumberId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CallStatus.GetHashCode();
-                if (this.StartTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartTime.GetHashCode();
-                }
-                if (this.ConnectTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConnectTime.GetHashCode();
-                }
-                if (this.EndTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.EndTime.GetHashCode();
-                }
-                if (this.Duration != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duration.GetHashCode();
-                }
-                if (this.ConnectDuration != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConnectDuration.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Direction.GetHashCode();
-                hashCode = (hashCode * 59) + this.AnsweredBy.GetHashCode();
-                if (this.SubresourceUris != null)
-                {
-                    hashCode = (hashCode * 59) + this.SubresourceUris.GetHashCode();
-                }
-                if (this.ApplicationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ApplicationId.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -494,10 +336,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

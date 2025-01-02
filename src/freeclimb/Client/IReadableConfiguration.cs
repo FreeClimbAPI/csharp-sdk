@@ -12,6 +12,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 
 namespace freeclimb.Client
@@ -101,6 +102,20 @@ namespace freeclimb.Client
         string Password { get; }
 
         /// <summary>
+        /// Determine whether or not the "default credentials" (e.g. the user account under which the current process is running) will be sent along to the server. The default is false.
+        /// </summary>
+        bool UseDefaultCredentials { get; }
+
+        /// <summary>
+        /// Get the servers associated with the operation.
+        /// </summary>
+        /// <value>Operation servers.</value>
+        IReadOnlyDictionary<
+            string,
+            List<IReadOnlyDictionary<string, object>>
+        > OperationServers { get; }
+
+        /// <summary>
         /// Gets the API key with prefix.
         /// </summary>
         /// <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
@@ -108,9 +123,23 @@ namespace freeclimb.Client
         string GetApiKeyWithPrefix(string apiKeyIdentifier);
 
         /// <summary>
+        /// Gets the Operation server url at the provided index.
+        /// </summary>
+        /// <param name="operation">Operation server name.</param>
+        /// <param name="index">Index of the operation server settings.</param>
+        /// <returns></returns>
+        string GetOperationServerUrl(string operation, int index);
+
+        /// <summary>
         /// Gets certificate collection to be sent with requests.
         /// </summary>
         /// <value>X509 Certificate collection.</value>
         X509CertificateCollection ClientCertificates { get; }
+
+        /// <summary>
+        /// Callback function for handling the validation of remote certificates. Useful for certificate pinning and
+        /// overriding certificate errors in the scope of a request.
+        /// </summary>
+        RemoteCertificateValidationCallback RemoteCertificateValidationCallback { get; }
     }
 }
