@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,13 +31,14 @@ namespace freeclimb.Model
     /// TollFree Campaign details for this number
     /// </summary>
     [DataContract(Name = "TFN")]
-    public partial class TFN : IEquatable<TFN>, IValidatableObject
+    public partial class TFN : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TFN" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected TFN() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TFN" /> class.
         /// </summary>
@@ -45,8 +46,11 @@ namespace freeclimb.Model
         public TFN(string campaignId = default(string))
         {
             // to ensure "campaignId" is required (not null)
-            if (campaignId == null) {
-                throw new ArgumentNullException("campaignId is a required property for TFN and cannot be null");
+            if (campaignId == null)
+            {
+                throw new ArgumentNullException(
+                    "campaignId is a required property for TFN and cannot be null"
+                );
             }
             this.CampaignId = campaignId;
         }
@@ -55,7 +59,7 @@ namespace freeclimb.Model
         /// alphanumeric identifier for the TollFree campaign associated with this number
         /// </summary>
         /// <value>alphanumeric identifier for the TollFree campaign associated with this number</value>
-        [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "campaignId", IsRequired = true, EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
         /// <summary>
@@ -77,64 +81,21 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the TFN instance. 
+        /// Retrieve the KVP Dictionary for the TFN instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("campaignId", CampaignId);          
+            props.Add("campaignId", CampaignId);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TFN);
-        }
-
-        /// <summary>
-        /// Returns true if TFN instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TFN to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TFN input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.CampaignId == input.CampaignId ||
-                    (this.CampaignId != null &&
-                    this.CampaignId.Equals(input.CampaignId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.CampaignId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CampaignId.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -142,10 +103,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

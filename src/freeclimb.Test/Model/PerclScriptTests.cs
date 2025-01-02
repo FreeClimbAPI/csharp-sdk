@@ -9,24 +9,17 @@
  */
 
 
-
-
-using Xunit;
-
 using System;
-using System.Linq;
-using System.IO;
+using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using freeclimb.Api;
-using freeclimb.Model;
-using freeclimb.Client;
+using System.IO;
+using System.Linq;
 using System.Reflection;
+using freeclimb.Client;
+using freeclimb.Enums;
+using freeclimb.Model;
 using Newtonsoft.Json;
-using System.Globalization;
-using freeclimb.Enums;
-
-using freeclimb.Enums;
+using Xunit;
 
 namespace freeclimb.Test.Model
 {
@@ -38,46 +31,51 @@ namespace freeclimb.Test.Model
     /// Please update the test case below to test the model.
     /// </remarks>
     public class PerclScriptTemplateTests : IDisposable
-{
-    // TODO uncomment below to declare an instance variable for PerclScript
-    private PerclScript instance;
-
-    public PerclScriptTemplateTests()
     {
-        instance = new PerclScript();
-        CreateConference create = new CreateConference("", false, PlayBeep.ALWAYS, false, "", "");
-        List<PerclCommand> commands = new List<PerclCommand>();
-        commands.Add(create);
-        instance = new PerclScript(commands);
+        // TODO uncomment below to declare an instance variable for PerclScript
+        private PerclScript instance;
+
+        public PerclScriptTemplateTests()
+        {
+            instance = new PerclScript();
+            CreateConference create = new CreateConference(
+                "",
+                false,
+                PlayBeep.ALWAYS,
+                false,
+                "",
+                ""
+            );
+            List<PerclCommand> commands = new List<PerclCommand>();
+            commands.Add(create);
+            instance = new PerclScript(commands);
+        }
+
+        public void Dispose()
+        {
+            // Cleanup when everything is done.
+        }
+
+        /// <summary>
+        /// Test an instance of PerclScript
+        /// </summary>
+        [Fact]
+        public void PerclScriptInstanceTest()
+        {
+            Assert.IsType<PerclScript>(instance);
+        }
+
+        /// <summary>
+        /// Test the property 'PerclScript'
+        /// </summary>
+        [Fact]
+        public void CommandsTest()
+        {
+            // TODO unit test for the property 'Commands'
+            string actualJSONString = instance.ToJson();
+            string expectedJSONString =
+                "[{\"CreateConference\":{\"actionUrl\":\"\",\"alias\":false,\"playBeep\":\"always\",\"record\":false,\"statusCallbackUrl\":\"\",\"waitUrl\":\"\"}}]";
+            Assert.Equal(expectedJSONString, actualJSONString);
+        }
     }
-
-    public void Dispose()
-    {
-        // Cleanup when everything is done.
-    }
-
-    /// <summary>
-    /// Test an instance of PerclScript
-    /// </summary>
-    [Fact]
-    public void PerclScriptInstanceTest()
-    {
-        // TODO uncomment below to test "IsType" PerclScript
-        //Assert.IsType<PerclScript>(instance);
-    }
-
-
-    /// <summary>
-    /// Test the property 'PerclScript'
-    /// </summary>
-    [Fact]
-    public void CommandsTest()
-    {
-        // TODO unit test for the property 'Commands'
-        string actualJSONString = instance.ToJson();
-        string expectedJSONString = "[{\"CreateConference\":{\"actionUrl\":\"\",\"alias\":false,\"playBeep\":\"always\",\"record\":false,\"statusCallbackUrl\":\"\",\"waitUrl\":\"\"}}]";
-        Assert.Equal(expectedJSONString, actualJSONString);
-    }
-}
-
 }

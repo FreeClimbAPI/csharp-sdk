@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,7 +31,7 @@ namespace freeclimb.Model
     /// IncomingNumberResult
     /// </summary>
     [DataContract(Name = "IncomingNumberResult")]
-    public partial class IncomingNumberResult : IEquatable<IncomingNumberResult>, IValidatableObject
+    public partial class IncomingNumberResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IncomingNumberResult" /> class.
@@ -53,24 +53,58 @@ namespace freeclimb.Model
         /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers..</param>
         /// <param name="offnet">The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource..</param>
         /// <param name="tfn">tfn.</param>
-        public IncomingNumberResult(string uri = default(string), string dateCreated = default(string), string dateUpdated = default(string), int revision = default(int), Capabilities capabilities = default(Capabilities), string campaignId = default(string), string phoneNumberId = default(string), string accountId = default(string), string applicationId = default(string), string phoneNumber = default(string), string alias = default(string), string region = default(string), string country = default(string), bool? voiceEnabled = default(bool?), bool? smsEnabled = default(bool?), bool? offnet = default(bool?), TFN tfn = default(TFN))
+        public IncomingNumberResult(
+            string uri = default(string),
+            string dateCreated = default(string),
+            string dateUpdated = default(string),
+            int revision = default(int),
+            Capabilities capabilities = default(Capabilities),
+            string campaignId = default(string),
+            string phoneNumberId = default(string),
+            string accountId = default(string),
+            string applicationId = default(string),
+            string phoneNumber = default(string),
+            string alias = default(string),
+            string region = default(string),
+            string country = default(string),
+            bool? voiceEnabled = default(bool?),
+            bool? smsEnabled = default(bool?),
+            bool? offnet = default(bool?),
+            TFN tfn = default(TFN)
+        )
         {
             this.Uri = uri;
+
             this.DateCreated = dateCreated;
+
             this.DateUpdated = dateUpdated;
+
             this.Revision = revision;
+
             this.Capabilities = capabilities;
+
             this.CampaignId = campaignId;
+
             this.PhoneNumberId = phoneNumberId;
+
             this.AccountId = accountId;
+
             this.ApplicationId = applicationId;
+
             this.PhoneNumber = phoneNumber;
+
             this.Alias = alias;
+
             this.Region = region;
+
             this.Country = country;
+
             this.VoiceEnabled = voiceEnabled;
+
             this.SmsEnabled = smsEnabled;
+
             this.Offnet = offnet;
+
             this.Tfn = tfn;
         }
 
@@ -228,220 +262,37 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the IncomingNumberResult instance. 
+        /// Retrieve the KVP Dictionary for the IncomingNumberResult instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("dateCreated", DateCreated);          
-            props.Add("dateUpdated", DateUpdated);          
-            props.Add("revision", Revision);          
-            props.Add("capabilities", Capabilities);          
-            props.Add("campaignId", CampaignId);          
-            props.Add("phoneNumberId", PhoneNumberId);          
-            props.Add("accountId", AccountId);          
-            props.Add("applicationId", ApplicationId);          
-            props.Add("phoneNumber", PhoneNumber);          
-            props.Add("alias", Alias);          
-            props.Add("region", Region);          
-            props.Add("country", Country);          
-            props.Add("voiceEnabled", VoiceEnabled);          
-            props.Add("smsEnabled", SmsEnabled);          
-            props.Add("offnet", Offnet);          
-            props.Add("tfn", Tfn);          
+            props.Add("uri", Uri);
+            props.Add("dateCreated", DateCreated);
+            props.Add("dateUpdated", DateUpdated);
+            props.Add("revision", Revision);
+            props.Add("capabilities", Capabilities);
+            props.Add("campaignId", CampaignId);
+            props.Add("phoneNumberId", PhoneNumberId);
+            props.Add("accountId", AccountId);
+            props.Add("applicationId", ApplicationId);
+            props.Add("phoneNumber", PhoneNumber);
+            props.Add("alias", Alias);
+            props.Add("region", Region);
+            props.Add("country", Country);
+            props.Add("voiceEnabled", VoiceEnabled);
+            props.Add("smsEnabled", SmsEnabled);
+            props.Add("offnet", Offnet);
+            props.Add("tfn", Tfn);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as IncomingNumberResult);
-        }
-
-        /// <summary>
-        /// Returns true if IncomingNumberResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of IncomingNumberResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(IncomingNumberResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.DateCreated == input.DateCreated ||
-                    (this.DateCreated != null &&
-                    this.DateCreated.Equals(input.DateCreated))
-                ) && 
-                (
-                    this.DateUpdated == input.DateUpdated ||
-                    (this.DateUpdated != null &&
-                    this.DateUpdated.Equals(input.DateUpdated))
-                ) && 
-                (
-                    this.Revision == input.Revision ||
-                    this.Revision.Equals(input.Revision)
-                ) && 
-                (
-                    this.Capabilities == input.Capabilities ||
-                    (this.Capabilities != null &&
-                    this.Capabilities.Equals(input.Capabilities))
-                ) && 
-                (
-                    this.CampaignId == input.CampaignId ||
-                    (this.CampaignId != null &&
-                    this.CampaignId.Equals(input.CampaignId))
-                ) && 
-                (
-                    this.PhoneNumberId == input.PhoneNumberId ||
-                    (this.PhoneNumberId != null &&
-                    this.PhoneNumberId.Equals(input.PhoneNumberId))
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.ApplicationId == input.ApplicationId ||
-                    (this.ApplicationId != null &&
-                    this.ApplicationId.Equals(input.ApplicationId))
-                ) && 
-                (
-                    this.PhoneNumber == input.PhoneNumber ||
-                    (this.PhoneNumber != null &&
-                    this.PhoneNumber.Equals(input.PhoneNumber))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
-                ) && 
-                (
-                    this.VoiceEnabled == input.VoiceEnabled ||
-                    (this.VoiceEnabled != null &&
-                    this.VoiceEnabled.Equals(input.VoiceEnabled))
-                ) && 
-                (
-                    this.SmsEnabled == input.SmsEnabled ||
-                    (this.SmsEnabled != null &&
-                    this.SmsEnabled.Equals(input.SmsEnabled))
-                ) && 
-                (
-                    this.Offnet == input.Offnet ||
-                    (this.Offnet != null &&
-                    this.Offnet.Equals(input.Offnet))
-                ) && 
-                (
-                    this.Tfn == input.Tfn ||
-                    (this.Tfn != null &&
-                    this.Tfn.Equals(input.Tfn))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.DateCreated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateCreated.GetHashCode();
-                }
-                if (this.DateUpdated != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateUpdated.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Revision.GetHashCode();
-                if (this.Capabilities != null)
-                {
-                    hashCode = (hashCode * 59) + this.Capabilities.GetHashCode();
-                }
-                if (this.CampaignId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CampaignId.GetHashCode();
-                }
-                if (this.PhoneNumberId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PhoneNumberId.GetHashCode();
-                }
-                if (this.AccountId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
-                }
-                if (this.ApplicationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ApplicationId.GetHashCode();
-                }
-                if (this.PhoneNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.PhoneNumber.GetHashCode();
-                }
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                if (this.Region != null)
-                {
-                    hashCode = (hashCode * 59) + this.Region.GetHashCode();
-                }
-                if (this.Country != null)
-                {
-                    hashCode = (hashCode * 59) + this.Country.GetHashCode();
-                }
-                if (this.VoiceEnabled != null)
-                {
-                    hashCode = (hashCode * 59) + this.VoiceEnabled.GetHashCode();
-                }
-                if (this.SmsEnabled != null)
-                {
-                    hashCode = (hashCode * 59) + this.SmsEnabled.GetHashCode();
-                }
-                if (this.Offnet != null)
-                {
-                    hashCode = (hashCode * 59) + this.Offnet.GetHashCode();
-                }
-                if (this.Tfn != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tfn.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -449,10 +300,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

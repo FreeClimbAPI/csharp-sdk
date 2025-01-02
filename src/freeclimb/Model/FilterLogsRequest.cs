@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,13 +31,14 @@ namespace freeclimb.Model
     /// FilterLogsRequest
     /// </summary>
     [DataContract(Name = "FilterLogsRequest")]
-    public partial class FilterLogsRequest : IEquatable<FilterLogsRequest>, IValidatableObject
+    public partial class FilterLogsRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FilterLogsRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected FilterLogsRequest() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FilterLogsRequest" /> class.
         /// </summary>
@@ -45,8 +46,11 @@ namespace freeclimb.Model
         public FilterLogsRequest(string pql = default(string))
         {
             // to ensure "pql" is required (not null)
-            if (pql == null) {
-                throw new ArgumentNullException("pql is a required property for FilterLogsRequest and cannot be null");
+            if (pql == null)
+            {
+                throw new ArgumentNullException(
+                    "pql is a required property for FilterLogsRequest and cannot be null"
+                );
             }
             this.Pql = pql;
         }
@@ -55,7 +59,7 @@ namespace freeclimb.Model
         /// The filter query for retrieving logs. See **Performance Query Language** below.
         /// </summary>
         /// <value>The filter query for retrieving logs. See **Performance Query Language** below.</value>
-        [DataMember(Name = "pql", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "pql", IsRequired = true, EmitDefaultValue = true)]
         public string Pql { get; set; }
 
         /// <summary>
@@ -77,64 +81,21 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the FilterLogsRequest instance. 
+        /// Retrieve the KVP Dictionary for the FilterLogsRequest instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("pql", Pql);          
+            props.Add("pql", Pql);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as FilterLogsRequest);
-        }
-
-        /// <summary>
-        /// Returns true if FilterLogsRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of FilterLogsRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(FilterLogsRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Pql == input.Pql ||
-                    (this.Pql != null &&
-                    this.Pql.Equals(input.Pql))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Pql != null)
-                {
-                    hashCode = (hashCode * 59) + this.Pql.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -142,10 +103,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

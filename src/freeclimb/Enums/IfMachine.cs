@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -44,8 +44,46 @@ namespace freeclimb.Enums
         /// Enum HANGUP for value: hangup
         /// </summary>
         [EnumMember(Value = "hangup")]
-        HANGUP = 2
-
+        HANGUP = 2,
     }
 
+    /// <summary>
+    /// Converts <see cref="IfMachine"/> to and from the JSON value
+    /// </summary>
+    public static class IfMachineValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="IfMachine"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static IfMachine FromString(string value)
+        {
+            if (value.Equals("redirect"))
+                return IfMachine.REDIRECT;
+
+            if (value.Equals("hangup"))
+                return IfMachine.HANGUP;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type IfMachine: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="IfMachine"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static IfMachine? FromStringOrDefault(string value)
+        {
+            if (value.Equals("redirect"))
+                return IfMachine.REDIRECT;
+
+            if (value.Equals("hangup"))
+                return IfMachine.HANGUP;
+
+            return null;
+        }
+    }
 }

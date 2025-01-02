@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,14 +31,14 @@ namespace freeclimb.Model
     /// CreateConferenceRequest
     /// </summary>
     [DataContract(Name = "CreateConferenceRequest")]
-    public partial class CreateConferenceRequest : IEquatable<CreateConferenceRequest>, IValidatableObject
+    public partial class CreateConferenceRequest : IValidatableObject
     {
-
         /// <summary>
         /// Gets or Sets PlayBeep
         /// </summary>
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public PlayBeep? PlayBeep { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConferenceRequest" /> class.
         /// </summary>
@@ -47,12 +47,22 @@ namespace freeclimb.Model
         /// <param name="record">Setting to &#x60;true&#x60; records the entire Conference..</param>
         /// <param name="waitUrl">If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &amp;mdash; when the Conference is created..</param>
         /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below)..</param>
-        public CreateConferenceRequest(string alias = default(string), PlayBeep? playBeep = default(PlayBeep?), bool record = default(bool), string waitUrl = default(string), string statusCallbackUrl = default(string))
+        public CreateConferenceRequest(
+            string alias = default(string),
+            PlayBeep? playBeep = default(PlayBeep?),
+            bool record = default(bool),
+            string waitUrl = default(string),
+            string statusCallbackUrl = default(string)
+        )
         {
             this.Alias = alias;
+
             this.PlayBeep = playBeep;
+
             this.Record = record;
+
             this.WaitUrl = waitUrl;
+
             this.StatusCallbackUrl = statusCallbackUrl;
         }
 
@@ -107,96 +117,25 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the CreateConferenceRequest instance. 
+        /// Retrieve the KVP Dictionary for the CreateConferenceRequest instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("alias", Alias);          
-            props.Add("playBeep", PlayBeep);          
-            props.Add("record", Record);          
-            props.Add("waitUrl", WaitUrl);          
-            props.Add("statusCallbackUrl", StatusCallbackUrl);          
+            props.Add("alias", Alias);
+            props.Add("playBeep", PlayBeep);
+            props.Add("record", Record);
+            props.Add("waitUrl", WaitUrl);
+            props.Add("statusCallbackUrl", StatusCallbackUrl);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CreateConferenceRequest);
-        }
-
-        /// <summary>
-        /// Returns true if CreateConferenceRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CreateConferenceRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CreateConferenceRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.PlayBeep == input.PlayBeep ||
-                    this.PlayBeep.Equals(input.PlayBeep)
-                ) && 
-                (
-                    this.Record == input.Record ||
-                    this.Record.Equals(input.Record)
-                ) && 
-                (
-                    this.WaitUrl == input.WaitUrl ||
-                    (this.WaitUrl != null &&
-                    this.WaitUrl.Equals(input.WaitUrl))
-                ) && 
-                (
-                    this.StatusCallbackUrl == input.StatusCallbackUrl ||
-                    (this.StatusCallbackUrl != null &&
-                    this.StatusCallbackUrl.Equals(input.StatusCallbackUrl))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Alias != null)
-                {
-                    hashCode = (hashCode * 59) + this.Alias.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PlayBeep.GetHashCode();
-                hashCode = (hashCode * 59) + this.Record.GetHashCode();
-                if (this.WaitUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.WaitUrl.GetHashCode();
-                }
-                if (this.StatusCallbackUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusCallbackUrl.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -204,10 +143,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

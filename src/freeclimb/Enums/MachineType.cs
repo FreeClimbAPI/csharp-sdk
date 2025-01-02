@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -34,17 +34,55 @@ namespace freeclimb.Enums
     public enum MachineType
     {
         /// <summary>
-        /// Enum ANSWERING_MACHINE for value: answeringMachine
+        /// Enum ANSWERING_MACHINE for value: answering machine
         /// </summary>
-        [EnumMember(Value = "answeringMachine")]
+        [EnumMember(Value = "answering machine")]
         ANSWERING_MACHINE = 1,
 
         /// <summary>
-        /// Enum FAX_MACHINE for value: faxMachine
+        /// Enum FAX_MODEM for value: fax modem
         /// </summary>
-        [EnumMember(Value = "faxMachine")]
-        FAX_MACHINE = 2
-
+        [EnumMember(Value = "fax modem")]
+        FAX_MODEM = 2,
     }
 
+    /// <summary>
+    /// Converts <see cref="MachineType"/> to and from the JSON value
+    /// </summary>
+    public static class MachineTypeValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="MachineType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MachineType FromString(string value)
+        {
+            if (value.Equals("answering machine"))
+                return MachineType.ANSWERING_MACHINE;
+
+            if (value.Equals("fax modem"))
+                return MachineType.FAX_MODEM;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type MachineType: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="MachineType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MachineType? FromStringOrDefault(string value)
+        {
+            if (value.Equals("answering machine"))
+                return MachineType.ANSWERING_MACHINE;
+
+            if (value.Equals("fax modem"))
+                return MachineType.FAX_MODEM;
+
+            return null;
+        }
+    }
 }

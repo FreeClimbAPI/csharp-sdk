@@ -1,6 +1,5 @@
 # freeclimb.Model.CallResult
 
-
 ## Properties
 
 Name | Type | Description | Notes
@@ -26,8 +25,5 @@ Name | Type | Description | Notes
 **SubresourceUris** | **Object** | The list of subresources for this Call. These include things like logs and recordings associated with the Call. | [optional] 
 **ApplicationId** | **string** | ApplicationId associated with the Call. | [optional] 
 
-[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
-[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
-[[Back to Model list]](../README.md#documentation-for-models)<br /> 
-[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
-[[Back to README]](../README.md) <br /> 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

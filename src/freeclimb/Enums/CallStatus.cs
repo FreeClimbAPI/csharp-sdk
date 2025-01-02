@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -80,8 +80,82 @@ namespace freeclimb.Enums
         /// Enum NO_ANSWER for value: noAnswer
         /// </summary>
         [EnumMember(Value = "noAnswer")]
-        NO_ANSWER = 8
-
+        NO_ANSWER = 8,
     }
 
+    /// <summary>
+    /// Converts <see cref="CallStatus"/> to and from the JSON value
+    /// </summary>
+    public static class CallStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="CallStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallStatus FromString(string value)
+        {
+            if (value.Equals("queued"))
+                return CallStatus.QUEUED;
+
+            if (value.Equals("ringing"))
+                return CallStatus.RINGING;
+
+            if (value.Equals("inProgress"))
+                return CallStatus.IN_PROGRESS;
+
+            if (value.Equals("canceled"))
+                return CallStatus.CANCELED;
+
+            if (value.Equals("completed"))
+                return CallStatus.COMPLETED;
+
+            if (value.Equals("failed"))
+                return CallStatus.FAILED;
+
+            if (value.Equals("busy"))
+                return CallStatus.BUSY;
+
+            if (value.Equals("noAnswer"))
+                return CallStatus.NO_ANSWER;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type CallStatus: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="CallStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CallStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("queued"))
+                return CallStatus.QUEUED;
+
+            if (value.Equals("ringing"))
+                return CallStatus.RINGING;
+
+            if (value.Equals("inProgress"))
+                return CallStatus.IN_PROGRESS;
+
+            if (value.Equals("canceled"))
+                return CallStatus.CANCELED;
+
+            if (value.Equals("completed"))
+                return CallStatus.COMPLETED;
+
+            if (value.Equals("failed"))
+                return CallStatus.FAILED;
+
+            if (value.Equals("busy"))
+                return CallStatus.BUSY;
+
+            if (value.Equals("noAnswer"))
+                return CallStatus.NO_ANSWER;
+
+            return null;
+        }
+    }
 }

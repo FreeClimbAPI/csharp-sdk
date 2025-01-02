@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -56,8 +56,58 @@ namespace freeclimb.Enums
         /// Enum TERMINATED for value: terminated
         /// </summary>
         [EnumMember(Value = "terminated")]
-        TERMINATED = 4
-
+        TERMINATED = 4,
     }
 
+    /// <summary>
+    /// Converts <see cref="ConferenceStatus"/> to and from the JSON value
+    /// </summary>
+    public static class ConferenceStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="ConferenceStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ConferenceStatus FromString(string value)
+        {
+            if (value.Equals("empty"))
+                return ConferenceStatus.EMPTY;
+
+            if (value.Equals("populated"))
+                return ConferenceStatus.POPULATED;
+
+            if (value.Equals("inProgress"))
+                return ConferenceStatus.IN_PROGRESS;
+
+            if (value.Equals("terminated"))
+                return ConferenceStatus.TERMINATED;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type ConferenceStatus: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="ConferenceStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ConferenceStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("empty"))
+                return ConferenceStatus.EMPTY;
+
+            if (value.Equals("populated"))
+                return ConferenceStatus.POPULATED;
+
+            if (value.Equals("inProgress"))
+                return ConferenceStatus.IN_PROGRESS;
+
+            if (value.Equals("terminated"))
+                return ConferenceStatus.TERMINATED;
+
+            return null;
+        }
+    }
 }

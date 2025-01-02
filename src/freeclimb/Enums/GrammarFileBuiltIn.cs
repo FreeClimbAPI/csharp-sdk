@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -121,8 +121,124 @@ namespace freeclimb.Enums
         /// Enum VERSAY_YESNO for value: VERSAY_YESNO
         /// </summary>
         [EnumMember(Value = "VERSAY_YESNO")]
-        VERSAY_YESNO = 15
-
+        VERSAY_YESNO = 15,
     }
 
+    /// <summary>
+    /// Converts <see cref="GrammarFileBuiltIn"/> to and from the JSON value
+    /// </summary>
+    public static class GrammarFileBuiltInValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="GrammarFileBuiltIn"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GrammarFileBuiltIn FromString(string value)
+        {
+            if (value.Equals("ALPHNUM6"))
+                return GrammarFileBuiltIn.ALPHNUM6;
+
+            if (value.Equals("ANY_DIG"))
+                return GrammarFileBuiltIn.ANY_DIG;
+
+            if (value.Equals("DIG1"))
+                return GrammarFileBuiltIn.DIG1;
+
+            if (value.Equals("DIG2"))
+                return GrammarFileBuiltIn.DIG2;
+
+            if (value.Equals("DIG3"))
+                return GrammarFileBuiltIn.DIG3;
+
+            if (value.Equals("DIG4"))
+                return GrammarFileBuiltIn.DIG4;
+
+            if (value.Equals("DIG5"))
+                return GrammarFileBuiltIn.DIG5;
+
+            if (value.Equals("DIG6"))
+                return GrammarFileBuiltIn.DIG6;
+
+            if (value.Equals("DIG7"))
+                return GrammarFileBuiltIn.DIG7;
+
+            if (value.Equals("DIG8"))
+                return GrammarFileBuiltIn.DIG8;
+
+            if (value.Equals("DIG9"))
+                return GrammarFileBuiltIn.DIG9;
+
+            if (value.Equals("DIG10"))
+                return GrammarFileBuiltIn.DIG10;
+
+            if (value.Equals("DIG11"))
+                return GrammarFileBuiltIn.DIG11;
+
+            if (value.Equals("UP_TO_20_DIGIT_SEQUENCE"))
+                return GrammarFileBuiltIn.UP_TO_20_DIGIT_SEQUENCE;
+
+            if (value.Equals("VERSAY_YESNO"))
+                return GrammarFileBuiltIn.VERSAY_YESNO;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type GrammarFileBuiltIn: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="GrammarFileBuiltIn"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GrammarFileBuiltIn? FromStringOrDefault(string value)
+        {
+            if (value.Equals("ALPHNUM6"))
+                return GrammarFileBuiltIn.ALPHNUM6;
+
+            if (value.Equals("ANY_DIG"))
+                return GrammarFileBuiltIn.ANY_DIG;
+
+            if (value.Equals("DIG1"))
+                return GrammarFileBuiltIn.DIG1;
+
+            if (value.Equals("DIG2"))
+                return GrammarFileBuiltIn.DIG2;
+
+            if (value.Equals("DIG3"))
+                return GrammarFileBuiltIn.DIG3;
+
+            if (value.Equals("DIG4"))
+                return GrammarFileBuiltIn.DIG4;
+
+            if (value.Equals("DIG5"))
+                return GrammarFileBuiltIn.DIG5;
+
+            if (value.Equals("DIG6"))
+                return GrammarFileBuiltIn.DIG6;
+
+            if (value.Equals("DIG7"))
+                return GrammarFileBuiltIn.DIG7;
+
+            if (value.Equals("DIG8"))
+                return GrammarFileBuiltIn.DIG8;
+
+            if (value.Equals("DIG9"))
+                return GrammarFileBuiltIn.DIG9;
+
+            if (value.Equals("DIG10"))
+                return GrammarFileBuiltIn.DIG10;
+
+            if (value.Equals("DIG11"))
+                return GrammarFileBuiltIn.DIG11;
+
+            if (value.Equals("UP_TO_20_DIGIT_SEQUENCE"))
+                return GrammarFileBuiltIn.UP_TO_20_DIGIT_SEQUENCE;
+
+            if (value.Equals("VERSAY_YESNO"))
+                return GrammarFileBuiltIn.VERSAY_YESNO;
+
+            return null;
+        }
+    }
 }

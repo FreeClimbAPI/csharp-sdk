@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -44,8 +44,46 @@ namespace freeclimb.Enums
         /// Enum TERMINATED for value: terminated
         /// </summary>
         [EnumMember(Value = "terminated")]
-        TERMINATED = 2
-
+        TERMINATED = 2,
     }
 
+    /// <summary>
+    /// Converts <see cref="UpdateConferenceRequestStatus"/> to and from the JSON value
+    /// </summary>
+    public static class UpdateConferenceRequestStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateConferenceRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateConferenceRequestStatus FromString(string value)
+        {
+            if (value.Equals("empty"))
+                return UpdateConferenceRequestStatus.EMPTY;
+
+            if (value.Equals("terminated"))
+                return UpdateConferenceRequestStatus.TERMINATED;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type UpdateConferenceRequestStatus: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="UpdateConferenceRequestStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static UpdateConferenceRequestStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("empty"))
+                return UpdateConferenceRequestStatus.EMPTY;
+
+            if (value.Equals("terminated"))
+                return UpdateConferenceRequestStatus.TERMINATED;
+
+            return null;
+        }
+    }
 }

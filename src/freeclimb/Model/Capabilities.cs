@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,13 +31,14 @@ namespace freeclimb.Model
     /// Details for which features this number may be used.
     /// </summary>
     [DataContract(Name = "Capabilities")]
-    public partial class Capabilities : IEquatable<Capabilities>, IValidatableObject
+    public partial class Capabilities : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Capabilities" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected Capabilities() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Capabilities" /> class.
         /// </summary>
@@ -46,31 +47,56 @@ namespace freeclimb.Model
         /// <param name="tollFree">Indicates that a number is toll-free and will make toll-free calls, and when enabled, toll-free messages. (required).</param>
         /// <param name="tenDLC">Indicates that a number, if sms is true, will be used for 10DLC messaging (required).</param>
         /// <param name="shortCode">Indicates that a number is a short code and can be used for short code messaging (required).</param>
-        public Capabilities(bool? voice = default(bool?), bool? sms = default(bool?), bool? tollFree = default(bool?), bool? tenDLC = default(bool?), bool? shortCode = default(bool?))
+        public Capabilities(
+            bool? voice = default(bool?),
+            bool? sms = default(bool?),
+            bool? tollFree = default(bool?),
+            bool? tenDLC = default(bool?),
+            bool? shortCode = default(bool?)
+        )
         {
             // to ensure "voice" is required (not null)
-            if (voice == null) {
-                throw new ArgumentNullException("voice is a required property for Capabilities and cannot be null");
+            if (voice == null)
+            {
+                throw new ArgumentNullException(
+                    "voice is a required property for Capabilities and cannot be null"
+                );
             }
             this.Voice = voice;
+
             // to ensure "sms" is required (not null)
-            if (sms == null) {
-                throw new ArgumentNullException("sms is a required property for Capabilities and cannot be null");
+            if (sms == null)
+            {
+                throw new ArgumentNullException(
+                    "sms is a required property for Capabilities and cannot be null"
+                );
             }
             this.Sms = sms;
+
             // to ensure "tollFree" is required (not null)
-            if (tollFree == null) {
-                throw new ArgumentNullException("tollFree is a required property for Capabilities and cannot be null");
+            if (tollFree == null)
+            {
+                throw new ArgumentNullException(
+                    "tollFree is a required property for Capabilities and cannot be null"
+                );
             }
             this.TollFree = tollFree;
+
             // to ensure "tenDLC" is required (not null)
-            if (tenDLC == null) {
-                throw new ArgumentNullException("tenDLC is a required property for Capabilities and cannot be null");
+            if (tenDLC == null)
+            {
+                throw new ArgumentNullException(
+                    "tenDLC is a required property for Capabilities and cannot be null"
+                );
             }
             this.TenDLC = tenDLC;
+
             // to ensure "shortCode" is required (not null)
-            if (shortCode == null) {
-                throw new ArgumentNullException("shortCode is a required property for Capabilities and cannot be null");
+            if (shortCode == null)
+            {
+                throw new ArgumentNullException(
+                    "shortCode is a required property for Capabilities and cannot be null"
+                );
             }
             this.ShortCode = shortCode;
         }
@@ -133,104 +159,25 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Capabilities instance. 
+        /// Retrieve the KVP Dictionary for the Capabilities instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("voice", Voice);          
-            props.Add("sms", Sms);          
-            props.Add("tollFree", TollFree);          
-            props.Add("tenDLC", TenDLC);          
-            props.Add("shortCode", ShortCode);          
+            props.Add("voice", Voice);
+            props.Add("sms", Sms);
+            props.Add("tollFree", TollFree);
+            props.Add("tenDLC", TenDLC);
+            props.Add("shortCode", ShortCode);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Capabilities);
-        }
-
-        /// <summary>
-        /// Returns true if Capabilities instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Capabilities to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Capabilities input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Voice == input.Voice ||
-                    (this.Voice != null &&
-                    this.Voice.Equals(input.Voice))
-                ) && 
-                (
-                    this.Sms == input.Sms ||
-                    (this.Sms != null &&
-                    this.Sms.Equals(input.Sms))
-                ) && 
-                (
-                    this.TollFree == input.TollFree ||
-                    (this.TollFree != null &&
-                    this.TollFree.Equals(input.TollFree))
-                ) && 
-                (
-                    this.TenDLC == input.TenDLC ||
-                    (this.TenDLC != null &&
-                    this.TenDLC.Equals(input.TenDLC))
-                ) && 
-                (
-                    this.ShortCode == input.ShortCode ||
-                    (this.ShortCode != null &&
-                    this.ShortCode.Equals(input.ShortCode))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Voice != null)
-                {
-                    hashCode = (hashCode * 59) + this.Voice.GetHashCode();
-                }
-                if (this.Sms != null)
-                {
-                    hashCode = (hashCode * 59) + this.Sms.GetHashCode();
-                }
-                if (this.TollFree != null)
-                {
-                    hashCode = (hashCode * 59) + this.TollFree.GetHashCode();
-                }
-                if (this.TenDLC != null)
-                {
-                    hashCode = (hashCode * 59) + this.TenDLC.GetHashCode();
-                }
-                if (this.ShortCode != null)
-                {
-                    hashCode = (hashCode * 59) + this.ShortCode.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -238,10 +185,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }
