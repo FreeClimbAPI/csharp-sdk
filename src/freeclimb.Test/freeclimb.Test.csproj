@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>freeclimb.Test</AssemblyName>
     <RootNamespace>freeclimb.Test</RootNamespace>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <Nullable>annotations</Nullable>
   </PropertyGroup>

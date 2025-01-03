@@ -18,6 +18,7 @@ using System.Reflection;
 using freeclimb.Client;
 using freeclimb.Enums;
 using freeclimb.Model;
+using freeclimb.Test;
 using Newtonsoft.Json;
 using Xunit;
 

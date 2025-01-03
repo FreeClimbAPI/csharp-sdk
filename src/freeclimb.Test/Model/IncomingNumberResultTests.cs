@@ -18,6 +18,7 @@ using System.Reflection;
 using freeclimb.Client;
 using freeclimb.Enums;
 using freeclimb.Model;
+using freeclimb.Test;
 using Newtonsoft.Json;
 using Xunit;
 
@@ -38,23 +39,23 @@ namespace freeclimb.Test.Model
         public IncomingNumberResultTests()
         {
             instance = new IncomingNumberResult(
-                uri: (string)getTestValue(typeof(string)),
-                dateCreated: (string)getTestValue(typeof(string)),
-                dateUpdated: (string)getTestValue(typeof(string)),
-                revision: (int)getTestValue(typeof(int)),
-                capabilities: (Capabilities)getTestValue(typeof(Capabilities)),
-                campaignId: (string)getTestValue(typeof(string)),
-                phoneNumberId: (string)getTestValue(typeof(string)),
-                accountId: (string)getTestValue(typeof(string)),
-                applicationId: (string)getTestValue(typeof(string)),
-                phoneNumber: (string)getTestValue(typeof(string)),
-                alias: (string)getTestValue(typeof(string)),
-                region: (string)getTestValue(typeof(string)),
-                country: (string)getTestValue(typeof(string)),
-                voiceEnabled: (bool?)getTestValue(typeof(bool?)),
-                smsEnabled: (bool?)getTestValue(typeof(bool?)),
-                offnet: (bool?)getTestValue(typeof(bool?)),
-                tfn: (TFN)getTestValue(typeof(TFN))
+                uri: (string)TestHelpers.getTestValue(typeof(string)),
+                dateCreated: (string)TestHelpers.getTestValue(typeof(string)),
+                dateUpdated: (string)TestHelpers.getTestValue(typeof(string)),
+                revision: (int)TestHelpers.getTestValue(typeof(int)),
+                capabilities: (Capabilities)TestHelpers.getTestValue(typeof(Capabilities)),
+                campaignId: (string)TestHelpers.getTestValue(typeof(string)),
+                phoneNumberId: (string)TestHelpers.getTestValue(typeof(string)),
+                accountId: (string)TestHelpers.getTestValue(typeof(string)),
+                applicationId: (string)TestHelpers.getTestValue(typeof(string)),
+                phoneNumber: (string)TestHelpers.getTestValue(typeof(string)),
+                alias: (string)TestHelpers.getTestValue(typeof(string)),
+                region: (string)TestHelpers.getTestValue(typeof(string)),
+                country: (string)TestHelpers.getTestValue(typeof(string)),
+                voiceEnabled: (bool?)TestHelpers.getTestValue(typeof(bool?)),
+                smsEnabled: (bool?)TestHelpers.getTestValue(typeof(bool?)),
+                offnet: (bool?)TestHelpers.getTestValue(typeof(bool?)),
+                tfn: (TFN)TestHelpers.getTestValue(typeof(TFN))
             );
         }
 
@@ -118,7 +119,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CapabilitiesTest()
         {
-            Capabilities testObject = (Capabilities)getTestValue(typeof(Capabilities));
+            Capabilities testObject = (Capabilities)TestHelpers.getTestValue(typeof(Capabilities));
             instance.Capabilities = testObject;
             Assert.Equal(testObject, instance.Capabilities);
         }
@@ -239,300 +240,9 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TfnTest()
         {
-            TFN testObject = (TFN)getTestValue(typeof(TFN));
+            TFN testObject = (TFN)TestHelpers.getTestValue(typeof(TFN));
             instance.Tfn = testObject;
             Assert.Equal(testObject, instance.Tfn);
-        }
-
-        public object getTestValue(Type type)
-        {
-            if (type == typeof(int))
-            {
-                return 1;
-            }
-            if (type == typeof(Nullable<int>))
-            {
-                return 1;
-            }
-            if (type == typeof(string))
-            {
-                return "TEST_STRING";
-            }
-            if (type == typeof(decimal))
-            {
-                return new decimal(0.1);
-            }
-            if (type == typeof(Nullable<decimal>))
-            {
-                return new decimal(0.1);
-            }
-            if (type == typeof(bool))
-            {
-                return true;
-            }
-            if (type == typeof(Nullable<bool>))
-            {
-                return true;
-            }
-            if (type == typeof(CallStatus))
-            {
-                return CallStatusValueConverter.FromString("completed");
-            }
-            if (type == typeof(CallDirection))
-            {
-                return CallDirectionValueConverter.FromString("inbound");
-            }
-            if (type == typeof(GetDigitsReason))
-            {
-                return GetDigitsReasonValueConverter.FromString("timeout");
-            }
-            if (type == typeof(LogLevel))
-            {
-                return LogLevelValueConverter.FromString("info");
-            }
-            if (type == typeof(CallEndedReason))
-            {
-                return CallEndedReasonValueConverter.FromString("busy");
-            }
-            if (type == typeof(SMSTenDLCBrandEntityType))
-            {
-                return SMSTenDLCBrandEntityTypeValueConverter.FromString("PUBLIC_PROFIT");
-            }
-            if (type == typeof(SMSTenDLCBrandStockExchange))
-            {
-                return SMSTenDLCBrandStockExchangeValueConverter.FromString("NONE");
-            }
-            if (type == typeof(SMSTenDLCBrandRelationship))
-            {
-                return SMSTenDLCBrandRelationshipValueConverter.FromString("BASIC_ACCOUNT");
-            }
-            if (type == typeof(SMSTenDLCBrandAltBusinessIdType))
-            {
-                return SMSTenDLCBrandAltBusinessIdTypeValueConverter.FromString("NONE");
-            }
-            if (type == typeof(SMSTenDLCBrandIdentityStatus))
-            {
-                return SMSTenDLCBrandIdentityStatusValueConverter.FromString("SELF_DECLARED");
-            }
-            if (type == typeof(PlayBeep))
-            {
-                return PlayBeepValueConverter.FromString("always");
-            }
-            if (type == typeof(UpdateCallRequestStatus))
-            {
-                return UpdateCallRequestStatusValueConverter.FromString("canceled");
-            }
-            if (type == typeof(QueueResultStatus))
-            {
-                return QueueResultStatusValueConverter.FromString("queueFull");
-            }
-            if (type == typeof(ConferenceStatus))
-            {
-                return ConferenceStatusValueConverter.FromString("empty");
-            }
-            if (type == typeof(MachineType))
-            {
-                return MachineTypeValueConverter.FromString("answering machine");
-            }
-            if (type == typeof(SMSTenDLCCampaignStatus))
-            {
-                return SMSTenDLCCampaignStatusValueConverter.FromString("ACTIVE");
-            }
-            if (type == typeof(SMSTenDLCPartnerCampaignStatus))
-            {
-                return SMSTenDLCPartnerCampaignStatusValueConverter.FromString("ACTIVE");
-            }
-            if (type == typeof(SMSTollFreeCampaignRegistrationStatus))
-            {
-                return SMSTollFreeCampaignRegistrationStatusValueConverter.FromString(
-                    "UNREGISTERED"
-                );
-            }
-            if (type == typeof(MessageStatus))
-            {
-                return MessageStatusValueConverter.FromString("new");
-            }
-            if (type == typeof(RecordUtteranceTermReason))
-            {
-                return RecordUtteranceTermReasonValueConverter.FromString("finishKey");
-            }
-            if (type == typeof(GrammarType))
-            {
-                return GrammarTypeValueConverter.FromString("URL");
-            }
-            if (type == typeof(CompletionResultStatus))
-            {
-                return CompletionResultStatusValueConverter.FromString("success");
-            }
-            if (type == typeof(AnsweredBy))
-            {
-                return AnsweredByValueConverter.FromString("human");
-            }
-            if (type == typeof(IfMachine))
-            {
-                return IfMachineValueConverter.FromString("redirect");
-            }
-            if (type == typeof(AccountType))
-            {
-                return AccountTypeValueConverter.FromString("trial");
-            }
-            if (type == typeof(AccountStatus))
-            {
-                return AccountStatusValueConverter.FromString("closed");
-            }
-            if (type == typeof(TranscribeTermReason))
-            {
-                return TranscribeTermReasonValueConverter.FromString("error");
-            }
-            if (type == typeof(TranscribeReason))
-            {
-                return TranscribeReasonValueConverter.FromString("internalError");
-            }
-            if (type == typeof(BargeInReason))
-            {
-                return BargeInReasonValueConverter.FromString("noBargeIn");
-            }
-            if (type == typeof(GetSpeechReason))
-            {
-                return GetSpeechReasonValueConverter.FromString("error");
-            }
-            if (type == typeof(UpdateConferenceRequestStatus))
-            {
-                return UpdateConferenceRequestStatusValueConverter.FromString("empty");
-            }
-            if (type == typeof(Capabilities))
-            {
-                return new Capabilities(false, false, false, false, false);
-            }
-            if (type == typeof(List<string>))
-            {
-                return new List<string>();
-            }
-            if (type == typeof(List<SMSTenDLCCampaign>))
-            {
-                return new List<SMSTenDLCCampaign>();
-            }
-            if (type == typeof(List<ConferenceResult>))
-            {
-                return new List<ConferenceResult>();
-            }
-            if (type == typeof(List<MessageResult>))
-            {
-                return new List<MessageResult>();
-            }
-            if (type == typeof(List<ApplicationResult>))
-            {
-                return new List<ApplicationResult>();
-            }
-            if (type == typeof(List<IncomingNumberResult>))
-            {
-                return new List<IncomingNumberResult>();
-            }
-            if (type == typeof(List<SMSTollFreeCampaign>))
-            {
-                return new List<SMSTollFreeCampaign>();
-            }
-            if (type == typeof(List<SMSTenDLCBrand>))
-            {
-                return new List<SMSTenDLCBrand>();
-            }
-            if (type == typeof(List<QueueResult>))
-            {
-                return new List<QueueResult>();
-            }
-            if (type == typeof(List<AvailableNumber>))
-            {
-                return new List<AvailableNumber>();
-            }
-            if (type == typeof(List<SMSTenDLCPartnerCampaign>))
-            {
-                return new List<SMSTenDLCPartnerCampaign>();
-            }
-            if (type == typeof(List<PerclCommand>))
-            {
-                return new List<PerclCommand>();
-            }
-            if (type == typeof(List<QueueMember>))
-            {
-                return new List<QueueMember>();
-            }
-            if (type == typeof(List<QueueResult>))
-            {
-                return new List<QueueResult>();
-            }
-            if (type == typeof(List<CallResult>))
-            {
-                return new List<CallResult>();
-            }
-            if (type == typeof(List<ConferenceParticipantResult>))
-            {
-                return new List<ConferenceParticipantResult>();
-            }
-            if (type == typeof(List<LogResult>))
-            {
-                return new List<LogResult>();
-            }
-            if (type == typeof(List<RecordingResult>))
-            {
-                return new List<RecordingResult>();
-            }
-            if (type == typeof(Capabilities))
-            {
-                return new Capabilities(
-                    voice: false,
-                    sms: false,
-                    tenDLC: false,
-                    tollFree: false,
-                    shortCode: false
-                );
-            }
-            if (type == typeof(TFN))
-            {
-                return new TFN(campaignId: "TEST_CAMPAIGN");
-            }
-            if (type == typeof(Dictionary<string, Object>))
-            {
-                return new Dictionary<string, Object>();
-            }
-            if (type == typeof(TranscribeUtteranceRecord))
-            {
-                return new TranscribeUtteranceRecord();
-            }
-            if (type == typeof(SMSTenDLCPartnerCampaignBrand))
-            {
-                return new SMSTenDLCPartnerCampaignBrand(
-                    firstName: "TEST_FIRST_NAME",
-                    lastName: "TEST_LAST_NAME",
-                    displayName: "TEST_DISPLAY_NAME",
-                    companyName: "TEST_COMPANY_NAME",
-                    website: "TEST_WEBSITE",
-                    evpVettingScore: 0,
-                    accountId: "TEST_ACCOUNT_ID",
-                    phone: "TEST_PHONE_NUMBER",
-                    email: "TEST_EMAIL"
-                );
-            }
-            if (type == typeof(DateTime))
-            {
-                return DateTime.Today;
-            }
-            if (type == typeof(Nullable<DateTime>))
-            {
-                return DateTime.Today;
-            }
-            if (type == typeof(DateOnly))
-            {
-                return DateOnly.FromDateTime(DateTime.Now);
-            }
-            if (type == typeof(Nullable<DateOnly>))
-            {
-                return DateOnly.FromDateTime(DateTime.Now);
-            }
-            if (type == typeof(Object))
-            {
-                return new Dictionary<string, string>();
-            }
-            throw new ArgumentException("Provided type has no test value", type.ToString());
         }
     }
 }

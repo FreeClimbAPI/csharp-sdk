@@ -1502,11 +1502,11 @@ namespace freeclimb.Test.Api
         {
             return new ApplicationRequest(
                 "TEST-APP",
-                "voice.com",
-                "voicefallback.com",
-                "callconnect.com",
-                "status.com",
-                "sms.com",
+                "https://voice.com",
+                "https://voicefallback.com",
+                "https://callconnect.com",
+                "https://status.com",
+                "https://sms.com",
                 "smsfallback.com"
             );
         }
