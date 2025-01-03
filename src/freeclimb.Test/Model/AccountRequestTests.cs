@@ -39,7 +39,11 @@ namespace freeclimb.Test.Model
         public AccountRequestTests()
         {
             instance = new AccountRequest(
-                alias: (string)TestHelpers.getTestValue(typeof(string)),
+
+/**
+force compilation error
+*/
+                alias: (string)TestHelper.getTestValue(typeof(string)),
                 label: (string)getTestValue(typeof(string))
             );
         }
