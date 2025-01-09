@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,7 +31,7 @@ namespace freeclimb.Model
     /// PaginationModel
     /// </summary>
     [DataContract(Name = "PaginationModel")]
-    public partial class PaginationModel : IEquatable<PaginationModel>, IValidatableObject
+    public partial class PaginationModel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaginationModel" /> class.
@@ -43,14 +43,28 @@ namespace freeclimb.Model
         /// <param name="numPages">Total number of pages.</param>
         /// <param name="pageSize">Number of items per page.</param>
         /// <param name="nextPageUri">Uri to retrieve the next page of items.</param>
-        public PaginationModel(int? total = default(int?), int? start = default(int?), int? end = default(int?), int? page = default(int?), int? numPages = default(int?), int? pageSize = default(int?), string nextPageUri = default(string))
+        public PaginationModel(
+            int? total = default(int?),
+            int? start = default(int?),
+            int? end = default(int?),
+            int? page = default(int?),
+            int? numPages = default(int?),
+            int? pageSize = default(int?),
+            string nextPageUri = default(string)
+        )
         {
             this.Total = total;
+
             this.Start = start;
+
             this.End = end;
+
             this.Page = page;
+
             this.NumPages = numPages;
+
             this.PageSize = pageSize;
+
             this.NextPageUri = nextPageUri;
         }
 
@@ -128,124 +142,27 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the PaginationModel instance. 
+        /// Retrieve the KVP Dictionary for the PaginationModel instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("total", Total);          
-            props.Add("start", Start);          
-            props.Add("end", End);          
-            props.Add("page", Page);          
-            props.Add("numPages", NumPages);          
-            props.Add("pageSize", PageSize);          
-            props.Add("nextPageUri", NextPageUri);          
+            props.Add("total", Total);
+            props.Add("start", Start);
+            props.Add("end", End);
+            props.Add("page", Page);
+            props.Add("numPages", NumPages);
+            props.Add("pageSize", PageSize);
+            props.Add("nextPageUri", NextPageUri);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PaginationModel);
-        }
-
-        /// <summary>
-        /// Returns true if PaginationModel instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PaginationModel to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PaginationModel input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Start == input.Start ||
-                    (this.Start != null &&
-                    this.Start.Equals(input.Start))
-                ) && 
-                (
-                    this.End == input.End ||
-                    (this.End != null &&
-                    this.End.Equals(input.End))
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                ) && 
-                (
-                    this.NumPages == input.NumPages ||
-                    (this.NumPages != null &&
-                    this.NumPages.Equals(input.NumPages))
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    (this.PageSize != null &&
-                    this.PageSize.Equals(input.PageSize))
-                ) && 
-                (
-                    this.NextPageUri == input.NextPageUri ||
-                    (this.NextPageUri != null &&
-                    this.NextPageUri.Equals(input.NextPageUri))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Total != null)
-                {
-                    hashCode = (hashCode * 59) + this.Total.GetHashCode();
-                }
-                if (this.Start != null)
-                {
-                    hashCode = (hashCode * 59) + this.Start.GetHashCode();
-                }
-                if (this.End != null)
-                {
-                    hashCode = (hashCode * 59) + this.End.GetHashCode();
-                }
-                if (this.Page != null)
-                {
-                    hashCode = (hashCode * 59) + this.Page.GetHashCode();
-                }
-                if (this.NumPages != null)
-                {
-                    hashCode = (hashCode * 59) + this.NumPages.GetHashCode();
-                }
-                if (this.PageSize != null)
-                {
-                    hashCode = (hashCode * 59) + this.PageSize.GetHashCode();
-                }
-                if (this.NextPageUri != null)
-                {
-                    hashCode = (hashCode * 59) + this.NextPageUri.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -253,10 +170,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

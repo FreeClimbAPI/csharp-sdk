@@ -1,10 +1,10 @@
 {
   "dependencies": {
-    "@stoplight/prism-cli": "5.6.0"
+    "@stoplight/prism-cli": "5.6.0",
+    "fast-xml-parser": "^4.5.0",
+    "jsonpath-plus": "^10.0.0"
   },
   "resolutions": {
-    "@stoplight/json": "3.20.0",
-    "jsonpath-plus": "^10.0.0",
-    "fast-xml-parser": "^4.5.0"
+    "@stoplight/json": "3.20.0"
   }
 }

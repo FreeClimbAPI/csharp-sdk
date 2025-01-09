@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -44,8 +44,46 @@ namespace freeclimb.Enums
         /// Enum BUILT_IN for value: BUILTIN
         /// </summary>
         [EnumMember(Value = "BUILTIN")]
-        BUILT_IN = 2
-
+        BUILT_IN = 2,
     }
 
+    /// <summary>
+    /// Converts <see cref="GrammarType"/> to and from the JSON value
+    /// </summary>
+    public static class GrammarTypeValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="GrammarType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GrammarType FromString(string value)
+        {
+            if (value.Equals("URL"))
+                return GrammarType.URL;
+
+            if (value.Equals("BUILTIN"))
+                return GrammarType.BUILT_IN;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type GrammarType: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="GrammarType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static GrammarType? FromStringOrDefault(string value)
+        {
+            if (value.Equals("URL"))
+                return GrammarType.URL;
+
+            if (value.Equals("BUILTIN"))
+                return GrammarType.BUILT_IN;
+
+            return null;
+        }
+    }
 }

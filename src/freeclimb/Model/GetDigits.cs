@@ -13,18 +13,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
+using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -33,39 +33,14 @@ namespace freeclimb.Model
     /// </summary>
     [DataContract(Name = "GetDigits")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
-    [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
-    [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigits), "GetDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeech), "GetSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(Hangup), "Hangup")]
-    [JsonSubtypes.KnownSubType(typeof(OutDial), "OutDial")]
-    [JsonSubtypes.KnownSubType(typeof(Park), "Park")]
-    [JsonSubtypes.KnownSubType(typeof(Pause), "Pause")]
-    [JsonSubtypes.KnownSubType(typeof(Play), "Play")]
-    [JsonSubtypes.KnownSubType(typeof(PlayEarlyMedia), "PlayEarlyMedia")]
-    [JsonSubtypes.KnownSubType(typeof(RecordUtterance), "RecordUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Redirect), "Redirect")]
-    [JsonSubtypes.KnownSubType(typeof(Reject), "Reject")]
-    [JsonSubtypes.KnownSubType(typeof(RemoveFromConference), "RemoveFromConference")]
-    [JsonSubtypes.KnownSubType(typeof(Say), "Say")]
-    [JsonSubtypes.KnownSubType(typeof(SendDigits), "SendDigits")]
-    [JsonSubtypes.KnownSubType(typeof(SetDTMFPassThrough), "SetDTMFPassThrough")]
-    [JsonSubtypes.KnownSubType(typeof(SetListen), "SetListen")]
-    [JsonSubtypes.KnownSubType(typeof(SetTalk), "SetTalk")]
-    [JsonSubtypes.KnownSubType(typeof(Sms), "Sms")]
-    [JsonSubtypes.KnownSubType(typeof(StartRecordCall), "StartRecordCall")]
-    [JsonSubtypes.KnownSubType(typeof(TerminateConference), "TerminateConference")]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeUtterance), "TranscribeUtterance")]
-    [JsonSubtypes.KnownSubType(typeof(Unpark), "Unpark")]
-    public partial class GetDigits : PerclCommand, IEquatable<GetDigits>, IValidatableObject
+    public partial class GetDigits : PerclCommand, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDigits" /> class.
         /// </summary>
         [JsonConstructorAttribute]
         protected GetDigits() { }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDigits" /> class.
         /// </summary>
@@ -79,20 +54,43 @@ namespace freeclimb.Model
         /// <param name="prompts">JSON array of PerCL commands to nest within the &#x60;GetDigits&#x60; command. The &#x60;Say&#x60;, &#x60;Play&#x60;, and &#x60;Pause&#x60; commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller..</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;GetDigits&quot;).</param>
-        public GetDigits(string actionUrl = default(string), int digitTimeoutMs = default(int), string finishOnKey = default(string), bool flushBuffer = default(bool), int initialTimeoutMs = default(int), int maxDigits = default(int), int minDigits = default(int), List<PerclCommand> prompts = default(List<PerclCommand>), bool privacyMode = default(bool), string command = "GetDigits") : base(command)
+        public GetDigits(
+            string actionUrl = default(string),
+            int digitTimeoutMs = default(int),
+            string finishOnKey = default(string),
+            bool flushBuffer = default(bool),
+            int initialTimeoutMs = default(int),
+            int maxDigits = default(int),
+            int minDigits = default(int),
+            List<PerclCommand> prompts = default(List<PerclCommand>),
+            bool privacyMode = default(bool),
+            string command = @"GetDigits"
+        )
+            : base(command)
         {
             // to ensure "actionUrl" is required (not null)
-            if (actionUrl == null) {
-                throw new ArgumentNullException("actionUrl is a required property for GetDigits and cannot be null");
+            if (actionUrl == null)
+            {
+                throw new ArgumentNullException(
+                    "actionUrl is a required property for GetDigits and cannot be null"
+                );
             }
             this.ActionUrl = actionUrl;
+
             this.DigitTimeoutMs = digitTimeoutMs;
+
             this.FinishOnKey = finishOnKey;
+
             this.FlushBuffer = flushBuffer;
+
             this.InitialTimeoutMs = initialTimeoutMs;
+
             this.MaxDigits = maxDigits;
+
             this.MinDigits = minDigits;
+
             this.Prompts = prompts;
+
             this.PrivacyMode = privacyMode;
         }
 
@@ -100,7 +98,7 @@ namespace freeclimb.Model
         /// When the Caller has finished entering digits, FreeClimb will make an HTTP POST request to this URL. A PerCL response is expected to continue handling the Call. Make sure to keep “http://“ in the URL.
         /// </summary>
         /// <value>When the Caller has finished entering digits, FreeClimb will make an HTTP POST request to this URL. A PerCL response is expected to continue handling the Call. Make sure to keep “http://“ in the URL.</value>
-        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "actionUrl", IsRequired = true, EmitDefaultValue = true)]
         public string ActionUrl { get; set; }
 
         /// <summary>
@@ -197,124 +195,29 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the GetDigits instance. 
+        /// Retrieve the KVP Dictionary for the GetDigits instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);          
-            props.Add("digitTimeoutMs", DigitTimeoutMs);          
-            props.Add("finishOnKey", FinishOnKey);          
-            props.Add("flushBuffer", FlushBuffer);          
-            props.Add("initialTimeoutMs", InitialTimeoutMs);          
-            props.Add("maxDigits", MaxDigits);          
-            props.Add("minDigits", MinDigits);          
+            props.Add("actionUrl", ActionUrl);
+            props.Add("digitTimeoutMs", DigitTimeoutMs);
+            props.Add("finishOnKey", FinishOnKey);
+            props.Add("flushBuffer", FlushBuffer);
+            props.Add("initialTimeoutMs", InitialTimeoutMs);
+            props.Add("maxDigits", MaxDigits);
+            props.Add("minDigits", MinDigits);
             List<object> nested = new List<object>();
             foreach (var item in Prompts)
             {
                 nested.Add(item);
             }
-            props.Add("prompts", nested); 
-            props.Add("privacyMode", PrivacyMode);          
+            props.Add("prompts", nested);
+            props.Add("privacyMode", PrivacyMode);
             IDictionary<string, object> command = new Dictionary<string, object>();
-            command.Add("GetDigits",props);
+            command.Add("GetDigits", props);
             return command;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GetDigits);
-        }
-
-        /// <summary>
-        /// Returns true if GetDigits instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GetDigits to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GetDigits input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return base.Equals(input) && 
-                (
-                    this.ActionUrl == input.ActionUrl ||
-                    (this.ActionUrl != null &&
-                    this.ActionUrl.Equals(input.ActionUrl))
-                ) && base.Equals(input) && 
-                (
-                    this.DigitTimeoutMs == input.DigitTimeoutMs ||
-                    this.DigitTimeoutMs.Equals(input.DigitTimeoutMs)
-                ) && base.Equals(input) && 
-                (
-                    this.FinishOnKey == input.FinishOnKey ||
-                    (this.FinishOnKey != null &&
-                    this.FinishOnKey.Equals(input.FinishOnKey))
-                ) && base.Equals(input) && 
-                (
-                    this.FlushBuffer == input.FlushBuffer ||
-                    this.FlushBuffer.Equals(input.FlushBuffer)
-                ) && base.Equals(input) && 
-                (
-                    this.InitialTimeoutMs == input.InitialTimeoutMs ||
-                    this.InitialTimeoutMs.Equals(input.InitialTimeoutMs)
-                ) && base.Equals(input) && 
-                (
-                    this.MaxDigits == input.MaxDigits ||
-                    this.MaxDigits.Equals(input.MaxDigits)
-                ) && base.Equals(input) && 
-                (
-                    this.MinDigits == input.MinDigits ||
-                    this.MinDigits.Equals(input.MinDigits)
-                ) && base.Equals(input) && 
-                (
-                    this.Prompts == input.Prompts ||
-                    this.Prompts != null &&
-                    input.Prompts != null &&
-                    this.Prompts.SequenceEqual(input.Prompts)
-                ) && base.Equals(input) && 
-                (
-                    this.PrivacyMode == input.PrivacyMode ||
-                    this.PrivacyMode.Equals(input.PrivacyMode)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = base.GetHashCode();
-                if (this.ActionUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.ActionUrl.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.DigitTimeoutMs.GetHashCode();
-                if (this.FinishOnKey != null)
-                {
-                    hashCode = (hashCode * 59) + this.FinishOnKey.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.FlushBuffer.GetHashCode();
-                hashCode = (hashCode * 59) + this.InitialTimeoutMs.GetHashCode();
-                hashCode = (hashCode * 59) + this.MaxDigits.GetHashCode();
-                hashCode = (hashCode * 59) + this.MinDigits.GetHashCode();
-                if (this.Prompts != null)
-                {
-                    hashCode = (hashCode * 59) + this.Prompts.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PrivacyMode.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -322,7 +225,9 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             return this.BaseValidate(validationContext);
         }
@@ -332,14 +237,13 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected override IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach (var x in BaseValidate(validationContext))
+            foreach (var x in base.BaseValidate(validationContext))
             {
                 yield return x;
             }
             yield break;
         }
     }
-
 }

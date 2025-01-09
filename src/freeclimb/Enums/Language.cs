@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -187,8 +187,190 @@ namespace freeclimb.Enums
         /// Enum CHINESE_TW for value: zh-TW
         /// </summary>
         [EnumMember(Value = "zh-TW")]
-        CHINESE_TW = 26
-
+        CHINESE_TW = 26,
     }
 
+    /// <summary>
+    /// Converts <see cref="Language"/> to and from the JSON value
+    /// </summary>
+    public static class LanguageValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="Language"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static Language FromString(string value)
+        {
+            if (value.Equals("ca-ES"))
+                return Language.CATALAN;
+
+            if (value.Equals("da-DK"))
+                return Language.DANISH;
+
+            if (value.Equals("de-DE"))
+                return Language.GERMAN;
+
+            if (value.Equals("en-AU"))
+                return Language.ENGLISH_AU;
+
+            if (value.Equals("en-CA"))
+                return Language.ENGLISH_CA;
+
+            if (value.Equals("en-GB"))
+                return Language.ENGLISH_UK;
+
+            if (value.Equals("en-IN"))
+                return Language.ENGLISH_IN;
+
+            if (value.Equals("en-US"))
+                return Language.ENGLISH_US;
+
+            if (value.Equals("es-ES"))
+                return Language.ENGLISH_ES;
+
+            if (value.Equals("es-MX"))
+                return Language.ENGLISH_MX;
+
+            if (value.Equals("fi-FI"))
+                return Language.FINNISH;
+
+            if (value.Equals("fr-CA"))
+                return Language.FRENCH_CA;
+
+            if (value.Equals("fr-FR"))
+                return Language.FRENCH_FR;
+
+            if (value.Equals("it-IT"))
+                return Language.ITALIAN;
+
+            if (value.Equals("ja-JP"))
+                return Language.JAPANESE;
+
+            if (value.Equals("ko-KR"))
+                return Language.KOREAN;
+
+            if (value.Equals("nb-NO"))
+                return Language.NORWEGIAN;
+
+            if (value.Equals("nl-NL"))
+                return Language.DUTCH;
+
+            if (value.Equals("pl-PL"))
+                return Language.POLISH;
+
+            if (value.Equals("pt-BR"))
+                return Language.PORTUGESE_BR;
+
+            if (value.Equals("pt-PT"))
+                return Language.PORTUGESE_PT;
+
+            if (value.Equals("ru-RU"))
+                return Language.RUSSIAN;
+
+            if (value.Equals("sv-SE"))
+                return Language.SWEDISH;
+
+            if (value.Equals("zh-CN"))
+                return Language.CHINESE_CN;
+
+            if (value.Equals("zh-HK"))
+                return Language.CHINESE_HK;
+
+            if (value.Equals("zh-TW"))
+                return Language.CHINESE_TW;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type Language: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="Language"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static Language? FromStringOrDefault(string value)
+        {
+            if (value.Equals("ca-ES"))
+                return Language.CATALAN;
+
+            if (value.Equals("da-DK"))
+                return Language.DANISH;
+
+            if (value.Equals("de-DE"))
+                return Language.GERMAN;
+
+            if (value.Equals("en-AU"))
+                return Language.ENGLISH_AU;
+
+            if (value.Equals("en-CA"))
+                return Language.ENGLISH_CA;
+
+            if (value.Equals("en-GB"))
+                return Language.ENGLISH_UK;
+
+            if (value.Equals("en-IN"))
+                return Language.ENGLISH_IN;
+
+            if (value.Equals("en-US"))
+                return Language.ENGLISH_US;
+
+            if (value.Equals("es-ES"))
+                return Language.ENGLISH_ES;
+
+            if (value.Equals("es-MX"))
+                return Language.ENGLISH_MX;
+
+            if (value.Equals("fi-FI"))
+                return Language.FINNISH;
+
+            if (value.Equals("fr-CA"))
+                return Language.FRENCH_CA;
+
+            if (value.Equals("fr-FR"))
+                return Language.FRENCH_FR;
+
+            if (value.Equals("it-IT"))
+                return Language.ITALIAN;
+
+            if (value.Equals("ja-JP"))
+                return Language.JAPANESE;
+
+            if (value.Equals("ko-KR"))
+                return Language.KOREAN;
+
+            if (value.Equals("nb-NO"))
+                return Language.NORWEGIAN;
+
+            if (value.Equals("nl-NL"))
+                return Language.DUTCH;
+
+            if (value.Equals("pl-PL"))
+                return Language.POLISH;
+
+            if (value.Equals("pt-BR"))
+                return Language.PORTUGESE_BR;
+
+            if (value.Equals("pt-PT"))
+                return Language.PORTUGESE_PT;
+
+            if (value.Equals("ru-RU"))
+                return Language.RUSSIAN;
+
+            if (value.Equals("sv-SE"))
+                return Language.SWEDISH;
+
+            if (value.Equals("zh-CN"))
+                return Language.CHINESE_CN;
+
+            if (value.Equals("zh-HK"))
+                return Language.CHINESE_HK;
+
+            if (value.Equals("zh-TW"))
+                return Language.CHINESE_TW;
+
+            return null;
+        }
+    }
 }

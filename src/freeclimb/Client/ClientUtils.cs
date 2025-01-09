@@ -11,12 +11,13 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using freeclimb.Enums;
 
 namespace freeclimb.Client
 {
@@ -44,7 +45,11 @@ namespace freeclimb.Client
         /// <param name="name">Key name.</param>
         /// <param name="value">Value object.</param>
         /// <returns>A multimap of keys with 1..n associated values.</returns>
-        public static Multimap<string, string> ParameterToMultiMap(string collectionFormat, string name, object value)
+        public static Multimap<string, string> ParameterToMultiMap(
+            string collectionFormat,
+            string name,
+            object value
+        )
         {
             var parameters = new Multimap<string, string>();
 
@@ -57,13 +62,18 @@ namespace freeclimb.Client
             }
             else if (value is IDictionary dictionary)
             {
-                if(collectionFormat == "deepObject") {
+                if (collectionFormat == "deepObject")
+                {
                     foreach (DictionaryEntry entry in dictionary)
                     {
-                        parameters.Add(name + "[" + entry.Key + "]", ParameterToString(entry.Value));
+                        parameters.Add(
+                            name + "[" + entry.Key + "]",
+                            ParameterToString(entry.Value)
+                        );
                     }
                 }
-                else {
+                else
+                {
                     foreach (DictionaryEntry entry in dictionary)
                     {
                         parameters.Add(entry.Key.ToString(), ParameterToString(entry.Value));
@@ -72,16 +82,7 @@ namespace freeclimb.Client
             }
             else
             {
-                if (value is Enum)
-                {
-                    Enum newValue = (Enum)value;
-                    parameters.Add(name, newValue.GetMemberValue());
-                }
-                else
-                {
-                    parameters.Add(name, ParameterToString(value));
-                }
-              
+                parameters.Add(name, ParameterToString(value));
             }
 
             return parameters;
@@ -95,61 +96,58 @@ namespace freeclimb.Client
         /// <param name="obj">The parameter (header, path, query, form).</param>
         /// <param name="configuration">An optional configuration instance, providing formatting options used in processing.</param>
         /// <returns>Formatted string.</returns>
-        public static string ParameterToString(object obj, IReadableConfiguration configuration = null)
+        public static string ParameterToString(
+            object obj,
+            IReadableConfiguration configuration = null
+        )
         {
             if (obj is DateTime dateTime)
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return dateTime.ToString((configuration ?? GlobalConfiguration.Instance).DateTimeFormat);
+                return dateTime.ToString(
+                    (configuration ?? GlobalConfiguration.Instance).DateTimeFormat
+                );
             if (obj is DateTimeOffset dateTimeOffset)
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return dateTimeOffset.ToString((configuration ?? GlobalConfiguration.Instance).DateTimeFormat);
+                return dateTimeOffset.ToString(
+                    (configuration ?? GlobalConfiguration.Instance).DateTimeFormat
+                );
+            if (obj is DateOnly dateOnly)
+                // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
+                // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
+                // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
+                // For example: 2009-06-15
+                return dateOnly.ToString(
+                    (configuration ?? GlobalConfiguration.Instance).DateTimeFormat
+                );
             if (obj is bool boolean)
                 return boolean ? "true" : "false";
             if (obj is ICollection collection)
-                return string.Join(",", collection.Cast<object>());
+            {
+                List<string> entries = new List<string>();
+                foreach (var entry in collection)
+                    entries.Add(ParameterToString(entry, configuration));
+                return string.Join(",", entries);
+            }
+            if (obj is Enum && HasEnumMemberAttrValue(obj))
+                return GetEnumMemberAttrValue(obj);
 
             return Convert.ToString(obj, CultureInfo.InvariantCulture);
         }
 
         /// <summary>
-        /// URL encode a string
-        /// Credit/Ref: https://github.com/restsharp/RestSharp/blob/master/RestSharp/Extensions/StringExtensions.cs#L50
+        /// Serializes the given object when not null. Otherwise return null.
         /// </summary>
-        /// <param name="input">string to be URL encoded</param>
-        /// <returns>Byte array</returns>
-        public static string UrlEncode(string input)
+        /// <param name="obj">The object to serialize.</param>
+        /// <returns>Serialized string.</returns>
+        public static string Serialize(object obj)
         {
-            const int maxLength = 32766;
-
-            if (input == null)
-            {
-                throw new ArgumentNullException("input");
-            }
-
-            if (input.Length <= maxLength)
-            {
-                return Uri.EscapeDataString(input);
-            }
-
-            StringBuilder sb = new StringBuilder(input.Length * 2);
-            int index = 0;
-
-            while (index < input.Length)
-            {
-                int length = Math.Min(input.Length - index, maxLength);
-                string subString = input.Substring(index, length);
-
-                sb.Append(Uri.EscapeDataString(subString));
-                index += subString.Length;
-            }
-
-            return sb.ToString();
+            return obj != null ? Newtonsoft.Json.JsonConvert.SerializeObject(obj) : null;
         }
 
         /// <summary>
@@ -159,7 +157,7 @@ namespace freeclimb.Client
         /// <returns>Encoded string.</returns>
         public static string Base64Encode(string text)
         {
-            return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(text));
+            return Convert.ToBase64String(global::System.Text.Encoding.UTF8.GetBytes(text));
         }
 
         /// <summary>
@@ -207,7 +205,7 @@ namespace freeclimb.Client
         public static string SelectHeaderAccept(string[] accepts)
         {
             if (accepts.Length == 0)
-                return "";
+                return null;
 
             if (accepts.Contains("application/json", StringComparer.OrdinalIgnoreCase))
                 return "application/json";
@@ -218,7 +216,9 @@ namespace freeclimb.Client
         /// <summary>
         /// Provides a case-insensitive check that a provided content type is a known JSON-like content type.
         /// </summary>
-        public static readonly Regex JsonRegex = new Regex("(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$");
+        public static readonly Regex JsonRegex = new Regex(
+            "(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$"
+        );
 
         /// <summary>
         /// Check if the given MIME is a JSON MIME.
@@ -232,9 +232,58 @@ namespace freeclimb.Client
         /// <returns>Returns True if MIME type is json.</returns>
         public static bool IsJsonMime(string mime)
         {
-            if (string.IsNullOrWhiteSpace(mime)) return false;
+            if (string.IsNullOrWhiteSpace(mime))
+                return false;
 
             return JsonRegex.IsMatch(mime) || mime.Equals("application/json-patch+json");
+        }
+
+        /// <summary>
+        /// Is the Enum decorated with EnumMember Attribute
+        /// </summary>
+        /// <param name="enumVal"></param>
+        /// <returns>true if found</returns>
+        private static bool HasEnumMemberAttrValue(object enumVal)
+        {
+            if (enumVal == null)
+                throw new ArgumentNullException(nameof(enumVal));
+            var enumType = enumVal.GetType();
+            var memInfo = enumType.GetMember(
+                enumVal.ToString() ?? throw new InvalidOperationException()
+            );
+            var attr = memInfo
+                .FirstOrDefault()
+                ?.GetCustomAttributes(false)
+                .OfType<EnumMemberAttribute>()
+                .FirstOrDefault();
+            if (attr != null)
+                return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Get the EnumMember value
+        /// </summary>
+        /// <param name="enumVal"></param>
+        /// <returns>EnumMember value as string otherwise null</returns>
+        private static string GetEnumMemberAttrValue(object enumVal)
+        {
+            if (enumVal == null)
+                throw new ArgumentNullException(nameof(enumVal));
+            var enumType = enumVal.GetType();
+            var memInfo = enumType.GetMember(
+                enumVal.ToString() ?? throw new InvalidOperationException()
+            );
+            var attr = memInfo
+                .FirstOrDefault()
+                ?.GetCustomAttributes(false)
+                .OfType<EnumMemberAttribute>()
+                .FirstOrDefault();
+            if (attr != null)
+            {
+                return attr.Value;
+            }
+            return null;
         }
     }
 }

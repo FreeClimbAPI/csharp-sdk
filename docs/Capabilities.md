@@ -1,6 +1,6 @@
 # freeclimb.Model.Capabilities
 
-
+Details for which features this number may be used.
 ## Properties
 
 Name | Type | Description | Notes
@@ -11,8 +11,5 @@ Name | Type | Description | Notes
 **TenDLC** | **bool?** | Indicates that a number, if sms is true, will be used for 10DLC messaging | 
 **ShortCode** | **bool?** | Indicates that a number is a short code and can be used for short code messaging | 
 
-[[Link to Serialization/Deserialization]](../README.md#documentation-for-serialization-deserialization)<br /> 
-[[Back to Enum list]](../README.md#documentation-for-enums)<br /> 
-[[Back to Model list]](../README.md#documentation-for-models)<br /> 
-[[Back to API list]](../README.md#documentation-for-api-endpoints) <br /> 
-[[Back to README]](../README.md) <br /> 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

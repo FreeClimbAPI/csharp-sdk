@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -169,8 +169,172 @@ namespace freeclimb.Enums
         /// Enum MESSAGE_STATUS for value: messageStatus
         /// </summary>
         [EnumMember(Value = "messageStatus")]
-        MESSAGE_STATUS = 23
-
+        MESSAGE_STATUS = 23,
     }
 
+    /// <summary>
+    /// Converts <see cref="RequestType"/> to and from the JSON value
+    /// </summary>
+    public static class RequestTypeValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="RequestType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static RequestType FromString(string value)
+        {
+            if (value.Equals("inboundCall"))
+                return RequestType.INBOUND_CALL;
+
+            if (value.Equals("record"))
+                return RequestType.RECORD;
+
+            if (value.Equals("getDigits"))
+                return RequestType.GET_DIGITS;
+
+            if (value.Equals("getSpeech"))
+                return RequestType.GET_SPEECH;
+
+            if (value.Equals("redirect"))
+                return RequestType.REDIRECT;
+
+            if (value.Equals("pause"))
+                return RequestType.PAUSE;
+
+            if (value.Equals("outDialStart"))
+                return RequestType.OUT_DIAL_START;
+
+            if (value.Equals("outDialConnect"))
+                return RequestType.OUT_DIAL_CONNECT;
+
+            if (value.Equals("outDialApiConnect"))
+                return RequestType.OUT_DIAL_API_CONNECT;
+
+            if (value.Equals("machineDetected"))
+                return RequestType.MACHINE_DETECTED;
+
+            if (value.Equals("dequeue"))
+                return RequestType.DEQUEUE;
+
+            if (value.Equals("queueWait"))
+                return RequestType.QUEUE_WAIT;
+
+            if (value.Equals("addToQueueNotification"))
+                return RequestType.ADD_TO_QUEUE_NOTIFICATION;
+
+            if (value.Equals("removeFromQueueNotification"))
+                return RequestType.REMOVE_FROM_QUEUE_NOTIFICATION;
+
+            if (value.Equals("callStatus"))
+                return RequestType.CALL_STATUS;
+
+            if (value.Equals("createConference"))
+                return RequestType.CREATE_CONFERENCE;
+
+            if (value.Equals("conferenceStatus"))
+                return RequestType.CONFERENCE_STATUS;
+
+            if (value.Equals("leaveConference"))
+                return RequestType.LEAVE_CONFERENCE;
+
+            if (value.Equals("addToConferenceNotification"))
+                return RequestType.ADD_TO_CONFERENCE_NOTIFICATION;
+
+            if (value.Equals("conferenceRecordingStatus"))
+                return RequestType.CONFERENCE_RECORDING_STATUS;
+
+            if (value.Equals("conferenceCallControl"))
+                return RequestType.CONFERENCE_CALL_CONTROL;
+
+            if (value.Equals("messageDelivery"))
+                return RequestType.MESSAGE_DELIVERY;
+
+            if (value.Equals("messageStatus"))
+                return RequestType.MESSAGE_STATUS;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type RequestType: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="RequestType"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static RequestType? FromStringOrDefault(string value)
+        {
+            if (value.Equals("inboundCall"))
+                return RequestType.INBOUND_CALL;
+
+            if (value.Equals("record"))
+                return RequestType.RECORD;
+
+            if (value.Equals("getDigits"))
+                return RequestType.GET_DIGITS;
+
+            if (value.Equals("getSpeech"))
+                return RequestType.GET_SPEECH;
+
+            if (value.Equals("redirect"))
+                return RequestType.REDIRECT;
+
+            if (value.Equals("pause"))
+                return RequestType.PAUSE;
+
+            if (value.Equals("outDialStart"))
+                return RequestType.OUT_DIAL_START;
+
+            if (value.Equals("outDialConnect"))
+                return RequestType.OUT_DIAL_CONNECT;
+
+            if (value.Equals("outDialApiConnect"))
+                return RequestType.OUT_DIAL_API_CONNECT;
+
+            if (value.Equals("machineDetected"))
+                return RequestType.MACHINE_DETECTED;
+
+            if (value.Equals("dequeue"))
+                return RequestType.DEQUEUE;
+
+            if (value.Equals("queueWait"))
+                return RequestType.QUEUE_WAIT;
+
+            if (value.Equals("addToQueueNotification"))
+                return RequestType.ADD_TO_QUEUE_NOTIFICATION;
+
+            if (value.Equals("removeFromQueueNotification"))
+                return RequestType.REMOVE_FROM_QUEUE_NOTIFICATION;
+
+            if (value.Equals("callStatus"))
+                return RequestType.CALL_STATUS;
+
+            if (value.Equals("createConference"))
+                return RequestType.CREATE_CONFERENCE;
+
+            if (value.Equals("conferenceStatus"))
+                return RequestType.CONFERENCE_STATUS;
+
+            if (value.Equals("leaveConference"))
+                return RequestType.LEAVE_CONFERENCE;
+
+            if (value.Equals("addToConferenceNotification"))
+                return RequestType.ADD_TO_CONFERENCE_NOTIFICATION;
+
+            if (value.Equals("conferenceRecordingStatus"))
+                return RequestType.CONFERENCE_RECORDING_STATUS;
+
+            if (value.Equals("conferenceCallControl"))
+                return RequestType.CONFERENCE_CALL_CONTROL;
+
+            if (value.Equals("messageDelivery"))
+                return RequestType.MESSAGE_DELIVERY;
+
+            if (value.Equals("messageStatus"))
+                return RequestType.MESSAGE_STATUS;
+
+            return null;
+        }
+    }
 }

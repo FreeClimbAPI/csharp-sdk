@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -55,8 +55,58 @@ namespace freeclimb.Enums
         /// Enum SYSTEM_ERROR for value: systemError
         /// </summary>
         [EnumMember(Value = "systemError")]
-        SYSTEM_ERROR = 4
-
+        SYSTEM_ERROR = 4,
     }
 
+    /// <summary>
+    /// Converts <see cref="QueueResultStatus"/> to and from the JSON value
+    /// </summary>
+    public static class QueueResultStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="QueueResultStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static QueueResultStatus FromString(string value)
+        {
+            if (value.Equals("queueFull"))
+                return QueueResultStatus.QUEUE_FULL;
+
+            if (value.Equals("dequeued"))
+                return QueueResultStatus.DEQUEUED;
+
+            if (value.Equals("hangup"))
+                return QueueResultStatus.HANGUP;
+
+            if (value.Equals("systemError"))
+                return QueueResultStatus.SYSTEM_ERROR;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type QueueResultStatus: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="QueueResultStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static QueueResultStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("queueFull"))
+                return QueueResultStatus.QUEUE_FULL;
+
+            if (value.Equals("dequeued"))
+                return QueueResultStatus.DEQUEUED;
+
+            if (value.Equals("hangup"))
+                return QueueResultStatus.HANGUP;
+
+            if (value.Equals("systemError"))
+                return QueueResultStatus.SYSTEM_ERROR;
+
+            return null;
+        }
+    }
 }

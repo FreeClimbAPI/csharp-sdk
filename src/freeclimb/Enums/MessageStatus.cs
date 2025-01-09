@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -98,8 +98,100 @@ namespace freeclimb.Enums
         /// Enum UNKNOWN for value: unknown
         /// </summary>
         [EnumMember(Value = "unknown")]
-        UNKNOWN = 11
-
+        UNKNOWN = 11,
     }
 
+    /// <summary>
+    /// Converts <see cref="MessageStatus"/> to and from the JSON value
+    /// </summary>
+    public static class MessageStatusValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="MessageStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MessageStatus FromString(string value)
+        {
+            if (value.Equals("new"))
+                return MessageStatus.NEW;
+
+            if (value.Equals("queued"))
+                return MessageStatus.QUEUED;
+
+            if (value.Equals("rejected"))
+                return MessageStatus.REJECTED;
+
+            if (value.Equals("sending"))
+                return MessageStatus.SENDING;
+
+            if (value.Equals("sent"))
+                return MessageStatus.SENT;
+
+            if (value.Equals("failed"))
+                return MessageStatus.FAILED;
+
+            if (value.Equals("received"))
+                return MessageStatus.RECEIVED;
+
+            if (value.Equals("undelivered"))
+                return MessageStatus.UNDELIVERED;
+
+            if (value.Equals("expired"))
+                return MessageStatus.EXPIRED;
+
+            if (value.Equals("deleted"))
+                return MessageStatus.DELETED;
+
+            if (value.Equals("unknown"))
+                return MessageStatus.UNKNOWN;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type MessageStatus: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="MessageStatus"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MessageStatus? FromStringOrDefault(string value)
+        {
+            if (value.Equals("new"))
+                return MessageStatus.NEW;
+
+            if (value.Equals("queued"))
+                return MessageStatus.QUEUED;
+
+            if (value.Equals("rejected"))
+                return MessageStatus.REJECTED;
+
+            if (value.Equals("sending"))
+                return MessageStatus.SENDING;
+
+            if (value.Equals("sent"))
+                return MessageStatus.SENT;
+
+            if (value.Equals("failed"))
+                return MessageStatus.FAILED;
+
+            if (value.Equals("received"))
+                return MessageStatus.RECEIVED;
+
+            if (value.Equals("undelivered"))
+                return MessageStatus.UNDELIVERED;
+
+            if (value.Equals("expired"))
+                return MessageStatus.EXPIRED;
+
+            if (value.Equals("deleted"))
+                return MessageStatus.DELETED;
+
+            if (value.Equals("unknown"))
+                return MessageStatus.UNKNOWN;
+
+            return null;
+        }
+    }
 }

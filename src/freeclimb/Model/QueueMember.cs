@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Model
 {
@@ -31,7 +31,7 @@ namespace freeclimb.Model
     /// QueueMember
     /// </summary>
     [DataContract(Name = "QueueMember")]
-    public partial class QueueMember : IEquatable<QueueMember>, IValidatableObject
+    public partial class QueueMember : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueMember" /> class.
@@ -41,12 +41,22 @@ namespace freeclimb.Model
         /// <param name="waitTime">Number of seconds the Member has been in the queue..</param>
         /// <param name="position">Member&#39;s current position in the Queue, 1 indexed..</param>
         /// <param name="dateEnqueued">Date that the Member was enqueued (GMT), given in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT)..</param>
-        public QueueMember(string uri = default(string), string callId = default(string), int? waitTime = default(int?), int? position = default(int?), string dateEnqueued = default(string))
+        public QueueMember(
+            string uri = default(string),
+            string callId = default(string),
+            int? waitTime = default(int?),
+            int? position = default(int?),
+            string dateEnqueued = default(string)
+        )
         {
             this.Uri = uri;
+
             this.CallId = callId;
+
             this.WaitTime = waitTime;
+
             this.Position = position;
+
             this.DateEnqueued = dateEnqueued;
         }
 
@@ -108,104 +118,25 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                Newtonsoft.Json.Formatting.Indented
+            );
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the QueueMember instance. 
+        /// Retrieve the KVP Dictionary for the QueueMember instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);          
-            props.Add("callId", CallId);          
-            props.Add("waitTime", WaitTime);          
-            props.Add("position", Position);          
-            props.Add("dateEnqueued", DateEnqueued);          
+            props.Add("uri", Uri);
+            props.Add("callId", CallId);
+            props.Add("waitTime", WaitTime);
+            props.Add("position", Position);
+            props.Add("dateEnqueued", DateEnqueued);
             return props;
-        }
-        
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as QueueMember);
-        }
-
-        /// <summary>
-        /// Returns true if QueueMember instances are equal
-        /// </summary>
-        /// <param name="input">Instance of QueueMember to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(QueueMember input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    (this.Uri != null &&
-                    this.Uri.Equals(input.Uri))
-                ) && 
-                (
-                    this.CallId == input.CallId ||
-                    (this.CallId != null &&
-                    this.CallId.Equals(input.CallId))
-                ) && 
-                (
-                    this.WaitTime == input.WaitTime ||
-                    (this.WaitTime != null &&
-                    this.WaitTime.Equals(input.WaitTime))
-                ) && 
-                (
-                    this.Position == input.Position ||
-                    (this.Position != null &&
-                    this.Position.Equals(input.Position))
-                ) && 
-                (
-                    this.DateEnqueued == input.DateEnqueued ||
-                    (this.DateEnqueued != null &&
-                    this.DateEnqueued.Equals(input.DateEnqueued))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Uri != null)
-                {
-                    hashCode = (hashCode * 59) + this.Uri.GetHashCode();
-                }
-                if (this.CallId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CallId.GetHashCode();
-                }
-                if (this.WaitTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.WaitTime.GetHashCode();
-                }
-                if (this.Position != null)
-                {
-                    hashCode = (hashCode * 59) + this.Position.GetHashCode();
-                }
-                if (this.DateEnqueued != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateEnqueued.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
@@ -213,10 +144,11 @@ namespace freeclimb.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext
+        )
         {
             yield break;
         }
     }
-
 }

@@ -13,17 +13,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using freeclimb.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
-using freeclimb.Enums;
 
 namespace freeclimb.Enums
 {
@@ -43,8 +43,46 @@ namespace freeclimb.Enums
         /// Enum OUTBOUND for value: outbound
         /// </summary>
         [EnumMember(Value = "outbound")]
-        OUTBOUND = 2
-
+        OUTBOUND = 2,
     }
 
+    /// <summary>
+    /// Converts <see cref="MessageDirection"/> to and from the JSON value
+    /// </summary>
+    public static class MessageDirectionValueConverter
+    {
+        /// <summary>
+        /// Parses a given value to <see cref="MessageDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MessageDirection FromString(string value)
+        {
+            if (value.Equals("inbound"))
+                return MessageDirection.INBOUND;
+
+            if (value.Equals("outbound"))
+                return MessageDirection.OUTBOUND;
+
+            throw new NotImplementedException(
+                $"Could not convert value to type MessageDirection: '{value}'"
+            );
+        }
+
+        /// <summary>
+        /// Parses a given value to <see cref="MessageDirection"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MessageDirection? FromStringOrDefault(string value)
+        {
+            if (value.Equals("inbound"))
+                return MessageDirection.INBOUND;
+
+            if (value.Equals("outbound"))
+                return MessageDirection.OUTBOUND;
+
+            return null;
+        }
+    }
 }
