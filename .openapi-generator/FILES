@@ -70,6 +70,7 @@ docs/MessageDeliveryWebhook.md
 docs/MessageDirection.md
 docs/MessageRequest.md
 docs/MessageResult.md
+docs/MessageResultAllOfTfn.md
 docs/MessageStatus.md
 docs/MessageStatusWebhook.md
 docs/MessagesList.md
@@ -129,6 +130,7 @@ docs/SetTalk.md
 docs/Sms.md
 docs/StartRecordCall.md
 docs/TFN.md
+docs/TFNCampaign.md
 docs/TerminateConference.md
 docs/TranscribeReason.md
 docs/TranscribeTermReason.md
@@ -211,6 +213,7 @@ src/freeclimb.Test/Model/MakeCallRequestTests.cs
 src/freeclimb.Test/Model/MessageDeliveryWebhookTests.cs
 src/freeclimb.Test/Model/MessageDirectionTests.cs
 src/freeclimb.Test/Model/MessageRequestTests.cs
+src/freeclimb.Test/Model/MessageResultAllOfTfnTests.cs
 src/freeclimb.Test/Model/MessageResultTests.cs
 src/freeclimb.Test/Model/MessageStatusTests.cs
 src/freeclimb.Test/Model/MessageStatusWebhookTests.cs
@@ -270,6 +273,7 @@ src/freeclimb.Test/Model/SetListenTests.cs
 src/freeclimb.Test/Model/SetTalkTests.cs
 src/freeclimb.Test/Model/SmsTests.cs
 src/freeclimb.Test/Model/StartRecordCallTests.cs
+src/freeclimb.Test/Model/TFNCampaignTests.cs
 src/freeclimb.Test/Model/TFNTests.cs
 src/freeclimb.Test/Model/TerminateConferenceTests.cs
 src/freeclimb.Test/Model/TranscribeReasonTests.cs
@@ -369,6 +373,7 @@ src/freeclimb/Model/MessageDeliveryWebhook.cs
 src/freeclimb/Model/MessageDirection.cs
 src/freeclimb/Model/MessageRequest.cs
 src/freeclimb/Model/MessageResult.cs
+src/freeclimb/Model/MessageResultAllOfTfn.cs
 src/freeclimb/Model/MessageStatus.cs
 src/freeclimb/Model/MessageStatusWebhook.cs
 src/freeclimb/Model/MessagesList.cs
@@ -428,6 +433,7 @@ src/freeclimb/Model/SetTalk.cs
 src/freeclimb/Model/Sms.cs
 src/freeclimb/Model/StartRecordCall.cs
 src/freeclimb/Model/TFN.cs
+src/freeclimb/Model/TFNCampaign.cs
 src/freeclimb/Model/TerminateConference.cs
 src/freeclimb/Model/TranscribeReason.cs
 src/freeclimb/Model/TranscribeTermReason.cs

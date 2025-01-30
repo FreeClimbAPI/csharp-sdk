@@ -173,7 +173,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void SubresourceUrisTest()
         {
-            object testObject = new object();
+            Object testObject = (Object)TestHelpers.getTestValue(typeof(Object));
             instance.SubresourceUris = testObject;
             Assert.Equal(testObject, instance.SubresourceUris);
         }

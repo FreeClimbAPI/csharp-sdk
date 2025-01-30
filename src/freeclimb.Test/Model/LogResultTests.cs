@@ -133,7 +133,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void MetadataTest()
         {
-            object testObject = new object();
+            Object testObject = (Object)TestHelpers.getTestValue(typeof(Object));
             instance.Metadata = testObject;
             Assert.Equal(testObject, instance.Metadata);
         }

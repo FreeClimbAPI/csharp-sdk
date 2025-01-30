@@ -290,6 +290,10 @@ namespace freeclimb.Test
                     email: "TEST_EMAIL"
                 );
             }
+            if (type == typeof(MessageResultAllOfTfn))
+            {
+                return new MessageResultAllOfTfn(campaignId: "TEST_CAMPAIGN");
+            }
             if (type == typeof(DateTime))
             {
                 return DateTime.Today;

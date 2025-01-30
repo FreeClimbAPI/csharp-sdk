@@ -58,6 +58,9 @@ namespace freeclimb.Model
         /// <param name="campaignId">The unique identifier for the campaign associated with the message.</param>
         /// <param name="segmentCount">The number of segments into which the message was split.</param>
         /// <param name="mediaUrls">an array of HTTP URLs which were attached this this message.</param>
+        /// <param name="tfn">tfn.</param>
+        /// <param name="phoneNumberId">String that uniquely identifies the phoneNumber resource used to send this Message.</param>
+        /// <param name="applicationId">String that uniquely identifies the Application resource used to send this Message.</param>
         public MessageResult(
             string uri = default(string),
             string dateCreated = default(string),
@@ -74,7 +77,10 @@ namespace freeclimb.Model
             string brandId = default(string),
             string campaignId = default(string),
             decimal? segmentCount = default(decimal?),
-            List<string> mediaUrls = default(List<string>)
+            List<string> mediaUrls = default(List<string>),
+            MessageResultAllOfTfn tfn = default(MessageResultAllOfTfn),
+            string phoneNumberId = default(string),
+            string applicationId = default(string)
         )
         {
             this.Uri = uri;
@@ -108,6 +114,12 @@ namespace freeclimb.Model
             this.SegmentCount = segmentCount;
 
             this.MediaUrls = mediaUrls;
+
+            this.Tfn = tfn;
+
+            this.PhoneNumberId = phoneNumberId;
+
+            this.ApplicationId = applicationId;
         }
 
         /// <summary>
@@ -216,6 +228,26 @@ namespace freeclimb.Model
         public List<string> MediaUrls { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tfn
+        /// </summary>
+        [DataMember(Name = "tfn", EmitDefaultValue = true)]
+        public MessageResultAllOfTfn Tfn { get; set; }
+
+        /// <summary>
+        /// String that uniquely identifies the phoneNumber resource used to send this Message
+        /// </summary>
+        /// <value>String that uniquely identifies the phoneNumber resource used to send this Message</value>
+        [DataMember(Name = "phoneNumberId", EmitDefaultValue = true)]
+        public string PhoneNumberId { get; set; }
+
+        /// <summary>
+        /// String that uniquely identifies the Application resource used to send this Message
+        /// </summary>
+        /// <value>String that uniquely identifies the Application resource used to send this Message</value>
+        [DataMember(Name = "applicationId", EmitDefaultValue = true)]
+        public string ApplicationId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -239,6 +271,9 @@ namespace freeclimb.Model
             sb.Append("  CampaignId: ").Append(CampaignId).Append("\n");
             sb.Append("  SegmentCount: ").Append(SegmentCount).Append("\n");
             sb.Append("  MediaUrls: ").Append(MediaUrls).Append("\n");
+            sb.Append("  Tfn: ").Append(Tfn).Append("\n");
+            sb.Append("  PhoneNumberId: ").Append(PhoneNumberId).Append("\n");
+            sb.Append("  ApplicationId: ").Append(ApplicationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -283,6 +318,9 @@ namespace freeclimb.Model
                 nested.Add(item);
             }
             props.Add("mediaUrls", nested);
+            props.Add("tfn", Tfn);
+            props.Add("phoneNumberId", PhoneNumberId);
+            props.Add("applicationId", ApplicationId);
             return props;
         }
 
