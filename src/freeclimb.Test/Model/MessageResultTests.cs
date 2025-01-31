@@ -55,7 +55,7 @@ namespace freeclimb.Test.Model
                 campaignId: (string)TestHelpers.getTestValue(typeof(string)),
                 segmentCount: (decimal?)TestHelpers.getTestValue(typeof(decimal?)),
                 mediaUrls: (List<string>)TestHelpers.getTestValue(typeof(List<string>)),
-                tfn: (MessageResultAllOfTfn)TestHelpers.getTestValue(typeof(MessageResultAllOfTfn)),
+                tfn: (TFN)TestHelpers.getTestValue(typeof(TFN)),
                 phoneNumberId: (string)TestHelpers.getTestValue(typeof(string)),
                 applicationId: (string)TestHelpers.getTestValue(typeof(string))
             );
@@ -262,8 +262,7 @@ namespace freeclimb.Test.Model
         [Fact]
         public void TfnTest()
         {
-            MessageResultAllOfTfn testObject = (MessageResultAllOfTfn)
-                TestHelpers.getTestValue(typeof(MessageResultAllOfTfn));
+            TFN testObject = (TFN)TestHelpers.getTestValue(typeof(TFN));
             instance.Tfn = testObject;
             Assert.Equal(testObject, instance.Tfn);
         }

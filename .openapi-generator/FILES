@@ -70,7 +70,6 @@ docs/MessageDeliveryWebhook.md
 docs/MessageDirection.md
 docs/MessageRequest.md
 docs/MessageResult.md
-docs/MessageResultAllOfTfn.md
 docs/MessageStatus.md
 docs/MessageStatusWebhook.md
 docs/MessagesList.md
@@ -213,7 +212,6 @@ src/freeclimb.Test/Model/MakeCallRequestTests.cs
 src/freeclimb.Test/Model/MessageDeliveryWebhookTests.cs
 src/freeclimb.Test/Model/MessageDirectionTests.cs
 src/freeclimb.Test/Model/MessageRequestTests.cs
-src/freeclimb.Test/Model/MessageResultAllOfTfnTests.cs
 src/freeclimb.Test/Model/MessageResultTests.cs
 src/freeclimb.Test/Model/MessageStatusTests.cs
 src/freeclimb.Test/Model/MessageStatusWebhookTests.cs
@@ -373,7 +371,6 @@ src/freeclimb/Model/MessageDeliveryWebhook.cs
 src/freeclimb/Model/MessageDirection.cs
 src/freeclimb/Model/MessageRequest.cs
 src/freeclimb/Model/MessageResult.cs
-src/freeclimb/Model/MessageResultAllOfTfn.cs
 src/freeclimb/Model/MessageStatus.cs
 src/freeclimb/Model/MessageStatusWebhook.cs
 src/freeclimb/Model/MessagesList.cs

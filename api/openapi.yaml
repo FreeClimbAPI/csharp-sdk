@@ -6849,7 +6849,7 @@ components:
           - https://openapi-generator.tech
           - https://openapi-generator.tech
           tfn:
-            campaignId: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
+            campaignId: campaignId
           status: new
           direction: direction
         - notificationUrl: https://openapi-generator.tech
@@ -6871,7 +6871,7 @@ components:
           - https://openapi-generator.tech
           - https://openapi-generator.tech
           tfn:
-            campaignId: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
+            campaignId: campaignId
           status: new
           direction: direction
         end: 1
@@ -7063,7 +7063,7 @@ components:
             type: array
             x-is-list: true
           tfn:
-            $ref: '#/components/schemas/MessageResult_allOf_tfn'
+            $ref: '#/components/schemas/TFN'
           phoneNumberId:
             description: String that uniquely identifies the phoneNumber resource
               used to send this Message
@@ -7095,7 +7095,7 @@ components:
         - https://openapi-generator.tech
         - https://openapi-generator.tech
         tfn:
-          campaignId: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
+          campaignId: campaignId
         status: new
         direction: direction
     TFNCampaign:
@@ -8569,20 +8569,6 @@ components:
       description: The list of subresources for this Conference. This includes participants
         and/or recordings.
       nullable: true
-      type: object
-      x-is-object: true
-    MessageResult_allOf_tfn:
-      example:
-        campaignId: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
-      nullable: true
-      properties:
-        campaignId:
-          description: TFNCampaignId
-          example: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
-          pattern: "cmptfn_[a-fA-F0-9]{40}"
-          type: string
-      required:
-      - campaignId
       type: object
       x-is-object: true
     QueueResult_allOf_subresourceUris:

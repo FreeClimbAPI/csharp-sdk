@@ -78,7 +78,7 @@ namespace freeclimb.Model
             string campaignId = default(string),
             decimal? segmentCount = default(decimal?),
             List<string> mediaUrls = default(List<string>),
-            MessageResultAllOfTfn tfn = default(MessageResultAllOfTfn),
+            TFN tfn = default(TFN),
             string phoneNumberId = default(string),
             string applicationId = default(string)
         )
@@ -230,8 +230,8 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets Tfn
         /// </summary>
-        [DataMember(Name = "tfn", EmitDefaultValue = true)]
-        public MessageResultAllOfTfn Tfn { get; set; }
+        [DataMember(Name = "tfn", EmitDefaultValue = false)]
+        public TFN Tfn { get; set; }
 
         /// <summary>
         /// String that uniquely identifies the phoneNumber resource used to send this Message

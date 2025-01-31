@@ -250,7 +250,6 @@ Class | Method | HTTP request | Description
  - [Model.MessageDirection](docs/MessageDirection.md)
  - [Model.MessageRequest](docs/MessageRequest.md)
  - [Model.MessageResult](docs/MessageResult.md)
- - [Model.MessageResultAllOfTfn](docs/MessageResultAllOfTfn.md)
  - [Model.MessageStatus](docs/MessageStatus.md)
  - [Model.MessageStatusWebhook](docs/MessageStatusWebhook.md)
  - [Model.MessagesList](docs/MessagesList.md)
