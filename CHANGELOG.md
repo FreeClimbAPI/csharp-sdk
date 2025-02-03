@@ -9,19 +9,30 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="5.1.0"></a>
+
+## [5.1.0] - 2025-01-08
+
+### Added
+
+- CampaignTFN and MessageResultsAllOfTfn models
+
 <a name="5.0.0"></a>
 
 ## [5.0.0] - 2025-01-08
 
 ### Added
+
 - Webhook classes
 - More idiomated Enum management
 
 ### Changed
+
 - Use upgraded openapi generator
 
 ### Removed
-- *AllOf model files
+
+- \*AllOf model files
 
 <a name="4.10.0"></a>
 
