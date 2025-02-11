@@ -3611,6 +3611,7 @@ components:
       type: object
       x-is-map: true
       x-is-hash: true
+      x-is-object: true
     PerclScript:
       description: A PerCL script to be returned to the FreeClimb servers in FreeClimb
         applications
@@ -3623,6 +3624,7 @@ components:
           x-is-list: true
       type: object
       x-percl-script: true
+      x-is-object: true
     PerclCommand:
       description: An individual command used in a PerCLScript.
       discriminator:
@@ -3663,6 +3665,7 @@ components:
           x-is-no-property: true
       type: object
       x-percl-command-base: true
+      x-is-object: true
     Webhook:
       discriminator:
         mapping:
@@ -3698,6 +3701,7 @@ components:
           x-webhook-base: true
       type: object
       x-webhook-base: true
+      x-is-object: true
     AddToConferenceNotificationWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5700,6 +5704,7 @@ components:
             creation and is incremented every time it is updated.
           type: integer
       type: object
+      x-is-object: true
     PaginationModel:
       properties:
         total:
@@ -5731,6 +5736,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-is-object: true
     Capabilities:
       description: Details for which features this number may be used.
       example:
@@ -5798,6 +5804,7 @@ components:
           description: Group to which this account belongs.
           type: string
       type: object
+      x-is-object: true
     AccountResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -5994,6 +6001,7 @@ components:
           x-is-uri: true
           x-is-url: true
       type: object
+      x-is-object: true
     ApplicationList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -6087,6 +6095,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-is-object: true
     AvailableNumberList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -6236,6 +6245,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-is-object: true
     IncomingNumberList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -6323,6 +6333,7 @@ components:
       required:
       - phoneNumber
       type: object
+      x-is-object: true
     CallResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -6424,6 +6435,7 @@ components:
       required:
       - status
       type: object
+      x-is-object: true
     MakeCallRequest:
       example:
         sendDigits: sendDigits
@@ -6519,6 +6531,7 @@ components:
       - from
       - to
       type: object
+      x-is-object: true
     CallList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -6696,7 +6709,9 @@ components:
             messages may include request and response header content in this field.
           nullable: true
           type: object
+          x-is-object: true
       type: object
+      x-is-object: true
     LogList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -6819,6 +6834,7 @@ components:
           campaignId: campaignId
           messageId: messageId
           uri: uri
+          phoneNumberId: phoneNumberId
           segmentCount: 9.301444243932576
           dateUpdated: dateUpdated
           revision: 7
@@ -6828,15 +6844,19 @@ components:
           from: from
           to: to
           text: text
+          applicationId: applicationId
           mediaUrls:
           - https://openapi-generator.tech
           - https://openapi-generator.tech
+          tfn:
+            campaignId: campaignId
           status: new
           direction: direction
         - notificationUrl: https://openapi-generator.tech
           campaignId: campaignId
           messageId: messageId
           uri: uri
+          phoneNumberId: phoneNumberId
           segmentCount: 9.301444243932576
           dateUpdated: dateUpdated
           revision: 7
@@ -6846,9 +6866,12 @@ components:
           from: from
           to: to
           text: text
+          applicationId: applicationId
           mediaUrls:
           - https://openapi-generator.tech
           - https://openapi-generator.tech
+          tfn:
+            campaignId: campaignId
           status: new
           direction: direction
         end: 1
@@ -6916,6 +6939,7 @@ components:
       required:
       - query
       type: object
+      x-is-object: true
     CompletionResult:
       example:
         response: response
@@ -6930,6 +6954,7 @@ components:
       - response
       - status
       type: object
+      x-is-object: true
     ConferenceList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7037,12 +7062,25 @@ components:
             nullable: true
             type: array
             x-is-list: true
+          tfn:
+            $ref: '#/components/schemas/TFN'
+          phoneNumberId:
+            description: String that uniquely identifies the phoneNumber resource
+              used to send this Message
+            nullable: true
+            type: string
+          applicationId:
+            description: String that uniquely identifies the Application resource
+              used to send this Message
+            nullable: true
+            type: string
         type: object
       example:
         notificationUrl: https://openapi-generator.tech
         campaignId: campaignId
         messageId: messageId
         uri: uri
+        phoneNumberId: phoneNumberId
         segmentCount: 9.301444243932576
         dateUpdated: dateUpdated
         revision: 7
@@ -7052,11 +7090,56 @@ components:
         from: from
         to: to
         text: text
+        applicationId: applicationId
         mediaUrls:
         - https://openapi-generator.tech
         - https://openapi-generator.tech
+        tfn:
+          campaignId: campaignId
         status: new
         direction: direction
+    TFNCampaign:
+      properties:
+        accountId:
+          description: ID of the account that created this participant.
+          nullable: true
+          type: string
+        campaignId:
+          description: TFNCampaignId
+          example: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
+          pattern: "cmptfn_[a-fA-F0-9]{40}"
+          type: string
+        useCase:
+          type: string
+        registrationStatus:
+          $ref: '#/components/schemas/SMSTollFreeCampaignRegistrationStatus'
+        dateCreated:
+          type: string
+        dateUpdated:
+          type: string
+        dateCreatedISO:
+          type: string
+        dateUpdatedISO:
+          type: string
+        revision:
+          type: integer
+      required:
+      - accountId
+      - campaignId
+      - dateCreated
+      - dateCreatedISO
+      - dateUpdated
+      - dateUpdatedISO
+      - registrationStatus
+      - revision
+      - useCase
+      type: object
+      x-is-object: true
+    TFNCampaignId:
+      description: TFNCampaignId
+      example: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
+      pattern: "cmptfn_[a-fA-F0-9]{40}"
+      type: string
     CreateConferenceRequest:
       example:
         playBeep: always
@@ -7090,6 +7173,7 @@ components:
           x-is-uri: true
           x-is-url: true
       type: object
+      x-is-object: true
     UpdateConferenceRequest:
       example:
         playBeep: always
@@ -7104,6 +7188,7 @@ components:
         status:
           $ref: '#/components/schemas/UpdateConferenceRequestStatus'
       type: object
+      x-is-object: true
     ConferenceParticipantResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -7174,6 +7259,7 @@ components:
             other value.
           type: boolean
       type: object
+      x-is-object: true
     ConferenceParticipantList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7279,6 +7365,7 @@ components:
           format: int32
           type: integer
       type: object
+      x-is-object: true
     QueueList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7353,6 +7440,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-is-object: true
     QueueMemberList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7395,6 +7483,7 @@ components:
       required:
       - pql
       type: object
+      x-is-object: true
     SMSTenDLCCampaignsListResult:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7699,6 +7788,7 @@ components:
       - subUsecases
       - usecase
       type: object
+      x-is-object: true
     SMSTenDLCPartnerCampaignsListResult:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7978,6 +8068,7 @@ components:
       - description
       - usecase
       type: object
+      x-is-object: true
     SMSTenDLCPartnerCampaignBrand:
       properties:
         accountId:
@@ -8029,6 +8120,7 @@ components:
           type: object
           x-is-map: true
           x-is-hash: true
+          x-is-object: true
         evpVettingScore:
           description: External vetting score.
           type: integer
@@ -8273,6 +8365,7 @@ components:
           type: object
           x-is-map: true
           x-is-hash: true
+          x-is-object: true
         mock:
           description: Test brand.
           type: boolean
@@ -8294,6 +8387,7 @@ components:
       - phone
       - vertical
       type: object
+      x-is-object: true
     SMSTollFreeCampaignsListResult:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -8366,6 +8460,7 @@ components:
       - revision
       - useCase
       type: object
+      x-is-object: true
     TranscribeUtteranceRecord:
       properties:
         saveRecording:
@@ -8458,24 +8553,29 @@ components:
       - to
       - uses
       type: object
+      x-is-object: true
     AccountResult_allOf_subresourceUris:
       description: The list of subresources for this account.
       nullable: true
       type: object
+      x-is-object: true
     CallResult_allOf_subresourceUris:
       description: The list of subresources for this Call. These include things like
         logs and recordings associated with the Call.
       nullable: true
       type: object
+      x-is-object: true
     ConferenceResult_allOf_subresourceUris:
       description: The list of subresources for this Conference. This includes participants
         and/or recordings.
       nullable: true
       type: object
+      x-is-object: true
     QueueResult_allOf_subresourceUris:
       description: List of subresources for this Queue (which includes Queue members).
       nullable: true
       type: object
+      x-is-object: true
   securitySchemes:
     fc:
       description: HTTP requests to the FreeClimb REST API are protected with HTTP

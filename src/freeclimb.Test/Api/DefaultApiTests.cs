@@ -1507,7 +1507,7 @@ namespace freeclimb.Test.Api
                 "https://callconnect.com",
                 "https://status.com",
                 "https://sms.com",
-                "smsfallback.com"
+                "https://smsfallback.com"
             );
         }
 

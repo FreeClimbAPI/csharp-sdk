@@ -54,7 +54,10 @@ namespace freeclimb.Test.Model
                 brandId: (string)TestHelpers.getTestValue(typeof(string)),
                 campaignId: (string)TestHelpers.getTestValue(typeof(string)),
                 segmentCount: (decimal?)TestHelpers.getTestValue(typeof(decimal?)),
-                mediaUrls: (List<string>)TestHelpers.getTestValue(typeof(List<string>))
+                mediaUrls: (List<string>)TestHelpers.getTestValue(typeof(List<string>)),
+                tfn: (TFN)TestHelpers.getTestValue(typeof(TFN)),
+                phoneNumberId: (string)TestHelpers.getTestValue(typeof(string)),
+                applicationId: (string)TestHelpers.getTestValue(typeof(string))
             );
         }
 
@@ -251,6 +254,37 @@ namespace freeclimb.Test.Model
             List<string> testList = new List<string>();
             instance.MediaUrls = testList;
             Assert.Equal(instance.MediaUrls, testList);
+        }
+
+        /// <summary>
+        /// Test the property 'Tfn'
+        /// </summary>
+        [Fact]
+        public void TfnTest()
+        {
+            TFN testObject = (TFN)TestHelpers.getTestValue(typeof(TFN));
+            instance.Tfn = testObject;
+            Assert.Equal(testObject, instance.Tfn);
+        }
+
+        /// <summary>
+        /// Test the property 'PhoneNumberId'
+        /// </summary>
+        [Fact]
+        public void PhoneNumberIdTest()
+        {
+            instance.PhoneNumberId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.PhoneNumberId);
+        }
+
+        /// <summary>
+        /// Test the property 'ApplicationId'
+        /// </summary>
+        [Fact]
+        public void ApplicationIdTest()
+        {
+            instance.ApplicationId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ApplicationId);
         }
     }
 }

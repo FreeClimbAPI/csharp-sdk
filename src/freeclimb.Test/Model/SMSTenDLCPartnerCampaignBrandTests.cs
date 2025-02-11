@@ -153,9 +153,11 @@ namespace freeclimb.Test.Model
         [Fact]
         public void OptionalAttributesTest()
         {
-            Dictionary<string, Object> testDictionary = new Dictionary<string, object>();
-            instance.OptionalAttributes = testDictionary;
-            Assert.Equal(testDictionary, instance.OptionalAttributes);
+            Dictionary<string, Object> testObject =
+                (Dictionary<string, Object>)
+                    TestHelpers.getTestValue(typeof(Dictionary<string, Object>));
+            instance.OptionalAttributes = testObject;
+            Assert.Equal(testObject, instance.OptionalAttributes);
         }
 
         /// <summary>

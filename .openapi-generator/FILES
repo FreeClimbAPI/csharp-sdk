@@ -129,6 +129,7 @@ docs/SetTalk.md
 docs/Sms.md
 docs/StartRecordCall.md
 docs/TFN.md
+docs/TFNCampaign.md
 docs/TerminateConference.md
 docs/TranscribeReason.md
 docs/TranscribeTermReason.md
@@ -270,6 +271,7 @@ src/freeclimb.Test/Model/SetListenTests.cs
 src/freeclimb.Test/Model/SetTalkTests.cs
 src/freeclimb.Test/Model/SmsTests.cs
 src/freeclimb.Test/Model/StartRecordCallTests.cs
+src/freeclimb.Test/Model/TFNCampaignTests.cs
 src/freeclimb.Test/Model/TFNTests.cs
 src/freeclimb.Test/Model/TerminateConferenceTests.cs
 src/freeclimb.Test/Model/TranscribeReasonTests.cs
@@ -428,6 +430,7 @@ src/freeclimb/Model/SetTalk.cs
 src/freeclimb/Model/Sms.cs
 src/freeclimb/Model/StartRecordCall.cs
 src/freeclimb/Model/TFN.cs
+src/freeclimb/Model/TFNCampaign.cs
 src/freeclimb/Model/TerminateConference.cs
 src/freeclimb/Model/TranscribeReason.cs
 src/freeclimb/Model/TranscribeTermReason.cs
