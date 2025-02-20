@@ -7172,6 +7172,8 @@ components:
           type: string
           x-is-uri: true
           x-is-url: true
+      required:
+      - statusCallbackUrl
       type: object
       x-is-object: true
     UpdateConferenceRequest:

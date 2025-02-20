@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="5.1.1"></a>
+
+## [5.1.1] - 2025-02-18
+
+### Changed
+
+- Make statusCallbackURL property mandatory for CreateConference
+
 <a name="5.1.0"></a>
 
 ## [5.1.0] - 2025-02-05

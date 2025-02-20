@@ -42,11 +42,17 @@ namespace freeclimb.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConferenceRequest" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected CreateConferenceRequest() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConferenceRequest" /> class.
+        /// </summary>
         /// <param name="alias">A description for this Conference. Maximum 64 characters..</param>
         /// <param name="playBeep">playBeep.</param>
         /// <param name="record">Setting to &#x60;true&#x60; records the entire Conference..</param>
         /// <param name="waitUrl">If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &amp;mdash; when the Conference is created..</param>
-        /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below)..</param>
+        /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below). (required).</param>
         public CreateConferenceRequest(
             string alias = default(string),
             PlayBeep? playBeep = default(PlayBeep?),
@@ -55,6 +61,15 @@ namespace freeclimb.Model
             string statusCallbackUrl = default(string)
         )
         {
+            // to ensure "statusCallbackUrl" is required (not null)
+            if (statusCallbackUrl == null)
+            {
+                throw new ArgumentNullException(
+                    "statusCallbackUrl is a required property for CreateConferenceRequest and cannot be null"
+                );
+            }
+            this.StatusCallbackUrl = statusCallbackUrl;
+
             this.Alias = alias;
 
             this.PlayBeep = playBeep;
@@ -62,8 +77,6 @@ namespace freeclimb.Model
             this.Record = record;
 
             this.WaitUrl = waitUrl;
-
-            this.StatusCallbackUrl = statusCallbackUrl;
         }
 
         /// <summary>
@@ -91,7 +104,7 @@ namespace freeclimb.Model
         /// This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).
         /// </summary>
         /// <value>This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).</value>
-        [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = false)]
+        [DataMember(Name = "statusCallbackUrl", IsRequired = true, EmitDefaultValue = true)]
         public string StatusCallbackUrl { get; set; }
 
         /// <summary>
