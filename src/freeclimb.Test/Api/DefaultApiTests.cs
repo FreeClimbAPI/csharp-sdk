@@ -1457,7 +1457,13 @@ namespace freeclimb.Test.Api
         private CreateConferenceRequest createConferenceRequestTestValue()
         {
             PlayBeep enumPlayBeepStatus = PlayBeepValueConverter.FromString("always");
-            return new CreateConferenceRequest("TEST-CONF", enumPlayBeepStatus, true);
+            return new CreateConferenceRequest(
+                "TEST-CONF",
+                enumPlayBeepStatus,
+                true,
+                "https://test.ca",
+                "https://test.ca"
+            );
         }
 
         private ConferenceResult conferenceResultTestValue()
