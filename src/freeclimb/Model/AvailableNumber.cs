@@ -145,7 +145,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
