@@ -197,13 +197,11 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
-
-            return strb.ToString();
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+            };
+            return JsonConvert.SerializeObject(ToKvp(), settings);
         }
 
         /// <summary>
@@ -213,19 +211,32 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("allowCallControl", AllowCallControl);
-            props.Add("callControlSequence", CallControlSequence);
-            props.Add("callControlUrl", CallControlUrl);
-            props.Add("conferenceId", ConferenceId);
-            props.Add("leaveConferenceUrl", LeaveConferenceUrl);
-            props.Add("listen", Listen);
-            props.Add("notificationUrl", NotificationUrl);
-            props.Add("startConfOnEnter", StartConfOnEnter);
-            props.Add("talk", Talk);
-            props.Add("dtmfPassThrough", DtmfPassThrough);
+            AddToDictionary(props, "allowCallControl", AllowCallControl);
+            AddToDictionary(props, "callControlSequence", CallControlSequence);
+            AddToDictionary(props, "callControlUrl", CallControlUrl);
+            AddToDictionary(props, "conferenceId", ConferenceId);
+            AddToDictionary(props, "leaveConferenceUrl", LeaveConferenceUrl);
+            AddToDictionary(props, "listen", Listen);
+            AddToDictionary(props, "notificationUrl", NotificationUrl);
+            AddToDictionary(props, "startConfOnEnter", StartConfOnEnter);
+            AddToDictionary(props, "talk", Talk);
+            AddToDictionary(props, "dtmfPassThrough", DtmfPassThrough);
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("AddToConference", props);
             return command;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

@@ -66,5 +66,29 @@ namespace freeclimb.Test.Model
             instance.Query = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Query);
         }
+
+        /// <summary>
+        /// Test serialize a CompletionRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void CompletionRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++CompletionRequest++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - query ++ " + json.Contains("query"));
+            Assert.Contains("query", json);
+        }
+
+        /// <summary>
+        /// Test serialize a CompletionRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void CompletionRequestSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

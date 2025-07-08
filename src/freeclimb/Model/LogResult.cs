@@ -155,14 +155,27 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("timestamp", Timestamp);
-            props.Add("level", Level);
-            props.Add("requestId", RequestId);
-            props.Add("accountId", AccountId);
-            props.Add("callId", CallId);
-            props.Add("message", Message);
-            props.Add("metadata", Metadata);
+            AddToDictionary(props, "timestamp", Timestamp);
+            AddToDictionary(props, "level", Level);
+            AddToDictionary(props, "requestId", RequestId);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "callId", CallId);
+            AddToDictionary(props, "message", Message);
+            AddToDictionary(props, "metadata", Metadata);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

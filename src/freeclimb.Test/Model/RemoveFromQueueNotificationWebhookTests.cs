@@ -206,5 +206,67 @@ namespace freeclimb.Test.Model
             Assert.IsType<RemoveFromQueueNotificationWebhook>(deserialized);
             Assert.Equal("removeFromQueueNotification", deserialized.RequestType);
         }
+
+        /// <summary>
+        /// Test serialize a RemoveFromQueueNotificationWebhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void RemoveFromQueueNotificationWebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++RemoveFromQueueNotificationWebhook++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - requestType ++ " + json.Contains("requestType"));
+            Assert.Contains("requestType", json);
+
+            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
+            Assert.Contains("accountId", json);
+
+            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
+            Assert.Contains("callId", json);
+
+            //Console.WriteLine("does it contain - from ++ " + json.Contains("from"));
+            Assert.Contains("from", json);
+
+            //Console.WriteLine("does it contain - to ++ " + json.Contains("to"));
+            Assert.Contains("to", json);
+
+            //Console.WriteLine("does it contain - callStatus ++ " + json.Contains("callStatus"));
+            Assert.Contains("callStatus", json);
+
+            //Console.WriteLine("does it contain - direction ++ " + json.Contains("direction"));
+            Assert.Contains("direction", json);
+
+            //Console.WriteLine("does it contain - conferenceId ++ " + json.Contains("conferenceId"));
+            Assert.Contains("conferenceId", json);
+
+            //Console.WriteLine("does it contain - queueId ++ " + json.Contains("queueId"));
+            Assert.Contains("queueId", json);
+
+            //Console.WriteLine("does it contain - queueResult ++ " + json.Contains("queueResult"));
+            Assert.Contains("queueResult", json);
+
+            //Console.WriteLine("does it contain - queueTime ++ " + json.Contains("queueTime"));
+            Assert.Contains("queueTime", json);
+        }
+
+        /// <summary>
+        /// Test serialize a RemoveFromQueueNotificationWebhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void RemoveFromQueueNotificationWebhookSerializeToJSONStripNullTest()
+        {
+            instance.CallStatus = null;
+
+            instance.Direction = null;
+
+            instance.ConferenceId = null;
+
+            instance.QueueId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

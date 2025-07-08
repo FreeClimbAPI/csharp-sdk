@@ -155,5 +155,55 @@ namespace freeclimb.Test.Model
             instance.MediaUrls = testList;
             Assert.Equal(instance.MediaUrls, testList);
         }
+
+        /// <summary>
+        /// Test serialize a MessageRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void MessageRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++MessageRequest++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
+            Assert.Contains("uri", json);
+
+            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
+            Assert.Contains("dateCreated", json);
+
+            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
+            Assert.Contains("dateUpdated", json);
+
+            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
+            Assert.Contains("revision", json);
+
+            //Console.WriteLine("does it contain - from ++ " + json.Contains("from"));
+            Assert.Contains("from", json);
+
+            //Console.WriteLine("does it contain - to ++ " + json.Contains("to"));
+            Assert.Contains("to", json);
+
+            //Console.WriteLine("does it contain - text ++ " + json.Contains("text"));
+            Assert.Contains("text", json);
+
+            //Console.WriteLine("does it contain - notificationUrl ++ " + json.Contains("notificationUrl"));
+            Assert.Contains("notificationUrl", json);
+
+            //Console.WriteLine("does it contain - mediaUrls ++ " + json.Contains("mediaUrls"));
+            Assert.Contains("mediaUrls", json);
+        }
+
+        /// <summary>
+        /// Test serialize a MessageRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void MessageRequestSerializeToJSONStripNullTest()
+        {
+            instance.MediaUrls = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

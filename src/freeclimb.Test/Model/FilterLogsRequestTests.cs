@@ -64,5 +64,29 @@ namespace freeclimb.Test.Model
             instance.Pql = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Pql);
         }
+
+        /// <summary>
+        /// Test serialize a FilterLogsRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void FilterLogsRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++FilterLogsRequest++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - pql ++ " + json.Contains("pql"));
+            Assert.Contains("pql", json);
+        }
+
+        /// <summary>
+        /// Test serialize a FilterLogsRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void FilterLogsRequestSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -297,24 +297,37 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);
-            props.Add("callId", CallId);
-            props.Add("accountId", AccountId);
-            props.Add("from", From);
-            props.Add("to", To);
-            props.Add("callStatus", CallStatus);
-            props.Add("direction", Direction);
-            props.Add("conferenceId", ConferenceId);
-            props.Add("queueId", QueueId);
-            props.Add("reason", Reason);
-            props.Add("recognitionResult", RecognitionResult);
-            props.Add("confidence", Confidence);
-            props.Add("parentCallId", ParentCallId);
-            props.Add("completionReason", CompletionReason);
-            props.Add("completionCause", CompletionCause);
-            props.Add("mrcpCode", MrcpCode);
-            props.Add("mrcpDiagnostic", MrcpDiagnostic);
+            AddToDictionary(props, "requestType", RequestType);
+            AddToDictionary(props, "callId", CallId);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "from", From);
+            AddToDictionary(props, "to", To);
+            AddToDictionary(props, "callStatus", CallStatus);
+            AddToDictionary(props, "direction", Direction);
+            AddToDictionary(props, "conferenceId", ConferenceId);
+            AddToDictionary(props, "queueId", QueueId);
+            AddToDictionary(props, "reason", Reason);
+            AddToDictionary(props, "recognitionResult", RecognitionResult);
+            AddToDictionary(props, "confidence", Confidence);
+            AddToDictionary(props, "parentCallId", ParentCallId);
+            AddToDictionary(props, "completionReason", CompletionReason);
+            AddToDictionary(props, "completionCause", CompletionCause);
+            AddToDictionary(props, "mrcpCode", MrcpCode);
+            AddToDictionary(props, "mrcpDiagnostic", MrcpDiagnostic);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

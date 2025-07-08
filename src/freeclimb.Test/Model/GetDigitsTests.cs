@@ -155,5 +155,53 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.False(instance.PrivacyMode);
         }
+
+        /// <summary>
+        /// Test serialize a GetDigits to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void GetDigitsSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++GetDigits++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
+            Assert.Contains("actionUrl", json);
+
+            //Console.WriteLine("does it contain - digitTimeoutMs ++ " + json.Contains("digitTimeoutMs"));
+            Assert.Contains("digitTimeoutMs", json);
+
+            //Console.WriteLine("does it contain - finishOnKey ++ " + json.Contains("finishOnKey"));
+            Assert.Contains("finishOnKey", json);
+
+            //Console.WriteLine("does it contain - flushBuffer ++ " + json.Contains("flushBuffer"));
+            Assert.Contains("flushBuffer", json);
+
+            //Console.WriteLine("does it contain - initialTimeoutMs ++ " + json.Contains("initialTimeoutMs"));
+            Assert.Contains("initialTimeoutMs", json);
+
+            //Console.WriteLine("does it contain - maxDigits ++ " + json.Contains("maxDigits"));
+            Assert.Contains("maxDigits", json);
+
+            //Console.WriteLine("does it contain - minDigits ++ " + json.Contains("minDigits"));
+            Assert.Contains("minDigits", json);
+
+            //Console.WriteLine("does it contain - prompts ++ " + json.Contains("prompts"));
+            Assert.Contains("prompts", json);
+
+            //Console.WriteLine("does it contain - privacyMode ++ " + json.Contains("privacyMode"));
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a GetDigits to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void GetDigitsSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -64,5 +64,29 @@ namespace freeclimb.Test.Model
             instance.File = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.File);
         }
+
+        /// <summary>
+        /// Test serialize a PlayEarlyMedia to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void PlayEarlyMediaSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++PlayEarlyMedia++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - file ++ " + json.Contains("file"));
+            Assert.Contains("file", json);
+        }
+
+        /// <summary>
+        /// Test serialize a PlayEarlyMedia to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void PlayEarlyMediaSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -133,5 +133,59 @@ namespace freeclimb.Test.Model
             instance.Country = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Country);
         }
+
+        /// <summary>
+        /// Test serialize a AvailableNumber to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void AvailableNumberSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++AvailableNumber++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - capabilities ++ " + json.Contains("capabilities"));
+            Assert.Contains("capabilities", json);
+
+            //Console.WriteLine("does it contain - campaignId ++ " + json.Contains("campaignId"));
+            Assert.Contains("campaignId", json);
+
+            //Console.WriteLine("does it contain - phoneNumber ++ " + json.Contains("phoneNumber"));
+            Assert.Contains("phoneNumber", json);
+
+            //Console.WriteLine("does it contain - voiceEnabled ++ " + json.Contains("voiceEnabled"));
+            Assert.Contains("voiceEnabled", json);
+
+            //Console.WriteLine("does it contain - smsEnabled ++ " + json.Contains("smsEnabled"));
+            Assert.Contains("smsEnabled", json);
+
+            //Console.WriteLine("does it contain - region ++ " + json.Contains("region"));
+            Assert.Contains("region", json);
+
+            //Console.WriteLine("does it contain - country ++ " + json.Contains("country"));
+            Assert.Contains("country", json);
+        }
+
+        /// <summary>
+        /// Test serialize a AvailableNumber to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void AvailableNumberSerializeToJSONStripNullTest()
+        {
+            instance.CampaignId = null;
+
+            instance.PhoneNumber = null;
+
+            instance.VoiceEnabled = null;
+
+            instance.SmsEnabled = null;
+
+            instance.Region = null;
+
+            instance.Country = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

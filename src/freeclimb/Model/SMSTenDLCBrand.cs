@@ -538,38 +538,51 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);
-            props.Add("entityType", EntityType);
-            props.Add("cspId", CspId);
-            props.Add("brandId", BrandId);
-            props.Add("firstName", FirstName);
-            props.Add("lastName", LastName);
-            props.Add("displayName", DisplayName);
-            props.Add("companyName", CompanyName);
-            props.Add("ein", Ein);
-            props.Add("einIssuingCountry", EinIssuingCountry);
-            props.Add("phone", Phone);
-            props.Add("street", Street);
-            props.Add("city", City);
-            props.Add("state", State);
-            props.Add("postalCode", PostalCode);
-            props.Add("country", Country);
-            props.Add("email", Email);
-            props.Add("stockSymbol", StockSymbol);
-            props.Add("stockExchange", StockExchange);
-            props.Add("ipAddress", IpAddress);
-            props.Add("website", Website);
-            props.Add("brandRelationship", BrandRelationship);
-            props.Add("vertical", Vertical);
-            props.Add("altBusinessId", AltBusinessId);
-            props.Add("altBusinessIdType", AltBusinessIdType);
-            props.Add("universalEin", UniversalEin);
-            props.Add("referenceId", ReferenceId);
-            props.Add("optionalAttributes", OptionalAttributes);
-            props.Add("mock", Mock);
-            props.Add("identityStatus", IdentityStatus);
-            props.Add("createDate", CreateDate);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "entityType", EntityType);
+            AddToDictionary(props, "cspId", CspId);
+            AddToDictionary(props, "brandId", BrandId);
+            AddToDictionary(props, "firstName", FirstName);
+            AddToDictionary(props, "lastName", LastName);
+            AddToDictionary(props, "displayName", DisplayName);
+            AddToDictionary(props, "companyName", CompanyName);
+            AddToDictionary(props, "ein", Ein);
+            AddToDictionary(props, "einIssuingCountry", EinIssuingCountry);
+            AddToDictionary(props, "phone", Phone);
+            AddToDictionary(props, "street", Street);
+            AddToDictionary(props, "city", City);
+            AddToDictionary(props, "state", State);
+            AddToDictionary(props, "postalCode", PostalCode);
+            AddToDictionary(props, "country", Country);
+            AddToDictionary(props, "email", Email);
+            AddToDictionary(props, "stockSymbol", StockSymbol);
+            AddToDictionary(props, "stockExchange", StockExchange);
+            AddToDictionary(props, "ipAddress", IpAddress);
+            AddToDictionary(props, "website", Website);
+            AddToDictionary(props, "brandRelationship", BrandRelationship);
+            AddToDictionary(props, "vertical", Vertical);
+            AddToDictionary(props, "altBusinessId", AltBusinessId);
+            AddToDictionary(props, "altBusinessIdType", AltBusinessIdType);
+            AddToDictionary(props, "universalEin", UniversalEin);
+            AddToDictionary(props, "referenceId", ReferenceId);
+            AddToDictionary(props, "optionalAttributes", OptionalAttributes);
+            AddToDictionary(props, "mock", Mock);
+            AddToDictionary(props, "identityStatus", IdentityStatus);
+            AddToDictionary(props, "createDate", CreateDate);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

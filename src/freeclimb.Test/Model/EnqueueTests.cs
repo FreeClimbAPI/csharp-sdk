@@ -99,5 +99,38 @@ namespace freeclimb.Test.Model
             instance.WaitUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.WaitUrl);
         }
+
+        /// <summary>
+        /// Test serialize a Enqueue to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void EnqueueSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++Enqueue++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
+            Assert.Contains("actionUrl", json);
+
+            //Console.WriteLine("does it contain - notificationUrl ++ " + json.Contains("notificationUrl"));
+            Assert.Contains("notificationUrl", json);
+
+            //Console.WriteLine("does it contain - queueId ++ " + json.Contains("queueId"));
+            Assert.Contains("queueId", json);
+
+            //Console.WriteLine("does it contain - waitUrl ++ " + json.Contains("waitUrl"));
+            Assert.Contains("waitUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Enqueue to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void EnqueueSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

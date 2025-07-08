@@ -77,5 +77,32 @@ namespace freeclimb.Test.Model
             instance.Label = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Label);
         }
+
+        /// <summary>
+        /// Test serialize a AccountRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void AccountRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++AccountRequest++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
+            Assert.Contains("alias", json);
+
+            //Console.WriteLine("does it contain - label ++ " + json.Contains("label"));
+            Assert.Contains("label", json);
+        }
+
+        /// <summary>
+        /// Test serialize a AccountRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void AccountRequestSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

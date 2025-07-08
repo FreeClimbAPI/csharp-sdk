@@ -54,5 +54,26 @@ namespace freeclimb.Test.Model
         {
             Assert.IsType<TerminateConference>(instance);
         }
+
+        /// <summary>
+        /// Test serialize a TerminateConference to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void TerminateConferenceSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++TerminateConference++" );
+            //Console.WriteLine(json);
+        }
+
+        /// <summary>
+        /// Test serialize a TerminateConference to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void TerminateConferenceSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

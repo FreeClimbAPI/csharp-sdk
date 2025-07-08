@@ -66,5 +66,29 @@ namespace freeclimb.Test.Model
             instance.DtmfPassThrough = false;
             Assert.False(instance.DtmfPassThrough);
         }
+
+        /// <summary>
+        /// Test serialize a SetDTMFPassThrough to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void SetDTMFPassThroughSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++SetDTMFPassThrough++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - dtmfPassThrough ++ " + json.Contains("dtmfPassThrough"));
+            Assert.Contains("dtmfPassThrough", json);
+        }
+
+        /// <summary>
+        /// Test serialize a SetDTMFPassThrough to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void SetDTMFPassThroughSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

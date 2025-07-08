@@ -54,5 +54,26 @@ namespace freeclimb.Test.Model
         {
             Assert.IsType<RemoveFromConference>(instance);
         }
+
+        /// <summary>
+        /// Test serialize a RemoveFromConference to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void RemoveFromConferenceSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++RemoveFromConference++" );
+            //Console.WriteLine(json);
+        }
+
+        /// <summary>
+        /// Test serialize a RemoveFromConference to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void RemoveFromConferenceSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

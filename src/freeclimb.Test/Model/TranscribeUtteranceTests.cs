@@ -125,5 +125,44 @@ namespace freeclimb.Test.Model
             instance.Prompts = testList;
             Assert.Equal(instance.Prompts, testList);
         }
+
+        /// <summary>
+        /// Test serialize a TranscribeUtterance to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void TranscribeUtteranceSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++TranscribeUtterance++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
+            Assert.Contains("actionUrl", json);
+
+            //Console.WriteLine("does it contain - playBeep ++ " + json.Contains("playBeep"));
+            Assert.Contains("playBeep", json);
+
+            //Console.WriteLine("does it contain - record ++ " + json.Contains("record"));
+            Assert.Contains("record", json);
+
+            //Console.WriteLine("does it contain - privacyForLogging ++ " + json.Contains("privacyForLogging"));
+            Assert.Contains("privacyForLogging", json);
+
+            //Console.WriteLine("does it contain - privacyForRecording ++ " + json.Contains("privacyForRecording"));
+            Assert.Contains("privacyForRecording", json);
+
+            //Console.WriteLine("does it contain - prompts ++ " + json.Contains("prompts"));
+            Assert.Contains("prompts", json);
+        }
+
+        /// <summary>
+        /// Test serialize a TranscribeUtterance to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void TranscribeUtteranceSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

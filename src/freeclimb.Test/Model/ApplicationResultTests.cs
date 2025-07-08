@@ -198,5 +198,83 @@ namespace freeclimb.Test.Model
             instance.SmsFallbackUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.SmsFallbackUrl);
         }
+
+        /// <summary>
+        /// Test serialize a ApplicationResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ApplicationResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++ApplicationResult++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
+            Assert.Contains("uri", json);
+
+            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
+            Assert.Contains("dateCreated", json);
+
+            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
+            Assert.Contains("dateUpdated", json);
+
+            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
+            Assert.Contains("revision", json);
+
+            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
+            Assert.Contains("accountId", json);
+
+            //Console.WriteLine("does it contain - applicationId ++ " + json.Contains("applicationId"));
+            Assert.Contains("applicationId", json);
+
+            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
+            Assert.Contains("alias", json);
+
+            //Console.WriteLine("does it contain - voiceUrl ++ " + json.Contains("voiceUrl"));
+            Assert.Contains("voiceUrl", json);
+
+            //Console.WriteLine("does it contain - voiceFallbackUrl ++ " + json.Contains("voiceFallbackUrl"));
+            Assert.Contains("voiceFallbackUrl", json);
+
+            //Console.WriteLine("does it contain - callConnectUrl ++ " + json.Contains("callConnectUrl"));
+            Assert.Contains("callConnectUrl", json);
+
+            //Console.WriteLine("does it contain - statusCallbackUrl ++ " + json.Contains("statusCallbackUrl"));
+            Assert.Contains("statusCallbackUrl", json);
+
+            //Console.WriteLine("does it contain - smsUrl ++ " + json.Contains("smsUrl"));
+            Assert.Contains("smsUrl", json);
+
+            //Console.WriteLine("does it contain - smsFallbackUrl ++ " + json.Contains("smsFallbackUrl"));
+            Assert.Contains("smsFallbackUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a ApplicationResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ApplicationResultSerializeToJSONStripNullTest()
+        {
+            instance.AccountId = null;
+
+            instance.ApplicationId = null;
+
+            instance.Alias = null;
+
+            instance.VoiceUrl = null;
+
+            instance.VoiceFallbackUrl = null;
+
+            instance.CallConnectUrl = null;
+
+            instance.StatusCallbackUrl = null;
+
+            instance.SmsUrl = null;
+
+            instance.SmsFallbackUrl = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -319,5 +319,29 @@ namespace freeclimb.Test.Model
         /// </summary>
         [Fact]
         public void RequestTypeTest() { }
+
+        /// <summary>
+        /// Test serialize a Webhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void WebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++Webhook++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - requestType ++ " + json.Contains("requestType"));
+            Assert.Contains("requestType", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Webhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void WebhookSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

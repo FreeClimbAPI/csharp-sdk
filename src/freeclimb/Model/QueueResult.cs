@@ -204,18 +204,31 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);
-            props.Add("dateCreated", DateCreated);
-            props.Add("dateUpdated", DateUpdated);
-            props.Add("revision", Revision);
-            props.Add("accountId", AccountId);
-            props.Add("queueId", QueueId);
-            props.Add("alias", Alias);
-            props.Add("maxSize", MaxSize);
-            props.Add("currentSize", CurrentSize);
-            props.Add("averageQueueRemovalTime", AverageQueueRemovalTime);
-            props.Add("subresourceUris", SubresourceUris);
+            AddToDictionary(props, "uri", Uri);
+            AddToDictionary(props, "dateCreated", DateCreated);
+            AddToDictionary(props, "dateUpdated", DateUpdated);
+            AddToDictionary(props, "revision", Revision);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "queueId", QueueId);
+            AddToDictionary(props, "alias", Alias);
+            AddToDictionary(props, "maxSize", MaxSize);
+            AddToDictionary(props, "currentSize", CurrentSize);
+            AddToDictionary(props, "averageQueueRemovalTime", AverageQueueRemovalTime);
+            AddToDictionary(props, "subresourceUris", SubresourceUris);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

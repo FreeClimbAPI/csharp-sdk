@@ -64,5 +64,29 @@ namespace freeclimb.Test.Model
             instance.CampaignId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CampaignId);
         }
+
+        /// <summary>
+        /// Test serialize a TFN to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void TFNSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++TFN++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - campaignId ++ " + json.Contains("campaignId"));
+            Assert.Contains("campaignId", json);
+        }
+
+        /// <summary>
+        /// Test serialize a TFN to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void TFNSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

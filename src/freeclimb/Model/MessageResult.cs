@@ -298,31 +298,44 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);
-            props.Add("dateCreated", DateCreated);
-            props.Add("dateUpdated", DateUpdated);
-            props.Add("revision", Revision);
-            props.Add("accountId", AccountId);
-            props.Add("messageId", MessageId);
-            props.Add("status", Status);
-            props.Add("from", From);
-            props.Add("to", To);
-            props.Add("text", Text);
-            props.Add("direction", Direction);
-            props.Add("notificationUrl", NotificationUrl);
-            props.Add("brandId", BrandId);
-            props.Add("campaignId", CampaignId);
-            props.Add("segmentCount", SegmentCount);
+            AddToDictionary(props, "uri", Uri);
+            AddToDictionary(props, "dateCreated", DateCreated);
+            AddToDictionary(props, "dateUpdated", DateUpdated);
+            AddToDictionary(props, "revision", Revision);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "messageId", MessageId);
+            AddToDictionary(props, "status", Status);
+            AddToDictionary(props, "from", From);
+            AddToDictionary(props, "to", To);
+            AddToDictionary(props, "text", Text);
+            AddToDictionary(props, "direction", Direction);
+            AddToDictionary(props, "notificationUrl", NotificationUrl);
+            AddToDictionary(props, "brandId", BrandId);
+            AddToDictionary(props, "campaignId", CampaignId);
+            AddToDictionary(props, "segmentCount", SegmentCount);
             List<object> nested = new List<object>();
-            foreach (var item in MediaUrls)
+            if (MediaUrls != null)
             {
-                nested.Add(item);
+                nested.Add(MediaUrls);
             }
-            props.Add("mediaUrls", nested);
-            props.Add("tfn", Tfn);
-            props.Add("phoneNumberId", PhoneNumberId);
-            props.Add("applicationId", ApplicationId);
+            AddToDictionary(props, "mediaUrls", nested);
+            AddToDictionary(props, "tfn", Tfn);
+            AddToDictionary(props, "phoneNumberId", PhoneNumberId);
+            AddToDictionary(props, "applicationId", ApplicationId);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

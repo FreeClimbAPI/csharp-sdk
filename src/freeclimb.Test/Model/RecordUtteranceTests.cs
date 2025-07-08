@@ -132,5 +132,47 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.False(instance.PrivacyMode);
         }
+
+        /// <summary>
+        /// Test serialize a RecordUtterance to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void RecordUtteranceSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++RecordUtterance++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
+            Assert.Contains("actionUrl", json);
+
+            //Console.WriteLine("does it contain - silenceTimeoutMs ++ " + json.Contains("silenceTimeoutMs"));
+            Assert.Contains("silenceTimeoutMs", json);
+
+            //Console.WriteLine("does it contain - finishOnKey ++ " + json.Contains("finishOnKey"));
+            Assert.Contains("finishOnKey", json);
+
+            //Console.WriteLine("does it contain - maxLengthSec ++ " + json.Contains("maxLengthSec"));
+            Assert.Contains("maxLengthSec", json);
+
+            //Console.WriteLine("does it contain - playBeep ++ " + json.Contains("playBeep"));
+            Assert.Contains("playBeep", json);
+
+            //Console.WriteLine("does it contain - autoStart ++ " + json.Contains("autoStart"));
+            Assert.Contains("autoStart", json);
+
+            //Console.WriteLine("does it contain - privacyMode ++ " + json.Contains("privacyMode"));
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a RecordUtterance to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void RecordUtteranceSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

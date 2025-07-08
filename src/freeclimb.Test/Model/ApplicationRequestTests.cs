@@ -132,5 +132,59 @@ namespace freeclimb.Test.Model
             instance.SmsFallbackUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.SmsFallbackUrl);
         }
+
+        /// <summary>
+        /// Test serialize a ApplicationRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ApplicationRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++ApplicationRequest++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
+            Assert.Contains("alias", json);
+
+            //Console.WriteLine("does it contain - voiceUrl ++ " + json.Contains("voiceUrl"));
+            Assert.Contains("voiceUrl", json);
+
+            //Console.WriteLine("does it contain - voiceFallbackUrl ++ " + json.Contains("voiceFallbackUrl"));
+            Assert.Contains("voiceFallbackUrl", json);
+
+            //Console.WriteLine("does it contain - callConnectUrl ++ " + json.Contains("callConnectUrl"));
+            Assert.Contains("callConnectUrl", json);
+
+            //Console.WriteLine("does it contain - statusCallbackUrl ++ " + json.Contains("statusCallbackUrl"));
+            Assert.Contains("statusCallbackUrl", json);
+
+            //Console.WriteLine("does it contain - smsUrl ++ " + json.Contains("smsUrl"));
+            Assert.Contains("smsUrl", json);
+
+            //Console.WriteLine("does it contain - smsFallbackUrl ++ " + json.Contains("smsFallbackUrl"));
+            Assert.Contains("smsFallbackUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a ApplicationRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ApplicationRequestSerializeToJSONStripNullTest()
+        {
+            instance.VoiceUrl = null;
+
+            instance.VoiceFallbackUrl = null;
+
+            instance.CallConnectUrl = null;
+
+            instance.StatusCallbackUrl = null;
+
+            instance.SmsUrl = null;
+
+            instance.SmsFallbackUrl = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -88,5 +88,35 @@ namespace freeclimb.Test.Model
             instance.ApplicationId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ApplicationId);
         }
+
+        /// <summary>
+        /// Test serialize a BuyIncomingNumberRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void BuyIncomingNumberRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++BuyIncomingNumberRequest++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - phoneNumber ++ " + json.Contains("phoneNumber"));
+            Assert.Contains("phoneNumber", json);
+
+            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
+            Assert.Contains("alias", json);
+
+            //Console.WriteLine("does it contain - applicationId ++ " + json.Contains("applicationId"));
+            Assert.Contains("applicationId", json);
+        }
+
+        /// <summary>
+        /// Test serialize a BuyIncomingNumberRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void BuyIncomingNumberRequestSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

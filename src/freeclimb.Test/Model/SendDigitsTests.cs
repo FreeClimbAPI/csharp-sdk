@@ -88,5 +88,35 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.False(instance.PrivacyMode);
         }
+
+        /// <summary>
+        /// Test serialize a SendDigits to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void SendDigitsSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++SendDigits++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - digits ++ " + json.Contains("digits"));
+            Assert.Contains("digits", json);
+
+            //Console.WriteLine("does it contain - pauseMs ++ " + json.Contains("pauseMs"));
+            Assert.Contains("pauseMs", json);
+
+            //Console.WriteLine("does it contain - privacyMode ++ " + json.Contains("privacyMode"));
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a SendDigits to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void SendDigitsSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

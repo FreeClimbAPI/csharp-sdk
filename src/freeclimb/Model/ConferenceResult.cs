@@ -238,21 +238,34 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);
-            props.Add("dateCreated", DateCreated);
-            props.Add("dateUpdated", DateUpdated);
-            props.Add("revision", Revision);
-            props.Add("conferenceId", ConferenceId);
-            props.Add("accountId", AccountId);
-            props.Add("alias", Alias);
-            props.Add("playBeep", PlayBeep);
-            props.Add("record", Record);
-            props.Add("status", Status);
-            props.Add("waitUrl", WaitUrl);
-            props.Add("actionUrl", ActionUrl);
-            props.Add("statusCallbackUrl", StatusCallbackUrl);
-            props.Add("subresourceUris", SubresourceUris);
+            AddToDictionary(props, "uri", Uri);
+            AddToDictionary(props, "dateCreated", DateCreated);
+            AddToDictionary(props, "dateUpdated", DateUpdated);
+            AddToDictionary(props, "revision", Revision);
+            AddToDictionary(props, "conferenceId", ConferenceId);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "alias", Alias);
+            AddToDictionary(props, "playBeep", PlayBeep);
+            AddToDictionary(props, "record", Record);
+            AddToDictionary(props, "status", Status);
+            AddToDictionary(props, "waitUrl", WaitUrl);
+            AddToDictionary(props, "actionUrl", ActionUrl);
+            AddToDictionary(props, "statusCallbackUrl", StatusCallbackUrl);
+            AddToDictionary(props, "subresourceUris", SubresourceUris);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

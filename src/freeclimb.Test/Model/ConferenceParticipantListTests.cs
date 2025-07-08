@@ -145,5 +145,66 @@ namespace freeclimb.Test.Model
             instance.Participants = testList;
             Assert.Equal(instance.Participants, testList);
         }
+
+        /// <summary>
+        /// Test serialize a ConferenceParticipantList to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ConferenceParticipantListSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++ConferenceParticipantList++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - total ++ " + json.Contains("total"));
+            Assert.Contains("total", json);
+
+            //Console.WriteLine("does it contain - start ++ " + json.Contains("start"));
+            Assert.Contains("start", json);
+
+            //Console.WriteLine("does it contain - end ++ " + json.Contains("end"));
+            Assert.Contains("end", json);
+
+            //Console.WriteLine("does it contain - page ++ " + json.Contains("page"));
+            Assert.Contains("page", json);
+
+            //Console.WriteLine("does it contain - numPages ++ " + json.Contains("numPages"));
+            Assert.Contains("numPages", json);
+
+            //Console.WriteLine("does it contain - pageSize ++ " + json.Contains("pageSize"));
+            Assert.Contains("pageSize", json);
+
+            //Console.WriteLine("does it contain - nextPageUri ++ " + json.Contains("nextPageUri"));
+            Assert.Contains("nextPageUri", json);
+
+            //Console.WriteLine("does it contain - participants ++ " + json.Contains("participants"));
+            Assert.Contains("participants", json);
+        }
+
+        /// <summary>
+        /// Test serialize a ConferenceParticipantList to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ConferenceParticipantListSerializeToJSONStripNullTest()
+        {
+            instance.Total = null;
+
+            instance.Start = null;
+
+            instance.End = null;
+
+            instance.Page = null;
+
+            instance.NumPages = null;
+
+            instance.PageSize = null;
+
+            instance.NextPageUri = null;
+
+            instance.Participants = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

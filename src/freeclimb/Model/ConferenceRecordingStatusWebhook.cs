@@ -249,20 +249,33 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);
-            props.Add("callId", CallId);
-            props.Add("accountId", AccountId);
-            props.Add("from", From);
-            props.Add("to", To);
-            props.Add("callStatus", CallStatus);
-            props.Add("direction", Direction);
-            props.Add("conferenceId", ConferenceId);
-            props.Add("queueId", QueueId);
-            props.Add("status", Status);
-            props.Add("recordingUrl", RecordingUrl);
-            props.Add("recordingId", RecordingId);
-            props.Add("recordingDurationSec", RecordingDurationSec);
+            AddToDictionary(props, "requestType", RequestType);
+            AddToDictionary(props, "callId", CallId);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "from", From);
+            AddToDictionary(props, "to", To);
+            AddToDictionary(props, "callStatus", CallStatus);
+            AddToDictionary(props, "direction", Direction);
+            AddToDictionary(props, "conferenceId", ConferenceId);
+            AddToDictionary(props, "queueId", QueueId);
+            AddToDictionary(props, "status", Status);
+            AddToDictionary(props, "recordingUrl", RecordingUrl);
+            AddToDictionary(props, "recordingId", RecordingId);
+            AddToDictionary(props, "recordingDurationSec", RecordingDurationSec);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

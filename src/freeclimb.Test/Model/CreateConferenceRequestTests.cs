@@ -116,5 +116,43 @@ namespace freeclimb.Test.Model
             instance.StatusCallbackUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.StatusCallbackUrl);
         }
+
+        /// <summary>
+        /// Test serialize a CreateConferenceRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void CreateConferenceRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++CreateConferenceRequest++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
+            Assert.Contains("alias", json);
+
+            //Console.WriteLine("does it contain - playBeep ++ " + json.Contains("playBeep"));
+            Assert.Contains("playBeep", json);
+
+            //Console.WriteLine("does it contain - record ++ " + json.Contains("record"));
+            Assert.Contains("record", json);
+
+            //Console.WriteLine("does it contain - waitUrl ++ " + json.Contains("waitUrl"));
+            Assert.Contains("waitUrl", json);
+
+            //Console.WriteLine("does it contain - statusCallbackUrl ++ " + json.Contains("statusCallbackUrl"));
+            Assert.Contains("statusCallbackUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a CreateConferenceRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void CreateConferenceRequestSerializeToJSONStripNullTest()
+        {
+            instance.PlayBeep = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

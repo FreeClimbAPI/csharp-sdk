@@ -276,24 +276,37 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);
-            props.Add("dateCreated", DateCreated);
-            props.Add("dateUpdated", DateUpdated);
-            props.Add("revision", Revision);
-            props.Add("capabilities", Capabilities);
-            props.Add("campaignId", CampaignId);
-            props.Add("phoneNumberId", PhoneNumberId);
-            props.Add("accountId", AccountId);
-            props.Add("applicationId", ApplicationId);
-            props.Add("phoneNumber", PhoneNumber);
-            props.Add("alias", Alias);
-            props.Add("region", Region);
-            props.Add("country", Country);
-            props.Add("voiceEnabled", VoiceEnabled);
-            props.Add("smsEnabled", SmsEnabled);
-            props.Add("offnet", Offnet);
-            props.Add("tfn", Tfn);
+            AddToDictionary(props, "uri", Uri);
+            AddToDictionary(props, "dateCreated", DateCreated);
+            AddToDictionary(props, "dateUpdated", DateUpdated);
+            AddToDictionary(props, "revision", Revision);
+            AddToDictionary(props, "capabilities", Capabilities);
+            AddToDictionary(props, "campaignId", CampaignId);
+            AddToDictionary(props, "phoneNumberId", PhoneNumberId);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "applicationId", ApplicationId);
+            AddToDictionary(props, "phoneNumber", PhoneNumber);
+            AddToDictionary(props, "alias", Alias);
+            AddToDictionary(props, "region", Region);
+            AddToDictionary(props, "country", Country);
+            AddToDictionary(props, "voiceEnabled", VoiceEnabled);
+            AddToDictionary(props, "smsEnabled", SmsEnabled);
+            AddToDictionary(props, "offnet", Offnet);
+            AddToDictionary(props, "tfn", Tfn);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

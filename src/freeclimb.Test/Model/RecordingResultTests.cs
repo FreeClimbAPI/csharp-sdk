@@ -154,5 +154,63 @@ namespace freeclimb.Test.Model
             instance.ConferenceId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ConferenceId);
         }
+
+        /// <summary>
+        /// Test serialize a RecordingResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void RecordingResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++RecordingResult++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
+            Assert.Contains("uri", json);
+
+            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
+            Assert.Contains("dateCreated", json);
+
+            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
+            Assert.Contains("dateUpdated", json);
+
+            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
+            Assert.Contains("revision", json);
+
+            //Console.WriteLine("does it contain - recordingId ++ " + json.Contains("recordingId"));
+            Assert.Contains("recordingId", json);
+
+            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
+            Assert.Contains("accountId", json);
+
+            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
+            Assert.Contains("callId", json);
+
+            //Console.WriteLine("does it contain - durationSec ++ " + json.Contains("durationSec"));
+            Assert.Contains("durationSec", json);
+
+            //Console.WriteLine("does it contain - conferenceId ++ " + json.Contains("conferenceId"));
+            Assert.Contains("conferenceId", json);
+        }
+
+        /// <summary>
+        /// Test serialize a RecordingResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void RecordingResultSerializeToJSONStripNullTest()
+        {
+            instance.RecordingId = null;
+
+            instance.AccountId = null;
+
+            instance.CallId = null;
+
+            instance.DurationSec = null;
+
+            instance.ConferenceId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

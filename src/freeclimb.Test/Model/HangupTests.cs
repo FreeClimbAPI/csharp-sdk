@@ -64,5 +64,29 @@ namespace freeclimb.Test.Model
             instance.Reason = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Reason);
         }
+
+        /// <summary>
+        /// Test serialize a Hangup to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void HangupSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++Hangup++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - reason ++ " + json.Contains("reason"));
+            Assert.Contains("reason", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Hangup to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void HangupSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

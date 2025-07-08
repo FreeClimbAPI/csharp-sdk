@@ -64,5 +64,29 @@ namespace freeclimb.Test.Model
             instance.Talk = false;
             Assert.False(instance.Talk);
         }
+
+        /// <summary>
+        /// Test serialize a SetTalk to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void SetTalkSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++SetTalk++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - talk ++ " + json.Contains("talk"));
+            Assert.Contains("talk", json);
+        }
+
+        /// <summary>
+        /// Test serialize a SetTalk to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void SetTalkSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

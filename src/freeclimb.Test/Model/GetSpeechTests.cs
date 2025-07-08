@@ -201,5 +201,67 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.False(instance.PrivacyMode);
         }
+
+        /// <summary>
+        /// Test serialize a GetSpeech to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void GetSpeechSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++GetSpeech++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
+            Assert.Contains("actionUrl", json);
+
+            //Console.WriteLine("does it contain - grammarType ++ " + json.Contains("grammarType"));
+            Assert.Contains("grammarType", json);
+
+            //Console.WriteLine("does it contain - grammarFile ++ " + json.Contains("grammarFile"));
+            Assert.Contains("grammarFile", json);
+
+            //Console.WriteLine("does it contain - grammarRule ++ " + json.Contains("grammarRule"));
+            Assert.Contains("grammarRule", json);
+
+            //Console.WriteLine("does it contain - playBeep ++ " + json.Contains("playBeep"));
+            Assert.Contains("playBeep", json);
+
+            //Console.WriteLine("does it contain - prompts ++ " + json.Contains("prompts"));
+            Assert.Contains("prompts", json);
+
+            //Console.WriteLine("does it contain - noInputTimeoutMs ++ " + json.Contains("noInputTimeoutMs"));
+            Assert.Contains("noInputTimeoutMs", json);
+
+            //Console.WriteLine("does it contain - recognitionTimeoutMs ++ " + json.Contains("recognitionTimeoutMs"));
+            Assert.Contains("recognitionTimeoutMs", json);
+
+            //Console.WriteLine("does it contain - confidenceThreshold ++ " + json.Contains("confidenceThreshold"));
+            Assert.Contains("confidenceThreshold", json);
+
+            //Console.WriteLine("does it contain - sensitivityLevel ++ " + json.Contains("sensitivityLevel"));
+            Assert.Contains("sensitivityLevel", json);
+
+            //Console.WriteLine("does it contain - speechCompleteTimeoutMs ++ " + json.Contains("speechCompleteTimeoutMs"));
+            Assert.Contains("speechCompleteTimeoutMs", json);
+
+            //Console.WriteLine("does it contain - speechIncompleteTimeoutMs ++ " + json.Contains("speechIncompleteTimeoutMs"));
+            Assert.Contains("speechIncompleteTimeoutMs", json);
+
+            //Console.WriteLine("does it contain - privacyMode ++ " + json.Contains("privacyMode"));
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a GetSpeech to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void GetSpeechSerializeToJSONStripNullTest()
+        {
+            instance.GrammarType = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

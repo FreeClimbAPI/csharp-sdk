@@ -228,5 +228,73 @@ namespace freeclimb.Test.Model
             Assert.IsType<ConferenceRecordingStatusWebhook>(deserialized);
             Assert.Equal("conferenceRecordingStatus", deserialized.RequestType);
         }
+
+        /// <summary>
+        /// Test serialize a ConferenceRecordingStatusWebhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ConferenceRecordingStatusWebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++ConferenceRecordingStatusWebhook++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - requestType ++ " + json.Contains("requestType"));
+            Assert.Contains("requestType", json);
+
+            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
+            Assert.Contains("callId", json);
+
+            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
+            Assert.Contains("accountId", json);
+
+            //Console.WriteLine("does it contain - from ++ " + json.Contains("from"));
+            Assert.Contains("from", json);
+
+            //Console.WriteLine("does it contain - to ++ " + json.Contains("to"));
+            Assert.Contains("to", json);
+
+            //Console.WriteLine("does it contain - callStatus ++ " + json.Contains("callStatus"));
+            Assert.Contains("callStatus", json);
+
+            //Console.WriteLine("does it contain - direction ++ " + json.Contains("direction"));
+            Assert.Contains("direction", json);
+
+            //Console.WriteLine("does it contain - conferenceId ++ " + json.Contains("conferenceId"));
+            Assert.Contains("conferenceId", json);
+
+            //Console.WriteLine("does it contain - queueId ++ " + json.Contains("queueId"));
+            Assert.Contains("queueId", json);
+
+            //Console.WriteLine("does it contain - status ++ " + json.Contains("status"));
+            Assert.Contains("status", json);
+
+            //Console.WriteLine("does it contain - recordingUrl ++ " + json.Contains("recordingUrl"));
+            Assert.Contains("recordingUrl", json);
+
+            //Console.WriteLine("does it contain - recordingId ++ " + json.Contains("recordingId"));
+            Assert.Contains("recordingId", json);
+
+            //Console.WriteLine("does it contain - recordingDurationSec ++ " + json.Contains("recordingDurationSec"));
+            Assert.Contains("recordingDurationSec", json);
+        }
+
+        /// <summary>
+        /// Test serialize a ConferenceRecordingStatusWebhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ConferenceRecordingStatusWebhookSerializeToJSONStripNullTest()
+        {
+            instance.CallStatus = null;
+
+            instance.Direction = null;
+
+            instance.QueueId = null;
+
+            instance.Status = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

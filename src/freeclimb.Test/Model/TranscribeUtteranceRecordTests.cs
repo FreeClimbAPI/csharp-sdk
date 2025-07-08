@@ -88,5 +88,35 @@ namespace freeclimb.Test.Model
             instance.RcrdTerminationSilenceTimeMs = 1;
             Assert.Equal(1, (int)instance.RcrdTerminationSilenceTimeMs);
         }
+
+        /// <summary>
+        /// Test serialize a TranscribeUtteranceRecord to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void TranscribeUtteranceRecordSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++TranscribeUtteranceRecord++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - saveRecording ++ " + json.Contains("saveRecording"));
+            Assert.Contains("saveRecording", json);
+
+            //Console.WriteLine("does it contain - maxLengthSec ++ " + json.Contains("maxLengthSec"));
+            Assert.Contains("maxLengthSec", json);
+
+            //Console.WriteLine("does it contain - rcrdTerminationSilenceTimeMs ++ " + json.Contains("rcrdTerminationSilenceTimeMs"));
+            Assert.Contains("rcrdTerminationSilenceTimeMs", json);
+        }
+
+        /// <summary>
+        /// Test serialize a TranscribeUtteranceRecord to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void TranscribeUtteranceRecordSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

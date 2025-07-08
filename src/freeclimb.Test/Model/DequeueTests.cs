@@ -54,5 +54,26 @@ namespace freeclimb.Test.Model
         {
             Assert.IsType<Dequeue>(instance);
         }
+
+        /// <summary>
+        /// Test serialize a Dequeue to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void DequeueSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++Dequeue++" );
+            //Console.WriteLine(json);
+        }
+
+        /// <summary>
+        /// Test serialize a Dequeue to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void DequeueSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

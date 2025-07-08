@@ -212,17 +212,30 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("from", From);
-            props.Add("to", To);
-            props.Add("applicationId", ApplicationId);
-            props.Add("sendDigits", SendDigits);
-            props.Add("ifMachine", IfMachine);
-            props.Add("ifMachineUrl", IfMachineUrl);
-            props.Add("timeout", Timeout);
-            props.Add("parentCallId", ParentCallId);
-            props.Add("privacyMode", PrivacyMode);
-            props.Add("callConnectUrl", CallConnectUrl);
+            AddToDictionary(props, "from", From);
+            AddToDictionary(props, "to", To);
+            AddToDictionary(props, "applicationId", ApplicationId);
+            AddToDictionary(props, "sendDigits", SendDigits);
+            AddToDictionary(props, "ifMachine", IfMachine);
+            AddToDictionary(props, "ifMachineUrl", IfMachineUrl);
+            AddToDictionary(props, "timeout", Timeout);
+            AddToDictionary(props, "parentCallId", ParentCallId);
+            AddToDictionary(props, "privacyMode", PrivacyMode);
+            AddToDictionary(props, "callConnectUrl", CallConnectUrl);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

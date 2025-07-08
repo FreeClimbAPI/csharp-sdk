@@ -64,5 +64,29 @@ namespace freeclimb.Test.Model
             instance.ActionUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ActionUrl);
         }
+
+        /// <summary>
+        /// Test serialize a Redirect to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void RedirectSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++Redirect++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
+            Assert.Contains("actionUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Redirect to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void RedirectSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -165,5 +165,56 @@ namespace freeclimb.Test.Model
             instance.DtmfPassThrough = false;
             Assert.False(instance.DtmfPassThrough);
         }
+
+        /// <summary>
+        /// Test serialize a AddToConference to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void AddToConferenceSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++AddToConference++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - allowCallControl ++ " + json.Contains("allowCallControl"));
+            Assert.Contains("allowCallControl", json);
+
+            //Console.WriteLine("does it contain - callControlSequence ++ " + json.Contains("callControlSequence"));
+            Assert.Contains("callControlSequence", json);
+
+            //Console.WriteLine("does it contain - callControlUrl ++ " + json.Contains("callControlUrl"));
+            Assert.Contains("callControlUrl", json);
+
+            //Console.WriteLine("does it contain - conferenceId ++ " + json.Contains("conferenceId"));
+            Assert.Contains("conferenceId", json);
+
+            //Console.WriteLine("does it contain - leaveConferenceUrl ++ " + json.Contains("leaveConferenceUrl"));
+            Assert.Contains("leaveConferenceUrl", json);
+
+            //Console.WriteLine("does it contain - listen ++ " + json.Contains("listen"));
+            Assert.Contains("listen", json);
+
+            //Console.WriteLine("does it contain - notificationUrl ++ " + json.Contains("notificationUrl"));
+            Assert.Contains("notificationUrl", json);
+
+            //Console.WriteLine("does it contain - startConfOnEnter ++ " + json.Contains("startConfOnEnter"));
+            Assert.Contains("startConfOnEnter", json);
+
+            //Console.WriteLine("does it contain - talk ++ " + json.Contains("talk"));
+            Assert.Contains("talk", json);
+
+            //Console.WriteLine("does it contain - dtmfPassThrough ++ " + json.Contains("dtmfPassThrough"));
+            Assert.Contains("dtmfPassThrough", json);
+        }
+
+        /// <summary>
+        /// Test serialize a AddToConference to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void AddToConferenceSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -110,5 +110,51 @@ namespace freeclimb.Test.Model
             instance.DateEnqueued = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.DateEnqueued);
         }
+
+        /// <summary>
+        /// Test serialize a QueueMember to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void QueueMemberSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+            //Console.WriteLine("++QueueMember++" );
+            //Console.WriteLine(json);
+
+            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
+            Assert.Contains("uri", json);
+
+            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
+            Assert.Contains("callId", json);
+
+            //Console.WriteLine("does it contain - waitTime ++ " + json.Contains("waitTime"));
+            Assert.Contains("waitTime", json);
+
+            //Console.WriteLine("does it contain - position ++ " + json.Contains("position"));
+            Assert.Contains("position", json);
+
+            //Console.WriteLine("does it contain - dateEnqueued ++ " + json.Contains("dateEnqueued"));
+            Assert.Contains("dateEnqueued", json);
+        }
+
+        /// <summary>
+        /// Test serialize a QueueMember to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void QueueMemberSerializeToJSONStripNullTest()
+        {
+            instance.Uri = null;
+
+            instance.CallId = null;
+
+            instance.WaitTime = null;
+
+            instance.Position = null;
+
+            instance.DateEnqueued = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }
