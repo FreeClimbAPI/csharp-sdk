@@ -48,7 +48,7 @@ namespace freeclimb.Test.Utils
             instance = new SignatureInformation(requestHeader);
             int tolerance = 5 * 60;
             Boolean isRequestTimeValid = instance.isRequestTimeValid(tolerance);
-            Assert.Equal<Boolean>(isRequestTimeValid, true);
+            Assert.True(isRequestTimeValid);
         }
 
         [Fact]
@@ -62,7 +62,7 @@ namespace freeclimb.Test.Utils
             instance = new SignatureInformation(requestHeader);
             int tolerance = 500 * 60;
             Boolean isRequestTimeValid = instance.isRequestTimeValid(tolerance);
-            Assert.Equal<Boolean>(isRequestTimeValid, false);
+            Assert.False(isRequestTimeValid);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace freeclimb.Test.Utils
                 "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793";
             Boolean isSignatureSafe = instance.isSignatureSafe(requestBody, signingSecret);
-            Assert.Equal<Boolean>(isSignatureSafe, true);
+            Assert.True(isSignatureSafe);
         }
 
         [Fact]
@@ -85,7 +85,7 @@ namespace freeclimb.Test.Utils
                 "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
             string signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7794";
             Boolean isSignatureSafe = instance.isSignatureSafe(requestBody, signingSecret);
-            Assert.Equal<Boolean>(isSignatureSafe, false);
+            Assert.False(isSignatureSafe);
         }
     }
 }
