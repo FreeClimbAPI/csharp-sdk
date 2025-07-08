@@ -133,25 +133,17 @@ namespace freeclimb.Test.Model
         public void TranscribeUtteranceSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++TranscribeUtterance++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
             Assert.Contains("actionUrl", json);
 
-            //Console.WriteLine("does it contain - playBeep ++ " + json.Contains("playBeep"));
             Assert.Contains("playBeep", json);
 
-            //Console.WriteLine("does it contain - record ++ " + json.Contains("record"));
             Assert.Contains("record", json);
 
-            //Console.WriteLine("does it contain - privacyForLogging ++ " + json.Contains("privacyForLogging"));
             Assert.Contains("privacyForLogging", json);
 
-            //Console.WriteLine("does it contain - privacyForRecording ++ " + json.Contains("privacyForRecording"));
             Assert.Contains("privacyForRecording", json);
 
-            //Console.WriteLine("does it contain - prompts ++ " + json.Contains("prompts"));
             Assert.Contains("prompts", json);
         }
 

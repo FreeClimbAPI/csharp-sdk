@@ -164,28 +164,19 @@ namespace freeclimb.Test.Model
         public void SMSTollFreeCampaignSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++SMSTollFreeCampaign++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - campaignId ++ " + json.Contains("campaignId"));
             Assert.Contains("campaignId", json);
 
-            //Console.WriteLine("does it contain - useCase ++ " + json.Contains("useCase"));
             Assert.Contains("useCase", json);
 
-            //Console.WriteLine("does it contain - registrationStatus ++ " + json.Contains("registrationStatus"));
             Assert.Contains("registrationStatus", json);
 
-            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
             Assert.Contains("dateCreated", json);
 
-            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
             Assert.Contains("dateUpdated", json);
 
-            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
             Assert.Contains("revision", json);
         }
 

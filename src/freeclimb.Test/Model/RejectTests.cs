@@ -72,10 +72,7 @@ namespace freeclimb.Test.Model
         public void RejectSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Reject++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - reason ++ " + json.Contains("reason"));
             Assert.Contains("reason", json);
         }
 

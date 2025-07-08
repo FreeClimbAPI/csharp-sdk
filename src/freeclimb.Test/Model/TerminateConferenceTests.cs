@@ -62,8 +62,6 @@ namespace freeclimb.Test.Model
         public void TerminateConferenceSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++TerminateConference++" );
-            //Console.WriteLine(json);
         }
 
         /// <summary>

@@ -191,40 +191,27 @@ namespace freeclimb.Test.Model
         public void AccountResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++AccountResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
             Assert.Contains("uri", json);
 
-            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
             Assert.Contains("dateCreated", json);
 
-            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
             Assert.Contains("dateUpdated", json);
 
-            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
             Assert.Contains("revision", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - apiKey ++ " + json.Contains("apiKey"));
             Assert.Contains("apiKey", json);
 
-            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
             Assert.Contains("alias", json);
 
-            //Console.WriteLine("does it contain - label ++ " + json.Contains("label"));
             Assert.Contains("label", json);
 
-            //Console.WriteLine("does it contain - type ++ " + json.Contains("type"));
             Assert.Contains("type", json);
 
-            //Console.WriteLine("does it contain - status ++ " + json.Contains("status"));
             Assert.Contains("status", json);
 
-            //Console.WriteLine("does it contain - subresourceUris ++ " + json.Contains("subresourceUris"));
             Assert.Contains("subresourceUris", json);
         }
 

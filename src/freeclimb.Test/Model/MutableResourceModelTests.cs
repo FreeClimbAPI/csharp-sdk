@@ -107,19 +107,13 @@ namespace freeclimb.Test.Model
         public void MutableResourceModelSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++MutableResourceModel++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
             Assert.Contains("uri", json);
 
-            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
             Assert.Contains("dateCreated", json);
 
-            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
             Assert.Contains("dateUpdated", json);
 
-            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
             Assert.Contains("revision", json);
         }
 

@@ -72,10 +72,7 @@ namespace freeclimb.Test.Model
         public void HangupSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Hangup++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - reason ++ " + json.Contains("reason"));
             Assert.Contains("reason", json);
         }
 

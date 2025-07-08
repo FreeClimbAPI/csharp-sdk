@@ -96,16 +96,11 @@ namespace freeclimb.Test.Model
         public void BuyIncomingNumberRequestSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++BuyIncomingNumberRequest++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - phoneNumber ++ " + json.Contains("phoneNumber"));
             Assert.Contains("phoneNumber", json);
 
-            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
             Assert.Contains("alias", json);
 
-            //Console.WriteLine("does it contain - applicationId ++ " + json.Contains("applicationId"));
             Assert.Contains("applicationId", json);
         }
 

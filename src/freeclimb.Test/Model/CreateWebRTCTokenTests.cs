@@ -96,16 +96,11 @@ namespace freeclimb.Test.Model
         public void CreateWebRTCTokenSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++CreateWebRTCToken++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - to ++ " + json.Contains("to"));
             Assert.Contains("to", json);
 
-            //Console.WriteLine("does it contain - from ++ " + json.Contains("from"));
             Assert.Contains("from", json);
 
-            //Console.WriteLine("does it contain - uses ++ " + json.Contains("uses"));
             Assert.Contains("uses", json);
         }
 

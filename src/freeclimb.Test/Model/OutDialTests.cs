@@ -175,37 +175,25 @@ namespace freeclimb.Test.Model
         public void OutDialSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++OutDial++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
             Assert.Contains("actionUrl", json);
 
-            //Console.WriteLine("does it contain - callConnectUrl ++ " + json.Contains("callConnectUrl"));
             Assert.Contains("callConnectUrl", json);
 
-            //Console.WriteLine("does it contain - callingNumber ++ " + json.Contains("callingNumber"));
             Assert.Contains("callingNumber", json);
 
-            //Console.WriteLine("does it contain - destination ++ " + json.Contains("destination"));
             Assert.Contains("destination", json);
 
-            //Console.WriteLine("does it contain - ifMachine ++ " + json.Contains("ifMachine"));
             Assert.Contains("ifMachine", json);
 
-            //Console.WriteLine("does it contain - ifMachineUrl ++ " + json.Contains("ifMachineUrl"));
             Assert.Contains("ifMachineUrl", json);
 
-            //Console.WriteLine("does it contain - sendDigits ++ " + json.Contains("sendDigits"));
             Assert.Contains("sendDigits", json);
 
-            //Console.WriteLine("does it contain - statusCallbackUrl ++ " + json.Contains("statusCallbackUrl"));
             Assert.Contains("statusCallbackUrl", json);
 
-            //Console.WriteLine("does it contain - timeout ++ " + json.Contains("timeout"));
             Assert.Contains("timeout", json);
 
-            //Console.WriteLine("does it contain - privacyMode ++ " + json.Contains("privacyMode"));
             Assert.Contains("privacyMode", json);
         }
 

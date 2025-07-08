@@ -72,10 +72,7 @@ namespace freeclimb.Test.Model
         public void SetTalkSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++SetTalk++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - talk ++ " + json.Contains("talk"));
             Assert.Contains("talk", json);
         }
 

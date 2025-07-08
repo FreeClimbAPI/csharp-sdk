@@ -88,13 +88,9 @@ namespace freeclimb.Test.Model
         public void CompletionResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++CompletionResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - response ++ " + json.Contains("response"));
             Assert.Contains("response", json);
 
-            //Console.WriteLine("does it contain - status ++ " + json.Contains("status"));
             Assert.Contains("status", json);
         }
 

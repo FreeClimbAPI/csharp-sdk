@@ -118,22 +118,15 @@ namespace freeclimb.Test.Model
         public void QueueMemberSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++QueueMember++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
             Assert.Contains("uri", json);
 
-            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
             Assert.Contains("callId", json);
 
-            //Console.WriteLine("does it contain - waitTime ++ " + json.Contains("waitTime"));
             Assert.Contains("waitTime", json);
 
-            //Console.WriteLine("does it contain - position ++ " + json.Contains("position"));
             Assert.Contains("position", json);
 
-            //Console.WriteLine("does it contain - dateEnqueued ++ " + json.Contains("dateEnqueued"));
             Assert.Contains("dateEnqueued", json);
         }
 

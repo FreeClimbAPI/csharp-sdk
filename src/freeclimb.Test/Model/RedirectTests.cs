@@ -72,10 +72,7 @@ namespace freeclimb.Test.Model
         public void RedirectSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Redirect++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
             Assert.Contains("actionUrl", json);
         }
 

@@ -304,67 +304,45 @@ namespace freeclimb.Test.Model
         public void CallResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++CallResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
             Assert.Contains("uri", json);
 
-            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
             Assert.Contains("dateCreated", json);
 
-            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
             Assert.Contains("dateUpdated", json);
 
-            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
             Assert.Contains("revision", json);
 
-            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
             Assert.Contains("callId", json);
 
-            //Console.WriteLine("does it contain - parentCallId ++ " + json.Contains("parentCallId"));
             Assert.Contains("parentCallId", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - from ++ " + json.Contains("from"));
             Assert.Contains("from", json);
 
-            //Console.WriteLine("does it contain - to ++ " + json.Contains("to"));
             Assert.Contains("to", json);
 
-            //Console.WriteLine("does it contain - phoneNumberId ++ " + json.Contains("phoneNumberId"));
             Assert.Contains("phoneNumberId", json);
 
-            //Console.WriteLine("does it contain - callStatus ++ " + json.Contains("callStatus"));
             Assert.Contains("callStatus", json);
 
-            //Console.WriteLine("does it contain - startTime ++ " + json.Contains("startTime"));
             Assert.Contains("startTime", json);
 
-            //Console.WriteLine("does it contain - connectTime ++ " + json.Contains("connectTime"));
             Assert.Contains("connectTime", json);
 
-            //Console.WriteLine("does it contain - endTime ++ " + json.Contains("endTime"));
             Assert.Contains("endTime", json);
 
-            //Console.WriteLine("does it contain - duration ++ " + json.Contains("duration"));
             Assert.Contains("duration", json);
 
-            //Console.WriteLine("does it contain - connectDuration ++ " + json.Contains("connectDuration"));
             Assert.Contains("connectDuration", json);
 
-            //Console.WriteLine("does it contain - direction ++ " + json.Contains("direction"));
             Assert.Contains("direction", json);
 
-            //Console.WriteLine("does it contain - answeredBy ++ " + json.Contains("answeredBy"));
             Assert.Contains("answeredBy", json);
 
-            //Console.WriteLine("does it contain - subresourceUris ++ " + json.Contains("subresourceUris"));
             Assert.Contains("subresourceUris", json);
 
-            //Console.WriteLine("does it contain - applicationId ++ " + json.Contains("applicationId"));
             Assert.Contains("applicationId", json);
         }
 

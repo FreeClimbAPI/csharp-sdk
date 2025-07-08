@@ -96,16 +96,11 @@ namespace freeclimb.Test.Model
         public void TranscribeUtteranceRecordSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++TranscribeUtteranceRecord++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - saveRecording ++ " + json.Contains("saveRecording"));
             Assert.Contains("saveRecording", json);
 
-            //Console.WriteLine("does it contain - maxLengthSec ++ " + json.Contains("maxLengthSec"));
             Assert.Contains("maxLengthSec", json);
 
-            //Console.WriteLine("does it contain - rcrdTerminationSilenceTimeMs ++ " + json.Contains("rcrdTerminationSilenceTimeMs"));
             Assert.Contains("rcrdTerminationSilenceTimeMs", json);
         }
 

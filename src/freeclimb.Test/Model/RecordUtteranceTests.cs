@@ -140,28 +140,19 @@ namespace freeclimb.Test.Model
         public void RecordUtteranceSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++RecordUtterance++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
             Assert.Contains("actionUrl", json);
 
-            //Console.WriteLine("does it contain - silenceTimeoutMs ++ " + json.Contains("silenceTimeoutMs"));
             Assert.Contains("silenceTimeoutMs", json);
 
-            //Console.WriteLine("does it contain - finishOnKey ++ " + json.Contains("finishOnKey"));
             Assert.Contains("finishOnKey", json);
 
-            //Console.WriteLine("does it contain - maxLengthSec ++ " + json.Contains("maxLengthSec"));
             Assert.Contains("maxLengthSec", json);
 
-            //Console.WriteLine("does it contain - playBeep ++ " + json.Contains("playBeep"));
             Assert.Contains("playBeep", json);
 
-            //Console.WriteLine("does it contain - autoStart ++ " + json.Contains("autoStart"));
             Assert.Contains("autoStart", json);
 
-            //Console.WriteLine("does it contain - privacyMode ++ " + json.Contains("privacyMode"));
             Assert.Contains("privacyMode", json);
         }
 

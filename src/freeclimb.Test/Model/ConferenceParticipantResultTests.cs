@@ -184,40 +184,27 @@ namespace freeclimb.Test.Model
         public void ConferenceParticipantResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++ConferenceParticipantResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
             Assert.Contains("uri", json);
 
-            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
             Assert.Contains("dateCreated", json);
 
-            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
             Assert.Contains("dateUpdated", json);
 
-            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
             Assert.Contains("revision", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - conferenceId ++ " + json.Contains("conferenceId"));
             Assert.Contains("conferenceId", json);
 
-            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
             Assert.Contains("callId", json);
 
-            //Console.WriteLine("does it contain - talk ++ " + json.Contains("talk"));
             Assert.Contains("talk", json);
 
-            //Console.WriteLine("does it contain - listen ++ " + json.Contains("listen"));
             Assert.Contains("listen", json);
 
-            //Console.WriteLine("does it contain - dtmfPassThrough ++ " + json.Contains("dtmfPassThrough"));
             Assert.Contains("dtmfPassThrough", json);
 
-            //Console.WriteLine("does it contain - startConfOnEnter ++ " + json.Contains("startConfOnEnter"));
             Assert.Contains("startConfOnEnter", json);
         }
 

@@ -162,34 +162,23 @@ namespace freeclimb.Test.Model
         public void RecordingResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++RecordingResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
             Assert.Contains("uri", json);
 
-            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
             Assert.Contains("dateCreated", json);
 
-            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
             Assert.Contains("dateUpdated", json);
 
-            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
             Assert.Contains("revision", json);
 
-            //Console.WriteLine("does it contain - recordingId ++ " + json.Contains("recordingId"));
             Assert.Contains("recordingId", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
             Assert.Contains("callId", json);
 
-            //Console.WriteLine("does it contain - durationSec ++ " + json.Contains("durationSec"));
             Assert.Contains("durationSec", json);
 
-            //Console.WriteLine("does it contain - conferenceId ++ " + json.Contains("conferenceId"));
             Assert.Contains("conferenceId", json);
         }
 

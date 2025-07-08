@@ -85,13 +85,9 @@ namespace freeclimb.Test.Model
         public void QueueRequestSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++QueueRequest++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
             Assert.Contains("alias", json);
 
-            //Console.WriteLine("does it contain - maxSize ++ " + json.Contains("maxSize"));
             Assert.Contains("maxSize", json);
         }
 

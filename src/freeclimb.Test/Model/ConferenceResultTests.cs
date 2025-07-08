@@ -230,49 +230,33 @@ namespace freeclimb.Test.Model
         public void ConferenceResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++ConferenceResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
             Assert.Contains("uri", json);
 
-            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
             Assert.Contains("dateCreated", json);
 
-            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
             Assert.Contains("dateUpdated", json);
 
-            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
             Assert.Contains("revision", json);
 
-            //Console.WriteLine("does it contain - conferenceId ++ " + json.Contains("conferenceId"));
             Assert.Contains("conferenceId", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
             Assert.Contains("alias", json);
 
-            //Console.WriteLine("does it contain - playBeep ++ " + json.Contains("playBeep"));
             Assert.Contains("playBeep", json);
 
-            //Console.WriteLine("does it contain - record ++ " + json.Contains("record"));
             Assert.Contains("record", json);
 
-            //Console.WriteLine("does it contain - status ++ " + json.Contains("status"));
             Assert.Contains("status", json);
 
-            //Console.WriteLine("does it contain - waitUrl ++ " + json.Contains("waitUrl"));
             Assert.Contains("waitUrl", json);
 
-            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
             Assert.Contains("actionUrl", json);
 
-            //Console.WriteLine("does it contain - statusCallbackUrl ++ " + json.Contains("statusCallbackUrl"));
             Assert.Contains("statusCallbackUrl", json);
 
-            //Console.WriteLine("does it contain - subresourceUris ++ " + json.Contains("subresourceUris"));
             Assert.Contains("subresourceUris", json);
         }
 

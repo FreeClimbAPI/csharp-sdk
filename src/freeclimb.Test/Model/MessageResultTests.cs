@@ -294,64 +294,43 @@ namespace freeclimb.Test.Model
         public void MessageResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++MessageResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
             Assert.Contains("uri", json);
 
-            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
             Assert.Contains("dateCreated", json);
 
-            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
             Assert.Contains("dateUpdated", json);
 
-            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
             Assert.Contains("revision", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - messageId ++ " + json.Contains("messageId"));
             Assert.Contains("messageId", json);
 
-            //Console.WriteLine("does it contain - status ++ " + json.Contains("status"));
             Assert.Contains("status", json);
 
-            //Console.WriteLine("does it contain - from ++ " + json.Contains("from"));
             Assert.Contains("from", json);
 
-            //Console.WriteLine("does it contain - to ++ " + json.Contains("to"));
             Assert.Contains("to", json);
 
-            //Console.WriteLine("does it contain - text ++ " + json.Contains("text"));
             Assert.Contains("text", json);
 
-            //Console.WriteLine("does it contain - direction ++ " + json.Contains("direction"));
             Assert.Contains("direction", json);
 
-            //Console.WriteLine("does it contain - notificationUrl ++ " + json.Contains("notificationUrl"));
             Assert.Contains("notificationUrl", json);
 
-            //Console.WriteLine("does it contain - brandId ++ " + json.Contains("brandId"));
             Assert.Contains("brandId", json);
 
-            //Console.WriteLine("does it contain - campaignId ++ " + json.Contains("campaignId"));
             Assert.Contains("campaignId", json);
 
-            //Console.WriteLine("does it contain - segmentCount ++ " + json.Contains("segmentCount"));
             Assert.Contains("segmentCount", json);
 
-            //Console.WriteLine("does it contain - mediaUrls ++ " + json.Contains("mediaUrls"));
             Assert.Contains("mediaUrls", json);
 
-            //Console.WriteLine("does it contain - tfn ++ " + json.Contains("tfn"));
             Assert.Contains("tfn", json);
 
-            //Console.WriteLine("does it contain - phoneNumberId ++ " + json.Contains("phoneNumberId"));
             Assert.Contains("phoneNumberId", json);
 
-            //Console.WriteLine("does it contain - applicationId ++ " + json.Contains("applicationId"));
             Assert.Contains("applicationId", json);
         }
 

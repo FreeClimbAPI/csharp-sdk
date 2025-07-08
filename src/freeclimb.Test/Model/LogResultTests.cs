@@ -145,28 +145,19 @@ namespace freeclimb.Test.Model
         public void LogResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++LogResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - timestamp ++ " + json.Contains("timestamp"));
             Assert.Contains("timestamp", json);
 
-            //Console.WriteLine("does it contain - level ++ " + json.Contains("level"));
             Assert.Contains("level", json);
 
-            //Console.WriteLine("does it contain - requestId ++ " + json.Contains("requestId"));
             Assert.Contains("requestId", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
             Assert.Contains("callId", json);
 
-            //Console.WriteLine("does it contain - message ++ " + json.Contains("message"));
             Assert.Contains("message", json);
 
-            //Console.WriteLine("does it contain - metadata ++ " + json.Contains("metadata"));
             Assert.Contains("metadata", json);
         }
 

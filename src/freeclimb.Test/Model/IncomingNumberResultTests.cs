@@ -252,58 +252,39 @@ namespace freeclimb.Test.Model
         public void IncomingNumberResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++IncomingNumberResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - uri ++ " + json.Contains("uri"));
             Assert.Contains("uri", json);
 
-            //Console.WriteLine("does it contain - dateCreated ++ " + json.Contains("dateCreated"));
             Assert.Contains("dateCreated", json);
 
-            //Console.WriteLine("does it contain - dateUpdated ++ " + json.Contains("dateUpdated"));
             Assert.Contains("dateUpdated", json);
 
-            //Console.WriteLine("does it contain - revision ++ " + json.Contains("revision"));
             Assert.Contains("revision", json);
 
-            //Console.WriteLine("does it contain - capabilities ++ " + json.Contains("capabilities"));
             Assert.Contains("capabilities", json);
 
-            //Console.WriteLine("does it contain - campaignId ++ " + json.Contains("campaignId"));
             Assert.Contains("campaignId", json);
 
-            //Console.WriteLine("does it contain - phoneNumberId ++ " + json.Contains("phoneNumberId"));
             Assert.Contains("phoneNumberId", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - applicationId ++ " + json.Contains("applicationId"));
             Assert.Contains("applicationId", json);
 
-            //Console.WriteLine("does it contain - phoneNumber ++ " + json.Contains("phoneNumber"));
             Assert.Contains("phoneNumber", json);
 
-            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
             Assert.Contains("alias", json);
 
-            //Console.WriteLine("does it contain - region ++ " + json.Contains("region"));
             Assert.Contains("region", json);
 
-            //Console.WriteLine("does it contain - country ++ " + json.Contains("country"));
             Assert.Contains("country", json);
 
-            //Console.WriteLine("does it contain - voiceEnabled ++ " + json.Contains("voiceEnabled"));
             Assert.Contains("voiceEnabled", json);
 
-            //Console.WriteLine("does it contain - smsEnabled ++ " + json.Contains("smsEnabled"));
             Assert.Contains("smsEnabled", json);
 
-            //Console.WriteLine("does it contain - offnet ++ " + json.Contains("offnet"));
             Assert.Contains("offnet", json);
 
-            //Console.WriteLine("does it contain - tfn ++ " + json.Contains("tfn"));
             Assert.Contains("tfn", json);
         }
 

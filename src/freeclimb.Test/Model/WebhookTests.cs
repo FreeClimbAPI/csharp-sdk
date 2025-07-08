@@ -327,10 +327,7 @@ namespace freeclimb.Test.Model
         public void WebhookSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Webhook++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - requestType ++ " + json.Contains("requestType"));
             Assert.Contains("requestType", json);
         }
 

@@ -62,8 +62,6 @@ namespace freeclimb.Test.Model
         public void UnparkSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Unpark++" );
-            //Console.WriteLine(json);
         }
 
         /// <summary>

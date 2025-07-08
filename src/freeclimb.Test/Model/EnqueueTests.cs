@@ -107,19 +107,13 @@ namespace freeclimb.Test.Model
         public void EnqueueSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Enqueue++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
             Assert.Contains("actionUrl", json);
 
-            //Console.WriteLine("does it contain - notificationUrl ++ " + json.Contains("notificationUrl"));
             Assert.Contains("notificationUrl", json);
 
-            //Console.WriteLine("does it contain - queueId ++ " + json.Contains("queueId"));
             Assert.Contains("queueId", json);
 
-            //Console.WriteLine("does it contain - waitUrl ++ " + json.Contains("waitUrl"));
             Assert.Contains("waitUrl", json);
         }
 

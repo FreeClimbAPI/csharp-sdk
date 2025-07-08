@@ -85,13 +85,9 @@ namespace freeclimb.Test.Model
         public void AccountRequestSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++AccountRequest++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
             Assert.Contains("alias", json);
 
-            //Console.WriteLine("does it contain - label ++ " + json.Contains("label"));
             Assert.Contains("label", json);
         }
 

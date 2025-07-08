@@ -74,10 +74,7 @@ namespace freeclimb.Test.Model
         public void SetDTMFPassThroughSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++SetDTMFPassThrough++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - dtmfPassThrough ++ " + json.Contains("dtmfPassThrough"));
             Assert.Contains("dtmfPassThrough", json);
         }
 

@@ -72,10 +72,7 @@ namespace freeclimb.Test.Model
         public void TFNSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++TFN++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - campaignId ++ " + json.Contains("campaignId"));
             Assert.Contains("campaignId", json);
         }
 

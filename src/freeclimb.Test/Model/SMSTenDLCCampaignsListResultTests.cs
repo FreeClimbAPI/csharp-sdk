@@ -153,31 +153,21 @@ namespace freeclimb.Test.Model
         public void SMSTenDLCCampaignsListResultSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++SMSTenDLCCampaignsListResult++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - total ++ " + json.Contains("total"));
             Assert.Contains("total", json);
 
-            //Console.WriteLine("does it contain - start ++ " + json.Contains("start"));
             Assert.Contains("start", json);
 
-            //Console.WriteLine("does it contain - end ++ " + json.Contains("end"));
             Assert.Contains("end", json);
 
-            //Console.WriteLine("does it contain - page ++ " + json.Contains("page"));
             Assert.Contains("page", json);
 
-            //Console.WriteLine("does it contain - numPages ++ " + json.Contains("numPages"));
             Assert.Contains("numPages", json);
 
-            //Console.WriteLine("does it contain - pageSize ++ " + json.Contains("pageSize"));
             Assert.Contains("pageSize", json);
 
-            //Console.WriteLine("does it contain - nextPageUri ++ " + json.Contains("nextPageUri"));
             Assert.Contains("nextPageUri", json);
 
-            //Console.WriteLine("does it contain - campaigns ++ " + json.Contains("campaigns"));
             Assert.Contains("campaigns", json);
         }
 

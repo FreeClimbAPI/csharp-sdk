@@ -135,25 +135,17 @@ namespace freeclimb.Test.Model
         public void CreateConferenceSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++CreateConference++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
             Assert.Contains("actionUrl", json);
 
-            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
             Assert.Contains("alias", json);
 
-            //Console.WriteLine("does it contain - playBeep ++ " + json.Contains("playBeep"));
             Assert.Contains("playBeep", json);
 
-            //Console.WriteLine("does it contain - record ++ " + json.Contains("record"));
             Assert.Contains("record", json);
 
-            //Console.WriteLine("does it contain - statusCallbackUrl ++ " + json.Contains("statusCallbackUrl"));
             Assert.Contains("statusCallbackUrl", json);
 
-            //Console.WriteLine("does it contain - waitUrl ++ " + json.Contains("waitUrl"));
             Assert.Contains("waitUrl", json);
         }
 

@@ -72,10 +72,7 @@ namespace freeclimb.Test.Model
         public void FilterLogsRequestSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++FilterLogsRequest++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - pql ++ " + json.Contains("pql"));
             Assert.Contains("pql", json);
         }
 

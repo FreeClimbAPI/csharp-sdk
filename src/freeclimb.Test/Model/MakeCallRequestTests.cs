@@ -173,37 +173,25 @@ namespace freeclimb.Test.Model
         public void MakeCallRequestSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++MakeCallRequest++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - from ++ " + json.Contains("from"));
             Assert.Contains("from", json);
 
-            //Console.WriteLine("does it contain - to ++ " + json.Contains("to"));
             Assert.Contains("to", json);
 
-            //Console.WriteLine("does it contain - applicationId ++ " + json.Contains("applicationId"));
             Assert.Contains("applicationId", json);
 
-            //Console.WriteLine("does it contain - sendDigits ++ " + json.Contains("sendDigits"));
             Assert.Contains("sendDigits", json);
 
-            //Console.WriteLine("does it contain - ifMachine ++ " + json.Contains("ifMachine"));
             Assert.Contains("ifMachine", json);
 
-            //Console.WriteLine("does it contain - ifMachineUrl ++ " + json.Contains("ifMachineUrl"));
             Assert.Contains("ifMachineUrl", json);
 
-            //Console.WriteLine("does it contain - timeout ++ " + json.Contains("timeout"));
             Assert.Contains("timeout", json);
 
-            //Console.WriteLine("does it contain - parentCallId ++ " + json.Contains("parentCallId"));
             Assert.Contains("parentCallId", json);
 
-            //Console.WriteLine("does it contain - privacyMode ++ " + json.Contains("privacyMode"));
             Assert.Contains("privacyMode", json);
 
-            //Console.WriteLine("does it contain - callConnectUrl ++ " + json.Contains("callConnectUrl"));
             Assert.Contains("callConnectUrl", json);
         }
 

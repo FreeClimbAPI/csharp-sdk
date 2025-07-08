@@ -62,8 +62,6 @@ namespace freeclimb.Test.Model
         public void DequeueSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Dequeue++" );
-            //Console.WriteLine(json);
         }
 
         /// <summary>

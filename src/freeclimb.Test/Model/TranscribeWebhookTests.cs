@@ -344,76 +344,51 @@ namespace freeclimb.Test.Model
         public void TranscribeWebhookSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++TranscribeWebhook++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - requestType ++ " + json.Contains("requestType"));
             Assert.Contains("requestType", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
             Assert.Contains("callId", json);
 
-            //Console.WriteLine("does it contain - from ++ " + json.Contains("from"));
             Assert.Contains("from", json);
 
-            //Console.WriteLine("does it contain - to ++ " + json.Contains("to"));
             Assert.Contains("to", json);
 
-            //Console.WriteLine("does it contain - recordingId ++ " + json.Contains("recordingId"));
             Assert.Contains("recordingId", json);
 
-            //Console.WriteLine("does it contain - recordingUrl ++ " + json.Contains("recordingUrl"));
             Assert.Contains("recordingUrl", json);
 
-            //Console.WriteLine("does it contain - recordingSize ++ " + json.Contains("recordingSize"));
             Assert.Contains("recordingSize", json);
 
-            //Console.WriteLine("does it contain - recordingFormat ++ " + json.Contains("recordingFormat"));
             Assert.Contains("recordingFormat", json);
 
-            //Console.WriteLine("does it contain - recordingDurationMs ++ " + json.Contains("recordingDurationMs"));
             Assert.Contains("recordingDurationMs", json);
 
-            //Console.WriteLine("does it contain - termReason ++ " + json.Contains("termReason"));
             Assert.Contains("termReason", json);
 
-            //Console.WriteLine("does it contain - recordTermReason ++ " + json.Contains("recordTermReason"));
             Assert.Contains("recordTermReason", json);
 
-            //Console.WriteLine("does it contain - digit ++ " + json.Contains("digit"));
             Assert.Contains("digit", json);
 
-            //Console.WriteLine("does it contain - privacyForLogging ++ " + json.Contains("privacyForLogging"));
             Assert.Contains("privacyForLogging", json);
 
-            //Console.WriteLine("does it contain - privacyForRecording ++ " + json.Contains("privacyForRecording"));
             Assert.Contains("privacyForRecording", json);
 
-            //Console.WriteLine("does it contain - bargeInReason ++ " + json.Contains("bargeInReason"));
             Assert.Contains("bargeInReason", json);
 
-            //Console.WriteLine("does it contain - bargedInPromptNo ++ " + json.Contains("bargedInPromptNo"));
             Assert.Contains("bargedInPromptNo", json);
 
-            //Console.WriteLine("does it contain - bargedInPromptMs ++ " + json.Contains("bargedInPromptMs"));
             Assert.Contains("bargedInPromptMs", json);
 
-            //Console.WriteLine("does it contain - bargedInPromptLoopNo ++ " + json.Contains("bargedInPromptLoopNo"));
             Assert.Contains("bargedInPromptLoopNo", json);
 
-            //Console.WriteLine("does it contain - bargeInTimeMs ++ " + json.Contains("bargeInTimeMs"));
             Assert.Contains("bargeInTimeMs", json);
 
-            //Console.WriteLine("does it contain - transcript ++ " + json.Contains("transcript"));
             Assert.Contains("transcript", json);
 
-            //Console.WriteLine("does it contain - transcribeReason ++ " + json.Contains("transcribeReason"));
             Assert.Contains("transcribeReason", json);
 
-            //Console.WriteLine("does it contain - transcriptionDurationMs ++ " + json.Contains("transcriptionDurationMs"));
             Assert.Contains("transcriptionDurationMs", json);
         }
 

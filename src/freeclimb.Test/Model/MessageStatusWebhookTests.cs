@@ -209,40 +209,27 @@ namespace freeclimb.Test.Model
         public void MessageStatusWebhookSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++MessageStatusWebhook++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - requestType ++ " + json.Contains("requestType"));
             Assert.Contains("requestType", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - messageId ++ " + json.Contains("messageId"));
             Assert.Contains("messageId", json);
 
-            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
             Assert.Contains("callId", json);
 
-            //Console.WriteLine("does it contain - from ++ " + json.Contains("from"));
             Assert.Contains("from", json);
 
-            //Console.WriteLine("does it contain - to ++ " + json.Contains("to"));
             Assert.Contains("to", json);
 
-            //Console.WriteLine("does it contain - text ++ " + json.Contains("text"));
             Assert.Contains("text", json);
 
-            //Console.WriteLine("does it contain - direction ++ " + json.Contains("direction"));
             Assert.Contains("direction", json);
 
-            //Console.WriteLine("does it contain - applicationId ++ " + json.Contains("applicationId"));
             Assert.Contains("applicationId", json);
 
-            //Console.WriteLine("does it contain - status ++ " + json.Contains("status"));
             Assert.Contains("status", json);
 
-            //Console.WriteLine("does it contain - phoneNumberId ++ " + json.Contains("phoneNumberId"));
             Assert.Contains("phoneNumberId", json);
         }
 

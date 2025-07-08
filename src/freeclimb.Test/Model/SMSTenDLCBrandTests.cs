@@ -460,91 +460,61 @@ namespace freeclimb.Test.Model
         public void SMSTenDLCBrandSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++SMSTenDLCBrand++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - entityType ++ " + json.Contains("entityType"));
             Assert.Contains("entityType", json);
 
-            //Console.WriteLine("does it contain - firstName ++ " + json.Contains("firstName"));
             Assert.Contains("firstName", json);
 
-            //Console.WriteLine("does it contain - lastName ++ " + json.Contains("lastName"));
             Assert.Contains("lastName", json);
 
-            //Console.WriteLine("does it contain - displayName ++ " + json.Contains("displayName"));
             Assert.Contains("displayName", json);
 
-            //Console.WriteLine("does it contain - companyName ++ " + json.Contains("companyName"));
             Assert.Contains("companyName", json);
 
-            //Console.WriteLine("does it contain - ein ++ " + json.Contains("ein"));
             Assert.Contains("ein", json);
 
-            //Console.WriteLine("does it contain - einIssuingCountry ++ " + json.Contains("einIssuingCountry"));
             Assert.Contains("einIssuingCountry", json);
 
-            //Console.WriteLine("does it contain - phone ++ " + json.Contains("phone"));
             Assert.Contains("phone", json);
 
-            //Console.WriteLine("does it contain - street ++ " + json.Contains("street"));
             Assert.Contains("street", json);
 
-            //Console.WriteLine("does it contain - city ++ " + json.Contains("city"));
             Assert.Contains("city", json);
 
-            //Console.WriteLine("does it contain - state ++ " + json.Contains("state"));
             Assert.Contains("state", json);
 
-            //Console.WriteLine("does it contain - postalCode ++ " + json.Contains("postalCode"));
             Assert.Contains("postalCode", json);
 
-            //Console.WriteLine("does it contain - country ++ " + json.Contains("country"));
             Assert.Contains("country", json);
 
-            //Console.WriteLine("does it contain - email ++ " + json.Contains("email"));
             Assert.Contains("email", json);
 
-            //Console.WriteLine("does it contain - stockSymbol ++ " + json.Contains("stockSymbol"));
             Assert.Contains("stockSymbol", json);
 
-            //Console.WriteLine("does it contain - stockExchange ++ " + json.Contains("stockExchange"));
             Assert.Contains("stockExchange", json);
 
-            //Console.WriteLine("does it contain - ipAddress ++ " + json.Contains("ipAddress"));
             Assert.Contains("ipAddress", json);
 
-            //Console.WriteLine("does it contain - website ++ " + json.Contains("website"));
             Assert.Contains("website", json);
 
-            //Console.WriteLine("does it contain - brandRelationship ++ " + json.Contains("brandRelationship"));
             Assert.Contains("brandRelationship", json);
 
-            //Console.WriteLine("does it contain - vertical ++ " + json.Contains("vertical"));
             Assert.Contains("vertical", json);
 
-            //Console.WriteLine("does it contain - altBusinessId ++ " + json.Contains("altBusinessId"));
             Assert.Contains("altBusinessId", json);
 
-            //Console.WriteLine("does it contain - altBusinessIdType ++ " + json.Contains("altBusinessIdType"));
             Assert.Contains("altBusinessIdType", json);
 
-            //Console.WriteLine("does it contain - referenceId ++ " + json.Contains("referenceId"));
             Assert.Contains("referenceId", json);
 
-            //Console.WriteLine("does it contain - optionalAttributes ++ " + json.Contains("optionalAttributes"));
             Assert.Contains("optionalAttributes", json);
 
-            //Console.WriteLine("does it contain - mock ++ " + json.Contains("mock"));
             Assert.Contains("mock", json);
 
-            //Console.WriteLine("does it contain - identityStatus ++ " + json.Contains("identityStatus"));
             Assert.Contains("identityStatus", json);
 
-            //Console.WriteLine("does it contain - createDate ++ " + json.Contains("createDate"));
             Assert.Contains("createDate", json);
         }
 

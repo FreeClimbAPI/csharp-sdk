@@ -123,22 +123,15 @@ namespace freeclimb.Test.Model
         public void CallControlWebhookSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++CallControlWebhook++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - requestType ++ " + json.Contains("requestType"));
             Assert.Contains("requestType", json);
 
-            //Console.WriteLine("does it contain - callId ++ " + json.Contains("callId"));
             Assert.Contains("callId", json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - conferenceId ++ " + json.Contains("conferenceId"));
             Assert.Contains("conferenceId", json);
 
-            //Console.WriteLine("does it contain - digits ++ " + json.Contains("digits"));
             Assert.Contains("digits", json);
         }
 

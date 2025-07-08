@@ -468,115 +468,77 @@ namespace freeclimb.Test.Model
         public void SMSTenDLCCampaignSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++SMSTenDLCCampaign++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - campaignId ++ " + json.Contains("campaignId"));
             Assert.Contains("campaignId", json);
 
-            //Console.WriteLine("does it contain - cspId ++ " + json.Contains("cspId"));
             Assert.Contains("cspId", json);
 
-            //Console.WriteLine("does it contain - resellerId ++ " + json.Contains("resellerId"));
             Assert.Contains("resellerId", json);
 
-            //Console.WriteLine("does it contain - status ++ " + json.Contains("status"));
             Assert.Contains("status", json);
 
-            //Console.WriteLine("does it contain - createDate ++ " + json.Contains("createDate"));
             Assert.Contains("createDate", json);
 
-            //Console.WriteLine("does it contain - autoRenewal ++ " + json.Contains("autoRenewal"));
             Assert.Contains("autoRenewal", json);
 
-            //Console.WriteLine("does it contain - billedDate ++ " + json.Contains("billedDate"));
             Assert.Contains("billedDate", json);
 
-            //Console.WriteLine("does it contain - brandId ++ " + json.Contains("brandId"));
             Assert.Contains("brandId", json);
 
-            //Console.WriteLine("does it contain - usecase ++ " + json.Contains("usecase"));
             Assert.Contains("usecase", json);
 
-            //Console.WriteLine("does it contain - subUsecases ++ " + json.Contains("subUsecases"));
             Assert.Contains("subUsecases", json);
 
-            //Console.WriteLine("does it contain - description ++ " + json.Contains("description"));
             Assert.Contains("description", json);
 
-            //Console.WriteLine("does it contain - embeddedLink ++ " + json.Contains("embeddedLink"));
             Assert.Contains("embeddedLink", json);
 
-            //Console.WriteLine("does it contain - embeddedPhone ++ " + json.Contains("embeddedPhone"));
             Assert.Contains("embeddedPhone", json);
 
-            //Console.WriteLine("does it contain - affiliateMarketing ++ " + json.Contains("affiliateMarketing"));
             Assert.Contains("affiliateMarketing", json);
 
-            //Console.WriteLine("does it contain - numberPool ++ " + json.Contains("numberPool"));
             Assert.Contains("numberPool", json);
 
-            //Console.WriteLine("does it contain - ageGated ++ " + json.Contains("ageGated"));
             Assert.Contains("ageGated", json);
 
-            //Console.WriteLine("does it contain - directLending ++ " + json.Contains("directLending"));
             Assert.Contains("directLending", json);
 
-            //Console.WriteLine("does it contain - subscriberOptin ++ " + json.Contains("subscriberOptin"));
             Assert.Contains("subscriberOptin", json);
 
-            //Console.WriteLine("does it contain - subscriberOptout ++ " + json.Contains("subscriberOptout"));
             Assert.Contains("subscriberOptout", json);
 
-            //Console.WriteLine("does it contain - subscriberHelp ++ " + json.Contains("subscriberHelp"));
             Assert.Contains("subscriberHelp", json);
 
-            //Console.WriteLine("does it contain - sample1 ++ " + json.Contains("sample1"));
             Assert.Contains("sample1", json);
 
-            //Console.WriteLine("does it contain - sample2 ++ " + json.Contains("sample2"));
             Assert.Contains("sample2", json);
 
-            //Console.WriteLine("does it contain - sample3 ++ " + json.Contains("sample3"));
             Assert.Contains("sample3", json);
 
-            //Console.WriteLine("does it contain - sample4 ++ " + json.Contains("sample4"));
             Assert.Contains("sample4", json);
 
-            //Console.WriteLine("does it contain - sample5 ++ " + json.Contains("sample5"));
             Assert.Contains("sample5", json);
 
-            //Console.WriteLine("does it contain - messageFlow ++ " + json.Contains("messageFlow"));
             Assert.Contains("messageFlow", json);
 
-            //Console.WriteLine("does it contain - helpMessage ++ " + json.Contains("helpMessage"));
             Assert.Contains("helpMessage", json);
 
-            //Console.WriteLine("does it contain - optinKeywords ++ " + json.Contains("optinKeywords"));
             Assert.Contains("optinKeywords", json);
 
-            //Console.WriteLine("does it contain - optoutKeywords ++ " + json.Contains("optoutKeywords"));
             Assert.Contains("optoutKeywords", json);
 
-            //Console.WriteLine("does it contain - helpKeywords ++ " + json.Contains("helpKeywords"));
             Assert.Contains("helpKeywords", json);
 
-            //Console.WriteLine("does it contain - optinMessage ++ " + json.Contains("optinMessage"));
             Assert.Contains("optinMessage", json);
 
-            //Console.WriteLine("does it contain - optoutMessage ++ " + json.Contains("optoutMessage"));
             Assert.Contains("optoutMessage", json);
 
-            //Console.WriteLine("does it contain - referenceId ++ " + json.Contains("referenceId"));
             Assert.Contains("referenceId", json);
 
-            //Console.WriteLine("does it contain - mock ++ " + json.Contains("mock"));
             Assert.Contains("mock", json);
 
-            //Console.WriteLine("does it contain - nextRenewalOrExpirationDate ++ " + json.Contains("nextRenewalOrExpirationDate"));
             Assert.Contains("nextRenewalOrExpirationDate", json);
         }
 

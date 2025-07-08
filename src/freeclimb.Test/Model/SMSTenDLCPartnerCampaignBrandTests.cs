@@ -177,37 +177,25 @@ namespace freeclimb.Test.Model
         public void SMSTenDLCPartnerCampaignBrandSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++SMSTenDLCPartnerCampaignBrand++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - accountId ++ " + json.Contains("accountId"));
             Assert.Contains("accountId", json);
 
-            //Console.WriteLine("does it contain - firstName ++ " + json.Contains("firstName"));
             Assert.Contains("firstName", json);
 
-            //Console.WriteLine("does it contain - lastName ++ " + json.Contains("lastName"));
             Assert.Contains("lastName", json);
 
-            //Console.WriteLine("does it contain - displayName ++ " + json.Contains("displayName"));
             Assert.Contains("displayName", json);
 
-            //Console.WriteLine("does it contain - companyName ++ " + json.Contains("companyName"));
             Assert.Contains("companyName", json);
 
-            //Console.WriteLine("does it contain - phone ++ " + json.Contains("phone"));
             Assert.Contains("phone", json);
 
-            //Console.WriteLine("does it contain - email ++ " + json.Contains("email"));
             Assert.Contains("email", json);
 
-            //Console.WriteLine("does it contain - website ++ " + json.Contains("website"));
             Assert.Contains("website", json);
 
-            //Console.WriteLine("does it contain - optionalAttributes ++ " + json.Contains("optionalAttributes"));
             Assert.Contains("optionalAttributes", json);
 
-            //Console.WriteLine("does it contain - evpVettingScore ++ " + json.Contains("evpVettingScore"));
             Assert.Contains("evpVettingScore", json);
         }
 

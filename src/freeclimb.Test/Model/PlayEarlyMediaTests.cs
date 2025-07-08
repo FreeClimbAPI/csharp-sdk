@@ -72,10 +72,7 @@ namespace freeclimb.Test.Model
         public void PlayEarlyMediaSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++PlayEarlyMedia++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - file ++ " + json.Contains("file"));
             Assert.Contains("file", json);
         }
 

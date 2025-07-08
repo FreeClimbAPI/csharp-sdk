@@ -74,10 +74,7 @@ namespace freeclimb.Test.Model
         public void CompletionRequestSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++CompletionRequest++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - query ++ " + json.Contains("query"));
             Assert.Contains("query", json);
         }
 

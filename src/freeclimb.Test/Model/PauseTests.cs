@@ -72,10 +72,7 @@ namespace freeclimb.Test.Model
         public void PauseSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Pause++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - length ++ " + json.Contains("length"));
             Assert.Contains("length", json);
         }
 

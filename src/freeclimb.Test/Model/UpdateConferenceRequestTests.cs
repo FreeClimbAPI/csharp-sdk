@@ -105,16 +105,11 @@ namespace freeclimb.Test.Model
         public void UpdateConferenceRequestSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++UpdateConferenceRequest++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - alias ++ " + json.Contains("alias"));
             Assert.Contains("alias", json);
 
-            //Console.WriteLine("does it contain - playBeep ++ " + json.Contains("playBeep"));
             Assert.Contains("playBeep", json);
 
-            //Console.WriteLine("does it contain - status ++ " + json.Contains("status"));
             Assert.Contains("status", json);
         }
 

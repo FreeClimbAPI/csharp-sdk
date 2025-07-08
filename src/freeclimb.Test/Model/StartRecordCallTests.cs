@@ -62,8 +62,6 @@ namespace freeclimb.Test.Model
         public void StartRecordCallSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++StartRecordCall++" );
-            //Console.WriteLine(json);
         }
 
         /// <summary>

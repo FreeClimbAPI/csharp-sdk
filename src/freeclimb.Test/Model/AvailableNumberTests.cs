@@ -141,28 +141,19 @@ namespace freeclimb.Test.Model
         public void AvailableNumberSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++AvailableNumber++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - capabilities ++ " + json.Contains("capabilities"));
             Assert.Contains("capabilities", json);
 
-            //Console.WriteLine("does it contain - campaignId ++ " + json.Contains("campaignId"));
             Assert.Contains("campaignId", json);
 
-            //Console.WriteLine("does it contain - phoneNumber ++ " + json.Contains("phoneNumber"));
             Assert.Contains("phoneNumber", json);
 
-            //Console.WriteLine("does it contain - voiceEnabled ++ " + json.Contains("voiceEnabled"));
             Assert.Contains("voiceEnabled", json);
 
-            //Console.WriteLine("does it contain - smsEnabled ++ " + json.Contains("smsEnabled"));
             Assert.Contains("smsEnabled", json);
 
-            //Console.WriteLine("does it contain - region ++ " + json.Contains("region"));
             Assert.Contains("region", json);
 
-            //Console.WriteLine("does it contain - country ++ " + json.Contains("country"));
             Assert.Contains("country", json);
         }
 

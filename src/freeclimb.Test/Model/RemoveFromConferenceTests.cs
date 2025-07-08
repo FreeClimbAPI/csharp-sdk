@@ -62,8 +62,6 @@ namespace freeclimb.Test.Model
         public void RemoveFromConferenceSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++RemoveFromConference++" );
-            //Console.WriteLine(json);
         }
 
         /// <summary>

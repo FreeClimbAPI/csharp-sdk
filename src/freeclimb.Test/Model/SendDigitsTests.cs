@@ -96,16 +96,11 @@ namespace freeclimb.Test.Model
         public void SendDigitsSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++SendDigits++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - digits ++ " + json.Contains("digits"));
             Assert.Contains("digits", json);
 
-            //Console.WriteLine("does it contain - pauseMs ++ " + json.Contains("pauseMs"));
             Assert.Contains("pauseMs", json);
 
-            //Console.WriteLine("does it contain - privacyMode ++ " + json.Contains("privacyMode"));
             Assert.Contains("privacyMode", json);
         }
 

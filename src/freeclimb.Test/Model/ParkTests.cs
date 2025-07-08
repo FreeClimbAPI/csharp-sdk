@@ -96,16 +96,11 @@ namespace freeclimb.Test.Model
         public void ParkSerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Park++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - waitUrl ++ " + json.Contains("waitUrl"));
             Assert.Contains("waitUrl", json);
 
-            //Console.WriteLine("does it contain - actionUrl ++ " + json.Contains("actionUrl"));
             Assert.Contains("actionUrl", json);
 
-            //Console.WriteLine("does it contain - notificationUrl ++ " + json.Contains("notificationUrl"));
             Assert.Contains("notificationUrl", json);
         }
 

@@ -96,16 +96,11 @@ namespace freeclimb.Test.Model
         public void PlaySerializeToJSONTest()
         {
             string json = instance.ToJson();
-            //Console.WriteLine("++Play++" );
-            //Console.WriteLine(json);
 
-            //Console.WriteLine("does it contain - file ++ " + json.Contains("file"));
             Assert.Contains("file", json);
 
-            //Console.WriteLine("does it contain - loop ++ " + json.Contains("loop"));
             Assert.Contains("loop", json);
 
-            //Console.WriteLine("does it contain - privacyMode ++ " + json.Contains("privacyMode"));
             Assert.Contains("privacyMode", json);
         }
 
