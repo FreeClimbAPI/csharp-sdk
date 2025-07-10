@@ -272,5 +272,66 @@ namespace freeclimb.Test.Model
             Assert.IsType<RecordWebhook>(deserialized);
             Assert.Equal("record", deserialized.RequestType);
         }
+
+        /// <summary>
+        /// Test serialize a RecordWebhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void RecordWebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("requestType", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("callStatus", json);
+
+            Assert.Contains("direction", json);
+
+            Assert.Contains("conferenceId", json);
+
+            Assert.Contains("queueId", json);
+
+            Assert.Contains("recordingId", json);
+
+            Assert.Contains("recordingUrl", json);
+
+            Assert.Contains("recordingSize", json);
+
+            Assert.Contains("recordingFormat", json);
+
+            Assert.Contains("recordingDurationSec", json);
+
+            Assert.Contains("termReason", json);
+
+            Assert.Contains("parentCallId", json);
+
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a RecordWebhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void RecordWebhookSerializeToJSONStripNullTest()
+        {
+            instance.CallStatus = null;
+
+            instance.Direction = null;
+
+            instance.ConferenceId = null;
+
+            instance.QueueId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

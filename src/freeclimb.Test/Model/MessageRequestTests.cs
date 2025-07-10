@@ -155,5 +155,44 @@ namespace freeclimb.Test.Model
             instance.MediaUrls = testList;
             Assert.Equal(instance.MediaUrls, testList);
         }
+
+        /// <summary>
+        /// Test serialize a MessageRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void MessageRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("revision", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("text", json);
+
+            Assert.Contains("notificationUrl", json);
+
+            Assert.Contains("mediaUrls", json);
+        }
+
+        /// <summary>
+        /// Test serialize a MessageRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void MessageRequestSerializeToJSONStripNullTest()
+        {
+            instance.MediaUrls = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

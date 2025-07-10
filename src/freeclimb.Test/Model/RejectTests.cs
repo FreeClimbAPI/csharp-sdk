@@ -64,5 +64,26 @@ namespace freeclimb.Test.Model
             instance.Reason = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Reason);
         }
+
+        /// <summary>
+        /// Test serialize a Reject to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void RejectSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("reason", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Reject to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void RejectSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -217,13 +217,11 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
-
-            return strb.ToString();
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+            };
+            return JsonConvert.SerializeObject(ToKvp(), settings);
         }
 
         /// <summary>
@@ -233,19 +231,32 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);
-            props.Add("callConnectUrl", CallConnectUrl);
-            props.Add("callingNumber", CallingNumber);
-            props.Add("destination", Destination);
-            props.Add("ifMachine", IfMachine);
-            props.Add("ifMachineUrl", IfMachineUrl);
-            props.Add("sendDigits", SendDigits);
-            props.Add("statusCallbackUrl", StatusCallbackUrl);
-            props.Add("timeout", Timeout);
-            props.Add("privacyMode", PrivacyMode);
+            AddToDictionary(props, "actionUrl", ActionUrl);
+            AddToDictionary(props, "callConnectUrl", CallConnectUrl);
+            AddToDictionary(props, "callingNumber", CallingNumber);
+            AddToDictionary(props, "destination", Destination);
+            AddToDictionary(props, "ifMachine", IfMachine);
+            AddToDictionary(props, "ifMachineUrl", IfMachineUrl);
+            AddToDictionary(props, "sendDigits", SendDigits);
+            AddToDictionary(props, "statusCallbackUrl", StatusCallbackUrl);
+            AddToDictionary(props, "timeout", Timeout);
+            AddToDictionary(props, "privacyMode", PrivacyMode);
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("OutDial", props);
             return command;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

@@ -235,7 +235,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -246,18 +247,31 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);
-            props.Add("brandId", BrandId);
-            props.Add("firstName", FirstName);
-            props.Add("lastName", LastName);
-            props.Add("displayName", DisplayName);
-            props.Add("companyName", CompanyName);
-            props.Add("phone", Phone);
-            props.Add("email", Email);
-            props.Add("website", Website);
-            props.Add("optionalAttributes", OptionalAttributes);
-            props.Add("evpVettingScore", EvpVettingScore);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "brandId", BrandId);
+            AddToDictionary(props, "firstName", FirstName);
+            AddToDictionary(props, "lastName", LastName);
+            AddToDictionary(props, "displayName", DisplayName);
+            AddToDictionary(props, "companyName", CompanyName);
+            AddToDictionary(props, "phone", Phone);
+            AddToDictionary(props, "email", Email);
+            AddToDictionary(props, "website", Website);
+            AddToDictionary(props, "optionalAttributes", OptionalAttributes);
+            AddToDictionary(props, "evpVettingScore", EvpVettingScore);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

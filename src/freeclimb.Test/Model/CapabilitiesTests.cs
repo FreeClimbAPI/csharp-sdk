@@ -110,5 +110,34 @@ namespace freeclimb.Test.Model
             instance.ShortCode = false;
             Assert.False(instance.ShortCode);
         }
+
+        /// <summary>
+        /// Test serialize a Capabilities to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void CapabilitiesSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("voice", json);
+
+            Assert.Contains("sms", json);
+
+            Assert.Contains("tollFree", json);
+
+            Assert.Contains("tenDLC", json);
+
+            Assert.Contains("shortCode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Capabilities to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void CapabilitiesSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

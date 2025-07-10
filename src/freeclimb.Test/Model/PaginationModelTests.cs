@@ -132,5 +132,52 @@ namespace freeclimb.Test.Model
             instance.NextPageUri = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.NextPageUri);
         }
+
+        /// <summary>
+        /// Test serialize a PaginationModel to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void PaginationModelSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("total", json);
+
+            Assert.Contains("start", json);
+
+            Assert.Contains("end", json);
+
+            Assert.Contains("page", json);
+
+            Assert.Contains("numPages", json);
+
+            Assert.Contains("pageSize", json);
+
+            Assert.Contains("nextPageUri", json);
+        }
+
+        /// <summary>
+        /// Test serialize a PaginationModel to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void PaginationModelSerializeToJSONStripNullTest()
+        {
+            instance.Total = null;
+
+            instance.Start = null;
+
+            instance.End = null;
+
+            instance.Page = null;
+
+            instance.NumPages = null;
+
+            instance.PageSize = null;
+
+            instance.NextPageUri = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

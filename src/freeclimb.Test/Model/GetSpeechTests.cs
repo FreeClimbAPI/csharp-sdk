@@ -201,5 +201,52 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.False(instance.PrivacyMode);
         }
+
+        /// <summary>
+        /// Test serialize a GetSpeech to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void GetSpeechSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("actionUrl", json);
+
+            Assert.Contains("grammarType", json);
+
+            Assert.Contains("grammarFile", json);
+
+            Assert.Contains("grammarRule", json);
+
+            Assert.Contains("playBeep", json);
+
+            Assert.Contains("prompts", json);
+
+            Assert.Contains("noInputTimeoutMs", json);
+
+            Assert.Contains("recognitionTimeoutMs", json);
+
+            Assert.Contains("confidenceThreshold", json);
+
+            Assert.Contains("sensitivityLevel", json);
+
+            Assert.Contains("speechCompleteTimeoutMs", json);
+
+            Assert.Contains("speechIncompleteTimeoutMs", json);
+
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a GetSpeech to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void GetSpeechSerializeToJSONStripNullTest()
+        {
+            instance.GrammarType = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

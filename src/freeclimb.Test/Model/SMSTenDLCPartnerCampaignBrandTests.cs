@@ -169,5 +169,46 @@ namespace freeclimb.Test.Model
             instance.EvpVettingScore = 1;
             Assert.Equal(1, (int)instance.EvpVettingScore);
         }
+
+        /// <summary>
+        /// Test serialize a SMSTenDLCPartnerCampaignBrand to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void SMSTenDLCPartnerCampaignBrandSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("firstName", json);
+
+            Assert.Contains("lastName", json);
+
+            Assert.Contains("displayName", json);
+
+            Assert.Contains("companyName", json);
+
+            Assert.Contains("phone", json);
+
+            Assert.Contains("email", json);
+
+            Assert.Contains("website", json);
+
+            Assert.Contains("optionalAttributes", json);
+
+            Assert.Contains("evpVettingScore", json);
+        }
+
+        /// <summary>
+        /// Test serialize a SMSTenDLCPartnerCampaignBrand to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void SMSTenDLCPartnerCampaignBrandSerializeToJSONStripNullTest()
+        {
+            instance.AccountId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

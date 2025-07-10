@@ -181,7 +181,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -192,14 +193,27 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);
-            props.Add("campaignId", CampaignId);
-            props.Add("useCase", UseCase);
-            props.Add("registrationStatus", RegistrationStatus);
-            props.Add("dateCreated", DateCreated);
-            props.Add("dateUpdated", DateUpdated);
-            props.Add("revision", Revision);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "campaignId", CampaignId);
+            AddToDictionary(props, "useCase", UseCase);
+            AddToDictionary(props, "registrationStatus", RegistrationStatus);
+            AddToDictionary(props, "dateCreated", DateCreated);
+            AddToDictionary(props, "dateUpdated", DateUpdated);
+            AddToDictionary(props, "revision", Revision);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

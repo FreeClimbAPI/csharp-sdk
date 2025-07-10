@@ -167,5 +167,44 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.False(instance.PrivacyMode);
         }
+
+        /// <summary>
+        /// Test serialize a OutDial to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void OutDialSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("actionUrl", json);
+
+            Assert.Contains("callConnectUrl", json);
+
+            Assert.Contains("callingNumber", json);
+
+            Assert.Contains("destination", json);
+
+            Assert.Contains("ifMachine", json);
+
+            Assert.Contains("ifMachineUrl", json);
+
+            Assert.Contains("sendDigits", json);
+
+            Assert.Contains("statusCallbackUrl", json);
+
+            Assert.Contains("timeout", json);
+
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a OutDial to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void OutDialSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

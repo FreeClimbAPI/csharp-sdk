@@ -188,5 +188,52 @@ namespace freeclimb.Test.Model
             Assert.IsType<OutDialConnectWebhook>(deserialized);
             Assert.Equal("outDialConnect", deserialized.RequestType);
         }
+
+        /// <summary>
+        /// Test serialize a OutDialConnectWebhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void OutDialConnectWebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("requestType", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("callStatus", json);
+
+            Assert.Contains("direction", json);
+
+            Assert.Contains("conferenceId", json);
+
+            Assert.Contains("queueId", json);
+
+            Assert.Contains("parentCallId", json);
+        }
+
+        /// <summary>
+        /// Test serialize a OutDialConnectWebhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void OutDialConnectWebhookSerializeToJSONStripNullTest()
+        {
+            instance.CallStatus = null;
+
+            instance.Direction = null;
+
+            instance.ConferenceId = null;
+
+            instance.QueueId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

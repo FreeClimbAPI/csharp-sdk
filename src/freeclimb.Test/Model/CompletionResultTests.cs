@@ -80,5 +80,28 @@ namespace freeclimb.Test.Model
             instance.Status = CompletionResultStatus.NO_CONTEXT;
             Assert.Equal(CompletionResultStatus.NO_CONTEXT, instance.Status);
         }
+
+        /// <summary>
+        /// Test serialize a CompletionResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void CompletionResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("response", json);
+
+            Assert.Contains("status", json);
+        }
+
+        /// <summary>
+        /// Test serialize a CompletionResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void CompletionResultSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

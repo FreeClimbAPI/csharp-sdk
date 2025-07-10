@@ -354,7 +354,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -365,30 +366,43 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);
-            props.Add("accountId", AccountId);
-            props.Add("callId", CallId);
-            props.Add("from", From);
-            props.Add("to", To);
-            props.Add("recordingId", RecordingId);
-            props.Add("recordingUrl", RecordingUrl);
-            props.Add("recordingSize", RecordingSize);
-            props.Add("recordingFormat", RecordingFormat);
-            props.Add("recordingDurationMs", RecordingDurationMs);
-            props.Add("termReason", TermReason);
-            props.Add("recordTermReason", RecordTermReason);
-            props.Add("digit", Digit);
-            props.Add("privacyForLogging", PrivacyForLogging);
-            props.Add("privacyForRecording", PrivacyForRecording);
-            props.Add("bargeInReason", BargeInReason);
-            props.Add("bargedInPromptNo", BargedInPromptNo);
-            props.Add("bargedInPromptMs", BargedInPromptMs);
-            props.Add("bargedInPromptLoopNo", BargedInPromptLoopNo);
-            props.Add("bargeInTimeMs", BargeInTimeMs);
-            props.Add("transcript", Transcript);
-            props.Add("transcribeReason", TranscribeReason);
-            props.Add("transcriptionDurationMs", TranscriptionDurationMs);
+            AddToDictionary(props, "requestType", RequestType);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "callId", CallId);
+            AddToDictionary(props, "from", From);
+            AddToDictionary(props, "to", To);
+            AddToDictionary(props, "recordingId", RecordingId);
+            AddToDictionary(props, "recordingUrl", RecordingUrl);
+            AddToDictionary(props, "recordingSize", RecordingSize);
+            AddToDictionary(props, "recordingFormat", RecordingFormat);
+            AddToDictionary(props, "recordingDurationMs", RecordingDurationMs);
+            AddToDictionary(props, "termReason", TermReason);
+            AddToDictionary(props, "recordTermReason", RecordTermReason);
+            AddToDictionary(props, "digit", Digit);
+            AddToDictionary(props, "privacyForLogging", PrivacyForLogging);
+            AddToDictionary(props, "privacyForRecording", PrivacyForRecording);
+            AddToDictionary(props, "bargeInReason", BargeInReason);
+            AddToDictionary(props, "bargedInPromptNo", BargedInPromptNo);
+            AddToDictionary(props, "bargedInPromptMs", BargedInPromptMs);
+            AddToDictionary(props, "bargedInPromptLoopNo", BargedInPromptLoopNo);
+            AddToDictionary(props, "bargeInTimeMs", BargeInTimeMs);
+            AddToDictionary(props, "transcript", Transcript);
+            AddToDictionary(props, "transcribeReason", TranscribeReason);
+            AddToDictionary(props, "transcriptionDurationMs", TranscriptionDurationMs);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

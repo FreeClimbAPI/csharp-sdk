@@ -380,5 +380,96 @@ namespace freeclimb.Test.Model
             instance.Brand = testObject;
             Assert.Equal(testObject, instance.Brand);
         }
+
+        /// <summary>
+        /// Test serialize a SMSTenDLCPartnerCampaign to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void SMSTenDLCPartnerCampaignSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("campaignId", json);
+
+            Assert.Contains("status", json);
+
+            Assert.Contains("createDate", json);
+
+            Assert.Contains("brandId", json);
+
+            Assert.Contains("usecase", json);
+
+            Assert.Contains("description", json);
+
+            Assert.Contains("embeddedLink", json);
+
+            Assert.Contains("embeddedPhone", json);
+
+            Assert.Contains("affiliateMarketing", json);
+
+            Assert.Contains("numberPool", json);
+
+            Assert.Contains("ageGated", json);
+
+            Assert.Contains("directLending", json);
+
+            Assert.Contains("subscriberOptin", json);
+
+            Assert.Contains("subscriberOptout", json);
+
+            Assert.Contains("subscriberHelp", json);
+
+            Assert.Contains("sample1", json);
+
+            Assert.Contains("sample2", json);
+
+            Assert.Contains("sample3", json);
+
+            Assert.Contains("sample4", json);
+
+            Assert.Contains("sample5", json);
+
+            Assert.Contains("messageFlow", json);
+
+            Assert.Contains("helpMessage", json);
+
+            Assert.Contains("optinKeywords", json);
+
+            Assert.Contains("optoutKeywords", json);
+
+            Assert.Contains("helpKeywords", json);
+
+            Assert.Contains("optinMessage", json);
+
+            Assert.Contains("optoutMessage", json);
+
+            Assert.Contains("brand", json);
+        }
+
+        /// <summary>
+        /// Test serialize a SMSTenDLCPartnerCampaign to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void SMSTenDLCPartnerCampaignSerializeToJSONStripNullTest()
+        {
+            instance.AccountId = null;
+
+            instance.Sample2 = null;
+
+            instance.Sample3 = null;
+
+            instance.Sample4 = null;
+
+            instance.Sample5 = null;
+
+            instance.MessageFlow = null;
+
+            instance.HelpMessage = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -88,5 +88,30 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.False(instance.PrivacyMode);
         }
+
+        /// <summary>
+        /// Test serialize a Play to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void PlaySerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("file", json);
+
+            Assert.Contains("loop", json);
+
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Play to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void PlaySerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

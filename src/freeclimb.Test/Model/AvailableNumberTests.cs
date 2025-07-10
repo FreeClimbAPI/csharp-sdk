@@ -133,5 +133,50 @@ namespace freeclimb.Test.Model
             instance.Country = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.Country);
         }
+
+        /// <summary>
+        /// Test serialize a AvailableNumber to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void AvailableNumberSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("capabilities", json);
+
+            Assert.Contains("campaignId", json);
+
+            Assert.Contains("phoneNumber", json);
+
+            Assert.Contains("voiceEnabled", json);
+
+            Assert.Contains("smsEnabled", json);
+
+            Assert.Contains("region", json);
+
+            Assert.Contains("country", json);
+        }
+
+        /// <summary>
+        /// Test serialize a AvailableNumber to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void AvailableNumberSerializeToJSONStripNullTest()
+        {
+            instance.CampaignId = null;
+
+            instance.PhoneNumber = null;
+
+            instance.VoiceEnabled = null;
+
+            instance.SmsEnabled = null;
+
+            instance.Region = null;
+
+            instance.Country = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

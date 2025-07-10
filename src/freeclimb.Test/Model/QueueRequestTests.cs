@@ -77,5 +77,28 @@ namespace freeclimb.Test.Model
             instance.MaxSize = 1;
             Assert.Equal(1, (int)instance.MaxSize);
         }
+
+        /// <summary>
+        /// Test serialize a QueueRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void QueueRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("alias", json);
+
+            Assert.Contains("maxSize", json);
+        }
+
+        /// <summary>
+        /// Test serialize a QueueRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void QueueRequestSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

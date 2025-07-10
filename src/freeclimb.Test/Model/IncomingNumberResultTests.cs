@@ -244,5 +244,80 @@ namespace freeclimb.Test.Model
             instance.Tfn = testObject;
             Assert.Equal(testObject, instance.Tfn);
         }
+
+        /// <summary>
+        /// Test serialize a IncomingNumberResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void IncomingNumberResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("revision", json);
+
+            Assert.Contains("capabilities", json);
+
+            Assert.Contains("campaignId", json);
+
+            Assert.Contains("phoneNumberId", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("applicationId", json);
+
+            Assert.Contains("phoneNumber", json);
+
+            Assert.Contains("alias", json);
+
+            Assert.Contains("region", json);
+
+            Assert.Contains("country", json);
+
+            Assert.Contains("voiceEnabled", json);
+
+            Assert.Contains("smsEnabled", json);
+
+            Assert.Contains("offnet", json);
+
+            Assert.Contains("tfn", json);
+        }
+
+        /// <summary>
+        /// Test serialize a IncomingNumberResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void IncomingNumberResultSerializeToJSONStripNullTest()
+        {
+            instance.CampaignId = null;
+
+            instance.PhoneNumberId = null;
+
+            instance.AccountId = null;
+
+            instance.ApplicationId = null;
+
+            instance.PhoneNumber = null;
+
+            instance.Alias = null;
+
+            instance.Region = null;
+
+            instance.Country = null;
+
+            instance.VoiceEnabled = null;
+
+            instance.SmsEnabled = null;
+
+            instance.Offnet = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

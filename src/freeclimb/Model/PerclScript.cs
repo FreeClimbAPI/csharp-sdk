@@ -68,8 +68,10 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+            };
 
             List<object> list = new List<object>();
             foreach (PerclCommand command in this.Commands.ToList<PerclCommand>())
@@ -77,10 +79,7 @@ namespace freeclimb.Model
                 list.Add(command.ToKvp());
             }
 
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), list);
-
-            return strb.ToString();
+            return JsonConvert.SerializeObject(list, settings);
         }
 
         /// <summary>
@@ -91,12 +90,28 @@ namespace freeclimb.Model
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
             List<object> nested = new List<object>();
-            foreach (var item in Commands)
+            if (Commands != null)
             {
-                nested.Add(item);
+                foreach (var item in Commands)
+                {
+                    nested.Add(item.ToKvp());
+                }
             }
-            props.Add("commands", nested);
+            AddToDictionary(props, "commands", nested);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

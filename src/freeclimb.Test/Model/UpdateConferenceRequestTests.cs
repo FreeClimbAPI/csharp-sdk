@@ -97,5 +97,32 @@ namespace freeclimb.Test.Model
             instance.Status = UpdateConferenceRequestStatus.TERMINATED;
             Assert.Equal(UpdateConferenceRequestStatus.TERMINATED, instance.Status);
         }
+
+        /// <summary>
+        /// Test serialize a UpdateConferenceRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void UpdateConferenceRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("alias", json);
+
+            Assert.Contains("playBeep", json);
+
+            Assert.Contains("status", json);
+        }
+
+        /// <summary>
+        /// Test serialize a UpdateConferenceRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void UpdateConferenceRequestSerializeToJSONStripNullTest()
+        {
+            instance.PlayBeep = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

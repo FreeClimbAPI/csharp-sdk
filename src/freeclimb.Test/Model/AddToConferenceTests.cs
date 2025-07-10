@@ -165,5 +165,44 @@ namespace freeclimb.Test.Model
             instance.DtmfPassThrough = false;
             Assert.False(instance.DtmfPassThrough);
         }
+
+        /// <summary>
+        /// Test serialize a AddToConference to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void AddToConferenceSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("allowCallControl", json);
+
+            Assert.Contains("callControlSequence", json);
+
+            Assert.Contains("callControlUrl", json);
+
+            Assert.Contains("conferenceId", json);
+
+            Assert.Contains("leaveConferenceUrl", json);
+
+            Assert.Contains("listen", json);
+
+            Assert.Contains("notificationUrl", json);
+
+            Assert.Contains("startConfOnEnter", json);
+
+            Assert.Contains("talk", json);
+
+            Assert.Contains("dtmfPassThrough", json);
+        }
+
+        /// <summary>
+        /// Test serialize a AddToConference to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void AddToConferenceSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

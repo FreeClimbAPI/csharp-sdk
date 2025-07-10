@@ -145,5 +145,56 @@ namespace freeclimb.Test.Model
             instance.Participants = testList;
             Assert.Equal(instance.Participants, testList);
         }
+
+        /// <summary>
+        /// Test serialize a ConferenceParticipantList to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ConferenceParticipantListSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("total", json);
+
+            Assert.Contains("start", json);
+
+            Assert.Contains("end", json);
+
+            Assert.Contains("page", json);
+
+            Assert.Contains("numPages", json);
+
+            Assert.Contains("pageSize", json);
+
+            Assert.Contains("nextPageUri", json);
+
+            Assert.Contains("participants", json);
+        }
+
+        /// <summary>
+        /// Test serialize a ConferenceParticipantList to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ConferenceParticipantListSerializeToJSONStripNullTest()
+        {
+            instance.Total = null;
+
+            instance.Start = null;
+
+            instance.End = null;
+
+            instance.Page = null;
+
+            instance.NumPages = null;
+
+            instance.PageSize = null;
+
+            instance.NextPageUri = null;
+
+            instance.Participants = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

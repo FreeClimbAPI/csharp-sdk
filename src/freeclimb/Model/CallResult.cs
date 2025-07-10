@@ -297,7 +297,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -308,27 +309,40 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);
-            props.Add("dateCreated", DateCreated);
-            props.Add("dateUpdated", DateUpdated);
-            props.Add("revision", Revision);
-            props.Add("callId", CallId);
-            props.Add("parentCallId", ParentCallId);
-            props.Add("accountId", AccountId);
-            props.Add("from", From);
-            props.Add("to", To);
-            props.Add("phoneNumberId", PhoneNumberId);
-            props.Add("callStatus", CallStatus);
-            props.Add("startTime", StartTime);
-            props.Add("connectTime", ConnectTime);
-            props.Add("endTime", EndTime);
-            props.Add("duration", Duration);
-            props.Add("connectDuration", ConnectDuration);
-            props.Add("direction", Direction);
-            props.Add("answeredBy", AnsweredBy);
-            props.Add("subresourceUris", SubresourceUris);
-            props.Add("applicationId", ApplicationId);
+            AddToDictionary(props, "uri", Uri);
+            AddToDictionary(props, "dateCreated", DateCreated);
+            AddToDictionary(props, "dateUpdated", DateUpdated);
+            AddToDictionary(props, "revision", Revision);
+            AddToDictionary(props, "callId", CallId);
+            AddToDictionary(props, "parentCallId", ParentCallId);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "from", From);
+            AddToDictionary(props, "to", To);
+            AddToDictionary(props, "phoneNumberId", PhoneNumberId);
+            AddToDictionary(props, "callStatus", CallStatus);
+            AddToDictionary(props, "startTime", StartTime);
+            AddToDictionary(props, "connectTime", ConnectTime);
+            AddToDictionary(props, "endTime", EndTime);
+            AddToDictionary(props, "duration", Duration);
+            AddToDictionary(props, "connectDuration", ConnectDuration);
+            AddToDictionary(props, "direction", Direction);
+            AddToDictionary(props, "answeredBy", AnsweredBy);
+            AddToDictionary(props, "subresourceUris", SubresourceUris);
+            AddToDictionary(props, "applicationId", ApplicationId);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

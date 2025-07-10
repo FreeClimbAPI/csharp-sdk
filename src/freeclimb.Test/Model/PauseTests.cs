@@ -64,5 +64,26 @@ namespace freeclimb.Test.Model
             instance.Length = 1;
             Assert.Equal(1, (int)instance.Length);
         }
+
+        /// <summary>
+        /// Test serialize a Pause to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void PauseSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("length", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Pause to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void PauseSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

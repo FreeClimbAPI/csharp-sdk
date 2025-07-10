@@ -285,7 +285,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -296,24 +297,37 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);
-            props.Add("accountId", AccountId);
-            props.Add("callId", CallId);
-            props.Add("from", From);
-            props.Add("to", To);
-            props.Add("callStatus", CallStatus);
-            props.Add("direction", Direction);
-            props.Add("conferenceId", ConferenceId);
-            props.Add("queueId", QueueId);
-            props.Add("recordingId", RecordingId);
-            props.Add("recordingUrl", RecordingUrl);
-            props.Add("recordingSize", RecordingSize);
-            props.Add("recordingFormat", RecordingFormat);
-            props.Add("recordingDurationSec", RecordingDurationSec);
-            props.Add("termReason", TermReason);
-            props.Add("parentCallId", ParentCallId);
-            props.Add("privacyMode", PrivacyMode);
+            AddToDictionary(props, "requestType", RequestType);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "callId", CallId);
+            AddToDictionary(props, "from", From);
+            AddToDictionary(props, "to", To);
+            AddToDictionary(props, "callStatus", CallStatus);
+            AddToDictionary(props, "direction", Direction);
+            AddToDictionary(props, "conferenceId", ConferenceId);
+            AddToDictionary(props, "queueId", QueueId);
+            AddToDictionary(props, "recordingId", RecordingId);
+            AddToDictionary(props, "recordingUrl", RecordingUrl);
+            AddToDictionary(props, "recordingSize", RecordingSize);
+            AddToDictionary(props, "recordingFormat", RecordingFormat);
+            AddToDictionary(props, "recordingDurationSec", RecordingDurationSec);
+            AddToDictionary(props, "termReason", TermReason);
+            AddToDictionary(props, "parentCallId", ParentCallId);
+            AddToDictionary(props, "privacyMode", PrivacyMode);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

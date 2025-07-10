@@ -99,5 +99,32 @@ namespace freeclimb.Test.Model
             instance.NotificationUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.NotificationUrl);
         }
+
+        /// <summary>
+        /// Test serialize a Sms to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void SmsSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("text", json);
+
+            Assert.Contains("notificationUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Sms to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void SmsSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

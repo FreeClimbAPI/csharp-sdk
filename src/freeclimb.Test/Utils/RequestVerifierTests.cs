@@ -6,26 +6,9 @@ namespace freeclimb.Test.Utils
 {
     public class RequestVerifierTests : IDisposable
     {
-        private RequestVerifier instance;
-
-        public RequestVerifierTests()
-        {
-            RequestVerifier instance = new RequestVerifier();
-        }
-
         public void Dispose()
         {
             // Cleanup when everything is done.
-        }
-
-        /// <summary>
-        /// Test an instance of SignatureInformation
-        /// </summary>
-        [Fact]
-        public void RequestVerifierInstanceTests()
-        {
-            // TODO uncomment below to test "IsType" AccountRequest
-            //Assert.IsType<RequestVerifier>(instance);
         }
 
         [Fact]

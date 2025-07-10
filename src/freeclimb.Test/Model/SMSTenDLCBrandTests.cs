@@ -452,5 +452,82 @@ namespace freeclimb.Test.Model
             instance.CreateDate = DateTime.Parse("2022-07-05T15:17:05+00:00");
             Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.CreateDate);
         }
+
+        /// <summary>
+        /// Test serialize a SMSTenDLCBrand to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void SMSTenDLCBrandSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("entityType", json);
+
+            Assert.Contains("firstName", json);
+
+            Assert.Contains("lastName", json);
+
+            Assert.Contains("displayName", json);
+
+            Assert.Contains("companyName", json);
+
+            Assert.Contains("ein", json);
+
+            Assert.Contains("einIssuingCountry", json);
+
+            Assert.Contains("phone", json);
+
+            Assert.Contains("street", json);
+
+            Assert.Contains("city", json);
+
+            Assert.Contains("state", json);
+
+            Assert.Contains("postalCode", json);
+
+            Assert.Contains("country", json);
+
+            Assert.Contains("email", json);
+
+            Assert.Contains("stockSymbol", json);
+
+            Assert.Contains("stockExchange", json);
+
+            Assert.Contains("ipAddress", json);
+
+            Assert.Contains("website", json);
+
+            Assert.Contains("brandRelationship", json);
+
+            Assert.Contains("vertical", json);
+
+            Assert.Contains("altBusinessId", json);
+
+            Assert.Contains("altBusinessIdType", json);
+
+            Assert.Contains("referenceId", json);
+
+            Assert.Contains("optionalAttributes", json);
+
+            Assert.Contains("mock", json);
+
+            Assert.Contains("identityStatus", json);
+
+            Assert.Contains("createDate", json);
+        }
+
+        /// <summary>
+        /// Test serialize a SMSTenDLCBrand to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void SMSTenDLCBrandSerializeToJSONStripNullTest()
+        {
+            instance.AccountId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

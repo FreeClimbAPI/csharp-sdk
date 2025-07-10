@@ -88,5 +88,32 @@ namespace freeclimb.Test.Model
             instance.CampaignId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CampaignId);
         }
+
+        /// <summary>
+        /// Test serialize a IncomingNumberRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void IncomingNumberRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("applicationId", json);
+
+            Assert.Contains("alias", json);
+
+            Assert.Contains("campaignId", json);
+        }
+
+        /// <summary>
+        /// Test serialize a IncomingNumberRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void IncomingNumberRequestSerializeToJSONStripNullTest()
+        {
+            instance.CampaignId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

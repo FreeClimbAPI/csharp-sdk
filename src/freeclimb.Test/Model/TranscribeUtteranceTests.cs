@@ -125,5 +125,36 @@ namespace freeclimb.Test.Model
             instance.Prompts = testList;
             Assert.Equal(instance.Prompts, testList);
         }
+
+        /// <summary>
+        /// Test serialize a TranscribeUtterance to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void TranscribeUtteranceSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("actionUrl", json);
+
+            Assert.Contains("playBeep", json);
+
+            Assert.Contains("record", json);
+
+            Assert.Contains("privacyForLogging", json);
+
+            Assert.Contains("privacyForRecording", json);
+
+            Assert.Contains("prompts", json);
+        }
+
+        /// <summary>
+        /// Test serialize a TranscribeUtterance to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void TranscribeUtteranceSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

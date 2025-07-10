@@ -156,7 +156,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -167,20 +168,36 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("total", Total);
-            props.Add("start", Start);
-            props.Add("end", End);
-            props.Add("page", Page);
-            props.Add("numPages", NumPages);
-            props.Add("pageSize", PageSize);
-            props.Add("nextPageUri", NextPageUri);
+            AddToDictionary(props, "total", Total);
+            AddToDictionary(props, "start", Start);
+            AddToDictionary(props, "end", End);
+            AddToDictionary(props, "page", Page);
+            AddToDictionary(props, "numPages", NumPages);
+            AddToDictionary(props, "pageSize", PageSize);
+            AddToDictionary(props, "nextPageUri", NextPageUri);
             List<object> nested = new List<object>();
-            foreach (var item in Recordings)
+            if (Recordings != null)
             {
-                nested.Add(item);
+                foreach (var item in Recordings)
+                {
+                    nested.Add(item.ToKvp());
+                }
             }
-            props.Add("recordings", nested);
+            AddToDictionary(props, "recordings", nested);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

@@ -145,5 +145,56 @@ namespace freeclimb.Test.Model
             instance.AvailablePhoneNumbers = testList;
             Assert.Equal(instance.AvailablePhoneNumbers, testList);
         }
+
+        /// <summary>
+        /// Test serialize a AvailableNumberList to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void AvailableNumberListSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("total", json);
+
+            Assert.Contains("start", json);
+
+            Assert.Contains("end", json);
+
+            Assert.Contains("page", json);
+
+            Assert.Contains("numPages", json);
+
+            Assert.Contains("pageSize", json);
+
+            Assert.Contains("nextPageUri", json);
+
+            Assert.Contains("availablePhoneNumbers", json);
+        }
+
+        /// <summary>
+        /// Test serialize a AvailableNumberList to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void AvailableNumberListSerializeToJSONStripNullTest()
+        {
+            instance.Total = null;
+
+            instance.Start = null;
+
+            instance.End = null;
+
+            instance.Page = null;
+
+            instance.NumPages = null;
+
+            instance.PageSize = null;
+
+            instance.NextPageUri = null;
+
+            instance.AvailablePhoneNumbers = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

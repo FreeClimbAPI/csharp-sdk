@@ -206,5 +206,54 @@ namespace freeclimb.Test.Model
             Assert.IsType<RemoveFromQueueNotificationWebhook>(deserialized);
             Assert.Equal("removeFromQueueNotification", deserialized.RequestType);
         }
+
+        /// <summary>
+        /// Test serialize a RemoveFromQueueNotificationWebhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void RemoveFromQueueNotificationWebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("requestType", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("callStatus", json);
+
+            Assert.Contains("direction", json);
+
+            Assert.Contains("conferenceId", json);
+
+            Assert.Contains("queueId", json);
+
+            Assert.Contains("queueResult", json);
+
+            Assert.Contains("queueTime", json);
+        }
+
+        /// <summary>
+        /// Test serialize a RemoveFromQueueNotificationWebhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void RemoveFromQueueNotificationWebhookSerializeToJSONStripNullTest()
+        {
+            instance.CallStatus = null;
+
+            instance.Direction = null;
+
+            instance.ConferenceId = null;
+
+            instance.QueueId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

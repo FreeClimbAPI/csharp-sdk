@@ -9,6 +9,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="5.1.2"></a>
+
+### Changed
+
+- Remove null values when serializing models to JSON
+
 <a name="5.1.1"></a>
 
 ## [5.1.1] - 2025-02-18

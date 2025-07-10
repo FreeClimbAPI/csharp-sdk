@@ -204,7 +204,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -215,17 +216,30 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("requestType", RequestType);
-            props.Add("accountId", AccountId);
-            props.Add("from", From);
-            props.Add("to", To);
-            props.Add("text", Text);
-            props.Add("direction", Direction);
-            props.Add("applicationId", ApplicationId);
-            props.Add("status", Status);
-            props.Add("phoneNumberId", PhoneNumberId);
-            props.Add("uri", Uri);
+            AddToDictionary(props, "requestType", RequestType);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "from", From);
+            AddToDictionary(props, "to", To);
+            AddToDictionary(props, "text", Text);
+            AddToDictionary(props, "direction", Direction);
+            AddToDictionary(props, "applicationId", ApplicationId);
+            AddToDictionary(props, "status", Status);
+            AddToDictionary(props, "phoneNumberId", PhoneNumberId);
+            AddToDictionary(props, "uri", Uri);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

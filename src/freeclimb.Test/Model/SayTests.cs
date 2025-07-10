@@ -99,5 +99,32 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.False(instance.PrivacyMode);
         }
+
+        /// <summary>
+        /// Test serialize a Say to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void SaySerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("text", json);
+
+            Assert.Contains("language", json);
+
+            Assert.Contains("loop", json);
+
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Say to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void SaySerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

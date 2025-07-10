@@ -99,5 +99,32 @@ namespace freeclimb.Test.Model
             instance.Revision = 1;
             Assert.Equal(1, (int)instance.Revision);
         }
+
+        /// <summary>
+        /// Test serialize a MutableResourceModel to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void MutableResourceModelSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("revision", json);
+        }
+
+        /// <summary>
+        /// Test serialize a MutableResourceModel to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void MutableResourceModelSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

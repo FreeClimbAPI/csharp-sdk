@@ -227,5 +227,64 @@ namespace freeclimb.Test.Model
             Assert.IsType<CreateConferenceWebhook>(deserialized);
             Assert.Equal("createConference", deserialized.RequestType);
         }
+
+        /// <summary>
+        /// Test serialize a CreateConferenceWebhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void CreateConferenceWebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("requestType", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("callStatus", json);
+
+            Assert.Contains("direction", json);
+
+            Assert.Contains("conferenceId", json);
+
+            Assert.Contains("queueId", json);
+
+            Assert.Contains("status", json);
+
+            Assert.Contains("recordingUrl", json);
+
+            Assert.Contains("recordingId", json);
+
+            Assert.Contains("recordingDurationSec", json);
+        }
+
+        /// <summary>
+        /// Test serialize a CreateConferenceWebhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void CreateConferenceWebhookSerializeToJSONStripNullTest()
+        {
+            instance.CallStatus = null;
+
+            instance.Direction = null;
+
+            instance.QueueId = null;
+
+            instance.Status = null;
+
+            instance.RecordingUrl = null;
+
+            instance.RecordingId = null;
+
+            instance.RecordingDurationSec = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

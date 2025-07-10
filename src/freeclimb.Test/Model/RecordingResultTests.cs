@@ -154,5 +154,52 @@ namespace freeclimb.Test.Model
             instance.ConferenceId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ConferenceId);
         }
+
+        /// <summary>
+        /// Test serialize a RecordingResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void RecordingResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("revision", json);
+
+            Assert.Contains("recordingId", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("durationSec", json);
+
+            Assert.Contains("conferenceId", json);
+        }
+
+        /// <summary>
+        /// Test serialize a RecordingResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void RecordingResultSerializeToJSONStripNullTest()
+        {
+            instance.RecordingId = null;
+
+            instance.AccountId = null;
+
+            instance.CallId = null;
+
+            instance.DurationSec = null;
+
+            instance.ConferenceId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

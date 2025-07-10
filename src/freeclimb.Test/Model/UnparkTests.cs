@@ -54,5 +54,24 @@ namespace freeclimb.Test.Model
         {
             Assert.IsType<Unpark>(instance);
         }
+
+        /// <summary>
+        /// Test serialize a Unpark to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void UnparkSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+        }
+
+        /// <summary>
+        /// Test serialize a Unpark to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void UnparkSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

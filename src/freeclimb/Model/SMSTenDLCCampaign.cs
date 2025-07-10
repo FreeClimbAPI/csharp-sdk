@@ -543,7 +543,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -554,48 +555,61 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("accountId", AccountId);
-            props.Add("campaignId", CampaignId);
-            props.Add("cspId", CspId);
-            props.Add("resellerId", ResellerId);
-            props.Add("status", Status);
-            props.Add("createDate", CreateDate);
-            props.Add("autoRenewal", AutoRenewal);
-            props.Add("billedDate", BilledDate);
-            props.Add("brandId", BrandId);
-            props.Add("usecase", Usecase);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "campaignId", CampaignId);
+            AddToDictionary(props, "cspId", CspId);
+            AddToDictionary(props, "resellerId", ResellerId);
+            AddToDictionary(props, "status", Status);
+            AddToDictionary(props, "createDate", CreateDate);
+            AddToDictionary(props, "autoRenewal", AutoRenewal);
+            AddToDictionary(props, "billedDate", BilledDate);
+            AddToDictionary(props, "brandId", BrandId);
+            AddToDictionary(props, "usecase", Usecase);
             List<object> nested = new List<object>();
-            foreach (var item in SubUsecases)
+            if (SubUsecases != null)
             {
-                nested.Add(item);
+                nested.Add(SubUsecases);
             }
-            props.Add("subUsecases", nested);
-            props.Add("description", Description);
-            props.Add("embeddedLink", EmbeddedLink);
-            props.Add("embeddedPhone", EmbeddedPhone);
-            props.Add("affiliateMarketing", AffiliateMarketing);
-            props.Add("numberPool", NumberPool);
-            props.Add("ageGated", AgeGated);
-            props.Add("directLending", DirectLending);
-            props.Add("subscriberOptin", SubscriberOptin);
-            props.Add("subscriberOptout", SubscriberOptout);
-            props.Add("subscriberHelp", SubscriberHelp);
-            props.Add("sample1", Sample1);
-            props.Add("sample2", Sample2);
-            props.Add("sample3", Sample3);
-            props.Add("sample4", Sample4);
-            props.Add("sample5", Sample5);
-            props.Add("messageFlow", MessageFlow);
-            props.Add("helpMessage", HelpMessage);
-            props.Add("optinKeywords", OptinKeywords);
-            props.Add("optoutKeywords", OptoutKeywords);
-            props.Add("helpKeywords", HelpKeywords);
-            props.Add("optinMessage", OptinMessage);
-            props.Add("optoutMessage", OptoutMessage);
-            props.Add("referenceId", ReferenceId);
-            props.Add("mock", Mock);
-            props.Add("nextRenewalOrExpirationDate", NextRenewalOrExpirationDate);
+            AddToDictionary(props, "subUsecases", nested);
+            AddToDictionary(props, "description", Description);
+            AddToDictionary(props, "embeddedLink", EmbeddedLink);
+            AddToDictionary(props, "embeddedPhone", EmbeddedPhone);
+            AddToDictionary(props, "affiliateMarketing", AffiliateMarketing);
+            AddToDictionary(props, "numberPool", NumberPool);
+            AddToDictionary(props, "ageGated", AgeGated);
+            AddToDictionary(props, "directLending", DirectLending);
+            AddToDictionary(props, "subscriberOptin", SubscriberOptin);
+            AddToDictionary(props, "subscriberOptout", SubscriberOptout);
+            AddToDictionary(props, "subscriberHelp", SubscriberHelp);
+            AddToDictionary(props, "sample1", Sample1);
+            AddToDictionary(props, "sample2", Sample2);
+            AddToDictionary(props, "sample3", Sample3);
+            AddToDictionary(props, "sample4", Sample4);
+            AddToDictionary(props, "sample5", Sample5);
+            AddToDictionary(props, "messageFlow", MessageFlow);
+            AddToDictionary(props, "helpMessage", HelpMessage);
+            AddToDictionary(props, "optinKeywords", OptinKeywords);
+            AddToDictionary(props, "optoutKeywords", OptoutKeywords);
+            AddToDictionary(props, "helpKeywords", HelpKeywords);
+            AddToDictionary(props, "optinMessage", OptinMessage);
+            AddToDictionary(props, "optoutMessage", OptoutMessage);
+            AddToDictionary(props, "referenceId", ReferenceId);
+            AddToDictionary(props, "mock", Mock);
+            AddToDictionary(props, "nextRenewalOrExpirationDate", NextRenewalOrExpirationDate);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

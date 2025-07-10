@@ -183,5 +183,60 @@ namespace freeclimb.Test.Model
             instance.SubresourceUris = testObject;
             Assert.Equal(testObject, instance.SubresourceUris);
         }
+
+        /// <summary>
+        /// Test serialize a AccountResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void AccountResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("revision", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("apiKey", json);
+
+            Assert.Contains("alias", json);
+
+            Assert.Contains("label", json);
+
+            Assert.Contains("type", json);
+
+            Assert.Contains("status", json);
+
+            Assert.Contains("subresourceUris", json);
+        }
+
+        /// <summary>
+        /// Test serialize a AccountResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void AccountResultSerializeToJSONStripNullTest()
+        {
+            instance.AccountId = null;
+
+            instance.ApiKey = null;
+
+            instance.Alias = null;
+
+            instance.Label = null;
+
+            instance.Type = null;
+
+            instance.Status = null;
+
+            instance.SubresourceUris = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

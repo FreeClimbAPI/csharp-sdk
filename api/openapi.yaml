@@ -4929,6 +4929,7 @@ components:
             description: ID of the Conference to which to add the Participant (Call
               leg). Conference must exist or an error will result.
             type: string
+            x-is-required: true
           leaveConferenceUrl:
             description: 'URL to be invoked when the Participant leaves the Conference. '
             format: uri
@@ -4983,6 +4984,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           alias:
             description: 'Descriptive name for the Conference. '
             type: boolean
@@ -5042,6 +5044,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           notificationUrl:
             description: URL to be invoked when the call enters the queue. The request
               to the URL contains the standard request parameters.This is a notification
@@ -5055,6 +5058,7 @@ components:
               \ not exist, it will be created. The ID must start with QU followed\
               \ by 40 hex characters."
             type: string
+            x-is-required: true
           waitUrl:
             description: "A request is made to this URL when the Call leaves the Queue,\
               \ which can occur if enqueue of the Call fails or when the call is dequeued\
@@ -5064,6 +5068,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
         required:
         - actionUrl
         - queueId
@@ -5091,6 +5096,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           digitTimeoutMs:
             description: " Maximum time in milliseconds that FreeClimb will wait for\
               \ the Caller to press any digit after the last digit entered, before\
@@ -5164,12 +5170,14 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           grammarType:
             $ref: '#/components/schemas/GrammarType'
           grammarFile:
             description: "The grammar file to use for speech recognition. If grammarType\
               \ is set to URL, this attribute is specified as a download URL."
             type: string
+            x-is-required: true
           grammarRule:
             description: The grammar rule within the specified grammar file to use
               for speech recognition. This attribute is optional if `grammarType`
@@ -5268,6 +5276,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           callConnectUrl:
             description: URL to which FreeClimb makes an HTTP POST request informing
               the result of the OutDial.
@@ -5275,15 +5284,18 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           callingNumber:
             description: "he caller ID to show to the called party when FreeClimb\
               \ calls. This can be one of the following: The To or From number provided\
               \ in the first Webhook to your webserver. Any phone number you have\
               \ purchased from FreeClimb."
             type: string
+            x-is-required: true
           destination:
             description: 'E.164 representation of the phone number to Call. '
             type: string
+            x-is-required: true
           ifMachine:
             $ref: '#/components/schemas/IfMachine'
           ifMachineUrl:
@@ -5340,6 +5352,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           actionUrl:
             description: "A request is made to this URL when the Call is resumed,\
               \ which can occur if the Call is resumed via the Unpark command, the\
@@ -5350,6 +5363,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           notificationUrl:
             description: URL to be invoked when the Call is parked. The request to
               the URL contains the standard request parameters.
@@ -5378,6 +5392,7 @@ components:
             description: Length in milliseconds. FreeClimb will wait silently before
               continuing on.
             type: integer
+            x-is-required: true
         required:
         - length
         type: object
@@ -5395,6 +5410,7 @@ components:
               can be the `recordingUrl` generated from the `RecordUtterance` or `StartRecordCall`
               PerCL commands. '
             type: string
+            x-is-required: true
           loop:
             description: Number of times the audio file is played. Specifying '0'
               causes the Play action to loop until the Call is hung up.
@@ -5424,6 +5440,7 @@ components:
               \ repeated requests for unchanged audio. If no Cache-Control header\
               \ is provided, the file will be cached for seven days by default."
             type: string
+            x-is-required: true
         required:
         - file
         type: object
@@ -5444,6 +5461,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           silenceTimeoutMs:
             description: Interval of silence that should elapse before ending the
               recording.
@@ -5492,6 +5510,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
         required:
         - actionUrl
         type: object
@@ -5536,6 +5555,7 @@ components:
               \ of the string is limited to 4 KB (or 4,096 bytes). An empty string\
               \ will cause the command to be skipped."
             type: string
+            x-is-required: true
           language:
             description: Language and (by implication) the locale to use. This implies
               the accent and pronunciations to be usde for the TTS. The complete list
@@ -5569,6 +5589,7 @@ components:
               \ specification for delay or pause between the output of individual\
               \ digits."
             type: string
+            x-is-required: true
           pauseMs:
             description: Pause between digits in milliseconds. Valid values are 100-1000
               milliseconds and will be adjusted by FreeClimb to satisfy the constraint.
@@ -5628,13 +5649,16 @@ components:
               \ will be sent. Must be within FreeClimb's service area and E.164 formatting\
               \ (e.g., +18003608245)."
             type: string
+            x-is-required: true
           from:
             description: E.164 representation of the phone number to use as the sender.
               This must be an incoming phone number you have purchased from FreeClimb.
             type: string
+            x-is-required: true
           text:
             description: Text contained in the message (maximum 160 characters).
             type: string
+            x-is-required: true
           notificationUrl:
             description: "When the message changes status, this URL will be invoked\
               \ using HTTP POST with the messageStatus parameters. This is a notification\
@@ -5751,26 +5775,31 @@ components:
             voiceEnabled.
           nullable: true
           type: boolean
+          x-is-required: true
         sms:
           description: Indicates whether a number can be used SMS messaging. Replaces
             smsEnabled.
           nullable: true
           type: boolean
+          x-is-required: true
         tollFree:
           description: "Indicates that a number is toll-free and will make toll-free\
             \ calls, and when enabled, toll-free messages."
           nullable: true
           type: boolean
+          x-is-required: true
         tenDLC:
           description: "Indicates that a number, if sms is true, will be used for\
             \ 10DLC messaging"
           nullable: true
           type: boolean
+          x-is-required: true
         shortCode:
           description: Indicates that a number is a short code and can be used for
             short code messaging
           nullable: true
           type: boolean
+          x-is-required: true
       required:
       - shortCode
       - sms
@@ -5788,6 +5817,7 @@ components:
           description: alphanumeric identifier for the TollFree campaign associated
             with this number
           type: string
+          x-is-required: true
       required:
       - campaignId
       type: object
@@ -6323,6 +6353,7 @@ components:
           description: Phone number to purchase in E.164 format (as returned in the
             list of Available Phone Numbers).
           type: string
+          x-is-required: true
         alias:
           description: Description for this new incoming phone number (max 64 characters).
           type: string
@@ -6454,9 +6485,11 @@ components:
             \ To or From number provided in FreeClimb's initial request to your app\
             \ or (b) Any incoming phone number you have purchased from FreeClimb."
           type: string
+          x-is-required: true
         to:
           description: Phone number to place the Call to.
           type: string
+          x-is-required: true
         applicationId:
           description: "Required if no `parentCallId` or `callConnectUrl` has been\
             \ provided. ID of the application FreeClimb should use to handle this\
@@ -6885,14 +6918,17 @@ components:
             description: Phone number to use as the sender. This must be an incoming
               phone number that you have purchased from FreeClimb.
             type: string
+            x-is-required: true
           to:
             description: Phone number to receive the message. Must be within FreeClimb's
               service area.
             type: string
+            x-is-required: true
           text:
             description: "Text contained in the message (maximum 160 characters).\
               \   **Note:** For text, only ASCII characters are supported."
             type: string
+            x-is-required: true
           notificationUrl:
             description: "When the Message changes status, this URL is invoked using\
               \ HTTP POST with the messageStatus parameters.  **Note:** This is a\
@@ -6936,6 +6972,7 @@ components:
           description: Question to ask the Knowledge Base
           maxLength: 2000
           type: string
+          x-is-required: true
       required:
       - query
       type: object
@@ -6948,6 +6985,7 @@ components:
         response:
           description: The generative response from the KnowledgeBase
           type: string
+          x-is-required: true
         status:
           $ref: '#/components/schemas/CompletionResultStatus'
       required:
@@ -7104,6 +7142,7 @@ components:
           description: ID of the account that created this participant.
           nullable: true
           type: string
+          x-is-required: true
         campaignId:
           description: TFNCampaignId
           example: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
@@ -7111,18 +7150,24 @@ components:
           type: string
         useCase:
           type: string
+          x-is-required: true
         registrationStatus:
           $ref: '#/components/schemas/SMSTollFreeCampaignRegistrationStatus'
         dateCreated:
           type: string
+          x-is-required: true
         dateUpdated:
           type: string
+          x-is-required: true
         dateCreatedISO:
           type: string
+          x-is-required: true
         dateUpdatedISO:
           type: string
+          x-is-required: true
         revision:
           type: integer
+          x-is-required: true
       required:
       - accountId
       - campaignId
@@ -7172,6 +7217,7 @@ components:
           type: string
           x-is-uri: true
           x-is-url: true
+          x-is-required: true
       required:
       - statusCallbackUrl
       type: object
@@ -7482,6 +7528,7 @@ components:
           description: The filter query for retrieving logs. See **Performance Query
             Language** below.
           type: string
+          x-is-required: true
       required:
       - pql
       type: object
@@ -7615,9 +7662,11 @@ components:
             This identifier is required by the NetNumber OSR SMS enabling process
             of 10DLC.
           type: string
+          x-is-required: true
         cspId:
           description: Alphanumeric identifier of the CSP associated with this campaign.
           type: string
+          x-is-required: true
         resellerId:
           description: Alphanumeric identifier of the reseller that you want to associate
             with this campaign.
@@ -7644,11 +7693,13 @@ components:
           description: Alphanumeric identifier of the brand associated with this campaign.
           maxLength: 8
           type: string
+          x-is-required: true
         usecase:
           description: Campaign usecase. Must be of defined valid types. Use `/registry/enum/usecase`
             operation to retrieve usecases available for given brand.
           maxLength: 20
           type: string
+          x-is-required: true
         subUsecases:
           description: Campaign sub-usecases. Must be of defined valid sub-usecase
             types. Use `/registry/enum/usecase` operation to retrieve list of valid
@@ -7661,10 +7712,12 @@ components:
           type: array
           uniqueItems: true
           x-is-set: true
+          x-is-required: true
         description:
           description: Summary description of this campaign.
           maxLength: 4096
           type: string
+          x-is-required: true
         embeddedLink:
           default: false
           description: Does message generated by the campaign include URL link in
@@ -7774,6 +7827,7 @@ components:
           description: Campaign created from mock brand. Mocked campaign cannot be
             shared with an upstream CNP.
           type: boolean
+          x-is-required: true
         nextRenewalOrExpirationDate:
           description: When the campaign would be due for its next renew/bill date.
           example: 2000-01-01
@@ -7944,6 +7998,7 @@ components:
             This identifier is required by the NetNumber OSR SMS enabling process
             of 10DLC.
           type: string
+          x-is-required: true
         status:
           $ref: '#/components/schemas/SMSTenDLCPartnerCampaignStatus'
         createDate:
@@ -7955,15 +8010,18 @@ components:
           description: Alphanumeric identifier of the brand associated with this campaign.
           maxLength: 8
           type: string
+          x-is-required: true
         usecase:
           description: Campaign usecase. Must be of defined valid types. Use `/registry/enum/usecase`
             operation to retrieve usecases available for given brand.
           maxLength: 20
           type: string
+          x-is-required: true
         description:
           description: Summary description of this campaign.
           maxLength: 4096
           type: string
+          x-is-required: true
         embeddedLink:
           default: false
           description: Does message generated by the campaign include URL link in
@@ -8106,10 +8164,12 @@ components:
           example: "+12024567890"
           maxLength: 20
           type: string
+          x-is-required: true
         email:
           description: Valid email address of brand support contact.
           maxLength: 100
           type: string
+          x-is-required: true
         website:
           description: Brand website URL.
           example: http://www.abcmobile.com
@@ -8272,6 +8332,7 @@ components:
           example: ABC Mobile
           maxLength: 255
           type: string
+          x-is-required: true
         companyName:
           description: (Required for Non-profit/private/public) Legal company name.
           example: ABC Inc.
@@ -8293,6 +8354,7 @@ components:
           example: "+12024567890"
           maxLength: 20
           type: string
+          x-is-required: true
         street:
           description: Street number and name.
           example: 123 6th Ave
@@ -8318,10 +8380,12 @@ components:
           example: US
           maxLength: 2
           type: string
+          x-is-required: true
         email:
           description: Valid email address of brand support contact.
           maxLength: 100
           type: string
+          x-is-required: true
         stockSymbol:
           description: (Required for public company) stock symbol.
           example: ABC
@@ -8344,6 +8408,7 @@ components:
           description: Vertical or industry segment of the brand.
           maxLength: 50
           type: string
+          x-is-required: true
         altBusinessId:
           description: "Alternate business identifier such as DUNS, LEI, or GIIN"
           maxLength: 50
@@ -8371,6 +8436,7 @@ components:
         mock:
           description: Test brand.
           type: boolean
+          x-is-required: true
         identityStatus:
           $ref: '#/components/schemas/SMSTenDLCBrandIdentityStatus'
         createDate:
@@ -8439,20 +8505,26 @@ components:
           description: ID of the account that created this toll-free campaign
           nullable: true
           type: string
+          x-is-required: true
         campaignId:
           description: Alphanumeric identifier used by the platform to identify this
             toll-free campaign
           type: string
+          x-is-required: true
         useCase:
           type: string
+          x-is-required: true
         registrationStatus:
           $ref: '#/components/schemas/SMSTollFreeCampaignRegistrationStatus'
         dateCreated:
           type: string
+          x-is-required: true
         dateUpdated:
           type: string
+          x-is-required: true
         revision:
           type: integer
+          x-is-required: true
       required:
       - accountId
       - campaignId
@@ -8492,6 +8564,7 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+            x-is-required: true
           playBeep:
             default: false
             type: boolean
@@ -8542,14 +8615,17 @@ components:
           description: E.164 formatted phone number to which calls using this token
             will be made.
           type: string
+          x-is-required: true
         from:
           description: E.164 formatted phone number owned by the reqeusting account
             from which calls using this token will be made.
           type: string
+          x-is-required: true
         uses:
           description: number of times this token may be used for a WebRTC call
           minimum: 1
           type: integer
+          x-is-required: true
       required:
       - from
       - to

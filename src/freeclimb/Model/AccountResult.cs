@@ -190,7 +190,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -201,18 +202,31 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);
-            props.Add("dateCreated", DateCreated);
-            props.Add("dateUpdated", DateUpdated);
-            props.Add("revision", Revision);
-            props.Add("accountId", AccountId);
-            props.Add("apiKey", ApiKey);
-            props.Add("alias", Alias);
-            props.Add("label", Label);
-            props.Add("type", Type);
-            props.Add("status", Status);
-            props.Add("subresourceUris", SubresourceUris);
+            AddToDictionary(props, "uri", Uri);
+            AddToDictionary(props, "dateCreated", DateCreated);
+            AddToDictionary(props, "dateUpdated", DateUpdated);
+            AddToDictionary(props, "revision", Revision);
+            AddToDictionary(props, "accountId", AccountId);
+            AddToDictionary(props, "apiKey", ApiKey);
+            AddToDictionary(props, "alias", Alias);
+            AddToDictionary(props, "label", Label);
+            AddToDictionary(props, "type", Type);
+            AddToDictionary(props, "status", Status);
+            AddToDictionary(props, "subresourceUris", SubresourceUris);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

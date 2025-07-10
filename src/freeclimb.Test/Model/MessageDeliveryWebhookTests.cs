@@ -170,5 +170,44 @@ namespace freeclimb.Test.Model
             Assert.IsType<MessageDeliveryWebhook>(deserialized);
             Assert.Equal("messageDelivery", deserialized.RequestType);
         }
+
+        /// <summary>
+        /// Test serialize a MessageDeliveryWebhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void MessageDeliveryWebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("requestType", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("text", json);
+
+            Assert.Contains("direction", json);
+
+            Assert.Contains("applicationId", json);
+
+            Assert.Contains("status", json);
+
+            Assert.Contains("phoneNumberId", json);
+
+            Assert.Contains("uri", json);
+        }
+
+        /// <summary>
+        /// Test serialize a MessageDeliveryWebhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void MessageDeliveryWebhookSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

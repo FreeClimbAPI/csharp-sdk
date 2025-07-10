@@ -137,5 +137,52 @@ namespace freeclimb.Test.Model
             instance.Metadata = testObject;
             Assert.Equal(testObject, instance.Metadata);
         }
+
+        /// <summary>
+        /// Test serialize a LogResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void LogResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("timestamp", json);
+
+            Assert.Contains("level", json);
+
+            Assert.Contains("requestId", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("message", json);
+
+            Assert.Contains("metadata", json);
+        }
+
+        /// <summary>
+        /// Test serialize a LogResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void LogResultSerializeToJSONStripNullTest()
+        {
+            instance.Timestamp = null;
+
+            instance.Level = null;
+
+            instance.RequestId = null;
+
+            instance.AccountId = null;
+
+            instance.CallId = null;
+
+            instance.Message = null;
+
+            instance.Metadata = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -198,5 +198,68 @@ namespace freeclimb.Test.Model
             instance.SmsFallbackUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.SmsFallbackUrl);
         }
+
+        /// <summary>
+        /// Test serialize a ApplicationResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ApplicationResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("revision", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("applicationId", json);
+
+            Assert.Contains("alias", json);
+
+            Assert.Contains("voiceUrl", json);
+
+            Assert.Contains("voiceFallbackUrl", json);
+
+            Assert.Contains("callConnectUrl", json);
+
+            Assert.Contains("statusCallbackUrl", json);
+
+            Assert.Contains("smsUrl", json);
+
+            Assert.Contains("smsFallbackUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a ApplicationResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ApplicationResultSerializeToJSONStripNullTest()
+        {
+            instance.AccountId = null;
+
+            instance.ApplicationId = null;
+
+            instance.Alias = null;
+
+            instance.VoiceUrl = null;
+
+            instance.VoiceFallbackUrl = null;
+
+            instance.CallConnectUrl = null;
+
+            instance.StatusCallbackUrl = null;
+
+            instance.SmsUrl = null;
+
+            instance.SmsFallbackUrl = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

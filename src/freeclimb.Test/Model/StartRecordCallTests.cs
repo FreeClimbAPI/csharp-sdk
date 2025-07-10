@@ -54,5 +54,24 @@ namespace freeclimb.Test.Model
         {
             Assert.IsType<StartRecordCall>(instance);
         }
+
+        /// <summary>
+        /// Test serialize a StartRecordCall to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void StartRecordCallSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+        }
+
+        /// <summary>
+        /// Test serialize a StartRecordCall to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void StartRecordCallSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

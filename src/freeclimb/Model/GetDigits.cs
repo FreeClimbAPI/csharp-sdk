@@ -185,13 +185,11 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
-
-            return strb.ToString();
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+            };
+            return JsonConvert.SerializeObject(ToKvp(), settings);
         }
 
         /// <summary>
@@ -201,23 +199,39 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);
-            props.Add("digitTimeoutMs", DigitTimeoutMs);
-            props.Add("finishOnKey", FinishOnKey);
-            props.Add("flushBuffer", FlushBuffer);
-            props.Add("initialTimeoutMs", InitialTimeoutMs);
-            props.Add("maxDigits", MaxDigits);
-            props.Add("minDigits", MinDigits);
+            AddToDictionary(props, "actionUrl", ActionUrl);
+            AddToDictionary(props, "digitTimeoutMs", DigitTimeoutMs);
+            AddToDictionary(props, "finishOnKey", FinishOnKey);
+            AddToDictionary(props, "flushBuffer", FlushBuffer);
+            AddToDictionary(props, "initialTimeoutMs", InitialTimeoutMs);
+            AddToDictionary(props, "maxDigits", MaxDigits);
+            AddToDictionary(props, "minDigits", MinDigits);
             List<object> nested = new List<object>();
-            foreach (var item in Prompts)
+            if (Prompts != null)
             {
-                nested.Add(item);
+                foreach (var item in Prompts)
+                {
+                    nested.Add(item.ToKvp());
+                }
             }
-            props.Add("prompts", nested);
-            props.Add("privacyMode", PrivacyMode);
+            AddToDictionary(props, "prompts", nested);
+            AddToDictionary(props, "privacyMode", PrivacyMode);
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("GetDigits", props);
             return command;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

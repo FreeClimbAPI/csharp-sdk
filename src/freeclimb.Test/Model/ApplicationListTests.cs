@@ -145,5 +145,56 @@ namespace freeclimb.Test.Model
             instance.Applications = testList;
             Assert.Equal(instance.Applications, testList);
         }
+
+        /// <summary>
+        /// Test serialize a ApplicationList to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ApplicationListSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("total", json);
+
+            Assert.Contains("start", json);
+
+            Assert.Contains("end", json);
+
+            Assert.Contains("page", json);
+
+            Assert.Contains("numPages", json);
+
+            Assert.Contains("pageSize", json);
+
+            Assert.Contains("nextPageUri", json);
+
+            Assert.Contains("applications", json);
+        }
+
+        /// <summary>
+        /// Test serialize a ApplicationList to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ApplicationListSerializeToJSONStripNullTest()
+        {
+            instance.Total = null;
+
+            instance.Start = null;
+
+            instance.End = null;
+
+            instance.Page = null;
+
+            instance.NumPages = null;
+
+            instance.PageSize = null;
+
+            instance.NextPageUri = null;
+
+            instance.Applications = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

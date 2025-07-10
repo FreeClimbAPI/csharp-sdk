@@ -296,5 +296,96 @@ namespace freeclimb.Test.Model
             instance.ApplicationId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ApplicationId);
         }
+
+        /// <summary>
+        /// Test serialize a CallResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void CallResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("revision", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("parentCallId", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("phoneNumberId", json);
+
+            Assert.Contains("callStatus", json);
+
+            Assert.Contains("startTime", json);
+
+            Assert.Contains("connectTime", json);
+
+            Assert.Contains("endTime", json);
+
+            Assert.Contains("duration", json);
+
+            Assert.Contains("connectDuration", json);
+
+            Assert.Contains("direction", json);
+
+            Assert.Contains("answeredBy", json);
+
+            Assert.Contains("subresourceUris", json);
+
+            Assert.Contains("applicationId", json);
+        }
+
+        /// <summary>
+        /// Test serialize a CallResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void CallResultSerializeToJSONStripNullTest()
+        {
+            instance.CallId = null;
+
+            instance.ParentCallId = null;
+
+            instance.AccountId = null;
+
+            instance.From = null;
+
+            instance.To = null;
+
+            instance.PhoneNumberId = null;
+
+            instance.CallStatus = null;
+
+            instance.StartTime = null;
+
+            instance.ConnectTime = null;
+
+            instance.EndTime = null;
+
+            instance.Duration = null;
+
+            instance.ConnectDuration = null;
+
+            instance.Direction = null;
+
+            instance.AnsweredBy = null;
+
+            instance.SubresourceUris = null;
+
+            instance.ApplicationId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -161,13 +161,11 @@ namespace freeclimb.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            JsonSerializer jsonSerializer = JsonSerializer.Create();
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-
-            StringBuilder strb = new StringBuilder();
-            jsonSerializer.Serialize(new StringWriter(strb), ToKvp());
-
-            return strb.ToString();
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+            };
+            return JsonConvert.SerializeObject(ToKvp(), settings);
         }
 
         /// <summary>
@@ -177,16 +175,29 @@ namespace freeclimb.Model
         public override IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("actionUrl", ActionUrl);
-            props.Add("silenceTimeoutMs", SilenceTimeoutMs);
-            props.Add("finishOnKey", FinishOnKey);
-            props.Add("maxLengthSec", MaxLengthSec);
-            props.Add("playBeep", PlayBeep);
-            props.Add("autoStart", AutoStart);
-            props.Add("privacyMode", PrivacyMode);
+            AddToDictionary(props, "actionUrl", ActionUrl);
+            AddToDictionary(props, "silenceTimeoutMs", SilenceTimeoutMs);
+            AddToDictionary(props, "finishOnKey", FinishOnKey);
+            AddToDictionary(props, "maxLengthSec", MaxLengthSec);
+            AddToDictionary(props, "playBeep", PlayBeep);
+            AddToDictionary(props, "autoStart", AutoStart);
+            AddToDictionary(props, "privacyMode", PrivacyMode);
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("RecordUtterance", props);
             return command;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

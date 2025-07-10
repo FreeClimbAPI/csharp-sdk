@@ -127,5 +127,38 @@ namespace freeclimb.Test.Model
             instance.WaitUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.WaitUrl);
         }
+
+        /// <summary>
+        /// Test serialize a CreateConference to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void CreateConferenceSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("actionUrl", json);
+
+            Assert.Contains("alias", json);
+
+            Assert.Contains("playBeep", json);
+
+            Assert.Contains("record", json);
+
+            Assert.Contains("statusCallbackUrl", json);
+
+            Assert.Contains("waitUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a CreateConference to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void CreateConferenceSerializeToJSONStripNullTest()
+        {
+            instance.PlayBeep = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

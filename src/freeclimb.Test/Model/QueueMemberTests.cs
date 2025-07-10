@@ -110,5 +110,44 @@ namespace freeclimb.Test.Model
             instance.DateEnqueued = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.DateEnqueued);
         }
+
+        /// <summary>
+        /// Test serialize a QueueMember to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void QueueMemberSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("waitTime", json);
+
+            Assert.Contains("position", json);
+
+            Assert.Contains("dateEnqueued", json);
+        }
+
+        /// <summary>
+        /// Test serialize a QueueMember to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void QueueMemberSerializeToJSONStripNullTest()
+        {
+            instance.Uri = null;
+
+            instance.CallId = null;
+
+            instance.WaitTime = null;
+
+            instance.Position = null;
+
+            instance.DateEnqueued = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

@@ -165,5 +165,44 @@ namespace freeclimb.Test.Model
             instance.CallConnectUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.CallConnectUrl);
         }
+
+        /// <summary>
+        /// Test serialize a MakeCallRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void MakeCallRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("applicationId", json);
+
+            Assert.Contains("sendDigits", json);
+
+            Assert.Contains("ifMachine", json);
+
+            Assert.Contains("ifMachineUrl", json);
+
+            Assert.Contains("timeout", json);
+
+            Assert.Contains("parentCallId", json);
+
+            Assert.Contains("privacyMode", json);
+
+            Assert.Contains("callConnectUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a MakeCallRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void MakeCallRequestSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

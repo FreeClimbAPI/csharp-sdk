@@ -195,7 +195,8 @@ namespace freeclimb.Model
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
-                Newtonsoft.Json.Formatting.Indented
+                Newtonsoft.Json.Formatting.Indented,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }
             );
         }
 
@@ -206,21 +207,34 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("uri", Uri);
-            props.Add("dateCreated", DateCreated);
-            props.Add("dateUpdated", DateUpdated);
-            props.Add("revision", Revision);
-            props.Add("from", From);
-            props.Add("to", To);
-            props.Add("text", Text);
-            props.Add("notificationUrl", NotificationUrl);
+            AddToDictionary(props, "uri", Uri);
+            AddToDictionary(props, "dateCreated", DateCreated);
+            AddToDictionary(props, "dateUpdated", DateUpdated);
+            AddToDictionary(props, "revision", Revision);
+            AddToDictionary(props, "from", From);
+            AddToDictionary(props, "to", To);
+            AddToDictionary(props, "text", Text);
+            AddToDictionary(props, "notificationUrl", NotificationUrl);
             List<object> nested = new List<object>();
-            foreach (var item in MediaUrls)
+            if (MediaUrls != null)
             {
-                nested.Add(item);
+                nested.Add(MediaUrls);
             }
-            props.Add("mediaUrls", nested);
+            AddToDictionary(props, "mediaUrls", nested);
             return props;
+        }
+
+        private IDictionary<string, object> AddToDictionary(
+            IDictionary<string, object> dict,
+            string key,
+            object value
+        )
+        {
+            if (value != null)
+            {
+                dict.Add(key, value);
+            }
+            return dict;
         }
 
         /// <summary>

@@ -132,5 +132,50 @@ namespace freeclimb.Test.Model
             instance.SmsFallbackUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.SmsFallbackUrl);
         }
+
+        /// <summary>
+        /// Test serialize a ApplicationRequest to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ApplicationRequestSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("alias", json);
+
+            Assert.Contains("voiceUrl", json);
+
+            Assert.Contains("voiceFallbackUrl", json);
+
+            Assert.Contains("callConnectUrl", json);
+
+            Assert.Contains("statusCallbackUrl", json);
+
+            Assert.Contains("smsUrl", json);
+
+            Assert.Contains("smsFallbackUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a ApplicationRequest to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ApplicationRequestSerializeToJSONStripNullTest()
+        {
+            instance.VoiceUrl = null;
+
+            instance.VoiceFallbackUrl = null;
+
+            instance.CallConnectUrl = null;
+
+            instance.StatusCallbackUrl = null;
+
+            instance.SmsUrl = null;
+
+            instance.SmsFallbackUrl = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

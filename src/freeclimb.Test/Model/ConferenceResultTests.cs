@@ -222,5 +222,72 @@ namespace freeclimb.Test.Model
             instance.SubresourceUris = testObject;
             Assert.Equal(testObject, instance.SubresourceUris);
         }
+
+        /// <summary>
+        /// Test serialize a ConferenceResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ConferenceResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("revision", json);
+
+            Assert.Contains("conferenceId", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("alias", json);
+
+            Assert.Contains("playBeep", json);
+
+            Assert.Contains("record", json);
+
+            Assert.Contains("status", json);
+
+            Assert.Contains("waitUrl", json);
+
+            Assert.Contains("actionUrl", json);
+
+            Assert.Contains("statusCallbackUrl", json);
+
+            Assert.Contains("subresourceUris", json);
+        }
+
+        /// <summary>
+        /// Test serialize a ConferenceResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ConferenceResultSerializeToJSONStripNullTest()
+        {
+            instance.ConferenceId = null;
+
+            instance.AccountId = null;
+
+            instance.Alias = null;
+
+            instance.PlayBeep = null;
+
+            instance.Record = null;
+
+            instance.Status = null;
+
+            instance.WaitUrl = null;
+
+            instance.ActionUrl = null;
+
+            instance.StatusCallbackUrl = null;
+
+            instance.SubresourceUris = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

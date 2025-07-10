@@ -155,5 +155,42 @@ namespace freeclimb.Test.Model
             instance.PrivacyMode = false;
             Assert.False(instance.PrivacyMode);
         }
+
+        /// <summary>
+        /// Test serialize a GetDigits to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void GetDigitsSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("actionUrl", json);
+
+            Assert.Contains("digitTimeoutMs", json);
+
+            Assert.Contains("finishOnKey", json);
+
+            Assert.Contains("flushBuffer", json);
+
+            Assert.Contains("initialTimeoutMs", json);
+
+            Assert.Contains("maxDigits", json);
+
+            Assert.Contains("minDigits", json);
+
+            Assert.Contains("prompts", json);
+
+            Assert.Contains("privacyMode", json);
+        }
+
+        /// <summary>
+        /// Test serialize a GetDigits to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void GetDigitsSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

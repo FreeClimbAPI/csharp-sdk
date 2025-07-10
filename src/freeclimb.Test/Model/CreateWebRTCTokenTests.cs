@@ -88,5 +88,30 @@ namespace freeclimb.Test.Model
             instance.Uses = 1;
             Assert.Equal(1, (int)instance.Uses);
         }
+
+        /// <summary>
+        /// Test serialize a CreateWebRTCToken to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void CreateWebRTCTokenSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("uses", json);
+        }
+
+        /// <summary>
+        /// Test serialize a CreateWebRTCToken to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void CreateWebRTCTokenSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

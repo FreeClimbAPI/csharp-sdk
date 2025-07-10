@@ -115,5 +115,34 @@ namespace freeclimb.Test.Model
             Assert.IsType<CallControlWebhook>(deserialized);
             Assert.Equal("callControl", deserialized.RequestType);
         }
+
+        /// <summary>
+        /// Test serialize a CallControlWebhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void CallControlWebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("requestType", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("conferenceId", json);
+
+            Assert.Contains("digits", json);
+        }
+
+        /// <summary>
+        /// Test serialize a CallControlWebhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void CallControlWebhookSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

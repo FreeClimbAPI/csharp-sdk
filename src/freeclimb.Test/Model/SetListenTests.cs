@@ -64,5 +64,26 @@ namespace freeclimb.Test.Model
             instance.Listen = false;
             Assert.False(instance.Listen);
         }
+
+        /// <summary>
+        /// Test serialize a SetListen to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void SetListenSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("listen", json);
+        }
+
+        /// <summary>
+        /// Test serialize a SetListen to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void SetListenSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

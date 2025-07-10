@@ -88,5 +88,30 @@ namespace freeclimb.Test.Model
             instance.NotificationUrl = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.NotificationUrl);
         }
+
+        /// <summary>
+        /// Test serialize a Park to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void ParkSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("waitUrl", json);
+
+            Assert.Contains("actionUrl", json);
+
+            Assert.Contains("notificationUrl", json);
+        }
+
+        /// <summary>
+        /// Test serialize a Park to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void ParkSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

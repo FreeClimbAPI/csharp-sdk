@@ -178,5 +178,42 @@ namespace freeclimb.Test.Model
             instance.Revision = 1;
             Assert.Equal(1, (int)instance.Revision);
         }
+
+        /// <summary>
+        /// Test serialize a TFNCampaign to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void TFNCampaignSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("campaignId", json);
+
+            Assert.Contains("useCase", json);
+
+            Assert.Contains("registrationStatus", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("dateCreatedISO", json);
+
+            Assert.Contains("dateUpdatedISO", json);
+
+            Assert.Contains("revision", json);
+        }
+
+        /// <summary>
+        /// Test serialize a TFNCampaign to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void TFNCampaignSerializeToJSONStripNullTest()
+        {
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

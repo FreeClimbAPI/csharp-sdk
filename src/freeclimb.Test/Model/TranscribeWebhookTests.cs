@@ -336,5 +336,80 @@ namespace freeclimb.Test.Model
             Assert.IsType<TranscribeWebhook>(deserialized);
             Assert.Equal("transcribe", deserialized.RequestType);
         }
+
+        /// <summary>
+        /// Test serialize a TranscribeWebhook to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void TranscribeWebhookSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("requestType", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("callId", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("recordingId", json);
+
+            Assert.Contains("recordingUrl", json);
+
+            Assert.Contains("recordingSize", json);
+
+            Assert.Contains("recordingFormat", json);
+
+            Assert.Contains("recordingDurationMs", json);
+
+            Assert.Contains("termReason", json);
+
+            Assert.Contains("recordTermReason", json);
+
+            Assert.Contains("digit", json);
+
+            Assert.Contains("privacyForLogging", json);
+
+            Assert.Contains("privacyForRecording", json);
+
+            Assert.Contains("bargeInReason", json);
+
+            Assert.Contains("bargedInPromptNo", json);
+
+            Assert.Contains("bargedInPromptMs", json);
+
+            Assert.Contains("bargedInPromptLoopNo", json);
+
+            Assert.Contains("bargeInTimeMs", json);
+
+            Assert.Contains("transcript", json);
+
+            Assert.Contains("transcribeReason", json);
+
+            Assert.Contains("transcriptionDurationMs", json);
+        }
+
+        /// <summary>
+        /// Test serialize a TranscribeWebhook to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void TranscribeWebhookSerializeToJSONStripNullTest()
+        {
+            instance.RecordingId = null;
+
+            instance.RecordingUrl = null;
+
+            instance.RecordingFormat = null;
+
+            instance.Digit = null;
+
+            instance.Transcript = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }

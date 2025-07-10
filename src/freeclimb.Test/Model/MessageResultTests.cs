@@ -286,5 +286,90 @@ namespace freeclimb.Test.Model
             instance.ApplicationId = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.ApplicationId);
         }
+
+        /// <summary>
+        /// Test serialize a MessageResult to JSON string - all values are present
+        /// </summary>
+        [Fact]
+        public void MessageResultSerializeToJSONTest()
+        {
+            string json = instance.ToJson();
+
+            Assert.Contains("uri", json);
+
+            Assert.Contains("dateCreated", json);
+
+            Assert.Contains("dateUpdated", json);
+
+            Assert.Contains("revision", json);
+
+            Assert.Contains("accountId", json);
+
+            Assert.Contains("messageId", json);
+
+            Assert.Contains("status", json);
+
+            Assert.Contains("from", json);
+
+            Assert.Contains("to", json);
+
+            Assert.Contains("text", json);
+
+            Assert.Contains("direction", json);
+
+            Assert.Contains("notificationUrl", json);
+
+            Assert.Contains("brandId", json);
+
+            Assert.Contains("campaignId", json);
+
+            Assert.Contains("segmentCount", json);
+
+            Assert.Contains("mediaUrls", json);
+
+            Assert.Contains("tfn", json);
+
+            Assert.Contains("phoneNumberId", json);
+
+            Assert.Contains("applicationId", json);
+        }
+
+        /// <summary>
+        /// Test serialize a MessageResult to JSON string - null values are stripped
+        /// </summary>
+        [Fact]
+        public void MessageResultSerializeToJSONStripNullTest()
+        {
+            instance.AccountId = null;
+
+            instance.MessageId = null;
+
+            instance.Status = null;
+
+            instance.From = null;
+
+            instance.To = null;
+
+            instance.Text = null;
+
+            instance.Direction = null;
+
+            instance.NotificationUrl = null;
+
+            instance.BrandId = null;
+
+            instance.CampaignId = null;
+
+            instance.SegmentCount = null;
+
+            instance.MediaUrls = null;
+
+            instance.PhoneNumberId = null;
+
+            instance.ApplicationId = null;
+
+            string json = instance.ToJson();
+            Assert.DoesNotContain("null", json);
+        }
     }
 }
