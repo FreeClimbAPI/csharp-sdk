@@ -11,6 +11,8 @@ None
 
 <a name="5.1.2"></a>
 
+## [5.1.2] - 2025-07-10
+
 ### Changed
 
 - Remove null values when serializing models to JSON
