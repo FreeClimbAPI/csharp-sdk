@@ -8,13 +8,16 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**CreateAConference**](DefaultApi.md#createaconference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference |
 | [**CreateAQueue**](DefaultApi.md#createaqueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue |
 | [**CreateAnApplication**](DefaultApi.md#createanapplication) | **POST** /Accounts/{accountId}/Applications | Create an application |
+| [**CreateExport**](DefaultApi.md#createexport) | **POST** /Accounts/{accountId}/Exports | Create an Export |
 | [**CreateKnowledgeBaseCompletion**](DefaultApi.md#createknowledgebasecompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base |
 | [**DeleteARecording**](DefaultApi.md#deletearecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording |
 | [**DeleteAnApplication**](DefaultApi.md#deleteanapplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application |
+| [**DeleteAnExport**](DefaultApi.md#deleteanexport) | **DELETE** /Accounts/{accountId}/Exports/{exportId} | Delete an Export |
 | [**DeleteAnIncomingNumber**](DefaultApi.md#deleteanincomingnumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number |
 | [**DequeueAMember**](DefaultApi.md#dequeueamember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Dequeue a Member |
 | [**DequeueHeadMember**](DefaultApi.md#dequeueheadmember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Dequeue Head Member |
 | [**DownloadARecordingFile**](DefaultApi.md#downloadarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download | Download a Recording File |
+| [**DownloadAnExport**](DefaultApi.md#downloadanexport) | **GET** /Accounts/{accountId}/Exports/{exportId}/Download | Download an Export |
 | [**FilterLogs**](DefaultApi.md#filterlogs) | **POST** /Accounts/{accountId}/Logs | Filter Logs |
 | [**GetACall**](DefaultApi.md#getacall) | **GET** /Accounts/{accountId}/Calls/{callId} | Get a Call |
 | [**GetAConference**](DefaultApi.md#getaconference) | **GET** /Accounts/{accountId}/Conferences/{conferenceId} | Get a Conference |
@@ -24,6 +27,7 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**GetARecording**](DefaultApi.md#getarecording) | **GET** /Accounts/{accountId}/Recordings/{recordingId} | Get a Recording |
 | [**GetAnAccount**](DefaultApi.md#getanaccount) | **GET** /Accounts/{accountId} | Get an Account |
 | [**GetAnApplication**](DefaultApi.md#getanapplication) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application |
+| [**GetAnExport**](DefaultApi.md#getanexport) | **GET** /Accounts/{accountId}/Exports/{exportId} | Get an Export |
 | [**GetAnIncomingNumber**](DefaultApi.md#getanincomingnumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number |
 | [**GetAnSmsMessage**](DefaultApi.md#getansmsmessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message |
 | [**GetHeadMember**](DefaultApi.md#getheadmember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member |
@@ -44,6 +48,7 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**ListCalls**](DefaultApi.md#listcalls) | **GET** /Accounts/{accountId}/Calls | List Calls |
 | [**ListConferenceRecordings**](DefaultApi.md#listconferencerecordings) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Recordings | List Conference Recordings |
 | [**ListConferences**](DefaultApi.md#listconferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences |
+| [**ListExports**](DefaultApi.md#listexports) | **GET** /Accounts/{accountId}/Exports | List Exports |
 | [**ListIncomingNumbers**](DefaultApi.md#listincomingnumbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers |
 | [**ListMembers**](DefaultApi.md#listmembers) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members | List Members |
 | [**ListParticipants**](DefaultApi.md#listparticipants) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants | List Participants |
@@ -450,6 +455,103 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="createexport"></a>
+# **CreateExport**
+> ExportResult CreateExport (ExportRequest? exportRequest = null)
+
+Create an Export
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class CreateExportExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var exportRequest = new ExportRequest?(); // ExportRequest? | A JSON object containing export creation parameters (optional) 
+            
+            try
+            {
+                // Create an Export
+                ExportResult result = apiInstance.CreateExport(exportRequest);
+                Debug.WriteLine(result);                
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.CreateExport: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateExportWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create an Export
+    ApiResponse<ExportResult> response = apiInstance.CreateExportWithHttpInfo(exportRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);    
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DefaultApi.CreateExportWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+
+
+| **exportRequest** | [**ExportRequest?**](ExportRequest?.md) | A JSON object containing export creation parameters | [optional]  |
+
+
+### Return type
+
+[**ExportResult**](ExportResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Export successfully created |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="createknowledgebasecompletion"></a>
 # **CreateKnowledgeBaseCompletion**
 > CompletionResult CreateKnowledgeBaseCompletion (string knowledgeBaseId, CompletionRequest? completionRequest = null)
@@ -734,6 +836,99 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful application deletion |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deleteanexport"></a>
+# **DeleteAnExport**
+> void DeleteAnExport (string exportId)
+
+Delete an Export
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class DeleteAnExportExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var exportId = "exportId_example";  // string | A string that uniquely identifies this export resource.
+            
+            try
+            {
+                // Delete an Export
+                apiInstance.DeleteAnExport(exportId);                
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.DeleteAnExport: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteAnExportWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete an Export
+    apiInstance.DeleteAnExportWithHttpInfo(exportId);    
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DefaultApi.DeleteAnExportWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+
+
+| **exportId** | **string** | A string that uniquely identifies this export resource. |  |
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Successful Export deletion |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1122,6 +1317,103 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Download a Recording file represented with audio/x-wav mime-type |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="downloadanexport"></a>
+# **DownloadAnExport**
+> string DownloadAnExport (string exportId)
+
+Download an Export
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class DownloadAnExportExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var exportId = "exportId_example";  // string | A string that uniquely identifies this export resource.
+            
+            try
+            {
+                // Download an Export
+                string result = apiInstance.DownloadAnExport(exportId);
+                Debug.WriteLine(result);                
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.DownloadAnExport: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DownloadAnExportWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Download an Export
+    ApiResponse<string> response = apiInstance.DownloadAnExportWithHttpInfo(exportId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);    
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DefaultApi.DownloadAnExportWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+
+
+| **exportId** | **string** | A string that uniquely identifies this export resource. |  |
+
+
+### Return type
+
+**string**
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/csv
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Export Details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1996,6 +2288,103 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Application Details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getanexport"></a>
+# **GetAnExport**
+> ExportResult GetAnExport (string exportId)
+
+Get an Export
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class GetAnExportExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var exportId = "exportId_example";  // string | A string that uniquely identifies this export resource.
+            
+            try
+            {
+                // Get an Export
+                ExportResult result = apiInstance.GetAnExport(exportId);
+                Debug.WriteLine(result);                
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.GetAnExport: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetAnExportWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get an Export
+    ApiResponse<ExportResult> response = apiInstance.GetAnExportWithHttpInfo(exportId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);    
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DefaultApi.GetAnExportWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+
+
+| **exportId** | **string** | A string that uniquely identifies this export resource. |  |
+
+
+### Return type
+
+[**ExportResult**](ExportResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Export Details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3669,7 +4058,7 @@ catch (ApiException e)
 
 <a id="listcalls"></a>
 # **ListCalls**
-> CallList ListCalls (bool? active = null, string? to = null, string? from = null, CallStatus? status = null, string? startTime = null, string? endTime = null, string? parentCallId = null, List<string>? applicationId = null)
+> CallList ListCalls (bool? active = null, string? to = null, string? from = null, CallStatus? status = null, string? startTime = null, string? endTime = null, string? parentCallId = null, List<string>? applicationId = null, int? riskScoreMin = null, int? riskScoreMax = null)
 
 List Calls
 
@@ -3711,10 +4100,14 @@ namespace Example
             
             var applicationId = new List<string>?(); // List<string>? | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional) 
             
+            var riskScoreMin = 56;  // int? | The minimum riskScore that should be included in the list. (optional) 
+            
+            var riskScoreMax = 56;  // int? | The maximum riskScore that should be included in the list. (optional) 
+            
             try
             {
                 // List Calls
-                CallList result = apiInstance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId);
+                CallList result = apiInstance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax);
                 Debug.WriteLine(result);                
             }
             catch (ApiException  e)
@@ -3735,7 +4128,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Calls
-    ApiResponse<CallList> response = apiInstance.ListCallsWithHttpInfo(active, to, from, status, startTime, endTime, parentCallId, applicationId);
+    ApiResponse<CallList> response = apiInstance.ListCallsWithHttpInfo(active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);    
@@ -3769,6 +4162,10 @@ catch (ApiException e)
 | **parentCallId** | **string?** | Only show Calls spawned by the call with this ID. | [optional]  |
 
 | **applicationId** | [**List&lt;string&gt;?**](string.md) | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional]  |
+
+| **riskScoreMin** | **int?** | The minimum riskScore that should be included in the list. | [optional]  |
+
+| **riskScoreMax** | **int?** | The maximum riskScore that should be included in the list. | [optional]  |
 
 
 ### Return type
@@ -4003,6 +4400,107 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List of Conferences |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="listexports"></a>
+# **ListExports**
+> ExportList ListExports (ExportStatus? status = null, string? cursor = null)
+
+List Exports
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
+namespace Example
+{
+    public class ListExportsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.freeclimb.com/apiserver";
+            // Configure HTTP basic authorization: fc
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+
+            var apiInstance = new DefaultApi(config);
+            
+            var status = new ExportStatus?(); // ExportStatus? | Status of export (optional) 
+            
+            var cursor = "cursor_example";  // string? | Used to reference pages of a list of exports (optional) 
+            
+            try
+            {
+                // List Exports
+                ExportList result = apiInstance.ListExports(status, cursor);
+                Debug.WriteLine(result);                
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.ListExports: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListExportsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List Exports
+    ApiResponse<ExportList> response = apiInstance.ListExportsWithHttpInfo(status, cursor);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);    
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DefaultApi.ListExportsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+
+
+| **status** | [**ExportStatus?**](ExportStatus?.md) | Status of export | [optional]  |
+
+| **cursor** | **string?** | Used to reference pages of a list of exports | [optional]  |
+
+
+### Return type
+
+[**ExportList**](ExportList.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful retrieved export list |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

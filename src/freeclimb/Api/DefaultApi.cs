@@ -125,6 +125,29 @@ namespace freeclimb.Api
         );
 
         /// <summary>
+        /// Create an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportRequest">A JSON object containing export creation parameters (optional)</param>
+
+        /// <returns>ExportResult</returns>
+        ExportResult CreateExport(ExportRequest? exportRequest = default(ExportRequest?));
+
+        /// <summary>
+        /// Create an Export
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportRequest">A JSON object containing export creation parameters (optional)</param>
+
+        /// <returns>ApiResponse of ExportResult</returns>
+        ApiResponse<ExportResult> CreateExportWithHttpInfo(
+            ExportRequest? exportRequest = default(ExportRequest?)
+        );
+
+        /// <summary>
         /// Query the knowledge base
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -194,6 +217,27 @@ namespace freeclimb.Api
 
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteAnApplicationWithHttpInfo(string applicationId);
+
+        /// <summary>
+        /// Delete an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns></returns>
+        void DeleteAnExport(string exportId);
+
+        /// <summary>
+        /// Delete an Export
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteAnExportWithHttpInfo(string exportId);
 
         /// <summary>
         /// Delete an Incoming Number
@@ -280,6 +324,27 @@ namespace freeclimb.Api
 
         /// <returns>ApiResponse of System.IO.Stream</returns>
         ApiResponse<System.IO.Stream> DownloadARecordingFileWithHttpInfo(string recordingId);
+
+        /// <summary>
+        /// Download an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>string</returns>
+        string DownloadAnExport(string exportId);
+
+        /// <summary>
+        /// Download an Export
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> DownloadAnExportWithHttpInfo(string exportId);
 
         /// <summary>
         /// Filter Logs
@@ -474,6 +539,27 @@ namespace freeclimb.Api
 
         /// <returns>ApiResponse of ApplicationResult</returns>
         ApiResponse<ApplicationResult> GetAnApplicationWithHttpInfo(string applicationId);
+
+        /// <summary>
+        /// Get an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>ExportResult</returns>
+        ExportResult GetAnExport(string exportId);
+
+        /// <summary>
+        /// Get an Export
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>ApiResponse of ExportResult</returns>
+        ApiResponse<ExportResult> GetAnExportWithHttpInfo(string exportId);
 
         /// <summary>
         /// Get an Incoming Number
@@ -891,6 +977,8 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
+        /// <param name="riskScoreMin">The minimum riskScore that should be included in the list. (optional)</param>
+        /// <param name="riskScoreMax">The maximum riskScore that should be included in the list. (optional)</param>
 
         /// <returns>CallList</returns>
         CallList ListCalls(
@@ -901,7 +989,9 @@ namespace freeclimb.Api
             string? startTime = default(string?),
             string? endTime = default(string?),
             string? parentCallId = default(string?),
-            List<string>? applicationId = default(List<string>?)
+            List<string>? applicationId = default(List<string>?),
+            int? riskScoreMin = default(int?),
+            int? riskScoreMax = default(int?)
         );
 
         /// <summary>
@@ -919,6 +1009,8 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
+        /// <param name="riskScoreMin">The minimum riskScore that should be included in the list. (optional)</param>
+        /// <param name="riskScoreMax">The maximum riskScore that should be included in the list. (optional)</param>
 
         /// <returns>ApiResponse of CallList</returns>
         ApiResponse<CallList> ListCallsWithHttpInfo(
@@ -929,7 +1021,9 @@ namespace freeclimb.Api
             string? startTime = default(string?),
             string? endTime = default(string?),
             string? parentCallId = default(string?),
-            List<string>? applicationId = default(List<string>?)
+            List<string>? applicationId = default(List<string>?),
+            int? riskScoreMin = default(int?),
+            int? riskScoreMax = default(int?)
         );
 
         /// <summary>
@@ -1000,6 +1094,35 @@ namespace freeclimb.Api
             string? alias = default(string?),
             string? dateCreated = default(string?),
             string? dateUpdated = default(string?)
+        );
+
+        /// <summary>
+        /// List Exports
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Status of export (optional)</param>
+        /// <param name="cursor">Used to reference pages of a list of exports (optional)</param>
+
+        /// <returns>ExportList</returns>
+        ExportList ListExports(
+            ExportStatus? status = default(ExportStatus?),
+            string? cursor = default(string?)
+        );
+
+        /// <summary>
+        /// List Exports
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Status of export (optional)</param>
+        /// <param name="cursor">Used to reference pages of a list of exports (optional)</param>
+
+        /// <returns>ApiResponse of ExportList</returns>
+        ApiResponse<ExportList> ListExportsWithHttpInfo(
+            ExportStatus? status = default(ExportStatus?),
+            string? cursor = default(string?)
         );
 
         /// <summary>
@@ -2160,6 +2283,106 @@ namespace freeclimb.Api
         }
 
         /// <summary>
+        /// Create an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportRequest">A JSON object containing export creation parameters (optional)</param>
+
+        /// <returns>ExportResult</returns>
+        public ExportResult CreateExport(ExportRequest? exportRequest = default(ExportRequest?))
+        {
+            freeclimb.Client.ApiResponse<ExportResult> localVarResponse = CreateExportWithHttpInfo(
+                exportRequest
+            );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportRequest">A JSON object containing export creation parameters (optional)</param>
+
+        /// <returns>ApiResponse of ExportResult</returns>
+        public freeclimb.Client.ApiResponse<ExportResult> CreateExportWithHttpInfo(
+            ExportRequest? exportRequest = default(ExportRequest?)
+        )
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->CreateExport"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { "application/json" };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "application/json" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            localVarRequestOptions.Data = exportRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.CreateExport";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<ExportResult>(
+                "/Accounts/{accountId}/Exports",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateExport", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Query the knowledge base
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2490,6 +2713,113 @@ namespace freeclimb.Api
                     "DeleteAnApplication",
                     localVarResponse
                 );
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns></returns>
+        public void DeleteAnExport(string exportId)
+        {
+            DeleteAnExportWithHttpInfo(exportId);
+        }
+
+        /// <summary>
+        /// Delete an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>ApiResponse of Object(void)</returns>
+        public freeclimb.Client.ApiResponse<Object> DeleteAnExportWithHttpInfo(string exportId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->DeleteAnExport"
+                );
+            }
+
+            // verify the required parameter 'exportId' is set
+            if (exportId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'exportId' when calling DefaultApi->DeleteAnExport"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            localVarRequestOptions.PathParameters.Add(
+                "exportId",
+                freeclimb.Client.ClientUtils.ParameterToString(exportId)
+            ); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.DeleteAnExport";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>(
+                "/Accounts/{accountId}/Exports/{exportId}",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteAnExport", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2956,6 +3286,116 @@ namespace freeclimb.Api
                     "DownloadARecordingFile",
                     localVarResponse
                 );
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Download an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>string</returns>
+        public string DownloadAnExport(string exportId)
+        {
+            freeclimb.Client.ApiResponse<string> localVarResponse = DownloadAnExportWithHttpInfo(
+                exportId
+            );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Download an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>ApiResponse of string</returns>
+        public freeclimb.Client.ApiResponse<string> DownloadAnExportWithHttpInfo(string exportId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->DownloadAnExport"
+                );
+            }
+
+            // verify the required parameter 'exportId' is set
+            if (exportId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'exportId' when calling DefaultApi->DownloadAnExport"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "text/csv" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            localVarRequestOptions.PathParameters.Add(
+                "exportId",
+                freeclimb.Client.ClientUtils.ParameterToString(exportId)
+            ); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.DownloadAnExport";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<string>(
+                "/Accounts/{accountId}/Exports/{exportId}/Download",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DownloadAnExport", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3968,6 +4408,116 @@ namespace freeclimb.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAnApplication", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>ExportResult</returns>
+        public ExportResult GetAnExport(string exportId)
+        {
+            freeclimb.Client.ApiResponse<ExportResult> localVarResponse = GetAnExportWithHttpInfo(
+                exportId
+            );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get an Export
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exportId">A string that uniquely identifies this export resource.</param>
+
+        /// <returns>ApiResponse of ExportResult</returns>
+        public freeclimb.Client.ApiResponse<ExportResult> GetAnExportWithHttpInfo(string exportId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->GetAnExport"
+                );
+            }
+
+            // verify the required parameter 'exportId' is set
+            if (exportId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'exportId' when calling DefaultApi->GetAnExport"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "application/json" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            localVarRequestOptions.PathParameters.Add(
+                "exportId",
+                freeclimb.Client.ClientUtils.ParameterToString(exportId)
+            ); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.GetAnExport";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ExportResult>(
+                "/Accounts/{accountId}/Exports/{exportId}",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAnExport", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -5952,6 +6502,8 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
+        /// <param name="riskScoreMin">The minimum riskScore that should be included in the list. (optional)</param>
+        /// <param name="riskScoreMax">The maximum riskScore that should be included in the list. (optional)</param>
 
         /// <returns>CallList</returns>
         public CallList ListCalls(
@@ -5962,7 +6514,9 @@ namespace freeclimb.Api
             string? startTime = default(string?),
             string? endTime = default(string?),
             string? parentCallId = default(string?),
-            List<string>? applicationId = default(List<string>?)
+            List<string>? applicationId = default(List<string>?),
+            int? riskScoreMin = default(int?),
+            int? riskScoreMax = default(int?)
         )
         {
             freeclimb.Client.ApiResponse<CallList> localVarResponse = ListCallsWithHttpInfo(
@@ -5973,7 +6527,9 @@ namespace freeclimb.Api
                 startTime,
                 endTime,
                 parentCallId,
-                applicationId
+                applicationId,
+                riskScoreMin,
+                riskScoreMax
             );
             return localVarResponse.Data;
         }
@@ -5990,6 +6546,8 @@ namespace freeclimb.Api
         /// <param name="endTime">Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)</param>
         /// <param name="parentCallId">Only show Calls spawned by the call with this ID. (optional)</param>
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
+        /// <param name="riskScoreMin">The minimum riskScore that should be included in the list. (optional)</param>
+        /// <param name="riskScoreMax">The maximum riskScore that should be included in the list. (optional)</param>
 
         /// <returns>ApiResponse of CallList</returns>
         public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(
@@ -6000,7 +6558,9 @@ namespace freeclimb.Api
             string? startTime = default(string?),
             string? endTime = default(string?),
             string? parentCallId = default(string?),
-            List<string>? applicationId = default(List<string>?)
+            List<string>? applicationId = default(List<string>?),
+            int? riskScoreMin = default(int?),
+            int? riskScoreMax = default(int?)
         )
         {
             // verify the required parameter 'accountId' is set
@@ -6091,6 +6651,26 @@ namespace freeclimb.Api
                         "multi",
                         "applicationId",
                         applicationId
+                    )
+                );
+            }
+            if (riskScoreMin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap(
+                        "",
+                        "riskScoreMin",
+                        riskScoreMin
+                    )
+                );
+            }
+            if (riskScoreMax != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap(
+                        "",
+                        "riskScoreMax",
+                        riskScoreMax
                     )
                 );
             }
@@ -6395,6 +6975,124 @@ namespace freeclimb.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListConferences", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Exports
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Status of export (optional)</param>
+        /// <param name="cursor">Used to reference pages of a list of exports (optional)</param>
+
+        /// <returns>ExportList</returns>
+        public ExportList ListExports(
+            ExportStatus? status = default(ExportStatus?),
+            string? cursor = default(string?)
+        )
+        {
+            freeclimb.Client.ApiResponse<ExportList> localVarResponse = ListExportsWithHttpInfo(
+                status,
+                cursor
+            );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Exports
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Status of export (optional)</param>
+        /// <param name="cursor">Used to reference pages of a list of exports (optional)</param>
+
+        /// <returns>ApiResponse of ExportList</returns>
+        public freeclimb.Client.ApiResponse<ExportList> ListExportsWithHttpInfo(
+            ExportStatus? status = default(ExportStatus?),
+            string? cursor = default(string?)
+        )
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->ListExports"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "application/json" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "status", status)
+                );
+            }
+            if (cursor != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "cursor", cursor)
+                );
+            }
+
+            localVarRequestOptions.Operation = "DefaultApi.ListExports";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ExportList>(
+                "/Accounts/{accountId}/Exports",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListExports", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

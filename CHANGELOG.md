@@ -9,6 +9,19 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="5.2.0"></a>
+
+## [5.2.0] - 2025-09-24
+
+### Added
+
+- Add models for ExportResult and ExportRequest
+
+### Changed
+
+- CallResult.callStatus -> CallResult.status
+- CreateConference now includes parentCallId
+
 <a name="5.1.2"></a>
 
 ## [5.1.2] - 2025-07-10

@@ -310,6 +310,38 @@ namespace freeclimb.Test
             {
                 return new Dictionary<string, string>();
             }
+            if (type == typeof(ExportResourceType))
+            {
+                return ExportResourceTypeValueConverter.FromString("Calls");
+            }
+            if (type == typeof(ExportRequestOutput))
+            {
+                return new ExportRequestOutput(
+                    type: ExportOutputTypeValueConverter.FromString("csv")
+                );
+            }
+            if (type == typeof(ExportResultOutput))
+            {
+                return new ExportResultOutput(
+                    type: ExportOutputTypeValueConverter.FromString("csv")
+                );
+            }
+            if (type == typeof(ExportStatus))
+            {
+                return ExportStatusValueConverter.FromString("completed");
+            }
+            if (type == typeof(ExportOutputType))
+            {
+                return ExportOutputTypeValueConverter.FromString("csv");
+            }
+            if (type == typeof(ExportList))
+            {
+                return new ExportList();
+            }
+            if (type == typeof(List<ExportResult>))
+            {
+                return new List<ExportResult>();
+            }
             throw new ArgumentException("Provided type has no test value", type.ToString());
         }
     }
