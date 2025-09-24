@@ -29,7 +29,7 @@ jobs:
       - name: Start Prism Server
         run: |
           yarn install
-          ./node_modules/.bin/prism mock -h 127.0.0.1 openapi.json &
+          ./node_modules/.bin/prism mock -h 127.0.0.1 api/openapi.yaml &
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
