@@ -34,10 +34,10 @@ namespace freeclimb.Model
     public partial class CallResult : IValidatableObject
     {
         /// <summary>
-        /// Gets or Sets CallStatus
+        /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "callStatus", EmitDefaultValue = true)]
-        public CallStatus? CallStatus { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = true)]
+        public CallStatus? Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Direction
@@ -64,7 +64,7 @@ namespace freeclimb.Model
         /// <param name="from">Phone number that initiated this Call..</param>
         /// <param name="to">Phone number that received this Call..</param>
         /// <param name="phoneNumberId">If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI)..</param>
-        /// <param name="callStatus">callStatus.</param>
+        /// <param name="status">status.</param>
         /// <param name="startTime">Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed..</param>
         /// <param name="connectTime">Time the Call was answered (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed..</param>
         /// <param name="endTime">End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully..</param>
@@ -85,7 +85,7 @@ namespace freeclimb.Model
             string from = default(string),
             string to = default(string),
             string phoneNumberId = default(string),
-            CallStatus? callStatus = default(CallStatus?),
+            CallStatus? status = default(CallStatus?),
             string startTime = default(string),
             string connectTime = default(string),
             string endTime = default(string),
@@ -117,7 +117,7 @@ namespace freeclimb.Model
 
             this.PhoneNumberId = phoneNumberId;
 
-            this.CallStatus = callStatus;
+            this.Status = status;
 
             this.StartTime = startTime;
 
@@ -275,7 +275,7 @@ namespace freeclimb.Model
             sb.Append("  From: ").Append(From).Append("\n");
             sb.Append("  To: ").Append(To).Append("\n");
             sb.Append("  PhoneNumberId: ").Append(PhoneNumberId).Append("\n");
-            sb.Append("  CallStatus: ").Append(CallStatus).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StartTime: ").Append(StartTime).Append("\n");
             sb.Append("  ConnectTime: ").Append(ConnectTime).Append("\n");
             sb.Append("  EndTime: ").Append(EndTime).Append("\n");
@@ -319,7 +319,7 @@ namespace freeclimb.Model
             AddToDictionary(props, "from", From);
             AddToDictionary(props, "to", To);
             AddToDictionary(props, "phoneNumberId", PhoneNumberId);
-            AddToDictionary(props, "callStatus", CallStatus);
+            AddToDictionary(props, "status", Status);
             AddToDictionary(props, "startTime", StartTime);
             AddToDictionary(props, "connectTime", ConnectTime);
             AddToDictionary(props, "endTime", EndTime);

@@ -799,6 +799,22 @@ paths:
           type: string
         style: simple
         x-account-id: true
+      - description: The minimum riskScore that should be included in the list.
+        explode: true
+        in: query
+        name: riskScoreMin
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: The maximum riskScore that should be included in the list.
+        explode: true
+        in: query
+        name: riskScoreMax
+        required: false
+        schema:
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -2368,6 +2384,160 @@ paths:
           description: The specific SMS TollFree Campaign that’s been processed by
             FreeClimb
       summary: Get a TollFree SMS Campaign
+      tags: []
+  /Accounts/{accountId}/Exports:
+    get:
+      operationId: list-exports
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-account-id: true
+      - description: Status of export
+        explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          $ref: '#/components/schemas/ExportStatus'
+        style: form
+      - description: Used to reference pages of a list of exports
+        explode: true
+        in: query
+        name: cursor
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExportList'
+          description: Successful retrieved export list
+      summary: List Exports
+      tags: []
+      x-is-paginated: true
+    post:
+      operationId: create-export
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-account-id: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExportRequest'
+        description: A JSON object containing export creation parameters
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExportResult'
+          description: Export successfully created
+      summary: Create an Export
+      tags: []
+  /Accounts/{accountId}/Exports/{exportId}:
+    delete:
+      deprecated: false
+      operationId: delete-an-export
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-account-id: true
+      - description: A string that uniquely identifies this export resource.
+        explode: false
+        in: path
+        name: exportId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Successful Export deletion
+      summary: Delete an Export
+      tags: []
+    get:
+      deprecated: false
+      operationId: get-an-export
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-account-id: true
+      - description: A string that uniquely identifies this export resource.
+        explode: false
+        in: path
+        name: exportId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExportResult'
+          description: Export Details
+      summary: Get an Export
+      tags: []
+  /Accounts/{accountId}/Exports/{exportId}/Download:
+    get:
+      deprecated: false
+      operationId: download-an-export
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-account-id: true
+      - description: A string that uniquely identifies this export resource.
+        explode: false
+        in: path
+        name: exportId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/csv:
+              schema:
+                type: string
+          description: Export Details
+      summary: Download an Export
       tags: []
 components:
   parameters:
@@ -4987,7 +5157,7 @@ components:
             x-is-required: true
           alias:
             description: 'Descriptive name for the Conference. '
-            type: boolean
+            type: string
           playBeep:
             $ref: '#/components/schemas/PlayBeep'
           record:
@@ -5013,6 +5183,9 @@ components:
             type: string
             x-is-uri: true
             x-is-url: true
+          parentCallId:
+            description: ID of the Call that created this leg (child call).
+            type: string
         required:
         - actionUrl
         type: object
@@ -6395,7 +6568,7 @@ components:
               \ ID of the phone number from which the Call was placed (ANI)."
             nullable: true
             type: string
-          callStatus:
+          status:
             $ref: '#/components/schemas/CallStatus'
           startTime:
             description: "Start time of the Call (GMT) in RFC 1123 format (e.g., Mon,\
@@ -6449,13 +6622,13 @@ components:
         dateCreated: dateCreated
         connectTime: connectTime
         connectDuration: 1
-        callStatus: queued
         subresourceUris: null
         from: from
         startTime: startTime
         to: to
         endTime: endTime
         applicationId: applicationId
+        status: queued
         direction: inbound
     UpdateCallRequest:
       example:
@@ -6593,13 +6766,13 @@ components:
           dateCreated: dateCreated
           connectTime: connectTime
           connectDuration: 1
-          callStatus: queued
           subresourceUris: null
           from: from
           startTime: startTime
           to: to
           endTime: endTime
           applicationId: applicationId
+          status: queued
           direction: inbound
         - callId: callId
           answeredBy: human
@@ -6613,13 +6786,13 @@ components:
           dateCreated: dateCreated
           connectTime: connectTime
           connectDuration: 1
-          callStatus: queued
           subresourceUris: null
           from: from
           startTime: startTime
           to: to
           endTime: endTime
           applicationId: applicationId
+          status: queued
           direction: inbound
         start: 6
         pageSize: 2
@@ -8630,6 +8803,246 @@ components:
       - from
       - to
       - uses
+      type: object
+      x-is-object: true
+    ExportStatus:
+      description: platform export status
+      enum:
+      - intaking
+      - queued
+      - inProgress
+      - completed
+      - failed
+      - deleted
+      type: string
+      x-enum: true
+      x-enum-varnames:
+      - INTAKING
+      - QUEUED
+      - IN_PROGRESS
+      - COMPLETED
+      - FAILED
+      - DELETED
+      x-enum-mapping:
+      - enum: intaking
+        varname: INTAKING
+      - enum: queued
+        varname: QUEUED
+      - enum: inProgress
+        varname: IN_PROGRESS
+      - enum: completed
+        varname: COMPLETED
+      - enum: failed
+        varname: FAILED
+      - enum: deleted
+        varname: DELETED
+    ExportResourceType:
+      description: platform resource type
+      enum:
+      - Messages
+      - Calls
+      type: string
+      x-enum: true
+      x-enum-varnames:
+      - MESSAGES
+      - CALLS
+      x-enum-mapping:
+      - enum: Messages
+        varname: MESSAGES
+      - enum: Calls
+        varname: CALLS
+    ExportOutputType:
+      description: output type of the export
+      enum:
+      - csv
+      type: string
+      x-enum: true
+      x-enum-varnames:
+      - CSV
+      x-enum-mapping:
+      - enum: csv
+        varname: CSV
+    ExportRequestOutput:
+      example:
+        type: csv
+      properties:
+        type:
+          $ref: '#/components/schemas/ExportOutputType'
+      required:
+      - type
+      type: object
+      x-is-object: true
+    ExportResultOutput:
+      properties:
+        type:
+          $ref: '#/components/schemas/ExportOutputType'
+      required:
+      - type
+      type: object
+      x-is-object: true
+    ExportResult:
+      example:
+        accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+        uri: /Accounts/AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78/Exports/EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+        dateCreated: "Wed, 26 Jun 2024 15:45:06 UTC"
+        dateUpdated: "Wed, 26 Jun 2024 15:45:06 UTC"
+        revision: 1
+        exportId: EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+        status: completed
+        size: 12893786
+        resourceType: Messages
+        query:
+          direction: inbound
+        format:
+        - messageId
+        - dateUpdated
+        - segmentCount
+        - status
+        output:
+          type: csv
+      properties:
+        accountId:
+          description: String that uniquely identifies this account resource.
+          nullable: true
+          type: string
+          x-is-required: true
+        uri:
+          format: uri-reference
+          type: string
+          x-is-required: true
+        dateCreated:
+          type: string
+          x-is-required: true
+        dateUpdated:
+          type: string
+          x-is-required: true
+        revision:
+          minimum: 0
+          type: integer
+          x-is-required: true
+        exportId:
+          description: String that uniquely identifies this export resource
+          nullable: true
+          type: string
+          x-is-required: true
+        status:
+          $ref: '#/components/schemas/ExportStatus'
+        size:
+          type: integer
+          x-is-required: true
+        resourceType:
+          $ref: '#/components/schemas/ExportResourceType'
+        query:
+          description: Query params used to filter exported documents
+          type: object
+          x-is-object: true
+          x-is-required: true
+        format:
+          description: Desired fields of exported documents
+          items:
+            type: string
+          type: array
+          x-is-list: true
+          x-is-required: true
+        output:
+          $ref: '#/components/schemas/ExportResultOutput'
+      required:
+      - accountId
+      - dateCreated
+      - dateUpdated
+      - exportId
+      - format
+      - output
+      - query
+      - resourceType
+      - revision
+      - size
+      - status
+      - uri
+      type: object
+      x-is-object: true
+    ExportList:
+      allOf:
+      - $ref: '#/components/schemas/PaginationModel'
+      - properties:
+          exports:
+            items:
+              $ref: '#/components/schemas/ExportResult'
+            nullable: true
+            type: array
+            x-is-list: true
+        type: object
+      example:
+        numPages: 5
+        total: 0
+        nextPageUri: nextPageUri
+        exports:
+        - accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+          uri: /Accounts/AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78/Exports/EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+          dateCreated: "Wed, 26 Jun 2024 15:45:06 UTC"
+          dateUpdated: "Wed, 26 Jun 2024 15:45:06 UTC"
+          revision: 1
+          exportId: EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+          status: completed
+          size: 12893786
+          resourceType: Messages
+          query:
+            direction: inbound
+          format:
+          - messageId
+          - dateUpdated
+          - segmentCount
+          - status
+          output:
+            type: csv
+        - accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+          uri: /Accounts/AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78/Exports/EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+          dateCreated: "Wed, 26 Jun 2024 15:45:06 UTC"
+          dateUpdated: "Wed, 26 Jun 2024 15:45:06 UTC"
+          revision: 1
+          exportId: EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+          status: completed
+          size: 12893786
+          resourceType: Messages
+          query:
+            direction: inbound
+          format:
+          - messageId
+          - dateUpdated
+          - segmentCount
+          - status
+          output:
+            type: csv
+        start: 6
+        pageSize: 2
+        end: 1
+        page: 5
+      x-implements: Pagination
+    ExportRequest:
+      example:
+        output:
+          type: csv
+        query: "{}"
+        format:
+        - format
+        - format
+        resourceType: Messages
+      properties:
+        resourceType:
+          $ref: '#/components/schemas/ExportResourceType'
+        format:
+          items:
+            type: string
+          type: array
+          x-is-list: true
+        output:
+          $ref: '#/components/schemas/ExportRequestOutput'
+        query:
+          type: object
+          x-is-object: true
+      required:
+      - output
+      - resourceType
       type: object
       x-is-object: true
     AccountResult_allOf_subresourceUris:

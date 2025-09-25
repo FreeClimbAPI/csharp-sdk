@@ -40,11 +40,12 @@ namespace freeclimb.Test.Model
         {
             instance = new CreateConference(
                 actionUrl: (string)TestHelpers.getTestValue(typeof(string)),
-                alias: (bool)TestHelpers.getTestValue(typeof(bool)),
+                alias: (string)TestHelpers.getTestValue(typeof(string)),
                 playBeep: (PlayBeep)TestHelpers.getTestValue(typeof(PlayBeep)),
                 record: (bool)TestHelpers.getTestValue(typeof(bool)),
                 statusCallbackUrl: (string)TestHelpers.getTestValue(typeof(string)),
-                waitUrl: (string)TestHelpers.getTestValue(typeof(string))
+                waitUrl: (string)TestHelpers.getTestValue(typeof(string)),
+                parentCallId: (string)TestHelpers.getTestValue(typeof(string))
             );
         }
 
@@ -78,8 +79,8 @@ namespace freeclimb.Test.Model
         [Fact]
         public void AliasTest()
         {
-            instance.Alias = false;
-            Assert.False(instance.Alias);
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
         }
 
         /// <summary>
@@ -129,6 +130,16 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ParentCallId'
+        /// </summary>
+        [Fact]
+        public void ParentCallIdTest()
+        {
+            instance.ParentCallId = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.ParentCallId);
+        }
+
+        /// <summary>
         /// Test serialize a CreateConference to JSON string - all values are present
         /// </summary>
         [Fact]
@@ -147,6 +158,8 @@ namespace freeclimb.Test.Model
             Assert.Contains("statusCallbackUrl", json);
 
             Assert.Contains("waitUrl", json);
+
+            Assert.Contains("parentCallId", json);
         }
 
         /// <summary>

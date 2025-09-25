@@ -108,6 +108,18 @@ namespace freeclimb.Test.Api
         }
 
         /// <summary>
+        /// Test CreateExport
+        /// </summary>
+        [Fact]
+        public void CreateExportTest()
+        {
+            ExportRequest? exportRequest = exportRequestTestValue();
+
+            var response = instance.CreateExport(exportRequest);
+            Assert.IsAssignableFrom<ExportResult>(response);
+        }
+
+        /// <summary>
         /// Test CreateKnowledgeBaseCompletion
         /// </summary>
         [Fact]
@@ -144,6 +156,17 @@ namespace freeclimb.Test.Api
             string applicationId = applicationIdTestValue();
 
             instance.DeleteAnApplication(applicationId);
+        }
+
+        /// <summary>
+        /// Test DeleteAnExport
+        /// </summary>
+        [Fact]
+        public void DeleteAnExportTest()
+        {
+            string exportId = exportIdTestValue();
+
+            instance.DeleteAnExport(exportId);
         }
 
         /// <summary>
@@ -193,6 +216,18 @@ namespace freeclimb.Test.Api
 
             var response = instance.DownloadARecordingFile(recordingId);
             Assert.IsAssignableFrom<System.IO.Stream>(response);
+        }
+
+        /// <summary>
+        /// Test DownloadAnExport
+        /// </summary>
+        [Fact]
+        public void DownloadAnExportTest()
+        {
+            string exportId = exportIdTestValue();
+
+            var response = instance.DownloadAnExport(exportId);
+            Assert.IsAssignableFrom<string>(response);
         }
 
         /// <summary>
@@ -303,6 +338,18 @@ namespace freeclimb.Test.Api
 
             var response = instance.GetAnApplication(applicationId);
             Assert.IsAssignableFrom<ApplicationResult>(response);
+        }
+
+        /// <summary>
+        /// Test GetAnExport
+        /// </summary>
+        [Fact]
+        public void GetAnExportTest()
+        {
+            string exportId = exportIdTestValue();
+
+            var response = instance.GetAnExport(exportId);
+            Assert.IsAssignableFrom<ExportResult>(response);
         }
 
         /// <summary>
@@ -546,7 +593,7 @@ namespace freeclimb.Test.Api
 
             string? from = fromTestValue();
 
-            CallStatus? status = statusTestEnum();
+            CallStatus? status = statusCallStatusTestEnum();
 
             string? startTime = startTimeTestValue();
 
@@ -556,6 +603,10 @@ namespace freeclimb.Test.Api
 
             List<string>? applicationId = applicationIdTestArray();
 
+            int? riskScoreMin = riskScoreMinTestValue();
+
+            int? riskScoreMax = riskScoreMaxTestValue();
+
             var response = instance.ListCalls(
                 active,
                 to,
@@ -564,7 +615,9 @@ namespace freeclimb.Test.Api
                 startTime,
                 endTime,
                 parentCallId,
-                applicationId
+                applicationId,
+                riskScoreMin,
+                riskScoreMax
             );
             Assert.IsAssignableFrom<CallList>(response);
         }
@@ -601,6 +654,20 @@ namespace freeclimb.Test.Api
 
             var response = instance.ListConferences(status, alias, dateCreated, dateUpdated);
             Assert.IsAssignableFrom<ConferenceList>(response);
+        }
+
+        /// <summary>
+        /// Test ListExports
+        /// </summary>
+        [Fact]
+        public void ListExportsTest()
+        {
+            ExportStatus? status = statusExportStatusTestEnum();
+
+            string? cursor = cursorTestValue();
+
+            var response = instance.ListExports(status, cursor);
+            Assert.IsAssignableFrom<ExportList>(response);
         }
 
         /// <summary>
@@ -722,7 +789,7 @@ namespace freeclimb.Test.Api
 
             string? endTime = endTimeTestValue();
 
-            MessageDirection? direction = directionTestEnum();
+            MessageDirection? direction = directionMessageDirectionTestEnum();
 
             string? campaignId = campaignIdTestValue();
 
@@ -1128,7 +1195,7 @@ namespace freeclimb.Test.Api
 
             string? from = fromTestValue();
 
-            CallStatus? status = statusTestEnum();
+            CallStatus? status = statusCallStatusTestEnum();
 
             string? startTime = startTimeTestValue();
 
@@ -1138,6 +1205,10 @@ namespace freeclimb.Test.Api
 
             List<string>? applicationId = applicationIdTestArray();
 
+            int? riskScoreMin = riskScoreMinTestValue();
+
+            int? riskScoreMax = riskScoreMaxTestValue();
+
             var response = instance.ListCalls(
                 active,
                 to,
@@ -1146,7 +1217,9 @@ namespace freeclimb.Test.Api
                 startTime,
                 endTime,
                 parentCallId,
-                applicationId
+                applicationId,
+                riskScoreMin,
+                riskScoreMax
             );
             //Assert.IsType<CallList>(response);
             Assert.IsAssignableFrom<CallList>(response);
@@ -1199,6 +1272,25 @@ namespace freeclimb.Test.Api
             var nextPageResponse = instance.GetNextPage(response);
             //Assert.IsType<ConferenceList>(response);
             Assert.IsAssignableFrom<ConferenceList>(nextPageResponse);
+        }
+
+        /// <summary>
+        /// Test ListExports
+        /// </summary>
+        [Fact]
+        public void ListExportsGetNextPageTest()
+        {
+            ExportStatus? status = statusExportStatusTestEnum();
+
+            string? cursor = cursorTestValue();
+
+            var response = instance.ListExports(status, cursor);
+            //Assert.IsType<ExportList>(response);
+            Assert.IsAssignableFrom<ExportList>(response);
+            response.NextPageUri = "/Accounts/{accountId}/Exports?cursor=1";
+            var nextPageResponse = instance.GetNextPage(response);
+            //Assert.IsType<ExportList>(response);
+            Assert.IsAssignableFrom<ExportList>(nextPageResponse);
         }
 
         /// <summary>
@@ -1341,7 +1433,7 @@ namespace freeclimb.Test.Api
 
             string? endTime = endTimeTestValue();
 
-            MessageDirection? direction = directionTestEnum();
+            MessageDirection? direction = directionMessageDirectionTestEnum();
 
             string? campaignId = campaignIdTestValue();
 
@@ -1756,7 +1848,7 @@ namespace freeclimb.Test.Api
             return "completed";
         }
 
-        private CallStatus statusTestEnum()
+        private CallStatus statusCallStatusTestEnum()
         {
             return CallStatusValueConverter.FromString("completed");
         }
@@ -1839,7 +1931,7 @@ namespace freeclimb.Test.Api
             return "outbound";
         }
 
-        private MessageDirection directionTestEnum()
+        private MessageDirection directionMessageDirectionTestEnum()
         {
             MessageDirection messageDirection = MessageDirectionValueConverter.FromString(
                 "outbound"
@@ -1947,6 +2039,36 @@ namespace freeclimb.Test.Api
         private bool dtmfPassThroughTestValue()
         {
             return true;
+        }
+
+        private int riskScoreMinTestValue()
+        {
+            return 10;
+        }
+
+        private int riskScoreMaxTestValue()
+        {
+            return 90;
+        }
+
+        private string cursorTestValue()
+        {
+            return "cursor_test_value";
+        }
+
+        private string exportIdTestValue()
+        {
+            return "export_id_test_value";
+        }
+
+        private ExportStatus statusExportStatusTestEnum()
+        {
+            return ExportStatusValueConverter.FromString("completed");
+        }
+
+        private ExportRequest exportRequestTestValue()
+        {
+            return null;
         }
     }
 }

@@ -56,14 +56,16 @@ namespace freeclimb.Model
         /// <param name="record">When set to &#x60;true&#x60;, the entire Conference is recorded. The &#x60;statusCallbackUrl&#x60; of the Conference will receive a &#x60;conferenceRecordingEnded&#x60; Webhook when the Conference transitions from the &#x60;inProgress&#x60; to empty state..</param>
         /// <param name="statusCallbackUrl">This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available..</param>
         /// <param name="waitUrl">If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb..</param>
+        /// <param name="parentCallId">ID of the Call that created this leg (child call)..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;CreateConference&quot;).</param>
         public CreateConference(
             string actionUrl = default(string),
-            bool alias = default(bool),
+            string alias = default(string),
             PlayBeep? playBeep = default(PlayBeep?),
             bool record = default(bool),
             string statusCallbackUrl = default(string),
             string waitUrl = default(string),
+            string parentCallId = default(string),
             string command = @"CreateConference"
         )
             : base(command)
@@ -86,6 +88,8 @@ namespace freeclimb.Model
             this.StatusCallbackUrl = statusCallbackUrl;
 
             this.WaitUrl = waitUrl;
+
+            this.ParentCallId = parentCallId;
         }
 
         /// <summary>
@@ -99,8 +103,8 @@ namespace freeclimb.Model
         /// Descriptive name for the Conference.
         /// </summary>
         /// <value>Descriptive name for the Conference. </value>
-        [DataMember(Name = "alias", EmitDefaultValue = true)]
-        public bool Alias { get; set; }
+        [DataMember(Name = "alias", EmitDefaultValue = false)]
+        public string Alias { get; set; }
 
         /// <summary>
         /// When set to &#x60;true&#x60;, the entire Conference is recorded. The &#x60;statusCallbackUrl&#x60; of the Conference will receive a &#x60;conferenceRecordingEnded&#x60; Webhook when the Conference transitions from the &#x60;inProgress&#x60; to empty state.
@@ -124,6 +128,13 @@ namespace freeclimb.Model
         public string WaitUrl { get; set; }
 
         /// <summary>
+        /// ID of the Call that created this leg (child call).
+        /// </summary>
+        /// <value>ID of the Call that created this leg (child call).</value>
+        [DataMember(Name = "parentCallId", EmitDefaultValue = false)]
+        public string ParentCallId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +149,7 @@ namespace freeclimb.Model
             sb.Append("  Record: ").Append(Record).Append("\n");
             sb.Append("  StatusCallbackUrl: ").Append(StatusCallbackUrl).Append("\n");
             sb.Append("  WaitUrl: ").Append(WaitUrl).Append("\n");
+            sb.Append("  ParentCallId: ").Append(ParentCallId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -168,6 +180,7 @@ namespace freeclimb.Model
             AddToDictionary(props, "record", Record);
             AddToDictionary(props, "statusCallbackUrl", StatusCallbackUrl);
             AddToDictionary(props, "waitUrl", WaitUrl);
+            AddToDictionary(props, "parentCallId", ParentCallId);
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("CreateConference", props);
             return command;

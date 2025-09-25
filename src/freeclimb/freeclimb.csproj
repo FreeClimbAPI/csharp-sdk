@@ -12,7 +12,7 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>freeclimb</RootNamespace>
-    <Version>5.1.2</Version>
+    <Version>5.2.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\freeclimb.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/freeclimbapi/csharp-sdk.git</RepositoryUrl>    
     <RepositoryType>git</RepositoryType>

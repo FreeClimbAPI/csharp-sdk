@@ -49,7 +49,7 @@ namespace freeclimb.Test.Model
                 from: (string)TestHelpers.getTestValue(typeof(string)),
                 to: (string)TestHelpers.getTestValue(typeof(string)),
                 phoneNumberId: (string)TestHelpers.getTestValue(typeof(string)),
-                callStatus: (CallStatus)TestHelpers.getTestValue(typeof(CallStatus)),
+                status: (CallStatus)TestHelpers.getTestValue(typeof(CallStatus)),
                 startTime: (string)TestHelpers.getTestValue(typeof(string)),
                 connectTime: (string)TestHelpers.getTestValue(typeof(string)),
                 endTime: (string)TestHelpers.getTestValue(typeof(string)),
@@ -177,27 +177,27 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'CallStatus'
+        /// Test the property 'Status'
         /// </summary>
         [Fact]
-        public void CallStatusTest()
+        public void StatusTest()
         {
-            instance.CallStatus = CallStatus.QUEUED;
-            Assert.Equal(CallStatus.QUEUED, instance.CallStatus);
-            instance.CallStatus = CallStatus.RINGING;
-            Assert.Equal(CallStatus.RINGING, instance.CallStatus);
-            instance.CallStatus = CallStatus.IN_PROGRESS;
-            Assert.Equal(CallStatus.IN_PROGRESS, instance.CallStatus);
-            instance.CallStatus = CallStatus.CANCELED;
-            Assert.Equal(CallStatus.CANCELED, instance.CallStatus);
-            instance.CallStatus = CallStatus.COMPLETED;
-            Assert.Equal(CallStatus.COMPLETED, instance.CallStatus);
-            instance.CallStatus = CallStatus.FAILED;
-            Assert.Equal(CallStatus.FAILED, instance.CallStatus);
-            instance.CallStatus = CallStatus.BUSY;
-            Assert.Equal(CallStatus.BUSY, instance.CallStatus);
-            instance.CallStatus = CallStatus.NO_ANSWER;
-            Assert.Equal(CallStatus.NO_ANSWER, instance.CallStatus);
+            instance.Status = CallStatus.QUEUED;
+            Assert.Equal(CallStatus.QUEUED, instance.Status);
+            instance.Status = CallStatus.RINGING;
+            Assert.Equal(CallStatus.RINGING, instance.Status);
+            instance.Status = CallStatus.IN_PROGRESS;
+            Assert.Equal(CallStatus.IN_PROGRESS, instance.Status);
+            instance.Status = CallStatus.CANCELED;
+            Assert.Equal(CallStatus.CANCELED, instance.Status);
+            instance.Status = CallStatus.COMPLETED;
+            Assert.Equal(CallStatus.COMPLETED, instance.Status);
+            instance.Status = CallStatus.FAILED;
+            Assert.Equal(CallStatus.FAILED, instance.Status);
+            instance.Status = CallStatus.BUSY;
+            Assert.Equal(CallStatus.BUSY, instance.Status);
+            instance.Status = CallStatus.NO_ANSWER;
+            Assert.Equal(CallStatus.NO_ANSWER, instance.Status);
         }
 
         /// <summary>
@@ -325,7 +325,7 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("phoneNumberId", json);
 
-            Assert.Contains("callStatus", json);
+            Assert.Contains("status", json);
 
             Assert.Contains("startTime", json);
 
@@ -364,7 +364,7 @@ namespace freeclimb.Test.Model
 
             instance.PhoneNumberId = null;
 
-            instance.CallStatus = null;
+            instance.Status = null;
 
             instance.StartTime = null;
 

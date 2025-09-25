@@ -40,12 +40,13 @@ namespace freeclimb.Test.Model
         {
             instance = new PerclScript();
             CreateConference create = new CreateConference(
-                "",
-                false,
-                PlayBeep.ALWAYS,
-                false,
-                "",
-                ""
+                actionUrl: (string)TestHelpers.getTestValue(typeof(string)),
+                alias: (string)TestHelpers.getTestValue(typeof(string)),
+                playBeep: (PlayBeep)TestHelpers.getTestValue(typeof(PlayBeep)),
+                record: (bool)TestHelpers.getTestValue(typeof(bool)),
+                statusCallbackUrl: (string)TestHelpers.getTestValue(typeof(string)),
+                waitUrl: (string)TestHelpers.getTestValue(typeof(string)),
+                parentCallId: (string)TestHelpers.getTestValue(typeof(string))
             );
             List<PerclCommand> commands = new List<PerclCommand>();
             commands.Add(create);
@@ -75,7 +76,7 @@ namespace freeclimb.Test.Model
             // TODO unit test for the property 'Commands'
             string actualJSONString = instance.ToJson();
             string expectedJSONString =
-                "[{\"CreateConference\":{\"actionUrl\":\"\",\"alias\":false,\"playBeep\":\"always\",\"record\":false,\"statusCallbackUrl\":\"\",\"waitUrl\":\"\"}}]";
+                "[{\"CreateConference\":{\"actionUrl\":\"TEST_STRING\",\"alias\":\"TEST_STRING\",\"playBeep\":\"always\",\"record\":true,\"statusCallbackUrl\":\"TEST_STRING\",\"waitUrl\":\"TEST_STRING\",\"parentCallId\":\"TEST_STRING\"}}]";
             Assert.Equal(expectedJSONString, actualJSONString);
         }
     }
