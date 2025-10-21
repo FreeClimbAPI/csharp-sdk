@@ -260,15 +260,15 @@ namespace freeclimb.Model
             AddToDictionary(props, "grammarFile", GrammarFile);
             AddToDictionary(props, "grammarRule", GrammarRule);
             AddToDictionary(props, "playBeep", PlayBeep);
-            List<object> nested = new List<object>();
+            List<object> nestedPrompts = new List<object>();
             if (Prompts != null)
             {
                 foreach (var item in Prompts)
                 {
-                    nested.Add(item.ToKvp());
+                    nestedPrompts.Add(item.ToKvp());
                 }
             }
-            AddToDictionary(props, "prompts", nested);
+            AddToDictionary(props, "prompts", nestedPrompts);
             AddToDictionary(props, "noInputTimeoutMs", NoInputTimeoutMs);
             AddToDictionary(props, "recognitionTimeoutMs", RecognitionTimeoutMs);
             AddToDictionary(props, "confidenceThreshold", ConfidenceThreshold);

@@ -31,6 +31,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -42,7 +44,6 @@ paths:
                 $ref: '#/components/schemas/AccountResult'
           description: Account Details
       summary: Get an Account
-      tags: []
     post:
       operationId: update-an-account
       parameters:
@@ -52,6 +53,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -65,7 +68,6 @@ paths:
         "204":
           description: Successful Account update
       summary: Manage an account
-      tags: []
   /Accounts/{accountId}/Applications/{applicationId}:
     delete:
       deprecated: false
@@ -77,6 +79,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -92,7 +96,6 @@ paths:
         "204":
           description: Successful application deletion
       summary: Delete an application
-      tags: []
     get:
       deprecated: false
       operationId: get-an-application
@@ -103,6 +106,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -122,7 +127,6 @@ paths:
                 $ref: '#/components/schemas/ApplicationResult'
           description: Application Details
       summary: Get an Application
-      tags: []
     post:
       deprecated: false
       operationId: update-an-application
@@ -133,6 +137,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -158,7 +164,6 @@ paths:
                 $ref: '#/components/schemas/ApplicationResult'
           description: Update Application
       summary: Update an application
-      tags: []
   /Accounts/{accountId}/Applications:
     get:
       deprecated: false
@@ -179,6 +184,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -190,7 +197,6 @@ paths:
                 $ref: '#/components/schemas/ApplicationList'
           description: List of Applications
       summary: List applications
-      tags: []
       x-is-paginated: true
     post:
       deprecated: false
@@ -202,6 +208,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -219,7 +227,6 @@ paths:
                 $ref: '#/components/schemas/ApplicationResult'
           description: Application successfuly created
       summary: Create an application
-      tags: []
   /AvailablePhoneNumbers:
     get:
       deprecated: false
@@ -318,7 +325,6 @@ paths:
                 $ref: '#/components/schemas/AvailableNumberList'
           description: Available Numbers List
       summary: List available numbers
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}:
     delete:
@@ -331,6 +337,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -346,7 +354,6 @@ paths:
         "204":
           description: Successful Incoming Number deletion.
       summary: Delete an Incoming Number
-      tags: []
     get:
       deprecated: false
       operationId: get-an-incoming-number
@@ -357,6 +364,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -376,7 +385,6 @@ paths:
                 $ref: '#/components/schemas/IncomingNumberResult'
           description: Incoming Phone Number result.
       summary: Get an Incoming Number
-      tags: []
     post:
       deprecated: false
       operationId: update-an-incoming-number
@@ -387,6 +395,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -412,7 +422,6 @@ paths:
                 $ref: '#/components/schemas/IncomingNumberResult'
           description: Updated Incoming Phone Number
       summary: Update an Incoming Number
-      tags: []
   /Accounts/{accountId}/IncomingPhoneNumbers:
     get:
       deprecated: false
@@ -424,6 +433,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -479,28 +490,6 @@ paths:
         required: false
         schema:
           default: false
-          type: boolean
-        style: form
-      - deprecated: true
-        description: Indicates whether the phone number can handle Calls. Typically
-          set to true for all numbers.
-        explode: true
-        in: query
-        name: voiceEnabled
-        required: false
-        schema:
-          default: true
-          type: boolean
-        style: form
-      - deprecated: true
-        description: Indication of whether the phone number can handle sending and
-          receiving SMS messages. Typically set to true for all numbers.
-        explode: true
-        in: query
-        name: smsEnabled
-        required: false
-        schema:
-          default: true
           type: boolean
         style: form
       - description: Indication of whether the phone number has a campaign associated
@@ -579,7 +568,6 @@ paths:
                 $ref: '#/components/schemas/IncomingNumberList'
           description: List of Incoming Phone Numbers
       summary: List Incoming Numbers
-      tags: []
       x-is-paginated: true
     post:
       deprecated: false
@@ -591,6 +579,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -609,7 +599,6 @@ paths:
                 $ref: '#/components/schemas/IncomingNumberResult'
           description: Successful Incoming Number transaction
       summary: Buy a Phone Number
-      tags: []
   /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion:
     post:
       deprecated: false
@@ -621,6 +610,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -646,7 +637,6 @@ paths:
                 $ref: '#/components/schemas/CompletionResult'
           description: KnowledgeaBase completion response
       summary: Query the knowledge base
-      tags: []
   /Accounts/{accountId}/Calls/{callId}:
     get:
       deprecated: false
@@ -658,6 +648,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -677,7 +669,6 @@ paths:
                 $ref: '#/components/schemas/CallResult'
           description: Call Resource
       summary: Get a Call
-      tags: []
     post:
       deprecated: false
       operationId: update-a-live-call
@@ -688,6 +679,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -710,7 +703,6 @@ paths:
         "202":
           description: Successfully queued call
       summary: Update a Live Call
-      tags: []
   /Accounts/{accountId}/Calls:
     get:
       deprecated: false
@@ -796,6 +788,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -823,7 +817,6 @@ paths:
                 $ref: '#/components/schemas/CallList'
           description: Successful retrieved call list
       summary: List Calls
-      tags: []
       x-is-paginated: true
     post:
       deprecated: false
@@ -835,6 +828,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -852,7 +847,6 @@ paths:
                 $ref: '#/components/schemas/CallResult'
           description: Call that was created
       summary: Make a Call
-      tags: []
   /Accounts/{accountId}/Calls/{callId}/Recordings:
     get:
       deprecated: false
@@ -873,6 +867,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -892,7 +888,6 @@ paths:
                 $ref: '#/components/schemas/RecordingList'
           description: List of recordings for a call
       summary: List Call Recordings
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Calls/{callId}/Logs:
     get:
@@ -905,6 +900,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -924,7 +921,6 @@ paths:
                 $ref: '#/components/schemas/LogList'
           description: Logs for this call
       summary: List Call Logs
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Calls/WebRTC/Token:
     post:
@@ -936,6 +932,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1002,6 +1000,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1013,7 +1013,6 @@ paths:
                 $ref: '#/components/schemas/ConferenceList'
           description: List of Conferences
       summary: List Conferences
-      tags: []
       x-is-paginated: true
     post:
       deprecated: false
@@ -1025,6 +1024,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1042,7 +1043,6 @@ paths:
                 $ref: '#/components/schemas/ConferenceResult'
           description: Details of created conference
       summary: Create a Conference
-      tags: []
   /Accounts/{accountId}/Conferences/{conferenceId}:
     get:
       deprecated: false
@@ -1054,6 +1054,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1073,7 +1075,6 @@ paths:
                 $ref: '#/components/schemas/ConferenceResult'
           description: Successfully retrieved conference
       summary: Get a Conference
-      tags: []
     post:
       deprecated: false
       operationId: update-a-conference
@@ -1084,6 +1085,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1105,7 +1108,6 @@ paths:
         "204":
           description: Successful conference details update
       summary: Update a Conference
-      tags: []
   /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}:
     delete:
       deprecated: false
@@ -1117,6 +1119,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1140,7 +1144,6 @@ paths:
         "204":
           description: Successfully deleted conference participant
       summary: Remove a Participant
-      tags: []
     get:
       deprecated: false
       operationId: get-a-participant
@@ -1151,6 +1154,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1178,7 +1183,6 @@ paths:
                 $ref: '#/components/schemas/ConferenceParticipantResult'
           description: Successfully retrieved conference participant
       summary: Get a Participant
-      tags: []
     post:
       deprecated: false
       operationId: update-a-participant
@@ -1189,6 +1193,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1222,7 +1228,6 @@ paths:
                 $ref: '#/components/schemas/ConferenceParticipantResult'
           description: Successfully retrieved conference participant
       summary: Update a Participant
-      tags: []
   /Accounts/{accountId}/Conferences/{conferenceId}/Participants:
     get:
       deprecated: false
@@ -1258,6 +1263,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1277,7 +1284,6 @@ paths:
                 $ref: '#/components/schemas/ConferenceParticipantList'
           description: Successfully retrieved conference participant list
       summary: List Participants
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Conferences/{conferenceId}/Recordings:
     get:
@@ -1306,6 +1312,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1325,7 +1333,6 @@ paths:
                 $ref: '#/components/schemas/RecordingList'
           description: List of Recordings
       summary: List Conference Recordings
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Queues/{queueId}:
     get:
@@ -1338,6 +1345,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1357,7 +1366,6 @@ paths:
                 $ref: '#/components/schemas/QueueResult'
           description: Successfully retrieved queue
       summary: Get a Queue
-      tags: []
     post:
       deprecated: false
       operationId: update-a-queue
@@ -1368,6 +1376,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1393,7 +1403,6 @@ paths:
                 $ref: '#/components/schemas/QueueResult'
           description: Successfully updated queue
       summary: Update a Queue
-      tags: []
   /Accounts/{accountId}/Queues:
     get:
       deprecated: false
@@ -1414,6 +1423,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1425,7 +1436,6 @@ paths:
                 $ref: '#/components/schemas/QueueList'
           description: Successfuly retrieved queue list
       summary: List Active Queues
-      tags: []
       x-is-paginated: true
     post:
       deprecated: false
@@ -1437,6 +1447,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1454,7 +1466,6 @@ paths:
                 $ref: '#/components/schemas/QueueResult'
           description: Successfuly created queue
       summary: Create a Queue
-      tags: []
   /Accounts/{accountId}/Queues/{queueId}/Members/Front:
     get:
       deprecated: false
@@ -1466,6 +1477,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1486,7 +1499,6 @@ paths:
                 $ref: '#/components/schemas/QueueMember'
           description: Successfully retrieved queue member
       summary: Get Head Member
-      tags: []
     post:
       deprecated: false
       operationId: dequeue-head-member
@@ -1497,6 +1509,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1516,7 +1530,6 @@ paths:
                 $ref: '#/components/schemas/QueueMember'
           description: Accepted dequeue request
       summary: Dequeue Head Member
-      tags: []
   /Accounts/{accountId}/Queues/{queueId}/Members:
     get:
       deprecated: false
@@ -1528,6 +1541,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1548,7 +1563,6 @@ paths:
                 $ref: '#/components/schemas/QueueMemberList'
           description: Successfully retrieved queue member list
       summary: List Members
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Queues/{queueId}/Members/{callId}:
     get:
@@ -1561,6 +1575,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1589,7 +1605,6 @@ paths:
                 $ref: '#/components/schemas/QueueMember'
           description: Successfully retrieved a queue member
       summary: Get a Member
-      tags: []
     post:
       deprecated: false
       operationId: dequeue-a-member
@@ -1600,6 +1615,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1628,7 +1645,6 @@ paths:
                 $ref: '#/components/schemas/QueueMember'
           description: Accepted dequeue request
       summary: Dequeue a Member
-      tags: []
   /Accounts/{accountId}/Logs:
     get:
       deprecated: false
@@ -1640,6 +1656,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1651,7 +1669,6 @@ paths:
                 $ref: '#/components/schemas/LogList'
           description: Successfully retrieved log list
       summary: List All Account Logs
-      tags: []
       x-is-paginated: true
     post:
       deprecated: false
@@ -1663,6 +1680,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1681,7 +1700,6 @@ paths:
                 $ref: '#/components/schemas/LogList'
           description: Successfully retrieved log list
       summary: Filter Logs
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Recordings:
     get:
@@ -1718,6 +1736,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1729,7 +1749,6 @@ paths:
                 $ref: '#/components/schemas/RecordingList'
           description: List of Recordings
       summary: List Recordings
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Recordings/{recordingId}:
     delete:
@@ -1742,6 +1761,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1757,7 +1778,6 @@ paths:
         "204":
           description: Recording Deleted
       summary: Delete a Recording
-      tags: []
     get:
       deprecated: false
       operationId: get-a-recording
@@ -1768,6 +1788,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1787,7 +1809,6 @@ paths:
                 $ref: '#/components/schemas/RecordingResult'
           description: ""
       summary: Get a Recording
-      tags: []
   /Accounts/{accountId}/Recordings/{recordingId}/Stream:
     get:
       deprecated: false
@@ -1799,6 +1820,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1813,13 +1836,12 @@ paths:
       responses:
         "200":
           content:
-            audio/x-wav:
+            audio/wav:
               schema:
                 format: binary
                 type: string
-          description: Streaming a Recording represented with audio/x-wav mime-type
+          description: Streaming a Recording represented with audio/wav mime-type
       summary: Stream a Recording File
-      tags: []
   /Accounts/{accountId}/Recordings/{recordingId}/Download:
     get:
       deprecated: false
@@ -1831,6 +1853,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1845,13 +1869,12 @@ paths:
       responses:
         "200":
           content:
-            audio/x-wav:
+            audio/wav:
               schema:
                 format: binary
                 type: string
-          description: Download a Recording file represented with audio/x-wav mime-type
+          description: Download a Recording file represented with audio/wav mime-type
       summary: Download a Recording File
-      tags: []
   /Accounts/{accountId}/Messages:
     get:
       deprecated: false
@@ -1863,6 +1886,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1941,7 +1966,6 @@ paths:
                 $ref: '#/components/schemas/MessagesList'
           description: List of messages
       summary: List SMS Messages
-      tags: []
       x-is-paginated: true
     post:
       deprecated: false
@@ -1953,6 +1977,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -1971,7 +1997,6 @@ paths:
                 $ref: '#/components/schemas/MessageResult'
           description: The message has been accepted.
       summary: Send an SMS Message
-      tags: []
   /Accounts/{accountId}/Messages/{messageId}:
     get:
       deprecated: false
@@ -1983,6 +2008,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2002,7 +2029,6 @@ paths:
                 $ref: '#/components/schemas/MessageResult'
           description: The specific SMS message that’s been processed by FreeClimb
       summary: Get an SMS Message
-      tags: []
   /Accounts/{accountId}/Messages/10DLC/Campaigns:
     get:
       deprecated: false
@@ -2014,6 +2040,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2074,7 +2102,6 @@ paths:
                 $ref: '#/components/schemas/SMSTenDLCCampaignsListResult'
           description: The list SMS 10DLC campaigns
       summary: Get list of SMS 10DLC Campaigns
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Messages/10DLC/Campaigns/{campaignId}:
     get:
@@ -2087,6 +2114,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2106,7 +2135,6 @@ paths:
                 $ref: '#/components/schemas/SMSTenDLCCampaign'
           description: The specific SMS 10DLC Campaign that’s been processed by FreeClimb
       summary: Get a 10DLC SMS Campaign
-      tags: []
   /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns:
     get:
       deprecated: false
@@ -2118,6 +2146,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2186,7 +2216,6 @@ paths:
                 $ref: '#/components/schemas/SMSTenDLCPartnerCampaignsListResult'
           description: The list SMS 10DLC partner campaigns
       summary: Get list of SMS 10DLC Partner Campaigns
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId}:
     get:
@@ -2199,6 +2228,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2219,7 +2250,6 @@ paths:
           description: The specific SMS 10DLC Partner Campaign that’s been processed
             by FreeClimb
       summary: Get a 10DLC SMS Partner Campaign
-      tags: []
   /Accounts/{accountId}/Messages/10DLC/Brands:
     get:
       deprecated: false
@@ -2231,6 +2261,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2280,7 +2312,6 @@ paths:
                 $ref: '#/components/schemas/SMSTenDLCBrandsListResult'
           description: The list SMS 10DLC brands
       summary: Get list of SMS 10DLC Brands
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Messages/10DLC/Brands/{brandId}:
     get:
@@ -2293,6 +2324,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2312,7 +2345,6 @@ paths:
                 $ref: '#/components/schemas/SMSTenDLCBrand'
           description: The specific SMS 10DLC Brand that’s been processed by FreeClimb
       summary: Get a 10DLC SMS Brand
-      tags: []
   /Accounts/{accountId}/Messages/TollFree/Campaigns:
     get:
       deprecated: false
@@ -2324,6 +2356,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2351,7 +2385,6 @@ paths:
                 $ref: '#/components/schemas/SMSTollFreeCampaignsListResult'
           description: The list toll-free campaigns
       summary: Get list of TollFree Campaigns
-      tags: []
       x-is-paginated: true
   /Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId}:
     get:
@@ -2364,6 +2397,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2384,7 +2419,6 @@ paths:
           description: The specific SMS TollFree Campaign that’s been processed by
             FreeClimb
       summary: Get a TollFree SMS Campaign
-      tags: []
   /Accounts/{accountId}/Exports:
     get:
       operationId: list-exports
@@ -2395,6 +2429,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2422,7 +2458,6 @@ paths:
                 $ref: '#/components/schemas/ExportList'
           description: Successful retrieved export list
       summary: List Exports
-      tags: []
       x-is-paginated: true
     post:
       operationId: create-export
@@ -2433,6 +2468,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2450,7 +2487,6 @@ paths:
                 $ref: '#/components/schemas/ExportResult'
           description: Export successfully created
       summary: Create an Export
-      tags: []
   /Accounts/{accountId}/Exports/{exportId}:
     delete:
       deprecated: false
@@ -2462,6 +2498,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2477,7 +2515,6 @@ paths:
         "204":
           description: Successful Export deletion
       summary: Delete an Export
-      tags: []
     get:
       deprecated: false
       operationId: get-an-export
@@ -2488,6 +2525,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2507,7 +2546,6 @@ paths:
                 $ref: '#/components/schemas/ExportResult'
           description: Export Details
       summary: Get an Export
-      tags: []
   /Accounts/{accountId}/Exports/{exportId}/Download:
     get:
       deprecated: false
@@ -2519,6 +2557,8 @@ paths:
         name: accountId
         required: true
         schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
         x-account-id: true
@@ -2538,7 +2578,654 @@ paths:
                 type: string
           description: Export Details
       summary: Download an Export
-      tags: []
+  /Accounts/{accountId}/Blobs:
+    get:
+      description: List Blobs belonging to an account. Results are returned in paginated
+        lists mirroring other listing features in the API.
+      operationId: list-blobs
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
+          type: string
+        style: simple
+        x-account-id: true
+      - description: Filter blobs by alias
+        explode: true
+        in: query
+        name: alias
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Used to reference pages of a list of blobs
+        explode: true
+        in: query
+        name: cursor
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                total: 2
+                start: 0
+                end: 1
+                page: 0
+                numPages: 1
+                pageSize: 100
+                nextPageUri: null
+                blobs:
+                - blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                  accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                  alias: my-blob-alias
+                  revision: 1
+                  dateCreated: 2006-01-02T15:04:05.000Z
+                  dateUpdated: 2006-01-02T15:04:05.000Z
+                  expiresAt: 2006-01-02T15:04:05.000Z
+                  blob:
+                    field0: value0
+                    field1: 1
+                    field2: true
+                - blobId: BL487ec3f6e03b340553f35f29c8f118cdf3eae08b
+                  accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                  alias: another-blob
+                  revision: 1
+                  dateCreated: 2006-01-02T16:04:05.000Z
+                  dateUpdated: 2006-01-02T16:04:05.000Z
+                  expiresAt: 2006-01-02T16:04:05.000Z
+                  blob:
+                    data: example
+              schema:
+                $ref: '#/components/schemas/BlobListResponse'
+          description: Single page of blob list results.
+        "400":
+          content:
+            application/json:
+              example:
+                code: 80
+                call: Missing Required Parameter(s)
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#80
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform bad request.
+        "500":
+          content:
+            application/json:
+              example:
+                code: 0
+                call: Internal Failure
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform internal error.
+        "504":
+          content:
+            application/json:
+              example:
+                code: 0
+                call: Internal Failure
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: gateway timeout error
+      summary: List Blobs belonging to an account.
+      x-is-paginated: true
+    post:
+      description: Create a new Blob belonging to the requesting account.
+      operationId: create-blob
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
+          type: string
+        style: simple
+        x-account-id: true
+      requestBody:
+        content:
+          application/json:
+            examples:
+              plain_empty_blob:
+                value:
+                  blob: {}
+              setting_blob_content:
+                value:
+                  blob:
+                    key0: value0
+                    key1: 1
+                    key2:
+                      keyA: true
+                      keyB:
+                      - 1
+                      - 1
+                      - 2
+                      - 3
+                      - 5
+                      - 8
+                      - 13
+                      - 21
+              setting_alias_blob:
+                value:
+                  alias: my_custom_blob_identifier
+                  blob:
+                    key: value
+              setting_expiresAt_blob:
+                value:
+                  expiresAt: 2025-01-04T15:04:05.060Z
+                  blob:
+                    key: 45
+              setting_everything_blob:
+                value:
+                  alias: my_custom_blob_identifier
+                  expiresAt: 2025-01-04T15:04:05.060Z
+                  blob:
+                    key0: value
+                    key1: 45
+            schema:
+              $ref: '#/components/schemas/CreateBlobRequest'
+        description: An object defining a new blob. A request body must be provided
+          but the blob may be empty.
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              examples:
+                plain_empty_blob:
+                  value:
+                    revision: 1
+                    dateCreated: 2025-01-02T15:04:05.000Z
+                    dateUpdated: 2025-01-02T15:04:05.000Z
+                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    alias: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    expiresAt: 2025-01-03T00:04:05.000Z
+                    blob: {}
+                setting_blob_content:
+                  value:
+                    revision: 1
+                    dateCreated: 2025-01-02T15:04:05.000Z
+                    dateUpdated: 2025-01-02T15:04:05.000Z
+                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    alias: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    expiresAt: 2025-01-03T00:04:05.000Z
+                    blob:
+                      key0: value0
+                      key1: 1
+                      key2:
+                        keyA: true
+                        keyB:
+                        - 1
+                        - 1
+                        - 2
+                        - 3
+                        - 5
+                        - 8
+                        - 13
+                        - 21
+                setting_alias_blob:
+                  value:
+                    revision: 1
+                    dateCreated: 2025-01-02T15:04:05.000Z
+                    dateUpdated: 2025-01-02T15:04:05.000Z
+                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    alias: my_custom_blob_identifier
+                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    expiresAt: 2025-01-03T00:04:05.000Z
+                    blob:
+                      key: value
+                setting_expiresAt_blob:
+                  value:
+                    revision: 1
+                    dateCreated: 2025-01-02T15:04:05.000Z
+                    dateUpdated: 2025-01-02T15:04:05.000Z
+                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    alias: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    expiresAt: 2025-01-04T15:04:05.060Z
+                    blob:
+                      key: 45
+                setting_everything_blob:
+                  value:
+                    revision: 1
+                    dateCreated: 2025-01-02T15:04:05.000Z
+                    dateUpdated: 2025-01-02T15:04:05.000Z
+                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    alias: my_custom_blob_identifier
+                    expiresAt: 2025-01-04T15:04:05.060Z
+                    blob:
+                      key0: value
+                      key1: 45
+              schema:
+                $ref: '#/components/schemas/BlobResult'
+          description: Successful creation of a new blob.
+        "400":
+          content:
+            application/json:
+              example:
+                code: 80
+                call: Missing Required Parameter(s)
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#80
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform bad request.
+        "409":
+          content:
+            application/json:
+              example:
+                code: 108
+                call: Request conflicts with another resource
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#108
+                details:
+                  explanation: alias already exists for another blob on this account
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: A blob with the provided alias already exists oln the requesting
+            account and so this new blob is rejected as there cannot be duplicate
+            alises.
+        "413":
+          content:
+            application/json:
+              example:
+                code: 80
+                call: Missing Required Parameter(s)
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#80
+                details:
+                  explanation: blob exceeds per-blob size limit
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: The blob exceeded one of the size limits. Either it itself
+            is too large or it would push the total sum of all blobs over the account's
+            limit.
+        "422":
+          content:
+            application/json:
+              example:
+                code: 9
+                call: Invalid JSON
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#9
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform unprocessible entity response.
+        "500":
+          content:
+            application/json:
+              example:
+                code: 0
+                call: Internal Failure
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform internal error.
+      summary: Create a Blob
+    summary: Operations affecting the whole set of Blobs belonging to an account.
+  /Accounts/{accountId}/Blobs/{blobId}:
+    delete:
+      description: "Deletes a blob or specific keys from a blob. If no keys are specified\
+        \ in the request body, the entire blob is deleted (returns 204). If specific\
+        \ keys are provided, only those keys are removed and the remaining blob is\
+        \ returned (returns 200)."
+      operationId: delete-blob
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
+          type: string
+        style: simple
+        x-account-id: true
+      - description: String that uniquely identifies this Blob resource.
+        explode: false
+        in: path
+        name: blobId
+        required: true
+        schema:
+          $ref: '#/components/schemas/blobId'
+        style: simple
+      - description: key within blob to remove
+        explode: true
+        in: query
+        name: key
+        required: false
+        schema:
+          items:
+            pattern: "^[a-zA-Z0-9_]{1,64}$"
+            type: string
+          type: array
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlobResult'
+          description: "Blob keys deleted successfully, remaining blob returned."
+        "204":
+          description: Successful operation
+        "404":
+          content:
+            application/json:
+              example:
+                code: 1
+                call: Not Found
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform not found error.
+        "422":
+          content:
+            application/json:
+              example:
+                code: 9
+                call: Invalid JSON
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#9
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform unprocessible entity response.
+        "500":
+          content:
+            application/json:
+              example:
+                code: 0
+                call: Internal Failure
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform internal error.
+        "504":
+          content:
+            application/json:
+              example:
+                code: 0
+                call: Internal Failure
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: gateway timeout error
+      summary: Delete Blob
+    get:
+      description: Retrieves a specified blob
+      operationId: get-blob
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
+          type: string
+        style: simple
+        x-account-id: true
+      - description: String that uniquely identifies this Blob resource.
+        explode: false
+        in: path
+        name: blobId
+        required: true
+        schema:
+          $ref: '#/components/schemas/blobId'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                alias: my-blob-alias
+                revision: 1
+                dateCreated: 2006-01-02T15:04:05.000Z
+                dateUpdated: 2006-01-02T15:04:05.000Z
+                expiresAt: 2006-01-02T15:04:05.000Z
+                blob:
+                  field0: value0
+                  field1: 1
+                  field2: true
+              schema:
+                $ref: '#/components/schemas/BlobResult'
+          description: Retrieve a Blob.
+        "404":
+          content:
+            application/json:
+              example:
+                code: 1
+                call: Not Found
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform not found error.
+        "500":
+          content:
+            application/json:
+              example:
+                code: 0
+                call: Internal Failure
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform internal error.
+        "504":
+          content:
+            application/json:
+              example:
+                code: 0
+                call: Internal Failure
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: gateway timeout error
+      summary: Get Blob
+    patch:
+      description: "Modifys a pre existing blob by either adding new fields, or modifying\
+        \ existing fields"
+      operationId: modify-blob
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
+          type: string
+        style: simple
+        x-account-id: true
+      - description: String that uniquely identifies this Blob resource.
+        explode: false
+        in: path
+        name: blobId
+        required: true
+        schema:
+          $ref: '#/components/schemas/blobId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              alias: new_conversation_id
+              blob:
+                field0: value0_redux
+                field4: value4
+            schema:
+              $ref: '#/components/schemas/ModifyBlobRequest'
+        description: Request body to specify keys to modify. Or new keys to add onto
+          the already existing blob
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                alias: new_conversation_id
+                revision: 2
+                dateCreated: 2006-01-02T15:04:05.000Z
+                dateUpdated: 2006-01-02T15:04:05.000Z
+                expiresAt: 2006-01-02T15:04:05.000Z
+                blob:
+                  field0: value0_redux
+                  field4: value4
+              schema:
+                $ref: '#/components/schemas/BlobResult'
+          description: "Blob keys successfully modified, updated blob returned."
+        "404":
+          content:
+            application/json:
+              example:
+                code: 1
+                call: Not Found
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform not found error.
+        "409":
+          content:
+            application/json:
+              example:
+                code: 108
+                call: ResourceConflict
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#108
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform status conflict error.
+        "413":
+          content:
+            application/json:
+              example:
+                code: 3
+                call: BadRequestBody
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#3
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform status request entity too large.
+        "500":
+          content:
+            application/json:
+              example:
+                code: 0
+                call: Internal Failure
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform internal error.
+      summary: Modify Blob
+    put:
+      description: Replaces the blob content with the provided values.
+      operationId: replace-blob
+      parameters:
+      - description: ID of the account
+        explode: false
+        in: path
+        name: accountId
+        required: true
+        schema:
+          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          pattern: "AC[0-9a-fA-F]{40}"
+          type: string
+        style: simple
+        x-account-id: true
+      - description: String that uniquely identifies this Blob resource.
+        explode: false
+        in: path
+        name: blobId
+        required: true
+        schema:
+          $ref: '#/components/schemas/blobId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              blob:
+                field0: value0_redux
+                field4: value4
+            schema:
+              $ref: '#/components/schemas/ReplaceBlobRequest'
+        description: JSON object containing blob key the contents of which will be
+          used to override the enitre blob contents.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                alias: new_conversation_id
+                revision: 2
+                dateCreated: 2006-01-02T15:04:05.000Z
+                dateUpdated: 2006-01-02T15:04:05.000Z
+                expiresAt: 2006-01-02T15:04:05.000Z
+                blob:
+                  field0: value0_redux
+                  field4: value4
+              schema:
+                $ref: '#/components/schemas/BlobResult'
+          description: Replaces all keys in blob with those provided.
+        "404":
+          content:
+            application/json:
+              example:
+                code: 1
+                call: Not Found
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform not found error.
+        "409":
+          content:
+            application/json:
+              example:
+                code: 108
+                call: ResourceConflict
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#108
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform status conflict error.
+        "413":
+          content:
+            application/json:
+              example:
+                code: 3
+                call: BadRequestBody
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#3
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform status request entity too large.
+        "500":
+          content:
+            application/json:
+              example:
+                code: 0
+                call: Internal Failure
+                url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+              schema:
+                $ref: '#/components/schemas/platformError'
+          description: Generic platform internal error.
+      summary: Replace Blob
+    summary: Operations affecting an individual blob belonging to an account.
 components:
   parameters:
     AccountId:
@@ -2548,6 +3235,8 @@ components:
       name: accountId
       required: true
       schema:
+        example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+        pattern: "AC[0-9a-fA-F]{40}"
         type: string
       style: simple
       x-account-id: true
@@ -2596,7 +3285,89 @@ components:
       schema:
         type: boolean
       style: form
+  responses:
+    success204:
+      description: Successful operation
+    error400:
+      content:
+        application/json:
+          example:
+            code: 80
+            call: Missing Required Parameter(s)
+            url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#80
+          schema:
+            $ref: '#/components/schemas/platformError'
+      description: Generic platform bad request.
+    error404:
+      content:
+        application/json:
+          example:
+            code: 1
+            call: Not Found
+            url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
+          schema:
+            $ref: '#/components/schemas/platformError'
+      description: Generic platform not found error.
+    error409:
+      content:
+        application/json:
+          example:
+            code: 108
+            call: ResourceConflict
+            url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#108
+          schema:
+            $ref: '#/components/schemas/platformError'
+      description: Generic platform status conflict error.
+    error413:
+      content:
+        application/json:
+          example:
+            code: 3
+            call: BadRequestBody
+            url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#3
+          schema:
+            $ref: '#/components/schemas/platformError'
+      description: Generic platform status request entity too large.
+    error422:
+      content:
+        application/json:
+          example:
+            code: 9
+            call: Invalid JSON
+            url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#9
+          schema:
+            $ref: '#/components/schemas/platformError'
+      description: Generic platform unprocessible entity response.
+    error500:
+      content:
+        application/json:
+          example:
+            code: 0
+            call: Internal Failure
+            url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+          schema:
+            $ref: '#/components/schemas/platformError'
+      description: Generic platform internal error.
+    error504:
+      content:
+        application/json:
+          example:
+            code: 0
+            call: Internal Failure
+            url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+          schema:
+            $ref: '#/components/schemas/platformError'
+      description: gateway timeout error
   schemas:
+    accountId:
+      example: AC0534faec6b32da45f36166674d65b3903f784141
+      pattern: "AC[0-9a-fA-F]{40}"
+      type: string
+    blobId:
+      description: Identifier which can be used to reference this blob in future interations.
+      example: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+      pattern: "BL[0-9a-fA-F]{40}"
+      type: string
     AccountStatus:
       description: "The status of this account. It is one of: active, suspended, or\
         \ closed."
@@ -5719,33 +6490,438 @@ components:
         \ in response to the `leaveConferenceUrl` attribute."
       x-percl-command: RemoveFromConference
       x-no-properties: true
+    SayElevenLabs:
+      description: The `SayElevenLabs` command provides Text-To-Speech (TTS) support
+        using the ElevenLabs TTS engine. It converts text to speech and then renders
+        it in a female voice back to the caller. `SayElevenLabs` is useful in cases
+        where it's difficult to pre-record a prompt for any reason. `SayElevenLabs`
+        does not allow barge-in unless nested within a `GetSpeech` command. The file
+        will always be played to completion unless nested.
+      properties:
+        text:
+          description: "The message to be played to the caller using TTS. The size\
+            \ of the string is limited to 4 KB (or 4,096 bytes). An empty string will\
+            \ cause the command to be skipped."
+          type: string
+          x-is-required: true
+        loop:
+          default: 1
+          description: Number of times the text is said. Specifying '0' causes the
+            `SayElevenLabs` action to loop until the Call is hung up.
+          type: integer
+        privacyMode:
+          description: Parameter `privacyMode` will not log the `text` as required
+            by PCI compliance.
+          type: boolean
+        engine:
+          $ref: '#/components/schemas/SayElevenLabs_engine'
+      required:
+      - engine
+      - text
+      type: object
+      x-is-object: true
+    SayElevenLabsEngineParameters:
+      description: The parameters to use for the TTS. The complete list of valid values
+        for the parameters attribute is shown below.
+      properties:
+        model_id:
+          default: eleven_turbo_v2_5
+          description: The ID of the ElevenLabs model to use for the TTS. The complete
+            list of valid values for the model_id attribute is shown below.
+          type: string
+        voice_id:
+          description: The ID of the ElevenLabs voice to use for the TTS. The complete
+            list of valid values for the voice_id attribute is shown below.
+          type: string
+        language_code:
+          default: en
+          description: The language code to use for the TTS. The complete list of
+            valid values for the language_code attribute is shown below.
+          type: string
+        voice_settings:
+          $ref: '#/components/schemas/SayElevenLabsEngineParameters_voice_settings'
+        pronunciation_dictionary:
+          items:
+            $ref: '#/components/schemas/SayElevenLabsEngineParameters_pronunciation_dictionary_inner'
+          type: array
+          x-is-list: true
+        seed:
+          type: integer
+        previous_text:
+          type: string
+        next_text:
+          type: string
+        previous_request_ids:
+          items:
+            type: string
+          type: array
+          x-is-list: true
+        next_request_ids:
+          items:
+            type: string
+          type: array
+          x-is-list: true
+        apply_language_text_normalization:
+          type: boolean
+      type: object
+      x-is-object: true
+    SayNeuralTextType:
+      description: The type of text to use for the TTS. The complete list of valid
+        values for the text type attribute is shown below.
+      enum:
+      - text
+      - ssml
+      type: string
+      x-enum: true
+      x-enum-varnames:
+      - TEXT
+      - SSML
+      x-enum-mapping:
+      - enum: text
+        varname: TEXT
+      - enum: ssml
+        varname: SSML
+    SayNeural:
+      description: The `SayNeural` command provides Text-To-Speech (TTS) support using
+        the freeclimb.neural TTS engine. It converts text to speech and then renders
+        it in a female voice back to the caller. `SayNeural` is useful in cases where
+        it's difficult to pre-record a prompt for any reason. `SayNeural` does not
+        allow barge-in unless nested within a `GetSpeech` command. The file will always
+        be played to completion unless nested.
+      properties:
+        text:
+          description: "The message to be played to the caller using TTS. The size\
+            \ of the string is limited to 4 KB (or 4,096 bytes). An empty string will\
+            \ cause the command to be skipped."
+          type: string
+          x-is-required: true
+        loop:
+          default: 1
+          description: Number of times the text is said. Specifying '0' causes the
+            `SayNeural` action to loop until the Call is hung up.
+          type: integer
+        privacyMode:
+          default: false
+          description: Parameter `privacyMode` will not log the `text` as required
+            by PCI compliance.
+          type: boolean
+        engine:
+          $ref: '#/components/schemas/SayNeural_engine'
+      required:
+      - engine
+      - text
+      type: object
+      x-is-object: true
+    SayStandardVoice:
+      description: The voice to use for the TTS. The complete list of valid values
+        for the voice attribute is shown below.
+      enum:
+      - Herena
+      - Helle
+      - Hedda
+      - Hayley
+      - Heather
+      - Hazel
+      - Heera
+      - Helen
+      - ZiraPro
+      - Helena
+      - Hilda
+      - Heidi
+      - Harmonie
+      - Hortense
+      - Lucia
+      - Harkua
+      - Heami
+      - Hulda
+      - Hanna
+      - Paulina
+      - Helosia
+      - Helia
+      - Elena
+      - Hedvig
+      - HunYee
+      - HanHan
+      type: string
+      x-enum: true
+      x-enum-varnames:
+      - HERENA
+      - HELLE
+      - HEDDA
+      - HAYLEY
+      - HEATHER
+      - HAZEL
+      - HEERA
+      - HELEN
+      - ZIRA_PRO
+      - HELENA
+      - HILDA
+      - HEIDI
+      - HARMONIE
+      - HORTENSE
+      - LUCIA
+      - HARKUA
+      - HEAMI
+      - HULDA
+      - HANNA
+      - PAULINA
+      - HELOSIA
+      - HELIA
+      - ELENA
+      - HEDVIG
+      - HUN_YEE
+      - HAN_HAN
+      x-enum-mapping:
+      - enum: Herena
+        varname: HERENA
+      - enum: Helle
+        varname: HELLE
+      - enum: Hedda
+        varname: HEDDA
+      - enum: Hayley
+        varname: HAYLEY
+      - enum: Heather
+        varname: HEATHER
+      - enum: Hazel
+        varname: HAZEL
+      - enum: Heera
+        varname: HEERA
+      - enum: Helen
+        varname: HELEN
+      - enum: ZiraPro
+        varname: ZIRA_PRO
+      - enum: Helena
+        varname: HELENA
+      - enum: Hilda
+        varname: HILDA
+      - enum: Heidi
+        varname: HEIDI
+      - enum: Harmonie
+        varname: HARMONIE
+      - enum: Hortense
+        varname: HORTENSE
+      - enum: Lucia
+        varname: LUCIA
+      - enum: Harkua
+        varname: HARKUA
+      - enum: Heami
+        varname: HEAMI
+      - enum: Hulda
+        varname: HULDA
+      - enum: Hanna
+        varname: HANNA
+      - enum: Paulina
+        varname: PAULINA
+      - enum: Helosia
+        varname: HELOSIA
+      - enum: Helia
+        varname: HELIA
+      - enum: Elena
+        varname: ELENA
+      - enum: Hedvig
+        varname: HEDVIG
+      - enum: HunYee
+        varname: HUN_YEE
+      - enum: HanHan
+        varname: HAN_HAN
+    SayStandardCulture:
+      description: The culture to use for the TTS. The complete list of valid values
+        for the culture attribute is shown below.
+      enum:
+      - ca-ES
+      - da-DK
+      - de-DE
+      - en-AU
+      - en-CA
+      - en-GB
+      - en-IN
+      - en-US
+      - es-ES
+      - es-MX
+      - fi-FI
+      - fr-CA
+      - fr-FR
+      - it-IT
+      - ja-JP
+      - ko-KR
+      - nb-NO
+      - nl-NL
+      - pl-PL
+      - pt-BR
+      - pt-PT
+      - ru-RU
+      - sv-SE
+      - zh-CN
+      - zh-HK
+      - zh-TW
+      type: string
+      x-enum: true
+      x-enum-varnames:
+      - CA_ES
+      - DA_DK
+      - DE_DE
+      - EN_AU
+      - EN_CA
+      - EN_GB
+      - EN_IN
+      - EN_US
+      - ES_ES
+      - ES_MX
+      - FI_FI
+      - FR_CA
+      - FR_FR
+      - IT_IT
+      - JA_JP
+      - KO_KR
+      - NB_NO
+      - NL_NL
+      - PL_PL
+      - PT_BR
+      - PT_PT
+      - RU_RU
+      - SV_SE
+      - ZH_CN
+      - ZH_HK
+      - ZH_TW
+      x-enum-mapping:
+      - enum: ca-ES
+        varname: CA_ES
+      - enum: da-DK
+        varname: DA_DK
+      - enum: de-DE
+        varname: DE_DE
+      - enum: en-AU
+        varname: EN_AU
+      - enum: en-CA
+        varname: EN_CA
+      - enum: en-GB
+        varname: EN_GB
+      - enum: en-IN
+        varname: EN_IN
+      - enum: en-US
+        varname: EN_US
+      - enum: es-ES
+        varname: ES_ES
+      - enum: es-MX
+        varname: ES_MX
+      - enum: fi-FI
+        varname: FI_FI
+      - enum: fr-CA
+        varname: FR_CA
+      - enum: fr-FR
+        varname: FR_FR
+      - enum: it-IT
+        varname: IT_IT
+      - enum: ja-JP
+        varname: JA_JP
+      - enum: ko-KR
+        varname: KO_KR
+      - enum: nb-NO
+        varname: NB_NO
+      - enum: nl-NL
+        varname: NL_NL
+      - enum: pl-PL
+        varname: PL_PL
+      - enum: pt-BR
+        varname: PT_BR
+      - enum: pt-PT
+        varname: PT_PT
+      - enum: ru-RU
+        varname: RU_RU
+      - enum: sv-SE
+        varname: SV_SE
+      - enum: zh-CN
+        varname: ZH_CN
+      - enum: zh-HK
+        varname: ZH_HK
+      - enum: zh-TW
+        varname: ZH_TW
+    SayStandardContentType:
+      description: The content type to use for the TTS. The complete list of valid
+        values for the content type attribute is shown below.
+      enum:
+      - text/plain
+      - application/ssml+xml
+      type: string
+      x-enum: true
+      x-enum-varnames:
+      - TEXT_PLAIN
+      - APPLICATION_SSML_XML
+      x-enum-mapping:
+      - enum: text/plain
+        varname: TEXT_PLAIN
+      - enum: application/ssml+xml
+        varname: APPLICATION_SSML_XML
+    SayStandard:
+      description: The `Say` command provides Text-To-Speech (TTS) support using the
+        freeclimb.standard  TTS engine. It converts text to speech and then renders
+        it in a female voice back to the caller. `SayStandard` is useful in cases
+        where it's difficult to pre-record a prompt for any reason. `SayStandard`
+        does not allow barge-in unless nested within a `GetSpeech` command. The file
+        will always be played to completion unless nested.
+      properties:
+        text:
+          description: "The message to be played to the caller using TTS. The size\
+            \ of the string is limited to 4 KB (or 4,096 bytes). An empty string will\
+            \ cause the command to be skipped."
+          type: string
+          x-is-required: true
+        loop:
+          default: 1
+          description: Number of times the text is said. Specifying '0' causes the
+            `Say` action to loop until the Call is hung up.
+          type: integer
+        privacyMode:
+          default: false
+          description: Parameter `privacyMode` will not log the `text` as required
+            by PCI compliance.
+          type: boolean
+        engine:
+          $ref: '#/components/schemas/SayStandard_engine'
+      required:
+      - engine
+      - text
+      type: object
+      x-is-object: true
+    SayClassic:
+      description: The `Say` command provides Text-To-Speech (TTS) support. It converts
+        text to speech and then renders it in a female voice back to the caller. `Say`
+        is useful in cases where it's difficult to pre-record a prompt for any reason.
+        `Say` does not allow barge-in unless nested within a `GetSpeech` command.
+        The file will always be played to completion unless nested.
+      properties:
+        text:
+          description: "The message to be played to the caller using TTS. The size\
+            \ of the string is limited to 4 KB (or 4,096 bytes). An empty string will\
+            \ cause the command to be skipped."
+          type: string
+          x-is-required: true
+        language:
+          description: Language and (by implication) the locale to use. This implies
+            the accent and pronunciations to be usde for the TTS. The complete list
+            of valid values for the language attribute is shown below.
+          type: string
+        loop:
+          default: 1
+          description: Number of times the text is said. Specifying '0' causes the
+            `Say` action to loop until the Call is hung up.
+          type: integer
+        privacyMode:
+          description: Parameter `privacyMode` will not log the `text` as required
+            by PCI compliance.
+          type: boolean
+      required:
+      - text
+      type: object
+      x-is-object: true
     Say:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
-      - properties:
-          text:
-            description: "The message to be played to the caller using TTS. The size\
-              \ of the string is limited to 4 KB (or 4,096 bytes). An empty string\
-              \ will cause the command to be skipped."
-            type: string
-            x-is-required: true
-          language:
-            description: Language and (by implication) the locale to use. This implies
-              the accent and pronunciations to be usde for the TTS. The complete list
-              of valid values for the language attribute is shown below.
-            type: string
-          loop:
-            default: 1
-            description: Number of times the text is said. Specifying '0' causes the
-              `Say` action to loop until the Call is hung up.
-            type: integer
-          privacyMode:
-            description: Parameter `privacyMode` will not log the `text` as required
-              by PCI compliance.
-            type: boolean
-        required:
-        - text
-        type: object
+      - oneOf:
+        - $ref: '#/components/schemas/SayElevenLabs'
+        - $ref: '#/components/schemas/SayNeural'
+        - $ref: '#/components/schemas/SayStandard'
+        - $ref: '#/components/schemas/SayClassic'
       description: The `Say` command provides Text-To-Speech (TTS) support. It converts
         text to speech and then renders it in a female voice back to the caller. `Say`
         is useful in cases where it's difficult to pre-record a prompt for any reason.
@@ -6263,9 +7439,7 @@ components:
           shortCode: true
         phoneNumber: phoneNumber
         campaignId: campaignId
-        smsEnabled: true
         region: region
-        voiceEnabled: true
       properties:
         capabilities:
           $ref: '#/components/schemas/Capabilities'
@@ -6278,17 +7452,6 @@ components:
             \ number: +18003608245)."
           nullable: true
           type: string
-        voiceEnabled:
-          deprecated: true
-          description: Typically set to true for all numbers.
-          nullable: true
-          type: boolean
-        smsEnabled:
-          deprecated: true
-          description: Indicates whether the phone number can send and receive SMS
-            messages.
-          nullable: true
-          type: boolean
         region:
           description: The state or province of this phone number.
           nullable: true
@@ -6324,9 +7487,7 @@ components:
             shortCode: true
           phoneNumber: phoneNumber
           campaignId: campaignId
-          smsEnabled: true
           region: region
-          voiceEnabled: true
         - country: country
           capabilities:
             voice: true
@@ -6336,9 +7497,7 @@ components:
             shortCode: true
           phoneNumber: phoneNumber
           campaignId: campaignId
-          smsEnabled: true
           region: region
-          voiceEnabled: true
         start: 6
         pageSize: 2
         end: 1
@@ -6386,18 +7545,6 @@ components:
             description: Country of this phone number.
             nullable: true
             type: string
-          voiceEnabled:
-            deprecated: true
-            description: Indicates whether the phone number can handle Calls. Typically
-              set to true for all numbers.
-            nullable: true
-            type: boolean
-          smsEnabled:
-            deprecated: true
-            description: Indication of whether the phone number can handle sending
-              and receiving SMS messages. Typically set to true for all numbers.
-            nullable: true
-            type: boolean
           offnet:
             description: The offnet field is a boolean representing whether the number
               is offnet registered or not. This field will be rendered only for requests
@@ -6420,11 +7567,9 @@ components:
         phoneNumberId: phoneNumberId
         dateUpdated: dateUpdated
         revision: 0
-        voiceEnabled: true
         accountId: accountId
         dateCreated: dateCreated
         phoneNumber: phoneNumber
-        smsEnabled: true
         alias: alias
         offnet: true
         applicationId: applicationId
@@ -6477,11 +7622,9 @@ components:
           phoneNumberId: phoneNumberId
           dateUpdated: dateUpdated
           revision: 0
-          voiceEnabled: true
           accountId: accountId
           dateCreated: dateCreated
           phoneNumber: phoneNumber
-          smsEnabled: true
           alias: alias
           offnet: true
           applicationId: applicationId
@@ -6500,11 +7643,9 @@ components:
           phoneNumberId: phoneNumberId
           dateUpdated: dateUpdated
           revision: 0
-          voiceEnabled: true
           accountId: accountId
           dateCreated: dateCreated
           phoneNumber: phoneNumber
-          smsEnabled: true
           alias: alias
           offnet: true
           applicationId: applicationId
@@ -9045,6 +10186,261 @@ components:
       - resourceType
       type: object
       x-is-object: true
+    CreateBlobRequest:
+      additionalProperties: false
+      example:
+        blob: "{}"
+        alias: alias
+        expiresAt: 2006-01-02T15:04:05.000Z
+      properties:
+        alias:
+          description: Custom identifier for this blob that is unique for the owning
+            account. It will be set to the blobId by default if not provided.
+          maxLength: 64
+          type: string
+        expiresAt:
+          description: An RFC3339 timestamp with millisecond resolution. This timestamp
+            defines the time at which this blob will delete itself. It must not be
+            more than 48 hours in the future and will default to 9 hours in the future
+            if not provided.
+          example: 2006-01-02T15:04:05.000Z
+          type: string
+        blob:
+          type: object
+          x-is-object: true
+          x-is-required: true
+      required:
+      - blob
+      type: object
+      x-is-object: true
+    ModifyBlobRequest:
+      example:
+        blob: "{}"
+        alias: alias
+      properties:
+        blob:
+          type: object
+          x-is-object: true
+          x-is-required: true
+        alias:
+          description: Custom identifier for this blob that is unique for the owning
+            account. It will be set to the blobId by default if not provided.
+          maxLength: 64
+          type: string
+      required:
+      - blob
+      type: object
+      x-is-object: true
+    ReplaceBlobRequest:
+      example:
+        blob: "{}"
+      properties:
+        blob:
+          type: object
+          x-is-object: true
+          x-is-required: true
+      required:
+      - blob
+      type: object
+      x-is-object: true
+    BlobResult:
+      example:
+        accountId: AC0534faec6b32da45f36166674d65b3903f784141
+        dateCreated: 2000-01-23T04:56:07.000+00:00
+        blob: "{}"
+        blobId: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+        alias: alias
+        expiresAt: 2000-01-23T04:56:07.000+00:00
+        revision: 7
+        dateUpdated: 2000-01-23T04:56:07.000+00:00
+      properties:
+        blobId:
+          description: Identifier which can be used to reference this blob in future
+            interations.
+          example: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+          pattern: "BL[0-9a-fA-F]{40}"
+          type: string
+        accountId:
+          example: AC0534faec6b32da45f36166674d65b3903f784141
+          pattern: "AC[0-9a-fA-F]{40}"
+          type: string
+        alias:
+          description: Custom identifier for this blob that is unique for the owning
+            account. It will be set to the blobId by default if not provided in the
+            creation request.
+          maxLength: 64
+          type: string
+        revision:
+          type: integer
+        dateCreated:
+          description: An RFC3339 timestamp with millisecond resolution. It represents
+            the time this blob was created.
+          format: date-time
+          type: string
+          x-is-date-time: true
+        dateUpdated:
+          description: "An RFC3339 timestamp with millisecond resolution. It represents\
+            \ the time this blob was last modified, which at creation will always\
+            \ equal dateCreated."
+          format: date-time
+          type: string
+          x-is-date-time: true
+        expiresAt:
+          description: An RFC3339 timestamp with millisecond resolution. It represents
+            the time at which this blob will expire and self delete.
+          format: date-time
+          type: string
+          x-is-date-time: true
+        blob:
+          description: Blob content
+          type: object
+          x-is-object: true
+      type: object
+      x-is-object: true
+    BlobListResponse:
+      allOf:
+      - $ref: '#/components/schemas/PaginationModel'
+      - properties:
+          blobs:
+            items:
+              $ref: '#/components/schemas/BlobResult'
+            type: array
+            x-is-list: true
+        type: object
+      example:
+        numPages: 5
+        blobs:
+        - accountId: AC0534faec6b32da45f36166674d65b3903f784141
+          dateCreated: 2000-01-23T04:56:07.000+00:00
+          blob: "{}"
+          blobId: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+          alias: alias
+          expiresAt: 2000-01-23T04:56:07.000+00:00
+          revision: 7
+          dateUpdated: 2000-01-23T04:56:07.000+00:00
+        - accountId: AC0534faec6b32da45f36166674d65b3903f784141
+          dateCreated: 2000-01-23T04:56:07.000+00:00
+          blob: "{}"
+          blobId: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+          alias: alias
+          expiresAt: 2000-01-23T04:56:07.000+00:00
+          revision: 7
+          dateUpdated: 2000-01-23T04:56:07.000+00:00
+        total: 0
+        nextPageUri: nextPageUri
+        start: 6
+        pageSize: 2
+        end: 1
+        page: 5
+      type: object
+      x-is-object: true
+      x-implements: Pagination
+    platformError:
+      description: Standard error structure returned by platform.
+      example:
+        code: 0
+        call: Internal Failure
+        url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
+      properties:
+        code:
+          type: integer
+        call:
+          type: string
+        url:
+          format: uri-reference
+          type: string
+        details:
+          type: object
+          x-is-object: true
+      type: object
+      x-is-object: true
+    SayElevenLabs_engine:
+      description: The engine to use for the TTS. The complete list of valid values
+        for the engine attribute is shown below.
+      properties:
+        name:
+          default: ElevenLabs
+          description: The name of the TTS engine to use. Set to `elevenlabs.tts`
+            to use the elevenlabs.tts TTS engine.
+          type: string
+        parameters:
+          $ref: '#/components/schemas/SayElevenLabsEngineParameters'
+      type: object
+      x-is-object: true
+      x-is-required: true
+    SayElevenLabsEngineParameters_voice_settings:
+      description: The voice settings to use for the TTS. The complete list of valid
+        values for the voice_settings attribute is shown below.
+      properties:
+        stability:
+          type: number
+        use_speaker_boost:
+          type: boolean
+        similarity_boost:
+          type: number
+        style:
+          type: number
+        speed:
+          type: number
+      type: object
+      x-is-object: true
+    SayElevenLabsEngineParameters_pronunciation_dictionary_inner:
+      properties:
+        pronunciation_dictionary_id:
+          type: string
+        version_id:
+          type: string
+      type: object
+    SayNeural_engine_parameters:
+      description: The parameters to use for the TTS. The complete list of valid values
+        for the parameters attribute is shown below.
+      properties:
+        voice:
+          default: Eve
+          description: The voice to use for the TTS. The complete list of valid values
+            for the voice attribute is shown below.
+          type: string
+        textType:
+          $ref: '#/components/schemas/SayNeuralTextType'
+        language:
+          default: en-US
+          description: The language to use for the TTS. The complete list of valid
+            values for the language attribute is shown below.
+          type: string
+      type: object
+    SayNeural_engine:
+      description: The engine to use for the TTS. The complete list of valid values
+        for the engine attribute is shown below.
+      properties:
+        name:
+          default: freeclimb.neural
+          description: The name of the TTS engine to use. Set to `freeclimb.neural`
+            to use the freeclimb.neural TTS engine.
+          type: string
+        parameters:
+          $ref: '#/components/schemas/SayNeural_engine_parameters'
+      type: object
+      x-is-object: true
+      x-is-required: true
+    SayStandard_engine:
+      description: Language and (by implication) the locale to use. This implies the
+        accent and pronunciations to be usde for the TTS. The complete list of valid
+        values for the language attribute is shown below.
+      properties:
+        name:
+          default: freeclimb.standard
+          description: The name of the TTS engine to use. Set to `freeclimb.standard`
+            for to use the standard freeclimb TTS engine.
+          type: string
+        Voice:
+          $ref: '#/components/schemas/SayStandardVoice'
+        Culture:
+          $ref: '#/components/schemas/SayStandardCulture'
+        Content-Type:
+          $ref: '#/components/schemas/SayStandardContentType'
+      type: object
+      x-is-object: true
+      x-is-required: true
     AccountResult_allOf_subresourceUris:
       description: The list of subresources for this account.
       nullable: true
