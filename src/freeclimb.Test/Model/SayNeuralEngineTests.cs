@@ -73,7 +73,13 @@ namespace freeclimb.Test.Model
         /// Test the property 'Parameters'
         /// </summary>
         [Fact]
-        public void ParametersTest() { }
+        public void ParametersTest()
+        {
+            SayNeuralEngineParameters testObject = (SayNeuralEngineParameters)
+                TestHelpers.getTestValue(typeof(SayNeuralEngineParameters));
+            instance.Parameters = testObject;
+            Assert.Equal(testObject, instance.Parameters);
+        }
 
         /// <summary>
         /// Test serialize a SayNeuralEngine to JSON string - all values are present

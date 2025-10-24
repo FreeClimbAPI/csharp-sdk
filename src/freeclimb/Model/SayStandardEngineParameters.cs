@@ -28,39 +28,47 @@ using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
+    /// The parameters to use for the TTS. The complete list of valid values for the parameters attribute is shown below.
     /// </summary>
-    [DataContract(Name = "SayStandard_engine")]
-    public partial class SayStandardEngine : IValidatableObject
+    [DataContract(Name = "SayStandardEngineParameters")]
+    public partial class SayStandardEngineParameters : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SayStandardEngine" /> class.
+        /// Gets or Sets Voice
         /// </summary>
-        /// <param name="name">The name of the TTS engine to use. Set to &#x60;freeclimb.standard&#x60; for to use the standard freeclimb TTS engine. (default to &quot;freeclimb.standard&quot;).</param>
-        /// <param name="parameters">parameters.</param>
-        public SayStandardEngine(
-            string name = @"freeclimb.standard",
-            SayStandardEngineParameters parameters = default(SayStandardEngineParameters)
+        [DataMember(Name = "Voice", EmitDefaultValue = false)]
+        public SayStandardVoice? Voice { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Culture
+        /// </summary>
+        [DataMember(Name = "Culture", EmitDefaultValue = false)]
+        public SayStandardCulture? Culture { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ContentType
+        /// </summary>
+        [DataMember(Name = "Content-Type", EmitDefaultValue = false)]
+        public SayStandardContentType? ContentType { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SayStandardEngineParameters" /> class.
+        /// </summary>
+        /// <param name="voice">voice.</param>
+        /// <param name="culture">culture.</param>
+        /// <param name="contentType">contentType.</param>
+        public SayStandardEngineParameters(
+            SayStandardVoice? voice = default(SayStandardVoice?),
+            SayStandardCulture? culture = default(SayStandardCulture?),
+            SayStandardContentType? contentType = default(SayStandardContentType?)
         )
         {
-            // use default value if no "name" provided
-            this.Name = name;
+            this.Voice = voice;
 
-            this.Parameters = parameters;
+            this.Culture = culture;
+
+            this.ContentType = contentType;
         }
-
-        /// <summary>
-        /// The name of the TTS engine to use. Set to &#x60;freeclimb.standard&#x60; for to use the standard freeclimb TTS engine.
-        /// </summary>
-        /// <value>The name of the TTS engine to use. Set to &#x60;freeclimb.standard&#x60; for to use the standard freeclimb TTS engine.</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Parameters
-        /// </summary>
-        [DataMember(Name = "parameters", EmitDefaultValue = false)]
-        public SayStandardEngineParameters Parameters { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,9 +77,10 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SayStandardEngine {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
+            sb.Append("class SayStandardEngineParameters {\n");
+            sb.Append("  Voice: ").Append(Voice).Append("\n");
+            sb.Append("  Culture: ").Append(Culture).Append("\n");
+            sb.Append("  ContentType: ").Append(ContentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,14 +99,15 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SayStandardEngine instance.
+        /// Retrieve the KVP Dictionary for the SayStandardEngineParameters instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            AddToDictionary(props, "name", Name);
-            AddToDictionary(props, "parameters", Parameters);
+            AddToDictionary(props, "voice", Voice);
+            AddToDictionary(props, "culture", Culture);
+            AddToDictionary(props, "contentType", ContentType);
             return props;
         }
 

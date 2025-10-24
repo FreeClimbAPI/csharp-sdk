@@ -6581,6 +6581,24 @@ components:
         varname: TEXT
       - enum: ssml
         varname: SSML
+    SayNeuralEngineParameters:
+      description: The parameters to use for the TTS. The complete list of valid values
+        for the parameters attribute is shown below.
+      properties:
+        voice:
+          default: Eve
+          description: The voice to use for the TTS. The complete list of valid values
+            for the voice attribute is shown below.
+          type: string
+        textType:
+          $ref: '#/components/schemas/SayNeuralTextType'
+        language:
+          default: en-US
+          description: The language to use for the TTS. The complete list of valid
+            values for the language attribute is shown below.
+          type: string
+      type: object
+      x-is-object: true
     SayNeural:
       description: The `SayNeural` command provides Text-To-Speech (TTS) support using
         the freeclimb.neural TTS engine. It converts text to speech and then renders
@@ -6852,6 +6870,18 @@ components:
         varname: TEXT_PLAIN
       - enum: application/ssml+xml
         varname: APPLICATION_SSML_XML
+    SayStandardEngineParameters:
+      description: The parameters to use for the TTS. The complete list of valid values
+        for the parameters attribute is shown below.
+      properties:
+        Voice:
+          $ref: '#/components/schemas/SayStandardVoice'
+        Culture:
+          $ref: '#/components/schemas/SayStandardCulture'
+        Content-Type:
+          $ref: '#/components/schemas/SayStandardContentType'
+      type: object
+      x-is-object: true
     SayStandard:
       description: The `Say` command provides Text-To-Speech (TTS) support using the
         freeclimb.standard  TTS engine. It converts text to speech and then renders
@@ -10391,23 +10421,6 @@ components:
         version_id:
           type: string
       type: object
-    SayNeural_engine_parameters:
-      description: The parameters to use for the TTS. The complete list of valid values
-        for the parameters attribute is shown below.
-      properties:
-        voice:
-          default: Eve
-          description: The voice to use for the TTS. The complete list of valid values
-            for the voice attribute is shown below.
-          type: string
-        textType:
-          $ref: '#/components/schemas/SayNeuralTextType'
-        language:
-          default: en-US
-          description: The language to use for the TTS. The complete list of valid
-            values for the language attribute is shown below.
-          type: string
-      type: object
     SayNeural_engine:
       description: The engine to use for the TTS. The complete list of valid values
         for the engine attribute is shown below.
@@ -10418,7 +10431,7 @@ components:
             to use the freeclimb.neural TTS engine.
           type: string
         parameters:
-          $ref: '#/components/schemas/SayNeural_engine_parameters'
+          $ref: '#/components/schemas/SayNeuralEngineParameters'
       type: object
       x-is-object: true
       x-is-required: true
@@ -10432,12 +10445,8 @@ components:
           description: The name of the TTS engine to use. Set to `freeclimb.standard`
             for to use the standard freeclimb TTS engine.
           type: string
-        Voice:
-          $ref: '#/components/schemas/SayStandardVoice'
-        Culture:
-          $ref: '#/components/schemas/SayStandardCulture'
-        Content-Type:
-          $ref: '#/components/schemas/SayStandardContentType'
+        parameters:
+          $ref: '#/components/schemas/SayStandardEngineParameters'
       type: object
       x-is-object: true
       x-is-required: true

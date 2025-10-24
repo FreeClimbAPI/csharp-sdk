@@ -150,6 +150,7 @@ docs/SayStandard.md
 docs/SayStandardContentType.md
 docs/SayStandardCulture.md
 docs/SayStandardEngine.md
+docs/SayStandardEngineParameters.md
 docs/SayStandardVoice.md
 docs/SendDigits.md
 docs/SetDTMFPassThrough.md
@@ -319,6 +320,7 @@ src/freeclimb.Test/Model/SayNeuralTests.cs
 src/freeclimb.Test/Model/SayNeuralTextTypeTests.cs
 src/freeclimb.Test/Model/SayStandardContentTypeTests.cs
 src/freeclimb.Test/Model/SayStandardCultureTests.cs
+src/freeclimb.Test/Model/SayStandardEngineParametersTests.cs
 src/freeclimb.Test/Model/SayStandardEngineTests.cs
 src/freeclimb.Test/Model/SayStandardTests.cs
 src/freeclimb.Test/Model/SayStandardVoiceTests.cs
@@ -509,6 +511,7 @@ src/freeclimb/Model/SayStandard.cs
 src/freeclimb/Model/SayStandardContentType.cs
 src/freeclimb/Model/SayStandardCulture.cs
 src/freeclimb/Model/SayStandardEngine.cs
+src/freeclimb/Model/SayStandardEngineParameters.cs
 src/freeclimb/Model/SayStandardVoice.cs
 src/freeclimb/Model/SendDigits.cs
 src/freeclimb/Model/SetDTMFPassThrough.cs

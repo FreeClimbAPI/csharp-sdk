@@ -30,7 +30,7 @@ namespace freeclimb.Model
     /// <summary>
     /// The parameters to use for the TTS. The complete list of valid values for the parameters attribute is shown below.
     /// </summary>
-    [DataContract(Name = "SayNeural_engine_parameters")]
+    [DataContract(Name = "SayNeuralEngineParameters")]
     public partial class SayNeuralEngineParameters : IValidatableObject
     {
         /// <summary>

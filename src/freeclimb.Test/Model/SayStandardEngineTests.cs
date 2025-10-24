@@ -40,10 +40,8 @@ namespace freeclimb.Test.Model
         {
             instance = new SayStandardEngine(
                 name: (string)TestHelpers.getTestValue(typeof(string)),
-                voice: (SayStandardVoice)TestHelpers.getTestValue(typeof(SayStandardVoice)),
-                culture: (SayStandardCulture)TestHelpers.getTestValue(typeof(SayStandardCulture)),
-                contentType: (SayStandardContentType)
-                    TestHelpers.getTestValue(typeof(SayStandardContentType))
+                parameters: (SayStandardEngineParameters)
+                    TestHelpers.getTestValue(typeof(SayStandardEngineParameters))
             );
         }
 
@@ -72,135 +70,15 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Voice'
+        /// Test the property 'Parameters'
         /// </summary>
         [Fact]
-        public void VoiceTest()
+        public void ParametersTest()
         {
-            instance.Voice = SayStandardVoice.HERENA;
-            Assert.Equal(SayStandardVoice.HERENA, instance.Voice);
-            instance.Voice = SayStandardVoice.HELLE;
-            Assert.Equal(SayStandardVoice.HELLE, instance.Voice);
-            instance.Voice = SayStandardVoice.HEDDA;
-            Assert.Equal(SayStandardVoice.HEDDA, instance.Voice);
-            instance.Voice = SayStandardVoice.HAYLEY;
-            Assert.Equal(SayStandardVoice.HAYLEY, instance.Voice);
-            instance.Voice = SayStandardVoice.HEATHER;
-            Assert.Equal(SayStandardVoice.HEATHER, instance.Voice);
-            instance.Voice = SayStandardVoice.HAZEL;
-            Assert.Equal(SayStandardVoice.HAZEL, instance.Voice);
-            instance.Voice = SayStandardVoice.HEERA;
-            Assert.Equal(SayStandardVoice.HEERA, instance.Voice);
-            instance.Voice = SayStandardVoice.HELEN;
-            Assert.Equal(SayStandardVoice.HELEN, instance.Voice);
-            instance.Voice = SayStandardVoice.ZIRA_PRO;
-            Assert.Equal(SayStandardVoice.ZIRA_PRO, instance.Voice);
-            instance.Voice = SayStandardVoice.HELENA;
-            Assert.Equal(SayStandardVoice.HELENA, instance.Voice);
-            instance.Voice = SayStandardVoice.HILDA;
-            Assert.Equal(SayStandardVoice.HILDA, instance.Voice);
-            instance.Voice = SayStandardVoice.HEIDI;
-            Assert.Equal(SayStandardVoice.HEIDI, instance.Voice);
-            instance.Voice = SayStandardVoice.HARMONIE;
-            Assert.Equal(SayStandardVoice.HARMONIE, instance.Voice);
-            instance.Voice = SayStandardVoice.HORTENSE;
-            Assert.Equal(SayStandardVoice.HORTENSE, instance.Voice);
-            instance.Voice = SayStandardVoice.LUCIA;
-            Assert.Equal(SayStandardVoice.LUCIA, instance.Voice);
-            instance.Voice = SayStandardVoice.HARKUA;
-            Assert.Equal(SayStandardVoice.HARKUA, instance.Voice);
-            instance.Voice = SayStandardVoice.HEAMI;
-            Assert.Equal(SayStandardVoice.HEAMI, instance.Voice);
-            instance.Voice = SayStandardVoice.HULDA;
-            Assert.Equal(SayStandardVoice.HULDA, instance.Voice);
-            instance.Voice = SayStandardVoice.HANNA;
-            Assert.Equal(SayStandardVoice.HANNA, instance.Voice);
-            instance.Voice = SayStandardVoice.PAULINA;
-            Assert.Equal(SayStandardVoice.PAULINA, instance.Voice);
-            instance.Voice = SayStandardVoice.HELOSIA;
-            Assert.Equal(SayStandardVoice.HELOSIA, instance.Voice);
-            instance.Voice = SayStandardVoice.HELIA;
-            Assert.Equal(SayStandardVoice.HELIA, instance.Voice);
-            instance.Voice = SayStandardVoice.ELENA;
-            Assert.Equal(SayStandardVoice.ELENA, instance.Voice);
-            instance.Voice = SayStandardVoice.HEDVIG;
-            Assert.Equal(SayStandardVoice.HEDVIG, instance.Voice);
-            instance.Voice = SayStandardVoice.HUN_YEE;
-            Assert.Equal(SayStandardVoice.HUN_YEE, instance.Voice);
-            instance.Voice = SayStandardVoice.HAN_HAN;
-            Assert.Equal(SayStandardVoice.HAN_HAN, instance.Voice);
-        }
-
-        /// <summary>
-        /// Test the property 'Culture'
-        /// </summary>
-        [Fact]
-        public void CultureTest()
-        {
-            instance.Culture = SayStandardCulture.CA_ES;
-            Assert.Equal(SayStandardCulture.CA_ES, instance.Culture);
-            instance.Culture = SayStandardCulture.DA_DK;
-            Assert.Equal(SayStandardCulture.DA_DK, instance.Culture);
-            instance.Culture = SayStandardCulture.DE_DE;
-            Assert.Equal(SayStandardCulture.DE_DE, instance.Culture);
-            instance.Culture = SayStandardCulture.EN_AU;
-            Assert.Equal(SayStandardCulture.EN_AU, instance.Culture);
-            instance.Culture = SayStandardCulture.EN_CA;
-            Assert.Equal(SayStandardCulture.EN_CA, instance.Culture);
-            instance.Culture = SayStandardCulture.EN_GB;
-            Assert.Equal(SayStandardCulture.EN_GB, instance.Culture);
-            instance.Culture = SayStandardCulture.EN_IN;
-            Assert.Equal(SayStandardCulture.EN_IN, instance.Culture);
-            instance.Culture = SayStandardCulture.EN_US;
-            Assert.Equal(SayStandardCulture.EN_US, instance.Culture);
-            instance.Culture = SayStandardCulture.ES_ES;
-            Assert.Equal(SayStandardCulture.ES_ES, instance.Culture);
-            instance.Culture = SayStandardCulture.ES_MX;
-            Assert.Equal(SayStandardCulture.ES_MX, instance.Culture);
-            instance.Culture = SayStandardCulture.FI_FI;
-            Assert.Equal(SayStandardCulture.FI_FI, instance.Culture);
-            instance.Culture = SayStandardCulture.FR_CA;
-            Assert.Equal(SayStandardCulture.FR_CA, instance.Culture);
-            instance.Culture = SayStandardCulture.FR_FR;
-            Assert.Equal(SayStandardCulture.FR_FR, instance.Culture);
-            instance.Culture = SayStandardCulture.IT_IT;
-            Assert.Equal(SayStandardCulture.IT_IT, instance.Culture);
-            instance.Culture = SayStandardCulture.JA_JP;
-            Assert.Equal(SayStandardCulture.JA_JP, instance.Culture);
-            instance.Culture = SayStandardCulture.KO_KR;
-            Assert.Equal(SayStandardCulture.KO_KR, instance.Culture);
-            instance.Culture = SayStandardCulture.NB_NO;
-            Assert.Equal(SayStandardCulture.NB_NO, instance.Culture);
-            instance.Culture = SayStandardCulture.NL_NL;
-            Assert.Equal(SayStandardCulture.NL_NL, instance.Culture);
-            instance.Culture = SayStandardCulture.PL_PL;
-            Assert.Equal(SayStandardCulture.PL_PL, instance.Culture);
-            instance.Culture = SayStandardCulture.PT_BR;
-            Assert.Equal(SayStandardCulture.PT_BR, instance.Culture);
-            instance.Culture = SayStandardCulture.PT_PT;
-            Assert.Equal(SayStandardCulture.PT_PT, instance.Culture);
-            instance.Culture = SayStandardCulture.RU_RU;
-            Assert.Equal(SayStandardCulture.RU_RU, instance.Culture);
-            instance.Culture = SayStandardCulture.SV_SE;
-            Assert.Equal(SayStandardCulture.SV_SE, instance.Culture);
-            instance.Culture = SayStandardCulture.ZH_CN;
-            Assert.Equal(SayStandardCulture.ZH_CN, instance.Culture);
-            instance.Culture = SayStandardCulture.ZH_HK;
-            Assert.Equal(SayStandardCulture.ZH_HK, instance.Culture);
-            instance.Culture = SayStandardCulture.ZH_TW;
-            Assert.Equal(SayStandardCulture.ZH_TW, instance.Culture);
-        }
-
-        /// <summary>
-        /// Test the property 'ContentType'
-        /// </summary>
-        [Fact]
-        public void ContentTypeTest()
-        {
-            instance.ContentType = SayStandardContentType.TEXT_PLAIN;
-            Assert.Equal(SayStandardContentType.TEXT_PLAIN, instance.ContentType);
-            instance.ContentType = SayStandardContentType.APPLICATION_SSML_XML;
-            Assert.Equal(SayStandardContentType.APPLICATION_SSML_XML, instance.ContentType);
+            SayStandardEngineParameters testObject = (SayStandardEngineParameters)
+                TestHelpers.getTestValue(typeof(SayStandardEngineParameters));
+            instance.Parameters = testObject;
+            Assert.Equal(testObject, instance.Parameters);
         }
 
         /// <summary>
@@ -213,11 +91,7 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("name", json);
 
-            Assert.Contains("Voice", json);
-
-            Assert.Contains("Culture", json);
-
-            Assert.Contains("Content-Type", json);
+            Assert.Contains("parameters", json);
         }
 
         /// <summary>

@@ -341,6 +341,7 @@ Class | Method | HTTP request | Description
  - [Model.SayStandardContentType](docs/SayStandardContentType.md)
  - [Model.SayStandardCulture](docs/SayStandardCulture.md)
  - [Model.SayStandardEngine](docs/SayStandardEngine.md)
+ - [Model.SayStandardEngineParameters](docs/SayStandardEngineParameters.md)
  - [Model.SayStandardVoice](docs/SayStandardVoice.md)
  - [Model.SendDigits](docs/SendDigits.md)
  - [Model.SetDTMFPassThrough](docs/SetDTMFPassThrough.md)
