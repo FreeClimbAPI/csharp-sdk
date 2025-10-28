@@ -200,9 +200,7 @@ namespace freeclimb.Test.Api
         {
             string blobId = blobIdTestValue();
 
-            List<string>? key = keyTestArray();
-
-            var response = instance.DeleteBlob(blobId, key);
+            var response = instance.DeleteBlob(blobId);
             Assert.IsAssignableFrom<BlobResult>(response);
         }
 
@@ -599,11 +597,7 @@ namespace freeclimb.Test.Api
         [Fact]
         public void ListBlobsTest()
         {
-            string? alias = aliasTestValue();
-
-            string? cursor = cursorTestValue();
-
-            var response = instance.ListBlobs(alias, cursor);
+            var response = instance.ListBlobs();
             Assert.IsAssignableFrom<BlobListResponse>(response);
         }
 
@@ -1227,11 +1221,7 @@ namespace freeclimb.Test.Api
         [Fact]
         public void ListBlobsGetNextPageTest()
         {
-            string? alias = aliasTestValue();
-
-            string? cursor = cursorTestValue();
-
-            var response = instance.ListBlobs(alias, cursor);
+            var response = instance.ListBlobs();
             //Assert.IsType<BlobListResponse>(response);
             Assert.IsAssignableFrom<BlobListResponse>(response);
             response.NextPageUri = "/Accounts/{accountId}/Blobs?cursor=1";

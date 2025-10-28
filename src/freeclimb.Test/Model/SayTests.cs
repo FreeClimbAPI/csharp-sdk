@@ -40,10 +40,10 @@ namespace freeclimb.Test.Model
         {
             instance = new Say(
                 text: (string)TestHelpers.getTestValue(typeof(string)),
+                language: (string)TestHelpers.getTestValue(typeof(string)),
+                engine: (TTSEngine)TestHelpers.getTestValue(typeof(TTSEngine)),
                 loop: (int)TestHelpers.getTestValue(typeof(int)),
-                privacyMode: (bool)TestHelpers.getTestValue(typeof(bool)),
-                engine: (SayStandardEngine)TestHelpers.getTestValue(typeof(SayStandardEngine)),
-                language: (string)TestHelpers.getTestValue(typeof(string))
+                privacyMode: (bool)TestHelpers.getTestValue(typeof(bool))
             );
         }
 
@@ -72,6 +72,27 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Language'
+        /// </summary>
+        [Fact]
+        public void LanguageTest()
+        {
+            instance.Language = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Language);
+        }
+
+        /// <summary>
+        /// Test the property 'Engine'
+        /// </summary>
+        [Fact]
+        public void EngineTest()
+        {
+            TTSEngine testObject = (TTSEngine)TestHelpers.getTestValue(typeof(TTSEngine));
+            instance.Engine = testObject;
+            Assert.Equal(testObject, instance.Engine);
+        }
+
+        /// <summary>
         /// Test the property 'Loop'
         /// </summary>
         [Fact]
@@ -92,28 +113,6 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Engine'
-        /// </summary>
-        [Fact]
-        public void EngineTest()
-        {
-            SayStandardEngine testObject = (SayStandardEngine)
-                TestHelpers.getTestValue(typeof(SayStandardEngine));
-            instance.Engine = testObject;
-            Assert.Equal(testObject, instance.Engine);
-        }
-
-        /// <summary>
-        /// Test the property 'Language'
-        /// </summary>
-        [Fact]
-        public void LanguageTest()
-        {
-            instance.Language = "TEST_STRING";
-            Assert.Equal("TEST_STRING", instance.Language);
-        }
-
-        /// <summary>
         /// Test serialize a Say to JSON string - all values are present
         /// </summary>
         [Fact]
@@ -123,13 +122,13 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("text", json);
 
-            Assert.Contains("loop", json);
-
-            Assert.Contains("privacyMode", json);
+            Assert.Contains("language", json);
 
             Assert.Contains("engine", json);
 
-            Assert.Contains("language", json);
+            Assert.Contains("loop", json);
+
+            Assert.Contains("privacyMode", json);
         }
 
         /// <summary>

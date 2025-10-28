@@ -1137,7 +1137,7 @@ void (empty response body)
 
 <a id="deleteblob"></a>
 # **DeleteBlob**
-> BlobResult DeleteBlob (string blobId, List<string>? key = null)
+> BlobResult DeleteBlob (string blobId)
 
 Delete Blob
 
@@ -1167,12 +1167,10 @@ namespace Example
             
             var blobId = "blobId_example";  // string | String that uniquely identifies this Blob resource.
             
-            var key = new List<string>?(); // List<string>? | key within blob to remove (optional) 
-            
             try
             {
                 // Delete Blob
-                BlobResult result = apiInstance.DeleteBlob(blobId, key);
+                BlobResult result = apiInstance.DeleteBlob(blobId);
                 Debug.WriteLine(result);                
             }
             catch (ApiException  e)
@@ -1193,7 +1191,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete Blob
-    ApiResponse<BlobResult> response = apiInstance.DeleteBlobWithHttpInfo(blobId, key);
+    ApiResponse<BlobResult> response = apiInstance.DeleteBlobWithHttpInfo(blobId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);    
@@ -1213,8 +1211,6 @@ catch (ApiException e)
 
 
 | **blobId** | **string** | String that uniquely identifies this Blob resource. |  |
-
-| **key** | [**List&lt;string&gt;?**](string.md) | key within blob to remove | [optional]  |
 
 
 ### Return type
@@ -4180,7 +4176,7 @@ catch (ApiException e)
 
 <a id="listblobs"></a>
 # **ListBlobs**
-> BlobListResponse ListBlobs (string? alias = null, string? cursor = null)
+> BlobListResponse ListBlobs ()
 
 List Blobs belonging to an account.
 
@@ -4208,14 +4204,10 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             
-            var alias = "alias_example";  // string? | Filter blobs by alias (optional) 
-            
-            var cursor = "cursor_example";  // string? | Used to reference pages of a list of blobs (optional) 
-            
             try
             {
                 // List Blobs belonging to an account.
-                BlobListResponse result = apiInstance.ListBlobs(alias, cursor);
+                BlobListResponse result = apiInstance.ListBlobs();
                 Debug.WriteLine(result);                
             }
             catch (ApiException  e)
@@ -4236,7 +4228,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Blobs belonging to an account.
-    ApiResponse<BlobListResponse> response = apiInstance.ListBlobsWithHttpInfo(alias, cursor);
+    ApiResponse<BlobListResponse> response = apiInstance.ListBlobsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);    
@@ -4251,13 +4243,6 @@ catch (ApiException e)
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-
-
-| **alias** | **string?** | Filter blobs by alias | [optional]  |
-
-| **cursor** | **string?** | Used to reference pages of a list of blobs | [optional]  |
 
 
 ### Return type

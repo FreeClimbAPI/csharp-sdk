@@ -2595,22 +2595,6 @@ paths:
           type: string
         style: simple
         x-account-id: true
-      - description: Filter blobs by alias
-        explode: true
-        in: query
-        name: alias
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: Used to reference pages of a list of blobs
-        explode: true
-        in: query
-        name: cursor
-        required: false
-        schema:
-          type: string
-        style: form
       responses:
         "200":
           content:
@@ -2655,7 +2639,7 @@ paths:
                 call: Missing Required Parameter(s)
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#80
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform bad request.
         "500":
           content:
@@ -2665,7 +2649,7 @@ paths:
                 call: Internal Failure
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform internal error.
         "504":
           content:
@@ -2675,7 +2659,7 @@ paths:
                 call: Internal Failure
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: gateway timeout error
       summary: List Blobs belonging to an account.
       x-is-paginated: true
@@ -2822,7 +2806,7 @@ paths:
                 call: Missing Required Parameter(s)
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#80
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform bad request.
         "409":
           content:
@@ -2834,7 +2818,7 @@ paths:
                 details:
                   explanation: alias already exists for another blob on this account
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: A blob with the provided alias already exists oln the requesting
             account and so this new blob is rejected as there cannot be duplicate
             alises.
@@ -2848,7 +2832,7 @@ paths:
                 details:
                   explanation: blob exceeds per-blob size limit
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: The blob exceeded one of the size limits. Either it itself
             is too large or it would push the total sum of all blobs over the account's
             limit.
@@ -2860,7 +2844,7 @@ paths:
                 call: Invalid JSON
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#9
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform unprocessible entity response.
         "500":
           content:
@@ -2870,7 +2854,7 @@ paths:
                 call: Internal Failure
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform internal error.
       summary: Create a Blob
     summary: Operations affecting the whole set of Blobs belonging to an account.
@@ -2901,17 +2885,6 @@ paths:
         schema:
           $ref: '#/components/schemas/blobId'
         style: simple
-      - description: key within blob to remove
-        explode: true
-        in: query
-        name: key
-        required: false
-        schema:
-          items:
-            pattern: "^[a-zA-Z0-9_]{1,64}$"
-            type: string
-          type: array
-        style: form
       responses:
         "200":
           content:
@@ -2929,7 +2902,7 @@ paths:
                 call: Not Found
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform not found error.
         "422":
           content:
@@ -2939,7 +2912,7 @@ paths:
                 call: Invalid JSON
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#9
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform unprocessible entity response.
         "500":
           content:
@@ -2949,7 +2922,7 @@ paths:
                 call: Internal Failure
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform internal error.
         "504":
           content:
@@ -2959,7 +2932,7 @@ paths:
                 call: Internal Failure
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: gateway timeout error
       summary: Delete Blob
     get:
@@ -3012,7 +2985,7 @@ paths:
                 call: Not Found
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform not found error.
         "500":
           content:
@@ -3022,7 +2995,7 @@ paths:
                 call: Internal Failure
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform internal error.
         "504":
           content:
@@ -3032,7 +3005,7 @@ paths:
                 call: Internal Failure
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: gateway timeout error
       summary: Get Blob
     patch:
@@ -3098,7 +3071,7 @@ paths:
                 call: Not Found
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform not found error.
         "409":
           content:
@@ -3108,7 +3081,7 @@ paths:
                 call: ResourceConflict
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#108
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform status conflict error.
         "413":
           content:
@@ -3118,7 +3091,7 @@ paths:
                 call: BadRequestBody
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#3
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform status request entity too large.
         "500":
           content:
@@ -3128,7 +3101,7 @@ paths:
                 call: Internal Failure
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform internal error.
       summary: Modify Blob
     put:
@@ -3192,7 +3165,7 @@ paths:
                 call: Not Found
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform not found error.
         "409":
           content:
@@ -3202,7 +3175,7 @@ paths:
                 call: ResourceConflict
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#108
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform status conflict error.
         "413":
           content:
@@ -3212,7 +3185,7 @@ paths:
                 call: BadRequestBody
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#3
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform status request entity too large.
         "500":
           content:
@@ -3222,7 +3195,7 @@ paths:
                 call: Internal Failure
                 url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
               schema:
-                $ref: '#/components/schemas/platformError'
+                $ref: '#/components/schemas/PlatformError'
           description: Generic platform internal error.
       summary: Replace Blob
     summary: Operations affecting an individual blob belonging to an account.
@@ -3296,7 +3269,7 @@ components:
             call: Missing Required Parameter(s)
             url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#80
           schema:
-            $ref: '#/components/schemas/platformError'
+            $ref: '#/components/schemas/PlatformError'
       description: Generic platform bad request.
     error404:
       content:
@@ -3306,7 +3279,7 @@ components:
             call: Not Found
             url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#1
           schema:
-            $ref: '#/components/schemas/platformError'
+            $ref: '#/components/schemas/PlatformError'
       description: Generic platform not found error.
     error409:
       content:
@@ -3316,7 +3289,7 @@ components:
             call: ResourceConflict
             url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#108
           schema:
-            $ref: '#/components/schemas/platformError'
+            $ref: '#/components/schemas/PlatformError'
       description: Generic platform status conflict error.
     error413:
       content:
@@ -3326,7 +3299,7 @@ components:
             call: BadRequestBody
             url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#3
           schema:
-            $ref: '#/components/schemas/platformError'
+            $ref: '#/components/schemas/PlatformError'
       description: Generic platform status request entity too large.
     error422:
       content:
@@ -3336,7 +3309,7 @@ components:
             call: Invalid JSON
             url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#9
           schema:
-            $ref: '#/components/schemas/platformError'
+            $ref: '#/components/schemas/PlatformError'
       description: Generic platform unprocessible entity response.
     error500:
       content:
@@ -3346,7 +3319,7 @@ components:
             call: Internal Failure
             url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
           schema:
-            $ref: '#/components/schemas/platformError'
+            $ref: '#/components/schemas/PlatformError'
       description: Generic platform internal error.
     error504:
       content:
@@ -3356,7 +3329,7 @@ components:
             call: Internal Failure
             url: https://docs.freeclimb.com/reference/error-and-warning-dictionary#0
           schema:
-            $ref: '#/components/schemas/platformError'
+            $ref: '#/components/schemas/PlatformError'
       description: gateway timeout error
   schemas:
     accountId:
@@ -6490,468 +6463,68 @@ components:
         \ in response to the `leaveConferenceUrl` attribute."
       x-percl-command: RemoveFromConference
       x-no-properties: true
-    SayElevenLabs:
-      description: The `SayElevenLabs` command provides Text-To-Speech (TTS) support
-        using the ElevenLabs TTS engine. It converts text to speech and then renders
-        it in a female voice back to the caller. `SayElevenLabs` is useful in cases
-        where it's difficult to pre-record a prompt for any reason. `SayElevenLabs`
-        does not allow barge-in unless nested within a `GetSpeech` command. The file
-        will always be played to completion unless nested.
-      properties:
-        text:
-          description: "The message to be played to the caller using TTS. The size\
-            \ of the string is limited to 4 KB (or 4,096 bytes). An empty string will\
-            \ cause the command to be skipped."
-          type: string
-          x-is-required: true
-        loop:
-          default: 1
-          description: Number of times the text is said. Specifying '0' causes the
-            `SayElevenLabs` action to loop until the Call is hung up.
-          type: integer
-        privacyMode:
-          description: Parameter `privacyMode` will not log the `text` as required
-            by PCI compliance.
-          type: boolean
-        engine:
-          $ref: '#/components/schemas/SayElevenLabs_engine'
-      required:
-      - engine
-      - text
-      type: object
-      x-is-object: true
-    SayElevenLabsEngineParameters:
-      description: The parameters to use for the TTS. The complete list of valid values
-        for the parameters attribute is shown below.
-      properties:
-        model_id:
-          default: eleven_turbo_v2_5
-          description: The ID of the ElevenLabs model to use for the TTS. The complete
-            list of valid values for the model_id attribute is shown below.
-          type: string
-        voice_id:
-          description: The ID of the ElevenLabs voice to use for the TTS. The complete
-            list of valid values for the voice_id attribute is shown below.
-          type: string
-        language_code:
-          default: en
-          description: The language code to use for the TTS. The complete list of
-            valid values for the language_code attribute is shown below.
-          type: string
-        voice_settings:
-          $ref: '#/components/schemas/SayElevenLabsEngineParameters_voice_settings'
-        pronunciation_dictionary:
-          items:
-            $ref: '#/components/schemas/SayElevenLabsEngineParameters_pronunciation_dictionary_inner'
-          type: array
-          x-is-list: true
-        seed:
-          type: integer
-        previous_text:
-          type: string
-        next_text:
-          type: string
-        previous_request_ids:
-          items:
-            type: string
-          type: array
-          x-is-list: true
-        next_request_ids:
-          items:
-            type: string
-          type: array
-          x-is-list: true
-        apply_language_text_normalization:
-          type: boolean
-      type: object
-      x-is-object: true
-    SayNeuralTextType:
-      description: The type of text to use for the TTS. The complete list of valid
-        values for the text type attribute is shown below.
+    TTSEngineName:
+      description: The engine to use for the TTS. The complete list of valid values
+        for the engine attribute is shown below.
       enum:
-      - text
-      - ssml
+      - freeclimb.standard
+      - freeclimb.neural
+      - ElevenLabs
       type: string
       x-enum: true
       x-enum-varnames:
-      - TEXT
-      - SSML
+      - FREECLIMB_STANDARD
+      - FREECLIMB_NEURAL
+      - ELEVEN_LABS
       x-enum-mapping:
-      - enum: text
-        varname: TEXT
-      - enum: ssml
-        varname: SSML
-    SayNeuralEngineParameters:
-      description: The parameters to use for the TTS. The complete list of valid values
-        for the parameters attribute is shown below.
+      - enum: freeclimb.standard
+        varname: FREECLIMB_STANDARD
+      - enum: freeclimb.neural
+        varname: FREECLIMB_NEURAL
+      - enum: ElevenLabs
+        varname: ELEVEN_LABS
+    TTSEngine:
       properties:
-        voice:
-          default: Eve
-          description: The voice to use for the TTS. The complete list of valid values
-            for the voice attribute is shown below.
-          type: string
-        textType:
-          $ref: '#/components/schemas/SayNeuralTextType'
-        language:
-          default: en-US
-          description: The language to use for the TTS. The complete list of valid
-            values for the language attribute is shown below.
-          type: string
-      type: object
-      x-is-object: true
-    SayNeural:
-      description: The `SayNeural` command provides Text-To-Speech (TTS) support using
-        the freeclimb.neural TTS engine. It converts text to speech and then renders
-        it in a female voice back to the caller. `SayNeural` is useful in cases where
-        it's difficult to pre-record a prompt for any reason. `SayNeural` does not
-        allow barge-in unless nested within a `GetSpeech` command. The file will always
-        be played to completion unless nested.
-      properties:
-        text:
-          description: "The message to be played to the caller using TTS. The size\
-            \ of the string is limited to 4 KB (or 4,096 bytes). An empty string will\
-            \ cause the command to be skipped."
-          type: string
-          x-is-required: true
-        loop:
-          default: 1
-          description: Number of times the text is said. Specifying '0' causes the
-            `SayNeural` action to loop until the Call is hung up.
-          type: integer
-        privacyMode:
-          default: false
-          description: Parameter `privacyMode` will not log the `text` as required
-            by PCI compliance.
-          type: boolean
-        engine:
-          $ref: '#/components/schemas/SayNeural_engine'
-      required:
-      - engine
-      - text
-      type: object
-      x-is-object: true
-    SayStandardVoice:
-      description: The voice to use for the TTS. The complete list of valid values
-        for the voice attribute is shown below.
-      enum:
-      - Herena
-      - Helle
-      - Hedda
-      - Hayley
-      - Heather
-      - Hazel
-      - Heera
-      - Helen
-      - ZiraPro
-      - Helena
-      - Hilda
-      - Heidi
-      - Harmonie
-      - Hortense
-      - Lucia
-      - Harkua
-      - Heami
-      - Hulda
-      - Hanna
-      - Paulina
-      - Helosia
-      - Helia
-      - Elena
-      - Hedvig
-      - HunYee
-      - HanHan
-      type: string
-      x-enum: true
-      x-enum-varnames:
-      - HERENA
-      - HELLE
-      - HEDDA
-      - HAYLEY
-      - HEATHER
-      - HAZEL
-      - HEERA
-      - HELEN
-      - ZIRA_PRO
-      - HELENA
-      - HILDA
-      - HEIDI
-      - HARMONIE
-      - HORTENSE
-      - LUCIA
-      - HARKUA
-      - HEAMI
-      - HULDA
-      - HANNA
-      - PAULINA
-      - HELOSIA
-      - HELIA
-      - ELENA
-      - HEDVIG
-      - HUN_YEE
-      - HAN_HAN
-      x-enum-mapping:
-      - enum: Herena
-        varname: HERENA
-      - enum: Helle
-        varname: HELLE
-      - enum: Hedda
-        varname: HEDDA
-      - enum: Hayley
-        varname: HAYLEY
-      - enum: Heather
-        varname: HEATHER
-      - enum: Hazel
-        varname: HAZEL
-      - enum: Heera
-        varname: HEERA
-      - enum: Helen
-        varname: HELEN
-      - enum: ZiraPro
-        varname: ZIRA_PRO
-      - enum: Helena
-        varname: HELENA
-      - enum: Hilda
-        varname: HILDA
-      - enum: Heidi
-        varname: HEIDI
-      - enum: Harmonie
-        varname: HARMONIE
-      - enum: Hortense
-        varname: HORTENSE
-      - enum: Lucia
-        varname: LUCIA
-      - enum: Harkua
-        varname: HARKUA
-      - enum: Heami
-        varname: HEAMI
-      - enum: Hulda
-        varname: HULDA
-      - enum: Hanna
-        varname: HANNA
-      - enum: Paulina
-        varname: PAULINA
-      - enum: Helosia
-        varname: HELOSIA
-      - enum: Helia
-        varname: HELIA
-      - enum: Elena
-        varname: ELENA
-      - enum: Hedvig
-        varname: HEDVIG
-      - enum: HunYee
-        varname: HUN_YEE
-      - enum: HanHan
-        varname: HAN_HAN
-    SayStandardCulture:
-      description: The culture to use for the TTS. The complete list of valid values
-        for the culture attribute is shown below.
-      enum:
-      - ca-ES
-      - da-DK
-      - de-DE
-      - en-AU
-      - en-CA
-      - en-GB
-      - en-IN
-      - en-US
-      - es-ES
-      - es-MX
-      - fi-FI
-      - fr-CA
-      - fr-FR
-      - it-IT
-      - ja-JP
-      - ko-KR
-      - nb-NO
-      - nl-NL
-      - pl-PL
-      - pt-BR
-      - pt-PT
-      - ru-RU
-      - sv-SE
-      - zh-CN
-      - zh-HK
-      - zh-TW
-      type: string
-      x-enum: true
-      x-enum-varnames:
-      - CA_ES
-      - DA_DK
-      - DE_DE
-      - EN_AU
-      - EN_CA
-      - EN_GB
-      - EN_IN
-      - EN_US
-      - ES_ES
-      - ES_MX
-      - FI_FI
-      - FR_CA
-      - FR_FR
-      - IT_IT
-      - JA_JP
-      - KO_KR
-      - NB_NO
-      - NL_NL
-      - PL_PL
-      - PT_BR
-      - PT_PT
-      - RU_RU
-      - SV_SE
-      - ZH_CN
-      - ZH_HK
-      - ZH_TW
-      x-enum-mapping:
-      - enum: ca-ES
-        varname: CA_ES
-      - enum: da-DK
-        varname: DA_DK
-      - enum: de-DE
-        varname: DE_DE
-      - enum: en-AU
-        varname: EN_AU
-      - enum: en-CA
-        varname: EN_CA
-      - enum: en-GB
-        varname: EN_GB
-      - enum: en-IN
-        varname: EN_IN
-      - enum: en-US
-        varname: EN_US
-      - enum: es-ES
-        varname: ES_ES
-      - enum: es-MX
-        varname: ES_MX
-      - enum: fi-FI
-        varname: FI_FI
-      - enum: fr-CA
-        varname: FR_CA
-      - enum: fr-FR
-        varname: FR_FR
-      - enum: it-IT
-        varname: IT_IT
-      - enum: ja-JP
-        varname: JA_JP
-      - enum: ko-KR
-        varname: KO_KR
-      - enum: nb-NO
-        varname: NB_NO
-      - enum: nl-NL
-        varname: NL_NL
-      - enum: pl-PL
-        varname: PL_PL
-      - enum: pt-BR
-        varname: PT_BR
-      - enum: pt-PT
-        varname: PT_PT
-      - enum: ru-RU
-        varname: RU_RU
-      - enum: sv-SE
-        varname: SV_SE
-      - enum: zh-CN
-        varname: ZH_CN
-      - enum: zh-HK
-        varname: ZH_HK
-      - enum: zh-TW
-        varname: ZH_TW
-    SayStandardContentType:
-      description: The content type to use for the TTS. The complete list of valid
-        values for the content type attribute is shown below.
-      enum:
-      - text/plain
-      - application/ssml+xml
-      type: string
-      x-enum: true
-      x-enum-varnames:
-      - TEXT_PLAIN
-      - APPLICATION_SSML_XML
-      x-enum-mapping:
-      - enum: text/plain
-        varname: TEXT_PLAIN
-      - enum: application/ssml+xml
-        varname: APPLICATION_SSML_XML
-    SayStandardEngineParameters:
-      description: The parameters to use for the TTS. The complete list of valid values
-        for the parameters attribute is shown below.
-      properties:
-        Voice:
-          $ref: '#/components/schemas/SayStandardVoice'
-        Culture:
-          $ref: '#/components/schemas/SayStandardCulture'
-        Content-Type:
-          $ref: '#/components/schemas/SayStandardContentType'
-      type: object
-      x-is-object: true
-    SayStandard:
-      description: The `Say` command provides Text-To-Speech (TTS) support using the
-        freeclimb.standard  TTS engine. It converts text to speech and then renders
-        it in a female voice back to the caller. `SayStandard` is useful in cases
-        where it's difficult to pre-record a prompt for any reason. `SayStandard`
-        does not allow barge-in unless nested within a `GetSpeech` command. The file
-        will always be played to completion unless nested.
-      properties:
-        text:
-          description: "The message to be played to the caller using TTS. The size\
-            \ of the string is limited to 4 KB (or 4,096 bytes). An empty string will\
-            \ cause the command to be skipped."
-          type: string
-          x-is-required: true
-        loop:
-          default: 1
-          description: Number of times the text is said. Specifying '0' causes the
-            `Say` action to loop until the Call is hung up.
-          type: integer
-        privacyMode:
-          default: false
-          description: Parameter `privacyMode` will not log the `text` as required
-            by PCI compliance.
-          type: boolean
-        engine:
-          $ref: '#/components/schemas/SayStandard_engine'
-      required:
-      - engine
-      - text
-      type: object
-      x-is-object: true
-    SayClassic:
-      description: The `Say` command provides Text-To-Speech (TTS) support. It converts
-        text to speech and then renders it in a female voice back to the caller. `Say`
-        is useful in cases where it's difficult to pre-record a prompt for any reason.
-        `Say` does not allow barge-in unless nested within a `GetSpeech` command.
-        The file will always be played to completion unless nested.
-      properties:
-        text:
-          description: "The message to be played to the caller using TTS. The size\
-            \ of the string is limited to 4 KB (or 4,096 bytes). An empty string will\
-            \ cause the command to be skipped."
-          type: string
-          x-is-required: true
-        language:
-          description: Language and (by implication) the locale to use. This implies
-            the accent and pronunciations to be usde for the TTS. The complete list
-            of valid values for the language attribute is shown below.
-          type: string
-        loop:
-          default: 1
-          description: Number of times the text is said. Specifying '0' causes the
-            `Say` action to loop until the Call is hung up.
-          type: integer
-        privacyMode:
-          description: Parameter `privacyMode` will not log the `text` as required
-            by PCI compliance.
-          type: boolean
-      required:
-      - text
+        name:
+          $ref: '#/components/schemas/TTSEngineName'
+        parameters:
+          additionalProperties: true
+          description: Parameters for the TTS engine. The parameters are specific
+            to the engine and are documented in the engine's documentation.
+          properties: {}
+          type: object
+          x-is-map: true
+          x-is-object: true
       type: object
       x-is-object: true
     Say:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
-      - oneOf:
-        - $ref: '#/components/schemas/SayElevenLabs'
-        - $ref: '#/components/schemas/SayNeural'
-        - $ref: '#/components/schemas/SayStandard'
-        - $ref: '#/components/schemas/SayClassic'
+      - properties:
+          text:
+            description: "The message to be played to the caller using TTS. The size\
+              \ of the string is limited to 4 KB (or 4,096 bytes). An empty string\
+              \ will cause the command to be skipped."
+            type: string
+            x-is-required: true
+          language:
+            description: Language and (by implication) the locale to use. This implies
+              the accent and pronunciations to be usde for the TTS. The complete list
+              of valid values for the language attribute is shown below.
+            type: string
+          engine:
+            $ref: '#/components/schemas/TTSEngine'
+          loop:
+            default: 1
+            description: Number of times the text is said. Specifying '0' causes the
+              `Say` action to loop until the Call is hung up.
+            type: integer
+          privacyMode:
+            description: Parameter `privacyMode` will not log the `text` as required
+              by PCI compliance.
+            type: boolean
+        required:
+        - text
       description: The `Say` command provides Text-To-Speech (TTS) support. It converts
         text to speech and then renders it in a female voice back to the caller. `Say`
         is useful in cases where it's difficult to pre-record a prompt for any reason.
@@ -10365,7 +9938,7 @@ components:
       type: object
       x-is-object: true
       x-implements: Pagination
-    platformError:
+    PlatformError:
       description: Standard error structure returned by platform.
       example:
         code: 0
@@ -10384,72 +9957,6 @@ components:
           x-is-object: true
       type: object
       x-is-object: true
-    SayElevenLabs_engine:
-      description: The engine to use for the TTS. The complete list of valid values
-        for the engine attribute is shown below.
-      properties:
-        name:
-          default: ElevenLabs
-          description: The name of the TTS engine to use. Set to `elevenlabs.tts`
-            to use the elevenlabs.tts TTS engine.
-          type: string
-        parameters:
-          $ref: '#/components/schemas/SayElevenLabsEngineParameters'
-      type: object
-      x-is-object: true
-      x-is-required: true
-    SayElevenLabsEngineParameters_voice_settings:
-      description: The voice settings to use for the TTS. The complete list of valid
-        values for the voice_settings attribute is shown below.
-      properties:
-        stability:
-          type: number
-        use_speaker_boost:
-          type: boolean
-        similarity_boost:
-          type: number
-        style:
-          type: number
-        speed:
-          type: number
-      type: object
-      x-is-object: true
-    SayElevenLabsEngineParameters_pronunciation_dictionary_inner:
-      properties:
-        pronunciation_dictionary_id:
-          type: string
-        version_id:
-          type: string
-      type: object
-    SayNeural_engine:
-      description: The engine to use for the TTS. The complete list of valid values
-        for the engine attribute is shown below.
-      properties:
-        name:
-          default: freeclimb.neural
-          description: The name of the TTS engine to use. Set to `freeclimb.neural`
-            to use the freeclimb.neural TTS engine.
-          type: string
-        parameters:
-          $ref: '#/components/schemas/SayNeuralEngineParameters'
-      type: object
-      x-is-object: true
-      x-is-required: true
-    SayStandard_engine:
-      description: Language and (by implication) the locale to use. This implies the
-        accent and pronunciations to be usde for the TTS. The complete list of valid
-        values for the language attribute is shown below.
-      properties:
-        name:
-          default: freeclimb.standard
-          description: The name of the TTS engine to use. Set to `freeclimb.standard`
-            for to use the standard freeclimb TTS engine.
-          type: string
-        parameters:
-          $ref: '#/components/schemas/SayStandardEngineParameters'
-      type: object
-      x-is-object: true
-      x-is-required: true
     AccountResult_allOf_subresourceUris:
       description: The list of subresources for this account.
       nullable: true

@@ -30,7 +30,7 @@ namespace freeclimb.Model
     /// <summary>
     /// Standard error structure returned by platform.
     /// </summary>
-    [DataContract(Name = "platformError")]
+    [DataContract(Name = "PlatformError")]
     public partial class PlatformError : IValidatableObject
     {
         /// <summary>

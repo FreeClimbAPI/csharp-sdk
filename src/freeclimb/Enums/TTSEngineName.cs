@@ -28,60 +28,72 @@ using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 namespace freeclimb.Enums
 {
     /// <summary>
-    /// The content type to use for the TTS. The complete list of valid values for the content type attribute is shown below.
+    /// The engine to use for the TTS. The complete list of valid values for the engine attribute is shown below.
     /// </summary>
-    /// <value>The content type to use for the TTS. The complete list of valid values for the content type attribute is shown below.</value>
+    /// <value>The engine to use for the TTS. The complete list of valid values for the engine attribute is shown below.</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum SayStandardContentType
+    public enum TTSEngineName
     {
         /// <summary>
-        /// Enum TEXT_PLAIN for value: text/plain
+        /// Enum FREECLIMB_STANDARD for value: freeclimb.standard
         /// </summary>
-        [EnumMember(Value = "text/plain")]
-        TEXT_PLAIN = 1,
+        [EnumMember(Value = "freeclimb.standard")]
+        FREECLIMB_STANDARD = 1,
 
         /// <summary>
-        /// Enum APPLICATION_SSML_XML for value: application/ssml+xml
+        /// Enum FREECLIMB_NEURAL for value: freeclimb.neural
         /// </summary>
-        [EnumMember(Value = "application/ssml+xml")]
-        APPLICATION_SSML_XML = 2,
+        [EnumMember(Value = "freeclimb.neural")]
+        FREECLIMB_NEURAL = 2,
+
+        /// <summary>
+        /// Enum ELEVEN_LABS for value: ElevenLabs
+        /// </summary>
+        [EnumMember(Value = "ElevenLabs")]
+        ELEVEN_LABS = 3,
     }
 
     /// <summary>
-    /// Converts <see cref="SayStandardContentType"/> to and from the JSON value
+    /// Converts <see cref="TTSEngineName"/> to and from the JSON value
     /// </summary>
-    public static class SayStandardContentTypeValueConverter
+    public static class TTSEngineNameValueConverter
     {
         /// <summary>
-        /// Parses a given value to <see cref="SayStandardContentType"/>
+        /// Parses a given value to <see cref="TTSEngineName"/>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static SayStandardContentType FromString(string value)
+        public static TTSEngineName FromString(string value)
         {
-            if (value.Equals("text/plain"))
-                return SayStandardContentType.TEXT_PLAIN;
+            if (value.Equals("freeclimb.standard"))
+                return TTSEngineName.FREECLIMB_STANDARD;
 
-            if (value.Equals("application/ssml+xml"))
-                return SayStandardContentType.APPLICATION_SSML_XML;
+            if (value.Equals("freeclimb.neural"))
+                return TTSEngineName.FREECLIMB_NEURAL;
+
+            if (value.Equals("ElevenLabs"))
+                return TTSEngineName.ELEVEN_LABS;
 
             throw new NotImplementedException(
-                $"Could not convert value to type SayStandardContentType: '{value}'"
+                $"Could not convert value to type TTSEngineName: '{value}'"
             );
         }
 
         /// <summary>
-        /// Parses a given value to <see cref="SayStandardContentType"/>
+        /// Parses a given value to <see cref="TTSEngineName"/>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static SayStandardContentType? FromStringOrDefault(string value)
+        public static TTSEngineName? FromStringOrDefault(string value)
         {
-            if (value.Equals("text/plain"))
-                return SayStandardContentType.TEXT_PLAIN;
+            if (value.Equals("freeclimb.standard"))
+                return TTSEngineName.FREECLIMB_STANDARD;
 
-            if (value.Equals("application/ssml+xml"))
-                return SayStandardContentType.APPLICATION_SSML_XML;
+            if (value.Equals("freeclimb.neural"))
+                return TTSEngineName.FREECLIMB_NEURAL;
+
+            if (value.Equals("ElevenLabs"))
+                return TTSEngineName.ELEVEN_LABS;
 
             return null;
         }

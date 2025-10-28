@@ -28,39 +28,38 @@ using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// The engine to use for the TTS. The complete list of valid values for the engine attribute is shown below.
+    /// TTSEngine
     /// </summary>
-    [DataContract(Name = "SayNeural_engine")]
-    public partial class SayNeuralEngine : IValidatableObject
+    [DataContract(Name = "TTSEngine")]
+    public partial class TTSEngine : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SayNeuralEngine" /> class.
+        /// Gets or Sets Name
         /// </summary>
-        /// <param name="name">The name of the TTS engine to use. Set to &#x60;freeclimb.neural&#x60; to use the freeclimb.neural TTS engine. (default to &quot;freeclimb.neural&quot;).</param>
-        /// <param name="parameters">parameters.</param>
-        public SayNeuralEngine(
-            string name = @"freeclimb.neural",
-            SayNeuralEngineParameters parameters = default(SayNeuralEngineParameters)
+        [DataMember(Name = "name", EmitDefaultValue = false)]
+        public TTSEngineName? Name { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TTSEngine" /> class.
+        /// </summary>
+        /// <param name="name">name.</param>
+        /// <param name="parameters">Parameters for the TTS engine. The parameters are specific to the engine and are documented in the engine&#39;s documentation..</param>
+        public TTSEngine(
+            TTSEngineName? name = default(TTSEngineName?),
+            Dictionary<string, Object> parameters = default(Dictionary<string, Object>)
         )
         {
-            // use default value if no "name" provided
             this.Name = name;
 
             this.Parameters = parameters;
         }
 
         /// <summary>
-        /// The name of the TTS engine to use. Set to &#x60;freeclimb.neural&#x60; to use the freeclimb.neural TTS engine.
+        /// Parameters for the TTS engine. The parameters are specific to the engine and are documented in the engine&#39;s documentation.
         /// </summary>
-        /// <value>The name of the TTS engine to use. Set to &#x60;freeclimb.neural&#x60; to use the freeclimb.neural TTS engine.</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Parameters
-        /// </summary>
+        /// <value>Parameters for the TTS engine. The parameters are specific to the engine and are documented in the engine&#39;s documentation.</value>
         [DataMember(Name = "parameters", EmitDefaultValue = false)]
-        public SayNeuralEngineParameters Parameters { get; set; }
+        public Dictionary<string, Object> Parameters { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,7 +68,7 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SayNeuralEngine {\n");
+            sb.Append("class TTSEngine {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("}\n");
@@ -90,7 +89,7 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the SayNeuralEngine instance.
+        /// Retrieve the KVP Dictionary for the TTSEngine instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()

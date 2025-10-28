@@ -292,10 +292,9 @@ namespace freeclimb.Api
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
-        /// <param name="key">key within blob to remove (optional)</param>
 
         /// <returns>BlobResult</returns>
-        BlobResult DeleteBlob(string blobId, List<string>? key = default(List<string>?));
+        BlobResult DeleteBlob(string blobId);
 
         /// <summary>
         /// Delete Blob
@@ -305,13 +304,9 @@ namespace freeclimb.Api
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
-        /// <param name="key">key within blob to remove (optional)</param>
 
         /// <returns>ApiResponse of BlobResult</returns>
-        ApiResponse<BlobResult> DeleteBlobWithHttpInfo(
-            string blobId,
-            List<string>? key = default(List<string>?)
-        );
+        ApiResponse<BlobResult> DeleteBlobWithHttpInfo(string blobId);
 
         /// <summary>
         /// Dequeue a Member
@@ -1002,14 +997,9 @@ namespace freeclimb.Api
         /// List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="alias">Filter blobs by alias (optional)</param>
-        /// <param name="cursor">Used to reference pages of a list of blobs (optional)</param>
 
         /// <returns>BlobListResponse</returns>
-        BlobListResponse ListBlobs(
-            string? alias = default(string?),
-            string? cursor = default(string?)
-        );
+        BlobListResponse ListBlobs();
 
         /// <summary>
         /// List Blobs belonging to an account.
@@ -1018,14 +1008,9 @@ namespace freeclimb.Api
         /// List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="alias">Filter blobs by alias (optional)</param>
-        /// <param name="cursor">Used to reference pages of a list of blobs (optional)</param>
 
         /// <returns>ApiResponse of BlobListResponse</returns>
-        ApiResponse<BlobListResponse> ListBlobsWithHttpInfo(
-            string? alias = default(string?),
-            string? cursor = default(string?)
-        );
+        ApiResponse<BlobListResponse> ListBlobsWithHttpInfo();
 
         /// <summary>
         /// List Call Logs
@@ -3214,14 +3199,12 @@ namespace freeclimb.Api
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
-        /// <param name="key">key within blob to remove (optional)</param>
 
         /// <returns>BlobResult</returns>
-        public BlobResult DeleteBlob(string blobId, List<string>? key = default(List<string>?))
+        public BlobResult DeleteBlob(string blobId)
         {
             freeclimb.Client.ApiResponse<BlobResult> localVarResponse = DeleteBlobWithHttpInfo(
-                blobId,
-                key
+                blobId
             );
             return localVarResponse.Data;
         }
@@ -3231,13 +3214,9 @@ namespace freeclimb.Api
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
-        /// <param name="key">key within blob to remove (optional)</param>
 
         /// <returns>ApiResponse of BlobResult</returns>
-        public freeclimb.Client.ApiResponse<BlobResult> DeleteBlobWithHttpInfo(
-            string blobId,
-            List<string>? key = default(List<string>?)
-        )
+        public freeclimb.Client.ApiResponse<BlobResult> DeleteBlobWithHttpInfo(string blobId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3287,12 +3266,6 @@ namespace freeclimb.Api
                 "blobId",
                 freeclimb.Client.ClientUtils.ParameterToString(blobId)
             ); // path parameter
-            if (key != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(
-                    freeclimb.Client.ClientUtils.ParameterToMultiMap("multi", "key", key)
-                );
-            }
 
             localVarRequestOptions.Operation = "DefaultApi.DeleteBlob";
 
@@ -6756,19 +6729,12 @@ namespace freeclimb.Api
         /// List Blobs belonging to an account. List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="alias">Filter blobs by alias (optional)</param>
-        /// <param name="cursor">Used to reference pages of a list of blobs (optional)</param>
 
         /// <returns>BlobListResponse</returns>
-        public BlobListResponse ListBlobs(
-            string? alias = default(string?),
-            string? cursor = default(string?)
-        )
+        public BlobListResponse ListBlobs()
         {
-            freeclimb.Client.ApiResponse<BlobListResponse> localVarResponse = ListBlobsWithHttpInfo(
-                alias,
-                cursor
-            );
+            freeclimb.Client.ApiResponse<BlobListResponse> localVarResponse =
+                ListBlobsWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -6776,14 +6742,9 @@ namespace freeclimb.Api
         /// List Blobs belonging to an account. List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="alias">Filter blobs by alias (optional)</param>
-        /// <param name="cursor">Used to reference pages of a list of blobs (optional)</param>
 
         /// <returns>ApiResponse of BlobListResponse</returns>
-        public freeclimb.Client.ApiResponse<BlobListResponse> ListBlobsWithHttpInfo(
-            string? alias = default(string?),
-            string? cursor = default(string?)
-        )
+        public freeclimb.Client.ApiResponse<BlobListResponse> ListBlobsWithHttpInfo()
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6820,18 +6781,6 @@ namespace freeclimb.Api
                 "accountId",
                 freeclimb.Client.ClientUtils.ParameterToString(accountId)
             ); // path parameter
-            if (alias != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(
-                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "alias", alias)
-                );
-            }
-            if (cursor != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(
-                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "cursor", cursor)
-                );
-            }
 
             localVarRequestOptions.Operation = "DefaultApi.ListBlobs";
 
