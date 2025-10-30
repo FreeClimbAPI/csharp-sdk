@@ -215,12 +215,12 @@ namespace freeclimb.Model
             AddToDictionary(props, "to", To);
             AddToDictionary(props, "text", Text);
             AddToDictionary(props, "notificationUrl", NotificationUrl);
-            List<object> nestedMediaUrls = new List<object>();
+            List<object> nested = new List<object>();
             if (MediaUrls != null)
             {
-                nestedMediaUrls.Add(MediaUrls);
+                nested.Add(MediaUrls);
             }
-            AddToDictionary(props, "mediaUrls", nestedMediaUrls);
+            AddToDictionary(props, "mediaUrls", nested);
             return props;
         }
 

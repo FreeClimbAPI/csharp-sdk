@@ -40,8 +40,8 @@ namespace freeclimb.Test.Api
         {
             Configuration config = new Configuration();
             config.BasePath = "http://127.0.0.1:4010/";
-            config.Username = "AC0123456789abcdefABCDEF0123456789abcdef00";
-            config.Password = "123ABC123ABC123ABC123ABC123ABC123ABCID";
+            config.Username = "TEST-ACCOUNT-ID";
+            config.Password = "TEST-API-KEY";
             instance = new DefaultApi(config);
         }
 
@@ -105,18 +105,6 @@ namespace freeclimb.Test.Api
 
             var response = instance.CreateAnApplication(applicationRequest);
             Assert.IsAssignableFrom<ApplicationResult>(response);
-        }
-
-        /// <summary>
-        /// Test CreateBlob
-        /// </summary>
-        [Fact]
-        public void CreateBlobTest()
-        {
-            CreateBlobRequest createBlobRequest = createBlobRequestTestValue();
-
-            var response = instance.CreateBlob(createBlobRequest);
-            Assert.IsAssignableFrom<BlobResult>(response);
         }
 
         /// <summary>
@@ -190,20 +178,6 @@ namespace freeclimb.Test.Api
             string phoneNumberId = phoneNumberIdTestValue();
 
             instance.DeleteAnIncomingNumber(phoneNumberId);
-        }
-
-        /// <summary>
-        /// Test DeleteBlob
-        /// </summary>
-        [Fact]
-        public void DeleteBlobTest()
-        {
-            string blobId = blobIdTestValue();
-
-            List<string>? key = keyTestArray();
-
-            var response = instance.DeleteBlob(blobId, key);
-            Assert.IsAssignableFrom<BlobResult>(response);
         }
 
         /// <summary>
@@ -403,18 +377,6 @@ namespace freeclimb.Test.Api
         }
 
         /// <summary>
-        /// Test GetBlob
-        /// </summary>
-        [Fact]
-        public void GetBlobTest()
-        {
-            string blobId = blobIdTestValue();
-
-            var response = instance.GetBlob(blobId);
-            Assert.IsAssignableFrom<BlobResult>(response);
-        }
-
-        /// <summary>
         /// Test GetHeadMember
         /// </summary>
         [Fact]
@@ -594,20 +556,6 @@ namespace freeclimb.Test.Api
         }
 
         /// <summary>
-        /// Test ListBlobs
-        /// </summary>
-        [Fact]
-        public void ListBlobsTest()
-        {
-            string? alias = aliasTestValue();
-
-            string? cursor = cursorTestValue();
-
-            var response = instance.ListBlobs(alias, cursor);
-            Assert.IsAssignableFrom<BlobListResponse>(response);
-        }
-
-        /// <summary>
         /// Test ListCallLogs
         /// </summary>
         [Fact]
@@ -740,6 +688,10 @@ namespace freeclimb.Test.Api
 
             bool? hasApplication = hasApplicationTestValue();
 
+            bool? voiceEnabled = voiceEnabledTestValue();
+
+            bool? smsEnabled = smsEnabledTestValue();
+
             bool? hasCampaign = hasCampaignTestValue();
 
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
@@ -763,6 +715,8 @@ namespace freeclimb.Test.Api
                 country,
                 applicationId,
                 hasApplication,
+                voiceEnabled,
+                smsEnabled,
                 hasCampaign,
                 capabilitiesVoice,
                 capabilitiesSms,
@@ -881,20 +835,6 @@ namespace freeclimb.Test.Api
         }
 
         /// <summary>
-        /// Test ModifyBlob
-        /// </summary>
-        [Fact]
-        public void ModifyBlobTest()
-        {
-            string blobId = blobIdTestValue();
-
-            ModifyBlobRequest modifyBlobRequest = modifyBlobRequestTestValue();
-
-            var response = instance.ModifyBlob(blobId, modifyBlobRequest);
-            Assert.IsAssignableFrom<BlobResult>(response);
-        }
-
-        /// <summary>
         /// Test RemoveAParticipant
         /// </summary>
         [Fact]
@@ -905,20 +845,6 @@ namespace freeclimb.Test.Api
             string callId = callIdTestValue();
 
             instance.RemoveAParticipant(conferenceId, callId);
-        }
-
-        /// <summary>
-        /// Test ReplaceBlob
-        /// </summary>
-        [Fact]
-        public void ReplaceBlobTest()
-        {
-            string blobId = blobIdTestValue();
-
-            ReplaceBlobRequest replaceBlobRequest = replaceBlobRequestTestValue();
-
-            var response = instance.ReplaceBlob(blobId, replaceBlobRequest);
-            Assert.IsAssignableFrom<BlobResult>(response);
         }
 
         /// <summary>
@@ -1222,25 +1148,6 @@ namespace freeclimb.Test.Api
         }
 
         /// <summary>
-        /// Test ListBlobs
-        /// </summary>
-        [Fact]
-        public void ListBlobsGetNextPageTest()
-        {
-            string? alias = aliasTestValue();
-
-            string? cursor = cursorTestValue();
-
-            var response = instance.ListBlobs(alias, cursor);
-            //Assert.IsType<BlobListResponse>(response);
-            Assert.IsAssignableFrom<BlobListResponse>(response);
-            response.NextPageUri = "/Accounts/{accountId}/Blobs?cursor=1";
-            var nextPageResponse = instance.GetNextPage(response);
-            //Assert.IsType<BlobListResponse>(response);
-            Assert.IsAssignableFrom<BlobListResponse>(nextPageResponse);
-        }
-
-        /// <summary>
         /// Test ListCallLogs
         /// </summary>
         [Fact]
@@ -1404,6 +1311,10 @@ namespace freeclimb.Test.Api
 
             bool? hasApplication = hasApplicationTestValue();
 
+            bool? voiceEnabled = voiceEnabledTestValue();
+
+            bool? smsEnabled = smsEnabledTestValue();
+
             bool? hasCampaign = hasCampaignTestValue();
 
             bool? capabilitiesVoice = capabilitiesVoiceTestValue();
@@ -1427,6 +1338,8 @@ namespace freeclimb.Test.Api
                 country,
                 applicationId,
                 hasApplication,
+                voiceEnabled,
+                smsEnabled,
                 hasCampaign,
                 capabilitiesVoice,
                 capabilitiesSms,
@@ -1548,22 +1461,22 @@ namespace freeclimb.Test.Api
 
         private string accountIdTestValue()
         {
-            return "AC0123456789abcdefABCDEF0123456789abcdef00";
+            return "AC0000000000000000000000000000000000000000";
         }
 
         private string applicationIdTestValue()
         {
-            return "AP0123456789abcdefABCDEF0123456789abcdef00";
+            return "AP0000000000000000000000000000000000000000";
         }
 
         private string recordingIdTestValue()
         {
-            return "RC0123456789abcdefABCDEF0123456789abcdef00";
+            return "RC0000000000000000000000000000000000000000";
         }
 
         private string callIdTestValue()
         {
-            return "CA0123456789abcdefABCDEF0123456789abcdef00";
+            return "CA0000000000000000000000000000000000000000";
         }
 
         private string phoneNumberTestValue()
@@ -1573,22 +1486,22 @@ namespace freeclimb.Test.Api
 
         private string phoneNumberIdTestValue()
         {
-            return "PN0123456789abcdefABCDEF0123456789abcdef00";
+            return "PN0000000000000000000000000000000000000000";
         }
 
         private string queueIdTestValue()
         {
-            return "QU0123456789abcdefABCDEF0123456789abcdef00";
+            return "QU0000000000000000000000000000000000000000";
         }
 
         private string conferenceIdTestValue()
         {
-            return "CN0123456789abcdefABCDEF0123456789abcdef00";
+            return "CN0000000000000000000000000000000000000000";
         }
 
         private string messageIdTestValue()
         {
-            return "ME0123456789abcdefABCDEF0123456789abcdef00";
+            return "ME0000000000000000000000000000000000000000";
         }
 
         private string aliasTestValue()
@@ -1773,6 +1686,8 @@ namespace freeclimb.Test.Api
                 capabilities,
                 "TEST-CAMPAIGN",
                 "+18003608245",
+                true,
+                true,
                 "US",
                 "IL"
             );
@@ -1780,6 +1695,8 @@ namespace freeclimb.Test.Api
                 capabilities,
                 "TEST-CAMPAIGN",
                 phoneNumberTestValue(),
+                true,
+                true,
                 "US",
                 "IL"
             );
@@ -2152,31 +2069,6 @@ namespace freeclimb.Test.Api
         private ExportRequest exportRequestTestValue()
         {
             return null;
-        }
-
-        private CreateBlobRequest createBlobRequestTestValue()
-        {
-            return new CreateBlobRequest("test_alias", "test_expiration", new { });
-        }
-
-        private string blobIdTestValue()
-        {
-            return "BL0123456789abcdefABCDEF0123456789abcdef00";
-        }
-
-        private List<string> keyTestArray()
-        {
-            return new List<string>() { "test_key" };
-        }
-
-        private ModifyBlobRequest modifyBlobRequestTestValue()
-        {
-            return new ModifyBlobRequest(new { }, "test_alias");
-        }
-
-        private ReplaceBlobRequest replaceBlobRequestTestValue()
-        {
-            return new ReplaceBlobRequest(new { });
         }
     }
 }

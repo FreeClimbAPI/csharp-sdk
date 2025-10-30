@@ -206,15 +206,15 @@ namespace freeclimb.Model
             AddToDictionary(props, "initialTimeoutMs", InitialTimeoutMs);
             AddToDictionary(props, "maxDigits", MaxDigits);
             AddToDictionary(props, "minDigits", MinDigits);
-            List<object> nestedPrompts = new List<object>();
+            List<object> nested = new List<object>();
             if (Prompts != null)
             {
                 foreach (var item in Prompts)
                 {
-                    nestedPrompts.Add(item.ToKvp());
+                    nested.Add(item.ToKvp());
                 }
             }
-            AddToDictionary(props, "prompts", nestedPrompts);
+            AddToDictionary(props, "prompts", nested);
             AddToDictionary(props, "privacyMode", PrivacyMode);
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("GetDigits", props);

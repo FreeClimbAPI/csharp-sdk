@@ -313,12 +313,12 @@ namespace freeclimb.Model
             AddToDictionary(props, "brandId", BrandId);
             AddToDictionary(props, "campaignId", CampaignId);
             AddToDictionary(props, "segmentCount", SegmentCount);
-            List<object> nestedMediaUrls = new List<object>();
+            List<object> nested = new List<object>();
             if (MediaUrls != null)
             {
-                nestedMediaUrls.Add(MediaUrls);
+                nested.Add(MediaUrls);
             }
-            AddToDictionary(props, "mediaUrls", nestedMediaUrls);
+            AddToDictionary(props, "mediaUrls", nested);
             AddToDictionary(props, "tfn", Tfn);
             AddToDictionary(props, "phoneNumberId", PhoneNumberId);
             AddToDictionary(props, "applicationId", ApplicationId);

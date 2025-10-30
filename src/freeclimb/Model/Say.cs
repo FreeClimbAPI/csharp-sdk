@@ -45,17 +45,15 @@ namespace freeclimb.Model
         /// Initializes a new instance of the <see cref="Say" /> class.
         /// </summary>
         /// <param name="text">The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped. (required).</param>
+        /// <param name="language">Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below..</param>
         /// <param name="loop">Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up. (default to 1).</param>
         /// <param name="privacyMode">Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance..</param>
-        /// <param name="engine">engine (required).</param>
-        /// <param name="language">Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below..</param>
         /// <param name="command">Name of PerCL Command (this is automatically derived from mapping configuration and should not be manually supplied in any arguments) (default to &quot;Say&quot;).</param>
         public Say(
             string text = default(string),
+            string language = default(string),
             int loop = 1,
             bool privacyMode = default(bool),
-            SayStandardEngine engine = default(SayStandardEngine),
-            string language = default(string),
             string command = @"Say"
         )
             : base(command)
@@ -69,20 +67,11 @@ namespace freeclimb.Model
             }
             this.Text = text;
 
-            // to ensure "engine" is required (not null)
-            if (engine == null)
-            {
-                throw new ArgumentNullException(
-                    "engine is a required property for Say and cannot be null"
-                );
-            }
-            this.Engine = engine;
+            this.Language = language;
 
             this.Loop = loop;
 
             this.PrivacyMode = privacyMode;
-
-            this.Language = language;
         }
 
         /// <summary>
@@ -91,6 +80,13 @@ namespace freeclimb.Model
         /// <value>The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.</value>
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
+
+        /// <summary>
+        /// Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
+        /// </summary>
+        /// <value>Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.</value>
+        [DataMember(Name = "language", EmitDefaultValue = false)]
+        public string Language { get; set; }
 
         /// <summary>
         /// Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up.
@@ -107,19 +103,6 @@ namespace freeclimb.Model
         public bool PrivacyMode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Engine
-        /// </summary>
-        [DataMember(Name = "engine", IsRequired = true, EmitDefaultValue = true)]
-        public SayStandardEngine Engine { get; set; }
-
-        /// <summary>
-        /// Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
-        /// </summary>
-        /// <value>Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.</value>
-        [DataMember(Name = "language", EmitDefaultValue = false)]
-        public string Language { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -129,10 +112,9 @@ namespace freeclimb.Model
             sb.Append("class Say {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  Loop: ").Append(Loop).Append("\n");
             sb.Append("  PrivacyMode: ").Append(PrivacyMode).Append("\n");
-            sb.Append("  Engine: ").Append(Engine).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -158,10 +140,9 @@ namespace freeclimb.Model
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
             AddToDictionary(props, "text", Text);
+            AddToDictionary(props, "language", Language);
             AddToDictionary(props, "loop", Loop);
             AddToDictionary(props, "privacyMode", PrivacyMode);
-            AddToDictionary(props, "engine", Engine);
-            AddToDictionary(props, "language", Language);
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("Say", props);
             return command;

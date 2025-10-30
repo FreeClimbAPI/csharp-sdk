@@ -565,12 +565,12 @@ namespace freeclimb.Model
             AddToDictionary(props, "billedDate", BilledDate);
             AddToDictionary(props, "brandId", BrandId);
             AddToDictionary(props, "usecase", Usecase);
-            List<object> nestedSubUsecases = new List<object>();
+            List<object> nested = new List<object>();
             if (SubUsecases != null)
             {
-                nestedSubUsecases.Add(SubUsecases);
+                nested.Add(SubUsecases);
             }
-            AddToDictionary(props, "subUsecases", nestedSubUsecases);
+            AddToDictionary(props, "subUsecases", nested);
             AddToDictionary(props, "description", Description);
             AddToDictionary(props, "embeddedLink", EmbeddedLink);
             AddToDictionary(props, "embeddedPhone", EmbeddedPhone);

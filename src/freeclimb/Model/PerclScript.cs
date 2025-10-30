@@ -89,15 +89,15 @@ namespace freeclimb.Model
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            List<object> nestedCommands = new List<object>();
+            List<object> nested = new List<object>();
             if (Commands != null)
             {
                 foreach (var item in Commands)
                 {
-                    nestedCommands.Add(item.ToKvp());
+                    nested.Add(item.ToKvp());
                 }
             }
-            AddToDictionary(props, "commands", nestedCommands);
+            AddToDictionary(props, "commands", nested);
             return props;
         }
 
