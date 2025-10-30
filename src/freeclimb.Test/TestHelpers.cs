@@ -352,7 +352,10 @@ namespace freeclimb.Test
             }
             if (type == typeof(TTSEngine))
             {
-                return new TTSEngine(name: TTSEngineNameValueConverter.FromString("freeclimb.standard"), parameters: new Dictionary<string, Object>());
+                return new TTSEngine(
+                    name: TTSEngineNameValueConverter.FromString("freeclimb.standard"),
+                    parameters: new Dictionary<string, Object>()
+                );
             }
             if (type == typeof(TTSEngineName))
             {
