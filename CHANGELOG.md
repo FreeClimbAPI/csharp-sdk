@@ -11,6 +11,8 @@ None
 
 <a name="5.3.1"></a>
 
+## [5.3.1] - 2025-10-30
+
 ### Changed
 
 - Resolves a discrepancy during package publishing
