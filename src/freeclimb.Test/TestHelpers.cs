@@ -342,6 +342,23 @@ namespace freeclimb.Test
             {
                 return new List<ExportResult>();
             }
+            if (type == typeof(List<BlobResult>))
+            {
+                return new List<BlobResult>();
+            }
+            if (type == typeof(BlobResult))
+            {
+                return new BlobResult();
+            }
+            if (type == typeof(TTSEngine))
+            {
+                return new TTSEngine(name: TTSEngineNameValueConverter.FromString("freeclimb.standard"), parameters: new Dictionary<string, Object>());
+            }
+            if (type == typeof(TTSEngineName))
+            {
+                return TTSEngineNameValueConverter.FromString("freeclimb.standard");
+            }
+
             throw new ArgumentException("Provided type has no test value", type.ToString());
         }
     }

@@ -125,6 +125,30 @@ namespace freeclimb.Api
         );
 
         /// <summary>
+        /// Create a Blob
+        /// </summary>
+        /// <remarks>
+        /// Create a new Blob belonging to the requesting account.
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createBlobRequest">An object defining a new blob. A request body must be provided but the blob may be empty.</param>
+
+        /// <returns>BlobResult</returns>
+        BlobResult CreateBlob(CreateBlobRequest createBlobRequest);
+
+        /// <summary>
+        /// Create a Blob
+        /// </summary>
+        /// <remarks>
+        /// Create a new Blob belonging to the requesting account.
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createBlobRequest">An object defining a new blob. A request body must be provided but the blob may be empty.</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        ApiResponse<BlobResult> CreateBlobWithHttpInfo(CreateBlobRequest createBlobRequest);
+
+        /// <summary>
         /// Create an Export
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -259,6 +283,30 @@ namespace freeclimb.Api
 
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteAnIncomingNumberWithHttpInfo(string phoneNumberId);
+
+        /// <summary>
+        /// Delete Blob
+        /// </summary>
+        /// <remarks>
+        /// Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+
+        /// <returns>BlobResult</returns>
+        BlobResult DeleteBlob(string blobId);
+
+        /// <summary>
+        /// Delete Blob
+        /// </summary>
+        /// <remarks>
+        /// Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        ApiResponse<BlobResult> DeleteBlobWithHttpInfo(string blobId);
 
         /// <summary>
         /// Dequeue a Member
@@ -604,6 +652,30 @@ namespace freeclimb.Api
         ApiResponse<MessageResult> GetAnSmsMessageWithHttpInfo(string messageId);
 
         /// <summary>
+        /// Get Blob
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a specified blob
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+
+        /// <returns>BlobResult</returns>
+        BlobResult GetBlob(string blobId);
+
+        /// <summary>
+        /// Get Blob
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a specified blob
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        ApiResponse<BlobResult> GetBlobWithHttpInfo(string blobId);
+
+        /// <summary>
         /// Get Head Member
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -919,6 +991,28 @@ namespace freeclimb.Api
         );
 
         /// <summary>
+        /// List Blobs belonging to an account.
+        /// </summary>
+        /// <remarks>
+        /// List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+
+        /// <returns>BlobListResponse</returns>
+        BlobListResponse ListBlobs();
+
+        /// <summary>
+        /// List Blobs belonging to an account.
+        /// </summary>
+        /// <remarks>
+        /// List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+
+        /// <returns>ApiResponse of BlobListResponse</returns>
+        ApiResponse<BlobListResponse> ListBlobsWithHttpInfo();
+
+        /// <summary>
         /// List Call Logs
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1135,8 +1229,6 @@ namespace freeclimb.Api
         /// <param name="country">Country of this phone number. (optional)</param>
         /// <param name="applicationId">ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)</param>
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
-        /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         /// <param name="hasCampaign">Indication of whether the phone number has a campaign associated with it (optional)</param>
         /// <param name="capabilitiesVoice"> (optional)</param>
         /// <param name="capabilitiesSms"> (optional)</param>
@@ -1154,8 +1246,6 @@ namespace freeclimb.Api
             string? country = default(string?),
             string? applicationId = default(string?),
             bool? hasApplication = default(bool?),
-            bool? voiceEnabled = default(bool?),
-            bool? smsEnabled = default(bool?),
             bool? hasCampaign = default(bool?),
             bool? capabilitiesVoice = default(bool?),
             bool? capabilitiesSms = default(bool?),
@@ -1179,8 +1269,6 @@ namespace freeclimb.Api
         /// <param name="country">Country of this phone number. (optional)</param>
         /// <param name="applicationId">ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)</param>
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
-        /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         /// <param name="hasCampaign">Indication of whether the phone number has a campaign associated with it (optional)</param>
         /// <param name="capabilitiesVoice"> (optional)</param>
         /// <param name="capabilitiesSms"> (optional)</param>
@@ -1198,8 +1286,6 @@ namespace freeclimb.Api
             string? country = default(string?),
             string? applicationId = default(string?),
             bool? hasApplication = default(bool?),
-            bool? voiceEnabled = default(bool?),
-            bool? smsEnabled = default(bool?),
             bool? hasCampaign = default(bool?),
             bool? capabilitiesVoice = default(bool?),
             bool? capabilitiesSms = default(bool?),
@@ -1399,6 +1485,35 @@ namespace freeclimb.Api
         ApiResponse<string> MakeAWebrtcJwtWithHttpInfo(CreateWebRTCToken createWebRTCToken);
 
         /// <summary>
+        /// Modify Blob
+        /// </summary>
+        /// <remarks>
+        /// Modifys a pre existing blob by either adding new fields, or modifying existing fields
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+        /// <param name="modifyBlobRequest">Request body to specify keys to modify. Or new keys to add onto the already existing blob</param>
+
+        /// <returns>BlobResult</returns>
+        BlobResult ModifyBlob(string blobId, ModifyBlobRequest modifyBlobRequest);
+
+        /// <summary>
+        /// Modify Blob
+        /// </summary>
+        /// <remarks>
+        /// Modifys a pre existing blob by either adding new fields, or modifying existing fields
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+        /// <param name="modifyBlobRequest">Request body to specify keys to modify. Or new keys to add onto the already existing blob</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        ApiResponse<BlobResult> ModifyBlobWithHttpInfo(
+            string blobId,
+            ModifyBlobRequest modifyBlobRequest
+        );
+
+        /// <summary>
         /// Remove a Participant
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1420,6 +1535,35 @@ namespace freeclimb.Api
 
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveAParticipantWithHttpInfo(string conferenceId, string callId);
+
+        /// <summary>
+        /// Replace Blob
+        /// </summary>
+        /// <remarks>
+        /// Replaces the blob content with the provided values.
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+        /// <param name="replaceBlobRequest">JSON object containing blob key the contents of which will be used to override the enitre blob contents.</param>
+
+        /// <returns>BlobResult</returns>
+        BlobResult ReplaceBlob(string blobId, ReplaceBlobRequest replaceBlobRequest);
+
+        /// <summary>
+        /// Replace Blob
+        /// </summary>
+        /// <remarks>
+        /// Replaces the blob content with the provided values.
+        /// </remarks>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+        /// <param name="replaceBlobRequest">JSON object containing blob key the contents of which will be used to override the enitre blob contents.</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        ApiResponse<BlobResult> ReplaceBlobWithHttpInfo(
+            string blobId,
+            ReplaceBlobRequest replaceBlobRequest
+        );
 
         /// <summary>
         /// Send an SMS Message
@@ -2283,6 +2427,115 @@ namespace freeclimb.Api
         }
 
         /// <summary>
+        /// Create a Blob Create a new Blob belonging to the requesting account.
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createBlobRequest">An object defining a new blob. A request body must be provided but the blob may be empty.</param>
+
+        /// <returns>BlobResult</returns>
+        public BlobResult CreateBlob(CreateBlobRequest createBlobRequest)
+        {
+            freeclimb.Client.ApiResponse<BlobResult> localVarResponse = CreateBlobWithHttpInfo(
+                createBlobRequest
+            );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a Blob Create a new Blob belonging to the requesting account.
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createBlobRequest">An object defining a new blob. A request body must be provided but the blob may be empty.</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        public freeclimb.Client.ApiResponse<BlobResult> CreateBlobWithHttpInfo(
+            CreateBlobRequest createBlobRequest
+        )
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->CreateBlob"
+                );
+            }
+
+            // verify the required parameter 'createBlobRequest' is set
+            if (createBlobRequest == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'createBlobRequest' when calling DefaultApi->CreateBlob"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { "application/json" };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "application/json" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            localVarRequestOptions.Data = createBlobRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.CreateBlob";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<BlobResult>(
+                "/Accounts/{accountId}/Blobs",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateBlob", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Create an Export
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2942,6 +3195,116 @@ namespace freeclimb.Api
         }
 
         /// <summary>
+        /// Delete Blob Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+
+        /// <returns>BlobResult</returns>
+        public BlobResult DeleteBlob(string blobId)
+        {
+            freeclimb.Client.ApiResponse<BlobResult> localVarResponse = DeleteBlobWithHttpInfo(
+                blobId
+            );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete Blob Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        public freeclimb.Client.ApiResponse<BlobResult> DeleteBlobWithHttpInfo(string blobId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->DeleteBlob"
+                );
+            }
+
+            // verify the required parameter 'blobId' is set
+            if (blobId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'blobId' when calling DefaultApi->DeleteBlob"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "application/json" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            localVarRequestOptions.PathParameters.Add(
+                "blobId",
+                freeclimb.Client.ClientUtils.ParameterToString(blobId)
+            ); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.DeleteBlob";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<BlobResult>(
+                "/Accounts/{accountId}/Blobs/{blobId}",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteBlob", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Dequeue a Member
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3230,7 +3593,7 @@ namespace freeclimb.Api
             string[] _contentTypes = new string[] { };
 
             // to determine the Accept header
-            string[] _accepts = new string[] { "audio/x-wav" };
+            string[] _accepts = new string[] { "audio/wav" };
 
             var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
                 _contentTypes
@@ -4753,6 +5116,114 @@ namespace freeclimb.Api
         }
 
         /// <summary>
+        /// Get Blob Retrieves a specified blob
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+
+        /// <returns>BlobResult</returns>
+        public BlobResult GetBlob(string blobId)
+        {
+            freeclimb.Client.ApiResponse<BlobResult> localVarResponse = GetBlobWithHttpInfo(blobId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Blob Retrieves a specified blob
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        public freeclimb.Client.ApiResponse<BlobResult> GetBlobWithHttpInfo(string blobId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->GetBlob"
+                );
+            }
+
+            // verify the required parameter 'blobId' is set
+            if (blobId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'blobId' when calling DefaultApi->GetBlob"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "application/json" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            localVarRequestOptions.PathParameters.Add(
+                "blobId",
+                freeclimb.Client.ClientUtils.ParameterToString(blobId)
+            ); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.GetBlob";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<BlobResult>(
+                "/Accounts/{accountId}/Blobs/{blobId}",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetBlob", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get Head Member
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -6255,6 +6726,100 @@ namespace freeclimb.Api
         }
 
         /// <summary>
+        /// List Blobs belonging to an account. List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+
+        /// <returns>BlobListResponse</returns>
+        public BlobListResponse ListBlobs()
+        {
+            freeclimb.Client.ApiResponse<BlobListResponse> localVarResponse =
+                ListBlobsWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Blobs belonging to an account. List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+
+        /// <returns>ApiResponse of BlobListResponse</returns>
+        public freeclimb.Client.ApiResponse<BlobListResponse> ListBlobsWithHttpInfo()
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->ListBlobs"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "application/json" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.ListBlobs";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<BlobListResponse>(
+                "/Accounts/{accountId}/Blobs",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListBlobs", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// List Call Logs
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -7112,8 +7677,6 @@ namespace freeclimb.Api
         /// <param name="country">Country of this phone number. (optional)</param>
         /// <param name="applicationId">ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)</param>
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
-        /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         /// <param name="hasCampaign">Indication of whether the phone number has a campaign associated with it (optional)</param>
         /// <param name="capabilitiesVoice"> (optional)</param>
         /// <param name="capabilitiesSms"> (optional)</param>
@@ -7131,8 +7694,6 @@ namespace freeclimb.Api
             string? country = default(string?),
             string? applicationId = default(string?),
             bool? hasApplication = default(bool?),
-            bool? voiceEnabled = default(bool?),
-            bool? smsEnabled = default(bool?),
             bool? hasCampaign = default(bool?),
             bool? capabilitiesVoice = default(bool?),
             bool? capabilitiesSms = default(bool?),
@@ -7151,8 +7712,6 @@ namespace freeclimb.Api
                     country,
                     applicationId,
                     hasApplication,
-                    voiceEnabled,
-                    smsEnabled,
                     hasCampaign,
                     capabilitiesVoice,
                     capabilitiesSms,
@@ -7175,8 +7734,6 @@ namespace freeclimb.Api
         /// <param name="country">Country of this phone number. (optional)</param>
         /// <param name="applicationId">ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)</param>
         /// <param name="hasApplication">Indication of whether the phone number has an application linked to it. (optional, default to false)</param>
-        /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
-        /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)</param>
         /// <param name="hasCampaign">Indication of whether the phone number has a campaign associated with it (optional)</param>
         /// <param name="capabilitiesVoice"> (optional)</param>
         /// <param name="capabilitiesSms"> (optional)</param>
@@ -7194,8 +7751,6 @@ namespace freeclimb.Api
             string? country = default(string?),
             string? applicationId = default(string?),
             bool? hasApplication = default(bool?),
-            bool? voiceEnabled = default(bool?),
-            bool? smsEnabled = default(bool?),
             bool? hasCampaign = default(bool?),
             bool? capabilitiesVoice = default(bool?),
             bool? capabilitiesSms = default(bool?),
@@ -7283,22 +7838,6 @@ namespace freeclimb.Api
                         "hasApplication",
                         hasApplication
                     )
-                );
-            }
-            if (voiceEnabled != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(
-                    freeclimb.Client.ClientUtils.ParameterToMultiMap(
-                        "",
-                        "voiceEnabled",
-                        voiceEnabled
-                    )
-                );
-            }
-            if (smsEnabled != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(
-                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "smsEnabled", smsEnabled)
                 );
             }
             if (hasCampaign != null)
@@ -8195,6 +8734,132 @@ namespace freeclimb.Api
         }
 
         /// <summary>
+        /// Modify Blob Modifys a pre existing blob by either adding new fields, or modifying existing fields
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+        /// <param name="modifyBlobRequest">Request body to specify keys to modify. Or new keys to add onto the already existing blob</param>
+
+        /// <returns>BlobResult</returns>
+        public BlobResult ModifyBlob(string blobId, ModifyBlobRequest modifyBlobRequest)
+        {
+            freeclimb.Client.ApiResponse<BlobResult> localVarResponse = ModifyBlobWithHttpInfo(
+                blobId,
+                modifyBlobRequest
+            );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Modify Blob Modifys a pre existing blob by either adding new fields, or modifying existing fields
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+        /// <param name="modifyBlobRequest">Request body to specify keys to modify. Or new keys to add onto the already existing blob</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        public freeclimb.Client.ApiResponse<BlobResult> ModifyBlobWithHttpInfo(
+            string blobId,
+            ModifyBlobRequest modifyBlobRequest
+        )
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->ModifyBlob"
+                );
+            }
+
+            // verify the required parameter 'blobId' is set
+            if (blobId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'blobId' when calling DefaultApi->ModifyBlob"
+                );
+            }
+
+            // verify the required parameter 'modifyBlobRequest' is set
+            if (modifyBlobRequest == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'modifyBlobRequest' when calling DefaultApi->ModifyBlob"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { "application/json" };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "application/json" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            localVarRequestOptions.PathParameters.Add(
+                "blobId",
+                freeclimb.Client.ClientUtils.ParameterToString(blobId)
+            ); // path parameter
+            localVarRequestOptions.Data = modifyBlobRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.ModifyBlob";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<BlobResult>(
+                "/Accounts/{accountId}/Blobs/{blobId}",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ModifyBlob", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Remove a Participant
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
@@ -8313,6 +8978,132 @@ namespace freeclimb.Api
                     "RemoveAParticipant",
                     localVarResponse
                 );
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Replace Blob Replaces the blob content with the provided values.
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+        /// <param name="replaceBlobRequest">JSON object containing blob key the contents of which will be used to override the enitre blob contents.</param>
+
+        /// <returns>BlobResult</returns>
+        public BlobResult ReplaceBlob(string blobId, ReplaceBlobRequest replaceBlobRequest)
+        {
+            freeclimb.Client.ApiResponse<BlobResult> localVarResponse = ReplaceBlobWithHttpInfo(
+                blobId,
+                replaceBlobRequest
+            );
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Replace Blob Replaces the blob content with the provided values.
+        /// </summary>
+        /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId">String that uniquely identifies this Blob resource.</param>
+        /// <param name="replaceBlobRequest">JSON object containing blob key the contents of which will be used to override the enitre blob contents.</param>
+
+        /// <returns>ApiResponse of BlobResult</returns>
+        public freeclimb.Client.ApiResponse<BlobResult> ReplaceBlobWithHttpInfo(
+            string blobId,
+            ReplaceBlobRequest replaceBlobRequest
+        )
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'accountId' when calling DefaultApi->ReplaceBlob"
+                );
+            }
+
+            // verify the required parameter 'blobId' is set
+            if (blobId == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'blobId' when calling DefaultApi->ReplaceBlob"
+                );
+            }
+
+            // verify the required parameter 'replaceBlobRequest' is set
+            if (replaceBlobRequest == null)
+            {
+                throw new freeclimb.Client.ApiException(
+                    400,
+                    "Missing required parameter 'replaceBlobRequest' when calling DefaultApi->ReplaceBlob"
+                );
+            }
+
+            freeclimb.Client.RequestOptions localVarRequestOptions =
+                new freeclimb.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] { "application/json" };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] { "application/json" };
+
+            var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
+                _contentTypes
+            );
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = freeclimb.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add(
+                "accountId",
+                freeclimb.Client.ClientUtils.ParameterToString(accountId)
+            ); // path parameter
+            localVarRequestOptions.PathParameters.Add(
+                "blobId",
+                freeclimb.Client.ClientUtils.ParameterToString(blobId)
+            ); // path parameter
+            localVarRequestOptions.Data = replaceBlobRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.ReplaceBlob";
+
+            // authentication (fc) required
+            // http basic authentication required
+            if (
+                !string.IsNullOrEmpty(this.Configuration.Username)
+                || !string.IsNullOrEmpty(this.Configuration.Password)
+                    && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization")
+            )
+            {
+                localVarRequestOptions.HeaderParameters.Add(
+                    "Authorization",
+                    "Basic "
+                        + freeclimb.Client.ClientUtils.Base64Encode(
+                            this.Configuration.Username + ":" + this.Configuration.Password
+                        )
+                );
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<BlobResult>(
+                "/Accounts/{accountId}/Blobs/{blobId}",
+                localVarRequestOptions,
+                this.Configuration
+            );
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ReplaceBlob", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -8479,7 +9270,7 @@ namespace freeclimb.Api
             string[] _contentTypes = new string[] { };
 
             // to determine the Accept header
-            string[] _accepts = new string[] { "audio/x-wav" };
+            string[] _accepts = new string[] { "audio/wav" };
 
             var localVarContentType = freeclimb.Client.ClientUtils.SelectHeaderContentType(
                 _contentTypes

@@ -16,6 +16,8 @@ docs/ApplicationResult.md
 docs/AvailableNumber.md
 docs/AvailableNumberList.md
 docs/BargeInReason.md
+docs/BlobListResponse.md
+docs/BlobResult.md
 docs/BuyIncomingNumberRequest.md
 docs/CallControlWebhook.md
 docs/CallDirection.md
@@ -35,6 +37,7 @@ docs/ConferenceRecordingStatusWebhook.md
 docs/ConferenceResult.md
 docs/ConferenceStatus.md
 docs/ConferenceStatusWebhook.md
+docs/CreateBlobRequest.md
 docs/CreateConference.md
 docs/CreateConferenceRequest.md
 docs/CreateConferenceWebhook.md
@@ -81,6 +84,7 @@ docs/MessageResult.md
 docs/MessageStatus.md
 docs/MessageStatusWebhook.md
 docs/MessagesList.md
+docs/ModifyBlobRequest.md
 docs/MutableResourceModel.md
 docs/OutDial.md
 docs/OutDialApiConnectWebhook.md
@@ -91,6 +95,7 @@ docs/Park.md
 docs/Pause.md
 docs/PerclCommand.md
 docs/PerclScript.md
+docs/PlatformError.md
 docs/Play.md
 docs/PlayBeep.md
 docs/PlayEarlyMedia.md
@@ -111,6 +116,7 @@ docs/RedirectWebhook.md
 docs/Reject.md
 docs/RemoveFromConference.md
 docs/RemoveFromQueueNotificationWebhook.md
+docs/ReplaceBlobRequest.md
 docs/RequestType.md
 docs/SMSTenDLCBrand.md
 docs/SMSTenDLCBrandAltBusinessIdType.md
@@ -138,6 +144,8 @@ docs/Sms.md
 docs/StartRecordCall.md
 docs/TFN.md
 docs/TFNCampaign.md
+docs/TTSEngine.md
+docs/TTSEngineName.md
 docs/TerminateConference.md
 docs/TranscribeReason.md
 docs/TranscribeTermReason.md
@@ -168,6 +176,8 @@ src/freeclimb.Test/Model/ApplicationResultTests.cs
 src/freeclimb.Test/Model/AvailableNumberListTests.cs
 src/freeclimb.Test/Model/AvailableNumberTests.cs
 src/freeclimb.Test/Model/BargeInReasonTests.cs
+src/freeclimb.Test/Model/BlobListResponseTests.cs
+src/freeclimb.Test/Model/BlobResultTests.cs
 src/freeclimb.Test/Model/BuyIncomingNumberRequestTests.cs
 src/freeclimb.Test/Model/CallControlWebhookTests.cs
 src/freeclimb.Test/Model/CallDirectionTests.cs
@@ -187,6 +197,7 @@ src/freeclimb.Test/Model/ConferenceRecordingStatusWebhookTests.cs
 src/freeclimb.Test/Model/ConferenceResultTests.cs
 src/freeclimb.Test/Model/ConferenceStatusTests.cs
 src/freeclimb.Test/Model/ConferenceStatusWebhookTests.cs
+src/freeclimb.Test/Model/CreateBlobRequestTests.cs
 src/freeclimb.Test/Model/CreateConferenceRequestTests.cs
 src/freeclimb.Test/Model/CreateConferenceTests.cs
 src/freeclimb.Test/Model/CreateConferenceWebhookTests.cs
@@ -232,6 +243,7 @@ src/freeclimb.Test/Model/MessageResultTests.cs
 src/freeclimb.Test/Model/MessageStatusTests.cs
 src/freeclimb.Test/Model/MessageStatusWebhookTests.cs
 src/freeclimb.Test/Model/MessagesListTests.cs
+src/freeclimb.Test/Model/ModifyBlobRequestTests.cs
 src/freeclimb.Test/Model/MutableResourceModelTests.cs
 src/freeclimb.Test/Model/OutDialApiConnectWebhookTests.cs
 src/freeclimb.Test/Model/OutDialConnectWebhookTests.cs
@@ -242,6 +254,7 @@ src/freeclimb.Test/Model/ParkTests.cs
 src/freeclimb.Test/Model/PauseTests.cs
 src/freeclimb.Test/Model/PerclCommandTests.cs
 src/freeclimb.Test/Model/PerclScriptTests.cs
+src/freeclimb.Test/Model/PlatformErrorTests.cs
 src/freeclimb.Test/Model/PlayBeepTests.cs
 src/freeclimb.Test/Model/PlayEarlyMediaTests.cs
 src/freeclimb.Test/Model/PlayTests.cs
@@ -262,6 +275,7 @@ src/freeclimb.Test/Model/RedirectWebhookTests.cs
 src/freeclimb.Test/Model/RejectTests.cs
 src/freeclimb.Test/Model/RemoveFromConferenceTests.cs
 src/freeclimb.Test/Model/RemoveFromQueueNotificationWebhookTests.cs
+src/freeclimb.Test/Model/ReplaceBlobRequestTests.cs
 src/freeclimb.Test/Model/RequestTypeTests.cs
 src/freeclimb.Test/Model/SMSTenDLCBrandAltBusinessIdTypeTests.cs
 src/freeclimb.Test/Model/SMSTenDLCBrandEntityTypeTests.cs
@@ -289,6 +303,8 @@ src/freeclimb.Test/Model/SmsTests.cs
 src/freeclimb.Test/Model/StartRecordCallTests.cs
 src/freeclimb.Test/Model/TFNCampaignTests.cs
 src/freeclimb.Test/Model/TFNTests.cs
+src/freeclimb.Test/Model/TTSEngineNameTests.cs
+src/freeclimb.Test/Model/TTSEngineTests.cs
 src/freeclimb.Test/Model/TerminateConferenceTests.cs
 src/freeclimb.Test/Model/TranscribeReasonTests.cs
 src/freeclimb.Test/Model/TranscribeTermReasonTests.cs
@@ -334,6 +350,8 @@ src/freeclimb/Model/ApplicationResult.cs
 src/freeclimb/Model/AvailableNumber.cs
 src/freeclimb/Model/AvailableNumberList.cs
 src/freeclimb/Model/BargeInReason.cs
+src/freeclimb/Model/BlobListResponse.cs
+src/freeclimb/Model/BlobResult.cs
 src/freeclimb/Model/BuyIncomingNumberRequest.cs
 src/freeclimb/Model/CallControlWebhook.cs
 src/freeclimb/Model/CallDirection.cs
@@ -353,6 +371,7 @@ src/freeclimb/Model/ConferenceRecordingStatusWebhook.cs
 src/freeclimb/Model/ConferenceResult.cs
 src/freeclimb/Model/ConferenceStatus.cs
 src/freeclimb/Model/ConferenceStatusWebhook.cs
+src/freeclimb/Model/CreateBlobRequest.cs
 src/freeclimb/Model/CreateConference.cs
 src/freeclimb/Model/CreateConferenceRequest.cs
 src/freeclimb/Model/CreateConferenceWebhook.cs
@@ -398,6 +417,7 @@ src/freeclimb/Model/MessageResult.cs
 src/freeclimb/Model/MessageStatus.cs
 src/freeclimb/Model/MessageStatusWebhook.cs
 src/freeclimb/Model/MessagesList.cs
+src/freeclimb/Model/ModifyBlobRequest.cs
 src/freeclimb/Model/MutableResourceModel.cs
 src/freeclimb/Model/OutDial.cs
 src/freeclimb/Model/OutDialApiConnectWebhook.cs
@@ -408,6 +428,7 @@ src/freeclimb/Model/Park.cs
 src/freeclimb/Model/Pause.cs
 src/freeclimb/Model/PerclCommand.cs
 src/freeclimb/Model/PerclScript.cs
+src/freeclimb/Model/PlatformError.cs
 src/freeclimb/Model/Play.cs
 src/freeclimb/Model/PlayBeep.cs
 src/freeclimb/Model/PlayEarlyMedia.cs
@@ -428,6 +449,7 @@ src/freeclimb/Model/RedirectWebhook.cs
 src/freeclimb/Model/Reject.cs
 src/freeclimb/Model/RemoveFromConference.cs
 src/freeclimb/Model/RemoveFromQueueNotificationWebhook.cs
+src/freeclimb/Model/ReplaceBlobRequest.cs
 src/freeclimb/Model/RequestType.cs
 src/freeclimb/Model/SMSTenDLCBrand.cs
 src/freeclimb/Model/SMSTenDLCBrandAltBusinessIdType.cs
@@ -455,6 +477,8 @@ src/freeclimb/Model/Sms.cs
 src/freeclimb/Model/StartRecordCall.cs
 src/freeclimb/Model/TFN.cs
 src/freeclimb/Model/TFNCampaign.cs
+src/freeclimb/Model/TTSEngine.cs
+src/freeclimb/Model/TTSEngineName.cs
 src/freeclimb/Model/TerminateConference.cs
 src/freeclimb/Model/TranscribeReason.cs
 src/freeclimb/Model/TranscribeTermReason.cs

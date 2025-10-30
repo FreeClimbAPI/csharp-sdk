@@ -41,6 +41,7 @@ namespace freeclimb.Test.Model
             instance = new Say(
                 text: (string)TestHelpers.getTestValue(typeof(string)),
                 language: (string)TestHelpers.getTestValue(typeof(string)),
+                engine: (TTSEngine)TestHelpers.getTestValue(typeof(TTSEngine)),
                 loop: (int)TestHelpers.getTestValue(typeof(int)),
                 privacyMode: (bool)TestHelpers.getTestValue(typeof(bool))
             );
@@ -81,6 +82,17 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Engine'
+        /// </summary>
+        [Fact]
+        public void EngineTest()
+        {
+            TTSEngine testObject = (TTSEngine)TestHelpers.getTestValue(typeof(TTSEngine));
+            instance.Engine = testObject;
+            Assert.Equal(testObject, instance.Engine);
+        }
+
+        /// <summary>
         /// Test the property 'Loop'
         /// </summary>
         [Fact]
@@ -111,6 +123,8 @@ namespace freeclimb.Test.Model
             Assert.Contains("text", json);
 
             Assert.Contains("language", json);
+
+            Assert.Contains("engine", json);
 
             Assert.Contains("loop", json);
 
