@@ -52,8 +52,6 @@ namespace freeclimb.Test.Model
                 alias: (string)TestHelpers.getTestValue(typeof(string)),
                 region: (string)TestHelpers.getTestValue(typeof(string)),
                 country: (string)TestHelpers.getTestValue(typeof(string)),
-                voiceEnabled: (bool?)TestHelpers.getTestValue(typeof(bool?)),
-                smsEnabled: (bool?)TestHelpers.getTestValue(typeof(bool?)),
                 offnet: (bool?)TestHelpers.getTestValue(typeof(bool?)),
                 tfn: (TFN)TestHelpers.getTestValue(typeof(TFN))
             );
@@ -205,26 +203,6 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'VoiceEnabled'
-        /// </summary>
-        [Fact]
-        public void VoiceEnabledTest()
-        {
-            instance.VoiceEnabled = false;
-            Assert.False(instance.VoiceEnabled);
-        }
-
-        /// <summary>
-        /// Test the property 'SmsEnabled'
-        /// </summary>
-        [Fact]
-        public void SmsEnabledTest()
-        {
-            instance.SmsEnabled = false;
-            Assert.False(instance.SmsEnabled);
-        }
-
-        /// <summary>
         /// Test the property 'Offnet'
         /// </summary>
         [Fact]
@@ -279,10 +257,6 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("country", json);
 
-            Assert.Contains("voiceEnabled", json);
-
-            Assert.Contains("smsEnabled", json);
-
             Assert.Contains("offnet", json);
 
             Assert.Contains("tfn", json);
@@ -309,10 +283,6 @@ namespace freeclimb.Test.Model
             instance.Region = null;
 
             instance.Country = null;
-
-            instance.VoiceEnabled = null;
-
-            instance.SmsEnabled = null;
 
             instance.Offnet = null;
 
