@@ -49,6 +49,8 @@ namespace freeclimb.Model
         /// <param name="alias">Description for this phone number. Typically the conventionally-formatted version of the phone number..</param>
         /// <param name="region">State or province of this phone number..</param>
         /// <param name="country">Country of this phone number..</param>
+        /// <param name="voiceEnabled">Indicates whether the phone number can handle Calls. Typically set to true for all numbers..</param>
+        /// <param name="smsEnabled">Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers..</param>
         /// <param name="offnet">The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource..</param>
         /// <param name="tfn">tfn.</param>
         public IncomingNumberResult(
@@ -65,6 +67,8 @@ namespace freeclimb.Model
             string alias = default(string),
             string region = default(string),
             string country = default(string),
+            bool? voiceEnabled = default(bool?),
+            bool? smsEnabled = default(bool?),
             bool? offnet = default(bool?),
             TFN tfn = default(TFN)
         )
@@ -94,6 +98,10 @@ namespace freeclimb.Model
             this.Region = region;
 
             this.Country = country;
+
+            this.VoiceEnabled = voiceEnabled;
+
+            this.SmsEnabled = smsEnabled;
 
             this.Offnet = offnet;
 
@@ -191,6 +199,22 @@ namespace freeclimb.Model
         public string Country { get; set; }
 
         /// <summary>
+        /// Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+        /// </summary>
+        /// <value>Indicates whether the phone number can handle Calls. Typically set to true for all numbers.</value>
+        [DataMember(Name = "voiceEnabled", EmitDefaultValue = true)]
+        [Obsolete]
+        public bool? VoiceEnabled { get; set; }
+
+        /// <summary>
+        /// Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+        /// </summary>
+        /// <value>Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.</value>
+        [DataMember(Name = "smsEnabled", EmitDefaultValue = true)]
+        [Obsolete]
+        public bool? SmsEnabled { get; set; }
+
+        /// <summary>
         /// The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource.
         /// </summary>
         /// <value>The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource.</value>
@@ -224,6 +248,8 @@ namespace freeclimb.Model
             sb.Append("  Alias: ").Append(Alias).Append("\n");
             sb.Append("  Region: ").Append(Region).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  VoiceEnabled: ").Append(VoiceEnabled).Append("\n");
+            sb.Append("  SmsEnabled: ").Append(SmsEnabled).Append("\n");
             sb.Append("  Offnet: ").Append(Offnet).Append("\n");
             sb.Append("  Tfn: ").Append(Tfn).Append("\n");
             sb.Append("}\n");
@@ -263,6 +289,8 @@ namespace freeclimb.Model
             AddToDictionary(props, "alias", Alias);
             AddToDictionary(props, "region", Region);
             AddToDictionary(props, "country", Country);
+            AddToDictionary(props, "voiceEnabled", VoiceEnabled);
+            AddToDictionary(props, "smsEnabled", SmsEnabled);
             AddToDictionary(props, "offnet", Offnet);
             AddToDictionary(props, "tfn", Tfn);
             return props;

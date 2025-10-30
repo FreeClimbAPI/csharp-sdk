@@ -162,15 +162,15 @@ namespace freeclimb.Model
             AddToDictionary(props, "record", Record);
             AddToDictionary(props, "privacyForLogging", PrivacyForLogging);
             AddToDictionary(props, "privacyForRecording", PrivacyForRecording);
-            List<object> nestedPrompts = new List<object>();
+            List<object> nested = new List<object>();
             if (Prompts != null)
             {
                 foreach (var item in Prompts)
                 {
-                    nestedPrompts.Add(item.ToKvp());
+                    nested.Add(item.ToKvp());
                 }
             }
-            AddToDictionary(props, "prompts", nestedPrompts);
+            AddToDictionary(props, "prompts", nested);
             IDictionary<string, object> command = new Dictionary<string, object>();
             command.Add("TranscribeUtterance", props);
             return command;

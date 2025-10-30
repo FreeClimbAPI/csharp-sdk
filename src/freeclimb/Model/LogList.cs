@@ -175,15 +175,15 @@ namespace freeclimb.Model
             AddToDictionary(props, "numPages", NumPages);
             AddToDictionary(props, "pageSize", PageSize);
             AddToDictionary(props, "nextPageUri", NextPageUri);
-            List<object> nestedLogs = new List<object>();
+            List<object> nested = new List<object>();
             if (Logs != null)
             {
                 foreach (var item in Logs)
                 {
-                    nestedLogs.Add(item.ToKvp());
+                    nested.Add(item.ToKvp());
                 }
             }
-            AddToDictionary(props, "logs", nestedLogs);
+            AddToDictionary(props, "logs", nested);
             return props;
         }
 

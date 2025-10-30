@@ -130,12 +130,12 @@ namespace freeclimb.Model
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
             AddToDictionary(props, "resourceType", ResourceType);
-            List<object> nestedFormat = new List<object>();
+            List<object> nested = new List<object>();
             if (Format != null)
             {
-                nestedFormat.Add(Format);
+                nested.Add(Format);
             }
-            AddToDictionary(props, "format", nestedFormat);
+            AddToDictionary(props, "format", nested);
             AddToDictionary(props, "output", Output);
             AddToDictionary(props, "query", Query);
             return props;

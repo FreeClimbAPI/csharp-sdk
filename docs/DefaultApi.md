@@ -8,14 +8,12 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**CreateAConference**](DefaultApi.md#createaconference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference |
 | [**CreateAQueue**](DefaultApi.md#createaqueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue |
 | [**CreateAnApplication**](DefaultApi.md#createanapplication) | **POST** /Accounts/{accountId}/Applications | Create an application |
-| [**CreateBlob**](DefaultApi.md#createblob) | **POST** /Accounts/{accountId}/Blobs | Create a Blob |
 | [**CreateExport**](DefaultApi.md#createexport) | **POST** /Accounts/{accountId}/Exports | Create an Export |
 | [**CreateKnowledgeBaseCompletion**](DefaultApi.md#createknowledgebasecompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base |
 | [**DeleteARecording**](DefaultApi.md#deletearecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording |
 | [**DeleteAnApplication**](DefaultApi.md#deleteanapplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application |
 | [**DeleteAnExport**](DefaultApi.md#deleteanexport) | **DELETE** /Accounts/{accountId}/Exports/{exportId} | Delete an Export |
 | [**DeleteAnIncomingNumber**](DefaultApi.md#deleteanincomingnumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number |
-| [**DeleteBlob**](DefaultApi.md#deleteblob) | **DELETE** /Accounts/{accountId}/Blobs/{blobId} | Delete Blob |
 | [**DequeueAMember**](DefaultApi.md#dequeueamember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Dequeue a Member |
 | [**DequeueHeadMember**](DefaultApi.md#dequeueheadmember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Dequeue Head Member |
 | [**DownloadARecordingFile**](DefaultApi.md#downloadarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download | Download a Recording File |
@@ -32,7 +30,6 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**GetAnExport**](DefaultApi.md#getanexport) | **GET** /Accounts/{accountId}/Exports/{exportId} | Get an Export |
 | [**GetAnIncomingNumber**](DefaultApi.md#getanincomingnumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number |
 | [**GetAnSmsMessage**](DefaultApi.md#getansmsmessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message |
-| [**GetBlob**](DefaultApi.md#getblob) | **GET** /Accounts/{accountId}/Blobs/{blobId} | Get Blob |
 | [**GetHeadMember**](DefaultApi.md#getheadmember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member |
 | [**GetTenDLCSmsBrand**](DefaultApi.md#gettendlcsmsbrand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand |
 | [**GetTenDLCSmsBrands**](DefaultApi.md#gettendlcsmsbrands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brands |
@@ -46,7 +43,6 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**ListAllAccountLogs**](DefaultApi.md#listallaccountlogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs |
 | [**ListApplications**](DefaultApi.md#listapplications) | **GET** /Accounts/{accountId}/Applications | List applications |
 | [**ListAvailableNumbers**](DefaultApi.md#listavailablenumbers) | **GET** /AvailablePhoneNumbers | List available numbers |
-| [**ListBlobs**](DefaultApi.md#listblobs) | **GET** /Accounts/{accountId}/Blobs | List Blobs belonging to an account. |
 | [**ListCallLogs**](DefaultApi.md#listcalllogs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs |
 | [**ListCallRecordings**](DefaultApi.md#listcallrecordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings |
 | [**ListCalls**](DefaultApi.md#listcalls) | **GET** /Accounts/{accountId}/Calls | List Calls |
@@ -60,9 +56,7 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**ListSmsMessages**](DefaultApi.md#listsmsmessages) | **GET** /Accounts/{accountId}/Messages | List SMS Messages |
 | [**MakeACall**](DefaultApi.md#makeacall) | **POST** /Accounts/{accountId}/Calls | Make a Call |
 | [**MakeAWebrtcJwt**](DefaultApi.md#makeawebrtcjwt) | **POST** /Accounts/{accountId}/Calls/WebRTC/Token | Make a JWT for WebRTC calling |
-| [**ModifyBlob**](DefaultApi.md#modifyblob) | **PATCH** /Accounts/{accountId}/Blobs/{blobId} | Modify Blob |
 | [**RemoveAParticipant**](DefaultApi.md#removeaparticipant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant |
-| [**ReplaceBlob**](DefaultApi.md#replaceblob) | **PUT** /Accounts/{accountId}/Blobs/{blobId} | Replace Blob |
 | [**SendAnSmsMessage**](DefaultApi.md#sendansmsmessage) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message |
 | [**StreamARecordingFile**](DefaultApi.md#streamarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream | Stream a Recording File |
 | [**UpdateAConference**](DefaultApi.md#updateaconference) | **POST** /Accounts/{accountId}/Conferences/{conferenceId} | Update a Conference |
@@ -458,110 +452,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Application successfuly created |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="createblob"></a>
-# **CreateBlob**
-> BlobResult CreateBlob (CreateBlobRequest createBlobRequest)
-
-Create a Blob
-
-Create a new Blob belonging to the requesting account.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class CreateBlobExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-
-            var apiInstance = new DefaultApi(config);
-            
-            var createBlobRequest = new CreateBlobRequest(); // CreateBlobRequest | An object defining a new blob. A request body must be provided but the blob may be empty.
-            
-            try
-            {
-                // Create a Blob
-                BlobResult result = apiInstance.CreateBlob(createBlobRequest);
-                Debug.WriteLine(result);                
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.CreateBlob: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CreateBlobWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Create a Blob
-    ApiResponse<BlobResult> response = apiInstance.CreateBlobWithHttpInfo(createBlobRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);    
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DefaultApi.CreateBlobWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-
-
-| **createBlobRequest** | [**CreateBlobRequest**](CreateBlobRequest.md) | An object defining a new blob. A request body must be provided but the blob may be empty. |  |
-
-
-### Return type
-
-[**BlobResult**](BlobResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | Successful creation of a new blob. |  -  |
-| **400** | Generic platform bad request. |  -  |
-| **409** | A blob with the provided alias already exists oln the requesting account and so this new blob is rejected as there cannot be duplicate alises. |  -  |
-| **413** | The blob exceeded one of the size limits. Either it itself is too large or it would push the total sum of all blobs over the account&#39;s limit. |  -  |
-| **422** | Generic platform unprocessible entity response. |  -  |
-| **500** | Generic platform internal error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1135,114 +1025,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deleteblob"></a>
-# **DeleteBlob**
-> BlobResult DeleteBlob (string blobId, List<string>? key = null)
-
-Delete Blob
-
-Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class DeleteBlobExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-
-            var apiInstance = new DefaultApi(config);
-            
-            var blobId = "blobId_example";  // string | String that uniquely identifies this Blob resource.
-            
-            var key = new List<string>?(); // List<string>? | key within blob to remove (optional) 
-            
-            try
-            {
-                // Delete Blob
-                BlobResult result = apiInstance.DeleteBlob(blobId, key);
-                Debug.WriteLine(result);                
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.DeleteBlob: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the DeleteBlobWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Delete Blob
-    ApiResponse<BlobResult> response = apiInstance.DeleteBlobWithHttpInfo(blobId, key);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);    
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DefaultApi.DeleteBlobWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-
-
-| **blobId** | **string** | String that uniquely identifies this Blob resource. |  |
-
-| **key** | [**List&lt;string&gt;?**](string.md) | key within blob to remove | [optional]  |
-
-
-### Return type
-
-[**BlobResult**](BlobResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Blob keys deleted successfully, remaining blob returned. |  -  |
-| **204** | Successful operation |  -  |
-| **404** | Generic platform not found error. |  -  |
-| **422** | Generic platform unprocessible entity response. |  -  |
-| **500** | Generic platform internal error. |  -  |
-| **504** | gateway timeout error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="dequeueamember"></a>
 # **DequeueAMember**
 > QueueMember DequeueAMember (string queueId, string callId)
@@ -1528,13 +1310,13 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: audio/wav
+ - **Accept**: audio/x-wav
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Download a Recording file represented with audio/wav mime-type |  -  |
+| **200** | Download a Recording file represented with audio/x-wav mime-type |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2797,108 +2579,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The specific SMS message that’s been processed by FreeClimb |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="getblob"></a>
-# **GetBlob**
-> BlobResult GetBlob (string blobId)
-
-Get Blob
-
-Retrieves a specified blob
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class GetBlobExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-
-            var apiInstance = new DefaultApi(config);
-            
-            var blobId = "blobId_example";  // string | String that uniquely identifies this Blob resource.
-            
-            try
-            {
-                // Get Blob
-                BlobResult result = apiInstance.GetBlob(blobId);
-                Debug.WriteLine(result);                
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.GetBlob: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetBlobWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get Blob
-    ApiResponse<BlobResult> response = apiInstance.GetBlobWithHttpInfo(blobId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);    
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DefaultApi.GetBlobWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-
-
-| **blobId** | **string** | String that uniquely identifies this Blob resource. |  |
-
-
-### Return type
-
-[**BlobResult**](BlobResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Retrieve a Blob. |  -  |
-| **404** | Generic platform not found error. |  -  |
-| **500** | Generic platform internal error. |  -  |
-| **504** | gateway timeout error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4178,112 +3858,6 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="listblobs"></a>
-# **ListBlobs**
-> BlobListResponse ListBlobs (string? alias = null, string? cursor = null)
-
-List Blobs belonging to an account.
-
-List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class ListBlobsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-
-            var apiInstance = new DefaultApi(config);
-            
-            var alias = "alias_example";  // string? | Filter blobs by alias (optional) 
-            
-            var cursor = "cursor_example";  // string? | Used to reference pages of a list of blobs (optional) 
-            
-            try
-            {
-                // List Blobs belonging to an account.
-                BlobListResponse result = apiInstance.ListBlobs(alias, cursor);
-                Debug.WriteLine(result);                
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.ListBlobs: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ListBlobsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // List Blobs belonging to an account.
-    ApiResponse<BlobListResponse> response = apiInstance.ListBlobsWithHttpInfo(alias, cursor);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);    
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DefaultApi.ListBlobsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-
-
-| **alias** | **string?** | Filter blobs by alias | [optional]  |
-
-| **cursor** | **string?** | Used to reference pages of a list of blobs | [optional]  |
-
-
-### Return type
-
-[**BlobListResponse**](BlobListResponse.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Single page of blob list results. |  -  |
-| **400** | Generic platform bad request. |  -  |
-| **500** | Generic platform internal error. |  -  |
-| **504** | gateway timeout error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="listcalllogs"></a>
 # **ListCallLogs**
 > LogList ListCallLogs (string callId)
@@ -4932,7 +4506,7 @@ catch (ApiException e)
 
 <a id="listincomingnumbers"></a>
 # **ListIncomingNumbers**
-> IncomingNumberList ListIncomingNumbers (string? phoneNumber = null, string? alias = null, string? region = null, string? country = null, string? applicationId = null, bool? hasApplication = null, bool? hasCampaign = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null, string? tfnCampaignId = null, bool? offnet = null)
+> IncomingNumberList ListIncomingNumbers (string? phoneNumber = null, string? alias = null, string? region = null, string? country = null, string? applicationId = null, bool? hasApplication = null, bool? voiceEnabled = null, bool? smsEnabled = null, bool? hasCampaign = null, bool? capabilitiesVoice = null, bool? capabilitiesSms = null, bool? capabilitiesTollFree = null, bool? capabilitiesTenDLC = null, bool? capabilitiesShortCode = null, string? tfnCampaignId = null, bool? offnet = null)
 
 List Incoming Numbers
 
@@ -4970,6 +4544,10 @@ namespace Example
             
             var hasApplication = false;  // bool? | Indication of whether the phone number has an application linked to it. (optional)  (default to false)
             
+            var voiceEnabled = true;  // bool? | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional)  (default to true)
+            
+            var smsEnabled = true;  // bool? | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional)  (default to true)
+            
             var hasCampaign = true;  // bool? | Indication of whether the phone number has a campaign associated with it (optional) 
             
             var capabilitiesVoice = true;  // bool? |  (optional) 
@@ -4989,7 +4567,7 @@ namespace Example
             try
             {
                 // List Incoming Numbers
-                IncomingNumberList result = apiInstance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
+                IncomingNumberList result = apiInstance.ListIncomingNumbers(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
                 Debug.WriteLine(result);                
             }
             catch (ApiException  e)
@@ -5010,7 +4588,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Incoming Numbers
-    ApiResponse<IncomingNumberList> response = apiInstance.ListIncomingNumbersWithHttpInfo(phoneNumber, alias, region, country, applicationId, hasApplication, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
+    ApiResponse<IncomingNumberList> response = apiInstance.ListIncomingNumbersWithHttpInfo(phoneNumber, alias, region, country, applicationId, hasApplication, voiceEnabled, smsEnabled, hasCampaign, capabilitiesVoice, capabilitiesSms, capabilitiesTollFree, capabilitiesTenDLC, capabilitiesShortCode, tfnCampaignId, offnet);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);    
@@ -5040,6 +4618,10 @@ catch (ApiException e)
 | **applicationId** | **string?** | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. | [optional]  |
 
 | **hasApplication** | **bool?** | Indication of whether the phone number has an application linked to it. | [optional] [default to false] |
+
+| **voiceEnabled** | **bool?** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] [default to true] |
+
+| **smsEnabled** | **bool?** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] [default to true] |
 
 | **hasCampaign** | **bool?** | Indication of whether the phone number has a campaign associated with it | [optional]  |
 
@@ -5709,113 +5291,6 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="modifyblob"></a>
-# **ModifyBlob**
-> BlobResult ModifyBlob (string blobId, ModifyBlobRequest modifyBlobRequest)
-
-Modify Blob
-
-Modifys a pre existing blob by either adding new fields, or modifying existing fields
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class ModifyBlobExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-
-            var apiInstance = new DefaultApi(config);
-            
-            var blobId = "blobId_example";  // string | String that uniquely identifies this Blob resource.
-            
-            var modifyBlobRequest = new ModifyBlobRequest(); // ModifyBlobRequest | Request body to specify keys to modify. Or new keys to add onto the already existing blob
-            
-            try
-            {
-                // Modify Blob
-                BlobResult result = apiInstance.ModifyBlob(blobId, modifyBlobRequest);
-                Debug.WriteLine(result);                
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.ModifyBlob: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ModifyBlobWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Modify Blob
-    ApiResponse<BlobResult> response = apiInstance.ModifyBlobWithHttpInfo(blobId, modifyBlobRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);    
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DefaultApi.ModifyBlobWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-
-
-| **blobId** | **string** | String that uniquely identifies this Blob resource. |  |
-
-| **modifyBlobRequest** | [**ModifyBlobRequest**](ModifyBlobRequest.md) | Request body to specify keys to modify. Or new keys to add onto the already existing blob |  |
-
-
-### Return type
-
-[**BlobResult**](BlobResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Blob keys successfully modified, updated blob returned. |  -  |
-| **404** | Generic platform not found error. |  -  |
-| **409** | Generic platform status conflict error. |  -  |
-| **413** | Generic platform status request entity too large. |  -  |
-| **500** | Generic platform internal error. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="removeaparticipant"></a>
 # **RemoveAParticipant**
 > void RemoveAParticipant (string conferenceId, string callId)
@@ -5910,113 +5385,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successfully deleted conference participant |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="replaceblob"></a>
-# **ReplaceBlob**
-> BlobResult ReplaceBlob (string blobId, ReplaceBlobRequest replaceBlobRequest)
-
-Replace Blob
-
-Replaces the blob content with the provided values.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using freeclimb.Api;
-using freeclimb.Client;
-using freeclimb.Model;
-
-namespace Example
-{
-    public class ReplaceBlobExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://www.freeclimb.com/apiserver";
-            // Configure HTTP basic authorization: fc
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-
-            var apiInstance = new DefaultApi(config);
-            
-            var blobId = "blobId_example";  // string | String that uniquely identifies this Blob resource.
-            
-            var replaceBlobRequest = new ReplaceBlobRequest(); // ReplaceBlobRequest | JSON object containing blob key the contents of which will be used to override the enitre blob contents.
-            
-            try
-            {
-                // Replace Blob
-                BlobResult result = apiInstance.ReplaceBlob(blobId, replaceBlobRequest);
-                Debug.WriteLine(result);                
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.ReplaceBlob: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ReplaceBlobWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Replace Blob
-    ApiResponse<BlobResult> response = apiInstance.ReplaceBlobWithHttpInfo(blobId, replaceBlobRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);    
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DefaultApi.ReplaceBlobWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-
-
-| **blobId** | **string** | String that uniquely identifies this Blob resource. |  |
-
-| **replaceBlobRequest** | [**ReplaceBlobRequest**](ReplaceBlobRequest.md) | JSON object containing blob key the contents of which will be used to override the enitre blob contents. |  |
-
-
-### Return type
-
-[**BlobResult**](BlobResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Replaces all keys in blob with those provided. |  -  |
-| **404** | Generic platform not found error. |  -  |
-| **409** | Generic platform status conflict error. |  -  |
-| **413** | Generic platform status request entity too large. |  -  |
-| **500** | Generic platform internal error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6204,13 +5572,13 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: audio/wav
+ - **Accept**: audio/x-wav
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Streaming a Recording represented with audio/wav mime-type |  -  |
+| **200** | Streaming a Recording represented with audio/x-wav mime-type |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

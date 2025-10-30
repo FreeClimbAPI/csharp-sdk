@@ -42,6 +42,8 @@ namespace freeclimb.Test.Model
                 capabilities: (Capabilities)TestHelpers.getTestValue(typeof(Capabilities)),
                 campaignId: (string)TestHelpers.getTestValue(typeof(string)),
                 phoneNumber: (string)TestHelpers.getTestValue(typeof(string)),
+                voiceEnabled: (bool?)TestHelpers.getTestValue(typeof(bool?)),
+                smsEnabled: (bool?)TestHelpers.getTestValue(typeof(bool?)),
                 region: (string)TestHelpers.getTestValue(typeof(string)),
                 country: (string)TestHelpers.getTestValue(typeof(string))
             );
@@ -93,6 +95,26 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'VoiceEnabled'
+        /// </summary>
+        [Fact]
+        public void VoiceEnabledTest()
+        {
+            instance.VoiceEnabled = false;
+            Assert.False(instance.VoiceEnabled);
+        }
+
+        /// <summary>
+        /// Test the property 'SmsEnabled'
+        /// </summary>
+        [Fact]
+        public void SmsEnabledTest()
+        {
+            instance.SmsEnabled = false;
+            Assert.False(instance.SmsEnabled);
+        }
+
+        /// <summary>
         /// Test the property 'Region'
         /// </summary>
         [Fact]
@@ -126,6 +148,10 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("phoneNumber", json);
 
+            Assert.Contains("voiceEnabled", json);
+
+            Assert.Contains("smsEnabled", json);
+
             Assert.Contains("region", json);
 
             Assert.Contains("country", json);
@@ -140,6 +166,10 @@ namespace freeclimb.Test.Model
             instance.CampaignId = null;
 
             instance.PhoneNumber = null;
+
+            instance.VoiceEnabled = null;
+
+            instance.SmsEnabled = null;
 
             instance.Region = null;
 

@@ -342,67 +342,6 @@ namespace freeclimb.Test
             {
                 return new List<ExportResult>();
             }
-            if (type == typeof(SayElevenLabsEngineParametersVoiceSettings))
-            {
-                return new SayElevenLabsEngineParametersVoiceSettings();
-            }
-            if (type == typeof(SayElevenLabsEngineParameters))
-            {
-                return new SayElevenLabsEngineParameters();
-            }
-            if (type == typeof(SayNeuralEngine))
-            {
-                return new SayNeuralEngine();
-            }
-            if (type == typeof(SayNeuralEngineParameters))
-            {
-                return new SayNeuralEngineParameters();
-            }
-            if (type == typeof(SayStandardEngineParameters))
-            {
-                return new SayStandardEngineParameters();
-            }
-            if (type == typeof(SayNeuralTextType))
-            {
-                return SayNeuralTextTypeValueConverter.FromString("text");
-            }
-            if (type == typeof(SayStandardVoice))
-            {
-                return SayStandardVoiceValueConverter.FromString("Herena");
-            }
-            if (type == typeof(SayStandardCulture))
-            {
-                return SayStandardCultureValueConverter.FromString("en-US");
-            }
-            if (type == typeof(SayStandardContentType))
-            {
-                return SayStandardContentTypeValueConverter.FromString("text/plain");
-            }
-            if (type == typeof(SayStandardEngine))
-            {
-                return new SayStandardEngine();
-            }
-            if (type == typeof(SayElevenLabsEngine))
-            {
-                return new SayElevenLabsEngine();
-            }
-            if (type == typeof(List<SayElevenLabsEngineParametersPronunciationDictionaryInner>))
-            {
-                return new List<SayElevenLabsEngineParametersPronunciationDictionaryInner>();
-            }
-            if (type == typeof(SayElevenLabsEngineParametersPronunciationDictionaryInner))
-            {
-                return new SayElevenLabsEngineParametersPronunciationDictionaryInner();
-            }
-            if (type == typeof(List<BlobResult>))
-            {
-                return new List<BlobResult>();
-            }
-            if (type == typeof(BlobResult))
-            {
-                return new BlobResult();
-            }
-
             throw new ArgumentException("Provided type has no test value", type.ToString());
         }
     }
