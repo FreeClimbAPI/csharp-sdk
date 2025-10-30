@@ -9,6 +9,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="5.3.1"></a>
+
+### Changed
+
+- Resolves a discrepancy during package publishing
+
 <a name="5.3.0"></a>
 
 ## [5.3.0] - 2025-10-21

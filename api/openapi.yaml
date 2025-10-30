@@ -6525,6 +6525,7 @@ components:
             type: boolean
         required:
         - text
+        type: object
       description: The `Say` command provides Text-To-Speech (TTS) support. It converts
         text to speech and then renders it in a female voice back to the caller. `Say`
         is useful in cases where it's difficult to pre-record a prompt for any reason.
