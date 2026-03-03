@@ -55,6 +55,7 @@ namespace freeclimb.Test.Model
                 endTime: (string)TestHelpers.getTestValue(typeof(string)),
                 duration: (int?)TestHelpers.getTestValue(typeof(int?)),
                 connectDuration: (int?)TestHelpers.getTestValue(typeof(int?)),
+                audioStreamDuration: (int?)TestHelpers.getTestValue(typeof(int?)),
                 direction: (CallDirection)TestHelpers.getTestValue(typeof(CallDirection)),
                 answeredBy: (AnsweredBy)TestHelpers.getTestValue(typeof(AnsweredBy)),
                 subresourceUris: (Object)TestHelpers.getTestValue(typeof(Object)),
@@ -251,6 +252,16 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'AudioStreamDuration'
+        /// </summary>
+        [Fact]
+        public void AudioStreamDurationTest()
+        {
+            instance.AudioStreamDuration = 1;
+            Assert.Equal(1, (int)instance.AudioStreamDuration);
+        }
+
+        /// <summary>
         /// Test the property 'Direction'
         /// </summary>
         [Fact]
@@ -337,6 +348,8 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("connectDuration", json);
 
+            Assert.Contains("audioStreamDuration", json);
+
             Assert.Contains("direction", json);
 
             Assert.Contains("answeredBy", json);
@@ -375,6 +388,8 @@ namespace freeclimb.Test.Model
             instance.Duration = null;
 
             instance.ConnectDuration = null;
+
+            instance.AudioStreamDuration = null;
 
             instance.Direction = null;
 

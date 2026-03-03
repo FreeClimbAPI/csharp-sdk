@@ -708,6 +708,16 @@ paths:
       deprecated: false
       operationId: list-calls
       parameters:
+      - description: 'If usedAudioStream is set to true then all calls that have a
+          audioStreamDuration > 0 will be returned '
+        explode: true
+        in: query
+        name: usedAudioStream
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       - description: "If active is set to true then all calls of the nature queued,\
           \ ringing, inProgress are returned in the query."
         explode: true
@@ -880,6 +890,24 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Only show Recordings created at or after this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: startTime
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Only show Recordings created at or before this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: endTime
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -1325,6 +1353,24 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Only show Recordings created at or after this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: startTime
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Only show Recordings created at or before this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: endTime
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -1459,7 +1505,7 @@ paths:
               $ref: '#/components/schemas/QueueRequest'
         description: Queue details used to create a queue
       responses:
-        "200":
+        "201":
           content:
             application/json:
               schema:
@@ -1741,6 +1787,24 @@ paths:
           type: string
         style: simple
         x-account-id: true
+      - description: "Only show Recordings created at or after this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: startTime
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Only show Recordings created at or before this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: endTime
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -7343,6 +7407,11 @@ components:
               \ failed, unanswered or ongoing Calls."
             nullable: true
             type: integer
+          audioStreamDuration:
+            description: Length of time that the Call used the audio stream in seconds.
+              This value is empty or zero when the Call did not use the audio stream.
+            nullable: true
+            type: integer
           direction:
             $ref: '#/components/schemas/CallDirection'
           answeredBy:
@@ -7358,6 +7427,7 @@ components:
         callId: callId
         answeredBy: human
         parentCallId: parentCallId
+        audioStreamDuration: 5
         uri: uri
         phoneNumberId: phoneNumberId
         dateUpdated: dateUpdated
@@ -7502,6 +7572,7 @@ components:
         - callId: callId
           answeredBy: human
           parentCallId: parentCallId
+          audioStreamDuration: 5
           uri: uri
           phoneNumberId: phoneNumberId
           dateUpdated: dateUpdated
@@ -7522,6 +7593,7 @@ components:
         - callId: callId
           answeredBy: human
           parentCallId: parentCallId
+          audioStreamDuration: 5
           uri: uri
           phoneNumberId: phoneNumberId
           dateUpdated: dateUpdated

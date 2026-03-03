@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **EndTime** | **string** | End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully. | [optional] 
 **Duration** | **int?** | Total length of the Call in seconds. Measures time between startTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls. | [optional] 
 **ConnectDuration** | **int?** | Length of time that the Call was connected in seconds. Measures time between connectTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls. | [optional] 
+**AudioStreamDuration** | **int?** | Length of time that the Call used the audio stream in seconds. This value is empty or zero when the Call did not use the audio stream. | [optional] 
 **Direction** | **CallDirection** |  | [optional] 
 **AnsweredBy** | **AnsweredBy** |  | [optional] 
 **SubresourceUris** | **Object** | The list of subresources for this Call. These include things like logs and recordings associated with the Call. | [optional] 

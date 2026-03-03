@@ -70,6 +70,7 @@ namespace freeclimb.Model
         /// <param name="endTime">End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully..</param>
         /// <param name="duration">Total length of the Call in seconds. Measures time between startTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls..</param>
         /// <param name="connectDuration">Length of time that the Call was connected in seconds. Measures time between connectTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls..</param>
+        /// <param name="audioStreamDuration">Length of time that the Call used the audio stream in seconds. This value is empty or zero when the Call did not use the audio stream..</param>
         /// <param name="direction">direction.</param>
         /// <param name="answeredBy">answeredBy.</param>
         /// <param name="subresourceUris">The list of subresources for this Call. These include things like logs and recordings associated with the Call..</param>
@@ -91,6 +92,7 @@ namespace freeclimb.Model
             string endTime = default(string),
             int? duration = default(int?),
             int? connectDuration = default(int?),
+            int? audioStreamDuration = default(int?),
             CallDirection? direction = default(CallDirection?),
             AnsweredBy? answeredBy = default(AnsweredBy?),
             Object subresourceUris = default(Object),
@@ -128,6 +130,8 @@ namespace freeclimb.Model
             this.Duration = duration;
 
             this.ConnectDuration = connectDuration;
+
+            this.AudioStreamDuration = audioStreamDuration;
 
             this.Direction = direction;
 
@@ -244,6 +248,13 @@ namespace freeclimb.Model
         public int? ConnectDuration { get; set; }
 
         /// <summary>
+        /// Length of time that the Call used the audio stream in seconds. This value is empty or zero when the Call did not use the audio stream.
+        /// </summary>
+        /// <value>Length of time that the Call used the audio stream in seconds. This value is empty or zero when the Call did not use the audio stream.</value>
+        [DataMember(Name = "audioStreamDuration", EmitDefaultValue = true)]
+        public int? AudioStreamDuration { get; set; }
+
+        /// <summary>
         /// The list of subresources for this Call. These include things like logs and recordings associated with the Call.
         /// </summary>
         /// <value>The list of subresources for this Call. These include things like logs and recordings associated with the Call.</value>
@@ -281,6 +292,7 @@ namespace freeclimb.Model
             sb.Append("  EndTime: ").Append(EndTime).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  ConnectDuration: ").Append(ConnectDuration).Append("\n");
+            sb.Append("  AudioStreamDuration: ").Append(AudioStreamDuration).Append("\n");
             sb.Append("  Direction: ").Append(Direction).Append("\n");
             sb.Append("  AnsweredBy: ").Append(AnsweredBy).Append("\n");
             sb.Append("  SubresourceUris: ").Append(SubresourceUris).Append("\n");
@@ -325,6 +337,7 @@ namespace freeclimb.Model
             AddToDictionary(props, "endTime", EndTime);
             AddToDictionary(props, "duration", Duration);
             AddToDictionary(props, "connectDuration", ConnectDuration);
+            AddToDictionary(props, "audioStreamDuration", AudioStreamDuration);
             AddToDictionary(props, "direction", Direction);
             AddToDictionary(props, "answeredBy", AnsweredBy);
             AddToDictionary(props, "subresourceUris", SubresourceUris);

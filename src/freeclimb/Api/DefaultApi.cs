@@ -1039,9 +1039,16 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="callId">String that uniquely identifies this call resource.</param>
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>RecordingList</returns>
-        RecordingList ListCallRecordings(string callId, string? dateCreated = default(string?));
+        RecordingList ListCallRecordings(
+            string callId,
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
+        );
 
         /// <summary>
         /// List Call Recordings
@@ -1052,17 +1059,22 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="callId">String that uniquely identifies this call resource.</param>
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>ApiResponse of RecordingList</returns>
         ApiResponse<RecordingList> ListCallRecordingsWithHttpInfo(
             string callId,
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         );
 
         /// <summary>
         /// List Calls
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="usedAudioStream">If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned  (optional, default to false)</param>
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
@@ -1076,6 +1088,7 @@ namespace freeclimb.Api
 
         /// <returns>CallList</returns>
         CallList ListCalls(
+            bool? usedAudioStream = default(bool?),
             bool? active = default(bool?),
             string? to = default(string?),
             string? from = default(string?),
@@ -1095,6 +1108,7 @@ namespace freeclimb.Api
         ///
         /// </remarks>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="usedAudioStream">If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned  (optional, default to false)</param>
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
@@ -1108,6 +1122,7 @@ namespace freeclimb.Api
 
         /// <returns>ApiResponse of CallList</returns>
         ApiResponse<CallList> ListCallsWithHttpInfo(
+            bool? usedAudioStream = default(bool?),
             bool? active = default(bool?),
             string? to = default(string?),
             string? from = default(string?),
@@ -1127,12 +1142,16 @@ namespace freeclimb.Api
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID.</param>
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>RecordingList</returns>
         RecordingList ListConferenceRecordings(
             string conferenceId,
             string? callId = default(string?),
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         );
 
         /// <summary>
@@ -1145,12 +1164,16 @@ namespace freeclimb.Api
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID.</param>
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>ApiResponse of RecordingList</returns>
         ApiResponse<RecordingList> ListConferenceRecordingsWithHttpInfo(
             string conferenceId,
             string? callId = default(string?),
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         );
 
         /// <summary>
@@ -1361,12 +1384,16 @@ namespace freeclimb.Api
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>RecordingList</returns>
         RecordingList ListRecordings(
             string? callId = default(string?),
             string? conferenceId = default(string?),
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         );
 
         /// <summary>
@@ -1379,12 +1406,16 @@ namespace freeclimb.Api
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>ApiResponse of RecordingList</returns>
         ApiResponse<RecordingList> ListRecordingsWithHttpInfo(
             string? callId = default(string?),
             string? conferenceId = default(string?),
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         );
 
         /// <summary>
@@ -6935,15 +6966,19 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="callId">String that uniquely identifies this call resource.</param>
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>RecordingList</returns>
         public RecordingList ListCallRecordings(
             string callId,
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         )
         {
             freeclimb.Client.ApiResponse<RecordingList> localVarResponse =
-                ListCallRecordingsWithHttpInfo(callId, dateCreated);
+                ListCallRecordingsWithHttpInfo(callId, dateCreated, startTime, endTime);
             return localVarResponse.Data;
         }
 
@@ -6953,11 +6988,15 @@ namespace freeclimb.Api
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="callId">String that uniquely identifies this call resource.</param>
         /// <param name="dateCreated">Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>ApiResponse of RecordingList</returns>
         public freeclimb.Client.ApiResponse<RecordingList> ListCallRecordingsWithHttpInfo(
             string callId,
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         )
         {
             // verify the required parameter 'accountId' is set
@@ -7014,6 +7053,18 @@ namespace freeclimb.Api
                     freeclimb.Client.ClientUtils.ParameterToMultiMap("", "dateCreated", dateCreated)
                 );
             }
+            if (startTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "startTime", startTime)
+                );
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "endTime", endTime)
+                );
+            }
 
             localVarRequestOptions.Operation = "DefaultApi.ListCallRecordings";
 
@@ -7059,6 +7110,7 @@ namespace freeclimb.Api
         /// List Calls
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="usedAudioStream">If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned  (optional, default to false)</param>
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
@@ -7072,6 +7124,7 @@ namespace freeclimb.Api
 
         /// <returns>CallList</returns>
         public CallList ListCalls(
+            bool? usedAudioStream = default(bool?),
             bool? active = default(bool?),
             string? to = default(string?),
             string? from = default(string?),
@@ -7085,6 +7138,7 @@ namespace freeclimb.Api
         )
         {
             freeclimb.Client.ApiResponse<CallList> localVarResponse = ListCallsWithHttpInfo(
+                usedAudioStream,
                 active,
                 to,
                 from,
@@ -7103,6 +7157,7 @@ namespace freeclimb.Api
         /// List Calls
         /// </summary>
         /// <exception cref="freeclimb.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="usedAudioStream">If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned  (optional, default to false)</param>
         /// <param name="active">If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)</param>
         /// <param name="to">Only show Calls to this phone number. (optional)</param>
         /// <param name="from">Only show Calls from this phone number. (optional)</param>
@@ -7116,6 +7171,7 @@ namespace freeclimb.Api
 
         /// <returns>ApiResponse of CallList</returns>
         public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(
+            bool? usedAudioStream = default(bool?),
             bool? active = default(bool?),
             string? to = default(string?),
             string? from = default(string?),
@@ -7163,6 +7219,16 @@ namespace freeclimb.Api
                 "accountId",
                 freeclimb.Client.ClientUtils.ParameterToString(accountId)
             ); // path parameter
+            if (usedAudioStream != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap(
+                        "",
+                        "usedAudioStream",
+                        usedAudioStream
+                    )
+                );
+            }
             if (active != null)
             {
                 localVarRequestOptions.QueryParameters.Add(
@@ -7284,16 +7350,26 @@ namespace freeclimb.Api
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID.</param>
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>RecordingList</returns>
         public RecordingList ListConferenceRecordings(
             string conferenceId,
             string? callId = default(string?),
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         )
         {
             freeclimb.Client.ApiResponse<RecordingList> localVarResponse =
-                ListConferenceRecordingsWithHttpInfo(conferenceId, callId, dateCreated);
+                ListConferenceRecordingsWithHttpInfo(
+                    conferenceId,
+                    callId,
+                    dateCreated,
+                    startTime,
+                    endTime
+                );
             return localVarResponse.Data;
         }
 
@@ -7304,12 +7380,16 @@ namespace freeclimb.Api
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID.</param>
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>ApiResponse of RecordingList</returns>
         public freeclimb.Client.ApiResponse<RecordingList> ListConferenceRecordingsWithHttpInfo(
             string conferenceId,
             string? callId = default(string?),
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         )
         {
             // verify the required parameter 'accountId' is set
@@ -7370,6 +7450,18 @@ namespace freeclimb.Api
             {
                 localVarRequestOptions.QueryParameters.Add(
                     freeclimb.Client.ClientUtils.ParameterToMultiMap("", "dateCreated", dateCreated)
+                );
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "startTime", startTime)
+                );
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "endTime", endTime)
                 );
             }
 
@@ -8216,16 +8308,20 @@ namespace freeclimb.Api
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>RecordingList</returns>
         public RecordingList ListRecordings(
             string? callId = default(string?),
             string? conferenceId = default(string?),
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         )
         {
             freeclimb.Client.ApiResponse<RecordingList> localVarResponse =
-                ListRecordingsWithHttpInfo(callId, conferenceId, dateCreated);
+                ListRecordingsWithHttpInfo(callId, conferenceId, dateCreated, startTime, endTime);
             return localVarResponse.Data;
         }
 
@@ -8236,12 +8332,16 @@ namespace freeclimb.Api
         /// <param name="callId">Show only Recordings made during the Call with this ID. (optional)</param>
         /// <param name="conferenceId">Show only Recordings made during the conference with this ID. (optional)</param>
         /// <param name="dateCreated">Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)</param>
+        /// <param name="startTime">Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
+        /// <param name="endTime">Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)</param>
 
         /// <returns>ApiResponse of RecordingList</returns>
         public freeclimb.Client.ApiResponse<RecordingList> ListRecordingsWithHttpInfo(
             string? callId = default(string?),
             string? conferenceId = default(string?),
-            string? dateCreated = default(string?)
+            string? dateCreated = default(string?),
+            string? startTime = default(string?),
+            string? endTime = default(string?)
         )
         {
             // verify the required parameter 'accountId' is set
@@ -8299,6 +8399,18 @@ namespace freeclimb.Api
             {
                 localVarRequestOptions.QueryParameters.Add(
                     freeclimb.Client.ClientUtils.ParameterToMultiMap("", "dateCreated", dateCreated)
+                );
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "startTime", startTime)
+                );
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "endTime", endTime)
                 );
             }
 
