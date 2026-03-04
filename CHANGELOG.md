@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="5.3.2"></a>
+
+## [5.3.2] - 2026-03-04
+
+### Changed
+
+- Resolves a discrepancy during package publishing
+
 <a name="5.3.1"></a>
 
 ## [5.3.1] - 2025-10-30
