@@ -13,9 +13,10 @@ None
 
 ## [5.3.2] - 2026-03-04
 
-### Changed
+### Added
 
-- Resolves a discrepancy during package publishing
+- New parameters for fetching recordings (start time and end time)
+- Audio Streaming feature
 
 <a name="5.3.1"></a>
 
