@@ -361,6 +361,10 @@ namespace freeclimb.Test
             {
                 return TTSEngineNameValueConverter.FromString("freeclimb.standard");
             }
+            if (type == typeof(CallResultAllOfSubresourceUris))
+            {
+                return new CallResultAllOfSubresourceUris(null, null);
+            }
 
             throw new ArgumentException("Provided type has no test value", type.ToString());
         }

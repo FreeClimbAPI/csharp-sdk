@@ -1085,6 +1085,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
         /// <param name="riskScoreMin">The minimum riskScore that should be included in the list. (optional)</param>
         /// <param name="riskScoreMax">The maximum riskScore that should be included in the list. (optional)</param>
+        /// <param name="webRTC">Only show Calls that were originated via WebRTC. (optional, default to false)</param>
 
         /// <returns>CallList</returns>
         CallList ListCalls(
@@ -1098,7 +1099,8 @@ namespace freeclimb.Api
             string? parentCallId = default(string?),
             List<string>? applicationId = default(List<string>?),
             int? riskScoreMin = default(int?),
-            int? riskScoreMax = default(int?)
+            int? riskScoreMax = default(int?),
+            bool? webRTC = default(bool?)
         );
 
         /// <summary>
@@ -1119,6 +1121,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
         /// <param name="riskScoreMin">The minimum riskScore that should be included in the list. (optional)</param>
         /// <param name="riskScoreMax">The maximum riskScore that should be included in the list. (optional)</param>
+        /// <param name="webRTC">Only show Calls that were originated via WebRTC. (optional, default to false)</param>
 
         /// <returns>ApiResponse of CallList</returns>
         ApiResponse<CallList> ListCallsWithHttpInfo(
@@ -1132,7 +1135,8 @@ namespace freeclimb.Api
             string? parentCallId = default(string?),
             List<string>? applicationId = default(List<string>?),
             int? riskScoreMin = default(int?),
-            int? riskScoreMax = default(int?)
+            int? riskScoreMax = default(int?),
+            bool? webRTC = default(bool?)
         );
 
         /// <summary>
@@ -7121,6 +7125,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
         /// <param name="riskScoreMin">The minimum riskScore that should be included in the list. (optional)</param>
         /// <param name="riskScoreMax">The maximum riskScore that should be included in the list. (optional)</param>
+        /// <param name="webRTC">Only show Calls that were originated via WebRTC. (optional, default to false)</param>
 
         /// <returns>CallList</returns>
         public CallList ListCalls(
@@ -7134,7 +7139,8 @@ namespace freeclimb.Api
             string? parentCallId = default(string?),
             List<string>? applicationId = default(List<string>?),
             int? riskScoreMin = default(int?),
-            int? riskScoreMax = default(int?)
+            int? riskScoreMax = default(int?),
+            bool? webRTC = default(bool?)
         )
         {
             freeclimb.Client.ApiResponse<CallList> localVarResponse = ListCallsWithHttpInfo(
@@ -7148,7 +7154,8 @@ namespace freeclimb.Api
                 parentCallId,
                 applicationId,
                 riskScoreMin,
-                riskScoreMax
+                riskScoreMax,
+                webRTC
             );
             return localVarResponse.Data;
         }
@@ -7168,6 +7175,7 @@ namespace freeclimb.Api
         /// <param name="applicationId">Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)</param>
         /// <param name="riskScoreMin">The minimum riskScore that should be included in the list. (optional)</param>
         /// <param name="riskScoreMax">The maximum riskScore that should be included in the list. (optional)</param>
+        /// <param name="webRTC">Only show Calls that were originated via WebRTC. (optional, default to false)</param>
 
         /// <returns>ApiResponse of CallList</returns>
         public freeclimb.Client.ApiResponse<CallList> ListCallsWithHttpInfo(
@@ -7181,7 +7189,8 @@ namespace freeclimb.Api
             string? parentCallId = default(string?),
             List<string>? applicationId = default(List<string>?),
             int? riskScoreMin = default(int?),
-            int? riskScoreMax = default(int?)
+            int? riskScoreMax = default(int?),
+            bool? webRTC = default(bool?)
         )
         {
             // verify the required parameter 'accountId' is set
@@ -7303,6 +7312,12 @@ namespace freeclimb.Api
                         "riskScoreMax",
                         riskScoreMax
                     )
+                );
+            }
+            if (webRTC != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(
+                    freeclimb.Client.ClientUtils.ParameterToMultiMap("", "webRTC", webRTC)
                 );
             }
 

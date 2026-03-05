@@ -24,6 +24,7 @@ docs/CallDirection.md
 docs/CallEndedReason.md
 docs/CallList.md
 docs/CallResult.md
+docs/CallResultAllOfSubresourceUris.md
 docs/CallStatus.md
 docs/CallStatusWebhook.md
 docs/Capabilities.md
@@ -183,6 +184,7 @@ src/freeclimb.Test/Model/CallControlWebhookTests.cs
 src/freeclimb.Test/Model/CallDirectionTests.cs
 src/freeclimb.Test/Model/CallEndedReasonTests.cs
 src/freeclimb.Test/Model/CallListTests.cs
+src/freeclimb.Test/Model/CallResultAllOfSubresourceUrisTests.cs
 src/freeclimb.Test/Model/CallResultTests.cs
 src/freeclimb.Test/Model/CallStatusTests.cs
 src/freeclimb.Test/Model/CallStatusWebhookTests.cs
@@ -358,6 +360,7 @@ src/freeclimb/Model/CallDirection.cs
 src/freeclimb/Model/CallEndedReason.cs
 src/freeclimb/Model/CallList.cs
 src/freeclimb/Model/CallResult.cs
+src/freeclimb/Model/CallResultAllOfSubresourceUris.cs
 src/freeclimb/Model/CallStatus.cs
 src/freeclimb/Model/CallStatusWebhook.cs
 src/freeclimb/Model/Capabilities.cs

@@ -49,6 +49,7 @@ namespace freeclimb.Test.Model
                 maxSize: (int?)TestHelpers.getTestValue(typeof(int?)),
                 currentSize: (int?)TestHelpers.getTestValue(typeof(int?)),
                 averageQueueRemovalTime: (int?)TestHelpers.getTestValue(typeof(int?)),
+                averageWaitTime: (int?)TestHelpers.getTestValue(typeof(int?)),
                 subresourceUris: (Object)TestHelpers.getTestValue(typeof(Object))
             );
         }
@@ -168,6 +169,16 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'AverageWaitTime'
+        /// </summary>
+        [Fact]
+        public void AverageWaitTimeTest()
+        {
+            instance.AverageWaitTime = 1;
+            Assert.Equal(1, (int)instance.AverageWaitTime);
+        }
+
+        /// <summary>
         /// Test the property 'SubresourceUris'
         /// </summary>
         [Fact]
@@ -206,6 +217,8 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("averageQueueRemovalTime", json);
 
+            Assert.Contains("averageWaitTime", json);
+
             Assert.Contains("subresourceUris", json);
         }
 
@@ -226,6 +239,8 @@ namespace freeclimb.Test.Model
             instance.CurrentSize = null;
 
             instance.AverageQueueRemovalTime = null;
+
+            instance.AverageWaitTime = null;
 
             instance.SubresourceUris = null;
 

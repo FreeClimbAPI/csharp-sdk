@@ -46,6 +46,7 @@ namespace freeclimb.Model
         /// <param name="maxSize">The maximum number of Calls permitted in the Queue. Default is 100. Maximum is 1000..</param>
         /// <param name="currentSize">Count of Calls currently in the Queue..</param>
         /// <param name="averageQueueRemovalTime">The average amount of time (in seconds) for a call to be removed from the queue..</param>
+        /// <param name="averageWaitTime">The average wait time (in seconds) of all Calls in the Queue..</param>
         /// <param name="subresourceUris">List of subresources for this Queue (which includes Queue members)..</param>
         public QueueResult(
             string uri = default(string),
@@ -58,6 +59,7 @@ namespace freeclimb.Model
             int? maxSize = default(int?),
             int? currentSize = default(int?),
             int? averageQueueRemovalTime = default(int?),
+            int? averageWaitTime = default(int?),
             Object subresourceUris = default(Object)
         )
         {
@@ -80,6 +82,8 @@ namespace freeclimb.Model
             this.CurrentSize = currentSize;
 
             this.AverageQueueRemovalTime = averageQueueRemovalTime;
+
+            this.AverageWaitTime = averageWaitTime;
 
             this.SubresourceUris = subresourceUris;
         }
@@ -155,6 +159,13 @@ namespace freeclimb.Model
         public int? AverageQueueRemovalTime { get; set; }
 
         /// <summary>
+        /// The average wait time (in seconds) of all Calls in the Queue.
+        /// </summary>
+        /// <value>The average wait time (in seconds) of all Calls in the Queue.</value>
+        [DataMember(Name = "averageWaitTime", EmitDefaultValue = true)]
+        public int? AverageWaitTime { get; set; }
+
+        /// <summary>
         /// List of subresources for this Queue (which includes Queue members).
         /// </summary>
         /// <value>List of subresources for this Queue (which includes Queue members).</value>
@@ -179,6 +190,7 @@ namespace freeclimb.Model
             sb.Append("  MaxSize: ").Append(MaxSize).Append("\n");
             sb.Append("  CurrentSize: ").Append(CurrentSize).Append("\n");
             sb.Append("  AverageQueueRemovalTime: ").Append(AverageQueueRemovalTime).Append("\n");
+            sb.Append("  AverageWaitTime: ").Append(AverageWaitTime).Append("\n");
             sb.Append("  SubresourceUris: ").Append(SubresourceUris).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -214,6 +226,7 @@ namespace freeclimb.Model
             AddToDictionary(props, "maxSize", MaxSize);
             AddToDictionary(props, "currentSize", CurrentSize);
             AddToDictionary(props, "averageQueueRemovalTime", AverageQueueRemovalTime);
+            AddToDictionary(props, "averageWaitTime", AverageWaitTime);
             AddToDictionary(props, "subresourceUris", SubresourceUris);
             return props;
         }

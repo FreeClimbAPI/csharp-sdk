@@ -58,6 +58,8 @@ namespace freeclimb.Model
         /// <param name="dateCreated">The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT)..</param>
         /// <param name="dateUpdated">The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT)..</param>
         /// <param name="revision">Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated..</param>
+        /// <param name="dateCreatedISO">The date that this resource was created in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z)..</param>
+        /// <param name="dateUpdatedISO">The date that this resource was last updated in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z)..</param>
         /// <param name="callId">String that uniquely identifies this Call resource..</param>
         /// <param name="parentCallId">ID of the Call that created this leg (child Call)..</param>
         /// <param name="accountId">ID of the account that owns this Call..</param>
@@ -66,20 +68,27 @@ namespace freeclimb.Model
         /// <param name="phoneNumberId">If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI)..</param>
         /// <param name="status">status.</param>
         /// <param name="startTime">Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed..</param>
+        /// <param name="startTimeISO">Start time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed..</param>
         /// <param name="connectTime">Time the Call was answered (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed..</param>
+        /// <param name="connectTimeISO">Time the Call was answered in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed..</param>
         /// <param name="endTime">End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully..</param>
+        /// <param name="endTimeISO">End time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call did not complete successfully..</param>
         /// <param name="duration">Total length of the Call in seconds. Measures time between startTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls..</param>
         /// <param name="connectDuration">Length of time that the Call was connected in seconds. Measures time between connectTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls..</param>
         /// <param name="audioStreamDuration">Length of time that the Call used the audio stream in seconds. This value is empty or zero when the Call did not use the audio stream..</param>
         /// <param name="direction">direction.</param>
         /// <param name="answeredBy">answeredBy.</param>
-        /// <param name="subresourceUris">The list of subresources for this Call. These include things like logs and recordings associated with the Call..</param>
+        /// <param name="callerName">The caller ID name (CNAM) for this Call. Empty if unavailable..</param>
+        /// <param name="webRTC">Indicates whether this Call was initiated via WebRTC..</param>
+        /// <param name="subresourceUris">subresourceUris.</param>
         /// <param name="applicationId">ApplicationId associated with the Call..</param>
         public CallResult(
             string uri = default(string),
             string dateCreated = default(string),
             string dateUpdated = default(string),
             int revision = default(int),
+            DateTime? dateCreatedISO = default(DateTime?),
+            DateTime? dateUpdatedISO = default(DateTime?),
             string callId = default(string),
             string parentCallId = default(string),
             string accountId = default(string),
@@ -88,14 +97,20 @@ namespace freeclimb.Model
             string phoneNumberId = default(string),
             CallStatus? status = default(CallStatus?),
             string startTime = default(string),
+            DateTime? startTimeISO = default(DateTime?),
             string connectTime = default(string),
+            DateTime? connectTimeISO = default(DateTime?),
             string endTime = default(string),
+            DateTime? endTimeISO = default(DateTime?),
             int? duration = default(int?),
             int? connectDuration = default(int?),
             int? audioStreamDuration = default(int?),
             CallDirection? direction = default(CallDirection?),
             AnsweredBy? answeredBy = default(AnsweredBy?),
-            Object subresourceUris = default(Object),
+            string callerName = default(string),
+            bool? webRTC = default(bool?),
+            CallResultAllOfSubresourceUris subresourceUris =
+                default(CallResultAllOfSubresourceUris),
             string applicationId = default(string)
         )
         {
@@ -106,6 +121,10 @@ namespace freeclimb.Model
             this.DateUpdated = dateUpdated;
 
             this.Revision = revision;
+
+            this.DateCreatedISO = dateCreatedISO;
+
+            this.DateUpdatedISO = dateUpdatedISO;
 
             this.CallId = callId;
 
@@ -123,9 +142,15 @@ namespace freeclimb.Model
 
             this.StartTime = startTime;
 
+            this.StartTimeISO = startTimeISO;
+
             this.ConnectTime = connectTime;
 
+            this.ConnectTimeISO = connectTimeISO;
+
             this.EndTime = endTime;
+
+            this.EndTimeISO = endTimeISO;
 
             this.Duration = duration;
 
@@ -136,6 +161,10 @@ namespace freeclimb.Model
             this.Direction = direction;
 
             this.AnsweredBy = answeredBy;
+
+            this.CallerName = callerName;
+
+            this.WebRTC = webRTC;
 
             this.SubresourceUris = subresourceUris;
 
@@ -169,6 +198,20 @@ namespace freeclimb.Model
         /// <value>Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.</value>
         [DataMember(Name = "revision", EmitDefaultValue = false)]
         public int Revision { get; set; }
+
+        /// <summary>
+        /// The date that this resource was created in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).
+        /// </summary>
+        /// <value>The date that this resource was created in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).</value>
+        [DataMember(Name = "dateCreatedISO", EmitDefaultValue = true)]
+        public DateTime? DateCreatedISO { get; set; }
+
+        /// <summary>
+        /// The date that this resource was last updated in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).
+        /// </summary>
+        /// <value>The date that this resource was last updated in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).</value>
+        [DataMember(Name = "dateUpdatedISO", EmitDefaultValue = true)]
+        public DateTime? DateUpdatedISO { get; set; }
 
         /// <summary>
         /// String that uniquely identifies this Call resource.
@@ -220,6 +263,13 @@ namespace freeclimb.Model
         public string StartTime { get; set; }
 
         /// <summary>
+        /// Start time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed.
+        /// </summary>
+        /// <value>Start time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed.</value>
+        [DataMember(Name = "startTimeISO", EmitDefaultValue = true)]
+        public DateTime? StartTimeISO { get; set; }
+
+        /// <summary>
         /// Time the Call was answered (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed.
         /// </summary>
         /// <value>Time the Call was answered (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed.</value>
@@ -227,11 +277,25 @@ namespace freeclimb.Model
         public string ConnectTime { get; set; }
 
         /// <summary>
+        /// Time the Call was answered in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed.
+        /// </summary>
+        /// <value>Time the Call was answered in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed.</value>
+        [DataMember(Name = "connectTimeISO", EmitDefaultValue = true)]
+        public DateTime? ConnectTimeISO { get; set; }
+
+        /// <summary>
         /// End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully.
         /// </summary>
         /// <value>End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully.</value>
         [DataMember(Name = "endTime", EmitDefaultValue = true)]
         public string EndTime { get; set; }
+
+        /// <summary>
+        /// End time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call did not complete successfully.
+        /// </summary>
+        /// <value>End time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call did not complete successfully.</value>
+        [DataMember(Name = "endTimeISO", EmitDefaultValue = true)]
+        public DateTime? EndTimeISO { get; set; }
 
         /// <summary>
         /// Total length of the Call in seconds. Measures time between startTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls.
@@ -255,11 +319,24 @@ namespace freeclimb.Model
         public int? AudioStreamDuration { get; set; }
 
         /// <summary>
-        /// The list of subresources for this Call. These include things like logs and recordings associated with the Call.
+        /// The caller ID name (CNAM) for this Call. Empty if unavailable.
         /// </summary>
-        /// <value>The list of subresources for this Call. These include things like logs and recordings associated with the Call.</value>
+        /// <value>The caller ID name (CNAM) for this Call. Empty if unavailable.</value>
+        [DataMember(Name = "callerName", EmitDefaultValue = true)]
+        public string CallerName { get; set; }
+
+        /// <summary>
+        /// Indicates whether this Call was initiated via WebRTC.
+        /// </summary>
+        /// <value>Indicates whether this Call was initiated via WebRTC.</value>
+        [DataMember(Name = "webRTC", EmitDefaultValue = true)]
+        public bool? WebRTC { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SubresourceUris
+        /// </summary>
         [DataMember(Name = "subresourceUris", EmitDefaultValue = true)]
-        public Object SubresourceUris { get; set; }
+        public CallResultAllOfSubresourceUris SubresourceUris { get; set; }
 
         /// <summary>
         /// ApplicationId associated with the Call.
@@ -280,6 +357,8 @@ namespace freeclimb.Model
             sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
             sb.Append("  DateUpdated: ").Append(DateUpdated).Append("\n");
             sb.Append("  Revision: ").Append(Revision).Append("\n");
+            sb.Append("  DateCreatedISO: ").Append(DateCreatedISO).Append("\n");
+            sb.Append("  DateUpdatedISO: ").Append(DateUpdatedISO).Append("\n");
             sb.Append("  CallId: ").Append(CallId).Append("\n");
             sb.Append("  ParentCallId: ").Append(ParentCallId).Append("\n");
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
@@ -288,13 +367,18 @@ namespace freeclimb.Model
             sb.Append("  PhoneNumberId: ").Append(PhoneNumberId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StartTime: ").Append(StartTime).Append("\n");
+            sb.Append("  StartTimeISO: ").Append(StartTimeISO).Append("\n");
             sb.Append("  ConnectTime: ").Append(ConnectTime).Append("\n");
+            sb.Append("  ConnectTimeISO: ").Append(ConnectTimeISO).Append("\n");
             sb.Append("  EndTime: ").Append(EndTime).Append("\n");
+            sb.Append("  EndTimeISO: ").Append(EndTimeISO).Append("\n");
             sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  ConnectDuration: ").Append(ConnectDuration).Append("\n");
             sb.Append("  AudioStreamDuration: ").Append(AudioStreamDuration).Append("\n");
             sb.Append("  Direction: ").Append(Direction).Append("\n");
             sb.Append("  AnsweredBy: ").Append(AnsweredBy).Append("\n");
+            sb.Append("  CallerName: ").Append(CallerName).Append("\n");
+            sb.Append("  WebRTC: ").Append(WebRTC).Append("\n");
             sb.Append("  SubresourceUris: ").Append(SubresourceUris).Append("\n");
             sb.Append("  ApplicationId: ").Append(ApplicationId).Append("\n");
             sb.Append("}\n");
@@ -325,6 +409,8 @@ namespace freeclimb.Model
             AddToDictionary(props, "dateCreated", DateCreated);
             AddToDictionary(props, "dateUpdated", DateUpdated);
             AddToDictionary(props, "revision", Revision);
+            AddToDictionary(props, "dateCreatedISO", DateCreatedISO);
+            AddToDictionary(props, "dateUpdatedISO", DateUpdatedISO);
             AddToDictionary(props, "callId", CallId);
             AddToDictionary(props, "parentCallId", ParentCallId);
             AddToDictionary(props, "accountId", AccountId);
@@ -333,13 +419,18 @@ namespace freeclimb.Model
             AddToDictionary(props, "phoneNumberId", PhoneNumberId);
             AddToDictionary(props, "status", Status);
             AddToDictionary(props, "startTime", StartTime);
+            AddToDictionary(props, "startTimeISO", StartTimeISO);
             AddToDictionary(props, "connectTime", ConnectTime);
+            AddToDictionary(props, "connectTimeISO", ConnectTimeISO);
             AddToDictionary(props, "endTime", EndTime);
+            AddToDictionary(props, "endTimeISO", EndTimeISO);
             AddToDictionary(props, "duration", Duration);
             AddToDictionary(props, "connectDuration", ConnectDuration);
             AddToDictionary(props, "audioStreamDuration", AudioStreamDuration);
             AddToDictionary(props, "direction", Direction);
             AddToDictionary(props, "answeredBy", AnsweredBy);
+            AddToDictionary(props, "callerName", CallerName);
+            AddToDictionary(props, "webRTC", WebRTC);
             AddToDictionary(props, "subresourceUris", SubresourceUris);
             AddToDictionary(props, "applicationId", ApplicationId);
             return props;

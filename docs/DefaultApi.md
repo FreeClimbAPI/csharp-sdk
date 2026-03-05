@@ -4477,7 +4477,7 @@ catch (ApiException e)
 
 <a id="listcalls"></a>
 # **ListCalls**
-> CallList ListCalls (bool? usedAudioStream = null, bool? active = null, string? to = null, string? from = null, CallStatus? status = null, string? startTime = null, string? endTime = null, string? parentCallId = null, List<string>? applicationId = null, int? riskScoreMin = null, int? riskScoreMax = null)
+> CallList ListCalls (bool? usedAudioStream = null, bool? active = null, string? to = null, string? from = null, CallStatus? status = null, string? startTime = null, string? endTime = null, string? parentCallId = null, List<string>? applicationId = null, int? riskScoreMin = null, int? riskScoreMax = null, bool? webRTC = null)
 
 List Calls
 
@@ -4525,10 +4525,12 @@ namespace Example
             
             var riskScoreMax = 56;  // int? | The maximum riskScore that should be included in the list. (optional) 
             
+            var webRTC = false;  // bool? | Only show Calls that were originated via WebRTC. (optional)  (default to false)
+            
             try
             {
                 // List Calls
-                CallList result = apiInstance.ListCalls(usedAudioStream, active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax);
+                CallList result = apiInstance.ListCalls(usedAudioStream, active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax, webRTC);
                 Debug.WriteLine(result);                
             }
             catch (ApiException  e)
@@ -4549,7 +4551,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Calls
-    ApiResponse<CallList> response = apiInstance.ListCallsWithHttpInfo(usedAudioStream, active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax);
+    ApiResponse<CallList> response = apiInstance.ListCallsWithHttpInfo(usedAudioStream, active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax, webRTC);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);    
@@ -4589,6 +4591,8 @@ catch (ApiException e)
 | **riskScoreMin** | **int?** | The minimum riskScore that should be included in the list. | [optional]  |
 
 | **riskScoreMax** | **int?** | The maximum riskScore that should be included in the list. | [optional]  |
+
+| **webRTC** | **bool?** | Only show Calls that were originated via WebRTC. | [optional] [default to false] |
 
 
 ### Return type
