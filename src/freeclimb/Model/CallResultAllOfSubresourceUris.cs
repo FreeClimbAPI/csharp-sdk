@@ -30,7 +30,7 @@ namespace freeclimb.Model
     /// <summary>
     /// The list of subresources for this Call. These include things like logs and recordings associated with the Call.
     /// </summary>
-    [DataContract(Name = "CallResult_allOf_subresourceUris")]
+    [DataContract(Name = "CallResultAllOfSubresourceUris")]
     public partial class CallResultAllOfSubresourceUris : IValidatableObject
     {
         /// <summary>

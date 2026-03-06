@@ -7363,6 +7363,22 @@ components:
       - phoneNumber
       type: object
       x-is-object: true
+    CallResultAllOfSubresourceUris:
+      description: The list of subresources for this Call. These include things like
+        logs and recordings associated with the Call.
+      example:
+        recordings: recordings
+        logs: logs
+      nullable: true
+      properties:
+        logs:
+          description: The URI for the logs associated with this Call.
+          type: string
+        recordings:
+          description: The URI for the recordings associated with this Call.
+          type: string
+      type: object
+      x-is-object: true
     CallResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -7476,7 +7492,7 @@ components:
             nullable: true
             type: boolean
           subresourceUris:
-            $ref: '#/components/schemas/CallResult_allOf_subresourceUris'
+            $ref: '#/components/schemas/CallResultAllOfSubresourceUris'
           applicationId:
             description: ApplicationId associated with the Call.
             nullable: true
@@ -10126,22 +10142,6 @@ components:
     AccountResult_allOf_subresourceUris:
       description: The list of subresources for this account.
       nullable: true
-      type: object
-      x-is-object: true
-    CallResult_allOf_subresourceUris:
-      description: The list of subresources for this Call. These include things like
-        logs and recordings associated with the Call.
-      example:
-        recordings: recordings
-        logs: logs
-      nullable: true
-      properties:
-        logs:
-          description: The URI for the logs associated with this Call.
-          type: string
-        recordings:
-          description: The URI for the recordings associated with this Call.
-          type: string
       type: object
       x-is-object: true
     ConferenceResult_allOf_subresourceUris:
