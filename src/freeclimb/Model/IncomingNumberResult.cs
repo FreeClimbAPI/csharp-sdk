@@ -200,7 +200,7 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets Tfn
         /// </summary>
-        [DataMember(Name = "tfn", EmitDefaultValue = false)]
+        [DataMember(Name = "tfn", EmitDefaultValue = true)]
         public TFN Tfn { get; set; }
 
         /// <summary>

@@ -13,6 +13,8 @@ docs/AnsweredBy.md
 docs/ApplicationList.md
 docs/ApplicationRequest.md
 docs/ApplicationResult.md
+docs/AudioStream.md
+docs/AudioStreamWebhook.md
 docs/AvailableNumber.md
 docs/AvailableNumberList.md
 docs/BargeInReason.md
@@ -174,6 +176,8 @@ src/freeclimb.Test/Model/AnsweredByTests.cs
 src/freeclimb.Test/Model/ApplicationListTests.cs
 src/freeclimb.Test/Model/ApplicationRequestTests.cs
 src/freeclimb.Test/Model/ApplicationResultTests.cs
+src/freeclimb.Test/Model/AudioStreamTests.cs
+src/freeclimb.Test/Model/AudioStreamWebhookTests.cs
 src/freeclimb.Test/Model/AvailableNumberListTests.cs
 src/freeclimb.Test/Model/AvailableNumberTests.cs
 src/freeclimb.Test/Model/BargeInReasonTests.cs
@@ -349,6 +353,8 @@ src/freeclimb/Model/AnsweredBy.cs
 src/freeclimb/Model/ApplicationList.cs
 src/freeclimb/Model/ApplicationRequest.cs
 src/freeclimb/Model/ApplicationResult.cs
+src/freeclimb/Model/AudioStream.cs
+src/freeclimb/Model/AudioStreamWebhook.cs
 src/freeclimb/Model/AvailableNumber.cs
 src/freeclimb/Model/AvailableNumberList.cs
 src/freeclimb/Model/BargeInReason.cs

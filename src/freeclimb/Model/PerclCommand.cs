@@ -34,6 +34,7 @@ namespace freeclimb.Model
     [DataContract(Name = "PerclCommand")]
     [JsonConverter(typeof(JsonSubtypes), "Command")]
     [JsonSubtypes.KnownSubType(typeof(AddToConference), "AddToConference")]
+    [JsonSubtypes.KnownSubType(typeof(AudioStream), "AudioStream")]
     [JsonSubtypes.KnownSubType(typeof(CreateConference), "CreateConference")]
     [JsonSubtypes.KnownSubType(typeof(Dequeue), "Dequeue")]
     [JsonSubtypes.KnownSubType(typeof(Enqueue), "Enqueue")]

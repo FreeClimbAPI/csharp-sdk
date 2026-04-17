@@ -38,6 +38,7 @@ namespace freeclimb.Model
         "addToConferenceNotification"
     )]
     [JsonSubtypes.KnownSubType(typeof(AddToQueueNotificationWebhook), "addToQueueNotification")]
+    [JsonSubtypes.KnownSubType(typeof(AudioStreamWebhook), "audioStream")]
     [JsonSubtypes.KnownSubType(typeof(CallControlWebhook), "callControl")]
     [JsonSubtypes.KnownSubType(typeof(CallStatusWebhook), "callStatus")]
     [JsonSubtypes.KnownSubType(

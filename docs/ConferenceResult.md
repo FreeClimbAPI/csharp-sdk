@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ConferenceId** | **string** | A string that uniquely identifies this Conference resource. | [optional] 
 **AccountId** | **string** | ID of the account that created this Conference. | [optional] 
 **Alias** | **string** | A description for this Conference. | [optional] 
-**PlayBeep** | **PlayBeep** |  | [optional] 
+**PlayBeep** | **PlayBeep** | Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always. | [optional] 
 **Record** | **bool?** | Flag indicating whether recording is enabled for this Conference. | [optional] 
 **Status** | **ConferenceStatus** |  | [optional] 
 **WaitUrl** | **string** | URL referencing the audio file to be used as default wait music for the Conference when it is in the populated state. | [optional] 

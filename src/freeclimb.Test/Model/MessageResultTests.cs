@@ -364,6 +364,8 @@ namespace freeclimb.Test.Model
 
             instance.MediaUrls = null;
 
+            instance.Tfn = null;
+
             instance.PhoneNumberId = null;
 
             instance.ApplicationId = null;

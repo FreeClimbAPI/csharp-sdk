@@ -377,6 +377,31 @@ namespace freeclimb.Test.Enums
         }
 
         [Fact]
+        public void TestAUDIO_STREAMShouldWork()
+        {
+            RequestType test = RequestType.AUDIO_STREAM;
+            Assert.Equal(typeof(RequestType), test.GetType());
+        }
+
+        [Fact]
+        public void TestAUDIO_STREAMShouldSerializeToEnum()
+        {
+            RequestType expectedValue = RequestType.AUDIO_STREAM;
+            RequestType calculatedValue = (RequestType)
+                Enum.Parse(typeof(RequestType), "AUDIO_STREAM");
+            Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        [Fact]
+        public void TestAUDIO_STREAMShouldDeserializeToString()
+        {
+            RequestType test = RequestType.AUDIO_STREAM;
+            string expectedValue = "AUDIO_STREAM";
+            string calculatedValue = test.ToString();
+            Assert.Equal(expectedValue, calculatedValue);
+        }
+
+        [Fact]
         public void TestREMOVE_FROM_QUEUE_NOTIFICATIONShouldWork()
         {
             RequestType test = RequestType.REMOVE_FROM_QUEUE_NOTIFICATION;
