@@ -42,6 +42,7 @@ namespace freeclimb.Test.Model
                 capabilities: (Capabilities)TestHelpers.getTestValue(typeof(Capabilities)),
                 campaignId: (string)TestHelpers.getTestValue(typeof(string)),
                 phoneNumber: (string)TestHelpers.getTestValue(typeof(string)),
+                alias: (string)TestHelpers.getTestValue(typeof(string)),
                 region: (string)TestHelpers.getTestValue(typeof(string)),
                 country: (string)TestHelpers.getTestValue(typeof(string))
             );
@@ -93,6 +94,16 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Alias'
+        /// </summary>
+        [Fact]
+        public void AliasTest()
+        {
+            instance.Alias = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.Alias);
+        }
+
+        /// <summary>
         /// Test the property 'Region'
         /// </summary>
         [Fact]
@@ -126,6 +137,8 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("phoneNumber", json);
 
+            Assert.Contains("alias", json);
+
             Assert.Contains("region", json);
 
             Assert.Contains("country", json);
@@ -140,6 +153,8 @@ namespace freeclimb.Test.Model
             instance.CampaignId = null;
 
             instance.PhoneNumber = null;
+
+            instance.Alias = null;
 
             instance.Region = null;
 

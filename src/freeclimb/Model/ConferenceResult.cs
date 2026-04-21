@@ -34,8 +34,9 @@ namespace freeclimb.Model
     public partial class ConferenceResult : IValidatableObject
     {
         /// <summary>
-        /// Gets or Sets PlayBeep
+        /// Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.
         /// </summary>
+        /// <value>Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.</value>
         [DataMember(Name = "playBeep", EmitDefaultValue = true)]
         public PlayBeep? PlayBeep { get; set; }
 
@@ -55,7 +56,7 @@ namespace freeclimb.Model
         /// <param name="conferenceId">A string that uniquely identifies this Conference resource..</param>
         /// <param name="accountId">ID of the account that created this Conference..</param>
         /// <param name="alias">A description for this Conference..</param>
-        /// <param name="playBeep">playBeep.</param>
+        /// <param name="playBeep">Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always..</param>
         /// <param name="record">Flag indicating whether recording is enabled for this Conference..</param>
         /// <param name="status">status.</param>
         /// <param name="waitUrl">URL referencing the audio file to be used as default wait music for the Conference when it is in the populated state..</param>

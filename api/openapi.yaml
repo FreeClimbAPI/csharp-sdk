@@ -708,6 +708,16 @@ paths:
       deprecated: false
       operationId: list-calls
       parameters:
+      - description: 'If usedAudioStream is set to true then all calls that have a
+          audioStreamDuration > 0 will be returned '
+        explode: true
+        in: query
+        name: usedAudioStream
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       - description: "If active is set to true then all calls of the nature queued,\
           \ ringing, inProgress are returned in the query."
         explode: true
@@ -809,6 +819,15 @@ paths:
         schema:
           type: integer
         style: form
+      - description: Only show Calls that were originated via WebRTC.
+        explode: true
+        in: query
+        name: webRTC
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -880,6 +899,24 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Only show Recordings created at or after this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: startTime
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Only show Recordings created at or before this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: endTime
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -1325,6 +1362,24 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Only show Recordings created at or after this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: startTime
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Only show Recordings created at or before this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: endTime
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -1459,7 +1514,7 @@ paths:
               $ref: '#/components/schemas/QueueRequest'
         description: Queue details used to create a queue
       responses:
-        "200":
+        "201":
           content:
             application/json:
               schema:
@@ -1741,6 +1796,24 @@ paths:
           type: string
         style: simple
         x-account-id: true
+      - description: "Only show Recordings created at or after this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: startTime
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Only show Recordings created at or before this time, given as\
+          \ YYYY-MM-DD hh:mm:ss."
+        explode: true
+        in: query
+        name: endTime
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -4109,6 +4182,7 @@ components:
       - dequeue
       - queueWait
       - addToQueueNotification
+      - audioStream
       - removeFromQueueNotification
       - callStatus
       - createConference
@@ -4135,6 +4209,7 @@ components:
       - DEQUEUE
       - QUEUE_WAIT
       - ADD_TO_QUEUE_NOTIFICATION
+      - AUDIO_STREAM
       - REMOVE_FROM_QUEUE_NOTIFICATION
       - CALL_STATUS
       - CREATE_CONFERENCE
@@ -4172,6 +4247,8 @@ components:
         varname: QUEUE_WAIT
       - enum: addToQueueNotification
         varname: ADD_TO_QUEUE_NOTIFICATION
+      - enum: audioStream
+        varname: AUDIO_STREAM
       - enum: removeFromQueueNotification
         varname: REMOVE_FROM_QUEUE_NOTIFICATION
       - enum: callStatus
@@ -4544,6 +4621,7 @@ components:
       discriminator:
         mapping:
           AddToConference: '#/components/schemas/AddToConference'
+          AudioStream: '#/components/schemas/AudioStream'
           CreateConference: '#/components/schemas/CreateConference'
           Dequeue: '#/components/schemas/Dequeue'
           Enqueue: '#/components/schemas/Enqueue'
@@ -4585,6 +4663,7 @@ components:
         mapping:
           addToConferenceNotification: '#/components/schemas/AddToConferenceNotificationWebhook'
           addToQueueNotification: '#/components/schemas/AddToQueueNotificationWebhook'
+          audioStream: '#/components/schemas/AudioStreamWebhook'
           callControl: '#/components/schemas/CallControlWebhook'
           callStatus: '#/components/schemas/CallStatusWebhook'
           conferenceRecordingStatus: '#/components/schemas/ConferenceRecordingStatusWebhook'
@@ -4714,6 +4793,49 @@ components:
         is being invoked. This is a notification only; any PerCL returned will be
         ignored.
       x-webhook: addToQueueNotification
+    AudioStreamWebhook:
+      allOf:
+      - $ref: '#/components/schemas/Webhook'
+      - properties:
+          requestType:
+            description: Context or reason why this request is being made. Will be
+              audioStream - gRPC session for this Call has ended and its actionUrl
+              is being invoked.
+            type: string
+          callId:
+            description: "Unique ID for this Call, generated by FreeClimb. This is\
+              \ the call leg which ended its gRPC session."
+            type: string
+          accountId:
+            description: Account ID associated with your account.
+            type: string
+          from:
+            description: Phone number of the party that initiated the Call (in E.164
+              format).
+            type: string
+          to:
+            description: Phone number provisioned to you and to which this Call is
+              directed (in E.164 format).
+            type: string
+          callStatus:
+            $ref: '#/components/schemas/CallStatus'
+          direction:
+            $ref: '#/components/schemas/CallDirection'
+          conferenceId:
+            description: "This is only populated if request pertains to a Conference.\
+              \ Otherwise, it is set to null."
+            nullable: true
+            type: string
+          queueId:
+            description: "This is only populated if the request pertains to a Queue.\
+              \ Otherwise, it is set to null."
+            nullable: true
+            type: string
+        type: object
+      description: A gRPC session has ended for this Call its actionUrl is being invoked.
+        A PerCL response is expected — unless the URL is invoked due to the participant
+        hanging up.
+      x-webhook: audioStream
     CallControlWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5886,6 +6008,49 @@ components:
       required:
       - conferenceId
       x-percl-command: AddToConference
+    AudioStream:
+      allOf:
+      - $ref: '#/components/schemas/PerclCommand'
+      - properties:
+          location:
+            description: The gRPC server location that will receive the grpc stream
+              as a uri and must be port 80 or 443.
+            format: uri
+            type: string
+            x-is-uri: true
+            x-is-url: true
+            x-is-required: true
+          actionUrl:
+            description: A request is made to this URL when the gRPC session is concluded.
+              The PerCL script returned in response to the actionUrl will be executed
+              on the call.
+            format: uri
+            type: string
+            x-is-uri: true
+            x-is-url: true
+          contentType:
+            description: The type and sample rate of the audio being received over
+              the channel must match the environmental sample rate.
+            type: string
+          metaData:
+            description: An arbitrary array of strings passed through FC to the GRPC
+              server can be used to pass state or other information about the call.
+            items:
+              type: string
+            type: array
+            x-is-list: true
+          privacyMode:
+            description: Enables audio redaction with full call recording while gRPC
+              session is running and blocks logging of any DTMFs received by FreeClimb.
+            type: boolean
+        required:
+        - location
+        type: object
+      description: "The `AudioStream` command transfers control of the call to a gRPC\
+        \ session.  Upon completion of the gRPC session, if the actionUrl is specified,\
+        \ control can be returned to percl usage or the call will simply be hung up\
+        \ if the actionUrl is not specified."
+      x-percl-command: AudioStream
     CreateConference:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6763,8 +6928,6 @@ components:
       x-is-object: true
     TFN:
       description: TollFree Campaign details for this number
-      example:
-        campaignId: campaignId
       properties:
         campaignId:
           description: alphanumeric identifier for the TollFree campaign associated
@@ -7043,6 +7206,7 @@ components:
           shortCode: true
         phoneNumber: phoneNumber
         campaignId: campaignId
+        alias: alias
         region: region
       properties:
         capabilities:
@@ -7054,6 +7218,10 @@ components:
         phoneNumber:
           description: "The phone number, in E.164 format (+ country code and phone\
             \ number: +18003608245)."
+          nullable: true
+          type: string
+        alias:
+          description: A nicely-formatted version of the phone number.
           nullable: true
           type: string
         region:
@@ -7091,6 +7259,7 @@ components:
             shortCode: true
           phoneNumber: phoneNumber
           campaignId: campaignId
+          alias: alias
           region: region
         - country: country
           capabilities:
@@ -7101,6 +7270,7 @@ components:
             shortCode: true
           phoneNumber: phoneNumber
           campaignId: campaignId
+          alias: alias
           region: region
         start: 6
         pageSize: 2
@@ -7156,7 +7326,9 @@ components:
             nullable: true
             type: boolean
           tfn:
-            $ref: '#/components/schemas/TFN'
+            allOf:
+            - $ref: '#/components/schemas/TFN'
+            nullable: true
         type: object
       example:
         country: country
@@ -7178,8 +7350,7 @@ components:
         offnet: true
         applicationId: applicationId
         region: region
-        tfn:
-          campaignId: campaignId
+        tfn: ""
     IncomingNumberRequest:
       example:
         campaignId: campaignId
@@ -7233,8 +7404,7 @@ components:
           offnet: true
           applicationId: applicationId
           region: region
-          tfn:
-            campaignId: campaignId
+          tfn: ""
         - country: country
           capabilities:
             voice: true
@@ -7254,8 +7424,7 @@ components:
           offnet: true
           applicationId: applicationId
           region: region
-          tfn:
-            campaignId: campaignId
+          tfn: ""
         start: 6
         pageSize: 2
         end: 1
@@ -7283,10 +7452,40 @@ components:
       - phoneNumber
       type: object
       x-is-object: true
+    CallResultAllOfSubresourceUris:
+      description: The list of subresources for this Call. These include things like
+        logs and recordings associated with the Call.
+      example:
+        recordings: recordings
+        logs: logs
+      nullable: true
+      properties:
+        logs:
+          description: The URI for the logs associated with this Call.
+          type: string
+        recordings:
+          description: The URI for the recordings associated with this Call.
+          type: string
+      type: object
+      x-is-object: true
     CallResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
       - properties:
+          dateCreatedISO:
+            description: "The date that this resource was created in ISO 8601 format\
+              \ (e.g., 2022-01-01T00:00:00.000Z)."
+            format: date-time
+            nullable: true
+            type: string
+            x-is-date-time: true
+          dateUpdatedISO:
+            description: "The date that this resource was last updated in ISO 8601\
+              \ format (e.g., 2022-01-01T00:00:00.000Z)."
+            format: date-time
+            nullable: true
+            type: string
+            x-is-date-time: true
           callId:
             description: String that uniquely identifies this Call resource.
             nullable: true
@@ -7320,17 +7519,38 @@ components:
               \ 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed."
             nullable: true
             type: string
+          startTimeISO:
+            description: "Start time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).\
+              \ Empty if the Call has not yet been dialed."
+            format: date-time
+            nullable: true
+            type: string
+            x-is-date-time: true
           connectTime:
             description: "Time the Call was answered (GMT) in RFC 1123 format (e.g.,\
               \ Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been\
               \ dialed."
             nullable: true
             type: string
+          connectTimeISO:
+            description: "Time the Call was answered in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).\
+              \ Empty if the Call has not yet been dialed."
+            format: date-time
+            nullable: true
+            type: string
+            x-is-date-time: true
           endTime:
             description: "End time of the Call (GMT) in RFC 1123 format (e.g., Mon,\
               \ 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully."
             nullable: true
             type: string
+          endTimeISO:
+            description: "End time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).\
+              \ Empty if the Call did not complete successfully."
+            format: date-time
+            nullable: true
+            type: string
+            x-is-date-time: true
           duration:
             description: "Total length of the Call in seconds. Measures time between\
               \ startTime and endTime. This value is empty for busy, failed, unanswered\
@@ -7343,38 +7563,61 @@ components:
               \ failed, unanswered or ongoing Calls."
             nullable: true
             type: integer
+          audioStreamDuration:
+            description: Length of time that the Call used the audio stream in seconds.
+              This value is empty or zero when the Call did not use the audio stream.
+            nullable: true
+            type: integer
           direction:
             $ref: '#/components/schemas/CallDirection'
           answeredBy:
             $ref: '#/components/schemas/AnsweredBy'
+          callerName:
+            description: The caller ID name (CNAM) for this Call. Empty if unavailable.
+            nullable: true
+            type: string
+          webRTC:
+            description: Indicates whether this Call was initiated via WebRTC.
+            nullable: true
+            type: boolean
           subresourceUris:
-            $ref: '#/components/schemas/CallResult_allOf_subresourceUris'
+            $ref: '#/components/schemas/CallResultAllOfSubresourceUris'
           applicationId:
             description: ApplicationId associated with the Call.
             nullable: true
             type: string
         type: object
       example:
-        callId: callId
-        answeredBy: human
-        parentCallId: parentCallId
-        uri: uri
         phoneNumberId: phoneNumberId
-        dateUpdated: dateUpdated
-        revision: 0
+        callerName: callerName
         duration: 6
-        accountId: accountId
         dateCreated: dateCreated
         connectTime: connectTime
-        connectDuration: 1
-        subresourceUris: null
+        subresourceUris:
+          recordings: recordings
+          logs: logs
         from: from
         startTime: startTime
+        startTimeISO: 2000-01-23T04:56:07.000+00:00
+        direction: inbound
+        callId: callId
+        connectTimeISO: 2000-01-23T04:56:07.000+00:00
+        webRTC: true
+        endTimeISO: 2000-01-23T04:56:07.000+00:00
+        answeredBy: human
+        parentCallId: parentCallId
+        audioStreamDuration: 5
+        uri: uri
+        dateUpdatedISO: 2000-01-23T04:56:07.000+00:00
+        dateUpdated: dateUpdated
+        revision: 0
+        accountId: accountId
+        connectDuration: 1
         to: to
         endTime: endTime
         applicationId: applicationId
+        dateCreatedISO: 2000-01-23T04:56:07.000+00:00
         status: queued
-        direction: inbound
     UpdateCallRequest:
       example:
         status: canceled
@@ -7499,46 +7742,66 @@ components:
         total: 0
         nextPageUri: nextPageUri
         calls:
-        - callId: callId
-          answeredBy: human
-          parentCallId: parentCallId
-          uri: uri
-          phoneNumberId: phoneNumberId
-          dateUpdated: dateUpdated
-          revision: 0
+        - phoneNumberId: phoneNumberId
+          callerName: callerName
           duration: 6
-          accountId: accountId
           dateCreated: dateCreated
           connectTime: connectTime
-          connectDuration: 1
-          subresourceUris: null
+          subresourceUris:
+            recordings: recordings
+            logs: logs
           from: from
           startTime: startTime
+          startTimeISO: 2000-01-23T04:56:07.000+00:00
+          direction: inbound
+          callId: callId
+          connectTimeISO: 2000-01-23T04:56:07.000+00:00
+          webRTC: true
+          endTimeISO: 2000-01-23T04:56:07.000+00:00
+          answeredBy: human
+          parentCallId: parentCallId
+          audioStreamDuration: 5
+          uri: uri
+          dateUpdatedISO: 2000-01-23T04:56:07.000+00:00
+          dateUpdated: dateUpdated
+          revision: 0
+          accountId: accountId
+          connectDuration: 1
           to: to
           endTime: endTime
           applicationId: applicationId
+          dateCreatedISO: 2000-01-23T04:56:07.000+00:00
           status: queued
-          direction: inbound
-        - callId: callId
-          answeredBy: human
-          parentCallId: parentCallId
-          uri: uri
-          phoneNumberId: phoneNumberId
-          dateUpdated: dateUpdated
-          revision: 0
+        - phoneNumberId: phoneNumberId
+          callerName: callerName
           duration: 6
-          accountId: accountId
           dateCreated: dateCreated
           connectTime: connectTime
-          connectDuration: 1
-          subresourceUris: null
+          subresourceUris:
+            recordings: recordings
+            logs: logs
           from: from
           startTime: startTime
+          startTimeISO: 2000-01-23T04:56:07.000+00:00
+          direction: inbound
+          callId: callId
+          connectTimeISO: 2000-01-23T04:56:07.000+00:00
+          webRTC: true
+          endTimeISO: 2000-01-23T04:56:07.000+00:00
+          answeredBy: human
+          parentCallId: parentCallId
+          audioStreamDuration: 5
+          uri: uri
+          dateUpdatedISO: 2000-01-23T04:56:07.000+00:00
+          dateUpdated: dateUpdated
+          revision: 0
+          accountId: accountId
+          connectDuration: 1
           to: to
           endTime: endTime
           applicationId: applicationId
+          dateCreatedISO: 2000-01-23T04:56:07.000+00:00
           status: queued
-          direction: inbound
         start: 6
         pageSize: 2
         end: 1
@@ -7715,7 +7978,10 @@ components:
             nullable: true
             type: string
           playBeep:
-            $ref: '#/components/schemas/PlayBeep'
+            allOf:
+            - $ref: '#/components/schemas/PlayBeep'
+            description: "Setting that controls when a beep is played. One of: always,\
+              \ never, entryOnly, exitOnly. Defaults to always."
           record:
             description: Flag indicating whether recording is enabled for this Conference.
             nullable: true
@@ -7754,7 +8020,7 @@ components:
         dateUpdated: dateUpdated
         revision: 7
         accountId: accountId
-        playBeep: always
+        playBeep: ""
         dateCreated: dateCreated
         waitUrl: https://openapi-generator.tech
         conferenceId: conferenceId
@@ -7799,8 +8065,7 @@ components:
           mediaUrls:
           - https://openapi-generator.tech
           - https://openapi-generator.tech
-          tfn:
-            campaignId: campaignId
+          tfn: ""
           status: new
           direction: direction
         - notificationUrl: https://openapi-generator.tech
@@ -7821,8 +8086,7 @@ components:
           mediaUrls:
           - https://openapi-generator.tech
           - https://openapi-generator.tech
-          tfn:
-            campaignId: campaignId
+          tfn: ""
           status: new
           direction: direction
         end: 1
@@ -7937,7 +8201,7 @@ components:
           dateUpdated: dateUpdated
           revision: 7
           accountId: accountId
-          playBeep: always
+          playBeep: ""
           dateCreated: dateCreated
           waitUrl: https://openapi-generator.tech
           conferenceId: conferenceId
@@ -7951,7 +8215,7 @@ components:
           dateUpdated: dateUpdated
           revision: 7
           accountId: accountId
-          playBeep: always
+          playBeep: ""
           dateCreated: dateCreated
           waitUrl: https://openapi-generator.tech
           conferenceId: conferenceId
@@ -8019,7 +8283,9 @@ components:
             type: array
             x-is-list: true
           tfn:
-            $ref: '#/components/schemas/TFN'
+            allOf:
+            - $ref: '#/components/schemas/TFN'
+            nullable: true
           phoneNumberId:
             description: String that uniquely identifies the phoneNumber resource
               used to send this Message
@@ -8050,8 +8316,7 @@ components:
         mediaUrls:
         - https://openapi-generator.tech
         - https://openapi-generator.tech
-        tfn:
-          campaignId: campaignId
+        tfn: ""
         status: new
         direction: direction
     TFNCampaign:
@@ -8299,6 +8564,10 @@ components:
               removed from the queue.
             nullable: true
             type: integer
+          averageWaitTime:
+            description: The average wait time (in seconds) of all Calls in the Queue.
+            nullable: true
+            type: integer
           subresourceUris:
             $ref: '#/components/schemas/QueueResult_allOf_subresourceUris'
         type: object
@@ -8307,6 +8576,7 @@ components:
         queueId: queueId
         dateCreated: dateCreated
         averageQueueRemovalTime: 5
+        averageWaitTime: 5
         subresourceUris: null
         alias: alias
         maxSize: 6
@@ -8352,6 +8622,7 @@ components:
           queueId: queueId
           dateCreated: dateCreated
           averageQueueRemovalTime: 5
+          averageWaitTime: 5
           subresourceUris: null
           alias: alias
           maxSize: 6
@@ -8363,6 +8634,7 @@ components:
           queueId: queueId
           dateCreated: dateCreated
           averageQueueRemovalTime: 5
+          averageWaitTime: 5
           subresourceUris: null
           alias: alias
           maxSize: 6
@@ -9960,12 +10232,6 @@ components:
       x-is-object: true
     AccountResult_allOf_subresourceUris:
       description: The list of subresources for this account.
-      nullable: true
-      type: object
-      x-is-object: true
-    CallResult_allOf_subresourceUris:
-      description: The list of subresources for this Call. These include things like
-        logs and recordings associated with the Call.
       nullable: true
       type: object
       x-is-object: true

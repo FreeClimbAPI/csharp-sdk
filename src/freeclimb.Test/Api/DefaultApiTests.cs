@@ -623,7 +623,11 @@ namespace freeclimb.Test.Api
 
             string? dateCreated = dateCreatedTestValue();
 
-            var response = instance.ListCallRecordings(callId, dateCreated);
+            string? startTime = startTimeTestValue();
+
+            string? endTime = endTimeTestValue();
+
+            var response = instance.ListCallRecordings(callId, dateCreated, startTime, endTime);
             Assert.IsAssignableFrom<RecordingList>(response);
         }
 
@@ -633,6 +637,8 @@ namespace freeclimb.Test.Api
         [Fact]
         public void ListCallsTest()
         {
+            bool? usedAudioStream = usedAudioStreamTestValue();
+
             bool? active = activeTestValue();
 
             string? to = toTestValue();
@@ -653,7 +659,10 @@ namespace freeclimb.Test.Api
 
             int? riskScoreMax = riskScoreMaxTestValue();
 
+            bool? webRTC = webRTCTestValue();
+
             var response = instance.ListCalls(
+                usedAudioStream,
                 active,
                 to,
                 from,
@@ -663,7 +672,8 @@ namespace freeclimb.Test.Api
                 parentCallId,
                 applicationId,
                 riskScoreMin,
-                riskScoreMax
+                riskScoreMax,
+                webRTC
             );
             Assert.IsAssignableFrom<CallList>(response);
         }
@@ -680,7 +690,17 @@ namespace freeclimb.Test.Api
 
             string? dateCreated = dateCreatedTestValue();
 
-            var response = instance.ListConferenceRecordings(conferenceId, callId, dateCreated);
+            string? startTime = startTimeTestValue();
+
+            string? endTime = endTimeTestValue();
+
+            var response = instance.ListConferenceRecordings(
+                conferenceId,
+                callId,
+                dateCreated,
+                startTime,
+                endTime
+            );
             Assert.IsAssignableFrom<RecordingList>(response);
         }
 
@@ -811,7 +831,17 @@ namespace freeclimb.Test.Api
 
             string? dateCreated = dateCreatedTestValue();
 
-            var response = instance.ListRecordings(callId, conferenceId, dateCreated);
+            string? startTime = startTimeTestValue();
+
+            string? endTime = endTimeTestValue();
+
+            var response = instance.ListRecordings(
+                callId,
+                conferenceId,
+                dateCreated,
+                startTime,
+                endTime
+            );
             Assert.IsAssignableFrom<RecordingList>(response);
         }
 
@@ -1257,7 +1287,11 @@ namespace freeclimb.Test.Api
 
             string? dateCreated = dateCreatedTestValue();
 
-            var response = instance.ListCallRecordings(callId, dateCreated);
+            string? startTime = startTimeTestValue();
+
+            string? endTime = endTimeTestValue();
+
+            var response = instance.ListCallRecordings(callId, dateCreated, startTime, endTime);
             //Assert.IsType<RecordingList>(response);
             Assert.IsAssignableFrom<RecordingList>(response);
             response.NextPageUri = "/Accounts/{accountId}/Calls/{callId}/Recordings?cursor=1";
@@ -1272,6 +1306,8 @@ namespace freeclimb.Test.Api
         [Fact]
         public void ListCallsGetNextPageTest()
         {
+            bool? usedAudioStream = usedAudioStreamTestValue();
+
             bool? active = activeTestValue();
 
             string? to = toTestValue();
@@ -1292,7 +1328,10 @@ namespace freeclimb.Test.Api
 
             int? riskScoreMax = riskScoreMaxTestValue();
 
+            bool? webRTC = webRTCTestValue();
+
             var response = instance.ListCalls(
+                usedAudioStream,
                 active,
                 to,
                 from,
@@ -1302,7 +1341,8 @@ namespace freeclimb.Test.Api
                 parentCallId,
                 applicationId,
                 riskScoreMin,
-                riskScoreMax
+                riskScoreMax,
+                webRTC
             );
             //Assert.IsType<CallList>(response);
             Assert.IsAssignableFrom<CallList>(response);
@@ -1324,7 +1364,17 @@ namespace freeclimb.Test.Api
 
             string? dateCreated = dateCreatedTestValue();
 
-            var response = instance.ListConferenceRecordings(conferenceId, callId, dateCreated);
+            string? startTime = startTimeTestValue();
+
+            string? endTime = endTimeTestValue();
+
+            var response = instance.ListConferenceRecordings(
+                conferenceId,
+                callId,
+                dateCreated,
+                startTime,
+                endTime
+            );
             //Assert.IsType<RecordingList>(response);
             Assert.IsAssignableFrom<RecordingList>(response);
             response.NextPageUri =
@@ -1487,7 +1537,17 @@ namespace freeclimb.Test.Api
 
             string? dateCreated = dateCreatedTestValue();
 
-            var response = instance.ListRecordings(callId, conferenceId, dateCreated);
+            string? startTime = startTimeTestValue();
+
+            string? endTime = endTimeTestValue();
+
+            var response = instance.ListRecordings(
+                callId,
+                conferenceId,
+                dateCreated,
+                startTime,
+                endTime
+            );
             //Assert.IsType<RecordingList>(response);
             Assert.IsAssignableFrom<RecordingList>(response);
             response.NextPageUri = "/Accounts/{accountId}/Recordings?cursor=1";
@@ -1796,6 +1856,8 @@ namespace freeclimb.Test.Api
                 dateCreatedTestValue(),
                 "Mon, 15 Jun 2020 20:45:32 GMT",
                 1,
+                DateTime.Now,
+                DateTime.Now,
                 callIdTestValue(),
                 null,
                 accountIdTestValue(),
@@ -1804,7 +1866,9 @@ namespace freeclimb.Test.Api
                 null,
                 enumCallStatus,
                 dateCreatedTestValue(),
+                DateTime.Now,
                 dateCreatedTestValue(),
+                DateTime.Now,
                 null
             );
         }
@@ -2167,6 +2231,16 @@ namespace freeclimb.Test.Api
         private ReplaceBlobRequest replaceBlobRequestTestValue()
         {
             return new ReplaceBlobRequest(new { });
+        }
+
+        private bool usedAudioStreamTestValue()
+        {
+            return true;
+        }
+
+        private bool webRTCTestValue()
+        {
+            return true;
         }
     }
 }

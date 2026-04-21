@@ -43,6 +43,8 @@ namespace freeclimb.Test.Model
                 dateCreated: (string)TestHelpers.getTestValue(typeof(string)),
                 dateUpdated: (string)TestHelpers.getTestValue(typeof(string)),
                 revision: (int)TestHelpers.getTestValue(typeof(int)),
+                dateCreatedISO: (DateTime?)TestHelpers.getTestValue(typeof(DateTime?)),
+                dateUpdatedISO: (DateTime?)TestHelpers.getTestValue(typeof(DateTime?)),
                 callId: (string)TestHelpers.getTestValue(typeof(string)),
                 parentCallId: (string)TestHelpers.getTestValue(typeof(string)),
                 accountId: (string)TestHelpers.getTestValue(typeof(string)),
@@ -51,13 +53,20 @@ namespace freeclimb.Test.Model
                 phoneNumberId: (string)TestHelpers.getTestValue(typeof(string)),
                 status: (CallStatus)TestHelpers.getTestValue(typeof(CallStatus)),
                 startTime: (string)TestHelpers.getTestValue(typeof(string)),
+                startTimeISO: (DateTime?)TestHelpers.getTestValue(typeof(DateTime?)),
                 connectTime: (string)TestHelpers.getTestValue(typeof(string)),
+                connectTimeISO: (DateTime?)TestHelpers.getTestValue(typeof(DateTime?)),
                 endTime: (string)TestHelpers.getTestValue(typeof(string)),
+                endTimeISO: (DateTime?)TestHelpers.getTestValue(typeof(DateTime?)),
                 duration: (int?)TestHelpers.getTestValue(typeof(int?)),
                 connectDuration: (int?)TestHelpers.getTestValue(typeof(int?)),
+                audioStreamDuration: (int?)TestHelpers.getTestValue(typeof(int?)),
                 direction: (CallDirection)TestHelpers.getTestValue(typeof(CallDirection)),
                 answeredBy: (AnsweredBy)TestHelpers.getTestValue(typeof(AnsweredBy)),
-                subresourceUris: (Object)TestHelpers.getTestValue(typeof(Object)),
+                callerName: (string)TestHelpers.getTestValue(typeof(string)),
+                webRTC: (bool?)TestHelpers.getTestValue(typeof(bool?)),
+                subresourceUris: (CallResultAllOfSubresourceUris)
+                    TestHelpers.getTestValue(typeof(CallResultAllOfSubresourceUris)),
                 applicationId: (string)TestHelpers.getTestValue(typeof(string))
             );
         }
@@ -114,6 +123,26 @@ namespace freeclimb.Test.Model
         {
             instance.Revision = 1;
             Assert.Equal(1, (int)instance.Revision);
+        }
+
+        /// <summary>
+        /// Test the property 'DateCreatedISO'
+        /// </summary>
+        [Fact]
+        public void DateCreatedISOTest()
+        {
+            instance.DateCreatedISO = DateTime.Parse("2022-07-05T15:17:05+00:00");
+            Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.DateCreatedISO);
+        }
+
+        /// <summary>
+        /// Test the property 'DateUpdatedISO'
+        /// </summary>
+        [Fact]
+        public void DateUpdatedISOTest()
+        {
+            instance.DateUpdatedISO = DateTime.Parse("2022-07-05T15:17:05+00:00");
+            Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.DateUpdatedISO);
         }
 
         /// <summary>
@@ -211,6 +240,16 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'StartTimeISO'
+        /// </summary>
+        [Fact]
+        public void StartTimeISOTest()
+        {
+            instance.StartTimeISO = DateTime.Parse("2022-07-05T15:17:05+00:00");
+            Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.StartTimeISO);
+        }
+
+        /// <summary>
         /// Test the property 'ConnectTime'
         /// </summary>
         [Fact]
@@ -221,6 +260,16 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ConnectTimeISO'
+        /// </summary>
+        [Fact]
+        public void ConnectTimeISOTest()
+        {
+            instance.ConnectTimeISO = DateTime.Parse("2022-07-05T15:17:05+00:00");
+            Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.ConnectTimeISO);
+        }
+
+        /// <summary>
         /// Test the property 'EndTime'
         /// </summary>
         [Fact]
@@ -228,6 +277,16 @@ namespace freeclimb.Test.Model
         {
             instance.EndTime = "TEST_STRING";
             Assert.Equal("TEST_STRING", instance.EndTime);
+        }
+
+        /// <summary>
+        /// Test the property 'EndTimeISO'
+        /// </summary>
+        [Fact]
+        public void EndTimeISOTest()
+        {
+            instance.EndTimeISO = DateTime.Parse("2022-07-05T15:17:05+00:00");
+            Assert.Equal(DateTime.Parse("2022-07-05T15:17:05+00:00"), instance.EndTimeISO);
         }
 
         /// <summary>
@@ -248,6 +307,16 @@ namespace freeclimb.Test.Model
         {
             instance.ConnectDuration = 1;
             Assert.Equal(1, (int)instance.ConnectDuration);
+        }
+
+        /// <summary>
+        /// Test the property 'AudioStreamDuration'
+        /// </summary>
+        [Fact]
+        public void AudioStreamDurationTest()
+        {
+            instance.AudioStreamDuration = 1;
+            Assert.Equal(1, (int)instance.AudioStreamDuration);
         }
 
         /// <summary>
@@ -277,12 +346,33 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'CallerName'
+        /// </summary>
+        [Fact]
+        public void CallerNameTest()
+        {
+            instance.CallerName = "TEST_STRING";
+            Assert.Equal("TEST_STRING", instance.CallerName);
+        }
+
+        /// <summary>
+        /// Test the property 'WebRTC'
+        /// </summary>
+        [Fact]
+        public void WebRTCTest()
+        {
+            instance.WebRTC = false;
+            Assert.False(instance.WebRTC);
+        }
+
+        /// <summary>
         /// Test the property 'SubresourceUris'
         /// </summary>
         [Fact]
         public void SubresourceUrisTest()
         {
-            Object testObject = (Object)TestHelpers.getTestValue(typeof(Object));
+            CallResultAllOfSubresourceUris testObject = (CallResultAllOfSubresourceUris)
+                TestHelpers.getTestValue(typeof(CallResultAllOfSubresourceUris));
             instance.SubresourceUris = testObject;
             Assert.Equal(testObject, instance.SubresourceUris);
         }
@@ -313,6 +403,10 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("revision", json);
 
+            Assert.Contains("dateCreatedISO", json);
+
+            Assert.Contains("dateUpdatedISO", json);
+
             Assert.Contains("callId", json);
 
             Assert.Contains("parentCallId", json);
@@ -329,17 +423,29 @@ namespace freeclimb.Test.Model
 
             Assert.Contains("startTime", json);
 
+            Assert.Contains("startTimeISO", json);
+
             Assert.Contains("connectTime", json);
 
+            Assert.Contains("connectTimeISO", json);
+
             Assert.Contains("endTime", json);
+
+            Assert.Contains("endTimeISO", json);
 
             Assert.Contains("duration", json);
 
             Assert.Contains("connectDuration", json);
 
+            Assert.Contains("audioStreamDuration", json);
+
             Assert.Contains("direction", json);
 
             Assert.Contains("answeredBy", json);
+
+            Assert.Contains("callerName", json);
+
+            Assert.Contains("webRTC", json);
 
             Assert.Contains("subresourceUris", json);
 
@@ -352,6 +458,10 @@ namespace freeclimb.Test.Model
         [Fact]
         public void CallResultSerializeToJSONStripNullTest()
         {
+            instance.DateCreatedISO = null;
+
+            instance.DateUpdatedISO = null;
+
             instance.CallId = null;
 
             instance.ParentCallId = null;
@@ -368,17 +478,29 @@ namespace freeclimb.Test.Model
 
             instance.StartTime = null;
 
+            instance.StartTimeISO = null;
+
             instance.ConnectTime = null;
 
+            instance.ConnectTimeISO = null;
+
             instance.EndTime = null;
+
+            instance.EndTimeISO = null;
 
             instance.Duration = null;
 
             instance.ConnectDuration = null;
 
+            instance.AudioStreamDuration = null;
+
             instance.Direction = null;
 
             instance.AnsweredBy = null;
+
+            instance.CallerName = null;
+
+            instance.WebRTC = null;
 
             instance.SubresourceUris = null;
 

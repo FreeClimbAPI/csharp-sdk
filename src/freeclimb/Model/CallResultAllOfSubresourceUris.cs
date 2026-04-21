@@ -20,7 +20,6 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 using freeclimb.Enums;
-using JsonSubTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -29,60 +28,39 @@ using OpenAPIDateConverter = freeclimb.Client.OpenAPIDateConverter;
 namespace freeclimb.Model
 {
     /// <summary>
-    /// Webhook
+    /// The list of subresources for this Call. These include things like logs and recordings associated with the Call.
     /// </summary>
-    [DataContract(Name = "Webhook")]
-    [JsonConverter(typeof(JsonSubtypes), "RequestType")]
-    [JsonSubtypes.KnownSubType(
-        typeof(AddToConferenceNotificationWebhook),
-        "addToConferenceNotification"
-    )]
-    [JsonSubtypes.KnownSubType(typeof(AddToQueueNotificationWebhook), "addToQueueNotification")]
-    [JsonSubtypes.KnownSubType(typeof(AudioStreamWebhook), "audioStream")]
-    [JsonSubtypes.KnownSubType(typeof(CallControlWebhook), "callControl")]
-    [JsonSubtypes.KnownSubType(typeof(CallStatusWebhook), "callStatus")]
-    [JsonSubtypes.KnownSubType(
-        typeof(ConferenceRecordingStatusWebhook),
-        "conferenceRecordingStatus"
-    )]
-    [JsonSubtypes.KnownSubType(typeof(ConferenceStatusWebhook), "conferenceStatus")]
-    [JsonSubtypes.KnownSubType(typeof(CreateConferenceWebhook), "createConference")]
-    [JsonSubtypes.KnownSubType(typeof(DequeueWebhook), "dequeue")]
-    [JsonSubtypes.KnownSubType(typeof(GetDigitsWebhook), "getDigits")]
-    [JsonSubtypes.KnownSubType(typeof(GetSpeechWebhook), "getSpeech")]
-    [JsonSubtypes.KnownSubType(typeof(InboundCallWebhook), "inboundCall")]
-    [JsonSubtypes.KnownSubType(typeof(LeaveConferenceWebhook), "leaveConference")]
-    [JsonSubtypes.KnownSubType(typeof(MachineDetectedWebhook), "machineDetected")]
-    [JsonSubtypes.KnownSubType(typeof(MessageDeliveryWebhook), "messageDelivery")]
-    [JsonSubtypes.KnownSubType(typeof(MessageStatusWebhook), "messageStatus")]
-    [JsonSubtypes.KnownSubType(typeof(OutDialApiConnectWebhook), "outDialApiConnect")]
-    [JsonSubtypes.KnownSubType(typeof(OutDialConnectWebhook), "outDialConnect")]
-    [JsonSubtypes.KnownSubType(typeof(OutDialStartWebhook), "outDialStart")]
-    [JsonSubtypes.KnownSubType(typeof(QueueWaitWebhook), "queueWait")]
-    [JsonSubtypes.KnownSubType(typeof(RecordWebhook), "record")]
-    [JsonSubtypes.KnownSubType(typeof(RedirectWebhook), "redirect")]
-    [JsonSubtypes.KnownSubType(
-        typeof(RemoveFromQueueNotificationWebhook),
-        "removeFromQueueNotification"
-    )]
-    [JsonSubtypes.KnownSubType(typeof(TranscribeWebhook), "transcribe")]
-    public partial class Webhook : IValidatableObject
+    [DataContract(Name = "CallResultAllOfSubresourceUris")]
+    public partial class CallResultAllOfSubresourceUris : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Webhook" /> class.
+        /// Initializes a new instance of the <see cref="CallResultAllOfSubresourceUris" /> class.
         /// </summary>
-        /// <param name="requestType">Type of webhook request.</param>
-        public Webhook(string requestType = default(string))
+        /// <param name="logs">The URI for the logs associated with this Call..</param>
+        /// <param name="recordings">The URI for the recordings associated with this Call..</param>
+        public CallResultAllOfSubresourceUris(
+            string logs = default(string),
+            string recordings = default(string)
+        )
         {
-            this.RequestType = requestType;
+            this.Logs = logs;
+
+            this.Recordings = recordings;
         }
 
         /// <summary>
-        /// Type of webhook request
+        /// The URI for the logs associated with this Call.
         /// </summary>
-        /// <value>Type of webhook request</value>
-        [DataMember(Name = "requestType", EmitDefaultValue = false)]
-        public string RequestType { get; set; }
+        /// <value>The URI for the logs associated with this Call.</value>
+        [DataMember(Name = "logs", EmitDefaultValue = false)]
+        public string Logs { get; set; }
+
+        /// <summary>
+        /// The URI for the recordings associated with this Call.
+        /// </summary>
+        /// <value>The URI for the recordings associated with this Call.</value>
+        [DataMember(Name = "recordings", EmitDefaultValue = false)]
+        public string Recordings { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,8 +69,9 @@ namespace freeclimb.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Webhook {\n");
-            sb.Append("  RequestType: ").Append(RequestType).Append("\n");
+            sb.Append("class CallResultAllOfSubresourceUris {\n");
+            sb.Append("  Logs: ").Append(Logs).Append("\n");
+            sb.Append("  Recordings: ").Append(Recordings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -111,13 +90,14 @@ namespace freeclimb.Model
         }
 
         /// <summary>
-        /// Retrieve the KVP Dictionary for the Webhook instance.
+        /// Retrieve the KVP Dictionary for the CallResultAllOfSubresourceUris instance.
         /// </summary>
         /// <returns>KVP Dictionary</returns>
         public virtual IDictionary<string, object> ToKvp()
         {
             IDictionary<string, object> props = new Dictionary<string, object>();
-            AddToDictionary(props, "requestType", RequestType);
+            AddToDictionary(props, "logs", Logs);
+            AddToDictionary(props, "recordings", Recordings);
             return props;
         }
 
@@ -142,16 +122,6 @@ namespace freeclimb.Model
         IEnumerable<ValidationResult> IValidatableObject.Validate(
             ValidationContext validationContext
         )
-        {
-            return this.BaseValidate(validationContext);
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
             yield break;
         }

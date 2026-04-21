@@ -286,6 +286,8 @@ namespace freeclimb.Test.Model
 
             instance.Offnet = null;
 
+            instance.Tfn = null;
+
             string json = instance.ToJson();
             Assert.DoesNotContain("null", json);
         }

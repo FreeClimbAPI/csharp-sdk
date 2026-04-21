@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **MaxSize** | **int?** | The maximum number of Calls permitted in the Queue. Default is 100. Maximum is 1000. | [optional] 
 **CurrentSize** | **int?** | Count of Calls currently in the Queue. | [optional] 
 **AverageQueueRemovalTime** | **int?** | The average amount of time (in seconds) for a call to be removed from the queue. | [optional] 
+**AverageWaitTime** | **int?** | The average wait time (in seconds) of all Calls in the Queue. | [optional] 
 **SubresourceUris** | **Object** | List of subresources for this Queue (which includes Queue members). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

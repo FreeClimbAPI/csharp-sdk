@@ -360,7 +360,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfuly created queue |  -  |
+| **201** | Successfuly created queue |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4368,7 +4368,7 @@ catch (ApiException e)
 
 <a id="listcallrecordings"></a>
 # **ListCallRecordings**
-> RecordingList ListCallRecordings (string callId, string? dateCreated = null)
+> RecordingList ListCallRecordings (string callId, string? dateCreated = null, string? startTime = null, string? endTime = null)
 
 List Call Recordings
 
@@ -4398,10 +4398,14 @@ namespace Example
             
             var dateCreated = "dateCreated_example";  // string? | Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional) 
             
+            var startTime = "startTime_example";  // string? | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
+            
+            var endTime = "endTime_example";  // string? | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
+            
             try
             {
                 // List Call Recordings
-                RecordingList result = apiInstance.ListCallRecordings(callId, dateCreated);
+                RecordingList result = apiInstance.ListCallRecordings(callId, dateCreated, startTime, endTime);
                 Debug.WriteLine(result);                
             }
             catch (ApiException  e)
@@ -4422,7 +4426,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Call Recordings
-    ApiResponse<RecordingList> response = apiInstance.ListCallRecordingsWithHttpInfo(callId, dateCreated);
+    ApiResponse<RecordingList> response = apiInstance.ListCallRecordingsWithHttpInfo(callId, dateCreated, startTime, endTime);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);    
@@ -4444,6 +4448,10 @@ catch (ApiException e)
 | **callId** | **string** | String that uniquely identifies this call resource. |  |
 
 | **dateCreated** | **string?** | Only show recordings created on the specified date, in the form *YYYY-MM-DD*. | [optional]  |
+
+| **startTime** | **string?** | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional]  |
+
+| **endTime** | **string?** | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. | [optional]  |
 
 
 ### Return type
@@ -4469,7 +4477,7 @@ catch (ApiException e)
 
 <a id="listcalls"></a>
 # **ListCalls**
-> CallList ListCalls (bool? active = null, string? to = null, string? from = null, CallStatus? status = null, string? startTime = null, string? endTime = null, string? parentCallId = null, List<string>? applicationId = null, int? riskScoreMin = null, int? riskScoreMax = null)
+> CallList ListCalls (bool? usedAudioStream = null, bool? active = null, string? to = null, string? from = null, CallStatus? status = null, string? startTime = null, string? endTime = null, string? parentCallId = null, List<string>? applicationId = null, int? riskScoreMin = null, int? riskScoreMax = null, bool? webRTC = null)
 
 List Calls
 
@@ -4495,6 +4503,8 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             
+            var usedAudioStream = false;  // bool? | If usedAudioStream is set to true then all calls that have a audioStreamDuration > 0 will be returned  (optional)  (default to false)
+            
             var active = false;  // bool? | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional)  (default to false)
             
             var to = "to_example";  // string? | Only show Calls to this phone number. (optional) 
@@ -4515,10 +4525,12 @@ namespace Example
             
             var riskScoreMax = 56;  // int? | The maximum riskScore that should be included in the list. (optional) 
             
+            var webRTC = false;  // bool? | Only show Calls that were originated via WebRTC. (optional)  (default to false)
+            
             try
             {
                 // List Calls
-                CallList result = apiInstance.ListCalls(active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax);
+                CallList result = apiInstance.ListCalls(usedAudioStream, active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax, webRTC);
                 Debug.WriteLine(result);                
             }
             catch (ApiException  e)
@@ -4539,7 +4551,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Calls
-    ApiResponse<CallList> response = apiInstance.ListCallsWithHttpInfo(active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax);
+    ApiResponse<CallList> response = apiInstance.ListCallsWithHttpInfo(usedAudioStream, active, to, from, status, startTime, endTime, parentCallId, applicationId, riskScoreMin, riskScoreMax, webRTC);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);    
@@ -4557,6 +4569,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 
+
+| **usedAudioStream** | **bool?** | If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned  | [optional] [default to false] |
 
 | **active** | **bool?** | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional] [default to false] |
 
@@ -4577,6 +4591,8 @@ catch (ApiException e)
 | **riskScoreMin** | **int?** | The minimum riskScore that should be included in the list. | [optional]  |
 
 | **riskScoreMax** | **int?** | The maximum riskScore that should be included in the list. | [optional]  |
+
+| **webRTC** | **bool?** | Only show Calls that were originated via WebRTC. | [optional] [default to false] |
 
 
 ### Return type
@@ -4602,7 +4618,7 @@ catch (ApiException e)
 
 <a id="listconferencerecordings"></a>
 # **ListConferenceRecordings**
-> RecordingList ListConferenceRecordings (string conferenceId, string? callId = null, string? dateCreated = null)
+> RecordingList ListConferenceRecordings (string conferenceId, string? callId = null, string? dateCreated = null, string? startTime = null, string? endTime = null)
 
 List Conference Recordings
 
@@ -4634,10 +4650,14 @@ namespace Example
             
             var dateCreated = "dateCreated_example";  // string? | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional) 
             
+            var startTime = "startTime_example";  // string? | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
+            
+            var endTime = "endTime_example";  // string? | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
+            
             try
             {
                 // List Conference Recordings
-                RecordingList result = apiInstance.ListConferenceRecordings(conferenceId, callId, dateCreated);
+                RecordingList result = apiInstance.ListConferenceRecordings(conferenceId, callId, dateCreated, startTime, endTime);
                 Debug.WriteLine(result);                
             }
             catch (ApiException  e)
@@ -4658,7 +4678,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Conference Recordings
-    ApiResponse<RecordingList> response = apiInstance.ListConferenceRecordingsWithHttpInfo(conferenceId, callId, dateCreated);
+    ApiResponse<RecordingList> response = apiInstance.ListConferenceRecordingsWithHttpInfo(conferenceId, callId, dateCreated, startTime, endTime);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);    
@@ -4682,6 +4702,10 @@ catch (ApiException e)
 | **callId** | **string?** | Show only Recordings made during the Call with this ID. | [optional]  |
 
 | **dateCreated** | **string?** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional]  |
+
+| **startTime** | **string?** | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional]  |
+
+| **endTime** | **string?** | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. | [optional]  |
 
 
 ### Return type
@@ -5272,7 +5296,7 @@ catch (ApiException e)
 
 <a id="listrecordings"></a>
 # **ListRecordings**
-> RecordingList ListRecordings (string? callId = null, string? conferenceId = null, string? dateCreated = null)
+> RecordingList ListRecordings (string? callId = null, string? conferenceId = null, string? dateCreated = null, string? startTime = null, string? endTime = null)
 
 List Recordings
 
@@ -5304,10 +5328,14 @@ namespace Example
             
             var dateCreated = "dateCreated_example";  // string? | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional) 
             
+            var startTime = "startTime_example";  // string? | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
+            
+            var endTime = "endTime_example";  // string? | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional) 
+            
             try
             {
                 // List Recordings
-                RecordingList result = apiInstance.ListRecordings(callId, conferenceId, dateCreated);
+                RecordingList result = apiInstance.ListRecordings(callId, conferenceId, dateCreated, startTime, endTime);
                 Debug.WriteLine(result);                
             }
             catch (ApiException  e)
@@ -5328,7 +5356,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Recordings
-    ApiResponse<RecordingList> response = apiInstance.ListRecordingsWithHttpInfo(callId, conferenceId, dateCreated);
+    ApiResponse<RecordingList> response = apiInstance.ListRecordingsWithHttpInfo(callId, conferenceId, dateCreated, startTime, endTime);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);    
@@ -5352,6 +5380,10 @@ catch (ApiException e)
 | **conferenceId** | **string?** | Show only Recordings made during the conference with this ID. | [optional]  |
 
 | **dateCreated** | **string?** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional]  |
+
+| **startTime** | **string?** | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional]  |
+
+| **endTime** | **string?** | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. | [optional]  |
 
 
 ### Return type

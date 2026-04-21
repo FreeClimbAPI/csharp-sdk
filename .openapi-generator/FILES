@@ -13,6 +13,8 @@ docs/AnsweredBy.md
 docs/ApplicationList.md
 docs/ApplicationRequest.md
 docs/ApplicationResult.md
+docs/AudioStream.md
+docs/AudioStreamWebhook.md
 docs/AvailableNumber.md
 docs/AvailableNumberList.md
 docs/BargeInReason.md
@@ -24,6 +26,7 @@ docs/CallDirection.md
 docs/CallEndedReason.md
 docs/CallList.md
 docs/CallResult.md
+docs/CallResultAllOfSubresourceUris.md
 docs/CallStatus.md
 docs/CallStatusWebhook.md
 docs/Capabilities.md
@@ -173,6 +176,8 @@ src/freeclimb.Test/Model/AnsweredByTests.cs
 src/freeclimb.Test/Model/ApplicationListTests.cs
 src/freeclimb.Test/Model/ApplicationRequestTests.cs
 src/freeclimb.Test/Model/ApplicationResultTests.cs
+src/freeclimb.Test/Model/AudioStreamTests.cs
+src/freeclimb.Test/Model/AudioStreamWebhookTests.cs
 src/freeclimb.Test/Model/AvailableNumberListTests.cs
 src/freeclimb.Test/Model/AvailableNumberTests.cs
 src/freeclimb.Test/Model/BargeInReasonTests.cs
@@ -183,6 +188,7 @@ src/freeclimb.Test/Model/CallControlWebhookTests.cs
 src/freeclimb.Test/Model/CallDirectionTests.cs
 src/freeclimb.Test/Model/CallEndedReasonTests.cs
 src/freeclimb.Test/Model/CallListTests.cs
+src/freeclimb.Test/Model/CallResultAllOfSubresourceUrisTests.cs
 src/freeclimb.Test/Model/CallResultTests.cs
 src/freeclimb.Test/Model/CallStatusTests.cs
 src/freeclimb.Test/Model/CallStatusWebhookTests.cs
@@ -347,6 +353,8 @@ src/freeclimb/Model/AnsweredBy.cs
 src/freeclimb/Model/ApplicationList.cs
 src/freeclimb/Model/ApplicationRequest.cs
 src/freeclimb/Model/ApplicationResult.cs
+src/freeclimb/Model/AudioStream.cs
+src/freeclimb/Model/AudioStreamWebhook.cs
 src/freeclimb/Model/AvailableNumber.cs
 src/freeclimb/Model/AvailableNumberList.cs
 src/freeclimb/Model/BargeInReason.cs
@@ -358,6 +366,7 @@ src/freeclimb/Model/CallDirection.cs
 src/freeclimb/Model/CallEndedReason.cs
 src/freeclimb/Model/CallList.cs
 src/freeclimb/Model/CallResult.cs
+src/freeclimb/Model/CallResultAllOfSubresourceUris.cs
 src/freeclimb/Model/CallStatus.cs
 src/freeclimb/Model/CallStatusWebhook.cs
 src/freeclimb/Model/Capabilities.cs

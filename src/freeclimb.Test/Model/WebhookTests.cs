@@ -80,6 +80,17 @@ namespace freeclimb.Test.Model
         }
 
         /// <summary>
+        /// Test deserialize a AudioStreamWebhook from type Webhook
+        /// </summary>
+        [Fact]
+        public void AudioStreamWebhookDeserializeFromWebhookTest()
+        {
+            Assert.IsType<Webhook>(
+                JsonConvert.DeserializeObject<Webhook>(new AudioStreamWebhook().ToJson())
+            );
+        }
+
+        /// <summary>
         /// Test deserialize a CallControlWebhook from type Webhook
         /// </summary>
         [Fact]

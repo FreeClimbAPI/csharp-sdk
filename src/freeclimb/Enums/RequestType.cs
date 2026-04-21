@@ -112,64 +112,70 @@ namespace freeclimb.Enums
         ADD_TO_QUEUE_NOTIFICATION = 13,
 
         /// <summary>
+        /// Enum AUDIO_STREAM for value: audioStream
+        /// </summary>
+        [EnumMember(Value = "audioStream")]
+        AUDIO_STREAM = 14,
+
+        /// <summary>
         /// Enum REMOVE_FROM_QUEUE_NOTIFICATION for value: removeFromQueueNotification
         /// </summary>
         [EnumMember(Value = "removeFromQueueNotification")]
-        REMOVE_FROM_QUEUE_NOTIFICATION = 14,
+        REMOVE_FROM_QUEUE_NOTIFICATION = 15,
 
         /// <summary>
         /// Enum CALL_STATUS for value: callStatus
         /// </summary>
         [EnumMember(Value = "callStatus")]
-        CALL_STATUS = 15,
+        CALL_STATUS = 16,
 
         /// <summary>
         /// Enum CREATE_CONFERENCE for value: createConference
         /// </summary>
         [EnumMember(Value = "createConference")]
-        CREATE_CONFERENCE = 16,
+        CREATE_CONFERENCE = 17,
 
         /// <summary>
         /// Enum CONFERENCE_STATUS for value: conferenceStatus
         /// </summary>
         [EnumMember(Value = "conferenceStatus")]
-        CONFERENCE_STATUS = 17,
+        CONFERENCE_STATUS = 18,
 
         /// <summary>
         /// Enum LEAVE_CONFERENCE for value: leaveConference
         /// </summary>
         [EnumMember(Value = "leaveConference")]
-        LEAVE_CONFERENCE = 18,
+        LEAVE_CONFERENCE = 19,
 
         /// <summary>
         /// Enum ADD_TO_CONFERENCE_NOTIFICATION for value: addToConferenceNotification
         /// </summary>
         [EnumMember(Value = "addToConferenceNotification")]
-        ADD_TO_CONFERENCE_NOTIFICATION = 19,
+        ADD_TO_CONFERENCE_NOTIFICATION = 20,
 
         /// <summary>
         /// Enum CONFERENCE_RECORDING_STATUS for value: conferenceRecordingStatus
         /// </summary>
         [EnumMember(Value = "conferenceRecordingStatus")]
-        CONFERENCE_RECORDING_STATUS = 20,
+        CONFERENCE_RECORDING_STATUS = 21,
 
         /// <summary>
         /// Enum CONFERENCE_CALL_CONTROL for value: conferenceCallControl
         /// </summary>
         [EnumMember(Value = "conferenceCallControl")]
-        CONFERENCE_CALL_CONTROL = 21,
+        CONFERENCE_CALL_CONTROL = 22,
 
         /// <summary>
         /// Enum MESSAGE_DELIVERY for value: messageDelivery
         /// </summary>
         [EnumMember(Value = "messageDelivery")]
-        MESSAGE_DELIVERY = 22,
+        MESSAGE_DELIVERY = 23,
 
         /// <summary>
         /// Enum MESSAGE_STATUS for value: messageStatus
         /// </summary>
         [EnumMember(Value = "messageStatus")]
-        MESSAGE_STATUS = 23,
+        MESSAGE_STATUS = 24,
     }
 
     /// <summary>
@@ -222,6 +228,9 @@ namespace freeclimb.Enums
 
             if (value.Equals("addToQueueNotification"))
                 return RequestType.ADD_TO_QUEUE_NOTIFICATION;
+
+            if (value.Equals("audioStream"))
+                return RequestType.AUDIO_STREAM;
 
             if (value.Equals("removeFromQueueNotification"))
                 return RequestType.REMOVE_FROM_QUEUE_NOTIFICATION;
@@ -303,6 +312,9 @@ namespace freeclimb.Enums
 
             if (value.Equals("addToQueueNotification"))
                 return RequestType.ADD_TO_QUEUE_NOTIFICATION;
+
+            if (value.Equals("audioStream"))
+                return RequestType.AUDIO_STREAM;
 
             if (value.Equals("removeFromQueueNotification"))
                 return RequestType.REMOVE_FROM_QUEUE_NOTIFICATION;
