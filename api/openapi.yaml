@@ -859,7 +859,7 @@ paths:
               $ref: '#/components/schemas/MakeCallRequest'
         description: Call details for making a call
       responses:
-        "200":
+        "202":
           content:
             application/json:
               schema:
