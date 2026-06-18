@@ -15,5 +15,17 @@ Name | Type | Description | Notes
 **PrivacyMode** | **bool** | Activate privacy mode in order to obscure log data that can potentially expose private information. | [optional] 
 **CallConnectUrl** | **string** | The URL that FreeClimb should use to handle this phone call. If an applicationId or parentCallId have already been provided, this callConnectUrl attribute will be used as a replacement of the callConnectUrl originally assigned in the application or parent call. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"from\":\"+12025551234\",\"to\":\"+13035559876\",\"applicationId\":\"AP0123456789abcdefABCDEF0123456789abcdef03\",\"sendDigits\":\"1234#\",\"ifMachine\":\"redirect\",\"ifMachineUrl\":\"https://www.myapp.com/ifMachine\",\"timeout\":30,\"parentCallId\":\"CA0123456789abcdefABCDEF0123456789abcdef04\",\"privacyMode\":false,\"callConnectUrl\":\"https://www.myapp.com/callConnect\"}";
+
+// create an instance of MakeCallRequest from a JSON string
+MakeCallRequest makeCallRequest = JsonConvert.DeserializeObject<MakeCallRequest>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

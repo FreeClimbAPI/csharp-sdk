@@ -23,5 +23,17 @@ Name | Type | Description | Notes
 **ParentCallId** | **string** | ID of Call that created this leg (child call). | [optional] 
 **PrivacyMode** | **bool** | If true then it indicates the recording will only be available for download for two minutes prior to it being deleted. This is to minimize risk of anyone else getting access to the url and attempting to access it. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"record\",\"accountId\":\"string\",\"callId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"recordingId\":\"string\",\"recordingUrl\":\"https://www.example.com\",\"recordingSize\":\"string\",\"recordingFormat\":\"string\",\"recordingDurationSec\":0,\"termReason\":\"finishKey\",\"parentCallId\":\"string\",\"privacyMode\":false}";
+
+// create an instance of RecordWebhook from a JSON string
+RecordWebhook recordWebhook = JsonConvert.DeserializeObject<RecordWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

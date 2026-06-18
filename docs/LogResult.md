@@ -12,5 +12,17 @@ Name | Type | Description | Notes
 **Message** | **string** | A simple string describing the event being logged. | [optional] 
 **Metadata** | **Object** | JSON document containing metadata about the event. Some log messages may include request and response header content in this field. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"timestamp\":0,\"level\":\"info\",\"requestId\":\"string\",\"accountId\":\"string\",\"callId\":\"string\",\"message\":\"string\"}";
+
+// create an instance of LogResult from a JSON string
+LogResult logResult = JsonConvert.DeserializeObject<LogResult>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

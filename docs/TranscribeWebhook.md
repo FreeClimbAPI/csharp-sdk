@@ -28,5 +28,17 @@ Name | Type | Description | Notes
 **TranscribeReason** | **TranscribeReason** |  | [optional] 
 **TranscriptionDurationMs** | **int** | The duration of the audio being transcribed in milliseconds | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"transcribe\",\"accountId\":\"string\",\"callId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"recordingId\":\"string\",\"recordingUrl\":\"https://www.example.com\",\"recordingSize\":0,\"recordingFormat\":\"string\",\"recordingDurationMs\":0,\"termReason\":\"error\",\"recordTermReason\":\"finishKey\",\"digit\":\"string\",\"privacyForLogging\":false,\"privacyForRecording\":false,\"bargeInReason\":\"noBargeIn\",\"bargedInPromptNo\":0,\"bargedInPromptMs\":0,\"bargedInPromptLoopNo\":0,\"bargeInTimeMs\":0,\"transcript\":\"string\",\"transcribeReason\":\"internalError\",\"transcriptionDurationMs\":0}";
+
+// create an instance of TranscribeWebhook from a JSON string
+TranscribeWebhook transcribeWebhook = JsonConvert.DeserializeObject<TranscribeWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -10,5 +10,17 @@ Name | Type | Description | Notes
 **PauseMs** | **int** | Pause between digits in milliseconds. Valid values are 100-1000 milliseconds and will be adjusted by FreeClimb to satisfy the constraint. | [optional] 
 **PrivacyMode** | **bool** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"SendDigits\",\"digits\":\"string\",\"pauseMs\":0,\"privacyMode\":false}";
+
+// create an instance of SendDigits from a JSON string
+SendDigits sendDigits = JsonConvert.DeserializeObject<SendDigits>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

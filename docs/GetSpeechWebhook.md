@@ -23,5 +23,17 @@ Name | Type | Description | Notes
 **MrcpCode** | **int** | Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification. | [optional] 
 **MrcpDiagnostic** | **string** | Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"getSpeech\",\"callId\":\"string\",\"accountId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"reason\":\"error\",\"recognitionResult\":\"string\",\"confidence\":0,\"parentCallId\":\"string\",\"completionReason\":\"string\",\"completionCause\":\"string\",\"mrcpCode\":0,\"mrcpDiagnostic\":\"string\"}";
+
+// create an instance of GetSpeechWebhook from a JSON string
+GetSpeechWebhook getSpeechWebhook = JsonConvert.DeserializeObject<GetSpeechWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

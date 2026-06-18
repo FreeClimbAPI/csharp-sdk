@@ -17,5 +17,17 @@ Name | Type | Description | Notes
 **QueueResult** | **QueueResultStatus** |  | [optional] 
 **QueueTime** | **int** | Time (in seconds) the Call spent in the Queue. This is only available if the Call was actually enqueued. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"removeFromQueueNotification\",\"accountId\":\"string\",\"callId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"queueResult\":\"queueFull\",\"queueTime\":0}";
+
+// create an instance of RemoveFromQueueNotificationWebhook from a JSON string
+RemoveFromQueueNotificationWebhook removeFromQueueNotificationWebhook = JsonConvert.DeserializeObject<RemoveFromQueueNotificationWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

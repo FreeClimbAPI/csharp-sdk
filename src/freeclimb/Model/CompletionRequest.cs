@@ -59,6 +59,9 @@ namespace freeclimb.Model
         /// Question to ask the Knowledge Base
         /// </summary>
         /// <value>Question to ask the Knowledge Base</value>
+        /*
+        <example>What are your business hours?</example>
+        */
         [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
         public string Query { get; set; }
 

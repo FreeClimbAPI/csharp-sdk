@@ -18,5 +18,17 @@ Name | Type | Description | Notes
 **Reason** | **GetDigitsReason** |  | [optional] 
 **ParentCallId** | **string** | ID of the Call that created this leg (child call). | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"getDigits\",\"callId\":\"string\",\"accountId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"digits\":\"string\",\"reason\":\"finishKey\",\"parentCallId\":\"string\"}";
+
+// create an instance of GetDigitsWebhook from a JSON string
+GetDigitsWebhook getDigitsWebhook = JsonConvert.DeserializeObject<GetDigitsWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

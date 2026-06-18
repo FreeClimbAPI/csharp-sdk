@@ -69,6 +69,9 @@ namespace freeclimb.Model
         /// Phone number to purchase in E.164 format (as returned in the list of Available Phone Numbers).
         /// </summary>
         /// <value>Phone number to purchase in E.164 format (as returned in the list of Available Phone Numbers).</value>
+        /*
+        <example>+12025551234</example>
+        */
         [DataMember(Name = "phoneNumber", IsRequired = true, EmitDefaultValue = true)]
         public string PhoneNumber { get; set; }
 
@@ -76,6 +79,9 @@ namespace freeclimb.Model
         /// Description for this new incoming phone number (max 64 characters).
         /// </summary>
         /// <value>Description for this new incoming phone number (max 64 characters).</value>
+        /*
+        <example>Main Office Line</example>
+        */
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
@@ -83,6 +89,9 @@ namespace freeclimb.Model
         /// ID of the application that should handle phone calls to the number.
         /// </summary>
         /// <value>ID of the application that should handle phone calls to the number.</value>
+        /*
+        <example>AP0123456789abcdefABCDEF0123456789abcdef03</example>
+        */
         [DataMember(Name = "applicationId", EmitDefaultValue = false)]
         public string ApplicationId { get; set; }
 

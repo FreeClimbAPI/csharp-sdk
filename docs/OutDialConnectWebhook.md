@@ -16,5 +16,17 @@ Name | Type | Description | Notes
 **QueueId** | **string** | This is only populated if the request pertains to a queue. Otherwise, it is set to null. | [optional] 
 **ParentCallId** | **string** | ID of the Call that created this leg (child call). | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"outDialConnect\",\"accountId\":\"string\",\"callId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"parentCallId\":\"string\"}";
+
+// create an instance of OutDialConnectWebhook from a JSON string
+OutDialConnectWebhook outDialConnectWebhook = JsonConvert.DeserializeObject<OutDialConnectWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

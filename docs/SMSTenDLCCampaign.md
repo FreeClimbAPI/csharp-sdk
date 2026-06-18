@@ -41,5 +41,17 @@ Name | Type | Description | Notes
 **Mock** | **bool** | Campaign created from mock brand. Mocked campaign cannot be shared with an upstream CNP. | 
 **NextRenewalOrExpirationDate** | **DateOnly?** | When the campaign would be due for its next renew/bill date. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"campaignId\":\"CX56XX4\",\"accountId\":\"AC0123456789abcdefABCDEF0123456789abcdef05\",\"cspId\":\"SX56XX4\",\"brandId\":\"BX56XX4\",\"usecase\":\"2FA\",\"description\":\"mock campaign.\",\"subUsecases\":[],\"resellerId\":null,\"sample1\":\"Your verification code from FreeClimb is 000000. It expires in 10 minutes.\",\"sample2\":null,\"sample3\":null,\"sample4\":null,\"sample5\":null,\"messageFlow\":null,\"helpMessage\":null,\"referenceId\":null,\"status\":\"EXPIRED\",\"mock\":true,\"autoRenewal\":false,\"embeddedLink\":false,\"embeddedPhone\":false,\"affiliateMarketing\":false,\"numberPool\":false,\"ageGated\":false,\"directLending\":false,\"subscriberOptin\":true,\"subscriberOptout\":false,\"subscriberHelp\":true,\"createDate\":\"2022-07-05T15:17:05Z\",\"billedDate\":\"2022-07-05T00:00:00Z\",\"nextRenewalOrExpirationDate\":null}";
+
+// create an instance of SMSTenDLCCampaign from a JSON string
+SMSTenDLCCampaign sMSTenDLCCampaign = JsonConvert.DeserializeObject<SMSTenDLCCampaign>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

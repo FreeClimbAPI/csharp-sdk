@@ -59,6 +59,9 @@ namespace freeclimb.Model
         /// The filter query for retrieving logs. See **Performance Query Language** below.
         /// </summary>
         /// <value>The filter query for retrieving logs. See **Performance Query Language** below.</value>
+        /*
+        <example>2020-06-22T19:42:53.376Z &lt; timestamp &lt; 2020-06-23T19:42:53.376Z</example>
+        */
         [DataMember(Name = "pql", IsRequired = true, EmitDefaultValue = true)]
         public string Pql { get; set; }
 

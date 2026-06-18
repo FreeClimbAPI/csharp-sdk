@@ -13,5 +13,17 @@ Name | Type | Description | Notes
 **PrivacyForRecording** | **bool** |  | [optional] [default to false]
 **Prompts** | [**List&lt;PerclCommand&gt;**](PerclCommand.md) |  | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"TranscribeUtterance\",\"actionUrl\":\"https://www.example.com\",\"playBeep\":false,\"record\":{\"saveRecording\":false,\"maxLengthSec\":60,\"rcrdTerminationSilenceTimeMs\":0},\"privacyForLogging\":false,\"privacyForRecording\":false,\"prompts\":[{\"command\":\"string\"}]}";
+
+// create an instance of TranscribeUtterance from a JSON string
+TranscribeUtterance transcribeUtterance = JsonConvert.DeserializeObject<TranscribeUtterance>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

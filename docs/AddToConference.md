@@ -17,5 +17,17 @@ Name | Type | Description | Notes
 **Talk** | **bool** | If &#x60;true&#x60;, the Participant joins the Conference with talk privileges. This may be modified later via the REST API or &#x60;SetTalk&#x60; PerCL command.  | [optional] 
 **DtmfPassThrough** | **bool** | If &#x60;true&#x60;, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or &#x60;SetDTMFPassThrough&#x60; PerCL command.  | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"AddToConference\",\"allowCallControl\":false,\"callControlSequence\":\"string\",\"callControlUrl\":\"https://www.example.com\",\"conferenceId\":\"string\",\"leaveConferenceUrl\":\"https://www.example.com\",\"listen\":false,\"notificationUrl\":\"https://www.example.com\",\"startConfOnEnter\":false,\"talk\":false,\"dtmfPassThrough\":false}";
+
+// create an instance of AddToConference from a JSON string
+AddToConference addToConference = JsonConvert.DeserializeObject<AddToConference>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

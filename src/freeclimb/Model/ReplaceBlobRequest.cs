@@ -58,6 +58,9 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets Blob
         /// </summary>
+        /*
+        <example>{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot;:&quot;Doe&quot;}</example>
+        */
         [DataMember(Name = "blob", IsRequired = true, EmitDefaultValue = true)]
         public Object Blob { get; set; }
 

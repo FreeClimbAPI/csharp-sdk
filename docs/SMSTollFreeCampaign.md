@@ -12,5 +12,17 @@ Name | Type | Description | Notes
 **DateUpdated** | **string** |  | 
 **Revision** | **int** |  | 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"accountId\":\"string\",\"campaignId\":\"string\",\"useCase\":\"string\",\"registrationStatus\":\"UNREGISTERED\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0}";
+
+// create an instance of SMSTollFreeCampaign from a JSON string
+SMSTollFreeCampaign sMSTollFreeCampaign = JsonConvert.DeserializeObject<SMSTollFreeCampaign>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

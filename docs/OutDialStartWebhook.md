@@ -17,5 +17,17 @@ Name | Type | Description | Notes
 **DialCallId** | **string** | ID of the child call that was generated as a result of the Outdial. | [optional] 
 **ParentCallId** | **string** | ID of the Call that created this leg (child call). If this was an inbound call or call created via REST API with no parent, this field will be null. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"outDialStart\",\"accountId\":\"string\",\"callId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"dialCallId\":\"string\",\"parentCallId\":\"string\"}";
+
+// create an instance of OutDialStartWebhook from a JSON string
+OutDialStartWebhook outDialStartWebhook = JsonConvert.DeserializeObject<OutDialStartWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

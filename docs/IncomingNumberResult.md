@@ -20,5 +20,17 @@ Name | Type | Description | Notes
 **Offnet** | **bool?** | The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource. | [optional] 
 **Tfn** | [**TFN**](TFN.md) |  | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"capabilities\":{\"voice\":false,\"sms\":false,\"tollFree\":false,\"tenDLC\":false,\"shortCode\":false},\"campaignId\":\"string\",\"phoneNumberId\":\"string\",\"accountId\":\"string\",\"applicationId\":\"string\",\"phoneNumber\":\"string\",\"alias\":\"string\",\"region\":\"string\",\"country\":\"string\",\"offnet\":false,\"tfn\":{\"campaignId\":\"string\"}}";
+
+// create an instance of IncomingNumberResult from a JSON string
+IncomingNumberResult incomingNumberResult = JsonConvert.DeserializeObject<IncomingNumberResult>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

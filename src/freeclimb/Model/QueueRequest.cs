@@ -49,6 +49,9 @@ namespace freeclimb.Model
         /// Description for this Queue. Max length is 64 characters.
         /// </summary>
         /// <value>Description for this Queue. Max length is 64 characters.</value>
+        /*
+        <example>Support Queue</example>
+        */
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
@@ -56,6 +59,9 @@ namespace freeclimb.Model
         /// Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize.
         /// </summary>
         /// <value>Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize.</value>
+        /*
+        <example>100</example>
+        */
         [DataMember(Name = "maxSize", EmitDefaultValue = false)]
         public int MaxSize { get; set; }
 

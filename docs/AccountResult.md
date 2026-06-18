@@ -16,5 +16,17 @@ Name | Type | Description | Notes
 **Status** | **AccountStatus** |  | [optional] 
 **SubresourceUris** | **Object** | The list of subresources for this account. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"accountId\":\"string\",\"apiKey\":\"string\",\"alias\":\"string\",\"label\":\"string\",\"type\":\"trial\",\"status\":\"closed\"}";
+
+// create an instance of AccountResult from a JSON string
+AccountResult accountResult = JsonConvert.DeserializeObject<AccountResult>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

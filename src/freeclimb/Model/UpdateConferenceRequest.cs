@@ -68,6 +68,9 @@ namespace freeclimb.Model
         /// Description for this conference. Maximum 64 characters.
         /// </summary>
         /// <value>Description for this conference. Maximum 64 characters.</value>
+        /*
+        <example>Customer Conference</example>
+        */
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 

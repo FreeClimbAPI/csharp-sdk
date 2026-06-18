@@ -77,7 +77,7 @@ namespace freeclimb.Model
         /// </summary>
         /// <value>Identifier which can be used to reference this blob in future interations.</value>
         /*
-        <example>BL88615a9b4ca7e9aad57d9057773fc74268b9caf7</example>
+        <example>BL0123456789abcdefABCDEF0123456789abcdef02</example>
         */
         [DataMember(Name = "blobId", EmitDefaultValue = false)]
         public string BlobId { get; set; }
@@ -86,7 +86,7 @@ namespace freeclimb.Model
         /// Gets or Sets AccountId
         /// </summary>
         /*
-        <example>AC0534faec6b32da45f36166674d65b3903f784141</example>
+        <example>AC0123456789abcdefABCDEF0123456789abcdef01</example>
         */
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }

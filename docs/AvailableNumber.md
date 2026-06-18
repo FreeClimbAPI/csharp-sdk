@@ -11,5 +11,17 @@ Name | Type | Description | Notes
 **Region** | **string** | The state or province of this phone number. | [optional] 
 **Country** | **string** | The country of this phone number. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"capabilities\":{\"voice\":false,\"sms\":false,\"tollFree\":false,\"tenDLC\":false,\"shortCode\":false},\"campaignId\":\"string\",\"phoneNumber\":\"string\",\"alias\":\"string\",\"region\":\"string\",\"country\":\"string\"}";
+
+// create an instance of AvailableNumber from a JSON string
+AvailableNumber availableNumber = JsonConvert.DeserializeObject<AvailableNumber>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

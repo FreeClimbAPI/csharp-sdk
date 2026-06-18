@@ -11,5 +11,17 @@ Name | Type | Description | Notes
 **ConferenceId** | **string** | Unique ID of the Conference. | [optional] 
 **Digits** | **string** | String of digits entered by the participant. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"callControl\",\"callId\":\"string\",\"accountId\":\"string\",\"conferenceId\":\"string\",\"digits\":\"string\"}";
+
+// create an instance of CallControlWebhook from a JSON string
+CallControlWebhook callControlWebhook = JsonConvert.DeserializeObject<CallControlWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,5 +12,17 @@ Name | Type | Description | Notes
 **MetaData** | **List&lt;string&gt;** | An arbitrary array of strings passed through FC to the GRPC server can be used to pass state or other information about the call. | [optional] 
 **PrivacyMode** | **bool** | Enables audio redaction with full call recording while gRPC session is running and blocks logging of any DTMFs received by FreeClimb. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"AudioStream\",\"location\":\"https://www.example.com\",\"actionUrl\":\"https://www.example.com\",\"contentType\":\"string\",\"metaData\":[\"string\"],\"privacyMode\":false}";
+
+// create an instance of AudioStream from a JSON string
+AudioStream audioStream = JsonConvert.DeserializeObject<AudioStream>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

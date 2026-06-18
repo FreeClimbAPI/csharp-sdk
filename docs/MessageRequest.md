@@ -14,5 +14,17 @@ Name | Type | Description | Notes
 **NotificationUrl** | **string** | When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored. | [optional] 
 **MediaUrls** | **List&lt;string&gt;** | an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"from\":\"+12025551234\",\"to\":\"+13035559876\",\"text\":\"Hello from FreeClimb!\",\"notificationUrl\":\"https://www.myapp.com/messageStatus\",\"mediaUrls\":[\"https://www.myapp.com/image.jpg\"]}";
+
+// create an instance of MessageRequest from a JSON string
+MessageRequest messageRequest = JsonConvert.DeserializeObject<MessageRequest>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

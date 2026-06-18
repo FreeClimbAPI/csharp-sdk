@@ -10,5 +10,17 @@ Name | Type | Description | Notes
 **Position** | **int?** | Member&#39;s current position in the Queue, 1 indexed. | [optional] 
 **DateEnqueued** | **string** | Date that the Member was enqueued (GMT), given in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"uri\":\"string\",\"callId\":\"string\",\"waitTime\":0,\"position\":0,\"dateEnqueued\":\"string\"}";
+
+// create an instance of QueueMember from a JSON string
+QueueMember queueMember = JsonConvert.DeserializeObject<QueueMember>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

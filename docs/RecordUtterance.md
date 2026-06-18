@@ -14,5 +14,17 @@ Name | Type | Description | Notes
 **AutoStart** | **bool** | If &#x60;false&#x60;, recording begins immediately after the RecordUtterance command is processed. If &#x60;true&#x60;, recording begins when audio is present and if audio begins before the &#x60;maxLengthSec&#x60; timeout. If no audio begins before &#x60;maxLengthSec&#x60;, no recording is generated. | [optional] 
 **PrivacyMode** | **bool** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"RecordUtterance\",\"actionUrl\":\"https://www.example.com\",\"silenceTimeoutMs\":0,\"finishOnKey\":\"string\",\"maxLengthSec\":0,\"playBeep\":false,\"autoStart\":false,\"privacyMode\":false}";
+
+// create an instance of RecordUtterance from a JSON string
+RecordUtterance recordUtterance = JsonConvert.DeserializeObject<RecordUtterance>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

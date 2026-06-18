@@ -17,5 +17,17 @@ Name | Type | Description | Notes
 **Timeout** | **int** | Maximum time in seconds the &#x60;OutDial&#x60; command waits for the called party to answer the Call. When a timeout occurs, FreeClimb invokes the &#x60;callConnectUrl&#x60; Webhook to report that the out-dialed Call has ended with a status of &#x60;noAnswer&#x60;. | [optional] 
 **PrivacyMode** | **bool** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"OutDial\",\"actionUrl\":\"https://www.example.com\",\"callConnectUrl\":\"https://www.example.com\",\"callingNumber\":\"string\",\"destination\":\"string\",\"ifMachine\":\"redirect\",\"ifMachineUrl\":\"https://www.example.com\",\"sendDigits\":\"string\",\"statusCallbackUrl\":\"https://www.example.com\",\"timeout\":0,\"privacyMode\":false}";
+
+// create an instance of OutDial from a JSON string
+OutDial outDial = JsonConvert.DeserializeObject<OutDial>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

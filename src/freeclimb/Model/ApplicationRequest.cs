@@ -72,6 +72,9 @@ namespace freeclimb.Model
         /// A human readable description of the application, with maximum length 64 characters.
         /// </summary>
         /// <value>A human readable description of the application, with maximum length 64 characters.</value>
+        /*
+        <example>Customer Support Line</example>
+        */
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
@@ -79,6 +82,9 @@ namespace freeclimb.Model
         /// The URL that FreeClimb will request when an inbound call arrives on a phone number assigned to this application. Used only for inbound calls.
         /// </summary>
         /// <value>The URL that FreeClimb will request when an inbound call arrives on a phone number assigned to this application. Used only for inbound calls.</value>
+        /*
+        <example>https://www.myapp.com/voice</example>
+        */
         [DataMember(Name = "voiceUrl", EmitDefaultValue = true)]
         public string VoiceUrl { get; set; }
 
@@ -86,6 +92,9 @@ namespace freeclimb.Model
         /// The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only. Note: A PerCL response is expected to control the inbound call.
         /// </summary>
         /// <value>The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only. Note: A PerCL response is expected to control the inbound call.</value>
+        /*
+        <example>https://www.myapp.com/voiceFallback</example>
+        */
         [DataMember(Name = "voiceFallbackUrl", EmitDefaultValue = true)]
         public string VoiceFallbackUrl { get; set; }
 
@@ -93,6 +102,9 @@ namespace freeclimb.Model
         /// The URL that FreeClimb will request when an outbound call request is complete. Used for outbound calls only.  Note: A PerCL response is expected if the outbound call is connected (status&#x3D;InProgress) to control the call.
         /// </summary>
         /// <value>The URL that FreeClimb will request when an outbound call request is complete. Used for outbound calls only.  Note: A PerCL response is expected if the outbound call is connected (status&#x3D;InProgress) to control the call.</value>
+        /*
+        <example>https://www.myapp.com/callConnect</example>
+        */
         [DataMember(Name = "callConnectUrl", EmitDefaultValue = true)]
         public string CallConnectUrl { get; set; }
 
@@ -100,6 +112,9 @@ namespace freeclimb.Model
         /// The URL that FreeClimb will request to pass call status (such as call ended) to the application.  Note: This is a notification only; any PerCL returned will be ignored.
         /// </summary>
         /// <value>The URL that FreeClimb will request to pass call status (such as call ended) to the application.  Note: This is a notification only; any PerCL returned will be ignored.</value>
+        /*
+        <example>https://www.myapp.com/status</example>
+        */
         [DataMember(Name = "statusCallbackUrl", EmitDefaultValue = true)]
         public string StatusCallbackUrl { get; set; }
 
@@ -107,6 +122,9 @@ namespace freeclimb.Model
         /// The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored.
         /// </summary>
         /// <value>The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored.</value>
+        /*
+        <example>https://www.myapp.com/sms</example>
+        */
         [DataMember(Name = "smsUrl", EmitDefaultValue = true)]
         public string SmsUrl { get; set; }
 
@@ -114,6 +132,9 @@ namespace freeclimb.Model
         /// The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored.
         /// </summary>
         /// <value>The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored.</value>
+        /*
+        <example>https://www.myapp.com/smsFallback</example>
+        */
         [DataMember(Name = "smsFallbackUrl", EmitDefaultValue = true)]
         public string SmsFallbackUrl { get; set; }
 
