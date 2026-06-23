@@ -15,5 +15,17 @@ Name | Type | Description | Notes
 **ConferenceId** | **string** | Unique ID of the Conference. | [optional] 
 **QueueId** | **string** | This is only populated if the request pertains to a Queue. Otherwise, it is set to null. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"addToQueueNotification\",\"callId\":\"string\",\"accountId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\"}";
+
+// create an instance of AddToQueueNotificationWebhook from a JSON string
+AddToQueueNotificationWebhook addToQueueNotificationWebhook = JsonConvert.DeserializeObject<AddToQueueNotificationWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

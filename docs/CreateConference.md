@@ -14,5 +14,17 @@ Name | Type | Description | Notes
 **WaitUrl** | **string** | If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb. | [optional] 
 **ParentCallId** | **string** | ID of the Call that created this leg (child call). | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"CreateConference\",\"actionUrl\":\"https://www.example.com\",\"alias\":\"string\",\"playBeep\":\"always\",\"record\":false,\"statusCallbackUrl\":\"https://www.example.com\",\"waitUrl\":\"https://www.example.com\",\"parentCallId\":\"string\"}";
+
+// create an instance of CreateConference from a JSON string
+CreateConference createConference = JsonConvert.DeserializeObject<CreateConference>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -19,5 +19,17 @@ Name | Type | Description | Notes
 **RecordingId** | **string** | Unique ID of the Recording from this Conference. Populated only if a recording exists and the Conference was emptied. | [optional] 
 **RecordingDurationSec** | **int** | Duration of the recorded audio (in seconds), rounded up to the nearest second. Populated only if a Recording exists and the Conference was emptied. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"conferenceRecordingStatus\",\"callId\":\"string\",\"accountId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"status\":\"empty\",\"recordingUrl\":\"https://www.example.com\",\"recordingId\":\"string\",\"recordingDurationSec\":0}";
+
+// create an instance of ConferenceRecordingStatusWebhook from a JSON string
+ConferenceRecordingStatusWebhook conferenceRecordingStatusWebhook = JsonConvert.DeserializeObject<ConferenceRecordingStatusWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

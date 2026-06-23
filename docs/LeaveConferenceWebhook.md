@@ -15,5 +15,17 @@ Name | Type | Description | Notes
 **ConferenceId** | **string** | This is only populated if request pertains to a Conference. Otherwise, it is set to null. | [optional] 
 **QueueId** | **string** | This is only populated if the request pertains to a Queue. Otherwise, it is set to null. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"leaveConference\",\"callId\":\"string\",\"accountId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\"}";
+
+// create an instance of LeaveConferenceWebhook from a JSON string
+LeaveConferenceWebhook leaveConferenceWebhook = JsonConvert.DeserializeObject<LeaveConferenceWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

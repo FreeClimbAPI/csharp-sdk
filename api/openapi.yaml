@@ -31,7 +31,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -53,7 +53,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -79,7 +79,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -106,7 +106,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -137,7 +137,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -184,7 +184,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -208,7 +208,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -337,7 +337,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -364,7 +364,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -395,7 +395,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -433,7 +433,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -579,7 +579,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -610,7 +610,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -648,7 +648,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -679,7 +679,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -787,6 +787,7 @@ paths:
         required: false
         schema:
           items:
+            example: AP0123456789abcdefABCDEF0123456789abcdef03
             pattern: "^AP[0-9a-fA-F]{40}$"
             type: string
           maxItems: 16
@@ -798,7 +799,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -847,7 +848,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -886,7 +887,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -937,7 +938,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -969,7 +970,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1037,7 +1038,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1061,7 +1062,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1091,7 +1092,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1122,7 +1123,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1156,7 +1157,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1191,7 +1192,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1230,7 +1231,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1300,7 +1301,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1349,7 +1350,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1400,7 +1401,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1431,7 +1432,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1478,7 +1479,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1502,7 +1503,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1532,7 +1533,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1564,7 +1565,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1596,7 +1597,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1630,7 +1631,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1670,7 +1671,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1711,7 +1712,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1735,7 +1736,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1791,7 +1792,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1834,7 +1835,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1861,7 +1862,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1893,7 +1894,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1926,7 +1927,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -1959,7 +1960,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2050,7 +2051,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2081,7 +2082,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2113,7 +2114,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2140,7 +2141,7 @@ paths:
                 nextPageUri: null
                 campaigns:
                 - campaignId: C3TMRFL
-                  accountId: ACe39970fb7c31c747c67148900b4d9da60a41e532
+                  accountId: AC0123456789abcdefABCDEF0123456789abcdef05
                   cspId: SKGC6G0
                   brandId: BVCEBIJ
                   usecase: 2FA
@@ -2187,7 +2188,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2219,7 +2220,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2246,7 +2247,7 @@ paths:
                 nextPageUri: null
                 sharedCampaigns:
                 - campaignId: CX56XX4
-                  accountId: ACe39970fb7c31c747c67148900b4d9da60a41e532
+                  accountId: AC0123456789abcdefABCDEF0123456789abcdef05
                   brandId: BX56XX4
                   usecase: 2FA
                   description: mock campaign.
@@ -2301,7 +2302,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2334,7 +2335,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2354,7 +2355,7 @@ paths:
                 brands:
                 - mock: true
                   optionalAttributes: {}
-                  accountId: AC1234512345123451234512345123451234512345
+                  accountId: AC0123456789abcdefABCDEF0123456789abcdef06
                   brandId: BVCEBIJ
                   cspId: SKGC6G0
                   firstName: ""
@@ -2397,7 +2398,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2429,7 +2430,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2447,7 +2448,7 @@ paths:
                 pageSize: 100
                 nextPageUri: null
                 tfnCampaigns:
-                - accountId: ACe39970fb7c31c747c67148900b4d9da60a41e532
+                - accountId: AC0123456789abcdefABCDEF0123456789abcdef05
                   campaignId: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
                   useCase: example use case
                   registrationStatus: PENDING
@@ -2470,7 +2471,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2502,7 +2503,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2541,7 +2542,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2571,7 +2572,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2598,7 +2599,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2630,7 +2631,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2663,7 +2664,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2681,8 +2682,8 @@ paths:
                 pageSize: 100
                 nextPageUri: null
                 blobs:
-                - blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                  accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                - blobId: BL0123456789abcdefABCDEF0123456789abcdef09
+                  accountId: AC0123456789abcdefABCDEF0123456789abcdef07
                   alias: my-blob-alias
                   revision: 1
                   dateCreated: 2006-01-02T15:04:05.000Z
@@ -2692,8 +2693,8 @@ paths:
                     field0: value0
                     field1: 1
                     field2: true
-                - blobId: BL487ec3f6e03b340553f35f29c8f118cdf3eae08b
-                  accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                - blobId: BL0123456789abcdefABCDEF0123456789abcdef0a
+                  accountId: AC0123456789abcdefABCDEF0123456789abcdef07
                   alias: another-blob
                   revision: 1
                   dateCreated: 2006-01-02T16:04:05.000Z
@@ -2746,7 +2747,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -2806,9 +2807,9 @@ paths:
                     revision: 1
                     dateCreated: 2025-01-02T15:04:05.000Z
                     dateUpdated: 2025-01-02T15:04:05.000Z
-                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                    alias: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    accountId: AC0123456789abcdefABCDEF0123456789abcdef0b
+                    alias: BL0123456789abcdefABCDEF0123456789abcdef09
+                    blobId: BL0123456789abcdefABCDEF0123456789abcdef09
                     expiresAt: 2025-01-03T00:04:05.000Z
                     blob: {}
                 setting_blob_content:
@@ -2816,9 +2817,9 @@ paths:
                     revision: 1
                     dateCreated: 2025-01-02T15:04:05.000Z
                     dateUpdated: 2025-01-02T15:04:05.000Z
-                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                    alias: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    accountId: AC0123456789abcdefABCDEF0123456789abcdef0b
+                    alias: BL0123456789abcdefABCDEF0123456789abcdef09
+                    blobId: BL0123456789abcdefABCDEF0123456789abcdef09
                     expiresAt: 2025-01-03T00:04:05.000Z
                     blob:
                       key0: value0
@@ -2839,9 +2840,9 @@ paths:
                     revision: 1
                     dateCreated: 2025-01-02T15:04:05.000Z
                     dateUpdated: 2025-01-02T15:04:05.000Z
-                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    accountId: AC0123456789abcdefABCDEF0123456789abcdef0b
                     alias: my_custom_blob_identifier
-                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    blobId: BL0123456789abcdefABCDEF0123456789abcdef09
                     expiresAt: 2025-01-03T00:04:05.000Z
                     blob:
                       key: value
@@ -2850,9 +2851,9 @@ paths:
                     revision: 1
                     dateCreated: 2025-01-02T15:04:05.000Z
                     dateUpdated: 2025-01-02T15:04:05.000Z
-                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                    alias: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    accountId: AC0123456789abcdefABCDEF0123456789abcdef0b
+                    alias: BL0123456789abcdefABCDEF0123456789abcdef09
+                    blobId: BL0123456789abcdefABCDEF0123456789abcdef09
                     expiresAt: 2025-01-04T15:04:05.060Z
                     blob:
                       key: 45
@@ -2861,8 +2862,8 @@ paths:
                     revision: 1
                     dateCreated: 2025-01-02T15:04:05.000Z
                     dateUpdated: 2025-01-02T15:04:05.000Z
-                    accountId: AC387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                    blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
+                    accountId: AC0123456789abcdefABCDEF0123456789abcdef0b
+                    blobId: BL0123456789abcdefABCDEF0123456789abcdef09
                     alias: my_custom_blob_identifier
                     expiresAt: 2025-01-04T15:04:05.060Z
                     blob:
@@ -2945,7 +2946,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -3018,7 +3019,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -3036,8 +3037,8 @@ paths:
           content:
             application/json:
               example:
-                blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                blobId: BL0123456789abcdefABCDEF0123456789abcdef09
+                accountId: AC0123456789abcdefABCDEF0123456789abcdef07
                 alias: my-blob-alias
                 revision: 1
                 dateCreated: 2006-01-02T15:04:05.000Z
@@ -3092,7 +3093,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -3123,8 +3124,8 @@ paths:
           content:
             application/json:
               example:
-                blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                blobId: BL0123456789abcdefABCDEF0123456789abcdef09
+                accountId: AC0123456789abcdefABCDEF0123456789abcdef07
                 alias: new_conversation_id
                 revision: 2
                 dateCreated: 2006-01-02T15:04:05.000Z
@@ -3187,7 +3188,7 @@ paths:
         name: accountId
         required: true
         schema:
-          example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+          example: AC0123456789abcdefABCDEF0123456789abcdef00
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
         style: simple
@@ -3217,8 +3218,8 @@ paths:
           content:
             application/json:
               example:
-                blobId: BL387ec3f6e03b340553f35f29c8f118cdf3eae08a
-                accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
+                blobId: BL0123456789abcdefABCDEF0123456789abcdef09
+                accountId: AC0123456789abcdefABCDEF0123456789abcdef07
                 alias: new_conversation_id
                 revision: 2
                 dateCreated: 2006-01-02T15:04:05.000Z
@@ -3281,7 +3282,7 @@ components:
       name: accountId
       required: true
       schema:
-        example: AC170e4c66d358aa1755931da0452561933d1b8fd5
+        example: AC0123456789abcdefABCDEF0123456789abcdef00
         pattern: "AC[0-9a-fA-F]{40}"
         type: string
       style: simple
@@ -3406,14 +3407,18 @@ components:
       description: gateway timeout error
   schemas:
     accountId:
-      example: AC0534faec6b32da45f36166674d65b3903f784141
+      example: AC0123456789abcdefABCDEF0123456789abcdef01
       pattern: "AC[0-9a-fA-F]{40}"
       type: string
+      x-example: '"AC0123456789abcdefABCDEF0123456789abcdef01"'
+      x-example-escaped: '"\"AC0123456789abcdefABCDEF0123456789abcdef01\""'
     blobId:
       description: Identifier which can be used to reference this blob in future interations.
-      example: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+      example: BL0123456789abcdefABCDEF0123456789abcdef02
       pattern: "BL[0-9a-fA-F]{40}"
       type: string
+      x-example: '"BL0123456789abcdefABCDEF0123456789abcdef02"'
+      x-example-escaped: '"\"BL0123456789abcdefABCDEF0123456789abcdef02\""'
     AccountStatus:
       description: "The status of this account. It is one of: active, suspended, or\
         \ closed."
@@ -3435,6 +3440,8 @@ components:
         varname: SUSPENDED
       - enum: active
         varname: ACTIVE
+      x-example: '"closed"'
+      x-example-escaped: '"\"closed\""'
     AccountType:
       description: "The type of this account. It is one of: trial or full."
       enum:
@@ -3451,6 +3458,8 @@ components:
         varname: TRIAL
       - enum: full
         varname: FULL
+      x-example: '"trial"'
+      x-example-escaped: '"\"trial\""'
     AnsweredBy:
       description: "If this Call was initiated with answering machine detection, either\
         \ `human` or `machine`. Empty otherwise."
@@ -3468,6 +3477,8 @@ components:
         varname: HUMAN
       - enum: machine
         varname: MACHINE
+      x-example: '"human"'
+      x-example-escaped: '"\"human\""'
     CallDirection:
       description: "Direction of the Call. `inbound` for Calls into FreeClimb, `outboundAPI`\
         \ for Calls initiated via the REST API,  `outboundDial` for Calls initiated\
@@ -3490,6 +3501,8 @@ components:
         varname: OUTBOUND_API
       - enum: outboundDial
         varname: OUTBOUND_DIAL
+      x-example: '"inbound"'
+      x-example-escaped: '"\"inbound\""'
     CallStatus:
       description: "* `queued` &ndash; Call is ready and waiting in line before going\
         \ out. * `ringing` &ndash; Call is currently ringing. * `inProgress` &ndash;\
@@ -3537,6 +3550,8 @@ components:
         varname: BUSY
       - enum: noAnswer
         varname: NO_ANSWER
+      x-example: '"queued"'
+      x-example-escaped: '"\"queued\""'
     CallEndedReason:
       description: Enhanced status for the Call with additional information where
         available.
@@ -3638,6 +3653,8 @@ components:
         varname: GRPC_HANGUP
       - enum: maxDuration
         varname: MAX_DURATION
+      x-example: '"busy"'
+      x-example-escaped: '"\"busy\""'
     GetDigitsReason:
       description: "This field explains how the GetDigits action ended. The value\
         \ is one of the below: •finishKey - The finish key as specified had been pressed\
@@ -3668,6 +3685,8 @@ components:
         varname: MAX_DIGITS
       - enum: tone
         varname: TONE
+      x-example: '"finishKey"'
+      x-example-escaped: '"\"finishKey\""'
     ConferenceStatus:
       description: "The status of the Conference. One of: creating, empty, populated,\
         \ inProgress, or terminated."
@@ -3693,6 +3712,8 @@ components:
         varname: IN_PROGRESS
       - enum: terminated
         varname: TERMINATED
+      x-example: '"empty"'
+      x-example-escaped: '"\"empty\""'
     GetSpeechReason:
       enum:
       - error
@@ -3723,6 +3744,8 @@ components:
         varname: NO_MATCH
       - enum: recognition
         varname: RECOGNITION
+      x-example: '"error"'
+      x-example-escaped: '"\"error\""'
     GrammarFileBuiltIn:
       enum:
       - ALPHNUM6
@@ -3789,6 +3812,8 @@ components:
         varname: UP_TO_20_DIGIT_SEQUENCE
       - enum: VERSAY_YESNO
         varname: VERSAY_YESNO
+      x-example: '"ALPHNUM6"'
+      x-example-escaped: '"\"ALPHNUM6\""'
     GrammarType:
       description: The grammar file type to use for speech recognition. A value of
         'URL' indicates the grammarFile attribute specifies a URL that points to the
@@ -3808,6 +3833,8 @@ components:
         varname: URL
       - enum: BUILTIN
         varname: BUILT_IN
+      x-example: '"URL"'
+      x-example-escaped: '"\"URL\""'
     IfMachine:
       description: "Specifies how FreeClimb should handle this OutDial if an answering\
         \ machine answers the Call. Valid values: `redirect` invokes the ifMachineUrl\
@@ -3826,6 +3853,8 @@ components:
         varname: REDIRECT
       - enum: hangup
         varname: HANGUP
+      x-example: '"redirect"'
+      x-example-escaped: '"\"redirect\""'
     Language:
       enum:
       - ca-ES
@@ -3936,6 +3965,8 @@ components:
         varname: CHINESE_HK
       - enum: zh-TW
         varname: CHINESE_TW
+      x-example: '"ca-ES"'
+      x-example-escaped: '"\"ca-ES\""'
     LogLevel:
       description: "Level of the log. Possible values are info, warning, and error."
       enum:
@@ -3956,6 +3987,8 @@ components:
         varname: WARNING
       - enum: error
         varname: ERROR
+      x-example: '"info"'
+      x-example-escaped: '"\"info\""'
     MachineType:
       enum:
       - answering machine
@@ -3970,6 +4003,8 @@ components:
         varname: ANSWERING_MACHINE
       - enum: fax modem
         varname: FAX_MODEM
+      x-example: '"answering machine"'
+      x-example-escaped: '"\"answering machine\""'
     MessageDirection:
       enum:
       - inbound
@@ -3984,6 +4019,8 @@ components:
         varname: INBOUND
       - enum: outbound
         varname: OUTBOUND
+      x-example: '"inbound"'
+      x-example-escaped: '"\"inbound\""'
     MessageStatus:
       description: "Indicates the state of the message through the message lifecycle\
         \ including: new, queued, rejected, sending, sent, failed, received, undelivered,\
@@ -4038,6 +4075,8 @@ components:
         varname: DELETED
       - enum: unknown
         varname: UNKNOWN
+      x-example: '"new"'
+      x-example-escaped: '"\"new\""'
     PlayBeep:
       description: "Indicates whether to play a beep when a Participant enters or\
         \ leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`.\
@@ -4065,6 +4104,8 @@ components:
       - enum: exitOnly
         varname: EXIT_ONLY
       x-enum-default-attr: ALWAYS
+      x-example: '"always"'
+      x-example-escaped: '"\"always\""'
     QueueResultStatus:
       enum:
       - queueFull
@@ -4087,6 +4128,8 @@ components:
         varname: HANGUP
       - enum: systemError
         varname: SYSTEM_ERROR
+      x-example: '"queueFull"'
+      x-example-escaped: '"\"queueFull\""'
     RecordUtteranceTermReason:
       enum:
       - finishKey
@@ -4109,6 +4152,8 @@ components:
         varname: HANGUP
       - enum: maxLength
         varname: MAX_LENGTH
+      x-example: '"finishKey"'
+      x-example-escaped: '"\"finishKey\""'
     BargeInReason:
       enum:
       - noBargeIn
@@ -4127,6 +4172,8 @@ components:
         varname: BARGE_IN_BY_DTMF
       - enum: bargeInByEnergy
         varname: BARGE_IN_BY_ENERGY
+      x-example: '"noBargeIn"'
+      x-example-escaped: '"\"noBargeIn\""'
     TranscribeTermReason:
       enum:
       - error
@@ -4141,6 +4188,8 @@ components:
         varname: ERROR
       - enum: completed
         varname: COMPLETED
+      x-example: '"error"'
+      x-example-escaped: '"\"error\""'
     TranscribeReason:
       enum:
       - internalError
@@ -4167,6 +4216,8 @@ components:
         varname: DIGIT
       - enum: noInput
         varname: NO_INPUT
+      x-example: '"internalError"'
+      x-example-escaped: '"\"internalError\""'
     RequestType:
       enum:
       - inboundCall
@@ -4269,6 +4320,8 @@ components:
         varname: MESSAGE_DELIVERY
       - enum: messageStatus
         varname: MESSAGE_STATUS
+      x-example: '"inboundCall"'
+      x-example-escaped: '"\"inboundCall\""'
     UpdateCallRequestStatus:
       description: Either `canceled` or `completed`.  Specifying `canceled` attempts
         to hang up calls that are queued without affecting calls already in progress.
@@ -4286,6 +4339,8 @@ components:
         varname: CANCELED
       - enum: completed
         varname: COMPLETED
+      x-example: '"canceled"'
+      x-example-escaped: '"\"canceled\""'
     UpdateConferenceRequestStatus:
       description: "New status of the conference. Valid values: `empty` or `terminated`.\
         \ For more information, see **Status Parameter** below.**"
@@ -4302,6 +4357,8 @@ components:
         varname: EMPTY
       - enum: terminated
         varname: TERMINATED
+      x-example: '"empty"'
+      x-example-escaped: '"\"empty\""'
     SMSTollFreeCampaignRegistrationStatus:
       description: "Current toll-free campaign registration status.Possible values:\
         \ UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign\
@@ -4331,6 +4388,8 @@ components:
         varname: DECLINED
       - enum: REGISTERED
         varname: REGISTERED
+      x-example: '"UNREGISTERED"'
+      x-example-escaped: '"\"UNREGISTERED\""'
     SMSTenDLCCampaignStatus:
       description: "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly\
         \ created campaign defaults to ACTIVE status. "
@@ -4347,6 +4406,8 @@ components:
         varname: ACTIVE
       - enum: EXPIRED
         varname: EXPIRED
+      x-example: '"ACTIVE"'
+      x-example-escaped: '"\"ACTIVE\""'
     SMSTenDLCPartnerCampaignStatus:
       description: "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly\
         \ created campaign defaults to ACTIVE status. "
@@ -4363,6 +4424,8 @@ components:
         varname: ACTIVE
       - enum: EXPIRED
         varname: EXPIRED
+      x-example: '"ACTIVE"'
+      x-example-escaped: '"\"ACTIVE\""'
     SMSTenDLCBrandEntityType:
       description: Entity type behind the brand. This is the form of business establishment.
       enum:
@@ -4391,6 +4454,8 @@ components:
         varname: GOVERNMENT
       - enum: SOLE_PROPRIETOR
         varname: SOLE_PROPRIETOR
+      x-example: '"PRIVATE_PROFIT"'
+      x-example-escaped: '"\"PRIVATE_PROFIT\""'
     SMSTenDLCBrandRelationship:
       description: Brand relationship to the CSP
       enum:
@@ -4418,6 +4483,8 @@ components:
         varname: LARGE_ACCOUNT
       - enum: KEY_ACCOUNT
         varname: KEY_ACCOUNT
+      x-example: '"BASIC_ACCOUNT"'
+      x-example-escaped: '"\"BASIC_ACCOUNT\""'
     SMSTenDLCBrandStockExchange:
       description: (Required for public company) stock exchange.
       enum:
@@ -4534,6 +4601,8 @@ components:
         varname: VSE
       - enum: OTHER
         varname: OTHER
+      x-example: '"NASDAQ"'
+      x-example-escaped: '"\"NASDAQ\""'
     SMSTenDLCBrandAltBusinessIdType:
       description: The type of the Alternative business identifier
       enum:
@@ -4557,6 +4626,8 @@ components:
         varname: GIIN
       - enum: LEI
         varname: LEI
+      x-example: '"NONE"'
+      x-example-escaped: '"\"NONE\""'
     SMSTenDLCBrandIdentityStatus:
       description: TCR assessment of the brand identification status.
       enum:
@@ -4580,6 +4651,8 @@ components:
         varname: VERIFIED
       - enum: VETTED_VERIFIED
         varname: VETTED_VERIFIED
+      x-example: '"SELF_DECLARED"'
+      x-example-escaped: '"\"SELF_DECLARED\""'
     CompletionResultStatus:
       description: "Completion result status. Possible values: success, no_context"
       enum:
@@ -4595,6 +4668,8 @@ components:
         varname: SUCCESS
       - enum: no_context
         varname: NO_CONTEXT
+      x-example: '"success"'
+      x-example-escaped: '"\"success\""'
     SMSTenDLCOptionalAttributes:
       additionalProperties: true
       description: Optional brand attributes. Please refer to GET /enum/optionalAttributeNames
@@ -4616,6 +4691,15 @@ components:
       type: object
       x-percl-script: true
       x-is-object: true
+      x-example: |-
+        {
+          "commands": [
+            {
+              "command": "string"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"commands\\\":[{\\\"command\\\":\\\"string\\\"}]}\""
     PerclCommand:
       description: An individual command used in a PerCLScript.
       discriminator:
@@ -4658,6 +4742,11 @@ components:
       type: object
       x-percl-command-base: true
       x-is-object: true
+      x-example: |-
+        {
+          "command": "string"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"string\\\"}\""
     Webhook:
       discriminator:
         mapping:
@@ -4695,6 +4784,11 @@ components:
       type: object
       x-webhook-base: true
       x-is-object: true
+      x-example: |-
+        {
+          "requestType": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"string\\\"}\""
     AddToConferenceNotificationWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -4753,6 +4847,29 @@ components:
         command’s notificationUrl is being invoked. This is a notification only; any
         PerCL returned will be ignored.
       x-webhook: addToConferenceNotification
+      x-example: |-
+        {
+          "requestType": "addToConferenceNotification",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "status": "empty",
+          "recordingUrl": "https://www.example.com",
+          "recordingId": "string",
+          "recordingDurationSec": 0
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"addToConferenceNotification\\\
+        \",\\\"callId\\\":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\
+        \":\\\"string\\\",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\
+        \",\\\"direction\\\":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\
+        \"queueId\\\":\\\"string\\\",\\\"status\\\":\\\"empty\\\",\\\"recordingUrl\\\
+        \":\\\"https://www.example.com\\\",\\\"recordingId\\\":\\\"string\\\",\\\"\
+        recordingDurationSec\\\":0}\""
     AddToQueueNotificationWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -4793,6 +4910,23 @@ components:
         is being invoked. This is a notification only; any PerCL returned will be
         ignored.
       x-webhook: addToQueueNotification
+      x-example: |-
+        {
+          "requestType": "addToQueueNotification",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"addToQueueNotification\\\",\\\
+        \"callId\\\":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\"\
+        :\\\"string\\\",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\"\
+        ,\\\"direction\\\":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"\
+        queueId\\\":\\\"string\\\"}\""
     AudioStreamWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -4836,6 +4970,23 @@ components:
         A PerCL response is expected — unless the URL is invoked due to the participant
         hanging up.
       x-webhook: audioStream
+      x-example: |-
+        {
+          "requestType": "audioStream",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"audioStream\\\",\\\"callId\\\"\
+        :\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\
+        \",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\"}\""
     CallControlWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -4862,6 +5013,17 @@ components:
         \ participant. A PerCL response is expected. If invalid PerCL is provided,\
         \ the call leg which triggered this webhook will terminate."
       x-webhook: callControl
+      x-example: |-
+        {
+          "requestType": "callControl",
+          "callId": "string",
+          "accountId": "string",
+          "conferenceId": "string",
+          "digits": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"callControl\\\",\\\"callId\\\"\
+        :\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"conferenceId\\\":\\\"\
+        string\\\",\\\"digits\\\":\\\"string\\\"}\""
     CallStatusWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -4902,6 +5064,24 @@ components:
       description: A Call has ended and the statusCallbackUrl is being invoked. This
         is a notification only; All PerCL commands will be ignored.
       x-webhook: callStatus
+      x-example: |-
+        {
+          "requestType": "callStatus",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "callEndedReason": "busy",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"callStatus\\\",\\\"callId\\\"\
+        :\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\
+        \",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"callEndedReason\\\
+        \":\\\"busy\\\",\\\"direction\\\":\\\"inbound\\\",\\\"conferenceId\\\":\\\"\
+        string\\\",\\\"queueId\\\":\\\"string\\\"}\""
     ConferenceRecordingStatusWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -4960,6 +5140,29 @@ components:
         a Conference that ended. This is a notification only; any PerCL returned will
         be ignored.
       x-webhook: conferenceRecordingStatus
+      x-example: |-
+        {
+          "requestType": "conferenceRecordingStatus",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "status": "empty",
+          "recordingUrl": "https://www.example.com",
+          "recordingId": "string",
+          "recordingDurationSec": 0
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"conferenceRecordingStatus\\\"\
+        ,\\\"callId\\\":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\
+        \":\\\"string\\\",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\
+        \",\\\"direction\\\":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\
+        \"queueId\\\":\\\"string\\\",\\\"status\\\":\\\"empty\\\",\\\"recordingUrl\\\
+        \":\\\"https://www.example.com\\\",\\\"recordingId\\\":\\\"string\\\",\\\"\
+        recordingDurationSec\\\":0}\""
     ConferenceStatusWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5022,6 +5225,28 @@ components:
       description: The context or reason why this request is being made. Will be conferenceStatus
         - A Conference's status changed and its statusCallbackUrl is being invoked.
       x-webhook: conferenceStatus
+      x-example: |-
+        {
+          "requestType": "conferenceStatus",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "status": "empty",
+          "recordingUrl": "https://www.example.com",
+          "recordingId": "string",
+          "recordingDurationSec": 0
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"conferenceStatus\\\",\\\"callId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\
+        \",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"status\\\":\\\"empty\\\",\\\"recordingUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"recordingId\\\":\\\"string\\\",\\\"recordingDurationSec\\\":0}\""
     CreateConferenceWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5084,6 +5309,28 @@ components:
       description: A Conference has been created and its statusCallbackUrl or actionUrl
         is being invoked. A PerCL response is expected if the actionUrl is being invoked.
       x-webhook: createConference
+      x-example: |-
+        {
+          "requestType": "createConference",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "status": "empty",
+          "recordingUrl": "https://www.example.com",
+          "recordingId": "string",
+          "recordingDurationSec": 0
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"createConference\\\",\\\"callId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\
+        \",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"status\\\":\\\"empty\\\",\\\"recordingUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"recordingId\\\":\\\"string\\\",\\\"recordingDurationSec\\\":0}\""
     DequeueWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5133,6 +5380,25 @@ components:
       description: A queued call has been dequeued and the actionUrl of the corresponding
         Enqueue action is being invoked. A PerCL response is expected.
       x-webhook: dequeue
+      x-example: |-
+        {
+          "requestType": "dequeue",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "queueResult": "string",
+          "queueTime": 0
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"dequeue\\\",\\\"callId\\\":\\\
+        \"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\"\
+        ,\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"queueResult\\\":\\\"string\\\",\\\"queueTime\\\":0}\""
     GetDigitsWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5182,6 +5448,27 @@ components:
       description: A POST request with the following fields will be sent to the actionUrl
         provided in your GetDigits command.
       x-webhook: getDigits
+      x-example: |-
+        {
+          "requestType": "getDigits",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "digits": "string",
+          "reason": "finishKey",
+          "parentCallId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"getDigits\\\",\\\"callId\\\"\
+        :\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\
+        \",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"digits\\\":\\\"string\\\",\\\"reason\\\":\\\"finishKey\\\"\
+        ,\\\"parentCallId\\\":\\\"string\\\"}\""
     GetSpeechWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5255,6 +5542,34 @@ components:
       description: "The GetSpeech command has completed and its actionUrl is being\
         \ invoked. A PerCL response is expected, unless reason is hangup."
       x-webhook: getSpeech
+      x-example: |-
+        {
+          "requestType": "getSpeech",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "reason": "error",
+          "recognitionResult": "string",
+          "confidence": 0,
+          "parentCallId": "string",
+          "completionReason": "string",
+          "completionCause": "string",
+          "mrcpCode": 0,
+          "mrcpDiagnostic": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"getSpeech\\\",\\\"callId\\\"\
+        :\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\
+        \",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"reason\\\":\\\"error\\\",\\\"recognitionResult\\\":\\\"string\\\
+        \",\\\"confidence\\\":0,\\\"parentCallId\\\":\\\"string\\\",\\\"completionReason\\\
+        \":\\\"string\\\",\\\"completionCause\\\":\\\"string\\\",\\\"mrcpCode\\\"\
+        :0,\\\"mrcpDiagnostic\\\":\\\"string\\\"}\""
     InboundCallWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5301,6 +5616,24 @@ components:
         expects to receive PerCL in response to this request in order to process the
         Call. The following parameters are sent as the POST body.
       x-webhook: inboundCall
+      x-example: |-
+        {
+          "requestType": "inboundCall",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "parentCallId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"inboundCall\\\",\\\"callId\\\"\
+        :\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\
+        \",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"parentCallId\\\":\\\"string\\\"}\""
     LeaveConferenceWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5344,6 +5677,23 @@ components:
         is being invoked. A PerCL response is expected — unless the URL is invoked
         due to the participant hanging up.
       x-webhook: leaveConference
+      x-example: |-
+        {
+          "requestType": "leaveConference",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"leaveConference\\\",\\\"callId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\
+        \",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\"}\""
     MachineDetectedWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5391,6 +5741,26 @@ components:
         (answering machine or fax/modem machine) and ifMachineUrl is being invoked.
         A PerCL response is expected.
       x-webhook: machineDetected
+      x-example: |-
+        {
+          "requestType": "machineDetected",
+          "callId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "parentCallId": "string",
+          "machineType": "answering machine"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"machineDetected\\\",\\\"callId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\
+        \",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"parentCallId\\\":\\\"string\\\",\\\"machineType\\\":\\\"answering\
+        \ machine\\\"}\""
     MessageDeliveryWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5437,6 +5807,24 @@ components:
         to the smsUrl of the customer application that is associated with the destination
         number. A PerCL response will be ignored.
       x-webhook: messageDelivery
+      x-example: |-
+        {
+          "requestType": "messageDelivery",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "text": "string",
+          "direction": "string",
+          "applicationId": "string",
+          "status": "string",
+          "phoneNumberId": "string",
+          "uri": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"messageDelivery\\\",\\\"accountId\\\
+        \":\\\"string\\\",\\\"from\\\":\\\"string\\\",\\\"to\\\":\\\"string\\\",\\\
+        \"text\\\":\\\"string\\\",\\\"direction\\\":\\\"string\\\",\\\"applicationId\\\
+        \":\\\"string\\\",\\\"status\\\":\\\"string\\\",\\\"phoneNumberId\\\":\\\"\
+        string\\\",\\\"uri\\\":\\\"string\\\"}\""
     MessageStatusWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5483,6 +5871,25 @@ components:
         the Sms command or Send an SMS request is being invoked. A PerCL response
         will be ignored.
       x-webhook: messageStatus
+      x-example: |-
+        {
+          "requestType": "messageStatus",
+          "accountId": "string",
+          "messageId": "string",
+          "callId": "string",
+          "from": "string",
+          "to": "string",
+          "text": "string",
+          "direction": "string",
+          "applicationId": "string",
+          "status": "new",
+          "phoneNumberId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"messageStatus\\\",\\\"accountId\\\
+        \":\\\"string\\\",\\\"messageId\\\":\\\"string\\\",\\\"callId\\\":\\\"string\\\
+        \",\\\"from\\\":\\\"string\\\",\\\"to\\\":\\\"string\\\",\\\"text\\\":\\\"\
+        string\\\",\\\"direction\\\":\\\"string\\\",\\\"applicationId\\\":\\\"string\\\
+        \",\\\"status\\\":\\\"new\\\",\\\"phoneNumberId\\\":\\\"string\\\"}\""
     OutDialApiConnectWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5528,6 +5935,24 @@ components:
         callConnectUrl specified in the API request is being invoked. A PerCL response
         is expected if the call was successfully connected (with status of inProgress).
       x-webhook: outDialApiConnect
+      x-example: |-
+        {
+          "requestType": "outDialApiConnect",
+          "accountId": "string",
+          "callId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "parentCallId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"outDialApiConnect\\\",\\\"accountId\\\
+        \":\\\"string\\\",\\\"callId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\"\
+        ,\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"parentCallId\\\":\\\"string\\\"}\""
     OutDialConnectWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5576,6 +6001,24 @@ components:
         is expected if the call was successfully connected (as indicated by status
         of inProgress) and begins the execution context for this (child) call.
       x-webhook: outDialConnect
+      x-example: |-
+        {
+          "requestType": "outDialConnect",
+          "accountId": "string",
+          "callId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "parentCallId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"outDialConnect\\\",\\\"accountId\\\
+        \":\\\"string\\\",\\\"callId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\"\
+        ,\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"parentCallId\\\":\\\"string\\\"}\""
     OutDialStartWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5628,6 +6071,26 @@ components:
         This request is made in the context of the parent call (Call leg that invoked).
         A PerCL response is expected.
       x-webhook: outDialStart
+      x-example: |-
+        {
+          "requestType": "outDialStart",
+          "accountId": "string",
+          "callId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "dialCallId": "string",
+          "parentCallId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"outDialStart\\\",\\\"accountId\\\
+        \":\\\"string\\\",\\\"callId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\"\
+        ,\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"dialCallId\\\":\\\"string\\\",\\\"parentCallId\\\":\\\"string\\\
+        \"}\""
     QueueWaitWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5681,6 +6144,27 @@ components:
         \ response is expected. The following are the only PerCL commands supported\
         \ in the PerCL script response to a request to the waitUrl: Play,Say,Pause,GetDigits,Dequeue,Hangup"
       x-webhook: queueWait
+      x-example: |-
+        {
+          "requestType": "queueWait",
+          "accountId": "string",
+          "callId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "queuePosition": "string",
+          "queueTime": 0,
+          "currentQueueSize": 0
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"queueWait\\\",\\\"accountId\\\
+        \":\\\"string\\\",\\\"callId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\"\
+        ,\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"queuePosition\\\":\\\"string\\\",\\\"queueTime\\\":0,\\\"currentQueueSize\\\
+        \":0}\""
     RecordWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5754,6 +6238,34 @@ components:
       description: The RecordUtterance command has completed and its actionUrl is
         being invoked.
       x-webhook: record
+      x-example: |-
+        {
+          "requestType": "record",
+          "accountId": "string",
+          "callId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "recordingId": "string",
+          "recordingUrl": "https://www.example.com",
+          "recordingSize": "string",
+          "recordingFormat": "string",
+          "recordingDurationSec": 0,
+          "termReason": "finishKey",
+          "parentCallId": "string",
+          "privacyMode": false
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"record\\\",\\\"accountId\\\"\
+        :\\\"string\\\",\\\"callId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\"\
+        ,\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"recordingId\\\":\\\"string\\\",\\\"recordingUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"recordingSize\\\":\\\"string\\\",\\\"recordingFormat\\\":\\\"string\\\
+        \",\\\"recordingDurationSec\\\":0,\\\"termReason\\\":\\\"finishKey\\\",\\\"\
+        parentCallId\\\":\\\"string\\\",\\\"privacyMode\\\":false}\""
     RedirectWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5798,6 +6310,24 @@ components:
       description: The Redirect command is executing and its actionUrl is being invoked.
         A PerCL response is expected.
       x-webhook: redirect
+      x-example: |-
+        {
+          "requestType": "redirect",
+          "accountId": "string",
+          "callId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "parentCallId": "string"
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"redirect\\\",\\\"accountId\\\"\
+        :\\\"string\\\",\\\"callId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\"\
+        ,\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\",\\\"direction\\\
+        \":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"queueId\\\":\\\"\
+        string\\\",\\\"parentCallId\\\":\\\"string\\\"}\""
     RemoveFromQueueNotificationWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5846,6 +6376,26 @@ components:
         actionUrl is being invoked. A PerCL response is expected except if reason
         is hangup.
       x-webhook: removeFromQueueNotification
+      x-example: |-
+        {
+          "requestType": "removeFromQueueNotification",
+          "accountId": "string",
+          "callId": "string",
+          "from": "string",
+          "to": "string",
+          "callStatus": "queued",
+          "direction": "inbound",
+          "conferenceId": "string",
+          "queueId": "string",
+          "queueResult": "queueFull",
+          "queueTime": 0
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"removeFromQueueNotification\\\
+        \",\\\"accountId\\\":\\\"string\\\",\\\"callId\\\":\\\"string\\\",\\\"from\\\
+        \":\\\"string\\\",\\\"to\\\":\\\"string\\\",\\\"callStatus\\\":\\\"queued\\\
+        \",\\\"direction\\\":\\\"inbound\\\",\\\"conferenceId\\\":\\\"string\\\",\\\
+        \"queueId\\\":\\\"string\\\",\\\"queueResult\\\":\\\"queueFull\\\",\\\"queueTime\\\
+        \":0}\""
     TranscribeWebhook:
       allOf:
       - $ref: '#/components/schemas/Webhook'
@@ -5941,6 +6491,43 @@ components:
             type: integer
         type: object
       x-webhook: transcribe
+      x-example: |-
+        {
+          "requestType": "transcribe",
+          "accountId": "string",
+          "callId": "string",
+          "from": "string",
+          "to": "string",
+          "recordingId": "string",
+          "recordingUrl": "https://www.example.com",
+          "recordingSize": 0,
+          "recordingFormat": "string",
+          "recordingDurationMs": 0,
+          "termReason": "error",
+          "recordTermReason": "finishKey",
+          "digit": "string",
+          "privacyForLogging": false,
+          "privacyForRecording": false,
+          "bargeInReason": "noBargeIn",
+          "bargedInPromptNo": 0,
+          "bargedInPromptMs": 0,
+          "bargedInPromptLoopNo": 0,
+          "bargeInTimeMs": 0,
+          "transcript": "string",
+          "transcribeReason": "internalError",
+          "transcriptionDurationMs": 0
+        }
+      x-example-escaped: "\"{\\\"requestType\\\":\\\"transcribe\\\",\\\"accountId\\\
+        \":\\\"string\\\",\\\"callId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\"\
+        ,\\\"to\\\":\\\"string\\\",\\\"recordingId\\\":\\\"string\\\",\\\"recordingUrl\\\
+        \":\\\"https://www.example.com\\\",\\\"recordingSize\\\":0,\\\"recordingFormat\\\
+        \":\\\"string\\\",\\\"recordingDurationMs\\\":0,\\\"termReason\\\":\\\"error\\\
+        \",\\\"recordTermReason\\\":\\\"finishKey\\\",\\\"digit\\\":\\\"string\\\"\
+        ,\\\"privacyForLogging\\\":false,\\\"privacyForRecording\\\":false,\\\"bargeInReason\\\
+        \":\\\"noBargeIn\\\",\\\"bargedInPromptNo\\\":0,\\\"bargedInPromptMs\\\":0,\\\
+        \"bargedInPromptLoopNo\\\":0,\\\"bargeInTimeMs\\\":0,\\\"transcript\\\":\\\
+        \"string\\\",\\\"transcribeReason\\\":\\\"internalError\\\",\\\"transcriptionDurationMs\\\
+        \":0}\""
     AddToConference:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6008,6 +6595,26 @@ components:
       required:
       - conferenceId
       x-percl-command: AddToConference
+      x-example: |-
+        {
+          "command": "AddToConference",
+          "allowCallControl": false,
+          "callControlSequence": "string",
+          "callControlUrl": "https://www.example.com",
+          "conferenceId": "string",
+          "leaveConferenceUrl": "https://www.example.com",
+          "listen": false,
+          "notificationUrl": "https://www.example.com",
+          "startConfOnEnter": false,
+          "talk": false,
+          "dtmfPassThrough": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"AddToConference\\\",\\\"allowCallControl\\\
+        \":false,\\\"callControlSequence\\\":\\\"string\\\",\\\"callControlUrl\\\"\
+        :\\\"https://www.example.com\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"\
+        leaveConferenceUrl\\\":\\\"https://www.example.com\\\",\\\"listen\\\":false,\\\
+        \"notificationUrl\\\":\\\"https://www.example.com\\\",\\\"startConfOnEnter\\\
+        \":false,\\\"talk\\\":false,\\\"dtmfPassThrough\\\":false}\""
     AudioStream:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6051,6 +6658,21 @@ components:
         \ control can be returned to percl usage or the call will simply be hung up\
         \ if the actionUrl is not specified."
       x-percl-command: AudioStream
+      x-example: |-
+        {
+          "command": "AudioStream",
+          "location": "https://www.example.com",
+          "actionUrl": "https://www.example.com",
+          "contentType": "string",
+          "metaData": [
+            "string"
+          ],
+          "privacyMode": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"AudioStream\\\",\\\"location\\\"\
+        :\\\"https://www.example.com\\\",\\\"actionUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"contentType\\\":\\\"string\\\",\\\"metaData\\\":[\\\"string\\\"],\\\
+        \"privacyMode\\\":false}\""
     CreateConference:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6103,6 +6725,22 @@ components:
         \ created, a Conference remains in FreeClimb until explicitly terminated by\
         \ a customer. Once a Conference has been terminated, it can no longer be used."
       x-percl-command: CreateConference
+      x-example: |-
+        {
+          "command": "CreateConference",
+          "actionUrl": "https://www.example.com",
+          "alias": "string",
+          "playBeep": "always",
+          "record": false,
+          "statusCallbackUrl": "https://www.example.com",
+          "waitUrl": "https://www.example.com",
+          "parentCallId": "string"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"CreateConference\\\",\\\"actionUrl\\\
+        \":\\\"https://www.example.com\\\",\\\"alias\\\":\\\"string\\\",\\\"playBeep\\\
+        \":\\\"always\\\",\\\"record\\\":false,\\\"statusCallbackUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"waitUrl\\\":\\\"https://www.example.com\\\",\\\"parentCallId\\\":\\\
+        \"string\\\"}\""
     Dequeue:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6113,6 +6751,11 @@ components:
         in the `Enqueue` command.
       x-percl-command: Dequeue
       x-no-properties: true
+      x-example: |-
+        {
+          "command": "Dequeue"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Dequeue\\\"}\""
     Enqueue:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6165,6 +6808,18 @@ components:
       - queueId
       - waitUrl
       x-percl-command: Enqueue
+      x-example: |-
+        {
+          "command": "Enqueue",
+          "actionUrl": "https://www.example.com",
+          "notificationUrl": "https://www.example.com",
+          "queueId": "string",
+          "waitUrl": "https://www.example.com"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Enqueue\\\",\\\"actionUrl\\\":\\\"\
+        https://www.example.com\\\",\\\"notificationUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"queueId\\\":\\\"string\\\",\\\"waitUrl\\\":\\\"https://www.example.com\\\
+        \"}\""
     GetDigits:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6240,6 +6895,28 @@ components:
         \ to respond to the FreeClimb Webhook with PerCL to continue handling the\
         \ call."
       x-percl-command: GetDigits
+      x-example: |-
+        {
+          "command": "GetDigits",
+          "actionUrl": "https://www.example.com",
+          "digitTimeoutMs": 0,
+          "finishOnKey": "string",
+          "flushBuffer": false,
+          "initialTimeoutMs": 0,
+          "maxDigits": 0,
+          "minDigits": 0,
+          "prompts": [
+            {
+              "command": "string"
+            }
+          ],
+          "privacyMode": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"GetDigits\\\",\\\"actionUrl\\\":\\\
+        \"https://www.example.com\\\",\\\"digitTimeoutMs\\\":0,\\\"finishOnKey\\\"\
+        :\\\"string\\\",\\\"flushBuffer\\\":false,\\\"initialTimeoutMs\\\":0,\\\"\
+        maxDigits\\\":0,\\\"minDigits\\\":0,\\\"prompts\\\":[{\\\"command\\\":\\\"\
+        string\\\"}],\\\"privacyMode\\\":false}\""
     GetSpeech:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6333,6 +7010,34 @@ components:
         \ is only supported on a single call leg. It is not supported when there are\
         \ two or more call legs connected (as in within a Conference)."
       x-percl-command: GetSpeech
+      x-example: |-
+        {
+          "command": "GetSpeech",
+          "actionUrl": "https://www.example.com",
+          "grammarType": "URL",
+          "grammarFile": "string",
+          "grammarRule": "string",
+          "playBeep": false,
+          "prompts": [
+            {
+              "command": "string"
+            }
+          ],
+          "noInputTimeoutMs": 0,
+          "recognitionTimeoutMs": 0,
+          "confidenceThreshold": 0,
+          "sensitivityLevel": 0,
+          "speechCompleteTimeoutMs": 0,
+          "speechIncompleteTimeoutMs": 0,
+          "privacyMode": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"GetSpeech\\\",\\\"actionUrl\\\":\\\
+        \"https://www.example.com\\\",\\\"grammarType\\\":\\\"URL\\\",\\\"grammarFile\\\
+        \":\\\"string\\\",\\\"grammarRule\\\":\\\"string\\\",\\\"playBeep\\\":false,\\\
+        \"prompts\\\":[{\\\"command\\\":\\\"string\\\"}],\\\"noInputTimeoutMs\\\"\
+        :0,\\\"recognitionTimeoutMs\\\":0,\\\"confidenceThreshold\\\":0,\\\"sensitivityLevel\\\
+        \":0,\\\"speechCompleteTimeoutMs\\\":0,\\\"speechIncompleteTimeoutMs\\\":0,\\\
+        \"privacyMode\\\":false}\""
     Hangup:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6348,6 +7053,13 @@ components:
         \ answering the Call and billing your account. See the `Reject` command to\
         \ hang up at no charge."
       x-percl-command: Hangup
+      x-example: |-
+        {
+          "command": "Hangup",
+          "reason": "string"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Hangup\\\",\\\"reason\\\":\\\"string\\\
+        \"}\""
     OutDial:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6420,6 +7132,26 @@ components:
         type: object
       description: The OutDial command is used to call a phone number
       x-percl-command: OutDial
+      x-example: |-
+        {
+          "command": "OutDial",
+          "actionUrl": "https://www.example.com",
+          "callConnectUrl": "https://www.example.com",
+          "callingNumber": "string",
+          "destination": "string",
+          "ifMachine": "redirect",
+          "ifMachineUrl": "https://www.example.com",
+          "sendDigits": "string",
+          "statusCallbackUrl": "https://www.example.com",
+          "timeout": 0,
+          "privacyMode": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"OutDial\\\",\\\"actionUrl\\\":\\\"\
+        https://www.example.com\\\",\\\"callConnectUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"callingNumber\\\":\\\"string\\\",\\\"destination\\\":\\\"string\\\"\
+        ,\\\"ifMachine\\\":\\\"redirect\\\",\\\"ifMachineUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"sendDigits\\\":\\\"string\\\",\\\"statusCallbackUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"timeout\\\":0,\\\"privacyMode\\\":false}\""
     Park:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6466,6 +7198,16 @@ components:
         \ ways -- REST API invocation or the Unpark percl command. No actions can\
         \ be nested within Park and Park cannot be nested in any other actions. "
       x-percl-command: Park
+      x-example: |-
+        {
+          "command": "Park",
+          "waitUrl": "https://www.example.com",
+          "actionUrl": "https://www.example.com",
+          "notificationUrl": "https://www.example.com"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Park\\\",\\\"waitUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"actionUrl\\\":\\\"https://www.example.com\\\",\\\"notificationUrl\\\
+        \":\\\"https://www.example.com\\\"}\""
     Pause:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6483,6 +7225,12 @@ components:
         \ in a PerCL document, FreeClimb will wait for the specified time to elapse\
         \ before picking up the call."
       x-percl-command: Pause
+      x-example: |-
+        {
+          "command": "Pause",
+          "length": 0
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Pause\\\",\\\"length\\\":0}\""
     Play:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6510,6 +7258,15 @@ components:
         unless nested within a `GetSpeech` command. The file will always be played
         to completion unless nested.
       x-percl-command: Play
+      x-example: |-
+        {
+          "command": "Play",
+          "file": "string",
+          "loop": 0,
+          "privacyMode": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Play\\\",\\\"file\\\":\\\"string\\\
+        \",\\\"loop\\\":0,\\\"privacyMode\\\":false}\""
     PlayEarlyMedia:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6532,6 +7289,13 @@ components:
         \ audio file it uses can be stored in any location that is accessible via\
         \ URL."
       x-percl-command: PlayEarlyMedia
+      x-example: |-
+        {
+          "command": "PlayEarlyMedia",
+          "file": "string"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"PlayEarlyMedia\\\",\\\"file\\\":\\\
+        \"string\\\"}\""
     RecordUtterance:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6578,6 +7342,21 @@ components:
         \ and control of the Call picks up using the PerCL returned in response to\
         \ the `actionUrl`. Recording information is returned in the `actionUrl` request."
       x-percl-command: RecordUtterance
+      x-example: |-
+        {
+          "command": "RecordUtterance",
+          "actionUrl": "https://www.example.com",
+          "silenceTimeoutMs": 0,
+          "finishOnKey": "string",
+          "maxLengthSec": 0,
+          "playBeep": false,
+          "autoStart": false,
+          "privacyMode": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"RecordUtterance\\\",\\\"actionUrl\\\
+        \":\\\"https://www.example.com\\\",\\\"silenceTimeoutMs\\\":0,\\\"finishOnKey\\\
+        \":\\\"string\\\",\\\"maxLengthSec\\\":0,\\\"playBeep\\\":false,\\\"autoStart\\\
+        \":false,\\\"privacyMode\\\":false}\""
     Redirect:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6602,6 +7381,13 @@ components:
         \ the life time of a Call is 256. This is intended to prevent a Call from\
         \ possibly looping infinitely due to errors in PerCL being generated."
       x-percl-command: Redirect
+      x-example: |-
+        {
+          "command": "Redirect",
+          "actionUrl": "https://www.example.com"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Redirect\\\",\\\"actionUrl\\\":\\\
+        \"https://www.example.com\\\"}\""
     Reject:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6617,6 +7403,13 @@ components:
         the only way to prevent FreeClimb from answering a Call. Any other response
         will result in an answered Call and your account will be billed.
       x-percl-command: Reject
+      x-example: |-
+        {
+          "command": "Reject",
+          "reason": "string"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Reject\\\",\\\"reason\\\":\\\"string\\\
+        \"}\""
     RemoveFromConference:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6628,6 +7421,11 @@ components:
         \ in response to the `leaveConferenceUrl` attribute."
       x-percl-command: RemoveFromConference
       x-no-properties: true
+      x-example: |-
+        {
+          "command": "RemoveFromConference"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"RemoveFromConference\\\"}\""
     TTSEngineName:
       description: The engine to use for the TTS. The complete list of valid values
         for the engine attribute is shown below.
@@ -6648,6 +7446,8 @@ components:
         varname: FREECLIMB_NEURAL
       - enum: ElevenLabs
         varname: ELEVEN_LABS
+      x-example: '"freeclimb.standard"'
+      x-example-escaped: '"\"freeclimb.standard\""'
     TTSEngine:
       properties:
         name:
@@ -6662,6 +7462,11 @@ components:
           x-is-object: true
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "name": "freeclimb.standard"
+        }
+      x-example-escaped: "\"{\\\"name\\\":\\\"freeclimb.standard\\\"}\""
     Say:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6697,6 +7502,20 @@ components:
         `Say` does not allow barge-in unless nested within a `GetSpeech` command.
         The file will always be played to completion unless nested.
       x-percl-command: Say
+      x-example: |-
+        {
+          "command": "Say",
+          "text": "string",
+          "language": "string",
+          "engine": {
+            "name": "freeclimb.standard"
+          },
+          "loop": 1,
+          "privacyMode": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Say\\\",\\\"text\\\":\\\"string\\\
+        \",\\\"language\\\":\\\"string\\\",\\\"engine\\\":{\\\"name\\\":\\\"freeclimb.standard\\\
+        \"},\\\"loop\\\":1,\\\"privacyMode\\\":false}\""
     SendDigits:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6722,6 +7541,15 @@ components:
       description: The `SendDigits` command plays DTMF tones on a live Call. This
         is useful for navigating through IVR menus or dialing extensions.
       x-percl-command: SendDigits
+      x-example: |-
+        {
+          "command": "SendDigits",
+          "digits": "string",
+          "pauseMs": 0,
+          "privacyMode": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"SendDigits\\\",\\\"digits\\\":\\\"\
+        string\\\",\\\"pauseMs\\\":0,\\\"privacyMode\\\":false}\""
     SetListen:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6734,6 +7562,12 @@ components:
         for this Conference Participant. The Participant can hear what the other participants
         are saying only if this privilege is enabled.
       x-percl-command: SetListen
+      x-example: |-
+        {
+          "command": "SetListen",
+          "listen": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"SetListen\\\",\\\"listen\\\":false}\""
     SetTalk:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6746,6 +7580,12 @@ components:
         \ this Conference Participant. If 'true', no audio from that Participant is\
         \ shared with the other Participants of the Conference."
       x-percl-command: SetTalk
+      x-example: |-
+        {
+          "command": "SetTalk",
+          "talk": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"SetTalk\\\",\\\"talk\\\":false}\""
     SetDTMFPassThrough:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6758,6 +7598,13 @@ components:
         \ privilege for this Conference Participant. If 'true', DTMFs will be passed\
         \ through from this Participant to all other Participants in the Conference"
       x-percl-command: SetDTMFPassThrough
+      x-example: |-
+        {
+          "command": "SetDTMFPassThrough",
+          "dtmfPassThrough": false
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"SetDTMFPassThrough\\\",\\\"dtmfPassThrough\\\
+        \":false}\""
     Sms:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6793,6 +7640,17 @@ components:
       description: The `Sms` command can be used to send an SMS message to a phone
         number during a phone call. International SMS is disabled by default.
       x-percl-command: Sms
+      x-example: |-
+        {
+          "command": "Sms",
+          "to": "string",
+          "from": "string",
+          "text": "string",
+          "notificationUrl": "https://www.example.com"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Sms\\\",\\\"to\\\":\\\"string\\\"\
+        ,\\\"from\\\":\\\"string\\\",\\\"text\\\":\\\"string\\\",\\\"notificationUrl\\\
+        \":\\\"https://www.example.com\\\"}\""
     StartRecordCall:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6804,6 +7662,11 @@ components:
         \ in the current PerCL script."
       x-percl-command: StartRecordCall
       x-no-properties: true
+      x-example: |-
+        {
+          "command": "StartRecordCall"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"StartRecordCall\\\"}\""
     TerminateConference:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6816,6 +7679,11 @@ components:
         \ must be on the same Conference for this command to execute."
       x-percl-command: TerminateConference
       x-no-properties: true
+      x-example: |-
+        {
+          "command": "TerminateConference"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"TerminateConference\\\"}\""
     Unpark:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -6828,6 +7696,11 @@ components:
         \ not executed."
       x-percl-command: Unpark
       x-no-properties: true
+      x-example: |-
+        {
+          "command": "Unpark"
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"Unpark\\\"}\""
     MutableResourceModel:
       properties:
         uri:
@@ -6847,6 +7720,15 @@ components:
           type: integer
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0}\""
     PaginationModel:
       properties:
         total:
@@ -6879,6 +7761,19 @@ components:
           type: string
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string"
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \"}\""
     Capabilities:
       description: Details for which features this number may be used.
       example:
@@ -6926,6 +7821,16 @@ components:
       - voice
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "voice": false,
+          "sms": false,
+          "tollFree": false,
+          "tenDLC": false,
+          "shortCode": false
+        }
+      x-example-escaped: "\"{\\\"voice\\\":false,\\\"sms\\\":false,\\\"tollFree\\\"\
+        :false,\\\"tenDLC\\\":false,\\\"shortCode\\\":false}\""
     TFN:
       description: TollFree Campaign details for this number
       properties:
@@ -6938,19 +7843,33 @@ components:
       - campaignId
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "campaignId": "string"
+        }
+      x-example-escaped: "\"{\\\"campaignId\\\":\\\"string\\\"}\""
     AccountRequest:
       example:
-        alias: alias
-        label: label
+        alias: My Account
+        label: My Label
       properties:
         alias:
           description: Description for this account.
+          example: My Account
           type: string
         label:
           description: Group to which this account belongs.
+          example: My Label
           type: string
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "alias": "My Account",
+          "label": "My Label"
+        }
+      x-example-escaped: "\"{\\\"alias\\\":\\\"My Account\\\",\\\"label\\\":\\\"My\
+        \ Label\\\"}\""
     AccountResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -6992,6 +7911,24 @@ components:
         dateUpdated: dateUpdated
         revision: 0
         status: closed
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "accountId": "string",
+          "apiKey": "string",
+          "alias": "string",
+          "label": "string",
+          "type": "trial",
+          "status": "closed"
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"accountId\\\"\
+        :\\\"string\\\",\\\"apiKey\\\":\\\"string\\\",\\\"alias\\\":\\\"string\\\"\
+        ,\\\"label\\\":\\\"string\\\",\\\"type\\\":\\\"trial\\\",\\\"status\\\":\\\
+        \"closed\\\"}\""
     ApplicationResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -7077,24 +8014,50 @@ components:
         alias: alias
         voiceFallbackUrl: https://openapi-generator.tech
         applicationId: applicationId
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "accountId": "string",
+          "applicationId": "string",
+          "alias": "string",
+          "voiceUrl": "https://www.example.com",
+          "voiceFallbackUrl": "https://www.example.com",
+          "callConnectUrl": "https://www.example.com",
+          "statusCallbackUrl": "https://www.example.com",
+          "smsUrl": "https://www.example.com",
+          "smsFallbackUrl": "https://www.example.com"
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"accountId\\\"\
+        :\\\"string\\\",\\\"applicationId\\\":\\\"string\\\",\\\"alias\\\":\\\"string\\\
+        \",\\\"voiceUrl\\\":\\\"https://www.example.com\\\",\\\"voiceFallbackUrl\\\
+        \":\\\"https://www.example.com\\\",\\\"callConnectUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"statusCallbackUrl\\\":\\\"https://www.example.com\\\",\\\"smsUrl\\\"\
+        :\\\"https://www.example.com\\\",\\\"smsFallbackUrl\\\":\\\"https://www.example.com\\\
+        \"}\""
     ApplicationRequest:
       example:
-        voiceUrl: https://openapi-generator.tech
-        smsUrl: https://openapi-generator.tech
-        smsFallbackUrl: https://openapi-generator.tech
-        alias: alias
-        voiceFallbackUrl: https://openapi-generator.tech
-        statusCallbackUrl: https://openapi-generator.tech
-        callConnectUrl: https://openapi-generator.tech
+        voiceUrl: https://www.myapp.com/voice
+        smsUrl: https://www.myapp.com/sms
+        smsFallbackUrl: https://www.myapp.com/smsFallback
+        alias: Customer Support Line
+        voiceFallbackUrl: https://www.myapp.com/voiceFallback
+        statusCallbackUrl: https://www.myapp.com/status
+        callConnectUrl: https://www.myapp.com/callConnect
       properties:
         alias:
           description: "A human readable description of the application, with maximum\
             \ length 64 characters."
+          example: Customer Support Line
           type: string
         voiceUrl:
           description: The URL that FreeClimb will request when an inbound call arrives
             on a phone number assigned to this application. Used only for inbound
             calls.
+          example: https://www.myapp.com/voice
           format: uri
           nullable: true
           type: string
@@ -7104,6 +8067,7 @@ components:
           description: "The URL that FreeClimb will request if it times out waiting\
             \ for a response from the voiceUrl. Used for inbound calls only. Note:\
             \ A PerCL response is expected to control the inbound call."
+          example: https://www.myapp.com/voiceFallback
           format: uri
           nullable: true
           type: string
@@ -7114,6 +8078,7 @@ components:
             \ request is complete. Used for outbound calls only.  Note: A PerCL response\
             \ is expected if the outbound call is connected (status=InProgress) to\
             \ control the call."
+          example: https://www.myapp.com/callConnect
           format: uri
           nullable: true
           type: string
@@ -7123,6 +8088,7 @@ components:
           description: "The URL that FreeClimb will request to pass call status (such\
             \ as call ended) to the application.  Note: This is a notification only;\
             \ any PerCL returned will be ignored."
+          example: https://www.myapp.com/status
           format: uri
           nullable: true
           type: string
@@ -7132,6 +8098,7 @@ components:
           description: "The URL that FreeClimb will request when a phone number assigned\
             \ to this application receives an incoming SMS message. Used for inbound\
             \ SMS only.  Note: Any PerCL returned will be ignored."
+          example: https://www.myapp.com/sms
           format: uri
           nullable: true
           type: string
@@ -7141,6 +8108,7 @@ components:
           description: "The URL that FreeClimb will request if it times out waiting\
             \ for a response from the smsUrl. Used for inbound SMS only.  Note: Any\
             \ PerCL returned will be ignored."
+          example: https://www.myapp.com/smsFallback
           format: uri
           nullable: true
           type: string
@@ -7148,6 +8116,21 @@ components:
           x-is-url: true
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "alias": "Customer Support Line",
+          "voiceUrl": "https://www.myapp.com/voice",
+          "voiceFallbackUrl": "https://www.myapp.com/voiceFallback",
+          "callConnectUrl": "https://www.myapp.com/callConnect",
+          "statusCallbackUrl": "https://www.myapp.com/status",
+          "smsUrl": "https://www.myapp.com/sms",
+          "smsFallbackUrl": "https://www.myapp.com/smsFallback"
+        }
+      x-example-escaped: "\"{\\\"alias\\\":\\\"Customer Support Line\\\",\\\"voiceUrl\\\
+        \":\\\"https://www.myapp.com/voice\\\",\\\"voiceFallbackUrl\\\":\\\"https://www.myapp.com/voiceFallback\\\
+        \",\\\"callConnectUrl\\\":\\\"https://www.myapp.com/callConnect\\\",\\\"statusCallbackUrl\\\
+        \":\\\"https://www.myapp.com/status\\\",\\\"smsUrl\\\":\\\"https://www.myapp.com/sms\\\
+        \",\\\"smsFallbackUrl\\\":\\\"https://www.myapp.com/smsFallback\\\"}\""
     ApplicationList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7195,6 +8178,43 @@ components:
           voiceFallbackUrl: https://openapi-generator.tech
           applicationId: applicationId
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "applications": [
+            {
+              "uri": "string",
+              "dateCreated": "string",
+              "dateUpdated": "string",
+              "revision": 0,
+              "accountId": "string",
+              "applicationId": "string",
+              "alias": "string",
+              "voiceUrl": "https://www.example.com",
+              "voiceFallbackUrl": "https://www.example.com",
+              "callConnectUrl": "https://www.example.com",
+              "statusCallbackUrl": "https://www.example.com",
+              "smsUrl": "https://www.example.com",
+              "smsFallbackUrl": "https://www.example.com"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"applications\\\":[{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\
+        \"string\\\",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"accountId\\\
+        \":\\\"string\\\",\\\"applicationId\\\":\\\"string\\\",\\\"alias\\\":\\\"\
+        string\\\",\\\"voiceUrl\\\":\\\"https://www.example.com\\\",\\\"voiceFallbackUrl\\\
+        \":\\\"https://www.example.com\\\",\\\"callConnectUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"statusCallbackUrl\\\":\\\"https://www.example.com\\\",\\\"smsUrl\\\"\
+        :\\\"https://www.example.com\\\",\\\"smsFallbackUrl\\\":\\\"https://www.example.com\\\
+        \"}]}\""
     AvailableNumber:
       example:
         country: country
@@ -7234,6 +8254,26 @@ components:
           type: string
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "capabilities": {
+            "voice": false,
+            "sms": false,
+            "tollFree": false,
+            "tenDLC": false,
+            "shortCode": false
+          },
+          "campaignId": "string",
+          "phoneNumber": "string",
+          "alias": "string",
+          "region": "string",
+          "country": "string"
+        }
+      x-example-escaped: "\"{\\\"capabilities\\\":{\\\"voice\\\":false,\\\"sms\\\"\
+        :false,\\\"tollFree\\\":false,\\\"tenDLC\\\":false,\\\"shortCode\\\":false},\\\
+        \"campaignId\\\":\\\"string\\\",\\\"phoneNumber\\\":\\\"string\\\",\\\"alias\\\
+        \":\\\"string\\\",\\\"region\\\":\\\"string\\\",\\\"country\\\":\\\"string\\\
+        \"}\""
     AvailableNumberList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7277,6 +8317,39 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "availablePhoneNumbers": [
+            {
+              "capabilities": {
+                "voice": false,
+                "sms": false,
+                "tollFree": false,
+                "tenDLC": false,
+                "shortCode": false
+              },
+              "campaignId": "string",
+              "phoneNumber": "string",
+              "alias": "string",
+              "region": "string",
+              "country": "string"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"availablePhoneNumbers\\\":[{\\\"capabilities\\\":{\\\"voice\\\":false,\\\
+        \"sms\\\":false,\\\"tollFree\\\":false,\\\"tenDLC\\\":false,\\\"shortCode\\\
+        \":false},\\\"campaignId\\\":\\\"string\\\",\\\"phoneNumber\\\":\\\"string\\\
+        \",\\\"alias\\\":\\\"string\\\",\\\"region\\\":\\\"string\\\",\\\"country\\\
+        \":\\\"string\\\"}]}\""
     IncomingNumberResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -7351,24 +8424,70 @@ components:
         applicationId: applicationId
         region: region
         tfn: ""
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "capabilities": {
+            "voice": false,
+            "sms": false,
+            "tollFree": false,
+            "tenDLC": false,
+            "shortCode": false
+          },
+          "campaignId": "string",
+          "phoneNumberId": "string",
+          "accountId": "string",
+          "applicationId": "string",
+          "phoneNumber": "string",
+          "alias": "string",
+          "region": "string",
+          "country": "string",
+          "offnet": false,
+          "tfn": {
+            "campaignId": "string"
+          }
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"capabilities\\\
+        \":{\\\"voice\\\":false,\\\"sms\\\":false,\\\"tollFree\\\":false,\\\"tenDLC\\\
+        \":false,\\\"shortCode\\\":false},\\\"campaignId\\\":\\\"string\\\",\\\"phoneNumberId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"applicationId\\\":\\\
+        \"string\\\",\\\"phoneNumber\\\":\\\"string\\\",\\\"alias\\\":\\\"string\\\
+        \",\\\"region\\\":\\\"string\\\",\\\"country\\\":\\\"string\\\",\\\"offnet\\\
+        \":false,\\\"tfn\\\":{\\\"campaignId\\\":\\\"string\\\"}}\""
     IncomingNumberRequest:
       example:
-        campaignId: campaignId
-        alias: alias
-        applicationId: applicationId
+        campaignId: CX56XX4
+        alias: Main Office Line
+        applicationId: AP0123456789abcdefABCDEF0123456789abcdef03
       properties:
         applicationId:
           description: ID of the Application that should handle calls to this number.
+          example: AP0123456789abcdefABCDEF0123456789abcdef03
           type: string
         alias:
           description: Description for this phone number.
+          example: Main Office Line
           type: string
         campaignId:
           description: The campaign ID generated by the campaign registry
+          example: CX56XX4
           nullable: true
           type: string
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "applicationId": "AP0123456789abcdefABCDEF0123456789abcdef03",
+          "alias": "Main Office Line",
+          "campaignId": "CX56XX4"
+        }
+      x-example-escaped: "\"{\\\"applicationId\\\":\\\"AP0123456789abcdefABCDEF0123456789abcdef03\\\
+        \",\\\"alias\\\":\\\"Main Office Line\\\",\\\"campaignId\\\":\\\"CX56XX4\\\
+        \"}\""
     IncomingNumberList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7430,28 +8549,88 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "incomingPhoneNumbers": [
+            {
+              "uri": "string",
+              "dateCreated": "string",
+              "dateUpdated": "string",
+              "revision": 0,
+              "capabilities": {
+                "voice": false,
+                "sms": false,
+                "tollFree": false,
+                "tenDLC": false,
+                "shortCode": false
+              },
+              "campaignId": "string",
+              "phoneNumberId": "string",
+              "accountId": "string",
+              "applicationId": "string",
+              "phoneNumber": "string",
+              "alias": "string",
+              "region": "string",
+              "country": "string",
+              "offnet": false,
+              "tfn": {
+                "campaignId": "string"
+              }
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"incomingPhoneNumbers\\\":[{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\
+        \":\\\"string\\\",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\
+        \"capabilities\\\":{\\\"voice\\\":false,\\\"sms\\\":false,\\\"tollFree\\\"\
+        :false,\\\"tenDLC\\\":false,\\\"shortCode\\\":false},\\\"campaignId\\\":\\\
+        \"string\\\",\\\"phoneNumberId\\\":\\\"string\\\",\\\"accountId\\\":\\\"string\\\
+        \",\\\"applicationId\\\":\\\"string\\\",\\\"phoneNumber\\\":\\\"string\\\"\
+        ,\\\"alias\\\":\\\"string\\\",\\\"region\\\":\\\"string\\\",\\\"country\\\"\
+        :\\\"string\\\",\\\"offnet\\\":false,\\\"tfn\\\":{\\\"campaignId\\\":\\\"\
+        string\\\"}}]}\""
     BuyIncomingNumberRequest:
       example:
-        phoneNumber: phoneNumber
-        alias: alias
-        applicationId: applicationId
+        phoneNumber: "+12025551234"
+        alias: Main Office Line
+        applicationId: AP0123456789abcdefABCDEF0123456789abcdef03
       properties:
         phoneNumber:
           description: Phone number to purchase in E.164 format (as returned in the
             list of Available Phone Numbers).
+          example: "+12025551234"
           type: string
           x-is-required: true
         alias:
           description: Description for this new incoming phone number (max 64 characters).
+          example: Main Office Line
           type: string
         applicationId:
           description: ID of the application that should handle phone calls to the
             number.
+          example: AP0123456789abcdefABCDEF0123456789abcdef03
           type: string
       required:
       - phoneNumber
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "phoneNumber": "+12025551234",
+          "alias": "Main Office Line",
+          "applicationId": "AP0123456789abcdefABCDEF0123456789abcdef03"
+        }
+      x-example-escaped: "\"{\\\"phoneNumber\\\":\\\"+12025551234\\\",\\\"alias\\\"\
+        :\\\"Main Office Line\\\",\\\"applicationId\\\":\\\"AP0123456789abcdefABCDEF0123456789abcdef03\\\
+        \"}\""
     CallResultAllOfSubresourceUris:
       description: The list of subresources for this Call. These include things like
         logs and recordings associated with the Call.
@@ -7468,6 +8647,13 @@ components:
           type: string
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "logs": "string",
+          "recordings": "string"
+        }
+      x-example-escaped: "\"{\\\"logs\\\":\\\"string\\\",\\\"recordings\\\":\\\"string\\\
+        \"}\""
     CallResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -7618,6 +8804,54 @@ components:
         applicationId: applicationId
         dateCreatedISO: 2000-01-23T04:56:07.000+00:00
         status: queued
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "dateCreatedISO": "2022-01-01T00:00:00Z",
+          "dateUpdatedISO": "2022-01-01T00:00:00Z",
+          "callId": "string",
+          "parentCallId": "string",
+          "accountId": "string",
+          "from": "string",
+          "to": "string",
+          "phoneNumberId": "string",
+          "status": "queued",
+          "startTime": "string",
+          "startTimeISO": "2022-01-01T00:00:00Z",
+          "connectTime": "string",
+          "connectTimeISO": "2022-01-01T00:00:00Z",
+          "endTime": "string",
+          "endTimeISO": "2022-01-01T00:00:00Z",
+          "duration": 0,
+          "connectDuration": 0,
+          "audioStreamDuration": 0,
+          "direction": "inbound",
+          "answeredBy": "human",
+          "callerName": "string",
+          "webRTC": false,
+          "subresourceUris": {
+            "logs": "string",
+            "recordings": "string"
+          },
+          "applicationId": "string"
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"dateCreatedISO\\\
+        \":\\\"2022-01-01T00:00:00Z\\\",\\\"dateUpdatedISO\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"callId\\\":\\\"string\\\",\\\"parentCallId\\\":\\\"string\\\",\\\"\
+        accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\",\\\"to\\\":\\\"string\\\
+        \",\\\"phoneNumberId\\\":\\\"string\\\",\\\"status\\\":\\\"queued\\\",\\\"\
+        startTime\\\":\\\"string\\\",\\\"startTimeISO\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"connectTime\\\":\\\"string\\\",\\\"connectTimeISO\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"endTime\\\":\\\"string\\\",\\\"endTimeISO\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"duration\\\":0,\\\"connectDuration\\\":0,\\\"audioStreamDuration\\\"\
+        :0,\\\"direction\\\":\\\"inbound\\\",\\\"answeredBy\\\":\\\"human\\\",\\\"\
+        callerName\\\":\\\"string\\\",\\\"webRTC\\\":false,\\\"subresourceUris\\\"\
+        :{\\\"logs\\\":\\\"string\\\",\\\"recordings\\\":\\\"string\\\"},\\\"applicationId\\\
+        \":\\\"string\\\"}\""
     UpdateCallRequest:
       example:
         status: canceled
@@ -7628,27 +8862,34 @@ components:
       - status
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "status": "canceled"
+        }
+      x-example-escaped: "\"{\\\"status\\\":\\\"canceled\\\"}\""
     MakeCallRequest:
       example:
-        sendDigits: sendDigits
-        ifMachineUrl: https://openapi-generator.tech
-        privacyMode: true
-        parentCallId: parentCallId
-        ifMachine: ifMachine
-        from: from
-        to: to
-        applicationId: applicationId
-        timeout: 0
-        callConnectUrl: https://openapi-generator.tech
+        sendDigits: 1234#
+        ifMachineUrl: https://www.myapp.com/ifMachine
+        privacyMode: false
+        parentCallId: CA0123456789abcdefABCDEF0123456789abcdef04
+        ifMachine: redirect
+        from: "+12025551234"
+        to: "+13035559876"
+        applicationId: AP0123456789abcdefABCDEF0123456789abcdef03
+        timeout: 30
+        callConnectUrl: https://www.myapp.com/callConnect
       properties:
         from:
           description: "Phone number to use as the caller ID. This can be: (a) The\
             \ To or From number provided in FreeClimb's initial request to your app\
             \ or (b) Any incoming phone number you have purchased from FreeClimb."
+          example: "+12025551234"
           type: string
           x-is-required: true
         to:
           description: Phone number to place the Call to.
+          example: "+13035559876"
           type: string
           x-is-required: true
         applicationId:
@@ -7662,6 +8903,7 @@ components:
             \ an attribute of the request or as part of the specified application,\
             \ an error will be provided. The application’s voiceUrl parameter is not\
             \ used for outbound calls."
+          example: AP0123456789abcdefABCDEF0123456789abcdef03
           type: string
         sendDigits:
           description: "String of digits to dial after connecting to the number. It\
@@ -7671,10 +8913,12 @@ components:
             \ the 4 standard pauses implied within the string. A custom pause is specified\
             \ by including a positive integer wrapped in curly braces: {n}. For more\
             \ information, see **sendDigits examples** below."
+          example: 1234#
           type: string
         ifMachine:
           description: Specifies how FreeClimb should handle this Call if an answering
             machine answers it.
+          example: redirect
           type: string
         ifMachineUrl:
           description: "This attribute specifies a URL to which FreeClimb will make\
@@ -7682,6 +8926,7 @@ components:
             \ This URL is required if the ifMachine flag is set to redirect. When\
             \ ifMachine is set to hangup, ifMachineUrl must not be included in the\
             \ request. For more information, see **ifMachineUrl example** below."
+          example: https://www.myapp.com/ifMachine
           format: uri
           type: string
           x-is-uri: true
@@ -7692,6 +8937,7 @@ components:
             ring before assuming there is no answer. Default is 30 seconds. Maximum
             allowed ring-time is determined by the target phone's provider. Note that
             most providers limit ring-time to 120 seconds.
+          example: 30
           format: int32
           type: integer
         parentCallId:
@@ -7707,16 +8953,19 @@ components:
             \ attribute is also included with the `parentCallId` in the request, this\
             \ URL will be used as a replacement of the `callConnectUrl` originally\
             \ assigned in the parent call."
+          example: CA0123456789abcdefABCDEF0123456789abcdef04
           type: string
         privacyMode:
           description: Activate privacy mode in order to obscure log data that can
             potentially expose private information.
+          example: false
           type: boolean
         callConnectUrl:
           description: "The URL that FreeClimb should use to handle this phone call.\
             \ If an applicationId or parentCallId have already been provided, this\
             \ callConnectUrl attribute will be used as a replacement of the callConnectUrl\
             \ originally assigned in the application or parent call."
+          example: https://www.myapp.com/callConnect
           format: uri
           type: string
           x-is-uri: true
@@ -7726,6 +8975,26 @@ components:
       - to
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "from": "+12025551234",
+          "to": "+13035559876",
+          "applicationId": "AP0123456789abcdefABCDEF0123456789abcdef03",
+          "sendDigits": "1234#",
+          "ifMachine": "redirect",
+          "ifMachineUrl": "https://www.myapp.com/ifMachine",
+          "timeout": 30,
+          "parentCallId": "CA0123456789abcdefABCDEF0123456789abcdef04",
+          "privacyMode": false,
+          "callConnectUrl": "https://www.myapp.com/callConnect"
+        }
+      x-example-escaped: "\"{\\\"from\\\":\\\"+12025551234\\\",\\\"to\\\":\\\"+13035559876\\\
+        \",\\\"applicationId\\\":\\\"AP0123456789abcdefABCDEF0123456789abcdef03\\\"\
+        ,\\\"sendDigits\\\":\\\"1234#\\\",\\\"ifMachine\\\":\\\"redirect\\\",\\\"\
+        ifMachineUrl\\\":\\\"https://www.myapp.com/ifMachine\\\",\\\"timeout\\\":30,\\\
+        \"parentCallId\\\":\\\"CA0123456789abcdefABCDEF0123456789abcdef04\\\",\\\"\
+        privacyMode\\\":false,\\\"callConnectUrl\\\":\\\"https://www.myapp.com/callConnect\\\
+        \"}\""
     CallList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7807,6 +9076,67 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "calls": [
+            {
+              "uri": "string",
+              "dateCreated": "string",
+              "dateUpdated": "string",
+              "revision": 0,
+              "dateCreatedISO": "2022-01-01T00:00:00Z",
+              "dateUpdatedISO": "2022-01-01T00:00:00Z",
+              "callId": "string",
+              "parentCallId": "string",
+              "accountId": "string",
+              "from": "string",
+              "to": "string",
+              "phoneNumberId": "string",
+              "status": "queued",
+              "startTime": "string",
+              "startTimeISO": "2022-01-01T00:00:00Z",
+              "connectTime": "string",
+              "connectTimeISO": "2022-01-01T00:00:00Z",
+              "endTime": "string",
+              "endTimeISO": "2022-01-01T00:00:00Z",
+              "duration": 0,
+              "connectDuration": 0,
+              "audioStreamDuration": 0,
+              "direction": "inbound",
+              "answeredBy": "human",
+              "callerName": "string",
+              "webRTC": false,
+              "subresourceUris": {
+                "logs": "string",
+                "recordings": "string"
+              },
+              "applicationId": "string"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"calls\\\":[{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"dateCreatedISO\\\
+        \":\\\"2022-01-01T00:00:00Z\\\",\\\"dateUpdatedISO\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"callId\\\":\\\"string\\\",\\\"parentCallId\\\":\\\"string\\\",\\\"\
+        accountId\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\",\\\"to\\\":\\\"string\\\
+        \",\\\"phoneNumberId\\\":\\\"string\\\",\\\"status\\\":\\\"queued\\\",\\\"\
+        startTime\\\":\\\"string\\\",\\\"startTimeISO\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"connectTime\\\":\\\"string\\\",\\\"connectTimeISO\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"endTime\\\":\\\"string\\\",\\\"endTimeISO\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"duration\\\":0,\\\"connectDuration\\\":0,\\\"audioStreamDuration\\\"\
+        :0,\\\"direction\\\":\\\"inbound\\\",\\\"answeredBy\\\":\\\"human\\\",\\\"\
+        callerName\\\":\\\"string\\\",\\\"webRTC\\\":false,\\\"subresourceUris\\\"\
+        :{\\\"logs\\\":\\\"string\\\",\\\"recordings\\\":\\\"string\\\"},\\\"applicationId\\\
+        \":\\\"string\\\"}]}\""
     RecordingResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -7844,6 +9174,22 @@ components:
         uri: uri
         dateUpdated: dateUpdated
         revision: 7
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "recordingId": "string",
+          "accountId": "string",
+          "callId": "string",
+          "durationSec": 0,
+          "conferenceId": "string"
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"recordingId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"callId\\\":\\\"string\\\
+        \",\\\"durationSec\\\":0,\\\"conferenceId\\\":\\\"string\\\"}\""
     RecordingList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7883,6 +9229,35 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "recordings": [
+            {
+              "uri": "string",
+              "dateCreated": "string",
+              "dateUpdated": "string",
+              "revision": 0,
+              "recordingId": "string",
+              "accountId": "string",
+              "callId": "string",
+              "durationSec": 0,
+              "conferenceId": "string"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"recordings\\\":[{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"\
+        string\\\",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"recordingId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"callId\\\":\\\"string\\\
+        \",\\\"durationSec\\\":0,\\\"conferenceId\\\":\\\"string\\\"}]}\""
     LogResult:
       example:
         callId: callId
@@ -7926,6 +9301,18 @@ components:
           x-is-object: true
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "timestamp": 0,
+          "level": "info",
+          "requestId": "string",
+          "accountId": "string",
+          "callId": "string",
+          "message": "string"
+        }
+      x-example-escaped: "\"{\\\"timestamp\\\":0,\\\"level\\\":\\\"info\\\",\\\"requestId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"callId\\\":\\\"string\\\
+        \",\\\"message\\\":\\\"string\\\"}\""
     LogList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -7961,6 +9348,31 @@ components:
           message: message
           timestamp: 7
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "logs": [
+            {
+              "timestamp": 0,
+              "level": "info",
+              "requestId": "string",
+              "accountId": "string",
+              "callId": "string",
+              "message": "string"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"logs\\\":[{\\\"timestamp\\\":0,\\\"level\\\":\\\"info\\\",\\\"requestId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"callId\\\":\\\"string\\\
+        \",\\\"message\\\":\\\"string\\\"}]}\""
     ConferenceResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -8028,6 +9440,27 @@ components:
         subresourceUris: null
         alias: alias
         status: empty
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "conferenceId": "string",
+          "accountId": "string",
+          "alias": "string",
+          "record": false,
+          "status": "empty",
+          "waitUrl": "https://www.example.com",
+          "actionUrl": "https://www.example.com",
+          "statusCallbackUrl": "https://www.example.com"
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"conferenceId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"alias\\\":\\\"string\\\
+        \",\\\"record\\\":false,\\\"status\\\":\\\"empty\\\",\\\"waitUrl\\\":\\\"\
+        https://www.example.com\\\",\\\"actionUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"statusCallbackUrl\\\":\\\"https://www.example.com\\\"}\""
     MessagesList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -8092,6 +9525,54 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "messages": [
+            {
+              "uri": "string",
+              "dateCreated": "string",
+              "dateUpdated": "string",
+              "revision": 0,
+              "accountId": "string",
+              "messageId": "string",
+              "status": "new",
+              "from": "string",
+              "to": "string",
+              "text": "string",
+              "direction": "string",
+              "notificationUrl": "https://www.example.com",
+              "brandId": "string",
+              "campaignId": "string",
+              "segmentCount": 0,
+              "mediaUrls": [
+                "https://www.example.com"
+              ],
+              "tfn": {
+                "campaignId": "string"
+              },
+              "phoneNumberId": "string",
+              "applicationId": "string"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"messages\\\":[{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"\
+        string\\\",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"accountId\\\
+        \":\\\"string\\\",\\\"messageId\\\":\\\"string\\\",\\\"status\\\":\\\"new\\\
+        \",\\\"from\\\":\\\"string\\\",\\\"to\\\":\\\"string\\\",\\\"text\\\":\\\"\
+        string\\\",\\\"direction\\\":\\\"string\\\",\\\"notificationUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"brandId\\\":\\\"string\\\",\\\"campaignId\\\":\\\"string\\\",\\\"segmentCount\\\
+        \":0,\\\"mediaUrls\\\":[\\\"https://www.example.com\\\"],\\\"tfn\\\":{\\\"\
+        campaignId\\\":\\\"string\\\"},\\\"phoneNumberId\\\":\\\"string\\\",\\\"applicationId\\\
+        \":\\\"string\\\"}]}\""
     MessageRequest:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -8099,22 +9580,26 @@ components:
           from:
             description: Phone number to use as the sender. This must be an incoming
               phone number that you have purchased from FreeClimb.
+            example: "+12025551234"
             type: string
             x-is-required: true
           to:
             description: Phone number to receive the message. Must be within FreeClimb's
               service area.
+            example: "+13035559876"
             type: string
             x-is-required: true
           text:
             description: "Text contained in the message (maximum 160 characters).\
               \   **Note:** For text, only ASCII characters are supported."
+            example: Hello from FreeClimb!
             type: string
             x-is-required: true
           notificationUrl:
             description: "When the Message changes status, this URL is invoked using\
               \ HTTP POST with the messageStatus parameters.  **Note:** This is a\
               \ notification only; any PerCL returned is ignored."
+            example: https://www.myapp.com/messageStatus
             format: uri
             type: string
             x-is-uri: true
@@ -8123,6 +9608,8 @@ components:
             description: an array of HTTP URLs which are to be used as attachments
               to the message. This will force the message into being an MMS message
               and must be done using a from number which is MMS capabile.
+            example:
+            - https://www.myapp.com/image.jpg
             items:
               format: uri
               type: string
@@ -8135,23 +9622,42 @@ components:
         - to
         type: object
       example:
-        notificationUrl: https://openapi-generator.tech
+        notificationUrl: https://www.myapp.com/messageStatus
         dateCreated: dateCreated
-        from: from
-        to: to
-        text: text
+        from: "+12025551234"
+        to: "+13035559876"
+        text: Hello from FreeClimb!
         uri: uri
         mediaUrls:
-        - https://openapi-generator.tech
-        - https://openapi-generator.tech
+        - https://www.myapp.com/image.jpg
         dateUpdated: dateUpdated
         revision: 0
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "from": "+12025551234",
+          "to": "+13035559876",
+          "text": "Hello from FreeClimb!",
+          "notificationUrl": "https://www.myapp.com/messageStatus",
+          "mediaUrls": [
+            "https://www.myapp.com/image.jpg"
+          ]
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"from\\\":\\\"\
+        +12025551234\\\",\\\"to\\\":\\\"+13035559876\\\",\\\"text\\\":\\\"Hello from\
+        \ FreeClimb!\\\",\\\"notificationUrl\\\":\\\"https://www.myapp.com/messageStatus\\\
+        \",\\\"mediaUrls\\\":[\\\"https://www.myapp.com/image.jpg\\\"]}\""
     CompletionRequest:
       example:
-        query: query
+        query: What are your business hours?
       properties:
         query:
           description: Question to ask the Knowledge Base
+          example: What are your business hours?
           maxLength: 2000
           type: string
           x-is-required: true
@@ -8159,6 +9665,11 @@ components:
       - query
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "query": "What are your business hours?"
+        }
+      x-example-escaped: "\"{\\\"query\\\":\\\"What are your business hours?\\\"}\""
     CompletionResult:
       example:
         response: response
@@ -8175,6 +9686,13 @@ components:
       - status
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "response": "string",
+          "status": "success"
+        }
+      x-example-escaped: "\"{\\\"response\\\":\\\"string\\\",\\\"status\\\":\\\"success\\\
+        \"}\""
     ConferenceList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -8224,6 +9742,40 @@ components:
           alias: alias
           status: empty
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "conferences": [
+            {
+              "uri": "string",
+              "dateCreated": "string",
+              "dateUpdated": "string",
+              "revision": 0,
+              "conferenceId": "string",
+              "accountId": "string",
+              "alias": "string",
+              "record": false,
+              "status": "empty",
+              "waitUrl": "https://www.example.com",
+              "actionUrl": "https://www.example.com",
+              "statusCallbackUrl": "https://www.example.com"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"conferences\\\":[{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\
+        \"string\\\",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"conferenceId\\\
+        \":\\\"string\\\",\\\"accountId\\\":\\\"string\\\",\\\"alias\\\":\\\"string\\\
+        \",\\\"record\\\":false,\\\"status\\\":\\\"empty\\\",\\\"waitUrl\\\":\\\"\
+        https://www.example.com\\\",\\\"actionUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"statusCallbackUrl\\\":\\\"https://www.example.com\\\"}]}\""
     MessageResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -8319,6 +9871,41 @@ components:
         tfn: ""
         status: new
         direction: direction
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "accountId": "string",
+          "messageId": "string",
+          "status": "new",
+          "from": "string",
+          "to": "string",
+          "text": "string",
+          "direction": "string",
+          "notificationUrl": "https://www.example.com",
+          "brandId": "string",
+          "campaignId": "string",
+          "segmentCount": 0,
+          "mediaUrls": [
+            "https://www.example.com"
+          ],
+          "tfn": {
+            "campaignId": "string"
+          },
+          "phoneNumberId": "string",
+          "applicationId": "string"
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"accountId\\\"\
+        :\\\"string\\\",\\\"messageId\\\":\\\"string\\\",\\\"status\\\":\\\"new\\\"\
+        ,\\\"from\\\":\\\"string\\\",\\\"to\\\":\\\"string\\\",\\\"text\\\":\\\"string\\\
+        \",\\\"direction\\\":\\\"string\\\",\\\"notificationUrl\\\":\\\"https://www.example.com\\\
+        \",\\\"brandId\\\":\\\"string\\\",\\\"campaignId\\\":\\\"string\\\",\\\"segmentCount\\\
+        \":0,\\\"mediaUrls\\\":[\\\"https://www.example.com\\\"],\\\"tfn\\\":{\\\"\
+        campaignId\\\":\\\"string\\\"},\\\"phoneNumberId\\\":\\\"string\\\",\\\"applicationId\\\
+        \":\\\"string\\\"}\""
     TFNCampaign:
       properties:
         accountId:
@@ -8331,6 +9918,8 @@ components:
           example: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
           pattern: "cmptfn_[a-fA-F0-9]{40}"
           type: string
+          x-example: '"cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a"'
+          x-example-escaped: '"\"cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a\""'
         useCase:
           type: string
           x-is-required: true
@@ -8363,32 +9952,54 @@ components:
       - useCase
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "accountId": "string",
+          "campaignId": "cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a",
+          "useCase": "string",
+          "registrationStatus": "UNREGISTERED",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "dateCreatedISO": "string",
+          "dateUpdatedISO": "string",
+          "revision": 0
+        }
+      x-example-escaped: "\"{\\\"accountId\\\":\\\"string\\\",\\\"campaignId\\\":\\\
+        \"cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a\\\",\\\"useCase\\\":\\\"\
+        string\\\",\\\"registrationStatus\\\":\\\"UNREGISTERED\\\",\\\"dateCreated\\\
+        \":\\\"string\\\",\\\"dateUpdated\\\":\\\"string\\\",\\\"dateCreatedISO\\\"\
+        :\\\"string\\\",\\\"dateUpdatedISO\\\":\\\"string\\\",\\\"revision\\\":0}\""
     TFNCampaignId:
       description: TFNCampaignId
       example: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a
       pattern: "cmptfn_[a-fA-F0-9]{40}"
       type: string
+      x-example: '"cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a"'
+      x-example-escaped: '"\"cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a\""'
     CreateConferenceRequest:
       example:
         playBeep: always
-        waitUrl: https://openapi-generator.tech
-        record: true
-        alias: alias
-        statusCallbackUrl: https://openapi-generator.tech
+        waitUrl: https://www.myapp.com/waitMusic
+        record: false
+        alias: Customer Conference
+        statusCallbackUrl: https://www.myapp.com/conferenceStatus
       properties:
         alias:
           description: A description for this Conference. Maximum 64 characters.
+          example: Customer Conference
           type: string
         playBeep:
           $ref: '#/components/schemas/PlayBeep'
         record:
           description: Setting to `true` records the entire Conference.
+          example: false
           type: boolean
         waitUrl:
           description: "If specified, a URL for the audio file that provides custom\
             \ hold music for the Conference when it is in the populated state. Otherwise,\
             \ FreeClimb uses a system default audio file. This is always fetched using\
             \ HTTP GET and is fetched just once &mdash; when the Conference is created."
+          example: https://www.myapp.com/waitMusic
           format: uri
           type: string
           x-is-uri: true
@@ -8396,6 +10007,7 @@ components:
         statusCallbackUrl:
           description: "This URL is invoked when the status of the Conference changes.\
             \ For more information, see **statusCallbackUrl** (below)."
+          example: https://www.myapp.com/conferenceStatus
           format: uri
           type: string
           x-is-uri: true
@@ -8405,14 +10017,27 @@ components:
       - statusCallbackUrl
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "alias": "Customer Conference",
+          "playBeep": "always",
+          "record": false,
+          "waitUrl": "https://www.myapp.com/waitMusic",
+          "statusCallbackUrl": "https://www.myapp.com/conferenceStatus"
+        }
+      x-example-escaped: "\"{\\\"alias\\\":\\\"Customer Conference\\\",\\\"playBeep\\\
+        \":\\\"always\\\",\\\"record\\\":false,\\\"waitUrl\\\":\\\"https://www.myapp.com/waitMusic\\\
+        \",\\\"statusCallbackUrl\\\":\\\"https://www.myapp.com/conferenceStatus\\\"\
+        }\""
     UpdateConferenceRequest:
       example:
         playBeep: always
-        alias: alias
+        alias: Customer Conference
         status: empty
       properties:
         alias:
           description: Description for this conference. Maximum 64 characters.
+          example: Customer Conference
           type: string
         playBeep:
           $ref: '#/components/schemas/PlayBeep'
@@ -8420,6 +10045,14 @@ components:
           $ref: '#/components/schemas/UpdateConferenceRequestStatus'
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "alias": "Customer Conference",
+          "playBeep": "always",
+          "status": "empty"
+        }
+      x-example-escaped: "\"{\\\"alias\\\":\\\"Customer Conference\\\",\\\"playBeep\\\
+        \":\\\"always\\\",\\\"status\\\":\\\"empty\\\"}\""
     ConferenceParticipantResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -8469,6 +10102,25 @@ components:
         dtmfPassThrough: true
         dateUpdated: dateUpdated
         revision: 0
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "accountId": "string",
+          "conferenceId": "string",
+          "callId": "string",
+          "talk": false,
+          "listen": false,
+          "dtmfPassThrough": false,
+          "startConfOnEnter": false
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"accountId\\\"\
+        :\\\"string\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"callId\\\":\\\"string\\\
+        \",\\\"talk\\\":false,\\\"listen\\\":false,\\\"dtmfPassThrough\\\":false,\\\
+        \"startConfOnEnter\\\":false}\""
     UpdateConferenceParticipantRequest:
       example:
         talk: true
@@ -8478,19 +10130,30 @@ components:
         talk:
           description: (Optional) Default is `true`. Setting to `false` mutes the
             Participant. FreeClimb returns an error and ignores any other value.
+          example: true
           type: boolean
         listen:
           description: (Optional) Default is `true`. Setting to `false` silences the
             Conference for this Participant. FreeClimb returns an error and ignores
             any other value.
+          example: true
           type: boolean
         dtmfPassThrough:
           description: (Optional) Default is `true`. Setting to `false` mutes dtmf
             audio for this Participant. FreeClimb returns an error and ignores any
             other value.
+          example: true
           type: boolean
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "talk": true,
+          "listen": true,
+          "dtmfPassThrough": true
+        }
+      x-example-escaped: "\"{\\\"talk\\\":true,\\\"listen\\\":true,\\\"dtmfPassThrough\\\
+        \":true}\""
     ConferenceParticipantList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -8534,6 +10197,38 @@ components:
           dateUpdated: dateUpdated
           revision: 0
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "participants": [
+            {
+              "uri": "string",
+              "dateCreated": "string",
+              "dateUpdated": "string",
+              "revision": 0,
+              "accountId": "string",
+              "conferenceId": "string",
+              "callId": "string",
+              "talk": false,
+              "listen": false,
+              "dtmfPassThrough": false,
+              "startConfOnEnter": false
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"participants\\\":[{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\
+        \"string\\\",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"accountId\\\
+        \":\\\"string\\\",\\\"conferenceId\\\":\\\"string\\\",\\\"callId\\\":\\\"\
+        string\\\",\\\"talk\\\":false,\\\"listen\\\":false,\\\"dtmfPassThrough\\\"\
+        :false,\\\"startConfOnEnter\\\":false}]}\""
     QueueResult:
       allOf:
       - $ref: '#/components/schemas/MutableResourceModel'
@@ -8584,13 +10279,33 @@ components:
         dateUpdated: dateUpdated
         revision: 0
         currentSize: 1
+      x-example: |-
+        {
+          "uri": "string",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0,
+          "accountId": "string",
+          "queueId": "string",
+          "alias": "string",
+          "maxSize": 0,
+          "currentSize": 0,
+          "averageQueueRemovalTime": 0,
+          "averageWaitTime": 0
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"accountId\\\"\
+        :\\\"string\\\",\\\"queueId\\\":\\\"string\\\",\\\"alias\\\":\\\"string\\\"\
+        ,\\\"maxSize\\\":0,\\\"currentSize\\\":0,\\\"averageQueueRemovalTime\\\":0,\\\
+        \"averageWaitTime\\\":0}\""
     QueueRequest:
       example:
-        alias: alias
-        maxSize: 0
+        alias: Support Queue
+        maxSize: 100
       properties:
         alias:
           description: Description for this Queue. Max length is 64 characters.
+          example: Support Queue
           type: string
         maxSize:
           default: 100
@@ -8598,10 +10313,17 @@ components:
             Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the
             Queue to reject incoming requests until it shrinks below the new value
             of maxSize.
+          example: 100
           format: int32
           type: integer
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "alias": "Support Queue",
+          "maxSize": 100
+        }
+      x-example-escaped: "\"{\\\"alias\\\":\\\"Support Queue\\\",\\\"maxSize\\\":100}\""
     QueueList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -8647,6 +10369,38 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "queues": [
+            {
+              "uri": "string",
+              "dateCreated": "string",
+              "dateUpdated": "string",
+              "revision": 0,
+              "accountId": "string",
+              "queueId": "string",
+              "alias": "string",
+              "maxSize": 0,
+              "currentSize": 0,
+              "averageQueueRemovalTime": 0,
+              "averageWaitTime": 0
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"queues\\\":[{\\\"uri\\\":\\\"string\\\",\\\"dateCreated\\\":\\\"string\\\
+        \",\\\"dateUpdated\\\":\\\"string\\\",\\\"revision\\\":0,\\\"accountId\\\"\
+        :\\\"string\\\",\\\"queueId\\\":\\\"string\\\",\\\"alias\\\":\\\"string\\\"\
+        ,\\\"maxSize\\\":0,\\\"currentSize\\\":0,\\\"averageQueueRemovalTime\\\":0,\\\
+        \"averageWaitTime\\\":0}]}\""
     QueueMember:
       example:
         callId: callId
@@ -8679,6 +10433,17 @@ components:
           type: string
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "uri": "string",
+          "callId": "string",
+          "waitTime": 0,
+          "position": 0,
+          "dateEnqueued": "string"
+        }
+      x-example-escaped: "\"{\\\"uri\\\":\\\"string\\\",\\\"callId\\\":\\\"string\\\
+        \",\\\"waitTime\\\":0,\\\"position\\\":0,\\\"dateEnqueued\\\":\\\"string\\\
+        \"}\""
     QueueMemberList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -8710,19 +10475,50 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "queueMembers": [
+            {
+              "uri": "string",
+              "callId": "string",
+              "waitTime": 0,
+              "position": 0,
+              "dateEnqueued": "string"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"queueMembers\\\":[{\\\"uri\\\":\\\"string\\\",\\\"callId\\\":\\\"string\\\
+        \",\\\"waitTime\\\":0,\\\"position\\\":0,\\\"dateEnqueued\\\":\\\"string\\\
+        \"}]}\""
     FilterLogsRequest:
       example:
-        pql: pql
+        pql: 2020-06-22T19:42:53.376Z < timestamp < 2020-06-23T19:42:53.376Z
       properties:
         pql:
           description: The filter query for retrieving logs. See **Performance Query
             Language** below.
+          example: 2020-06-22T19:42:53.376Z < timestamp < 2020-06-23T19:42:53.376Z
           type: string
           x-is-required: true
       required:
       - pql
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "pql": "2020-06-22T19:42:53.376Z < timestamp < 2020-06-23T19:42:53.376Z"
+        }
+      x-example-escaped: "\"{\\\"pql\\\":\\\"2020-06-22T19:42:53.376Z < timestamp\
+        \ < 2020-06-23T19:42:53.376Z\\\"}\""
     SMSTenDLCCampaignsListResult:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -8740,7 +10536,7 @@ components:
         nextPageUri: nextPageUri
         campaigns:
         - campaignId: CX56XX4
-          accountId: ACe39970fb7c31c747c67148900b4d9da60a41e532
+          accountId: AC0123456789abcdefABCDEF0123456789abcdef05
           cspId: SX56XX4
           brandId: BX56XX4
           usecase: 2FA
@@ -8772,7 +10568,7 @@ components:
           billedDate: 2022-07-05T00:00:00Z
           nextRenewalOrExpirationDate: null
         - campaignId: CX56XX4
-          accountId: ACe39970fb7c31c747c67148900b4d9da60a41e532
+          accountId: AC0123456789abcdefABCDEF0123456789abcdef05
           cspId: SX56XX4
           brandId: BX56XX4
           usecase: 2FA
@@ -8808,10 +10604,71 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "campaigns": [
+            {
+              "campaignId": "CX56XX4",
+              "accountId": "AC0123456789abcdefABCDEF0123456789abcdef05",
+              "cspId": "SX56XX4",
+              "brandId": "BX56XX4",
+              "usecase": "2FA",
+              "description": "mock campaign.",
+              "subUsecases": [],
+              "resellerId": null,
+              "sample1": "Your verification code from FreeClimb is 000000. It expires in 10 minutes.",
+              "sample2": null,
+              "sample3": null,
+              "sample4": null,
+              "sample5": null,
+              "messageFlow": null,
+              "helpMessage": null,
+              "referenceId": null,
+              "status": "EXPIRED",
+              "mock": true,
+              "autoRenewal": false,
+              "embeddedLink": false,
+              "embeddedPhone": false,
+              "affiliateMarketing": false,
+              "numberPool": false,
+              "ageGated": false,
+              "directLending": false,
+              "subscriberOptin": true,
+              "subscriberOptout": false,
+              "subscriberHelp": true,
+              "createDate": "2022-07-05T15:17:05Z",
+              "billedDate": "2022-07-05T00:00:00Z",
+              "nextRenewalOrExpirationDate": null
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"campaigns\\\":[{\\\"campaignId\\\":\\\"CX56XX4\\\",\\\"accountId\\\"\
+        :\\\"AC0123456789abcdefABCDEF0123456789abcdef05\\\",\\\"cspId\\\":\\\"SX56XX4\\\
+        \",\\\"brandId\\\":\\\"BX56XX4\\\",\\\"usecase\\\":\\\"2FA\\\",\\\"description\\\
+        \":\\\"mock campaign.\\\",\\\"subUsecases\\\":[],\\\"resellerId\\\":null,\\\
+        \"sample1\\\":\\\"Your verification code from FreeClimb is 000000. It expires\
+        \ in 10 minutes.\\\",\\\"sample2\\\":null,\\\"sample3\\\":null,\\\"sample4\\\
+        \":null,\\\"sample5\\\":null,\\\"messageFlow\\\":null,\\\"helpMessage\\\"\
+        :null,\\\"referenceId\\\":null,\\\"status\\\":\\\"EXPIRED\\\",\\\"mock\\\"\
+        :true,\\\"autoRenewal\\\":false,\\\"embeddedLink\\\":false,\\\"embeddedPhone\\\
+        \":false,\\\"affiliateMarketing\\\":false,\\\"numberPool\\\":false,\\\"ageGated\\\
+        \":false,\\\"directLending\\\":false,\\\"subscriberOptin\\\":true,\\\"subscriberOptout\\\
+        \":false,\\\"subscriberHelp\\\":true,\\\"createDate\\\":\\\"2022-07-05T15:17:05Z\\\
+        \",\\\"billedDate\\\":\\\"2022-07-05T00:00:00Z\\\",\\\"nextRenewalOrExpirationDate\\\
+        \":null}]}\""
     SMSTenDLCCampaign:
       example:
         campaignId: CX56XX4
-        accountId: ACe39970fb7c31c747c67148900b4d9da60a41e532
+        accountId: AC0123456789abcdefABCDEF0123456789abcdef05
         cspId: SX56XX4
         brandId: BX56XX4
         usecase: 2FA
@@ -9035,6 +10892,54 @@ components:
       - usecase
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "campaignId": "CX56XX4",
+          "accountId": "AC0123456789abcdefABCDEF0123456789abcdef05",
+          "cspId": "SX56XX4",
+          "brandId": "BX56XX4",
+          "usecase": "2FA",
+          "description": "mock campaign.",
+          "subUsecases": [],
+          "resellerId": null,
+          "sample1": "Your verification code from FreeClimb is 000000. It expires in 10 minutes.",
+          "sample2": null,
+          "sample3": null,
+          "sample4": null,
+          "sample5": null,
+          "messageFlow": null,
+          "helpMessage": null,
+          "referenceId": null,
+          "status": "EXPIRED",
+          "mock": true,
+          "autoRenewal": false,
+          "embeddedLink": false,
+          "embeddedPhone": false,
+          "affiliateMarketing": false,
+          "numberPool": false,
+          "ageGated": false,
+          "directLending": false,
+          "subscriberOptin": true,
+          "subscriberOptout": false,
+          "subscriberHelp": true,
+          "createDate": "2022-07-05T15:17:05Z",
+          "billedDate": "2022-07-05T00:00:00Z",
+          "nextRenewalOrExpirationDate": null
+        }
+      x-example-escaped: "\"{\\\"campaignId\\\":\\\"CX56XX4\\\",\\\"accountId\\\"\
+        :\\\"AC0123456789abcdefABCDEF0123456789abcdef05\\\",\\\"cspId\\\":\\\"SX56XX4\\\
+        \",\\\"brandId\\\":\\\"BX56XX4\\\",\\\"usecase\\\":\\\"2FA\\\",\\\"description\\\
+        \":\\\"mock campaign.\\\",\\\"subUsecases\\\":[],\\\"resellerId\\\":null,\\\
+        \"sample1\\\":\\\"Your verification code from FreeClimb is 000000. It expires\
+        \ in 10 minutes.\\\",\\\"sample2\\\":null,\\\"sample3\\\":null,\\\"sample4\\\
+        \":null,\\\"sample5\\\":null,\\\"messageFlow\\\":null,\\\"helpMessage\\\"\
+        :null,\\\"referenceId\\\":null,\\\"status\\\":\\\"EXPIRED\\\",\\\"mock\\\"\
+        :true,\\\"autoRenewal\\\":false,\\\"embeddedLink\\\":false,\\\"embeddedPhone\\\
+        \":false,\\\"affiliateMarketing\\\":false,\\\"numberPool\\\":false,\\\"ageGated\\\
+        \":false,\\\"directLending\\\":false,\\\"subscriberOptin\\\":true,\\\"subscriberOptout\\\
+        \":false,\\\"subscriberHelp\\\":true,\\\"createDate\\\":\\\"2022-07-05T15:17:05Z\\\
+        \",\\\"billedDate\\\":\\\"2022-07-05T00:00:00Z\\\",\\\"nextRenewalOrExpirationDate\\\
+        \":null}\""
     SMSTenDLCPartnerCampaignsListResult:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -9056,7 +10961,7 @@ components:
         page: 5
         partnerCampaigns:
         - campaignId: CX56XX4
-          accountId: ACe39970fb7c31c747c67148900b4d9da60a41e532
+          accountId: AC0123456789abcdefABCDEF0123456789abcdef05
           brandId: BX56XX4
           usecase: 2FA
           description: mock campaign.
@@ -9096,7 +11001,7 @@ components:
             website: https://www.freeclimb.com/
             evpVettingScore: 22
         - campaignId: CX56XX4
-          accountId: ACe39970fb7c31c747c67148900b4d9da60a41e532
+          accountId: AC0123456789abcdefABCDEF0123456789abcdef05
           brandId: BX56XX4
           usecase: 2FA
           description: mock campaign.
@@ -9136,10 +11041,84 @@ components:
             website: https://www.freeclimb.com/
             evpVettingScore: 22
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "partnerCampaigns": [
+            {
+              "campaignId": "CX56XX4",
+              "accountId": "AC0123456789abcdefABCDEF0123456789abcdef05",
+              "brandId": "BX56XX4",
+              "usecase": "2FA",
+              "description": "mock campaign.",
+              "sample1": "Your verification code from FreeClimb is 000000. It expires in 10 minutes.",
+              "sample2": null,
+              "sample3": null,
+              "sample4": null,
+              "sample5": null,
+              "messageFlow": null,
+              "helpMessage": null,
+              "status": "EXPIRED",
+              "embeddedLink": false,
+              "embeddedPhone": false,
+              "affiliateMarketing": false,
+              "numberPool": false,
+              "ageGated": false,
+              "directLending": false,
+              "subscriberOptin": true,
+              "subscriberOptout": false,
+              "subscriberHelp": true,
+              "createDate": "2022-07-05T15:17:05Z",
+              "optinKeywords": "START",
+              "optoutKeywords": "STOP",
+              "helpKeywords": "HELP",
+              "optinMessage": "",
+              "optoutMessage": "",
+              "brand": {
+                "optionalAttributes": {},
+                "brandId": "BVCEBIJ",
+                "firstName": "",
+                "lastName": "",
+                "displayName": "FreeClimb LLC(mock)",
+                "companyName": "FreeClimb LLC",
+                "phone": "+18475722071",
+                "email": "bmabry@vailsys.com",
+                "website": "https://www.freeclimb.com/",
+                "evpVettingScore": 22
+              }
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"partnerCampaigns\\\":[{\\\"campaignId\\\":\\\"CX56XX4\\\",\\\"accountId\\\
+        \":\\\"AC0123456789abcdefABCDEF0123456789abcdef05\\\",\\\"brandId\\\":\\\"\
+        BX56XX4\\\",\\\"usecase\\\":\\\"2FA\\\",\\\"description\\\":\\\"mock campaign.\\\
+        \",\\\"sample1\\\":\\\"Your verification code from FreeClimb is 000000. It\
+        \ expires in 10 minutes.\\\",\\\"sample2\\\":null,\\\"sample3\\\":null,\\\"\
+        sample4\\\":null,\\\"sample5\\\":null,\\\"messageFlow\\\":null,\\\"helpMessage\\\
+        \":null,\\\"status\\\":\\\"EXPIRED\\\",\\\"embeddedLink\\\":false,\\\"embeddedPhone\\\
+        \":false,\\\"affiliateMarketing\\\":false,\\\"numberPool\\\":false,\\\"ageGated\\\
+        \":false,\\\"directLending\\\":false,\\\"subscriberOptin\\\":true,\\\"subscriberOptout\\\
+        \":false,\\\"subscriberHelp\\\":true,\\\"createDate\\\":\\\"2022-07-05T15:17:05Z\\\
+        \",\\\"optinKeywords\\\":\\\"START\\\",\\\"optoutKeywords\\\":\\\"STOP\\\"\
+        ,\\\"helpKeywords\\\":\\\"HELP\\\",\\\"optinMessage\\\":\\\"\\\",\\\"optoutMessage\\\
+        \":\\\"\\\",\\\"brand\\\":{\\\"optionalAttributes\\\":{},\\\"brandId\\\":\\\
+        \"BVCEBIJ\\\",\\\"firstName\\\":\\\"\\\",\\\"lastName\\\":\\\"\\\",\\\"displayName\\\
+        \":\\\"FreeClimb LLC(mock)\\\",\\\"companyName\\\":\\\"FreeClimb LLC\\\",\\\
+        \"phone\\\":\\\"+18475722071\\\",\\\"email\\\":\\\"bmabry@vailsys.com\\\"\
+        ,\\\"website\\\":\\\"https://www.freeclimb.com/\\\",\\\"evpVettingScore\\\"\
+        :22}}]}\""
     SMSTenDLCPartnerCampaign:
       example:
         campaignId: CX56XX4
-        accountId: ACe39970fb7c31c747c67148900b4d9da60a41e532
+        accountId: AC0123456789abcdefABCDEF0123456789abcdef05
         brandId: BX56XX4
         usecase: 2FA
         description: mock campaign.
@@ -9319,6 +11298,67 @@ components:
       - usecase
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "campaignId": "CX56XX4",
+          "accountId": "AC0123456789abcdefABCDEF0123456789abcdef05",
+          "brandId": "BX56XX4",
+          "usecase": "2FA",
+          "description": "mock campaign.",
+          "sample1": "Your verification code from FreeClimb is 000000. It expires in 10 minutes.",
+          "sample2": null,
+          "sample3": null,
+          "sample4": null,
+          "sample5": null,
+          "messageFlow": null,
+          "helpMessage": null,
+          "status": "EXPIRED",
+          "embeddedLink": false,
+          "embeddedPhone": false,
+          "affiliateMarketing": false,
+          "numberPool": false,
+          "ageGated": false,
+          "directLending": false,
+          "subscriberOptin": true,
+          "subscriberOptout": false,
+          "subscriberHelp": true,
+          "createDate": "2022-07-05T15:17:05Z",
+          "optinKeywords": "START",
+          "optoutKeywords": "STOP",
+          "helpKeywords": "HELP",
+          "optinMessage": "",
+          "optoutMessage": "",
+          "brand": {
+            "optionalAttributes": {},
+            "brandId": "BVCEBIJ",
+            "firstName": "",
+            "lastName": "",
+            "displayName": "FreeClimb LLC(mock)",
+            "companyName": "FreeClimb LLC",
+            "phone": "+18475722071",
+            "email": "bmabry@vailsys.com",
+            "website": "https://www.freeclimb.com/",
+            "evpVettingScore": 22
+          }
+        }
+      x-example-escaped: "\"{\\\"campaignId\\\":\\\"CX56XX4\\\",\\\"accountId\\\"\
+        :\\\"AC0123456789abcdefABCDEF0123456789abcdef05\\\",\\\"brandId\\\":\\\"BX56XX4\\\
+        \",\\\"usecase\\\":\\\"2FA\\\",\\\"description\\\":\\\"mock campaign.\\\"\
+        ,\\\"sample1\\\":\\\"Your verification code from FreeClimb is 000000. It expires\
+        \ in 10 minutes.\\\",\\\"sample2\\\":null,\\\"sample3\\\":null,\\\"sample4\\\
+        \":null,\\\"sample5\\\":null,\\\"messageFlow\\\":null,\\\"helpMessage\\\"\
+        :null,\\\"status\\\":\\\"EXPIRED\\\",\\\"embeddedLink\\\":false,\\\"embeddedPhone\\\
+        \":false,\\\"affiliateMarketing\\\":false,\\\"numberPool\\\":false,\\\"ageGated\\\
+        \":false,\\\"directLending\\\":false,\\\"subscriberOptin\\\":true,\\\"subscriberOptout\\\
+        \":false,\\\"subscriberHelp\\\":true,\\\"createDate\\\":\\\"2022-07-05T15:17:05Z\\\
+        \",\\\"optinKeywords\\\":\\\"START\\\",\\\"optoutKeywords\\\":\\\"STOP\\\"\
+        ,\\\"helpKeywords\\\":\\\"HELP\\\",\\\"optinMessage\\\":\\\"\\\",\\\"optoutMessage\\\
+        \":\\\"\\\",\\\"brand\\\":{\\\"optionalAttributes\\\":{},\\\"brandId\\\":\\\
+        \"BVCEBIJ\\\",\\\"firstName\\\":\\\"\\\",\\\"lastName\\\":\\\"\\\",\\\"displayName\\\
+        \":\\\"FreeClimb LLC(mock)\\\",\\\"companyName\\\":\\\"FreeClimb LLC\\\",\\\
+        \"phone\\\":\\\"+18475722071\\\",\\\"email\\\":\\\"bmabry@vailsys.com\\\"\
+        ,\\\"website\\\":\\\"https://www.freeclimb.com/\\\",\\\"evpVettingScore\\\"\
+        :22}}\""
     SMSTenDLCPartnerCampaignBrand:
       properties:
         accountId:
@@ -9381,6 +11421,24 @@ components:
       - phone
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "accountId": "string",
+          "brandId": "string",
+          "firstName": "John",
+          "lastName": "Doe",
+          "displayName": "ABC Mobile",
+          "companyName": "ABC Inc.",
+          "phone": "+12024567890",
+          "email": "string",
+          "website": "http://www.abcmobile.com",
+          "evpVettingScore": 0
+        }
+      x-example-escaped: "\"{\\\"accountId\\\":\\\"string\\\",\\\"brandId\\\":\\\"\
+        string\\\",\\\"firstName\\\":\\\"John\\\",\\\"lastName\\\":\\\"Doe\\\",\\\"\
+        displayName\\\":\\\"ABC Mobile\\\",\\\"companyName\\\":\\\"ABC Inc.\\\",\\\
+        \"phone\\\":\\\"+12024567890\\\",\\\"email\\\":\\\"string\\\",\\\"website\\\
+        \":\\\"http://www.abcmobile.com\\\",\\\"evpVettingScore\\\":0}\""
     SMSTenDLCBrandsListResult:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -9398,7 +11456,7 @@ components:
         brands:
         - mock: true
           optionalAttributes: {}
-          accountId: AC1234512345123451234512345123451234512345
+          accountId: AC0123456789abcdefABCDEF0123456789abcdef06
           brandId: BVCEBIJ
           cspId: SKGC6G0
           firstName: ""
@@ -9427,7 +11485,7 @@ components:
           createDate: 2022-07-01T20:29:23Z
         - mock: true
           optionalAttributes: {}
-          accountId: AC1234512345123451234512345123451234512345
+          accountId: AC0123456789abcdefABCDEF0123456789abcdef06
           brandId: BVCEBIJ
           cspId: SKGC6G0
           firstName: ""
@@ -9460,12 +11518,72 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "brands": [
+            {
+              "mock": true,
+              "optionalAttributes": {},
+              "accountId": "AC0123456789abcdefABCDEF0123456789abcdef06",
+              "brandId": "BVCEBIJ",
+              "cspId": "SKGC6G0",
+              "firstName": "",
+              "lastName": "",
+              "displayName": "FreeClimb LLC(mock)",
+              "companyName": "FreeClimb LLC",
+              "ein": "843793747",
+              "einIssuingCountry": "US",
+              "phone": "+18475722071",
+              "street": "570 Lake Cook Rd Ste 400",
+              "city": "Deerfield",
+              "state": "IL",
+              "postalCode": "60015",
+              "country": "US",
+              "email": "bmabry@vailsys.com",
+              "stockSymbol": "",
+              "stockExchange": "NASDAQ",
+              "ipAddress": "127.0.0.1",
+              "website": "https://www.freeclimb.com/",
+              "vertical": "TECHNOLOGY",
+              "universalEin": "US_843793747",
+              "referenceId": "ACdeadbeef",
+              "entityType": "PRIVATE_PROFIT",
+              "brandRelationship": "SMALL_ACCOUNT",
+              "identityStatus": "VERIFIED",
+              "createDate": "2022-07-01T20:29:23Z"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"brands\\\":[{\\\"mock\\\":true,\\\"optionalAttributes\\\":{},\\\"accountId\\\
+        \":\\\"AC0123456789abcdefABCDEF0123456789abcdef06\\\",\\\"brandId\\\":\\\"\
+        BVCEBIJ\\\",\\\"cspId\\\":\\\"SKGC6G0\\\",\\\"firstName\\\":\\\"\\\",\\\"\
+        lastName\\\":\\\"\\\",\\\"displayName\\\":\\\"FreeClimb LLC(mock)\\\",\\\"\
+        companyName\\\":\\\"FreeClimb LLC\\\",\\\"ein\\\":\\\"843793747\\\",\\\"einIssuingCountry\\\
+        \":\\\"US\\\",\\\"phone\\\":\\\"+18475722071\\\",\\\"street\\\":\\\"570 Lake\
+        \ Cook Rd Ste 400\\\",\\\"city\\\":\\\"Deerfield\\\",\\\"state\\\":\\\"IL\\\
+        \",\\\"postalCode\\\":\\\"60015\\\",\\\"country\\\":\\\"US\\\",\\\"email\\\
+        \":\\\"bmabry@vailsys.com\\\",\\\"stockSymbol\\\":\\\"\\\",\\\"stockExchange\\\
+        \":\\\"NASDAQ\\\",\\\"ipAddress\\\":\\\"127.0.0.1\\\",\\\"website\\\":\\\"\
+        https://www.freeclimb.com/\\\",\\\"vertical\\\":\\\"TECHNOLOGY\\\",\\\"universalEin\\\
+        \":\\\"US_843793747\\\",\\\"referenceId\\\":\\\"ACdeadbeef\\\",\\\"entityType\\\
+        \":\\\"PRIVATE_PROFIT\\\",\\\"brandRelationship\\\":\\\"SMALL_ACCOUNT\\\"\
+        ,\\\"identityStatus\\\":\\\"VERIFIED\\\",\\\"createDate\\\":\\\"2022-07-01T20:29:23Z\\\
+        \"}]}\""
     SMSTenDLCBrand:
       description: A brand is a business identity behind the campaign.
       example:
         mock: true
         optionalAttributes: {}
-        accountId: AC1234512345123451234512345123451234512345
+        accountId: AC0123456789abcdefABCDEF0123456789abcdef06
         brandId: BVCEBIJ
         cspId: SKGC6G0
         firstName: ""
@@ -9646,6 +11764,53 @@ components:
       - vertical
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "mock": true,
+          "optionalAttributes": {},
+          "accountId": "AC0123456789abcdefABCDEF0123456789abcdef06",
+          "brandId": "BVCEBIJ",
+          "cspId": "SKGC6G0",
+          "firstName": "",
+          "lastName": "",
+          "displayName": "FreeClimb LLC(mock)",
+          "companyName": "FreeClimb LLC",
+          "ein": "843793747",
+          "einIssuingCountry": "US",
+          "phone": "+18475722071",
+          "street": "570 Lake Cook Rd Ste 400",
+          "city": "Deerfield",
+          "state": "IL",
+          "postalCode": "60015",
+          "country": "US",
+          "email": "bmabry@vailsys.com",
+          "stockSymbol": "",
+          "stockExchange": "NASDAQ",
+          "ipAddress": "127.0.0.1",
+          "website": "https://www.freeclimb.com/",
+          "vertical": "TECHNOLOGY",
+          "universalEin": "US_843793747",
+          "referenceId": "ACdeadbeef",
+          "entityType": "PRIVATE_PROFIT",
+          "brandRelationship": "SMALL_ACCOUNT",
+          "identityStatus": "VERIFIED",
+          "createDate": "2022-07-01T20:29:23Z"
+        }
+      x-example-escaped: "\"{\\\"mock\\\":true,\\\"optionalAttributes\\\":{},\\\"\
+        accountId\\\":\\\"AC0123456789abcdefABCDEF0123456789abcdef06\\\",\\\"brandId\\\
+        \":\\\"BVCEBIJ\\\",\\\"cspId\\\":\\\"SKGC6G0\\\",\\\"firstName\\\":\\\"\\\"\
+        ,\\\"lastName\\\":\\\"\\\",\\\"displayName\\\":\\\"FreeClimb LLC(mock)\\\"\
+        ,\\\"companyName\\\":\\\"FreeClimb LLC\\\",\\\"ein\\\":\\\"843793747\\\",\\\
+        \"einIssuingCountry\\\":\\\"US\\\",\\\"phone\\\":\\\"+18475722071\\\",\\\"\
+        street\\\":\\\"570 Lake Cook Rd Ste 400\\\",\\\"city\\\":\\\"Deerfield\\\"\
+        ,\\\"state\\\":\\\"IL\\\",\\\"postalCode\\\":\\\"60015\\\",\\\"country\\\"\
+        :\\\"US\\\",\\\"email\\\":\\\"bmabry@vailsys.com\\\",\\\"stockSymbol\\\":\\\
+        \"\\\",\\\"stockExchange\\\":\\\"NASDAQ\\\",\\\"ipAddress\\\":\\\"127.0.0.1\\\
+        \",\\\"website\\\":\\\"https://www.freeclimb.com/\\\",\\\"vertical\\\":\\\"\
+        TECHNOLOGY\\\",\\\"universalEin\\\":\\\"US_843793747\\\",\\\"referenceId\\\
+        \":\\\"ACdeadbeef\\\",\\\"entityType\\\":\\\"PRIVATE_PROFIT\\\",\\\"brandRelationship\\\
+        \":\\\"SMALL_ACCOUNT\\\",\\\"identityStatus\\\":\\\"VERIFIED\\\",\\\"createDate\\\
+        \":\\\"2022-07-01T20:29:23Z\\\"}\""
     SMSTollFreeCampaignsListResult:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -9681,6 +11846,33 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "brands": [
+            {
+              "accountId": "string",
+              "campaignId": "string",
+              "useCase": "string",
+              "registrationStatus": "UNREGISTERED",
+              "dateCreated": "string",
+              "dateUpdated": "string",
+              "revision": 0
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"brands\\\":[{\\\"accountId\\\":\\\"string\\\",\\\"campaignId\\\":\\\
+        \"string\\\",\\\"useCase\\\":\\\"string\\\",\\\"registrationStatus\\\":\\\"\
+        UNREGISTERED\\\",\\\"dateCreated\\\":\\\"string\\\",\\\"dateUpdated\\\":\\\
+        \"string\\\",\\\"revision\\\":0}]}\""
     SMSTollFreeCampaign:
       example:
         accountId: accountId
@@ -9725,6 +11917,20 @@ components:
       - useCase
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "accountId": "string",
+          "campaignId": "string",
+          "useCase": "string",
+          "registrationStatus": "UNREGISTERED",
+          "dateCreated": "string",
+          "dateUpdated": "string",
+          "revision": 0
+        }
+      x-example-escaped: "\"{\\\"accountId\\\":\\\"string\\\",\\\"campaignId\\\":\\\
+        \"string\\\",\\\"useCase\\\":\\\"string\\\",\\\"registrationStatus\\\":\\\"\
+        UNREGISTERED\\\",\\\"dateCreated\\\":\\\"string\\\",\\\"dateUpdated\\\":\\\
+        \"string\\\",\\\"revision\\\":0}\""
     TranscribeUtteranceRecord:
       properties:
         saveRecording:
@@ -9741,6 +11947,14 @@ components:
           type: integer
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "saveRecording": false,
+          "maxLengthSec": 60,
+          "rcrdTerminationSilenceTimeMs": 0
+        }
+      x-example-escaped: "\"{\\\"saveRecording\\\":false,\\\"maxLengthSec\\\":60,\\\
+        \"rcrdTerminationSilenceTimeMs\\\":0}\""
     TranscribeUtterance:
       allOf:
       - $ref: '#/components/schemas/PerclCommand'
@@ -9794,6 +12008,29 @@ components:
             - Play:
                 file: https://yoursite.com/path/to/please-record-greeting.wav
       x-percl-command: TranscribeUtterance
+      x-example: |-
+        {
+          "command": "TranscribeUtterance",
+          "actionUrl": "https://www.example.com",
+          "playBeep": false,
+          "record": {
+            "saveRecording": false,
+            "maxLengthSec": 60,
+            "rcrdTerminationSilenceTimeMs": 0
+          },
+          "privacyForLogging": false,
+          "privacyForRecording": false,
+          "prompts": [
+            {
+              "command": "string"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"command\\\":\\\"TranscribeUtterance\\\",\\\"actionUrl\\\
+        \":\\\"https://www.example.com\\\",\\\"playBeep\\\":false,\\\"record\\\":{\\\
+        \"saveRecording\\\":false,\\\"maxLengthSec\\\":60,\\\"rcrdTerminationSilenceTimeMs\\\
+        \":0},\\\"privacyForLogging\\\":false,\\\"privacyForRecording\\\":false,\\\
+        \"prompts\\\":[{\\\"command\\\":\\\"string\\\"}]}\""
     CreateWebRTCToken:
       additionalProperties: false
       example:
@@ -9822,6 +12059,14 @@ components:
       - uses
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "to": "string",
+          "from": "string",
+          "uses": 0
+        }
+      x-example-escaped: "\"{\\\"to\\\":\\\"string\\\",\\\"from\\\":\\\"string\\\"\
+        ,\\\"uses\\\":0}\""
     ExportStatus:
       description: platform export status
       enum:
@@ -9853,6 +12098,8 @@ components:
         varname: FAILED
       - enum: deleted
         varname: DELETED
+      x-example: '"intaking"'
+      x-example-escaped: '"\"intaking\""'
     ExportResourceType:
       description: platform resource type
       enum:
@@ -9868,6 +12115,8 @@ components:
         varname: MESSAGES
       - enum: Calls
         varname: CALLS
+      x-example: '"Messages"'
+      x-example-escaped: '"\"Messages\""'
     ExportOutputType:
       description: output type of the export
       enum:
@@ -9879,6 +12128,8 @@ components:
       x-enum-mapping:
       - enum: csv
         varname: CSV
+      x-example: '"csv"'
+      x-example-escaped: '"\"csv\""'
     ExportRequestOutput:
       example:
         type: csv
@@ -9889,6 +12140,11 @@ components:
       - type
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "type": "csv"
+        }
+      x-example-escaped: "\"{\\\"type\\\":\\\"csv\\\"}\""
     ExportResultOutput:
       properties:
         type:
@@ -9897,14 +12153,19 @@ components:
       - type
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "type": "csv"
+        }
+      x-example-escaped: "\"{\\\"type\\\":\\\"csv\\\"}\""
     ExportResult:
       example:
-        accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
-        uri: /Accounts/AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78/Exports/EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+        accountId: AC0123456789abcdefABCDEF0123456789abcdef07
+        uri: /Accounts/AC0123456789abcdefABCDEF0123456789abcdef07/Exports/EX0123456789abcdefABCDEF0123456789abcdef08
         dateCreated: "Wed, 26 Jun 2024 15:45:06 UTC"
         dateUpdated: "Wed, 26 Jun 2024 15:45:06 UTC"
         revision: 1
-        exportId: EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+        exportId: EX0123456789abcdefABCDEF0123456789abcdef08
         status: completed
         size: 12893786
         resourceType: Messages
@@ -9978,6 +12239,39 @@ components:
       - uri
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "accountId": "AC0123456789abcdefABCDEF0123456789abcdef07",
+          "uri": "/Accounts/AC0123456789abcdefABCDEF0123456789abcdef07/Exports/EX0123456789abcdefABCDEF0123456789abcdef08",
+          "dateCreated": "Wed, 26 Jun 2024 15:45:06 UTC",
+          "dateUpdated": "Wed, 26 Jun 2024 15:45:06 UTC",
+          "revision": 1,
+          "exportId": "EX0123456789abcdefABCDEF0123456789abcdef08",
+          "status": "completed",
+          "size": 12893786,
+          "resourceType": "Messages",
+          "query": {
+            "direction": "inbound"
+          },
+          "format": [
+            "messageId",
+            "dateUpdated",
+            "segmentCount",
+            "status"
+          ],
+          "output": {
+            "type": "csv"
+          }
+        }
+      x-example-escaped: "\"{\\\"accountId\\\":\\\"AC0123456789abcdefABCDEF0123456789abcdef07\\\
+        \",\\\"uri\\\":\\\"/Accounts/AC0123456789abcdefABCDEF0123456789abcdef07/Exports/EX0123456789abcdefABCDEF0123456789abcdef08\\\
+        \",\\\"dateCreated\\\":\\\"Wed, 26 Jun 2024 15:45:06 UTC\\\",\\\"dateUpdated\\\
+        \":\\\"Wed, 26 Jun 2024 15:45:06 UTC\\\",\\\"revision\\\":1,\\\"exportId\\\
+        \":\\\"EX0123456789abcdefABCDEF0123456789abcdef08\\\",\\\"status\\\":\\\"\
+        completed\\\",\\\"size\\\":12893786,\\\"resourceType\\\":\\\"Messages\\\"\
+        ,\\\"query\\\":{\\\"direction\\\":\\\"inbound\\\"},\\\"format\\\":[\\\"messageId\\\
+        \",\\\"dateUpdated\\\",\\\"segmentCount\\\",\\\"status\\\"],\\\"output\\\"\
+        :{\\\"type\\\":\\\"csv\\\"}}\""
     ExportList:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -9994,12 +12288,12 @@ components:
         total: 0
         nextPageUri: nextPageUri
         exports:
-        - accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
-          uri: /Accounts/AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78/Exports/EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+        - accountId: AC0123456789abcdefABCDEF0123456789abcdef07
+          uri: /Accounts/AC0123456789abcdefABCDEF0123456789abcdef07/Exports/EX0123456789abcdefABCDEF0123456789abcdef08
           dateCreated: "Wed, 26 Jun 2024 15:45:06 UTC"
           dateUpdated: "Wed, 26 Jun 2024 15:45:06 UTC"
           revision: 1
-          exportId: EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+          exportId: EX0123456789abcdefABCDEF0123456789abcdef08
           status: completed
           size: 12893786
           resourceType: Messages
@@ -10012,12 +12306,12 @@ components:
           - status
           output:
             type: csv
-        - accountId: AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78
-          uri: /Accounts/AC3ff5d5aed7fde9e6659673d850cbd18ea8bfca78/Exports/EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+        - accountId: AC0123456789abcdefABCDEF0123456789abcdef07
+          uri: /Accounts/AC0123456789abcdefABCDEF0123456789abcdef07/Exports/EX0123456789abcdefABCDEF0123456789abcdef08
           dateCreated: "Wed, 26 Jun 2024 15:45:06 UTC"
           dateUpdated: "Wed, 26 Jun 2024 15:45:06 UTC"
           revision: 1
-          exportId: EX4d7500862e3abf4b9f4da24d54f559d3024252f8
+          exportId: EX0123456789abcdefABCDEF0123456789abcdef08
           status: completed
           size: 12893786
           resourceType: Messages
@@ -10035,19 +12329,71 @@ components:
         end: 1
         page: 5
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "exports": [
+            {
+              "accountId": "AC0123456789abcdefABCDEF0123456789abcdef07",
+              "uri": "/Accounts/AC0123456789abcdefABCDEF0123456789abcdef07/Exports/EX0123456789abcdefABCDEF0123456789abcdef08",
+              "dateCreated": "Wed, 26 Jun 2024 15:45:06 UTC",
+              "dateUpdated": "Wed, 26 Jun 2024 15:45:06 UTC",
+              "revision": 1,
+              "exportId": "EX0123456789abcdefABCDEF0123456789abcdef08",
+              "status": "completed",
+              "size": 12893786,
+              "resourceType": "Messages",
+              "query": {
+                "direction": "inbound"
+              },
+              "format": [
+                "messageId",
+                "dateUpdated",
+                "segmentCount",
+                "status"
+              ],
+              "output": {
+                "type": "csv"
+              }
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"exports\\\":[{\\\"accountId\\\":\\\"AC0123456789abcdefABCDEF0123456789abcdef07\\\
+        \",\\\"uri\\\":\\\"/Accounts/AC0123456789abcdefABCDEF0123456789abcdef07/Exports/EX0123456789abcdefABCDEF0123456789abcdef08\\\
+        \",\\\"dateCreated\\\":\\\"Wed, 26 Jun 2024 15:45:06 UTC\\\",\\\"dateUpdated\\\
+        \":\\\"Wed, 26 Jun 2024 15:45:06 UTC\\\",\\\"revision\\\":1,\\\"exportId\\\
+        \":\\\"EX0123456789abcdefABCDEF0123456789abcdef08\\\",\\\"status\\\":\\\"\
+        completed\\\",\\\"size\\\":12893786,\\\"resourceType\\\":\\\"Messages\\\"\
+        ,\\\"query\\\":{\\\"direction\\\":\\\"inbound\\\"},\\\"format\\\":[\\\"messageId\\\
+        \",\\\"dateUpdated\\\",\\\"segmentCount\\\",\\\"status\\\"],\\\"output\\\"\
+        :{\\\"type\\\":\\\"csv\\\"}}]}\""
     ExportRequest:
       example:
         output:
           type: csv
-        query: "{}"
+        query:
+          direction: inbound
         format:
-        - format
-        - format
+        - messageId
+        - dateUpdated
+        - status
         resourceType: Messages
       properties:
         resourceType:
           $ref: '#/components/schemas/ExportResourceType'
         format:
+          example:
+          - messageId
+          - dateUpdated
+          - status
           items:
             type: string
           type: array
@@ -10055,6 +12401,8 @@ components:
         output:
           $ref: '#/components/schemas/ExportRequestOutput'
         query:
+          example:
+            direction: inbound
           type: object
           x-is-object: true
       required:
@@ -10062,16 +12410,37 @@ components:
       - resourceType
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "resourceType": "Messages",
+          "format": [
+            "messageId",
+            "dateUpdated",
+            "status"
+          ],
+          "output": {
+            "type": "csv"
+          },
+          "query": {
+            "direction": "inbound"
+          }
+        }
+      x-example-escaped: "\"{\\\"resourceType\\\":\\\"Messages\\\",\\\"format\\\"\
+        :[\\\"messageId\\\",\\\"dateUpdated\\\",\\\"status\\\"],\\\"output\\\":{\\\
+        \"type\\\":\\\"csv\\\"},\\\"query\\\":{\\\"direction\\\":\\\"inbound\\\"}}\""
     CreateBlobRequest:
       additionalProperties: false
       example:
-        blob: "{}"
-        alias: alias
+        blob:
+          firstName: John
+          lastName: Doe
+        alias: customer-profile
         expiresAt: 2006-01-02T15:04:05.000Z
       properties:
         alias:
           description: Custom identifier for this blob that is unique for the owning
             account. It will be set to the blobId by default if not provided.
+          example: customer-profile
           maxLength: 64
           type: string
         expiresAt:
@@ -10082,6 +12451,9 @@ components:
           example: 2006-01-02T15:04:05.000Z
           type: string
         blob:
+          example:
+            firstName: John
+            lastName: Doe
           type: object
           x-is-object: true
           x-is-required: true
@@ -10089,29 +12461,62 @@ components:
       - blob
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "alias": "customer-profile",
+          "expiresAt": "2006-01-02T15:04:05.000Z",
+          "blob": {
+            "firstName": "John",
+            "lastName": "Doe"
+          }
+        }
+      x-example-escaped: "\"{\\\"alias\\\":\\\"customer-profile\\\",\\\"expiresAt\\\
+        \":\\\"2006-01-02T15:04:05.000Z\\\",\\\"blob\\\":{\\\"firstName\\\":\\\"John\\\
+        \",\\\"lastName\\\":\\\"Doe\\\"}}\""
     ModifyBlobRequest:
       example:
-        blob: "{}"
-        alias: alias
+        blob:
+          firstName: John
+          lastName: Doe
+        alias: customer-profile
       properties:
         blob:
+          example:
+            firstName: John
+            lastName: Doe
           type: object
           x-is-object: true
           x-is-required: true
         alias:
           description: Custom identifier for this blob that is unique for the owning
             account. It will be set to the blobId by default if not provided.
+          example: customer-profile
           maxLength: 64
           type: string
       required:
       - blob
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "blob": {
+            "firstName": "John",
+            "lastName": "Doe"
+          },
+          "alias": "customer-profile"
+        }
+      x-example-escaped: "\"{\\\"blob\\\":{\\\"firstName\\\":\\\"John\\\",\\\"lastName\\\
+        \":\\\"Doe\\\"},\\\"alias\\\":\\\"customer-profile\\\"}\""
     ReplaceBlobRequest:
       example:
-        blob: "{}"
+        blob:
+          firstName: John
+          lastName: Doe
       properties:
         blob:
+          example:
+            firstName: John
+            lastName: Doe
           type: object
           x-is-object: true
           x-is-required: true
@@ -10119,12 +12524,21 @@ components:
       - blob
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "blob": {
+            "firstName": "John",
+            "lastName": "Doe"
+          }
+        }
+      x-example-escaped: "\"{\\\"blob\\\":{\\\"firstName\\\":\\\"John\\\",\\\"lastName\\\
+        \":\\\"Doe\\\"}}\""
     BlobResult:
       example:
-        accountId: AC0534faec6b32da45f36166674d65b3903f784141
+        accountId: AC0123456789abcdefABCDEF0123456789abcdef01
         dateCreated: 2000-01-23T04:56:07.000+00:00
         blob: "{}"
-        blobId: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+        blobId: BL0123456789abcdefABCDEF0123456789abcdef02
         alias: alias
         expiresAt: 2000-01-23T04:56:07.000+00:00
         revision: 7
@@ -10133,13 +12547,17 @@ components:
         blobId:
           description: Identifier which can be used to reference this blob in future
             interations.
-          example: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+          example: BL0123456789abcdefABCDEF0123456789abcdef02
           pattern: "BL[0-9a-fA-F]{40}"
           type: string
+          x-example: '"BL0123456789abcdefABCDEF0123456789abcdef02"'
+          x-example-escaped: '"\"BL0123456789abcdefABCDEF0123456789abcdef02\""'
         accountId:
-          example: AC0534faec6b32da45f36166674d65b3903f784141
+          example: AC0123456789abcdefABCDEF0123456789abcdef01
           pattern: "AC[0-9a-fA-F]{40}"
           type: string
+          x-example: '"AC0123456789abcdefABCDEF0123456789abcdef01"'
+          x-example-escaped: '"\"AC0123456789abcdefABCDEF0123456789abcdef01\""'
         alias:
           description: Custom identifier for this blob that is unique for the owning
             account. It will be set to the blobId by default if not provided in the
@@ -10173,6 +12591,21 @@ components:
           x-is-object: true
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "blobId": "BL0123456789abcdefABCDEF0123456789abcdef02",
+          "accountId": "AC0123456789abcdefABCDEF0123456789abcdef01",
+          "alias": "string",
+          "revision": 0,
+          "dateCreated": "2022-01-01T00:00:00Z",
+          "dateUpdated": "2022-01-01T00:00:00Z",
+          "expiresAt": "2022-01-01T00:00:00Z"
+        }
+      x-example-escaped: "\"{\\\"blobId\\\":\\\"BL0123456789abcdefABCDEF0123456789abcdef02\\\
+        \",\\\"accountId\\\":\\\"AC0123456789abcdefABCDEF0123456789abcdef01\\\",\\\
+        \"alias\\\":\\\"string\\\",\\\"revision\\\":0,\\\"dateCreated\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"dateUpdated\\\":\\\"2022-01-01T00:00:00Z\\\",\\\"expiresAt\\\":\\\"\
+        2022-01-01T00:00:00Z\\\"}\""
     BlobListResponse:
       allOf:
       - $ref: '#/components/schemas/PaginationModel'
@@ -10186,18 +12619,18 @@ components:
       example:
         numPages: 5
         blobs:
-        - accountId: AC0534faec6b32da45f36166674d65b3903f784141
+        - accountId: AC0123456789abcdefABCDEF0123456789abcdef01
           dateCreated: 2000-01-23T04:56:07.000+00:00
           blob: "{}"
-          blobId: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+          blobId: BL0123456789abcdefABCDEF0123456789abcdef02
           alias: alias
           expiresAt: 2000-01-23T04:56:07.000+00:00
           revision: 7
           dateUpdated: 2000-01-23T04:56:07.000+00:00
-        - accountId: AC0534faec6b32da45f36166674d65b3903f784141
+        - accountId: AC0123456789abcdefABCDEF0123456789abcdef01
           dateCreated: 2000-01-23T04:56:07.000+00:00
           blob: "{}"
-          blobId: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7
+          blobId: BL0123456789abcdefABCDEF0123456789abcdef02
           alias: alias
           expiresAt: 2000-01-23T04:56:07.000+00:00
           revision: 7
@@ -10211,6 +12644,34 @@ components:
       type: object
       x-is-object: true
       x-implements: Pagination
+      x-example: |-
+        {
+          "total": 0,
+          "start": 0,
+          "end": 0,
+          "page": 0,
+          "numPages": 0,
+          "pageSize": 0,
+          "nextPageUri": "string",
+          "blobs": [
+            {
+              "blobId": "BL0123456789abcdefABCDEF0123456789abcdef02",
+              "accountId": "AC0123456789abcdefABCDEF0123456789abcdef01",
+              "alias": "string",
+              "revision": 0,
+              "dateCreated": "2022-01-01T00:00:00Z",
+              "dateUpdated": "2022-01-01T00:00:00Z",
+              "expiresAt": "2022-01-01T00:00:00Z"
+            }
+          ]
+        }
+      x-example-escaped: "\"{\\\"total\\\":0,\\\"start\\\":0,\\\"end\\\":0,\\\"page\\\
+        \":0,\\\"numPages\\\":0,\\\"pageSize\\\":0,\\\"nextPageUri\\\":\\\"string\\\
+        \",\\\"blobs\\\":[{\\\"blobId\\\":\\\"BL0123456789abcdefABCDEF0123456789abcdef02\\\
+        \",\\\"accountId\\\":\\\"AC0123456789abcdefABCDEF0123456789abcdef01\\\",\\\
+        \"alias\\\":\\\"string\\\",\\\"revision\\\":0,\\\"dateCreated\\\":\\\"2022-01-01T00:00:00Z\\\
+        \",\\\"dateUpdated\\\":\\\"2022-01-01T00:00:00Z\\\",\\\"expiresAt\\\":\\\"\
+        2022-01-01T00:00:00Z\\\"}]}\""
     PlatformError:
       description: Standard error structure returned by platform.
       example:
@@ -10230,6 +12691,15 @@ components:
           x-is-object: true
       type: object
       x-is-object: true
+      x-example: |-
+        {
+          "code": 0,
+          "call": "Internal Failure",
+          "url": "https://docs.freeclimb.com/reference/error-and-warning-dictionary#0"
+        }
+      x-example-escaped: "\"{\\\"code\\\":0,\\\"call\\\":\\\"Internal Failure\\\"\
+        ,\\\"url\\\":\\\"https://docs.freeclimb.com/reference/error-and-warning-dictionary#0\\\
+        \"}\""
     AccountResult_allOf_subresourceUris:
       description: The list of subresources for this account.
       nullable: true

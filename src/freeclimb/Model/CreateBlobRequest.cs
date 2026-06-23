@@ -69,6 +69,9 @@ namespace freeclimb.Model
         /// Custom identifier for this blob that is unique for the owning account. It will be set to the blobId by default if not provided.
         /// </summary>
         /// <value>Custom identifier for this blob that is unique for the owning account. It will be set to the blobId by default if not provided.</value>
+        /*
+        <example>customer-profile</example>
+        */
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
@@ -85,6 +88,9 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets Blob
         /// </summary>
+        /*
+        <example>{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot;:&quot;Doe&quot;}</example>
+        */
         [DataMember(Name = "blob", IsRequired = true, EmitDefaultValue = true)]
         public Object Blob { get; set; }
 

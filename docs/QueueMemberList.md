@@ -13,5 +13,17 @@ Name | Type | Description | Notes
 **NextPageUri** | **string** | Uri to retrieve the next page of items | [optional] 
 **QueueMembers** | [**List&lt;QueueMember&gt;**](QueueMember.md) |  | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"total\":0,\"start\":0,\"end\":0,\"page\":0,\"numPages\":0,\"pageSize\":0,\"nextPageUri\":\"string\",\"queueMembers\":[{\"uri\":\"string\",\"callId\":\"string\",\"waitTime\":0,\"position\":0,\"dateEnqueued\":\"string\"}]}";
+
+// create an instance of QueueMemberList from a JSON string
+QueueMemberList queueMemberList = JsonConvert.DeserializeObject<QueueMemberList>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -135,6 +135,9 @@ namespace freeclimb.Model
         /// Phone number to use as the sender. This must be an incoming phone number that you have purchased from FreeClimb.
         /// </summary>
         /// <value>Phone number to use as the sender. This must be an incoming phone number that you have purchased from FreeClimb.</value>
+        /*
+        <example>+12025551234</example>
+        */
         [DataMember(Name = "from", IsRequired = true, EmitDefaultValue = true)]
         public string From { get; set; }
 
@@ -142,6 +145,9 @@ namespace freeclimb.Model
         /// Phone number to receive the message. Must be within FreeClimb&#39;s service area.
         /// </summary>
         /// <value>Phone number to receive the message. Must be within FreeClimb&#39;s service area.</value>
+        /*
+        <example>+13035559876</example>
+        */
         [DataMember(Name = "to", IsRequired = true, EmitDefaultValue = true)]
         public string To { get; set; }
 
@@ -149,6 +155,9 @@ namespace freeclimb.Model
         /// Text contained in the message (maximum 160 characters).   **Note:** For text, only ASCII characters are supported.
         /// </summary>
         /// <value>Text contained in the message (maximum 160 characters).   **Note:** For text, only ASCII characters are supported.</value>
+        /*
+        <example>Hello from FreeClimb!</example>
+        */
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
@@ -156,6 +165,9 @@ namespace freeclimb.Model
         /// When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored.
         /// </summary>
         /// <value>When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored.</value>
+        /*
+        <example>https://www.myapp.com/messageStatus</example>
+        */
         [DataMember(Name = "notificationUrl", EmitDefaultValue = false)]
         public string NotificationUrl { get; set; }
 
@@ -163,6 +175,9 @@ namespace freeclimb.Model
         /// an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.
         /// </summary>
         /// <value>an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.</value>
+        /*
+        <example>[&quot;https://www.myapp.com/image.jpg&quot;]</example>
+        */
         [DataMember(Name = "mediaUrls", EmitDefaultValue = true)]
         public List<string> MediaUrls { get; set; }
 

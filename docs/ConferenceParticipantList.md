@@ -13,5 +13,17 @@ Name | Type | Description | Notes
 **NextPageUri** | **string** | Uri to retrieve the next page of items | [optional] 
 **Participants** | [**List&lt;ConferenceParticipantResult&gt;**](ConferenceParticipantResult.md) |  | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"total\":0,\"start\":0,\"end\":0,\"page\":0,\"numPages\":0,\"pageSize\":0,\"nextPageUri\":\"string\",\"participants\":[{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"accountId\":\"string\",\"conferenceId\":\"string\",\"callId\":\"string\",\"talk\":false,\"listen\":false,\"dtmfPassThrough\":false,\"startConfOnEnter\":false}]}";
+
+// create an instance of ConferenceParticipantList from a JSON string
+ConferenceParticipantList conferenceParticipantList = JsonConvert.DeserializeObject<ConferenceParticipantList>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -19,5 +19,17 @@ Name | Type | Description | Notes
 **StatusCallbackUrl** | **string** | URL to inform that the Conference status has changed. | [optional] 
 **SubresourceUris** | **Object** | The list of subresources for this Conference. This includes participants and/or recordings. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"conferenceId\":\"string\",\"accountId\":\"string\",\"alias\":\"string\",\"record\":false,\"status\":\"empty\",\"waitUrl\":\"https://www.example.com\",\"actionUrl\":\"https://www.example.com\",\"statusCallbackUrl\":\"https://www.example.com\"}";
+
+// create an instance of ConferenceResult from a JSON string
+ConferenceResult conferenceResult = JsonConvert.DeserializeObject<ConferenceResult>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

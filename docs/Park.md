@@ -10,5 +10,17 @@ Name | Type | Description | Notes
 **ActionUrl** | **string** | A request is made to this URL when the Call is resumed, which can occur if the Call is resumed via the Unpark command, the REST API (POST to Call resource), or the caller hangs up. The PerCL script returned in response to the actionUrl will be executed on the resumed call. | 
 **NotificationUrl** | **string** | URL to be invoked when the Call is parked. The request to the URL contains the standard request parameters. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"Park\",\"waitUrl\":\"https://www.example.com\",\"actionUrl\":\"https://www.example.com\",\"notificationUrl\":\"https://www.example.com\"}";
+
+// create an instance of Park from a JSON string
+Park park = JsonConvert.DeserializeObject<Park>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

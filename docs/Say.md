@@ -12,5 +12,17 @@ Name | Type | Description | Notes
 **Loop** | **int** | Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up. | [optional] [default to 1]
 **PrivacyMode** | **bool** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"Say\",\"text\":\"string\",\"language\":\"string\",\"engine\":{\"name\":\"freeclimb.standard\"},\"loop\":1,\"privacyMode\":false}";
+
+// create an instance of Say from a JSON string
+Say say = JsonConvert.DeserializeObject<Say>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

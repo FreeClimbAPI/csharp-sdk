@@ -16,5 +16,17 @@ Name | Type | Description | Notes
 **OptionalAttributes** | **Dictionary&lt;string, Object&gt;** | Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names. | [optional] 
 **EvpVettingScore** | **int** | External vetting score. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"accountId\":\"string\",\"brandId\":\"string\",\"firstName\":\"John\",\"lastName\":\"Doe\",\"displayName\":\"ABC Mobile\",\"companyName\":\"ABC Inc.\",\"phone\":\"+12024567890\",\"email\":\"string\",\"website\":\"http://www.abcmobile.com\",\"evpVettingScore\":0}";
+
+// create an instance of SMSTenDLCPartnerCampaignBrand from a JSON string
+SMSTenDLCPartnerCampaignBrand sMSTenDLCPartnerCampaignBrand = JsonConvert.DeserializeObject<SMSTenDLCPartnerCampaignBrand>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

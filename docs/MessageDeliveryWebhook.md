@@ -16,5 +16,17 @@ Name | Type | Description | Notes
 **PhoneNumberId** | **string** | ID of the destination phone number. | [optional] 
 **Uri** | **string** | The URI for this resource, relative to the API base URL | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"messageDelivery\",\"accountId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"text\":\"string\",\"direction\":\"string\",\"applicationId\":\"string\",\"status\":\"string\",\"phoneNumberId\":\"string\",\"uri\":\"string\"}";
+
+// create an instance of MessageDeliveryWebhook from a JSON string
+MessageDeliveryWebhook messageDeliveryWebhook = JsonConvert.DeserializeObject<MessageDeliveryWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

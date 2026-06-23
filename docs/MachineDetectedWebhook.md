@@ -17,5 +17,17 @@ Name | Type | Description | Notes
 **ParentCallId** | **string** | Call ID of the leg which initiated the OutDial. | [optional] 
 **MachineType** | **MachineType** |  | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"machineDetected\",\"callId\":\"string\",\"accountId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"parentCallId\":\"string\",\"machineType\":\"answering machine\"}";
+
+// create an instance of MachineDetectedWebhook from a JSON string
+MachineDetectedWebhook machineDetectedWebhook = JsonConvert.DeserializeObject<MachineDetectedWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,5 +12,17 @@ Name | Type | Description | Notes
 **SmsUrl** | **string** | The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. | [optional] 
 **SmsFallbackUrl** | **string** | The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"alias\":\"Customer Support Line\",\"voiceUrl\":\"https://www.myapp.com/voice\",\"voiceFallbackUrl\":\"https://www.myapp.com/voiceFallback\",\"callConnectUrl\":\"https://www.myapp.com/callConnect\",\"statusCallbackUrl\":\"https://www.myapp.com/status\",\"smsUrl\":\"https://www.myapp.com/sms\",\"smsFallbackUrl\":\"https://www.myapp.com/smsFallback\"}";
+
+// create an instance of ApplicationRequest from a JSON string
+ApplicationRequest applicationRequest = JsonConvert.DeserializeObject<ApplicationRequest>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,5 +8,17 @@ Name | Type | Description | Notes
 **ExpiresAt** | **string** | An RFC3339 timestamp with millisecond resolution. This timestamp defines the time at which this blob will delete itself. It must not be more than 48 hours in the future and will default to 9 hours in the future if not provided. | [optional] 
 **Blob** | **Object** |  | 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"alias\":\"customer-profile\",\"expiresAt\":\"2006-01-02T15:04:05.000Z\",\"blob\":{\"firstName\":\"John\",\"lastName\":\"Doe\"}}";
+
+// create an instance of CreateBlobRequest from a JSON string
+CreateBlobRequest createBlobRequest = JsonConvert.DeserializeObject<CreateBlobRequest>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

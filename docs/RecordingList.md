@@ -13,5 +13,17 @@ Name | Type | Description | Notes
 **NextPageUri** | **string** | Uri to retrieve the next page of items | [optional] 
 **Recordings** | [**List&lt;RecordingResult&gt;**](RecordingResult.md) |  | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"total\":0,\"start\":0,\"end\":0,\"page\":0,\"numPages\":0,\"pageSize\":0,\"nextPageUri\":\"string\",\"recordings\":[{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"recordingId\":\"string\",\"accountId\":\"string\",\"callId\":\"string\",\"durationSec\":0,\"conferenceId\":\"string\"}]}";
+
+// create an instance of RecordingList from a JSON string
+RecordingList recordingList = JsonConvert.DeserializeObject<RecordingList>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

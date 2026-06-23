@@ -10,5 +10,17 @@ Name | Type | Description | Notes
 **Loop** | **int** | Number of times the audio file is played. Specifying &#39;0&#39; causes the Play action to loop until the Call is hung up. | [optional] 
 **PrivacyMode** | **bool** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"command\":\"Play\",\"file\":\"string\",\"loop\":0,\"privacyMode\":false}";
+
+// create an instance of Play from a JSON string
+Play play = JsonConvert.DeserializeObject<Play>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

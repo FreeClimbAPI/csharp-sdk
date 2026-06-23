@@ -56,6 +56,9 @@ namespace freeclimb.Model
         /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes the Participant. FreeClimb returns an error and ignores any other value.
         /// </summary>
         /// <value>(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes the Participant. FreeClimb returns an error and ignores any other value.</value>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "talk", EmitDefaultValue = true)]
         public bool Talk { get; set; }
 
@@ -63,6 +66,9 @@ namespace freeclimb.Model
         /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; silences the Conference for this Participant. FreeClimb returns an error and ignores any other value.
         /// </summary>
         /// <value>(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; silences the Conference for this Participant. FreeClimb returns an error and ignores any other value.</value>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "listen", EmitDefaultValue = true)]
         public bool Listen { get; set; }
 
@@ -70,6 +76,9 @@ namespace freeclimb.Model
         /// (Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value.
         /// </summary>
         /// <value>(Optional) Default is &#x60;true&#x60;. Setting to &#x60;false&#x60; mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value.</value>
+        /*
+        <example>true</example>
+        */
         [DataMember(Name = "dtmfPassThrough", EmitDefaultValue = true)]
         public bool DtmfPassThrough { get; set; }
 

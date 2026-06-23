@@ -16,5 +16,17 @@ Name | Type | Description | Notes
 **QueueId** | **string** | This is only populated if the request pertains to a Queue. Otherwise, it is set to null. | [optional] 
 **ParentCallId** | **string** |  | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"inboundCall\",\"callId\":\"string\",\"accountId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"parentCallId\":\"string\"}";
+
+// create an instance of InboundCallWebhook from a JSON string
+InboundCallWebhook inboundCallWebhook = JsonConvert.DeserializeObject<InboundCallWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

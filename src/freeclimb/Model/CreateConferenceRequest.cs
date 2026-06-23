@@ -83,6 +83,9 @@ namespace freeclimb.Model
         /// A description for this Conference. Maximum 64 characters.
         /// </summary>
         /// <value>A description for this Conference. Maximum 64 characters.</value>
+        /*
+        <example>Customer Conference</example>
+        */
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
@@ -90,6 +93,9 @@ namespace freeclimb.Model
         /// Setting to &#x60;true&#x60; records the entire Conference.
         /// </summary>
         /// <value>Setting to &#x60;true&#x60; records the entire Conference.</value>
+        /*
+        <example>false</example>
+        */
         [DataMember(Name = "record", EmitDefaultValue = true)]
         public bool Record { get; set; }
 
@@ -97,6 +103,9 @@ namespace freeclimb.Model
         /// If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &amp;mdash; when the Conference is created.
         /// </summary>
         /// <value>If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &amp;mdash; when the Conference is created.</value>
+        /*
+        <example>https://www.myapp.com/waitMusic</example>
+        */
         [DataMember(Name = "waitUrl", EmitDefaultValue = false)]
         public string WaitUrl { get; set; }
 
@@ -104,6 +113,9 @@ namespace freeclimb.Model
         /// This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).
         /// </summary>
         /// <value>This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).</value>
+        /*
+        <example>https://www.myapp.com/conferenceStatus</example>
+        */
         [DataMember(Name = "statusCallbackUrl", IsRequired = true, EmitDefaultValue = true)]
         public string StatusCallbackUrl { get; set; }
 

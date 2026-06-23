@@ -17,5 +17,17 @@ Name | Type | Description | Notes
 **Status** | **MessageStatus** |  | [optional] 
 **PhoneNumberId** | **string** | ID of the destination phone number. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"messageStatus\",\"accountId\":\"string\",\"messageId\":\"string\",\"callId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"text\":\"string\",\"direction\":\"string\",\"applicationId\":\"string\",\"status\":\"new\",\"phoneNumberId\":\"string\"}";
+
+// create an instance of MessageStatusWebhook from a JSON string
+MessageStatusWebhook messageStatusWebhook = JsonConvert.DeserializeObject<MessageStatusWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

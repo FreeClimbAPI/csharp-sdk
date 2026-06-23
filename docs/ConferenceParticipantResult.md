@@ -16,5 +16,17 @@ Name | Type | Description | Notes
 **DtmfPassThrough** | **bool?** | True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise. | [optional] 
 **StartConfOnEnter** | **bool?** | True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"accountId\":\"string\",\"conferenceId\":\"string\",\"callId\":\"string\",\"talk\":false,\"listen\":false,\"dtmfPassThrough\":false,\"startConfOnEnter\":false}";
+
+// create an instance of ConferenceParticipantResult from a JSON string
+ConferenceParticipantResult conferenceParticipantResult = JsonConvert.DeserializeObject<ConferenceParticipantResult>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

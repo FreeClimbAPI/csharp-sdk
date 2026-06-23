@@ -14,5 +14,17 @@ Name | Type | Description | Notes
 **DurationSec** | **int?** | Length of the recording in seconds. | [optional] 
 **ConferenceId** | **string** | ID of the Conference that was recorded. If a Call was recorded, this value is empty and the callId property is populated. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"recordingId\":\"string\",\"accountId\":\"string\",\"callId\":\"string\",\"durationSec\":0,\"conferenceId\":\"string\"}";
+
+// create an instance of RecordingResult from a JSON string
+RecordingResult recordingResult = JsonConvert.DeserializeObject<RecordingResult>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

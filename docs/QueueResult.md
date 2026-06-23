@@ -17,5 +17,17 @@ Name | Type | Description | Notes
 **AverageWaitTime** | **int?** | The average wait time (in seconds) of all Calls in the Queue. | [optional] 
 **SubresourceUris** | **Object** | List of subresources for this Queue (which includes Queue members). | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"accountId\":\"string\",\"queueId\":\"string\",\"alias\":\"string\",\"maxSize\":0,\"currentSize\":0,\"averageQueueRemovalTime\":0,\"averageWaitTime\":0}";
+
+// create an instance of QueueResult from a JSON string
+QueueResult queueResult = JsonConvert.DeserializeObject<QueueResult>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

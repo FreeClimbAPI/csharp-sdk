@@ -18,5 +18,17 @@ Name | Type | Description | Notes
 **QueueTime** | **int** | Time (in seconds) the Call spent in the Queue. This is only available if the Call was actually enqueued. | [optional] 
 **CurrentQueueSize** | **int** | Current number of enqueued Calls in this Queue. | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"requestType\":\"queueWait\",\"accountId\":\"string\",\"callId\":\"string\",\"from\":\"string\",\"to\":\"string\",\"callStatus\":\"queued\",\"direction\":\"inbound\",\"conferenceId\":\"string\",\"queueId\":\"string\",\"queuePosition\":\"string\",\"queueTime\":0,\"currentQueueSize\":0}";
+
+// create an instance of QueueWaitWebhook from a JSON string
+QueueWaitWebhook queueWaitWebhook = JsonConvert.DeserializeObject<QueueWaitWebhook>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

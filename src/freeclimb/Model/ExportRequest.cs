@@ -78,6 +78,9 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets Format
         /// </summary>
+        /*
+        <example>[&quot;messageId&quot;,&quot;dateUpdated&quot;,&quot;status&quot;]</example>
+        */
         [DataMember(Name = "format", EmitDefaultValue = false)]
         public List<string> Format { get; set; }
 
@@ -90,6 +93,9 @@ namespace freeclimb.Model
         /// <summary>
         /// Gets or Sets Query
         /// </summary>
+        /*
+        <example>{&quot;direction&quot;:&quot;inbound&quot;}</example>
+        */
         [DataMember(Name = "query", EmitDefaultValue = false)]
         public Object Query { get; set; }
 

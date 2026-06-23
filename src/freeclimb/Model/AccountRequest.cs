@@ -49,6 +49,9 @@ namespace freeclimb.Model
         /// Description for this account.
         /// </summary>
         /// <value>Description for this account.</value>
+        /*
+        <example>My Account</example>
+        */
         [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
@@ -56,6 +59,9 @@ namespace freeclimb.Model
         /// Group to which this account belongs.
         /// </summary>
         /// <value>Group to which this account belongs.</value>
+        /*
+        <example>My Label</example>
+        */
         [DataMember(Name = "label", EmitDefaultValue = false)]
         public string Label { get; set; }
 

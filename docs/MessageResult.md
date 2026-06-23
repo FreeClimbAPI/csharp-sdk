@@ -24,5 +24,17 @@ Name | Type | Description | Notes
 **PhoneNumberId** | **string** | String that uniquely identifies the phoneNumber resource used to send this Message | [optional] 
 **ApplicationId** | **string** | String that uniquely identifies the Application resource used to send this Message | [optional] 
 
+
+## Example
+
+```csharp
+using Newtonsoft.Json;
+using freeclimb.Model;
+
+string json = "{\"uri\":\"string\",\"dateCreated\":\"string\",\"dateUpdated\":\"string\",\"revision\":0,\"accountId\":\"string\",\"messageId\":\"string\",\"status\":\"new\",\"from\":\"string\",\"to\":\"string\",\"text\":\"string\",\"direction\":\"string\",\"notificationUrl\":\"https://www.example.com\",\"brandId\":\"string\",\"campaignId\":\"string\",\"segmentCount\":0,\"mediaUrls\":[\"https://www.example.com\"],\"tfn\":{\"campaignId\":\"string\"},\"phoneNumberId\":\"string\",\"applicationId\":\"string\"}";
+
+// create an instance of MessageResult from a JSON string
+MessageResult messageResult = JsonConvert.DeserializeObject<MessageResult>(json);
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
